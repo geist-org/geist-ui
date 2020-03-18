@@ -14,21 +14,21 @@ export const meta = {
 
 ## Switch themes
 
-<Note>Before using any Components, you must add <Code>ThemeProvider</Code> to the root node.</Note>
+<Note>Before using any Components, you must add <Code>ZEITUIProvider</Code> to the root node.</Note>
 <Spacer y={0.5} />
 <Note type="success"><Code>CSSBaseline</Code> provides basic CSS support, which is similar to <Code>normalize</Code>.</Note>
 <Spacer y={1} />
 
 **Now you can change the theme as follows:**
 
-  1. Make sure `ThemeProvider` and `CSSBaseline` are already on the root component.
+  1. Make sure `ZEITUIProvider` and `CSSBaseline` are already on the root component.
 
   2. Get the current theme of the page through hook `useTheme`.
 
   3. Update the value of `theme.type`, and the theme of all components will follow automatically.
 
 ```jsx
-import { CSSBaseline, ThemeProvider, useTheme } from '@zeit-ui/react'
+import { CSSBaseline, ZEITUIProvider, useTheme } from '@zeit-ui/react'
 
 const [type, setType] = useState('light')
 const currentTheme = useTheme()
@@ -38,10 +38,10 @@ const switchThemes = () => () => {
 }
 
 const App = () => (
-  <ThemeProvider theme={{ type }}>
+  <ZEITUIProvider theme={{ type }}>
     <CSSBaseline />
       <YourAppComponent onClick={switchThemes}/>
-  </ThemeProvider>
+  </ZEITUIProvider>
 )
 ```
 
@@ -57,7 +57,7 @@ Of course, if a *Component* doesn't use your customize variables, it doesn't mak
 <Note type="warning">The more changes you custom, the more Components <b>Re-Render</b>.</Note>
 
 ```jsx
-import { CSSBaseline, ThemeProvider } from '@zeit-ui/react'
+import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
 
 const myTheme = {
   palette: {
@@ -66,10 +66,10 @@ const myTheme = {
 }
 
 const App = () => (
-  <ThemeProvider theme={myTheme}>
+  <ZEITUIProvider theme={myTheme}>
     <CSSBaseline />
       <YourAppComponent onClick={switchThemes}/>
-  </ThemeProvider>
+  </ZEITUIProvider>
 )
 ```
 
@@ -127,7 +127,6 @@ const MyComponent = () => (
   </div>
 )
 ```
-
 
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
