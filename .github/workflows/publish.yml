@@ -1,0 +1,41 @@
+name: Publish
+
+on:
+  release:
+    types:
+      - published
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: checkout
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: install
+        run: yarn install --check-files --frozen-lockfile
+      - name: lint
+        run: yarn lint
+      - name: build
+        run: yarn build
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: checkout
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: install
+        run: yarn install --check-files --frozen-lockfile
+      - name: publish
+        run: yarn release
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
