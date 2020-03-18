@@ -46,8 +46,8 @@ const Container: React.FC<React.PropsWithChildren<RowProps>> = React.memo(({
   const Component = component
   const theme = useTheme()
   const { justifyValue, alignValue } = useMemo(
-  () => getFlexAlignment(justify, align),
-  [justify, align],
+    () => getFlexAlignment(justify, align),
+    [justify, align],
   )
   
   return (

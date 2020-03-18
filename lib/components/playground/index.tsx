@@ -14,7 +14,7 @@ interface Props {
   code: string
   scope: {
     [key: string]: any
-  },
+  }
 }
 
 const defaultProps = {
@@ -124,11 +124,11 @@ const Playground: React.FC<PlaygroundProps> = React.memo(props => {
       <Title title={props.title} desc={props.desc} />
       <div className="playground">
         <LiveProvider code={code} scope={props.scope} theme={codeTheme}>
-        <div className="wrapper">
-          <LivePreview />
-          <LiveError />
-        </div>
-        {editor(code)}
+          <div className="wrapper">
+            <LivePreview />
+            <LiveError />
+          </div>
+          {editor(code)}
         </LiveProvider>
     
         <style jsx>{`

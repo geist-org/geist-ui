@@ -6,13 +6,13 @@ import Controls from 'lib/components/controls'
 import sides from 'lib/data/metadata.json'
 
 export interface Meta {
-  title: string,
-  description: string,
-  editUrl?: string,
+  title: string
+  description: string
+  editUrl?: string
 }
 
 export interface Props {
-  router: Router,
+  router: Router
 }
 
 export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ children }) => {

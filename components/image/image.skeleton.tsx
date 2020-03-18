@@ -3,7 +3,7 @@ import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 
 interface Props {
-  opacity: number,
+  opacity: number
 }
 
 const defaultProps = {

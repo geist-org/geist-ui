@@ -27,7 +27,7 @@ const ToastContainer: React.FC<React.PropsWithChildren<{}>> = () => {
         key={`toast-${t.id}-${i}`}
       />
     )),
-    [toasts, hover],
+  [toasts, hover],
   )
   const hoverHandler = (onHover: boolean) => {
     if (onHover) {

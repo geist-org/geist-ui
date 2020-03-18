@@ -5,7 +5,7 @@ import SideItem, { SideItemProps, Sides } from './side-item'
 import useConfigs from 'lib/states/use-config'
 
 export interface Props {
-  router: Router,
+  router: Router
 }
 
 export type SideGroupProps = Props & SideItemProps
@@ -15,7 +15,7 @@ export type SideChildren = Sides | Array<Sides>
 export const SideGroup: React.FC<{ sides?: SideChildren }> = React.memo(({ sides }) => {
   if (!sides) return null
   sides = Array.isArray(sides) ? sides : [sides]
-  return <><SideItem sides={sides} /></>
+  return <SideItem sides={sides} />
 })
 
 export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {

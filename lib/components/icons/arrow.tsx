@@ -2,7 +2,7 @@ import React from 'react'
 import { useTheme } from 'components/index'
 
 export interface ArrowProps {
-  rotate?: number,
+  rotate?: number
 }
 
 export const ArrowIcon: React.FC<ArrowProps> = React.memo(({ rotate }) => {

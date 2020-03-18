@@ -4,7 +4,7 @@ import withDefaults from '../utils/with-defaults'
 interface Props {
   x?: number
   y?: number
-  color?: string,
+  color?: string
   onCompleted?: Function
 }
 

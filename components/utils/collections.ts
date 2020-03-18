@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react'
 export const hasChild = (
   children: ReactNode | undefined,
   child: React.ElementType
-): Boolean => {
+): boolean => {
   const types = React.Children.map(children, item => {
     if (!React.isValidElement(item)) return null
     return item.type

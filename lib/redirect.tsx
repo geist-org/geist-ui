@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 
 export interface Props {
-  metaRedirect?: boolean,
+  metaRedirect?: boolean
 }
 
 const redirect = (destination: string) => {

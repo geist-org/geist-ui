@@ -17,7 +17,7 @@ const defaultProps = {
 export type RightIconProps = Props & typeof defaultProps
 
 const RightIcon: React.FC<RightIconProps> = React.memo(({
-width, height, active, ...props
+  width, height, active, ...props
 }) => {
   const theme = useTheme()
   return (

@@ -1,6 +1,7 @@
 import { ThemeTypes } from '../../utils/prop-types'
 
 export interface ZeitUIThemesPalette {
+  /* eslint-disable @typescript-eslint/camelcase */
   accents_1: string
   accents_2: string
   accents_3: string
@@ -9,6 +10,7 @@ export interface ZeitUIThemesPalette {
   accents_6: string
   accents_7: string
   accents_8: string
+  /* eslint-enable camelcase */
   background: string
   foreground: string
   selection: string

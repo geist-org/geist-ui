@@ -63,7 +63,7 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
         {!hasTitle && <FieldsetTitle>{title}</FieldsetTitle>}
         {!hasSubtitle && <FieldsetSubtitle>{subtitle}</FieldsetSubtitle>}
       </div>
-      {FooterChildren && <>{FooterChildren}</>}
+      {FooterChildren && {FooterChildren}}
       <style jsx>{`
         .fieldset {
           background-color: ${theme.palette.background};

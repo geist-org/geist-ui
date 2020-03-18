@@ -10,7 +10,7 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
   
   return (
     <>
-      <React.Fragment>{children}</React.Fragment>
+      {children}
       <style global jsx>{`
         html, body {
           background-color: ${theme.palette.background};

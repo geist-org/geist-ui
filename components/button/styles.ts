@@ -168,8 +168,8 @@ export const getButtonHoverColors = (
 }
 
 export interface ButtonCursorGroup {
-  cursor: string,
-  events: string,
+  cursor: string
+  events: string
 }
 
 export const getButtonCursor = (disabled: boolean, loading: boolean): ButtonCursorGroup => {

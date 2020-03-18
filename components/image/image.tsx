@@ -4,7 +4,7 @@ import useTheme from '../styles/use-theme'
 import ImageSkeleton from './image.skeleton'
 
 interface Props {
-  src: string,
+  src: string
   animation: boolean
   width?: number
   height?: number

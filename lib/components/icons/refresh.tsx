@@ -15,7 +15,7 @@ const defaultProps = {
 export type RefreshIconProps = Props & typeof defaultProps & React.SVGAttributes<any>
 
 const RefreshIcon: React.FC<RefreshIconProps> = React.memo(({
-width, height, ...props
+  width, height, ...props
 }) => {
   const theme = useTheme()
   return (

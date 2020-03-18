@@ -7,6 +7,7 @@ import {
 } from './index'
 
 export const palette: ZeitUIThemesPalette = {
+  /* eslint-disable @typescript-eslint/camelcase */
   accents_1: '#fafafa',
   accents_2: '#eaeaea',
   accents_3: '#999',
@@ -15,6 +16,7 @@ export const palette: ZeitUIThemesPalette = {
   accents_6: '#444',
   accents_7: '#333',
   accents_8: '#111',
+  /* eslint-enable camelcase */
   background: '#fff',
   foreground: '#000',
   selection: '#79ffe1',

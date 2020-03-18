@@ -68,7 +68,7 @@ const Input: React.FC<InputProps> = ({
   return (
     <div className={`input-container ${className}`}>
       {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
-        <div className={`input-wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${labelClasses}`}>
+      <div className={`input-wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${labelClasses}`}>
         {icon && <InputIcon icon={icon} ratio={heightRatio} />}
         <input type="text" className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
           value={selfValue}

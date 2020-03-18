@@ -19,8 +19,9 @@ const getChildrenHeight = (children?: Sides | Array<Sides>) => {
   return children.length * 36
 }
 
-const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(
-({ children, sides }) => {
+const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
+  children, sides,
+}) => {
   const theme = useTheme()
   const [childrenActived, setChildrenActived] = useState<Array<boolean>>(() => sides.map(() => true))
   
@@ -121,6 +122,6 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(
         `}</style>
     </>
   )
-  })
+})
 
 export default SideItem

@@ -15,7 +15,7 @@ const defaultProps = {
 export type CopyIconProps = Props & typeof defaultProps & React.SVGAttributes<any>
 
 const CopyIcon: React.FC<CopyIconProps> = React.memo(({
-width, height, ...props
+  width, height, ...props
 }) => {
   const theme = useTheme()
   return (
