@@ -13,6 +13,7 @@
     "docs-start": "next start",
     "docs-collect": "node scripts/collect-meta.js",
     "clear": "rm -rf dist",
+    "lint": "eslint \"{components,lib}/**/*.{js,ts,tsx}\"",
     "now-build": "yarn run docs-build",
     "build": "yarn run clear && webpack --config scripts/webpack.config.js && tsc -p ./scripts",
     "release": "yarn run build && yarn publish --access public --non-interactive"
@@ -20,6 +21,28 @@
   "files": [
     "/dist"
   ],
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint-config-ts-lambdas",
+      "eslint-config-ts-lambdas/react"
+    ],
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "settings": {
+      "react": {
+        "pragma": "React",
+        "version": "detect"
+      }
+    },
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+  },
   "devDependencies": {
     "@babel/preset-typescript": "^7.8.3",
     "@mapbox/rehype-prism": "^0.4.0",
@@ -29,8 +52,13 @@
     "@types/react": "^16.9.22",
     "@types/react-dom": "^16.9.5",
     "@types/styled-jsx": "^2.2.8",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
     "@zeit/next-css": "^1.0.1",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "eslint-config-ts-lambdas": "^1.2.0",
+    "eslint-plugin-react": "^7.19.0",
     "extract-mdx-metadata": "^1.0.0",
     "fs-extra": "^8.1.0",
     "next": "^9.2.2",
