@@ -1,0 +1,180 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Modal, Button, Code, useModal } from 'components'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'modal',
+  description: 'tenotext',
+}
+
+## Modal
+
+Display popup content that requires attention or provides additional information.
+
+<Playground
+  title="Basic"
+  scope={{ Modal, Button, useState }}
+  code={`
+() => {
+  const [state, setState] = useState(false)
+  const handler = () => setState(true)
+  const closeHandler = (event) => {
+    setState(false)
+    console.log('closed')
+  }
+  return (
+    <div>
+      <Button auto onClick={handler}>Show Modal</Button>
+      <Modal open={state} onClose={closeHandler}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <p>Some content contained within the modal.</p>
+        </Modal.Content>
+        <Modal.Action passive>Cancel</Modal.Action>
+        <Modal.Action>Submit</Modal.Action>
+      </Modal>
+    </div>
+  )
+}
+`} />
+
+
+<Playground
+  title={<>With <Code>useModal</Code></>}
+  scope={{ Modal, Button, useModal }}
+  code={`
+() => {
+  const { visible, setVisible, bindings } = useModal()
+  return (
+    <>
+      <Button auto onClick={() => setVisible(true)}>Show Modal</Button>
+      <Modal {...bindings}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <p>Some content contained within the modal.</p>
+        </Modal.Content>
+        <Modal.Action passive>Cancel</Modal.Action>
+        <Modal.Action>Submit</Modal.Action>
+      </Modal>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="Without Actions"
+  scope={{ Modal, Button, useState }}
+  code={`
+() => {
+  const [state, setState] = useState(false)
+  const handler = () => setState(true)
+  const closeHandler = (event) => {
+    setState(false)
+    console.log('closed')
+  }
+  return (
+    <div>
+      <Button auto onClick={handler}>Show Modal</Button>
+      <Modal open={state} onClose={closeHandler}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <p>Some content contained within the modal.</p>
+        </Modal.Content>
+      </Modal>
+    </div>
+  )
+}
+`} />
+
+<Playground
+  title="Disable Action"
+  scope={{ Modal, Button, useState }}
+  code={`
+() => {
+  const [state, setState] = useState(false)
+  const handler = () => setState(true)
+  const closeHandler = (event) => {
+    setState(false)
+    console.log('closed')
+  }
+  return (
+    <>
+      <Button auto onClick={handler}>Show Modal</Button>
+      <Modal open={state} onClose={closeHandler}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <p>Some content contained within the modal.</p>
+        </Modal.Content>
+        <Modal.Action passive>Cancel</Modal.Action>
+        <Modal.Action disabled>Submit</Modal.Action>
+      </Modal>
+    </>
+  )
+}
+`} />
+
+<Attributes>
+<Attributes.Title>Modal.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **open** | open or close | `boolean` | - | `false` |
+| **onOpen** | open event | `() => void` | - | - |
+| **onClose** | open event | `() => void` | - | - |
+| **disableBackdropClick** | click background and don't close  | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+
+<Attributes.Title>Modal.Title.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Modal.Subtitle.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Modal.Content.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Modal.Actions.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| - | - | - | - | - |
+
+<Attributes.Title>Modal.Action.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **passive** | display passive mode | `boolean` | - | `false` |
+| **disabled** | disable current action | `boolean` | - | `false` |
+| **onClick** | click handler | `(event: ModalActionEvent) => void` | - | - |
+| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>useModal</Attributes.Title>
+
+```ts
+type useModal = (initialVisible: boolean) => {
+  visible: boolean
+  setVisible: Dispatch<SetStateAction<boolean>>
+  currentRef: MutableRefObject<boolean>
+  bindings: {
+    open: boolean
+    onClose: () => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,0 +1,122 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useToasts, Button, Spacer } from 'components'
+
+export const meta = {
+  title: 'toast',
+  description: 'tenotext',
+}
+
+## Toast
+
+Display an important message globally.
+
+<Playground
+  title="Basic"
+  scope={{ Button, useToasts }}
+  code={`
+() => {
+  const [toasts, setToast] = useToasts()
+  const click = () => setToast({ text: 'The Evil Rabbit jumped over the fence.' })
+  return <Button onClick={click}>Show Toast</Button>
+}
+`} />
+
+<Playground
+  title="Multiline"
+  scope={{ Button, useToasts }}
+  code={`
+() => {
+  const [toasts, setToast] = useToasts()
+  const click = () => setToast({ text: 'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.' })
+  return <Button onClick={click}>Show Toast</Button>
+}
+`} />
+
+<Playground
+  title="Action"
+  scope={{ Button, useToasts }}
+  code={`
+() => {
+  const [, setToast] = useToasts()
+  const action = {
+    name: 'alert',
+    handler: () => alert('alert from toast')
+  }
+  const click = () => setToast({
+    text: 'The Evil Rabbit jumped over the fence.',
+    actions: [action],
+  })
+  return <Button onClick={click} type="secondary">Show Action</Button>
+}
+`} />
+
+<Playground
+  title="Cancel"
+  scope={{ Button, useToasts }}
+  code={`
+() => {
+  const [, setToast] = useToasts()
+  const action = {
+    name: 'cancel',
+    passive: true,
+    handler: (event, cancel) => cancel()
+  }
+  const click = () => setToast({
+    text: 'The Evil Rabbit jumped over the fence.',
+    actions: [action],
+  })
+  return <Button onClick={click}>Show Toast</Button>
+}
+`} />
+
+<Playground
+  title="Type"
+  scope={{ Button, useToasts, Spacer }}
+  code={`
+() => {
+  const [, setToast] = useToasts()
+  const click = type => setToast({
+    text: 'The Evil Rabbit jumped over the fence.',
+    type,
+  })
+  return (
+    <>
+    <Button onClick={() => click('success')} type="success">Show Success</Button>
+    <Spacer y={.5} />
+    <Button onClick={() => click('warning')} type="warning">Show Warning</Button>
+    </>
+  )
+}
+`} />
+
+<Attributes>
+<Attributes.Title>useToasts</Attributes.Title>
+
+```ts
+const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
+```
+
+<Attributes.Title>Toast</Attributes.Title>
+
+```ts
+interface Toast {
+  text?: string
+  type?: NormalTypes
+  delay?: number
+  actions?: Array<ToastAction>
+}
+```
+
+<Attributes.Title>ToastAction</Attributes.Title>
+
+```ts
+interface ToastAction {
+  name: string
+  handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void
+  passive?: boolean
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

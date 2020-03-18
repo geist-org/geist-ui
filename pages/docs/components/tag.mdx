@@ -1,0 +1,42 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Tag } from 'components'
+
+export const meta = {
+  title: 'Tag',
+  description: 'tenotext',
+}
+
+## Tag
+
+Display a unique keyword, optionally as a part of a set.
+
+<Playground
+  scope={{ Tag }}
+  code={`
+<div>
+  <Tag>Status: Unstable</Tag>
+</div>
+`} />
+
+<Playground
+  title="types"
+  scope={{ Tag }}
+  code={`
+<div>
+  <Tag type="success" style={{ marginRight: '15px' }}>Status: Success</Tag>
+  <Tag type="warning" style={{ marginRight: '15px' }}>Status: Warning</Tag>
+  <Tag type="error">Status: Error</Tag>
+</div>
+`} />
+
+<Attributes>
+<Attributes.Title>Tag.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | tag type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

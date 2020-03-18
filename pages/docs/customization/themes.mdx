@@ -1,0 +1,133 @@
+import Layout from 'lib/components/layout'
+import { Note, Code, Spacer } from 'components'
+
+export const meta = {
+  title: 'Themes',
+  description: 'description',
+}
+
+# Themes
+
+`@zeit-ui/react` support **Dark Mode** now. You can switch theme at any time through a very simple API, no third-party styles or configs.
+
+<Spacer y={2} />
+
+## Switch themes
+
+<Note>Before using any Components, you must add <Code>ThemeProvider</Code> to the root node.</Note>
+<Spacer y={0.5} />
+<Note type="success"><Code>CSSBaseline</Code> provides basic CSS support, which is similar to <Code>normalize</Code>.</Note>
+<Spacer y={1} />
+
+**Now you can change the theme as follows:**
+
+  1. Make sure `ThemeProvider` and `CSSBaseline` are already on the root component.
+
+  2. Get the current theme of the page through hook `useTheme`.
+
+  3. Update the value of `theme.type`, and the theme of all components will follow automatically.
+
+```jsx
+import { CSSBaseline, ThemeProvider, useTheme } from '@zeit-ui/react'
+
+const [type, setType] = useState('light')
+const currentTheme = useTheme()
+const switchThemes = () => () => {
+  const nextTheme = currentTheme.type === 'dark' ? 'light' : 'dark'
+  setType(nextTheme)
+}
+
+const App = () => (
+  <ThemeProvider theme={{ type }}>
+    <CSSBaseline />
+      <YourAppComponent onClick={switchThemes}/>
+  </ThemeProvider>
+)
+```
+
+<Spacer y={3} />
+
+## Customizing theme
+
+Customize theme is very simple in `@zeit-ui/react`, you just need to provide a new theme `Object`, and all the components will change automatically.
+
+Of course, if a *Component* doesn't use your customize variables, it doesn't make any additional **changes** or **rendering**.
+
+<Spacer y={1} />
+<Note type="warning">The more changes you custom, the more Components <b>Re-Render</b>.</Note>
+
+```jsx
+import { CSSBaseline, ThemeProvider } from '@zeit-ui/react'
+
+const myTheme = {
+  palette: {
+    success: '#000',
+  },
+}
+
+const App = () => (
+  <ThemeProvider theme={myTheme}>
+    <CSSBaseline />
+      <YourAppComponent onClick={switchThemes}/>
+  </ThemeProvider>
+)
+```
+
+<Spacer y={3} />
+
+## Customizing components
+
+#### Overriding styles with `className`
+
+You can override the style by define any `className` on the component
+
+```jsx
+import { Button, Row } from '@zeit-ui/react'
+
+const MyPage = () => (
+  <Row>
+    <Button className="page-button">Click me!</Button>
+  </Row>
+)
+
+// in css file:
+.page-button {
+  padding: 0;
+}
+```
+
+<Spacer y={2} />
+
+#### Overriding styles with `inline-style`
+
+Any `inline-style` works correctly on the component.
+
+```jsx
+const MyPage = () => (
+  <Row>
+    <Button style={{ margin: '20px' }}>Click me!</Button>
+  </Row>
+)
+```
+
+<Spacer y={2} />
+
+#### Build your own Components with `theme`
+
+Sometimes you want to create new components, but you want to be consistent with the current theme. Now you can try using **theme variables** in your components
+
+```jsx
+import { useTheme } from '@zeit-ui/react'
+
+const currentTheme = useTheme()
+
+const MyComponent = () => (
+  <div style={{ color: currentTheme.palette.success }}>
+    <span>hello world!</span>
+  </div>
+)
+```
+
+
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

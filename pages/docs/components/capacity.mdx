@@ -1,0 +1,45 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Capacity, Spacer, useTheme } from 'components'
+
+export const meta = {
+  title: 'Capacity',
+  description: 'tenotext',
+}
+
+## Capacity
+
+Display an capacity indicator.
+
+<Playground
+  scope={{ Capacity, Spacer }}
+  code={`
+<>
+  <Capacity value={15} /> <Spacer />
+  <Capacity value={45} /> <Spacer />
+  <Capacity value={95} />
+</>
+`} />
+
+<Playground
+  title="Fixed Color"
+  scope={{ Capacity, Spacer, useTheme }}
+  code={`
+() => {
+  const theme = useTheme()
+  return <Capacity value={75} color={theme.palette.success} />
+}
+`} />
+
+<Attributes>
+<Attributes.Title>Capacity.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | value number | `number` | - | 0 |
+| **limit** | max value | `number` | - | 100 |
+| **color** | css color string | `string` | - | - |
+| ... | native props | `any` | `'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

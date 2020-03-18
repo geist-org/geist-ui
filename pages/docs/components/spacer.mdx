@@ -1,0 +1,54 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Spacer, Container, Col } from 'components'
+
+export const meta = {
+  title: 'Spacer',
+  description: 'tenotext',
+}
+
+## Spacer
+
+Provide empty space.
+
+<Playground
+  title="Vertical"
+  scope={{ Spacer, Container }}
+  code={`
+<>
+  <Container style={{ background: '#444' }}>
+    <Spacer y={1}/>
+  </Container>
+  <Spacer y={1}/>
+  <Container style={{ background: '#444' }}>
+    <Spacer y={2}/>
+  </Container>
+  <Spacer y={1}/>
+  <Container style={{ background: '#444' }}>
+    <Spacer y={3}/>
+  </Container>
+</>
+`} />
+
+<Playground
+  title="Vertical"
+  scope={{ Spacer, Container, Col }}
+  code={`
+<Container>
+  <Col style={{ background: '#444' }} />
+  <Spacer x={5}/>
+  <Col style={{ background: '#444' }} />
+</Container>
+`} />
+
+<Attributes>
+<Attributes.Title>Avatar.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **x** | x-axis spacing | `number` / `float` | - | 1 |
+| **y** | y-axis spacing | `number` / `float` | - | 1 |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

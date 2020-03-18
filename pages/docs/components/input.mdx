@@ -1,0 +1,140 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import GitIcon from 'lib/components/icons/github'
+import { Input, Spacer, useInput, Button, Code } from 'components'
+import { useState, useEffect } from 'react'
+
+export const meta = {
+  title: 'Input',
+  description: 'avatar',
+}
+
+## Input
+
+Retrieve text input from a user.
+
+<Playground
+  scope={{ Input }}
+  code={`
+<Input placeholder="The Evil Rabbit" />
+`} />
+
+<Playground
+  title="unwritable"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input disabled placeholder="Disabled" />
+  <Spacer y={.5} />
+  <Input readOnly initialValue="readOnly" />
+</>
+`} />
+
+<Playground
+  title="label"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input label="username" placeholder="The Evil Rabbit" />
+  <Spacer y={.5} />
+  <Input labelRight=".com" placeholder="https://github" />
+</>
+`} />
+
+<Playground
+  title="status"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input status="secondary" initialValue="The Evil Rabbit" />
+  <Spacer y={.5} />
+  <Input status="success" initialValue="The Evil Rabbit" />
+  <Spacer y={.5} />
+  <Input status="warning" initialValue="The Evil Rabbit" />
+  <Spacer y={.5} />
+  <Input status="error" initialValue="The Evil Rabbit" />
+</>
+`} />
+
+<Playground
+  title="icon"
+  scope={{ Input, GitIcon }}
+  code={`
+<>
+  <Input icon={<GitIcon />} placeholder="The Evil Rabbit" />
+</>
+`} />
+
+<Playground
+  title="Get Change"
+  scope={{ Input, useState }}
+  code={`
+() => {
+  const [value, setValue] = useState()
+  const handler = (e) => {
+    setValue(e.target.value)
+    console.log(e.target.value)
+  }
+  return (
+    <Input value={value} onChange={handler} placeholder="The Evil Rabbit" />
+  )
+}
+`} />
+
+<Playground
+  title={<>With <Code>useInput</Code></>}
+  scope={{ Input, useInput, useEffect, Button, Spacer }}
+  code={`
+() => {
+  const { state, setState, reset, bindings } = useInput('The Evil Rabbit')
+  useEffect(() => console.log(state), [state])
+  return (
+    <>
+      <Input {...bindings} />
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small"
+        onClick={() => setState(Math.random().toString(32))}>set value</Button>
+      <Spacer y={.5} />
+      <Button auto size="small"onClick={() => reset()}>reset value</Button>
+    </>
+  )
+}
+`} />
+
+
+<Attributes>
+<Attributes.Title>Input.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | input value | `string` | - | - |
+| **initialValue** | inital value | `string` | - | - |
+| **placeholder** | placeholder | `string` | - | - |
+| **size** | input size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **status** | current status | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **readOnly** | native attr | `boolean` | - | `false` |
+| **disabled** | disable input | `boolean` | - | `false` |
+| **label** | text label for input | `string` | - | - |
+| **icon** | icon for input | `React.ReactNode` | - | - |
+| **labelRight** | text label at right for input | `string` | - | - |
+| **iconRight** | icon at right for input | `React.ReactNode` | - | - |
+| **onChange** | change event | `(e: React.ChangeEvent) => void` | - | - |
+| ... | native props | `InputHTMLAttributes` | `'alt', 'type', 'className', ...` | - |
+
+<Attributes.Title>useInput</Attributes.Title>
+
+```ts
+type useInput = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  reset: () => void
+  bindings: {
+    value: string
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

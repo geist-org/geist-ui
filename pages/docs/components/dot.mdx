@@ -1,0 +1,45 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Dot } from 'components'
+
+export const meta = {
+  title: 'Dot',
+  description: 'tenotext',
+}
+
+## Dot
+
+Display an indicator of deployment status.
+
+<Playground
+  scope={{ Dot }}
+  code={`
+<>
+  <Dot style={{ marginRight: '15px' }} />
+  <Dot style={{ marginRight: '15px' }} type="success" />
+  <Dot style={{ marginRight: '15px' }} type="warning" />
+  <Dot type="error" />
+</>
+`} />
+
+<Playground
+  scope={{ Dot }}
+  code={`
+<>
+  <Dot style={{ marginRight: '20px' }}>Canceled</Dot>
+  <Dot style={{ marginRight: '20px' }} type="success">Ready</Dot>
+  <Dot style={{ marginRight: '20px' }} type="warning">Warning</Dot>
+  <Dot type="error">Error</Dot>
+</>
+`} />
+
+<Attributes>
+<Attributes.Title>Dot.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | dot type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ... | native props | `HTMLAttributes` | - | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

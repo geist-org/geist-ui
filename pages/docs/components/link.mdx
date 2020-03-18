@@ -1,0 +1,55 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Link, Text } from 'components'
+
+export const meta = {
+  title: 'link',
+  description: 'tenotext',
+}
+
+## Link
+
+Hyperlinks between pages.
+
+<Playground
+  desc="Use `Text` to standardize text content."
+  scope={{ Link }}
+  code={`
+<Link href="#">The Evil Rabbit Jumped over the Fence.</Link>
+`} />
+
+<Playground
+  title="highlight"
+  desc="Use `Text` to standardize text content."
+  scope={{ Link }}
+  code={`
+<Link href="#" color>The Evil Rabbit Jumped over the Fence.</Link>
+`} />
+
+<Playground
+  title="variant"
+  desc="Use `Text` to standardize text content."
+  scope={{ Link, Text }}
+  code={`
+<div>
+<Text><Link href="#" pure>The Evil Rabbit Jumped over the Fence.</Link></Text>
+<Text><Link href="#" color pure>The Evil Rabbit Jumped over the Fence.</Link></Text>
+<Text><Link href="#" pure underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
+<Text><Link href="#" underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
+
+</div>
+`} />
+
+<Attributes>
+<Attributes.Title>Link.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **href** | link url | `string` | - | - |
+| **color** | display color for link | `boolean` | - | `false` |
+| **pure** | hide icon | `boolean` | - | `false` |
+| **underline** | display underline | `boolean` | - | `false` |
+| ... | native props | `LinkHTMLAttributes` | `'alt', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

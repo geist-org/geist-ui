@@ -1,0 +1,44 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Spinner, Spacer } from 'components'
+
+export const meta = {
+  title: 'Spinner',
+  description: 'tenotext',
+}
+
+## Spinner
+
+Indicate an action running in the background.
+
+<Playground
+  scope={{ Spinner }}
+  code={`
+<Spinner />
+`} />
+
+<Playground
+  title="Size"
+  scope={{ Spinner, Spacer }}
+  code={`
+<>
+  <Spinner size="mini" />
+  <Spacer y={.5} />
+  <Spinner size="small" />
+  <Spacer y={.5} />
+  <Spinner size="medium" />
+  <Spacer y={.5} />
+  <Spinner size="large" />
+</>
+`} />
+
+<Attributes>
+<Attributes.Title>Spinner.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **size** | spinner size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

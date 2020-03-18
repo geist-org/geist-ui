@@ -1,0 +1,38 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Description, Code } from 'components'
+
+export const meta = {
+  title: 'description',
+  description: 'tenotext',
+}
+
+## Description
+
+A common container component.
+
+<Playground
+  scope={{ Description }}
+  code={`
+<Description title="Section Title" content="Data about this section." />
+`} />
+
+<Playground
+  title="With Component"
+  scope={{ Description, Code }}
+  code={`
+<Description title="Section Title" content={<p><Code>code</Code> about this section.</p>} />
+`} />
+
+<Attributes>
+<Attributes.Title>Description.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **title** | title text | `ReactNode` / `string` | - | - |
+| **content** | title text | `ReactNode` / `string` | - | - |
+| ... | native props | `HTMLAttributes` | - | - |
+
+</Attributes>
+
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

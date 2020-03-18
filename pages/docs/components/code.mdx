@@ -1,0 +1,53 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Code } from 'components'
+
+export const meta = {
+  title: 'Code',
+  description: 'tenotext',
+}
+
+## Code
+
+
+<Playground
+  title="Basic"
+  scope={{ Code }}
+  code={`
+<p>Run <Code>npm i @zeit-ui/react</Code> to install.</p>
+`} />
+
+<Playground
+  title="Bash"
+  scope={{ Code }}
+  code={`
+<Code bash>yarn add @zeit-ui/vue</Code>
+`} />
+
+<Playground
+  title="Dark Bash"
+  scope={{ Code }}
+  code={`
+<Code darkBash>yarn add @zeit-ui/vue</Code>
+`} />
+
+<Playground
+  title="Code Block"
+  scope={{ Code }}
+  code={`
+<Code block>npm i @zeit-ui/vue
+yarn add @zeit-ui/vue</Code>
+`} />
+
+<Attributes>
+<Attributes.Title>Code.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **bash** | show code in bash mode | `boolean` | - | `false` |
+| **darkBash** | show code in darkBash mode | `boolean` | - | `false` |
+| **block** | show code in `pre` | `boolean` | - | `false` |
+| ... | native props | `any` | `'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

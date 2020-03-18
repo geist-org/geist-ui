@@ -1,0 +1,145 @@
+import Layout from 'lib/components/layout'
+import Attributes from 'lib/components/attributes'
+import Playground from 'lib/components/playground'
+import { ButtonDropdown, Spacer } from 'components'
+
+export const meta = {
+  title: 'button-dropdown',
+  description: 'tenotext',
+  index: 101,
+}
+
+## Button Dropdown
+
+Display related but alternate actions for a button.
+
+
+<Playground
+  title="Basic"
+  scope={{ ButtonDropdown }}
+  code={`
+<ButtonDropdown>
+  <ButtonDropdown.Item main>Default Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
+</ButtonDropdown>
+`} />
+
+<Playground
+  title="Disabled"
+  scope={{ ButtonDropdown }}
+  code={`
+<ButtonDropdown disabled>
+  <ButtonDropdown.Item main>Default Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
+</ButtonDropdown>
+`} />
+
+<Playground
+  title="Loading"
+  scope={{ ButtonDropdown }}
+  code={`
+<ButtonDropdown loading>
+  <ButtonDropdown.Item main>Default Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
+</ButtonDropdown>
+`} />
+
+<Playground
+  title="Types"
+  scope={{ ButtonDropdown, Spacer }}
+  code={`
+<>
+  <ButtonDropdown type="secondary">
+    <ButtonDropdown.Item main>Secondary Action</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown type="success">
+    <ButtonDropdown.Item main>Success Action</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown type="warning">
+    <ButtonDropdown.Item main>Warning Action</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown type="error">
+    <ButtonDropdown.Item main>Error Action</ButtonDropdown.Item>
+  </ButtonDropdown>
+</>
+`} />
+
+<Playground
+  title="Size"
+  scope={{ ButtonDropdown, Spacer }}
+  code={`
+<>
+  <ButtonDropdown size="mini" auto>
+    <ButtonDropdown.Item main>Auto Mini</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="small" auto>
+      <ButtonDropdown.Item main>Auto Small</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="small" auto>
+    <ButtonDropdown.Item main>Auto Medium</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="mini">
+    <ButtonDropdown.Item main>Mini</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="small">
+    <ButtonDropdown.Item main>Small</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="medium">
+    <ButtonDropdown.Item main>Medium</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="large">
+    <ButtonDropdown.Item main>Large</ButtonDropdown.Item>
+  </ButtonDropdown>
+</>
+`} />
+
+<Playground
+  title="Multiple Type"
+  scope={{ ButtonDropdown }}
+  code={`
+<ButtonDropdown>
+  <ButtonDropdown.Item main>Check Account</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Block Account</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Lock Account</ButtonDropdown.Item>
+  <ButtonDropdown.Item type="error">Destoy Account</ButtonDropdown.Item>
+</ButtonDropdown>
+`} />
+
+<Attributes>
+<Attributes.Title>ButtonDropdown.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | button type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size** | button size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **loading** | display loading indicator | `boolean` | - | `false` |
+| **auto** | autoscale width | `boolean` | - | `false` |
+| **disabled** | disable button | `boolean` | - | `false` |
+| ... | native props | `any` | `'autoFocus', 'name', 'className', ...` | - |
+
+<Attributes.Title>ButtonDropdown.Item.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | button type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **main** | the main action | `boolean` | - | `false` |
+| **onClick** | event handler | `MouseEventHandler` | - | - |
+| ... | native props | `any` | `'autoFocus', 'name', 'className', ...` | - |
+
+</Attributes>
+
+
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

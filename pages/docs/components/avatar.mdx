@@ -1,0 +1,100 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Avatar, Spacer } from 'components'
+
+export const meta = {
+  title: 'avatar',
+  description: 'avatar',
+}
+
+## Avatar
+
+Avatars represent a user or a team. Stacked avatars represent a group of people.
+
+
+<Playground
+  desc="The `Avatar` contains circle and square."
+  scope={{ Avatar, Spacer }}
+  code={`
+() => {
+  const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
+  return (
+    <>
+      <Avatar src={url} />
+      <Avatar src={url} />
+      <Avatar src={url} />
+      <Avatar src={url} />
+      <Spacer y={.5} />
+      <Avatar src={url} isSquare />
+      <Avatar src={url} isSquare />
+      <Avatar src={url} isSquare />
+      <Avatar src={url} isSquare />
+    </>
+  )
+}
+`} />
+
+
+<Playground
+ title="Size"
+ desc="You can specify different sizes of `Avatar`."
+ scope={{ Avatar }}
+ code={`
+() => {
+  const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
+  return (
+    <>
+      <Avatar src={url} size="mini" />
+      <Avatar src={url} size="small" />
+      <Avatar src={url} size="medium" />
+      <Avatar src={url} size="large" />
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="Text"
+  scope={{ Avatar }}
+  code={`
+<>
+  <Avatar text="W" />
+  <Avatar text="A" />
+  <Avatar text="W" />
+  <Avatar text="Joe" />
+</>
+`} />
+
+
+<Playground
+  title="Stacked"
+  desc="Multiple avatars can overlap and stack together."
+  scope={{ Avatar }}
+  code={`
+() => {
+  const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
+  return (
+    <>
+      <Avatar src={url} stacked />
+      <Avatar src={url} stacked />
+      <Avatar src={url} stacked />
+      <Avatar src={url} stacked />
+    </>
+  )
+}
+`} />
+
+<Attributes>
+<Attributes.Title>Avatar.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **src** | image src | `string` | - | - |
+| **stacked** | stacked display group | `boolean` | - | `false` |
+| **text** | display text when image is missing | `string` | - | - |
+| **size** | avatar size | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
+| **isSquare** | avatar shape | `boolean` | - | `false` |
+| ... | native props | `any` | `'alt', 'crossOrigin', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

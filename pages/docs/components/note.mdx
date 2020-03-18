@@ -1,0 +1,93 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Note } from 'components'
+
+export const meta = {
+  title: 'note',
+  description: 'tenotext',
+}
+
+## Note
+
+Display text that requires attention or provides additional information.
+
+<Playground
+  desc="Use `Text` to standardize text content."
+  scope={{ Note }}
+  code={`
+<Note>This note details something important.</Note>
+`} />
+
+<Playground
+  title="secondary"
+  scope={{ Note }}
+  code={`
+<Note type="secondary">This note details something important.</Note>
+`} />
+
+<Playground
+  title="status"
+  scope={{ Note }}
+  code={`
+<>
+  <Note type="success">This note details something important.</Note>
+  <br/>
+  <Note type="warning">This note details something important.</Note>
+  <br/>
+  <Note type="error">This note details something important.</Note>
+</>
+`} />
+
+<Playground
+  title="hidden label"
+  scope={{ Note }}
+  code={`
+<Note label={false}>Just a quick note!</Note>
+`} />
+
+<Playground
+  title="custom label"
+  scope={{ Note }}
+  code={`
+<Note label="custom">This note uses a custom label.</Note>
+`} />
+
+<Playground
+  title="small"
+  scope={{ Note }}
+  code={`
+<Note small>This note details something important.</Note>
+`} />
+
+<Playground
+  title="Filled Variant"
+  scope={{ Note }}
+  code={`
+<>
+  <Note label="custom" filled>This note uses a custom label.</Note>
+  <br/>
+  <Note label={false} filled>Just a quick note!</Note>
+  <br/>
+  <Note type="success" label="success" filled>This note details a success.</Note>
+  <br/>
+  <Note type="warning" label="warning" filled>This note details a warning.</Note>
+  <br/>
+  <Note type="error" label="error" filled>This note details an error.</Note>
+  <br/>
+  <Note type="secondary" filled>This note details something important.</Note>
+</>
+`} />
+
+<Attributes>
+<Attributes.Title>Note.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | note type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **label** | show label or custom text | `boolean` / `string` | - | - |
+| **small** | small note | `boolean` | - | `false` |
+| **filled** | fill color | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

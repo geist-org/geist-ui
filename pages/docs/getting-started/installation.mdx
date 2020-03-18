@@ -1,0 +1,58 @@
+import Layout from 'lib/components/layout'
+import { Note, Link, Code, Spacer } from 'components'
+
+export const meta = {
+  title: 'installation',
+  description: 'description',
+  index: 10,
+}
+
+## Installation
+
+### Install package
+
+<Note>
+Ensure your have the latest version of <Link href="https://nodejs.org/en/download/">NodeJS</Link>,
+and also need a package manager of NodeJS: <Link href="https://www.npmjs.com/">NPM</Link> or <Link href="https://yarnpkg.com/">Yarn</Link>.
+</Note>
+
+1. Run script to download:
+
+<Code bash darkBash>npm i @zeit-ui/react</Code>
+
+2. Import `@zeit-ui/react` to your React project:
+
+```jsx
+import { CSSBaseline, ZEITUIProvider, useTheme } from '@zeit-ui/react'
+
+const Application = () => {
+  return (
+    <ZEITUIProvider>   // ---> Base provider
+      <CSSBaseline />  // ---> normalize styles
+      <Component />    // ---> Your App Component
+    </ZEITUIProvider>
+  )
+}
+```
+
+3. Use Components in any where:
+
+```jsx
+import { Button } from '@zeit-ui/react'
+
+const MyComponent = () =>  <Button>click me</Button>
+```
+
+<Spacer y={3} />
+
+### Import a component
+
+`@zeit-ui/react` supports import components when you actually need. e.g.:
+
+```js
+import { Button } from '@zeit-ui/react/components/button'
+
+const MyComponent = () =>  <Button>click me</Button>
+```
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,0 +1,70 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Display, Code } from 'components'
+
+export const meta = {
+  title: 'Display',
+  description: 'tenotext',
+}
+
+## Display
+
+<Playground
+  title="Basic"
+  scope={{ Display }}
+  code={`
+  <Display shadow caption="ZEIT Now for GitHub deploying a pull request automatically.">
+    <img height="214" src="https://zeit.co/docs/static/docs/git-integrations/github-comment.png" />
+  </Display>
+`} />
+
+
+<Playground
+  title="With Code"
+  scope={{ Display, Code }}
+  code={`
+() => {
+  const codes = \`{
+  "build": {
+    "env": {
+      "VARIABLE_NAME": "@secret-name"
+    }
+  }
+}\`
+  return (
+    <Display caption="Application's build with a defined environment variable.">
+      <Code block>{codes}</Code>
+    </Display>
+  )
+}
+`} />
+
+<Playground
+  title="With Code 2"
+  scope={{ Display, Code }}
+  code={`
+  <Display caption="Run this command to install the library.">
+    <Code darkBash>yarn add @zeit-ui/react</Code>
+  </Display>
+`} />
+
+<Playground
+  title="Component Caption"
+  scope={{ Display, Code }}
+  code={`
+  <Display shadow caption={<p>A domain redirect that redirects requests made to <Code>www.zeit.rocks</Code> to <Code>zeit.rocks</Code>.</p>}>
+    <img style={{ minWidth: '650px' }} height="305" src="https://zeit.co/docs/static/docs/custom-domains/redirecting-domains.png" />
+  </Display>
+`} />
+
+<Attributes>
+<Attributes.Title>Display.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **caption** | description for display block | `ReactNode` / `string` | - | - |
+| **shadow** | show shadow | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | - | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

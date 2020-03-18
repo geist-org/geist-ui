@@ -1,0 +1,63 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Keyboard } from 'components'
+
+export const meta = {
+  title: 'keyboard',
+  description: 'tenotext',
+}
+
+## Keyboard
+
+Display keyboard input that triggers an action.
+
+<Playground
+  scope={{ Keyboard }}
+  code={`
+<Keyboard>f</Keyboard>
+`} />
+
+<Playground
+  title="modifiers"
+  scope={{ Keyboard }}
+  code={`
+<div>
+  <Keyboard command />
+  <Keyboard shift />
+  <Keyboard option />
+  <Keyboard ctrl />
+</div>
+`} />
+
+<Playground
+  title="combination"
+  scope={{ Keyboard }}
+  code={`
+<div>
+  <Keyboard command>f</Keyboard>
+  <Keyboard shift>e</Keyboard>
+  <Keyboard option ctrl>b</Keyboard>
+</div>
+`} />
+
+<Playground
+  title="small"
+  scope={{ Keyboard }}
+  code={`
+<Keyboard small>/</Keyboard>
+`} />
+
+<Attributes>
+<Attributes.Title>Keyboard.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **command** | show command key | `boolean` | - | `false` |
+| **shift** | show shift key | `boolean` | - | `false` |
+| **option** | show option key | `boolean` | - | `false` |
+| **ctrl** | show ctrl key | `boolean` | - | `false` |
+| **small** | small keyboard size | `boolean` | - | `false` |
+| ... | native props | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

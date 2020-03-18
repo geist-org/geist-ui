@@ -1,0 +1,75 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Checkbox, Spacer } from 'components'
+
+export const meta = {
+  title: 'checkbox',
+  description: 'tenotext',
+}
+
+## Checkbox
+
+Displays a boolean value.
+
+
+<Playground
+  desc="Change state with `checked` props."
+  scope={{ Checkbox }}
+  code={`
+  <Checkbox checked={true}>Sydney</Checkbox>
+`} />
+
+<Playground
+  title="disable"
+  scope={{ Checkbox, Spacer }}
+  code={`
+<>
+  <Checkbox>Sydney</Checkbox>
+  <Spacer y={.5} />
+  <Checkbox disabled checked={true}>Bei Jing</Checkbox>
+</>
+`} />
+
+<Playground
+  title="group"
+  desc="Manage a set of `Checkbox`."
+  scope={{ Checkbox, Spacer }}
+  code={`
+() => {
+  const handler = value => {
+    console.log(value)
+  }
+  return (
+    <Checkbox.Group value={['sydney']} onChange={handler}>
+      <Checkbox value="sydney">Sydney</Checkbox>
+      <Checkbox value="beijing">Bei Jing</Checkbox>
+      <Checkbox value="london">London</Checkbox>
+      <Checkbox value="tokyo">Tokyo</Checkbox>
+    </Checkbox.Group>
+  )
+}
+`} />
+
+<Attributes>
+<Attributes.Title>Checkbox.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **checked** | checked or not | `boolean` | - | `false` |
+| **defaultChecked** | checked or not on initial | `boolean` | - | `false` |
+| **onChange** | change event handler | `CheckboxEvent` | - | - |
+| **value** | unique identification value (only in group) | `string` | - | - |
+| **disabled** | disable checkbox | `boolean` | - | `false` |
+| ... | native props | `any` | `'form', 'className', ...` | - |
+
+<Attributes.Title>Checkbox.Group.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | checked children | `Array<string>` | - | `[]` |
+| **disabled** | disable checkbox group | `boolean` | - | `false` |
+| **onChange** | change event handler | `(values: string[]) => void` | - | - |
+| ... | native props | `any` | `'spellCheck', 'style', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

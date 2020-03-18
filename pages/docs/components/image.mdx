@@ -1,0 +1,51 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Image, Display, Code } from 'components'
+
+export const meta = {
+  title: 'Image',
+  description: 'tenotext',
+}
+
+## Image
+
+Display image content.
+
+<Playground
+  title="Basic"
+  scope={{ Image }}
+  code={`
+<Image width="540" height="160" src="/images/custom-domains.png" />
+`} />
+
+<Playground
+  title="Skeleton"
+  desc="`Image` will show skeleton animation after `width` and `height` props are set."
+  scope={{ Image }}
+  code={`
+<Image width="540" height="160" src="/images/custom-domains.png" />
+`} />
+
+<Playground
+  title="Compose"
+  desc="Show `Image` in `Display` component."
+  scope={{ Image, Display, Code }}
+  code={`
+<Display shadow caption={<p>Set the <Code>height</Code> to reduces the possibility of page rerender.</p>}>
+  <Image width="540" height="246" src="/images/branch-domains.png" />
+</Display>
+`} />
+
+<Attributes>
+<Attributes.Title>Image.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **src** | image src | `string` | - | - |
+| **animation** | display animation when loading  | `boolean` | - | `true` |
+| **width** | width | `number` | - | - |
+| **height** | height | `number` | - | - |
+| ... | native props | `ImgHTMLAttributes` | `'alt', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

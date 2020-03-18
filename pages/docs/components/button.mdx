@@ -1,0 +1,106 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, Spacer } from 'components'
+import Router from 'next/router'
+
+export const meta = {
+  title: 'button',
+  description: 'tenotext',
+}
+
+## Button
+
+Used to trigger an operation.
+
+
+<Playground
+  title="Basic"
+  desc="The basic `Button` contains an animation effect."
+  scope={{ Button }}
+  code={`
+<Button>Action</Button>
+`} />
+
+<Playground
+  title="Loading"
+  desc="Show running status."
+  scope={{ Button }}
+  code={`
+<Button loading>Action</Button>
+`} />
+
+<Playground
+  title="Disabled"
+  desc="Do not respond to any action."
+  scope={{ Button }}
+  code={`
+<Button disabled>Action</Button>
+`} />
+
+<Playground
+  title="Shadow"
+  scope={{ Button }}
+  code={`
+<Button shadow type="secondary">Shadow</Button>
+`} />
+
+<Playground
+  title="Types"
+  desc="Different state."
+  scope={{ Button, Spacer }}
+  code={`
+<>
+  <Button type="secondary">Secondary</Button> <Spacer y={.5} />
+  <Button type="success">Success</Button> <Spacer y={.5} />
+  <Button type="warning">Warning</Button> <Spacer y={.5} />
+  <Button type="error">Error</Button> <Spacer y={.5} />
+  <Button type="abort">Abort</Button>
+</>
+`} />
+
+<Playground
+  title="GHOST"
+  desc="The opposite color."
+  scope={{ Button, Spacer }}
+  code={`
+<>
+  <Button type="secondary" ghost>Secondary</Button> <Spacer y={.5} />
+  <Button type="success" ghost>Success</Button> <Spacer y={.5} />
+  <Button type="warning" ghost>Warning</Button> <Spacer y={.5} />
+  <Button type="error" ghost>Error</Button>
+</>
+`} />
+
+
+<Playground
+  title="Size"
+  desc="Buttons of different sizes."
+  scope={{ Button, Spacer }}
+  code={`
+<>
+  <Button size="mini">mini</Button> <Spacer y={.5} />
+  <Button size="small">small</Button> <Spacer y={.5} />
+  <Button>medium</Button> <Spacer y={.5} />
+  <Button size="large">large</Button> <Spacer y={.5} />
+  <Button auto>auto width</Button>
+</>
+`} />
+
+<Attributes>
+<Attributes.Title>Button.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | button type | `ButtonTypes` | `'default', 'secondary', 'success', 'warning', 'error', 'abort'` | `default` |
+| **size** | button size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **ghost** | the opposite color | `boolean` | - | `false` |
+| **loading** | display loading indicator | `boolean` | - | `false` |
+| **shadow** | display shadow | `boolean` | - | `false` |
+| **auto** | autoscale width | `boolean` | - | `false` |
+| **effect** | display animation | `boolean` | - | `true` |
+| **disabled** | disable button | `boolean` | - | `false` |
+| **onClick** | click handler | `MouseEventHandler` | - | - |
+| ... | native props | `any` | `'autoFocus', 'name', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

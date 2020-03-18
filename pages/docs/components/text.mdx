@@ -1,0 +1,99 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Text } from 'components'
+
+export const meta = {
+  title: 'text',
+  description: 'text',
+}
+
+## Text
+
+Display text using well-defined typographic styles.
+
+<Playground
+  title="Headings"
+  desc="Use `Text` to standardize text content."
+  scope={{ Text }}
+  code={`
+() => {
+  const text = 'The evil rabbit jumps over the fence.'
+  return (
+    <>
+      <Text h1>{text}</Text>
+      <Text h2>{text}</Text>
+      <Text h3>{text}</Text>
+      <Text h4>{text}</Text>
+      <Text h5>{text}</Text>
+      <Text h6>{text}</Text>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="Paragraph"
+  desc="Add `p` and `b` attributes to a `Text`."
+  scope={{ Text }}
+  code={`
+<>
+  <Text p>
+   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+  </Text>
+
+  <Text p b>
+   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+  </Text>
+</>
+`} />
+
+<Playground
+  title="Small"
+  scope={{ Text }}
+  code={`
+<>
+  <Text small>
+   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+  </Text>
+
+  <Text small b>
+   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+  </Text>
+</>
+`} />
+
+<Playground
+  title="Compose"
+  desc="Effect of multiple `Text` stacks"
+  scope={{ Text }}
+  code={`
+<>
+  <Text p>
+   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+  </Text>
+
+  <Text>
+    <Text small del>Our mission is to make cloud computing accessible to everyone.</Text>
+    <Text small b>We build products for developers and designers. And those who aspire to become one.</Text>
+  </Text>
+</>
+`} />
+
+<Attributes>
+<Attributes.Title>Text.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **p** | component name | `boolean` | - | `true` |
+| **h1 - h6** | component name | `boolean` | - | `false` |
+| **small** | component name | `boolean` | - | `false` |
+| **span** | component name | `boolean` | - | `false` |
+| **del** | component name | `boolean` | - | `false` |
+| **i** | component name | `boolean` | - | `false` |
+| **em** | component name | `boolean` | - | `false` |
+| **b** | component name | `boolean` | - | `false` |
+| **type** | text type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

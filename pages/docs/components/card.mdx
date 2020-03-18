@@ -1,0 +1,53 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Card } from 'components'
+
+export const meta = {
+  title: 'card',
+  description: 'tenotext',
+}
+
+## Card
+
+A common container component.
+
+
+<Playground
+  title="Basic"
+  scope={{ Card }}
+  code={`
+<Card>
+  <p>A basic card.</p>
+</Card>
+`} />
+
+<Playground
+  title="Hoverable"
+  scope={{ Card }}
+  code={`
+<Card hoverable>
+  <p>hoverable card.</p>
+</Card>
+`} />
+
+<Playground
+  title="Shadow"
+  scope={{ Card }}
+  code={`
+<Card shadow>
+  <h4>The Evil Rabbit</h4>
+  <p>shadow card.</p>
+</Card>
+`} />
+
+<Attributes>
+<Attributes.Title>Card.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **hoverable** | add effect on hover | `boolean` | - | `false` |
+| **shadow** | show shadow | `boolean` | - | `false` |
+| ... | native props | `any` | `'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

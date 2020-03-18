@@ -1,0 +1,49 @@
+{
+  "name": "@zeit-ui/react",
+  "version": "0.0.1-alpha.20",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "browser": "dist/index.umd.js",
+  "style": "dist/index.css",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run docs-collect && next dev",
+    "docs-build": "yarn run docs-collect && next build",
+    "docs-start": "next start",
+    "docs-collect": "node scripts/collect-meta.js",
+    "clear": "rm -rf dist",
+    "now-build": "yarn run docs-build",
+    "build": "yarn run clear && webpack --config scripts/webpack.config.js && tsc -p ./scripts",
+    "release": "yarn run build && yarn publish --access public --non-interactive"
+  },
+  "files": [
+    "/dist"
+  ],
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.8.3",
+    "@mapbox/rehype-prism": "^0.4.0",
+    "@mdx-js/loader": "^1.5.7",
+    "@next/mdx": "^9.2.2",
+    "@types/prismjs": "^1.16.0",
+    "@types/react": "^16.9.22",
+    "@types/react-dom": "^16.9.5",
+    "@types/styled-jsx": "^2.2.8",
+    "@zeit/next-css": "^1.0.1",
+    "babel-loader": "^8.0.6",
+    "extract-mdx-metadata": "^1.0.0",
+    "fs-extra": "^8.1.0",
+    "next": "^9.2.2",
+    "prismjs": "^1.19.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-live": "^2.2.2",
+    "react-use-clipboard": "^1.0.0",
+    "styled-jsx": "^3.2.4",
+    "typescript": "^3.8.2",
+    "typescript-transform-paths": "^1.1.14",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {}
+}

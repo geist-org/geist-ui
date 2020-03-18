@@ -1,0 +1,35 @@
+import Layout from 'lib/components/layout'
+import { Code, Link, Text, Spacer } from 'components'
+
+export const meta = {
+  title: 'introduction',
+  description: 'description',
+  index: 5,
+}
+
+
+## Introduction
+
+### Why @zeit-ui/react
+
+`@zeit-ui/react` is a React implementation for [Styles](https://github.com/zeit-ui/zeit-style) originating from [ZEIT's Design](https://zeit.co/design).
+
+The design of the **ZEIT** is concise and aesthetic feeling, this is an important reason for popular of ZEIT.
+Now you can use them through the `@zeit-ui/react`.
+
+<Text><Link color href="https://github.com/zeit-ui/react">Lean more at Github</Link></Text>
+
+<Spacer y={3} />
+
+### Contact
+
+- [Report a issue](https://github.com/zeit-ui/react/issues/new)
+- Welcome share your feedback and ideas. We also love PRs.
+
+<Spacer y={3} />
+
+### License
+
+Licensed under the [MIT LICENSE](https://github.com/zeit-ui/react/blob/master/LICENSE).
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
