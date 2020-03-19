@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Card, Link, Spacer, useTheme } from 'components'
 import AttributesTitle from './attributes-title'
 
@@ -10,6 +10,9 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
   edit, children,
 }) => {
   const theme = useTheme()
+  const link = useMemo(() => {
+    return `https://github.com/zeit-ui/react/blob/master${edit || '/pages'}`
+  }, [])
   
   return (
     <>
@@ -19,7 +22,7 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
         {children}
       </Card>
       <Spacer y={1} />
-      <Link color target="_blank" className="attributes-link" href={edit} rel="nofollow">Edit this page on GitHub</Link>
+      <Link color target="_blank" className="attributes-link" href={link} rel="nofollow">Edit this page on GitHub</Link>
   
       <style global jsx>{`
         .attr pre {
