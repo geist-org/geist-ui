@@ -3,6 +3,7 @@ import { NormalTypes } from '../utils/prop-types'
 import useCurrentState from '../utils/use-current-state'
 import { useZEITUIContext } from '../utils/use-zeit-ui-context'
 import { ToastWithID } from './toast-container'
+import { getId } from '../utils/collections'
 
 export interface ToastAction {
   name: string
@@ -19,10 +20,6 @@ export interface Toast {
 
 const defaultToast = {
   delay: 2000,
-}
-
-const generateId = () => {
-  return Math.random().toString(32).slice(2, 10)
 }
 
 const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
@@ -55,7 +52,7 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
   
 
   const setToast = (toast: Toast): void => {
-    const id = `toast-${generateId()}`
+    const id = `toast-${getId()}`
     const delay = toast.delay || defaultToast.delay
     
     const cancel = (id: string, delay: number) => {

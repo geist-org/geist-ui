@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
 import useSSR from '../utils/use-ssr'
-
-const getId = () => {
-  return Math.random().toString(32).slice(2, 10)
-}
+import { getId } from './collections'
 
 const createElement = (id: string): HTMLElement => {
   const el = document.createElement('div')

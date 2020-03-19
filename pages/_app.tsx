@@ -16,6 +16,19 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>React - ZEIT UI</title>
+        <meta name="google" content="notranslate" />
+        <meta name="twitter:creator" content="@echo_witt" />
+        <meta name="referrer" content="strict-origin" />
+        <meta property="og:title" content="React - ZEIT UI" />
+        <meta property="og:url" content="https://react.zeit-ui.co" />
+        <link rel="dns-prefetch" href="//react.zeit-ui.co" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="generator" content="ZEIT UI" />
+        <meta name="description" content="React implementation for ZEIT design." />
+        <meta property="og:description" content="React implementation for ZEIT design." />
+        <meta property="og:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+        <meta property="twitter:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover" />
       </Head>
       <ZEITUIProvider theme={{ type: themeType }}>
         <CSSBaseline />

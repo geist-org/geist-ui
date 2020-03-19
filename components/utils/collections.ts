@@ -1,5 +1,9 @@
 import React, { ReactNode } from 'react'
 
+export const getId = () => {
+  return Math.random().toString(32).slice(2, 10)
+}
+
 export const hasChild = (
   children: ReactNode | undefined,
   child: React.ElementType
@@ -18,7 +22,7 @@ export const pickChild = (
 ): [ReactNode | undefined, ReactNode | undefined] => {
   let target: ReactNode[] = []
   const withoutTargetChildren = React.Children.map(children, item => {
-    if (!React.isValidElement(item)) return null
+    if (!React.isValidElement(item)) return item
     if (item.type === targetChild) {
       target.push(item)
       return null
