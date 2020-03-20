@@ -7,7 +7,8 @@ interface Props {
   href?: string
   color?: boolean
   pure?: boolean
-  underline: boolean
+  underline?: boolean
+  block?: boolean
   className?: string
 }
 
@@ -16,16 +17,18 @@ const defaultProps = {
   color: false,
   pure: false,
   underline: false,
+  block: false,
   className: '',
 }
 
 export type LinkProps = Props & typeof defaultProps & React.AllHTMLAttributes<any>
 
 const Link: React.FC<React.PropsWithChildren<LinkProps>> = React.memo(({
-  href, color, underline, pure, children, className, ...props
+  href, color, underline, pure, children, className, block, ...props
 }) => {
   const theme = useTheme()
-  const linkColor = color ? theme.palette.success : 'inherit'
+  const linkColor = color || block ? theme.palette.success : 'inherit'
+  const padding = block ? theme.layout.gapQuarter : '0'
   const decoration = underline ? 'underline' : 'none'
   
   return (
@@ -38,11 +41,17 @@ const Link: React.FC<React.PropsWithChildren<LinkProps>> = React.memo(({
           line-height: inherit;
           color: ${linkColor};
           text-decoration: none;
+          padding: calc(${padding} * .8) calc(${padding} * 1.7);
+          border-radius: ${block ? theme.layout.radius : 0};
           width: fit-content;
         }
         
         .link:hover, .link:active, .link:focus {
           text-decoration: ${decoration};
+        }
+        
+        .link:hover {
+          background-color: ${block ? '#0076ff1a' : 'unset'};
         }
       `}</style>
     </a>

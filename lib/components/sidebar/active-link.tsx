@@ -13,12 +13,13 @@ export interface Props {
 const ActiveLink: React.FC<React.PropsWithChildren<Props>> = React.memo(
   ({ children, index, href }) => {
     const { updateShouldScroll } = useConfigs()
-    const { asPath } = useRouter()
-    const isActive = asPath === href
+    const { pathname } = useRouter()
+    const isActive = pathname === href
     const child = Children.only(children)
-    
+  
     useEffect(() => {
       if (!isActive) return
+      
       updateShouldScroll && updateShouldScroll(index > 16)
     }, [isActive])
 
