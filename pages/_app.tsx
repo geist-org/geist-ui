@@ -56,7 +56,11 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
           color: ${theme.palette.accents_4};
         }
         
-        span[class*="class-name"] {
+        span.class-name {
+          color: ${theme.palette.warning};
+        }
+        
+        span.maybe-class-name {
           color: ${theme.palette.purple};
         }
         

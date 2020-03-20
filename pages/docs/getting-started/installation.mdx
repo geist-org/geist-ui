@@ -23,13 +23,13 @@ and also need a package manager of NodeJS: <Link href="https://www.npmjs.com/">N
 2. Import `@zeit-ui/react` to your React project:
 
 ```jsx
-import { CSSBaseline, ZEITUIProvider, useTheme } from '@zeit-ui/react'
+import { ZEITUIProvider, CSSBaseline } from '@zeit-ui/react'
 
 const Application = () => {
   return (
     <ZEITUIProvider>   // ---> Base provider
       <CSSBaseline />  // ---> normalize styles
-      <Component />    // ---> Your App Component
+      <AppComponent />    // ---> Your App Component
     </ZEITUIProvider>
   )
 }
@@ -40,7 +40,7 @@ const Application = () => {
 ```jsx
 import { Button } from '@zeit-ui/react'
 
-const MyComponent = () =>  <Button>click me</Button>
+const MyComponent = () =>  <Button>Click Me</Button>
 ```
 
 <Spacer y={3} />
@@ -49,10 +49,10 @@ const MyComponent = () =>  <Button>click me</Button>
 
 `@zeit-ui/react` supports import components when you actually need. e.g.:
 
-```js
+```jsx
 import { Button } from '@zeit-ui/react/components/button'
 
-const MyComponent = () =>  <Button>click me</Button>
+const MyComponent = () =>  <Button>Click Me</Button>
 ```
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
