@@ -30,13 +30,20 @@ Hyperlinks between pages.
   desc="Use `Text` to standardize text content."
   scope={{ Link, Text }}
   code={`
-<div>
-<Text><Link href="#" pure>The Evil Rabbit Jumped over the Fence.</Link></Text>
-<Text><Link href="#" color pure>The Evil Rabbit Jumped over the Fence.</Link></Text>
-<Text><Link href="#" pure underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
-<Text><Link href="#" underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
+<>
+  <Text><Link href="#" pure>The Evil Rabbit Jumped over the Fence.</Link></Text>
+  <Text><Link href="#" color pure>The Evil Rabbit Jumped over the Fence.</Link></Text>
+  <Text><Link href="#" pure underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
+  <Text><Link href="#" underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
+</>
+`} />
 
-</div>
+<Playground
+  title="block"
+  desc="Display as a separate block."
+  scope={{ Link }}
+  code={`
+<Link href="#" pure block>The Evil Rabbit Jumped over the Fence.</Link>
 `} />
 
 <Attributes edit="/pages/docs/components/link.mdx">
@@ -48,6 +55,7 @@ Hyperlinks between pages.
 | **color** | display color for link | `boolean` | - | `false` |
 | **pure** | hide icon | `boolean` | - | `false` |
 | **underline** | display underline | `boolean` | - | `false` |
+| **block** | display as a separate block | `boolean` | - | `false` |
 | ... | native props | `LinkHTMLAttributes` | `'alt', 'className', ...` | - |
 
 </Attributes>
