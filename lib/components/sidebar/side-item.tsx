@@ -1,7 +1,7 @@
 import React, { useState, ReactElement, useCallback } from 'react'
-import ArrowIcon from 'lib/components/icons/arrow'
-import ActiveLink from 'lib/components/active-link'
-import ActiveCatalog from 'lib/components/active-catalog'
+import ActiveLink from './active-link'
+import ArrowIcon from '../icons/arrow'
+import ActiveCatalog from './active-catalog'
 import { useTheme } from 'components'
 
 export type Sides = {
