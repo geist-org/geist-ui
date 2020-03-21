@@ -1,0 +1,92 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Select, Spacer, Code } from 'components'
+
+export const meta = {
+  title: 'select',
+  description: 'select',
+}
+
+## Select
+
+Display a dropdown list of items.
+
+<Playground
+  scope={{ Select }}
+  code={`
+() => {
+  const handler = val => console.log(val)
+  return (
+    <Select placeholder="Choose one" onChange={handler}>
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+  )
+}
+`} />
+
+<Playground
+  title="Disabled"
+  scope={{ Select }}
+  code={`
+<Select placeholder="Choose one" disabled>
+  <Select.Option value="1">Option 1</Select.Option>
+  <Select.Option value="2">Option 2</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="Disabled Option"
+  scope={{ Select }}
+  code={`
+<Select placeholder="Choose one">
+  <Select.Option value="1" disabled>Option 1</Select.Option>
+  <Select.Option value="2">Option 2</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="Without Icon"
+  scope={{ Select }}
+  code={`
+<Select placeholder="Choose one" pure>
+  <Select.Option value="1">Option 1</Select.Option>
+  <Select.Option value="2">Option 2</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="Compose"
+  scope={{ Select, Code }}
+  code={`
+<Select placeholder="Choose one" initialValue="1">
+  <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
+  <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
+</Select>
+`} />
+
+
+<Attributes edit="/pages/docs/components/select.mdx">
+<Attributes.Title>Select.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **initialValue** | selected value | `string` | - | - |
+| **placeholder** | placeholder string | `string` | - | - |
+| **size** | select component size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **icon** | icon component | `ReactNode` | - | `SVG Component` |
+| **pure** | remove icon component | `boolean` | - | `false` |
+| **disabled** | disable current radio | `boolean` | - | `false` |
+| **onChange** | selected value | `(val: string) => void` | - | - |
+| ... | native props | `HTMLAttributes` | `'name', 'alt', 'className', ...` | - |
+
+<Attributes.Title>Select.Option.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value**(required) | unique ident value | `string` | - | - |
+| **disabled** | disable current option | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

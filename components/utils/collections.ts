@@ -55,3 +55,9 @@ export const pickChildByProps = (
   
   return [withoutPropChildren, targetChildren]
 }
+
+export const pickChildrenFirst = (
+  children: ReactNode | undefined,
+): ReactNode | undefined => {
+  return React.Children.toArray(children)[0]
+}
