@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 
 const isBrowser = (): boolean => {
   return Boolean(typeof window !== 'undefined' &&
@@ -11,9 +12,14 @@ export type SSRState = {
 }
 
 const useSSR = (): SSRState => {
+  const [browser, setBrowser] = useState<boolean>(false)
+  useEffect(() => {
+    setBrowser(isBrowser())
+  }, [])
+
   return {
-    isBrowser: isBrowser(),
-    isServer: !isBrowser(),
+    isBrowser: browser,
+    isServer: !browser,
   }
 }
 
