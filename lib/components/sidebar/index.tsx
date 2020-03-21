@@ -53,15 +53,10 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
         }
         
         .box::-webkit-scrollbar {
-          width: 5px;
-          background-color: ${theme.palette.accents_1};
+          width: 0;
+          background-color: transparent;
         }
         
-        .box::-webkit-scrollbar-thumb {
-          background-color: ${theme.palette.accents_2};
-          border-radius: ${theme.layout.radius};
-        }
-
         .box>:global(.item) {
           margin-bottom: 10px;
         }

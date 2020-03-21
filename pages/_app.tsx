@@ -77,7 +77,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
           }
           
           body::-webkit-scrollbar {
-            width: 5px;
+            width: 0;
             background-color: ${theme.palette.accents_1};
           }
           

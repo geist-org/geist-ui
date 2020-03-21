@@ -59,67 +59,67 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
         )
       })}
       <style jsx>{`
-          .item {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            justify-content: center;
-          }
-          
-          .link {
-            color: ${theme.palette.accents_5};
-            display: flex;
-            height: 36px;
-            align-items: center;
-            cursor: pointer;
-            text-transform: capitalize;
-          }
-          
-          .link :global(a) {
-            color: ${theme.palette.accents_6};
-            padding-left: .7rem;
-            font-size: 14px;
-          }
-          
-          .link :global(a.active) {
-            color: ${theme.palette.success};
-          }
-          
-          .icon {
-            margin-right: 10px;
-            margin-left: 5px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            user-select: none;
-          }
-          
-          .children {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-            margin-left: ${theme.layout.gapHalf};
-            padding-left: ${theme.layout.gap};
-            overflow: hidden;
-            transition: all .2s ease-in-out;
-            position: relative;
-          }
-          
-          .active-title {
-            font-weight: bold;
-          }
-          
-          .line {
-            position: absolute;
-            top: 14px;
-            left: 1px;
-            bottom: 9px;
-            width: 1px;
-            background-color: ${theme.palette.accents_2};
-          }
-        `}</style>
+        .item {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          justify-content: center;
+        }
+        
+        .link {
+          color: ${theme.palette.accents_5};
+          display: flex;
+          height: 36px;
+          align-items: center;
+          cursor: pointer;
+          text-transform: capitalize;
+        }
+        
+        .link :global(a) {
+          color: ${theme.palette.accents_6};
+          padding-left: .7rem;
+          font-size: 14px;
+        }
+        
+        .link :global(a.active) {
+          color: ${theme.palette.success};
+        }
+        
+        .icon {
+          margin-right: 10px;
+          margin-left: 5px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          user-select: none;
+        }
+        
+        .children {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          margin-left: ${theme.layout.gapHalf};
+          padding-left: ${theme.layout.gap};
+          overflow: hidden;
+          transition: all .2s ease-in-out;
+          position: relative;
+        }
+        
+        .active-title {
+          font-weight: bold;
+        }
+        
+        .line {
+          position: absolute;
+          top: 14px;
+          left: 1px;
+          bottom: 9px;
+          width: 1px;
+          background-color: ${theme.palette.accents_2};
+        }
+      `}</style>
     </>
   )
 })
