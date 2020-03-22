@@ -1,5 +1,5 @@
 import React from 'react'
-import { Spacer, Code } from 'components'
+import { Spacer, Code, useTheme } from 'components'
 
 export interface AttributesTitleProps {
   alias?: string
@@ -8,13 +8,15 @@ export interface AttributesTitleProps {
 const getAlias = (alias?: string) => {
   if (!alias) return null
   return (
-    <small>[alias: <Code>{alias}</Code>]</small>
+    <small><span>[</span>alias: <Code>{alias}</Code><span>]</span></small>
   )
 }
 
 const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> = React.memo(({
   children, alias,
 }) => {
+  const theme = useTheme()
+
   return (
     <>
       <h4 className="title"><Code>{children}</Code>{getAlias(alias)}</h4>
@@ -23,14 +25,24 @@ const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> =
       <style jsx>{`
         h4 {
           display: inline-flex;
-          height: 1.6rem;
-          line-height: 1.2;
           align-items: center;
+          height: 2rem;
+          padding-left: ${theme.layout.gapQuarter};
+          padding-right: ${theme.layout.gapHalf};
+          background-color: ${theme.palette.accents_1};
+          border-radius: ${theme.layout.radius};
         }
 
         h4 :global(small) {
-          font-size: .75em;
-          padding-left: 1rem;
+          font-size: .65em;
+          padding-left: .65rem;
+          color: ${theme.palette.accents_4};
+          align-self: flex-end;
+          line-height: 1.6rem;
+        }
+        
+        h4 :global(span) {
+          color: ${theme.palette.accents_6};
         }
       `}</style>
     </>
