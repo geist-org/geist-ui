@@ -190,11 +190,11 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         pre {
           border: 1px solid ${theme.palette.accents_2};
           border-radius: ${theme.layout.radius};
-          padding: 1.25rem;
-          margin: 1.5rem 0;
+          padding: ${theme.layout.gap};
+          margin: ${theme.layout.gap} 0;
           white-space: pre;
           overflow: auto;
-          font-size: 0.75rem;
+          font-size: 0.875rem;
           -webkit-overflow-scrolling: touch;
         }
         

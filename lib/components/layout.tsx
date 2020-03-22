@@ -61,7 +61,6 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
           padding-top: 25px;
           flex: 0 0 100%;
           padding-bottom: 150px;
-          font-size: 15px;
         }
       `}</style>
     </div>
