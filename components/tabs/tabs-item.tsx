@@ -25,7 +25,9 @@ const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
     register && register({ value, label, disabled })
   }, [])
 
+  /* eslint-disable react/jsx-no-useless-fragment */
   return isActive ? <>{children}</> : null
 }
 
 export default withDefaults(TabsItem, defaultProps)
+/* eslint-enable */
