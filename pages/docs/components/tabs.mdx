@@ -1,0 +1,128 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Tabs, Spacer, Link, Text, Button, Code, useTabs } from 'components'
+import { useState } from 'react'
+import GithubIcon from 'lib/components/icons/github'
+import ZeitIcon from 'lib/components/icons/zeit'
+import ReactIcon from 'lib/components/icons/react'
+
+export const meta = {
+  title: 'tabs',
+  description: 'tabs',
+}
+
+## Tabs
+
+Display tab content.
+
+<Playground
+  scope={{ Tabs }}
+  code={`
+<Tabs initialValue="1">
+  <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
+  <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
+</Tabs>
+`} />
+
+<Playground
+  title="Disabled"
+  scope={{ Tabs }}
+  code={`
+<Tabs initialValue="1">
+  <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
+  <Tabs.Item label="jumped" value="2" disabled />
+</Tabs>
+`} />
+
+<Playground
+  title="With Icon"
+  scope={{ Tabs, ReactIcon, ZeitIcon, Link, Text }}
+  code={`
+<Tabs initialValue="1">
+  <Tabs.Item label={<><ZeitIcon /> ZEIT UI</>} value="1">
+    <Text>Hello, this is the unofficial ZEIT UI Library.</Text>
+    <Link href="https://github.com/zeit-ui/react" color rel="nofollow" target="_blank">Click here to visit GitHub repo.</Link>
+  </Tabs.Item>
+  <Tabs.Item label={<><ReactIcon/> React Components </>} value="2">
+    <Text>The Components of React looks very cool.</Text>
+  </Tabs.Item>
+</Tabs>
+`} />
+
+<Playground
+  title="Imperatively"
+  scope={{ Tabs, Button, Spacer, Code, Text, useState }}
+  code={`
+() => {
+  const [value, setValue] = useState('1')
+  const switchHandler = () => setValue('2')
+  const changeHandler = val => setValue(val)
+  return (
+    <>
+      <Button size="small" onClick={switchHandler}><Text>Select  <Code>Jumped</Code></Text></Button>
+      <Spacer y={.5} />
+      <Tabs value={value} onChange={changeHandler}>
+        <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
+        <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
+      </Tabs>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title={<>with <Code>useTabs</Code></>}
+  scope={{ Tabs, Button, Spacer, Code, Text, useTabs }}
+  code={`
+() => {
+  const { setState, bindings } = useTabs('1')
+  return (
+    <>
+      <Button size="small" onClick={() => setState('2')}>
+        <Text>Select  <Code>Jumped</Code></Text>
+      </Button>
+      <Spacer y={.5} />
+      <Tabs {...bindings}>
+        <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
+        <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
+      </Tabs>
+    </>
+  )
+}
+`} />
+
+
+<Attributes edit="/pages/docs/components/tabs.mdx">
+<Attributes.Title>Tabs.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **initialValue** | initial value | `string` | - | - |
+| **value** | current selected value | `string` | - | - |
+| **onChange** | change event | `(val: string) => void` | - | - |
+| ... | native props | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+
+<Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **label**(required) | display tab's label | `string` | - | - |
+| **value** | unique ident value | `string` | - | - |
+| **disabled** | disable current tab | `boolean` | - | `false` |
+
+<Attributes.Title>useTabs</Attributes.Title>
+
+```ts
+type useTabs = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  bindings: {
+    value: string
+    onChange: (val: string) => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

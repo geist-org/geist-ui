@@ -21,7 +21,7 @@ const defaultProps = {
   className: '',
 }
 
-export type LinkProps = Props & typeof defaultProps & React.AllHTMLAttributes<any>
+export type LinkProps = Props & typeof defaultProps & React.AnchorHTMLAttributes<any>
 
 const Link: React.FC<React.PropsWithChildren<LinkProps>> = React.memo(({
   href, color, underline, pure, children, className, block, ...props

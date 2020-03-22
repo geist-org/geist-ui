@@ -41,6 +41,10 @@ const Title: React.FC<TitleProps> = React.memo(props => {
         h3 > p {
           margin: 0;
         }
+        
+        h3 > :global(code), h3 > :global(pre) {
+          text-transform: none;
+        }
       `}</style>
     </>
   )
