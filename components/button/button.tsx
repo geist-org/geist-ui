@@ -80,7 +80,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = React.memo(({
   
   return (
     <button ref={buttonRef} className={`btn ${className}`} disabled={disabled} onClick={clickHandler} {...props}>
-      {loading ? <ButtonLoading /> : <span className="text">{children}</span>}
+      {loading ? <ButtonLoading /> : <div className="text">{children}</div>}
       {dripShow && <ButtonDrip
         x={dripX} y={dripY}
         color={theme.palette.accents_2}
@@ -134,6 +134,10 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = React.memo(({
           text-align: center;
           line-height: inherit;
           top: -1px;
+        }
+        
+        .text :global(p), .text :global(pre), .text :global(div) {
+          margin: 0;
         }
       `}</style>
     </button>
