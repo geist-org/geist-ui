@@ -68,9 +68,27 @@ const Text: React.FC<React.PropsWithChildren<TextProps>> = React.memo(({
   const inlineElements: ElementMap = { b, small, i, span, del, em }
   const names = Object.keys(elements)
     .filter((name: keyof JSX.IntrinsicElements) => elements[name])
-  const tag = (names[0] || 'p') as keyof JSX.IntrinsicElements
+  const inlineNames = Object.keys(inlineElements)
+    .filter((name: keyof JSX.IntrinsicElements) => inlineElements[name])
+  
+  /**
+   *  Render element "p" only if no element is found.
+   *  If there is only one modifier, just rendered one modifier element
+   *  e.g.
+   *    <Text /> => <p />
+   *    <Text em /> => <em />
+   *    <Text p em /> => <p><em>children</em></p>
+   *
+   */
+
+  const notSpecialElement = !names[0]
+  const defaultElement = (inlineNames[0] || 'p') as keyof JSX.IntrinsicElements
+  const tag = notSpecialElement ? defaultElement : (names[0]) as keyof JSX.IntrinsicElements
   const modifers = useMemo(
-    () => getModifiers(inlineElements, children),
+    () => {
+      if (notSpecialElement) return children
+      return getModifiers(inlineElements, children)
+    },
     [inlineElements, children],
   )
   return (
