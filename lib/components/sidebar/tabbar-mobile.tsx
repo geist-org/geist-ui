@@ -1,20 +1,22 @@
 import React from 'react'
-import { useTheme } from 'components'
+import { Button, useTheme } from 'components'
 import ToggleIcon from '../icons/toggle'
 
 interface Props {
-  onClick?: (e: React.MouseEvent<SVGElement>) => void
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const TabbarMobile:React.FC<Props> = ({ onClick }) => {
   const theme = useTheme()
-  const handler = (event: React.MouseEvent<SVGElement>) => {
+  const handler = (event: React.MouseEvent<HTMLButtonElement>) => {
     onClick && onClick(event)
   }
 
   return (
     <div className="tabbar">
-      <ToggleIcon color={theme.palette.accents_7} onClick={handler} />
+      <Button className="toggle" auto type="abort" onClick={handler}>
+        <ToggleIcon color={theme.palette.accents_7} />
+      </Button>
       <span>ZEIT-UI React</span>
       <style jsx>{`
         .tabbar {
@@ -31,6 +33,15 @@ const TabbarMobile:React.FC<Props> = ({ onClick }) => {
           box-sizing: border-box;
           justify-content: space-between;
           box-shadow: ${theme.expressiveness.shadowMedium};
+        }
+        
+        .tabbar :global(.toggle) {
+          width: 40px;
+          height: 40px;
+          padding: 0;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
         }
         
         span {
