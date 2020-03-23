@@ -66,6 +66,7 @@ const Image: React.FC<ImageProps> = React.memo(({
           position: relative;
           border-radius: ${theme.layout.radius};
           overflow: hidden;
+          max-width: 100%;
         }
         
         img {
