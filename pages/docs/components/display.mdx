@@ -31,8 +31,8 @@ export const meta = {
   }
 }\`
   return (
-    <Display caption="Application's build with a defined environment variable.">
-      <Code block minWidth="500px">{codes}</Code>
+    <Display width="500px" caption="Application's build with a defined environment variable.">
+      <Code block>{codes}</Code>
     </Display>
   )
 }
@@ -42,8 +42,8 @@ export const meta = {
   title="With Code 2"
   scope={{ Display, Code }}
   code={`
-  <Display caption="Run this command to install the library.">
-    <Code darkBash minWidth="500px">yarn add @zeit-ui/react</Code>
+  <Display width="500px" caption="Run this command to install the library.">
+    <Code darkBash>yarn add @zeit-ui/react</Code>
   </Display>
 `} />
 
@@ -52,7 +52,7 @@ export const meta = {
   scope={{ Display, Code }}
   code={`
   <Display shadow caption={<p>A domain redirect that redirects requests made to <Code>www.zeit.rocks</Code> to <Code>zeit.rocks</Code>.</p>}>
-    <img style={{ minWidth: '650px' }} height="305" src="https://zeit.co/docs/static/docs/custom-domains/redirecting-domains.png" />
+    <img width="650" height="305" src="https://zeit.co/docs/static/docs/custom-domains/redirecting-domains.png" />
   </Display>
 `} />
 
@@ -63,7 +63,7 @@ export const meta = {
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **caption** | description for display block | `ReactNode` / `string` | - | - |
 | **shadow** | show shadow | `boolean` | - | `false` |
-| **minWidth** | set CSS min-width | `boolean` | - | `unset` |
+| **width** | set width | `string` | - | `fit-content` |
 | ... | native props | `HTMLAttributes` | - | - |
 
 </Attributes>

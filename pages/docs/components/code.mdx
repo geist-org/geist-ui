@@ -34,8 +34,11 @@ export const meta = {
   title="Code Block"
   scope={{ Code }}
   code={`
-<Code block>npm i @zeit-ui/vue
-yarn add @zeit-ui/vue</Code>
+() => {
+  const codes = \`npm i @zeit-ui/vue
+yarn add @zeit-ui/vue\`
+  return <Code block>{codes}</Code>
+}
 `} />
 
 <Attributes edit="/pages/docs/components/code.mdx">
@@ -46,7 +49,7 @@ yarn add @zeit-ui/vue</Code>
 | **bash** | show code in bash mode | `boolean` | - | `false` |
 | **block** | show code in `pre` | `boolean` | - | `false` |
 | **darkBash** | show code in darkBash mode | `boolean` | - | `false` |
-| **minWidth** | set CSS min-width | `string` | - | `unset` |
+| **width** | set CSS width | `string` | - | `initial` |
 | ... | native props | `HTMLAttributes` | `'className', ...` | - |
 
 </Attributes>

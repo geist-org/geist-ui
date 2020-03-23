@@ -6,7 +6,7 @@ interface Props {
   bash?: boolean
   darkBash?: boolean
   block?: boolean
-  minWidth?: string
+  width?: string
   className?: string
 }
 
@@ -20,7 +20,7 @@ const defaultProps = {
 export type CodeProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
 const Code: React.FC<React.PropsWithChildren<CodeProps>> = React.memo(({
-  children, block, bash, darkBash, className, minWidth, ...props
+  children, block, bash, darkBash, className, width, ...props
 }) => {
   const theme = useTheme()
   const isBash = bash || darkBash
@@ -35,17 +35,12 @@ const Code: React.FC<React.PropsWithChildren<CodeProps>> = React.memo(({
     <>
       <pre className={classes} {...props}><code>{children}</code></pre>
       <style jsx>{`
-        code {
-          min-width: ${minWidth ? minWidth : 'unset'};
-        }
-        
         pre {
           line-height: 1.5;
           padding: ${theme.layout.gapHalf};
           text-align: left;
-          white-space: pre;
-          overflow: auto;
-          min-width: ${minWidth ? minWidth : 'unset'};
+          width: ${width ? width : 'initial'};
+          max-width: 100%;
         }
         
         pre :global(p) {
@@ -53,8 +48,6 @@ const Code: React.FC<React.PropsWithChildren<CodeProps>> = React.memo(({
         }
         
         .dark {
-          max-width: 100%;
-          width: initial;
           color: white;
           background: black;
         }
