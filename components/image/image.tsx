@@ -9,17 +9,19 @@ interface Props {
   width?: number
   height?: number
   className?: string
+  scale?: string
 }
 
 const defaultProps = {
   animation: true,
   className: '',
+  scale: '100%',
 }
 
 export type ImageProps = Props & typeof defaultProps & React.ImgHTMLAttributes<any>
 
 const Image: React.FC<ImageProps> = React.memo(({
-  src, width, height, animation, className, ...props
+  src, width, height, animation, className, scale, ...props
 }) => {
   const showAnimation = animation && width && height
   const theme = useTheme()
@@ -67,8 +69,9 @@ const Image: React.FC<ImageProps> = React.memo(({
         }
         
         img {
-          width: 100%;
-          height: 100%;
+          width: ${scale};
+          height: ${scale};
+          object-fit: scale-down;
         }
       `}</style>
     </div>
