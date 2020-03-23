@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import React, { ReactNode } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 
@@ -20,17 +20,8 @@ const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
   children, caption, shadow, className, ...props
 }) => {
   const theme = useTheme()
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [minWidth, setMinWidth] = useState<string>('150px')
-  
-  useEffect(() => {
-    if (!containerRef.current) return
-    if (!containerRef.current.parentElement) return
-    setMinWidth(`${containerRef.current.parentElement.clientWidth * .85}px`)
-  }, [containerRef])
-
   return (
-    <div ref={containerRef} className={`display ${className}`} {...props}>
+    <div className={`display ${className}`} {...props}>
       <div className="content">{children}</div>
       <div className="caption">{caption}</div>
   
@@ -54,10 +45,9 @@ const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
         
         .content :global(pre) {
           margin: 0;
-          min-width: ${minWidth};
           transition: min-width ease .2s;
         }
-        
+
         .caption {
           font-size: .875rem;
           line-height: 1.571em;

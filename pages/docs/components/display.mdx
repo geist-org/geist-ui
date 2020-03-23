@@ -32,7 +32,7 @@ export const meta = {
 }\`
   return (
     <Display caption="Application's build with a defined environment variable.">
-      <Code block>{codes}</Code>
+      <Code block minWidth="500px">{codes}</Code>
     </Display>
   )
 }
@@ -43,7 +43,7 @@ export const meta = {
   scope={{ Display, Code }}
   code={`
   <Display caption="Run this command to install the library.">
-    <Code darkBash>yarn add @zeit-ui/react</Code>
+    <Code darkBash minWidth="500px">yarn add @zeit-ui/react</Code>
   </Display>
 `} />
 
