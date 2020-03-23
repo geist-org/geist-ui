@@ -6,6 +6,7 @@ interface Props {
   caption?: ReactNode | string
   shadow?: boolean
   className?: string
+  minWidth?: string
 }
 
 const defaultProps = {
@@ -17,7 +18,7 @@ const defaultProps = {
 export type DisplayProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
 const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
-  children, caption, shadow, className, ...props
+  children, caption, shadow, className, minWidth, ...props
 }) => {
   const theme = useTheme()
   return (
@@ -40,12 +41,14 @@ const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
           border-radius: 4px;
           overflow: hidden;
           width: fit-content;
+          min-width: ${minWidth ? minWidth : 'unset'};
           box-shadow: ${shadow ? theme.expressiveness.shadowLarge : 'none'};
         }
         
         .content :global(pre) {
           margin: 0;
           transition: min-width ease .2s;
+          min-width: ${minWidth ? minWidth : 'unset'};
         }
 
         .caption {
