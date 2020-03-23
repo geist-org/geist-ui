@@ -1,3 +1,3 @@
-import Introduction from './getting-started/introduction.mdx'
+import redirect from 'lib/redirect'
 
-export default Introduction
+export default redirect('/docs/getting-started/introduction')

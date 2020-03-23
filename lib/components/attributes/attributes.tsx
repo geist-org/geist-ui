@@ -25,6 +25,10 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
       <Link color target="_blank" className="attributes-link" href={link} rel="nofollow">Edit this page on GitHub</Link>
   
       <style global jsx>{`
+        .attr table {
+          margin-right: ${theme.layout.gap};
+        }
+
         .attr pre {
           margin: 0;
         }
@@ -94,6 +98,18 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
         
         .attr td:nth-child(1) {
           border-left: 1px solid transparent;
+        }
+        
+        @media only screen and (max-width: 767px) {
+          .attr {
+            overflow-x: scroll;
+          }
+          
+          .attr::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            background-color: transparent;
+          }
         }
       `}</style>
     </>
