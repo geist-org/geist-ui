@@ -66,7 +66,7 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
         
         @media only screen and (max-width: 767px) {
           .box {
-            padding-top: ${theme.layout.gap};
+            padding-top: calc(1.5 * ${theme.layout.gap});
           }
         }
       `}</style>

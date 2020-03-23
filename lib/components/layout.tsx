@@ -73,9 +73,9 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
           .layout {
             max-width: 100%;
             width: 100%;
-            padding: 3.7rem 1rem;
+            padding: 5rem 1rem;
           }
-          
+
           .sidebar {
             position: fixed;
             top: 0;

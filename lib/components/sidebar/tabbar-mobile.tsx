@@ -32,7 +32,7 @@ const TabbarMobile:React.FC<Props> = ({ onClick }) => {
           padding: 0 calc(${theme.layout.gap} * 2);
           box-sizing: border-box;
           justify-content: space-between;
-          box-shadow: ${theme.expressiveness.shadowMedium};
+          border-bottom: 1px solid ${theme.palette.border};
         }
         
         .tabbar :global(.toggle) {
