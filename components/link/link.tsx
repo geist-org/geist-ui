@@ -38,6 +38,7 @@ const Link: React.FC<React.PropsWithChildren<LinkProps>> = React.memo(({
       <style jsx>{`
         .link {
           display: inline-flex;
+          align-items: baseline;
           line-height: inherit;
           color: ${linkColor};
           text-decoration: none;

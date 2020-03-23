@@ -15,6 +15,8 @@ export const LinkIcon: React.FC<Props> = React.memo(({ color }) => {
       <style jsx>{`
         .icon {
           margin: 0 5px;
+          display: inline-flex;
+          align-self: center;
         }
       `}</style>
     </svg>
