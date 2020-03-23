@@ -10,7 +10,6 @@ import { useFieldset } from './fieldset-context'
 interface Props {
   value?: string
   label?: string
-  disabled?: boolean
   title?: string | ReactNode
   subtitle?: string | ReactNode
   className?: string
@@ -28,7 +27,7 @@ const defaultProps = {
 export type FieldsetProps = Props & typeof defaultProps & React.FieldsetHTMLAttributes<any>
 
 const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
-  className, title, subtitle, children, value, label,
+  className, title, subtitle, children, value, label, ...props
 }) => {
   const theme = useTheme()
   const { inGroup, currentValue, register } = useFieldset()
@@ -57,7 +56,7 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
   }
   
   return (
-    <div className={`fieldset ${className}`}>
+    <div className={`fieldset ${className}`} {...props}>
       <div className="content">
         {withoutFooterChildren}
         {!hasTitle && <FieldsetTitle>{title}</FieldsetTitle>}
