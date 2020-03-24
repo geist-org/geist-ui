@@ -4,12 +4,14 @@ import withDefaults from '../utils/with-defaults'
 interface Props {
   x?: number
   y?: number
+  inline?: boolean
   className?: string
 }
 
 const defaultProps = {
   x: 1,
   y: 1,
+  inline: false,
   className: ''
 }
 
@@ -24,7 +26,7 @@ const getMargin = (num: number): string => {
 }
 
 const Spacer: React.FC<SpacerProps> = React.memo(({
-  x, y, className, ...props
+  x, y, inline, className, ...props
 }) => {
   const left = getMargin(x)
   const top = getMargin(y)
@@ -33,7 +35,7 @@ const Spacer: React.FC<SpacerProps> = React.memo(({
     <span className={className} {...props}>
       <style jsx>{`
         span {
-          display: block;
+          display: ${inline ? 'inline-block' : 'block'};
           height: 1px;
           width: 1px;
           margin-left: ${left};

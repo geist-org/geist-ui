@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
+import { useProportions } from '../utils/calculations'
 import { ZeitUIThemesPalette } from '../styles/themes'
 
 interface Props {
@@ -29,18 +30,7 @@ const Capacity: React.FC<CapacityProps> = React.memo(({
   value, limit, color: userColor, className, ...props
 }) => {
   const theme = useTheme()
-  const percentValue = useMemo<number>(() => {
-    const val = value / limit
-    const couldBeDecimalValue = (Number.isNaN(val) ? 0 : val) * 100
-    if (couldBeDecimalValue > 100) return 100
-    if (couldBeDecimalValue < 0) return 0
-    if (!`${couldBeDecimalValue}`.includes('.')) return couldBeDecimalValue
-    
-    const decimal = `${couldBeDecimalValue}`.split('.')[1]
-    if (decimal.length < 2) return couldBeDecimalValue
-    
-    return +couldBeDecimalValue.toFixed(2)
-  }, [value, limit])
+  const percentValue = useProportions(value, limit)
   const color = useMemo(() => {
     if (userColor && userColor !== '') return userColor
     return getColor(percentValue, theme.palette)

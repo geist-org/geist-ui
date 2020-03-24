@@ -1,0 +1,82 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Progress, Spacer, useTheme, Button } from 'components'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'Progress',
+  description: 'Progress',
+}
+
+## Progress
+
+Display progress relative to a limit or related to a task.
+
+<Playground
+  scope={{ Progress }}
+  code={`
+<Progress value={50} />
+`} />
+
+<Playground
+  title="Custom Max"
+  scope={{ Progress }}
+  code={`
+<Progress value={45} max={50} />
+`} />
+
+<Playground
+  title="Dynamic Colors"
+  scope={{ Progress, useState, useTheme, Button, Spacer }}
+  code={`
+() => {
+  const theme = useTheme()
+  const [value, setValue] = useState(20)
+  const colors = {
+    20: theme.palette.error,
+    40: theme.palette.warning,
+    60: theme.palette.success,
+    80: '#000',
+  }
+  return (
+    <>
+      <Progress value={value} colors={colors} />
+      <Spacer />
+      <Button onClick={() => setValue(value + 20)} auto size="small">Increase</Button>
+      <Spacer x={.5} inline />
+      <Button onClick={() => setValue(20)} auto size="small" type="abort">Reset</Button>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="Type"
+  scope={{ Progress, Spacer }}
+  code={`
+<>
+  <Progress type="secondary" value={10} />
+  <Spacer />
+  <Progress type="success" value={45} />
+  <Spacer />
+  <Progress type="warning" value={100} />
+  <Spacer />
+  <Progress type="error" value={21} />
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/progress.mdx">
+<Attributes.Title>Progress.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | current value | `number` | - | 0 |
+| **max** | max value | `number` | - | 100 |
+| **fixedTop** | fix progress to top | `boolean` | - | `false` |
+| **fixedBottom** | fix progress to bottom | `boolean` | - | `false` |
+| **colors** | custom colors | `{ [key: number]: string }` | - | - |
+| **type** | predefined state types | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ... | native props | `ProgressHTMLAttributes` | `'aria-busy', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
