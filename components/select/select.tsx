@@ -1,13 +1,13 @@
-import React, { MutableRefObject, useEffect, useMemo, useRef, useState } from 'react'
-import useTheme from '../styles/use-theme'
-import SelectOption from './select-option'
-import SelectIcon from './select-icon'
-import Dropdown from '../shared/dropdown'
-import { ZeitUIThemes } from '../styles/themes'
-import { SelectContext, SelectConfig } from './select-context'
+import React, { useMemo, useRef, useState } from 'react'
 import { NormalSizes } from '../utils/prop-types'
-import { getSizes } from './styles'
+import useClickAway from '../utils/use-click-away'
 import { pickChildByProps, pickChildrenFirst } from '../utils/collections'
+import SelectIcon from './select-icon'
+import SelectOption from './select-option'
+import useTheme from '../styles/use-theme'
+import SelectDropdown from './select-dropdown'
+import { SelectContext, SelectConfig } from './select-context'
+import { getSizes } from './styles'
 
 interface Props {
   disabled?: boolean
@@ -30,25 +30,6 @@ const defaultProps = {
 
 export type SelectProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
-const getDropdown = (
-  ref: MutableRefObject<HTMLDivElement | null>,
-  children: React.ReactNode | null,
-  theme: ZeitUIThemes,
-  visible: boolean,
-) => (
-  <Dropdown parent={ref} visible={visible}>
-    <div className="select-dropdown">
-      {children}
-      <style jsx>{`
-        .select-dropdown {
-          border-radius: ${theme.layout.radius};
-          box-shadow: ${theme.expressiveness.shadowLarge};
-        }
-      `}</style>
-    </div>
-  </Dropdown>
-)
-
 const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   children, size, disabled, initialValue: init, placeholder,
   icon: Icon, onChange, className, pure, ...props
@@ -67,10 +48,10 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   }
 
   const initialValue: SelectConfig = useMemo(() => ({
-    value, visible, updateValue, updateVisible,
-    size, disableAll: disabled,
-  }), [visible, size, disabled])
-  
+    value, visible, updateValue, updateVisible, size, ref,
+    disableAll: disabled,
+  }), [visible, size, disabled, ref])
+
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
     event.nativeEvent.stopImmediatePropagation()
@@ -79,11 +60,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
     setVisible(!visible)
   }
   
-  useEffect(() => {
-    const closeHandler = () => setVisible(false)
-    document.addEventListener('click', closeHandler)
-    return () => document.removeEventListener('click', closeHandler)
-  }, [])
+  useClickAway(ref, () => setVisible(false))
   
   const selectedChild = useMemo(() => {
     const [, optionChildren] = pickChildByProps(children, 'value', value)
@@ -97,7 +74,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
       <div className={`select ${className}`} ref={ref} onClick={clickHandler} {...props}>
         {!value && <span className="value placeholder">{placeholder}</span>}
         {value && <span className="value">{selectedChild}</span>}
-        {getDropdown(ref, children, theme, visible)}
+        <SelectDropdown visible={visible}>{children}</SelectDropdown>
         {!pure && <div className="icon"><Icon /></div>}
         <style jsx>{`
           .select {

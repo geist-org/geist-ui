@@ -3,6 +3,7 @@ import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import useCurrentState from '../utils/use-current-state'
 import { FieldsetContext, FieldItem } from './fieldset-context'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   value: string
@@ -26,7 +27,7 @@ const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = Rea
   const register = useCallback((newItem: FieldItem) => {
     const hasItem = ref.current.find(item => item.value === newItem.value)
     if (hasItem) {
-      console.error('[Fieldset Group]: The "value" of each "Fieldset" must be unique.')
+      useWarning('The "value" of each "Fieldset" must be unique.', 'Fieldset')
     }
     setItems([...ref.current, newItem])
   }, [])

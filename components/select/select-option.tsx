@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { useSelectContext } from './select-context'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   value: string
@@ -25,7 +26,7 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   const { updateValue, value, disableAll } = useSelectContext()
   const isDisabled = useMemo(() => disabled || disableAll, [disabled, disableAll])
   if (identValue === undefined) {
-    console.error('[Select Option]: the props "value" is required.')
+    useWarning('The props "value" is required.', 'Select Option')
   }
 
   const selected = useMemo(() => value ? identValue === value : false, [identValue, value])

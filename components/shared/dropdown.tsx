@@ -1,10 +1,12 @@
-import React, { MutableRefObject, useEffect, useState } from 'react'
+import React, { MutableRefObject, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
+import useResize from '../utils/use-resize'
 import CSSTransition from './css-transition'
+import useClickAnyWhere from '../utils/use-click-anywhere'
 
 interface Props {
-  parent?: MutableRefObject<HTMLDivElement | null>
+  parent?: MutableRefObject<HTMLElement | null> | undefined
   visible: boolean
 }
 
@@ -22,7 +24,7 @@ const defaultRect: ReactiveDomReact = {
   width: 0,
 }
 
-const getRect = (ref: MutableRefObject<HTMLDivElement | null>): ReactiveDomReact => {
+const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact => {
   if (!ref || !ref.current) return defaultRect
   const rect = ref.current.getBoundingClientRect()
   return {
@@ -45,12 +47,14 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
     setRect({ top, left, right, width: nativeWidth })
   }
 
-  useEffect(() => {
+  useResize(updateRect)
+  useClickAnyWhere(() => {
+    const { top, left } = getRect(parent)
+    const shouldUpdatePosition = top !== rect.top || left !== rect.left
+    if (!shouldUpdatePosition) return
     updateRect()
-    window.addEventListener('resize', updateRect)
-    return () => window.removeEventListener('resize', updateRect)
-  }, [])
-  
+  })
+
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
     event.preventDefault()

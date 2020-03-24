@@ -25,7 +25,7 @@ const usePortal = (selectId: string = getId()): Element | null => {
     return () => {
       const node = document.getElementById(id)
       if (node) {
-        // document.body.removeChild(node)
+        document.body.removeChild(node)
       }
     }
   }, [])

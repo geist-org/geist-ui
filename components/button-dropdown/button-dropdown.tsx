@@ -1,5 +1,6 @@
-import React, { MouseEvent, useCallback, useEffect, useMemo, useState } from 'react'
+import React, { MouseEvent, useCallback, useMemo, useRef, useState } from 'react'
 import useTheme from '../styles/use-theme'
+import useClickAway from '../utils/use-click-away'
 import { getColor } from './styles'
 import ButtonDropdownIcon from './icon'
 import ButtonDropdownItem from './item'
@@ -36,6 +37,7 @@ const stopPropagation = (event: MouseEvent<HTMLElement>) => {
 const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = React.memo(({
   children, type, size, auto, className, disabled, loading, ...props
 }) => {
+  const ref = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const colors = getColor(theme.palette, type)
   const sizes = getButtonSize(size, auto)
@@ -58,15 +60,11 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = R
     return visible ? colors.hoverBgColor : colors.bgColor
   }, [visible, colors, theme.palette])
   
-  const closeDetails = () => setVisible(false)
-  useEffect(() => {
-    document.addEventListener('click', closeDetails)
-    return () => document.removeEventListener('click', closeDetails)
-  }, [])
-  
+  useClickAway(ref, () => setVisible(false))
+
   return (
     <ButtonDropdownContext.Provider value={initialValue}>
-      <div className={`btn-dropdown ${className}`} onClick={stopPropagation} {...props}>
+      <div ref={ref} className={`btn-dropdown ${className}`} onClick={stopPropagation} {...props}>
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>

@@ -4,6 +4,7 @@ import darkTheme from '../themes/dark'
 import lightTheme from '../themes/default'
 import { ZeitUIThemes } from '../themes/index'
 import ThemeContext from '../use-theme/theme-context'
+import useWarning from '../../utils/use-warning'
 
 type PartialTheme = Partial<ZeitUIThemes>
 export type ThemeParam = PartialTheme | ((theme: PartialTheme) => PartialTheme) | undefined
@@ -17,7 +18,7 @@ const mergeTheme = (current: ZeitUIThemes, custom: ThemeParam): ZeitUIThemes => 
   if (typeof custom === 'function') {
     const merged = custom(current)
     if (!merged || typeof merged !== 'object') {
-      console.error('Zeit-UI: the theme function must return object value.')
+      useWarning('The theme function must return object value.')
     }
     return merged as ZeitUIThemes
   }
