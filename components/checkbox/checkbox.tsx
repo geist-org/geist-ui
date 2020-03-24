@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useCheckbox } from './checkbox-context'
 import CheckboxGroup from './checkbox-group'
 import CheckboxIcon from './checkbox.icon'
+import useWarning from '../utils/use-warning'
 
 interface CheckboxEventTarget {
   checked: boolean
@@ -41,11 +42,17 @@ const Checkbox: React.FC<CheckboxProps> = React.memo(({
   const isDisabled = inGroup ? disabledAll || disabled : disabled
 
   if (inGroup && !value) {
-    console.error('[Checkbox]: Props "value" must be set when [Checkbox] component is in the group.')
+    useWarning(
+      'Props "value" must be set when [Checkbox] component is in the group.',
+      'Checkbox',
+    )
   }
   
   if (inGroup && checked) {
-    console.error('[Checkbox]: Remove props "checked" when [Checkbox] component is in the group.')
+    useWarning(
+      'Remove props "checked" when [Checkbox] component is in the group.',
+      'Checkbox',
+    )
   }
   
   if (inGroup) {

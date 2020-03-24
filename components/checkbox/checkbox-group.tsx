@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
 import { CheckboxContext } from './checkbox-context'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   value: string[]
@@ -22,7 +23,7 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = Rea
   const [selfVal, setSelfVal] = useState<string[]>([])
   if (!value) {
     value = []
-    console.error('[Checkbox Group]: Props "value" is required.')
+    useWarning('Props "value" is required.', 'Checkbox Group')
   }
   
   const updateState = (val: string, checked: boolean) => {

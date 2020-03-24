@@ -6,6 +6,7 @@ import FieldsetFooter from './fieldset-footer'
 import FieldsetGroup from './fieldset-group'
 import { hasChild, pickChild } from '../utils/collections'
 import { useFieldset } from './fieldset-context'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   value?: string
@@ -38,7 +39,7 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
   
   if (inGroup) {
     if (!label) {
-      console.error('[Fieldset Group]: Props "label" is required when in a group.')
+      useWarning('Props "label" is required when in a group.', 'Fieldset Group')
     }
     if (!value || value === '') {
       value = label

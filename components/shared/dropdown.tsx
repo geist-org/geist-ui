@@ -1,6 +1,7 @@
-import React, { MutableRefObject, useEffect, useState } from 'react'
+import React, { MutableRefObject, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
+import useResize from '../utils/use-resize'
 import CSSTransition from './css-transition'
 
 interface Props {
@@ -44,13 +45,9 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
     const { top, left, right, width: nativeWidth } = getRect(parent)
     setRect({ top, left, right, width: nativeWidth })
   }
-
-  useEffect(() => {
-    updateRect()
-    window.addEventListener('resize', updateRect)
-    return () => window.removeEventListener('resize', updateRect)
-  }, [])
   
+  useResize(updateRect)
+
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
     event.preventDefault()

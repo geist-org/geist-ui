@@ -3,6 +3,7 @@ import TabsItem from './tabs-item'
 import useTheme from '../styles/use-theme'
 import { TabsLabelItem, TabsConfig, TabsContext } from './tabs-context'
 import useCurrentState from '../utils/use-current-state'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   initialValue?: string
@@ -28,7 +29,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   const register = (next: TabsLabelItem) => {
     const hasItem = tabsRef.current.find(item => item.value === next.value)
     if (hasItem) {
-      console.error('[Tabs]: The "value" of each "Tabs.Item" must be unique.')
+      useWarning('The "value" of each "Tabs.Item" must be unique.', 'Tabs')
     }
     setTabs([...tabsRef.current, next])
   }

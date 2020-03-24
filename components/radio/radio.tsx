@@ -4,6 +4,7 @@ import { useRadioContext } from './radio-context'
 import RadioGroup from './radio-group'
 import RadioDescription from './radio-description'
 import { pickChild } from '../utils/collections'
+import useWarning from '../utils/use-warning'
 
 interface RadioEventTarget {
   checked: boolean
@@ -43,10 +44,10 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = React.memo(({
   
   if (inGroup) {
     if (checked !== undefined) {
-      console.error('[Radio]: remove props "checked" if in the Radio.Group.')
+      useWarning('Remove props "checked" if in the Radio.Group.', 'Radio')
     }
     if (radioValue === undefined) {
-      console.error('[Radio]: props "value" must be deinfed if in the Radio.Group.')
+      useWarning('Props "value" must be deinfed if in the Radio.Group.', 'Radio')
     }
     useEffect(() => setSelfChecked(groupValue === radioValue), [groupValue, radioValue])
   }
