@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { MutableRefObject } from 'react'
 import { NormalSizes } from '../utils/prop-types'
 
 export interface SelectConfig {
@@ -8,6 +8,7 @@ export interface SelectConfig {
   updateVisible?: Function
   size?: NormalSizes
   disableAll?: boolean
+  ref?: MutableRefObject<HTMLElement | null>
 }
 
 const defaultContext = {
