@@ -1,8 +1,9 @@
-import React, { MutableRefObject, useEffect, useMemo, useRef, useState } from 'react'
+import React, { MutableRefObject, useMemo, useRef, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import SelectOption from './select-option'
 import SelectIcon from './select-icon'
 import Dropdown from '../shared/dropdown'
+import useClickAway from '../utils/use-click-away'
 import { ZeitUIThemes } from '../styles/themes'
 import { SelectContext, SelectConfig } from './select-context'
 import { NormalSizes } from '../utils/prop-types'
@@ -79,11 +80,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
     setVisible(!visible)
   }
   
-  useEffect(() => {
-    const closeHandler = () => setVisible(false)
-    document.addEventListener('click', closeHandler)
-    return () => document.removeEventListener('click', closeHandler)
-  }, [])
+  useClickAway(ref, () => setVisible(false))
   
   const selectedChild = useMemo(() => {
     const [, optionChildren] = pickChildByProps(children, 'value', value)
