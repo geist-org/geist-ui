@@ -28,7 +28,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
         <meta property="og:description" content="React implementation for ZEIT design." />
         <meta property="og:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
         <meta property="twitter:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
-        <meta name="viewport" content="initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover" />
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover" />
       </Head>
       <ZEITUIProvider theme={{ type: themeType }}>
         <CSSBaseline />
@@ -74,6 +74,10 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
           
           span.plain-text {
             color: ${theme.palette.accents_3};
+          }
+          
+          body {
+            overflow-x: hidden;
           }
           
           body::-webkit-scrollbar {

@@ -45,11 +45,14 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
           width: 100%;
           padding-bottom: ${theme.layout.gap};
         }
-        
+
         .box {
           overflow-y: auto;
           overflow-x: hidden;
           height: calc(100vh - 140px);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
         
         .box::-webkit-scrollbar {
@@ -58,7 +61,13 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
         }
         
         .box>:global(.item) {
-          margin-bottom: 10px;
+          margin-bottom: ${theme.layout.gap};
+        }
+        
+        @media only screen and (max-width: 767px) {
+          .box {
+            padding-top: calc(1.5 * ${theme.layout.gap});
+          }
         }
       `}</style>
     </div>

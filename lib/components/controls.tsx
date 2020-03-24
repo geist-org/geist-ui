@@ -1,6 +1,5 @@
-import React, { useCallback, useMemo, useRef, useState } from 'react'
-import useTheme from 'components/styles/use-theme'
-import { Button, Col, Image } from 'components'
+import React, { useCallback, useMemo } from 'react'
+import { Button, useTheme, Spacer } from 'components'
 import useConfigs from 'lib/states/use-config'
 import MoonIcon from './icons/moon'
 import SunIcon from './icons/sun'
@@ -10,10 +9,7 @@ const Controls: React.FC<{}> = React.memo(({
 }) => {
   const theme = useTheme()
   const config = useConfigs()
-  const timer = useRef<number>()
-  const [hover, setHover] = useState<boolean>(false)
   const isDark = useMemo(() => theme.type === 'dark', [theme.type])
-  const hideLogo = useMemo(() => isDark || hover, [isDark, hover])
   const switchThemes = useCallback(() => {
     const isDark = theme.type === 'dark'
     config.onChange && config.onChange(!isDark)
@@ -25,29 +21,10 @@ const Controls: React.FC<{}> = React.memo(({
     }
   }
   
-  const hoverHandler = (next: boolean) => {
-    if (typeof window === 'undefined') return
-    if (next) {
-      timer.current && clearTimeout(timer.current)
-      return setHover(true)
-    }
-  
-    timer.current = window.setTimeout(() => {
-      setHover(false)
-      clearTimeout(timer.current)
-    }, 300)
-  }
-  
   return (
     <div className="controls">
-      <Col className="line" span={18}
-        onMouseEnter={() => hoverHandler(true)}
-        onMouseLeave={() => hoverHandler(false)}>
-        <Image draggable={false} width={150} height={55} src="/images/zeit-react-logo.png" />
-      </Col>
-      <div className="tools"
-        onMouseEnter={() => hoverHandler(true)}
-        onMouseLeave={() => hoverHandler(false)}>
+      <div className="tools">
+        <Spacer x={.5} />
         <Button className="button" auto type="abort"
           onClick={switchThemes}>
           {isDark ? <SunIcon width={16} height={16} /> : <MoonIcon width={16} height={16} />}
@@ -61,11 +38,11 @@ const Controls: React.FC<{}> = React.memo(({
         .controls {
           height: 110px;
           display: flex;
-          align-items: center;
+          align-items: flex-start;
           flex-direction: column-reverse;
           margin: 0;
+          padding-bottom: ${theme.layout.gapHalf};
           position: relative;
-          padding-right: 30px;
         }
         
         .controls :global(.button) {
@@ -80,26 +57,36 @@ const Controls: React.FC<{}> = React.memo(({
         
         .tools {
           display: flex;
-          padding: 7px 0;
-          height: 54px;
+          height: 2.5rem;
           box-sizing: border-box;
-          margin-bottom: 0;
-          position: absolute;
-          bottom: 0;
-          right: 50%;
-          transform: translateX(50%);
+          align-items: center;
+        }
+        
+        .tools:before {
+          content: "";
+          display: inline-block;
+          height: 1.25rem;
+          width: .3125rem;
+          background-color: ${theme.palette.accents_2};
         }
         
         .controls :global(.line) {
           width: 150px;
-          height: ${hideLogo ? 0 : '55px'};
-          opacity: ${hideLogo ? 0 : 1};
+          height: 55px;
           cursor: pointer;
           background-color: ${theme.palette.background};
           position: relative;
           z-index: 100;
           transition: all 200ms ease;
           overflow: hidden;
+        }
+        
+        @media only screen and (max-width: 767px) {
+          .controls {
+            display: none;
+            pointer-events: none;
+            visibility: hidden;
+          }
         }
       `}</style>
     </div>
