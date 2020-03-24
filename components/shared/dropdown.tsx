@@ -3,9 +3,10 @@ import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
 import CSSTransition from './css-transition'
+import useClickAnyWhere from '../utils/use-click-anywhere'
 
 interface Props {
-  parent?: MutableRefObject<HTMLDivElement | null>
+  parent?: MutableRefObject<HTMLElement | null> | undefined
   visible: boolean
 }
 
@@ -23,7 +24,7 @@ const defaultRect: ReactiveDomReact = {
   width: 0,
 }
 
-const getRect = (ref: MutableRefObject<HTMLDivElement | null>): ReactiveDomReact => {
+const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact => {
   if (!ref || !ref.current) return defaultRect
   const rect = ref.current.getBoundingClientRect()
   return {
@@ -45,8 +46,14 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
     const { top, left, right, width: nativeWidth } = getRect(parent)
     setRect({ top, left, right, width: nativeWidth })
   }
-  
+
   useResize(updateRect)
+  useClickAnyWhere(() => {
+    const { top, left } = getRect(parent)
+    const shouldUpdatePosition = top !== rect.top || left !== rect.left
+    if (!shouldUpdatePosition) return
+    updateRect()
+  })
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
