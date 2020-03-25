@@ -7,6 +7,7 @@ interface Props {
 const TreeIndents: React.FC<Props> = ({ count }) => {
   if (count === 0) return null
   return (
+    /* eslint-disable react/jsx-no-useless-fragment */
     <>
       {[...new Array(count)].map((_, index) => (
         <span className="indent" key={`indent-${index}`}>
@@ -18,6 +19,7 @@ const TreeIndents: React.FC<Props> = ({ count }) => {
         </span>
       ))}
     </>
+    /* eslint-enable */
   )
 }
 

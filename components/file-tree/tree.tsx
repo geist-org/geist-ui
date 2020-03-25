@@ -42,13 +42,13 @@ const makeChildren = (value: Array<FileTreeValue> = []) => {
       return `${a.name}`.charCodeAt(0) - `${b.name}`.charCodeAt(0)
     })
     .map((item, index) => {
-    if (item.type === directoryType) return (
-      <TreeFolder name={item.name} extra={item.extra} key={`folder-${item.name}-${index}`}>
-        {makeChildren(item.files)}
-      </TreeFolder>
-    )
-    return <TreeFile name={item.name} extra={item.extra} key={`file-${item.name}-${index}`} />
-  })
+      if (item.type === directoryType) return (
+        <TreeFolder name={item.name} extra={item.extra} key={`folder-${item.name}-${index}`}>
+          {makeChildren(item.files)}
+        </TreeFolder>
+      )
+      return <TreeFile name={item.name} extra={item.extra} key={`file-${item.name}-${index}`} />
+    })
 }
 
 const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({

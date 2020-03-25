@@ -82,8 +82,8 @@ export const setChildrenProps = (
 }
 
 export type ShapeType = {
-  width: number,
-  height: number,
+  width: number
+  height: number
 }
 
 export const getRealShape = (el: HTMLElement | null): ShapeType => {
