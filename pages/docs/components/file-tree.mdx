@@ -1,0 +1,176 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Tree, useToasts } from 'components'
+
+export const meta = {
+  title: 'File-Tree',
+  description: 'File-Tree',
+}
+
+## File Tree
+
+Display a list of files and folders in a hierarchical tree structure.
+
+<Playground
+  title="Basic"
+  desc="All folders and files are sorted automatically."
+  scope={{ Tree }}
+  code={`
+<Tree>
+  <Tree.File name="package.json" />
+  <Tree.Folder name="components">
+    <Tree.File name="layout.js" />
+    <Tree.Folder name="footer">
+      <Tree.File name="footer.js" />
+      <Tree.File name="footer-text.js" />
+      <Tree.File name="footer-license.js" />
+    </Tree.Folder>
+    <Tree.File name="header.js" />
+  </Tree.Folder>
+  <Tree.File name="readme.md" />
+</Tree>
+`} />
+
+
+<Playground
+  title="Imperative"
+  desc="Use props `value` to show more complex file tree."
+  scope={{ Tree }}
+  code={`
+() => {
+  const files = [{
+    type: 'directory',
+    name: 'bin',
+    files: [{
+      type: 'file',
+      name: 'cs.js',
+    }],
+  }, {
+    type: 'directory',
+    name: 'docs',
+    files: [{
+      type: 'file',
+      name: 'controllers.md',
+    }, {
+      type: 'file',
+      name: 'es6.md',
+    }, {
+      type: 'file',
+      name: 'production.md',
+    }, {
+      type: 'file',
+      name: 'views.md',
+    }],
+  }]
+  return <Tree value={files} />
+}
+`} />
+
+
+<Playground
+  title="Extra Message"
+  desc="Use props `value` to show more complex file tree."
+  scope={{ Tree }}
+  code={`
+() => {
+  const files = [{
+    type: 'directory',
+    name: 'controllers',
+    extra: '1 file',
+    files: [{
+      type: 'file',
+      name: 'cs.js',
+      extra: '1kb',
+    }],
+  }, {
+    type: 'directory',
+    name: 'docs',
+    extra: '2 files',
+    files: [{
+      type: 'file',
+      name: 'controllers.md',
+      extra: '2.5kb',
+    }, {
+      type: 'file',
+      name: 'es6.md',
+      extra: '2.9kb',
+    }],
+  }, {
+     type: 'file',
+     name: 'production.md',
+     extra: '0.8kb',
+   }, {
+     type: 'file',
+     name: 'views.md',
+     extra: '8.1kb',
+   }]
+  return <Tree value={files} />
+}
+`} />
+
+<Playground
+  title="Event"
+  desc="Path will be reported when file is clicked."
+  scope={{ Tree, useToasts }}
+  code={`
+() => {
+  const [_, setToast] = useToasts()
+  const handler = path => setToast({ text: path })
+  return (
+    <Tree onClick={handler}>
+      <Tree.Folder name="components">
+        <Tree.File name="layout.js" />
+        <Tree.File name="layout.js" />
+        <Tree.Folder name="footer">
+          <Tree.File name="footer.js" />
+          <Tree.File name="footer-text.js" />
+          <Tree.File name="footer-license.js" />
+        </Tree.Folder>
+      </Tree.Folder>
+      <Tree.File name="package.json" />
+      <Tree.File name="readme.md" />
+    </Tree>
+  )
+}
+`} />
+
+
+<Attributes edit="/pages/docs/components/file-tree.mdx">
+<Attributes.Title>Tree.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | value of files | `Array<FileTreeValue>` | - | - |
+| **initialExpand** | expand by default | `boolean` | - | `false` |
+| **onClick** | click file event | `(path: string) => void` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+
+<Attributes.Title>Tree.File.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **name**(required) | file name | `string` | - | - |
+| **extra** | extra message | `string` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+
+<Attributes.Title>Tree.Folder.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **name**(required) | folder name | `string` | - | - |
+| **extra** | extra message | `string` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+
+<Attributes.Title>type FileTreeValue</Attributes.Title>
+
+```ts
+type FileTreeValue = {
+  type: 'directory' || 'file'
+  name: string
+  extra?: string
+  files?: Array<FileTreeValue>
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
