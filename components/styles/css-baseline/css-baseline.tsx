@@ -224,10 +224,21 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         summary {
           cursor: pointer;
           user-select: none;
+          list-style: none;
+          outline: none;
         }
         
-        summary::-webkit-details-marker, summary:focus, summary:hover, summary:active {
+        summary::-webkit-details-marker, summary::before {
           display: none;
+        }
+        
+        summary::-moz-list-bullet {
+          font-size: 0;
+        }
+
+        summary:focus, summary:hover, summary:active {
+          outline: none;
+          list-style: none;
         }
       `}</style>
     </>
