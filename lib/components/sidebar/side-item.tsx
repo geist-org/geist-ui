@@ -66,9 +66,8 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
         
         .link :global(a.active) {
           color: ${theme.palette.background};
-          font-weight: 700;
+          font-weight: bold;
           background-color: ${theme.palette.accents_7};
-          text-transform: uppercase;
         }
         
         .children {
