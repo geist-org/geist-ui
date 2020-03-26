@@ -116,8 +116,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
           }
           
           .tab :global(svg) {
-            max-width: .9em;
-            max-height: .9em;
+            max-height: 1em;
             margin-right: 5px;
           }
 
