@@ -1,5 +1,5 @@
 import ButtonDropdown from './button-dropdown'
-import ButtonDropdownItem from './item'
+import ButtonDropdownItem from './button-dropdown-item'
 
 ButtonDropdown.Item = ButtonDropdownItem
 
