@@ -4,6 +4,14 @@ export type ElementStackItem = {
   last: string
 }
 
+export type BodyScrollOptions = {
+  scrollLayer: boolean
+}
+
+const defaultOptions: BodyScrollOptions = {
+  scrollLayer: false,
+}
+
 const elementStack = new Map<HTMLElement, ElementStackItem>()
 
 const isIos = () => {
@@ -18,17 +26,29 @@ const touchHandler = (event: TouchEvent): boolean => {
 }
 
 const useBodyScroll = (
-  elementRef?: MutableRefObject<HTMLElement>
+  elementRef?: MutableRefObject<HTMLElement> | null,
+  options?: BodyScrollOptions,
 ): [boolean, Dispatch<SetStateAction<boolean>>] => {
   if (typeof document === 'undefined') return [false, (t: boolean) => t]
   const elRef = elementRef || useRef<HTMLElement>(document.body)
   const [hidden, setHidden] = useState<boolean>(false)
+  const safeOptions = {
+    ...defaultOptions,
+    ...(options || {}),
+  }
+  
+  
+  // don't prevent touch event when layer contain scroll
+  const isIosWithCustom = () => {
+    if (safeOptions.scrollLayer) return false
+    return isIos()
+  }
 
   useEffect(() => {
     const lastOverflow = elRef.current.style.overflow
     if (hidden) {
       if (elementStack.has(elRef.current)) return
-      if (!isIos()) {
+      if (!isIosWithCustom()) {
         elRef.current.style.overflow = 'hidden'
       } else {
         document.addEventListener('touchmove', touchHandler, { passive: false })
@@ -41,7 +61,7 @@ const useBodyScroll = (
   
     // reset element overflow
     if (!elementStack.has(elRef.current)) return
-    if (!isIos()) {
+    if (!isIosWithCustom()) {
       const store = elementStack.get(elRef.current) || { last: 'auto' }
       elRef.current.style.overflow = store.last
     } else {
