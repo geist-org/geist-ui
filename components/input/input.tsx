@@ -40,7 +40,7 @@ const Input: React.FC<InputProps> = ({
   className, ...props
 }) => {
   const theme = useTheme()
-  const [selfValue, setSelfValue] = useState<string | undefined>(initialValue)
+  const [selfValue, setSelfValue] = useState<string>(initialValue)
   const [hover, setHover] = useState<boolean>(false)
   const { heightRatio, fontSize } = useMemo(() => getSizes(size),[size])
   const labelClasses = useMemo(
@@ -57,6 +57,7 @@ const Input: React.FC<InputProps> = ({
   )
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled || readOnly) return
+    setSelfValue(event.target.value)
     onChange && onChange(event)
   }
 
