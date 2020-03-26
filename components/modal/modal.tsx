@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
 import ModalTitle from './modal-title'
@@ -10,6 +10,7 @@ import ModalActions from './modal-actions'
 import Backdrop from '../shared/backdrop'
 import { ModalConfig, ModalContext } from './modal-context'
 import { pickChild } from '../utils/collections'
+import useBodyScroll from '../utils/use-body-scroll'
 
 interface Props {
   disableBackdropClick?: boolean
@@ -31,27 +32,30 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = React.memo(({
   children, disableBackdropClick, onClose, onOpen, open
 }) => {
   const portal = usePortal('modal')
+  const [, setBodyHidden] = useBodyScroll()
   const [visible, setVisible] = useState<boolean>(open)
   const [withoutActionsChildren, ActionsChildren] = pickChild(children, ModalAction)
   const hasActions = ActionsChildren && React.Children.count(ActionsChildren) > 0
 
-  const closeModal = useCallback(() => {
+  const closeModal = () => {
     setVisible(false)
     onClose && onClose()
-  }, [open])
-  const openModal = useCallback(() => {
+  }
+  const openModal = () => {
     setVisible(true)
+    
     onOpen && onOpen()
-  }, [])
+  }
 
   useEffect(() => {
     setVisible(open)
+    setBodyHidden(open)
   }, [open])
 
-  const closeFromBackdrop = useCallback(() => {
+  const closeFromBackdrop = () => {
     if (disableBackdropClick && hasActions) return
     closeModal()
-  }, [disableBackdropClick])
+  }
 
   const modalConfig: ModalConfig = useMemo(() => ({
     close: closeModal,
