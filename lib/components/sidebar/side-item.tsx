@@ -87,7 +87,10 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
         }
         
         @media only screen and (max-width: 767px) {
-        
+          .link {
+            border-bottom: 1px solid ${theme.palette.border};
+            height: 3.5rem;
+          }
         }
       `}</style>
     </>
