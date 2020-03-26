@@ -42,6 +42,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
           margin: 0 auto;
           padding: 0 ${theme.layout.gap};
           display: flex;
+          box-sizing: border-box;
         }
         
         .sidebar {

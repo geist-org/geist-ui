@@ -76,7 +76,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
             color: ${theme.palette.accents_3};
           }
           
-          html, body {
+          body {
             overflow-x: hidden;
           }
           
