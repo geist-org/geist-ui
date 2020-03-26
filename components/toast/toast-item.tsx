@@ -94,6 +94,7 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({
       <style jsx>{`
         .toast {
           width: 420px;
+          max-width: 90vw;
           max-height: 75px;
           display: flex;
           justify-content: space-between;
