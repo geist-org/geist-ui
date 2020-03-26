@@ -5,6 +5,7 @@ import Sidebar from './sidebar'
 import Controls from 'lib/components/controls'
 import sides from 'lib/data/metadata.json'
 import TabbarMobile from './sidebar/tabbar-mobile'
+import useBodyScroll from 'components/utils/use-body-scroll'
 
 export interface Meta {
   title: string
@@ -18,9 +19,11 @@ export interface Props {
 
 export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ children }) => {
   const theme = useTheme()
+  const [, setBodyScroll] = useBodyScroll(null, { scrollLayer: true })
   const [expanded, setExpanded] = useState<boolean>(false)
   const mobileTabbarClickHandler = () => {
     setExpanded(!expanded)
+    setBodyScroll(!expanded)
   }
   
   return (
@@ -42,6 +45,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
           margin: 0 auto;
           padding: 0 ${theme.layout.gap};
           display: flex;
+          box-sizing: border-box;
         }
         
         .sidebar {
@@ -85,7 +89,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
             width: 100vw;
             height: ${expanded ? '100vh' : '0'};
             background-color: ${theme.palette.background};
-            padding: 50px 12vw 0;
+            padding: 0;
             overflow: hidden;
             transition: height 250ms ease;
           }

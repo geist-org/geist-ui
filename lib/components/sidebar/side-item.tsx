@@ -43,11 +43,6 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
       })}
       <style jsx>{`
         .item {
-          display: flex;
-          flex: 1;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
           width: 100%;
         }
         
@@ -55,7 +50,7 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
           width: 100%;
           color: ${theme.palette.accents_5};
           display: flex;
-          height: 36px;
+          height: 2.25rem;
           align-items: center;
           justify-content: flex-start;
           cursor: pointer;
@@ -82,9 +77,9 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
           align-items: flex-start;
           flex-direction: column;
           padding-left: ${theme.layout.gapHalf};
-          overflow: hidden;
           transition: all .2s ease-in-out;
           position: relative;
+          margin-top: .5rem;
         }
         
         .active-title {
@@ -92,7 +87,10 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
         }
         
         @media only screen and (max-width: 767px) {
-        
+          .link {
+            border-bottom: 1px solid ${theme.palette.border};
+            height: 3.5rem;
+          }
         }
       `}</style>
     </>
