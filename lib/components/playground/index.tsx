@@ -90,6 +90,7 @@ const editor = (code: string) => {
           justify-content: center;
           align-items: center;
           height: 100%;
+          width: fit-content;
         }
         
         summary :global(svg) {

@@ -21,7 +21,6 @@ const ActiveCatalog: React.FC<Props> = React.memo(
             transition: all .2s ease;
             color: ${theme.palette.accents_3};
             text-transform: uppercase;
-            padding-bottom: .5rem;
           }
           
           .active {
