@@ -52,6 +52,8 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
           display: inline-flex;
           flex: 1;
           justify-content: center;
+          align-items: center;
+          vertical-align: middle;
           text-align: center;
           cursor: ${cursor};
           box-sizing: border-box;
