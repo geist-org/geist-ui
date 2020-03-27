@@ -21,7 +21,8 @@ const defaultProps = {
   className: '',
 }
 
-export type AvatarProps = Props & typeof defaultProps & React.ImgHTMLAttributes<any>
+type NativeAttrs = React.ImgHTMLAttributes<any> | React.HTMLAttributes<any>
+export type AvatarProps = Props & typeof defaultProps & NativeAttrs
 
 const getAvatarSize = (size: NormalSizes | number): string => {
   if (typeof size === 'number') return `${size}px`
@@ -45,7 +46,7 @@ const Avatar: React.FC<AvatarProps> = React.memo(({
   return (
     <span className={`avatar ${className}`}>
       {!showText && <img className="avatar-img" src={src} {...props} />}
-      {showText && <span className="avatar-text">{safeText(text)}</span>}
+      {showText && <span className="avatar-text" {...props}>{safeText(text)}</span>}
 
       <style jsx>{`
         .avatar {
@@ -88,4 +89,4 @@ const Avatar: React.FC<AvatarProps> = React.memo(({
 })
 
 
-export default withDefaults<Props, typeof defaultProps>(Avatar, defaultProps)
+export default withDefaults(Avatar, defaultProps)
