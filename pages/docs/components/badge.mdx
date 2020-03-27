@@ -1,0 +1,60 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Badge, Spacer } from 'components'
+
+export const meta = {
+  title: 'Badge',
+  description: 'Badge',
+}
+
+## Badge
+
+Display an indicator that requires attention.
+
+<Playground
+  scope={{ Badge, Spacer }}
+  code={`
+  <>
+    <Badge>1</Badge> <Spacer y={.5} />
+    <Badge>50</Badge> <Spacer y={.5} />
+    <Badge>100</Badge> <Spacer y={.5} />
+    <Badge>2020</Badge>
+  </>
+`} />
+
+<Playground
+  title="Type"
+  scope={{ Badge, Spacer }}
+  code={`
+  <>
+    <Badge type="success">Success</Badge> <Spacer y={.5} />
+    <Badge type="warning">Warning</Badge> <Spacer y={.5} />
+    <Badge type="error">Error</Badge> <Spacer y={.5} />
+    <Badge type="secondary">Secondary</Badge>
+  </>
+`} />
+
+<Playground
+  title="Size"
+  scope={{ Badge, Spacer }}
+  code={`
+  <>
+    <Badge size="mini">Mini</Badge> <Spacer y={.5} />
+    <Badge size="small">Small</Badge> <Spacer y={.5} />
+    <Badge size="medium">Medium</Badge> <Spacer y={.5} />
+    <Badge size="large">Large</Badge>
+  </>
+`} />
+
+
+<Attributes edit="/pages/docs/components/badge.mdx">
+<Attributes.Title>Badge.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | badge type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size** | badge size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| ... | native props | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
