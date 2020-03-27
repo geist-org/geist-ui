@@ -24,6 +24,9 @@ interface Props {
   clearable?: boolean
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
   onClearClick?: (e: React.MouseEvent<HTMLDivElement>) => void
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
+  autoComplete: string
 }
 
 const defaultProps = {
@@ -33,6 +36,7 @@ const defaultProps = {
   width: 'initial',
   size: 'medium',
   status: 'default',
+  autoComplete: 'off',
   className: '',
   placeholder: '',
   initialValue: '',
@@ -43,12 +47,14 @@ export type InputProps = Props & typeof defaultProps & React.InputHTMLAttributes
 const Input: React.FC<InputProps> = ({
   placeholder, label, labelRight, size, status, disabled,
   icon, iconRight, initialValue, onChange, readOnly, value,
-  onClearClick, clearable, width, className, ...props
+  onClearClick, clearable, width, className, onBlur, onFocus,
+  autoComplete, ...props
 }) => {
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string>(initialValue)
   const [hover, setHover] = useState<boolean>(false)
   const { heightRatio, fontSize } = useMemo(() => getSizes(size),[size])
+  const showClearIcon = useMemo(() => clearable && selfValue !== '', [selfValue, clearable])
   const labelClasses = useMemo(
     () =>  labelRight ? 'right-label' : (label ? 'left-label' : ''),
     [label, labelRight],
@@ -63,14 +69,22 @@ const Input: React.FC<InputProps> = ({
   )
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled || readOnly) return
-    console.log(123, event.target.value)
     setSelfValue(event.target.value)
     onChange && onChange(event)
   }
-  
+
   const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     setSelfValue('')
     onClearClick && onClearClick(event)
+  }
+  
+  const focusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    setHover(true)
+    onFocus && onFocus(e)
+  }
+  const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    setHover(false)
+    onBlur && onBlur(e)
   }
 
   useEffect(() => {
@@ -88,12 +102,15 @@ const Input: React.FC<InputProps> = ({
           placeholder={placeholder}
           disabled={disabled}
           readOnly={readOnly}
-          onFocus={() => setHover(true)}
-          onBlur={() => setHover(false)}
+          onFocus={focusHandler}
+          onBlur={blurHandler}
           onChange={changeHandler}
+          autoComplete={autoComplete}
           {...props}
         />
-        {clearable && <InputClearIcon heightRatio={heightRatio}
+        {clearable && <InputClearIcon
+          visibale={showClearIcon}
+          heightRatio={heightRatio}
           disabled={disabled || readOnly}
           onClick={clearHandler} />}
         {iconRight && <InputIcon icon={iconRight} ratio={heightRatio} />}

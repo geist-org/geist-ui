@@ -32,6 +32,7 @@ const InputIcon: React.FC<InputIconProps> = React.memo(({
           margin: 0;
           padding: 0 ${padding};
           line-height: 1;
+          position: relative;
         }
       `}</style>
     </span>

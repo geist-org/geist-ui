@@ -2,13 +2,14 @@ import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
 
 interface Props {
+  visibale: boolean
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void
   heightRatio?: string | undefined
   disabled?: boolean
 }
 
 const InputIconClear: React.FC<Props> = ({
-  onClick, heightRatio, disabled,
+  onClick, heightRatio, disabled, visibale,
 }) => {
   const theme = useTheme()
   const width = useMemo(() => {
@@ -21,7 +22,7 @@ const InputIconClear: React.FC<Props> = ({
     onClick && onClick(event)
   }
   return (
-    <div onClick={clickHandler}>
+    <div onClick={clickHandler} className={`${visibale ? 'visibale' : ''}`}>
       <svg viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
         strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
         <path d="M18 6L6 18" />
@@ -39,6 +40,13 @@ const InputIconClear: React.FC<Props> = ({
           box-sizing: border-box;
           transition: color 150ms ease 0s;
           color: ${theme.palette.accents_3};
+          visibility: hidden;
+          opacity: 0;
+        }
+        
+        .visibale {
+          visibility: visible;
+          opacity: 1;
         }
         
         div:hover {
