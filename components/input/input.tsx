@@ -3,6 +3,7 @@ import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import InputLabel from './input-label'
 import InputIcon from './input-icon'
+import InputClearIcon from './input-icon-clear'
 import { getSizes, getColors } from './styles'
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
 
@@ -18,13 +19,18 @@ interface Props {
   labelRight?: string
   icon?: React.ReactNode
   iconRight?: React.ReactNode
+  width?: string
   className?: string
+  clearable?: boolean
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  onClearClick?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
 const defaultProps = {
   disabled: false,
   readOnly: false,
+  clearable: false,
+  width: 'initial',
   size: 'medium',
   status: 'default',
   className: '',
@@ -37,7 +43,7 @@ export type InputProps = Props & typeof defaultProps & React.InputHTMLAttributes
 const Input: React.FC<InputProps> = ({
   placeholder, label, labelRight, size, status, disabled,
   icon, iconRight, initialValue, onChange, readOnly, value,
-  className, ...props
+  onClearClick, clearable, width, className, ...props
 }) => {
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string>(initialValue)
@@ -57,8 +63,14 @@ const Input: React.FC<InputProps> = ({
   )
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (disabled || readOnly) return
+    console.log(123, event.target.value)
     setSelfValue(event.target.value)
     onChange && onChange(event)
+  }
+  
+  const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    setSelfValue('')
+    onClearClick && onClearClick(event)
   }
 
   useEffect(() => {
@@ -81,6 +93,9 @@ const Input: React.FC<InputProps> = ({
           onChange={changeHandler}
           {...props}
         />
+        {clearable && <InputClearIcon heightRatio={heightRatio}
+          disabled={disabled || readOnly}
+          onClick={clearHandler} />}
         {iconRight && <InputIcon icon={iconRight} ratio={heightRatio} />}
       </div>
       {labelRight && <InputLabel fontSize={fontSize} isRight={true}>{labelRight}</InputLabel>}
@@ -91,9 +106,10 @@ const Input: React.FC<InputProps> = ({
           align-items: center;
           box-sizing: border-box;
           user-select: none;
+          width: ${width};
           height: calc(${heightRatio} * ${theme.layout.gap});
         }
-        
+
         .input-wrapper {
           display: inline-flex;
           vertical-align: middle;

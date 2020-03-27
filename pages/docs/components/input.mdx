@@ -19,6 +19,25 @@ Retrieve text input from a user.
 `} />
 
 <Playground
+  title="Size"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input size="mini" placeholder="Mini Input" /> <Spacer y={.5} />
+  <Input size="small" placeholder="Small Input" /> <Spacer y={.5} />
+  <Input size="medium" placeholder="Medium Input" /> <Spacer y={.5} />
+  <Input size="large" placeholder="Large Input" />
+</>
+`} />
+
+<Playground
+  title="Set width"
+  scope={{ Input }}
+  code={`
+<Input placeholder="The Evil Rabbit" width="100%" />
+`} />
+
+<Playground
   title="unwritable"
   scope={{ Input, Spacer }}
   code={`
@@ -56,11 +75,20 @@ Retrieve text input from a user.
 `} />
 
 <Playground
-  title="icon"
+  title="Icon"
   scope={{ Input, GitIcon }}
   code={`
 <>
   <Input icon={<GitIcon />} placeholder="The Evil Rabbit" />
+</>
+`} />
+
+<Playground
+  title="Clearable"
+  scope={{ Input }}
+  code={`
+<>
+  <Input clearable initialValue="The Evil Rabbit" />
 </>
 `} />
 
@@ -113,11 +141,13 @@ Retrieve text input from a user.
 | **status** | current status | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **readOnly** | native attr | `boolean` | - | `false` |
 | **disabled** | disable input | `boolean` | - | `false` |
+| **clearable** | show clear icon | `boolean` | - | `false` |
 | **label** | text label for input | `string` | - | - |
 | **icon** | icon for input | `React.ReactNode` | - | - |
 | **labelRight** | text label at right for input | `string` | - | - |
 | **iconRight** | icon at right for input | `React.ReactNode` | - | - |
 | **onChange** | change event | `(e: React.ChangeEvent) => void` | - | - |
+| **onClearClick** | clear icon event | `(e: React.MouseEvent) => void` | - | - |
 | ... | native props | `InputHTMLAttributes` | `'alt', 'type', 'className', ...` | - |
 
 <Attributes.Title>useInput</Attributes.Title>
