@@ -1,7 +1,13 @@
 import React from 'react'
 import useTheme from '../styles/use-theme'
 
-const ButtonLoading: React.FC<{}> = React.memo(() => {
+interface Props {
+  bgColor?: string
+}
+
+const ButtonLoading: React.FC<Props> = React.memo(({
+  bgColor,
+}) => {
   const theme = useTheme()
   return (
     <span className="loading">
@@ -21,7 +27,7 @@ const ButtonLoading: React.FC<{}> = React.memo(() => {
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: ${theme.palette.accents_1};
+          background-color: ${bgColor || theme.palette.accents_1};
         }
 
         i {

@@ -1,11 +1,37 @@
 import React from 'react'
+import useTheme from '../styles/use-theme'
+import { useAutoCompleteContext } from './auto-complete-context'
+import Dropdown from '../shared/dropdown'
 
-const AutoComplete = () => {
+interface Props {
+  visible: boolean
+}
+
+const AutoCompleteDropdown: React.FC<React.PropsWithChildren<Props>> = ({
+  children, visible
+}) => {
+  const theme = useTheme()
+  const { ref } = useAutoCompleteContext()
+  const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    event.stopPropagation()
+    event.nativeEvent.stopImmediatePropagation()
+  }
+  
   return (
-    <div>
-    
-    </div>
+    <Dropdown parent={ref} visible={visible}>
+      <div className="auto-dropdown-dropdown" onClick={clickHandler}>
+        {children}
+        <style jsx>{`
+        .auto-dropdown-dropdown {
+          border-radius: ${theme.layout.radius};
+          box-shadow: ${theme.expressiveness.shadowLarge};
+          background-color: ${theme.palette.background};
+        }
+      `}</style>
+      </div>
+    </Dropdown>
   )
 }
 
-export default AutoComplete
+export default AutoCompleteDropdown

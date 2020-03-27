@@ -1,6 +1,6 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import AutoCompleteSearch from './auto-complete-searching'
 
 interface Props {
   className?: string
@@ -10,36 +10,13 @@ const defaultProps = {
   className: '',
 }
 
-export type AutoCompleteSearchProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+export type AutoCompleteEmptyProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
-const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchProps>> = ({
+const AutoCompleteEmpty: React.FC<React.PropsWithChildren<AutoCompleteEmptyProps>> = ({
   children, className,
 }) => {
-  const theme = useTheme()
 
-  return (
-    <div className={className}>
-      {children}
-      <style jsx>{`
-        div {
-          display: flex;
-          justify-content: center;
-          text-align: center;
-          align-items: center;
-          font-weight: normal;
-          white-space: pre;
-          font-size: .875rem;
-          padding: ${theme.layout.gapHalf};
-          line-height: 1;
-          background-color: ${theme.palette.background};
-          color: ${theme.palette.accents_5};
-          user-select: none;
-          border: 0;
-          border-radius: ${theme.layout.radius};
-        }
-      `}</style>
-    </div>
-  )
+  return <AutoCompleteSearch className={className}>{children}</AutoCompleteSearch>
 }
 
-export default withDefaults(AutoCompleteSearch, defaultProps)
+export default withDefaults(AutoCompleteEmpty, defaultProps)

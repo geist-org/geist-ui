@@ -1,99 +1,256 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Avatar, Spacer } from 'components'
+import { AutoComplete, Spacer, Badge, Row } from 'components'
+import { useState, useRef, useEffect } from 'react'
 
 export const meta = {
-  title: 'avatar',
-  description: 'avatar',
+  title: 'AutoComplete',
+  description: 'auto-complete',
 }
 
-## Avatar
-
-Avatars represent a user or a team. Stacked avatars represent a group of people.
+## Auto Complete
 
 
 <Playground
-  desc="The `Avatar` contains circle and square."
-  scope={{ Avatar, Spacer }}
+  scope={{ AutoComplete }}
   code={`
 () => {
-  const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return <AutoComplete placeholder="Enter here" options={options} />
+}
+`} />
+
+<Playground
+  title="disabled"
+  scope={{ AutoComplete }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return <AutoComplete disabled options={options} initialValue="London" />
+}
+`} />
+
+<Playground
+  title="search"
+  scope={{ AutoComplete, useState }}
+  code={`
+() => {
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = useState()
+  const searchHandler = (currentValue) => {
+    if (!currentValue) return setOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    setOptions(relatedOptions)
+  }
+  return <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
+}
+`} />
+
+<Playground
+  title="Waiting in search"
+  scope={{ AutoComplete, useState, useEffect, useRef }}
+  code={`
+() => {
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = useState()
+  const [searching, setSearching] = useState(false)
+  const timer = useRef()
+  // triggered every time input
+  const searchHandler = (currentValue) => {
+    if (!currentValue) return setOptions([])
+    setSearching(true)
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    // this is mock async request
+    // you can get data in any way
+    timer.current && clearTimeout(timer.current)
+    timer.current = setTimeout(() => {
+      setOptions(relatedOptions)
+      setSearching(false)
+      clearTimeout(timer.current)
+    }, 1000)
+  }
+  return (
+    <AutoComplete searching={searching}
+      options={options}
+      placeholder="Enter here"
+      onSearch={searchHandler} />
+  )
+}
+`} />
+
+<Playground
+  title="custom searching text"
+  scope={{ AutoComplete }}
+  code={`
+<AutoComplete searching placeholder="Enter here" width="100%">
+  <AutoComplete.Searching>
+    <span style={{ color: 'red' }}>waiting...</span>
+  </AutoComplete.Searching>
+</AutoComplete>
+`} />
+
+<Playground
+  title="custom no options"
+  scope={{ AutoComplete, useState }}
+  code={`
+() => {
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = useState()
+  const searchHandler = (currentValue) => {
+    if (!currentValue) return setOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    setOptions(relatedOptions)
+  }
+  return (
+    <AutoComplete placeholder="Enter here" width="100%" options={options} onSearch={searchHandler}>
+      <AutoComplete.Empty>
+        <span>no options...</span>
+      </AutoComplete.Empty>
+    </AutoComplete>
+  )
+}
+`} />
+
+<Playground
+  title="custom option"
+  scope={{ AutoComplete, useState, Spacer, Badge, Row }}
+  code={`
+() => {
+  const makeOption = (label, value) => (
+    <AutoComplete.Option value={value}>
+      <div style={{ width: '100%' }}>
+        <div style={{ display: 'flex-inline', width: '100%', alignItems: 'space-between' }}>
+          <h4>Recent search results </h4>
+          <Badge type="success" style={{ float: 'right' }}>Recommended</Badge>
+        </div>
+        <Spacer y={.5} />
+        <span>{label}</span>
+      </div>
+    </AutoComplete.Option>
+  )
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = useState()
+  const searchHandler = (currentValue) => {
+    if (!currentValue) return setOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const customOptions = relatedOptions.map(({ label, value }) => makeOption(label, value))
+    setOptions(customOptions)
+  }
+  return (
+    <AutoComplete placeholder="Enter here"
+      width="100%"
+      options={options}
+      onSearch={searchHandler} />
+  )
+}
+`} />
+
+<Playground
+  title="size"
+  scope={{ AutoComplete, Spacer }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
   return (
     <>
-      <Avatar src={url} />
-      <Avatar src={url} />
-      <Avatar src={url} />
-      <Avatar src={url} />
+      <AutoComplete placeholder="Mini" size="mini" options={options} />
       <Spacer y={.5} />
-      <Avatar src={url} isSquare />
-      <Avatar src={url} isSquare />
-      <Avatar src={url} isSquare />
-      <Avatar src={url} isSquare />
-    </>
-  )
-}
-`} />
-
-
-<Playground
- title="Size"
- desc="You can specify different sizes of `Avatar`."
- scope={{ Avatar }}
- code={`
-() => {
-  const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
-  return (
-    <>
-      <Avatar src={url} size="mini" />
-      <Avatar src={url} size="small" />
-      <Avatar src={url} size="medium" />
-      <Avatar src={url} size="large" />
+      <AutoComplete placeholder="Small" size="small" options={options} />
+      <Spacer y={.5} />
+      <AutoComplete placeholder="Medium" size="medium" options={options} />
+      <Spacer y={.5} />
+      <AutoComplete placeholder="Large" size="large" options={options} />
     </>
   )
 }
 `} />
 
 <Playground
-  title="Text"
-  scope={{ Avatar }}
-  code={`
-<>
-  <Avatar text="W" />
-  <Avatar text="A" />
-  <Avatar text="W" />
-  <Avatar text="Joe" />
-</>
-`} />
-
-
-<Playground
-  title="Stacked"
-  desc="Multiple avatars can overlap and stack together."
-  scope={{ Avatar }}
+  title="clearable"
+  scope={{ AutoComplete }}
   code={`
 () => {
-  const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
-  return (
-    <>
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
-    </>
-  )
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return <AutoComplete placeholder="Enter here" clearable options={options} />
 }
 `} />
 
-<Attributes edit="/pages/docs/components/avatar.mdx">
-<Attributes.Title>Avatar.Props</Attributes.Title>
+<Attributes edit="/pages/docs/components/auto-complete.mdx">
+<Attributes.Title>AutoComplete.Props</Attributes.Title>
 
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **src** | image src | `string` | - | - |
-| **stacked** | stacked display group | `boolean` | - | `false` |
-| **text** | display text when image is missing | `string` | - | - |
-| **size** | avatar size | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
-| **isSquare** | avatar shape | `boolean` | - | `false` |
-| ... | native props | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | - |
+| **options** | options of input | `AutoCompleteOptions` | - | - |
+| **status** | input type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size** | input size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **initialValue** | initial value | `string` | - | - |
+| **value** | current value | `string` | - | - |
+| **width** | container width | `string` | - | - |
+| **clearable** | show clear icon | `boolean` | - | `false` |
+| **searching** | show loading icon for search | `boolean` | - | `false` |
+| **onChange** | value of input is changed | `(value: string) => void` | - | - |
+| **onSearch** | called when searching items | `(value: string) => void` | - | - |
+| **onSelect** | called when a option is selected | `(value: string) => void` | - | - |
+| ... | native props | `InputHTMLAttributes` | `'autoComplete', 'type', 'className', ...` | - |
+
+<Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | a unique ident value | `string` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>AutoComplete.Searching</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>AutoComplete.Empty</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>type AutoCompleteOptions</Attributes.Title>
+
+```ts
+Array<{
+  label: string
+  value: string
+} | AutoComplete.Item>
+```
 
 </Attributes>
 

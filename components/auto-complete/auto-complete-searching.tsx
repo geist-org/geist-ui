@@ -1,37 +1,30 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
-import { useAutoCompleteContext } from './auto-complete-context'
 
 interface Props {
-  value: string
-  disabled?: boolean
+  className?: string
 }
 
 const defaultProps = {
-  disabled: false,
+  className: '',
 }
 
-export type AutoCompleteItemProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+export type AutoCompleteSearchProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
-const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>> = ({
-  value: identValue, children, disabled,
+const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchProps>> = ({
+  children, className,
 }) => {
   const theme = useTheme()
-  const { value, updateValue } = useAutoCompleteContext()
-  const selectHandler = () => {
-    updateValue && updateValue(identValue)
-  }
-  
-  const isActive = useMemo(() => value === identValue, [identValue, value])
-  
+
   return (
-    <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
+    <div className={className}>
       {children}
       <style jsx>{`
-        .item {
+        div {
           display: flex;
-          justify-content: flex-start;
+          justify-content: center;
+          text-align: center;
           align-items: center;
           font-weight: normal;
           white-space: pre;
@@ -39,34 +32,14 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           padding: ${theme.layout.gapHalf};
           line-height: 1;
           background-color: ${theme.palette.background};
-          color: ${theme.palette.foreground};
+          color: ${theme.palette.accents_5};
           user-select: none;
           border: 0;
-          cursor: ${disabled ? 'not-allowed' : 'pointer'};
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        .item:first-of-type {
-          border-top-left-radius: ${theme.layout.radius};
-          border-top-right-radius: ${theme.layout.radius};
-        }
-        
-        .item:last-of-type {
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
-        }
-        
-        .item:hover {
-          background-color: ${theme.palette.accents_1};
-        }
-        
-        .item.active {
-          background-color: ${theme.palette.accents_1};
-          color: ${theme.palette.success};
+          border-radius: ${theme.layout.radius};
         }
       `}</style>
     </div>
   )
 }
 
-export default withDefaults(AutoCompleteItem, defaultProps)
+export default withDefaults(AutoCompleteSearch, defaultProps)
