@@ -155,11 +155,6 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
           font-weight: 600;
         }
         
-        selection {
-          background-color: ${theme.palette.background};
-          color: ${theme.palette.foreground};
-        }
-        
         input-webkit-autofill {
           box-shadow: 0 0 0 100px var(--geist-background) inset;
         }
@@ -239,6 +234,11 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         summary:focus, summary:hover, summary:active {
           outline: none;
           list-style: none;
+        }
+        
+        ::selection {
+          background-color: ${theme.palette.selection};
+          color: ${theme.palette.foreground};
         }
       `}</style>
     </>
