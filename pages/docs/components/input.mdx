@@ -19,6 +19,25 @@ Retrieve text input from a user.
 `} />
 
 <Playground
+  title="Size"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input size="mini" placeholder="Mini Input" /> <Spacer y={.5} />
+  <Input size="small" placeholder="Small Input" /> <Spacer y={.5} />
+  <Input size="medium" placeholder="Medium Input" /> <Spacer y={.5} />
+  <Input size="large" placeholder="Large Input" />
+</>
+`} />
+
+<Playground
+  title="Set width"
+  scope={{ Input }}
+  code={`
+<Input placeholder="The Evil Rabbit" width="100%" />
+`} />
+
+<Playground
   title="unwritable"
   scope={{ Input, Spacer }}
   code={`

@@ -18,6 +18,7 @@ interface Props {
   labelRight?: string
   icon?: React.ReactNode
   iconRight?: React.ReactNode
+  width?: string
   className?: string
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
@@ -25,6 +26,7 @@ interface Props {
 const defaultProps = {
   disabled: false,
   readOnly: false,
+  width: 'initial',
   size: 'medium',
   status: 'default',
   className: '',
@@ -37,7 +39,7 @@ export type InputProps = Props & typeof defaultProps & React.InputHTMLAttributes
 const Input: React.FC<InputProps> = ({
   placeholder, label, labelRight, size, status, disabled,
   icon, iconRight, initialValue, onChange, readOnly, value,
-  className, ...props
+  width, className, ...props
 }) => {
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string>(initialValue)
@@ -91,9 +93,10 @@ const Input: React.FC<InputProps> = ({
           align-items: center;
           box-sizing: border-box;
           user-select: none;
+          width: ${width};
           height: calc(${heightRatio} * ${theme.layout.gap});
         }
-        
+
         .input-wrapper {
           display: inline-flex;
           vertical-align: middle;
