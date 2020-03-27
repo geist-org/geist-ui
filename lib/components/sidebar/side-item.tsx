@@ -59,15 +59,14 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
 
         .link :global(a) {
           color: ${theme.palette.accents_7};
-          font-size: .9rem;
+          font-size: 1rem;
           padding: 0 ${theme.layout.gapQuarter};
-          transition: color 200ms ease;
+          transition: all 200ms ease;
         }
         
         .link :global(a.active) {
-          color: ${theme.palette.background};
+          color: ${theme.palette.success};
           font-weight: bold;
-          background-color: ${theme.palette.accents_7};
         }
         
         .children {

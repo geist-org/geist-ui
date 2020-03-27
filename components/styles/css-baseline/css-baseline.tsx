@@ -88,9 +88,9 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         }
         
         ul, ol {
-          padding: 0 0 0 10px;
+          padding: 0;
           list-style-type: none;
-          margin: 1rem 0 1rem 0.9375rem;
+          margin: ${theme.layout.gapHalf} ${theme.layout.gapHalf} ${theme.layout.gapHalf} ${theme.layout.gap};
           color: ${theme.palette.foreground};
         }
         
