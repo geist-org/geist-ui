@@ -4,7 +4,7 @@ import withDefaults from '../utils/with-defaults'
 import { getColor } from './styles'
 import { useButtonDropdown } from './button-dropdown-context'
 import { getButtonSize } from '../button/styles'
-import ButtonLoading from '../button/button.loading'
+import Loading from '../loading'
 import { NormalTypes } from '../utils/prop-types'
 
 interface Props {
@@ -43,7 +43,7 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
   
   return (
     <button className={className} onClick={clickHandler} {...props}>
-      {loading ? <ButtonLoading /> : children}
+      {loading ? <Loading /> : children}
       <style jsx>{`
         button {
           position: relative;

@@ -1,0 +1,91 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Loading, Spacer, Row } from 'components'
+
+export const meta = {
+  title: 'Loading',
+  description: 'Loading',
+}
+
+## Loading
+
+Indicate an action running in the background.
+
+<Playground
+  scope={{ Loading, Row, Spacer }}
+  code={`
+<Row style={{ padding: '10px 0'}}>
+  <Loading />
+</Row>
+`} />
+
+<Playground
+  title="with text"
+  scope={{ Loading, Row }}
+  code={`
+<Row style={{ padding: '10px 0'}}>
+  <Loading>Loading</Loading>
+</Row>
+`} />
+
+<Playground
+  title="size"
+  scope={{ Loading, Row, Spacer }}
+  code={`
+<>
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading size="mini" />
+  </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading size="small" />
+  </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading size="medium" />
+  </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading size="large" />
+  </Row>
+</>
+`} />
+
+
+<Playground
+  title="type"
+  scope={{ Loading, Row, Spacer }}
+  code={`
+<>
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading type="success" />
+  </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading type="secondary" />
+  </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading type="warning" />
+  </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading type="error" />
+  </Row>
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/loading.mdx">
+<Attributes.Title>Loading.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | bg-color type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size** | loading size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **color** | custom bg color | `string` | - | - |
+| **width** | custom width | `string` | - | `100%` |
+| **height** | custom height | `string` | - | `100%` |
+| ... | native props | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
