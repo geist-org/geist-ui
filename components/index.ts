@@ -1,5 +1,6 @@
 /// <reference types="styled-jsx" />
 
+export * from './styles/themes'
 export { default as useTheme } from './styles/use-theme'
 export { default as ZEITUIProvider } from './providers/zeit-ui-provider'
 export { default as useToasts } from './toast'
