@@ -1,0 +1,257 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { AutoComplete, Spacer, Badge, Row } from 'components'
+import { useState, useRef, useEffect } from 'react'
+
+export const meta = {
+  title: 'AutoComplete',
+  description: 'auto-complete',
+}
+
+## Auto Complete
+
+
+<Playground
+  scope={{ AutoComplete }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return <AutoComplete placeholder="Enter here" options={options} />
+}
+`} />
+
+<Playground
+  title="disabled"
+  scope={{ AutoComplete }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return <AutoComplete disabled options={options} initialValue="London" />
+}
+`} />
+
+<Playground
+  title="search"
+  scope={{ AutoComplete, useState }}
+  code={`
+() => {
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = useState()
+  const searchHandler = (currentValue) => {
+    if (!currentValue) return setOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    setOptions(relatedOptions)
+  }
+  return <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
+}
+`} />
+
+<Playground
+  title="Waiting in search"
+  scope={{ AutoComplete, useState, useEffect, useRef }}
+  code={`
+() => {
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = useState()
+  const [searching, setSearching] = useState(false)
+  const timer = useRef()
+  // triggered every time input
+  const searchHandler = (currentValue) => {
+    if (!currentValue) return setOptions([])
+    setSearching(true)
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    // this is mock async request
+    // you can get data in any way
+    timer.current && clearTimeout(timer.current)
+    timer.current = setTimeout(() => {
+      setOptions(relatedOptions)
+      setSearching(false)
+      clearTimeout(timer.current)
+    }, 1000)
+  }
+  return (
+    <AutoComplete searching={searching}
+      options={options}
+      placeholder="Enter here"
+      onSearch={searchHandler} />
+  )
+}
+`} />
+
+<Playground
+  title="custom searching text"
+  scope={{ AutoComplete }}
+  code={`
+<AutoComplete searching placeholder="Enter here" width="100%">
+  <AutoComplete.Searching>
+    <span style={{ color: 'red' }}>waiting...</span>
+  </AutoComplete.Searching>
+</AutoComplete>
+`} />
+
+<Playground
+  title="custom no options"
+  scope={{ AutoComplete, useState }}
+  code={`
+() => {
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = useState()
+  const searchHandler = (currentValue) => {
+    if (!currentValue) return setOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    setOptions(relatedOptions)
+  }
+  return (
+    <AutoComplete placeholder="Enter here" width="100%" options={options} onSearch={searchHandler}>
+      <AutoComplete.Empty>
+        <span>no options...</span>
+      </AutoComplete.Empty>
+    </AutoComplete>
+  )
+}
+`} />
+
+<Playground
+  title="custom option"
+  scope={{ AutoComplete, useState, Spacer, Badge, Row }}
+  code={`
+() => {
+  const makeOption = (label, value) => (
+    <AutoComplete.Option value={value}>
+      <div style={{ width: '100%' }}>
+        <div style={{ display: 'flex-inline', width: '100%', alignItems: 'space-between' }}>
+          <h4>Recent search results </h4>
+          <Badge type="success" style={{ float: 'right' }}>Recommended</Badge>
+        </div>
+        <Spacer y={.5} />
+        <span>{label}</span>
+      </div>
+    </AutoComplete.Option>
+  )
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = useState()
+  const searchHandler = (currentValue) => {
+    if (!currentValue) return setOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const customOptions = relatedOptions.map(({ label, value }) => makeOption(label, value))
+    setOptions(customOptions)
+  }
+  return (
+    <AutoComplete placeholder="Enter here"
+      width="100%"
+      options={options}
+      onSearch={searchHandler} />
+  )
+}
+`} />
+
+<Playground
+  title="size"
+  scope={{ AutoComplete, Spacer }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return (
+    <>
+      <AutoComplete placeholder="Mini" size="mini" options={options} />
+      <Spacer y={.5} />
+      <AutoComplete placeholder="Small" size="small" options={options} />
+      <Spacer y={.5} />
+      <AutoComplete placeholder="Medium" size="medium" options={options} />
+      <Spacer y={.5} />
+      <AutoComplete placeholder="Large" size="large" options={options} />
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="clearable"
+  scope={{ AutoComplete }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return <AutoComplete placeholder="Enter here" clearable options={options} />
+}
+`} />
+
+<Attributes edit="/pages/docs/components/auto-complete.mdx">
+<Attributes.Title>AutoComplete.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **options** | options of input | `AutoCompleteOptions` | - | - |
+| **status** | input type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size** | input size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **initialValue** | initial value | `string` | - | - |
+| **value** | current value | `string` | - | - |
+| **width** | container width | `string` | - | - |
+| **clearable** | show clear icon | `boolean` | - | `false` |
+| **searching** | show loading icon for search | `boolean` | - | `false` |
+| **onChange** | value of input is changed | `(value: string) => void` | - | - |
+| **onSearch** | called when searching items | `(value: string) => void` | - | - |
+| **onSelect** | called when a option is selected | `(value: string) => void` | - | - |
+| ... | native props | `InputHTMLAttributes` | `'autoComplete', 'type', 'className', ...` | - |
+
+<Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | a unique ident value | `string` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>AutoComplete.Searching</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>AutoComplete.Empty</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>type AutoCompleteOptions</Attributes.Title>
+
+```ts
+Array<{
+  label: string
+  value: string
+} | AutoComplete.Item>
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
