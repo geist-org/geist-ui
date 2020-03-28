@@ -3,7 +3,7 @@ import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { ButtonTypes, NormalSizes } from '../utils/prop-types'
 import ButtonDrip from './button.drip'
-import ButtonLoading from './button.loading'
+import ButtonLoading from '../loading'
 import { getButtonColors, getButtonCursor, getButtonHoverColors, getButtonSize } from './styles'
 
 interface Props {

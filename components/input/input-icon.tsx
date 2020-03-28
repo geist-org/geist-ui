@@ -18,10 +18,10 @@ const InputIcon: React.FC<InputIconProps> = React.memo(({
   }, [theme.layout.gap, ratio])
 
   return (
-    <span>
+    <span className="input-icon">
       {icon}
       <style jsx>{`
-        span {
+        .input-icon {
           box-sizing: content-box;
           display: flex;
           width: ${width};

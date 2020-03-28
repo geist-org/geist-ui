@@ -6,7 +6,7 @@ import AutoCompleteSearching from './auto-complete-searching'
 import AutoCompleteEmpty from './auto-complete-empty'
 import { AutoCompleteContext, AutoCompleteConfig } from './auto-complete-context'
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
-import ButtonLoading from '../button/button.loading'
+import Loading from '../loading'
 import { pickChild } from 'components/utils/collections'
 
 export type AutoCompleteOption = {
@@ -62,7 +62,7 @@ const childrenToOptionsNode = (options: AutoCompleteOptions) => {
 // When the search is seted, at least one element should exist to avoid re-render.
 const getSearchIcon = (searching?: boolean) => {
   if (searching === undefined) return null
-  return searching ? <ButtonLoading bgColor="transparent" /> : <span />
+  return searching ? <Loading size="medium" /> : <span />
 }
 
 const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
@@ -145,6 +145,12 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
         <style jsx>{`
           .auto-complete {
             width: ${width || 'max-content'};
+          }
+          
+          .auto-complete :global(.loading) {
+            left: -3px;
+            right: -3px;
+            width: max-content;
           }
         `}</style>
       </div>

@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Spinner, Spacer } from 'components'
+import { Spinner, Spacer, Note, Code, Link } from 'components'
+import NextLink from 'next/link'
 
 export const meta = {
   title: 'Spinner',
@@ -9,6 +10,8 @@ export const meta = {
 ## Spinner
 
 Indicate an action running in the background.
+
+<Note>Looking for <Code>Loading</Code>? Use the <NextLink href="/docs/components/loading"><a>Loading Component</a></NextLink>.</Note>
 
 <Playground
   scope={{ Spinner }}
