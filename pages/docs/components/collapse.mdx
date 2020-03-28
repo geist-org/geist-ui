@@ -1,0 +1,97 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Collapse, Spacer, Text } from 'components'
+
+export const meta = {
+  title: 'collapse',
+  description: 'collapse',
+}
+
+## Collapse
+
+Display large amounts of text in collapsible sections. Commonly referred to as an accordion.
+
+<Playground
+  scope={{ Collapse, Text }}
+  code={`
+<Collapse.Group>
+  <Collapse title="Question A">
+    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+  </Collapse>
+  <Collapse title="Question B">
+    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+  </Collapse>
+</Collapse.Group>
+`} />
+
+<Playground
+  title="Expanded"
+  scope={{ Collapse, Text }}
+  code={`
+<Collapse.Group>
+  <Collapse title="Question A" initialVisible>
+    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+  </Collapse>
+  <Collapse title="Question B">
+    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+  </Collapse>
+</Collapse.Group>
+`} />
+
+<Playground
+  title="Subtitle"
+  scope={{ Collapse, Text }}
+  code={`
+<Collapse.Group>
+  <Collapse title="Question A" subtitle="More description about Question A">
+    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+  </Collapse>
+  <Collapse title="Question B">
+    <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+  </Collapse>
+</Collapse.Group>
+`} />
+
+<Playground
+  title="Shadow"
+  scope={{ Collapse, Text }}
+  code={`
+<Collapse shadow title="Question A" subtitle="More description about Question A">
+  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+</Collapse>
+`} />
+
+<Attributes edit="/pages/docs/components/collapse.mdx">
+<Attributes.Title>Collapse.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **title**(required) | collapse title | `string` | - | - |
+| **subtitle** | description  | `string` | - | - |
+| **initialVisible** | initial expanded  | `boolean` | - | `false` |
+| **shadow** | show shadow card  | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>Collapse.Group.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **accordion** | accordion mode  | `boolean` | - | `true` |
+| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
