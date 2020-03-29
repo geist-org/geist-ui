@@ -28,7 +28,8 @@ const defaultProps = {
   className: '',
 }
 
-export type ProgressProps = Props & typeof defaultProps & React.ProgressHTMLAttributes<any>
+type NativeAttrs = Omit<React.ProgressHTMLAttributes<any>, keyof Props>
+export type ProgressProps = Props & typeof defaultProps & NativeAttrs
 
 const getCurrentColor = (
   ratio: number,

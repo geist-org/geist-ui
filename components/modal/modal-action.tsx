@@ -21,7 +21,8 @@ const defaultProps = {
   onClick: (event: ModalActionEvent) => event.close && event.close(),
 }
 
-export type ModalActionProps = Props & typeof defaultProps & React.ButtonHTMLAttributes<any>
+type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
+export type ModalActionProps = Props & typeof defaultProps & NativeAttrs
 
 const ModalAction: React.FC<ModalActionProps> = React.memo(({
   className, children, onClick, passive, disabled, ...props

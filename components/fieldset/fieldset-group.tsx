@@ -15,7 +15,8 @@ const defaultProps = {
   className: '',
 }
 
-export type FieldsetGroupProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type FieldsetGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = React.memo(({
   className, children, value, onChange, ...props

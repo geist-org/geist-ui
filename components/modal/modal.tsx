@@ -26,7 +26,8 @@ const defaultProps = {
   open: false,
 }
 
-export type ModalProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type ModalProps = Props & typeof defaultProps & NativeAttrs
 
 const Modal: React.FC<React.PropsWithChildren<ModalProps>> = React.memo(({
   children, disableBackdropClick, onClose, onOpen, open

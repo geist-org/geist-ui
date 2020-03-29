@@ -15,7 +15,8 @@ const defaultProps = {
   className: '',
 }
 
-export type ColProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type ColProps = Props & typeof defaultProps & NativeAttrs
 
 const Col: React.FC<React.PropsWithChildren<ColProps>> = React.memo(({
   component, children, span, offset, className, ...props

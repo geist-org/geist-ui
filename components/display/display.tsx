@@ -15,7 +15,8 @@ const defaultProps = {
   className: '',
 }
 
-export type DisplayProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type DisplayProps = Props & typeof defaultProps & NativeAttrs
 
 const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
   children, caption, shadow, className, width, ...props

@@ -41,7 +41,8 @@ const defaultProps = {
 
 type ElementMap = { [key in (keyof JSX.IntrinsicElements)]?: boolean }
 
-export type TextProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type TextProps = Props & typeof defaultProps & NativeAttrs
 
 const getModifierChild = (tags: Array<keyof JSX.IntrinsicElements>, children: ReactNode) => {
   if (!tags.length) return children

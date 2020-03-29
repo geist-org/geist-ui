@@ -9,7 +9,8 @@ const defaultProps = {
   className: ''
 }
 
-export type FieldsetTitleProps = Props & typeof defaultProps & React.HTMLAttributes<HTMLHeadingElement>
+type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
+export type FieldsetTitleProps = Props & typeof defaultProps & NativeAttrs
 
 const FieldsetTitle: React.FC<FieldsetTitleProps> = React.memo(({
   className, children, ...props

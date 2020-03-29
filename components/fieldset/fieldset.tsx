@@ -25,7 +25,8 @@ const defaultProps = {
   className: '',
 }
 
-export type FieldsetProps = Props & typeof defaultProps & React.FieldsetHTMLAttributes<any>
+type NativeAttrs = Omit<React.FieldsetHTMLAttributes<any>, keyof Props>
+export type FieldsetProps = Props & typeof defaultProps & NativeAttrs
 
 const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
   className, title, subtitle, children, value, label, ...props

@@ -20,7 +20,8 @@ const defaultProps = {
   className: '',
 }
 
-export type NoteProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type NoteProps = Props & typeof defaultProps & NativeAttrs
 
 const getStatusColor = (type: NormalTypes, filled: boolean, theme: ZeitUIThemes) => {
   const colors: { [key in NormalTypes]?: string } = {

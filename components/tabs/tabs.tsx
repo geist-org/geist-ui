@@ -16,7 +16,8 @@ const defaultProps = {
   className: '',
 }
 
-export type TabsProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type TabsProps = Props & typeof defaultProps & NativeAttrs
 
 const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   initialValue: userCustomInitialValue, value, children, onChange,

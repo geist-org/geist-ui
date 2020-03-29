@@ -28,7 +28,8 @@ const defaultProps = {
   className: '',
 }
 
-export type SelectProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type SelectProps = Props & typeof defaultProps & NativeAttrs
 
 const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   children, size, disabled, initialValue: init, placeholder,

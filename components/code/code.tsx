@@ -17,7 +17,8 @@ const defaultProps = {
   className: '',
 }
 
-export type CodeProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type CodeProps = Props & typeof defaultProps & NativeAttrs
 
 const Code: React.FC<React.PropsWithChildren<CodeProps>> = React.memo(({
   children, block, bash, darkBash, className, width, ...props

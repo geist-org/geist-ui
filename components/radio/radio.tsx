@@ -31,7 +31,8 @@ const defaultProps = {
   className: '',
 }
 
-export type RadioProps = Props & typeof defaultProps & React.InputHTMLAttributes<any>
+type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
+export type RadioProps = Props & typeof defaultProps & NativeAttrs
 
 const Radio: React.FC<React.PropsWithChildren<RadioProps>> = React.memo(({
   className, id: customId, checked, onChange, disabled,

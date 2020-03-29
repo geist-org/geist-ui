@@ -15,7 +15,8 @@ const defaultProps = {
   className: '',
 }
 
-export type CheckboxGroupProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type CheckboxGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = React.memo(({
   disabled, onChange, value, children, className, ...props

@@ -18,7 +18,8 @@ const defaultProps = {
   useRow: false,
 }
 
-export type RadioGroupProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type RadioGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = React.memo(({
   disabled, onChange, value, children, className, initialValue, useRow, ...props

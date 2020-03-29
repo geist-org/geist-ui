@@ -21,7 +21,8 @@ const defaultProps = {
   className: '',
 }
 
-export type KeyboardProps = Props & typeof defaultProps & React.KeygenHTMLAttributes<any>
+type NativeAttrs = Omit<React.KeygenHTMLAttributes<any>, keyof Props>
+export type KeyboardProps = Props & typeof defaultProps & NativeAttrs
 
 type CustomLayout = {
   padding: number | string

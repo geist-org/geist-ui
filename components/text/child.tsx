@@ -41,7 +41,8 @@ const getTypeColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
   return colors[type] || colors.default
 }
 
-export type TextChildProps = Props & typeof defaultProps & React.DetailsHTMLAttributes<any>
+type NativeAttrs = Omit<React.DetailsHTMLAttributes<any>, keyof Props>
+export type TextChildProps = Props & typeof defaultProps & NativeAttrs
 
 const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = React.memo(({
   children, tag, className, type, ...props

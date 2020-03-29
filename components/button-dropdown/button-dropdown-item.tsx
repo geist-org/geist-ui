@@ -21,7 +21,8 @@ const defaultProps = {
   className: '',
 }
 
-export type ButtonDropdownItemProps = Props & typeof defaultProps & React.ButtonHTMLAttributes<any>
+type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
+export type ButtonDropdownItemProps = Props & typeof defaultProps & NativeAttrs
 
 const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemProps>> = React.memo(({
   children, onClick, className, main, type: selfType, ...props

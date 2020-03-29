@@ -17,7 +17,8 @@ const defaultProps = {
   preventAllEvents: false,
 }
 
-export type SelectOptionProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type SelectOptionProps = Props & typeof defaultProps & NativeAttrs
 
 const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   value: identValue, className, children, disabled, preventAllEvents, ...props

@@ -14,7 +14,8 @@ const defaultProps = {
   className: '',
 }
 
-export type DotProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type DotProps = Props & typeof defaultProps & NativeAttrs
 
 const getColor = (type: NormalTypes, theme: ZeitUIThemes): string => {
   const colors: { [key in NormalTypes]?: string } = {
