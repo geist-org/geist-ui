@@ -32,7 +32,7 @@ interface Props {
 }
 
 const defaultProps = {
-  options: [],
+  options: [] as AutoCompleteOptions[],
   initialValue: '',
   disabled: false,
   clearable: false,
