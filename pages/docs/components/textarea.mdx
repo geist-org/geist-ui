@@ -1,0 +1,119 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Textarea, Spacer, useInput, Button, Code } from 'components'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'textarea',
+  description: 'textarea',
+}
+
+## Textarea
+
+Retrieve multi-line user input.
+
+<Playground
+  scope={{ Textarea }}
+  code={`
+<Textarea placeholder="Please enter a description." />
+`} />
+
+<Playground
+  title="width"
+  scope={{ Textarea }}
+  code={`
+<Textarea width="100%" placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+`} />
+
+<Playground
+  title="disabled"
+  scope={{ Textarea }}
+  code={`
+<Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+`} />
+
+<Playground
+  title="status"
+  scope={{ Textarea, Spacer }}
+  code={`
+<>
+  <Textarea status="success" minHeight="65px" value="Success" />
+  <Spacer x={.5} inline />
+  <Textarea status="secondary" minHeight="65px" value="Secondary" />
+  <Spacer y={.5} />
+  <Textarea status="warning" minHeight="65px" value="Warning" />
+  <Spacer x={.5} inline />
+  <Textarea status="error" minHeight="65px" value="Error" />
+</>
+`} />
+
+<Playground
+  title="get change"
+  scope={{ Textarea, useState }}
+  code={`
+() => {
+  const [value, setValue] = useState()
+  const handler = (e) => {
+    setValue(e.target.value)
+    console.log(e.target.value)
+  }
+  return (
+    <Textarea width="100%"
+     value={value}
+     onChange={handler}
+     placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+  )
+}
+`} />
+
+<Playground
+  title={<>With <Code>useInput</Code></>}
+  scope={{ Textarea, useInput, Button, Spacer }}
+  code={`
+() => {
+  const { setState, reset, bindings } = useInput('ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.')
+  return (
+    <>
+      <Textarea width="100%" {...bindings}/>
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>set value</Button>
+      <Spacer y={.5} />
+      <Button auto size="small" onClick={() => reset()}>reset value</Button>
+    </>
+  )
+}
+`} />
+
+<Attributes edit="/pages/docs/components/textarea.mdx">
+<Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | textarea value | `string` | - | - |
+| **initialValue** | textarea value | `string` | - | - |
+| **placeholder** | placeholder | `string` | - | - |
+| **status** | current status | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **readOnly** | native attr | `boolean` | - | `false` |
+| **disabled** | disable input | `boolean` | - | `false` |
+| **width** | set width string | `string` | - | `initial` |
+| **minHeight** | set min-height string | `string` | - | - |
+| **onChange** | change event | `(e: React.ChangeEvent) => void` | - | - |
+| ... | native props | `TextareaHTMLAttributes` | `'form', 'id', 'className', ...` | - |
+
+<Attributes.Title>useInput</Attributes.Title>
+
+```ts
+type useInput = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  reset: () => void
+  bindings: {
+    value: string
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

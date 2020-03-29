@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import InputLabel from './input-label'
 import InputIcon from './input-icon'
 import InputClearIcon from './input-icon-clear'
+import Textarea from '../textarea/textarea'
 import { getSizes, getColors } from './styles'
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
 
@@ -193,4 +193,12 @@ const Input: React.FC<InputProps> = ({
   )
 }
 
-export default withDefaults(Input, defaultProps)
+type InputComponent<P = {}> = React.FC<P> & {
+  Textarea: typeof Textarea
+}
+
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+
+(Input as InputComponent<ComponentProps>).defaultProps = defaultProps
+
+export default Input as InputComponent<ComponentProps>
