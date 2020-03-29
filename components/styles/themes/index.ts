@@ -29,6 +29,7 @@ export interface ZeitUIThemesPalette {
   cyan: string
   purple: string
   alert: string
+  violet: string
 }
 
 export interface ZeitUIThemesExpressiveness {

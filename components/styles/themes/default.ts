@@ -35,6 +35,7 @@ export const palette: ZeitUIThemesPalette = {
   cyan: '#79ffe1',
   purple: '#f81ce5',
   alert: '#ff0080',
+  violet: '#7928ca',
 }
 
 export const expressiveness: ZeitUIThemesExpressiveness = {
