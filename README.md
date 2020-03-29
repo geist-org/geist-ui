@@ -46,6 +46,7 @@ const Application = () => {
 
 - [views.show](https://docs.views.show/)
 - [tree viewer for cdn](https://cdn.unix.bio/)
+- [Implement of ZEIT's Dashboard](https://github.com/ofekashery/zeit-dashboard-template)
 - [Add here](https://github.com/zeit-ui/react/issues/new)
 
 <br/>
