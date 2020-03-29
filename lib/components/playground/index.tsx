@@ -1,6 +1,6 @@
 import React, { MouseEvent, useState } from 'react'
 import { LivePreview, LiveProvider, LiveEditor, LiveError } from 'react-live'
-import useClipboard from 'react-use-clipboard'
+import { useClipboard } from 'use-clipboard-copy'
 import withDefaults from 'components/utils/with-defaults'
 import { useTheme, useToasts } from 'components'
 import makeCodeTheme from './code-theme'
@@ -29,7 +29,7 @@ export type PlaygroundProps = Props & typeof defaultProps
 const editor = (code: string) => {
   const theme = useTheme()
   const [visible, setVisible] = useState(false)
-  const [, setCopied] = useClipboard(code)
+  const { copy } = useClipboard()
   const [, setToast] = useToasts()
   const clickHandler = (event: MouseEvent<HTMLDetailsElement>) => {
     event.stopPropagation()
@@ -37,10 +37,10 @@ const editor = (code: string) => {
     setVisible(!visible)
   }
   
-  const copy = (event: MouseEvent<SVGElement>) => {
+  const copyHandler = (event: MouseEvent<SVGElement>) => {
     event.stopPropagation()
     event.preventDefault()
-    setCopied()
+    copy(code)
     setToast({ text: 'code copied.' })
   }
   
@@ -53,7 +53,7 @@ const editor = (code: string) => {
             <span>Code Editor</span>
           </div>
           <div>
-            {visible && <CopyIcon onClick={copy} />}
+            {visible && <CopyIcon onClick={copyHandler} />}
           </div>
         </summary>
         <div className="area">

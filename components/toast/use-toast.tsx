@@ -12,7 +12,7 @@ export interface ToastAction {
 }
 
 export interface Toast {
-  text?: string
+  text?: string | React.ReactNode
   type?: NormalTypes
   delay?: number
   actions?: Array<ToastAction>
