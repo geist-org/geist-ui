@@ -21,7 +21,8 @@ const defaultProps = {
   initialVisible: false,
 }
 
-export type CollapseProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type CollapseProps = Props & typeof defaultProps & NativeAttrs
 
 const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   children, title, subtitle, initialVisible, shadow, className,

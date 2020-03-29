@@ -10,7 +10,8 @@ const defaultProps = {
   className: ''
 }
 
-export type ModalContentProps = Props & typeof defaultProps & React.HTMLAttributes<HTMLElement>
+type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>
+export type ModalContentProps = Props & typeof defaultProps & NativeAttrs
 
 const ModalContent: React.FC<ModalContentProps> = React.memo(({
   className, children, ...props

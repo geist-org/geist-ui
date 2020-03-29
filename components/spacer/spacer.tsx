@@ -16,7 +16,8 @@ const defaultProps = {
   className: ''
 }
 
-export type SpacerProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type SpacerProps = Props & typeof defaultProps & NativeAttrs
 
 const getMargin = (num: number): string => {
   if (num < 0) {

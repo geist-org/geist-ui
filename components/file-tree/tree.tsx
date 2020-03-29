@@ -31,7 +31,8 @@ const defaultProps = {
   className: '',
 }
 
-export type TreeProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type TreeProps = Props & typeof defaultProps & NativeAttrs
 
 const makeChildren = (value: Array<FileTreeValue> = []) => {
   if (!value || !value.length) return null

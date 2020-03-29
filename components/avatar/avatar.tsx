@@ -21,8 +21,8 @@ const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = React.ImgHTMLAttributes<any> & React.HTMLAttributes<any>
-export type AvatarProps = Props & typeof defaultProps & Partial<NativeAttrs>
+type NativeAttrs = Omit<Partial<React.ImgHTMLAttributes<any> & React.HTMLAttributes<any>>, keyof Props>
+export type AvatarProps = Props & typeof defaultProps & NativeAttrs
 
 const getAvatarSize = (size: NormalSizes | number): string => {
   if (typeof size === 'number') return `${size}px`

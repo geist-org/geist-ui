@@ -16,7 +16,8 @@ const defaultProps = {
   className: '',
 }
 
-export type CollapseGroupProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type CollapseGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
   children, accordion, className, ...props

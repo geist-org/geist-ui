@@ -18,7 +18,8 @@ const defaultProps = {
   scale: '100%',
 }
 
-export type ImageProps = Props & typeof defaultProps & React.ImgHTMLAttributes<any>
+type NativeAttrs = Omit<React.ImgHTMLAttributes<any>, keyof Props>
+export type ImageProps = Props & typeof defaultProps & NativeAttrs
 
 const Image: React.FC<ImageProps> = React.memo(({
   src, width, height, animation, className, scale, ...props

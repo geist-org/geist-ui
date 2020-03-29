@@ -42,7 +42,8 @@ const defaultProps = {
   initialValue: '',
 }
 
-export type InputProps = Props & typeof defaultProps & React.InputHTMLAttributes<any>
+type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
+export type InputProps = Props & typeof defaultProps & NativeAttrs
 
 const Input: React.FC<InputProps> = ({
   placeholder, label, labelRight, size, status, disabled,

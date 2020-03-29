@@ -27,7 +27,8 @@ const defaultProps = {
   className: '',
 }
 
-export type ButtonDropdownProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type ButtonDropdownProps = Props & typeof defaultProps & NativeAttrs
 
 const stopPropagation = (event: MouseEvent<HTMLElement>) => {
   event.stopPropagation()

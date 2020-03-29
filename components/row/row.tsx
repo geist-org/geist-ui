@@ -21,7 +21,8 @@ const defaultProps = {
   className: '',
 }
 
-export type RowProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type RowProps = Props & typeof defaultProps & NativeAttrs
 
 const getFlexAlignment = (justify: Justify, align: Align) => {
   const flexJustifyMap: { [key in Justify]?: string } = {

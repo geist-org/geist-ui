@@ -11,7 +11,8 @@ const defaultProps = {
   className: '',
 }
 
-export type FieldsetFooterProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type FieldsetFooterProps = Props & typeof defaultProps & NativeAttrs
 
 const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = React.memo(({
   className, children, ...props

@@ -24,7 +24,8 @@ const defaultProps = {
   parentPath: '',
 }
 
-export type TreeFolderProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type TreeFolderProps = Props & typeof defaultProps & NativeAttrs
 
 const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
   name, children, parentPath, level: parentLevel, extra, className, ...props

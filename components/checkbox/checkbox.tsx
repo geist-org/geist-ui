@@ -32,7 +32,8 @@ const defaultProps = {
   value: '',
 }
 
-export type CheckboxProps = Props & typeof defaultProps & React.LabelHTMLAttributes<any>
+type NativeAttrs = Omit<React.LabelHTMLAttributes<any>, keyof Props>
+export type CheckboxProps = Props & typeof defaultProps & NativeAttrs
 
 const Checkbox: React.FC<CheckboxProps> = React.memo(({
   checked, defaultChecked, disabled, onChange, className, children, value, ...props

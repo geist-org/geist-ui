@@ -17,7 +17,8 @@ const defaultProps = {
   type: 'default' as NormalTypes,
 }
 
-export type LoadingProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type LoadingProps = Props & typeof defaultProps & NativeAttrs
 
 const getIconSize = (size: NormalSizes) => {
   const sizes: { [key in NormalSizes]: string } = {

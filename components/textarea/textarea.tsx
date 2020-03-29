@@ -29,7 +29,8 @@ const defaultProps = {
   className: '',
 }
 
-export type TextareaProps = Props & typeof defaultProps & React.TextareaHTMLAttributes<any>
+type NativeAttrs = Omit<React.TextareaHTMLAttributes<any>, keyof Props>
+export type TextareaProps = Props & typeof defaultProps & NativeAttrs
 
 const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
   width, status, minHeight, disabled, readOnly, onFocus, onBlur,

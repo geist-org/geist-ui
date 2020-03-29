@@ -10,7 +10,8 @@ const defaultProps = {
   className: ''
 }
 
-export type ModalSubtitleProps = Props & typeof defaultProps & React.HTMLAttributes<HTMLHeadingElement>
+type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
+export type ModalSubtitleProps = Props & typeof defaultProps & NativeAttrs
 
 const ModalSubtitle: React.FC<ModalSubtitleProps> = React.memo(({
   className, children, ...props

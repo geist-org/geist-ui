@@ -14,7 +14,8 @@ const defaultProps = {
   className: '',
 }
 
-export type DescriptionProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type DescriptionProps = Props & typeof defaultProps & NativeAttrs
 
 const Description: React.FC<DescriptionProps> = React.memo(({
   title, content, className, ...props

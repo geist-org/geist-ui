@@ -40,7 +40,8 @@ const defaultProps = {
   className: '',
 }
 
-export type AutoCompleteProps = Props & typeof defaultProps & React.InputHTMLAttributes<any>
+type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
+export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
 
 const childrenToOptionsNode = (options: AutoCompleteOptions) => {
   if (options.length === 0) return null

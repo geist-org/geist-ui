@@ -14,7 +14,8 @@ const defaultProps = {
   className: '',
 }
 
-export type CardProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type CardProps = Props & typeof defaultProps & NativeAttrs
 
 const Card: React.FC<React.PropsWithChildren<CardProps>> = React.memo(({
   children, hoverable, className, shadow, ...props

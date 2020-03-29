@@ -16,7 +16,8 @@ const defaultProps = {
   className: '',
 }
 
-export type BadgeProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type BadgeProps = Props & typeof defaultProps & NativeAttrs
 
 const getFontSize = (size: NormalSizes) => {
   const sizes: { [key in NormalSizes]: string } = {

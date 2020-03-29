@@ -18,7 +18,8 @@ const defaultProps = {
   className: '',
 }
 
-export type CapacityProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type CapacityProps = Props & typeof defaultProps & NativeAttrs
 
 const getColor = (val: number, palette: ZeitUIThemesPalette): string => {
   if (val < 33) return palette.cyan
