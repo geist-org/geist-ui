@@ -1,0 +1,65 @@
+import Layout from 'lib/components/layout'
+import { Note, Code, Spacer, Link, Display } from 'components'
+import NextLink from 'next/link'
+import Colors from 'lib/components/displays/colors'
+
+export const meta = {
+  title: 'Colors',
+  description: 'description',
+}
+
+## Colors
+
+Default colors for themes.
+
+<Spacer y={2} />
+
+### PRIMARY
+
+You can use any color in any where. All colors change with the theme,
+want to customize some colors? please read <NextLink href="/docs/customization/themes"><a>here</a></NextLink>.
+
+<Display width="90%" caption={<span>Get palette from <Code>useTheme</Code>.</span>}>
+
+```jsx
+import { useTheme } from '@zeit-ui/react'
+
+const myComponent = () => {
+  const { palette } = useTheme()
+
+  return (
+    <p style={{ color: palette.accents_1 }}>myComponent</p>
+  )
+}
+```
+
+</Display>
+<Spacer y={1} />
+<Colors type="normal" />
+<Spacer y={3} />
+
+### Status
+
+Use different colors to express more emotional changes.
+
+#### Success
+
+<Colors type="success" />
+<Spacer y={3} />
+
+#### Error
+
+<Colors type="error" />
+<Spacer y={3} />
+
+#### Warning
+
+<Colors type="warning" />
+<Spacer y={3} />
+
+#### Highlight
+
+<Colors type="highlight" />
+<Spacer y={3} />
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
