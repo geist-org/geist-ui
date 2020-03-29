@@ -28,21 +28,20 @@ export const meta = {
   3. Update the value of `theme.type`, and the theme of all components will follow automatically.
 
 ```jsx
-import { CSSBaseline, ZEITUIProvider, useTheme } from '@zeit-ui/react'
+import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
 
-const [type, setType] = useState('light')
-const currentTheme = useTheme()
-const switchThemes = () => () => {
-  const nextTheme = currentTheme.type === 'dark' ? 'light' : 'dark'
-  setType(nextTheme)
+const App = () => {
+  const [themeType, setThemeType] = useState('dark')
+  const switchThemes = () => {
+    setThemeType(lastThemeType => lastThemeType === 'dark' ? 'light' : 'dark')
+  }
+  return (
+    <ZEITUIProvider theme={{ type: themeType }}>
+      <CSSBaseline />
+      <YourComponent onClick={switchThemes} />
+    </ZEITUIProvider>
+  )
 }
-
-const App = () => (
-  <ZEITUIProvider theme={{ type }}>
-    <CSSBaseline />
-      <YourAppComponent onClick={switchThemes}/>
-  </ZEITUIProvider>
-)
 ```
 
 <Spacer y={3} />
