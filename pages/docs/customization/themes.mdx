@@ -33,7 +33,7 @@ import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
 const App = () => {
   const [themeType, setThemeType] = useState('dark')
   const switchThemes = () => {
-    setThemeType(themeType === 'dark' ? 'light' : 'dark')
+    setThemeType(lastThemeType => lastThemeType === 'dark' ? 'light' : 'dark')
   }
   return (
     <ZEITUIProvider theme={{ type: themeType }}>
