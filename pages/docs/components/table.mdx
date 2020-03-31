@@ -1,0 +1,147 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Table, Spacer, Code, Text, Button } from 'components'
+
+export const meta = {
+  title: 'Table',
+  description: 'Table',
+}
+
+## Table
+
+Display tabular data in format.
+
+<Playground
+  scope={{ Table }}
+  code={`
+() => {
+  const data = [
+    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
+    { property: 'Component', description: 'DOM element to use', type: 'string', default: '-' },
+    { property: 'bold', description: 'Bold style', type: 'boolean', default: 'true' },
+  ]
+  return (
+    <Table data={data}>
+      <Table.Column prop="property" label="property" />
+      <Table.Column prop="description" label="description" />
+      <Table.Column prop="type" label="type" />
+      <Table.Column prop="default" label="default" />
+    </Table>
+  )
+}
+`} />
+
+<Playground
+  title="compose"
+  scope={{ Table, Code, Text }}
+  code={`
+() => {
+  const data = [
+    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
+    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
+    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
+  ]
+  return (
+    <Table data={data}>
+      <Table.Column prop="property" label="property" />
+      <Table.Column prop="description" label="description" />
+      <Table.Column prop="type" label="type" />
+      <Table.Column prop="default" label="default" />
+    </Table>
+  )
+}
+`} />
+
+<Playground
+  title="width"
+  desc="Specifies the `width` of all or part of the columns."
+  scope={{ Table, Code, Text }}
+  code={`
+() => {
+  const data = [
+    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
+    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
+    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
+  ]
+  return (
+    <Table data={data}>
+      <Table.Column prop="property" label="property" width={50} />
+      <Table.Column prop="description" label="description" />
+      <Table.Column prop="type" label="type" />
+      <Table.Column prop="default" label="default" />
+    </Table>
+  )
+}
+`} />
+
+<Playground
+  title="actions"
+  scope={{ Table, Text, Button }}
+  code={`
+() => {
+  const operation = (actions, rowData) => {
+    return <Button type="error" auto size="mini" onClick={() => actions.remove()}>Remove</Button>
+  }
+  const data = [
+    { property: 'type', description: 'Content type', operation },
+    { property: 'Component', description: 'DOM element to use', operation },
+    { property: <Text b>bold</Text>, description: 'Bold style', operation },
+  ]
+  return (
+    <Table data={data}>
+      <Table.Column prop="property" label="property" />
+      <Table.Column prop="description" label="description" />
+      <Table.Column prop="operation" label="operation" width={150} />
+    </Table>
+  )
+}
+`} />
+
+<Playground
+  title="custom head"
+  scope={{ Table, Code, Text }}
+  code={`
+() => {
+  const data = [
+    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
+    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
+    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
+  ]
+  return (
+    <Table data={data}>
+      <Table.Column prop="property" label="property" />
+      <Table.Column prop="description" label="description" />
+      <Table.Column prop="type">
+        <Code>type</Code>
+      </Table.Column>
+      <Table.Column prop="default">
+        <Text b>default</Text>
+      </Table.Column>
+    </Table>
+  )
+}
+`} />
+
+<Attributes edit="/pages/docs/components/table.mdx">
+<Attributes.Title>Table.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **data** | data source | `Array<any>` | - | - |
+| **emptyText** | displayed text when table's content is empty | `string` | - | - |
+| **hover** | table's hover effect | `boolean` | - | `true` |
+| **onRow** | callback row's content by click | `(row: any, index: number) => void` | - | - |
+| **onCell** | callback cell's content by click | `(cell: any, index: number, colunm: number) => void` | - | - |
+| **onChange** | data change event | `(data: any) => void` | - | - |
+| ... | native props | `TableHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>Table.Column.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **prop**(required) | table-column's prop | `string` | - | - |
+| **label** | table-column's label | `string` | - | - |
+| **width** | width number (px) | `number` | - | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
