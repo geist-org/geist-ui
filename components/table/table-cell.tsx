@@ -2,10 +2,10 @@ import React from 'react'
 import { TableColumnItem, useTableContext } from './table-context'
 
 interface Props {
-  columns: Array<TableColumnItem>,
-  row: any,
-  rowIndex: number,
-  emptyText: string,
+  columns: Array<TableColumnItem>
+  row: any
+  rowIndex: number
+  emptyText: string
   onCellClick: (cell: any, rowIndex: number, colunmIndex: number) => void
 }
 
@@ -14,9 +14,9 @@ export type cellActions = {
 }
 
 export type cellData = {
-  row: number,
-  column: number,
-  rowValue: any,
+  row: number
+  column: number
+  rowValue: any
 }
 
 const TableCell: React.FC<Props> = React.memo(({
@@ -28,7 +28,7 @@ const TableCell: React.FC<Props> = React.memo(({
       removeRow && removeRow(rowIndex)
     },
   }
-  
+  /* eslint-disable react/jsx-no-useless-fragment */
   return (
     <>
       {columns.map((column, index) => {
@@ -50,6 +50,7 @@ const TableCell: React.FC<Props> = React.memo(({
       })}
     </>
   )
+  /* eslint-enable */
 })
 
 export default TableCell

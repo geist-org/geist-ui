@@ -25,9 +25,9 @@ export type cellActions = {
 }
 
 export type cellData = {
-  row: number,
-  column: number,
-  value: any,
+  row: number
+  column: number
+  value: any
 }
 
 const TableBody: React.FC<TableBodyProps> = React.memo(({

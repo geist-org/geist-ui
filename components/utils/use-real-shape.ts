@@ -35,7 +35,6 @@ const useRealShape = <T extends HTMLElement>(ref: MutableRefObject<T | null>): S
   })
   const update = () => {
     const { width, height } = getRealShape(ref.current)
-    console.log(123, 'update')
     setState({ width, height })
   }
   useEffect(() => update(), [ref.current])
