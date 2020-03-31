@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
-import { getRealShape } from '../utils/collections'
+import useRealShape from '../utils/use-real-shape'
 
 interface Props {
   isExpanded?: boolean
@@ -24,23 +24,18 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
   const entryTimer = useRef<number>()
   const leaveTimer = useRef<number>()
   const resetTimer = useRef<number>()
-  
-  const setRealHeight = () => {
-    const { height: elHeight } = getRealShape(contentRef.current)
-    setHeight(`${elHeight}px`)
-  }
+  const [state, updateShape] = useRealShape<HTMLDivElement>(contentRef)
 
+  useEffect(() => setHeight(`${state.height}px`), [state.height])
   useEffect(() => {
-    if (!contentRef || !contentRef.current) return
-    setRealHeight()
-  }, [contentRef])
-  
-  useEffect(() => {
-    // show element or reset height
+    // show element or reset height.
+    // force an update once manually, even if the element does not change.
+    // (the height of the element might be "auto")
     if (isExpanded) {
       setVisible(isExpanded)
     } else {
-      setRealHeight()
+      updateShape()
+      setHeight(`${state.height}px`)
     }
     
     // show expand animation
