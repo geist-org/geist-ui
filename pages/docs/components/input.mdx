@@ -1,6 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import GitIcon from 'lib/components/icons/github'
-import { Input, Spacer, useInput, Button, Code } from 'components'
+import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
 import { useState, useEffect } from 'react'
 
 export const meta = {
@@ -49,13 +49,34 @@ Retrieve text input from a user.
 `} />
 
 <Playground
-  title="label"
+  title="inline label"
   scope={{ Input, Spacer }}
   code={`
 <>
   <Input label="username" placeholder="The Evil Rabbit" />
   <Spacer y={.5} />
   <Input labelRight=".com" placeholder="https://github" />
+</>
+`} />
+
+<Playground
+  title="block label"
+  scope={{ Input, Spacer, Text, Code, Dot }}
+  code={`
+<>
+  <Input placeholder="Evil Rabbit">
+    Username
+  </Input>
+  <Spacer />
+  <Input placeholder="Post title" width="50%">
+    <Text h3>Title</Text>
+  </Input>
+  <Spacer />
+  <Input placeholder="GitHub Actions" width="50%">
+    <Dot type="warning">
+      <Text small>Problem area for <Code>deployment</Code></Text>
+    </Dot>
+  </Input>
 </>
 `} />
 

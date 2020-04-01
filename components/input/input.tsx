@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import InputLabel from './input-label'
+import InputBlockLabel from './input-block-label'
 import InputIcon from './input-icon'
 import InputClearIcon from './input-icon-clear'
 import Textarea from '../textarea/textarea'
@@ -45,11 +46,11 @@ const defaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & typeof defaultProps & NativeAttrs
 
-const Input: React.FC<InputProps> = ({
+const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   placeholder, label, labelRight, size, status, disabled,
   icon, iconRight, initialValue, onChange, readOnly, value,
   onClearClick, clearable, width, className, onBlur, onFocus,
-  autoComplete, ...props
+  autoComplete, children, ...props
 }) => {
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string>(initialValue)
@@ -94,102 +95,110 @@ const Input: React.FC<InputProps> = ({
   }, [value])
 
   return (
-    <div className={`input-container ${className}`}>
-      {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
-      <div className={`input-wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${labelClasses}`}>
-        {icon && <InputIcon icon={icon} ratio={heightRatio} />}
-        <input type="text" className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
-          value={selfValue}
-          placeholder={placeholder}
-          disabled={disabled}
-          readOnly={readOnly}
-          onFocus={focusHandler}
-          onBlur={blurHandler}
-          onChange={changeHandler}
-          autoComplete={autoComplete}
-          {...props}
-        />
-        {clearable && <InputClearIcon
-          visibale={showClearIcon}
-          heightRatio={heightRatio}
-          disabled={disabled || readOnly}
-          onClick={clearHandler} />}
-        {iconRight && <InputIcon icon={iconRight} ratio={heightRatio} />}
-      </div>
-      {labelRight && <InputLabel fontSize={fontSize} isRight={true}>{labelRight}</InputLabel>}
+    <div className="with-label">
+      {children && <InputBlockLabel>{children}</InputBlockLabel>}
+      <div className={`input-container ${className}`}>
+        {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
+        <div className={`input-wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${labelClasses}`}>
+          {icon && <InputIcon icon={icon} ratio={heightRatio} />}
+          <input type="text" className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
+            value={selfValue}
+            placeholder={placeholder}
+            disabled={disabled}
+            readOnly={readOnly}
+            onFocus={focusHandler}
+            onBlur={blurHandler}
+            onChange={changeHandler}
+            autoComplete={autoComplete}
+            {...props}
+          />
+          {clearable && <InputClearIcon
+            visibale={showClearIcon}
+            heightRatio={heightRatio}
+            disabled={disabled || readOnly}
+            onClick={clearHandler} />}
+          {iconRight && <InputIcon icon={iconRight} ratio={heightRatio} />}
+        </div>
+        {labelRight && <InputLabel fontSize={fontSize} isRight={true}>{labelRight}</InputLabel>}
+    
+        <style jsx>{`
+          .with-label {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            box-sizing: border-box;
+            width: ${width};
+            height: calc(${heightRatio} * ${theme.layout.gap});
+          }
   
-      <style jsx>{`
-        .input-container {
-          display: inline-flex;
-          align-items: center;
-          box-sizing: border-box;
-          user-select: none;
-          width: ${width};
-          height: calc(${heightRatio} * ${theme.layout.gap});
-        }
-
-        .input-wrapper {
-          display: inline-flex;
-          vertical-align: middle;
-          align-items: center;
-          flex: 1;
-          height: 100%;
-          border-radius: ${theme.layout.radius};
-          border: 1px solid ${borderColor};
-          transition: border 0.2s ease 0s, color 0.2s ease 0s;
-        }
-        
-        .input-wrapper.left-label {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-        }
-        
-        .input-wrapper.right-label {
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-        }
-        
-        .input-wrapper.disabled {
-          background-color: ${theme.palette.accents_1};
-          border-color: ${theme.palette.accents_2};
-          cursor: not-allowed;
-        }
-        
-        input.disabled {
-          cursor: not-allowed;
-        }
-        
-        .input-wrapper.hover {
-          border-color: ${hoverBorder};
-        }
-
-        input {
-          margin: 4px 10px;
-          padding: 0;
-          box-shadow: none;
-          line-height: 1.625rem;
-          font-size: ${fontSize};
-          background-color: transparent;
-          border: none;
-          color: ${color};
-          outline: none;
-          border-radius: 0;
-          width: 100%;
-          -webkit-appearance: none;
-        }
-        
-        input.left-icon {
-          margin-left: 0;
-        }
-        
-        input.right-icon {
-          margin-right: 0;
-        }
-        
-        input::placeholder {
-          color: ${theme.palette.accents_3};
-        }
-      `}</style>
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: ${theme.layout.radius};
+            border: 1px solid ${borderColor};
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+          }
+          
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+          
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          
+          .input-wrapper.disabled {
+            background-color: ${theme.palette.accents_1};
+            border-color: ${theme.palette.accents_2};
+            cursor: not-allowed;
+          }
+          
+          input.disabled {
+            cursor: not-allowed;
+          }
+          
+          .input-wrapper.hover {
+            border-color: ${hoverBorder};
+          }
+  
+          input {
+            margin: 4px 10px;
+            padding: 0;
+            box-shadow: none;
+            line-height: 1.625rem;
+            font-size: ${fontSize};
+            background-color: transparent;
+            border: none;
+            color: ${color};
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            -webkit-appearance: none;
+          }
+          
+          input.left-icon {
+            margin-left: 0;
+          }
+          
+          input.right-icon {
+            margin-right: 0;
+          }
+          
+          input::placeholder {
+            color: ${theme.palette.accents_3};
+          }
+        `}</style>
+      </div>
     </div>
   )
 }
