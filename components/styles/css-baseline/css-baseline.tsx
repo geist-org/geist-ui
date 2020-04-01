@@ -23,6 +23,7 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         
         body {
           -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
           text-rendering: optimizeLegibility;
           font-size: 1rem;
           line-height: 1.5;

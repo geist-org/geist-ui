@@ -18,16 +18,15 @@ export interface CheckboxEvent {
 interface Props {
   checked?: boolean
   disabled?: boolean
-  defaultChecked?: boolean
+  initialChecked?: boolean
   onChange?: (e: CheckboxEvent) => void
   className?: string
   value?: string
 }
 
 const defaultProps = {
-  checked: false,
   disabled: false,
-  defaultChecked: false,
+  initialChecked: false,
   className: '',
   value: '',
 }
@@ -36,9 +35,9 @@ type NativeAttrs = Omit<React.LabelHTMLAttributes<any>, keyof Props>
 export type CheckboxProps = Props & typeof defaultProps & NativeAttrs
 
 const Checkbox: React.FC<CheckboxProps> = React.memo(({
-  checked, defaultChecked, disabled, onChange, className, children, value, ...props
+  checked, initialChecked, disabled, onChange, className, children, value, ...props
 }) => {
-  const [selfChecked, setSelfChecked] = useState(defaultChecked)
+  const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
   const { updateState, inGroup, disabledAll, values } = useCheckbox()
   const isDisabled = inGroup ? disabledAll || disabled : disabled
 
@@ -83,9 +82,10 @@ const Checkbox: React.FC<CheckboxProps> = React.memo(({
   }, [updateState, onChange, isDisabled, selfChecked])
   
   useEffect(() => {
+    if (checked === undefined) return
     setSelfChecked(checked)
   }, [checked])
-  
+
   return (
     <label className={`${className}`} {...props}>
       <CheckboxIcon disabled={isDisabled} checked={selfChecked} />
