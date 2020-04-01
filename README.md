@@ -4,8 +4,6 @@
 
 > @zeit-ui/react -- React implementation for [ZEIT Style](https://github.com/zeit-ui/zeit-style), originating from [ZEIT Design](https://zeit.co/design).
 
-> work in progress. version info: [npm/package/@zeit-ui/react](https://www.npmjs.com/package/@zeit-ui/react?activeTab=versions)
-
 <br/>
 
 ## Quick Start
@@ -31,7 +29,7 @@ const Application = () => {
 
 ## Documentation
 
-- [Document](https://react.zeit-ui.co/)
+- [Document Site](https://react.zeit-ui.co/)
 
 <br/>
 
