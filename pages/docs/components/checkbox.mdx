@@ -54,8 +54,8 @@ Displays a boolean value.
 
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **checked** | checked or not | `boolean` | - | `false` |
-| **defaultChecked** | checked or not on initial | `boolean` | - | `false` |
+| **checked** | checked or not | `boolean` | - | - |
+| **initialChecked** | checked or not on initial | `boolean` | - | `false` |
 | **onChange** | change event handler | `CheckboxEvent` | - | - |
 | **value** | unique identification value (only in group) | `string` | - | - |
 | **disabled** | disable checkbox | `boolean` | - | `false` |
@@ -69,6 +69,21 @@ Displays a boolean value.
 | **disabled** | disable checkbox group | `boolean` | - | `false` |
 | **onChange** | change event handler | `(values: string[]) => void` | - | - |
 | ... | native props | `HTMLAttributes` | `'spellCheck', 'style', 'className', ...` | - |
+
+<Attributes.Title>CheckboxEvent</Attributes.Title>
+
+```ts
+interface CheckboxEventTarget {
+  checked: boolean
+}
+
+export interface CheckboxEvent {
+  target: CheckboxEventTarget
+  stopPropagation: () => void
+  preventDefault: () => void
+  nativeEvent: React.ChangeEvent
+}
+```
 
 </Attributes>
 
