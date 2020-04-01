@@ -120,85 +120,84 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
           {iconRight && <InputIcon icon={iconRight} ratio={heightRatio} />}
         </div>
         {labelRight && <InputLabel fontSize={fontSize} isRight={true}>{labelRight}</InputLabel>}
-    
-        <style jsx>{`
-          .with-label {
-            display: flex;
-            flex-direction: column;
-          }
-          
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            box-sizing: border-box;
-            width: ${width};
-            height: calc(${heightRatio} * ${theme.layout.gap});
-          }
-  
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: ${theme.layout.radius};
-            border: 1px solid ${borderColor};
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-          
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-          
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-          
-          .input-wrapper.disabled {
-            background-color: ${theme.palette.accents_1};
-            border-color: ${theme.palette.accents_2};
-            cursor: not-allowed;
-          }
-          
-          input.disabled {
-            cursor: not-allowed;
-          }
-          
-          .input-wrapper.hover {
-            border-color: ${hoverBorder};
-          }
-  
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            line-height: 1.625rem;
-            font-size: ${fontSize};
-            background-color: transparent;
-            border: none;
-            color: ${color};
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            -webkit-appearance: none;
-          }
-          
-          input.left-icon {
-            margin-left: 0;
-          }
-          
-          input.right-icon {
-            margin-right: 0;
-          }
-          
-          input::placeholder {
-            color: ${theme.palette.accents_3};
-          }
-        `}</style>
       </div>
+      <style jsx>{`
+        .with-label {
+          display: inline-block;
+          width: ${width};
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: ${width};
+          height: calc(${heightRatio} * ${theme.layout.gap});
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: ${theme.layout.radius};
+          border: 1px solid ${borderColor};
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: ${theme.palette.accents_1};
+          border-color: ${theme.palette.accents_2};
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: ${hoverBorder};
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: ${fontSize};
+          background-color: transparent;
+          border: none;
+          color: ${color};
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: ${theme.palette.accents_3};
+        }
+      `}</style>
     </div>
   )
 }

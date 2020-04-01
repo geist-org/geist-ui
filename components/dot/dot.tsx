@@ -56,7 +56,6 @@ const Dot: React.FC<React.PropsWithChildren<DotProps>> = React.memo(({
         
         .label {
           margin-left: 8px;
-          line-height: 1rem;
           font-size: 1rem;
           text-transform: capitalize;
         }
