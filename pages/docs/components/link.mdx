@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Link, Text } from 'components'
+import { Link, Text, Code } from 'components'
+import NextLink from 'next/link'
 
 export const meta = {
   title: 'link',
@@ -44,6 +45,16 @@ Hyperlinks between pages.
   scope={{ Link }}
   code={`
 <Link href="#" pure block>The Evil Rabbit Jumped over the Fence.</Link>
+`} />
+
+<Playground
+  title={<>With <Code>next/link</Code></>}
+  desc="Use `Link` with NextJS without any configuration."
+  scope={{ Link, NextLink }}
+  code={`
+<NextLink href="/docs/components/button">
+  <Link pure block>Docs of Button</Link>
+</NextLink>
 `} />
 
 <Attributes edit="/pages/docs/components/link.mdx">
