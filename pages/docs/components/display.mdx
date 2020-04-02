@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Display, Code } from 'components'
+import { Display, Code, Snippet } from 'components'
 
 export const meta = {
   title: 'Display',
@@ -39,11 +39,11 @@ export const meta = {
 `} />
 
 <Playground
-  title="With Code 2"
-  scope={{ Display, Code }}
+  title="With Snippet"
+  scope={{ Display, Snippet }}
   code={`
   <Display width="500px" caption="Run this command to install the library.">
-    <Code darkBash>yarn add @zeit-ui/react</Code>
+    <Snippet type="dark">yarn add @zeit-ui/react</Snippet>
   </Display>
 `} />
 

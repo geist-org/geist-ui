@@ -1,5 +1,5 @@
 import Layout from 'lib/components/layout'
-import { Note, Link, Code, Spacer, Tabs, Row, Dot, Display } from 'components'
+import { Note, Link, Code, Spacer, Tabs, Row, Dot, Display, Snippet } from 'components'
 
 export const meta = {
   title: 'installation',
@@ -20,10 +20,12 @@ and a package manager: <Link pure href="https://www.npmjs.com/">NPM</Link> or <L
 <Spacer y={.8} />
 <Tabs initialValue="yarn" style={{ width: '90%', margin: '0 auto' }}>
   <Tabs.Item label={<span><Spacer x={.3} inline />Yarn<Spacer x={.3} inline /></span>} value="yarn">
-    <Code bash style={{ marginTop: 0 }}>yarn add @zeit-ui/react</Code>
+    <Spacer y={.6} />
+    <Snippet width="400px">yarn add @zeit-ui/react</Snippet>
   </Tabs.Item>
   <Tabs.Item label={<span><Spacer x={.3} inline />Npm<Spacer x={.3} inline /></span>} value="npm">
-    <Code bash style={{ marginTop: 0 }}>npm i @zeit-ui/react</Code>
+    <Spacer y={.6} />
+    <Snippet width="400px">npm i @zeit-ui/react</Snippet>
   </Tabs.Item>
 </Tabs>
 <Spacer y={1.5} />

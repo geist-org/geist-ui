@@ -188,8 +188,11 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
           border-radius: ${theme.layout.radius};
           padding: ${theme.layout.gap};
           margin: ${theme.layout.gap} 0;
+          font-family: ${theme.font.mono};
           white-space: pre;
           overflow: auto;
+          line-height: 1.5;
+          text-align: left;
           font-size: 0.875rem;
           -webkit-overflow-scrolling: touch;
         }
@@ -198,10 +201,22 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
           color: ${theme.palette.foreground};
           font-size: 0.75rem;
           line-height: 1.25rem;
+          white-space: pre;
         }
         
         pre code:before, pre code:after {
           display: none;
+        }
+        
+        pre :global(p) {
+          margin: 0;
+        }
+        
+        pre::-webkit-scrollbar {
+          display: none;
+          width: 0;
+          height: 0;
+          background: transparent;
         }
         
         hr {

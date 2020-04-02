@@ -1,7 +1,7 @@
 import React, { MouseEvent, useState } from 'react'
 import { LivePreview, LiveProvider, LiveEditor, LiveError } from 'react-live'
-import { useClipboard } from 'use-clipboard-copy'
 import withDefaults from 'components/utils/with-defaults'
+import useClipboard from 'components/utils/use-clipboard'
 import { useTheme, useToasts } from 'components'
 import makeCodeTheme from './code-theme'
 import RightIcon from 'lib/components/icons/right'
@@ -26,10 +26,10 @@ const defaultProps = {
 
 export type PlaygroundProps = Props & typeof defaultProps
 
-const editor = (code: string) => {
+const editor = (code: string, copy: Function) => {
   const theme = useTheme()
   const [visible, setVisible] = useState(false)
-  const { copy } = useClipboard()
+  
   const [, setToast] = useToasts()
   const clickHandler = (event: MouseEvent<HTMLDetailsElement>) => {
     event.stopPropagation()
@@ -118,6 +118,7 @@ const editor = (code: string) => {
 const Playground: React.FC<PlaygroundProps> = React.memo(props => {
   const theme = useTheme()
   const codeTheme = makeCodeTheme(theme)
+  const { copy } = useClipboard()
   const code = props.code.trim()
 
   return (
@@ -129,7 +130,7 @@ const Playground: React.FC<PlaygroundProps> = React.memo(props => {
             <LivePreview />
             <LiveError />
           </div>
-          {editor(code)}
+          {editor(code, copy)}
         </LiveProvider>
     
         <style jsx>{`
