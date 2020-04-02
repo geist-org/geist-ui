@@ -1,0 +1,100 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Snippet, Spacer, Code } from 'components'
+
+export const meta = {
+  title: 'Snippet',
+  description: 'Snippet',
+}
+
+## Snippet
+
+Display a snippet of copyable code for the command line.
+
+<Playground
+  scope={{ Snippet }}
+  code={`
+<Snippet text="yarn add @zeit-ui/react" width="300px" />
+`} />
+
+<Playground
+  title="width"
+  scope={{ Snippet }}
+  code={`
+<Snippet text="yarn add @zeit-ui/react" width="100%" />
+`} />
+
+<Playground
+  title="types"
+  scope={{ Snippet, Spacer }}
+  code={`
+<>
+  <Snippet text="yarn add @zeit-ui/react" type="dark" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="success" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="warning" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="error" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="secondary" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="lite" width="300px" />
+</>
+`} />
+
+<Playground
+  title="Multi Line"
+  scope={{ Snippet }}
+  code={`
+<Snippet text={['cd project', 'now']} width="300px" />
+`} />
+
+<Playground
+  title="without copy"
+  scope={{ Snippet }}
+  code={`
+<Snippet copy="prevent" text="yarn add @zeit-ui/react" width="300px" />
+`} />
+
+<Playground
+  title="filled"
+  scope={{ Snippet, Spacer }}
+  code={`
+<>
+  <Snippet text="yarn add @zeit-ui/react" type="success" fill width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="warning" fill width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="error" fill width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="secondary" fill width="300px" />
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/snippet.mdx">
+<Attributes.Title>Snippet.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **text** | code snippet | `string` `Array<string>` | - | - |
+| **fill** | filled style | `boolean` | - | `false` |
+| **width** | set CSS string | `string` | - | `initial` |
+| **copy** | function of copy button | `CopyTypes` | `'default', 'slient', 'prevent'` | `default` |
+| **type** | snippet types | `SnippetTypes` | `SnippetTypes` | `default` |
+| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>SnippetTypes</Attributes.Title>
+
+```ts
+type SnippetTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'dark'
+  | 'lite'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

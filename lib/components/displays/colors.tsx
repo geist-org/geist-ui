@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { useTheme, useToasts, Code, ZeitUIThemesPalette } from 'components'
-import { useClipboard } from 'use-clipboard-copy'
+import useClipboard from 'components/utils/use-clipboard'
 import { getColorData, getCurrentColor } from './colors-data'
 
 interface Props {

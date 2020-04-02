@@ -16,28 +16,37 @@ export const meta = {
 <p>Run <Code>npm i @zeit-ui/react</Code> to install.</p>
 `} />
 
-<Playground
-  title="Bash"
-  scope={{ Code }}
-  code={`
-<Code bash>yarn add @zeit-ui/vue</Code>
-`} />
-
-<Playground
-  title="Dark Bash"
-  scope={{ Code }}
-  code={`
-<Code darkBash>yarn add @zeit-ui/vue</Code>
-`} />
 
 <Playground
   title="Code Block"
   scope={{ Code }}
   code={`
 () => {
-  const codes = \`npm i @zeit-ui/vue
-yarn add @zeit-ui/vue\`
+  const codes = \`npm i @zeit-ui/react
+yarn add @zeit-ui/react\`
   return <Code block>{codes}</Code>
+}
+`} />
+
+<Playground
+  title="width"
+  scope={{ Code }}
+  code={`
+() => {
+  const codes = \`npm i @zeit-ui/react
+yarn add @zeit-ui/react\`
+  return <Code block width="50%">{codes}</Code>
+}
+`} />
+
+<Playground
+  title="overlong"
+  scope={{ Code }}
+  code={`
+() => {
+  const codes = \`npm i @zeit-ui/react npm i @zeit-ui/react npm i @zeit-ui/react
+yarn add @zeit-ui/react\`
+  return <Code block width="50%">{codes}</Code>
 }
 `} />
 
@@ -46,9 +55,7 @@ yarn add @zeit-ui/vue\`
 
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **bash** | show code in bash mode | `boolean` | - | `false` |
 | **block** | show code in `pre` | `boolean` | - | `false` |
-| **darkBash** | show code in darkBash mode | `boolean` | - | `false` |
 | **width** | set CSS width | `string` | - | `initial` |
 | ... | native props | `HTMLAttributes` | `'className', ...` | - |
 

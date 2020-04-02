@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   bash?: boolean
@@ -23,7 +23,13 @@ export type CodeProps = Props & typeof defaultProps & NativeAttrs
 const Code: React.FC<React.PropsWithChildren<CodeProps>> = React.memo(({
   children, block, bash, darkBash, className, width, ...props
 }) => {
-  const theme = useTheme()
+  if (bash) {
+    useWarning('Props "bash" is deprecated. Use `Snippet` instead of it.', 'code')
+  }
+  if (darkBash) {
+    useWarning('Props "darkBash" is deprecated. Use `Snippet` instead of it.', 'code')
+  }
+  
   const isBash = bash || darkBash
   const isBlock = isBash || block
   if (!isBlock) return <code {...props}>{children}</code>
@@ -37,15 +43,8 @@ const Code: React.FC<React.PropsWithChildren<CodeProps>> = React.memo(({
       <pre className={classes} {...props}><code>{children}</code></pre>
       <style jsx>{`
         pre {
-          line-height: 1.5;
-          padding: ${theme.layout.gapHalf};
-          text-align: left;
           width: ${width ? width : 'initial'};
           max-width: 100%;
-        }
-        
-        pre :global(p) {
-          margin: 0;
         }
         
         .dark {
