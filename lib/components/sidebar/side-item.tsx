@@ -26,9 +26,7 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
             {!side.url && <ActiveCatalog name={side.name} />}
             {side.url && (
               <div className="link">
-                <ActiveLink href={side.url} index={index} total={sides.length}>
-                  <a>{side.name}</a>
-                </ActiveLink>
+                <ActiveLink href={side.url}><a>{side.name}</a></ActiveLink>
               </div>
             )}
             
