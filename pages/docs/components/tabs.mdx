@@ -7,7 +7,6 @@ import ReactIcon from 'lib/components/icons/react'
 
 export const meta = {
   title: 'tabs',
-  description: 'tabs',
 }
 
 ## Tabs
@@ -16,6 +15,7 @@ Display tab content.
 
 <Playground
   scope={{ Tabs }}
+  desc="Toggle display of different templates."
   code={`
 <Tabs initialValue="1">
   <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
@@ -35,6 +35,7 @@ Display tab content.
 
 <Playground
   title="With Icon"
+  desc="Show icon component on label button."
   scope={{ Tabs, ReactIcon, ZeitIcon, Link, Text }}
   code={`
 <Tabs initialValue="1">
@@ -50,6 +51,7 @@ Display tab content.
 
 <Playground
   title="Imperatively"
+  desc="Control components with imperatively style."
   scope={{ Tabs, Button, Spacer, Code, Text, useState }}
   code={`
 () => {
@@ -71,6 +73,7 @@ Display tab content.
 
 <Playground
   title={<>with <Code>useTabs</Code></>}
+  desc="Control components with `hooks`."
   scope={{ Tabs, Button, Spacer, Code, Text, useTabs }}
   code={`
 () => {

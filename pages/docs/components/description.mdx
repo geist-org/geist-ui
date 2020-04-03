@@ -8,9 +8,10 @@ export const meta = {
 
 ## Description
 
-A common container component.
+Display brief information with a title and description.
 
 <Playground
+  desc="`Description` component contains title and content."
   scope={{ Description }}
   code={`
 <Description title="Section Title" content="Data about this section." />
@@ -18,6 +19,7 @@ A common container component.
 
 <Playground
   title="With Component"
+  desc="Use in combination with other components."
   scope={{ Description, Code }}
   code={`
 <Description title="Section Title" content={<p><Code>code</Code> about this section.</p>} />

@@ -19,6 +19,7 @@ Provides single user input from a selection of options.
 
 <Playground
   title="Group"
+  desc="A group of radio components."
   scope={{ Radio, useState }}
   code={`
 () => {
@@ -40,7 +41,7 @@ Provides single user input from a selection of options.
 
 <Playground
   title="Description"
-  desc="`Description` can be combined with other `Components`."
+  desc="`Description` can be combined with other components."
   scope={{ Radio, Code }}
   code={`
 <Radio.Group value="1" onChange={val => console.log(val)}>
@@ -58,6 +59,7 @@ Provides single user input from a selection of options.
 
 <Playground
   title="Disabled"
+  desc="Disable all radios."
   scope={{ Radio, useState, Code }}
   code={`
 <Radio.Group value="1" disabled>

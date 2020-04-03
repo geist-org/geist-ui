@@ -9,8 +9,10 @@ export const meta = {
 
 ## Auto Complete
 
+AutoComplete control of input field.
 
 <Playground
+  desc="Basic usage, add auto-complete list for all inputs."
   scope={{ AutoComplete }}
   code={`
 () => {
@@ -24,6 +26,7 @@ export const meta = {
 `} />
 
 <Playground
+  desc="Disable all."
   title="disabled"
   scope={{ AutoComplete }}
   code={`
@@ -38,6 +41,7 @@ export const meta = {
 `} />
 
 <Playground
+  desc="Update the contents of drop-down list based on input."
   title="search"
   scope={{ AutoComplete, useState }}
   code={`
@@ -59,6 +63,7 @@ export const meta = {
 
 <Playground
   title="Waiting in search"
+  desc="Show friendly tips and UI when searching."
   scope={{ AutoComplete, useState, useEffect, useRef }}
   code={`
 () => {
@@ -95,6 +100,7 @@ export const meta = {
 
 <Playground
   title="custom searching text"
+  desc="You can replace the default waiting text with any components."
   scope={{ AutoComplete }}
   code={`
 <AutoComplete searching placeholder="Enter here" width="100%">
@@ -106,6 +112,7 @@ export const meta = {
 
 <Playground
   title="custom no options"
+  desc="You can also customize the prompt with no options."
   scope={{ AutoComplete, useState }}
   code={`
 () => {
@@ -132,6 +139,7 @@ export const meta = {
 
 <Playground
   title="custom option"
+  desc="You can rewrite each item of the `AutoComplete` to express more."
   scope={{ AutoComplete, useState, Spacer, Badge, Row }}
   code={`
 () => {
@@ -169,7 +177,8 @@ export const meta = {
 `} />
 
 <Playground
-  title="size"
+  title="sizes"
+  desc="Components of different sizes."
   scope={{ AutoComplete, Spacer }}
   code={`
 () => {
@@ -194,6 +203,7 @@ export const meta = {
 
 <Playground
   title="clearable"
+  desc="Add a clear button in the input box."
   scope={{ AutoComplete }}
   code={`
 () => {
@@ -211,7 +221,7 @@ export const meta = {
 
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **options** | options of input | `AutoCompleteOptions` | - | - |
+| **options** | options of input | [AutoCompleteOptions](#type-autocompleteoptions) | - | - |
 | **status** | input type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **size** | input size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
 | **initialValue** | initial value | `string` | - | - |

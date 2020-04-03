@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Code } from 'components'
+import { Code, Note, Link } from 'components'
 
 export const meta = {
   title: 'Code',
@@ -8,9 +8,12 @@ export const meta = {
 
 ## Code
 
+Show source code in a standardized way.
+
+<Note>Want to display <Code>shell</Code> code snippets? Try <Link pure color href="/docs/components/snippet">Snippet</Link>.</Note>
 
 <Playground
-  title="Basic"
+  desc="Basic inline codes."
   scope={{ Code }}
   code={`
 <p>Run <Code>npm i @zeit-ui/react</Code> to install.</p>
@@ -19,6 +22,7 @@ export const meta = {
 
 <Playground
   title="Code Block"
+  desc="Multi line code display."
   scope={{ Code }}
   code={`
 () => {
@@ -30,6 +34,7 @@ yarn add @zeit-ui/react\`
 
 <Playground
   title="width"
+  desc="Specify width manually, or other styles."
   scope={{ Code }}
   code={`
 () => {
@@ -41,6 +46,7 @@ yarn add @zeit-ui/react\`
 
 <Playground
   title="overlong"
+  desc="Out of range presentation."
   scope={{ Code }}
   code={`
 () => {

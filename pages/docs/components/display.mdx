@@ -8,8 +8,11 @@ export const meta = {
 
 ## Display
 
+To display important information or images in a central alignment.
+
 <Playground
   title="Basic"
+  desc="Describe the main part with a paragraph."
   scope={{ Display }}
   code={`
   <Display shadow caption="ZEIT Now for GitHub deploying a pull request automatically.">
@@ -20,6 +23,7 @@ export const meta = {
 
 <Playground
   title="With Code"
+  desc="Show multiline code blocks."
   scope={{ Display, Code }}
   code={`
 () => {
@@ -40,6 +44,7 @@ export const meta = {
 
 <Playground
   title="With Snippet"
+  desc="Show shell codes."
   scope={{ Display, Snippet }}
   code={`
   <Display width="500px" caption="Run this command to install the library.">
@@ -49,6 +54,7 @@ export const meta = {
 
 <Playground
   title="Component Caption"
+  desc="Use component on `caption` prop."
   scope={{ Display, Code }}
   code={`
   <Display shadow caption={<p>A domain redirect that redirects requests made to <Code>www.zeit.rocks</Code> to <Code>zeit.rocks</Code>.</p>}>

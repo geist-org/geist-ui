@@ -3,7 +3,6 @@ import { Table, Spacer, Code, Text, Button } from 'components'
 
 export const meta = {
   title: 'Table',
-  description: 'Table',
 }
 
 ## Table
@@ -11,6 +10,7 @@ export const meta = {
 Display tabular data in format.
 
 <Playground
+  desc="Display formatted data in rows and columns."
   scope={{ Table }}
   code={`
 () => {
@@ -32,6 +32,7 @@ Display tabular data in format.
 
 <Playground
   title="compose"
+  desc="Show other components in the table."
   scope={{ Table, Code, Text }}
   code={`
 () => {
@@ -75,6 +76,7 @@ Display tabular data in format.
 
 <Playground
   title="actions"
+  desc="Custom elements can be displayed in the table, and any changes will be immediately rendered."
   scope={{ Table, Text, Button }}
   code={`
 () => {
