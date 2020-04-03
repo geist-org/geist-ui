@@ -33,7 +33,6 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
             )}
             
             {side.children && <div className="children">
-              {/*<span className="line" />*/}
               {React.cloneElement(children as ReactElement, {
                 sides: side.children,
               })}
@@ -60,13 +59,13 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
         .link :global(a) {
           color: ${theme.palette.accents_7};
           font-size: 1rem;
-          padding: 0 ${theme.layout.gapQuarter};
           transition: all 200ms ease;
+          font-weight: 400;
         }
         
         .link :global(a.active) {
           color: ${theme.palette.success};
-          font-weight: bold;
+          font-weight: 600;
         }
         
         .children {
@@ -74,7 +73,6 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
           justify-content: center;
           align-items: flex-start;
           flex-direction: column;
-          padding-left: ${theme.layout.gapHalf};
           transition: all .2s ease-in-out;
           position: relative;
           margin-top: .5rem;

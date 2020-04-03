@@ -1,4 +1,5 @@
 import React from 'react'
+import VirtualAnchor from 'lib/components/anchor'
 import withDefaults from 'components/utils/with-defaults'
 
 interface Props {
@@ -22,20 +23,25 @@ const replaceCode = (desc: string) => {
   })
 }
 
-const Title: React.FC<TitleProps> = React.memo(props => {
-  
+
+const Title: React.FC<TitleProps> = React.memo(({
+  title, desc,
+}) => {
   return (
     <>
-      <h3>{props.title}</h3>
-      {props.desc && <p dangerouslySetInnerHTML={{ __html: replaceCode(props.desc) }} />}
+      <h3>
+        <VirtualAnchor>{title}</VirtualAnchor>
+      </h3>
+      {desc && <p dangerouslySetInnerHTML={{ __html: replaceCode(desc) }} />}
   
       <style jsx>{`
         h3 {
-          margin-bottom: ${props.desc ? 0 : '30px'};
+          margin-bottom: ${desc ? 0 : '30px'};
           line-height: 1;
           font-size: 1.3rem;
           margin-top: 75px;
           text-transform: capitalize;
+          position: relative;
         }
         
         h3 > p {

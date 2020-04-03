@@ -17,14 +17,15 @@ const ActiveCatalog: React.FC<Props> = React.memo(
         {name}
         <style jsx>{`
           span {
-            font-size: .9rem;
+            font-size: .8125rem;
             transition: all .2s ease;
-            color: ${theme.palette.accents_3};
+            color: ${theme.palette.accents_4};
             text-transform: uppercase;
+            letter-spacing: 1.3px;
           }
           
           .active {
-            color: ${theme.palette.accents_6};
+            color: ${theme.palette.foreground};
           }
         `}</style>
       </span>

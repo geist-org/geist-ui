@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { Card, Link, Spacer, useTheme } from 'components'
 import AttributesTitle from './attributes-title'
+import VirtualAnchor from 'lib/components/anchor'
 
 export interface AttributesProps {
   edit: string
@@ -17,7 +18,7 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
   return (
     <>
       <Spacer y={5} />
-      <h3>Attributes</h3>
+      <h3><VirtualAnchor>Attributes</VirtualAnchor></h3>
       <Card className="attr">
         {children}
       </Card>
