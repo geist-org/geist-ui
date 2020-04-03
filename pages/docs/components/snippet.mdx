@@ -11,6 +11,7 @@ export const meta = {
 Display a snippet of copyable code for the command line.
 
 <Playground
+  desc="Basic usage."
   scope={{ Snippet }}
   code={`
 <Snippet text="yarn add @zeit-ui/react" width="300px" />
@@ -18,6 +19,7 @@ Display a snippet of copyable code for the command line.
 
 <Playground
   title="width"
+  desc="Specify width manually."
   scope={{ Snippet }}
   code={`
 <Snippet text="yarn add @zeit-ui/react" width="100%" />
@@ -25,6 +27,7 @@ Display a snippet of copyable code for the command line.
 
 <Playground
   title="types"
+  desc="Show different states with colors."
   scope={{ Snippet, Spacer }}
   code={`
 <>
@@ -51,6 +54,7 @@ Display a snippet of copyable code for the command line.
 
 <Playground
   title="without copy"
+  desc="Hide icon for copy. (disable copy)"
   scope={{ Snippet }}
   code={`
 <Snippet copy="prevent" text="yarn add @zeit-ui/react" width="300px" />
@@ -77,10 +81,10 @@ Display a snippet of copyable code for the command line.
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **text** | code snippet | `string` `Array<string>` | - | - |
+| **type** | snippet types | [SnippetTypes](#snippettypes) | [SnippetTypes](#snippettypes) | `default` |
 | **fill** | filled style | `boolean` | - | `false` |
 | **width** | set CSS string | `string` | - | `initial` |
 | **copy** | function of copy button | `CopyTypes` | `'default', 'slient', 'prevent'` | `default` |
-| **type** | snippet types | `SnippetTypes` | `SnippetTypes` | `default` |
 | ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
 
 <Attributes.Title>SnippetTypes</Attributes.Title>

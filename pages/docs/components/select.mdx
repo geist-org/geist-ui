@@ -11,6 +11,7 @@ export const meta = {
 Display a dropdown list of items.
 
 <Playground
+  desc="Basic usage."
   scope={{ Select }}
   code={`
 () => {
@@ -26,6 +27,7 @@ Display a dropdown list of items.
 
 <Playground
   title="Disabled"
+  desc="Disable all options."
   scope={{ Select }}
   code={`
 <Select placeholder="Choose one" disabled>
@@ -36,6 +38,7 @@ Display a dropdown list of items.
 
 <Playground
   title="Disabled Option"
+  desc="disable specified options."
   scope={{ Select }}
   code={`
 <Select placeholder="Choose one">
@@ -46,6 +49,7 @@ Display a dropdown list of items.
 
 <Playground
   title="Without Icon"
+  desc="Hide icon on right."
   scope={{ Select }}
   code={`
 <Select placeholder="Choose one" pure>
@@ -56,6 +60,7 @@ Display a dropdown list of items.
 
 <Playground
   title="Compose"
+  desc="Use with other components."
   scope={{ Select, Code }}
   code={`
 <Select placeholder="Choose one" initialValue="1">

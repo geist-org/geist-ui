@@ -12,6 +12,7 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 
 <Playground
   scope={{ Collapse, Text }}
+  desc="Show title only by default."
   code={`
 <Collapse.Group>
   <Collapse title="Question A">
@@ -29,6 +30,7 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 
 <Playground
   title="Expanded"
+  desc="Specify what to display first."
   scope={{ Collapse, Text }}
   code={`
 <Collapse.Group>
@@ -47,6 +49,7 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 
 <Playground
   title="Subtitle"
+  desc="Add text or components as subtitle."
   scope={{ Collapse, Text }}
   code={`
 <Collapse.Group>
@@ -55,7 +58,7 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
   </Collapse>
-  <Collapse title="Question B">
+  <Collapse title="Question B" subtitle={<>More description about <Text b>Question A</Text></>}>
     <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
@@ -65,6 +68,7 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 
 <Playground
   title="Shadow"
+  desc="Highlight importance at a higher level."
   scope={{ Collapse, Text }}
   code={`
 <Collapse shadow title="Question A" subtitle="More description about Question A">

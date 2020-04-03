@@ -4,7 +4,6 @@ import { useState } from 'react'
 
 export const meta = {
   title: 'Progress',
-  description: 'Progress',
 }
 
 ## Progress
@@ -19,6 +18,7 @@ Display progress relative to a limit or related to a task.
 
 <Playground
   title="Custom Max"
+  desc="Modify the maximum value of progress."
   scope={{ Progress }}
   code={`
 <Progress value={45} max={50} />
@@ -26,6 +26,7 @@ Display progress relative to a limit or related to a task.
 
 <Playground
   title="Dynamic Colors"
+  desc="You can specify the color of the progress in any range."
   scope={{ Progress, useState, useTheme, Button, Spacer }}
   code={`
 () => {
@@ -51,6 +52,7 @@ Display progress relative to a limit or related to a task.
 
 <Playground
   title="Type"
+  desc="We prepared some different styles in advance."
   scope={{ Progress, Spacer }}
   code={`
 <>

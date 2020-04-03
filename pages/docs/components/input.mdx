@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 
 export const meta = {
   title: 'Input',
-  description: 'avatar',
 }
 
 ## Input
@@ -13,13 +12,15 @@ export const meta = {
 Retrieve text input from a user.
 
 <Playground
+  desc="Basic input field."
   scope={{ Input }}
   code={`
 <Input placeholder="The Evil Rabbit" />
 `} />
 
 <Playground
-  title="Size"
+  title="Sizes"
+  desc="Inputs of different sizes."
   scope={{ Input, Spacer }}
   code={`
 <>
@@ -32,6 +33,7 @@ Retrieve text input from a user.
 
 <Playground
   title="Set width"
+  desc="Specify width or other styles."
   scope={{ Input }}
   code={`
 <Input placeholder="The Evil Rabbit" width="100%" />
@@ -39,6 +41,7 @@ Retrieve text input from a user.
 
 <Playground
   title="unwritable"
+  desc="Disable interactive inputs."
   scope={{ Input, Spacer }}
   code={`
 <>
@@ -50,6 +53,7 @@ Retrieve text input from a user.
 
 <Playground
   title="inline label"
+  desc="Show a short label in the line."
   scope={{ Input, Spacer }}
   code={`
 <>
@@ -61,6 +65,7 @@ Retrieve text input from a user.
 
 <Playground
   title="block label"
+  desc="Labels for custom styles."
   scope={{ Input, Spacer, Text, Code, Dot }}
   code={`
 <>
@@ -82,6 +87,7 @@ Retrieve text input from a user.
 
 <Playground
   title="status"
+  desc="Differentiate states by color."
   scope={{ Input, Spacer }}
   code={`
 <>
@@ -97,6 +103,7 @@ Retrieve text input from a user.
 
 <Playground
   title="Icon"
+  desc="Specify an icon component."
   scope={{ Input, GitIcon }}
   code={`
 <>
@@ -106,6 +113,7 @@ Retrieve text input from a user.
 
 <Playground
   title="Clearable"
+  desc="Add a clear button in the input box."
   scope={{ Input }}
   code={`
 <>
@@ -115,6 +123,7 @@ Retrieve text input from a user.
 
 <Playground
   title="Get Change"
+  desc="Capture changes in input."
   scope={{ Input, useState }}
   code={`
 () => {
@@ -131,6 +140,7 @@ Retrieve text input from a user.
 
 <Playground
   title={<>With <Code>useInput</Code></>}
+  desc="Use `hooks` to capture changes."
   scope={{ Input, useInput, useEffect, Button, Spacer }}
   code={`
 () => {

@@ -4,7 +4,6 @@ import { useState } from 'react'
 
 export const meta = {
   title: 'textarea',
-  description: 'textarea',
 }
 
 ## Textarea
@@ -12,6 +11,7 @@ export const meta = {
 Retrieve multi-line user input.
 
 <Playground
+  desc="Basic usage."
   scope={{ Textarea }}
   code={`
 <Textarea placeholder="Please enter a description." />
@@ -19,6 +19,7 @@ Retrieve multi-line user input.
 
 <Playground
   title="width"
+  desc="Specify width manually."
   scope={{ Textarea }}
   code={`
 <Textarea width="100%" placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
@@ -26,6 +27,7 @@ Retrieve multi-line user input.
 
 <Playground
   title="disabled"
+  desc="Disable interactive textarea."
   scope={{ Textarea }}
   code={`
 <Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
@@ -33,6 +35,7 @@ Retrieve multi-line user input.
 
 <Playground
   title="status"
+  desc="Differentiate states by color."
   scope={{ Textarea, Spacer }}
   code={`
 <>
@@ -48,6 +51,7 @@ Retrieve multi-line user input.
 
 <Playground
   title="get change"
+  desc="Capture changes in textarea."
   scope={{ Textarea, useState }}
   code={`
 () => {
@@ -67,6 +71,7 @@ Retrieve multi-line user input.
 
 <Playground
   title={<>With <Code>useInput</Code></>}
+  desc="Use `hooks` to capture changes."
   scope={{ Textarea, useInput, Button, Spacer }}
   code={`
 () => {

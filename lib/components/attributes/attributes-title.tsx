@@ -1,5 +1,6 @@
 import React from 'react'
 import { Spacer, Code, useTheme } from 'components'
+import VirtualAnchor from 'lib/components/anchor'
 
 export interface AttributesTitleProps {
   alias?: string
@@ -19,7 +20,10 @@ const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> =
 
   return (
     <>
-      <h4 className="title"><Code>{children}</Code>{getAlias(alias)}</h4>
+      <h4 className="title">
+        <Code><VirtualAnchor pure>{children}</VirtualAnchor></Code>
+        {getAlias(alias)}
+      </h4>
       <Spacer y={.6} />
   
       <style jsx>{`
