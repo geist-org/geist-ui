@@ -2,7 +2,7 @@
 <img align="center" height="370" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png">
 </p>
 
-> @zeit-ui/react -- React implementation for [ZEIT Style](https://github.com/zeit-ui/zeit-style), originating from [ZEIT Design](https://zeit.co/design).
+> @zeit-ui/react -- Modern and minimalist React UI library, originating from ZEIT Design.
 
 <br/>
 
@@ -15,21 +15,19 @@
 ```jsx
 import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
 
-const Application = () => {
-  return (
-    <ZEITUIProvider>      //  ---> Base provider
-      <CSSBaseline />     //  ---> normalize styles
-      <AppComponent />    //  ---> Your App Component
-    </ZEITUIProvider>
-  )
-}
+const Application = () => (
+  <ZEITUIProvider>      //  ---> Base provider
+    <CSSBaseline />     //  ---> normalize styles
+    <AppComponent />    //  ---> Your App Component
+  </ZEITUIProvider>
+)
 ```
 
 <br/>
 
 ## Documentation
 
-- [Document Site](https://react.zeit-ui.co/)
+- [Document Site](https://react.zeit-ui.co)
 
 <br/>
 
