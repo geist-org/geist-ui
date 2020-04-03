@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import withDefaults from 'components/utils/with-defaults'
-import { ConfigContext } from 'lib/states/config-context'
+import { ConfigContext, Configs } from './config-context'
 
 interface Props {
   onChange?: Function
@@ -14,15 +14,15 @@ export type ConfigProviderProps = Props & typeof defaultProps
 const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = React.memo(({
   onChange, children,
 }) => {
-  const [shouldScroll, setShouldScroll] = useState<boolean>(false)
-  const updateShouldScroll = (next: boolean) => {
-    setShouldScroll(next)
+  const [scrollHeight, setScrollHeight] = useState<number>(0)
+  const updateSidebarScrollHeight = (height: number) => {
+    setScrollHeight(height)
   }
-  const initialValue = useMemo(() => ({
+  const initialValue = useMemo<Configs>(() => ({
     onChange,
-    shouldScroll,
-    updateShouldScroll,
-  }), [onChange, shouldScroll])
+    sidebarScrollHeight: scrollHeight,
+    updateSidebarScrollHeight,
+  }), [onChange, scrollHeight])
 
   return (
     <ConfigContext.Provider value={initialValue}>

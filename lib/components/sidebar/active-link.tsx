@@ -1,27 +1,17 @@
-import React, { Children, useEffect } from 'react'
+import React, { Children } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import useConfigs from 'lib/states/use-config'
 
 export interface Props {
   onAcitve?: Function
-  index: number
-  total: number
   href: string
 }
 
 const ActiveLink: React.FC<React.PropsWithChildren<Props>> = React.memo(
-  ({ children, index, href }) => {
-    const { updateShouldScroll } = useConfigs()
+  ({ children, href }) => {
     const { pathname } = useRouter()
     const isActive = pathname === href
     const child = Children.only(children)
-  
-    useEffect(() => {
-      if (!isActive) return
-      
-      updateShouldScroll && updateShouldScroll(index > 16)
-    }, [isActive])
 
     return (
       <Link href={href}>

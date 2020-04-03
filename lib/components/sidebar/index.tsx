@@ -1,16 +1,22 @@
-import React, { useEffect, useMemo, useRef } from 'react'
-import { withRouter, Router } from 'next/router'
+import React, { PropsWithChildren, useEffect, useRef } from 'react'
+import Router from 'next/router'
 import { useTheme, Spacer } from 'components'
 import SideItem, { SideItemProps, Sides } from './side-item'
-import useConfigs from 'lib/states/use-config'
+import { useConfigs } from '../config-context'
 
 export interface Props {
-  router: Router
 }
 
 export type SideGroupProps = Props & SideItemProps
 
 export type SideChildren = Sides | Array<Sides>
+
+const areEqual = (
+  preProps: Readonly<PropsWithChildren<SideGroupProps>>,
+  nextProps: Readonly<PropsWithChildren<SideGroupProps>>,
+): boolean => {
+  return preProps.sides.length === nextProps.sides.length
+}
 
 export const SideGroup: React.FC<{ sides?: SideChildren }> = React.memo(({ sides }) => {
   if (!sides) return null
@@ -21,17 +27,19 @@ export const SideGroup: React.FC<{ sides?: SideChildren }> = React.memo(({ sides
 export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
   const theme = useTheme()
   const boxRef = useRef<HTMLDivElement>(null)
-  const { shouldScroll, updateShouldScroll } = useConfigs()
-  const totalHeight = useMemo<number>(() => {
-    if (!sides || !Array.isArray(sides)) return 0
-    return sides.length * 36
-  }, [sides])
-
+  const { sidebarScrollHeight, updateSidebarScrollHeight } = useConfigs()
+  
   useEffect(() => {
-    if (!boxRef.current || !shouldScroll) return
-    updateShouldScroll && updateShouldScroll(false)
-    boxRef.current.scrollTo({ top: boxRef.current.scrollHeight })
-  }, [shouldScroll])
+    Router.events.on('routeChangeStart', () => {
+      if (!boxRef.current) return
+      updateSidebarScrollHeight(boxRef.current.scrollTop || 0)
+    })
+  }, [])
+  
+  useEffect(() => {
+    if (!boxRef.current) return
+    boxRef.current.scrollTo({ top: sidebarScrollHeight })
+  }, [boxRef.current])
 
   return (
     <div ref={boxRef} className="sides box">
@@ -41,11 +49,10 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
       <Spacer />
       <style jsx>{`
         .sides {
-          height: ${totalHeight}px;
           width: 100%;
           padding-bottom: ${theme.layout.gap};
         }
-
+        
         .box {
           overflow-y: auto;
           overflow-x: hidden;
@@ -74,6 +81,6 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
       `}</style>
     </div>
   )
-})
+}, areEqual)
 
-export default withRouter(Sidebar)
+export default Sidebar

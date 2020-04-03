@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react'
 import { Button, useTheme, Spacer } from 'components'
-import useConfigs from 'lib/states/use-config'
+import { useConfigs } from './config-context'
 import MoonIcon from './icons/moon'
 import SunIcon from './icons/sun'
 import GithubIcon from './icons/github'
