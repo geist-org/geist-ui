@@ -24,14 +24,14 @@ const defaultProps = {
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>
 export type LinkProps = Props & typeof defaultProps & NativeAttrs
 
-const Link: React.FC<React.PropsWithChildren<LinkProps>> = React.memo(React.forwardRef(({
+const Link = React.memo(React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(({
   href, color, underline, pure, children, className, block, ...props
 }, ref: React.Ref<HTMLAnchorElement>) => {
   const theme = useTheme()
   const linkColor = color || block ? theme.palette.success : 'inherit'
   const padding = block ? theme.layout.gapQuarter : '0'
   const decoration = underline ? 'underline' : 'none'
-  
+
   return (
     <a className={`link ${className}`} href={href} {...props} ref={ref}>
       {children}
