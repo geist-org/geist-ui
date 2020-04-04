@@ -145,7 +145,7 @@ type ButtonDropdownComponent<P = {}> = React.FC<P> & {
   Item: typeof ButtonDropdownItem
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 export default ButtonDropdown as ButtonDropdownComponent<ComponentProps>
 

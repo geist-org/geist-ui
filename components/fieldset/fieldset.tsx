@@ -91,6 +91,6 @@ type FieldsetComponent<P = {}> = React.FC<P> & {
   Group: typeof FieldsetGroup
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 export default Fieldset as FieldsetComponent<ComponentProps>

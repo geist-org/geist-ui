@@ -135,6 +135,6 @@ type CheckboxComponent<P = {}> = React.FC<P> & {
   Group: typeof CheckboxGroup
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 export default Checkbox as CheckboxComponent<ComponentProps>
