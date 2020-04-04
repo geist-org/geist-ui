@@ -1,3 +1,3 @@
 import redirect from 'lib/redirect'
 
-export default redirect('/docs')
+export default redirect('/en-us')

@@ -1,0 +1,95 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Select, Spacer, Code } from 'components'
+
+export const meta = {
+  title: 'Select / 选择器',
+}
+
+## Select / 选择器
+
+显示下拉列表选框。
+
+<Playground
+  scope={{ Select }}
+  code={`
+() => {
+  const handler = val => console.log(val)
+  return (
+    <Select placeholder="选择工作方式" onChange={handler}>
+      <Select.Option value="1">远程工作</Select.Option>
+      <Select.Option value="2">线下工作</Select.Option>
+    </Select>
+  )
+}
+`} />
+
+<Playground
+  title="禁用"
+  desc="禁用所有的交互。"
+  scope={{ Select }}
+  code={`
+<Select placeholder="选择工作方式" disabled>
+  <Select.Option value="1">Option 1</Select.Option>
+  <Select.Option value="2">Option 2</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="禁用选项"
+  desc="禁用指定的选项。"
+  scope={{ Select }}
+  code={`
+<Select placeholder="选择工作地点">
+  <Select.Option value="1" disabled>北京</Select.Option>
+  <Select.Option value="2">上海</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="无图标"
+  desc="隐藏选择器右侧的图标。"
+  scope={{ Select }}
+  code={`
+<Select placeholder="工作方式" pure>
+  <Select.Option value="1">远程办公</Select.Option>
+  <Select.Option value="2">线下工作</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="组合"
+  desc="与其他组件组合使用。"
+  scope={{ Select, Code }}
+  code={`
+<Select placeholder="选择语言" initialValue="1">
+  <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
+  <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
+</Select>
+`} />
+
+
+<Attributes edit="/pages/docs/components/select.mdx">
+<Attributes.Title>Select.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **initialValue** | 选择器初始值 | `string` | - | - |
+| **placeholder** | 占位文本内容 | `string` | - | - |
+| **size** | 选择器组件大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **icon** | 右侧图标组件 | `ReactNode` | - | `SVG Component` |
+| **pure** | 隐藏右侧图标组件 | `boolean` | - | `false` |
+| **disabled** | 禁用所有的交互 | `boolean` | - | `false` |
+| **onChange** | 选项被选中所触发的事件 | `(val: string) => void` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'name', 'alt', 'className', ...` | - |
+
+<Attributes.Title>Select.Option.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value**(必须的) | 唯一鉴别值 | `string` | - | - |
+| **disabled** | 禁用当前选项 | `boolean` | - | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

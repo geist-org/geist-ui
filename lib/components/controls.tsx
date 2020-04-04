@@ -1,6 +1,7 @@
 import React, { useCallback, useMemo } from 'react'
 import { Button, useTheme, Spacer } from 'components'
-import { useConfigs } from './config-context'
+import { useConfigs } from 'lib/config-context'
+import Router, { useRouter } from 'next/router'
 import MoonIcon from './icons/moon'
 import SunIcon from './icons/sun'
 import GithubIcon from './icons/github'
@@ -8,19 +9,30 @@ import GithubIcon from './icons/github'
 const Controls: React.FC<{}> = React.memo(({
 }) => {
   const theme = useTheme()
-  const config = useConfigs()
+  const { onChange, updateChineseState } = useConfigs()
+  const { pathname } = useRouter()
+  const currentLocaleText = useMemo(() => {
+    return pathname.toLowerCase().includes('zh-cn') ? 'EN' : '中'
+  }, [pathname])
   const isDark = useMemo(() => theme.type === 'dark', [theme.type])
   const switchThemes = useCallback(() => {
     const isDark = theme.type === 'dark'
-    config.onChange && config.onChange(!isDark)
+    onChange && onChange(!isDark)
   }, [theme.type])
   
+  const switchLanguages = useCallback(() => {
+    const currentIsChinese = pathname.toLowerCase().includes('zh-cn')
+    const nextPath = `/${currentIsChinese ? 'en-us' : 'zh-cn'}`
+    updateChineseState(!currentIsChinese)
+    Router.push(nextPath)
+  }, [pathname])
+
   const redirectGithub = () => {
     if (typeof window !== 'undefined') {
       window.open('https://github.com/zeit-ui/react')
     }
   }
-  
+
   return (
     <div className="controls">
       <div className="tools">
@@ -32,6 +44,10 @@ const Controls: React.FC<{}> = React.memo(({
         <Button className="button" auto type="abort"
           onClick={redirectGithub}>
           <GithubIcon width={16} height={16} />
+        </Button>
+        <Button className="button" auto type="abort"
+          onClick={switchLanguages}>
+          <span>{currentLocaleText}</span>
         </Button>
       </div>
       <style jsx>{`

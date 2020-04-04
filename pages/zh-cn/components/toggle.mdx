@@ -1,0 +1,90 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Toggle, Spacer } from 'components'
+
+export const meta = {
+  title: 'Toggle / 开关',
+}
+
+## Toggle / 开关
+
+显示布尔值的状态。
+
+<Playground
+  scope={{ Toggle, Spacer }}
+  code={`
+<>
+  <Toggle />
+  <Spacer y={.5} />
+  <Toggle initialChecked />
+</>
+`} />
+
+<Playground
+  title="禁用"
+  scope={{ Toggle, Spacer }}
+  code={`
+<>
+  <Toggle disabled />
+  <Spacer y={.5} />
+  <Toggle initialChecked disabled />
+</>
+`} />
+
+<Playground
+  title="大小"
+  desc="不同大小的开关组件。"
+  scope={{ Toggle, Spacer }}
+  code={`
+<>
+  <Toggle size="small" />
+  <Spacer y={.5} />
+  <Toggle initialChecked size="medium" />
+  <Spacer y={.5} />
+  <Toggle initialChecked size="large" />
+</>
+`} />
+
+<Playground
+  title="获取变化事件"
+  scope={{ Toggle, Spacer }}
+  code={`
+() => {
+  const handler = event => {
+    console.log(event.target.checked)
+  }
+  return <Toggle onChange={handler} />
+}
+`} />
+
+
+<Attributes edit="/pages/docs/components/toggle.mdx">
+<Attributes.Title>Toggle.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **checked** | 是否选中 | `boolean` | - | - |
+| **initialChecked** | 开关的初始状态 | `boolean` | - | `false` |
+| **onChange** | 变化事件 | `ToggleEvent` | - | - |
+| **size** | 开关组件的大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **disabled** | 禁用交互 | `boolean` | - | `false` |
+| ... | 原生属性 | `LabelHTMLAttributes` | `'from', 'name', 'className', ...` | - |
+
+
+<Attributes.Title>ToggleEvent</Attributes.Title>
+
+```ts
+interface ToggleEventTarget {
+  checked: boolean
+}
+
+export interface ToggleEvent {
+  target: ToggleEventTarget
+  stopPropagation: () => void
+  preventDefault: () => void
+  nativeEvent: React.ChangeEvent
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

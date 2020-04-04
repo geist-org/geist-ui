@@ -1,37 +1,49 @@
-import React, { useState } from 'react'
-import { withRouter, Router } from 'next/router'
-import { useTheme } from 'components/index'
+import React, { useMemo, useState } from 'react'
+import { useRouter } from 'next/router'
+import { useTheme } from 'components'
+import Controls from './controls'
 import Sidebar from './sidebar'
-import Controls from 'lib/components/controls'
-import sides from 'lib/data/metadata.json'
+import { Sides } from './sidebar/side-item'
 import TabbarMobile from './sidebar/tabbar-mobile'
 import useBodyScroll from 'components/utils/use-body-scroll'
+import sides from 'lib/data/metadata.json'
 
 export interface Meta {
   title: string
-  description: string
-  editUrl?: string
 }
 
 export interface Props {
-  router: Router
+  meta: Meta
+  getStaticProps?: any
+}
+
+export interface MultilLocaleMetaInformation {
+  [key: string]: Sides[]
 }
 
 export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ children }) => {
   const theme = useTheme()
+  const { pathname } = useRouter()
   const [, setBodyScroll] = useBodyScroll(null, { scrollLayer: true })
   const [expanded, setExpanded] = useState<boolean>(false)
   const mobileTabbarClickHandler = () => {
     setExpanded(!expanded)
     setBodyScroll(!expanded)
   }
+  const sideData = useMemo(() => {
+    const language = pathname
+      .split('/')
+      .filter(r => !!r)
+    const locale: string = language[0] || 'en-us'
+    return (sides as MultilLocaleMetaInformation)[locale]
+  }, [pathname, sides])
   
   return (
     <div className="layout">
       <TabbarMobile onClick={mobileTabbarClickHandler} />
       <aside className="sidebar">
         <Controls />
-        <Sidebar sides={sides}/>
+        <Sidebar sides={sideData}/>
       </aside>
       <div className="side-shadow" />
       <main className="main">
@@ -110,4 +122,4 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
   )
 })
 
-export default withRouter(Layout)
+export default Layout

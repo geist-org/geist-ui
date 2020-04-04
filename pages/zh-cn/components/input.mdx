@@ -1,0 +1,201 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import GitIcon from 'lib/components/icons/github'
+import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
+import { useState, useEffect } from 'react'
+
+export const meta = {
+  title: 'Input / 输入框',
+}
+
+## Input / 输入框
+
+处理用户的输入数据。
+
+<Playground
+  desc="基础的输入字段。"
+  scope={{ Input }}
+  code={`
+<Input placeholder="一个基础示例" />
+`} />
+
+<Playground
+  title="大小"
+  desc="不同大小的输入框。"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input size="mini" placeholder="最小的" /> <Spacer y={.5} />
+  <Input size="small" placeholder="较小的" /> <Spacer y={.5} />
+  <Input size="medium" placeholder="中等的" /> <Spacer y={.5} />
+  <Input size="large" placeholder="较大的" />
+</>
+`} />
+
+<Playground
+  title="宽度"
+  desc="手动地设置宽度，或其他样式。"
+  scope={{ Input }}
+  code={`
+<Input placeholder="一个基础示例" width="100%" />
+`} />
+
+<Playground
+  title="不可交互地"
+  desc="禁用输入框地所有交互效果。"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input disabled placeholder="禁用" />
+  <Spacer y={.5} />
+  <Input readOnly initialValue="只读" />
+</>
+`} />
+
+<Playground
+  title="行内标签"
+  desc="在输入框内显示短小地行内文本。"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input label="用户名" placeholder="一个基础示例" />
+  <Spacer y={.5} />
+  <Input labelRight=".com" placeholder="https://github" />
+</>
+`} />
+
+<Playground
+  title="块级标签"
+  desc="为标签自定义更多样式。"
+  scope={{ Input, Spacer, Text, Code, Dot }}
+  code={`
+<>
+  <Input placeholder="小维特">
+    用户名
+  </Input>
+  <Spacer />
+  <Input placeholder="文章标题" width="50%">
+    <Text h3>标题</Text>
+  </Input>
+  <Spacer />
+  <Input placeholder="GitHub Actions" width="50%">
+    <Dot type="warning">
+      <Text small><Code>部署</Code> 问题详情</Text>
+    </Dot>
+  </Input>
+</>
+`} />
+
+<Playground
+  title="状态"
+  desc="用色彩区分不同的状态。"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input status="secondary" initialValue="次要" />
+  <Spacer y={.5} />
+  <Input status="success" initialValue="成功" />
+  <Spacer y={.5} />
+  <Input status="warning" initialValue="警告" />
+  <Spacer y={.5} />
+  <Input status="error" initialValue="包含错误" />
+</>
+`} />
+
+<Playground
+  title="图标"
+  desc="指定一个图标组件。"
+  scope={{ Input, GitIcon }}
+  code={`
+<>
+  <Input icon={<GitIcon />} placeholder="输入 Git 地址" />
+</>
+`} />
+
+<Playground
+  title="清除按钮"
+  desc="在输入框内增加一个用于清除文本的按钮。"
+  scope={{ Input }}
+  code={`
+<>
+  <Input clearable initialValue="示例文字" />
+</>
+`} />
+
+<Playground
+  title="变化事件"
+  desc="捕获输入框的文本变化。"
+  scope={{ Input, useState }}
+  code={`
+() => {
+  const [value, setValue] = useState()
+  const handler = (e) => {
+    setValue(e.target.value)
+    console.log(e.target.value)
+  }
+  return (
+    <Input value={value} onChange={handler} placeholder="一个基础示例" />
+  )
+}
+`} />
+
+<Playground
+  title={<><Code>useInput</Code></>}
+  desc="使用 `hooks` 捕获输入框的文本变化。"
+  scope={{ Input, useInput, useEffect, Button, Spacer }}
+  code={`
+() => {
+  const { state, setState, reset, bindings } = useInput('The Evil Rabbit')
+  useEffect(() => console.log(state), [state])
+  return (
+    <>
+      <Input {...bindings} />
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small"
+        onClick={() => setState(Math.random().toString(32))}>随机设置值</Button>
+      <Spacer y={.5} />
+      <Button auto size="small"onClick={() => reset()}>重置值</Button>
+    </>
+  )
+}
+`} />
+
+
+<Attributes edit="/pages/docs/components/input.mdx">
+<Attributes.Title>Input.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | 命令式设定输入框的值 | `string` | - | - |
+| **initialValue** | 初始值 | `string` | - | - |
+| **placeholder** | 占位文本 | `string` | - | - |
+| **size** | 输入框大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **status** | 输入框状态 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **readOnly** | 是否设置输入框为只读 | `boolean` | - | `false` |
+| **disabled** | 是否禁用输入框 | `boolean` | - | `false` |
+| **clearable** | 是否展示清除按钮 | `boolean` | - | `false` |
+| **label** | 文本标签 | `string` | - | - |
+| **icon** | 输入框图标 | `React.ReactNode` | - | - |
+| **labelRight** | 居于右侧的文本标签 | `string` | - | - |
+| **iconRight** | 居于右侧的图标 | `React.ReactNode` | - | - |
+| **onChange** | 输入框变化事件 | `(e: React.ChangeEvent) => void` | - | - |
+| **onClearClick** | 清除按钮的点击事件 | `(e: React.MouseEvent) => void` | - | - |
+| ... | 原生属性 | `InputHTMLAttributes` | `'alt', 'type', 'className', ...` | - |
+
+<Attributes.Title>useInput</Attributes.Title>
+
+```ts
+type useInput = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  reset: () => void
+  bindings: {
+    value: string
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

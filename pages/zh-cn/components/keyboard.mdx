@@ -1,0 +1,63 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Keyboard } from 'components'
+
+export const meta = {
+  title: 'keyboard / 键盘',
+  description: 'tenotext',
+}
+
+## Keyboard / 键盘
+
+显示用于键盘输入的按键字符。
+
+<Playground
+  scope={{ Keyboard }}
+  code={`
+<Keyboard>f</Keyboard>
+`} />
+
+<Playground
+  title="修饰符"
+  scope={{ Keyboard }}
+  code={`
+<div>
+  <Keyboard command />
+  <Keyboard shift />
+  <Keyboard option />
+  <Keyboard ctrl />
+</div>
+`} />
+
+<Playground
+  title="组合键"
+  scope={{ Keyboard }}
+  code={`
+<div>
+  <Keyboard command>f</Keyboard>
+  <Keyboard shift>e</Keyboard>
+  <Keyboard option ctrl>b</Keyboard>
+</div>
+`} />
+
+<Playground
+  title="较小的"
+  scope={{ Keyboard }}
+  code={`
+<Keyboard small>/</Keyboard>
+`} />
+
+<Attributes edit="/pages/docs/components/keyboard.mdx">
+<Attributes.Title>Keyboard.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **command** | 显示 Command 按钮 | `boolean` | - | `false` |
+| **shift** | 显示 Shift 按钮 | `boolean` | - | `false` |
+| **option** | 显示 Option 按钮 | `boolean` | - | `false` |
+| **ctrl** | 显示 Control 按钮 | `boolean` | - | `false` |
+| **small** | 较小的键盘 | `boolean` | - | `false` |
+| ... | 原生属性 | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

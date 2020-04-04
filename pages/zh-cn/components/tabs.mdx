@@ -1,0 +1,129 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Tabs, Spacer, Link, Text, Button, Code, useTabs } from 'components'
+import { useState } from 'react'
+import GithubIcon from 'lib/components/icons/github'
+import ZeitIcon from 'lib/components/icons/zeit'
+import ReactIcon from 'lib/components/icons/react'
+
+export const meta = {
+  title: 'Tabs / 选项卡',
+}
+
+## Tabs / 选项卡
+
+显示选项卡的内容。
+
+<Playground
+  scope={{ Tabs }}
+  desc="切换显示不同的内容。"
+  code={`
+<Tabs initialValue="1">
+  <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
+  <Tabs.Item label="八进制" value="2">八进制表示为开头是0后接大写或小写的O（0o或0O）。</Tabs.Item>
+</Tabs>
+`} />
+
+<Playground
+  title="禁用"
+  scope={{ Tabs }}
+  code={`
+<Tabs initialValue="1">
+  <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
+  <Tabs.Item label="八进制" value="2" disabled />
+</Tabs>
+`} />
+
+<Playground
+  title="图标"
+  desc="在选项卡的标签上显示图标组件。"
+  scope={{ Tabs, ReactIcon, ZeitIcon, Link, Text }}
+  code={`
+<Tabs initialValue="1">
+  <Tabs.Item label={<><ZeitIcon /> ZEIT UI</>} value="1">
+    <Text>你好，这是非官方的 ZEIT UI 库。</Text>
+    <Link href="https://github.com/zeit-ui/react" pure color rel="nofollow" target="_blank">点击这里浏览 GitHub 项目</Link>
+  </Tabs.Item>
+  <Tabs.Item label={<><ReactIcon/> React Components </>} value="2">
+    <Text>这个组件看起来还不错。</Text>
+  </Tabs.Item>
+</Tabs>
+`} />
+
+<Playground
+  title="命令式"
+  desc="以命令式的风格控制选项卡组件。"
+  scope={{ Tabs, Button, Spacer, useState }}
+  code={`
+() => {
+  const [value, setValue] = useState('1')
+  const switchHandler = () => setValue('2')
+  const changeHandler = val => setValue(val)
+  return (
+    <>
+      <Button size="small" onClick={switchHandler} auto>选择八进制</Button>
+      <Spacer />
+      <Tabs value={value} onChange={changeHandler}>
+        <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
+        <Tabs.Item label="八进制" value="2">八进制表示为开头是0后接大写或小写的O（0o或0O）。</Tabs.Item>
+      </Tabs>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title={<>与&nbsp;<Code>useTabs</Code>&nbsp;组合</>}
+  desc="使用 `hooks` 以更简单的方式控制选项卡。"
+  scope={{ Tabs, Button, Spacer, useTabs }}
+  code={`
+() => {
+  const { setState, bindings } = useTabs('1')
+  return (
+    <>
+      <Button size="small" onClick={() => setState('2')} auto>选择八进制</Button>
+      <Spacer />
+      <Tabs {...bindings}>
+        <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
+        <Tabs.Item label="八进制" value="2">八进制表示为开头是0后接大写或小写的O（0o或0O）。</Tabs.Item>
+      </Tabs>
+    </>
+  )
+}
+`} />
+
+
+<Attributes edit="/pages/docs/components/tabs.mdx">
+<Attributes.Title>Tabs.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **initialValue** | 初始值 | `string` | - | - |
+| **value** | 设定当前选项 | `string` | - | - |
+| **onChange** | 选项卡切换事件 | `(val: string) => void` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+
+<Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **label**(必须的) | 选项卡标签文字 | `string` | - | - |
+| **value** | 唯一鉴别值 | `string` | - | - |
+| **disabled** | 禁用当前选项卡 | `boolean` | - | `false` |
+
+<Attributes.Title>useTabs</Attributes.Title>
+
+```ts
+type useTabs = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  bindings: {
+    value: string
+    onChange: (val: string) => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

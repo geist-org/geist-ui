@@ -1,0 +1,62 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Badge, Spacer } from 'components'
+
+export const meta = {
+  title: 'Badge / 徽章',
+}
+
+## Badge / 徽章
+
+显示一个需要注意的指标。
+
+<Playground
+  scope={{ Badge, Spacer }}
+  desc="展示一个数字或一段文字。"
+  code={`
+  <>
+    <Badge>1</Badge> <Spacer y={.5} />
+    <Badge>50</Badge> <Spacer y={.5} />
+    <Badge>100</Badge> <Spacer y={.5} />
+    <Badge>2020</Badge>
+  </>
+`} />
+
+<Playground
+  title="类型"
+  desc="以不同的色彩表达不同的状态。"
+  scope={{ Badge, Spacer }}
+  code={`
+  <>
+    <Badge type="success">成功</Badge> <Spacer y={.5} />
+    <Badge type="warning">警告</Badge> <Spacer y={.5} />
+    <Badge type="error">错误</Badge> <Spacer y={.5} />
+    <Badge type="secondary">次要的</Badge>
+  </>
+`} />
+
+<Playground
+  title="大小"
+  desc="不同大小的徽章组件。"
+  scope={{ Badge, Spacer }}
+  code={`
+  <>
+    <Badge size="mini">极小</Badge> <Spacer y={.5} />
+    <Badge size="small">较小</Badge> <Spacer y={.5} />
+    <Badge size="medium">中等</Badge> <Spacer y={.5} />
+    <Badge size="large">最大</Badge>
+  </>
+`} />
+
+
+<Attributes edit="/pages/docs/components/badge.mdx">
+<Attributes.Title>Badge.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | 徽章的类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size** | 徽章的大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| ... | 原生属性 | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

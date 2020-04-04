@@ -3,6 +3,7 @@ import { LivePreview, LiveProvider, LiveEditor, LiveError } from 'react-live'
 import withDefaults from 'components/utils/with-defaults'
 import useClipboard from 'components/utils/use-clipboard'
 import { useTheme, useToasts } from 'components'
+import { useConfigs } from '../../config-context'
 import makeCodeTheme from './code-theme'
 import RightIcon from 'lib/components/icons/right'
 import CopyIcon from 'lib/components/icons/copy'
@@ -18,7 +19,6 @@ interface Props {
 }
 
 const defaultProps = {
-  title: 'Default',
   desc: '',
   code: '',
   bindings: {},
@@ -26,7 +26,7 @@ const defaultProps = {
 
 export type PlaygroundProps = Props & typeof defaultProps
 
-const editor = (code: string, copy: Function) => {
+const editor = (code: string, copy: Function, isChinese: boolean) => {
   const theme = useTheme()
   const [visible, setVisible] = useState(false)
   
@@ -41,7 +41,7 @@ const editor = (code: string, copy: Function) => {
     event.stopPropagation()
     event.preventDefault()
     copy(code)
-    setToast({ text: 'code copied.' })
+    setToast({ text: isChinese ? '代码已拷贝至剪切板。' : 'code copied.' })
   }
   
   return (
@@ -50,7 +50,7 @@ const editor = (code: string, copy: Function) => {
         <summary onClick={clickHandler}>
           <div>
             <RightIcon active={visible} />
-            <span>Code Editor</span>
+            <span>{isChinese ? '编辑代码' : 'Code Editor'}</span>
           </div>
           <div>
             {visible && <CopyIcon onClick={copyHandler} />}
@@ -115,22 +115,26 @@ const editor = (code: string, copy: Function) => {
   )
 }
 
-const Playground: React.FC<PlaygroundProps> = React.memo(props => {
+const Playground: React.FC<PlaygroundProps> = React.memo(({
+  title: inputTitle, code: inputCode, desc, scope,
+}) => {
   const theme = useTheme()
+  const { isChinese } = useConfigs()
   const codeTheme = makeCodeTheme(theme)
   const { copy } = useClipboard()
-  const code = props.code.trim()
+  const code = inputCode.trim()
+  const title = inputTitle || (isChinese ? '基础的' : 'Default')
 
   return (
     <>
-      <Title title={props.title} desc={props.desc} />
+      <Title title={title} desc={desc} />
       <div className="playground">
-        <LiveProvider code={code} scope={props.scope} theme={codeTheme}>
+        <LiveProvider code={code} scope={scope} theme={codeTheme}>
           <div className="wrapper">
             <LivePreview />
             <LiveError />
           </div>
-          {editor(code, copy)}
+          {editor(code, copy, !!isChinese)}
         </LiveProvider>
     
         <style jsx>{`

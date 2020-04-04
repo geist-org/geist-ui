@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useEffect, useRef } from 'react'
 import Router from 'next/router'
 import { useTheme, Spacer } from 'components'
 import SideItem, { SideItemProps, Sides } from './side-item'
-import { useConfigs } from '../config-context'
+import { useConfigs } from 'lib/config-context'
 
 export interface Props {
 }

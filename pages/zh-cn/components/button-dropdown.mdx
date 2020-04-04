@@ -1,0 +1,147 @@
+import Layout from 'lib/components/layout'
+import Attributes from 'lib/components/attributes'
+import Playground from 'lib/components/playground'
+import { ButtonDropdown, Spacer } from 'components'
+
+export const meta = {
+  title: 'Btn-Dropdown / 下拉按钮',
+  index: 105,
+}
+
+## Button Dropdown / 下拉按钮
+
+显示相关的操作。
+
+
+<Playground
+  scope={{ ButtonDropdown }}
+  code={`
+<ButtonDropdown>
+  <ButtonDropdown.Item main>默认按钮</ButtonDropdown.Item>
+  <ButtonDropdown.Item>次要的按钮</ButtonDropdown.Item>
+  <ButtonDropdown.Item>第三个按钮</ButtonDropdown.Item>
+</ButtonDropdown>
+`} />
+
+<Playground
+  title="禁用"
+  desc="禁用所有的按钮。"
+  scope={{ ButtonDropdown }}
+  code={`
+<ButtonDropdown disabled>
+  <ButtonDropdown.Item main>默认动作</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
+</ButtonDropdown>
+`} />
+
+<Playground
+  title="加载中"
+  desc="显示一个友好的加载指示器。"
+  scope={{ ButtonDropdown }}
+  code={`
+<ButtonDropdown loading>
+  <ButtonDropdown.Item main>Default Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
+</ButtonDropdown>
+`} />
+
+<Playground
+  title="类型"
+  scope={{ ButtonDropdown, Spacer }}
+  code={`
+<>
+  <ButtonDropdown type="secondary">
+    <ButtonDropdown.Item main>次要的</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown type="success">
+    <ButtonDropdown.Item main>成功</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown type="warning">
+    <ButtonDropdown.Item main>警告</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown type="error">
+    <ButtonDropdown.Item main>错误</ButtonDropdown.Item>
+  </ButtonDropdown>
+</>
+`} />
+
+<Playground
+  title="大小"
+  desc="不同大小的组件。"
+  scope={{ ButtonDropdown, Spacer }}
+  code={`
+<>
+  <ButtonDropdown size="mini" auto>
+    <ButtonDropdown.Item main>自动-小</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="small" auto>
+      <ButtonDropdown.Item main>自动-较小</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="small" auto>
+    <ButtonDropdown.Item main>自动-中等</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="mini">
+    <ButtonDropdown.Item main>小</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="small">
+    <ButtonDropdown.Item main>较小</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="medium">
+    <ButtonDropdown.Item main>中等</ButtonDropdown.Item>
+  </ButtonDropdown>
+  <Spacer y={.5} />
+  <ButtonDropdown size="large">
+    <ButtonDropdown.Item main>最大的</ButtonDropdown.Item>
+  </ButtonDropdown>
+</>
+`} />
+
+<Playground
+  title="多类型"
+  desc="为每个按钮设定不同的类型。"
+  scope={{ ButtonDropdown }}
+  code={`
+<ButtonDropdown>
+  <ButtonDropdown.Item main>访问账户</ButtonDropdown.Item>
+  <ButtonDropdown.Item>屏蔽账户</ButtonDropdown.Item>
+  <ButtonDropdown.Item>锁定账户</ButtonDropdown.Item>
+  <ButtonDropdown.Item type="error">移除账户</ButtonDropdown.Item>
+</ButtonDropdown>
+`} />
+
+<Attributes edit="/pages/docs/components/button-dropdown.mdx">
+<Attributes.Title>ButtonDropdown.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | 按钮类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size** | 按钮的大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **loading** | 显示加载中的指示器 | `boolean` | - | `false` |
+| **auto** | 自动缩放宽度 | `boolean` | - | `false` |
+| **disabled** | 禁用所有按钮 | `boolean` | - | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+
+<Attributes.Title>ButtonDropdown.Item.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | 当前单个按钮类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **main** | 是否为主要按钮 | `boolean` | - | `false` |
+| **onClick** | 按钮的点击事件 | `MouseEventHandler` | - | - |
+| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+</Attributes>
+
+
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

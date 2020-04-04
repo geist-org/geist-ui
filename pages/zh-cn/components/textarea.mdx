@@ -1,0 +1,124 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Textarea, Spacer, useInput, Button, Code } from 'components'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'Textarea / 文本输入框',
+}
+
+## Textarea / 文本输入框
+
+获取用户输入的多行文本。
+
+<Playground
+  desc="基础示例。"
+  scope={{ Textarea }}
+  code={`
+<Textarea placeholder="请输入一段描述。" />
+`} />
+
+<Playground
+  title="宽度"
+  desc="手动指定文本框的宽度。"
+  scope={{ Textarea }}
+  code={`
+<Textarea width="100%" placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+`} />
+
+<Playground
+  title="禁用"
+  desc="禁用文本框所有交互。"
+  scope={{ Textarea }}
+  code={`
+<Textarea width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+`} />
+
+<Playground
+  title="状态"
+  desc="通过色彩区分不同的状态"
+  scope={{ Textarea, Spacer }}
+  code={`
+<>
+  <Textarea status="success" minHeight="65px" value="成功" />
+  <Spacer x={.5} inline />
+  <Textarea status="secondary" minHeight="65px" value="次要的" />
+  <Spacer y={.5} />
+  <Textarea status="warning" minHeight="65px" value="警告" />
+  <Spacer x={.5} inline />
+  <Textarea status="error" minHeight="65px" value="错误" />
+</>
+`} />
+
+<Playground
+  title="事件"
+  desc="捕获文本框的输入事件"
+  scope={{ Textarea, useState }}
+  code={`
+() => {
+  const [value, setValue] = useState()
+  const handler = (e) => {
+    setValue(e.target.value)
+    console.log(e.target.value)
+  }
+  return (
+    <Textarea width="100%"
+     value={value}
+     onChange={handler}
+     placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+  )
+}
+`} />
+
+<Playground
+  title={<>与&nbsp;<Code>useInput</Code>&nbsp;组合</>}
+  desc="通过 `hooks` 以更简单的方式驱动文本框。"
+  scope={{ Textarea, useInput, Button, Spacer }}
+  code={`
+() => {
+  const { setState, reset, bindings } = useInput('CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。')
+  return (
+    <>
+      <Textarea width="100%" {...bindings}/>
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>设置随机文本</Button>
+      <Spacer y={.5} />
+      <Button auto size="small" onClick={() => reset()}>重置文本</Button>
+    </>
+  )
+}
+`} />
+
+<Attributes edit="/pages/docs/components/textarea.mdx">
+<Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | 设置文本框的值 | `string` | - | - |
+| **initialValue** | 文本框的初始值 | `string` | - | - |
+| **placeholder** | 占位文本 | `string` | - | - |
+| **status** | 文本框当前状态 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **readOnly** | 是否以只读方式显示 | `boolean` | - | `false` |
+| **disabled** | 是否禁用文本框 | `boolean` | - | `false` |
+| **width** | 设置 CSS 宽度 | `string` | - | `initial` |
+| **minHeight** | 设置 CSS 最小高度 | `string` | - | - |
+| **onChange** | 文本变化事件 | `(e: React.ChangeEvent) => void` | - | - |
+| ... | 原生属性 | `TextareaHTMLAttributes` | `'form', 'id', 'className', ...` | - |
+
+<Attributes.Title>useInput</Attributes.Title>
+
+```ts
+type useInput = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  reset: () => void
+  bindings: {
+    value: string
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,0 +1,39 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Description, Code } from 'components'
+
+export const meta = {
+  title: 'Description / 描述',
+}
+
+## Description / 描述
+
+显示简短的信息和描述内容。
+
+<Playground
+  desc="`Description` 组件默认包含标题和内容。"
+  scope={{ Description }}
+  code={`
+<Description title="章节的标题" content="关于这部分的数据。" />
+`} />
+
+<Playground
+  title="组件组合"
+  desc="与其他组件结合使用。"
+  scope={{ Description, Code }}
+  code={`
+<Description title="推荐的文章" content={<>在 React 中父子组件 <Code>通信</Code> 的最佳实践。</>} />
+`} />
+
+<Attributes edit="/pages/docs/components/description.mdx">
+<Attributes.Title>Description.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **title** | 标题文本 | `ReactNode` / `string` | - | - |
+| **content** | 内容文本 | `ReactNode` / `string` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | - | - |
+
+</Attributes>
+
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,0 +1,55 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Spacer, Container, Col } from 'components'
+
+export const meta = {
+  title: 'Spacer / 间距',
+  description: 'tenotext',
+}
+
+## Spacer / 间距
+
+为排版提供标准化的空间。
+
+<Playground
+  title="垂直的"
+  scope={{ Spacer, Container }}
+  code={`
+<>
+  <Container style={{ background: '#444' }}>
+    <Spacer y={1}/>
+  </Container>
+  <Spacer y={1}/>
+  <Container style={{ background: '#444' }}>
+    <Spacer y={2}/>
+  </Container>
+  <Spacer y={1}/>
+  <Container style={{ background: '#444' }}>
+    <Spacer y={3}/>
+  </Container>
+</>
+`} />
+
+<Playground
+  title="水平的"
+  scope={{ Spacer, Container, Col }}
+  code={`
+<Container>
+  <Col style={{ background: '#444' }} />
+  <Spacer x={5}/>
+  <Col style={{ background: '#444' }} />
+</Container>
+`} />
+
+<Attributes edit="/pages/docs/components/spacer.mdx">
+<Attributes.Title>Spacer.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **x** | X 轴间距 | `number` / `float` | - | 1 |
+| **y** | Y 轴间距 | `number` / `float` | - | 1 |
+| **inline** | 行内模式 (不会产生换行) | `boolean` | - | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

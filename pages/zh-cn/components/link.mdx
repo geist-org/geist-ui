@@ -1,0 +1,74 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Link, Text, Code } from 'components'
+import NextLink from 'next/link'
+
+export const meta = {
+  title: 'Link / 链接',
+  description: 'tenotext',
+}
+
+## Link / 链接
+
+网页之间的超链接。
+
+<Playground
+  desc="组件默认会为链接添加一个图标。"
+  scope={{ Link }}
+  code={`
+<Link href="#">通过使用指南和教程来学习如何用 React</Link>
+`} />
+
+<Playground
+  title="高亮"
+  desc="以不同的颜色区分链接。"
+  scope={{ Link }}
+  code={`
+<Link href="#" color>通过使用指南和教程来学习如何用 React</Link>
+`} />
+
+<Playground
+  title="变体"
+  desc="链接的不同样式。"
+  scope={{ Link, Text }}
+  code={`
+<>
+  <Text><Link href="#" pure>通过使用指南和教程来学习如何用 React</Link></Text>
+  <Text><Link href="#" color pure>通过使用指南和教程来学习如何用 React</Link></Text>
+  <Text><Link href="#" pure underline>通过使用指南和教程来学习如何用 React</Link></Text>
+  <Text><Link href="#" underline>通过使用指南和教程来学习如何用 React</Link></Text>
+</>
+`} />
+
+<Playground
+  title="块级链接"
+  desc="将链接单独作为一个块显示。"
+  scope={{ Link }}
+  code={`
+<Link href="#" pure block>通过使用指南和教程来学习如何用 React</Link>
+`} />
+
+<Playground
+  title={<>与&nbsp;<Code>next/link</Code>&nbsp;组合</>}
+  desc="使用 `Link` 组件与 NextJS 组合使用不需要任何额外的配置。"
+  scope={{ Link, NextLink }}
+  code={`
+<NextLink href="/zh-cn/components/button">
+  <Link pure block>Docs of Button</Link>
+</NextLink>
+`} />
+
+<Attributes edit="/pages/docs/components/link.mdx">
+<Attributes.Title>Link.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **href** | 链接地址 | `string` | - | - |
+| **color** | 是否高亮显示 | `boolean` | - | `false` |
+| **pure** | 隐藏图标，仅显示文本 | `boolean` | - | `false` |
+| **underline** | 显示下划线 | `boolean` | - | `false` |
+| **block** | 是否以块的方式显示链接 | `boolean` | - | `false` |
+| ... | 原生属性 | `AnchorHTMLAttributes` | `'rel', 'target', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

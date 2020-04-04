@@ -1,0 +1,111 @@
+import Layout from 'lib/components/layout'
+import { Code, Link, Text, Spacer, Note } from 'components'
+
+export const meta = {
+  title: '服务端渲染',
+  index: 15,
+}
+
+
+## 服务端渲染
+
+### 在服务端的 ZEIT-UI React
+
+`@zeit-ui/react` 的所有组件都能完美的适应 **服务端渲染**，实际上，你现在所见的文档站点就是来自服务端渲染。
+
+<Note label="阅读提示">
+ 如果你只想创建 <Link href="https://en.wikipedia.org/wiki/Single-page_application" rel="nofollow" pure underline>一个 SPA 应用</Link>，
+  建议跳过此章节。
+</Note>
+
+<Spacer y={.5} />
+
+使用服务端渲染会让我们的应用失去 SPA 的所有优势吗？或许你可以考虑 `hybrid render` (混合渲染) 的应用，
+阅读 <Link pure color href="https://nextjs.org/blog/next-9-3#next-gen-static-site-generation-ssg-support" rel="nofollow">
+这篇来自 Next.js 团队的文章</Link> 了解更多细节。
+
+<Text>除此之外，关于 <Text b>服务端渲染</Text> 和 Web 应用的细节考量，
+我们强烈推荐你阅读这篇来自 <Text em>Guillermo Rauch</Text> 的著名博文：
+<Link pure color href="https://rauchg.com/2014/7-principles-of-rich-web-applications" rel="nofollow" target="_blank">
+  构建 Web 应用的 7 原则
+</Link>。
+</Text>
+
+<Spacer y={2.5} />
+
+### 使用 Next.js
+
+在 `next.js` 框架中，你首先需要创建 `_document.js` 文件来填充自定义信息，
+请参考 <Link href="https://nextjs.org/docs/advanced-features/custom-document" rel="nofollow">Next.js 的官方文档</Link>
+创建 `_document.js` 文件。
+
+随后我们将以下示例代码加入到文件中即可：
+
+```js
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { CSSBaseline } from '@zeit-ui/react'
+
+class MyDocument extends Document {
+  static async getInitialProps (ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    const styles = CSSBaseline.flush()
+
+    return {
+      ...initialProps,
+      styles: (
+        <>
+          {initialProps.styles}
+          {styles}
+        </>
+      )
+    }
+  }
+
+  render() { ... }
+}
+```
+
+这里也准备了一个完整的应用示例供作参考: <Link href="https://github.com/unix/unix.bio/blob/template/pages/_document.jsx" rel="nofollow">_document.jsx</Link>。
+
+<Spacer y={3} />
+
+### 定制服务端
+
+在你自定义的服务端或其他预渲染框架中，你可以通过函数 `CSSBaseLine.flush` 获取所有样式文本。
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom/server'
+import { CSSBaseLine } from 'zeit-ui/react'
+import App from './app'
+
+export default (req, res) => {
+  const app = ReactDOM.renderToString(<App />)
+  const styles = CSSBaseLine.flush()
+  const html = ReactDOM.renderToStaticMarkup(<html>
+    <head>{ styles }</head>
+    <body>
+      <div id="root" dangerouslySetInnerHTML={{__html: app}} />
+    </body>
+  </html>)
+  res.end('<!doctype html>' + html)
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

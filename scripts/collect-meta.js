@@ -1,8 +1,8 @@
 const fs = require('fs-extra')
 const path = require('path')
 const extractMetadata = require('extract-mdx-metadata')
+const metaLocales = require('./locales')
 const pagePrefix = path.join(__dirname, '../pages')
-const docsDir = path.join(__dirname, '../pages/docs')
 const targetPath = path.join(__dirname, '../lib/data/metadata.json')
 const weights = {
   'getting-started': 1,
@@ -28,20 +28,51 @@ const getMetadata = async (files, parentPath) => {
         const url = filePath
           .replace(pagePrefix, '')
           .replace('.mdx', '')
-        return { name: meta.title || file, url, index: meta.index || 100, meta }
+        return { name: meta.title || file, url, index: meta.index || 100 }
       })
   )
 }
 
 ;(async () => {
   try {
-    const files = await fs.readdir(docsDir)
-    const data = await getMetadata(files, docsDir)
-    const sorted = data.sort((a, b) => {
-      return weights[a.name] - weights[b.name]
-    })
+    const locales = (await fs.readdir(pagePrefix))
+      .filter(name => {
+        const fullPath = path.join(pagePrefix, name)
+        if (name === 'docs') return false
+        return fs.statSync(fullPath).isDirectory()
+      })
+    
+    const sortdMetaData = await Promise.all(locales.map(async name => {
+      const currentLocale = metaLocales[name] || {}
+      const dir = path.join(pagePrefix, name)
+      const childDirs = await fs.readdir(dir)
+      const data = await getMetadata(childDirs, dir)
+      const sorted = data
+        .sort((a, b) => weights[a.name] - weights[b.name])
+        .map(item => {
+          const localeName = currentLocale[item.name]
+          if (!localeName) return item
+          return {
+            ...item,
+            localeName: localeName
+          }
+        })
+      
+      return {
+        name,
+        content: sorted
+      }
+    }))
+    
+    const jsonData = sortdMetaData.reduce((pre, current) => {
+      return {
+        ...pre,
+        [current.name]: current.content,
+      }
+    }, [])
+
     await fs.ensureFile(targetPath)
-    await fs.writeJson(targetPath, sorted)
+    await fs.writeJson(targetPath, jsonData)
   } catch (e) {
     console.log(e)
     process.exit(1)

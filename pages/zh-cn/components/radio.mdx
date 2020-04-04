@@ -1,0 +1,118 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Radio, Spacer, Code, Text } from 'components'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'Radio / 单选框',
+}
+
+## Radio / 单选框
+
+提供用户输入的选择项。
+
+<Playground
+  scope={{ Radio }}
+  code={`
+<Radio checked={false}>选项 1</Radio>
+`} />
+
+<Playground
+  title="组"
+  desc="一组可控选择的数值。"
+  scope={{ Radio, useState }}
+  code={`
+() => {
+  const [state, setState] = useState('1')
+  const handler = val => {
+    setState(val)
+    console.log(val)
+  }
+  return (
+    <>
+      <Radio.Group value={state} onChange={handler}>
+        <Radio value="1">上海</Radio>
+        <Radio value="2">广州</Radio>
+      </Radio.Group>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="描述"
+  desc="`Description` 属性可以与组件结合使用。"
+  scope={{ Radio, Text }}
+  code={`
+<Radio.Group value="1" onChange={val => console.log(val)}>
+  <Radio value="1">
+    No Store
+    <Radio.Description>缓存中不得存储任何关于客户端请求和服务端响应的内容。</Radio.Description>
+  </Radio>
+  <Radio value="2">
+    No Cache
+    <Radio.Desc>服务器端会验证 <Text b>请求中所描述的缓存</Text> 是否过期</Radio.Desc>
+  </Radio>
+</Radio.Group>
+`} />
+
+
+<Playground
+  title="禁用"
+  desc="禁用组内所有的可选项。"
+  scope={{ Radio, useState, Code }}
+  code={`
+<Radio.Group value="1" disabled>
+  <Radio value="1">郑州</Radio>
+  <Radio value="2">南昌</Radio>
+</Radio.Group>
+`} />
+
+<Playground
+  title="行"
+  desc="水平排列所有的选项。"
+  scope={{ Radio, Code }}
+  code={`
+<Radio.Group value="1" useRow>
+  <Radio value="1">
+    MSQRT
+    <Radio.Desc>不带根数的平方根</Radio.Desc>
+  </Radio>
+  <Radio value="2">
+    MROOT
+    <Radio.Desc>带指定根数的根号</Radio.Desc>
+  </Radio>
+</Radio.Group>
+`} />
+
+
+<Attributes edit="/pages/docs/components/radio.mdx">
+<Attributes.Title>Radio.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **checked** | 是否选择 (仅在单独使用时有效) | `boolean` | - | `false` |
+| **value** | 唯一的鉴别值 (仅在组内使用时有效) | `string` | - | - |
+| **disabled** | 禁用当前选项 | `boolean` | - | `false` |
+| **onChange** | 选项变化事件 | `(e: RadioEvent) => void` | - | - |
+| ... | 原生属性 | `InputHTMLAttributes` | `'id', 'alt', 'className', ...` | - |
+
+<Attributes.Title>Radio.Group.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **initialValue** | 初始值 | `string` | - | - |
+| **value** | 设置选中的子选项值 | `string` | - | - |
+| **useRow** | 水平对齐所有子单选框 | `boolean` | - | `false` |
+| **disabled** | 禁用组内所有单选框 | `boolean` | - | `false` |
+| **onChange** | 组的值变化事件 | `(value: string) => void` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+
+<Attributes.Title alias="Radio.Desc">Radio.Description.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | 原生属性 | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

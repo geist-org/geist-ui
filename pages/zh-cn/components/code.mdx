@@ -1,0 +1,69 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Code, Note, Link } from 'components'
+
+export const meta = {
+  title: 'Code / 代码',
+}
+
+## Code / 代码
+
+以标准化的方式展示源代码。
+
+<Note label="提示">想要展示 <Code>Shell</Code> 代码片段或一个命令？可以试试 <Link pure color href="/zh-cn/components/snippet">Snippet / 片段</Link> 组件。</Note>
+
+<Playground
+  desc="基础的行内代码。"
+  scope={{ Code }}
+  code={`
+<p>Run <Code>npm i @zeit-ui/react</Code> to install.</p>
+`} />
+
+
+<Playground
+  title="代码块"
+  desc="多行的代码块展示。"
+  scope={{ Code }}
+  code={`
+() => {
+  const codes = \`npm i @zeit-ui/react
+yarn add @zeit-ui/react\`
+  return <Code block>{codes}</Code>
+}
+`} />
+
+<Playground
+  title="宽度"
+  desc="手动地指定宽度，或其他样式。"
+  scope={{ Code }}
+  code={`
+() => {
+  const codes = \`npm i @zeit-ui/react
+yarn add @zeit-ui/react\`
+  return <Code block width="50%">{codes}</Code>
+}
+`} />
+
+<Playground
+  title="过长的"
+  desc="超出范围的代码的展示效果。"
+  scope={{ Code }}
+  code={`
+() => {
+  const codes = \`npm i @zeit-ui/react npm i @zeit-ui/react npm i @zeit-ui/react
+yarn add @zeit-ui/react\`
+  return <Code block width="50%">{codes}</Code>
+}
+`} />
+
+<Attributes edit="/pages/docs/components/code.mdx">
+<Attributes.Title>Code.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **block** | 展示多行的代码块 | `boolean` | - | `false` |
+| **width** | 设置 CSS 宽度 | `string` | - | `initial` |
+| ... | 原生属性 | `HTMLAttributes` | `'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

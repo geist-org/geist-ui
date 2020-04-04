@@ -1,0 +1,51 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Image, Display, Code } from 'components'
+
+export const meta = {
+  title: 'Image / 图片',
+  description: 'tenotext',
+}
+
+## Image / 图片
+
+展示图片内容。
+
+<Playground
+  scope={{ Image }}
+  code={`
+<Image width="540" height="160" src="/images/custom-domains.png" />
+`} />
+
+<Playground
+  title="骨架"
+  desc="组件在设置 `width` 与 `height` 属性后会在加载时显示骨架动画。"
+  scope={{ Image }}
+  code={`
+<Image width="540" height="160" src="/images/custom-domains.png" />
+`} />
+
+<Playground
+  title="组合"
+  desc="与 `Display` 组件组合使用。"
+  scope={{ Image, Display, Code }}
+  code={`
+<Display shadow caption={<p>设置 <Code>height</Code> 属性可以尽可能的减少重绘。</p>}>
+  <Image width="540" height="246" src="/images/branch-domains.png" />
+</Display>
+`} />
+
+<Attributes edit="/pages/docs/components/image.mdx">
+<Attributes.Title>Image.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **src** | 图片地址 | `string` | - | - |
+| **animation** | 是否在加载时显示骨架动画  | `boolean` | - | `true` |
+| **width** | 宽度 | `number` | - | - |
+| **height** | 高度 | `number` | - | - |
+| **scale** | 缩放比例 | `string` | - | `100%` |
+| ... | 原生属性 | `ImgHTMLAttributes` | `'alt', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -6,6 +6,7 @@ import { useTheme } from 'components'
 export type Sides = {
   name: string
   url?: string
+  localeName?: string
   children?: Sides | Array<Sides>
 }
 
@@ -23,7 +24,7 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
       {sides.map((side, index) => {
         return (
           <div key={`${side.name}-${index}`} className="item">
-            {!side.url && <ActiveCatalog name={side.name} />}
+            {!side.url && <ActiveCatalog name={side.name} localeName={side.localeName} />}
             {side.url && (
               <div className="link">
                 <ActiveLink href={side.url}><a>{side.name}</a></ActiveLink>
