@@ -1,5 +1,5 @@
 import Layout from 'lib/components/layout'
-import { Note, Code, Spacer } from 'components'
+import { Note, Code, Spacer, Link } from 'components'
 
 export const meta = {
   title: '主题',
@@ -71,6 +71,28 @@ const App = () => (
   </ZEITUIProvider>
 )
 ```
+
+<Spacer y={3} />
+
+### 查看主题定义的所有类型
+
+如果你正在使用 TypeScript，可以选择引入各类预置的类型：
+
+```ts
+import {
+  ZeitUIThemes,
+  ZeitUIThemesFont,
+  ZeitUIThemesPalette,
+  ZeitUIThemesExpressiveness,
+  ZeitUIThemesLayout,
+} from '@zeit-ui/react'
+
+// 使用示例
+const myStyles: ZeitUIThemes = { /* ... */ }
+const myPalette: Partial<ZeitUIThemesPalette> = { /* ... */ }
+```
+
+如果你没有使用 TypeScript，想要了解更多的预置类型，请看<Link color target="_blank" pure href="https://github.com/zeit-ui/react/blob/master/components/styles/themes/index.ts">这里的类型声明文件</Link>。
 
 <Spacer y={3} />
 
