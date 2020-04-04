@@ -39,7 +39,10 @@ const Colors: React.FC<Props> = ({
     copy(text)
     setToast(({ text: <span>Copied <Code>{text}</Code></span> }))
   }
-  const colorItems = useMemo(() => getColorItem(type, theme.palette, copyText), [])
+  const colorItems = useMemo(
+    () => getColorItem(type, theme.palette, copyText),
+    [type, theme.palette],
+  )
   
   return (
     <div className="colors">

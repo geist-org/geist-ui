@@ -64,8 +64,8 @@ export const getCurrentColor = (palette: ZeitUIThemesPalette, type: string, inde
   }
   
   if (type === 'highlight') {
-    if (index < 3) return palette.background
-    return palette.foreground
+    if (index < 3) return 'white'
+    return 'black'
   }
   
   return palette.background
