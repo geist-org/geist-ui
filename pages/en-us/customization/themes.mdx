@@ -1,5 +1,5 @@
 import Layout from 'lib/components/layout'
-import { Note, Code, Spacer } from 'components'
+import { Note, Code, Spacer, Link } from 'components'
 
 export const meta = {
   title: 'Themes',
@@ -71,6 +71,29 @@ const App = () => (
   </ZEITUIProvider>
 )
 ```
+
+<Spacer y={3} />
+
+### View all types of Theme definitions
+
+If you are using TypeScript, you can import various preset types:
+
+```ts
+import {
+  ZeitUIThemes,
+  ZeitUIThemesFont,
+  ZeitUIThemesPalette,
+  ZeitUIThemesExpressiveness,
+  ZeitUIThemesLayout,
+} from '@zeit-ui/react'
+
+// usage:
+const myStyles: ZeitUIThemes = { /* ... */ }
+const myPalette: Partial<ZeitUIThemesPalette> = { /* ... */ }
+```
+
+If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" pure href="https://github.com/zeit-ui/react/blob/master/components/styles/themes/index.ts">here</Link>.
+
 
 <Spacer y={3} />
 
