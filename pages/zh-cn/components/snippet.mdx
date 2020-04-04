@@ -1,0 +1,103 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Snippet, Spacer, Code } from 'components'
+
+export const meta = {
+  title: 'Snippet / 片段',
+}
+
+## Snippet / 片段
+
+显示可拷贝的命令行代码片段。
+
+<Playground
+  desc="展示一个命令。"
+  scope={{ Snippet }}
+  code={`
+<Snippet text="yarn add @zeit-ui/react" width="300px" />
+`} />
+
+<Playground
+  title="宽度"
+  desc="手动地指定宽度。"
+  scope={{ Snippet }}
+  code={`
+<Snippet text="yarn add @zeit-ui/react" width="100%" />
+`} />
+
+<Playground
+  title="类型"
+  desc="以颜色区分不同的类型。"
+  scope={{ Snippet, Spacer }}
+  code={`
+<>
+  <Snippet text="yarn add @zeit-ui/react" type="dark" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="success" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="warning" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="error" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="secondary" width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="lite" width="300px" />
+</>
+`} />
+
+<Playground
+  title="多行"
+  scope={{ Snippet }}
+  code={`
+<Snippet text={['cd project', 'now']} width="300px" />
+`} />
+
+<Playground
+  title="无拷贝"
+  desc="隐藏拷贝按钮。 (禁用拷贝)"
+  scope={{ Snippet }}
+  code={`
+<Snippet copy="prevent" text="yarn add @zeit-ui/react" width="300px" />
+`} />
+
+<Playground
+  title="填充"
+  scope={{ Snippet, Spacer }}
+  code={`
+<>
+  <Snippet text="yarn add @zeit-ui/react" type="success" fill width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="warning" fill width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="error" fill width="300px" />
+  <Spacer />
+  <Snippet text="yarn add @zeit-ui/react" type="secondary" fill width="300px" />
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/snippet.mdx">
+<Attributes.Title>Snippet.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **text** | 命令文本 | `string` `Array<string>` | - | - |
+| **type** | 组件类型 | [SnippetTypes](#snippettypes) | [SnippetTypes](#snippettypes) | `default` |
+| **fill** | 填充风格的样式 | `boolean` | - | `false` |
+| **width** | 设置 CSS 宽度 | `string` | - | `initial` |
+| **copy** | 拷贝按钮的工作方式 | `CopyTypes` | `'default', 'slient', 'prevent'` | `default` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>SnippetTypes</Attributes.Title>
+
+```ts
+type SnippetTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'dark'
+  | 'lite'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

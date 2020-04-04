@@ -1,0 +1,45 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Capacity, Spacer, useTheme } from 'components'
+
+export const meta = {
+  title: 'Capacity / 容量',
+}
+
+## Capacity / 容量
+
+显示一个容量指示器。
+
+<Playground
+  scope={{ Capacity, Spacer }}
+  code={`
+<>
+  <Capacity value={15} /> <Spacer />
+  <Capacity value={45} /> <Spacer />
+  <Capacity value={95} />
+</>
+`} />
+
+<Playground
+  title="固定色彩"
+  desc="指定一个颜色以覆盖默认的。"
+  scope={{ Capacity, Spacer, useTheme }}
+  code={`
+() => {
+  const theme = useTheme()
+  return <Capacity value={75} color={theme.palette.success} />
+}
+`} />
+
+<Attributes edit="/pages/docs/components/capacity.mdx">
+<Attributes.Title>Capacity.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | 当前的容量值 | `number` | - | 0 |
+| **limit** | 最大的容量值 | `number` | - | 100 |
+| **color** | CSS 颜色值 | `string` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

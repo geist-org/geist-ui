@@ -1,0 +1,45 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Dot } from 'components'
+
+export const meta = {
+  title: 'Dot / 点',
+  description: 'tenotext',
+}
+
+## Dot / 点
+
+点可以表达语句的状态，或是仅用于分类装饰。
+
+<Playground
+  scope={{ Dot }}
+  code={`
+<>
+  <Dot style={{ marginRight: '15px' }} />
+  <Dot style={{ marginRight: '15px' }} type="success" />
+  <Dot style={{ marginRight: '15px' }} type="warning" />
+  <Dot type="error" />
+</>
+`} />
+
+<Playground
+  scope={{ Dot }}
+  code={`
+<>
+  <Dot style={{ marginRight: '20px' }}>已取消</Dot>
+  <Dot style={{ marginRight: '20px' }} type="success">已准备</Dot>
+  <Dot style={{ marginRight: '20px' }} type="warning">警告</Dot>
+  <Dot type="error">错误</Dot>
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/dot.mdx">
+<Attributes.Title>Dot.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | 点的类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ... | 原生属性 | `HTMLAttributes` | - | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

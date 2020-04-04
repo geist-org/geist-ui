@@ -3,15 +3,14 @@ import { Spinner, Spacer, Note, Code, Link } from 'components'
 import NextLink from 'next/link'
 
 export const meta = {
-  title: 'Spinner',
-  description: 'tenotext',
+  title: 'Spinner / 指示器',
 }
 
-## Spinner
+## Spinner / 指示器
 
-Indicate an action running in the background.
+表示一个动作正在进行中。
 
-<Note>Looking for <Code>Loading</Code>? Use the <NextLink href="/docs/components/loading"><a>Loading Component</a></NextLink>.</Note>
+<Note>想要表示加载中状态或后台运行任务? 试试 <NextLink href="/zh-cn/components/loading"><a>Loading / 加载中</a></NextLink> 组件。</Note>
 
 <Playground
   scope={{ Spinner }}
@@ -20,8 +19,8 @@ Indicate an action running in the background.
 `} />
 
 <Playground
-  title="Sizes"
-  desc="Components of different sizes."
+  title="大小"
+  desc="不同大小的组件。"
   scope={{ Spinner, Spacer }}
   code={`
 <>
@@ -38,10 +37,10 @@ Indicate an action running in the background.
 <Attributes edit="/pages/docs/components/spinner.mdx">
 <Attributes.Title>Spinner.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
+| 属性 | 描述 | 类型 | 推荐值 | 默认
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **size** | spinner size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| **size** | 指示器大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
 
 </Attributes>
 

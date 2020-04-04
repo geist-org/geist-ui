@@ -1,0 +1,89 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Checkbox, Spacer } from 'components'
+
+export const meta = {
+  title: 'Checkbox / 复选框',
+}
+
+## Checkbox / 复选框
+
+用于表示多个可选项。
+
+
+<Playground
+  desc="设置 `initialChecked` 属性初始的状态。"
+  scope={{ Checkbox }}
+  code={`
+  <Checkbox initialChecked={true}>墨西哥</Checkbox>
+`} />
+
+<Playground
+  title="禁用的"
+  scope={{ Checkbox, Spacer }}
+  code={`
+<>
+  <Checkbox>悉尼</Checkbox>
+  <Spacer y={.5} />
+  <Checkbox disabled checked={true}>北京</Checkbox>
+</>
+`} />
+
+<Playground
+  title="组"
+  desc="管理一组 `Checkbox`。"
+  scope={{ Checkbox, Spacer }}
+  code={`
+() => {
+  const handler = value => {
+    console.log(value)
+  }
+  return (
+    <Checkbox.Group value={['sydney']} onChange={handler}>
+      <Checkbox value="sydney">悉尼</Checkbox>
+      <Checkbox value="beijing">北京</Checkbox>
+      <Checkbox value="london">伦敦</Checkbox>
+      <Checkbox value="tokyo">东京</Checkbox>
+    </Checkbox.Group>
+  )
+}
+`} />
+
+<Attributes edit="/pages/docs/components/checkbox.mdx">
+<Attributes.Title>Checkbox.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **checked** | 是否选中 | `boolean` | - | - |
+| **initialChecked** | 初始状态是否选中 | `boolean` | - | `false` |
+| **onChange** | 复选框的变化事件 | `CheckboxEvent` | - | - |
+| **value** | 唯一的鉴别值 (仅在组内可用) | `string` | - | - |
+| **disabled** | 禁用复选框 | `boolean` | - | `false` |
+| ... | 原生属性 | `LabelHTMLAttributes` | `'form', 'className', ...` | - |
+
+<Attributes.Title>Checkbox.Group.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | 选中的一组值 | `Array<string>` | - | `[]` |
+| **disabled** | 禁用一个组的复选框 | `boolean` | - | `false` |
+| **onChange** | 复选框的变化事件 | `(values: string[]) => void` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'spellCheck', 'style', 'className', ...` | - |
+
+<Attributes.Title>CheckboxEvent</Attributes.Title>
+
+```ts
+interface CheckboxEventTarget {
+  checked: boolean
+}
+
+export interface CheckboxEvent {
+  target: CheckboxEventTarget
+  stopPropagation: () => void
+  preventDefault: () => void
+  nativeEvent: React.ChangeEvent
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

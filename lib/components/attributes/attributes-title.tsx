@@ -1,15 +1,16 @@
 import React from 'react'
 import { Spacer, Code, useTheme } from 'components'
 import VirtualAnchor from 'lib/components/anchor'
+import { useConfigs } from 'lib/config-context'
 
 export interface AttributesTitleProps {
   alias?: string
 }
 
-const getAlias = (alias?: string) => {
+const getAlias = (isChinese: boolean, alias?: string, ) => {
   if (!alias) return null
   return (
-    <small><span>[</span>alias: <Code>{alias}</Code><span>]</span></small>
+    <small><span>[</span>{isChinese ? '别名' : 'alias'}: <Code>{alias}</Code><span>]</span></small>
   )
 }
 
@@ -17,12 +18,13 @@ const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> =
   children, alias,
 }) => {
   const theme = useTheme()
+  const { isChinese } = useConfigs()
 
   return (
     <>
       <h4 className="title">
         <Code><VirtualAnchor pure>{children}</VirtualAnchor></Code>
-        {getAlias(alias)}
+        {getAlias(!!isChinese, alias)}
       </h4>
       <Spacer y={.6} />
   

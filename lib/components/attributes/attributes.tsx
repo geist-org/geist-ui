@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import { Card, Link, Spacer, useTheme } from 'components'
 import AttributesTitle from './attributes-title'
 import VirtualAnchor from 'lib/components/anchor'
+import { useConfigs } from '../../config-context'
 
 export interface AttributesProps {
   edit: string
@@ -11,6 +12,7 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
   edit, children,
 }) => {
   const theme = useTheme()
+  const { isChinese } = useConfigs()
   const link = useMemo(() => {
     return `https://github.com/zeit-ui/react/blob/master${edit || '/pages'}`
   }, [])
@@ -18,12 +20,14 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
   return (
     <>
       <Spacer y={5} />
-      <h3><VirtualAnchor>Attributes</VirtualAnchor></h3>
+      <h3><VirtualAnchor>APIs</VirtualAnchor>{isChinese && ' / 接口文档'}</h3>
       <Card className="attr">
         {children}
       </Card>
       <Spacer y={1} />
-      <Link color target="_blank" className="attributes-link" href={link} rel="nofollow">Edit this page on GitHub</Link>
+      <Link color target="_blank" className="attributes-link" href={link} rel="nofollow">
+        {isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'}
+      </Link>
   
       <style global jsx>{`
         .attr table {

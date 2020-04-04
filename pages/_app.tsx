@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import { useCallback, useState } from 'react'
 import { CSSBaseline, ZEITUIProvider, useTheme } from 'components'
-import ConfigContext from 'lib/components/config-provider'
+import ConfigContext from 'lib/config-provider'
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   const theme = useTheme()

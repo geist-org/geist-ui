@@ -1,0 +1,192 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Modal, Button, Code, useModal, Note, Link } from 'components'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'Modal / 对话框',
+}
+
+## Modal / 对话框
+
+弹出显示需要额外注意或重要的内容。
+
+<Note>仅仅需要弹出文本信息？试试 <Link pure color href="/zh-cn/components/toast">Toast / 通知</Link> 组件。</Note>
+
+<Playground
+  desc="使用 `open` 属性控制何时显示对话框。"
+  scope={{ Modal, Button, useState, Code }}
+  code={`
+() => {
+  const [state, setState] = useState(false)
+  const handler = () => setState(true)
+  const closeHandler = (event) => {
+    setState(false)
+    console.log('closed')
+  }
+  return (
+    <div>
+      <Button auto onClick={handler}>显示对话框</Button>
+      <Modal open={state} onClose={closeHandler}>
+        <Modal.Title>箭头函数</Modal.Title>
+        <Modal.Subtitle>它不能用作构造函数</Modal.Subtitle>
+        <Modal.Content>
+          <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
+        </Modal.Content>
+        <Modal.Action passive>放弃使用</Modal.Action>
+        <Modal.Action>明白了</Modal.Action>
+      </Modal>
+    </div>
+  )
+}
+`} />
+
+
+<Playground
+  title={<>与&nbsp;<Code>useModal</Code>&nbsp;组合</>}
+  desc="使用 `hooks` 可以更简单的控制对话框。"
+  scope={{ Modal, Button, useModal, Code }}
+  code={`
+() => {
+  const { visible, setVisible, bindings } = useModal()
+  return (
+    <>
+      <Button auto onClick={() => setVisible(true)}>显示对话框</Button>
+      <Modal {...bindings}>
+        <Modal.Title>箭头函数</Modal.Title>
+        <Modal.Subtitle>它不能用作构造函数</Modal.Subtitle>
+        <Modal.Content>
+          <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
+        </Modal.Content>
+        <Modal.Action passive>放弃使用</Modal.Action>
+        <Modal.Action>明白了</Modal.Action>
+      </Modal>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="无按钮"
+  desc="隐藏指定的按钮。"
+  scope={{ Modal, Button, useState, Code }}
+  code={`
+() => {
+  const [state, setState] = useState(false)
+  const handler = () => setState(true)
+  const closeHandler = (event) => {
+    setState(false)
+    console.log('closed')
+  }
+  return (
+    <div>
+      <Button auto onClick={handler}>显示对话框</Button>
+      <Modal open={state} onClose={closeHandler}>
+        <Modal.Title>箭头函数</Modal.Title>
+        <Modal.Subtitle>它不能用作构造函数</Modal.Subtitle>
+        <Modal.Content>
+          <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
+        </Modal.Content>
+      </Modal>
+    </div>
+  )
+}
+`} />
+
+<Playground
+  title="禁用按钮"
+  desc="禁用指定的按钮。"
+  scope={{ Modal, Button, useState, Code }}
+  code={`
+() => {
+  const [state, setState] = useState(false)
+  const handler = () => setState(true)
+  const closeHandler = (event) => {
+    setState(false)
+    console.log('closed')
+  }
+  return (
+    <>
+      <Button auto onClick={handler}>Show Modal</Button>
+      <Modal open={state} onClose={closeHandler}>
+        <Modal.Title>箭头函数</Modal.Title>
+        <Modal.Subtitle>它不能用作构造函数</Modal.Subtitle>
+        <Modal.Content>
+          <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
+        </Modal.Content>
+        <Modal.Action passive>继续学习</Modal.Action>
+        <Modal.Action disabled>尝试箭头函数</Modal.Action>
+      </Modal>
+    </>
+  )
+}
+`} />
+
+<Attributes edit="/pages/docs/components/modal.mdx">
+<Attributes.Title>Modal.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **open** | 打开或关闭对话框 | `boolean` | - | `false` |
+| **onOpen** | 对话框打开的事件 | `() => void` | - | - |
+| **onClose** | 对话框关闭的事件 | `() => void` | - | - |
+| **disableBackdropClick** | 点击背景层时是否关闭对话框  | `boolean` | - | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+
+<Attributes.Title>Modal.Title.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Modal.Subtitle.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Modal.Content.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Modal.Actions.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| - | - | - | - | - |
+
+<Attributes.Title>Modal.Action.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **passive** | 以消极的状态显示按钮 | `boolean` | - | `false` |
+| **disabled** | 禁用按钮 | `boolean` | - | `false` |
+| **onClick** | 按钮的点击事件 | [(event: ModalActionEvent) => void](#modalactionevent) | - | - |
+| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>useModal</Attributes.Title>
+
+```ts
+type useModal = (initialVisible: boolean) => {
+  visible: boolean
+  setVisible: Dispatch<SetStateAction<boolean>>
+  currentRef: MutableRefObject<boolean>
+  bindings: {
+    open: boolean
+    onClose: () => void
+  }
+}
+```
+
+<Attributes.Title>ModalActionEvent</Attributes.Title>
+
+```ts
+type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
+  close: () => void
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

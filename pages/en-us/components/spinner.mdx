@@ -1,0 +1,48 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Spinner, Spacer, Note, Code, Link } from 'components'
+import NextLink from 'next/link'
+
+export const meta = {
+  title: 'Spinner',
+  description: 'tenotext',
+}
+
+## Spinner
+
+Indicate an action running in the background.
+
+<Note>Looking for <Code>Loading</Code>? Use the <NextLink href="/en-us/components/loading"><a>Loading Component</a></NextLink>.</Note>
+
+<Playground
+  scope={{ Spinner }}
+  code={`
+<Spinner />
+`} />
+
+<Playground
+  title="Sizes"
+  desc="Components of different sizes."
+  scope={{ Spinner, Spacer }}
+  code={`
+<>
+  <Spinner size="mini" />
+  <Spacer y={.5} />
+  <Spinner size="small" />
+  <Spacer y={.5} />
+  <Spinner size="medium" />
+  <Spacer y={.5} />
+  <Spinner size="large" />
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/spinner.mdx">
+<Attributes.Title>Spinner.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **size** | spinner size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

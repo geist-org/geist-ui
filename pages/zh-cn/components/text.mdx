@@ -1,0 +1,110 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Text } from 'components'
+
+export const meta = {
+  title: 'Text / 文本',
+}
+
+## Text / 文本
+
+使用预定义的排版样式显示文本。
+
+<Playground
+  title="标题"
+  scope={{ Text }}
+  code={`
+() => {
+  const text = 'JavaScript 是一门编程语言。'
+  return (
+    <>
+      <Text h1>{text}</Text>
+      <Text h2>{text}</Text>
+      <Text h3>{text}</Text>
+      <Text h4>{text}</Text>
+      <Text h5>{text}</Text>
+      <Text h6>{text}</Text>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="段落"
+  desc="在 `Text` 组件上添加 `p` 与 `b` 属性获得不同的效果。"
+  scope={{ Text }}
+  code={`
+<>
+  <Text p>
+  函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
+  </Text>
+
+  <Text p b>
+  函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
+  </Text>
+</>
+`} />
+
+<Playground
+  title="较小的"
+  scope={{ Text }}
+  code={`
+<>
+  <Text small>
+  函数 用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
+  </Text>
+
+  <Text b>
+  函数 用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
+  </Text>
+</>
+`} />
+
+<Playground
+  title="组合"
+  desc="多个文本堆叠的效果。"
+  scope={{ Text }}
+  code={`
+<>
+  <Text p>
+  函数 用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
+  </Text>
+
+  <Text>
+    <Text small del>函数 用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。</Text>
+    <Text small>函数 用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。</Text>
+  </Text>
+</>
+`} />
+
+<Playground
+  title="类型"
+  desc="以不同的色彩区分状态文字。"
+  scope={{ Text }}
+  code={`
+<>
+  <Text p type="success">事件能为网页添加真实的交互能力。</Text>
+  <Text p type="warning">事件能为网页添加真实的交互能力。</Text>
+  <Text p type="error">事件能为网页添加真实的交互能力。</Text>
+  <Text p type="secondary">事件能为网页添加真实的交互能力。</Text>
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/text.mdx">
+<Attributes.Title>Text.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **p** | component name | `boolean` | - | `true` |
+| **h1 - h6** | component name | `boolean` | - | `false` |
+| **small** | component name | `boolean` | - | `false` |
+| **span** | component name | `boolean` | - | `false` |
+| **del** | component name | `boolean` | - | `false` |
+| **i** | component name | `boolean` | - | `false` |
+| **em** | component name | `boolean` | - | `false` |
+| **b** | component name | `boolean` | - | `false` |
+| **type** | text type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

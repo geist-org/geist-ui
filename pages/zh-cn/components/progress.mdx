@@ -1,0 +1,84 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Progress, Spacer, useTheme, Button } from 'components'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'Progress / 进度条',
+}
+
+## Progress / 进度条
+
+展示事件或与之相关的任务进展。
+
+<Playground
+  scope={{ Progress }}
+  code={`
+<Progress value={50} />
+`} />
+
+<Playground
+  title="最大值"
+  desc="自定义进度条的最大数值。"
+  scope={{ Progress }}
+  code={`
+<Progress value={45} max={50} />
+`} />
+
+<Playground
+  title="动态色彩"
+  desc="你可以指定进度条在任何范围内的颜色。"
+  scope={{ Progress, useState, useTheme, Button, Spacer }}
+  code={`
+() => {
+  const theme = useTheme()
+  const [value, setValue] = useState(20)
+  const colors = {
+    20: theme.palette.error,
+    40: theme.palette.warning,
+    60: theme.palette.success,
+    80: '#000',
+  }
+  return (
+    <>
+      <Progress value={value} colors={colors} />
+      <Spacer />
+      <Button onClick={() => setValue(value + 20)} auto size="small">增加</Button>
+      <Spacer x={.5} inline />
+      <Button onClick={() => setValue(20)} auto size="small" type="abort">重置</Button>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="类型"
+  desc="我们预置了一些不同风格的进度条。"
+  scope={{ Progress, Spacer }}
+  code={`
+<>
+  <Progress type="secondary" value={10} />
+  <Spacer />
+  <Progress type="success" value={45} />
+  <Spacer />
+  <Progress type="warning" value={100} />
+  <Spacer />
+  <Progress type="error" value={21} />
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/progress.mdx">
+<Attributes.Title>Progress.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | 进度条当前数值 | `number` | - | 0 |
+| **max** | 最大值 | `number` | - | 100 |
+| **fixedTop** | 固定进度条在顶部 | `boolean` | - | `false` |
+| **fixedBottom** | 固定进度条在底部 | `boolean` | - | `false` |
+| **colors** | 在范围内自定义颜色 | `{ [key: number]: string }` | - | - |
+| **type** | 预定义的状体类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ... | 原生属性 | `ProgressHTMLAttributes` | `'aria-busy', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

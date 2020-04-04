@@ -1,0 +1,133 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Card, Fieldset, Button, Text } from 'components'
+
+export const meta = {
+  title: 'Fieldset / 控件组',
+  description: 'tenotext',
+}
+
+## Fieldset / 控件组
+
+在一个集合内显示相关的信息。
+
+<Playground
+  desc="在 `Actions` 内可以添加自定义的按钮。"
+  scope={{ Fieldset, Button }}
+  code={`
+<Fieldset>
+  <Fieldset.Title>层叠样式表 (Cascading Style Sheets，缩写为 CSS）</Fieldset.Title>
+  <Fieldset.Subtitle>CSS 是开放网络的核心语言之一，由 W3C 规范 实现跨浏览器的标准化。</Fieldset.Subtitle>
+  <Fieldset.Footer>
+    <Fieldset.Footer.Status>
+      CSS3 分成多个小模块且正在标准化中。
+    </Fieldset.Footer.Status>
+    <Fieldset.Footer.Actions>
+      <Button auto size="mini">学习 CSS</Button>
+    </Fieldset.Footer.Actions>
+  </Fieldset.Footer>
+</Fieldset>
+`} />
+
+<Playground
+  title="定制文本"
+  desc="在不同的场景下定制文本的色彩。"
+  scope={{ Fieldset, Button, Text }}
+  code={`
+<Fieldset>
+  <Fieldset.Title>层叠样式表 (Cascading Style Sheets，缩写为 CSS）</Fieldset.Title>
+  <Fieldset.Subtitle>CSS 是开放网络的核心语言之一，由 W3C 规范 实现跨浏览器的标准化。</Fieldset.Subtitle>
+  <Fieldset.Footer>
+    <Fieldset.Footer.Status>
+      <Text type="error">视频教程部分暂不可用。</Text>
+    </Fieldset.Footer.Status>
+    <Fieldset.Footer.Actions>
+      <Button auto size="mini" type="error">知道了</Button>
+    </Fieldset.Footer.Actions>
+  </Fieldset.Footer>
+</Fieldset>
+`} />
+
+<Playground
+  title="选项卡"
+  desc="同时展示多个组件组"
+  scope={{ Fieldset, Button }}
+  code={`
+() => {
+  const handler = v => console.log(v)
+  return (
+    <Fieldset.Group value="HTML" onChange={handler}>
+    <Fieldset label="CSS">
+      <Fieldset.Title>层叠样式表 (Cascading Style Sheets，缩写为 CSS）</Fieldset.Title>
+      <Fieldset.Subtitle>CSS 是开放网络的核心语言之一，由 W3C 规范 实现跨浏览器的标准化。</Fieldset.Subtitle>
+      <Fieldset.Footer>
+        <Fieldset.Footer.Status>包含 20 个视频学习资料与 10 篇文章</Fieldset.Footer.Status>
+        <Fieldset.Footer.Actions>
+          <Button auto size="mini">了解更多</Button>
+        </Fieldset.Footer.Actions>
+      </Fieldset.Footer>
+    </Fieldset>
+    <Fieldset label="HTML">
+      <Fieldset.Title>HTML（超文本标记语言——HyperText Markup Language）</Fieldset.Title>
+      <Fieldset.Subtitle>HTML 使用“标记”（markup）来注明文本、图片和其他内容，以便于在 Web 浏览器中显示。</Fieldset.Subtitle>
+      <Fieldset.Footer>
+        <Fieldset.Footer.Status>包含 2 个视频学习资料与 1 篇文章</Fieldset.Footer.Status>
+        <Fieldset.Footer.Actions>
+          <Button auto size="mini">了解更多</Button>
+        </Fieldset.Footer.Actions>
+      </Fieldset.Footer>
+    </Fieldset>
+    <Fieldset label="JavaScript">
+      <Fieldset.Title>JavaScript ( JS ) 是一种即时编译型的编程语言。</Fieldset.Title>
+      <Fieldset.Subtitle>虽然它是作为开发Web 页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中。</Fieldset.Subtitle>
+      <Fieldset.Footer>
+        <Fieldset.Footer.Status>包含 18 个视频学习资料与 3 篇文章</Fieldset.Footer.Status>
+        <Fieldset.Footer.Actions>
+          <Button auto size="mini">了解更多</Button>
+        </Fieldset.Footer.Actions>
+      </Fieldset.Footer>
+    </Fieldset>
+    </Fieldset.Group>
+  )
+}
+`} />
+
+<Attributes edit="/pages/docs/components/fieldset.mdx">
+<Attributes.Title>Fieldset.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | 唯一的鉴别值 (仅作用于组中) | `string` | - | - |
+| **label** | 选项卡的文本 (仅作用于组中) | `string` |- | - |
+| **title** | 控件组的标题 | `ReactNode` / `string` | - | - |
+| **subtitle** | 副标题 | `ReactNode` / `string` | - | - |
+| ... | 原生属性 | `FieldsetHTMLAttributes` | `'name', 'className', ...` | - |
+
+<Attributes.Title>Fieldset.Footer.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | 原生属性 | `HTMLAttributes` | - | - |
+
+<Attributes.Title>Fieldset.Footer.Actions.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | 原生属性 | `HTMLAttributes` | - | - |
+
+<Attributes.Title>Fieldset.Footer.Status.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | 原生属性 | `HTMLAttributes` | - | - |
+
+<Attributes.Title>Fieldset.Group.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **value** | 当前选中的值 | `string` | - | - |
+| **onChange** | 选项卡切换事件 | `(value: string) => void` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | - | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

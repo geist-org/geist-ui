@@ -1,0 +1,96 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Collapse, Spacer, Text, Code } from 'components'
+
+export const meta = {
+  title: 'Collapse / 折叠框',
+}
+
+## Collapse / 折叠框
+
+折叠显示大段的文本或组件内容，通常也被称为手风琴。
+
+<Playground
+  scope={{ Collapse, Text }}
+  desc="默认只展示标题。"
+  code={`
+<Collapse.Group>
+  <Collapse title="超文本标记语言">
+    <Text>HTML（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。
+    它定义了网页内容的含义和结构。除 HTML 以外的其它技术则通常用来描述一个网页的表现与展示效果（如 CSS），或功能与行为（如 JavaScript）。</Text>
+  </Collapse>
+  <Collapse title="层叠样式表">
+    <Text>层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，
+    用来描述 HTML 或 XML（包括如 SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。
+    CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</Text>
+  </Collapse>
+</Collapse.Group>
+`} />
+
+<Playground
+  title="展开的"
+  desc="指定初始时如何显示组件。"
+  scope={{ Collapse, Text }}
+  code={`
+<Collapse.Group>
+  <Collapse title="超文本标记语言" initialVisible>
+    <Text>HTML（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。
+    它定义了网页内容的含义和结构。除 HTML 以外的其它技术则通常用来描述一个网页的表现与展示效果（如 CSS），或功能与行为（如 JavaScript）。</Text>
+  </Collapse>
+  <Collapse title="层叠样式表">
+    <Text>层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，
+    用来描述 HTML 或 XML（包括如 SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。
+    CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</Text>
+  </Collapse>
+</Collapse.Group>
+`} />
+
+<Playground
+  title="子标题"
+  desc="使用文本或组件作为子标题。"
+  scope={{ Collapse, Text }}
+  code={`
+<Collapse.Group>
+  <Collapse title="超文本标记语言" subtitle="HyperText Markup Language">
+    <Text>HTML（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。
+    它定义了网页内容的含义和结构。除 HTML 以外的其它技术则通常用来描述一个网页的表现与展示效果（如 CSS），或功能与行为（如 JavaScript）。</Text>
+  </Collapse>
+  <Collapse title="层叠样式表" subtitle={<>Cascading Style Sheets，缩写为 <Text b>CSS</Text></>}>
+    <Text>层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，
+    用来描述 HTML 或 XML（包括如 SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。
+    CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</Text>
+  </Collapse>
+</Collapse.Group>
+`} />
+
+<Playground
+  title="阴影"
+  desc="用更高的层级表示重要的信息。"
+  scope={{ Collapse, Text, Code }}
+  code={`
+<Collapse shadow title="超文本标记语言" subtitle={<Code>HyperText Markup Language</Code>}>
+  <Text>HTML（超文本标记语言——HyperText Markup Language）是构成 Web 世界的一砖一瓦。
+      它定义了网页内容的含义和结构。除 HTML 以外的其它技术则通常用来描述一个网页的表现与展示效果（如 CSS），或功能与行为（如 JavaScript）。</Text>
+</Collapse>
+`} />
+
+<Attributes edit="/pages/docs/components/collapse.mdx">
+<Attributes.Title>Collapse.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **title**(必须的) | 标题值 | `string` | - | - |
+| **subtitle** | 子标题内容  | `string` | - | - |
+| **initialVisible** | 初始时是否展开  | `boolean` | - | `false` |
+| **shadow** | 以阴影模式展示  | `boolean` | - | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>Collapse.Group.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **accordion** | 手风琴模式 (一次最多打开一个)  | `boolean` | - | `true` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

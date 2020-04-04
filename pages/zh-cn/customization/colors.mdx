@@ -1,0 +1,64 @@
+import Layout from 'lib/components/layout'
+import { Note, Code, Spacer, Link, Display } from 'components'
+import NextLink from 'next/link'
+import Colors from 'lib/components/displays/colors'
+
+export const meta = {
+  title: '色彩',
+}
+
+## 色彩
+
+默认的色彩展示。
+
+<Spacer y={2} />
+
+### 主要的
+
+你可以在自己的应用中使用这些色彩，所有的色彩值都会跟随主题而变化。
+想要自定义一些颜色？请阅读这篇 <NextLink href="/zh-cn/customization/themes"><a>文档</a></NextLink>。
+
+<Display width="90%" caption={<span>从 <Code>useTheme</Code> 函数中获取调色板。</span>}>
+
+```jsx
+import { useTheme } from '@zeit-ui/react'
+
+const myComponent = () => {
+  const { palette } = useTheme()
+
+  return (
+    <p style={{ color: palette.accents_1 }}>myComponent</p>
+  )
+}
+```
+
+</Display>
+<Spacer y={1} />
+<Colors type="normal" />
+<Spacer y={3} />
+
+### 状态
+
+使用不同的颜色表达情感的变化。
+
+#### 成功
+
+<Colors type="success" />
+<Spacer y={3} />
+
+#### 错误
+
+<Colors type="error" />
+<Spacer y={3} />
+
+#### 警告
+
+<Colors type="warning" />
+<Spacer y={3} />
+
+#### 高亮
+
+<Colors type="highlight" />
+<Spacer y={3} />
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

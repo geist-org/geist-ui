@@ -1,0 +1,45 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Tag, Spacer } from 'components'
+
+export const meta = {
+  title: 'Tag / 标签',
+}
+
+## Tag / 标签
+
+标记文档的状态与功能。
+
+<Playground
+  scope={{ Tag, Spacer }}
+  code={`
+<>
+  <Tag>状态: 不稳定的</Tag>
+  <Spacer />
+  <Tag>作者：佚名</Tag>
+</>
+`} />
+
+<Playground
+  title="类型"
+  scope={{ Tag, Spacer }}
+  code={`
+<>
+  <Tag type="success">状态: 成功</Tag>
+  <Spacer />
+  <Tag type="warning">状态: 警告</Tag>
+  <Spacer />
+  <Tag type="error">状态: 错误</Tag>
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/tag.mdx">
+<Attributes.Title>Tag.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | 标签类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

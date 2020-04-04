@@ -1,0 +1,105 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, Spacer } from 'components'
+import Router from 'next/router'
+
+export const meta = {
+  title: 'Button / 按钮',
+}
+
+## Button / 按钮
+
+用于触发一个操作。
+
+
+<Playground
+  desc="基础的 `Button` 包含一个动画效果。"
+  scope={{ Button }}
+  code={`
+<Button>动作</Button>
+`} />
+
+<Playground
+  title="加载中"
+  desc="表示正在运行或加载中的状态。"
+  scope={{ Button }}
+  code={`
+<Button loading>动作</Button>
+`} />
+
+<Playground
+  title="禁用的"
+  desc="不对任何操作进行响应。"
+  scope={{ Button }}
+  code={`
+<Button disabled>点击</Button>
+`} />
+
+<Playground
+  title="阴影"
+  desc="使用阴影突出显示更高层级的按钮。"
+  scope={{ Button }}
+  code={`
+<Button shadow type="secondary">阴影</Button>
+`} />
+
+<Playground
+  title="类型"
+  desc="不同状态下的按钮。"
+  scope={{ Button, Spacer }}
+  code={`
+<>
+  <Button type="secondary">次要的</Button> <Spacer y={.5} />
+  <Button type="success">成功</Button> <Spacer y={.5} />
+  <Button type="warning">警告</Button> <Spacer y={.5} />
+  <Button type="error">错误</Button> <Spacer y={.5} />
+  <Button type="abort">中止</Button>
+</>
+`} />
+
+<Playground
+  title='"幽灵"按钮'
+  desc="底色与主色相反的透明按钮。"
+  scope={{ Button, Spacer }}
+  code={`
+<>
+  <Button type="secondary" ghost>次要的</Button> <Spacer y={.5} />
+  <Button type="success" ghost>成功</Button> <Spacer y={.5} />
+  <Button type="warning" ghost>警告</Button> <Spacer y={.5} />
+  <Button type="error" ghost>错误</Button>
+</>
+`} />
+
+
+<Playground
+  title="大小"
+  desc="不同大小的按钮组件。"
+  scope={{ Button, Spacer }}
+  code={`
+<>
+  <Button size="mini">小</Button> <Spacer y={.5} />
+  <Button size="small">较小</Button> <Spacer y={.5} />
+  <Button>中等</Button> <Spacer y={.5} />
+  <Button size="large">最大</Button> <Spacer y={.5} />
+  <Button auto>自动宽度</Button>
+</>
+`} />
+
+<Attributes edit="/pages/docs/components/button.mdx">
+<Attributes.Title>Button.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | 按钮的类型 | `ButtonTypes` | `'default', 'secondary', 'success', 'warning', 'error', 'abort'` | `default` |
+| **size** | 按钮的大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **ghost** | 是否为反色按钮 | `boolean` | - | `false` |
+| **loading** | 是否显示加载中的指示器 | `boolean` | - | `false` |
+| **shadow** | 是否显示阴影 | `boolean` | - | `false` |
+| **auto** | 自动缩放宽度 | `boolean` | - | `false` |
+| **effect** | 是否显示动画效果 | `boolean` | - | `true` |
+| **disabled** | 是否禁用按钮 | `boolean` | - | `false` |
+| **onClick** | 点击事件 | `MouseEventHandler` | - | - |
+| ... | 原生属性 | `ButtonHTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

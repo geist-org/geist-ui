@@ -1,0 +1,88 @@
+import Layout from 'lib/components/layout'
+import { Note, Link, Code, Spacer, Tabs, Row, Dot, Display, Snippet } from 'components'
+
+export const meta = {
+  title: '安装',
+  index: 10,
+}
+
+## 安装
+
+### 从包管理器安装
+
+<Note>
+请确认你的 <Link pure href="https://nodejs.org/en/download/">NodeJS</Link> 处于最新版本，
+同时还需要准备包管理器: <Link pure href="https://www.npmjs.com/">NPM</Link> 或是 <Link pure href="https://yarnpkg.com/">Yarn</Link>.
+</Note>
+<Spacer y={1} />
+<Dot type="success" /> 1. 运行命令下载包:
+<Spacer y={.8} />
+<Tabs initialValue="yarn" style={{ width: '90%', margin: '0 auto' }}>
+  <Tabs.Item label={<span><Spacer x={.3} inline />Yarn<Spacer x={.3} inline /></span>} value="yarn">
+    <Spacer y={.6} />
+    <Snippet width="400px">yarn add @zeit-ui/react</Snippet>
+  </Tabs.Item>
+  <Tabs.Item label={<span><Spacer x={.3} inline />Npm<Spacer x={.3} inline /></span>} value="npm">
+    <Spacer y={.6} />
+    <Snippet width="400px">npm i @zeit-ui/react</Snippet>
+  </Tabs.Item>
+</Tabs>
+<Spacer y={1.5} />
+<Dot type="success" /> 2. 引入包到你的 React 项目中：
+
+<Display width="90%">
+
+```jsx
+import { ZEITUIProvider, CSSBaseline } from '@zeit-ui/react'
+
+const Application = () => (
+  <ZEITUIProvider>   // ---> Base provider
+    <CSSBaseline />  // ---> normalize styles
+    <AppComponent />    // ---> Your App Component
+  </ZEITUIProvider>
+)
+```
+
+</Display>
+
+<Spacer y={1.5} />
+<Dot type="success" /> 3. 在任意处使用组件：
+
+<Display width="90%">
+
+```jsx
+import { Button } from '@zeit-ui/react'
+
+const MyComponent = () => <Button>Click Me</Button>
+```
+
+</Display>
+
+<Spacer y={3} />
+
+### 引入单个组件
+
+`@zeit-ui/react` 支持仅引入你需要的单个组件，例如：
+
+<Display width="90%">
+
+```jsx
+import { Button } from '@zeit-ui/react/components/button'
+
+const MyComponent = () => <Button>Click Me</Button>
+```
+
+</Display>
+
+<Spacer y={3} />
+
+### 使用 Create React App
+
+使用 <Link pure color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> 创建的 React 项目也能轻易的使用 `@zeit-ui/react`。
+你不需要做任何改变，只需要引入组件库即可。
+
+我们准备了 <Link target="_blank" pure color rel="nofollow" href="https://github.com/zeit-ui/react-getting-started">一个用 create react app 创建的示例项目</Link> 供作参考。
+
+
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

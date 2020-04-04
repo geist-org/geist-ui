@@ -1,0 +1,52 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Card } from 'components'
+
+export const meta = {
+  title: 'Card / 卡片',
+  description: 'tenotext',
+}
+
+## Card / 卡片
+
+基础的组件容器。
+
+
+<Playground
+  scope={{ Card }}
+  code={`
+<Card>
+  <p>一个基础的卡片。</p>
+</Card>
+`} />
+
+<Playground
+  title="可悬停的"
+  scope={{ Card }}
+  code={`
+<Card hoverable>
+  <p>可悬停的卡片。</p>
+</Card>
+`} />
+
+<Playground
+  title="阴影"
+  scope={{ Card }}
+  code={`
+<Card shadow>
+  <h4>这是一个 React 组件。</h4>
+  <p>阴影卡片组件。</p>
+</Card>
+`} />
+
+<Attributes edit="/pages/docs/components/card.mdx">
+<Attributes.Title>Card.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **hoverable** | 是否在悬停时增加阴影 | `boolean` | - | `false` |
+| **shadow** | 是否总是显示阴影 | `boolean` | - | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

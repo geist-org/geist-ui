@@ -25,6 +25,28 @@ const nextConfig = {
     config.resolve.modules.push(__dirname)
     return config
   },
+  
+  experimental: {
+    redirects() {
+      return [
+        {
+          source: '/docs/:path*',
+          permanent: true,
+          destination: '/en-us/:path*'
+        },
+        {
+          source: '/zh-cn/',
+          permanent: true,
+          destination: '/zh-cn',
+        },
+        {
+          source: '/en-us/',
+          permanent: true,
+          destination: '/en-us',
+        },
+      ]
+    },
+  },
 }
 
 module.exports = withMDX(nextConfig)
