@@ -46,6 +46,10 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = React.memo(({
   const theme = useTheme()
   const bg = useMemo(() => getBgColor(type, theme.palette), [type, theme.palette])
   const font = useMemo(() => getFontSize(size), [size])
+  const color = useMemo(() => {
+    if (!type || type === 'default') return theme.palette.background
+    return 'white'
+  }, [type, theme.palette.background])
   
   return (
     <span className={className} {...props}>
@@ -59,7 +63,7 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = React.memo(({
           line-height: 1;
           vertical-align: middle;
           background-color: ${bg};
-          color: white;
+          color: ${color};
           font-size: ${font};
           border: 0;
         }
