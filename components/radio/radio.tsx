@@ -158,6 +158,6 @@ type RadioComponent<P = {}> = React.FC<P> & {
   Description: typeof RadioDescription
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 export default Radio as RadioComponent<ComponentProps>

@@ -87,7 +87,7 @@ type TreeComponent<P = {}> = React.FC<P> & {
   Folder: typeof TreeFolder
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 Tree.defaultProps = defaultProps
 

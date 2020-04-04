@@ -87,6 +87,6 @@ type ModalComponent<P = {}> = React.FC<P> & {
   Action: typeof ModalAction
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 export default Modal as ModalComponent<ComponentProps>

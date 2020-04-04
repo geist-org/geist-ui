@@ -166,7 +166,7 @@ type AutoCompleteComponent<P = {}> = React.FC<P> & {
   Empty: typeof AutoCompleteEmpty
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 (AutoComplete as AutoCompleteComponent<ComponentProps>).defaultProps = defaultProps
 

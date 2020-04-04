@@ -49,6 +49,6 @@ type FieldsetFooterComponent<P = {}> = React.FC<P> & {
   Actions: typeof FieldsetFooterActions
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 export default FieldsetFooter as FieldsetFooterComponent<ComponentProps>

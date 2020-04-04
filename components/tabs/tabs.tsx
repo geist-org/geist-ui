@@ -146,6 +146,6 @@ type TabsComponent<P = {}> = React.FC<P> & {
   Tab: typeof TabsItem
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 export default Tabs as TabsComponent<ComponentProps>

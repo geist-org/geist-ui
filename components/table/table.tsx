@@ -82,7 +82,7 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
 type TableComponent<P = {}> = React.FC<P> & {
   Column: typeof TableColumn
 }
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 (Table as TableComponent<ComponentProps>).defaultProps = defaultProps
 

@@ -206,7 +206,7 @@ type InputComponent<P = {}> = React.FC<P> & {
   Textarea: typeof Textarea
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 (Input as InputComponent<ComponentProps>).defaultProps = defaultProps
 

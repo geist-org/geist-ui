@@ -153,7 +153,7 @@ type SelectComponent<P = {}> = React.FC<P> & {
   Option: typeof SelectOption
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps>
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 (Select as SelectComponent<ComponentProps>).defaultProps = defaultProps
 
