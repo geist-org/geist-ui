@@ -28,7 +28,7 @@ const Application = () => (
 ## Documentation
 
 - [Document Site](https://react.zeit-ui.co)
-- [中文文档](https://react.zeit-ui.co/en-us)
+- [中文文档](https://react.zeit-ui.co/zh-cn)
 
 <br/>
 
