@@ -36,14 +36,12 @@ and a package manager: <Link pure href="https://www.npmjs.com/">NPM</Link> or <L
 ```jsx
 import { ZEITUIProvider, CSSBaseline } from '@zeit-ui/react'
 
-const Application = () => {
-  return (
-    <ZEITUIProvider>   // ---> Base provider
-      <CSSBaseline />  // ---> normalize styles
-      <AppComponent />    // ---> Your App Component
-    </ZEITUIProvider>
-  )
-}
+const Application = () => (
+  <ZEITUIProvider>      // ---> Base provider
+    <CSSBaseline />     // ---> normalize styles
+    <AppComponent />    // ---> Your App Component
+  </ZEITUIProvider>
+)
 ```
 
 </Display>
