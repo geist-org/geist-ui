@@ -24,14 +24,8 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
       {sides.map((side, index) => {
         return (
           <div key={`${side.localeName || side.name}-${index}`} className="item">
-            {!side.url && <ActiveCatalog name={side.name}
-              localeName={side.localeName}
-              key={side.localeName || side.name} />}
-            {side.url && (
-              <div className="link">
-                <ActiveLink href={side.url}><a>{side.name}</a></ActiveLink>
-              </div>
-            )}
+            {!side.url && <ActiveCatalog name={side.name} localeName={side.localeName} />}
+            {side.url && <ActiveLink href={side.url} text={side.name} />}
             
             {side.children && <div className="children">
               {React.cloneElement(children as ReactElement, {
@@ -44,29 +38,6 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
       <style jsx>{`
         .item {
           width: 100%;
-        }
-        
-        .link {
-          width: 100%;
-          color: ${theme.palette.accents_5};
-          display: flex;
-          height: 2.25rem;
-          align-items: center;
-          justify-content: flex-start;
-          cursor: pointer;
-          text-transform: capitalize;
-        }
-
-        .link :global(a) {
-          color: ${theme.palette.accents_7};
-          font-size: 1rem;
-          transition: all 200ms ease;
-          font-weight: 400;
-        }
-        
-        .link :global(a.active) {
-          color: ${theme.palette.success};
-          font-weight: 600;
         }
         
         .children {
