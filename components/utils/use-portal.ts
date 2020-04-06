@@ -21,13 +21,6 @@ const usePortal = (selectId: string = getId()): HTMLElement | null => {
       document.body.appendChild(el)
     }
     setElSnapshot(el)
-  
-    return () => {
-      const node = document.getElementById(id)
-      if (node) {
-        document.body.removeChild(node)
-      }
-    }
   }, [])
 
   return elSnapshot
