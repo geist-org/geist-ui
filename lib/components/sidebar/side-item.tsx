@@ -23,8 +23,10 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
     <>
       {sides.map((side, index) => {
         return (
-          <div key={`${side.name}-${index}`} className="item">
-            {!side.url && <ActiveCatalog name={side.name} localeName={side.localeName} />}
+          <div key={`${side.localeName || side.name}-${index}`} className="item">
+            {!side.url && <ActiveCatalog name={side.name}
+              localeName={side.localeName}
+              key={side.localeName || side.name} />}
             {side.url && (
               <div className="link">
                 <ActiveLink href={side.url}><a>{side.name}</a></ActiveLink>

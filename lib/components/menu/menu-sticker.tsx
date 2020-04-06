@@ -24,7 +24,7 @@ const MenuSticker = () => {
       .filter(r => !!r)
     const locale: string = language[0] || 'en-us'
     return (sides as MultilLocaleMetaInformation)[locale]
-  }, [pathname, sides])
+  }, [pathname])
   
   const currentTabValue = useMemo(() => {
     const language = pathname
@@ -57,7 +57,7 @@ const MenuSticker = () => {
     updateSides(currentTab.children)
     Router.push(defaultPath)
   }
-  
+
   useEffect(() => {
     tabbarData && tabChangeHandler(currentTabValue)
   }, [tabbarData])
@@ -69,10 +69,10 @@ const MenuSticker = () => {
         <div className="sticker">
           <div className="inner">
             <Tabs value={currentTabValue} onChange={tabChangeHandler}>
-              {tabbarData ? tabbarData.map(tab => (
+              {tabbarData ? tabbarData.map((tab, index) => (
                 <Tabs.Item label={tab.localeName || tab.name}
                   value={tab.name}
-                  key={tab.name} />
+                  key={`${tab.localeName || tab.name}-${index}`} />
               )) : null}
             </Tabs>
           </div>
