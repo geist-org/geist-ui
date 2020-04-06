@@ -1,16 +1,21 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Modal, Button, Code, useModal, Note, Link } from 'components'
+import NextLink from 'next/link'
 import { useState } from 'react'
 
 export const meta = {
-  title: 'Modal / 对话框',
+  title: '对话框 Modal',
+  group: '反馈',
 }
 
 ## Modal / 对话框
 
 弹出显示需要额外注意或重要的内容。
 
-<Note>仅仅需要弹出文本信息？试试 <Link pure color href="/zh-cn/components/toast">Toast / 通知</Link> 组件。</Note>
+<Note>
+仅仅需要弹出文本信息？
+试试 <NextLink href="/zh-cn/components/toast"><Link pure color>Toast / 通知</Link></NextLink> 组件。
+</Note>
 
 <Playground
   desc="使用 `open` 属性控制何时显示对话框。"

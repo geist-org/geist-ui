@@ -1,15 +1,20 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Code, Note, Link } from 'components'
+import NextLink from 'next/link'
 
 export const meta = {
-  title: 'Code / 代码',
+  title: '代码 Code',
+  group: '通用',
 }
 
 ## Code / 代码
 
 以标准化的方式展示源代码。
 
-<Note label="提示">想要展示 <Code>Shell</Code> 代码片段或一个命令？可以试试 <Link pure color href="/zh-cn/components/snippet">Snippet / 片段</Link> 组件。</Note>
+<Note label="提示">
+想要展示 <Code>Shell</Code> 代码片段或一个命令？
+可以试试 <NextLink href="/zh-cn/components/snippet"><Link pure color>Snippet / 片段</Link></NextLink> 组件。
+</Note>
 
 <Playground
   desc="基础的行内代码。"

@@ -30,9 +30,29 @@ const nextConfig = {
     redirects() {
       return [
         {
-          source: '/docs/:path*',
+          source: '/docs/getting-started/:path*',
           permanent: true,
-          destination: '/en-us/:path*'
+          destination: '/en-us/guide/:path*'
+        },
+        {
+          source: '/en-us/getting-started/:path*',
+          permanent: true,
+          destination: '/en-us/guide/:path*'
+        },
+        {
+          source: '/en-us/customization/:path*',
+          permanent: true,
+          destination: '/en-us/guide/:path*'
+        },
+        {
+          source: '/zh-cn/getting-started/:path*',
+          permanent: true,
+          destination: '/zh-cn/guide/:path*'
+        },
+        {
+          source: '/zh-cn/customization/:path*',
+          permanent: true,
+          destination: '/zh-cn/guide/:path*'
         },
         {
           source: '/zh-cn/',

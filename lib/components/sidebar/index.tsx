@@ -56,7 +56,7 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
         .box {
           overflow-y: auto;
           overflow-x: hidden;
-          height: calc(100vh - 140px);
+          height: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;

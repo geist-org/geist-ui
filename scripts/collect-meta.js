@@ -5,9 +5,32 @@ const metaLocales = require('./locales')
 const pagePrefix = path.join(__dirname, '../pages')
 const targetPath = path.join(__dirname, '../lib/data/metadata.json')
 const weights = {
-  'getting-started': 1,
-  'customization': 2,
-  'components': 3,
+  'guide': 1,
+  'docs': 2,
+  'getting-started': 3,
+  'customization': 4,
+  'components': 5,
+}
+const groupWeights = {
+  '快速上手': 1,
+  '起步': 2,
+  '定制化': 5,
+  'general': 1,
+  '通用': 1,
+  'layout': 2,
+  '布局': 2,
+  'surfaces': 3,
+  '表面': 3,
+  'data entry': 4,
+  '数据录入': 4,
+  'data display': 5,
+  '数据展示': 5,
+  'feedback': 6,
+  '反馈': 6,
+  'navigation': 7,
+  '导航': 7,
+  'others': 8,
+  '其他': 8,
 }
 
 const getMetadata = async (files, parentPath) => {
@@ -21,6 +44,27 @@ const getMetadata = async (files, parentPath) => {
           const children = await fs.readdir(filePath)
           const childrenMetadata = await getMetadata(children, filePath)
           const sorted = childrenMetadata.sort((a, b) => a.index - b.index)
+          
+          // grouping
+          const childrenHasGroup = sorted.find(item => item.group)
+          if (childrenHasGroup) {
+            const groups = [...new Set(sorted.map(item => item.group || 'others'))]
+            const groupChildren = groups
+              .map(groupName => ({
+                name: groupName,
+                children: sorted.filter(item => (item.group || 'others') === groupName)
+              }))
+              .sort((a, b) => {
+                const pre = a.name.toLowerCase()
+                const current = b.name.toLowerCase()
+                return groupWeights[pre] - groupWeights[current]
+              })
+            return {
+              name: file,
+              children: groupChildren,
+            }
+          }
+          
           return { name: file, children: sorted }
         }
         const content = await fs.readFile(filePath, 'utf-8')
@@ -28,9 +72,30 @@ const getMetadata = async (files, parentPath) => {
         const url = filePath
           .replace(pagePrefix, '')
           .replace('.mdx', '')
-        return { name: meta.title || file, url, index: meta.index || 100 }
+        return {
+          name: meta.title || file,
+          url,
+          index: meta.index || 100,
+          group: meta.group || null,
+        }
       })
   )
+}
+
+const deepTranslate = (metadata, locales) => {
+  if (!metadata || !Array.isArray(metadata)) return metadata
+  return metadata.map(data => {
+    if (typeof data !== 'object') return data
+    if (data.children) {
+      data.children = deepTranslate(data.children, locales)
+    }
+    const localeName = locales[data.name]
+    if (!localeName) return data
+    return {
+      ...data,
+      localeName,
+    }
+  })
 }
 
 ;(async () => {
@@ -49,18 +114,11 @@ const getMetadata = async (files, parentPath) => {
       const data = await getMetadata(childDirs, dir)
       const sorted = data
         .sort((a, b) => weights[a.name] - weights[b.name])
-        .map(item => {
-          const localeName = currentLocale[item.name]
-          if (!localeName) return item
-          return {
-            ...item,
-            localeName: localeName
-          }
-        })
+      const translatedData = deepTranslate(sorted, currentLocale)
       
       return {
         name,
-        content: sorted
+        content: translatedData
       }
     }))
     

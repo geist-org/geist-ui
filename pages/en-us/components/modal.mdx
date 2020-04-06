@@ -1,16 +1,21 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Modal, Button, Code, useModal, Note, Link } from 'components'
+import NextLink from 'next/link'
 import { useState } from 'react'
 
 export const meta = {
   title: 'modal',
+  group: 'Feedback',
 }
 
 ## Modal
 
 Display popup content that requires attention or provides additional information.
 
-<Note>Just want a text notification? Try <Link pure color href="/en-us/components/toast">Toast component</Link>.</Note>
+<Note>
+  Just want a text notification?
+  Try <NextLink href="/en-us/components/toast"><Link pure color>Toast component</Link></NextLink>.
+</Note>
 
 <Playground
   title="Basic"
