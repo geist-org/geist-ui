@@ -22,7 +22,8 @@ Display image content.
   desc="`Image` will show skeleton animation after `width` and `height` props are set."
   scope={{ Image }}
   code={`
-<Image width="540" height="160" src="/images/custom-domains.png" />
+<Image width="540" height="160"
+  src="http://www.deelay.me/2000/https://react.zeit-ui.co/images/custom-domains.png" />
 `} />
 
 <Playground
@@ -42,6 +43,7 @@ Display image content.
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **src** | image src | `string` | - | - |
 | **animation** | display animation when loading  | `boolean` | - | `true` |
+| **maxDelay**(ms) | max duration of animation | `number` | - | `3000` |
 | **width** | width | `number` | - | - |
 | **height** | height | `number` | - | - |
 | **scale** | scale value | `string` | - | `100%` |
