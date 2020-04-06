@@ -1,3 +1,3 @@
 import redirect from 'lib/redirect'
 
-export default redirect('/en-us/getting-started/introduction')
+export default redirect('/en-us/guide/introduction')

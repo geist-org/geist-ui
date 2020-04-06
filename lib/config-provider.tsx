@@ -33,7 +33,7 @@ const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = R
     updateChineseState,
     sidebarScrollHeight: scrollHeight,
     updateSidebarScrollHeight,
-  }), [onChange, scrollHeight, sides, tabbarFixed])
+  }), [onChange, scrollHeight, sides, tabbarFixed, isChinese])
 
   return (
     <ConfigContext.Provider value={initialValue}>

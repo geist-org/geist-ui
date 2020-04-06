@@ -33,7 +33,6 @@ const MenuSticker = () => {
     return language[1]
   }, [pathname])
 
-
   useEffect(() => {
     const scrollHandler = () => {
       const shouldFixed = document.documentElement.scrollTop > 60
@@ -61,7 +60,7 @@ const MenuSticker = () => {
   
   useEffect(() => {
     tabbarData && tabChangeHandler(currentTabValue)
-  }, [])
+  }, [tabbarData])
 
   return (
     <>

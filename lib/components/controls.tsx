@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { Button, useTheme, Select, Spacer } from 'components'
 import { useConfigs } from 'lib/config-context'
 import Router, { useRouter } from 'next/router'
@@ -17,11 +17,11 @@ const Controls: React.FC<{}> = React.memo(({
     onChange && onChange(isDark)
   }
 
-  const switchLanguages = useCallback(() => {
+  const switchLanguages = () => {
     const nextPath = `/${isChinese ? 'en-us' : 'zh-cn'}`
     updateChineseState(!isChinese)
     Router.push(nextPath)
-  }, [isChinese])
+  }
 
   const redirectGithub = () => {
     if (typeof window !== 'undefined') {

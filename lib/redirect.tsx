@@ -1,5 +1,6 @@
 import { NextPage } from 'next'
 import Head from 'next/head'
+import Router from 'next/router'
 
 export interface Props {
   metaRedirect?: boolean
@@ -20,6 +21,8 @@ const redirect = (destination: string) => {
       res.writeHead(302, { Location: destination })
       res.end()
       return {}
+    } else {
+      await Router.push(destination)
     }
     
     return { metaRedirect: true }

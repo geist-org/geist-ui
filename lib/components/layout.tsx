@@ -28,7 +28,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
     setExpanded(!expanded)
     setBodyScroll(!expanded)
   }
-  
+
   return (
     <div className="layout">
       <TabbarMobile onClick={mobileTabbarClickHandler} />
