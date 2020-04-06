@@ -1,31 +1,27 @@
-import React, { useCallback, useMemo } from 'react'
-import { Button, useTheme, Spacer } from 'components'
+import React, { useMemo } from 'react'
+import { Button, useTheme, Select, Spacer } from 'components'
 import { useConfigs } from 'lib/config-context'
 import Router, { useRouter } from 'next/router'
 import MoonIcon from './icons/moon'
 import SunIcon from './icons/sun'
-import GithubIcon from './icons/github'
 
 const Controls: React.FC<{}> = React.memo(({
 }) => {
   const theme = useTheme()
   const { onChange, updateChineseState } = useConfigs()
   const { pathname } = useRouter()
-  const currentLocaleText = useMemo(() => {
-    return pathname.toLowerCase().includes('zh-cn') ? 'EN' : '中'
-  }, [pathname])
+  const isChinese = useMemo(() => pathname.toLowerCase().includes('zh-cn'), [pathname])
   const isDark = useMemo(() => theme.type === 'dark', [theme.type])
-  const switchThemes = useCallback(() => {
-    const isDark = theme.type === 'dark'
-    onChange && onChange(!isDark)
-  }, [theme.type])
-  
-  const switchLanguages = useCallback(() => {
-    const currentIsChinese = pathname.toLowerCase().includes('zh-cn')
-    const nextPath = `/${currentIsChinese ? 'en-us' : 'zh-cn'}`
-    updateChineseState(!currentIsChinese)
+  const switchThemes = (val: string) => {
+    const isDark = val === 'dark'
+    onChange && onChange(isDark)
+  }
+
+  const switchLanguages = () => {
+    const nextPath = `/${isChinese ? 'en-us' : 'zh-cn'}`
+    updateChineseState(!isChinese)
     Router.push(nextPath)
-  }, [pathname])
+  }
 
   const redirectGithub = () => {
     if (typeof window !== 'undefined') {
@@ -36,39 +32,48 @@ const Controls: React.FC<{}> = React.memo(({
   return (
     <div className="controls">
       <div className="tools">
-        <Spacer x={.5} />
-        <Button className="button" auto type="abort"
-          onClick={switchThemes}>
-          {isDark ? <SunIcon width={16} height={16} /> : <MoonIcon width={16} height={16} />}
-        </Button>
-        <Button className="button" auto type="abort"
-          onClick={redirectGithub}>
-          <GithubIcon width={16} height={16} />
-        </Button>
-        <Button className="button" auto type="abort"
-          onClick={switchLanguages}>
-          <span>{currentLocaleText}</span>
-        </Button>
+        <Button auto type="abort" size="small" onClick={switchLanguages}>{isChinese ? 'English' : '中文文档'}</Button>
+        <Spacer x={.25} />
+        <Button auto type="abort" size="small"
+          onClick={redirectGithub}
+          title={isChinese? '代码仓库' : 'Github Repository'}>{isChinese ? '代码仓库' : 'Github'}</Button>
+        <Spacer x={.75} />
+        <Select size="small" pure onChange={switchThemes} initialValue={isDark ? 'dark' : 'light'}
+          title={isChinese ? '切换主题' : 'Switch Themes'}>
+          <Select.Option value="light">
+            <div className="select-content">
+              <SunIcon width={16} height={16} /> {isChinese ? '明亮' : 'Light'}
+            </div>
+          </Select.Option>
+          <Select.Option value="dark">
+            <div className="select-content">
+              <MoonIcon width={16} height={16} /> {isChinese ? '暗黑' : 'Dark'}
+            </div>
+          </Select.Option>
+        </Select>
       </div>
       <style jsx>{`
         .controls {
-          height: 110px;
+          height: 100%;
           display: flex;
-          align-items: flex-start;
-          flex-direction: column-reverse;
           margin: 0;
-          padding-bottom: ${theme.layout.gapHalf};
           position: relative;
         }
         
-        .controls :global(.button) {
-          width: 40px;
-          height: 40px;
-          padding: 0;
+        .controls :global(.select) {
+          width: min-content;
+          min-width: unset;
+        }
+        
+        .select-content {
+          width: auto;
           display: inline-flex;
           justify-content: center;
           align-items: center;
-          margin-right: 5px;
+        }
+        
+        .select-content :global(svg) {
+          margin-right: .5rem;
         }
         
         .tools {
@@ -76,25 +81,6 @@ const Controls: React.FC<{}> = React.memo(({
           height: 2.5rem;
           box-sizing: border-box;
           align-items: center;
-        }
-        
-        .tools:before {
-          content: "";
-          display: inline-block;
-          height: 1.25rem;
-          width: .3125rem;
-          background-color: ${theme.palette.accents_2};
-        }
-        
-        .controls :global(.line) {
-          width: 150px;
-          height: 55px;
-          cursor: pointer;
-          background-color: ${theme.palette.background};
-          position: relative;
-          z-index: 100;
-          transition: all 200ms ease;
-          overflow: hidden;
         }
         
         @media only screen and (max-width: 767px) {

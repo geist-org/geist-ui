@@ -8,6 +8,7 @@ export interface TabsLabelItem {
 
 export interface TabsConfig {
   register?: (item: TabsLabelItem) => void
+  unregister?: (item: TabsLabelItem) => void
   currentValue?: string
   inGroup: boolean
 }

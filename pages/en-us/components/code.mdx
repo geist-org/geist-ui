@@ -1,16 +1,20 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Code, Note, Link } from 'components'
+import NextLink from 'next/link'
 
 export const meta = {
   title: 'Code',
-  description: 'tenotext',
+  group: 'General',
 }
 
 ## Code
 
 Show source code in a standardized way.
 
-<Note>Want to display <Code>shell</Code> code snippets? Try <Link pure color href="/en-us/components/snippet">Snippet</Link>.</Note>
+<Note>
+  Want to display <Code>shell</Code> code snippets?
+  Try <NextLink href="/en-us/components/snippet"><Link pure color>Snippet</Link></NextLink>.
+</Note>
 
 <Playground
   desc="Basic inline codes."

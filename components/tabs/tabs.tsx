@@ -34,9 +34,13 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
     }
     setTabs([...tabsRef.current, next])
   }
+  const unregister = (next: TabsLabelItem) => {
+    const nextTabs = tabsRef.current.filter(item => item.value !== next.value)
+    setTabs([...nextTabs])
+  }
   
   const initialValue = useMemo<TabsConfig>(() => ({
-    register,
+    register, unregister,
     currentValue: selfValue,
     inGroup: true,
   }), [selfValue])

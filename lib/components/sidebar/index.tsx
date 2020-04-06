@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Router from 'next/router'
 import { useTheme, Spacer } from 'components'
 import SideItem, { SideItemProps, Sides } from './side-item'
@@ -10,13 +10,6 @@ export interface Props {
 export type SideGroupProps = Props & SideItemProps
 
 export type SideChildren = Sides | Array<Sides>
-
-const areEqual = (
-  preProps: Readonly<PropsWithChildren<SideGroupProps>>,
-  nextProps: Readonly<PropsWithChildren<SideGroupProps>>,
-): boolean => {
-  return preProps.sides.length === nextProps.sides.length
-}
 
 export const SideGroup: React.FC<{ sides?: SideChildren }> = React.memo(({ sides }) => {
   if (!sides) return null
@@ -35,7 +28,7 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
       updateSidebarScrollHeight(boxRef.current.scrollTop || 0)
     })
   }, [])
-  
+
   useEffect(() => {
     if (!boxRef.current) return
     boxRef.current.scrollTo({ top: sidebarScrollHeight })
@@ -56,7 +49,7 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
         .box {
           overflow-y: auto;
           overflow-x: hidden;
-          height: calc(100vh - 140px);
+          height: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -81,6 +74,6 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
       `}</style>
     </div>
   )
-}, areEqual)
+})
 
 export default Sidebar

@@ -3,6 +3,7 @@ import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import { useCallback, useState } from 'react'
 import { CSSBaseline, ZEITUIProvider, useTheme } from 'components'
+import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
@@ -33,6 +34,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
       <ZEITUIProvider theme={{ type: themeType }}>
         <CSSBaseline />
         <ConfigContext onChange={changeHandle}>
+          <Menu />
           <Component {...pageProps} />
         </ConfigContext>
         <style global jsx>{`
