@@ -14,10 +14,13 @@ const MenuSticker = () => {
   const theme = useTheme()
   const { pathname } = useRouter()
   const { updateSides, updateTabbarFixed } = useConfigs()
+  const [tabValue, setTabValue, tabValueRef] = useCurrentState<string>('')
   const [fixed, setFixed, fixedRef] = useCurrentState<boolean>(false)
   
-  useEffect(() => updateTabbarFixed(fixed), [fixed])
-  
+  const currentUrlTabValue = useMemo(() => {
+    return pathname.split('/').filter(r => !!r)[1]
+  }, [pathname])
+
   const tabbarData = useMemo(() => {
     const language = pathname
       .split('/')
@@ -26,12 +29,8 @@ const MenuSticker = () => {
     return (sides as MultilLocaleMetaInformation)[locale]
   }, [pathname])
   
-  const currentTabValue = useMemo(() => {
-    const language = pathname
-      .split('/')
-      .filter(r => !!r)
-    return language[1]
-  }, [pathname])
+  useEffect(() => updateTabbarFixed(fixed), [fixed])
+  useEffect(() => setTabValue(currentUrlTabValue), [currentUrlTabValue])
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -43,24 +42,23 @@ const MenuSticker = () => {
     return () => document.removeEventListener('scroll', scrollHandler)
   }, [])
 
-  const tabChangeHandler = (value: string) => {
-    const currentTab = tabbarData.find(tab => tab.name === value)
+  useEffect(() => {
+    const currentTab = tabbarData.find(tab => tab.name === tabValueRef.current)
     if (!currentTab || !Array.isArray(currentTab.children)) return
-    
+  
     let firstChildren = currentTab.children
     if (Array.isArray(firstChildren[0].children)) {
       firstChildren = firstChildren[0].children
     }
-    
+  
     const defaultPath = firstChildren[0].url
     if (!defaultPath) return
     updateSides(currentTab.children)
+    
+    const shouldRedirectDefaultPage = currentUrlTabValue !== tabValueRef.current
+    if (!shouldRedirectDefaultPage) return
     Router.push(defaultPath)
-  }
-
-  useEffect(() => {
-    tabbarData && tabChangeHandler(currentTabValue)
-  }, [tabbarData])
+  }, [tabValue, tabbarData, currentUrlTabValue])
 
   return (
     <>
@@ -68,7 +66,7 @@ const MenuSticker = () => {
       <nav className={fixed ? 'fixed' : ''}>
         <div className="sticker">
           <div className="inner">
-            <Tabs value={currentTabValue} onChange={tabChangeHandler}>
+            <Tabs value={tabValue} onChange={val => setTabValue(val)}>
               {tabbarData ? tabbarData.map((tab, index) => (
                 <Tabs.Item label={tab.localeName || tab.name}
                   value={tab.name}
