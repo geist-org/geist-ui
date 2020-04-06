@@ -21,7 +21,8 @@ export const meta = {
   desc="组件在设置 `width` 与 `height` 属性后会在加载时显示骨架动画。"
   scope={{ Image }}
   code={`
-<Image width="540" height="160" src="/images/custom-domains.png" />
+<Image width="540" height="160"
+  src="http://www.deelay.me/2000/https://react.zeit-ui.co/images/custom-domains.png" />
 `} />
 
 <Playground
@@ -41,6 +42,7 @@ export const meta = {
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **src** | 图片地址 | `string` | - | - |
 | **animation** | 是否在加载时显示骨架动画  | `boolean` | - | `true` |
+| **maxDelay** | 动画持续最大时间 (毫秒)  | `number` | - | `3000` |
 | **width** | 宽度 | `number` | - | - |
 | **height** | 高度 | `number` | - | - |
 | **scale** | 缩放比例 | `string` | - | `100%` |

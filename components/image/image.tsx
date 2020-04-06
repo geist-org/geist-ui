@@ -10,19 +10,21 @@ interface Props {
   height?: number
   className?: string
   scale?: string
+  maxDelay?: number
 }
 
 const defaultProps = {
   animation: true,
   className: '',
   scale: '100%',
+  maxDelay: 3000,
 }
 
 type NativeAttrs = Omit<React.ImgHTMLAttributes<any>, keyof Props>
 export type ImageProps = Props & typeof defaultProps & NativeAttrs
 
 const Image: React.FC<ImageProps> = React.memo(({
-  src, width, height, animation, className, scale, ...props
+  src, width, height, animation, className, scale, maxDelay, ...props
 }) => {
   const showAnimation = animation && width && height
   const theme = useTheme()
@@ -51,10 +53,10 @@ const Image: React.FC<ImageProps> = React.memo(({
         setShowSkeleton(false)
       }
       clearTimeout(timer)
-    }, 300)
+    }, maxDelay)
     return () => clearTimeout(timer)
   }, [loading])
-  
+
   return (
     <div className={`image ${className}`}>
       {(showSkeleton && showAnimation) && <ImageSkeleton opacity={loading ? .5 : 0} />}
