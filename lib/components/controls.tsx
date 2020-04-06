@@ -10,9 +10,7 @@ const Controls: React.FC<{}> = React.memo(({
   const theme = useTheme()
   const { onChange, updateChineseState } = useConfigs()
   const { pathname } = useRouter()
-  const currentLocaleText = useMemo(() => {
-    return pathname.toLowerCase().includes('zh-cn') ? 'English' : '中文文档'
-  }, [pathname])
+  const isChinese = useMemo(() => pathname.toLowerCase().includes('zh-cn'), [pathname])
   const isDark = useMemo(() => theme.type === 'dark', [theme.type])
   const switchThemes = (val: string) => {
     const isDark = val === 'dark'
@@ -20,11 +18,10 @@ const Controls: React.FC<{}> = React.memo(({
   }
 
   const switchLanguages = useCallback(() => {
-    const currentIsChinese = pathname.toLowerCase().includes('zh-cn')
-    const nextPath = `/${currentIsChinese ? 'en-us' : 'zh-cn'}`
-    updateChineseState(!currentIsChinese)
+    const nextPath = `/${isChinese ? 'en-us' : 'zh-cn'}`
+    updateChineseState(!isChinese)
     Router.push(nextPath)
-  }, [pathname])
+  }, [isChinese])
 
   const redirectGithub = () => {
     if (typeof window !== 'undefined') {
@@ -35,19 +32,22 @@ const Controls: React.FC<{}> = React.memo(({
   return (
     <div className="controls">
       <div className="tools">
-        <Button auto type="abort" size="small" onClick={redirectGithub}>Github</Button>
+        <Button auto type="abort" size="small" onClick={switchLanguages}>{isChinese ? 'English' : '中文文档'}</Button>
         <Spacer x={.25} />
-        <Button auto type="abort" size="small" onClick={switchLanguages}>{currentLocaleText}</Button>
+        <Button auto type="abort" size="small"
+          onClick={redirectGithub}
+          title={isChinese? '代码仓库' : 'Github Repository'}>{isChinese ? '代码仓库' : 'Github'}</Button>
         <Spacer x={.75} />
-        <Select size="small" pure onChange={switchThemes} initialValue={isDark ? 'dark' : 'light'}>
+        <Select size="small" pure onChange={switchThemes} initialValue={isDark ? 'dark' : 'light'}
+          title={isChinese ? '切换主题' : 'Switch Themes'}>
           <Select.Option value="light">
             <div className="select-content">
-              <SunIcon width={16} height={16} /> Light
+              <SunIcon width={16} height={16} /> {isChinese ? '明亮' : 'Light'}
             </div>
           </Select.Option>
           <Select.Option value="dark">
             <div className="select-content">
-              <MoonIcon width={16} height={16} /> Dark
+              <MoonIcon width={16} height={16} /> {isChinese ? '暗黑' : 'Dark'}
             </div>
           </Select.Option>
         </Select>
