@@ -31,7 +31,7 @@ const defaultProps = {
 
 const getTypeColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
   const colors: { [key in NormalTypes]: string} = {
-    default: palette.foreground,
+    default: 'inherit',
     secondary: palette.secondary,
     success: palette.success,
     warning: palette.warning,

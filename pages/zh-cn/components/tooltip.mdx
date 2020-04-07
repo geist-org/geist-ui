@@ -1,0 +1,224 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Tooltip, Spacer, Row, Col, Button, Link, Badge, Code, Text } from 'components'
+
+export const meta = {
+  title: '文字提示 Tooltip',
+  group: '数据展示',
+}
+
+## Tooltip / 文字提示
+
+在悬停时显示额外的提示信息。
+
+<Playground
+  desc="基础示例。"
+  scope={{ Tooltip }}
+  code={`
+<Tooltip text={'缓存是达到高性能的重要组成部分'}>文字提示</Tooltip>
+`} />
+
+<Playground
+  title="触发方式"
+  desc="使用点击触发提示框。"
+  scope={{ Tooltip }}
+  code={`
+<Tooltip text={'缓存是达到高性能的重要组成部分'} trigger="click" type="dark">
+  <span>点击我</span>
+</Tooltip>
+`} />
+
+<Playground
+  title="组件组合"
+  desc="与不同的组件组合使用。"
+  scope={{ Tooltip, Button, Link, Spacer, Row, Badge }}
+  code={`
+<Row align="middle">
+  <Tooltip text={'缓存是达到高性能的重要组成部分'} type="dark">
+    <Button auto size="small">按钮</Button>
+  </Tooltip>
+  <Spacer inline x={1} />
+  <Tooltip text={'缓存是达到高性能的重要组成部分'} type="dark">
+    <Badge>1000+</Badge>
+  </Tooltip>
+  <Spacer inline x={1} />
+  <Tooltip text={'缓存是达到高性能的重要组成部分'} type="dark">
+    <Link href="#" color pure>超链接</Link>
+  </Tooltip>
+</Row>
+`} />
+
+<Playground
+  title="定制内容"
+  desc="你可以自定义弹出框的内容。"
+  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  code={`
+<Row align="middle">
+  <Tooltip text={<>请求中带上 <Code>If-Modified-Since</Code> 来验证缓存。</>}>
+    <span>上方</span>
+  </Tooltip>
+  <Spacer inline x={2.5} />
+  <Tooltip text={<>请求中带上 If-Modified-Since 来<Text b>验证缓存</Text>。</>} placement="bottom">
+    <span>下方</span>
+  </Tooltip>
+</Row>
+`} />
+
+<Playground
+  title="类型"
+  desc="我们为不同的类型预置了样式。"
+  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  code={`
+<Row align="middle">
+  <Tooltip text="缓存是达到高性能的重要组成部分" type="dark">
+    <span>黑暗的</span>
+  </Tooltip>
+  <Spacer inline x={1.5} />
+  <Tooltip text="缓存是达到高性能的重要组成部分" type="success">
+    <span>成功</span>
+  </Tooltip>
+  <Spacer inline x={1.5} />
+  <Tooltip text="缓存是达到高性能的重要组成部分" type="warning">
+    <span>警告</span>
+  </Tooltip>
+  <Spacer inline x={1.5} />
+  <Tooltip text="缓存是达到高性能的重要组成部分" type="error">
+    <span>错误</span>
+  </Tooltip>
+  <Spacer inline x={1.5} />
+  <Tooltip text="缓存是达到高性能的重要组成部分" type="secondary">
+    <span>次要的</span>
+  </Tooltip>
+</Row>
+`} />
+
+<Playground
+  title="变体"
+  desc="特殊样式。"
+  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  code={`
+<Row align="middle">
+  <Tooltip text="缓存是达到高性能的重要组成部分" type="lite">
+    <span>精简的</span>
+  </Tooltip>
+  <Spacer inline x={2.5} />
+  <Tooltip text="缓存是达到高性能的重要组成部分" hideArrow>
+    <span>无箭头</span>
+  </Tooltip>
+</Row>
+`} />
+
+<Playground
+  title="对齐方式"
+  desc="有 12 种对齐方式可用。"
+  scope={{ Tooltip, Spacer, Row, Col }}
+  code={`
+() => {
+  const text = 'The Evil Rabbit Jumped over the Fence'
+  const Center = ({ children, ...props }) => (
+    <Col style={{ display: 'flex', justifyContent: 'center' }} {...props}>{children}</Col>
+  )
+  return (
+    <div style={{ width: '80%', margin: '0 auto' }}>
+      <Row justify="center">
+        <Center span={5}>
+          <Tooltip text={text} placement="topStart" type="dark">topStart</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="top" type="dark">top</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="topEnd" type="dark">topEnd</Tooltip>
+        </Center>
+      </Row>
+      <Row justify="space-between">
+        <Center span={5}>
+          <Tooltip text={text} placement="leftStart" type="dark">leftStart</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="rightStart" type="dark">rightStart</Tooltip>
+        </Center>
+      </Row>
+      <Spacer y={.5} />
+      <Row justify="space-between">
+        <Center span={5}>
+          <Tooltip text={text} placement="left" type="dark">left</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="right" type="dark">right</Tooltip>
+        </Center>
+      </Row>
+      <Spacer y={.5} />
+      <Row justify="space-between">
+        <Center span={5}>
+          <Tooltip text={text} placement="leftEnd" type="dark">leftEnd</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="rightEnd" type="dark">rightEnd</Tooltip>
+        </Center>
+      </Row>
+      <Row justify="center">
+        <Center span={5}>
+          <Tooltip text={text} placement="bottomStart" type="dark">bottomStart</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="bottom" type="dark">bottom</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="bottomEnd" type="dark">bottomEnd</Tooltip>
+        </Center>
+      </Row>
+    </div>
+  )
+}
+`} />
+
+<Attributes edit="/pages/docs/components/tooltip.mdx">
+<Attributes.Title>Tooltip.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **text** | 弹出框文字 | `string` `React.ReactNode` | - | - |
+| **initialVisible** | 初始是否可见 | `boolean` | - | `false` |
+| **hideArrow** | 隐藏箭头 | `boolean` | - | `false` |
+| **type** | 不同的文字提示类型 | [TooltipTypes](#tooltiptypes) | - | `default` |
+| **placement** | 提示框与目标的对齐方式 | [Placement](#placement) | - | `top` |
+| **trigger** | 触发提示框的方式 | `'click' / 'hover'` | - | `hover` |
+| **enterDelay**(ms) | 在提示显示前的延迟 | `number` | - | `100` |
+| **leaveDelay**(ms) | 关闭提示前的延迟 | `number` | - | `0` |
+| **offset**(px) | 提示框与目标之间的偏移 | `number` | - | `12` |
+| **portalClassName** | 弹出框的类名 | `string` | - | - |
+| **onVisibleChange** | 当提示框状态改变时触发 | `(visible: boolean) => void` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>TooltipTypes</Attributes.Title>
+
+```ts
+type TooltipTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'dark'
+  | 'lite'
+```
+
+<Attributes.Title>Placement</Attributes.Title>
+
+```ts
+type Placement = 'top'
+  | 'topStart',
+  | 'topEnd',
+  | 'left',
+  | 'leftStart',
+  | 'leftEnd',
+  | 'bottom',
+  | 'bottomStart',
+  | 'bottomEnd',
+  | 'right',
+  | 'rightStart',
+  | 'rightEnd',
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
