@@ -46,6 +46,26 @@ const copyTypes = tuple(
   'prevent',
 )
 
+const triggerTypes = tuple(
+  'hover',
+  'click',
+)
+
+const placement = tuple(
+  'top',
+  'topStart',
+  'topEnd',
+  'left',
+  'leftStart',
+  'leftEnd',
+  'bottom',
+  'bottomStart',
+  'bottomEnd',
+  'right',
+  'rightStart',
+  'rightEnd',
+)
+
 export type ButtonTypes = typeof buttonTypes[number]
 
 export type NormalSizes = typeof normalSizes[number]
@@ -57,3 +77,7 @@ export type ThemeTypes = typeof themeTypes[number]
 export type SnippetTypes = typeof snippetTypes[number]
 
 export type CopyTypes = typeof copyTypes[number]
+
+export type TriggerTypes = typeof triggerTypes[number]
+
+export type Placement = typeof placement[number]
