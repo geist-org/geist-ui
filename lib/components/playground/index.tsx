@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from 'react'
+import React, { useState } from 'react'
 import { LivePreview, LiveProvider, LiveEditor, LiveError } from 'react-live'
 import withDefaults from 'components/utils/with-defaults'
 import useClipboard from 'components/utils/use-clipboard'
@@ -31,13 +31,13 @@ const editor = (code: string, copy: Function, isChinese: boolean) => {
   const [visible, setVisible] = useState(false)
   
   const [, setToast] = useToasts()
-  const clickHandler = (event: MouseEvent<HTMLDetailsElement>) => {
+  const clickHandler = (event: React.MouseEvent) => {
     event.stopPropagation()
     event.preventDefault()
     setVisible(!visible)
   }
   
-  const copyHandler = (event: MouseEvent<SVGElement>) => {
+  const copyHandler = (event: React.MouseEvent) => {
     event.stopPropagation()
     event.preventDefault()
     copy(code)
@@ -53,7 +53,11 @@ const editor = (code: string, copy: Function, isChinese: boolean) => {
             <span>{isChinese ? '编辑代码' : 'Code Editor'}</span>
           </div>
           <div>
-            {visible && <CopyIcon onClick={copyHandler} />}
+            {visible && (
+              <span className="copy" onClick={copyHandler} title={isChinese ? '拷贝代码' : 'Copy Code'}>
+                <CopyIcon />
+              </span>
+            )}
           </div>
         </summary>
         <div className="area">
@@ -109,6 +113,11 @@ const editor = (code: string, copy: Function, isChinese: boolean) => {
           overflow: hidden;
           border-top: 1px solid ${theme.palette.accents_2};
           padding: ${theme.layout.gapHalf};
+        }
+        
+        .copy {
+          display: inline-flex;
+          align-items: center;
         }
       `}</style>
     </div>
