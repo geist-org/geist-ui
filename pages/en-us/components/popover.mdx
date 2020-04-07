@@ -1,0 +1,134 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Popover, Spacer, Link } from 'components'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'Popover',
+  group: 'Data Display',
+}
+
+## Popover
+
+The floating box popped by clicking or hovering.
+
+<Playground
+  scope={{ Popover, Spacer, Link }}
+  code={`
+() => {
+  const content = () => (
+    <div style={{ padding: '0 10px' }}>
+      <Link pure href="#">A hyperlink</Link>
+      <Spacer y={.5} />
+      <Link pure color href="#">External link</Link>
+    </div>
+  )
+  return (
+    <Popover content={content}>
+      Menu
+    </Popover>
+  )
+}
+`} />
+
+<Playground
+  title="Preset Item"
+  desc="Use preset `Item` component build layout."
+  scope={{ Popover, Spacer, Link }}
+  code={`
+() => {
+  const content = () => (
+    <>
+      <Popover.Item title>
+        <span>User Settings</span>
+      </Popover.Item>
+      <Popover.Item>
+        <Link pure href="#">A hyperlink</Link>
+      </Popover.Item>
+      <Popover.Item>
+        <Link pure color href="#">A hyperlink for edit profile</Link>
+      </Popover.Item>
+      <Popover.Item line />
+      <Popover.Item>
+        <span>Command-Line</span>
+      </Popover.Item>
+    </>
+  )
+  return (
+    <Popover content={content}>
+      Menu
+    </Popover>
+  )
+}
+`} />
+
+<Playground
+  title="Close Manual"
+  desc="You can control when to close the pop-up box."
+  scope={{ Popover, Spacer, Link, useState }}
+  code={`
+() => {
+  const [visible, setVisible] = useState(false)
+  const changeHandler = (next) => {
+    setVisible(next)
+  }
+  const content = () => (
+    <div style={{ padding: '0 10px' }}>
+      <span onClick={() => setVisible(false)}>Click to close</span>
+      <Spacer y={.5} />
+      <span>Nothing</span>
+    </div>
+  )
+  return (
+    <Popover content={content} visible={visible}
+      onVisibleChange={changeHandler}>
+      Menu
+    </Popover>
+  )
+}
+`} />
+
+<Attributes edit="/pages/en-us/components/popover.mdx">
+<Attributes.Title>Popover.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **content** | content of pop-up | `ReactNode` `() => ReactNode` | - | - |
+| **visible** | visible or not | `boolean` | - | `false` |
+| **initialVisible** | visible on initial | `boolean` | - | `false` |
+| **hideArrow** | hide arrow icon | `boolean` | - | `false` |
+| **placement** | position of the popover relative to the target | [Placement](#placement) | - | `bottom` |
+| **trigger** | tooltip trigger mode | `'click' / 'hover'` | - | `click` |
+| **enterDelay**(ms) | delay before popover is shown | `number` | - | `100` |
+| **leaveDelay**(ms) | delay before popover is hidden | `number` | - | `0` |
+| **offset**(px) | distance between pop-up and target | `number` | - | `12` |
+| **portalClassName** | className of pop-up box | `string` | - | - |
+| **onVisibleChange** | call when visibility of the popover is changed | `(visible: boolean) => void` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title alias="Popover.Option">Popover.Item</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **line** | show a line | `boolean` | - | `false` |
+| **title** | show text with title style | `boolean` | - | `false` |
+
+<Attributes.Title>Placement</Attributes.Title>
+
+```ts
+type Placement = 'top'
+  | 'topStart',
+  | 'topEnd',
+  | 'left',
+  | 'leftStart',
+  | 'leftEnd',
+  | 'bottom',
+  | 'bottomStart',
+  | 'bottomEnd',
+  | 'right',
+  | 'rightStart',
+  | 'rightEnd',
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

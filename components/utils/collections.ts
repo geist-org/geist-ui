@@ -101,3 +101,12 @@ export const setChildrenIndex = (
     return item
   })
 }
+
+export const getReactNode = (
+  node?: React.ReactNode | (() => React.ReactNode),
+): React.ReactNode => {
+  if (!node) return null
+  
+  if (typeof node !== 'function') return node
+  return (node as () => React.ReactNode)()
+}

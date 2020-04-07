@@ -73,7 +73,6 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = React.memo(({
 
   const preventHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
-    event.preventDefault()
     event.nativeEvent.stopImmediatePropagation()
   }
 

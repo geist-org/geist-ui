@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
 import TooltipContent from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
@@ -8,6 +8,7 @@ interface Props {
   text: string | React.ReactNode
   type?: SnippetTypes
   placement?: Placement
+  visible?: boolean
   initialVisible?: boolean
   hideArrow?: boolean
   trigger?: TriggerTypes
@@ -39,7 +40,7 @@ export type TooltipProps = Props & typeof defaultProps & NativeAttrs
 const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   children, initialVisible, text, offset, placement, portalClassName,
   enterDelay, leaveDelay, trigger, type, className, onVisibleChange,
-  hideArrow, ...props
+  hideArrow, visible: customVisible, ...props
 }) => {
   const timer = useRef<number>()
   const ref = useRef<HTMLDivElement>(null)
@@ -74,7 +75,13 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   
   const mouseEventHandler = (next: boolean) => trigger === 'hover' && changeVisible(next)
   const clickEventHandler = () => trigger === 'click' && changeVisible(!visible)
+  
   useClickAway(ref, () => trigger === 'click' && changeVisible(false))
+  
+  useEffect(() => {
+    if (customVisible === undefined) return
+    changeVisible(customVisible)
+  }, [customVisible])
   
   return (
     <div ref={ref} className={`tooltip ${className}`}
