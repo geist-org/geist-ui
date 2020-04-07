@@ -1,20 +1,23 @@
-import React, { MutableRefObject, useRef, useState } from 'react'
+import React, { MutableRefObject, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import useTheme from '../styles/use-theme'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
 import CSSTransition from '../shared/css-transition'
 import useClickAnyWhere from '../utils/use-click-anywhere'
+import { getColors } from './styles'
 import { getPosition, TooltipPosition, defaultTooltipPosition } from './placement'
 import TooltipIcon from './tooltip-icon'
-import { Placement } from '../utils/prop-types'
+import { Placement, SnippetTypes } from '../utils/prop-types'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
   placement: Placement
+  type: SnippetTypes
   visible: boolean
+  hideArrow: boolean
   offset: number
-  bgColor: string
+  className?: string
 }
 
 interface ReactiveDomReact {
@@ -50,12 +53,14 @@ const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact =>
 }
 
 const TooltipContent: React.FC<React.PropsWithChildren<Props>> = React.memo(({
-  children, parent, visible, offset, placement, bgColor,
+  children, parent, visible, offset, placement, type, className, hideArrow,
 }) => {
   const theme = useTheme()
   const el = usePortal('tooltip')
   const selfRef = useRef<HTMLDivElement>(null)
   const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition)
+  const colors = useMemo(() => getColors(type, theme.palette), [type, theme.palette])
+  const hasShadow = type === 'default'
   if (!parent) return null
 
   const updateRect = () => {
@@ -75,12 +80,10 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = React.memo(({
   if (!el) return null
   return createPortal((
     <CSSTransition visible={visible}>
-      <div className="tooltip-content" ref={selfRef}
-        onClick={preventHandler}
-        onMouseEnter={preventHandler}
-        onMouseLeave={preventHandler}>
+      <div className={`tooltip-content ${className}`} ref={selfRef}
+        onClick={preventHandler}>
         <div className="inner">
-          <TooltipIcon placement={placement} bgColor={bgColor} />
+          {!hideArrow && <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={hasShadow} />}
           {children}
         </div>
         <style jsx>{`
@@ -90,11 +93,12 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = React.memo(({
           top: ${rect.top};
           left: ${rect.left};
           transform: ${rect.transform};
-          background-color: ${bgColor};
-          color: ${theme.palette.background};
+          background-color: ${colors.bgColor};
+          color: ${colors.color};
           border-radius: ${theme.layout.radius};
           padding: 0;
           z-index: 1000;
+          box-shadow: ${hasShadow ? theme.expressiveness.shadowMedium : 'none'};
         }
         
         .inner {

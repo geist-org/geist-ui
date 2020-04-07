@@ -1,105 +1,92 @@
-import React, { useMemo, useRef, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import React, { useRef, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
 import TooltipContent from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
-import { TriggerTypes, Placement, NormalTypes } from '../utils/prop-types'
+import { TriggerTypes, Placement, SnippetTypes } from '../utils/prop-types'
 
 interface Props {
   text: string | React.ReactNode
-  type?: NormalTypes
+  type?: SnippetTypes
   placement?: Placement
   initialVisible?: boolean
+  hideArrow?: boolean
   trigger?: TriggerTypes
   enterDelay?: number
   leaveDelay?: number
   offset?: number
+  className?: string
+  portalClassName?: string
+  onVisibleChange?: (visible: boolean) => void
 }
 
 const defaultProps = {
   initialVisible: false,
-  type: 'default' as NormalTypes,
+  hideArrow: false,
+  type: 'default' as SnippetTypes,
   trigger: 'hover' as TriggerTypes,
   placement: 'top',
   enterDelay: 100,
-  leaveDelay: 300,
+  leaveDelay: 0,
   offset: 12,
+  className: '',
+  portalClassName: '',
+  onVisibleChange: () => {},
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TooltipProps = Props & typeof defaultProps & NativeAttrs
 
-const getBgColor = (
-  type: NormalTypes,
-  palette: ZeitUIThemesPalette,
-) => {
-  const colors: { [key in NormalTypes ]: string } = {
-    default: palette.foreground,
-    success: palette.success,
-    warning: palette.warning,
-    error: palette.error,
-    secondary: palette.secondary,
-  }
-  return colors[type]
-}
-
 const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
-  children, initialVisible, text, offset, placement,
-  enterDelay, leaveDelay, trigger, type,
+  children, initialVisible, text, offset, placement, portalClassName,
+  enterDelay, leaveDelay, trigger, type, className, onVisibleChange,
+  hideArrow, ...props
 }) => {
-  const theme = useTheme()
   const timer = useRef<number>()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(initialVisible)
-  const bgColor = useMemo(() => getBgColor(type, theme.palette), [type, theme.palette])
+  const contentProps = {
+    type,
+    visible,
+    offset,
+    placement,
+    hideArrow,
+    parent: ref,
+    className: portalClassName,
+  }
   
   const changeVisible = (nextState: boolean) => {
     const clear = () => {
       clearTimeout(timer.current)
       timer.current = undefined
     }
-    if (nextState) {
-      timer.current = window.setTimeout(() => {
-        setVisible(true)
-        clear()
-      }, enterDelay)
-    } else {
+    const handler = (nextState: boolean) => {
+      setVisible(nextState)
+      onVisibleChange(nextState)
       clear()
-      timer.current = window.setTimeout(() => {
-        setVisible(false)
-        clear()
-      }, leaveDelay)
     }
-  }
-  const mouseEventHandler = (nextState: boolean) => {
-    if (trigger !== 'hover') return
-    changeVisible(nextState)
-  }
-  const clickEventHandler = () => {
-    if (trigger !== 'click') return
-    changeVisible(!visible)
+    clear()
+    if (nextState) {
+      timer.current = window.setTimeout(() => handler(true), enterDelay)
+      return
+    }
+    timer.current = window.setTimeout(() => handler(false), leaveDelay)
   }
   
-  useClickAway(ref, () => {
-    if (trigger !== 'click') return
-    changeVisible(false)
-  })
+  const mouseEventHandler = (next: boolean) => trigger === 'hover' && changeVisible(next)
+  const clickEventHandler = () => trigger === 'click' && changeVisible(!visible)
+  useClickAway(ref, () => trigger === 'click' && changeVisible(false))
   
   return (
-    <div ref={ref} className="tooltip" onClick={clickEventHandler}
+    <div ref={ref} className={`tooltip ${className}`}
+      onClick={clickEventHandler}
       onMouseEnter={() => mouseEventHandler(true)}
-      onMouseLeave={() => mouseEventHandler(false)}>
+      onMouseLeave={() => mouseEventHandler(false)}
+      {...props}>
       {children}
-      <TooltipContent parent={ref} visible={visible}
-        offset={offset}
-        bgColor={bgColor}
-        placement={placement}>
-        {text}
-      </TooltipContent>
+      <TooltipContent {...contentProps}>{text}</TooltipContent>
       <style jsx>{`
         .tooltip {
-          width: min-content;
+          width: max-content;
         }
       `}</style>
     </div>
