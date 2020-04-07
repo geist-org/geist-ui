@@ -40,7 +40,7 @@ const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({
         
         .virtual {
           position: absolute;
-          top: -30px;
+          top: -65px;
           left: 0;
           opacity: 0;
           pointer-events: none;
