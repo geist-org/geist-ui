@@ -5,12 +5,41 @@ import lightTheme from '../themes/default'
 import { ZeitUIThemes } from '../themes/index'
 import ThemeContext from '../use-theme/theme-context'
 import useWarning from '../../utils/use-warning'
+import { DeepPartial } from '../../utils/types'
 
-type PartialTheme = Partial<ZeitUIThemes>
+type PartialTheme = DeepPartial<ZeitUIThemes>
 export type ThemeParam = PartialTheme | ((theme: PartialTheme) => PartialTheme) | undefined
 
 export interface Props {
   theme?: ThemeParam
+}
+
+interface MergeObject {
+  [key: string]: any
+}
+
+const isObject = (target: any) => target && typeof target === 'object'
+
+const deepMergeObject = <T extends MergeObject,>(source: T, target: T): T => {
+  if (!isObject(target) || !isObject(source)) return source
+  
+  const sourceKeys = Object.keys(source) as Array<keyof T>
+  let result = {} as T
+  for (const key of sourceKeys) {
+    const sourceValue = source[key]
+    const targetValue = target[key]
+
+    if (Array.isArray(sourceValue) && Array.isArray(targetValue)) {
+      result[key] = targetValue.concat(sourceValue)
+    } else if (isObject(sourceValue) && isObject(targetValue)) {
+      result[key] = deepMergeObject(sourceValue, { ...targetValue })
+    } else if (targetValue) {
+      result[key] = targetValue
+    } else {
+      result[key] = sourceValue
+    }
+  }
+  return result
 }
 
 const mergeTheme = (current: ZeitUIThemes, custom: ThemeParam): ZeitUIThemes => {
@@ -22,7 +51,7 @@ const mergeTheme = (current: ZeitUIThemes, custom: ThemeParam): ZeitUIThemes => 
     }
     return merged as ZeitUIThemes
   }
-  return {...current, ...custom}
+  return deepMergeObject<ZeitUIThemes>(current, custom as ZeitUIThemes)
 }
 
 const switchTheme = (mergedTheme: ZeitUIThemes): ZeitUIThemes => {
