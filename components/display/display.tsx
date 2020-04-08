@@ -48,6 +48,10 @@ const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
           margin: 0;
           transition: min-width ease .2s;
         }
+        
+        .content :global(img) {
+          display: block;
+        }
 
         .caption {
           font-size: .875rem;
