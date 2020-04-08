@@ -76,6 +76,7 @@ const Image: React.FC<ImageProps> = React.memo(({
           width: ${scale};
           height: ${scale};
           object-fit: scale-down;
+          display: block;
         }
       `}</style>
     </div>
