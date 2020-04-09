@@ -40,6 +40,20 @@ const snippetTypes = tuple(
   'lite',
 )
 
+const cardTypes = tuple(
+  'default',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'dark',
+  'lite',
+  'alert',
+  'purple',
+  'violet',
+  'cyan',
+)
+
 const copyTypes = tuple(
   'default',
   'slient',
@@ -75,6 +89,8 @@ export type NormalTypes = typeof normalTypes[number]
 export type ThemeTypes = typeof themeTypes[number]
 
 export type SnippetTypes = typeof snippetTypes[number]
+
+export type CardTypes = typeof cardTypes[number]
 
 export type CopyTypes = typeof copyTypes[number]
 
