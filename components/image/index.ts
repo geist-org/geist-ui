@@ -1,5 +1,6 @@
 import Image from './image'
-import { ImageProps } from './image'
+import ImageBrowser from './image-browser'
 
-export type Props = ImageProps
+Image.Browser = ImageBrowser
+
 export default Image
