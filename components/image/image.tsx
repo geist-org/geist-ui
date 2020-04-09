@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import ImageSkeleton from './image.skeleton'
+import ImageBrowser from './image-browser'
 
 interface Props {
   src: string
@@ -83,4 +83,12 @@ const Image: React.FC<ImageProps> = React.memo(({
   )
 })
 
-export default withDefaults(Image, defaultProps)
+type ImageComponent<P = {}> = React.FC<P> & {
+  Browser: typeof ImageBrowser
+}
+
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+
+(Image as ImageComponent<ComponentProps>).defaultProps = defaultProps
+
+export default Image as ImageComponent<ComponentProps>

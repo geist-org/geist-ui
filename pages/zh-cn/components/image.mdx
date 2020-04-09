@@ -26,6 +26,25 @@ export const meta = {
 `} />
 
 <Playground
+  title="浏览器风格"
+  desc="为图片增加浏览器风格的外装饰。"
+  scope={{ Image, Display, Code }}
+  code={`
+<Image.Browser url="https://react.zeit-ui.co/en-us/guide/introduction" >
+  <Image width="540" height="246" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+</Image.Browser>
+`} />
+
+<Playground
+  title="反转的浏览器风格"
+  scope={{ Image, Display, Code }}
+  code={`
+<Image.Browser url="https://react.zeit-ui.co/en-us/guide/introduction" invert>
+  <Image width="540" height="246" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+</Image.Browser>
+`} />
+
+<Playground
   title="组合"
   desc="与 `Display` 组件组合使用。"
   scope={{ Image, Display, Code }}
@@ -47,6 +66,16 @@ export const meta = {
 | **height** | 高度 | `number` | - | - |
 | **scale** | 缩放比例 | `string` | - | `100%` |
 | ... | 原生属性 | `ImgHTMLAttributes` | `'alt', 'className', ...` | - |
+
+<Attributes.Title>Image.Browser.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **title** | 显示标题 (当 "url" 未设置时生效) | `string` | - | - |
+| **url** | 在浏览器地址栏显示链接 | `string` | - | - |
+| **showFullLink** | 显示完整的链接而非域名 | `boolean` | - | `false` |
+| **invert** | 反转所有颜色 | `boolean` | - | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
 
 </Attributes>
 

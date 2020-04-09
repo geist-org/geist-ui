@@ -27,6 +27,25 @@ Display image content.
 `} />
 
 <Playground
+  title="Browser"
+  desc="Add a browser style warpper to the image."
+  scope={{ Image, Display, Code }}
+  code={`
+<Image.Browser url="https://react.zeit-ui.co/en-us/guide/introduction" >
+  <Image width="540" height="246" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+</Image.Browser>
+`} />
+
+<Playground
+  title="Browser Invert"
+  scope={{ Image, Display, Code }}
+  code={`
+<Image.Browser url="https://react.zeit-ui.co/en-us/guide/introduction" invert>
+  <Image width="540" height="246" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+</Image.Browser>
+`} />
+
+<Playground
   title="Compose"
   desc="Show `Image` in `Display` component."
   scope={{ Image, Display, Code }}
@@ -48,6 +67,16 @@ Display image content.
 | **height** | height | `number` | - | - |
 | **scale** | scale value | `string` | - | `100%` |
 | ... | native props | `ImgHTMLAttributes` | `'alt', 'className', ...` | - |
+
+<Attributes.Title>Image.Browser.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **title** | show text title (when "url" is unset) | `string` | - | - |
+| **url** | show url on browser address input | `string` | - | - |
+| **showFullLink** | show full url | `boolean` | - | `false` |
+| **invert** | invert colors | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
 
 </Attributes>
 
