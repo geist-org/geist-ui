@@ -1,5 +1,6 @@
 import Avatar from './avatar'
-import { AvatarProps } from './avatar'
+import AvatarGroup from './avatar-group'
 
-export type Props = AvatarProps
+Avatar.Group = AvatarGroup
+
 export default Avatar

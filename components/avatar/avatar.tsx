@@ -1,8 +1,8 @@
 import React from 'react'
 import { AVATAR_SIZES } from './constants'
 import { NormalSizes } from '../utils/prop-types'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
+import AvatarGroup from './avatar-group'
 
 interface Props {
   src?: string
@@ -41,7 +41,7 @@ const Avatar: React.FC<AvatarProps> = React.memo(({
   const theme = useTheme()
   const showText = !src
   const radius = isSquare ? theme.layout.radius : '50%'
-  const marginLeft = stacked ? '-10px' : 0
+  const marginLeft = stacked ? '-.625rem' : 0
   
   return (
     <span className={`avatar ${className}`}>
@@ -88,5 +88,12 @@ const Avatar: React.FC<AvatarProps> = React.memo(({
   )
 })
 
+type AvatarComponent<P = {}> = React.FC<P> & {
+  Group: typeof AvatarGroup
+}
 
-export default withDefaults(Avatar, defaultProps)
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+
+(Avatar as AvatarComponent<ComponentProps>).defaultProps = defaultProps
+
+export default Avatar as AvatarComponent<ComponentProps>

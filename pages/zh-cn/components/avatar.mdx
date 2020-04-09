@@ -66,18 +66,26 @@ export const meta = {
 
 
 <Playground
-  title="堆叠的"
+  title="头像组"
   desc="多个头像框可以堆叠在一起。"
-  scope={{ Avatar }}
+  scope={{ Avatar, Spacer }}
   code={`
 () => {
   const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
   return (
     <>
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
+      <Avatar.Group>
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+      </Avatar.Group>
+      <Spacer />
+      <Avatar.Group count={12}>
+        <Avatar src={url} stacked />
+        <Avatar text="刘" stacked />
+        <Avatar text="Ana" stacked />
+      </Avatar.Group>
     </>
   )
 }
@@ -94,6 +102,13 @@ export const meta = {
 | **size** | 头像大小 | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
 | **isSquare** | 是否为方形头像 | `boolean` | - | `false` |
 | ... | 原生属性 | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | - |
+
+<Attributes.Title>Avatar.Group.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **count** | 显示成员数量 | `number` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
 
 </Attributes>
 
