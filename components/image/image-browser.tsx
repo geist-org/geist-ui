@@ -58,7 +58,7 @@ const getAddressInput = (
     <style jsx>{`
       .address-input {
         height: 1.75rem;
-        max-width: 55%;
+        max-width: 60%;
         min-width: 40%;
         background-color: ${colors.inputBgColor};
         color: inherit;
@@ -127,6 +127,7 @@ const ImageBrowser: React.FC<React.PropsWithChildren<ImageBrowserProps>> = ({
           background-color: transparent;
           box-shadow: ${theme.expressiveness.shadowLarge};
           width: max-content;
+          max-width: 100%;
           margin: 0 auto;
           border-radius: ${theme.layout.radius};
           overflow: hidden;
