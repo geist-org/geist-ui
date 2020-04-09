@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card } from 'components'
+import { Card, Row, Col } from 'components'
 
 export const meta = {
   title: '卡片 Card',
@@ -9,7 +9,6 @@ export const meta = {
 ## Card / 卡片
 
 基础的组件容器。
-
 
 <Playground
   scope={{ Card }}
@@ -38,6 +37,41 @@ export const meta = {
 </Card>
 `} />
 
+<Playground
+  title="类型"
+  desc="以各式色彩表达不同的类型或状态。"
+  scope={{ Card, Row, Col }}
+  code={`
+() => {
+  const typeLeft = ['secondary', 'success', 'warning', 'error', 'dark']
+  const typeRight = ['alert', 'purple', 'violet', 'cyan', 'lite']
+  const locales = {
+    secondary: '次要的', success: '成功', warning: '警告', error: '错误', dark: '暗黑',
+    alert: '提示', purple: '紫色', violet: '紫罗兰', cyan: '青色', lite: '精简',
+  }
+  return (
+    <>
+      {typeLeft.map((left, index) => (
+        <Row justify="space-around" key={left} style={{ marginBottom: '18px' }}>
+          <Col span="10">
+            <Card type={left}>
+              <h4 style={{ textTransform: 'capitalize' }}>{locales[left]}</h4>
+              <span>{left}</span>
+            </Card>
+          </Col>
+          <Col span="10">
+            <Card type={typeRight[index]}>
+              <h4 style={{ textTransform: 'capitalize' }}>{locales[typeRight[index]]}</h4>
+              <span>{typeRight[index]}</span>
+            </Card>
+          </Col>
+        </Row>
+      ))}
+    </>
+  )
+}
+`} />
+
 <Attributes edit="/pages/zh-cn/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
@@ -45,7 +79,24 @@ export const meta = {
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **hoverable** | 是否在悬停时增加阴影 | `boolean` | - | `false` |
 | **shadow** | 是否总是显示阴影 | `boolean` | - | `false` |
+| **type** | 卡片的类型 | [CardType](#cardtype) | - | `default` |
 | ... | 原生属性 | `HTMLAttributes` | `'className', ...` | - |
+
+<Attributes.Title>CardType</Attributes.Title>
+
+```ts
+type CardType = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'dark'
+  | 'lite'
+  | 'alert'
+  | 'purple'
+  | 'violet'
+  | 'cyan'
+```
 
 </Attributes>
 

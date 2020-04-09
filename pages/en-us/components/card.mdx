@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card } from 'components'
+import { Card, Spacer, Row, Col } from 'components'
 
 export const meta = {
   title: 'card',
@@ -39,6 +39,37 @@ A common container component.
 </Card>
 `} />
 
+<Playground
+  title="Types"
+  desc="Show different states with colors."
+  scope={{ Card, Spacer, Row, Col }}
+  code={`
+() => {
+  const typeLeft = ['secondary', 'success', 'warning', 'error', 'dark']
+  const typeRight = ['alert', 'purple', 'violet', 'cyan', 'lite']
+  return (
+    <>
+      {typeLeft.map((left, index) => (
+        <Row justify="space-around" key={left} style={{ marginBottom: '18px' }}>
+          <Col span="10">
+            <Card type={left}>
+              <h4 style={{ textTransform: 'capitalize' }}>{left}</h4>
+              <span>{left}</span>
+            </Card>
+          </Col>
+          <Col span="10">
+            <Card type={typeRight[index]}>
+              <h4 style={{ textTransform: 'capitalize' }}>{typeRight[index]}</h4>
+              <span>{typeRight[index]}</span>
+            </Card>
+          </Col>
+        </Row>
+      ))}
+    </>
+  )
+}
+`} />
+
 <Attributes edit="/pages/en-us/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
@@ -46,7 +77,24 @@ A common container component.
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **hoverable** | add effect on hover | `boolean` | - | `false` |
 | **shadow** | show shadow | `boolean` | - | `false` |
+| **type** | card type | [CardType](#cardtype) | - | `default` |
 | ... | native props | `HTMLAttributes` | `'className', ...` | - |
+
+<Attributes.Title>CardType</Attributes.Title>
+
+```ts
+type CardType = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'dark'
+  | 'lite'
+  | 'alert'
+  | 'purple'
+  | 'violet'
+  | 'cyan'
+```
 
 </Attributes>
 
