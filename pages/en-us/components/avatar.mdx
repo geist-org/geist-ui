@@ -67,18 +67,26 @@ Avatars represent a user or a team. Stacked avatars represent a group of people.
 
 
 <Playground
-  title="Stacked"
+  title="Group"
   desc="Multiple avatars can overlap and stack together."
-  scope={{ Avatar }}
+  scope={{ Avatar, Spacer }}
   code={`
 () => {
   const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
   return (
     <>
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
-      <Avatar src={url} stacked />
+      <Avatar.Group>
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+        <Avatar src={url} stacked />
+      </Avatar.Group>
+      <Spacer />
+      <Avatar.Group count={12}>
+        <Avatar src={url} stacked />
+        <Avatar text="W" stacked />
+        <Avatar text="Ana" stacked />
+      </Avatar.Group>
     </>
   )
 }
@@ -95,6 +103,13 @@ Avatars represent a user or a team. Stacked avatars represent a group of people.
 | **size** | avatar size | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
 | **isSquare** | avatar shape | `boolean` | - | `false` |
 | ... | native props | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | - |
+
+<Attributes.Title>Avatar.Group.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **count** | show total members | `number` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
 
 </Attributes>
 
