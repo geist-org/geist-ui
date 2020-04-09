@@ -39,7 +39,7 @@ const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
           margin: 0 auto;
           border-radius: 4px;
           overflow: hidden;
-          width: ${width ? width : 'fit-content'};
+          width: ${width ? width : 'max-content'};
           box-shadow: ${shadow ? theme.expressiveness.shadowLarge : 'none'};
           max-width: 100%;
         }
