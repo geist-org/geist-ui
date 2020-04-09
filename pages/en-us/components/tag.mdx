@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Tag } from 'components'
+import { Tag, Spacer } from 'components'
 
 export const meta = {
   title: 'Tag',
@@ -19,14 +19,39 @@ Display a unique keyword, optionally as a part of a set.
 `} />
 
 <Playground
-  title="types"
-  scope={{ Tag }}
+  title="Types"
+  desc="Show different states with colors."
+  scope={{ Tag, Spacer }}
   code={`
-<div>
-  <Tag type="success" style={{ marginRight: '15px' }}>Status: Success</Tag>
-  <Tag type="warning" style={{ marginRight: '15px' }}>Status: Warning</Tag>
-  <Tag type="error">Status: Error</Tag>
-</div>
+<>
+  <Tag type="success">Success</Tag>
+  <Spacer y={.5} />
+  <Tag type="warning">Warning</Tag>
+  <Spacer y={.5} />
+  <Tag type="error">Error</Tag>
+  <Spacer y={.5} />
+  <Tag type="secondary">Secondary</Tag>
+  <Spacer y={.5} />
+  <Tag type="lite">Lite</Tag>
+</>
+`} />
+
+<Playground
+  title="Invert"
+  desc="Invert color and background."
+  scope={{ Tag, Spacer }}
+  code={`
+<>
+  <Tag type="default" invert>Default</Tag>
+  <Spacer y={.5} />
+  <Tag type="success" invert>Success</Tag>
+  <Spacer y={.5} />
+  <Tag type="warning" invert>Warning</Tag>
+  <Spacer y={.5} />
+  <Tag type="error" invert>Error</Tag>
+  <Spacer y={.5} />
+  <Tag type="secondary" invert>Secondary</Tag>
+</>
 `} />
 
 <Attributes edit="/pages/en-us/components/tag.mdx">
@@ -34,8 +59,21 @@ Display a unique keyword, optionally as a part of a set.
 
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | tag type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **type** | tag type | [TagTypes](#tagtypes) | - | `default` |
+| **invert** | invert color and background | `boolean` | - | `false` |
 | ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>TagTypes</Attributes.Title>
+
+```ts
+type TagTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'dark'
+  | 'lite'
+```
 
 </Attributes>
 
