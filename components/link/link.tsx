@@ -28,7 +28,7 @@ const Link = React.memo(React.forwardRef<HTMLAnchorElement, React.PropsWithChild
   href, color, underline, pure, children, className, block, ...props
 }, ref: React.Ref<HTMLAnchorElement>) => {
   const theme = useTheme()
-  const linkColor = color || block ? theme.palette.success : 'inherit'
+  const linkColor = color || block ? theme.palette.link : 'inherit'
   const padding = block ? theme.layout.gapQuarter : '0'
   const decoration = underline ? 'underline' : 'none'
 
