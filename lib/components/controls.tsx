@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { Button, useTheme, Select, Spacer } from 'components'
 import { useConfigs } from 'lib/config-context'
+import useLocale from 'lib/use-locale'
 import Router, { useRouter } from 'next/router'
 import MoonIcon from './icons/moon'
 import SunIcon from './icons/sun'
@@ -10,19 +11,22 @@ const Controls: React.FC<{}> = React.memo(({
   const theme = useTheme()
   const { onChange, updateChineseState } = useConfigs()
   const { pathname } = useRouter()
-  const isChinese = useMemo(() => pathname.toLowerCase().includes('zh-cn'), [pathname])
+  const { locale } = useLocale()
+  const isChinese = useMemo(() => locale === 'zh-cn', [locale])
   const isDark = useMemo(() => theme.type === 'dark', [theme.type])
+  const nextLocalePath = useMemo(() => {
+    const nextLocale = isChinese ? 'en-us' : 'zh-cn'
+    return pathname.replace(locale, nextLocale)
+  }, [locale, pathname])
+
   const switchThemes = (val: string) => {
     const isDark = val === 'dark'
     onChange && onChange(isDark)
   }
-
   const switchLanguages = () => {
-    const nextPath = `/${isChinese ? 'en-us' : 'zh-cn'}`
     updateChineseState(!isChinese)
-    Router.push(nextPath)
+    Router.push(nextLocalePath)
   }
-
   const redirectGithub = () => {
     if (typeof window !== 'undefined') {
       window.open('https://github.com/zeit-ui/react')
