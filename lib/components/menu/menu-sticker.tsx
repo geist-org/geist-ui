@@ -1,37 +1,22 @@
 import React, { useEffect, useMemo } from 'react'
 import { Tabs, useTheme } from 'components'
 import useCurrentState from 'components/utils/use-current-state'
-import sides from 'lib/data/metadata.json'
-import { Sides } from 'lib/components/sidebar/side-item'
-import Router, { useRouter } from 'next/router'
-import { useConfigs } from '../../config-context'
-
-export interface MultilLocaleMetaInformation {
-  [key: string]: Sides[]
-}
+import Router from 'next/router'
+import Metadatas from 'lib/data'
+import useLocale from 'lib/use-locale'
+import { useConfigs } from 'lib/config-context'
 
 const MenuSticker = () => {
   const theme = useTheme()
-  const { pathname } = useRouter()
-  const { updateSides, updateTabbarFixed } = useConfigs()
+  const { updateTabbarFixed } = useConfigs()
+  const { tabbar: currentUrlTabValue, locale } = useLocale()
   const [tabValue, setTabValue, tabValueRef] = useCurrentState<string>('')
   const [fixed, setFixed, fixedRef] = useCurrentState<boolean>(false)
-  
-  const currentUrlTabValue = useMemo(() => {
-    return pathname.split('/').filter(r => !!r)[1]
-  }, [pathname])
 
-  const tabbarData = useMemo(() => {
-    const language = pathname
-      .split('/')
-      .filter(r => !!r)
-    const locale: string = language[0] || 'en-us'
-    return (sides as MultilLocaleMetaInformation)[locale]
-  }, [pathname])
-  
+  const tabbarData = useMemo(() => Metadatas[locale], [locale])
+
   useEffect(() => updateTabbarFixed(fixed), [fixed])
   useEffect(() => setTabValue(currentUrlTabValue), [currentUrlTabValue])
-
   useEffect(() => {
     const scrollHandler = () => {
       const shouldFixed = document.documentElement.scrollTop > 60
@@ -43,22 +28,11 @@ const MenuSticker = () => {
   }, [])
 
   useEffect(() => {
-    const currentTab = tabbarData.find(tab => tab.name === tabValueRef.current)
-    if (!currentTab || !Array.isArray(currentTab.children)) return
-  
-    let firstChildren = currentTab.children
-    if (Array.isArray(firstChildren[0].children)) {
-      firstChildren = firstChildren[0].children
-    }
-  
-    const defaultPath = firstChildren[0].url
-    if (!defaultPath) return
-    updateSides(currentTab.children)
-    
     const shouldRedirectDefaultPage = currentUrlTabValue !== tabValueRef.current
     if (!shouldRedirectDefaultPage) return
+    const defaultPath = `/${locale}/${tabValueRef.current}`
     Router.push(defaultPath)
-  }, [tabValue, tabbarData, currentUrlTabValue])
+  }, [tabValue, currentUrlTabValue])
 
   return (
     <>

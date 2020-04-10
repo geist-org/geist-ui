@@ -22,12 +22,13 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
   return (
     <>
       {sides.map((side, index) => {
+        const showChildren = side.children && children
         return (
           <div key={`${side.localeName || side.name}-${index}`} className="item">
             {!side.url && <ActiveCatalog name={side.name} localeName={side.localeName} />}
             {side.url && <ActiveLink href={side.url} text={side.name} />}
             
-            {side.children && <div className="children">
+            {showChildren && <div className="children">
               {React.cloneElement(children as ReactElement, {
                 sides: side.children,
               })}

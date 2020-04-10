@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useTheme } from 'components'
 import Sidebar from './sidebar'
-import { Sides } from './sidebar/side-item'
 import TabbarMobile from './sidebar/tabbar-mobile'
 import useBodyScroll from 'components/utils/use-body-scroll'
 import { useConfigs } from '../config-context'
@@ -15,31 +14,26 @@ export interface Props {
   getStaticProps?: any
 }
 
-export interface MultilLocaleMetaInformation {
-  [key: string]: Sides[]
-}
-
 export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ children }) => {
   const theme = useTheme()
-  const { sides, tabbarFixed } = useConfigs()
+  const { tabbarFixed } = useConfigs()
   const [, setBodyScroll] = useBodyScroll(null, { scrollLayer: true })
   const [expanded, setExpanded] = useState<boolean>(false)
   const mobileTabbarClickHandler = () => {
     setExpanded(!expanded)
     setBodyScroll(!expanded)
   }
-
+  
   return (
     <div className="layout">
       <TabbarMobile onClick={mobileTabbarClickHandler} />
       <aside className="sidebar">
-        <Sidebar sides={sides}/>
+        <Sidebar />
       </aside>
       <div className="side-shadow" />
       <main className="main">
         <div>{children}</div>
       </main>
-
       <style jsx>{`
         .layout {
           min-height: calc(100vh - 108px);

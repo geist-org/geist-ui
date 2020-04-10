@@ -3,7 +3,10 @@ const path = require('path')
 const extractMetadata = require('extract-mdx-metadata')
 const metaLocales = require('./locales')
 const pagePrefix = path.join(__dirname, '../pages')
-const targetPath = path.join(__dirname, '../lib/data/metadata.json')
+const getTargetPath = locale => {
+  return path.join(__dirname, '../lib/data/', `metadata-${locale}.json`)
+}
+
 const weights = {
   'guide': 1,
   'docs': 2,
@@ -122,15 +125,11 @@ const deepTranslate = (metadata, locales) => {
       }
     }))
     
-    const jsonData = sortdMetaData.reduce((pre, current) => {
-      return {
-        ...pre,
-        [current.name]: current.content,
-      }
-    }, [])
-
-    await fs.ensureFile(targetPath)
-    await fs.writeJson(targetPath, jsonData)
+    await Promise.all(sortdMetaData.map(async data => {
+      const targetPath = getTargetPath(data.name)
+      await fs.ensureFile(targetPath)
+      await fs.writeJson(targetPath, data.content)
+    }))
   } catch (e) {
     console.log(e)
     process.exit(1)

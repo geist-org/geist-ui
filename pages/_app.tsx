@@ -27,6 +27,7 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
         <meta name="generator" content="ZEIT UI" />
         <meta name="description" content="React implementation for ZEIT design." />
         <meta property="og:description" content="React implementation for ZEIT design." />
+        <meta itemProp="image" property="og:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
         <meta property="og:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
         <meta property="twitter:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover" />

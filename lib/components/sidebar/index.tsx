@@ -1,27 +1,34 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import Router from 'next/router'
 import { useTheme, Spacer } from 'components'
-import SideItem, { SideItemProps, Sides } from './side-item'
+import SideItem, { Sides } from './side-item'
+import useLocale from 'lib/use-locale'
 import { useConfigs } from 'lib/config-context'
+import Metadatas from 'lib/data'
 
 export interface Props {
 }
-
-export type SideGroupProps = Props & SideItemProps
 
 export type SideChildren = Sides | Array<Sides>
 
 export const SideGroup: React.FC<{ sides?: SideChildren }> = React.memo(({ sides }) => {
   if (!sides) return null
   sides = Array.isArray(sides) ? sides : [sides]
-  return <SideItem sides={sides} />
+  return <SideItem sides={sides} ><SideGroup /></SideItem>
 })
 
-export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
+export const Sidebar: React.FC<Props> = React.memo(() => {
   const theme = useTheme()
   const boxRef = useRef<HTMLDivElement>(null)
   const { sidebarScrollHeight, updateSidebarScrollHeight } = useConfigs()
-  
+  const { locale, tabbar } = useLocale()
+
+  const tabbarData = useMemo(() => {
+    const allSides = Metadatas[locale]
+    const currentSide = allSides.filter(side => side.name === tabbar)[0]
+    return (currentSide.children || []) as Array<Sides>
+  }, [locale, tabbar])
+
   useEffect(() => {
     Router.events.on('routeChangeStart', () => {
       if (!boxRef.current) return
@@ -36,7 +43,7 @@ export const Sidebar: React.FC<SideGroupProps> = React.memo(({ sides }) => {
 
   return (
     <div ref={boxRef} className="sides box">
-      <SideItem sides={sides}>
+      <SideItem sides={tabbarData}>
         <SideGroup />
       </SideItem>
       <Spacer />
