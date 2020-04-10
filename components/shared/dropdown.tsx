@@ -71,6 +71,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
           width: ${rect.width}px;
           top: ${rect.top + 2}px;
           left: ${rect.left}px;
+          z-index: 100;
         }
       `}</style>
       </div>
