@@ -9,7 +9,7 @@ import SunIcon from './icons/sun'
 const Controls: React.FC<{}> = React.memo(({
 }) => {
   const theme = useTheme()
-  const { onChange, updateChineseState } = useConfigs()
+  const { updateCustomTheme, updateChineseState } = useConfigs()
   const { pathname } = useRouter()
   const { locale } = useLocale()
   const isChinese = useMemo(() => locale === 'zh-cn', [locale])
@@ -19,9 +19,8 @@ const Controls: React.FC<{}> = React.memo(({
     return pathname.replace(locale, nextLocale)
   }, [locale, pathname])
 
-  const switchThemes = (val: string) => {
-    const isDark = val === 'dark'
-    onChange && onChange(isDark)
+  const switchThemes = (type: 'dark' | 'light') => {
+    updateCustomTheme({ type })
   }
   const switchLanguages = () => {
     updateChineseState(!isChinese)
