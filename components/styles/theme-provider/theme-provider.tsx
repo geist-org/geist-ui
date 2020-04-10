@@ -20,7 +20,7 @@ interface MergeObject {
 
 const isObject = (target: any) => target && typeof target === 'object'
 
-const deepMergeObject = <T extends MergeObject,>(source: T, target: T): T => {
+export const deepMergeObject = <T extends MergeObject,>(source: T, target: T): T => {
   if (!isObject(target) || !isObject(source)) return source
   
   const sourceKeys = Object.keys(source) as Array<keyof T>
@@ -67,7 +67,7 @@ const ThemeProvider: React.FC<PropsWithChildren<Props>> = ({ children, theme }) 
   const currentTheme = useTheme()
   const merged = mergeTheme(currentTheme, customTheme)
   const userTheme = currentTheme.type !== merged.type ? switchTheme(merged) : merged
-  
+
   return (
     <ThemeContext.Provider value={userTheme}>{children}</ThemeContext.Provider>
   )
