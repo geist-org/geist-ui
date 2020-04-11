@@ -10,7 +10,7 @@
 
 1. run `yarn add @zeit-ui/react` or `npm i @zeit-ui/react` install it.
 
-2. import to projcet:
+2. import into project:
 
 ```jsx
 import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
