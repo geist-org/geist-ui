@@ -86,7 +86,7 @@ const Controls: React.FC<{}> = React.memo(({
           align-items: center;
         }
         
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .controls {
             display: none;
             pointer-events: none;

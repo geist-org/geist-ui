@@ -14,11 +14,11 @@ export interface Props {
   theme?: ThemeParam
 }
 
-interface MergeObject {
+export interface MergeObject {
   [key: string]: any
 }
 
-const isObject = (target: any) => target && typeof target === 'object'
+export const isObject = (target: any) => target && typeof target === 'object'
 
 export const deepMergeObject = <T extends MergeObject,>(source: T, target: T): T => {
   if (!isObject(target) || !isObject(source)) return source

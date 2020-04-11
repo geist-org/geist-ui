@@ -37,7 +37,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
       <style jsx>{`
         .layout {
           min-height: calc(100vh - 108px);
-          max-width: 1000px;
+          max-width: ${theme.layout.pageWidthWithMargin};
           margin: 0 auto;
           padding: 0 ${theme.layout.gap};
           display: flex;
@@ -74,7 +74,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
           padding-bottom: 150px;
         }
         
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .layout {
             max-width: 100%;
             width: 100%;

@@ -14,7 +14,7 @@ const statusColors: Array<keyof ZeitUIThemesPalette> = [
   'warning', 'warningLight', 'warningDark',
 ]
 const otherColors: Array<keyof ZeitUIThemesPalette> = [
-  'selection', 'secondary', 'border', 'code', 'cyan', 'purple', 'alert', 'violet'
+  'selection', 'secondary', 'link', 'border', 'code', 'cyan', 'purple', 'alert', 'violet'
 ]
 const expressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
   'linkStyle', 'linkHoverStyle', 'dropdownBoxShadow', 'shadowSmall',

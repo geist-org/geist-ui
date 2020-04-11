@@ -98,7 +98,7 @@ const MenuSticker = () => {
         }
         
         .inner {
-          max-width: 1000px;
+          max-width: ${theme.layout.pageWidth};
           padding: 0 ${theme.layout.gap};
           width: 100%;
           display: flex;

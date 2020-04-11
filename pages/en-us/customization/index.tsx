@@ -8,9 +8,9 @@ const Customization = () => {
     <CustomizationLayout>
       <Spacer y={1.2} />
       <Text h2>Customization</Text>
-      <Text>Custom themes is a very simple thing in ZEIT UI, click change, download or share.</Text>
+      <Text>Custom themes is a very simple thing in ZEIT UI, click change, copy or share.</Text>
       <CustomizationEditor />
-      <Spacer y={3.2} />
+      <Spacer y={2} />
     </CustomizationLayout>
   )
 }

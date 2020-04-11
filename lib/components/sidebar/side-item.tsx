@@ -55,7 +55,7 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(({
           font-weight: bold;
         }
         
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .link {
             border-bottom: 1px solid ${theme.palette.border};
             height: 3.5rem;

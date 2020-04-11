@@ -51,7 +51,7 @@ const TabbarMobile:React.FC<Props> = ({ onClick }) => {
           text-transform: capitalize;
         }
         
-        @media only screen and (min-width: 767px) {
+        @media only screen and (min-width: ${theme.layout.breakpointMobile}) {
           .tabbar {
             display: none;
             visibility: hidden;

@@ -71,7 +71,7 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
           margin-bottom: ${theme.layout.gap};
         }
         
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .box {
             padding: calc(3.5 * ${theme.layout.gap}) 15vw;
             width: 100vw;

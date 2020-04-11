@@ -19,6 +19,7 @@ const EditorInputItem: React.FC<React.PropsWithChildren<Props>> = ({
     return theme[groupName][key]
   }, [theme.expressiveness, keyName])
   const width = useMemo(() => `${currentVal}`.length > 15 ? '350px' : 'auto', [])
+  
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     updateCustomTheme({
       [groupName]: { [keyName]: event.target.value },
@@ -27,7 +28,9 @@ const EditorInputItem: React.FC<React.PropsWithChildren<Props>> = ({
   
   return (
     <div className="editor-item">
-      <Input value={currentVal as string} label={keyName} onChange={changeHandler} className="editor-input" />
+      <Input value={currentVal as string} label={keyName}
+        onChange={changeHandler}
+        className="editor-input" />
       <style jsx>{`
         .editor-item {
           background-color: transparent;
@@ -46,7 +49,6 @@ const EditorInputItem: React.FC<React.PropsWithChildren<Props>> = ({
         .editor-item :global(.editor-input) {
           width: ${width};
         }
-        
       `}</style>
     </div>
   )

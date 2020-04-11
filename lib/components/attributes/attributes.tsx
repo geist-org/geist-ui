@@ -105,7 +105,7 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
           border-left: 1px solid transparent;
         }
         
-        @media only screen and (max-width: 767px) {
+        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .attr {
             overflow-x: scroll;
           }
