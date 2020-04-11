@@ -11,8 +11,8 @@ const weights = {
   'guide': 1,
   'docs': 2,
   'getting-started': 3,
-  'customization': 4,
   'components': 5,
+  'customization': 10,
 }
 const groupWeights = {
   '快速上手': 1,

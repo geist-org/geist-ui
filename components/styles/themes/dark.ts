@@ -36,14 +36,13 @@ export const palette: ZeitUIThemesPalette = {
   purple: '#f81ce5',
   alert: '#ff0080',
   violet: '#7928ca',
+  link: '#fff',
 }
 
 export const expressiveness: ZeitUIThemesExpressiveness = {
-  linkColor: '#fff',
   linkStyle: 'none',
   linkHoverStyle: 'none',
   dropdownBoxShadow: '0 0 0 1px #333',
-  dropdownTriangleStroke: '#fff',
   scrollerStart: 'rgba(255, 255, 255, 1)',
   scrollerEnd: 'rgba(255, 255, 255, 0)',
   shadowSmall: '0 0 0 1px #333',
@@ -62,7 +61,7 @@ export const layout: ZeitUIThemesLayout = {
   pageMargin: '16pt',
   pageWidth: '750pt',
   pageWidthWithMargin: '782pt',
-  breakpointMobile: '600px',
+  breakpointMobile: '720px',
   breakpointTablet: '960px',
   radius: '5px',
 }

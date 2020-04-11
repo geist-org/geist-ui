@@ -1,17 +1,18 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
-import { useCallback, useState } from 'react'
-import { CSSBaseline, ZEITUIProvider, useTheme } from 'components'
+import { useState } from 'react'
+import { CSSBaseline, ZEITUIProvider, useTheme, ZeitUIThemes } from 'components'
 import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
+import { DeepPartial } from 'components/utils/types'
 
 const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
   const theme = useTheme()
-  const [themeType, setThemeType] = useState<typeof theme.type>(theme.type)
-  const changeHandle = useCallback((isDark: boolean) => {
-    setThemeType(isDark ? 'dark' : 'light')
-  }, [])
+  const [customTheme, setCustomTheme] = useState<DeepPartial<ZeitUIThemes>>({})
+  const themeChangeHandle = (theme: DeepPartial<ZeitUIThemes>) => {
+    setCustomTheme(theme)
+  }
 
   return (
     <>
@@ -32,9 +33,9 @@ const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
         <meta property="twitter:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover" />
       </Head>
-      <ZEITUIProvider theme={{ type: themeType }}>
+      <ZEITUIProvider theme={customTheme}>
         <CSSBaseline />
-        <ConfigContext onChange={changeHandle}>
+        <ConfigContext onThemeChange={themeChangeHandle}>
           <Menu />
           <Component {...pageProps} />
         </ConfigContext>

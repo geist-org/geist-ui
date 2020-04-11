@@ -30,14 +30,13 @@ export interface ZeitUIThemesPalette {
   purple: string
   alert: string
   violet: string
+  link: string
 }
 
 export interface ZeitUIThemesExpressiveness {
-  linkColor: string
   linkStyle: string
   linkHoverStyle: string
   dropdownBoxShadow: string
-  dropdownTriangleStroke: string
   scrollerStart: string
   scrollerEnd: string
   shadowSmall: string

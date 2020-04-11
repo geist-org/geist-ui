@@ -1,7 +1,9 @@
 import React from 'react'
+import { ZeitUIThemes } from 'components/styles/themes'
+import { DeepPartial } from 'components/utils/types'
 
 export interface Configs {
-  onChange?: Function
+  onThemeChange?: Function
   isChinese?: boolean
   updateChineseState: Function
   sidebarScrollHeight: number
@@ -9,6 +11,9 @@ export interface Configs {
   
   tabbarFixed: boolean
   updateTabbarFixed: Function
+  
+  customTheme: DeepPartial<ZeitUIThemes>
+  updateCustomTheme: (theme: DeepPartial<ZeitUIThemes>) => void
 }
 
 export const defaultConfigs: Configs = {
@@ -18,6 +23,10 @@ export const defaultConfigs: Configs = {
   
   tabbarFixed: false,
   updateTabbarFixed: () => {},
+
+  customTheme: {},
+  updateCustomTheme: () => {},
+  onThemeChange: () => {},
 }
 
 export const ConfigContext = React.createContext<Configs>(defaultConfigs)

@@ -14,7 +14,7 @@ export type AutoCompleteOption = {
   value: string
 }
 
-export type AutoCompleteOptions = Array<AutoCompleteOption | typeof AutoCompleteItem>
+export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>
 
 interface Props {
   options: AutoCompleteOptions
@@ -32,7 +32,7 @@ interface Props {
 }
 
 const defaultProps = {
-  options: [] as AutoCompleteOptions[],
+  options: [] as AutoCompleteOptions,
   initialValue: '',
   disabled: false,
   clearable: false,
@@ -43,7 +43,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
 
-const childrenToOptionsNode = (options: AutoCompleteOptions) => {
+const childrenToOptionsNode = (options: Array<AutoCompleteOption>) => {
   if (options.length === 0) return null
   
   return options.map((item, index) => {
@@ -85,7 +85,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
       if (state === '') return null
       return hasEmptyChild ? emptyChild : <AutoCompleteEmpty>No Options</AutoCompleteEmpty>
     }
-    return childrenToOptionsNode(options)
+    return childrenToOptionsNode(options as Array<AutoCompleteOption>)
   }, [searching, options])
   const showClearIcon = useMemo(
     () => clearable && searching === undefined,
