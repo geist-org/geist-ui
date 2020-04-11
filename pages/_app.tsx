@@ -1,18 +1,26 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CSSBaseline, ZEITUIProvider, useTheme, ZeitUIThemes } from 'components'
 import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
+import useDomClean from 'lib/use-dom-clean'
 import { DeepPartial } from 'components/utils/types'
 
-const Application: NextPage<AppProps> = ({ Component, pageProps }) => {
+const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
   const [customTheme, setCustomTheme] = useState<DeepPartial<ZeitUIThemes>>({})
   const themeChangeHandle = (theme: DeepPartial<ZeitUIThemes>) => {
     setCustomTheme(theme)
   }
+  
+  useEffect(() => {
+    const theme = window.localStorage.getItem('theme')
+    if (theme !== 'dark') return
+    themeChangeHandle({ type: 'dark' })
+  }, [])
+  useDomClean()
 
   return (
     <>

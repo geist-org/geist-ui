@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MenuLinks from './menu-links'
 import MenuSticker from './menu-sticker'
 
-const Menu = () => {
+const Menu: React.FC<{}> = () => {
+  const [showAfterRender, setShowAfterRender] = useState<boolean>(false)
+  useEffect(() => setShowAfterRender(true), [])
+  
+  if (!showAfterRender) return null
   return (
     <div>
       <MenuLinks />

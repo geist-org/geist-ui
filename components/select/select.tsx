@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { NormalSizes } from '../utils/prop-types'
 import useClickAway from '../utils/use-click-away'
 import { pickChildByProps, pickChildrenFirst } from '../utils/collections'
@@ -12,6 +12,7 @@ import { getSizes } from './styles'
 interface Props {
   disabled?: boolean
   size?: NormalSizes
+  value?: string
   initialValue?: string
   placeholder?: React.ReactNode | string
   icon?: React.ReactNode
@@ -32,8 +33,8 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type SelectProps = Props & typeof defaultProps & NativeAttrs
 
 const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
-  children, size, disabled, initialValue: init, placeholder,
-  icon: Icon, onChange, className, pure, ...props
+  children, size, disabled, initialValue: init, value: customValue,
+  icon: Icon, onChange, className, pure, placeholder, ...props
 }) => {
   const theme = useTheme()
   const ref = useRef<HTMLDivElement>(null)
@@ -62,6 +63,11 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   }
   
   useClickAway(ref, () => setVisible(false))
+  
+  useEffect(() => {
+    if (customValue === undefined) return
+    setValue(customValue)
+  }, [customValue])
   
   const selectedChild = useMemo(() => {
     const [, optionChildren] = pickChildByProps(children, 'value', value)
