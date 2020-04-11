@@ -10,7 +10,7 @@ interface Props {
 }
 
 const defaultProps = {
-  caption: '',
+  caption: '' as ReactNode | string,
   shadow: false,
   className: '',
 }

@@ -18,7 +18,9 @@ const defaultProps = {
   className: '',
   passive: false,
   disabled: false,
-  onClick: (event: ModalActionEvent) => event.close && event.close(),
+  onClick: ((event: ModalActionEvent) => {
+    event.close && event.close()
+  }) as (event: ModalActionEvent) => void,
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>

@@ -13,7 +13,7 @@ interface Props {
 
 const defaultProps = {
   trigger: 'click' as TriggerTypes,
-  placement: 'bottom',
+  placement: 'bottom' as Placement,
 }
 
 type ExcludeTooltipProps = {

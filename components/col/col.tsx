@@ -11,7 +11,7 @@ interface Props {
 const defaultProps = {
   span: 24,
   offset: 0,
-  component: 'div' as 'div',
+  component: 'div' as keyof JSX.IntrinsicElements,
   className: '',
 }
 

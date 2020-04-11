@@ -5,7 +5,6 @@ import withDefaults from '../utils/with-defaults'
 interface Props {
   line?: boolean
   title?: boolean
-  
 }
 
 const defaultProps = {

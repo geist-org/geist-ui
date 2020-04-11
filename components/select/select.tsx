@@ -15,7 +15,7 @@ interface Props {
   value?: string
   initialValue?: string
   placeholder?: React.ReactNode | string
-  icon?: React.ReactNode
+  icon?: React.ComponentType
   onChange?: (value: string) => void
   pure?: boolean
   className?: string
@@ -24,7 +24,7 @@ interface Props {
 const defaultProps = {
   disabled: false,
   size: 'medium' as NormalSizes,
-  icon: SelectIcon,
+  icon: SelectIcon as React.ComponentType,
   pure: false,
   className: '',
 }

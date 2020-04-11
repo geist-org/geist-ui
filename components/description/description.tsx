@@ -9,8 +9,8 @@ interface Props {
 }
 
 const defaultProps = {
-  title: 'Title',
-  content: '',
+  title: 'Title' as ReactNode | string,
+  content: '' as ReactNode | string,
   className: '',
 }
 
