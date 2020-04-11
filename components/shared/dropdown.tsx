@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useState } from 'react'
+import React, { MutableRefObject, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
@@ -54,6 +54,14 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
     if (!shouldUpdatePosition) return
     updateRect()
   })
+  useEffect(() => {
+    if (!parent || !parent.current) return
+    parent.current.addEventListener('mouseenter', updateRect)
+    return () => {
+      if (!parent || !parent.current) return
+      parent.current.removeEventListener('mouseenter', updateRect)
+    }
+  }, [parent])
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
