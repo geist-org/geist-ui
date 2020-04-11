@@ -20,8 +20,8 @@ const defaultProps = {
   value: '',
   label: '',
   disabled: false,
-  title: '',
-  subtitle: '',
+  title: '' as string | ReactNode,
+  subtitle: '' as string | ReactNode,
   className: '',
 }
 

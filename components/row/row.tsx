@@ -15,9 +15,9 @@ interface Props {
 
 const defaultProps = {
   gap: 0,
-  justify: 'start' as 'start',
-  align: 'top' as 'top',
-  component: 'div' as 'div',
+  justify: 'start' as Justify,
+  align: 'top' as Align,
+  component: 'div' as keyof JSX.IntrinsicElements,
   className: '',
 }
 

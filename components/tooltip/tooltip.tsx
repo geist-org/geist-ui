@@ -4,6 +4,8 @@ import TooltipContent from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
 import { TriggerTypes, Placement, SnippetTypes } from '../utils/prop-types'
 
+export type TooltipOnVisibleChange = (visible: boolean) => void
+
 interface Props {
   text: string | React.ReactNode
   type?: SnippetTypes
@@ -17,7 +19,7 @@ interface Props {
   offset?: number
   className?: string
   portalClassName?: string
-  onVisibleChange?: (visible: boolean) => void
+  onVisibleChange?: TooltipOnVisibleChange
 }
 
 const defaultProps = {
@@ -25,13 +27,13 @@ const defaultProps = {
   hideArrow: false,
   type: 'default' as SnippetTypes,
   trigger: 'hover' as TriggerTypes,
-  placement: 'top',
+  placement: 'top' as Placement,
   enterDelay: 100,
   leaveDelay: 0,
   offset: 12,
   className: '',
   portalClassName: '',
-  onVisibleChange: () => {},
+  onVisibleChange: (() => {}) as TooltipOnVisibleChange,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>

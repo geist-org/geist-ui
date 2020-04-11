@@ -7,22 +7,26 @@ import useResize from '../utils/use-resize'
 import { TableContext, TableColumnItem, TableConfig } from './table-context'
 import useCurrentState from '../utils/use-current-state'
 
+export type TableOnRow = (row: any, index: number) => void
+export type TableOnCell = (cell: any, index: number, colunm: number) => void
+export type TableOnChange = (data: any) => void
+
 interface Props {
   data?: Array<any>
   emptyText?: string
   hover?: boolean
-  onRow: (row: any, index: number) => void
-  onCell: (cell: any, index: number, colunm: number) => void
-  onChange: (data: any) => void
+  onRow: TableOnRow
+  onCell: TableOnCell
+  onChange: TableOnChange
   className?: string
 }
 
 const defaultProps = {
   hover: true,
   emptyText: '',
-  onRow: () => {},
-  onCell: () => {},
-  onChange: () => {},
+  onRow: (() => {}) as TableOnRow,
+  onCell: (() => {}) as TableOnCell,
+  onChange: (() => {}) as TableOnChange,
   className: '',
 }
 

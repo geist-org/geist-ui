@@ -14,7 +14,7 @@ interface Props {
 
 const defaultProps = {
   type: 'default' as NormalTypes,
-  label: 'note',
+  label: 'note' as string | boolean,
   small: false,
   filled: false,
   className: '',
