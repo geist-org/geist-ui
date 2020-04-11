@@ -76,7 +76,7 @@ const CustomizationCodes = () => {
           display: flex;
           flex-direction: column;
           flex: 1;
-          margin: 2.5rem auto;
+          margin: 4.5rem auto 2.5rem;
           text-align: center;
         }
         

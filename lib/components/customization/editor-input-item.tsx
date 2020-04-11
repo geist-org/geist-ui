@@ -35,7 +35,7 @@ const EditorInputItem: React.FC<React.PropsWithChildren<Props>> = ({
         .editor-item {
           background-color: transparent;
           width: auto;
-          padding: 0 ${theme.layout.gapHalf};
+          padding: 0;
           line-height: 2rem;
           display: inline-flex;
           align-items: center;

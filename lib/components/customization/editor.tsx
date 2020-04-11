@@ -68,6 +68,7 @@ const Editor = () => {
       </div>
   
       <Text h3>Layout <Button type="abort" auto size="mini" onClick={resetLayout}>Reset</Button></Text>
+      <p>Most layout spacing depends on these variables, unreasonable changes may cause layout imbalance.</p>
       <p className="subtitle">basic</p>
       <div className="content">
         {pageLayout.map((item, index) => (
@@ -88,6 +89,7 @@ const Editor = () => {
           flex-wrap: wrap;
           width: auto;
           margin: 0 auto;
+          padding-left: ${theme.layout.gapQuarter};
         }
         
         .editor :global(h3) {

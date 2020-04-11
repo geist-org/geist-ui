@@ -2,10 +2,30 @@ import React, { useMemo } from 'react'
 import { useTheme, ZeitUIThemesPalette, Popover } from 'components'
 import { ColorResult, TwitterPicker } from 'react-color'
 import { useConfigs } from 'lib/config-context'
+import DefaultTheme from 'components/styles/themes/default'
 
 interface Props {
   value?: string
   keyName: keyof ZeitUIThemesPalette
+}
+
+const getRandomColor = () => {
+  const hex = `00000${(Math.random() * 0x1000000 << 0).toString(16)}`
+  return `#${hex.substr(-6)}`
+}
+
+const getRandomColors = () => {
+  const kyes = Object.keys(DefaultTheme.palette) as Array<keyof ZeitUIThemesPalette>
+  const basicColors = new Array(5).fill('')
+    .map(() => {
+      const index = Math.round(Math.random() * (kyes.length)) + kyes.length
+      return DefaultTheme.palette[kyes[index]]
+    })
+  const deduplicatedColors = [...new Set(...basicColors)]
+  const randomColors = new Array(10 - deduplicatedColors.length)
+    .fill('')
+    .map(() => getRandomColor())
+  return deduplicatedColors.concat(randomColors)
 }
 
 const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({
@@ -15,6 +35,7 @@ const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({
   const { updateCustomTheme } = useConfigs()
   const label = `${keyName}`
   const mainColor = useMemo(() => theme.palette[keyName], [theme.palette, keyName])
+  const randomColors = useMemo(() => getRandomColors(), [])
   const colorChangeHandler = ({ hex }: ColorResult) => {
     updateCustomTheme({
       palette: { [keyName]: hex }
@@ -22,7 +43,9 @@ const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({
   }
   
   const popoverContent = (color: string) => (
-    <TwitterPicker triangle="hide" color={color} onChangeComplete={colorChangeHandler} />
+    <TwitterPicker triangle="hide" color={color}
+      onChangeComplete={colorChangeHandler}
+      colors={randomColors} />
   )
   return (
     <Popover content={() => popoverContent(mainColor)} portalClassName="editor-popover" offset={3}>

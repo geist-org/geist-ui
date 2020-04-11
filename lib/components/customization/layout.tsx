@@ -12,9 +12,7 @@ const CustomizationLayout: React.FC<React.PropsWithChildren<{}>> = ({
     <div className="layout">
       <Row>
         <Demo />
-        <div className="content">
-          {children}
-        </div>
+        <div className="content">{children}</div>
       </Row>
       <Row>
         <CustomizationCodes />
@@ -34,10 +32,6 @@ const CustomizationLayout: React.FC<React.PropsWithChildren<{}>> = ({
         .content {
           flex: 1;
           overflow: hidden;
-        }
-        
-        .demo {
-        
         }
       `}</style>
     </div>

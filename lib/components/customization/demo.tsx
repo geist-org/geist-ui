@@ -1,6 +1,6 @@
 import React from 'react'
 import Colors from './colors'
-import { useTheme, Button, Text, Code, Spacer, Link, Select, Checkbox } from 'components'
+import { useTheme, Button, Text, Code, Spacer, Link, Select } from 'components'
 
 const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
   const theme = useTheme()
@@ -45,17 +45,12 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
         <Button auto type="secondary" size="small">Action</Button>
         <Spacer y={.5} />
         <Button>Action</Button>
-        <Spacer y={1} />
-        <Checkbox.Group value={['sydney']}>
-          <Checkbox value="sydney">Sydney</Checkbox>
-          <Checkbox value="beijing">Bei Jing</Checkbox>
-        </Checkbox.Group>
       </div>
       <style jsx>{`
         .demo {
           width: 34%;
           margin-top: calc(${theme.layout.gap} * 2);
-          margin-right: 20px;
+          margin-right: ${theme.layout.gap};
           padding-right: ${theme.layout.gapQuarter};
           position: relative;
           border-right: 1px solid ${theme.palette.border};
