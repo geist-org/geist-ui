@@ -36,7 +36,7 @@ export const palette: ZeitUIThemesPalette = {
   purple: '#f81ce5',
   alert: '#ff0080',
   violet: '#7928ca',
-  link: '#fff',
+  link: '#3291ff',
 }
 
 export const expressiveness: ZeitUIThemesExpressiveness = {
