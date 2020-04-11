@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useTheme } from 'components'
 import Sidebar from './sidebar'
 import TabbarMobile from './sidebar/tabbar-mobile'
@@ -16,6 +16,7 @@ export interface Props {
 
 export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ children }) => {
   const theme = useTheme()
+  const [showAfterRender, setShowAfterRender] = useState<boolean>(false)
   const { tabbarFixed } = useConfigs()
   const [, setBodyScroll] = useBodyScroll(null, { scrollLayer: true })
   const [expanded, setExpanded] = useState<boolean>(false)
@@ -24,6 +25,9 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
     setBodyScroll(!expanded)
   }
   
+  useEffect(() => setShowAfterRender(true), [])
+  
+  if (!showAfterRender) return null
   return (
     <div className="layout">
       <TabbarMobile onClick={mobileTabbarClickHandler} />

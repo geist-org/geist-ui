@@ -57,6 +57,7 @@ const MenuSticker = () => {
           opacity: 0;
           visibility: hidden;
           pointer-events: none;
+          background-color: ${theme.palette.background};
         }
         
         .nav-fill.active {

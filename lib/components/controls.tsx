@@ -21,6 +21,8 @@ const Controls: React.FC<{}> = React.memo(({
 
   const switchThemes = (type: 'dark' | 'light') => {
     updateCustomTheme({ type })
+    if (typeof window === 'undefined' || !window.localStorage) return
+    window.localStorage.setItem('theme', type)
   }
   const switchLanguages = () => {
     updateChineseState(!isChinese)
@@ -41,7 +43,7 @@ const Controls: React.FC<{}> = React.memo(({
           onClick={redirectGithub}
           title={isChinese? '代码仓库' : 'Github Repository'}>{isChinese ? '代码仓库' : 'Github'}</Button>
         <Spacer x={.75} />
-        <Select size="small" pure onChange={switchThemes} initialValue={isDark ? 'dark' : 'light'}
+        <Select size="small" pure onChange={switchThemes} value={isDark ? 'dark' : 'light'}
           title={isChinese ? '切换主题' : 'Switch Themes'}>
           <Select.Option value="light">
             <div className="select-content">
