@@ -64,6 +64,7 @@ const CustomizationCodes = () => {
   return (
     <div className="custom-codes">
       <h3 className="title">{isChinese ? '主题代码' : 'Theme Codes'}</h3>
+      <Spacer y={1} />
       {isChinese ? (
         <Text>这里是你所有的变更，点击 <Code>copy</Code> 按钮即可使用在你自己的项目中。</Text>
       ) : (
@@ -82,7 +83,7 @@ const CustomizationCodes = () => {
           display: flex;
           flex-direction: column;
           flex: 1;
-          margin: 4.5rem auto 2.5rem;
+          margin: 3rem auto 2.5rem;
           text-align: center;
         }
         
