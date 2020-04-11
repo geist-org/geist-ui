@@ -29,7 +29,7 @@ const gapLayout: Array<keyof ZeitUIThemesLayout> = [
 
 const Editor = () => {
   const theme = useTheme()
-  const { updateCustomTheme } = useConfigs()
+  const { updateCustomTheme, isChinese } = useConfigs()
   
   const resetLayout = () => updateCustomTheme({ layout: DefaultTheme.layout })
   const restColors = () => updateCustomTheme({ palette: DefaultTheme.palette })
@@ -39,43 +39,53 @@ const Editor = () => {
   
   return (
     <div className="editor">
-      <Text h3>Colors <Button type="abort" auto size="mini" onClick={restColors}>Reset</Button></Text>
-      <p className="subtitle">basic</p>
+      <Text h3>{isChinese ? '色彩' : 'Colors'}
+        <Button type="abort" auto size="mini" onClick={restColors}>{isChinese ? '重置' : 'Reset'}</Button>
+      </Text>
+      <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
       <div className="content">
         {basicColors.map((item, index) => (
           <EditorColorItem key={`${item}-${index}`} keyName={item} />
         ))}
       </div>
-      <p className="subtitle">status</p>
+      <p className="subtitle">{isChinese ? '状态' : 'status'}</p>
       <div className="content">
         {statusColors.map((item, index) => (
           <EditorColorItem key={`${item}-${index}`} keyName={item} />
         ))}
       </div>
-      <p className="subtitle">others</p>
+      <p className="subtitle">{isChinese ? '其他' : 'others'}</p>
       <div className="content">
         {otherColors.map((item, index) => (
           <EditorColorItem key={`${item}-${index}`} keyName={item} />
         ))}
       </div>
   
-      <Text h3>Expressiveness <Button type="abort" auto size="mini" onClick={resetExpressiveness}>Reset</Button></Text>
-      <p className="subtitle">basic</p>
+      <Text h3>{isChinese ? '表现力' : 'Expressiveness'}
+        <Button type="abort" auto size="mini" onClick={resetExpressiveness}>{isChinese ? '重置' : 'Reset'}</Button>
+      </Text>
+      <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
       <div className="content">
         {expressiveness.map((item, index) => (
           <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
         ))}
       </div>
   
-      <Text h3>Layout <Button type="abort" auto size="mini" onClick={resetLayout}>Reset</Button></Text>
-      <p>Most layout spacing depends on these variables, unreasonable changes may cause layout imbalance.</p>
-      <p className="subtitle">basic</p>
+      <Text h3>{isChinese ? '布局' : 'Layout'}
+        <Button type="abort" auto size="mini" onClick={resetLayout}>{isChinese ? '重置' : 'Reset'}</Button>
+      </Text>
+      {isChinese ? (
+        <p>大多数的布局间距都依赖这些变量，不合理的更改可能会导致布局失衡。</p>
+      ) : (
+        <p>Most layout spacing depends on these variables, unreasonable changes may cause layout imbalance.</p>
+      )}
+      <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
       <div className="content">
         {pageLayout.map((item, index) => (
           <EditorInputItem key={`${item}-${index}`} groupName="layout" keyName={item} />
         ))}
       </div>
-      <p className="subtitle">gaps</p>
+      <p className="subtitle">{isChinese ? '间距' : 'gaps'}</p>
       <div className="content">
         {gapLayout.map((item, index) => (
           <EditorInputItem key={`${item}-${index}`} groupName="layout" keyName={item} />

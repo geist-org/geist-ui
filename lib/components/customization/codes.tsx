@@ -6,6 +6,7 @@ import { LiveEditor, LiveProvider } from 'react-live'
 import makeCodeTheme from 'lib/components/playground/code-theme'
 import useClipboard from 'components/utils/use-clipboard'
 import CopyIcon from 'components/snippet/snippet-icon'
+import { useConfigs } from 'lib/config-context'
 
 export const getDeepDifferents = <T extends MergeObject,>(source: T, target: T): T => {
   if (!isObject(target) || !isObject(source)) return target
@@ -30,6 +31,7 @@ export const getDeepDifferents = <T extends MergeObject,>(source: T, target: T):
 
 const CustomizationCodes = () => {
   const theme = useTheme()
+  const { isChinese } = useConfigs()
   const codeTheme = makeCodeTheme(theme)
   const { copy } = useClipboard()
   const [, setToast] = useToasts()
@@ -61,8 +63,12 @@ const CustomizationCodes = () => {
 
   return (
     <div className="custom-codes">
-      <h3 className="title">Theme Codes</h3>
-      <Text>This is all your changes, click <Code>copy</Code> to use it in your own project.</Text>
+      <h3 className="title">{isChinese ? '主题代码' : 'Theme Codes'}</h3>
+      {isChinese ? (
+        <Text>这里是你所有的变更，点击 <Code>copy</Code> 按钮即可使用在你自己的项目中。</Text>
+      ) : (
+        <Text>This is all your changes, click <Code>copy</Code> to use it in your own project.</Text>
+      )}
       <Spacer y={2} />
       <div className="codes">
         <div className="copy" onClick={copyCode}><CopyIcon /></div>
