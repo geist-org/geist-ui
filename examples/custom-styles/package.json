@@ -1,0 +1,32 @@
+{
+  "name": "custom-styles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "@zeit-ui/react": "^0.0.1-beta.25",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.32",
+    "@types/react-dom": "^16.9.6",
+    "react-scripts": "^3.4.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
