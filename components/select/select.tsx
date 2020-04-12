@@ -19,6 +19,8 @@ interface Props {
   onChange?: (value: string) => void
   pure?: boolean
   className?: string
+  dropdownClassName?: string
+  dropdownStyle?: object
 }
 
 const defaultProps = {
@@ -34,7 +36,8 @@ export type SelectProps = Props & typeof defaultProps & NativeAttrs
 
 const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   children, size, disabled, initialValue: init, value: customValue,
-  icon: Icon, onChange, className, pure, placeholder, ...props
+  icon: Icon, onChange, className, pure, placeholder, dropdownClassName,
+  dropdownStyle, ...props
 }) => {
   const theme = useTheme()
   const ref = useRef<HTMLDivElement>(null)
@@ -81,7 +84,9 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
       <div className={`select ${className}`} ref={ref} onClick={clickHandler} {...props}>
         {!value && <span className="value placeholder">{placeholder}</span>}
         {value && <span className="value">{selectedChild}</span>}
-        <SelectDropdown visible={visible}>{children}</SelectDropdown>
+        <SelectDropdown visible={visible}
+          className={dropdownClassName}
+          dropdownStyle={dropdownStyle}>{children}</SelectDropdown>
         {!pure && <div className="icon"><Icon /></div>}
         <style jsx>{`
           .select {
