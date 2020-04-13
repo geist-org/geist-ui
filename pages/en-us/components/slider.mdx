@@ -1,0 +1,64 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Slider, Row, Spacer } from 'components'
+
+export const meta = {
+  title: 'Slider',
+  group: 'Data Entry',
+}
+
+## Slider
+
+Display a numeric value within a range.
+
+<Playground
+  desc="Accept clicks or drag actions."
+  scope={{ Slider }}
+  code={`
+<Slider initialValue={20} />
+`} />
+
+<Playground
+  title="Disabled"
+  desc="Do not respond to drag and click."
+  scope={{ Slider }}
+  code={`
+<Slider initialValue={50} disabled />
+`} />
+
+<Playground
+  title="Step"
+  desc="Different granularity."
+  scope={{ Slider, Row }}
+  code={`
+<Row style={{ width: '75%' }}>
+  <Slider step={10} showMarkers />
+</Row>
+`} />
+
+<Playground
+  title="Range"
+  desc="Different granularity."
+  scope={{ Slider, Spacer }}
+  code={`
+<div style={{ width: '75%' }}>
+  <Slider step={5} max={50} min={10} initialValue={25} showMarkers />
+  <Spacer />
+  <Slider step={0.2} max={1} min={0.2} initialValue={0.4} showMarkers />
+</div>
+`} />
+
+<Attributes edit="/pages/en-us/components/slider.mdx">
+<Attributes.Title>Slider.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **src** | image src | `string` | - | - |
+| **stacked** | stacked display group | `boolean` | - | `false` |
+| **text** | display text when image is missing | `string` | - | - |
+| **size** | avatar size | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
+| **isSquare** | avatar shape | `boolean` | - | `false` |
+| ... | native props | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
