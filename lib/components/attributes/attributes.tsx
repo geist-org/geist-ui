@@ -1,11 +1,23 @@
 import React, { useMemo } from 'react'
-import { Card, Link, Spacer, useTheme } from 'components'
+import { Card, Link, Spacer, Avatar, Tooltip, useTheme } from 'components'
 import AttributesTitle from './attributes-title'
 import VirtualAnchor from 'lib/components/anchor'
 import { useConfigs } from '../../config-context'
+import ContributorMetadatas from 'lib/data/contributors.json'
+const GithubURL = 'https://github.com/zeit-ui/react/blob/master'
 
 export interface AttributesProps {
   edit: string
+}
+
+export interface Contributor {
+  name: string
+  avatar: string
+  url: string
+}
+
+export type ContributorMeta = {
+  [key: string]: Array<Contributor>
 }
 
 const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.memo(({
@@ -13,8 +25,11 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
 }) => {
   const theme = useTheme()
   const { isChinese } = useConfigs()
-  const link = useMemo(() => {
-    return `https://github.com/zeit-ui/react/blob/master${edit || '/pages'}`
+  const link = useMemo(() => `${GithubURL}${edit || '/pages'}`, [])
+  const contributors = useMemo(() => {
+    const key = edit.replace('/pages', 'pages')
+    const users = (ContributorMetadatas as ContributorMeta)[key]
+    return users || []
   }, [])
   
   return (
@@ -24,10 +39,22 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
       <Card className="attr">
         {children}
       </Card>
-      <Spacer y={1} />
-      <Link color target="_blank" className="attributes-link" href={link} rel="nofollow">
-        {isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'}
-      </Link>
+      <Spacer y={3} />
+      <h4 className="contributor-title">{isChinese ? '文档贡献者' : 'Contributors'}</h4>
+      <div className="contributors">
+        {contributors.map((user, index) => (
+          <Tooltip text={<b>{user.name}</b>} key={`${user.url}-${index}`}>
+            <Link color pure target="_blank" rel="nofollow" href={user.url}>
+              <Avatar src={user.avatar} />
+            </Link>
+          </Tooltip>
+        ))}
+        <Tooltip text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'} type="dark">
+          <Link color pure target="_blank" rel="nofollow" href={link}>
+            <Avatar text="Add" />
+          </Link>
+        </Tooltip>
+      </div>
   
       <style global jsx>{`
         .attr table {
@@ -44,10 +71,6 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
 
         .attr h4.title:first-of-type {
           margin-top: 0;
-        }
-        
-        .attributes-link {
-          float: right;
         }
         
         .attr table {
@@ -103,6 +126,25 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
         
         .attr td:nth-child(1) {
           border-left: 1px solid transparent;
+        }
+        
+        .contributor-title {
+          text-transform: uppercase;
+          font-size: 1rem;
+          letter-spacing: 1.5px;
+        }
+        
+        .contributors {
+          padding-left: ${theme.layout.gap};
+          padding-top: ${theme.layout.gap};
+          max-width: 100%;
+          height: auto;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        
+        .contributors :global(.tooltip) {
+          margin-right: 3px;
         }
         
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
