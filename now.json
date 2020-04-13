@@ -2,7 +2,9 @@
   "github": {
     "silent": true
   },
-  "env": {
-    "GITHUB_PUBLIC_READ_ONLY": "$github-public-read-only"
+  "build": {
+    "env": {
+      "GIT_ORG_READONLY": "@git-org-readonly"
+    }
   }
 }

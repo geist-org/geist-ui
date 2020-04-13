@@ -1,13 +1,14 @@
-require('dotenv').config()
+const token = process.env.GIT_ORG_READONLY
+if (!token) require('dotenv').config()
 const fs = require('fs-extra')
 const path = require('path')
 const { GraphQLClient } = require('graphql-request')
 const target = path.join(__dirname, '../lib/data/', 'contributors.json')
-const token = process.env.GITHUB_PUBLIC_READ_ONLY
+
 if (!token) {
-  console.error('> Not found "GITHUB_PUBLIC_READ_ONLY" in "process.env".\n')
+  console.error('> Not found "GIT_ORG_READONLY" in "process.env".\n')
   console.log('  Env variables are automatically injected at production.')
-  console.log('  If you want to test, run [echo "GITHUB_PUBLIC_READ_ONLY=your_git_token" > .env ]\n')
+  console.log('  If you want to test, run [echo "GIT_ORG_READONLY=your_git_token" > .env ]\n')
   process.exit(1)
 }
 const client = new GraphQLClient('https://api.github.com/graphql', {
