@@ -51,7 +51,7 @@ const SliderDot = React.forwardRef<HTMLDivElement, React.PropsWithChildren<Slide
         }
         
         .dot.click {
-          transition: all 200ms ease 0;
+          transition: all 200ms ease;
         }
         
         .dot:hover {
