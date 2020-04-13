@@ -1,4 +1,4 @@
-import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef, useState } from 'react'
+import { Dispatch, RefObject, SetStateAction, useEffect, useRef, useState } from 'react'
 
 export type ElementStackItem = {
   last: string
@@ -26,7 +26,7 @@ const touchHandler = (event: TouchEvent): boolean => {
 }
 
 const useBodyScroll = (
-  elementRef?: MutableRefObject<HTMLElement> | null,
+  elementRef?: RefObject<HTMLElement> | null,
   options?: BodyScrollOptions,
 ): [boolean, Dispatch<SetStateAction<boolean>>] => {
   if (typeof document === 'undefined') return [false, (t: boolean) => t]
@@ -45,6 +45,7 @@ const useBodyScroll = (
   }
 
   useEffect(() => {
+    if (!elRef || !elRef.current) return
     const lastOverflow = elRef.current.style.overflow
     if (hidden) {
       if (elementStack.has(elRef.current)) return
@@ -68,7 +69,7 @@ const useBodyScroll = (
       document.removeEventListener('touchmove', touchHandler)
     }
     elementStack.delete(elRef.current)
-  }, [hidden, elRef.current])
+  }, [hidden, elRef])
 
   return [hidden, setHidden]
 }

@@ -1,0 +1,67 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Slider, Row, Spacer } from 'components'
+
+export const meta = {
+  title: 'Slider',
+  group: 'Data Entry',
+}
+
+## Slider
+
+Display the current value and an inputable range.
+
+<Playground
+  desc="Accept clicks or drag actions."
+  scope={{ Slider }}
+  code={`
+<Slider initialValue={20} />
+`} />
+
+<Playground
+  title="Disabled"
+  desc="Do not respond to drag and click."
+  scope={{ Slider }}
+  code={`
+<Slider initialValue={50} disabled />
+`} />
+
+<Playground
+  title="Step"
+  desc="Different granularity."
+  scope={{ Slider, Row }}
+  code={`
+<Row style={{ width: '75%' }}>
+  <Slider step={10} showMarkers />
+</Row>
+`} />
+
+<Playground
+  title="Range"
+  desc="Specifies the maximum or minimum value of the Slider."
+  scope={{ Slider, Spacer }}
+  code={`
+<div style={{ width: '75%' }}>
+  <Slider step={5} max={50} min={10} initialValue={25} showMarkers />
+  <Spacer />
+  <Slider step={0.2} max={1} min={0.2} initialValue={0.4} showMarkers />
+</div>
+`} />
+
+<Attributes edit="/pages/en-us/components/slider.mdx">
+<Attributes.Title>Slider.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **initialValue** | initial value | `number` | - | 0 |
+| **value** | slider value | `number` | - | 0 |
+| **step** | the granularity the slider can step through values | `number` | - | 1 |
+| **max** | the maximum value of slider | `number` | - | 100 |
+| **min** | the minimum value of slider | `number` | - | 0 |
+| **disabled** | disable slider interaction | `boolean` | `false` |
+| **showMarkers** | show each marker | `boolean` | - | `false` |
+| **onChange** | called when the value of silder changes | `(val: number) => void` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

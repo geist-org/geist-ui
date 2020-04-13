@@ -1,0 +1,67 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Slider, Row, Spacer } from 'components'
+
+export const meta = {
+  title: '滑动输入 Slider',
+  group: '数据录入',
+}
+
+## Slider / 滑动输入
+
+展示当前值与一个可输入范围。
+
+<Playground
+  desc="允许点击和滑动事件。"
+  scope={{ Slider }}
+  code={`
+<Slider initialValue={20} />
+`} />
+
+<Playground
+  title="禁用"
+  desc="不响应所有的操作。"
+  scope={{ Slider }}
+  code={`
+<Slider initialValue={50} disabled />
+`} />
+
+<Playground
+  title="步长"
+  desc="不同粒度的滑块。"
+  scope={{ Slider, Row }}
+  code={`
+<Row style={{ width: '75%' }}>
+  <Slider step={10} showMarkers />
+</Row>
+`} />
+
+<Playground
+  title="范围"
+  desc="手动指定最大值或最小值。"
+  scope={{ Slider, Spacer }}
+  code={`
+<div style={{ width: '75%' }}>
+  <Slider step={5} max={50} min={10} initialValue={25} showMarkers />
+  <Spacer />
+  <Slider step={0.2} max={1} min={0.2} initialValue={0.4} showMarkers />
+</div>
+`} />
+
+<Attributes edit="/pages/zh-cn/components/slider.mdx">
+<Attributes.Title>Slider.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **initialValue** | 初始值 | `number` | - | 0 |
+| **value** | 手动指定滑块的值 | `number` | - | 0 |
+| **step** | 滑块可选择的粒度大小 | `number` | - | 1 |
+| **max** | 滑块可选的最大值 | `number` | - | 100 |
+| **min** | 滑块可选的最小值 | `number` | - | 0 |
+| **disabled** | 禁用所有操作 | `boolean` | `false` |
+| **showMarkers** | 显示每一个标记 | `boolean` | - | `false` |
+| **onChange** | 当滑块的值改变时被调用 | `(val: number) => void` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
