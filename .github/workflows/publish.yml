@@ -21,6 +21,8 @@ jobs:
         run: yarn install --check-files --frozen-lockfile
       - name: lint
         run: yarn lint
+      - name: lint
+        run: yarn test
       - name: build
         run: yarn build
   publish:

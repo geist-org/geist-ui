@@ -7,7 +7,7 @@ import AutoCompleteEmpty from './auto-complete-empty'
 import { AutoCompleteContext, AutoCompleteConfig } from './auto-complete-context'
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
 import Loading from '../loading'
-import { pickChild } from 'components/utils/collections'
+import { pickChild } from '../utils/collections'
 
 export type AutoCompleteOption = {
   label: string
