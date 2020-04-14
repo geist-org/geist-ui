@@ -80,6 +80,14 @@ const placement = tuple(
   'rightEnd',
 )
 
+const dividerAlign = tuple(
+  'start',
+  'center',
+  'end',
+  'left',
+  'right',
+)
+
 export type ButtonTypes = typeof buttonTypes[number]
 
 export type NormalSizes = typeof normalSizes[number]
@@ -97,3 +105,5 @@ export type CopyTypes = typeof copyTypes[number]
 export type TriggerTypes = typeof triggerTypes[number]
 
 export type Placement = typeof placement[number]
+
+export type DividerAlign = typeof dividerAlign[number]
