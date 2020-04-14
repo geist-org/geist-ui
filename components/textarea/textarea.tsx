@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import useTheme from '../styles/use-theme'
-import withDefaults from 'components/utils/with-defaults'
-import { NormalTypes } from 'components/utils/prop-types'
+import withDefaults from '../utils/with-defaults'
+import { NormalTypes } from '../utils/prop-types'
 import { getColors } from '../input/styles'
 
 interface Props {

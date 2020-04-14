@@ -1,5 +1,5 @@
 import { Dispatch, MutableRefObject, SetStateAction } from 'react'
-import useCurrentState from 'components/utils/use-current-state'
+import useCurrentState from '../utils/use-current-state'
 
 const useModal = (initialVisible: boolean = false): {
   visible: boolean
