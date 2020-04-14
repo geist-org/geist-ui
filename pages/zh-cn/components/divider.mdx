@@ -1,0 +1,154 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Divider, Text } from 'components'
+
+export const meta = {
+  title: '分割线 Divider',
+  group: '其他',
+}
+
+## Divider / 分割线
+
+用于分割不同内容块的线条。
+
+<Playground
+  desc="基础示例。"
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
+    这些消息头描述了用户倾向的选择。
+  </Text>
+  <Divider/>
+  <Text>
+    服务器则以此为线索，通过内部算法来选择最佳方案提供给客户端。
+    相关算法与具体的服务器相关，并没有在规范中进行规定。
+  </Text>
+</>
+`} />
+
+<Playground
+  title="分割文字"
+  desc="在分割线上显示文字或组件。"
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
+    这些消息头描述了用户倾向的选择。
+  </Text>
+  <Divider>内容协商</Divider>
+  <Text>
+    服务器则以此为线索，通过内部算法来选择最佳方案提供给客户端。
+    相关算法与具体的服务器相关，并没有在规范中进行规定。
+  </Text>
+  <Divider align="start">标准头信息</Divider>
+  <Text>
+    HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （Accept、Accept-Charset、 Accept-Encoding、Accept-Language）。
+  </Text>
+</>
+`} />
+
+<Playground
+  title="间隔"
+  desc="自定义组件周围的间隔大小。"
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
+    这些消息头描述了用户倾向的选择。
+  </Text>
+  <Divider y={5}>内容协商</Divider>
+  <Text>
+    服务器则以此为线索，通过内部算法来选择最佳方案提供给客户端。
+    相关算法与具体的服务器相关，并没有在规范中进行规定。
+  </Text>
+  <Divider x={5} y={5}>标准头信息</Divider>
+  <Text>
+    HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （Accept、Accept-Charset、 Accept-Encoding、Accept-Language）。
+  </Text>
+</>
+`} />
+
+<Playground
+  title="体积"
+  desc="指定组件内部的体积。"
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
+    这些消息头描述了用户倾向的选择。
+  </Text>
+  <Divider volume={2} y={3} />
+  <Text>
+    服务器则以此为线索，通过内部算法来选择最佳方案提供给客户端。
+    相关算法与具体的服务器相关，并没有在规范中进行规定。
+  </Text>
+  <Divider volume={20} y={3}>标准头信息</Divider>
+  <Text>
+    HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （Accept、Accept-Charset、 Accept-Encoding、Accept-Language）。
+  </Text>
+</>
+`} />
+
+<Playground
+  title="类型"
+  desc="以不同的色彩表达类型。"
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    在服务端驱动型协商机制或者主动协商机制中，浏览器（或者其他任何类型的用户代理）会随同 URL 发送一系列的消息头。
+    这些消息头描述了用户倾向的选择。
+  </Text>
+  <Divider volume={2} y={3} type="success">内容协商</Divider>
+  <Text>
+    服务器则以此为线索，通过内部算法来选择最佳方案提供给客户端。
+    相关算法与具体的服务器相关，并没有在规范中进行规定。
+  </Text>
+  <Divider volume={20} y={3} type="warning">标准头信息</Divider>
+  <Text>
+    HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （Accept、Accept-Charset、 Accept-Encoding、Accept-Language）。
+  </Text>
+</>
+`} />
+
+<Attributes edit="/pages/zh-cn/components/divider.mdx">
+<Attributes.Title>Divider.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **x** | x 轴间距 | `number` / `float` | - | 0 |
+| **y** | y 轴间距 | `number` / `float` | - | 2 |
+| **type** | 分割线的类型 | [DividerTypes](#dividertypes) | - | `default` |
+| **align** | 子组件的对齐方式 | [DividerAlign](#divideralign) | - | `center` |
+| **volume** | 组件的大小 | `number` / `float` | - | 1 |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>DividerTypes</Attributes.Title>
+
+```ts
+type DividerTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'dark'
+  | 'lite'
+```
+
+<Attributes.Title>DividerAlign</Attributes.Title>
+
+```ts
+type DividerAlign = 'center'
+  | 'start'
+  | 'left'
+  | 'end'
+  | 'right'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

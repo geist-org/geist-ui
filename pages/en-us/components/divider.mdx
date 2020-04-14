@@ -1,0 +1,163 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Divider, Text } from 'components'
+
+export const meta = {
+  title: 'Divider',
+  group: 'Others',
+}
+
+## Divider
+
+A divider line separates different content.
+
+<Playground
+  desc="Basic usage."
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    In server-driven content negotiation, or proactive content negotiation,
+    the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
+    These headers describe the preferred choice of the user.
+  </Text>
+  <Divider/>
+  <Text>
+    The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
+    The algorithm is server-specific and not defined in the standard.
+  </Text>
+</>
+`} />
+
+<Playground
+  title="With Text"
+  desc="Display text or components in diriver."
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    In server-driven content negotiation, or proactive content negotiation,
+    the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
+    These headers describe the preferred choice of the user.
+  </Text>
+  <Divider>HTTP</Divider>
+  <Text>
+    The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
+    The algorithm is server-specific and not defined in the standard.
+  </Text>
+  <Divider align="start">standard headers</Divider>
+  <Text>
+    The HTTP/1.1 standard defines list of the standard headers that start server-driven negotiation
+    (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
+  </Text>
+</>
+`} />
+
+<Playground
+  title="Space"
+  desc="Custom size of white space around components."
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    In server-driven content negotiation, or proactive content negotiation,
+    the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
+    These headers describe the preferred choice of the user.
+  </Text>
+  <Divider y={5}>HTTP</Divider>
+  <Text>
+    The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
+    The algorithm is server-specific and not defined in the standard.
+  </Text>
+  <Divider x={5} y={5}>standard headers</Divider>
+  <Text>
+    The HTTP/1.1 standard defines list of the standard headers that start server-driven negotiation
+    (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
+  </Text>
+</>
+`} />
+
+<Playground
+  title="Volume"
+  desc="Specify the volume of the component."
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    In server-driven content negotiation, or proactive content negotiation,
+    the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
+    These headers describe the preferred choice of the user.
+  </Text>
+  <Divider volume={2} y={3} />
+  <Text>
+    The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
+    The algorithm is server-specific and not defined in the standard.
+  </Text>
+  <Divider volume={20} y={3}>standard headers</Divider>
+  <Text>
+    The HTTP/1.1 standard defines list of the standard headers that start server-driven negotiation
+    (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
+  </Text>
+</>
+`} />
+
+<Playground
+  title="Types"
+  desc="Different state."
+  scope={{ Divider, Text }}
+  code={`
+<>
+  <Text>
+    In server-driven content negotiation, or proactive content negotiation,
+    the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
+    These headers describe the preferred choice of the user.
+  </Text>
+  <Divider volume={2} y={3} type="success">HTTP</Divider>
+  <Text>
+    The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
+    The algorithm is server-specific and not defined in the standard.
+  </Text>
+  <Divider volume={20} y={3} type="warning">standard headers</Divider>
+  <Text>
+    The HTTP/1.1 standard defines list of the standard headers that start server-driven negotiation
+    (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
+  </Text>
+</>
+`} />
+
+<Attributes edit="/pages/en-us/components/divider.mdx">
+<Attributes.Title>Divider.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **x** | x-axis spacing | `number` / `float` | - | 0 |
+| **y** | y-axis spacing | `number` / `float` | - | 2 |
+| **type** | type of divier | [DividerTypes](#dividertypes) | - | `default` |
+| **align** | alignment of text | [DividerAlign](#divideralign) | - | `center` |
+| **volume** | size of component | `number` / `float` | - | 1 |
+| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>DividerTypes</Attributes.Title>
+
+```ts
+type DividerTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'dark'
+  | 'lite'
+```
+
+<Attributes.Title>DividerAlign</Attributes.Title>
+
+```ts
+type DividerAlign = 'center'
+  | 'start'
+  | 'left'
+  | 'end'
+  | 'right'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

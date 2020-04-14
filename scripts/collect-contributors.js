@@ -1,10 +1,10 @@
-const token = process.env.GIT_ORG_READONLY
-if (!token) require('dotenv').config()
+if (!process.env.GIT_ORG_READONLY) require('dotenv').config()
 const fs = require('fs-extra')
 const path = require('path')
 const { GraphQLClient } = require('graphql-request')
 const target = path.join(__dirname, '../lib/data/', 'contributors.json')
 
+const token = process.env.GIT_ORG_READONLY
 if (!token) {
   console.error('> Not found "GIT_ORG_READONLY" in "process.env".\n')
   console.log('  Env variables are automatically injected at production.')

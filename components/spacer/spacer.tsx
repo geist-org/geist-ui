@@ -19,7 +19,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type SpacerProps = Props & typeof defaultProps & NativeAttrs
 
-const getMargin = (num: number): string => {
+export const getMargin = (num: number): string => {
   if (num < 0) {
     useWarning('Props "x"/"y" must be greater than or equal to 0', 'Spacer')
     return '0'
