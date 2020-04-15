@@ -1,5 +1,4 @@
-import React from 'react'
-import { AVATAR_SIZES } from './constants'
+import React, { useMemo } from 'react'
 import { NormalSizes } from '../utils/prop-types'
 import useTheme from '../styles/use-theme'
 import AvatarGroup from './avatar-group'
@@ -16,7 +15,7 @@ interface Props {
 const defaultProps = {
   stacked: false,
   text: '',
-  size: 'small' as NormalSizes,
+  size: 'small' as NormalSizes | number,
   isSquare: false,
   className: '',
 }
@@ -24,10 +23,15 @@ const defaultProps = {
 type NativeAttrs = Omit<Partial<React.ImgHTMLAttributes<any> & React.HTMLAttributes<any>>, keyof Props>
 export type AvatarProps = Props & typeof defaultProps & NativeAttrs
 
-const getAvatarSize = (size: NormalSizes | number): string => {
+const getSize = (size: NormalSizes | number): string => {
+  const sizes: { [key in NormalSizes]: string } = {
+    mini: '1.25rem',
+    small: '1.875rem',
+    medium: '3.75rem',
+    large: '5.625rem',
+  }
   if (typeof size === 'number') return `${size}px`
-  if (!AVATAR_SIZES.has(size)) return AVATAR_SIZES.get(defaultProps.size) as string
-  return AVATAR_SIZES.get(size) as string
+  return sizes[size]
 }
 
 const safeText = (text: string): string => {
@@ -42,6 +46,7 @@ const Avatar: React.FC<AvatarProps> = React.memo(({
   const showText = !src
   const radius = isSquare ? theme.layout.radius : '50%'
   const marginLeft = stacked ? '-.625rem' : 0
+  const width = useMemo(() => getSize(size), [size])
   
   return (
     <span className={`avatar ${className}`}>
@@ -50,8 +55,8 @@ const Avatar: React.FC<AvatarProps> = React.memo(({
 
       <style jsx>{`
         .avatar {
-          width: ${getAvatarSize(size)};
-          height: ${getAvatarSize(size)};
+          width: ${width};
+          height: ${width};
           display: inline-block;
           position: relative;
           overflow: hidden;

@@ -23,6 +23,8 @@ jobs:
 
       - run: yarn run lint
       - run: yarn run test
+      - run: npm test -- -w 1 --coverage
+      - run: bash <(curl -s https://codecov.io/bash)
 
   build:
     docker:
