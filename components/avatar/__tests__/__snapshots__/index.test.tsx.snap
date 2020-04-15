@@ -1,0 +1,1722 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar should render component of a specified size 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "avatar ",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "avatar-text",
+        },
+        "children": Array [],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+        .avatar {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+        .avatar {
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "avatar-text",
+          },
+          "children": Array [],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "span",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Avatar should render text element 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "avatar ",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "avatar-text",
+        },
+        "children": Array [],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "avatar-text",
+          },
+          "children": Array [],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "span",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Avatar should render text element 2`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "avatar ",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "avatar-text",
+        },
+        "children": Array [
+          Object {
+            "data": "text",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "avatar-text",
+          },
+          "children": Array [
+            Object {
+              "data": "text",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "span",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Avatar should stacked when avatars are in a group 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "avatar-group ",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "avatar ",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "avatar-text",
+            },
+            "children": Array [],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "avatar-text",
+              },
+              "children": Array [],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "avatar ",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "avatar-text",
+              },
+              "children": Array [],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "avatar-text",
+                },
+                "children": Array [],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .avatar-group {
+          display: flex;
+          align-items: center;
+          height: auto;
+          width: max-content;
+        }
+        
+        .avatar-group :global(.avatar) {
+          margin-left: -.625rem;
+        }
+        
+        .count {
+          font-size: .875rem;
+          display: inline-flex;
+          align-items: center;
+          padding-left: 4pt;
+          color: #333;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "avatar ",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "avatar-text",
+            },
+            "children": Array [],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "avatar-text",
+              },
+              "children": Array [],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+        .avatar-group {
+          display: flex;
+          align-items: center;
+          height: auto;
+          width: max-content;
+        }
+        
+        .avatar-group :global(.avatar) {
+          margin-left: -.625rem;
+        }
+        
+        .count {
+          font-size: .875rem;
+          display: inline-flex;
+          align-items: center;
+          padding-left: 4pt;
+          color: #333;
+        }
+      ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "avatar ",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "avatar-text",
+              },
+              "children": Array [],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "avatar-text",
+                },
+                "children": Array [],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+        .avatar-group {
+          display: flex;
+          align-items: center;
+          height: auto;
+          width: max-content;
+        }
+        
+        .avatar-group :global(.avatar) {
+          margin-left: -.625rem;
+        }
+        
+        .count {
+          font-size: .875rem;
+          display: inline-flex;
+          align-items: center;
+          padding-left: 4pt;
+          color: #333;
+        }
+      ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "avatar ",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "avatar-text",
+              },
+              "children": Array [],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "avatar-text",
+                },
+                "children": Array [],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": Object {
+            "attribs": Object {
+              "class": "avatar ",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "class": "avatar-text",
+                },
+                "children": Array [],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .avatar {
+          width: 1.875rem;
+          height: 1.875rem;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          border: 1px solid #eaeaea;
+          border-radius: 50%;
+          vertical-align: top;
+          background-color: #fff;
+          margin: 0 0 0 0;
+        }
+        
+        .avatar:first-child {
+          margin: 0;
+        }
+        
+        .avatar-img {
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+        
+        .avatar-text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          font-size: 1em;
+          text-align: center;
+          transform: translate(-50%, -50%) scale(.65);
+          white-space: nowrap;
+          user-select: none;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "avatar-text",
+                  },
+                  "children": Array [],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
