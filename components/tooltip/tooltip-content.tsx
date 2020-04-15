@@ -1,4 +1,4 @@
-import React, { MutableRefObject, useMemo, useRef, useState } from 'react'
+import React, { MutableRefObject, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import useTheme from '../styles/use-theme'
 import usePortal from '../utils/use-portal'
@@ -70,6 +70,10 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = React.memo(({
 
   useResize(updateRect)
   useClickAnyWhere(() => updateRect())
+  
+  useEffect(() => {
+    updateRect()
+  }, [visible])
 
   const preventHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
