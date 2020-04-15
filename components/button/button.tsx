@@ -60,6 +60,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = React.memo(({
     [size, auto],
   )
   
+  /* istanbul ignore next */
   const dripCompletedHandle = () => {
     setDripShow(false)
     setDripX(0)
@@ -69,6 +70,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = React.memo(({
   const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     if (disabled || loading) return
     const showDrip = !shadow && !ghost && effect
+    /* istanbul ignore next */
     if (showDrip && buttonRef.current) {
       const rect = buttonRef.current.getBoundingClientRect()
       setDripShow(true)
