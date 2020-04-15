@@ -12,9 +12,11 @@ module.exports = {
   },
   
   testRegex: '.*\\.test\\.(j|t)sx?$',
+  // testRegex: 'button\\/.*\\.test\\.(j|t)sx?$',
   
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',
+    '!components/**/styles.{ts,tsx}',
     '!components/styles/*',
     '!components/index.ts',
   ],
