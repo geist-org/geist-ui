@@ -43,10 +43,8 @@ const defaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
 
-const childrenToOptionsNode = (options: Array<AutoCompleteOption>) => {
-  if (options.length === 0) return null
-  
-  return options.map((item, index) => {
+const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
+  options.map((item, index) => {
     const key = `auto-complete-item-${index}`
     if (React.isValidElement(item)) return React.cloneElement(item, { key })
     const validItem = item as AutoCompleteOption
@@ -57,7 +55,6 @@ const childrenToOptionsNode = (options: Array<AutoCompleteOption>) => {
       </AutoCompleteItem>
     )
   })
-}
 
 // When the search is not set, the "clearable" icon can be displayed in the original location.
 // When the search is seted, at least one element should exist to avoid re-render.
@@ -68,7 +65,8 @@ const getSearchIcon = (searching?: boolean) => {
 
 const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   options, initialValue: customInitialValue, onSelect, onSearch, onChange,
-  searching, children, size, status, value, width, clearable, ...props
+  searching, children, size, status, value, width, clearable,
+  disabled, ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const [state, setState] = useState<string>(customInitialValue)
@@ -93,6 +91,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   )
   
   const updateValue = (val: string) => {
+    if (disabled) return
     onSelect && onSelect(val)
     setState(val)
   }
@@ -102,7 +101,9 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     setState(event.target.value)
   }
   
-  useEffect(() => onChange && onChange(state), [state])
+  useEffect(() => {
+    onChange && onChange(state)
+  }, [state])
   useEffect(() => {
     if (value === undefined) return
     setState(value)
@@ -126,6 +127,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   const inputProps = {
     ...props,
     width,
+    disabled,
     value: state,
   }
 

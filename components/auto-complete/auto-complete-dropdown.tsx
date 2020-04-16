@@ -20,10 +20,10 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<Props>> = ({
   
   return (
     <Dropdown parent={ref} visible={visible}>
-      <div className="auto-dropdown-dropdown" onClick={clickHandler}>
+      <div className="auto-complete-dropdown" onClick={clickHandler}>
         {children}
         <style jsx>{`
-        .auto-dropdown-dropdown {
+        .auto-complete-dropdown {
           border-radius: ${theme.layout.radius};
           box-shadow: ${theme.expressiveness.shadowLarge};
           background-color: ${theme.palette.background};
