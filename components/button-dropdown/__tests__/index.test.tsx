@@ -50,6 +50,17 @@ describe('Button Dropdown', () => {
     expect(wrapper.text()).toContain('state2')
   })
   
+  it('should work correctly when callback missing', () => {
+    const wrapper = mount(
+      <ButtonDropdown type="secondary">
+        <ButtonDropdown.Item main>
+        </ButtonDropdown.Item>
+      </ButtonDropdown>
+    )
+    wrapper.find('button').simulate('click', nativeEvent)
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+  
   it('should ignore all events when loading', () => {
     const Wrapper = () => {
       const [state, setState] = React.useState<string>('state1')
