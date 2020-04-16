@@ -41,13 +41,6 @@ const Checkbox: React.FC<CheckboxProps> = React.memo(({
   const { updateState, inGroup, disabledAll, values } = useCheckbox()
   const isDisabled = inGroup ? disabledAll || disabled : disabled
 
-  if (inGroup && !value) {
-    useWarning(
-      'Props "value" must be set when [Checkbox] component is in the group.',
-      'Checkbox',
-    )
-  }
-  
   if (inGroup && checked) {
     useWarning(
       'Remove props "checked" when [Checkbox] component is in the group.',
