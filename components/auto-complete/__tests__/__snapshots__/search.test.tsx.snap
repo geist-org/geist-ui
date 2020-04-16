@@ -1,0 +1,1589 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AutoComplete Search should hide empty component 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "auto-complete",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "with-label",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "input-container ",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "class": "input-wrapper   ",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {
+                      "autocomplete": "off",
+                      "class": " ",
+                      "placeholder": "Enter here",
+                      "type": "text",
+                      "value": "",
+                    },
+                    "children": Array [],
+                    "name": "input",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "autocomplete": undefined,
+                      "class": undefined,
+                      "placeholder": undefined,
+                      "type": undefined,
+                      "value": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "autocomplete": undefined,
+                      "class": undefined,
+                      "placeholder": undefined,
+                      "type": undefined,
+                      "value": undefined,
+                    },
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .with-label {
+          display: inline-block;
+          width: initial;
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: initial;
+          height: calc(1.687 * 16pt);
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: #fafafa;
+          border-color: #eaeaea;
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: #666;
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: .875rem;
+          background-color: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: #999;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .with-label {
+          display: inline-block;
+          width: initial;
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: initial;
+          height: calc(1.687 * 16pt);
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: #fafafa;
+          border-color: #eaeaea;
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: #666;
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: .875rem;
+          background-color: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: #999;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "input-container ",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "class": "input-wrapper   ",
+                  },
+                  "children": Array [
+                    Object {
+                      "attribs": Object {
+                        "autocomplete": "off",
+                        "class": " ",
+                        "placeholder": "Enter here",
+                        "type": "text",
+                        "value": "",
+                      },
+                      "children": Array [],
+                      "name": "input",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "autocomplete": undefined,
+                        "class": undefined,
+                        "placeholder": undefined,
+                        "type": undefined,
+                        "value": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "autocomplete": undefined,
+                        "class": undefined,
+                        "placeholder": undefined,
+                        "type": undefined,
+                        "value": undefined,
+                      },
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+          .auto-complete {
+            width: max-content;
+          }
+          
+          .auto-complete :global(.loading) {
+            left: -3px;
+            right: -3px;
+            width: max-content;
+          }
+        ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+          .auto-complete {
+            width: max-content;
+          }
+          
+          .auto-complete :global(.loading) {
+            left: -3px;
+            right: -3px;
+            width: max-content;
+          }
+        ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "with-label",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "input-container ",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "class": "input-wrapper   ",
+                  },
+                  "children": Array [
+                    Object {
+                      "attribs": Object {
+                        "autocomplete": "off",
+                        "class": " ",
+                        "placeholder": "Enter here",
+                        "type": "text",
+                        "value": "",
+                      },
+                      "children": Array [],
+                      "name": "input",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "autocomplete": undefined,
+                        "class": undefined,
+                        "placeholder": undefined,
+                        "type": undefined,
+                        "value": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "autocomplete": undefined,
+                        "class": undefined,
+                        "placeholder": undefined,
+                        "type": undefined,
+                        "value": undefined,
+                      },
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .with-label {
+          display: inline-block;
+          width: initial;
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: initial;
+          height: calc(1.687 * 16pt);
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: #fafafa;
+          border-color: #eaeaea;
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: #666;
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: .875rem;
+          background-color: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: #999;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .with-label {
+          display: inline-block;
+          width: initial;
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: initial;
+          height: calc(1.687 * 16pt);
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: #fafafa;
+          border-color: #eaeaea;
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: #666;
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: .875rem;
+          background-color: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: #999;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "input-container ",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {
+                      "class": "input-wrapper   ",
+                    },
+                    "children": Array [
+                      Object {
+                        "attribs": Object {
+                          "autocomplete": "off",
+                          "class": " ",
+                          "placeholder": "Enter here",
+                          "type": "text",
+                          "value": "",
+                        },
+                        "children": Array [],
+                        "name": "input",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "autocomplete": undefined,
+                          "class": undefined,
+                          "placeholder": undefined,
+                          "type": undefined,
+                          "value": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "autocomplete": undefined,
+                          "class": undefined,
+                          "placeholder": undefined,
+                          "type": undefined,
+                          "value": undefined,
+                        },
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`AutoComplete Search should hide empty component 2`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "auto-complete",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "with-label",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "input-container ",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "class": "input-wrapper   ",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {
+                      "autocomplete": "off",
+                      "class": " ",
+                      "placeholder": "Enter here",
+                      "type": "text",
+                      "value": "",
+                    },
+                    "children": Array [],
+                    "name": "input",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "autocomplete": undefined,
+                      "class": undefined,
+                      "placeholder": undefined,
+                      "type": undefined,
+                      "value": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "autocomplete": undefined,
+                      "class": undefined,
+                      "placeholder": undefined,
+                      "type": undefined,
+                      "value": undefined,
+                    },
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .with-label {
+          display: inline-block;
+          width: initial;
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: initial;
+          height: calc(1.687 * 16pt);
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: #fafafa;
+          border-color: #eaeaea;
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: #666;
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: .875rem;
+          background-color: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: #999;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .with-label {
+          display: inline-block;
+          width: initial;
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: initial;
+          height: calc(1.687 * 16pt);
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: #fafafa;
+          border-color: #eaeaea;
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: #666;
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: .875rem;
+          background-color: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: #999;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "input-container ",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "class": "input-wrapper   ",
+                  },
+                  "children": Array [
+                    Object {
+                      "attribs": Object {
+                        "autocomplete": "off",
+                        "class": " ",
+                        "placeholder": "Enter here",
+                        "type": "text",
+                        "value": "",
+                      },
+                      "children": Array [],
+                      "name": "input",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "autocomplete": undefined,
+                        "class": undefined,
+                        "placeholder": undefined,
+                        "type": undefined,
+                        "value": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "autocomplete": undefined,
+                        "class": undefined,
+                        "placeholder": undefined,
+                        "type": undefined,
+                        "value": undefined,
+                      },
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+          .auto-complete {
+            width: max-content;
+          }
+          
+          .auto-complete :global(.loading) {
+            left: -3px;
+            right: -3px;
+            width: max-content;
+          }
+        ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+          .auto-complete {
+            width: max-content;
+          }
+          
+          .auto-complete :global(.loading) {
+            left: -3px;
+            right: -3px;
+            width: max-content;
+          }
+        ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "with-label",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "input-container ",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "class": "input-wrapper   ",
+                  },
+                  "children": Array [
+                    Object {
+                      "attribs": Object {
+                        "autocomplete": "off",
+                        "class": " ",
+                        "placeholder": "Enter here",
+                        "type": "text",
+                        "value": "",
+                      },
+                      "children": Array [],
+                      "name": "input",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "autocomplete": undefined,
+                        "class": undefined,
+                        "placeholder": undefined,
+                        "type": undefined,
+                        "value": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "autocomplete": undefined,
+                        "class": undefined,
+                        "placeholder": undefined,
+                        "type": undefined,
+                        "value": undefined,
+                      },
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .with-label {
+          display: inline-block;
+          width: initial;
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: initial;
+          height: calc(1.687 * 16pt);
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: #fafafa;
+          border-color: #eaeaea;
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: #666;
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: .875rem;
+          background-color: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: #999;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .with-label {
+          display: inline-block;
+          width: initial;
+          box-sizing: border-box;
+          -webkit-box-align: center;
+        }
+        
+        .input-container {
+          display: inline-flex;
+          align-items: center;
+          width: initial;
+          height: calc(1.687 * 16pt);
+        }
+
+        .input-wrapper {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          height: 100%;
+          flex: 1;
+          user-select: none;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+        }
+        
+        .input-wrapper.left-label {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+        
+        .input-wrapper.right-label {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        
+        .input-wrapper.disabled {
+          background-color: #fafafa;
+          border-color: #eaeaea;
+          cursor: not-allowed;
+        }
+        
+        input.disabled {
+          cursor: not-allowed;
+        }
+        
+        .input-wrapper.hover {
+          border-color: #666;
+        }
+
+        input {
+          margin: 4px 10px;
+          padding: 0;
+          box-shadow: none;
+          font-size: .875rem;
+          background-color: transparent;
+          border: none;
+          color: #000;
+          outline: none;
+          border-radius: 0;
+          width: 100%;
+          -webkit-appearance: none;
+        }
+        
+        input.left-icon {
+          margin-left: 0;
+        }
+        
+        input.right-icon {
+          margin-right: 0;
+        }
+        
+        ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
+          color: #999;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "input-container ",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {
+                      "class": "input-wrapper   ",
+                    },
+                    "children": Array [
+                      Object {
+                        "attribs": Object {
+                          "autocomplete": "off",
+                          "class": " ",
+                          "placeholder": "Enter here",
+                          "type": "text",
+                          "value": "",
+                        },
+                        "children": Array [],
+                        "name": "input",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "autocomplete": undefined,
+                          "class": undefined,
+                          "placeholder": undefined,
+                          "type": undefined,
+                          "value": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "autocomplete": undefined,
+                          "class": undefined,
+                          "placeholder": undefined,
+                          "type": undefined,
+                          "value": undefined,
+                        },
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;

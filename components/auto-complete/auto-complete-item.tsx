@@ -6,27 +6,25 @@ import { NormalSizes } from 'components/utils/prop-types'
 
 interface Props {
   value: string
-  disabled?: boolean
 }
 
 const defaultProps = {
-  disabled: false,
 }
 
 export type AutoCompleteItemProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
-const getSizes = (size?: NormalSizes) => {
+const getSizes = (size: NormalSizes) => {
   const fontSizes: { [key in NormalSizes]: string } = {
     mini: '.7rem',
     small: '.75rem',
     medium: '.875rem',
     large: '1rem',
   }
-  return size ? fontSizes[size] : fontSizes.medium
+  return fontSizes[size]
 }
 
 const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>> = ({
-  value: identValue, children, disabled,
+  value: identValue, children,
 }) => {
   const theme = useTheme()
   const { value, updateValue, size } = useAutoCompleteContext()
@@ -54,7 +52,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           color: ${theme.palette.foreground};
           user-select: none;
           border: 0;
-          cursor: ${disabled ? 'not-allowed' : 'pointer'};
+          cursor: pointer;
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
         }
         

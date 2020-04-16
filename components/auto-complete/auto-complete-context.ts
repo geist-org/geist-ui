@@ -6,7 +6,7 @@ export interface AutoCompleteConfig {
   updateValue?: Function
   visible?: boolean
   updateVisible?: Function
-  size?: NormalSizes
+  size: NormalSizes
   ref?: MutableRefObject<HTMLElement | null>
 }
 
