@@ -1,7 +1,7 @@
 import React from 'react'
 
 export interface CheckboxConfig {
-  updateState: (value: string, checked: boolean) => void
+  updateState?: (value: string, checked: boolean) => void
   disabledAll: boolean
   values: string[]
   inGroup: boolean
@@ -9,7 +9,6 @@ export interface CheckboxConfig {
 
 const defaultContext = {
   disabledAll: false,
-  updateState: () => {},
   inGroup: false,
   values: [],
 }
