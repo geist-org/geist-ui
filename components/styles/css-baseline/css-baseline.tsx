@@ -186,7 +186,7 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         pre {
           border: 1px solid ${theme.palette.accents_2};
           border-radius: ${theme.layout.radius};
-          padding: ${theme.layout.gap};
+          padding: calc(${theme.layout.gap} * 0.75) ${theme.layout.gap};
           margin: ${theme.layout.gap} 0;
           font-family: ${theme.font.mono};
           white-space: pre;
