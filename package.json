@@ -1,6 +1,6 @@
 {
   "name": "@zeit-ui/react",
-  "version": "0.0.1-beta.28",
+  "version": "0.0.1-beta.29",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "browser": "dist/index.umd.js",
@@ -76,11 +76,12 @@
     "react-color": "^2.18.0",
     "react-dom": "^16.13.0",
     "react-live": "^2.2.2",
-    "styled-jsx": "^3.2.5",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },
-  "dependencies": {}
+  "dependencies": {
+    "styled-jsx": "^3.2.5"
+  }
 }
