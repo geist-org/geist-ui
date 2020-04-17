@@ -1,0 +1,59 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { User, Spacer } from 'components'
+
+export const meta = {
+  title: '用户 User',
+  group: '数据展示',
+}
+
+## User / 用户
+
+展示用户的介绍或是社交链接。
+
+<Playground
+  desc="仅展示用户名。"
+  scope={{ User, Spacer }}
+  code={`
+<User src="https://zeit.co/api/www/avatar/?u=evilrabbit&s=160" name="Evil Rabbit" />
+`} />
+
+<Playground
+  title="描述"
+  desc="在用户名下方展示简短的用户介绍。"
+  scope={{ User, Spacer }}
+  code={`
+<User src="https://unix.bio/assets/avatar.png" name="维特">
+  JavaScript 工程师
+</User>
+`} />
+
+<Playground
+  title="社交"
+  desc="自定义用户的社交链接与文字。"
+  scope={{ User, Spacer }}
+  code={`
+<User src="https://unix.bio/assets/avatar.png" name="Witt">
+  <User.Link href="https://twitter.com/echo_witt">@echo_witt</User.Link>
+</User>
+`} />
+
+<Attributes edit="/pages/en-us/components/user.mdx">
+<Attributes.Title>User.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **name**(必须值) | 用户名 | `ReactNode` / `string` | - | - |
+| **src** | 头像图片地址 | `string` | - | - |
+| **text** | 以文字方式显示头像 | `string` | - | - |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>User.Link.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **href** | 链接地址 | `string` | - | - |
+| ... | 原生属性 | `AnchorHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
