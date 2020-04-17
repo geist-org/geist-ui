@@ -1,0 +1,59 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { User, Spacer } from 'components'
+
+export const meta = {
+  title: 'User',
+  group: 'Data Display',
+}
+
+## User
+
+Display user profile or social information.
+
+<Playground
+  desc="Show username."
+  scope={{ User, Spacer }}
+  code={`
+<User src="https://zeit.co/api/www/avatar/?u=evilrabbit&s=160" name="Evil Rabbit" />
+`} />
+
+<Playground
+  title="Description"
+  desc="Show an extra description."
+  scope={{ User, Spacer }}
+  code={`
+<User src="https://unix.bio/assets/avatar.png" name="Witt">
+  JavaScript engineer
+</User>
+`} />
+
+<Playground
+  title="Social"
+  desc="Show link below user name."
+  scope={{ User, Spacer }}
+  code={`
+<User src="https://unix.bio/assets/avatar.png" name="Witt">
+  <User.Link href="https://twitter.com/echo_witt">@echo_witt</User.Link>
+</User>
+`} />
+
+<Attributes edit="/pages/en-us/components/user.mdx">
+<Attributes.Title>User.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **name**(required) | user name | `ReactNode` / `string` | - | - |
+| **src** | avatar url | `string` | - | - |
+| **text** | display text when image is missing | `string` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+<Attributes.Title>User.Link.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **href** | link address | `string` | - | - |
+| ... | native props | `AnchorHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
