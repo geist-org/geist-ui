@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount, render } from 'enzyme'
-import { Checkbox } from '../../index'
+import { Checkbox } from 'components'
 
 describe('Checkbox Group', () => {
   it('should render correctly', () => {

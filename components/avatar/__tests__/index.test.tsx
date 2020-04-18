@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount, render, shallow } from 'enzyme'
-import { Avatar } from '../../index'
+import { Avatar } from 'components'
 
 describe('Avatar', () => {
   it('should support square and circle', () => {

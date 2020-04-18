@@ -1,0 +1,1523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`Display should support react-node 1`] = `ReactWrapper {}`;
+
+exports[`Display should work with shadow and width 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {},
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "display ",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "content",
+            },
+            "children": Array [
+              Object {
+                "data": "display",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {
+                "class": "caption",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "h1",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "h1",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: max-content;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 2.5rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {
+              "class": "caption",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "h1",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "h1",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: max-content;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 2.5rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "display",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: max-content;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 2.5rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "caption",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "h1",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "h1",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "display",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "display ",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "display",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {
+                  "class": "caption",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "h1",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "h1",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: 50px;
+          box-shadow: none;
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 1.3rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {
+                "class": "caption",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "h1",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "h1",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: 50px;
+          box-shadow: none;
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 1.3rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "display",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: 50px;
+          box-shadow: none;
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 1.3rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "caption",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "h1",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "h1",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "content",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "display",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "display ",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "content",
+            },
+            "children": Array [
+              Object {
+                "data": "display",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {
+                "class": "caption",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "h1",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "h1",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: 50px;
+          box-shadow: none;
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 1.3rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {
+              "class": "caption",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "h1",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "h1",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: 50px;
+          box-shadow: none;
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 1.3rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "display",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: 50px;
+          box-shadow: none;
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 1.3rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "caption",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "h1",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "h1",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "display",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "display ",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "display",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {
+                  "class": "caption",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "h1",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "h1",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: max-content;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 2.5rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {
+                "class": "caption",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "h1",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "h1",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: max-content;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 2.5rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "display",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .display {
+          display: block;
+          margin: 2.5rem auto;
+          max-width: 100%;
+        }
+        
+        .content {
+          display: block;
+          margin: 0 auto;
+          border-radius: 4px;
+          overflow: hidden;
+          width: max-content;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          max-width: 100%;
+        }
+        
+        .content :global(pre) {
+          margin: 0;
+          transition: min-width ease .2s;
+        }
+        
+        .content :global(img) {
+          display: block;
+        }
+
+        .caption {
+          font-size: .875rem;
+          line-height: 1.571em;
+          color: #666;
+          margin: 2.5rem auto 0;
+          text-align: center;
+          max-width: 85%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "caption",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "h1",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "h1",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "content",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "display",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {},
+    "x-attribsPrefix": Object {},
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;

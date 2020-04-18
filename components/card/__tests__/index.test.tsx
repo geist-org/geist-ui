@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount, render } from 'enzyme'
-import { Card } from '../../index'
+import { Card } from 'components'
 
 describe('Card', () => {
   it('should render correctly', () => {

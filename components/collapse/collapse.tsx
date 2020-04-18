@@ -5,6 +5,7 @@ import Expand from '../shared/expand'
 import { useCollapseContext } from './collapse-context'
 import useCurrentState from '../utils/use-current-state'
 import CollapseGroup from './collapse-group'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   title: string
@@ -31,6 +32,10 @@ const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   const theme = useTheme()
   const [visible, setVisible, visibleRef] = useCurrentState<boolean>(initialVisible)
   const { values, updateValues } = useCollapseContext()
+  
+  if (!title) {
+    useWarning('"title" is required.', 'Collapse')
+  }
 
   useEffect(() => {
     if (!values.length) return

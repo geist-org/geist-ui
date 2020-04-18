@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import { Button } from '../../'
-import { sleep } from '../../../tests/utils'
+import { sleep } from 'tests/utils'
 
 describe('Button', () => {
   it('should render correctly', () => {

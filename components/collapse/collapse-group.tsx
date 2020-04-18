@@ -32,6 +32,9 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
     }
     
     if (nextState) {
+      // In a few cases, the user will set Collapse Component state manually.
+      // If the user incorrectly set the state, Group component should ignore it.
+      /* istanbul ignore if */
       if (hasChild) return
       return setState([...stateRef.current, currentIndex])
     }

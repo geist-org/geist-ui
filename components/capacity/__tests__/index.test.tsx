@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, mount } from 'enzyme'
-import { Capacity } from '../../index'
+import { Capacity } from 'components'
 
 describe('Capacity', () => {
   it('should render value correctly', () => {

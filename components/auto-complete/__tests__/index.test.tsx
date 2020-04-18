@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { AutoComplete } from '../../index'
-import { nativeEvent } from '../../../tests/utils'
+import { AutoComplete } from 'components'
+import { nativeEvent } from 'tests/utils'
 
 describe('AutoComplete', () => {
   it('should render correctly', () => {
