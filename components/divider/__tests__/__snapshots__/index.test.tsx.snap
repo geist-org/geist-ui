@@ -1,0 +1,4153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`Divider should support float 1`] = `ReactWrapper {}`;
+
+exports[`Divider should work with align and volume 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {},
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "text start",
+            },
+            "children": Array [
+              Object {
+                "data": "start",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "text start",
+              },
+              "children": Array [
+                Object {
+                  "data": "start",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "text start",
+              },
+              "children": Array [
+                Object {
+                  "data": "left",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "text start",
+                },
+                "children": Array [
+                  Object {
+                    "data": "left",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Object {
+            "attribs": Object {
+              "class": "divider ",
+              "role": "separator",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "class": "text end",
+                },
+                "children": Array [
+                  Object {
+                    "data": "end",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "text end",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "end",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {
+                "class": "divider ",
+                "role": "separator",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "class": "text start",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "start",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(2 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "style",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(2 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {
+                      "class": "text start",
+                    },
+                    "children": Array [
+                      Object {
+                        "data": "start",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "span",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+                "role": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+                "role": undefined,
+              },
+            },
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "text start",
+            },
+            "children": Array [
+              Object {
+                "data": "left",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "text start",
+              },
+              "children": Array [
+                Object {
+                  "data": "left",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "text end",
+              },
+              "children": Array [
+                Object {
+                  "data": "end",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "text end",
+                },
+                "children": Array [
+                  Object {
+                    "data": "end",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Object {
+            "attribs": Object {
+              "class": "divider ",
+              "role": "separator",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "class": "text start",
+                },
+                "children": Array [
+                  Object {
+                    "data": "start",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(2 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(2 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "text start",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "start",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "text start",
+              },
+              "children": Array [
+                Object {
+                  "data": "start",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "text start",
+                },
+                "children": Array [
+                  Object {
+                    "data": "start",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "text end",
+            },
+            "children": Array [
+              Object {
+                "data": "end",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "text end",
+              },
+              "children": Array [
+                Object {
+                  "data": "end",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "text start",
+              },
+              "children": Array [
+                Object {
+                  "data": "start",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(2 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(2 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "text start",
+                },
+                "children": Array [
+                  Object {
+                    "data": "start",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "text start",
+              },
+              "children": Array [
+                Object {
+                  "data": "left",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "text start",
+                },
+                "children": Array [
+                  Object {
+                    "data": "left",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": Object {
+            "attribs": Object {
+              "class": "divider ",
+              "role": "separator",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "class": "text start",
+                },
+                "children": Array [
+                  Object {
+                    "data": "start",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "text start",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "start",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+          },
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "text start",
+            },
+            "children": Array [
+              Object {
+                "data": "start",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(2 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(2 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "text start",
+              },
+              "children": Array [
+                Object {
+                  "data": "start",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "text end",
+              },
+              "children": Array [
+                Object {
+                  "data": "end",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "text end",
+                },
+                "children": Array [
+                  Object {
+                    "data": "end",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": Object {
+            "attribs": Object {
+              "class": "divider ",
+              "role": "separator",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {
+                  "class": "text start",
+                },
+                "children": Array [
+                  Object {
+                    "data": "left",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "text start",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "left",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "divider ",
+                "role": "separator",
+              },
+              "children": Array [
+                Object {
+                  "attribs": Object {
+                    "class": "text start",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "start",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "style",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {
+                      "class": "text start",
+                    },
+                    "children": Array [
+                      Object {
+                        "data": "start",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "span",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+                "role": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+                "role": undefined,
+              },
+            },
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+          },
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {},
+    "x-attribsPrefix": Object {},
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Divider should work with type 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {},
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #666;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #666;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #f7b955;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #f7b955;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Object {
+            "attribs": Object {
+              "class": "divider ",
+              "role": "separator",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #000;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #f7b955;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #f7b955;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #000;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #666;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #666;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #000;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #f7b955;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #f7b955;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": Object {
+            "attribs": Object {
+              "class": "divider ",
+              "role": "separator",
+            },
+            "children": Array [
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #666;
+          margin: calc(15.25pt + 1px * 0) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #666;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+              "role": undefined,
+            },
+          },
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {},
+    "x-attribsPrefix": Object {},
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Divider should work with x and y 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {},
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) calc(22.875pt + 1px * 0.5);
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(22.875pt + 1px * 0.5) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "divider ",
+          "role": "separator",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(22.875pt + 1px * 0.5) 0;
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "divider ",
+            "role": "separator",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .divider {
+          width: auto;
+          max-width: 100%;
+          height: calc(1 * 1px);
+          background-color: #eaeaea;
+          margin: calc(15.25pt + 1px * 0) calc(22.875pt + 1px * 0.5);
+          position: relative;
+        }
+        
+        .text {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          min-height: 100%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          transform: translate(-50%, -50%);
+          padding: 0 16pt;
+          font-size: 1rem;
+          font-weight: bold;
+          text-transform: capitalize;
+          background-color: #fff;
+          color: #000;
+          z-index: 10;
+        }
+        
+        .text.start {
+          transform: translateY(-50%);
+          left: 7%;
+        }
+        
+        .text.end {
+          transform: translateY(-50%);
+          left: auto;
+          right: 7%;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "role": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "role": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {},
+    "x-attribsPrefix": Object {},
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
