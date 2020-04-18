@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount, render } from 'enzyme'
-import { Col } from '../../index'
+import { Col } from 'components'
 
 describe('Col', () => {
   it('should render correctly', () => {

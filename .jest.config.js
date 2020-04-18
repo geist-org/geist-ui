@@ -12,7 +12,7 @@ module.exports = {
   },
   
   testRegex: '.*\\.test\\.(j|t)sx?$',
-  // testRegex: 'button\\/.*\\.test\\.(j|t)sx?$',
+  // testRegex: 'collapse\\/.*\\.test\\.(j|t)sx?$',
   
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',
@@ -20,4 +20,9 @@ module.exports = {
     '!components/styles/*',
     '!components/index.ts',
   ],
+  
+  "moduleNameMapper": {
+    "tests/(.*)$": "<rootDir>/tests/$1",
+    "components": "<rootDir>/components/index.ts",
+  },
 }

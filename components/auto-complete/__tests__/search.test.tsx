@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount, render } from 'enzyme'
-import { AutoComplete } from '../../index'
-import { nativeEvent } from '../../../tests/utils'
+import { AutoComplete } from 'components'
+import { nativeEvent } from 'tests/utils'
 const mockOptions = [
   { label: 'London', value: 'london' },
 ]
