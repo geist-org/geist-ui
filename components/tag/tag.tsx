@@ -93,6 +93,7 @@ const Tag: React.FC<React.PropsWithChildren<TagProps>> = React.memo(({
           background-color: ${bgColor};
           color: ${color};
           padding: 6px;
+          box-sizing: border-box;
         }
       `}</style>
     </span>
