@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 
@@ -22,6 +22,8 @@ const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
   children, caption, shadow, className, width, ...props
 }) => {
   const theme = useTheme()
+  const showShadow = useMemo(() => shadow && theme.type !== 'dark', [theme.type, shadow])
+  
   return (
     <div className={`display ${className}`} {...props}>
       <div className="content">{children}</div>
@@ -40,7 +42,7 @@ const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
           border-radius: 4px;
           overflow: hidden;
           width: ${width ? width : 'max-content'};
-          box-shadow: ${shadow ? theme.expressiveness.shadowLarge : 'none'};
+          box-shadow: ${showShadow ? theme.expressiveness.shadowLarge : 'none'};
           max-width: 100%;
         }
         
