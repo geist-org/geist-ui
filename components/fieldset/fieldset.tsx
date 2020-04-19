@@ -52,6 +52,9 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
     }, [])
     
     useEffect(() => {
+      // In a few cases, the user will set Fieldset state manually.
+      // If the user incorrectly set the state, Group component should ignore it.
+      /* istanbul ignore if */
       if (!currentValue || currentValue === '') return
       setHidden(currentValue !== value)
     }, [currentValue])
