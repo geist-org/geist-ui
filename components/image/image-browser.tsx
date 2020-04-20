@@ -97,9 +97,9 @@ const getAddressInput = (
   </div>
 )
 
-const ImageBrowser: React.FC<React.PropsWithChildren<ImageBrowserProps>> = ({
+const ImageBrowser = React.memo(React.forwardRef<HTMLDivElement, React.PropsWithChildren<ImageBrowserProps>>(({
   url, title, children, showFullLink, invert, className, ...props
-}) => {
+}, ref: React.Ref<HTMLDivElement>) => {
   const theme = useTheme()
   const colors = useMemo(
     () => getBrowserColors(invert, theme.palette),
@@ -112,7 +112,7 @@ const ImageBrowser: React.FC<React.PropsWithChildren<ImageBrowserProps>> = ({
   }, [url, showFullLink, title, colors])
   
   return (
-    <div className={`bowser ${className}`} {...props}>
+    <div className={`bowser ${className}`} ref={ref} {...props}>
       <header>
         <div className="traffic">
           <span className="close" />
@@ -185,6 +185,6 @@ const ImageBrowser: React.FC<React.PropsWithChildren<ImageBrowserProps>> = ({
       `}</style>
     </div>
   )
-}
+}))
 
 export default withDefaults(ImageBrowser, defaultProps)
