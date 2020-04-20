@@ -114,9 +114,9 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
 
   useEffect(() => {
     if (customValue === undefined) return
+    if (customValue === value) return
     setValue(customValue)
-    setLastOffsetManually(customValue)
-  }, [customValue])
+  }, [customValue, value])
   
   useEffect(() => {
     initialValue && setLastOffsetManually(initialValue)
