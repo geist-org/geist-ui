@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Slider, Row, Spacer } from 'components'
+import { useState } from 'react'
 
 export const meta = {
   title: '滑动输入 Slider',
@@ -45,6 +46,25 @@ export const meta = {
   <Spacer />
   <Slider step={0.2} max={1} min={0.2} initialValue={0.4} showMarkers />
 </div>
+`} />
+
+<Playground
+  title="事件"
+  desc="在滑动时获取值的变化。"
+  scope={{ Slider, Row, useState }}
+  code={`
+() => {
+  const [value, setValue] = useState()
+  const handler = val => {
+    console.log(val)
+    setValue(val)
+  }
+  return (
+    <Row style={{ width: '75%' }}>
+      <Slider value={value} onChange={handler} />
+    </Row>
+  )
+}
 `} />
 
 <Attributes edit="/pages/zh-cn/components/slider.mdx">
