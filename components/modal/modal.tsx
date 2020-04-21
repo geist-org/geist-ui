@@ -14,16 +14,13 @@ import useBodyScroll from '../utils/use-body-scroll'
 
 interface Props {
   disableBackdropClick?: boolean
-  onClose: () => void
-  onOpen: () => void
+  onClose?: () => void
+  onOpen?: () => void
   open?: boolean
 }
 
 const defaultProps = {
   disableBackdropClick: false,
-  onClose: () => {},
-  onOpen: () => {},
-  open: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -34,7 +31,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = React.memo(({
 }) => {
   const portal = usePortal('modal')
   const [, setBodyHidden] = useBodyScroll()
-  const [visible, setVisible] = useState<boolean>(open)
+  const [visible, setVisible] = useState<boolean>(false)
   const [withoutActionsChildren, ActionsChildren] = pickChild(children, ModalAction)
   const hasActions = ActionsChildren && React.Children.count(ActionsChildren) > 0
 
@@ -42,17 +39,19 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = React.memo(({
     setVisible(false)
     onClose && onClose()
   }
-  const openModal = () => {
-    setVisible(true)
-    
-    onOpen && onOpen()
-  }
 
   useEffect(() => {
+    if (open === undefined) return
     setVisible(open)
     setBodyHidden(open)
+  
+    if (open) {
+      onOpen && onOpen()
+    } else {
+      onClose && onClose()
+    }
   }, [open])
-
+  
   const closeFromBackdrop = () => {
     if (disableBackdropClick && hasActions) return
     closeModal()
@@ -60,7 +59,6 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = React.memo(({
 
   const modalConfig: ModalConfig = useMemo(() => ({
     close: closeModal,
-    open: openModal,
   }), [])
   
   if (!portal) return null

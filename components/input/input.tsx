@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import InputLabel from './input-label'
 import InputBlockLabel from './input-block-label'
@@ -46,12 +46,24 @@ const defaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & typeof defaultProps & NativeAttrs
 
+const simulateChangeEvent = (
+  el: HTMLInputElement,
+  event: React.MouseEvent<HTMLDivElement>
+): React.ChangeEvent<HTMLInputElement> => {
+  return {
+    ...event,
+    target: el,
+    currentTarget: el,
+  }
+}
+
 const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   placeholder, label, labelRight, size, status, disabled,
   icon, iconRight, initialValue, onChange, readOnly, value,
   onClearClick, clearable, width, className, onBlur, onFocus,
   autoComplete, children, ...props
 }) => {
+  const ref = useRef<HTMLInputElement>(null)
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string>(initialValue)
   const [hover, setHover] = useState<boolean>(false)
@@ -78,6 +90,11 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
   const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     setSelfValue('')
     onClearClick && onClearClick(event)
+    if (!ref.current) return
+    
+    const changeEvent = simulateChangeEvent(ref.current, event)
+    changeEvent.target.value = ''
+    onChange && onChange(changeEvent)
   }
   
   const focusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -101,7 +118,8 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
         {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
         <div className={`input-wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${labelClasses}`}>
           {icon && <InputIcon icon={icon} ratio={heightRatio} />}
-          <input type="text" className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
+          <input type="text" ref={ref}
+            className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
             value={selfValue}
             placeholder={placeholder}
             disabled={disabled}

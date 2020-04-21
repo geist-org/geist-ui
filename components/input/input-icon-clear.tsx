@@ -22,7 +22,7 @@ const InputIconClear: React.FC<Props> = ({
     onClick && onClick(event)
   }
   return (
-    <div onClick={clickHandler} className={`${visibale ? 'visibale' : ''}`}>
+    <div onClick={clickHandler} className={`clear-icon ${visibale ? 'visibale' : ''}`}>
       <svg viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
         strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
         <path d="M18 6L6 18" />
@@ -30,7 +30,7 @@ const InputIconClear: React.FC<Props> = ({
       </svg>
   
       <style jsx>{`
-        div {
+        .clear-icon {
           padding: 0 ${theme.layout.gapHalf};
           margin: 0;
           display: inline-flex;
@@ -49,7 +49,7 @@ const InputIconClear: React.FC<Props> = ({
           opacity: 1;
         }
         
-        div:hover {
+        .clear-icon:hover {
           color: ${disabled ? theme.palette.accents_3 : theme.palette.foreground};
         }
         

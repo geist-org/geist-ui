@@ -1,0 +1,336 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Keyboard should render correctly 1`] = `
+"<kbd class=\\"\\"><span>F</span><style>
+        kbd {
+          width: fit-content;
+          line-height: 2em;
+          text-align: center;
+          display: inline-block;
+          color: #666;
+          background-color: #fafafa;
+          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          padding: 0 4pt;
+          min-width: calc(1.5 * 16pt);
+          font-size: 0.875rem;
+        }
+        
+        kbd + kbd {
+          margin-left: 4pt;
+        }
+        
+        span {
+          line-height: 2em;
+          font-size: 0.875rem;
+          text-align: center;
+        }
+        
+        span + span {
+          margin-left: 4pt;
+        }
+      </style></kbd>"
+`;
+
+exports[`Keyboard should work with modifiers 1`] = `
+"<div><kbd class=\\"\\"><span>⌘</span><span>F</span><style>
+        kbd {
+          width: fit-content;
+          line-height: 2em;
+          text-align: center;
+          display: inline-block;
+          color: #666;
+          background-color: #fafafa;
+          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          padding: 0 4pt;
+          min-width: calc(1.5 * 16pt);
+          font-size: 0.875rem;
+        }
+        
+        kbd + kbd {
+          margin-left: 4pt;
+        }
+        
+        span {
+          line-height: 2em;
+          font-size: 0.875rem;
+          text-align: center;
+        }
+        
+        span + span {
+          margin-left: 4pt;
+        }
+      </style></kbd><kbd class=\\"\\"><span>⇧</span><span>F</span><style>
+        kbd {
+          width: fit-content;
+          line-height: 2em;
+          text-align: center;
+          display: inline-block;
+          color: #666;
+          background-color: #fafafa;
+          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          padding: 0 4pt;
+          min-width: calc(1.5 * 16pt);
+          font-size: 0.875rem;
+        }
+        
+        kbd + kbd {
+          margin-left: 4pt;
+        }
+        
+        span {
+          line-height: 2em;
+          font-size: 0.875rem;
+          text-align: center;
+        }
+        
+        span + span {
+          margin-left: 4pt;
+        }
+      </style></kbd><kbd class=\\"\\"><span>⌥</span><span>F</span><style>
+        kbd {
+          width: fit-content;
+          line-height: 2em;
+          text-align: center;
+          display: inline-block;
+          color: #666;
+          background-color: #fafafa;
+          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          padding: 0 4pt;
+          min-width: calc(1.5 * 16pt);
+          font-size: 0.875rem;
+        }
+        
+        kbd + kbd {
+          margin-left: 4pt;
+        }
+        
+        span {
+          line-height: 2em;
+          font-size: 0.875rem;
+          text-align: center;
+        }
+        
+        span + span {
+          margin-left: 4pt;
+        }
+      </style></kbd><kbd class=\\"\\"><span>⌃</span><span>F</span><style>
+        kbd {
+          width: fit-content;
+          line-height: 2em;
+          text-align: center;
+          display: inline-block;
+          color: #666;
+          background-color: #fafafa;
+          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          padding: 0 4pt;
+          min-width: calc(1.5 * 16pt);
+          font-size: 0.875rem;
+        }
+        
+        kbd + kbd {
+          margin-left: 4pt;
+        }
+        
+        span {
+          line-height: 2em;
+          font-size: 0.875rem;
+          text-align: center;
+        }
+        
+        span + span {
+          margin-left: 4pt;
+        }
+      </style></kbd></div>"
+`;
+
+exports[`Keyboard should work with small size 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "F",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+        kbd {
+          width: fit-content;
+          line-height: 2em;
+          text-align: center;
+          display: inline-block;
+          color: #666;
+          background-color: #fafafa;
+          font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          padding: 0 0;
+          min-width: 16pt;
+          font-size: .75rem;
+        }
+        
+        kbd + kbd {
+          margin-left: 4pt;
+        }
+        
+        span {
+          line-height: 2em;
+          font-size: 0.875rem;
+          text-align: center;
+        }
+        
+        span + span {
+          margin-left: 4pt;
+        }
+      ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+        kbd {
+          width: fit-content;
+          line-height: 2em;
+          text-align: center;
+          display: inline-block;
+          color: #666;
+          background-color: #fafafa;
+          font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
+          border-radius: 5px;
+          border: 1px solid #eaeaea;
+          padding: 0 0;
+          min-width: 16pt;
+          font-size: .75rem;
+        }
+        
+        kbd + kbd {
+          margin-left: 4pt;
+        }
+        
+        span {
+          line-height: 2em;
+          font-size: 0.875rem;
+          text-align: center;
+        }
+        
+        span + span {
+          margin-left: 4pt;
+        }
+      ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "F",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "kbd",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
