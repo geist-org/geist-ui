@@ -9,7 +9,7 @@ initialize {
     "children": Array [
       Object {
         "attribs": Object {
-          "class": "card ",
+          "class": "content",
         },
         "children": Array [
           Object {
@@ -18,24 +18,52 @@ initialize {
             },
             "children": Array [
               Object {
-                "data": "card",
-                "next": Object {
-                  "attribs": Object {},
-                  "children": Array [
-                    Object {
-                      "data": "
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "attribs": Object {
+                      "class": "card ",
+                    },
+                    "children": Array [
+                      Object {
+                        "attribs": Object {
+                          "class": "content",
+                        },
+                        "children": Array [
+                          Object {
+                            "data": "card",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "text",
+                          },
+                        ],
+                        "name": "div",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": Object {
+                          "attribs": Object {},
+                          "children": Array [
+                            Object {
+                              "data": "
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -48,6 +76,187 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      ",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "style",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": [Circular],
+                          "type": "style",
+                          "x-attribsNamespace": Object {},
+                          "x-attribsPrefix": Object {},
+                        },
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                        },
+                      },
+                      Object {
+                        "attribs": Object {},
+                        "children": Array [
+                          Object {
+                            "data": "
+        .card {
+          background: #fff;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          transition: all .2s ease;
+          border-radius: 5px;
+          box-shadow: none;
+          box-sizing: border-box;
+          color: #000;
+          background-color: #fff;
+          border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
+        }
+        
+        .card:hover {
+          box-shadow: none;
+        }
+        
+        .card :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .card :global(*:last-child) {
+          margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      ",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "text",
+                          },
+                        ],
+                        "name": "style",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": Object {
+                          "attribs": Object {
+                            "class": "content",
+                          },
+                          "children": Array [
+                            Object {
+                              "data": "card",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "div",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": [Circular],
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "class": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "class": undefined,
+                          },
+                        },
+                        "type": "style",
+                        "x-attribsNamespace": Object {},
+                        "x-attribsPrefix": Object {},
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .card {
+          background: #fff;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          transition: all .2s ease;
+          border-radius: 5px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+          box-sizing: border-box;
+          color: #000;
+          background-color: #fff;
+          border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
+        }
+        
+        .card:hover {
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .card :global(*:last-child) {
+          margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                       "next": null,
@@ -67,7 +276,13 @@ initialize {
                 },
                 "parent": [Circular],
                 "prev": null,
-                "type": "text",
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
               },
               Object {
                 "attribs": Object {},
@@ -77,19 +292,24 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
-          box-shadow: none;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
-          border: 1px solid #eaeaea;
+          border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
-          box-shadow: none;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
         
         .card :global(*:first-child) {
@@ -98,6 +318,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                     "next": null,
@@ -111,40 +340,56 @@ initialize {
                 "next": null,
                 "parent": [Circular],
                 "prev": Object {
-                  "data": "card",
-                  "next": [Circular],
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-            ],
-            "name": "div",
-            "namespace": "http://www.w3.org/1999/xhtml",
-            "next": Object {
-              "attribs": Object {},
-              "children": Array [
-                Object {
-                  "data": "
+                  "attribs": Object {
+                    "class": "content",
+                  },
+                  "children": Array [
+                    Object {
+                      "attribs": Object {
+                        "class": "card ",
+                      },
+                      "children": Array [
+                        Object {
+                          "attribs": Object {
+                            "class": "content",
+                          },
+                          "children": Array [
+                            Object {
+                              "data": "card",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "div",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": Object {
+                            "attribs": Object {},
+                            "children": Array [
+                              Object {
+                                "data": "
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+          box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
-          border: 1px solid transparent;
+          border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+          box-shadow: none;
         }
         
         .card :global(*:first-child) {
@@ -154,22 +399,162 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
-                  "next": null,
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": [Circular],
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "class": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "class": undefined,
+                          },
+                        },
+                        Object {
+                          "attribs": Object {},
+                          "children": Array [
+                            Object {
+                              "data": "
+        .card {
+          background: #fff;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          transition: all .2s ease;
+          border-radius: 5px;
+          box-shadow: none;
+          box-sizing: border-box;
+          color: #000;
+          background-color: #fff;
+          border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
+        }
+        
+        .card:hover {
+          box-shadow: none;
+        }
+        
+        .card :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .card :global(*:last-child) {
+          margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      ",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "style",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": Object {
+                            "attribs": Object {
+                              "class": "content",
+                            },
+                            "children": Array [
+                              Object {
+                                "data": "card",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "div",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": [Circular],
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "class": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "class": undefined,
+                            },
+                          },
+                          "type": "style",
+                          "x-attribsNamespace": Object {},
+                          "x-attribsPrefix": Object {},
+                        },
+                      ],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                      },
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
                   "parent": [Circular],
                   "prev": null,
-                  "type": "text",
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
                 },
-              ],
-              "name": "style",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": null,
-              "parent": [Circular],
-              "prev": [Circular],
-              "type": "style",
-              "x-attribsNamespace": Object {},
-              "x-attribsPrefix": Object {},
-            },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
             "parent": [Circular],
             "prev": null,
             "type": "tag",
@@ -179,174 +564,6 @@ initialize {
             "x-attribsPrefix": Object {
               "class": undefined,
             },
-          },
-          Object {
-            "attribs": Object {},
-            "children": Array [
-              Object {
-                "data": "
-        .card {
-          background: #fff;
-          margin: 0;
-          width: 100%;
-          transition: all .2s ease;
-          padding: 16pt 16pt;
-          border-radius: 5px;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-          box-sizing: border-box;
-          color: #000;
-          background-color: #fff;
-          border: 1px solid transparent;
-        }
-        
-        .card:hover {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .card :global(*:first-child) {
-          margin-top: 0;
-        }
-        
-        .card :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      ",
-                "next": null,
-                "parent": [Circular],
-                "prev": null,
-                "type": "text",
-              },
-            ],
-            "name": "style",
-            "namespace": "http://www.w3.org/1999/xhtml",
-            "next": null,
-            "parent": [Circular],
-            "prev": Object {
-              "attribs": Object {
-                "class": "card ",
-              },
-              "children": Array [
-                Object {
-                  "data": "card",
-                  "next": Object {
-                    "attribs": Object {},
-                    "children": Array [
-                      Object {
-                        "data": "
-        .card {
-          background: #fff;
-          margin: 0;
-          width: 100%;
-          transition: all .2s ease;
-          padding: 16pt 16pt;
-          border-radius: 5px;
-          box-shadow: none;
-          box-sizing: border-box;
-          color: #000;
-          background-color: #fff;
-          border: 1px solid #eaeaea;
-        }
-        
-        .card:hover {
-          box-shadow: none;
-        }
-        
-        .card :global(*:first-child) {
-          margin-top: 0;
-        }
-        
-        .card :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": [Circular],
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-                Object {
-                  "attribs": Object {},
-                  "children": Array [
-                    Object {
-                      "data": "
-        .card {
-          background: #fff;
-          margin: 0;
-          width: 100%;
-          transition: all .2s ease;
-          padding: 16pt 16pt;
-          border-radius: 5px;
-          box-shadow: none;
-          box-sizing: border-box;
-          color: #000;
-          background-color: #fff;
-          border: 1px solid #eaeaea;
-        }
-        
-        .card:hover {
-          box-shadow: none;
-        }
-        
-        .card :global(*:first-child) {
-          margin-top: 0;
-        }
-        
-        .card :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": Object {
-                    "data": "card",
-                    "next": [Circular],
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": [Circular],
-              "parent": [Circular],
-              "prev": null,
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
-            },
-            "type": "style",
-            "x-attribsNamespace": Object {},
-            "x-attribsPrefix": Object {},
           },
         ],
         "name": "div",
@@ -359,15 +576,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -380,6 +602,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
               "next": null,
@@ -415,15 +646,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -436,6 +672,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
             "next": null,
@@ -450,7 +695,7 @@ initialize {
         "parent": [Circular],
         "prev": Object {
           "attribs": Object {
-            "class": "card ",
+            "class": "content",
           },
           "children": Array [
             Object {
@@ -459,24 +704,52 @@ initialize {
               },
               "children": Array [
                 Object {
-                  "data": "card",
-                  "next": Object {
-                    "attribs": Object {},
-                    "children": Array [
-                      Object {
-                        "data": "
+                  "attribs": Object {
+                    "class": "content",
+                  },
+                  "children": Array [
+                    Object {
+                      "attribs": Object {
+                        "class": "card ",
+                      },
+                      "children": Array [
+                        Object {
+                          "attribs": Object {
+                            "class": "content",
+                          },
+                          "children": Array [
+                            Object {
+                              "data": "card",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "div",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": Object {
+                            "attribs": Object {},
+                            "children": Array [
+                              Object {
+                                "data": "
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -489,6 +762,187 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": [Circular],
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "class": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "class": undefined,
+                          },
+                        },
+                        Object {
+                          "attribs": Object {},
+                          "children": Array [
+                            Object {
+                              "data": "
+        .card {
+          background: #fff;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          transition: all .2s ease;
+          border-radius: 5px;
+          box-shadow: none;
+          box-sizing: border-box;
+          color: #000;
+          background-color: #fff;
+          border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
+        }
+        
+        .card:hover {
+          box-shadow: none;
+        }
+        
+        .card :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .card :global(*:last-child) {
+          margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      ",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "style",
+                          "namespace": "http://www.w3.org/1999/xhtml",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": Object {
+                            "attribs": Object {
+                              "class": "content",
+                            },
+                            "children": Array [
+                              Object {
+                                "data": "card",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "div",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": [Circular],
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "class": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "class": undefined,
+                            },
+                          },
+                          "type": "style",
+                          "x-attribsNamespace": Object {},
+                          "x-attribsPrefix": Object {},
+                        },
+                      ],
+                      "name": "div",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                      },
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "
+        .card {
+          background: #fff;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          transition: all .2s ease;
+          border-radius: 5px;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+          box-sizing: border-box;
+          color: #000;
+          background-color: #fff;
+          border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
+        }
+        
+        .card:hover {
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .card :global(*:last-child) {
+          margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                         "next": null,
@@ -508,7 +962,13 @@ initialize {
                   },
                   "parent": [Circular],
                   "prev": null,
-                  "type": "text",
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
                 },
                 Object {
                   "attribs": Object {},
@@ -518,19 +978,24 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
-          box-shadow: none;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
-          border: 1px solid #eaeaea;
+          border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
-          box-shadow: none;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
         
         .card :global(*:first-child) {
@@ -539,6 +1004,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                       "next": null,
@@ -552,40 +1026,56 @@ initialize {
                   "next": null,
                   "parent": [Circular],
                   "prev": Object {
-                    "data": "card",
-                    "next": [Circular],
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Object {
-                "attribs": Object {},
-                "children": Array [
-                  Object {
-                    "data": "
+                    "attribs": Object {
+                      "class": "content",
+                    },
+                    "children": Array [
+                      Object {
+                        "attribs": Object {
+                          "class": "card ",
+                        },
+                        "children": Array [
+                          Object {
+                            "attribs": Object {
+                              "class": "content",
+                            },
+                            "children": Array [
+                              Object {
+                                "data": "card",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "div",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": Object {
+                              "attribs": Object {},
+                              "children": Array [
+                                Object {
+                                  "data": "
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+          box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
-          border: 1px solid transparent;
+          border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+          box-shadow: none;
         }
         
         .card :global(*:first-child) {
@@ -595,22 +1085,162 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
-                    "next": null,
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/1999/xhtml",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "class": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "class": undefined,
+                            },
+                          },
+                          Object {
+                            "attribs": Object {},
+                            "children": Array [
+                              Object {
+                                "data": "
+        .card {
+          background: #fff;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          transition: all .2s ease;
+          border-radius: 5px;
+          box-shadow: none;
+          box-sizing: border-box;
+          color: #000;
+          background-color: #fff;
+          border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
+        }
+        
+        .card:hover {
+          box-shadow: none;
+        }
+        
+        .card :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .card :global(*:last-child) {
+          margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/1999/xhtml",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": Object {
+                              "attribs": Object {
+                                "class": "content",
+                              },
+                              "children": Array [
+                                Object {
+                                  "data": "card",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "div",
+                              "namespace": "http://www.w3.org/1999/xhtml",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "class": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "class": undefined,
+                              },
+                            },
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
+                        ],
+                        "name": "div",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                        },
+                      },
+                    ],
+                    "name": "div",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
                     "parent": [Circular],
                     "prev": null,
-                    "type": "text",
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
                   },
-                ],
-                "name": "style",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": null,
-                "parent": [Circular],
-                "prev": [Circular],
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
               "parent": [Circular],
               "prev": null,
               "type": "tag",
@@ -620,174 +1250,6 @@ initialize {
               "x-attribsPrefix": Object {
                 "class": undefined,
               },
-            },
-            Object {
-              "attribs": Object {},
-              "children": Array [
-                Object {
-                  "data": "
-        .card {
-          background: #fff;
-          margin: 0;
-          width: 100%;
-          transition: all .2s ease;
-          padding: 16pt 16pt;
-          border-radius: 5px;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-          box-sizing: border-box;
-          color: #000;
-          background-color: #fff;
-          border: 1px solid transparent;
-        }
-        
-        .card:hover {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .card :global(*:first-child) {
-          margin-top: 0;
-        }
-        
-        .card :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      ",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-              ],
-              "name": "style",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": null,
-              "parent": [Circular],
-              "prev": Object {
-                "attribs": Object {
-                  "class": "card ",
-                },
-                "children": Array [
-                  Object {
-                    "data": "card",
-                    "next": Object {
-                      "attribs": Object {},
-                      "children": Array [
-                        Object {
-                          "data": "
-        .card {
-          background: #fff;
-          margin: 0;
-          width: 100%;
-          transition: all .2s ease;
-          padding: 16pt 16pt;
-          border-radius: 5px;
-          box-shadow: none;
-          box-sizing: border-box;
-          color: #000;
-          background-color: #fff;
-          border: 1px solid #eaeaea;
-        }
-        
-        .card:hover {
-          box-shadow: none;
-        }
-        
-        .card :global(*:first-child) {
-          margin-top: 0;
-        }
-        
-        .card :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      ",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "style",
-                      "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": [Circular],
-                      "type": "style",
-                      "x-attribsNamespace": Object {},
-                      "x-attribsPrefix": Object {},
-                    },
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                  Object {
-                    "attribs": Object {},
-                    "children": Array [
-                      Object {
-                        "data": "
-        .card {
-          background: #fff;
-          margin: 0;
-          width: 100%;
-          transition: all .2s ease;
-          padding: 16pt 16pt;
-          border-radius: 5px;
-          box-shadow: none;
-          box-sizing: border-box;
-          color: #000;
-          background-color: #fff;
-          border: 1px solid #eaeaea;
-        }
-        
-        .card:hover {
-          box-shadow: none;
-        }
-        
-        .card :global(*:first-child) {
-          margin-top: 0;
-        }
-        
-        .card :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": Object {
-                      "data": "card",
-                      "next": [Circular],
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": [Circular],
-                "parent": [Circular],
-                "prev": null,
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
-              },
-              "type": "style",
-              "x-attribsNamespace": Object {},
-              "x-attribsPrefix": Object {},
             },
           ],
           "name": "div",
@@ -857,7 +1319,20 @@ initialize {
         },
         "children": Array [
           Object {
-            "data": "card",
+            "attribs": Object {
+              "class": "content",
+            },
+            "children": Array [
+              Object {
+                "data": "card",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
             "next": Object {
               "attribs": Object {},
               "children": Array [
@@ -866,15 +1341,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -887,6 +1367,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                   "next": null,
@@ -906,7 +1395,13 @@ initialize {
             },
             "parent": [Circular],
             "prev": null,
-            "type": "text",
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
           },
           Object {
             "attribs": Object {},
@@ -916,15 +1411,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -938,6 +1438,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                 "next": null,
                 "parent": [Circular],
@@ -950,11 +1459,30 @@ initialize {
             "next": null,
             "parent": [Circular],
             "prev": Object {
-              "data": "card",
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "card",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
               "next": [Circular],
               "parent": [Circular],
               "prev": null,
-              "type": "text",
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
             },
             "type": "style",
             "x-attribsNamespace": Object {},
@@ -969,7 +1497,20 @@ initialize {
           },
           "children": Array [
             Object {
-              "data": "card",
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "card",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
               "next": Object {
                 "attribs": Object {},
                 "children": Array [
@@ -978,15 +1519,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -999,6 +1545,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                     "next": null,
@@ -1018,7 +1573,13 @@ initialize {
               },
               "parent": [Circular],
               "prev": null,
-              "type": "text",
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
             },
             Object {
               "attribs": Object {},
@@ -1028,15 +1589,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1050,6 +1616,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                   "next": null,
                   "parent": [Circular],
@@ -1062,11 +1637,30 @@ initialize {
               "next": null,
               "parent": [Circular],
               "prev": Object {
-                "data": "card",
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "card",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
                 "next": [Circular],
                 "parent": [Circular],
                 "prev": null,
-                "type": "text",
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
               },
               "type": "style",
               "x-attribsNamespace": Object {},
@@ -1081,7 +1675,20 @@ initialize {
             },
             "children": Array [
               Object {
-                "data": "card",
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "card",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
                 "next": Object {
                   "attribs": Object {},
                   "children": Array [
@@ -1090,15 +1697,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1111,6 +1723,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                       "next": null,
@@ -1130,7 +1751,13 @@ initialize {
                 },
                 "parent": [Circular],
                 "prev": null,
-                "type": "text",
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
               },
               Object {
                 "attribs": Object {},
@@ -1140,15 +1767,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1162,6 +1794,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                     "next": null,
                     "parent": [Circular],
@@ -1174,11 +1815,30 @@ initialize {
                 "next": null,
                 "parent": [Circular],
                 "prev": Object {
-                  "data": "card",
+                  "attribs": Object {
+                    "class": "content",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "card",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
                   "next": [Circular],
                   "parent": [Circular],
                   "prev": null,
-                  "type": "text",
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
                 },
                 "type": "style",
                 "x-attribsNamespace": Object {},
@@ -1224,7 +1884,20 @@ initialize {
         },
         "children": Array [
           Object {
-            "data": "card",
+            "attribs": Object {
+              "class": "content",
+            },
+            "children": Array [
+              Object {
+                "data": "card",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
             "next": Object {
               "attribs": Object {},
               "children": Array [
@@ -1233,15 +1906,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1254,6 +1932,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                   "next": null,
@@ -1273,7 +1960,13 @@ initialize {
             },
             "parent": [Circular],
             "prev": null,
-            "type": "text",
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
           },
           Object {
             "attribs": Object {},
@@ -1283,15 +1976,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1305,6 +2003,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                 "next": null,
                 "parent": [Circular],
@@ -1317,11 +2024,30 @@ initialize {
             "next": null,
             "parent": [Circular],
             "prev": Object {
-              "data": "card",
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "card",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
               "next": [Circular],
               "parent": [Circular],
               "prev": null,
-              "type": "text",
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
             },
             "type": "style",
             "x-attribsNamespace": Object {},
@@ -1336,7 +2062,20 @@ initialize {
           },
           "children": Array [
             Object {
-              "data": "card",
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "card",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
               "next": Object {
                 "attribs": Object {},
                 "children": Array [
@@ -1345,15 +2084,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1366,6 +2110,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                     "next": null,
@@ -1385,7 +2138,13 @@ initialize {
               },
               "parent": [Circular],
               "prev": null,
-              "type": "text",
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
             },
             Object {
               "attribs": Object {},
@@ -1395,15 +2154,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1417,6 +2181,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                   "next": null,
                   "parent": [Circular],
@@ -1429,11 +2202,30 @@ initialize {
               "next": null,
               "parent": [Circular],
               "prev": Object {
-                "data": "card",
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "card",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
                 "next": [Circular],
                 "parent": [Circular],
                 "prev": null,
-                "type": "text",
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
               },
               "type": "style",
               "x-attribsNamespace": Object {},
@@ -1460,7 +2252,20 @@ initialize {
           },
           "children": Array [
             Object {
-              "data": "card",
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "card",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
               "next": Object {
                 "attribs": Object {},
                 "children": Array [
@@ -1469,15 +2274,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1490,6 +2300,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                     "next": null,
@@ -1509,7 +2328,13 @@ initialize {
               },
               "parent": [Circular],
               "prev": null,
-              "type": "text",
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
             },
             Object {
               "attribs": Object {},
@@ -1519,15 +2344,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1541,6 +2371,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                   "next": null,
                   "parent": [Circular],
@@ -1553,11 +2392,30 @@ initialize {
               "next": null,
               "parent": [Circular],
               "prev": Object {
-                "data": "card",
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "card",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
                 "next": [Circular],
                 "parent": [Circular],
                 "prev": null,
-                "type": "text",
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
               },
               "type": "style",
               "x-attribsNamespace": Object {},
@@ -1591,7 +2449,20 @@ initialize {
         },
         "children": Array [
           Object {
-            "data": "card",
+            "attribs": Object {
+              "class": "content",
+            },
+            "children": Array [
+              Object {
+                "data": "card",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
             "next": Object {
               "attribs": Object {},
               "children": Array [
@@ -1600,15 +2471,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1621,6 +2497,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                   "next": null,
@@ -1640,7 +2525,13 @@ initialize {
             },
             "parent": [Circular],
             "prev": null,
-            "type": "text",
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
           },
           Object {
             "attribs": Object {},
@@ -1650,15 +2541,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1672,6 +2568,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                 "next": null,
                 "parent": [Circular],
@@ -1684,11 +2589,30 @@ initialize {
             "next": null,
             "parent": [Circular],
             "prev": Object {
-              "data": "card",
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "card",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
               "next": [Circular],
               "parent": [Circular],
               "prev": null,
-              "type": "text",
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
             },
             "type": "style",
             "x-attribsNamespace": Object {},
@@ -1705,7 +2629,20 @@ initialize {
           },
           "children": Array [
             Object {
-              "data": "card",
+              "attribs": Object {
+                "class": "content",
+              },
+              "children": Array [
+                Object {
+                  "data": "card",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
               "next": Object {
                 "attribs": Object {},
                 "children": Array [
@@ -1714,15 +2651,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1735,6 +2677,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                     "next": null,
@@ -1754,7 +2705,13 @@ initialize {
               },
               "parent": [Circular],
               "prev": null,
-              "type": "text",
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
             },
             Object {
               "attribs": Object {},
@@ -1764,15 +2721,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1786,6 +2748,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                   "next": null,
                   "parent": [Circular],
@@ -1798,11 +2769,30 @@ initialize {
               "next": null,
               "parent": [Circular],
               "prev": Object {
-                "data": "card",
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "card",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
                 "next": [Circular],
                 "parent": [Circular],
                 "prev": null,
-                "type": "text",
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
               },
               "type": "style",
               "x-attribsNamespace": Object {},
@@ -1819,7 +2809,20 @@ initialize {
             },
             "children": Array [
               Object {
-                "data": "card",
+                "attribs": Object {
+                  "class": "content",
+                },
+                "children": Array [
+                  Object {
+                    "data": "card",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
                 "next": Object {
                   "attribs": Object {},
                   "children": Array [
@@ -1828,15 +2831,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1849,6 +2857,15 @@ initialize {
         
         .card :global(*:last-child) {
           margin-bottom: 0;
+        }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
         }
       ",
                       "next": null,
@@ -1868,7 +2885,13 @@ initialize {
                 },
                 "parent": [Circular],
                 "prev": null,
-                "type": "text",
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
               },
               Object {
                 "attribs": Object {},
@@ -1878,15 +2901,20 @@ initialize {
         .card {
           background: #fff;
           margin: 0;
+          padding: 0;
           width: 100%;
           transition: all .2s ease;
-          padding: 16pt 16pt;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+        }
+        
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
         }
         
         .card:hover {
@@ -1900,6 +2928,15 @@ initialize {
         .card :global(*:last-child) {
           margin-bottom: 0;
         }
+        
+        .card :global(img) {
+          width: 100%;
+        }
+        
+        .card :global(.image) {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       ",
                     "next": null,
                     "parent": [Circular],
@@ -1912,11 +2949,30 @@ initialize {
                 "next": null,
                 "parent": [Circular],
                 "prev": Object {
-                  "data": "card",
+                  "attribs": Object {
+                    "class": "content",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "card",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
                   "next": [Circular],
                   "parent": [Circular],
                   "prev": null,
-                  "type": "text",
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
                 },
                 "type": "style",
                 "x-attribsNamespace": Object {},

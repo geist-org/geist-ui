@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Spacer, Row, Col } from 'components'
+import { Card, Spacer, Row, Col, Link, Image, Text } from 'components'
 
 export const meta = {
   title: 'card',
@@ -9,7 +9,6 @@ export const meta = {
 ## Card
 
 A common container component.
-
 
 <Playground
   title="Basic"
@@ -70,6 +69,43 @@ A common container component.
 }
 `} />
 
+<Playground
+  title="With Footer"
+  scope={{ Card, Link, Spacer, Row }}
+  code={`
+<Row style={{ flexWrap: 'wrap' }} justify="space-around">
+  <Card width="330px">
+    <h4>ZEIT UI React</h4>
+    <p>Modern and minimalist React UI library.</p>
+    <Card.Footer>
+      <Link pure color target="_blank" href="https://github.com/zeit-ui/react">Visit source code on GitHub.</Link>
+    </Card.Footer>
+  </Card>
+  <Card width="330px" type="dark">
+    <h4>ZEIT UI React</h4>
+    <p>Modern and minimalist React UI library.</p>
+    <Card.Footer>
+      <Link pure target="_blank" href="https://github.com/zeit-ui/react">Visit source code on GitHub.</Link>
+    </Card.Footer>
+  </Card>
+</Row>
+`} />
+
+<Playground
+  title="With Image"
+  scope={{ Card, Link, Spacer, Text, Image }}
+  code={`
+<Card width="400px">
+  <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+   height="200" width="400" style={{ objectFit: 'cover' }} />
+  <Text h4 style={{ marginBottom: '0' }}>ZEIT UI React</Text>
+  <Text type="secondary" small>Modern and minimalist React UI library.</Text>
+  <Card.Footer>
+    <Link pure block target="_blank" href="https://github.com/zeit-ui/react">Visit source code on GitHub.</Link>
+  </Card.Footer>
+</Card>
+`} />
+
 <Attributes edit="/pages/en-us/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
@@ -78,7 +114,15 @@ A common container component.
 | **hoverable** | add effect on hover | `boolean` | - | `false` |
 | **shadow** | show shadow | `boolean` | - | `false` |
 | **type** | card type | [CardType](#cardtype) | - | `default` |
-| ... | native props | `HTMLAttributes` | `'className', ...` | - |
+| **width** | CSS width value | `string` | - | `100%` |
+| ... | native props | `HTMLAttributes` | `'id', className', ...` | - |
+
+<Attributes.Title alias="Card.Actions">Card.Footer.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **disableAutoMargin** | cancel automatic margin value | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | `'id', className', ...` | - |
 
 <Attributes.Title>CardType</Attributes.Title>
 

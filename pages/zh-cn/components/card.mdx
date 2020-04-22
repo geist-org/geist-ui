@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Row, Col } from 'components'
+import { Card, Row, Col, Link, Spacer, Text, Image } from 'components'
 
 export const meta = {
   title: '卡片 Card',
@@ -72,6 +72,44 @@ export const meta = {
 }
 `} />
 
+
+<Playground
+  title="卡片页脚"
+  scope={{ Card, Link, Spacer, Row }}
+  code={`
+<Row style={{ flexWrap: 'wrap' }} justify="space-around">
+  <Card width="330px">
+    <h4>ZEIT UI React</h4>
+    <p>现代化、极简风格的 UI 库。</p>
+    <Card.Footer>
+      <Link pure color target="_blank" href="https://github.com/zeit-ui/react">在 GitHub 上查看源码</Link>
+    </Card.Footer>
+  </Card>
+  <Card width="330px" type="dark">
+    <h4>ZEIT UI React</h4>
+    <p>现代化、极简风格的 UI 库。</p>
+    <Card.Footer>
+      <Link pure target="_blank" href="https://github.com/zeit-ui/react">在 GitHub 上查看源码</Link>
+    </Card.Footer>
+  </Card>
+</Row>
+`} />
+
+<Playground
+  title="组合图片"
+  scope={{ Card, Link, Spacer, Text, Image }}
+  code={`
+<Card width="400px">
+  <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+   height="200" width="400" style={{ objectFit: 'cover' }} />
+  <Text h4 style={{ marginBottom: '0' }}>ZEIT UI React</Text>
+  <Text type="secondary" small>现代化、极简风格的 UI 库。</Text>
+  <Card.Footer>
+    <Link pure block target="_blank" href="https://github.com/zeit-ui/react">在 GitHub 上查看源码</Link>
+  </Card.Footer>
+</Card>
+`} />
+
 <Attributes edit="/pages/zh-cn/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
@@ -80,7 +118,15 @@ export const meta = {
 | **hoverable** | 是否在悬停时增加阴影 | `boolean` | - | `false` |
 | **shadow** | 是否总是显示阴影 | `boolean` | - | `false` |
 | **type** | 卡片的类型 | [CardType](#cardtype) | - | `default` |
-| ... | 原生属性 | `HTMLAttributes` | `'className', ...` | - |
+| **width** | CSS 宽度属性 | `string` | - | `100%` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', className', ...` | - |
+
+<Attributes.Title alias="Card.Actions">Card.Footer.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **disableAutoMargin** | 取消自动设置的 Margin 值 | `boolean` | - | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', className', ...` | - |
 
 <Attributes.Title>CardType</Attributes.Title>
 
