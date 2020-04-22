@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress should be render background-color with color prop 1`] = `
+"<div class=\\"progress  \\"><div class=\\"inner\\" title=\\"59%\\"></div><progress class=\\"\\" value=\\"59\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #111;
+          width: 59%;
+        }
+      </style></div>"
+`;
+
+exports[`Progress should fixed 1`] = `
+"<div><div class=\\"progress  fixed\\"><div class=\\"inner\\" title=\\"59%\\"></div><progress class=\\"\\" value=\\"59\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: 0;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #000;
+          width: 59%;
+        }
+      </style></div><div class=\\"progress  fixed\\"><div class=\\"inner\\" title=\\"21%\\"></div><progress class=\\"\\" value=\\"21\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: 0;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #000;
+          width: 21%;
+        }
+      </style></div></div>"
+`;
+
+exports[`Progress should render correctly 1`] = `
+"<div class=\\"progress  \\"><div class=\\"inner\\" title=\\"59%\\"></div><progress class=\\"\\" value=\\"59\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #000;
+          width: 59%;
+        }
+      </style></div>"
+`;
+
+exports[`Progress should show different progress by maximum 1`] = `
+"<div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"98.33%\\"></div><progress class=\\"\\" value=\\"59\\" max=\\"60\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #000;
+          width: 98.33%;
+        }
+      </style></div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"42%\\"></div><progress class=\\"\\" value=\\"21\\" max=\\"50\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #000;
+          width: 42%;
+        }
+      </style></div></div>"
+`;
+
+exports[`Progress should work with different types 1`] = `
+"<div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"59%\\"></div><progress class=\\"\\" value=\\"59\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #666;
+          width: 59%;
+        }
+      </style></div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"21%\\"></div><progress class=\\"\\" value=\\"21\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #0070f3;
+          width: 21%;
+        }
+      </style></div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"2%\\"></div><progress class=\\"\\" value=\\"2\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #f5a623;
+          width: 2%;
+        }
+      </style></div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"1%\\"></div><progress class=\\"\\" value=\\"1\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: .625rem;
+          background-color: #eaeaea;
+          border-radius: 5px;
+        }
+        
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+        
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 5px;
+          background-color: #ff0000;
+          width: 1%;
+        }
+      </style></div></div>"
+`;
