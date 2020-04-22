@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popover should render react-node 1`] = `
+"<div class=\\"tooltip \\"><div></div><style>
+        :global(.tooltip-content.popover > .inner) {
+          padding: 8pt 0;
+          text-align: center;
+        }
+      </style><style>
+        .tooltip {
+          width: max-content;
+        }
+      </style></div>"
+`;
+
+exports[`Popover should work with different placement 1`] = `
+"<div class=\\"tooltip \\"><div></div><style>
+        :global(.tooltip-content.popover > .inner) {
+          padding: 8pt 0;
+          text-align: center;
+        }
+      </style><style>
+        .tooltip {
+          width: max-content;
+        }
+      </style></div>"
+`;
