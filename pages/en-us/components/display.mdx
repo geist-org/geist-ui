@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Display, Code, Snippet } from 'components'
+import { Display, Code, Snippet, Image } from 'components'
 
 export const meta = {
   title: 'Display',
@@ -13,13 +13,12 @@ To display important information or images in a central alignment.
 <Playground
   title="Basic"
   desc="Describe the main part with a paragraph."
-  scope={{ Display }}
+  scope={{ Display, Image }}
   code={`
   <Display shadow caption="ZEIT Now for GitHub deploying a pull request automatically.">
-    <img height="214" src="https://zeit.co/docs/static/docs/git-integrations/github-comment.png" />
+    <Image width="435" height="200" src="https://zeit.co/docs/static/docs/git-integrations/github-comment.png" />
   </Display>
 `} />
-
 
 <Playground
   title="With Code"
@@ -55,10 +54,10 @@ To display important information or images in a central alignment.
 <Playground
   title="Component Caption"
   desc="Use component on `caption` prop."
-  scope={{ Display, Code }}
+  scope={{ Display, Code, Image }}
   code={`
   <Display shadow caption={<p>A domain redirect that redirects requests made to <Code>www.zeit.rocks</Code> to <Code>zeit.rocks</Code>.</p>}>
-    <img width="650" height="305" src="https://zeit.co/docs/static/docs/custom-domains/redirecting-domains.png" />
+    <Image width="650" height="297" src="https://zeit.co/docs/static/docs/custom-domains/redirecting-domains.png" />
   </Display>
 `} />
 

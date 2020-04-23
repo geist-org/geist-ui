@@ -2,10 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import ImageSkeleton from './image.skeleton'
 import ImageBrowser from './image-browser'
+import useRealShape from '../utils/use-real-shape'
+import useCurrentState from '../utils/use-current-state'
+import useResize from '../utils/use-resize'
 
 interface Props {
   src: string
-  animation: boolean
+  disableAutoResize?: boolean
+  disableSkeleton?: boolean
   width?: number
   height?: number
   className?: string
@@ -14,7 +18,8 @@ interface Props {
 }
 
 const defaultProps = {
-  animation: true,
+  disableSkeleton: false,
+  disableAutoResize: false,
   className: '',
   scale: '100%',
   maxDelay: 3000,
@@ -24,15 +29,20 @@ type NativeAttrs = Omit<React.ImgHTMLAttributes<any>, keyof Props>
 export type ImageProps = Props & typeof defaultProps & NativeAttrs
 
 const Image: React.FC<ImageProps> = React.memo(({
-  src, width, height, animation, className, scale, maxDelay, ...props
+  src, width, height, disableSkeleton, className, scale, maxDelay,
+  disableAutoResize, ...props
 }) => {
-  const showAnimation = animation && width && height
+  const showAnimation = !disableSkeleton && width && height
+  const w = width ? `${width}px` : 'auto'
+  const h = height ? `${height}px` : 'auto'
+  
   const theme = useTheme()
   const [loading, setLoading] = useState<boolean>(true)
   const [showSkeleton, setShowSkeleton] = useState<boolean>(true)
+  const [zoomHeight, setZoomHeight, zoomHeightRef] = useCurrentState<string>(h)
   const imageRef = useRef<HTMLImageElement>(null)
-  const w = width ? `${width}px` : 'auto'
-  const h = height ? `${height}px` : 'auto'
+  const [shape, updateShape] = useRealShape(imageRef)
+  
   const imageLoaded = () => {
     if (!showAnimation) return
     setLoading(false)
@@ -56,7 +66,31 @@ const Image: React.FC<ImageProps> = React.memo(({
     }, maxDelay)
     return () => clearTimeout(timer)
   }, [loading])
-
+  
+  /**
+   * On mobile devices, the render witdth may be less than CSS width value.
+   * If the image is scaled, set the height manually.
+   * This is to ensure the aspect ratio of the image.
+   *
+   * If the image is auto width, ignore all.
+   */
+  useEffect(() => {
+    if (disableAutoResize) return
+    const notLoaded = shape.width === 0
+    const isAutoZoom = zoomHeightRef.current === 'auto'
+    if (notLoaded || !width || !height) return
+    if (shape.width < width) {
+      !isAutoZoom && setZoomHeight('auto')
+    } else {
+      isAutoZoom && setZoomHeight(h)
+    }
+  }, [shape, width])
+  
+  useResize(() => {
+    if (disableAutoResize) return
+    updateShape()
+  })
+  
   return (
     <div className={`image ${className}`}>
       {(showSkeleton && showAnimation) && <ImageSkeleton opacity={loading ? .5 : 0} />}
@@ -64,7 +98,7 @@ const Image: React.FC<ImageProps> = React.memo(({
       <style jsx>{`
         .image {
           width: ${w};
-          height: ${h};
+          height: ${zoomHeight};
           margin: 0 auto;
           position: relative;
           border-radius: ${theme.layout.radius};
