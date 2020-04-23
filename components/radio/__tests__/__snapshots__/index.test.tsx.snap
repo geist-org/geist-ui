@@ -1,0 +1,251 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio should render correctly 1`] = `
+"<div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\">Option</span><span class=\\"point\\"></span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+        
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          line-height: 1.5rem;
+          position: relative;
+        }
+        
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin-left: 1.375rem;
+          color: #000;
+          cursor: pointer;
+        }
+        
+        .name {
+          font-size: 1rem;
+          font-weight: bold;
+          user-select: none;
+        }
+        
+        .point {
+          position: absolute;
+          left: 0;
+          top: 6px;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+        }
+        
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          transform: scale(0);
+          transition: all 0.2s ease;
+          background-color: #000;
+        }
+      </style></div>"
+`;
+
+exports[`Radio should support react-node in description 1`] = `
+"<div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\">Option</span><span class=\\"point\\"></span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+        
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          line-height: 1.5rem;
+          position: relative;
+        }
+        
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin-left: 1.375rem;
+          color: #000;
+          cursor: pointer;
+        }
+        
+        .name {
+          font-size: 1rem;
+          font-weight: bold;
+          user-select: none;
+        }
+        
+        .point {
+          position: absolute;
+          left: 0;
+          top: 6px;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+        }
+        
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          transform: scale(0);
+          transition: all 0.2s ease;
+          background-color: #000;
+        }
+      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\">Option 1</span><span class=\\"\\">Description for Option1<style>
+        span {
+          color: #999;
+          font-size: .875rem;
+        }
+      </style></span><span class=\\"point\\"></span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+        
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          line-height: 1.5rem;
+          position: relative;
+        }
+        
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin-left: 1.375rem;
+          color: #000;
+          cursor: pointer;
+        }
+        
+        .name {
+          font-size: 1rem;
+          font-weight: bold;
+          user-select: none;
+        }
+        
+        .point {
+          position: absolute;
+          left: 0;
+          top: 6px;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+        }
+        
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          transform: scale(0);
+          transition: all 0.2s ease;
+          background-color: #000;
+        }
+      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\">Option 1</span><span class=\\"\\"><b>Description</b> for Option1<style>
+        span {
+          color: #999;
+          font-size: .875rem;
+        }
+      </style></span><span class=\\"point\\"></span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+        
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          line-height: 1.5rem;
+          position: relative;
+        }
+        
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin-left: 1.375rem;
+          color: #000;
+          cursor: pointer;
+        }
+        
+        .name {
+          font-size: 1rem;
+          font-weight: bold;
+          user-select: none;
+        }
+        
+        .point {
+          position: absolute;
+          left: 0;
+          top: 6px;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+        }
+        
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          height: .875rem;
+          width: .875rem;
+          border-radius: 50%;
+          transform: scale(0);
+          transition: all 0.2s ease;
+          background-color: #000;
+        }
+      </style></div></div>"
+`;
