@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import { Radio } from 'components'
 import { nativeEvent } from 'tests/utils'
 
-describe('Radio', () => {
+describe('Radio Group', () => {
   it('should render correctly', () => {
     const wrapper = mount(
       <div>
