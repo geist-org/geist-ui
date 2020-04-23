@@ -53,10 +53,10 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
 
   return (
     <>
-      <div className={className} onClick={clickHandler} {...props}>{children}</div>
+      <div className={`option ${className}`} onClick={clickHandler} {...props}>{children}</div>
   
       <style jsx>{`
-        div {
+        .option {
           display: flex;
           justify-content: flex-start;
           align-items: center;
@@ -73,17 +73,17 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
         }
         
-        div:first-of-type {
+        .option:first-of-type {
           border-top-left-radius: ${theme.layout.radius};
           border-top-right-radius: ${theme.layout.radius};
         }
         
-        div:last-of-type {
+        .option:last-of-type {
           border-bottom-left-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
         }
         
-        div:hover {
+        .option:hover {
           background-color: ${theme.palette.accents_1};
         }
       `}</style>
