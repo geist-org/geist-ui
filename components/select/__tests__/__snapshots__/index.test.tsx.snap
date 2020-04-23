@@ -1,0 +1,1014 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select should render correctly 1`] = `
+"<div><div class=\\"select \\"><span class=\\"value placeholder\\"></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1.688 * 16pt);
+            min-width: 10rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .875rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value > :global(div), .value > :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .875rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        </style></div><div class=\\"select \\"><span class=\\"value placeholder\\"></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1 * 16pt);
+            min-width: 6.5rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .75rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value > :global(div), .value > :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .75rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        </style></div><div class=\\"select \\"><span class=\\"value placeholder\\"></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1.344 * 16pt);
+            min-width: 8rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .75rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value > :global(div), .value > :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .75rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        </style></div><div class=\\"select \\"><span class=\\"value placeholder\\"></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(2 * 16pt);
+            min-width: 12.5rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: 1.225rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value > :global(div), .value > :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: 1.225rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        </style></div></div>"
+`;
+
+exports[`Select should work with different icons 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "select ",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "value placeholder",
+        },
+        "children": Array [],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1.688 * 16pt);
+            min-width: 10rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .875rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value &gt; :global(div), .value &gt; :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .875rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1.688 * 16pt);
+            min-width: 10rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .875rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value &gt; :global(div), .value &gt; :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .875rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "value placeholder",
+          },
+          "children": Array [],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Select should work with different icons 2`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "select ",
+    },
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "value placeholder",
+        },
+        "children": Array [],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "icon",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "icon",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1.688 * 16pt);
+            min-width: 10rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .875rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value &gt; :global(div), .value &gt; :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .875rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "icon",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "icon",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1.688 * 16pt);
+            min-width: 10rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .875rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value &gt; :global(div), .value &gt; :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .875rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "value placeholder",
+          },
+          "children": Array [],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1.688 * 16pt);
+            min-width: 10rem;
+            background-color: #fff;
+          }
+          
+          .select:hover {
+            border-color: #000;
+          }
+          
+          .select:hover .icon {
+            color: #000
+          }
+          
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .875rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+          
+          .value &gt; :global(div), .value &gt; :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+          
+          .placeholder {
+            color: #999;
+          }
+          
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .875rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "icon",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "icon",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": Object {
+            "attribs": Object {
+              "class": "value placeholder",
+            },
+            "children": Array [],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
