@@ -20,10 +20,9 @@ export interface RadioEvent {
 interface Props {
   checked?: boolean
   value?: string
-  id?: string
   className?: string
   disabled?: boolean
-  onChange: (e: RadioEvent) => void
+  onChange?: (e: RadioEvent) => void
 }
 
 const defaultProps = {
@@ -35,8 +34,8 @@ type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type RadioProps = Props & typeof defaultProps & NativeAttrs
 
 const Radio: React.FC<React.PropsWithChildren<RadioProps>> = React.memo(({
-  className, id: customId, checked, onChange, disabled,
-  value: radioValue, children, ...props
+  className, checked, onChange, disabled, value: radioValue,
+  children, ...props
 }) => {
   const theme = useTheme()
   const [selfChecked, setSelfChecked] = useState<boolean>(!!checked)
@@ -50,10 +49,11 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = React.memo(({
     if (radioValue === undefined) {
       useWarning('Props "value" must be deinfed if in the Radio.Group.', 'Radio')
     }
-    useEffect(() => setSelfChecked(groupValue === radioValue), [groupValue, radioValue])
+    useEffect(() => {
+      setSelfChecked(groupValue === radioValue)
+    }, [groupValue, radioValue])
   }
   
-  // const id = useMemo(() => customId || `zeit-ui-radio-${label}`, [customId, label])
   const isDisabled = useMemo(() => disabled || disabledAll, [disabled, disabledAll])
   const changeHandler = (event: React.ChangeEvent) => {
     if (isDisabled) return
@@ -72,12 +72,15 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = React.memo(({
     onChange && onChange(selfEvent)
   }
   
-  useEffect(() => setSelfChecked(!!checked), [checked])
+  useEffect(() => {
+    if (checked === undefined) return
+    setSelfChecked(!!checked)
+  }, [checked])
 
   return (
     <div className={`radio ${className}`}>
-      <label htmlFor={customId}>
-        <input type="radio" value={radioValue} id={customId}
+      <label>
+        <input type="radio" value={radioValue}
           checked={selfChecked}
           onChange={changeHandler}
           {...props} />

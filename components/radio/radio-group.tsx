@@ -4,7 +4,7 @@ import useTheme from '../styles/use-theme'
 import { RadioContext } from './radio-context'
 
 interface Props {
-  value: string
+  value?: string
   initialValue?: string
   disabled?: boolean
   onChange?: (value: string) => void
@@ -42,6 +42,7 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = React.mem
   },[disabled, selfVal])
   
   useEffect(() => {
+    if (value === undefined) return
     setSelfVal(value)
   }, [value])
 
