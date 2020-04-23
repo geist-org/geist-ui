@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Display, Code, Snippet } from 'components'
+import { Display, Code, Snippet, Image } from 'components'
 
 export const meta = {
   title: '陈列框 Display',
@@ -12,10 +12,10 @@ export const meta = {
 
 <Playground
   desc="为一张图片添加描述文本。"
-  scope={{ Display }}
+  scope={{ Display, Image }}
   code={`
   <Display shadow caption="ZEIT Now 在 PR 上的自动部署。">
-    <img height="214" src="https://zeit.co/docs/static/docs/git-integrations/github-comment.png" />
+    <Image width="435" height="200" src="https://zeit.co/docs/static/docs/git-integrations/github-comment.png" />
   </Display>
 `} />
 
@@ -54,10 +54,10 @@ export const meta = {
 <Playground
   title="组件标题"
   desc="在 `caption` 属性上使用组件表达更丰富的信息。"
-  scope={{ Display, Code }}
+  scope={{ Display, Code, Image }}
   code={`
   <Display shadow caption={<p>将域名 <Code>www.zeit.rocks</Code> 重定向至 <Code>zeit.rocks</Code>。</p>}>
-    <img width="650" height="305" src="https://zeit.co/docs/static/docs/custom-domains/redirecting-domains.png" />
+    <Image width="650" height="297" src="https://zeit.co/docs/static/docs/custom-domains/redirecting-domains.png" />
   </Display>
 `} />
 
