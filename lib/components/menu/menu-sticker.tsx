@@ -77,7 +77,7 @@ const MenuSticker = () => {
           top: 0;
           left: 0;
           right: 0;
-          z-index: 3000;
+          z-index: 901;
           background-color: ${theme.palette.background};
           box-shadow: rgba(0, 0, 0, 0.1) 0 0 15px 0;
         }
@@ -106,7 +106,7 @@ const MenuSticker = () => {
           align-items: flex-end;
           height: 100%;
           overflow: auto;
-          z-index: 1000;
+          z-index: 900;
           margin: 0 auto;
         }
         
