@@ -65,13 +65,13 @@ Display a snippet of copyable code for the command line.
   scope={{ Snippet, Spacer }}
   code={`
 <>
-  <Snippet text="yarn add @zeit-ui/react" type="success" fill width="300px" />
+  <Snippet text="yarn add @zeit-ui/react" type="success" filled width="300px" />
   <Spacer />
-  <Snippet text="yarn add @zeit-ui/react" type="warning" fill width="300px" />
+  <Snippet text="yarn add @zeit-ui/react" type="warning" filled width="300px" />
   <Spacer />
-  <Snippet text="yarn add @zeit-ui/react" type="error" fill width="300px" />
+  <Snippet text="yarn add @zeit-ui/react" type="error" filled width="300px" />
   <Spacer />
-  <Snippet text="yarn add @zeit-ui/react" type="secondary" fill width="300px" />
+  <Snippet text="yarn add @zeit-ui/react" type="secondary" filled width="300px" />
 </>
 `} />
 
@@ -82,7 +82,7 @@ Display a snippet of copyable code for the command line.
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **text** | code snippet | `string` `Array<string>` | - | - |
 | **type** | snippet types | [SnippetTypes](#snippettypes) | [SnippetTypes](#snippettypes) | `default` |
-| **fill** | filled style | `boolean` | - | `false` |
+| **filled** | filled style | `boolean` | - | `false` |
 | **width** | set CSS string | `string` | - | `initial` |
 | **copy** | function of copy button | `CopyTypes` | `'default', 'slient', 'prevent'` | `default` |
 | ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |

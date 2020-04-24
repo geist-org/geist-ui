@@ -65,13 +65,13 @@ export const meta = {
   scope={{ Snippet, Spacer }}
   code={`
 <>
-  <Snippet text="yarn add @zeit-ui/react" type="success" fill width="300px" />
+  <Snippet text="yarn add @zeit-ui/react" type="success" filled width="300px" />
   <Spacer />
-  <Snippet text="yarn add @zeit-ui/react" type="warning" fill width="300px" />
+  <Snippet text="yarn add @zeit-ui/react" type="warning" filled width="300px" />
   <Spacer />
-  <Snippet text="yarn add @zeit-ui/react" type="error" fill width="300px" />
+  <Snippet text="yarn add @zeit-ui/react" type="error" filled width="300px" />
   <Spacer />
-  <Snippet text="yarn add @zeit-ui/react" type="secondary" fill width="300px" />
+  <Snippet text="yarn add @zeit-ui/react" type="secondary" filled width="300px" />
 </>
 `} />
 
@@ -82,7 +82,7 @@ export const meta = {
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **text** | 命令文本 | `string` `Array<string>` | - | - |
 | **type** | 组件类型 | [SnippetTypes](#snippettypes) | [SnippetTypes](#snippettypes) | `default` |
-| **fill** | 填充风格的样式 | `boolean` | - | `false` |
+| **filled** | 填充风格的样式 | `boolean` | - | `false` |
 | **width** | 设置 CSS 宽度 | `string` | - | `initial` |
 | **copy** | 拷贝按钮的工作方式 | `CopyTypes` | `'default', 'slient', 'prevent'` | `default` |
 | ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
