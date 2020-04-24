@@ -32,7 +32,7 @@ const ModalTitle: React.FC<ModalTitleProps> = React.memo(({
           justify-content: center;
           align-items: center;
           word-break: break-word;
-          text-transform: uppercase;
+          text-transform: capitalize;
           color: ${theme.palette.foreground};
         }
       `}</style>

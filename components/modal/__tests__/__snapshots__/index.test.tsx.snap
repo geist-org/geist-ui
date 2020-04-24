@@ -12,7 +12,7 @@ exports[`Modal should render correctly 1`] = `
           justify-content: center;
           align-items: center;
           word-break: break-word;
-          text-transform: uppercase;
+          text-transform: capitalize;
           color: #000;
         }
       </style><p class=\\"\\">This is a modal</p><style>
@@ -108,7 +108,7 @@ exports[`Modal should render correctly 1`] = `
         }
       </style><style>
         .wrapper {
-          max-width: 90%;
+          max-width: 85vw;
           width: 26rem;
           overflow: hidden;
           display: flex;
@@ -119,6 +119,7 @@ exports[`Modal should render correctly 1`] = `
           color: #000;
           border-radius: 5px;
           padding: 16pt;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
           opacity: 0;
           transform: translate3d(0px, -40px, 0px);
           transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
@@ -156,13 +157,16 @@ exports[`Modal should render correctly 1`] = `
           height: 100vh;
           width: 100vw;
           overflow: auto;
-          z-index: 2000;
+          z-index: 1000;
         }
         
         .content {
           display: flex;
           align-items: center;
           justify-content: center;
+          position: relative;
+          z-index: 1001;
+          outline: none;
         }
         
         .offset {
@@ -180,10 +184,10 @@ exports[`Modal should render correctly 1`] = `
           width: 100%;
           height: 100%;
           opacity: 0.25;
-          background-color: #000;
+          background-color: black;
           transition: opacity .35s cubic-bezier(.4, 0, .2, 1);
           pointer-events: none;
-          z-index: -1;
+          z-index: 1000;
         }
       </style></div>"
 `;
