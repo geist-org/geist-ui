@@ -48,7 +48,7 @@ export const expressiveness: ZeitUIThemesExpressiveness = {
   shadowSmall: '0 0 0 1px #333',
   shadowMedium: '0 0 0 1px #333',
   shadowLarge: '0 0 0 1px #333',
-  portalOpacity: 0.25,
+  portalOpacity: 0.75,
 }
 
 export const layout: ZeitUIThemesLayout = {

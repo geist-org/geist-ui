@@ -48,13 +48,16 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(({
           height: 100vh;
           width: 100vw;
           overflow: auto;
-          z-index: 2000;
+          z-index: 1000;
         }
         
         .content {
           display: flex;
           align-items: center;
           justify-content: center;
+          position: relative;
+          z-index: 1001;
+          outline: none;
         }
         
         .offset {
@@ -72,10 +75,10 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(({
           width: 100%;
           height: 100%;
           opacity: ${theme.expressiveness.portalOpacity};
-          background-color: ${theme.palette.foreground};
+          background-color: black;
           transition: opacity .35s cubic-bezier(.4, 0, .2, 1);
           pointer-events: none;
-          z-index: -1;
+          z-index: 1000;
         }
       `}</style>
       </div>

@@ -28,7 +28,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = React
         {children}
         <style jsx>{`
         .wrapper {
-          max-width: 90%;
+          max-width: 85%;
           width: ${width};
           overflow: hidden;
           display: flex;
@@ -39,6 +39,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = React
           color: ${theme.palette.foreground};
           border-radius: ${theme.layout.radius};
           padding: ${theme.layout.gap};
+          box-shadow: ${theme.expressiveness.shadowLarge};
           opacity: 0;
           transform: translate3d(0px, -40px, 0px);
           transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
