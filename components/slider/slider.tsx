@@ -57,7 +57,6 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
   disabled, step, max, min, initialValue, value: customValue,
   onChange, className, showMarkers, ...props
 }) => {
-  
   const theme = useTheme()
   const [value, setValue] = useState<number>(initialValue)
   const [, setSliderWidth, sideWidthRef] = useCurrentState<number>(0)
