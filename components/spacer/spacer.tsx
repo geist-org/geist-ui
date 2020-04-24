@@ -1,6 +1,5 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useWarning from '../utils/use-warning'
 
 interface Props {
   x?: number
@@ -20,10 +19,6 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type SpacerProps = Props & typeof defaultProps & NativeAttrs
 
 export const getMargin = (num: number): string => {
-  if (num < 0) {
-    useWarning('Props "x"/"y" must be greater than or equal to 0', 'Spacer')
-    return '0'
-  }
   return `calc(${num * 15.25}pt + 1px * ${num - 1})`
 }
 
