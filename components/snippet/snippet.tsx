@@ -9,7 +9,7 @@ import useToasts from '../toast/use-toast'
 
 interface Props {
   text?: string | string[]
-  fill?: boolean
+  filled?: boolean
   width?: string
   copy?: CopyTypes
   type?: SnippetTypes
@@ -17,7 +17,7 @@ interface Props {
 }
 
 const defaultProps = {
-  fill: false,
+  filled: false,
   width: 'initial',
   copy: 'default' as CopyTypes,
   type: 'default' as SnippetTypes,
@@ -35,7 +35,7 @@ const textArrayToString = (text: string[]): string => {
 }
 
 const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = React.memo(({
-  type, fill, children, text, width, copy: copyType, className, ...props
+  type, filled, children, text, width, copy: copyType, className, ...props
 }) => {
   const theme = useTheme()
   const { copy } = useClipboard()
@@ -43,7 +43,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = React.memo(({
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
   
-  const style = useMemo(() => getStyles(type, theme.palette, fill),[type, theme.palette, fill])
+  const style = useMemo(() => getStyles(type, theme.palette, filled),[type, theme.palette, filled])
   const showCopyIcon = useMemo(() => copyType !== 'prevent', [copyType])
   const childText = useMemo<string | undefined | null>(() => {
     if (isMultiLine) return textArrayToString(text as string[])
