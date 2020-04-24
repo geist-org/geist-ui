@@ -24,7 +24,7 @@ const TabbarMobile:React.FC<Props> = ({ onClick }) => {
           top: 0;
           left: 0;
           right: 0;
-          z-index: 10000;
+          z-index: 950;
           height: 3.7rem;
           background-color: ${theme.palette.background};
           display: flex;
