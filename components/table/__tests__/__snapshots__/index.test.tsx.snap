@@ -1,0 +1,469 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should be no erros when width is too large 1`] = `
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+        thead {
+          border-collapse: separate;
+          border-spacing: 0;
+        }
+        
+        th {
+          padding: 0 8pt;
+          font-size: .75rem;
+          font-weight: normal;
+          text-align: left;
+          letter-spacing: 0;
+          vertical-align: center;
+          min-height: 2.5rem;
+          color: #666;
+          background: #fafafa;
+          border-bottom: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-radius: 0;
+        }
+        
+        th:nth-child(1) {
+          border-bottom: 1px solid #eaeaea;
+          border-left: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        
+        th:last-child {
+          border-bottom: 1px solid #eaeaea;
+          border-right: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        
+        .thead-box {
+          display: flex;
+          align-items: center;
+          -webkit-box-align: center;
+          min-height: 2.5rem;
+          text-transform: uppercase;
+        }
+      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+        tr {
+          transition: background-color .25s ease;
+        }
+        
+        tr.hover:hover {
+          background-color: #fafafa;
+        }
+
+        tr :global(td) {
+          padding: 0 8pt;
+          border-bottom: 1px solid #eaeaea;
+          color: #444;
+          font-size: 0.875rem;
+          text-align: left;
+        }
+        
+        tr :global(.cell) {
+          min-height: 3.125rem;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          flex-flow: row wrap;
+        }
+      </style></tbody><style>
+          table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+          }
+        </style></table>"
+`;
+
+exports[`Table should render children for table head 1`] = `
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\"><code>property</code></div></th></tr></thead><style>
+        thead {
+          border-collapse: separate;
+          border-spacing: 0;
+        }
+        
+        th {
+          padding: 0 8pt;
+          font-size: .75rem;
+          font-weight: normal;
+          text-align: left;
+          letter-spacing: 0;
+          vertical-align: center;
+          min-height: 2.5rem;
+          color: #666;
+          background: #fafafa;
+          border-bottom: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-radius: 0;
+        }
+        
+        th:nth-child(1) {
+          border-bottom: 1px solid #eaeaea;
+          border-left: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        
+        th:last-child {
+          border-bottom: 1px solid #eaeaea;
+          border-right: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        
+        .thead-box {
+          display: flex;
+          align-items: center;
+          -webkit-box-align: center;
+          min-height: 2.5rem;
+          text-transform: uppercase;
+        }
+      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td></tr><style>
+        tr {
+          transition: background-color .25s ease;
+        }
+        
+        tr.hover:hover {
+          background-color: #fafafa;
+        }
+
+        tr :global(td) {
+          padding: 0 8pt;
+          border-bottom: 1px solid #eaeaea;
+          color: #444;
+          font-size: 0.875rem;
+          text-align: left;
+        }
+        
+        tr :global(.cell) {
+          min-height: 3.125rem;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          flex-flow: row wrap;
+        }
+      </style></tbody><style>
+          table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+          }
+        </style></table>"
+`;
+
+exports[`Table should render correctly 1`] = `
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+        thead {
+          border-collapse: separate;
+          border-spacing: 0;
+        }
+        
+        th {
+          padding: 0 8pt;
+          font-size: .75rem;
+          font-weight: normal;
+          text-align: left;
+          letter-spacing: 0;
+          vertical-align: center;
+          min-height: 2.5rem;
+          color: #666;
+          background: #fafafa;
+          border-bottom: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-radius: 0;
+        }
+        
+        th:nth-child(1) {
+          border-bottom: 1px solid #eaeaea;
+          border-left: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        
+        th:last-child {
+          border-bottom: 1px solid #eaeaea;
+          border-right: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        
+        .thead-box {
+          display: flex;
+          align-items: center;
+          -webkit-box-align: center;
+          min-height: 2.5rem;
+          text-transform: uppercase;
+        }
+      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+        tr {
+          transition: background-color .25s ease;
+        }
+        
+        tr.hover:hover {
+          background-color: #fafafa;
+        }
+
+        tr :global(td) {
+          padding: 0 8pt;
+          border-bottom: 1px solid #eaeaea;
+          color: #444;
+          font-size: 0.875rem;
+          text-align: left;
+        }
+        
+        tr :global(.cell) {
+          min-height: 3.125rem;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          flex-flow: row wrap;
+        }
+      </style></tbody><style>
+          table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+          }
+        </style></table>"
+`;
+
+exports[`Table should set width automatically 1`] = `
+"<table class=\\"\\"><colgroup><col width=\\"25\\"><col width=\\"25\\"><col width=\\"50\\"></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+        thead {
+          border-collapse: separate;
+          border-spacing: 0;
+        }
+        
+        th {
+          padding: 0 8pt;
+          font-size: .75rem;
+          font-weight: normal;
+          text-align: left;
+          letter-spacing: 0;
+          vertical-align: center;
+          min-height: 2.5rem;
+          color: #666;
+          background: #fafafa;
+          border-bottom: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-radius: 0;
+        }
+        
+        th:nth-child(1) {
+          border-bottom: 1px solid #eaeaea;
+          border-left: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        
+        th:last-child {
+          border-bottom: 1px solid #eaeaea;
+          border-right: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        
+        .thead-box {
+          display: flex;
+          align-items: center;
+          -webkit-box-align: center;
+          min-height: 2.5rem;
+          text-transform: uppercase;
+        }
+      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+        tr {
+          transition: background-color .25s ease;
+        }
+        
+        tr.hover:hover {
+          background-color: #fafafa;
+        }
+
+        tr :global(td) {
+          padding: 0 8pt;
+          border-bottom: 1px solid #eaeaea;
+          color: #444;
+          font-size: 0.875rem;
+          text-align: left;
+        }
+        
+        tr :global(.cell) {
+          min-height: 3.125rem;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          flex-flow: row wrap;
+        }
+      </style></tbody><style>
+          table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+          }
+        </style></table>"
+`;
+
+exports[`Table should work with other components 1`] = `
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+        thead {
+          border-collapse: separate;
+          border-spacing: 0;
+        }
+        
+        th {
+          padding: 0 8pt;
+          font-size: .75rem;
+          font-weight: normal;
+          text-align: left;
+          letter-spacing: 0;
+          vertical-align: center;
+          min-height: 2.5rem;
+          color: #666;
+          background: #fafafa;
+          border-bottom: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-radius: 0;
+        }
+        
+        th:nth-child(1) {
+          border-bottom: 1px solid #eaeaea;
+          border-left: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        
+        th:last-child {
+          border-bottom: 1px solid #eaeaea;
+          border-right: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        
+        .thead-box {
+          display: flex;
+          align-items: center;
+          -webkit-box-align: center;
+          min-height: 2.5rem;
+          text-transform: uppercase;
+        }
+      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\"><code>boolean</code></div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+        tr {
+          transition: background-color .25s ease;
+        }
+        
+        tr.hover:hover {
+          background-color: #fafafa;
+        }
+
+        tr :global(td) {
+          padding: 0 8pt;
+          border-bottom: 1px solid #eaeaea;
+          color: #444;
+          font-size: 0.875rem;
+          text-align: left;
+        }
+        
+        tr :global(.cell) {
+          min-height: 3.125rem;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          flex-flow: row wrap;
+        }
+      </style></tbody><style>
+          table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+          }
+        </style></table>"
+`;
+
+exports[`Table should work without hover effect 1`] = `
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+        thead {
+          border-collapse: separate;
+          border-spacing: 0;
+        }
+        
+        th {
+          padding: 0 8pt;
+          font-size: .75rem;
+          font-weight: normal;
+          text-align: left;
+          letter-spacing: 0;
+          vertical-align: center;
+          min-height: 2.5rem;
+          color: #666;
+          background: #fafafa;
+          border-bottom: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-radius: 0;
+        }
+        
+        th:nth-child(1) {
+          border-bottom: 1px solid #eaeaea;
+          border-left: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        
+        th:last-child {
+          border-bottom: 1px solid #eaeaea;
+          border-right: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        
+        .thead-box {
+          display: flex;
+          align-items: center;
+          -webkit-box-align: center;
+          min-height: 2.5rem;
+          text-transform: uppercase;
+        }
+      </style><tbody><tr class=\\"\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+        tr {
+          transition: background-color .25s ease;
+        }
+        
+        tr.hover:hover {
+          background-color: #fafafa;
+        }
+
+        tr :global(td) {
+          padding: 0 8pt;
+          border-bottom: 1px solid #eaeaea;
+          color: #444;
+          font-size: 0.875rem;
+          text-align: left;
+        }
+        
+        tr :global(.cell) {
+          min-height: 3.125rem;
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          flex-flow: row wrap;
+        }
+      </style></tbody><style>
+          table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+          }
+        </style></table>"
+`;
