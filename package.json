@@ -15,7 +15,7 @@
     "lint": "eslint \"{components,lib}/**/*.{js,ts,tsx}\"",
     "test": "jest --config .jest.config.js --no-cache",
     "test-update": "jest --config .jest.config.js --no-cache --update-snapshot",
-    "coverage": "yarn test -w 1 --coverage",
+    "coverage": "yarn test --coverage",
     "now-build": "yarn run docs-build",
     "build": "yarn run clear && webpack --config scripts/webpack.config.js && tsc -p ./scripts",
     "release": "yarn run build && yarn publish --access public --non-interactive"
