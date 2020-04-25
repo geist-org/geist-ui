@@ -14,7 +14,7 @@ export const expectModalIsClosed = (wrapper: ReactWrapper) => {
 describe('UseModal', () => {
   it('should follow change with use-modal', async () => {
     const MockModal: React.FC<{ show?: boolean }> = ({ show }) => {
-      const { setVisible, bindings } = useModal(false)
+      const { setVisible, bindings } = useModal()
       useEffect(() => {
         if (show !== undefined) setVisible(show)
       }, [show])
