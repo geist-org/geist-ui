@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle should render correctly 1`] = `
+"<label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+        label {
+          -webkit-tap-highlight-color: transparent;
+          display: inline-block;
+          vertical-align: center;
+          white-space: nowrap;
+          user-select: none;
+          padding: 3px 0;
+          position: relative;
+          cursor: pointer;
+        }
+        
+        input {
+          overflow: hidden;
+          visibility: hidden;
+          height: 0;
+          opacity: 0;
+          width: 0;
+          position: absolute;
+          background-color: transparent;
+          z-index: -1;
+        }
+        
+        .toggle {
+          height: .875rem;
+          width: 1.75rem;
+          border-radius: .875rem;
+          transition-delay: 0.12s;
+          transition-duration: 0.2s;
+          transition-property: background, border;
+          transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          position: relative;
+          border: 1px solid transparent;
+          background-color: #eaeaea;
+          padding: 0;
+        }
+        
+        .inner {
+          width: calc(.875rem - 2px);
+          height: calc(.875rem - 2px);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 1px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0;
+          transition: left 280ms cubic-bezier(0, 0, 0.2, 1);
+          border-radius: 50%;
+          background-color: #fff;
+        }
+        
+        .disabled {
+          border-color: #eaeaea;
+          background-color: #fafafa;
+        }
+        
+        .disabled > .inner {
+          background-color: #eaeaea;
+        }
+        
+        .disabled.checked {
+          border-color: #888;
+          background-color: #888;
+        }
+        
+        .checked {
+          background-color: #0070f3;
+        }
+        
+        .checked > .inner {
+          left: calc(100% - (.875rem - 2px));
+          box-shadow: none;
+        }
+      </style></label>"
+`;
+
+exports[`Toggle should work with different sizes 1`] = `
+"<div><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+        label {
+          -webkit-tap-highlight-color: transparent;
+          display: inline-block;
+          vertical-align: center;
+          white-space: nowrap;
+          user-select: none;
+          padding: 3px 0;
+          position: relative;
+          cursor: pointer;
+        }
+        
+        input {
+          overflow: hidden;
+          visibility: hidden;
+          height: 0;
+          opacity: 0;
+          width: 0;
+          position: absolute;
+          background-color: transparent;
+          z-index: -1;
+        }
+        
+        .toggle {
+          height: .835rem;
+          width: 1.67rem;
+          border-radius: .835rem;
+          transition-delay: 0.12s;
+          transition-duration: 0.2s;
+          transition-property: background, border;
+          transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          position: relative;
+          border: 1px solid transparent;
+          background-color: #eaeaea;
+          padding: 0;
+        }
+        
+        .inner {
+          width: calc(.835rem - 2px);
+          height: calc(.835rem - 2px);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 1px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0;
+          transition: left 280ms cubic-bezier(0, 0, 0.2, 1);
+          border-radius: 50%;
+          background-color: #fff;
+        }
+        
+        .disabled {
+          border-color: #eaeaea;
+          background-color: #fafafa;
+        }
+        
+        .disabled > .inner {
+          background-color: #eaeaea;
+        }
+        
+        .disabled.checked {
+          border-color: #888;
+          background-color: #888;
+        }
+        
+        .checked {
+          background-color: #0070f3;
+        }
+        
+        .checked > .inner {
+          left: calc(100% - (.835rem - 2px));
+          box-shadow: none;
+        }
+      </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+        label {
+          -webkit-tap-highlight-color: transparent;
+          display: inline-block;
+          vertical-align: center;
+          white-space: nowrap;
+          user-select: none;
+          padding: 3px 0;
+          position: relative;
+          cursor: pointer;
+        }
+        
+        input {
+          overflow: hidden;
+          visibility: hidden;
+          height: 0;
+          opacity: 0;
+          width: 0;
+          position: absolute;
+          background-color: transparent;
+          z-index: -1;
+        }
+        
+        .toggle {
+          height: .835rem;
+          width: 1.67rem;
+          border-radius: .835rem;
+          transition-delay: 0.12s;
+          transition-duration: 0.2s;
+          transition-property: background, border;
+          transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          position: relative;
+          border: 1px solid transparent;
+          background-color: #eaeaea;
+          padding: 0;
+        }
+        
+        .inner {
+          width: calc(.835rem - 2px);
+          height: calc(.835rem - 2px);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 1px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0;
+          transition: left 280ms cubic-bezier(0, 0, 0.2, 1);
+          border-radius: 50%;
+          background-color: #fff;
+        }
+        
+        .disabled {
+          border-color: #eaeaea;
+          background-color: #fafafa;
+        }
+        
+        .disabled > .inner {
+          background-color: #eaeaea;
+        }
+        
+        .disabled.checked {
+          border-color: #888;
+          background-color: #888;
+        }
+        
+        .checked {
+          background-color: #0070f3;
+        }
+        
+        .checked > .inner {
+          left: calc(100% - (.835rem - 2px));
+          box-shadow: none;
+        }
+      </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+        label {
+          -webkit-tap-highlight-color: transparent;
+          display: inline-block;
+          vertical-align: center;
+          white-space: nowrap;
+          user-select: none;
+          padding: 3px 0;
+          position: relative;
+          cursor: pointer;
+        }
+        
+        input {
+          overflow: hidden;
+          visibility: hidden;
+          height: 0;
+          opacity: 0;
+          width: 0;
+          position: absolute;
+          background-color: transparent;
+          z-index: -1;
+        }
+        
+        .toggle {
+          height: .875rem;
+          width: 1.75rem;
+          border-radius: .875rem;
+          transition-delay: 0.12s;
+          transition-duration: 0.2s;
+          transition-property: background, border;
+          transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          position: relative;
+          border: 1px solid transparent;
+          background-color: #eaeaea;
+          padding: 0;
+        }
+        
+        .inner {
+          width: calc(.875rem - 2px);
+          height: calc(.875rem - 2px);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 1px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0;
+          transition: left 280ms cubic-bezier(0, 0, 0.2, 1);
+          border-radius: 50%;
+          background-color: #fff;
+        }
+        
+        .disabled {
+          border-color: #eaeaea;
+          background-color: #fafafa;
+        }
+        
+        .disabled > .inner {
+          background-color: #eaeaea;
+        }
+        
+        .disabled.checked {
+          border-color: #888;
+          background-color: #888;
+        }
+        
+        .checked {
+          background-color: #0070f3;
+        }
+        
+        .checked > .inner {
+          left: calc(100% - (.875rem - 2px));
+          box-shadow: none;
+        }
+      </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+        label {
+          -webkit-tap-highlight-color: transparent;
+          display: inline-block;
+          vertical-align: center;
+          white-space: nowrap;
+          user-select: none;
+          padding: 3px 0;
+          position: relative;
+          cursor: pointer;
+        }
+        
+        input {
+          overflow: hidden;
+          visibility: hidden;
+          height: 0;
+          opacity: 0;
+          width: 0;
+          position: absolute;
+          background-color: transparent;
+          z-index: -1;
+        }
+        
+        .toggle {
+          height: 1rem;
+          width: 2rem;
+          border-radius: 1rem;
+          transition-delay: 0.12s;
+          transition-duration: 0.2s;
+          transition-property: background, border;
+          transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          position: relative;
+          border: 1px solid transparent;
+          background-color: #eaeaea;
+          padding: 0;
+        }
+        
+        .inner {
+          width: calc(1rem - 2px);
+          height: calc(1rem - 2px);
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 1px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0, rgba(0, 0, 0, 0.1) 0 1px 3px 0;
+          transition: left 280ms cubic-bezier(0, 0, 0.2, 1);
+          border-radius: 50%;
+          background-color: #fff;
+        }
+        
+        .disabled {
+          border-color: #eaeaea;
+          background-color: #fafafa;
+        }
+        
+        .disabled > .inner {
+          background-color: #eaeaea;
+        }
+        
+        .disabled.checked {
+          border-color: #888;
+          background-color: #888;
+        }
+        
+        .checked {
+          background-color: #0070f3;
+        }
+        
+        .checked > .inner {
+          left: calc(100% - (1rem - 2px));
+          box-shadow: none;
+        }
+      </style></label></div>"
+`;

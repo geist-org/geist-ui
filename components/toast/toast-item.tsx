@@ -76,13 +76,17 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({
   }, [])
 
   useEffect(() => {
+    let unMount = false
     const shouldBeHide = reverseIndex > 2 || toast.willBeDestroy
-    if (!shouldBeHide) return
+    if (!shouldBeHide || unMount) return
     const timer = setTimeout(() => {
       setHide(true)
       clearTimeout(timer)
     }, 150)
-    return () => clearTimeout(timer)
+    return () => {
+      unMount = true
+      clearTimeout(timer)
+    }
   }, [reverseIndex, toast.willBeDestroy])
 
   return (
