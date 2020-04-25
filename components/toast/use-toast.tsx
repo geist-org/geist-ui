@@ -35,10 +35,13 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
     // Wait for all components to display before destroying
     // The destory means direct remove all element, whether in animation or not.
     const nextDestoryTime = delay + 500
+    /* istanbul ignore next */
     if (nextDestoryTime < maxDestoryTime.current) return
+    clearTimeout(destoryTimer.current)
     maxDestoryTime.current = nextDestoryTime
 
     destoryTimer.current = window.setTimeout(() => {
+      /* istanbul ignore next */
       updateToasts((currentToasts: Array<ToastWithID>) => {
         if (destoryStack.current.length < currentToasts.length) {
           return currentToasts
@@ -49,7 +52,6 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
       clearTimeout(destoryTimer.current)
     }, maxDestoryTime.current)
   }
-  
 
   const setToast = (toast: Toast): void => {
     const id = `toast-${getId()}`
