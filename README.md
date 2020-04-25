@@ -41,9 +41,11 @@ const Application = () => (
 
 ## Showcases
 
-- [views.show](https://docs.views.show/)
-- [tree viewer for cdn](https://cdn.unix.bio/)
+- [Article view count](https://docs.views.show/)
+- [Tree viewer for CDN](https://cdn.unix.bio/)
+- [Better social image](https://img.unix.bio/)
 - [Implement of ZEIT's Dashboard](https://github.com/ofekashery/zeit-dashboard-template)
+- [Blog of ZEIT's design](https://github.com/unix/unix.bio)
 - [Add here](https://github.com/zeit-ui/react/issues/new)
 
 <br/>
