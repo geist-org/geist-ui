@@ -18,9 +18,6 @@ const defaultProps = {
   className: '',
   passive: false,
   disabled: false,
-  onClick: ((event: ModalActionEvent) => {
-    event.close && event.close()
-  }) as (event: ModalActionEvent) => void,
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
@@ -34,9 +31,9 @@ const ModalAction: React.FC<ModalActionProps> = React.memo(({
   const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     if (disabled) return
     const actionEvent = Object.assign({}, event, {
-      close: close,
+      close,
     })
-    onClick(actionEvent)
+    onClick && onClick(actionEvent)
   }
   
   const color = useMemo(() => {
