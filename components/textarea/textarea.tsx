@@ -115,6 +115,13 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
         .disabled > textarea {
           cursor: not-allowed;
         }
+        
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:active,
+        textarea:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0 30px ${theme.palette.background} inset !important;
+        }
       `}</style>
     </div>
   )

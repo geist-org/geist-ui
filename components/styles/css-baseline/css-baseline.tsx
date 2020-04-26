@@ -31,7 +31,12 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
           padding: 0;
           min-height: 100%;
           position: relative;
+          overflow-x: hidden;
           font-family: ${theme.font.sans};
+        }
+        
+        #__next {
+          overflow-x: hidden;
         }
         
         *, *:before, *:after {
@@ -114,7 +119,6 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         }
         
         h1, h2, h3, h4, h5, h6 {
-          font-family: ${theme.font.sans};
           color: inherit;
           margin: 0 0 .625rem 0;
         }
@@ -156,10 +160,6 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
           font-weight: 600;
         }
         
-        input-webkit-autofill {
-          box-shadow: 0 0 0 100px var(--geist-background) inset;
-        }
-        
         button, input, select, textarea {
           font-family: inherit;
           font-size: inherit;
@@ -167,7 +167,7 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
           color: inherit;
           margin: 0;
         }
-        
+
         button:focus, input:focus, select:focus, textarea:focus {
           outline: none;
         }
