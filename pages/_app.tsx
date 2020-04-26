@@ -88,10 +88,6 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             color: ${theme.palette.accents_3};
           }
           
-          body {
-            overflow-x: hidden;
-          }
-          
           body::-webkit-scrollbar {
             width: 0;
             background-color: ${theme.palette.accents_1};
