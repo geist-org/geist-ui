@@ -1,84 +1,83 @@
-import React from 'react';
-import { mount, ReactWrapper } from 'enzyme';
-import { Tooltip, Button, ZEITUIProvider } from 'components';
-
-import { ThemeParam } from '../../styles/theme-provider/theme-provider';
-import { nativeEvent, updateWrapper } from 'tests/utils';
-import { act } from 'react-dom/test-utils';
+import React from 'react'
+import { mount, ReactWrapper } from 'enzyme'
+import { Button, Tooltip, ZEITUIProvider } from 'components'
+import { nativeEvent, updateWrapper } from 'tests/utils'
+import { act } from 'react-dom/test-utils'
 
 const expectTooltipIsShow = (wrapper: ReactWrapper) => {
-  expect(wrapper.find('.inner').length).not.toBe(0);
-};
+  expect(wrapper.find('.inner').length)
+    .not.toBe(0)
+}
 
 const expectTooltipIsHidden = (wrapper: ReactWrapper) => {
-  expect(wrapper.find('.inner').length).toBe(0);
-};
+  expect(wrapper.find('.inner').length)
+    .toBe(0)
+}
 
 describe('Tooltip', () => {
   it('should render correctly', async () => {
-    const myThme = {
-      type: 'dark',
-    } as ThemeParam;
     const wrapper = mount(
-      <ZEITUIProvider theme={myThme}>
+      <ZEITUIProvider theme={{ type: 'dark' }}>
         <Tooltip text={<p id='test'>custom-content</p>}>some tips</Tooltip>
-      </ZEITUIProvider>
-    );
-
-    expectTooltipIsHidden(wrapper);
-
-    wrapper.find('.tooltip').simulate('mouseEnter', nativeEvent);
-    await updateWrapper(wrapper, 150);
-    wrapper.find('#test').simulate('click', nativeEvent);
-    expectTooltipIsShow(wrapper);
-    await updateWrapper(wrapper, 150);
-    wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent);
-    await updateWrapper(wrapper, 150);
-    expectTooltipIsHidden(wrapper);
-  });
-
+      </ZEITUIProvider>,
+    )
+    
+    expectTooltipIsHidden(wrapper)
+    
+    wrapper.find('.tooltip').simulate('mouseEnter', nativeEvent)
+    await updateWrapper(wrapper, 150)
+    wrapper.find('#test').simulate('click', nativeEvent)
+    expectTooltipIsShow(wrapper)
+    
+    await updateWrapper(wrapper, 150)
+    wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent)
+    await updateWrapper(wrapper, 150)
+    expectTooltipIsHidden(wrapper)
+  })
+  
   it('should render text when hover it', async () => {
     const wrapper = mount(
       <div>
         <Tooltip text='some text'>some tips</Tooltip>
       </div>
-    );
-    wrapper.find('.tooltip').simulate('mouseEnter', nativeEvent);
-    await updateWrapper(wrapper, 150);
-    expectTooltipIsShow(wrapper);
-
-    wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent);
-    await updateWrapper(wrapper, 150);
-    expectTooltipIsHidden(wrapper);
-  });
-
+    )
+    wrapper.find('.tooltip').simulate('mouseEnter', nativeEvent)
+    await updateWrapper(wrapper, 150)
+    expectTooltipIsShow(wrapper)
+    
+    wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent)
+    await updateWrapper(wrapper, 150)
+    expectTooltipIsHidden(wrapper)
+  })
+  
   it('should render react-node when click it', async () => {
     const wrapper = mount(
       <Tooltip text={<p id='test'>custom-content</p>} trigger='click'>
         <span>click me</span>
       </Tooltip>
-    );
-    wrapper.find('.tooltip').simulate('click', nativeEvent);
-    await updateWrapper(wrapper, 150);
-    expectTooltipIsShow(wrapper);
-
-    const testNode = wrapper.find('#test');
-    expect(testNode.length).not.toBe(0);
-    expect(testNode.text()).toContain('custom-content');
+    )
+    wrapper.find('.tooltip')
+      .simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 150)
+    expectTooltipIsShow(wrapper)
+    
+    const testNode = wrapper.find('#test')
+    expect(testNode.length).not.toBe(0)
+    expect(testNode.text()).toContain('custom-content')
     act(() => {
       document.body.dispatchEvent(
         new MouseEvent('click', {
           view: window,
           bubbles: true,
           cancelable: true,
-        })
-      );
-    });
-
-    await updateWrapper(wrapper, 150);
-    expectTooltipIsHidden(wrapper);
-  });
-
+        }),
+      )
+    })
+    
+    await updateWrapper(wrapper, 150)
+    expectTooltipIsHidden(wrapper)
+  })
+  
   it('should render inner components', async () => {
     const wrapper = mount(
       <Tooltip text='some text' type='dark'>
@@ -86,10 +85,11 @@ describe('Tooltip', () => {
           button
         </Button>
       </Tooltip>
-    );
-    expect(wrapper.find('#test').length).not.toBe(0);
-  });
-
+    )
+    expect(wrapper.find('#test').length)
+      .not.toBe(0)
+  })
+  
   it('should render correctly by visible', async () => {
     const wrapper = mount(
       <div>
@@ -97,20 +97,20 @@ describe('Tooltip', () => {
           some tips
         </Tooltip>
       </div>
-    );
-
-    await updateWrapper(wrapper, 150);
-    expect(wrapper.find('#visible').length).toBe(1);
-  });
-
+    )
+    
+    await updateWrapper(wrapper, 150)
+    expect(wrapper.find('#visible').length).toBe(1)
+  })
+  
   it('should render correctly by using wrong placement', async () => {
     const wrapper = mount(
       <div>
-        <Tooltip text={<p id='initialVisible'>custom-content</p>} initialVisible={true} placement={'test' as any}>
+        <Tooltip text={<p id='initial-visible'>custom-content</p>} initialVisible={true} placement={'test' as any}>
           some tips
         </Tooltip>
       </div>
-    );
-    expect(wrapper.find('#initialVisible').length).toBe(1);
-  });
-});
+    )
+    expect(wrapper.find('#initial-visible').length).toBe(1)
+  })
+})
