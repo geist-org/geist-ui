@@ -2,7 +2,7 @@
 <img align="center" height="370" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png">
 </p>
 
-> @zeit-ui/react -- Modern and minimalist React UI library, originating from ZEIT Design.
+> @zeit-ui/react -- Modern and minimalist React UI library, originating from Vercel's design.
 
 <br/>
 
