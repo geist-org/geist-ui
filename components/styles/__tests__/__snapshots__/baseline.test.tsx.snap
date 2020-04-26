@@ -26,7 +26,12 @@ initialize {
           padding: 0;
           min-height: 100%;
           position: relative;
+          overflow-x: hidden;
           font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
+        }
+        
+        #__next {
+          overflow-x: hidden;
         }
         
         *, *:before, *:after {
@@ -51,7 +56,7 @@ initialize {
         small {
           margin: 0;
           line-height: 1.5;
-          font-size: 14px;
+          font-size: .875rem;
         }
         
         b {
@@ -109,7 +114,6 @@ initialize {
         }
         
         h1, h2, h3, h4, h5, h6 {
-          font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
           color: inherit;
           margin: 0 0 .625rem 0;
         }
@@ -151,10 +155,6 @@ initialize {
           font-weight: 600;
         }
         
-        input-webkit-autofill {
-          box-shadow: 0 0 0 100px var(--geist-background) inset;
-        }
-        
         button, input, select, textarea {
           font-family: inherit;
           font-size: inherit;
@@ -162,7 +162,7 @@ initialize {
           color: inherit;
           margin: 0;
         }
-        
+
         button:focus, input:focus, select:focus, textarea:focus {
           outline: none;
         }
@@ -318,7 +318,12 @@ initialize {
           padding: 0;
           min-height: 100%;
           position: relative;
+          overflow-x: hidden;
           font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
+        }
+        
+        #__next {
+          overflow-x: hidden;
         }
         
         *, *:before, *:after {
@@ -343,7 +348,7 @@ initialize {
         small {
           margin: 0;
           line-height: 1.5;
-          font-size: 14px;
+          font-size: .875rem;
         }
         
         b {
@@ -401,7 +406,6 @@ initialize {
         }
         
         h1, h2, h3, h4, h5, h6 {
-          font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
           color: inherit;
           margin: 0 0 .625rem 0;
         }
@@ -443,10 +447,6 @@ initialize {
           font-weight: 600;
         }
         
-        input-webkit-autofill {
-          box-shadow: 0 0 0 100px var(--geist-background) inset;
-        }
-        
         button, input, select, textarea {
           font-family: inherit;
           font-size: inherit;
@@ -454,7 +454,7 @@ initialize {
           color: inherit;
           margin: 0;
         }
-        
+
         button:focus, input:focus, select:focus, textarea:focus {
           outline: none;
         }

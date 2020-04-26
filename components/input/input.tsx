@@ -215,6 +215,13 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
         ::placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder {
           color: ${theme.palette.accents_3};
         }
+        
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:active,
+        input:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0 30px ${theme.palette.background} inset !important;
+        }
       `}</style>
     </div>
   )
