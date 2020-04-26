@@ -5,6 +5,25 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
+  "description": "Modern and minimalist React UI library.",
+  "homepage": "https://react.zeit-ui.co",
+  "bugs": {
+    "url": "https://github.com/zeit-ui/react/issues/new/choose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeit-ui/react"
+  },
+  "keywords": [
+    "zeit",
+    "zeit ui",
+    "vercel",
+    "vercel ui",
+    "component",
+    "components",
+    "react components",
+    "react ui"
+  ],
   "scripts": {
     "dev": "yarn docs-collect && next dev",
     "docs-build": "yarn docs-collect && next build",
