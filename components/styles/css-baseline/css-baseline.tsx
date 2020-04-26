@@ -61,7 +61,7 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         small {
           margin: 0;
           line-height: 1.5;
-          font-size: 14px;
+          font-size: .875rem;
         }
         
         b {
