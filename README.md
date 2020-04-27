@@ -2,7 +2,14 @@
 <img align="center" height="370" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png">
 </p>
 
-> @zeit-ui/react -- Modern and minimalist React UI library, originating from Vercel's design.
+<p align="center">
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/zeit-ui/react?style=for-the-badge&labelColor=000000">
+<img alt="CircleCI" src="https://img.shields.io/circleci/build/github/zeit-ui/react?style=for-the-badge&labelColor=000000">
+<img alt="npm (scoped)" src="https://img.shields.io/npm/v/@zeit-ui/react?style=for-the-badge&labelColor=000000">
+</p>
+  
+> Modern and minimalist React UI library, originating from Vercel's design.
+
 
 <br/>
 
