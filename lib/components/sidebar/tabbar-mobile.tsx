@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, useTheme } from 'components'
-import ToggleIcon from '../icons/toggle'
+import SlidersIcon from '@zeit-ui/react-icons/sliders'
 
 interface Props {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
@@ -15,7 +15,7 @@ const TabbarMobile:React.FC<Props> = ({ onClick }) => {
   return (
     <div className="tabbar">
       <Button className="toggle" auto type="abort" onClick={handler}>
-        <ToggleIcon color={theme.palette.accents_7} />
+        <SlidersIcon size={16} />
       </Button>
       <span>ZEIT-UI React</span>
       <style jsx>{`
@@ -42,6 +42,7 @@ const TabbarMobile:React.FC<Props> = ({ onClick }) => {
           display: inline-flex;
           justify-content: center;
           align-items: center;
+          color: ${theme.palette.accents_6};
         }
         
         span {

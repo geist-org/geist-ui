@@ -5,8 +5,10 @@ import useClipboard from 'components/utils/use-clipboard'
 import { useTheme, useToasts } from 'components'
 import { useConfigs } from '../../config-context'
 import makeCodeTheme from './code-theme'
-import RightIcon from 'lib/components/icons/right'
-import CopyIcon from 'lib/components/icons/copy'
+import RightIcon from '@zeit-ui/react-icons/chevronRight'
+import CopyIcon from '@zeit-ui/react-icons/copy'
+// import RightIcon from 'lib/components/icons/right'
+// import CopyIcon from 'lib/components/icons/copy'
 import Title from './title'
 
 interface Props {
@@ -49,13 +51,15 @@ const editor = (code: string, copy: Function, isChinese: boolean) => {
       <details open={visible}>
         <summary onClick={clickHandler}>
           <div>
-            <RightIcon active={visible} />
+            <span className="right-icon">
+              <RightIcon size={16} />
+            </span>
             <span>{isChinese ? '编辑代码' : 'Code Editor'}</span>
           </div>
           <div>
             {visible && (
               <span className="copy" onClick={copyHandler} title={isChinese ? '拷贝代码' : 'Copy Code'}>
-                <CopyIcon />
+                <CopyIcon size={18} />
               </span>
             )}
           </div>
@@ -115,9 +119,22 @@ const editor = (code: string, copy: Function, isChinese: boolean) => {
           padding: ${theme.layout.gapHalf};
         }
         
+        .right-icon {
+          transition: all .2s ease;
+          transform: rotate(${visible ? 90 : 0}deg);
+          display: inline-flex;
+          align-items: center;
+        }
+        
         .copy {
           display: inline-flex;
           align-items: center;
+          color: ${theme.palette.accents_4};
+          transition: color .2s ease;
+        }
+        
+        .copy:hover {
+          color: ${theme.palette.accents_6};
         }
       `}</style>
     </div>
