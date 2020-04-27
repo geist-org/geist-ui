@@ -31,7 +31,7 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
   const currentPath = useMemo(() => makeChildPath(name, parentPath), [])
   const clickHandler = (event: React.MouseEvent) => {
     stopPropagation(event)
-    onFileClick(currentPath)
+    onFileClick && onFileClick(currentPath)
   }
 
   return (

@@ -25,18 +25,18 @@ const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = Rea
   const [selfVal, setSelfVal] = useState<string>(value)
   const [items, setItems, ref] = useCurrentState<FieldItem[]>([])
   
-  const register = useCallback((newItem: FieldItem) => {
+  const register = (newItem: FieldItem) => {
     const hasItem = ref.current.find(item => item.value === newItem.value)
     if (hasItem) {
       useWarning('The "value" of each "Fieldset" must be unique.', 'Fieldset')
     }
     setItems([...ref.current, newItem])
-  }, [])
+  }
 
   const providerValue = useMemo(() => ({
     currentValue: selfVal,
     inGroup: true,
-    register: () => register,
+    register,
   }), [selfVal])
 
   const clickHandle = useCallback((nextValue: string) => {

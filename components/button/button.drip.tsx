@@ -4,14 +4,13 @@ import withDefaults from '../utils/with-defaults'
 interface Props {
   x: number
   y: number
-  color?: string
-  onCompleted?: Function
+  onCompleted: () => void
+  color: string
 }
 
 const defaultProps = {
   x: 0,
   y: 0,
-  onCompleted: () => {},
 }
 
 export type ButtonDrip = Props & typeof defaultProps

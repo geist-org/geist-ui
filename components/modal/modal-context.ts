@@ -1,11 +1,10 @@
 import React from 'react'
 
 export interface ModalConfig {
-  close: () => void
+  close?: () => void
 }
 
 const defaultContext = {
-  close: () => {},
 }
 
 export const ModalContext = React.createContext<ModalConfig>(defaultContext)

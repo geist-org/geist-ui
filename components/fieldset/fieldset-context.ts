@@ -6,7 +6,7 @@ export interface FieldItem {
 }
 
 export interface FieldsetConfig {
-  register: (item: FieldItem) => void
+  register?: (item: FieldItem) => void
   currentValue: string
   inGroup: boolean
 }
@@ -14,7 +14,6 @@ export interface FieldsetConfig {
 const defaultContext = {
   inGroup: false,
   currentValue: '',
-  register: () => {},
 }
 
 export const FieldsetContext = React.createContext<FieldsetConfig>(defaultContext)
