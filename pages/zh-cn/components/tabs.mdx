@@ -1,9 +1,8 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Tabs, Spacer, Link, Text, Button, Code, useTabs } from 'components'
 import { useState } from 'react'
-import GithubIcon from 'lib/components/icons/github'
-import ZeitIcon from 'lib/components/icons/zeit'
-import ReactIcon from 'lib/components/icons/react'
+import TwitterIcon from '@zeit-ui/react-icons/twitter'
+import TwitchIcon from '@zeit-ui/react-icons/twitch'
 
 export const meta = {
   title: '选项卡 Tabs',
@@ -37,14 +36,14 @@ export const meta = {
 <Playground
   title="图标"
   desc="在选项卡的标签上显示图标组件。"
-  scope={{ Tabs, ReactIcon, ZeitIcon, Link, Text }}
+  scope={{ Tabs, TwitterIcon, TwitchIcon, Link, Text }}
   code={`
 <Tabs initialValue="1">
-  <Tabs.Item label={<><ZeitIcon /> ZEIT UI</>} value="1">
-    <Text>你好，这是非官方的 ZEIT UI 库。</Text>
+  <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
+    <Text>你好，这是我们在 Twitch 的最新直播。</Text>
     <Link href="https://github.com/zeit-ui/react" pure color rel="nofollow" target="_blank">点击这里浏览 GitHub 项目</Link>
   </Tabs.Item>
-  <Tabs.Item label={<><ReactIcon/> React Components </>} value="2">
+  <Tabs.Item label={<><TwitterIcon /> Twitter </>} value="2">
     <Text>这个组件看起来还不错。</Text>
   </Tabs.Item>
 </Tabs>

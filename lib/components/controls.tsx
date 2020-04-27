@@ -3,8 +3,8 @@ import { Button, useTheme, Select, Spacer } from 'components'
 import { useConfigs } from 'lib/config-context'
 import useLocale from 'lib/use-locale'
 import Router, { useRouter } from 'next/router'
-import MoonIcon from './icons/moon'
-import SunIcon from './icons/sun'
+import MoonIcon from '@zeit-ui/react-icons/moon'
+import SunIcon from '@zeit-ui/react-icons/sun'
 
 const Controls: React.FC<{}> = React.memo(({
 }) => {
@@ -47,12 +47,12 @@ const Controls: React.FC<{}> = React.memo(({
           title={isChinese ? '切换主题' : 'Switch Themes'}>
           <Select.Option value="light">
             <div className="select-content">
-              <SunIcon width={16} height={16} /> {isChinese ? '明亮' : 'Light'}
+              <SunIcon size={14} /> {isChinese ? '明亮' : 'Light'}
             </div>
           </Select.Option>
           <Select.Option value="dark">
             <div className="select-content">
-              <MoonIcon width={16} height={16} /> {isChinese ? '暗黑' : 'Dark'}
+              <MoonIcon size={14} /> {isChinese ? '暗黑' : 'Dark'}
             </div>
           </Select.Option>
         </Select>
