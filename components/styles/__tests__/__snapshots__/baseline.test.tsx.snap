@@ -248,6 +248,23 @@ initialize {
           list-style: none;
         }
         
+        blockquote {
+          padding: calc(.667 * 16pt) 16pt;
+          color: #666;
+          background-color: #fafafa;
+          border-radius: 5px;
+          margin: 1.5rem 0;
+          border: 1px solid #eaeaea;
+        }
+        
+        blockquote :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        blockquote :global(*:last-child) {
+          margin-bottom: 0;
+        }
+        
         ::selection {
           background-color: #79ffe1;
           color: #000;
@@ -539,6 +556,23 @@ initialize {
         summary:focus, summary:hover, summary:active {
           outline: none;
           list-style: none;
+        }
+        
+        blockquote {
+          padding: calc(.667 * 16pt) 16pt;
+          color: #888;
+          background-color: #111;
+          border-radius: 5px;
+          margin: 1.5rem 0;
+          border: 1px solid #333;
+        }
+        
+        blockquote :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        blockquote :global(*:last-child) {
+          margin-bottom: 0;
         }
         
         ::selection {
