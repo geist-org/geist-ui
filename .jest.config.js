@@ -19,6 +19,7 @@ module.exports = {
     '!components/**/styles.{ts,tsx}',
     '!components/styles/*',
     '!components/index.ts',
+    '!components/utils/*',
   ],
   
   "moduleNameMapper": {
