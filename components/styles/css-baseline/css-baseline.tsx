@@ -19,6 +19,7 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
         
         html {
           font-size: 16px;
+          --zeit-icons-background: ${theme.palette.background};
         }
         
         body {
