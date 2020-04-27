@@ -4,20 +4,6 @@ import useTheme from '../styles/use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { ZeitUIThemesPalette } from '../styles/themes'
 
-export const ComponentTypes: Array<keyof JSX.IntrinsicElements> = [
-  'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small',
-]
-
-export const ComponentModifiedElements: { [key: string]: string } = {
-  bold: 'b',
-  b: 'b',
-  italic: 'i',
-  i: 'i',
-  desc: 'desc',
-  description: 'desc',
-  del: 'del',
-}
-
 export interface Props {
   tag: keyof JSX.IntrinsicElements
   type?: NormalTypes

@@ -62,6 +62,38 @@ Display text using well-defined typographic styles.
 `} />
 
 <Playground
+  title="Blockquote"
+  scope={{ Text }}
+  code={`
+<Text blockquote>
+  Our mission is to make cloud computing accessible to everyone.
+</Text>
+`} />
+
+<Playground
+  title="Types"
+  scope={{ Text }}
+  code={`
+<>
+  <Text type="success">
+    Our mission is to make cloud computing accessible to everyone.
+  </Text>
+  <Text type="warning">
+    Our mission is to make cloud computing accessible to everyone.
+  </Text>
+  <Text type="secondary">
+    Our mission is to make cloud computing accessible to everyone.
+  </Text>
+  <Text type="error">
+    Our mission is to make cloud computing accessible to everyone.
+  </Text>
+  <Text style={{ color: '#ccc' }}>
+    Our mission is to make cloud computing accessible to everyone.
+  </Text>
+</>
+`} />
+
+<Playground
   title="Compose"
   desc="Effect of multiple `Text` stacks"
   scope={{ Text }}
@@ -91,8 +123,19 @@ Display text using well-defined typographic styles.
 | **i** | component name | `boolean` | - | `false` |
 | **em** | component name | `boolean` | - | `false` |
 | **b** | component name | `boolean` | - | `false` |
-| **type** | text type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **blockquote** | component name | `boolean` | - | `false` |
+| **type** | text type | `NormalTypes` | [TextTypes](#texttypes) | `default` |
 | ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>TextTypes</Attributes.Title>
+
+```ts
+type TextTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+```
 
 </Attributes>
 

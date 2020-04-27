@@ -253,6 +253,23 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = React.memo(({
           list-style: none;
         }
         
+        blockquote {
+          padding: calc(.667 * ${theme.layout.gap}) ${theme.layout.gap};
+          color: ${theme.palette.accents_5};
+          background-color: ${theme.palette.accents_1};
+          border-radius: ${theme.layout.radius};
+          margin: 1.5rem 0;
+          border: 1px solid ${theme.palette.border};
+        }
+        
+        blockquote :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        blockquote :global(*:last-child) {
+          margin-bottom: 0;
+        }
+        
         ::selection {
           background-color: ${theme.palette.selection};
           color: ${theme.palette.foreground};
