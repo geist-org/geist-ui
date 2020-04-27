@@ -31,7 +31,7 @@ const ModalAction: React.FC<ModalActionProps> = React.memo(({
   const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     if (disabled) return
     const actionEvent = Object.assign({}, event, {
-      close,
+      close: () => close && close(),
     })
     onClick && onClick(actionEvent)
   }

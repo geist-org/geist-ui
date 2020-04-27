@@ -1,13 +1,12 @@
 import React from 'react'
 
 export interface TreeConfig {
-  onFileClick: (path: string) => void
+  onFileClick?: (path: string) => void
   initialExpand: boolean
   isImperative: boolean
 }
 
 const defaultContext = {
-  onFileClick: () => {},
   initialExpand: false,
   isImperative: false,
 }

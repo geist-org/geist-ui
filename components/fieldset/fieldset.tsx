@@ -47,8 +47,7 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
     }
     
     useEffect(() => {
-      const r: any = register({ value, label })
-      r({ value, label })
+      register && register({ value, label })
     }, [])
     
     useEffect(() => {
