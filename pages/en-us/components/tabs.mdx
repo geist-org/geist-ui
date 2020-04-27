@@ -1,9 +1,8 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Tabs, Spacer, Link, Text, Button, Code, useTabs } from 'components'
 import { useState } from 'react'
-import GithubIcon from 'lib/components/icons/github'
-import ZeitIcon from 'lib/components/icons/zeit'
-import ReactIcon from 'lib/components/icons/react'
+import TwitterIcon from '@zeit-ui/react-icons/twitter'
+import TwitchIcon from '@zeit-ui/react-icons/twitch'
 
 export const meta = {
   title: 'tabs',
@@ -37,14 +36,14 @@ Display tab content.
 <Playground
   title="With Icon"
   desc="Show icon component on label button."
-  scope={{ Tabs, ReactIcon, ZeitIcon, Link, Text }}
+  scope={{ Tabs, TwitchIcon, TwitterIcon, Link, Text }}
   code={`
 <Tabs initialValue="1">
-  <Tabs.Item label={<><ZeitIcon /> ZEIT UI</>} value="1">
-    <Text>Hello, this is the unofficial ZEIT UI Library.</Text>
+  <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
+    <Text>Hello, this is our live broadcast on Twitch.</Text>
     <Link href="https://github.com/zeit-ui/react" color rel="nofollow" target="_blank">Click here to visit GitHub repo.</Link>
   </Tabs.Item>
-  <Tabs.Item label={<><ReactIcon/> React Components </>} value="2">
+  <Tabs.Item label={<><TwitterIcon/> Twitter </>} value="2">
     <Text>The Components of React looks very cool.</Text>
   </Tabs.Item>
 </Tabs>
