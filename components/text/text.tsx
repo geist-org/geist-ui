@@ -19,6 +19,7 @@ interface Props {
   em?: boolean
   blockquote?: boolean
   className?: string
+  size?: string | number
   type?: NormalTypes
 }
 
@@ -48,19 +49,23 @@ export type TextProps = Props & typeof defaultProps & NativeAttrs
 
 type TextRenderableElements = Array<keyof JSX.IntrinsicElements>
 
-const getModifierChild = (tags: TextRenderableElements, children: ReactNode) => {
+const getModifierChild = (
+  tags: TextRenderableElements,
+  children: ReactNode,
+  size?: string | number
+) => {
   if (!tags.length) return children
   const nextTag = tags.slice(1, tags.length)
   return (
-    <TextChild tag={tags[0]}>
-      {getModifierChild(nextTag, children)}
+    <TextChild tag={tags[0]} size={size}>
+      {getModifierChild(nextTag, children, size)}
     </TextChild>
   )
 }
 
 const Text: React.FC<React.PropsWithChildren<TextProps>> = React.memo(({
   h1, h2, h3, h4, h5, h6, p, b, small, i, span, del, em, blockquote,
-  children, className, ...props
+  size, children, className, ...props
 }) => {
   const elements: ElementMap = { h1, h2, h3, h4, h5, h6, p, blockquote }
   const inlineElements: ElementMap = { span, small, b, em, i, del }
@@ -90,11 +95,11 @@ const Text: React.FC<React.PropsWithChildren<TextProps>> = React.memo(({
 
   const modifers = useMemo(() => {
     if (!renderableChildElements.length) return children
-    return getModifierChild(renderableChildElements, children)
-  }, [renderableChildElements, children])
+    return getModifierChild(renderableChildElements, children, size)
+  }, [renderableChildElements, children, size])
 
   return (
-    <TextChild className={className} tag={tag} {...props}>{modifers}</TextChild>
+    <TextChild className={className} tag={tag} size={size} {...props}>{modifers}</TextChild>
   )
 })
 
