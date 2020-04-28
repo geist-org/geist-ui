@@ -9,7 +9,7 @@ initialize {
     "children": Array [
       Object {
         "attribs": Object {
-          "class": "content",
+          "class": "content ",
         },
         "children": Array [
           Object {
@@ -82,7 +82,38 @@ initialize {
                   ],
                   "name": "style",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
+                  "next": Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "style",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
                   "parent": [Circular],
                   "prev": [Circular],
                   "type": "style",
@@ -170,7 +201,38 @@ initialize {
                 ],
                 "name": "style",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": null,
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
                 "parent": [Circular],
                 "prev": [Circular],
                 "type": "style",
@@ -252,7 +314,38 @@ initialize {
               ],
               "name": "style",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": null,
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
               "parent": [Circular],
               "prev": [Circular],
               "type": "style",
@@ -340,7 +433,38 @@ initialize {
             ],
             "name": "style",
             "namespace": "http://www.w3.org/1999/xhtml",
-            "next": null,
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
             "parent": [Circular],
             "prev": Object {
               "attribs": Object {
@@ -419,6 +543,140 @@ initialize {
               "x-attribsPrefix": Object {
                 "class": undefined,
               },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        p {
+          font-size: .875rem;
+          line-height: 1.6;
+          margin: 8pt 0;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "",
+                },
+                "children": Array [
+                  Object {
+                    "data": "subtitle",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "p",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        h4 {
+          font-size: 1.25rem;
+          line-height: 1.5;
+          margin: 0;
+          display: inline-flex;
+          word-break: break-word;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {
+                      "class": "",
+                    },
+                    "children": Array [
+                      Object {
+                        "data": "title",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "h4",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
             },
             "type": "style",
             "x-attribsNamespace": Object {},
@@ -535,6 +793,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -673,6 +932,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -801,6 +1061,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -926,6 +1187,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -1061,6 +1323,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -1212,10 +1475,6 @@ initialize {
           overflow: hidden;
           display: block;
         }
-        
-        .content {
-          padding: 16pt;
-        }
       ",
                 "next": null,
                 "parent": [Circular],
@@ -1360,6 +1619,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -1498,6 +1758,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -1626,6 +1887,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -1751,6 +2013,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -1886,6 +2149,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -2037,10 +2301,6 @@ initialize {
           overflow: hidden;
           display: block;
         }
-        
-        .content {
-          padding: 16pt;
-        }
       ",
               "next": null,
               "parent": [Circular],
@@ -2060,7 +2320,7 @@ initialize {
         "parent": [Circular],
         "prev": Object {
           "attribs": Object {
-            "class": "content",
+            "class": "content ",
           },
           "children": Array [
             Object {
@@ -2133,7 +2393,38 @@ initialize {
                     ],
                     "name": "style",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
+                    "next": Object {
+                      "attribs": Object {},
+                      "children": Array [
+                        Object {
+                          "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "style",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "style",
+                      "x-attribsNamespace": Object {},
+                      "x-attribsPrefix": Object {},
+                    },
                     "parent": [Circular],
                     "prev": [Circular],
                     "type": "style",
@@ -2221,7 +2512,38 @@ initialize {
                   ],
                   "name": "style",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
+                  "next": Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "style",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
                   "parent": [Circular],
                   "prev": [Circular],
                   "type": "style",
@@ -2303,7 +2625,38 @@ initialize {
                 ],
                 "name": "style",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": null,
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
                 "parent": [Circular],
                 "prev": [Circular],
                 "type": "style",
@@ -2391,7 +2744,38 @@ initialize {
               ],
               "name": "style",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": null,
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
               "parent": [Circular],
               "prev": Object {
                 "attribs": Object {
@@ -2475,6 +2859,140 @@ initialize {
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        p {
+          font-size: .875rem;
+          line-height: 1.6;
+          margin: 8pt 0;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {
+                    "class": "",
+                  },
+                  "children": Array [
+                    Object {
+                      "data": "subtitle",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "p",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "
+        h4 {
+          font-size: 1.25rem;
+          line-height: 1.5;
+          margin: 0;
+          display: inline-flex;
+          word-break: break-word;
+        }
+      ",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": Object {
+                      "attribs": Object {
+                        "class": "",
+                      },
+                      "children": Array [
+                        Object {
+                          "data": "title",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "h4",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "class": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "class": undefined,
+                      },
+                    },
+                    "type": "style",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "class": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "class": undefined,
+                  },
+                },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
           ],
           "name": "div",
           "namespace": "http://www.w3.org/1999/xhtml",
@@ -2508,10 +3026,6 @@ initialize {
           border-radius: 5px;
           overflow: hidden;
           display: block;
-        }
-        
-        .content {
-          padding: 16pt;
         }
       ",
             "next": null,
@@ -2632,6 +3146,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -2770,6 +3285,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -2898,6 +3414,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -3023,6 +3540,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -3158,6 +3676,7 @@ initialize {
           color: #444;
           padding: 8pt 16pt;
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       ",
@@ -3301,7 +3820,7 @@ initialize {
           "parent": [Circular],
           "prev": Object {
             "attribs": Object {
-              "class": "content",
+              "class": "content ",
             },
             "children": Array [
               Object {
@@ -3374,7 +3893,38 @@ initialize {
                       ],
                       "name": "style",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": null,
+                      "next": Object {
+                        "attribs": Object {},
+                        "children": Array [
+                          Object {
+                            "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "text",
+                          },
+                        ],
+                        "name": "style",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": [Circular],
+                        "type": "style",
+                        "x-attribsNamespace": Object {},
+                        "x-attribsPrefix": Object {},
+                      },
                       "parent": [Circular],
                       "prev": [Circular],
                       "type": "style",
@@ -3462,7 +4012,38 @@ initialize {
                     ],
                     "name": "style",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
+                    "next": Object {
+                      "attribs": Object {},
+                      "children": Array [
+                        Object {
+                          "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "style",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": [Circular],
+                      "type": "style",
+                      "x-attribsNamespace": Object {},
+                      "x-attribsPrefix": Object {},
+                    },
                     "parent": [Circular],
                     "prev": [Circular],
                     "type": "style",
@@ -3544,7 +4125,38 @@ initialize {
                   ],
                   "name": "style",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
+                  "next": Object {
+                    "attribs": Object {},
+                    "children": Array [
+                      Object {
+                        "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": [Circular],
+                    "type": "style",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
                   "parent": [Circular],
                   "prev": [Circular],
                   "type": "style",
@@ -3632,7 +4244,38 @@ initialize {
                 ],
                 "name": "style",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": null,
+                "next": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": [Circular],
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
                 "parent": [Circular],
                 "prev": Object {
                   "attribs": Object {
@@ -3711,6 +4354,140 @@ initialize {
                   "x-attribsPrefix": Object {
                     "class": undefined,
                   },
+                },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .content {
+          padding: 16pt;
+        }
+        
+        .content :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content :global(*:last-child) {
+          margin-bottom: 0;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": Object {
+                  "attribs": Object {},
+                  "children": Array [
+                    Object {
+                      "data": "
+        p {
+          font-size: .875rem;
+          line-height: 1.6;
+          margin: 8pt 0;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": [Circular],
+                  "parent": [Circular],
+                  "prev": Object {
+                    "attribs": Object {
+                      "class": "",
+                    },
+                    "children": Array [
+                      Object {
+                        "data": "subtitle",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "p",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": [Circular],
+                    "parent": [Circular],
+                    "prev": Object {
+                      "attribs": Object {},
+                      "children": Array [
+                        Object {
+                          "data": "
+        h4 {
+          font-size: 1.25rem;
+          line-height: 1.5;
+          margin: 0;
+          display: inline-flex;
+          word-break: break-word;
+        }
+      ",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": null,
+                          "type": "text",
+                        },
+                      ],
+                      "name": "style",
+                      "namespace": "http://www.w3.org/1999/xhtml",
+                      "next": [Circular],
+                      "parent": [Circular],
+                      "prev": Object {
+                        "attribs": Object {
+                          "class": "",
+                        },
+                        "children": Array [
+                          Object {
+                            "data": "title",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "text",
+                          },
+                        ],
+                        "name": "h4",
+                        "namespace": "http://www.w3.org/1999/xhtml",
+                        "next": [Circular],
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "tag",
+                        "x-attribsNamespace": Object {
+                          "class": undefined,
+                        },
+                        "x-attribsPrefix": Object {
+                          "class": undefined,
+                        },
+                      },
+                      "type": "style",
+                      "x-attribsNamespace": Object {},
+                      "x-attribsPrefix": Object {},
+                    },
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "class": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "class": undefined,
+                    },
+                  },
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
                 },
                 "type": "style",
                 "x-attribsNamespace": Object {},
