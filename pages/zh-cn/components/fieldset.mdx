@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Fieldset, Button, Text } from 'components'
+import { Card, Fieldset, Button, Text, Divider } from 'components'
 
 export const meta = {
   title: '控件组 Fieldset',
@@ -49,7 +49,7 @@ export const meta = {
 
 <Playground
   title="选项卡"
-  desc="同时展示多个组件组"
+  desc="同时展示多个组件组。"
   scope={{ Fieldset, Button }}
   code={`
 () => {
@@ -91,6 +91,27 @@ export const meta = {
 }
 `} />
 
+<Playground
+  title="组合分割线"
+  desc="使用 `Fieldset.Content` 与其他组件组合成不同布局。"
+  scope={{ Fieldset, Divider }}
+  code={`
+<Fieldset>
+  <Fieldset.Content style={{ paddingTop: '10pt', paddingBottom: '10pt' }}>
+    <h4>预备知识</h4>
+  </Fieldset.Content>
+  <Divider y={0} />
+  <Fieldset.Content>
+    <Fieldset.Title>若知道 HTML 和 CSS 的基本知识会对理解内容大有裨益。</Fieldset.Title>
+    <p>若想深入理解这个单元的内容, 你必须能够以自己的能力较好地学完之前的几个章节。
+    这几部分涉及到了许多简单的API的使用，如果没有它们我们将很难做一些实际的事情。</p>
+  </Fieldset.Content>
+  <Fieldset.Footer>
+    <small>客户端 Web API</small>
+  </Fieldset.Footer>
+</Fieldset>
+`} />
+
 <Attributes edit="/pages/zh-cn/components/fieldset.mdx">
 <Attributes.Title>Fieldset.Props</Attributes.Title>
 
@@ -101,6 +122,12 @@ export const meta = {
 | **title** | 控件组的标题 | `ReactNode` / `string` | - | - |
 | **subtitle** | 副标题 | `ReactNode` / `string` | - | - |
 | ... | 原生属性 | `FieldsetHTMLAttributes` | `'name', 'className', ...` | - |
+
+<Attributes.Title alias="Fieldset.Body">Fieldset.Content.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | 原生属性 | `HTMLAttributes` | - | - |
 
 <Attributes.Title>Fieldset.Footer.Props</Attributes.Title>
 

@@ -35,6 +35,7 @@ const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = R
           color: ${theme.palette.accents_6};
           padding: ${theme.layout.gapHalf} ${theme.layout.gap};
           font-size: .875rem;
+          min-height: 2.875rem;
           box-sizing: border-box;
         }
       `}</style>
