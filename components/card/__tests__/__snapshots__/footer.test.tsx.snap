@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card Footer should render correctly 1`] = `
-"<div class=\\"card \\"><div class=\\"content\\"><p>card</p></div><footer class=\\"auto-margin \\">footer<style>
+"<div class=\\"card \\"><div class=\\"content \\"><p>card</p><style>
+        .content {
+          width: 100%;
+          padding: 16pt 16pt;
+        }
+      </style></div><footer class=\\"auto-margin \\">footer<style>
         footer {
           padding: 8pt 16pt;
           display: flex;
@@ -34,11 +39,6 @@ exports[`Card Footer should render correctly 1`] = `
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
-        }
-        
-        .content {
-          width: 100%;
-          padding: 16pt 16pt;
         }
         
         .card:hover {

@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Row, Col, Link, Spacer, Text, Image } from 'components'
+import { Card, Row, Col, Link, Spacer, Text, Image, Divider, Code } from 'components'
 
 export const meta = {
   title: '卡片 Card',
@@ -110,6 +110,23 @@ export const meta = {
 </Card>
 `} />
 
+<Playground
+  title="组合分割线"
+  desc="使用分割线展示不同类型的内容。"
+  scope={{ Card, Text, Divider, Code }}
+  code={`
+<Card width="400px">
+  <Card.Content>
+    <Text b>语法描述</Text>
+  </Card.Content>
+  <Divider y={0} />
+  <Card.Content>
+    <Text>Object 构造函数为给定值创建一个对象包装器，返回一个与给定值对应类型的对象。</Text>
+    <Text>当以非构造函数形式被调用时，Object 等同于 <Code>new Object()</Code>.</Text>
+  </Card.Content>
+</Card>
+`} />
+
 <Attributes edit="/pages/zh-cn/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
@@ -119,6 +136,12 @@ export const meta = {
 | **shadow** | 是否总是显示阴影 | `boolean` | - | `false` |
 | **type** | 卡片的类型 | [CardType](#cardtype) | - | `default` |
 | **width** | CSS 宽度属性 | `string` | - | `100%` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', className', ...` | - |
+
+<Attributes.Title alias="Card.Body">Card.Content.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
 | ... | 原生属性 | `HTMLAttributes` | `'id', className', ...` | - |
 
 <Attributes.Title alias="Card.Actions">Card.Footer.Props</Attributes.Title>

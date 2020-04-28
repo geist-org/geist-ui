@@ -3,8 +3,9 @@ import useTheme from '../styles/use-theme'
 import { CardTypes } from '../utils/prop-types'
 import { getStyles } from './styles'
 import CardFooter from './card-footer'
+import CardContent from './card-content'
 import Image from '../image'
-import { pickChild } from '../utils/collections'
+import { hasChild, pickChild } from '../utils/collections'
 
 interface Props {
   hoverable?: boolean
@@ -40,16 +41,15 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = React.memo(({
   
   const [withoutFooterChildren, footerChildren] = pickChild(children, CardFooter)
   const [withoutImageChildren, imageChildren] = pickChild(withoutFooterChildren, Image)
-  
+  const hasContent = hasChild(withoutImageChildren, CardContent)
   
   return (
     <div className={`card ${className}`} {...props}>
       {imageChildren}
-      <div className="content">
-        {withoutImageChildren}
-      </div>
+      {hasContent ? withoutImageChildren : (
+        <CardContent>{withoutImageChildren}</CardContent>
+      )}
       {footerChildren}
-      
       <style jsx>{`
         .card {
           background: ${theme.palette.background};
@@ -63,11 +63,6 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = React.memo(({
           color: ${color};
           background-color: ${bgColor};
           border: 1px solid ${borderColor};
-        }
-        
-        .content {
-          width: 100%;
-          padding: ${theme.layout.gap} ${theme.layout.gap};
         }
         
         .card:hover {
@@ -98,6 +93,8 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = React.memo(({
 type CardComponent<P = {}> = React.FC<P> & {
   Footer: typeof CardFooter
   Actions: typeof CardFooter
+  Content: typeof CardContent
+  Body: typeof CardContent
 }
 
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs

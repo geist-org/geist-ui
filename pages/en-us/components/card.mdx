@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Spacer, Row, Col, Link, Image, Text } from 'components'
+import { Card, Spacer, Row, Col, Link, Image, Text, Divider, Code } from 'components'
 
 export const meta = {
   title: 'card',
@@ -106,6 +106,23 @@ A common container component.
 </Card>
 `} />
 
+<Playground
+  title="With Divider"
+  desc="Show different types of content using `Divider`"
+  scope={{ Card, Text, Divider, Code }}
+  code={`
+<Card width="400px">
+  <Card.Content>
+    <Text b>Description</Text>
+  </Card.Content>
+  <Divider y={0} />
+  <Card.Content>
+    <Text>The Object constructor creates an object wrapper for the given value.</Text>
+    <Text>When called in a non-constructor context, Object behaves identically to <Code>new Object()</Code>.</Text>
+  </Card.Content>
+</Card>
+`} />
+
 <Attributes edit="/pages/en-us/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
@@ -115,6 +132,12 @@ A common container component.
 | **shadow** | show shadow | `boolean` | - | `false` |
 | **type** | card type | [CardType](#cardtype) | - | `default` |
 | **width** | CSS width value | `string` | - | `100%` |
+| ... | native props | `HTMLAttributes` | `'id', className', ...` | - |
+
+<Attributes.Title alias="Card.Body">Card.Content.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
 | ... | native props | `HTMLAttributes` | `'id', className', ...` | - |
 
 <Attributes.Title alias="Card.Actions">Card.Footer.Props</Attributes.Title>

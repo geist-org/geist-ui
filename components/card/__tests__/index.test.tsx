@@ -45,4 +45,10 @@ describe('Card', () => {
     expect(wrapper).toMatchSnapshot()
   })
   
+  it('the component Card.Content should be injected automatically', () => {
+    const card = mount(<Card>test-value</Card>)
+    const content = mount(<Card><Card.Content>test-value</Card.Content></Card>)
+    expect(card.html()).toEqual(content.html())
+  })
+  
 })
