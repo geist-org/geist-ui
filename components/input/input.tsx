@@ -1,47 +1,13 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import InputLabel from './input-label'
 import InputBlockLabel from './input-block-label'
 import InputIcon from './input-icon'
 import InputClearIcon from './input-icon-clear'
 import Textarea from '../textarea/textarea'
+import InputPassword from './password'
 import { getSizes, getColors } from './styles'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
-
-interface Props {
-  value?: string
-  initialValue?: string
-  placeholder?: string
-  size?: NormalSizes
-  status?: NormalTypes
-  readOnly?: boolean
-  disabled?: boolean
-  label?: string
-  labelRight?: string
-  icon?: React.ReactNode
-  iconRight?: React.ReactNode
-  width?: string
-  className?: string
-  clearable?: boolean
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
-  onClearClick?: (e: React.MouseEvent<HTMLDivElement>) => void
-  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
-  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
-  autoComplete: string
-}
-
-const defaultProps = {
-  disabled: false,
-  readOnly: false,
-  clearable: false,
-  width: 'initial',
-  size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
-  autoComplete: 'off',
-  className: '',
-  placeholder: '',
-  initialValue: '',
-}
+import { Props, defaultProps } from './input-props'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & typeof defaultProps & NativeAttrs
@@ -57,14 +23,16 @@ const simulateChangeEvent = (
   }
 }
 
-const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
-  placeholder, label, labelRight, size, status, disabled,
-  icon, iconRight, initialValue, onChange, readOnly, value,
-  onClearClick, clearable, width, className, onBlur, onFocus,
-  autoComplete, children, ...props
-}) => {
-  const ref = useRef<HTMLInputElement>(null)
+const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputProps>>(({
+  label, labelRight, size, status, icon, iconRight, iconClickable, onIconClick,
+  initialValue, onChange, readOnly, value, onClearClick, clearable, width,
+  className, onBlur, onFocus, autoComplete, placeholder, children, disabled,
+  ...props
+}, ref: React.Ref<HTMLInputElement | null>) => {
   const theme = useTheme()
+  const inputRef = useRef<HTMLInputElement>(null)
+  useImperativeHandle(ref, () => inputRef.current)
+
   const [selfValue, setSelfValue] = useState<string>(initialValue)
   const [hover, setHover] = useState<boolean>(false)
   const { heightRatio, fontSize } = useMemo(() => getSizes(size),[size])
@@ -86,17 +54,18 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
     setSelfValue(event.target.value)
     onChange && onChange(event)
   }
-
+  
   const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     setSelfValue('')
     onClearClick && onClearClick(event)
-    if (!ref.current) return
+    if (!inputRef.current) return
     
-    const changeEvent = simulateChangeEvent(ref.current, event)
+    const changeEvent = simulateChangeEvent(inputRef.current, event)
     changeEvent.target.value = ''
     onChange && onChange(changeEvent)
+    inputRef.current.focus()
   }
-  
+
   const focusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
     setHover(true)
     onFocus && onFocus(e)
@@ -105,20 +74,30 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
     setHover(false)
     onBlur && onBlur(e)
   }
-
+  
+  const iconClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (disabled) return
+    onIconClick && onIconClick(e)
+  }
+  const iconProps = useMemo(() => ({
+    ratio: heightRatio,
+    clickable: iconClickable,
+    onClick: iconClickHandler,
+  }), [heightRatio, iconClickable])
+  
   useEffect(() => {
     if (value === undefined) return
     setSelfValue(value)
   }, [value])
-
+  
   return (
     <div className="with-label">
       {children && <InputBlockLabel>{children}</InputBlockLabel>}
       <div className={`input-container ${className}`}>
         {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
         <div className={`input-wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${labelClasses}`}>
-          {icon && <InputIcon icon={icon} ratio={heightRatio} />}
-          <input type="text" ref={ref}
+          {icon && <InputIcon icon={icon} {...iconProps} />}
+          <input type="text" ref={inputRef}
             className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
             value={selfValue}
             placeholder={placeholder}
@@ -135,7 +114,7 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
             heightRatio={heightRatio}
             disabled={disabled || readOnly}
             onClick={clearHandler} />}
-          {iconRight && <InputIcon icon={iconRight} ratio={heightRatio} />}
+          {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
         </div>
         {labelRight && <InputLabel fontSize={fontSize} isRight={true}>{labelRight}</InputLabel>}
       </div>
@@ -225,10 +204,11 @@ const Input: React.FC<React.PropsWithChildren<InputProps>> = ({
       `}</style>
     </div>
   )
-}
+})
 
-type InputComponent<P = {}> = React.FC<P> & {
+type InputComponent<P = {}> = React.ForwardRefExoticComponent<P> & {
   Textarea: typeof Textarea
+  Password: typeof InputPassword
 }
 
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
