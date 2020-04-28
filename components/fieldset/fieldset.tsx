@@ -1,9 +1,10 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useMemo, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import FieldsetTitle from './fieldset-title'
 import FieldsetSubtitle from './fieldset-subtitle'
 import FieldsetFooter from './fieldset-footer'
 import FieldsetGroup from './fieldset-group'
+import FieldsetContent from './fieldset-content'
 import { hasChild, pickChild } from '../utils/collections'
 import { useFieldset } from './fieldset-context'
 import useWarning from '../utils/use-warning'
@@ -34,9 +35,11 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
   const theme = useTheme()
   const { inGroup, currentValue, register } = useFieldset()
   const [hidden, setHidden] = useState<boolean>(inGroup)
-  const hasTitle = hasChild(children, FieldsetTitle)
-  const hasSubtitle = hasChild(children, FieldsetSubtitle)
+  
   const [withoutFooterChildren, FooterChildren] = pickChild(children, FieldsetFooter)
+  const hasTitle = hasChild(withoutFooterChildren, FieldsetTitle)
+  const hasSubtitle = hasChild(withoutFooterChildren, FieldsetSubtitle)
+  const hasContent = hasChild(withoutFooterChildren, FieldsetContent)
   
   if (inGroup) {
     if (!label) {
@@ -59,13 +62,23 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
     }, [currentValue])
   }
   
+  const content = useMemo(() => (
+    <>
+      {withoutFooterChildren}
+      {(!hasTitle && title) && (
+        <FieldsetTitle>{title}</FieldsetTitle>
+      )}
+      {(!hasSubtitle && subtitle) && (
+        <FieldsetSubtitle>{subtitle}</FieldsetSubtitle>
+      )}
+    </>
+  ), [withoutFooterChildren, hasTitle, hasSubtitle, title, subtitle])
+  
   return (
     <div className={`fieldset ${className}`} {...props}>
-      <div className="content">
-        {withoutFooterChildren}
-        {!hasTitle && <FieldsetTitle>{title}</FieldsetTitle>}
-        {!hasSubtitle && <FieldsetSubtitle>{subtitle}</FieldsetSubtitle>}
-      </div>
+      {hasContent ? content : (
+        <FieldsetContent>{content}</FieldsetContent>
+      )}
       {FooterChildren && FooterChildren}
       <style jsx>{`
         .fieldset {
@@ -74,10 +87,6 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
           border-radius: ${theme.layout.radius};
           overflow: hidden;
           display: ${hidden ? 'none' : 'block'};
-        }
-        
-        .content {
-          padding: ${theme.layout.gap};
         }
       `}</style>
     </div>
@@ -91,6 +100,8 @@ type FieldsetComponent<P = {}> = React.FC<P> & {
   Subtitle: typeof FieldsetSubtitle
   Footer: typeof FieldsetFooter
   Group: typeof FieldsetGroup
+  Content: typeof FieldsetContent
+  Body: typeof FieldsetContent
 }
 
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
