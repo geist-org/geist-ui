@@ -65,11 +65,6 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = React.memo(({
           border: 1px solid ${borderColor};
         }
         
-        .content {
-          width: 100%;
-          padding: ${theme.layout.gap} ${theme.layout.gap};
-        }
-        
         .card:hover {
           box-shadow: ${hoverShadow};
         }
