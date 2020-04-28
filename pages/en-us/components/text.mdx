@@ -94,6 +94,19 @@ Display text using well-defined typographic styles.
 `} />
 
 <Playground
+  title="Sizes"
+  scope={{ Text }}
+  code={`
+<>
+  <Text size={12}>Font Size: 12px;</Text>
+  <Text size={14}>Font Size: 14px;</Text>
+  <Text size="100%">Font Size: 100%;</Text>
+  <Text size="1.25rem">Font Size: 1.25rem;</Text>
+  <Text size="2em">Font Size: 2em;</Text>
+</>
+`} />
+
+<Playground
   title="Compose"
   desc="Effect of multiple `Text` stacks"
   scope={{ Text }}
@@ -124,6 +137,7 @@ Display text using well-defined typographic styles.
 | **em** | component name | `boolean` | - | `false` |
 | **b** | component name | `boolean` | - | `false` |
 | **blockquote** | component name | `boolean` | - | `false` |
+| **size** | size of text | `string` / `number` | - | follow elements |
 | **type** | text type | `NormalTypes` | [TextTypes](#texttypes) | `default` |
 | ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
 

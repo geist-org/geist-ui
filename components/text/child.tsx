@@ -7,6 +7,7 @@ import { ZeitUIThemesPalette } from '../styles/themes'
 export interface Props {
   tag: keyof JSX.IntrinsicElements
   type?: NormalTypes
+  size?: string | number
   className?: ''
 }
 
@@ -31,7 +32,7 @@ type NativeAttrs = Omit<React.DetailsHTMLAttributes<any>, keyof Props>
 export type TextChildProps = Props & typeof defaultProps & NativeAttrs
 
 const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = React.memo(({
-  children, tag, className, type, ...props
+  children, tag, className, type, size, ...props
 }) => {
   const theme = useTheme()
   const Component = tag
@@ -39,12 +40,25 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = React.memo(
     () => getTypeColor(type, theme.palette),
     [type, theme.palette],
   )
+  const fontSize = useMemo<string>(() => {
+    if (!size) return 'inherit'
+    if (typeof size === 'number') return `${size}px`
+    return size
+  }, [size])
+  
   return (
     <>
-      <Component className={className} {...props}>{children}</Component>
+      <Component className={`${size ? 'custom-size' : ''} ${className}`}
+        {...props}>
+        {children}
+      </Component>
       <style jsx>{`
         ${tag} {
           color: ${color};
+        }
+        
+        .custom-size {
+          font-size: ${fontSize};
         }
       `}</style>
     </>

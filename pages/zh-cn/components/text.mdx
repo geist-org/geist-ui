@@ -118,6 +118,19 @@ export const meta = {
 </>
 `} />
 
+<Playground
+  title="字体大小"
+  scope={{ Text }}
+  code={`
+<>
+  <Text size={12}>Font Size: 12px;</Text>
+  <Text size={14}>Font Size: 14px;</Text>
+  <Text size="100%">Font Size: 100%;</Text>
+  <Text size="1.25rem">Font Size: 1.25rem;</Text>
+  <Text size="2em">Font Size: 2em;</Text>
+</>
+`} />
+
 <Attributes edit="/pages/zh-cn/components/text.mdx">
 <Attributes.Title>Text.Props</Attributes.Title>
 
@@ -132,6 +145,7 @@ export const meta = {
 | **em** | 渲染的组件名 | `boolean` | - | `false` |
 | **b** | 渲染的组件名 | `boolean` | - | `false` |
 | **blockquote** | 渲染的组件名 | `boolean` | - | `false` |
+| **size** | 手动设置文字大小 | `string` / `number` | - | 跟随元素变化 |
 | **type** | 文字类型 | `NormalTypes` | [TextTypes](#texttypes) | `default` |
 | ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
 
