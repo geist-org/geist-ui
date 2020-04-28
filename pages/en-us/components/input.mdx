@@ -118,8 +118,15 @@ Retrieve text input from a user.
   scope={{ Input }}
   code={`
 <>
-  <Input clearable initialValue="The Evil Rabbit" />
+  <Input clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
 </>
+`} />
+
+<Playground
+  title="Password"
+  scope={{ Input }}
+  code={`
+<Input.Password initialValue="123456abc" />
 `} />
 
 <Playground
@@ -169,18 +176,46 @@ Retrieve text input from a user.
 | **value** | input value | `string` | - | - |
 | **initialValue** | initial value | `string` | - | - |
 | **placeholder** | placeholder | `string` | - | - |
-| **size** | input size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
-| **status** | current status | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size** | input size | `NormalSizes` | [InputSizes](#inputsizes) | `medium` |
+| **status** | current status | `NormalTypes` | [InputStatus](#inputstatus) | `default` |
 | **readOnly** | native attr | `boolean` | - | `false` |
 | **disabled** | disable input | `boolean` | - | `false` |
 | **clearable** | show clear icon | `boolean` | - | `false` |
 | **label** | text label for input | `string` | - | - |
-| **icon** | icon for input | `React.ReactNode` | - | - |
 | **labelRight** | text label at right for input | `string` | - | - |
+| **icon** | icon for input | `React.ReactNode` | - | - |
 | **iconRight** | icon at right for input | `React.ReactNode` | - | - |
+| **iconClickable** | icons are clickable | `boolean` | - | `false` |
+| **onIconClick** | click icon event | `(e: React.ChangeEvent) => void` | - | - |
 | **onChange** | change event | `(e: React.ChangeEvent) => void` | - | - |
 | **onClearClick** | clear icon event | `(e: React.MouseEvent) => void` | - | - |
 | ... | native props | `InputHTMLAttributes` | `'alt', 'type', 'className', ...` | - |
+
+<Attributes.Title>Input.Password.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **hideToggle** | hide toggle icon | `boolean` | - | `false` |
+| ... | input props | `Input.Props` | [Input.Props](#input.props) | - |
+
+<Attributes.Title>InputSizes</Attributes.Title>
+
+```ts
+type InputSizes = 'mini'
+  | 'small'
+  | 'medium'
+  | 'large'
+```
+
+<Attributes.Title>InputStatus</Attributes.Title>
+
+```ts
+type InputStatus = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+```
 
 <Attributes.Title>useInput</Attributes.Title>
 
