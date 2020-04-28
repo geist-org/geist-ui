@@ -122,4 +122,22 @@ describe('Input', () => {
     input.simulate('blur')
     expect(blur).toHaveBeenCalled()
   })
+  
+  it('should trigger icon event', () => {
+    const click = jest.fn()
+    const wrapper = mount(
+      <Input icon={<span id="test-icon">icon</span>} onIconClick={click} iconClickable />
+    )
+    wrapper.find('#test-icon').simulate('click', nativeEvent)
+    expect(click).toHaveBeenCalled()
+  })
+  
+  it('should ignore icon event when input disabled', () => {
+    const click = jest.fn()
+    const wrapper = mount(
+      <Input icon={<span id="test-icon">icon</span>} onIconClick={click} iconClickable disabled />
+    )
+    wrapper.find('#test-icon').simulate('click', nativeEvent)
+    expect(click).not.toHaveBeenCalled()
+  })
 })

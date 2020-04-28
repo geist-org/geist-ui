@@ -24,8 +24,8 @@ const InputPassword = React.forwardRef<HTMLInputElement, React.PropsWithChildren
   useImperativeHandle(ref, () => inputRef.current)
   
   const iconClickHandler = () => {
-    if (hideToggle) return
     setVisible(v => !v)
+    /* istanbul ignore next */
     if (inputRef && inputRef.current) {
       inputRef.current.focus()
     }

@@ -58,6 +58,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
   const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     setSelfValue('')
     onClearClick && onClearClick(event)
+    /* istanbul ignore next */
     if (!inputRef.current) return
     
     const changeEvent = simulateChangeEvent(inputRef.current, event)
