@@ -97,7 +97,7 @@ const getAddressInput = (
   </div>
 )
 
-const ImageBrowser = React.memo(React.forwardRef<HTMLDivElement, React.PropsWithChildren<ImageBrowserProps>>(({
+const ImageBrowser = React.forwardRef<HTMLDivElement, React.PropsWithChildren<ImageBrowserProps>>(({
   url, title, children, showFullLink, invert, className, ...props
 }, ref: React.Ref<HTMLDivElement>) => {
   const theme = useTheme()
@@ -185,6 +185,6 @@ const ImageBrowser = React.memo(React.forwardRef<HTMLDivElement, React.PropsWith
       `}</style>
     </div>
   )
-}))
+})
 
 export default withDefaults(ImageBrowser, defaultProps)

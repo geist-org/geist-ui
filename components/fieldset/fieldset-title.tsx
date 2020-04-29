@@ -12,7 +12,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type FieldsetTitleProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetTitle: React.FC<FieldsetTitleProps> = React.memo(({
+const FieldsetTitle: React.FC<FieldsetTitleProps> = ({
   className, children, ...props
 }) => {
   return (
@@ -29,6 +29,8 @@ const FieldsetTitle: React.FC<FieldsetTitleProps> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(FieldsetTitle, defaultProps)
+const MemoFieldsetTitle = React.memo(FieldsetTitle)
+
+export default withDefaults(MemoFieldsetTitle, defaultProps)

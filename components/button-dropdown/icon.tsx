@@ -5,7 +5,7 @@ interface Props {
   height?: string
 }
 
-const ButtonDropdownIcon: React.FC<Props> = React.memo(({
+const ButtonDropdownIcon: React.FC<Props> = ({
   color, height,
 }) => {
   return (
@@ -20,6 +20,8 @@ const ButtonDropdownIcon: React.FC<Props> = React.memo(({
       `}</style>
     </svg>
   )
-})
+}
 
-export default ButtonDropdownIcon
+const MemoButtonDropdownIcon = React.memo(ButtonDropdownIcon)
+
+export default MemoButtonDropdownIcon

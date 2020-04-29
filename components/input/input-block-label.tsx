@@ -4,7 +4,7 @@ import useTheme from '../styles/use-theme'
 export interface InputBlockLabelLabel {
 }
 
-const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> = React.memo(({
+const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> = ({
   children,
 }) => {
   const theme = useTheme()
@@ -33,6 +33,8 @@ const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> =
       `}</style>
     </label>
   )
-})
+}
 
-export default InputBlockLabel
+const MemoInputBlockLabel = React.memo(InputBlockLabel)
+
+export default MemoInputBlockLabel

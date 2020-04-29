@@ -1,7 +1,7 @@
 import React from 'react'
 import useTheme from '../styles/use-theme'
 
-const ModalActions: React.FC<React.PropsWithChildren<{}>> = React.memo(({
+const ModalActions: React.FC<React.PropsWithChildren<{}>> = ({
   children, ...props
 }) => {
   const theme = useTheme()
@@ -10,7 +10,6 @@ const ModalActions: React.FC<React.PropsWithChildren<{}>> = React.memo(({
       <div />
       <footer {...props}>
         {children}
-        
       </footer>
       <style jsx>{`
         footer {
@@ -37,6 +36,8 @@ const ModalActions: React.FC<React.PropsWithChildren<{}>> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default ModalActions
+const MemoModalActions = React.memo(ModalActions)
+
+export default MemoModalActions

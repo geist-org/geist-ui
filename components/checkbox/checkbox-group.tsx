@@ -18,7 +18,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CheckboxGroupProps = Props & typeof defaultProps & NativeAttrs
 
-const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = React.memo(({
+const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
   disabled, onChange, value, children, className, ...props
 }) => {
   const [selfVal, setSelfVal] = useState<string[]>([])
@@ -59,6 +59,6 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = Rea
       </div>
     </CheckboxContext.Provider>
   )
-})
+}
 
 export default withDefaults(CheckboxGroup, defaultProps)

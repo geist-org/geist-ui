@@ -11,10 +11,9 @@ const defaultProps = {
 
 export type SelectIconProps = Props & typeof defaultProps
 
-const SelectIcon: React.FC<SelectIconProps> = React.memo(({
+const SelectIcon: React.FC<SelectIconProps> = ({
   width,
 }) => {
-  
   return (
     <svg viewBox="0 0 24 24" width={width} height={width} strokeWidth="1" strokeLinecap="round"
       strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
@@ -28,6 +27,8 @@ const SelectIcon: React.FC<SelectIconProps> = React.memo(({
       `}</style>
     </svg>
   )
-})
+}
 
-export default withDefaults(SelectIcon, defaultProps)
+const MemoSelectIcon = React.memo(SelectIcon)
+
+export default withDefaults(MemoSelectIcon, defaultProps)

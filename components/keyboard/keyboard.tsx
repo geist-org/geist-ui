@@ -43,7 +43,7 @@ const getLayout = (small: boolean, theme: ZeitUIThemes): CustomLayout => {
   }
 }
 
-const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = React.memo(({
+const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
   command, shift, option, ctrl, small, children, className, ...props
 }) => {
   const theme = useTheme()
@@ -92,6 +92,8 @@ const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = React.memo(({
       `}</style>
     </kbd>
   )
-})
+}
 
-export default withDefaults(Keyboard, defaultProps)
+const MemoKeyboard = React.memo(Keyboard)
+
+export default withDefaults(MemoKeyboard, defaultProps)

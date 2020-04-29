@@ -75,12 +75,11 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
   )
 }
 
-type UserComponent<P = {}> = React.FC<P> & {
+type MemoUserComponent<P = {}> = React.NamedExoticComponent<P> & {
   Link: typeof UserLink
 }
-
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
-(User as UserComponent<ComponentProps>).defaultProps = defaultProps
+User.defaultProps = defaultProps
 
-export default User as UserComponent<ComponentProps>
+export default React.memo(User) as MemoUserComponent<ComponentProps>

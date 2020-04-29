@@ -101,4 +101,6 @@ const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
   )
 }
 
-export default withDefaults(Divider, defaultProps)
+const MemoDivider = React.memo(Divider)
+
+export default withDefaults(MemoDivider, defaultProps)

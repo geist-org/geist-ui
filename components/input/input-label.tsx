@@ -6,7 +6,7 @@ export interface InputLabel {
   fontSize: string
 }
 
-const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = React.memo(({
+const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
   children, isRight, fontSize,
 }) => {
   const theme = useTheme()
@@ -45,6 +45,8 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = React.memo(({
       `}</style>
     </span>
   )
-})
+}
 
-export default InputLabel
+const MemoInputLabel = React.memo(InputLabel)
+
+export default MemoInputLabel

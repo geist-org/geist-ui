@@ -8,7 +8,7 @@ export interface InputIconProps {
   onClick: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
-const InputIcon: React.FC<InputIconProps> = React.memo(({
+const InputIcon: React.FC<InputIconProps> = ({
   icon, ratio, clickable, onClick,
 }) => {
   const theme = useTheme()
@@ -40,6 +40,8 @@ const InputIcon: React.FC<InputIconProps> = React.memo(({
       `}</style>
     </span>
   )
-})
+}
 
-export default InputIcon
+const MemoInputIcon = React.memo(InputIcon)
+
+export default MemoInputIcon

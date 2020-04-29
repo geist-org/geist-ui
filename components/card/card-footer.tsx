@@ -49,4 +49,6 @@ const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = ({
   )
 }
 
-export default withDefaults(CardFooter, defaultProps)
+const MemoCardFooter = React.memo(CardFooter)
+
+export default withDefaults(MemoCardFooter, defaultProps)

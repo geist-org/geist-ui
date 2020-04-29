@@ -34,7 +34,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.LabelHTMLAttributes<any>, keyof Props>
 export type CheckboxProps = Props & typeof defaultProps & NativeAttrs
 
-const Checkbox: React.FC<CheckboxProps> = React.memo(({
+const Checkbox: React.FC<CheckboxProps> = ({
   checked, initialChecked, disabled, onChange, className, children, value, ...props
 }) => {
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
@@ -119,8 +119,7 @@ const Checkbox: React.FC<CheckboxProps> = React.memo(({
       `}</style>
     </label>
   )
-})
-
+}
 
 Checkbox.defaultProps = defaultProps
 

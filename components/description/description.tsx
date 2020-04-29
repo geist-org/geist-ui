@@ -17,7 +17,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DescriptionProps = Props & typeof defaultProps & NativeAttrs
 
-const Description: React.FC<DescriptionProps> = React.memo(({
+const Description: React.FC<DescriptionProps> = ({
   title, content, className, ...props
 }) => {
   const theme = useTheme()
@@ -56,6 +56,8 @@ const Description: React.FC<DescriptionProps> = React.memo(({
       `}</style>
     </dl>
   )
-})
+}
 
-export default withDefaults(Description, defaultProps)
+const MemoDescription = React.memo(Description)
+
+export default withDefaults(MemoDescription, defaultProps)

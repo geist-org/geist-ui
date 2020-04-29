@@ -28,7 +28,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.ImgHTMLAttributes<any>, keyof Props>
 export type ImageProps = Props & typeof defaultProps & NativeAttrs
 
-const Image: React.FC<ImageProps> = React.memo(({
+const Image: React.FC<ImageProps> = ({
   src, width, height, disableSkeleton, className, scale, maxDelay,
   disableAutoResize, ...props
 }) => {
@@ -115,14 +115,13 @@ const Image: React.FC<ImageProps> = React.memo(({
       `}</style>
     </div>
   )
-})
-
-type ImageComponent<P = {}> = React.FC<P> & {
-  Browser: typeof ImageBrowser
 }
 
+type MemoImageComponent<P = {}> = React.NamedExoticComponent<P> & {
+  Browser: typeof ImageBrowser
+}
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
-(Image as ImageComponent<ComponentProps>).defaultProps = defaultProps
+Image.defaultProps = defaultProps
 
-export default Image as ImageComponent<ComponentProps>
+export default React.memo(Image) as MemoImageComponent<ComponentProps>

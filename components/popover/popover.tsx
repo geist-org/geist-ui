@@ -51,11 +51,10 @@ type PopoverComponent<P = {}> = React.FC<P> & {
   Item: typeof PopoverItem
   Option: typeof PopoverItem
 }
-
 type ComponentProps = Partial<typeof defaultProps>
 & Omit<Props, keyof typeof defaultProps>
 & Partial<Omit<TooltipProps, keyof ExcludeTooltipProps>>
 
-(Popover as PopoverComponent<ComponentProps>).defaultProps = defaultProps
+Popover.defaultProps = defaultProps
 
 export default Popover as PopoverComponent<ComponentProps>

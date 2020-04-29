@@ -10,4 +10,6 @@ const ImageBrowserHttpsIcon = () => {
   )
 }
 
-export default ImageBrowserHttpsIcon
+const MemoImageBrowserHttpsIcon = React.memo(ImageBrowserHttpsIcon)
+
+export default MemoImageBrowserHttpsIcon

@@ -20,4 +20,6 @@ const CollapseIcon: React.FC<Props> = ({ active }) => {
   )
 }
 
-export default CollapseIcon
+const MemoCollapseIcon = React.memo(CollapseIcon)
+
+export default MemoCollapseIcon

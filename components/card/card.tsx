@@ -26,7 +26,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CardProps = Props & typeof defaultProps & NativeAttrs
 
-const Card: React.FC<React.PropsWithChildren<CardProps>> = React.memo(({
+const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   children, hoverable, className, shadow, type, width, ...props
 }) => {
   const theme = useTheme()
@@ -88,17 +88,16 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = React.memo(({
       `}</style>
     </div>
   )
-})
+}
 
-type CardComponent<P = {}> = React.FC<P> & {
+type MemoCardComponent<P = {}> = React.NamedExoticComponent<P> & {
   Footer: typeof CardFooter
   Actions: typeof CardFooter
   Content: typeof CardContent
   Body: typeof CardContent
 }
-
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
-(Card as CardComponent<ComponentProps>).defaultProps = defaultProps
+Card.defaultProps = defaultProps
 
-export default Card as CardComponent<ComponentProps>
+export default React.memo(Card) as MemoCardComponent<ComponentProps>

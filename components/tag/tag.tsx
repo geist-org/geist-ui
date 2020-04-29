@@ -70,7 +70,7 @@ const getColors = (
   }
 }
 
-const Tag: React.FC<React.PropsWithChildren<TagProps>> = React.memo(({
+const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({
   type, children, className, invert, ...props
 }) => {
   const theme = useTheme()
@@ -98,6 +98,8 @@ const Tag: React.FC<React.PropsWithChildren<TagProps>> = React.memo(({
       `}</style>
     </span>
   )
-})
+}
 
-export default withDefaults(Tag, defaultProps)
+const MemoTag = React.memo(Tag)
+
+export default withDefaults(MemoTag, defaultProps)

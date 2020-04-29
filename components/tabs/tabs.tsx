@@ -143,13 +143,12 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   )
 }
 
-Tabs.defaultProps = defaultProps
-
 type TabsComponent<P = {}> = React.FC<P> & {
   Item: typeof TabsItem
   Tab: typeof TabsItem
 }
-
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+
+Tabs.defaultProps = defaultProps
 
 export default Tabs as TabsComponent<ComponentProps>

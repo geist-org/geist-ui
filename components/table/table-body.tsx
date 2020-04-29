@@ -30,7 +30,7 @@ export type cellData = {
   value: any
 }
 
-const TableBody: React.FC<TableBodyProps> = React.memo(({
+const TableBody: React.FC<TableBodyProps> = ({
   data, hover, emptyText, onRow, onCell
 }) => {
   const theme = useTheme()
@@ -80,6 +80,8 @@ const TableBody: React.FC<TableBodyProps> = React.memo(({
       `}</style>
     </tbody>
   )
-})
+}
 
-export default withDefaults(TableBody, defaultProps)
+const MemoTableBody = React.memo(TableBody)
+
+export default withDefaults(MemoTableBody, defaultProps)

@@ -10,4 +10,4 @@ const SnippetIcon: React.FC<{}> = () => {
   )
 }
 
-export default SnippetIcon
+export default React.memo(SnippetIcon)

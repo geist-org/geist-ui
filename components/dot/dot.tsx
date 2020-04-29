@@ -27,7 +27,7 @@ const getColor = (type: NormalTypes, theme: ZeitUIThemes): string => {
   return colors[type] || colors.default as string
 }
 
-const Dot: React.FC<React.PropsWithChildren<DotProps>> = React.memo(({
+const Dot: React.FC<React.PropsWithChildren<DotProps>> = ({
   type, children, className, ...props
 }) => {
   const theme = useTheme()
@@ -62,6 +62,8 @@ const Dot: React.FC<React.PropsWithChildren<DotProps>> = React.memo(({
       `}</style>
     </span>
   )
-})
+}
 
-export default withDefaults(Dot, defaultProps)
+const MemoDot = React.memo(Dot)
+
+export default withDefaults(MemoDot, defaultProps)

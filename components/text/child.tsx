@@ -31,7 +31,7 @@ const getTypeColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
 type NativeAttrs = Omit<React.DetailsHTMLAttributes<any>, keyof Props>
 export type TextChildProps = Props & typeof defaultProps & NativeAttrs
 
-const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = React.memo(({
+const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
   children, tag, className, type, size, ...props
 }) => {
   const theme = useTheme()
@@ -63,7 +63,9 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = React.memo(
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(TextChild, defaultProps)
+const MemoTextChild = React.memo(TextChild)
+
+export default withDefaults(MemoTextChild, defaultProps)
 

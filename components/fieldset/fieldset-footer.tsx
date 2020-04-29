@@ -14,7 +14,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type FieldsetFooterProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = React.memo(({
+const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = ({
   className, children, ...props
 }) => {
   const theme = useTheme()
@@ -41,7 +41,7 @@ const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = R
       `}</style>
     </footer>
   )
-})
+}
 
 FieldsetFooter.defaultProps = defaultProps
 

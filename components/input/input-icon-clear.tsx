@@ -63,4 +63,6 @@ const InputIconClear: React.FC<Props> = ({
   )
 }
 
-export default InputIconClear
+const MemoInputIconClear = React.memo(InputIconClear)
+
+export default MemoInputIconClear

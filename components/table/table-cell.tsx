@@ -19,7 +19,7 @@ export type cellData = {
   rowValue: any
 }
 
-const TableCell: React.FC<Props> = React.memo(({
+const TableCell: React.FC<Props> = ({
   columns, row, rowIndex, emptyText, onCellClick,
 }) => {
   const { removeRow } = useTableContext()
@@ -51,6 +51,6 @@ const TableCell: React.FC<Props> = React.memo(({
     </>
   )
   /* eslint-enable */
-})
+}
 
-export default TableCell
+export default React.memo(TableCell)

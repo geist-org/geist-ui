@@ -13,7 +13,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ModalTitleProps = Props & typeof defaultProps & NativeAttrs
 
-const ModalTitle: React.FC<ModalTitleProps> = React.memo(({
+const ModalTitle: React.FC<ModalTitleProps> = ({
   className, children, ...props
 }) => {
   const theme = useTheme()
@@ -38,6 +38,8 @@ const ModalTitle: React.FC<ModalTitleProps> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(ModalTitle, defaultProps)
+const MemoModalTitle = React.memo(ModalTitle)
+
+export default withDefaults(MemoModalTitle, defaultProps)

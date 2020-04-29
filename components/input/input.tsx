@@ -212,9 +212,8 @@ type InputComponent<P = {}> = React.ForwardRefExoticComponent<P> & {
   Textarea: typeof Textarea
   Password: typeof InputPassword
 }
-
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
-(Input as InputComponent<ComponentProps>).defaultProps = defaultProps
+Input.defaultProps = defaultProps
 
 export default Input as InputComponent<ComponentProps>
