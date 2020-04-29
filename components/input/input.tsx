@@ -201,6 +201,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
         input:-webkit-autofill:active,
         input:-webkit-autofill:focus {
           -webkit-box-shadow: 0 0 0 30px ${theme.palette.background} inset !important;
+          -webkit-text-fill-color: ${color} !important;
         }
       `}</style>
     </div>
