@@ -37,9 +37,9 @@ const getStatusColor = (type: NormalTypes, filled: boolean, theme: ZeitUIThemes)
     borderColor: statusColor || theme.palette.border,
     bgColor: theme.palette.background,
   }
-  
+  const filledColor = statusColor ? 'white' : theme.palette.background
   return {
-    color: theme.palette.background,
+    color: filledColor,
     borderColor: statusColor || theme.palette.foreground,
     bgColor: statusColor || theme.palette.foreground,
   }
