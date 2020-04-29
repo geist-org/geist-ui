@@ -27,6 +27,8 @@ const nextConfig = {
   },
   
   experimental: {
+    reactRefresh: true,
+
     redirects() {
       return [
         {
