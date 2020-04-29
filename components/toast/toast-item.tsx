@@ -44,10 +44,13 @@ const getColors = (palette: ZeitUIThemesPalette, type?: NormalTypes) => {
     bgColor: colors.default,
     color: palette.foreground,
   }
-  const mainColor = isDefault ? palette.background : 'white'
+  /**
+   * Prevent main color change in special types.
+   * The color will only follow the theme when it is in the default type.
+   */
   return {
     bgColor: colors[type as NormalTypes],
-    color: mainColor,
+    color: 'white',
   }
 }
 
