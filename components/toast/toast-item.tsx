@@ -39,13 +39,15 @@ const getColors = (palette: ZeitUIThemesPalette, type?: NormalTypes) => {
     warning: palette.warning,
     error: palette.error,
   }
-  if (!type || type === 'default') return {
+  const isDefault = !type || type === 'default'
+  if (isDefault) return {
     bgColor: colors.default,
     color: palette.foreground,
   }
+  const mainColor = isDefault ? palette.background : 'white'
   return {
-    bgColor: colors[type],
-    color: palette.background,
+    bgColor: colors[type as NormalTypes],
+    color: mainColor,
   }
 }
 
