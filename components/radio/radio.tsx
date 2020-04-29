@@ -33,7 +33,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type RadioProps = Props & typeof defaultProps & NativeAttrs
 
-const Radio: React.FC<React.PropsWithChildren<RadioProps>> = React.memo(({
+const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
   className, checked, onChange, disabled, value: radioValue,
   children, ...props
 }) => {
@@ -150,17 +150,15 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = React.memo(({
       `}</style>
     </div>
   )
-})
-
-
-Radio.defaultProps = defaultProps
+}
 
 type RadioComponent<P = {}> = React.FC<P> & {
   Group: typeof RadioGroup
   Desc: typeof RadioDescription
   Description: typeof RadioDescription
 }
-
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+
+Radio.defaultProps = defaultProps
 
 export default Radio as RadioComponent<ComponentProps>

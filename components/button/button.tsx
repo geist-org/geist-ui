@@ -34,7 +34,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ButtonProps = Props & typeof defaultProps & NativeAttrs
 
-const Button: React.FC<React.PropsWithChildren<ButtonProps>> = React.memo(({
+const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   children, disabled, type, loading, shadow, ghost, effect, onClick,
   auto, size, className, ...props
 }) => {
@@ -145,6 +145,8 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = React.memo(({
       `}</style>
     </button>
   )
-})
+}
 
-export default withDefaults(Button, defaultProps)
+const MemoButton = React.memo<React.PropsWithChildren<ButtonProps>>(Button)
+
+export default withDefaults(MemoButton, defaultProps)

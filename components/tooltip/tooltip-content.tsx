@@ -52,7 +52,7 @@ const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact =>
   }
 }
 
-const TooltipContent: React.FC<React.PropsWithChildren<Props>> = React.memo(({
+const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   children, parent, visible, offset, placement, type, className, hideArrow,
 }) => {
   const theme = useTheme()
@@ -112,6 +112,6 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = React.memo(({
       </div>
     </CSSTransition>
   ), el)
-})
+}
 
 export default TooltipContent

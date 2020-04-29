@@ -116,7 +116,7 @@ const getWidth = (size: NormalSizes) => {
   return widths[size]
 }
 
-const Spinner: React.FC<SpinnerProps> = React.memo(({
+const Spinner: React.FC<SpinnerProps> = ({
   size, className, ...props
 }) => {
   const theme = useTheme()
@@ -145,6 +145,8 @@ const Spinner: React.FC<SpinnerProps> = React.memo(({
       `}</style>
     </div>
   )
-})
+}
 
-export default withDefaults(Spinner, defaultProps)
+const MemoSpinner = React.memo(Spinner)
+
+export default withDefaults(MemoSpinner, defaultProps)

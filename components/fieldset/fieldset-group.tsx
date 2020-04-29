@@ -18,7 +18,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type FieldsetGroupProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = React.memo(({
+const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = ({
   className, children, value, onChange, ...props
 }) => {
   const theme = useTheme()
@@ -118,6 +118,6 @@ const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = Rea
       </div>
     </FieldsetContext.Provider>
   )
-})
+}
 
 export default withDefaults(FieldsetGroup, defaultProps)

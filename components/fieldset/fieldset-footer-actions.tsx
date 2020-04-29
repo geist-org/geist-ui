@@ -12,7 +12,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type FieldsetFooterActionsProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetFooterActions: React.FC<FieldsetFooterActionsProps> = React.memo(({
+const FieldsetFooterActions: React.FC<FieldsetFooterActionsProps> = ({
   className, children, ...props
 }) => {
   return (
@@ -26,6 +26,8 @@ const FieldsetFooterActions: React.FC<FieldsetFooterActionsProps> = React.memo((
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(FieldsetFooterActions, defaultProps)
+const MemoFieldsetFooterActions = React.memo(FieldsetFooterActions)
+
+export default withDefaults(MemoFieldsetFooterActions, defaultProps)

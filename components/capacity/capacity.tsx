@@ -27,7 +27,7 @@ const getColor = (val: number, palette: ZeitUIThemesPalette): string => {
   return palette.errorDark
 }
 
-const Capacity: React.FC<CapacityProps> = React.memo(({
+const Capacity: React.FC<CapacityProps> = ({
   value, limit, color: userColor, className, ...props
 }) => {
   const theme = useTheme()
@@ -60,6 +60,8 @@ const Capacity: React.FC<CapacityProps> = React.memo(({
       `}</style>
     </div>
   )
-})
+}
 
-export default withDefaults(Capacity, defaultProps)
+const MemoCapacity = React.memo(Capacity)
+
+export default withDefaults(MemoCapacity, defaultProps)

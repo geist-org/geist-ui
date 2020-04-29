@@ -20,7 +20,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CodeProps = Props & typeof defaultProps & NativeAttrs
 
-const Code: React.FC<React.PropsWithChildren<CodeProps>> = React.memo(({
+const Code: React.FC<React.PropsWithChildren<CodeProps>> = ({
   children, block, bash, darkBash, className, width, ...props
 }) => {
   if (bash) {
@@ -65,6 +65,8 @@ const Code: React.FC<React.PropsWithChildren<CodeProps>> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(Code, defaultProps)
+const MemoCode = React.memo(Code)
+
+export default withDefaults(MemoCode, defaultProps)

@@ -34,7 +34,7 @@ const textArrayToString = (text: string[]): string => {
   }, '')
 }
 
-const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = React.memo(({
+const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   type, filled, children, text, width, copy: copyType, className, ...props
 }) => {
   const theme = useTheme()
@@ -122,6 +122,8 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = React.memo(({
       `}</style>
     </div>
   )
-})
+}
 
-export default withDefaults(Snippet, defaultProps)
+const MemoSnippet = React.memo(Snippet)
+
+export default withDefaults(MemoSnippet, defaultProps)

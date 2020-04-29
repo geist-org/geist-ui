@@ -32,7 +32,7 @@ const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
   )
 }
 
-const TableHead: React.FC<TableHeadProps> = React.memo(({
+const TableHead: React.FC<TableHeadProps> = ({
   columns, width,
 }) => {
   const theme = useTheme()
@@ -101,6 +101,8 @@ const TableHead: React.FC<TableHeadProps> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(TableHead, defaultProps)
+const MemoTableHead = React.memo(TableHead)
+
+export default withDefaults(MemoTableHead, defaultProps)

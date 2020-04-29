@@ -13,7 +13,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type RadioDescriptionProps = Props & typeof defaultProps & NativeAttrs
 
-const RadioDescription: React.FC<React.PropsWithChildren<RadioDescriptionProps>> = React.memo(({
+const RadioDescription: React.FC<React.PropsWithChildren<RadioDescriptionProps>> = ({
   className, children, ...props
 }) => {
   const theme = useTheme()
@@ -29,6 +29,8 @@ const RadioDescription: React.FC<React.PropsWithChildren<RadioDescriptionProps>>
       `}</style>
     </span>
   )
-})
+}
 
-export default withDefaults(RadioDescription, defaultProps)
+const MemoRadioDescription = React.memo(RadioDescription)
+
+export default withDefaults(MemoRadioDescription, defaultProps)

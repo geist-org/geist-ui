@@ -40,7 +40,7 @@ const getBgColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
   return colors[type]
 }
 
-const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = React.memo(({
+const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
   type, size, className, children, ...props
 }) => {
   const theme = useTheme()
@@ -70,6 +70,8 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = React.memo(({
       `}</style>
     </span>
   )
-})
+}
 
-export default withDefaults(Badge, defaultProps)
+const MemoBadge = React.memo<React.PropsWithChildren<BadgeProps>>(Badge)
+
+export default withDefaults(MemoBadge, defaultProps)

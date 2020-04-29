@@ -18,7 +18,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DisplayProps = Props & typeof defaultProps & NativeAttrs
 
-const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
+const Display: React.FC<React.PropsWithChildren<DisplayProps>> = ({
   children, caption, shadow, className, width, ...props
 }) => {
   const theme = useTheme()
@@ -66,6 +66,8 @@ const Display: React.FC<React.PropsWithChildren<DisplayProps>> = React.memo(({
       `}</style>
     </div>
   )
-})
+}
 
-export default withDefaults(Display, defaultProps)
+const MemoDisplay = React.memo(Display)
+
+export default withDefaults(MemoDisplay, defaultProps)

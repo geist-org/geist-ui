@@ -13,7 +13,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type ModalSubtitleProps = Props & typeof defaultProps & NativeAttrs
 
-const ModalSubtitle: React.FC<ModalSubtitleProps> = React.memo(({
+const ModalSubtitle: React.FC<ModalSubtitleProps> = ({
   className, children, ...props
 }) => {
   const theme = useTheme()
@@ -38,6 +38,8 @@ const ModalSubtitle: React.FC<ModalSubtitleProps> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(ModalSubtitle, defaultProps)
+const MemoModalSubtitle = React.memo(ModalSubtitle)
+
+export default withDefaults(MemoModalSubtitle, defaultProps)

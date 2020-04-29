@@ -24,7 +24,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>
 export type LinkProps = Props & typeof defaultProps & NativeAttrs
 
-const Link = React.memo(React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(({
+const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(({
   href, color, underline, pure, children, className, block, ...props
 }, ref: React.Ref<HTMLAnchorElement>) => {
   const theme = useTheme()
@@ -58,6 +58,8 @@ const Link = React.memo(React.forwardRef<HTMLAnchorElement, React.PropsWithChild
       `}</style>
     </a>
   )
-}))
+})
 
-export default withDefaults(Link, defaultProps)
+const MemoLink = React.memo(Link)
+
+export default withDefaults(MemoLink, defaultProps)

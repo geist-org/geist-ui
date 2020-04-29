@@ -21,7 +21,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type RadioGroupProps = Props & typeof defaultProps & NativeAttrs
 
-const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = React.memo(({
+const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
   disabled, onChange, value, children, className, initialValue, useRow, ...props
 }) => {
   const theme = useTheme()
@@ -68,6 +68,6 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = React.mem
       `}</style>
     </RadioContext.Provider>
   )
-})
+}
 
 export default withDefaults(RadioGroup, defaultProps)

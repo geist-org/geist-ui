@@ -29,7 +29,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.FieldsetHTMLAttributes<any>, keyof Props>
 export type FieldsetProps = Props & typeof defaultProps & NativeAttrs
 
-const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
+const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
   className, title, subtitle, children, value, label, ...props
 }) => {
   const theme = useTheme()
@@ -91,7 +91,7 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = React.memo(({
       `}</style>
     </div>
   )
-})
+}
 
 Fieldset.defaultProps = defaultProps
 

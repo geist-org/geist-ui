@@ -15,7 +15,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type PopoverItemProps = Props & typeof defaultProps & NativeAttrs
 
-const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = React.memo(({
+const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   children, line, title, className, ...props
 }) => {
   const theme = useTheme()
@@ -70,6 +70,8 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = React.m
       {title && <PopoverItem line title={false} />}
     </>
   )
-})
+}
 
-export default withDefaults(PopoverItem, defaultProps)
+const MemoPopoverItem = React.memo(PopoverItem)
+
+export default withDefaults(MemoPopoverItem, defaultProps)

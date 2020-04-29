@@ -23,7 +23,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ModalActionProps = Props & typeof defaultProps & NativeAttrs
 
-const ModalAction: React.FC<ModalActionProps> = React.memo(({
+const ModalAction: React.FC<ModalActionProps> = ({
   className, children, onClick, passive, disabled, ...props
 }) => {
   const theme = useTheme()
@@ -73,6 +73,6 @@ const ModalAction: React.FC<ModalActionProps> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
 export default withDefaults(ModalAction, defaultProps)

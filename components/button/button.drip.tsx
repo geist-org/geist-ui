@@ -15,7 +15,7 @@ const defaultProps = {
 
 export type ButtonDrip = Props & typeof defaultProps
 
-const ButtonDrip: React.FC<ButtonDrip> = React.memo(({
+const ButtonDrip: React.FC<ButtonDrip> = ({
   x, y, color, onCompleted
 }) => {
   const dripRef = useRef<HTMLDivElement>(null)
@@ -80,7 +80,9 @@ const ButtonDrip: React.FC<ButtonDrip> = React.memo(({
       `}</style>
     </div>
   )
-})
+}
 
-export default withDefaults(ButtonDrip, defaultProps)
+const MemoButtonDrip = React.memo<ButtonDrip>(ButtonDrip)
+
+export default withDefaults(MemoButtonDrip, defaultProps)
 

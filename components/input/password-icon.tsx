@@ -24,4 +24,6 @@ const PasswordIcon: React.FC<Props> = ({ visible }) => {
   )
 }
 
-export default PasswordIcon
+const MemoPasswordIcon = React.memo(PasswordIcon)
+
+export default MemoPasswordIcon

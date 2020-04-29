@@ -42,4 +42,4 @@ const TooltipIcon: React.FC<Props> = ({
   )
 }
 
-export default TooltipIcon
+export default React.memo(TooltipIcon)

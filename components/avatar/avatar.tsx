@@ -39,7 +39,7 @@ const safeText = (text: string): string => {
   return text.slice(0, 3)
 }
 
-const Avatar: React.FC<AvatarProps> = React.memo(({
+const Avatar: React.FC<AvatarProps> = ({
   src, stacked, text, size, isSquare, className, ...props
 }) => {
   const theme = useTheme()
@@ -91,14 +91,14 @@ const Avatar: React.FC<AvatarProps> = React.memo(({
       `}</style>
     </span>
   )
-})
+}
 
-type AvatarComponent<P = {}> = React.FC<P> & {
+type MemoAvatarComponent<P = {}> = React.NamedExoticComponent<P> & {
   Group: typeof AvatarGroup
 }
 
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
-(Avatar as AvatarComponent<ComponentProps>).defaultProps = defaultProps
+Avatar.defaultProps = defaultProps
 
-export default Avatar as AvatarComponent<ComponentProps>
+export default React.memo(Avatar) as MemoAvatarComponent<ComponentProps>

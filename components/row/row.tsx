@@ -41,7 +41,7 @@ const getFlexAlignment = (justify: Justify, align: Align) => {
   }
 }
 
-const Container: React.FC<React.PropsWithChildren<RowProps>> = React.memo(({
+const Container: React.FC<React.PropsWithChildren<RowProps>> = ({
   children, component, gap, justify, align, className, ...props
 }) => {
   const Component = component
@@ -68,6 +68,8 @@ const Container: React.FC<React.PropsWithChildren<RowProps>> = React.memo(({
     `}</style>
     </Component>
   )
-})
+}
 
-export default withDefaults(Container, defaultProps)
+const MemoContainer = React.memo(Container)
+
+export default withDefaults(MemoContainer, defaultProps)

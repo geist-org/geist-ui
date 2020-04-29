@@ -4,7 +4,7 @@ interface Props {
   color?: string
 }
 
-export const LinkIcon: React.FC<Props> = React.memo(({ color }) => {
+export const LinkIcon: React.FC<Props> = ({ color }) => {
   return (
     <svg viewBox="0 0 24 24" width="1em" height="1em" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
       strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision" style={{ color }} className="icon">
@@ -21,6 +21,6 @@ export const LinkIcon: React.FC<Props> = React.memo(({ color }) => {
       `}</style>
     </svg>
   )
-})
+}
 
-export default LinkIcon
+export default React.memo(LinkIcon)

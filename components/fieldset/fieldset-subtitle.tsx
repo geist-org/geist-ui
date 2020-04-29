@@ -13,7 +13,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type FieldsetSubtitleProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = React.memo(({
+const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = ({
   className, children, ...props
 }) => {
   const theme = useTheme()
@@ -30,6 +30,8 @@ const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(FieldsetSubtitle, defaultProps)
+const MemoFieldsetSubtitle = React.memo(FieldsetSubtitle)
+
+export default withDefaults(MemoFieldsetSubtitle, defaultProps)

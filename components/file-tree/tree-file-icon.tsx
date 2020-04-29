@@ -33,4 +33,6 @@ const TreeFileIcon: React.FC<TreeFileIconProps> = ({
   )
 }
 
-export default withDefaults(TreeFileIcon, defaultProps)
+const MemoTreeFileIcon = React.memo(TreeFileIcon)
+
+export default withDefaults(MemoTreeFileIcon, defaultProps)

@@ -31,4 +31,6 @@ const CardContent: React.FC<React.PropsWithChildren<CardContentProps>> = ({
   )
 }
 
-export default withDefaults(CardContent, defaultProps)
+const MemoCardContent = React.memo(CardContent)
+
+export default withDefaults(MemoCardContent, defaultProps)

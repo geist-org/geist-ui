@@ -26,7 +26,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ModalProps = Props & typeof defaultProps & NativeAttrs
 
-const Modal: React.FC<React.PropsWithChildren<ModalProps>> = React.memo(({
+const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   children, disableBackdropClick, onClose, onOpen, open
 }) => {
   const portal = usePortal('modal')
@@ -74,9 +74,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = React.memo(({
       </ModalContext.Provider>
     ), portal
   )
-})
-
-Modal.defaultProps = defaultProps
+}
 
 type ModalComponent<P = {}> = React.FC<P> & {
   Title: typeof ModalTitle
@@ -84,7 +82,8 @@ type ModalComponent<P = {}> = React.FC<P> & {
   Content: typeof ModalContent
   Action: typeof ModalAction
 }
-
 type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+
+Modal.defaultProps = defaultProps
 
 export default Modal as ModalComponent<ComponentProps>

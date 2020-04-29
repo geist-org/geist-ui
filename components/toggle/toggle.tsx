@@ -56,7 +56,7 @@ const getSizes = (size: NormalSizes) => {
   return sizes[size]
 }
 
-const Toggle: React.FC<ToggleProps> = React.memo(({
+const Toggle: React.FC<ToggleProps> = ({
   initialChecked, checked, disabled, onChange, size, className, ...props
 }) => {
   const theme = useTheme()
@@ -164,6 +164,8 @@ const Toggle: React.FC<ToggleProps> = React.memo(({
       `}</style>
     </label>
   )
-})
+}
 
-export default withDefaults(Toggle, defaultProps)
+const MemoToggle = React.memo(Toggle)
+
+export default withDefaults(MemoToggle, defaultProps)

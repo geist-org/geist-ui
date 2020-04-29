@@ -46,7 +46,7 @@ const getIconBgColor = (
   return color ? color : colors[type]
 }
 
-const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = React.memo(({
+const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   children, size, type, color,
 }) => {
   const theme = useTheme()
@@ -134,6 +134,8 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = React.memo(({
       `}</style>
     </div>
   )
-})
+}
 
-export default withDefaults(Loading, defaultProps)
+const MemoLoading = React.memo(Loading)
+
+export default withDefaults(MemoLoading, defaultProps)

@@ -24,7 +24,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ButtonDropdownItemProps = Props & typeof defaultProps & NativeAttrs
 
-const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemProps>> = React.memo(({
+const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemProps>> = ({
   children, onClick, className, main, type: selfType, ...props
 }) => {
   const theme = useTheme()
@@ -76,6 +76,8 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
       `}</style>
     </button>
   )
-})
+}
 
-export default withDefaults(ButtonDropdownItem, defaultProps)
+const MemoButtonDropdownItem = React.memo(ButtonDropdownItem)
+
+export default withDefaults(MemoButtonDropdownItem, defaultProps)

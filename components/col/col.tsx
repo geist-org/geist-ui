@@ -18,7 +18,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ColProps = Props & typeof defaultProps & NativeAttrs
 
-const Col: React.FC<React.PropsWithChildren<ColProps>> = React.memo(({
+const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
   component, children, span, offset, className, ...props
 }) => {
   const Component = component
@@ -38,6 +38,8 @@ const Col: React.FC<React.PropsWithChildren<ColProps>> = React.memo(({
       `}</style>
     </Component>
   )
-})
+}
 
-export default withDefaults(Col, defaultProps)
+const MemoCol = React.memo(Col)
+
+export default withDefaults(MemoCol, defaultProps)

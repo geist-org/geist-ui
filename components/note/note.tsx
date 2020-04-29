@@ -45,7 +45,7 @@ const getStatusColor = (type: NormalTypes, filled: boolean, theme: ZeitUIThemes)
   }
 }
 
-export const Note: React.FC<React.PropsWithChildren<NoteProps>> = React.memo(({
+export const Note: React.FC<React.PropsWithChildren<NoteProps>> = ({
   children, type, label, filled, small, className, ...props
 }) => {
   const theme = useTheme()
@@ -88,7 +88,9 @@ export const Note: React.FC<React.PropsWithChildren<NoteProps>> = React.memo(({
     </div>
   )
 
-})
+}
 
-export default withDefaults(Note, defaultProps)
+const MemoNote = React.memo(Note)
+
+export default withDefaults(MemoNote, defaultProps)
 

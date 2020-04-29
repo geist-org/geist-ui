@@ -37,4 +37,6 @@ const TreeStatusIcon: React.FC<TreeStatusIconProps> = ({
   )
 }
 
-export default withDefaults(TreeStatusIcon, defaultProps)
+const MemoTreeStatusIcon = React.memo(TreeStatusIcon)
+
+export default withDefaults(MemoTreeStatusIcon, defaultProps)

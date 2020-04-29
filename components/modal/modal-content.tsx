@@ -13,7 +13,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>
 export type ModalContentProps = Props & typeof defaultProps & NativeAttrs
 
-const ModalContent: React.FC<ModalContentProps> = React.memo(({
+const ModalContent: React.FC<ModalContentProps> = ({
   className, children, ...props
 }) => {
   const theme = useTheme()
@@ -33,6 +33,8 @@ const ModalContent: React.FC<ModalContentProps> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default withDefaults(ModalContent, defaultProps)
+const MemoModalContent = React.memo(ModalContent)
+
+export default withDefaults(MemoModalContent, defaultProps)

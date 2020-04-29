@@ -35,7 +35,7 @@ const stopPropagation = (event: MouseEvent<HTMLElement>) => {
   event.nativeEvent.stopImmediatePropagation()
 }
 
-const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = React.memo(({
+const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = ({
   children, type, size, auto, className, disabled, loading, ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -137,15 +137,14 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = R
       </div>
     </ButtonDropdownContext.Provider>
   )
-})
+}
+
+type MemoButtonDropdownComponent<P = {}> = React.NamedExoticComponent<P> & {
+  Item: typeof ButtonDropdownItem
+}
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
 ButtonDropdown.defaultProps = defaultProps
 
-type ButtonDropdownComponent<P = {}> = React.FC<P> & {
-  Item: typeof ButtonDropdownItem
-}
-
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
-
-export default ButtonDropdown as ButtonDropdownComponent<ComponentProps>
+export default React.memo(ButtonDropdown) as MemoButtonDropdownComponent<ComponentProps>
 

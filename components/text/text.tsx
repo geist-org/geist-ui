@@ -63,7 +63,7 @@ const getModifierChild = (
   )
 }
 
-const Text: React.FC<React.PropsWithChildren<TextProps>> = React.memo(({
+const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
   h1, h2, h3, h4, h5, h6, p, b, small, i, span, del, em, blockquote,
   size, children, className, ...props
 }) => {
@@ -101,7 +101,9 @@ const Text: React.FC<React.PropsWithChildren<TextProps>> = React.memo(({
   return (
     <TextChild className={className} tag={tag} size={size} {...props}>{modifers}</TextChild>
   )
-})
+}
 
-export default withDefaults(Text, defaultProps)
+const MemoText = React.memo(Text)
+
+export default withDefaults(MemoText, defaultProps)
 

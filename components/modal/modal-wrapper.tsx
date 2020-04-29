@@ -17,7 +17,7 @@ const defaultProps = {
 
 export type ModalWrapperProps = Props & typeof defaultProps
 
-const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = React.memo(({
+const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   className, width, children, visible, ...props
 }) => {
   const theme = useTheme()
@@ -68,6 +68,6 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = React
       </div>
     </CSSTransition>
   )
-})
+}
 
 export default withDefaults(ModalWrapper, defaultProps)

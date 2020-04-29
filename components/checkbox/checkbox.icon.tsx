@@ -6,7 +6,7 @@ interface Props {
   checked?: boolean
 }
 
-const CheckboxIcon: React.FC<Props> = React.memo(({
+const CheckboxIcon: React.FC<Props> = ({
   disabled, checked,
 }) => {
   const theme = useTheme()
@@ -47,6 +47,8 @@ const CheckboxIcon: React.FC<Props> = React.memo(({
       `}</style>
     </>
   )
-})
+}
 
-export default CheckboxIcon
+const MemoCheckboxIcon = React.memo(CheckboxIcon)
+
+export default MemoCheckboxIcon
