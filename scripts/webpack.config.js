@@ -22,20 +22,19 @@ module.exports = async() => {
     .filter(r => r)
     .reduce((pre, current) => {
       return Object.assign({}, pre, { [current.name]: current.url })
-    }, { index: path.join(componentsPath, 'index.ts') })
+    }, {})
   
   console.log(`\n${Object.keys(componentsEntries).length} Components in total have been collected.`)
   console.log('Bundle now...')
-
-  return {
-    mode: 'production',
+  
+  const configs = {
+    mode: 'none',
     
     entry: componentsEntries,
     
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, '../dist'),
-      library: '',
       libraryTarget: 'commonjs',
     },
     
@@ -67,8 +66,8 @@ module.exports = async() => {
         //   amd: 'styled-jsx',
         // },
       },
-      function(context, request, done) {
-        if (/^styled-jsx/.test(request)){
+      function (context, request, done) {
+        if (/^styled-jsx/.test(request)) {
           return done(null, 'commonjs ' + request)
         }
         done()
@@ -89,4 +88,32 @@ module.exports = async() => {
       ],
     },
   }
+  
+  return [
+    configs,
+    {
+      ...configs,
+      
+      entry: {
+        index: path.join(componentsPath, 'index.ts'),
+      },
+    },
+    {
+      ...configs,
+      
+      mode: 'production',
+      
+      entry: {
+        'index.min': path.join(componentsPath, 'index.ts'),
+      },
+  
+      output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, '../dist'),
+        library: 'ZEITUI',
+        libraryTarget: 'umd',
+        globalObject: 'this',
+      },
+    },
+  ]
 }
