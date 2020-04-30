@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Badge, Spacer } from 'components'
+import { Badge, Spacer, Button, Link, Avatar } from 'components'
 
 export const meta = {
   title: '徽章 Badge',
@@ -48,15 +48,77 @@ export const meta = {
   </>
 `} />
 
+<Playground
+  title="锚点"
+  desc="将徽章固定在指定位置。"
+  scope={{ Badge, Avatar, Spacer, Button, Link }}
+  code={`
+<>
+  <Badge.Anchor>
+    <Badge size="mini">10</Badge>
+    <Avatar src="https://zeit.co/api/www/avatar/?u=evilrabbit&s=160" />
+  </Badge.Anchor>
+  <Spacer inline x={1.5} />
+  <Badge.Anchor placement="bottomRight">
+    <Badge size="mini" type="success">10</Badge>
+    <Avatar size={40} isSquare src="https://zeit.co/api/www/avatar/?u=evilrabbit&s=160" />
+  </Badge.Anchor>
+  <Spacer inline x={1.5} />
+  <Badge.Anchor>
+    <Badge size="mini" type="warning">99+</Badge>
+    <Button size="small" auto>按钮</Button>
+  </Badge.Anchor>
+  <Spacer inline x={1.5} />
+  <Badge.Anchor>
+    <Badge size="mini" type="error" dot />
+    <Link pure target="_blank" href="https://github.com/zeit-ui/react/">组件库</Link>
+  </Badge.Anchor>
+  <Spacer inline x={1.5} />
+  <Badge.Anchor>
+    <Badge size="mini" type="error" dot style={{ padding: '7px' }} />
+    <Link pure target="_blank" href="https://github.com/zeit-ui/react/">分享链接</Link>
+  </Badge.Anchor>
+</>
+`} />
 
 <Attributes edit="/pages/zh-cn/components/badge.mdx">
 <Attributes.Title>Badge.Props</Attributes.Title>
 
 | 属性 | 描述 | 类型 | 推荐值 | 默认
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | 徽章的类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size** | 徽章的大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **type** | 徽章的类型 | `NormalTypes` | [NormalTypes](#normaltypes) | `default` |
+| **size** | 徽章的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
+| **dot** | 忽略内容并显示圆点 | `boolean` | - | `false` |
 | ... | 原生属性 | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+
+<Attributes.Title>Badge.Anchor.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **placement** | 固定徽章的位置 | `AnchorPlacement` | [AnchorPlacement](#anchorplacement) | `topRight` |
+| ... | 原生属性 | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+
+<Attributes.Title>NormalTypes</Attributes.Title>
+
+```ts
+type NormalTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+```
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'medium' | 'mini' | 'small' | 'large'
+```
+
+<Attributes.Title>AnchorPlacement</Attributes.Title>
+
+```ts
+type AnchorPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight'
+```
 
 </Attributes>
 
