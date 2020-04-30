@@ -52,4 +52,10 @@ describe('Badge', () => {
     expect(span.props().style).not.toBeUndefined()
     expect((span.props().style as any).background).toBe('white')
   })
+  
+  it('should hide content when in dot mode', () => {
+    const wrapper = mount(<Badge dot>test-value</Badge>)
+    expect(wrapper.html()).not.toContain('test-value')
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
