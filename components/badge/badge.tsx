@@ -1,18 +1,20 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
 import { ZeitUIThemesPalette } from 'components/styles/themes'
+import BadgeAnchor from './badge-anchor'
 
 interface Props {
   type?: NormalTypes
   size?: NormalSizes
+  dot?: boolean
   className?: string
 }
 
 const defaultProps = {
   type: 'default' as NormalTypes,
   size: 'medium' as NormalSizes,
+  dot: false,
   className: '',
 }
 
@@ -41,7 +43,7 @@ const getBgColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
 }
 
 const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
-  type, size, className, children, ...props
+  type, size, className, children, dot, ...props
 }) => {
   const theme = useTheme()
   const bg = useMemo(() => getBgColor(type, theme.palette), [type, theme.palette])
@@ -52,8 +54,8 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
   }, [type, theme.palette.background])
   
   return (
-    <span className={className} {...props}>
-      {children}
+    <span className={`${dot ? 'dot' : ''} ${className}`} {...props}>
+      {!dot && children}
       <style jsx>{`
         span {
           display: inline-block;
@@ -67,11 +69,21 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
           font-size: ${font};
           border: 0;
         }
+        
+        .dot {
+          padding: 4px;
+          border-radius: 50%;
+        }
       `}</style>
     </span>
   )
 }
 
-const MemoBadge = React.memo<React.PropsWithChildren<BadgeProps>>(Badge)
+type MemoBadgeComponent<P = {}> = React.NamedExoticComponent<P> & {
+  Anchor: typeof BadgeAnchor
+}
+type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
 
-export default withDefaults(MemoBadge, defaultProps)
+Badge.defaultProps = defaultProps
+
+export default React.memo(Badge) as MemoBadgeComponent<ComponentProps>

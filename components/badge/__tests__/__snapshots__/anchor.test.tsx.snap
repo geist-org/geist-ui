@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BadgeAnchor should be support multiple position 1`] = `
+"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\" \\">test<style>
+        span {
+          display: inline-block;
+          padding: 4px 7px;
+          border-radius: 16px;
+          font-variant: tabular-nums;
+          line-height: 1;
+          vertical-align: middle;
+          background-color: #000;
+          color: #fff;
+          font-size: .875rem;
+          border: 0;
+        }
+        
+        .dot {
+          padding: 4px;
+          border-radius: 50%;
+        }
+      </style></span></sup><style>
+        .anchor {
+          position: relative;
+          display: inline-flex;
+          vertical-align: middle;
+          flex-shrink: 0;
+          box-sizing: border-box;
+        }
+
+        sup {
+          position: absolute;
+          top: 0;
+          left: auto;
+          right: 0;
+          bottom: auto;
+          transform: translate(50%, -50%);
+          transform-origin: 100% 0%;
+          z-index: 1;
+        }
+      </style></div>"
+`;
+
+exports[`BadgeAnchor should be support multiple position 2`] = `
+"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\" \\">test<style>
+        span {
+          display: inline-block;
+          padding: 4px 7px;
+          border-radius: 16px;
+          font-variant: tabular-nums;
+          line-height: 1;
+          vertical-align: middle;
+          background-color: #000;
+          color: #fff;
+          font-size: .875rem;
+          border: 0;
+        }
+        
+        .dot {
+          padding: 4px;
+          border-radius: 50%;
+        }
+      </style></span></sup><style>
+        .anchor {
+          position: relative;
+          display: inline-flex;
+          vertical-align: middle;
+          flex-shrink: 0;
+          box-sizing: border-box;
+        }
+
+        sup {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: auto;
+          bottom: auto;
+          transform: translate(-50%, -50%);
+          transform-origin: 0% 0%;
+          z-index: 1;
+        }
+      </style></div>"
+`;
+
+exports[`BadgeAnchor should be support multiple position 3`] = `
+"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\" \\">test<style>
+        span {
+          display: inline-block;
+          padding: 4px 7px;
+          border-radius: 16px;
+          font-variant: tabular-nums;
+          line-height: 1;
+          vertical-align: middle;
+          background-color: #000;
+          color: #fff;
+          font-size: .875rem;
+          border: 0;
+        }
+        
+        .dot {
+          padding: 4px;
+          border-radius: 50%;
+        }
+      </style></span></sup><style>
+        .anchor {
+          position: relative;
+          display: inline-flex;
+          vertical-align: middle;
+          flex-shrink: 0;
+          box-sizing: border-box;
+        }
+
+        sup {
+          position: absolute;
+          top: auto;
+          left: auto;
+          right: 0;
+          bottom: 0;
+          transform: translate(50%, 50%);
+          transform-origin: 100% 100%;
+          z-index: 1;
+        }
+      </style></div>"
+`;
