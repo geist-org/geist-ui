@@ -57,6 +57,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
   useEffect(() => {
     if (!parent || !parent.current) return
     parent.current.addEventListener('mouseenter', updateRect)
+    /* istanbul ignore next */
     return () => {
       if (!parent || !parent.current) return
       parent.current.removeEventListener('mouseenter', updateRect)
