@@ -1,8 +1,9 @@
 import React from 'react'
-import { Card, Input, Text, useInput } from 'components'
+import { Card, Input, Text, useInput, useTheme } from 'components'
 import * as Icon from '@zeit-ui/react-icons'
 
 const Icons: React.FC = () => {
+  const theme = useTheme()
   const { state: query, bindings } = useInput('')
   const icons = Object.entries(Icon).filter(
     ([name]) => !query || name.toLowerCase().includes(query.toLowerCase())
@@ -50,6 +51,11 @@ const Icons: React.FC = () => {
           flex-basis: 25%;
           min-width: 0px;
           height: 100px;
+        }
+        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
+          .icon-item {
+            flex-basis: 33%;
+          }
         }
       `}</style>
     </>
