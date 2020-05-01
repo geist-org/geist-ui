@@ -1,0 +1,72 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import Title from 'lib/components/playground/title'
+import { Spacer } from 'components'
+import * as Icon from '@zeit-ui/react-icons'
+import Github from '@zeit-ui/react-icons/github'
+import IconsGallery from 'lib/components/displays/icons'
+
+export const meta = {
+  title: 'Icons',
+  group: 'General',
+}
+
+## Icons
+
+Display semantic vector graphics in SVG format.
+
+<Title title="Installation" desc="Install the package in your project directory." />
+
+```
+// with yarn
+yarn add @zeit-ui/react-icons
+
+// with npm
+npm install @zeit-ui/react-icons
+```
+
+<Playground
+  title="Import"
+  scope={{ Icon, Github }}
+  code={`
+// import * as Icon from '@zeit-ui/react-icons'
+// or
+// import { Github } from '@zeit-ui/react-icons'
+// or, for tree-shaking:
+// import Github from '@zeit-ui/react-icons/github'
+
+<>
+  <Icon.Github />
+  <Github />
+</>
+`} />
+
+<Playground
+  title="Color"
+  scope={{ Github }}
+  code={`
+<Github color="red" />
+`}
+/>
+
+<Playground
+  title="Size"
+  scope={{ Github }}
+  code={`
+<Github size={36} />
+`}
+/>
+
+<IconsGallery />
+
+<Attributes edit="/pages/en-us/components/icons.mdx">
+<Attributes.Title>Icon.Props</Attributes.Title>
+
+| Attribute | Description  | Type            | Accepted values                  | Default |
+| --------- | ------------ | --------------- | -------------------------------- | ------- |
+| **color** | Icon color   | `string`        | -                                | -       |
+| **size**  | Icon size    | `number`        | -                                | -       |
+| ...       | Native props | `SVGAttributes` | `'id', 'name', 'className', ...` | -       |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
