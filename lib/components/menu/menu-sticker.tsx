@@ -77,7 +77,7 @@ const MenuSticker = () => {
           top: 0;
           left: 0;
           right: 0;
-          z-index: 901;
+          z-index: 1500;
           background-color: ${theme.palette.background};
           box-shadow: rgba(0, 0, 0, 0.1) 0 0 15px 0;
         }
