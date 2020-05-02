@@ -1,0 +1,62 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Utils, Link, Button, useToasts } from 'components'
+
+export const meta = {
+  title: '剪切板 useClipboard',
+  group: '工具包',
+}
+
+## Use clipboard / 拷贝至剪切板
+
+拷贝字符串到剪切板。
+
+这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" pure color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
+
+<Spacer y={1.5} />
+
+### 引入工具
+
+```jsx
+import { Utils } from '@zeit-ui/react'
+const { useClipboard } = Utils
+```
+
+<Playground
+  scope={{ Utils, Button, useToasts }}
+  code={`
+() => {
+  const [, setToast] = useToasts()
+  const { useClipboard } = Utils
+  const { copy } = useClipboard()
+  const handler = () => {
+    copy('hello, zeit-ui')
+    setToast({ text: '文字已拷贝。' })
+  }
+  return (
+    <>
+      <Button size="small" auto onClick={handler}>点击拷贝</Button>
+    </>
+  )
+}
+`} />
+
+<Attributes edit="/pages/zh-cn/components/use-clipboard.mdx">
+<Attributes.Title>useClipboard</Attributes.Title>
+
+```ts
+type UseClipboardOptions = {
+  onError: Function
+}
+
+type CopyResult = {
+ copy: (text: string) => void
+}
+
+const useClickAway = (
+  options?: UseClipboardOptions
+) => CopyResult
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,0 +1,53 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Utils, Link, Card } from 'components'
+
+export const meta = {
+  title: '点击他处 useClickAway',
+  group: '工具包',
+}
+
+## Use click away / 点击他处触发事件
+
+检测点击事件是否在元素之外。
+
+这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" pure color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
+
+<Spacer y={1.5} />
+
+### 引入工具
+
+```jsx
+import { Utils } from '@zeit-ui/react'
+const { useClickAway } = Utils
+```
+
+<Playground
+  desc="点击绿色块外部才能触发回调。"
+  scope={{ Utils }}
+  code={`
+() => {
+  const { useClickAway } = Utils
+  const ref = React.useRef()
+  const [count, setCount] = React.useState(0)
+  useClickAway(ref, () => setCount(last => last + 1))
+  return (
+    <div ref={ref} style={{ background: 'green', display: 'flex' }}>
+      <p style={{ fontSize: '2rem' }}>{count}</p>
+    </div>
+  )
+}
+`} />
+
+<Attributes edit="/pages/zh-cn/components/use-click-away.mdx">
+<Attributes.Title>useClickAway</Attributes.Title>
+
+```ts
+const useClickAway = (
+  ref: MutableRefObject<HTMLElement | null>,
+  handler: (event: Event) => void,
+) => void
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
