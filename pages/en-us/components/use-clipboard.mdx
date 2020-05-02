@@ -1,0 +1,62 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Utils, Link, Button, useToasts } from 'components'
+
+export const meta = {
+  title: 'use-clipboard',
+  group: 'Utils',
+}
+
+## Use clipboard
+
+Copy string to clipboard.
+
+This is custom React Hooks, you need to follow the <Link target="_blank" pure color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
+
+<Spacer y={1.5} />
+
+### Import
+
+```jsx
+import { Utils } from '@zeit-ui/react'
+const { useClipboard } = Utils
+```
+
+<Playground
+  scope={{ Utils, Button, useToasts }}
+  code={`
+() => {
+  const [, setToast] = useToasts()
+  const { useClipboard } = Utils
+  const { copy } = useClipboard()
+  const handler = () => {
+    copy('hello, zeit-ui')
+    setToast({ text: 'Text copied.' })
+  }
+  return (
+    <>
+      <Button size="small" auto onClick={handler}>Copy</Button>
+    </>
+  )
+}
+`} />
+
+<Attributes edit="/pages/en-us/components/use-clipboard.mdx">
+<Attributes.Title>useClipboard</Attributes.Title>
+
+```ts
+type UseClipboardOptions = {
+  onError: Function
+}
+
+type CopyResult = {
+ copy: (text: string) => void
+}
+
+const useClickAway = (
+  options?: UseClipboardOptions
+) => CopyResult
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

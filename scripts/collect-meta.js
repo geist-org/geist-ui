@@ -34,6 +34,8 @@ const groupWeights = {
   '导航': 7,
   'others': 8,
   '其他': 8,
+  'utils': 10,
+  '工具包': 10,
 }
 
 const getMetadata = async (files, parentPath) => {
