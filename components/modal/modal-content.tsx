@@ -27,8 +27,12 @@ const ModalContent: React.FC<ModalContentProps> = ({
           padding: ${theme.layout.gap} 0 ${theme.layout.gapHalf} 0;
         }
         
-        .content :global(p) {
-          margin: 0;
+        .content > :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content > :global(*:last-child) {
+          margin-bottom: 0;
         }
       `}</style>
     </>

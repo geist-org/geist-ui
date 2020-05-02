@@ -1,0 +1,82 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import Title from 'lib/components/playground/title'
+import { Spacer, Tabs, Snippet } from 'components'
+import * as Icon from '@zeit-ui/react-icons'
+import Github from '@zeit-ui/react-icons/github'
+import IconsGallery from 'lib/components/displays/icons'
+
+export const meta = {
+  title: 'Icons',
+  group: 'General',
+}
+
+## Icons
+
+Display semantic vector graphics in SVG format.
+
+<Title title="Installation" desc="Install the package in your project directory." />
+<Tabs initialValue="yarn">
+  <Tabs.Item label="Yarn" value="yarn">
+    <Spacer y={0.6} />
+    <Snippet width="400px">yarn add @zeit-ui/react-icons</Snippet>
+  </Tabs.Item>
+  <Tabs.Item label="npm" value="npm">
+    <Spacer y={0.6} />
+    <Snippet width="400px">npm i @zeit-ui/react-icons</Snippet>
+  </Tabs.Item>
+</Tabs>
+
+<Playground
+  title="Import"
+  scope={{ Icon, Github, Spacer }}
+  code={`
+// import * as Icon from '@zeit-ui/react-icons'
+// or
+// import { Github } from '@zeit-ui/react-icons'
+// or, for tree-shaking:
+// import Github from '@zeit-ui/react-icons/github'
+
+<>
+  <Icon.Github />
+  <Spacer x={1} inline />
+  <Github />
+</>
+`} />
+
+<Playground
+  title="Color"
+  scope={{ Github }}
+  code={`
+<Github color="red" />
+`}
+/>
+
+<Playground
+  title="Sizes"
+  scope={{ Github, Spacer }}
+  code={`
+<>
+  <Github size={16} /> <Spacer inline x={.35} />
+  <Github size={20} /> <Spacer inline x={.35} />
+  <Github size={24} /> <Spacer inline x={.35} />
+  <Github size={28} /> <Spacer inline x={.35} />
+  <Github size={32} /> <Spacer inline x={.35} />
+  <Github size={36} />
+</>
+`}
+/>
+
+<IconsGallery />
+
+<Attributes edit="/pages/en-us/components/icons.mdx">
+<Attributes.Title>Icon.Props</Attributes.Title>
+
+| Attribute | Description  | Type            | Accepted values                  | Default |
+| --------- | ------------ | --------------- | -------------------------------- | ------- |
+| **color** | Icon color   | `string`        | -                                | -       |
+| **size**  | Icon size    | `number`        | -                                | -       |
+| ...       | Native props | `SVGAttributes` | `'id', 'name', 'className', ...` | -       |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -6,6 +6,14 @@ exports[`Card Footer should render correctly 1`] = `
           width: 100%;
           padding: 16pt 16pt;
         }
+        
+        .content > :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content > :global(*:last-child) {
+          margin-bottom: 0;
+        }
       </style></div><footer class=\\"auto-margin \\">footer<style>
         footer {
           padding: 8pt 16pt;
@@ -43,14 +51,6 @@ exports[`Card Footer should render correctly 1`] = `
         
         .card:hover {
           box-shadow: none;
-        }
-        
-        .card :global(*:first-child) {
-          margin-top: 0;
-        }
-        
-        .card :global(*:last-child) {
-          margin-bottom: 0;
         }
         
         .card :global(img) {

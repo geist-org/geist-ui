@@ -1,9 +1,7 @@
 import React from 'react'
 import { useTheme } from 'components/index'
 
-
-
-export const LogoIcon: React.FC<React.SVGAttributes<any>> = React.memo(({ ...props }) => {
+export const LogoIcon: React.FC<React.SVGAttributes<any>> = ({ ...props }) => {
   const theme = useTheme()
   return (
     <svg width="25" viewBox="0 0 114 100" fill="none" {...props}>
@@ -25,6 +23,6 @@ export const LogoIcon: React.FC<React.SVGAttributes<any>> = React.memo(({ ...pro
       `}</style>
     </svg>
   )
-})
+}
 
-export default LogoIcon
+export default React.memo(LogoIcon)
