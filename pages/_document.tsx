@@ -1,22 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import flush from 'styled-jsx/server'
-import { DocumentContext, DocumentInitialProps } from 'next/dist/next-server/lib/utils'
 
 class MyDocument extends Document {
-  static async getInitialProps (ctx: DocumentContext): Promise<DocumentInitialProps> {
-    const initialProps = await Document.getInitialProps(ctx)
-
-    return {
-      ...initialProps,
-      styles: (
-        <>
-          {initialProps.styles}
-          {flush()}
-        </>
-      )
-    }
-  }
-  
   render() {
     return (
       <Html>

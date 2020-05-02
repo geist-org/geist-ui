@@ -3,12 +3,10 @@ import { LivePreview, LiveProvider, LiveEditor, LiveError } from 'react-live'
 import withDefaults from 'components/utils/with-defaults'
 import useClipboard from 'components/utils/use-clipboard'
 import { useTheme, useToasts } from 'components'
-import { useConfigs } from '../../config-context'
+import { useConfigs } from 'lib/config-context'
 import makeCodeTheme from './code-theme'
 import RightIcon from '@zeit-ui/react-icons/chevronRight'
 import CopyIcon from '@zeit-ui/react-icons/copy'
-// import RightIcon from 'lib/components/icons/right'
-// import CopyIcon from 'lib/components/icons/copy'
 import Title from './title'
 
 interface Props {

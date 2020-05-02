@@ -27,7 +27,17 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
   
   useEffect(() => setShowAfterRender(true), [])
   
-  if (!showAfterRender) return null
+  if (!showAfterRender) return (
+    <section>
+      {children}
+      <style jsx>{`
+        section {
+          display: none;
+          opacity: 0;
+        }
+      `}</style>
+    </section>
+  )
   return (
     <div className="layout">
       <TabbarMobile onClick={mobileTabbarClickHandler} />
