@@ -26,6 +26,14 @@ const CardContent: React.FC<React.PropsWithChildren<CardContentProps>> = ({
           width: 100%;
           padding: ${theme.layout.gap} ${theme.layout.gap};
         }
+        
+        .content > :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content > :global(*:last-child) {
+          margin-bottom: 0;
+        }
       `}</style>
     </div>
   )

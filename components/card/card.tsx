@@ -69,14 +69,6 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
           box-shadow: ${hoverShadow};
         }
         
-        .card :global(*:first-child) {
-          margin-top: 0;
-        }
-        
-        .card :global(*:last-child) {
-          margin-bottom: 0;
-        }
-        
         .card :global(img) {
           width: 100%;
         }
