@@ -35,8 +35,12 @@ exports[`Modal should render correctly 1`] = `
           padding: 16pt 0 8pt 0;
         }
         
-        .content :global(p) {
-          margin: 0;
+        .content > :global(*:first-child) {
+          margin-top: 0;
+        }
+        
+        .content > :global(*:last-child) {
+          margin-bottom: 0;
         }
       </style><div></div><footer><button class=\\"\\">Cancel</button><style>
         button {
