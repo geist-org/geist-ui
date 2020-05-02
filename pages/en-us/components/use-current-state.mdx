@@ -1,0 +1,67 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Utils, Link, Button } from 'components'
+
+export const meta = {
+  title: 'use-current-state',
+  group: 'Utils',
+}
+
+## Use current state
+
+Get **the latest value** in functional component. By default, `state` in a React FC
+can only get the value at render time, not the latest.
+
+This is a small tool to get the latest value, It is very useful in async actions such as `setTimeout`.
+if you like a bigger solution,
+try <Link target="_blank" pure color href="https://reactjs.org/docs/hooks-reference.html#usereducer">useReducer</Link>.
+
+This is custom React Hooks, you need to follow the <Link target="_blank" pure color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
+
+<Spacer y={1.5} />
+
+### Import
+
+```jsx
+import { Utils } from '@zeit-ui/react'
+const { useCurrentState } = Utils
+```
+
+<Playground
+  scope={{ Utils, Button }}
+  code={`
+() => {
+  const { useCurrentState } = Utils
+  const [value, setValue] = React.useState(0)
+  const [value2, setValue2, value2Ref] = useCurrentState(0)
+  const handler = () => {
+    setValue(pre => pre + 1)
+    setValue2(pre => pre + 1)
+    const str = \`render state: \${value}, the latest value: \${value2Ref.current}\`
+    alert(str)
+  }
+  return (
+    <>
+      <Button size="small" auto onClick={handler}>Click to show</Button>
+    </>
+  )
+}
+`} />
+
+<Attributes edit="/pages/en-us/components/use-current-state.mdx">
+<Attributes.Title>useCurrentState</Attributes.Title>
+
+```ts
+type CurrentStateType<S> = [
+  S,
+  Dispatch<SetStateAction<S>>,
+  MutableRefObject<S>,
+]
+
+const useCurrentState<S> = (
+  initialState: S,
+) => CurrentStateType<S>
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

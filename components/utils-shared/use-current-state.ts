@@ -12,9 +12,10 @@ const useCurrentState = <S,>(initialState: S): CurrentStateType<S> => {
     ref.current = state
   }, [state])
 
-  const setValue = (val: S) => {
-    ref.current = val
-    setState(val)
+  const setValue = (val: SetStateAction<S>) => {
+    const result = typeof val === 'function' ? (val as ((prevState: S) => S))(ref.current) : val
+    ref.current = result
+    setState(result)
   }
 
   return [state, setValue, ref]
