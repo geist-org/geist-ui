@@ -41,8 +41,7 @@ const Application = () => (
 
 ## Development
 
-1. fork and clone.
-2. start: `yarn && yarn dev`
+- [Contributing Guide](https://github.com/zeit-ui/react/blob/master/.github/CONTRIBUTING.md) 
 
 <br/>
 
