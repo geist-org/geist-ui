@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Card, Input, useInput, Modal, useModal, Snippet } from 'components'
 import * as Icon from '@zeit-ui/react-icons'
 import IconsCell, { getImportString } from './icons-cell'
+import { useConfigs } from 'lib/config-context'
 
 const ImportSnippet: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   return (
@@ -17,6 +18,7 @@ const ImportSnippet: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 }
 
 const Icons: React.FC = () => {
+  const { isChinese } = useConfigs()
   const { setVisible, bindings: modalBindings } = useModal()
   const { state: query, bindings } = useInput('')
   const [importStr, setImportStr] = useState({ title: '', single: '', normal: '' })
@@ -31,9 +33,9 @@ const Icons: React.FC = () => {
 
   return (
     <>
-      <h3 className="title">Icons Gallery</h3>
+      <h3 className="title">{isChinese ? '图标画廊' : 'Icons Gallery'}</h3>
       <Card>
-        <Input width="100%" icon={<Icon.Search />} placeholder="Search" {...bindings} />
+        <Input width="100%" icon={<Icon.Search />} placeholder={isChinese ? '搜索' : 'Search'} {...bindings} />
         <div className="icons-grid">
           {icons.map(([name, component], index) => (
             <IconsCell name={name} component={component} key={`${name}-${index}`}
@@ -43,9 +45,9 @@ const Icons: React.FC = () => {
         <Modal {...modalBindings}>
           <Modal.Title>{importStr.title}</Modal.Title>
           <Modal.Content>
-            <p>Import:</p>
+            <p>{isChinese ? '引入:' : 'Import:'}</p>
             <ImportSnippet>{importStr.normal}</ImportSnippet>
-            <p>Import single component:</p>
+            <p>{isChinese ? '引入单个组件:' : 'Import single component:'}</p>
             <ImportSnippet>{importStr.single}</ImportSnippet>
           </Modal.Content>
         </Modal>
