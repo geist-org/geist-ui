@@ -2,49 +2,51 @@ const fs = require('fs-extra')
 const path = require('path')
 const componentsPath = path.join(__dirname, '../components')
 
-module.exports = async() => {
+module.exports = async () => {
   const files = await fs.readdir(componentsPath)
-  
-  const components = await Promise.all(files.map(async name => {
-    const comPath = path.join(componentsPath, name)
-    const entry = path.join(comPath, 'index.ts')
-    
-    const stat = await fs.stat(comPath)
-    if (!stat.isDirectory()) return null
-    
-    const hasFile = await fs.pathExists(entry)
-    if (!hasFile) return null
-    
-    return { name, url: entry }
-  }))
-  
+
+  const components = await Promise.all(
+    files.map(async (name) => {
+      const comPath = path.join(componentsPath, name)
+      const entry = path.join(comPath, 'index.ts')
+
+      const stat = await fs.stat(comPath)
+      if (!stat.isDirectory()) return null
+
+      const hasFile = await fs.pathExists(entry)
+      if (!hasFile) return null
+
+      return { name, url: entry }
+    }),
+  )
+
   const componentsEntries = components
-    .filter(r => r)
+    .filter((r) => r)
     .reduce((pre, current) => {
       return Object.assign({}, pre, { [current.name]: current.url })
     }, {})
-  
+
   console.log(`\n${Object.keys(componentsEntries).length} Components in total have been collected.`)
   console.log('Bundle now...')
-  
+
   const configs = {
     mode: 'none',
-    
+
     entry: componentsEntries,
-    
+
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, '../dist'),
       libraryTarget: 'commonjs',
     },
-    
+
     resolve: {
       extensions: ['.ts', '.tsx', '.js'],
       alias: {
         components: componentsPath,
       },
     },
-    
+
     externals: [
       {
         react: {
@@ -73,7 +75,7 @@ module.exports = async() => {
         done()
       },
     ],
-    
+
     module: {
       rules: [
         {
@@ -88,25 +90,25 @@ module.exports = async() => {
       ],
     },
   }
-  
+
   return [
     configs,
     {
       ...configs,
-      
+
       entry: {
         index: path.join(componentsPath, 'index.ts'),
       },
     },
     {
       ...configs,
-      
+
       mode: 'production',
-      
+
       entry: {
         'index.min': path.join(componentsPath, 'index.ts'),
       },
-  
+
       output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../dist'),

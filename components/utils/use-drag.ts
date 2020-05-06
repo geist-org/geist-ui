@@ -17,12 +17,12 @@ const useDrag = (
   const onDragging = useRef<boolean>(false)
   const [, setStartX, startXRef] = useCurrentState<number>(0)
   const [, setCurrentX, currentXRef] = useCurrentState<number>(0)
-  
+
   const getCustomEvent = () => ({
     startX: startXRef.current,
     currentX: currentXRef.current,
   })
-  
+
   const elementMouseDownHandler = (event: MouseEvent) => {
     event.stopPropagation()
     event.stopImmediatePropagation()
@@ -45,12 +45,12 @@ const useDrag = (
     onDragging.current = false
     dragEndHandler(getCustomEvent())
   }
-  
+
   useEffect(() => {
     if (!elementRef || !elementRef.current) return
     elementRef.current.addEventListener('mousedown', elementMouseDownHandler)
     elementRef.current.addEventListener('touchstart', elementMouseDownHandler)
-    
+
     window.addEventListener('mousemove', globalDraggingHandler)
     window.addEventListener('touchmove', globalDraggingHandler)
     window.addEventListener('mouseup', globalDragEndHandler)
@@ -61,13 +61,12 @@ const useDrag = (
       window.removeEventListener('touchmove', globalDraggingHandler)
       window.removeEventListener('mouseup', globalDragEndHandler)
       window.removeEventListener('touchend', globalDragEndHandler)
-  
+
       if (!elementRef || !elementRef.current) return
       elementRef.current.removeEventListener('mousedown', elementMouseDownHandler)
       elementRef.current.removeEventListener('touchstart', elementMouseDownHandler)
     }
   }, [elementRef])
-  
 }
 
 export default useDrag

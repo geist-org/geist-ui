@@ -10,17 +10,16 @@ interface Props {
 }
 
 const getRandomColor = () => {
-  const hex = `00000${(Math.random() * 0x1000000 << 0).toString(16)}`
+  const hex = `00000${((Math.random() * 0x1000000) << 0).toString(16)}`
   return `#${hex.substr(-6)}`
 }
 
 const getRandomColors = () => {
   const kyes = Object.keys(DefaultTheme.palette) as Array<keyof ZeitUIThemesPalette>
-  const basicColors = new Array(5).fill('')
-    .map(() => {
-      const index = Math.round(Math.random() * (kyes.length)) + kyes.length
-      return DefaultTheme.palette[kyes[index]]
-    })
+  const basicColors = new Array(5).fill('').map(() => {
+    const index = Math.round(Math.random() * kyes.length) + kyes.length
+    return DefaultTheme.palette[kyes[index]]
+  })
   const deduplicatedColors = [...new Set(...basicColors)]
   const randomColors = new Array(10 - deduplicatedColors.length)
     .fill('')
@@ -28,9 +27,7 @@ const getRandomColors = () => {
   return deduplicatedColors.concat(randomColors)
 }
 
-const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({
-  keyName,
-}) => {
+const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({ keyName }) => {
   const theme = useTheme()
   const { updateCustomTheme } = useConfigs()
   const label = `${keyName}`
@@ -38,14 +35,17 @@ const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({
   const randomColors = useMemo(() => getRandomColors(), [])
   const colorChangeHandler = ({ hex }: ColorResult) => {
     updateCustomTheme({
-      palette: { [keyName]: hex }
+      palette: { [keyName]: hex },
     })
   }
-  
+
   const popoverContent = (color: string) => (
-    <TwitterPicker triangle="hide" color={color}
+    <TwitterPicker
+      triangle="hide"
+      color={color}
       onChangeComplete={colorChangeHandler}
-      colors={randomColors} />
+      colors={randomColors}
+    />
   )
   return (
     <Popover content={() => popoverContent(mainColor)} portalClassName="editor-popover" offset={3}>
@@ -65,48 +65,49 @@ const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({
             border: 1px solid ${theme.palette.border};
             border-radius: ${theme.layout.radius};
             color: ${theme.palette.accents_5};
-            margin-right: .75rem;
-            margin-bottom: .5rem;
+            margin-right: 0.75rem;
+            margin-bottom: 0.5rem;
             cursor: pointer;
             transition: color 200ms ease;
           }
-          
+
           :global(.editor-popover .inner) {
             padding: 0 !important;
           }
-          
+
           :global(.editor-popover .twitter-picker) {
             box-shadow: none !important;
             border: 0 !important;
             background: transparent !important;
           }
-          
+
           .editor-item:hover {
             color: ${theme.palette.accents_8};
           }
-          
+
           .editor-item:hover .dot {
             transform: scale(1);
           }
-          
-          .dot-box, .dot {
+
+          .dot-box,
+          .dot {
             display: inline-flex;
             justify-content: center;
             align-items: center;
           }
-          
+
           .dot-box {
             width: 1rem;
             height: 1rem;
-            margin-right: .75rem;
+            margin-right: 0.75rem;
           }
-          
+
           .dot {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             background-color: ${mainColor};
-            transform: scale(.8);
+            transform: scale(0.8);
             transition: transform 200ms ease;
           }
         `}</style>

@@ -15,8 +15,8 @@ describe('ThemeProvider', () => {
       font: {
         subFont: {
           key: 'font',
-        }
-      }
+        },
+      },
     }
     const targetObject: any = {
       palette: {
@@ -26,49 +26,47 @@ describe('ThemeProvider', () => {
       arr: [5],
       font: {
         first: 'first',
-      }
+      },
     }
-    expect(deepMergeObject(sourceObject, targetObject))
-      .toMatchObject({
-        palette: {
-          success: '#ccc',
+    expect(deepMergeObject(sourceObject, targetObject)).toMatchObject({
+      palette: {
+        success: '#ccc',
+      },
+      arr: [5, 'array', 10],
+      font: {
+        subFont: {
+          key: 'font',
         },
-        arr: [5, 'array', 10],
-        font: {
-          subFont: {
-            key: 'font',
-          }
-        }
-      })
+      },
+    })
   })
-  
+
   it('should merge themes with custom function', () => {
     const customFunc = (): DeepPartial<ZeitUIThemes> => {
       return {
         ...DefaultThemes,
         palette: {
           success: '#ccc',
-        }
+        },
       }
     }
     const wrapper = render(
       <ZEITUIProvider theme={customFunc}>
         <Text type="success">hello</Text>
-      </ZEITUIProvider>
+      </ZEITUIProvider>,
     )
     expect(wrapper).toMatchSnapshot()
   })
-  
+
   it('should warning when using the wrong merge function', () => {
-    const errorSpy = jest.spyOn(console, 'error')
-      .mockImplementation(() => {})
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
     const customFunc = () => 0 as DeepPartial<ZeitUIThemes>
     const wrapper = mount(
       <ZEITUIProvider theme={customFunc}>
         <p>test</p>
-      </ZEITUIProvider>
+      </ZEITUIProvider>,
     )
-    
+
     expect(errorSpy).toHaveBeenCalled()
     errorSpy.mockRestore()
     wrapper.unmount()

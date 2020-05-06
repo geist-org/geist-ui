@@ -4,7 +4,8 @@ import { Image } from 'components'
 import { updateWrapper } from 'tests/utils'
 import { act } from 'react-dom/test-utils'
 
-const url = 'data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA' +
+const url =
+  'data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA' +
   'AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO' +
   '9TXL0Y4OHwAAAABJRU5ErkJggg=='
 
@@ -43,7 +44,9 @@ describe('Image', () => {
 
   it('should remove skeleton when timeout', async () => {
     const animation = mount(<Image src={url} width={20} height={20} maxDelay={100} />)
-    const NoAnimation = mount(<Image src={url} width={20} height={20} maxDelay={100} disableSkeleton />)
+    const NoAnimation = mount(
+      <Image src={url} width={20} height={20} maxDelay={100} disableSkeleton />,
+    )
     expect(animation.find('.skeleton').length).not.toBe(0)
     await updateWrapper(animation, 300)
     await updateWrapper(NoAnimation, 300)
@@ -55,7 +58,7 @@ describe('Image', () => {
     Object.defineProperty((global as any).Image.prototype, 'complete', {
       get() {
         return true
-      }
+      },
     })
     const wrapper = mount(<Image src={url} width={20} height={20} />)
     const img = wrapper.find('img').at(0)
@@ -66,25 +69,25 @@ describe('Image', () => {
   })
 
   it('should zooming image when width so small', async () => {
-    window.getComputedStyle = jest.fn()
-      .mockImplementation(() => ({
-        width: '10px',
-      }))
+    window.getComputedStyle = jest.fn().mockImplementation(() => ({
+      width: '10px',
+    }))
     const wrapper = mount(
-      <div style={{ width: '10px' }}><Image src={url} width={100} height={100} /></div>
+      <div style={{ width: '10px' }}>
+        <Image src={url} width={100} height={100} />
+      </div>,
     )
     expect(wrapper.find('.image').html()).toContain('height: auto;')
     ;(window.getComputedStyle as jest.Mock).mockRestore()
-    
-    window.getComputedStyle = jest.fn()
-      .mockImplementation(() => ({
-        width: '110px',
-      }))
+
+    window.getComputedStyle = jest.fn().mockImplementation(() => ({
+      width: '110px',
+    }))
     act(() => {
       window.dispatchEvent(new Event('resize'))
     })
     await updateWrapper(wrapper)
-    
+
     expect(wrapper.find('.image').html()).not.toContain('height: auto;')
     ;(window.getComputedStyle as jest.Mock).mockRestore()
   })

@@ -19,7 +19,10 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type SelectDropdownProps = Props & typeof defaultProps & NativeAttrs
 
 const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = ({
-  visible, children, className, dropdownStyle,
+  visible,
+  children,
+  className,
+  dropdownStyle,
 }) => {
   const theme = useTheme()
   const { ref } = useSelectContext()
@@ -29,16 +32,16 @@ const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = (
       <div className={`select-dropdown ${className}`} style={dropdownStyle}>
         {children}
         <style jsx>{`
-        .select-dropdown {
-          border-radius: ${theme.layout.radius};
-          box-shadow: ${theme.expressiveness.shadowLarge};
-          background-color: ${theme.palette.background};
-          max-height: 15rem;
-          overflow-y: auto;
-          overflow-anchor: none;
-          padding: ${theme.layout.gapQuarter} 0;
-        }
-      `}</style>
+          .select-dropdown {
+            border-radius: ${theme.layout.radius};
+            box-shadow: ${theme.expressiveness.shadowLarge};
+            background-color: ${theme.palette.background};
+            max-height: 15rem;
+            overflow-y: auto;
+            overflow-anchor: none;
+            padding: ${theme.layout.gapQuarter} 0;
+          }
+        `}</style>
       </div>
     </Dropdown>
   )

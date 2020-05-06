@@ -8,9 +8,7 @@ interface Props {
   disabled?: boolean
 }
 
-const InputIconClear: React.FC<Props> = ({
-  onClick, heightRatio, disabled, visibale,
-}) => {
+const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visibale }) => {
   const theme = useTheme()
   const width = useMemo(() => {
     return heightRatio ? `calc(10.66px * ${heightRatio})` : '18px'
@@ -23,12 +21,18 @@ const InputIconClear: React.FC<Props> = ({
   }
   return (
     <div onClick={clickHandler} className={`clear-icon ${visibale ? 'visibale' : ''}`}>
-      <svg viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
-        strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
+      <svg
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+        shapeRendering="geometricPrecision">
         <path d="M18 6L6 18" />
         <path d="M6 6l12 12" />
       </svg>
-  
+
       <style jsx>{`
         .clear-icon {
           padding: 0 ${theme.layout.gapHalf};
@@ -43,16 +47,16 @@ const InputIconClear: React.FC<Props> = ({
           visibility: hidden;
           opacity: 0;
         }
-        
+
         .visibale {
           visibility: visible;
           opacity: 1;
         }
-        
+
         .clear-icon:hover {
           color: ${disabled ? theme.palette.accents_3 : theme.palette.foreground};
         }
-        
+
         svg {
           color: currentColor;
           width: ${width};

@@ -12,7 +12,7 @@ const defaultProps = {
   x: 1,
   y: 1,
   inline: false,
-  className: ''
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -22,12 +22,10 @@ export const getMargin = (num: number): string => {
   return `calc(${num * 15.25}pt + 1px * ${num - 1})`
 }
 
-const Spacer: React.FC<SpacerProps> = ({
-  x, y, inline, className, ...props
-}) => {
+const Spacer: React.FC<SpacerProps> = ({ x, y, inline, className, ...props }) => {
   const left = getMargin(x)
   const top = getMargin(y)
-  
+
   return (
     <span className={className} {...props}>
       <style jsx>{`

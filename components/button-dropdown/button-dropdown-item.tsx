@@ -25,7 +25,12 @@ type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ButtonDropdownItemProps = Props & typeof defaultProps & NativeAttrs
 
 const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemProps>> = ({
-  children, onClick, className, main, type: selfType, ...props
+  children,
+  onClick,
+  className,
+  main,
+  type: selfType,
+  ...props
 }) => {
   const theme = useTheme()
   const { size, type: parentType, auto, disabled, loading } = useButtonDropdown()
@@ -36,12 +41,12 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
     if (disabled || loading) return
     onClick && onClick(event)
   }
-  
+
   const cursor = useMemo(() => {
     if (loading) return 'default'
     return disabled ? 'not-allowed' : 'pointer'
-  },[loading, disabled])
-  
+  }, [loading, disabled])
+
   return (
     <button className={className} onClick={clickHandler} {...props}>
       {loading ? <Loading /> : children}
@@ -68,7 +73,7 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
           padding: 0 ${sizes.padding};
           font-size: ${sizes.fontSize};
         }
-        
+
         button:hover {
           border-color: ${colors.hoverBorder};
           background-color: ${colors.hoverBgColor};

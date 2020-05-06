@@ -8,7 +8,7 @@ describe('Dot', () => {
     expect(wrapper).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should supports types', () => {
     const wrapper = render(
       <div>
@@ -16,11 +16,11 @@ describe('Dot', () => {
         <Dot type="secondary" />
         <Dot type="warning" />
         <Dot type="error" />
-      </div>
+      </div>,
     )
     expect(wrapper).toMatchSnapshot()
   })
-  
+
   it('should be render text', () => {
     const wrapper = mount(<Dot>test</Dot>)
     expect(wrapper.text()).toContain('test')

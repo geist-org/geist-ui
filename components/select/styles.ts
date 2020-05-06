@@ -30,7 +30,6 @@ export const getSizes = (theme: ZeitUIThemes, size?: NormalSizes) => {
       minWidth: '12.5rem',
     },
   }
-  
+
   return size ? sizes[size] : sizes.medium
 }
-

@@ -1,7 +1,9 @@
 import React, { Dispatch, MutableRefObject, SetStateAction } from 'react'
 import useCurrentState from '../utils/use-current-state'
 
-const useInput = (initialValue: string): {
+const useInput = (
+  initialValue: string,
+): {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>
@@ -12,7 +14,7 @@ const useInput = (initialValue: string): {
   }
 } => {
   const [state, setState, currentRef] = useCurrentState<string>(initialValue)
-  
+
   return {
     state,
     setState,

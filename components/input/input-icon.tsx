@@ -8,9 +8,7 @@ export interface InputIconProps {
   onClick: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
-const InputIcon: React.FC<InputIconProps> = ({
-  icon, ratio, clickable, onClick,
-}) => {
+const InputIcon: React.FC<InputIconProps> = ({ icon, ratio, clickable, onClick }) => {
   const theme = useTheme()
   const width = useMemo(() => {
     return `calc(${ratio} * ${theme.layout.gap} * .42)`

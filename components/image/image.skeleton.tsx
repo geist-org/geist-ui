@@ -12,13 +12,10 @@ const defaultProps = {
 
 export type ImageSkeletonProps = Props & typeof defaultProps
 
-const ImageSkeleton: React.FC<ImageSkeletonProps> = React.memo(({
-  opacity, ...props
-}) => {
+const ImageSkeleton: React.FC<ImageSkeletonProps> = React.memo(({ opacity, ...props }) => {
   const theme = useTheme()
   return (
     <div className="skeleton" {...props}>
-  
       <style jsx>{`
         .skeleton {
           position: absolute;
@@ -33,23 +30,23 @@ const ImageSkeleton: React.FC<ImageSkeletonProps> = React.memo(({
             ${theme.palette.accents_1},
             ${theme.palette.accents_2},
             ${theme.palette.accents_2},
-            ${theme.palette.accents_1});
+            ${theme.palette.accents_1}
+          );
           background-size: 400% 100%;
           animation: loading 3s ease-in-out infinite;
           opacity: ${opacity};
           transition: opacity 300ms ease-out;
         }
-        
-        @keyframes loading{
+
+        @keyframes loading {
           0% {
             background-position: 200% 0;
           }
           to {
-          background-position: -200% 0;
+            background-position: -200% 0;
           }
         }
       `}</style>
-      
     </div>
   )
 })

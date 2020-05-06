@@ -16,17 +16,18 @@ const simulateGlobalClick = () => {
 
 describe('Dropdown', () => {
   beforeAll(() => {
-    window.Element.prototype.getBoundingClientRect = () => ({
-      width: 100,
-      left: 0,
-      right: 100,
-      top: 0,
-      bottom: 100,
-      height: 100,
-      x: 0,
-    } as DOMRect)
+    window.Element.prototype.getBoundingClientRect = () =>
+      ({
+        width: 100,
+        left: 0,
+        right: 100,
+        top: 0,
+        bottom: 100,
+        height: 100,
+        x: 0,
+      } as DOMRect)
   })
-  
+
   it('should render correctly', async () => {
     const Mock: React.FC<{ visible?: boolean }> = ({ visible = false }) => {
       const ref = useRef<HTMLDivElement>(null)
@@ -41,22 +42,22 @@ describe('Dropdown', () => {
     const wrapper = mount(<Mock />)
     wrapper.setProps({ visible: true })
     await updateWrapper(wrapper, 300)
-  
+
     expect(wrapper.find('.dropdown').html()).toContain('test-value')
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should be work without parent', () => {
     const wrapper = mount(
       <Dropdown visible>
         <span>test-value</span>
-      </Dropdown>
+      </Dropdown>,
     )
-    
+
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('events should be prevented', () => {
     const handler = jest.fn()
     const Mock: React.FC<{}> = () => {
@@ -71,16 +72,17 @@ describe('Dropdown', () => {
     }
     const wrapper = mount(<Mock />)
     wrapper.find('.dropdown').simulate('click', nativeEvent)
-    
+
     expect(handler).not.toHaveBeenCalled()
     expect(() => wrapper.unmount()).not.toThrow()
     handler.mockRestore()
   })
-  
+
   it('should trigger rect update', async () => {
-    let dynamicTopMock = 100, calledTimes = 0
+    let dynamicTopMock = 100,
+      calledTimes = 0
     window.Element.prototype.getBoundingClientRect = () => {
-      calledTimes ++
+      calledTimes++
       return {
         width: 100,
         left: 0,
@@ -125,11 +127,11 @@ describe('Dropdown', () => {
 
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should tigger rect update when mouseenter', () => {
     let calledTimes = 0
     window.Element.prototype.getBoundingClientRect = () => {
-      calledTimes ++
+      calledTimes++
       return {
         width: 100,
         left: 0,
@@ -152,14 +154,14 @@ describe('Dropdown', () => {
     }
     const wrapper = mount(<Mock />)
     expect(calledTimes).toBe(1)
-  
+
     // MouseEnter event is monitored by native API, the simulate can not trigger it.
     const parent = wrapper.find('#parent').getDOMNode() as HTMLDivElement
     act(() => {
       parent.dispatchEvent(new Event('mouseenter'))
     })
     expect(calledTimes).toBe(2)
-    
+
     expect(() => wrapper.unmount()).not.toThrow()
   })
 })

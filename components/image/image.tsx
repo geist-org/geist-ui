@@ -29,25 +29,32 @@ type NativeAttrs = Omit<React.ImgHTMLAttributes<any>, keyof Props>
 export type ImageProps = Props & typeof defaultProps & NativeAttrs
 
 const Image: React.FC<ImageProps> = ({
-  src, width, height, disableSkeleton, className, scale, maxDelay,
-  disableAutoResize, ...props
+  src,
+  width,
+  height,
+  disableSkeleton,
+  className,
+  scale,
+  maxDelay,
+  disableAutoResize,
+  ...props
 }) => {
   const showAnimation = !disableSkeleton && width && height
   const w = width ? `${width}px` : 'auto'
   const h = height ? `${height}px` : 'auto'
-  
+
   const theme = useTheme()
   const [loading, setLoading] = useState<boolean>(true)
   const [showSkeleton, setShowSkeleton] = useState<boolean>(true)
   const [zoomHeight, setZoomHeight, zoomHeightRef] = useCurrentState<string>(h)
   const imageRef = useRef<HTMLImageElement>(null)
   const [shape, updateShape] = useRealShape(imageRef)
-  
+
   const imageLoaded = () => {
     if (!showAnimation) return
     setLoading(false)
   }
-  
+
   useEffect(() => {
     if (!showAnimation) return
     if (!imageRef.current) return
@@ -56,7 +63,7 @@ const Image: React.FC<ImageProps> = ({
       setShowSkeleton(false)
     }
   })
-  
+
   useEffect(() => {
     const timer = setTimeout(() => {
       if (showAnimation) {
@@ -66,7 +73,7 @@ const Image: React.FC<ImageProps> = ({
     }, maxDelay)
     return () => clearTimeout(timer)
   }, [loading])
-  
+
   /**
    * On mobile devices, the render witdth may be less than CSS width value.
    * If the image is scaled, set the height manually.
@@ -85,15 +92,15 @@ const Image: React.FC<ImageProps> = ({
       isAutoZoom && setZoomHeight(h)
     }
   }, [shape, width])
-  
+
   useResize(() => {
     if (disableAutoResize) return
     updateShape()
   })
-  
+
   return (
     <div className={`image ${className}`}>
-      {(showSkeleton && showAnimation) && <ImageSkeleton opacity={loading ? .5 : 0} />}
+      {showSkeleton && showAnimation && <ImageSkeleton opacity={loading ? 0.5 : 0} />}
       <img ref={imageRef} width={width} height={height} onLoad={imageLoaded} src={src} {...props} />
       <style jsx>{`
         .image {
@@ -105,7 +112,7 @@ const Image: React.FC<ImageProps> = ({
           overflow: hidden;
           max-width: 100%;
         }
-        
+
         img {
           width: ${scale};
           height: ${scale};
@@ -120,7 +127,9 @@ const Image: React.FC<ImageProps> = ({
 type MemoImageComponent<P = {}> = React.NamedExoticComponent<P> & {
   Browser: typeof ImageBrowser
 }
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 Image.defaultProps = defaultProps
 

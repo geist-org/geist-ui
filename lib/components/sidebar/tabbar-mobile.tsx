@@ -6,7 +6,7 @@ interface Props {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-const TabbarMobile:React.FC<Props> = ({ onClick }) => {
+const TabbarMobile: React.FC<Props> = ({ onClick }) => {
   const theme = useTheme()
   const handler = (event: React.MouseEvent<HTMLButtonElement>) => {
     onClick && onClick(event)
@@ -34,7 +34,7 @@ const TabbarMobile:React.FC<Props> = ({ onClick }) => {
           justify-content: space-between;
           border-bottom: 1px solid ${theme.palette.border};
         }
-        
+
         .tabbar :global(.toggle) {
           width: 40px;
           height: 40px;
@@ -44,14 +44,14 @@ const TabbarMobile:React.FC<Props> = ({ onClick }) => {
           align-items: center;
           color: ${theme.palette.accents_6};
         }
-        
+
         span {
           color: ${theme.palette.accents_7};
-          font-size: .75rem;
+          font-size: 0.75rem;
           display: inline-flex;
           text-transform: capitalize;
         }
-        
+
         @media only screen and (min-width: ${theme.layout.breakpointMobile}) {
           .tabbar {
             display: none;

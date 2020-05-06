@@ -24,20 +24,21 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
     setExpanded(!expanded)
     setBodyScroll(!expanded)
   }
-  
+
   useEffect(() => setShowAfterRender(true), [])
-  
-  if (!showAfterRender) return (
-    <section>
-      {children}
-      <style jsx>{`
-        section {
-          display: none;
-          opacity: 0;
-        }
-      `}</style>
-    </section>
-  )
+
+  if (!showAfterRender)
+    return (
+      <section>
+        {children}
+        <style jsx>{`
+          section {
+            display: none;
+            opacity: 0;
+          }
+        `}</style>
+      </section>
+    )
   return (
     <div className="layout">
       <TabbarMobile onClick={mobileTabbarClickHandler} />
@@ -57,7 +58,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
           display: flex;
           box-sizing: border-box;
         }
-        
+
         .sidebar {
           width: 200px;
           margin-right: 20px;
@@ -77,7 +78,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
           flex-shrink: 0;
           height: 100vh;
         }
-        
+
         .main {
           display: flex;
           max-width: calc(100% - 220px);
@@ -87,7 +88,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
           flex: 0 0 100%;
           padding-bottom: 150px;
         }
-        
+
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .layout {
             max-width: 100%;
@@ -108,13 +109,13 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
             overflow: hidden;
             transition: height 250ms ease;
           }
-          
+
           .main {
             width: 90vw;
             max-width: 90vw;
             padding: 0;
           }
-          
+
           .side-shadow {
             display: none;
             visibility: hidden;

@@ -1,44 +1,14 @@
-
 export const tuple = <T extends string[]>(...args: T) => args
 
-const buttonTypes = tuple(
-  'default',
-  'secondary',
-  'success',
-  'warning',
-  'error',
-  'abort',
-)
+const buttonTypes = tuple('default', 'secondary', 'success', 'warning', 'error', 'abort')
 
-const normalSizes = tuple(
-  'mini',
-  'small',
-  'medium',
-  'large',
-)
+const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
-const normalTypes = tuple(
-  'default',
-  'secondary',
-  'success',
-  'warning',
-  'error',
-)
+const normalTypes = tuple('default', 'secondary', 'success', 'warning', 'error')
 
-const themeTypes = tuple(
-  'dark',
-  'light',
-)
+const themeTypes = tuple('dark', 'light')
 
-const snippetTypes = tuple(
-  'default',
-  'secondary',
-  'success',
-  'warning',
-  'error',
-  'dark',
-  'lite',
-)
+const snippetTypes = tuple('default', 'secondary', 'success', 'warning', 'error', 'dark', 'lite')
 
 const cardTypes = tuple(
   'default',
@@ -54,16 +24,9 @@ const cardTypes = tuple(
   'cyan',
 )
 
-const copyTypes = tuple(
-  'default',
-  'slient',
-  'prevent',
-)
+const copyTypes = tuple('default', 'slient', 'prevent')
 
-const triggerTypes = tuple(
-  'hover',
-  'click',
-)
+const triggerTypes = tuple('hover', 'click')
 
 const placement = tuple(
   'top',
@@ -80,13 +43,7 @@ const placement = tuple(
   'rightEnd',
 )
 
-const dividerAlign = tuple(
-  'start',
-  'center',
-  'end',
-  'left',
-  'right',
-)
+const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
 export type ButtonTypes = typeof buttonTypes[number]
 

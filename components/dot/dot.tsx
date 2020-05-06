@@ -24,36 +24,36 @@ const getColor = (type: NormalTypes, theme: ZeitUIThemes): string => {
     warning: theme.palette.warning,
     error: theme.palette.error,
   }
-  return colors[type] || colors.default as string
+  return colors[type] || (colors.default as string)
 }
 
 const Dot: React.FC<React.PropsWithChildren<DotProps>> = ({
-  type, children, className, ...props
+  type,
+  children,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
-  const color = useMemo(
-    () => getColor(type, theme),
-    [type, theme],
-  )
+  const color = useMemo(() => getColor(type, theme), [type, theme])
   return (
     <span className={`dot ${className}`} {...props}>
       <span className="icon" />
       <span className="label">{children}</span>
-      
+
       <style jsx>{`
         .dot {
           display: inline-flex;
           align-items: center;
         }
-        
+
         .icon {
-          width: .625rem;
-          height: .625rem;
+          width: 0.625rem;
+          height: 0.625rem;
           border-radius: 50%;
           background-color: ${color};
           user-select: none;
         }
-        
+
         .label {
           margin-left: 8px;
           font-size: 1rem;

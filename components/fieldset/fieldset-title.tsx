@@ -6,18 +6,18 @@ interface Props {
 }
 
 const defaultProps = {
-  className: ''
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type FieldsetTitleProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetTitle: React.FC<FieldsetTitleProps> = ({
-  className, children, ...props
-}) => {
+const FieldsetTitle: React.FC<FieldsetTitleProps> = ({ className, children, ...props }) => {
   return (
     <>
-      <h4 className={className} {...props}>{children}</h4>
+      <h4 className={className} {...props}>
+        {children}
+      </h4>
       <style jsx>{`
         h4 {
           font-size: 1.25rem;

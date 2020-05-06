@@ -6,7 +6,5 @@ module.exports = {
     guide: '上手指南',
     docs: '文档',
   },
-  'en-us': {
-  
-  },
+  'en-us': {},
 }

@@ -3,9 +3,7 @@ import { useTheme, Row } from 'components'
 import CustomizationCodes from './codes'
 import Demo from './demo'
 
-const CustomizationLayout: React.FC<React.PropsWithChildren<{}>> = ({
-  children,
-}) => {
+const CustomizationLayout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const theme = useTheme()
 
   return (
@@ -17,7 +15,7 @@ const CustomizationLayout: React.FC<React.PropsWithChildren<{}>> = ({
       <Row>
         <CustomizationCodes />
       </Row>
-      
+
       <style jsx>{`
         .layout {
           min-height: calc(100vh - 108px);
@@ -28,7 +26,7 @@ const CustomizationLayout: React.FC<React.PropsWithChildren<{}>> = ({
           flex-direction: column;
           box-sizing: border-box;
         }
-        
+
         .content {
           flex: 1;
           overflow: hidden;

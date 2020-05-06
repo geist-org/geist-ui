@@ -6,8 +6,7 @@ import Router, { useRouter } from 'next/router'
 import MoonIcon from '@zeit-ui/react-icons/moon'
 import SunIcon from '@zeit-ui/react-icons/sun'
 
-const Controls: React.FC<{}> = React.memo(({
-}) => {
+const Controls: React.FC<{}> = React.memo(({}) => {
   const theme = useTheme()
   const { updateCustomTheme, updateChineseState } = useConfigs()
   const { pathname } = useRouter()
@@ -37,13 +36,24 @@ const Controls: React.FC<{}> = React.memo(({
   return (
     <div className="controls">
       <div className="tools">
-        <Button auto type="abort" size="small" onClick={switchLanguages}>{isChinese ? 'English' : '中文文档'}</Button>
-        <Spacer x={.25} />
-        <Button auto type="abort" size="small"
+        <Button auto type="abort" size="small" onClick={switchLanguages}>
+          {isChinese ? 'English' : '中文文档'}
+        </Button>
+        <Spacer x={0.25} />
+        <Button
+          auto
+          type="abort"
+          size="small"
           onClick={redirectGithub}
-          title={isChinese? '代码仓库' : 'Github Repository'}>{isChinese ? '代码仓库' : 'Github'}</Button>
-        <Spacer x={.75} />
-        <Select size="small" pure onChange={switchThemes} value={isDark ? 'dark' : 'light'}
+          title={isChinese ? '代码仓库' : 'Github Repository'}>
+          {isChinese ? '代码仓库' : 'Github'}
+        </Button>
+        <Spacer x={0.75} />
+        <Select
+          size="small"
+          pure
+          onChange={switchThemes}
+          value={isDark ? 'dark' : 'light'}
           title={isChinese ? '切换主题' : 'Switch Themes'}>
           <Select.Option value="light">
             <div className="select-content">
@@ -64,30 +74,30 @@ const Controls: React.FC<{}> = React.memo(({
           margin: 0;
           position: relative;
         }
-        
+
         .controls :global(.select) {
           width: min-content;
           min-width: unset;
         }
-        
+
         .select-content {
           width: auto;
           display: inline-flex;
           justify-content: center;
           align-items: center;
         }
-        
+
         .select-content :global(svg) {
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
-        
+
         .tools {
           display: flex;
           height: 2.5rem;
           box-sizing: border-box;
           align-items: center;
         }
-        
+
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .controls {
             display: none;

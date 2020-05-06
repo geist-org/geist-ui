@@ -5,10 +5,7 @@ import { TreeContext } from './tree-context'
 import { tuple } from '../utils/prop-types'
 import { sortChildren } from '../file-tree/tree-help'
 
-const FileTreeValueType = tuple(
-  'directory',
-  'file',
-)
+const FileTreeValueType = tuple('directory', 'file')
 
 const directoryType = FileTreeValueType[0]
 
@@ -39,33 +36,42 @@ const makeChildren = (value: Array<FileTreeValue> = []) => {
   return value
     .sort((a, b) => {
       if (a.type !== b.type) return a.type !== directoryType ? 1 : -1
-  
+
       return `${a.name}`.charCodeAt(0) - `${b.name}`.charCodeAt(0)
     })
     .map((item, index) => {
-      if (item.type === directoryType) return (
-        <TreeFolder name={item.name} extra={item.extra} key={`folder-${item.name}-${index}`}>
-          {makeChildren(item.files)}
-        </TreeFolder>
-      )
+      if (item.type === directoryType)
+        return (
+          <TreeFolder name={item.name} extra={item.extra} key={`folder-${item.name}-${index}`}>
+            {makeChildren(item.files)}
+          </TreeFolder>
+        )
       return <TreeFile name={item.name} extra={item.extra} key={`file-${item.name}-${index}`} />
     })
 }
 
 const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
-  children, onClick, initialExpand, value, className, ...props
+  children,
+  onClick,
+  initialExpand,
+  value,
+  className,
+  ...props
 }) => {
   const isImperative = Boolean(value && value.length > 0)
   const onFileClick = (path: string) => {
     onClick && onClick(path)
   }
 
-  const initialValue = useMemo(() => ({
-    onFileClick,
-    initialExpand,
-    isImperative,
-  }), [initialExpand])
-  
+  const initialValue = useMemo(
+    () => ({
+      onFileClick,
+      initialExpand,
+      isImperative,
+    }),
+    [initialExpand],
+  )
+
   const customChildren = isImperative ? makeChildren(value) : sortChildren(children, TreeFolder)
 
   return (
@@ -73,10 +79,10 @@ const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
       <div className={`tree ${className}`} {...props}>
         {customChildren}
         <style jsx>{`
-        .tree {
-          padding-left: 1.625rem;
-        }
-      `}</style>
+          .tree {
+            padding-left: 1.625rem;
+          }
+        `}</style>
       </div>
     </TreeContext.Provider>
   )
@@ -87,7 +93,9 @@ type TreeComponent<P = {}> = React.FC<P> & {
   Folder: typeof TreeFolder
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 Tree.defaultProps = defaultProps
 

@@ -14,7 +14,11 @@ const MockToast: React.FC<{}> = () => {
     }, {})
     setToast(params)
   }
-  return <button id="btn" onClick={clickHandler}>btn</button>
+  return (
+    <button id="btn" onClick={clickHandler}>
+      btn
+    </button>
+  )
 }
 
 const triggerToast = (wrapper: ReactWrapper, params = {}) => {
@@ -36,7 +40,11 @@ const expectToastIsHidden = (wrapper: ReactWrapper) => {
 
 describe('UseToast', () => {
   it('should render correctly', async () => {
-    const wrapper = mount(<ZEITUIProvider><MockToast /></ZEITUIProvider>)
+    const wrapper = mount(
+      <ZEITUIProvider>
+        <MockToast />
+      </ZEITUIProvider>,
+    )
 
     expectToastIsHidden(wrapper)
     triggerToast(wrapper, { text: 'test-value' })
@@ -45,7 +53,11 @@ describe('UseToast', () => {
   })
 
   it('should work with different types', async () => {
-    const wrapper = mount(<ZEITUIProvider><MockToast /></ZEITUIProvider>)
+    const wrapper = mount(
+      <ZEITUIProvider>
+        <MockToast />
+      </ZEITUIProvider>,
+    )
 
     expectToastIsHidden(wrapper)
     triggerToast(wrapper, { type: 'success', text: 'hello' })
@@ -55,7 +67,11 @@ describe('UseToast', () => {
   })
 
   it('should close toast', async () => {
-    const wrapper = mount(<ZEITUIProvider><MockToast /></ZEITUIProvider>)
+    const wrapper = mount(
+      <ZEITUIProvider>
+        <MockToast />
+      </ZEITUIProvider>,
+    )
 
     expectToastIsHidden(wrapper)
     triggerToast(wrapper, { delay: 100, text: 'hello' })
@@ -66,40 +82,51 @@ describe('UseToast', () => {
     const toast = wrapper.find('.toast-container').find('.hide')
     expect(toast.length).not.toBe(0)
   })
-  
+
   it('the removeal should be delayed when hover is triggerd', async () => {
-    const wrapper = mount(<ZEITUIProvider><MockToast /></ZEITUIProvider>)
-  
+    const wrapper = mount(
+      <ZEITUIProvider>
+        <MockToast />
+      </ZEITUIProvider>,
+    )
+
     expectToastIsHidden(wrapper)
     triggerToast(wrapper, { delay: 100, text: 'hello' })
     await updateWrapper(wrapper, 0)
     expectToastIsShow(wrapper)
-    
+
     wrapper.find('.toast-container').simulate('mouseEnter', nativeEvent)
     await updateWrapper(wrapper, 350)
-    
+
     // Hover event will postpone hidden event
     let toast = wrapper.find('.toast-container').find('.hide')
     expect(toast.length).toBe(0)
-  
+
     // Restart hidden event after mouse leave
     wrapper.find('.toast-container').simulate('mouseLeave', nativeEvent)
     await updateWrapper(wrapper, 350 + 200)
     toast = wrapper.find('.toast-container').find('.hide')
     expect(toast.length).not.toBe(0)
   })
-  
+
   it('should render different actions', async () => {
-    const wrapper = mount(<ZEITUIProvider><MockToast /></ZEITUIProvider>)
-    const actions = [{
-      name: 'remove',
-      handler: () => {},
-    }, {
-      name: 'remove',
-      handler: () => {},
-      passive: true,
-    }]
-  
+    const wrapper = mount(
+      <ZEITUIProvider>
+        <MockToast />
+      </ZEITUIProvider>,
+    )
+    const actions = [
+      {
+        name: 'remove',
+        handler: () => {},
+      },
+      {
+        name: 'remove',
+        handler: () => {},
+        passive: true,
+      },
+    ]
+
     triggerToast(wrapper, { actions, text: 'hello' })
     await updateWrapper(wrapper)
     expectToastIsShow(wrapper)
@@ -107,28 +134,37 @@ describe('UseToast', () => {
   })
 
   it('should close toast when action triggered', async () => {
-    const wrapper = mount(<ZEITUIProvider><MockToast /></ZEITUIProvider>)
-    const actions = [{
-      name: 'remove',
-      handler: (_event: any, cancel: Function) => cancel()
-    }]
-    
+    const wrapper = mount(
+      <ZEITUIProvider>
+        <MockToast />
+      </ZEITUIProvider>,
+    )
+    const actions = [
+      {
+        name: 'remove',
+        handler: (_event: any, cancel: Function) => cancel(),
+      },
+    ]
+
     expectToastIsHidden(wrapper)
     triggerToast(wrapper, { actions, text: 'hello' })
     await updateWrapper(wrapper)
     expectToastIsShow(wrapper)
-    wrapper.find('.action').find('.btn').at(0)
-      .simulate('click', nativeEvent)
-    
+    wrapper.find('.action').find('.btn').at(0).simulate('click', nativeEvent)
+
     // Element already hidden, but Dom was removed after delay
     await updateWrapper(wrapper, 250)
     const toast = wrapper.find('.toast-container').find('.hide')
     expect(toast.length).not.toBe(0)
   })
-  
+
   it('should work with multiple toasts', async () => {
-    const wrapper = mount(<ZEITUIProvider><MockToast /></ZEITUIProvider>)
-  
+    const wrapper = mount(
+      <ZEITUIProvider>
+        <MockToast />
+      </ZEITUIProvider>,
+    )
+
     expectToastIsHidden(wrapper)
     triggerToast(wrapper, { delay: 100, text: 'hello' })
     triggerToast(wrapper, { delay: 100, text: 'hello' })
@@ -136,14 +172,14 @@ describe('UseToast', () => {
     triggerToast(wrapper, { delay: 100, text: 'hello' })
     triggerToast(wrapper, { delay: 100, text: 'hello' })
     triggerToast(wrapper, { delay: 200, text: 'hello' })
-    
+
     /**
      * If there are multiple Toasts at different deplay in the stack,
      * the destory Dom event will wait for the maximum delay time.
      */
     await updateWrapper(wrapper, 350)
     expectToastIsShow(wrapper)
-  
+
     await updateWrapper(wrapper, 200)
     const toast = wrapper.find('.toast-container').find('.hide')
     expect(toast.length).not.toBe(0)

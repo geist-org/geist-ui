@@ -3,25 +3,24 @@ import useTheme from '../use-theme'
 import flush from 'styled-jsx/server'
 import flushToReact from 'styled-jsx/server'
 
-const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({
-  children,
-}) => {
+const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
   const theme = useTheme()
-  
+
   return (
     <>
       {children}
       <style global jsx>{`
-        html, body {
+        html,
+        body {
           background-color: ${theme.palette.background};
           color: ${theme.palette.foreground};
         }
-        
+
         html {
           font-size: 16px;
           --zeit-icons-background: ${theme.palette.background};
         }
-        
+
         body {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
@@ -35,50 +34,53 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({
           overflow-x: hidden;
           font-family: ${theme.font.sans};
         }
-        
+
         #__next {
           overflow-x: hidden;
         }
-        
-        *, *:before, *:after {
+
+        *,
+        *:before,
+        *:after {
           box-sizing: inherit;
           text-rendering: geometricPrecision;
           -webkit-tap-highlight-color: transparent;
         }
-        
-        p, small {
+
+        p,
+        small {
           font-weight: 400;
           color: inherit;
           letter-spacing: -0.005625rem;
           font-family: ${theme.font.sans};
         }
-        
+
         p {
           margin: 1rem 0;
           font-size: 1em;
           line-height: 1.625em;
         }
-        
+
         small {
           margin: 0;
           line-height: 1.5;
-          font-size: .875rem;
+          font-size: 0.875rem;
         }
-        
+
         b {
           font-weight: 600;
         }
-        
+
         span {
           font-size: inherit;
           color: inherit;
           font-weight: inherit;
         }
-        
+
         img {
           max-width: 100%;
         }
-        
+
         a {
           cursor: pointer;
           font-size: inherit;
@@ -89,28 +91,30 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({
           color: ${theme.palette.link};
           text-decoration: ${theme.expressiveness.linkStyle};
         }
-        
+
         a:hover {
           text-decoration: ${theme.expressiveness.linkHoverStyle};
         }
-        
-        ul, ol {
+
+        ul,
+        ol {
           padding: 0;
           list-style-type: none;
-          margin: ${theme.layout.gapHalf} ${theme.layout.gapHalf} ${theme.layout.gapHalf} ${theme.layout.gap};
+          margin: ${theme.layout.gapHalf} ${theme.layout.gapHalf} ${theme.layout.gapHalf}
+            ${theme.layout.gap};
           color: ${theme.palette.foreground};
         }
-        
+
         ol {
           list-style-type: decimal;
         }
-        
+
         li {
-          margin-bottom: .625rem;
+          margin-bottom: 0.625rem;
           font-size: 1em;
           line-height: 1.625em;
         }
-        
+
         ul li:before {
           content: '–';
           display: inline-block;
@@ -118,50 +122,58 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({
           position: absolute;
           margin-left: -0.9375rem;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
           color: inherit;
-          margin: 0 0 .625rem 0;
+          margin: 0 0 0.625rem 0;
         }
-        
+
         h1 {
           font-size: 3rem;
-          letter-spacing: -.066875rem;
+          letter-spacing: -0.066875rem;
           line-height: 1.5;
           font-weight: 700;
         }
-        
+
         h2 {
           font-size: 2.25rem;
-          letter-spacing: -.020625rem;
+          letter-spacing: -0.020625rem;
           font-weight: 600;
         }
-        
+
         h3 {
           font-size: 1.5rem;
-          letter-spacing: -.029375rem;
+          letter-spacing: -0.029375rem;
           font-weight: 600;
         }
-        
+
         h4 {
           font-size: 1.25rem;
-          letter-spacing: -.020625rem;
+          letter-spacing: -0.020625rem;
           font-weight: 600;
         }
-        
+
         h5 {
           font-size: 1rem;
-          letter-spacing: -.01125rem;
+          letter-spacing: -0.01125rem;
           font-weight: 600;
         }
-        
+
         h6 {
-          font-size: .875rem;
-          letter-spacing: -.005625rem;
+          font-size: 0.875rem;
+          letter-spacing: -0.005625rem;
           font-weight: 600;
         }
-        
-        button, input, select, textarea {
+
+        button,
+        input,
+        select,
+        textarea {
           font-family: inherit;
           font-size: inherit;
           line-height: inherit;
@@ -169,21 +181,25 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({
           margin: 0;
         }
 
-        button:focus, input:focus, select:focus, textarea:focus {
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
           outline: none;
         }
-        
+
         code {
           color: ${theme.palette.code};
           font-family: ${theme.font.mono};
           font-size: 0.9em;
           white-space: pre-wrap;
         }
-        
-        code:before, code:after {
+
+        code:before,
+        code:after {
           content: '\`';
         }
-        
+
         pre {
           border: 1px solid ${theme.palette.accents_2};
           border-radius: ${theme.layout.radius};
@@ -197,79 +213,85 @@ const CSSBaseline: React.FC<React.PropsWithChildren<{}>> = ({
           font-size: 0.875rem;
           -webkit-overflow-scrolling: touch;
         }
-        
+
         pre code {
           color: ${theme.palette.foreground};
           font-size: 0.75rem;
           line-height: 1.25rem;
           white-space: pre;
         }
-        
-        pre code:before, pre code:after {
+
+        pre code:before,
+        pre code:after {
           display: none;
         }
-        
+
         pre :global(p) {
           margin: 0;
         }
-        
+
         pre::-webkit-scrollbar {
           display: none;
           width: 0;
           height: 0;
           background: transparent;
         }
-        
+
         hr {
           border-color: ${theme.palette.accents_2};
         }
-        
+
         details {
           background-color: ${theme.palette.accents_1};
           border: none;
         }
-        
-        details:focus, details:hover, details:active {
+
+        details:focus,
+        details:hover,
+        details:active {
           outline: none;
         }
-        
+
         summary {
           cursor: pointer;
           user-select: none;
           list-style: none;
           outline: none;
         }
-        
-        summary::-webkit-details-marker, summary::before {
+
+        summary::-webkit-details-marker,
+        summary::before {
           display: none;
         }
-        
+
         summary::-moz-list-bullet {
           font-size: 0;
         }
 
-        summary:focus, summary:hover, summary:active {
+        summary:focus,
+        summary:hover,
+        summary:active {
           outline: none;
           list-style: none;
         }
-        
+
         blockquote {
-          padding: calc(.667 * ${theme.layout.gap}) ${theme.layout.gap};
+          padding: calc(0.667 * ${theme.layout.gap}) ${theme.layout.gap};
           color: ${theme.palette.accents_5};
           background-color: ${theme.palette.accents_1};
           border-radius: ${theme.layout.radius};
           margin: 1.5rem 0;
           border: 1px solid ${theme.palette.border};
         }
-        
+
         blockquote :global(*:first-child) {
           margin-top: 0;
         }
-        
+
         blockquote :global(*:last-child) {
           margin-bottom: 0;
         }
-        
+
         ::selection {
           background-color: ${theme.palette.selection};
           color: ${theme.palette.foreground};
@@ -283,7 +305,9 @@ type MemoCssBaselineComponent<P = {}> = React.NamedExoticComponent<P> & {
   flush: typeof flushToReact
 }
 
-const MemoCSSBaseline = React.memo(CSSBaseline) as MemoCssBaselineComponent<React.PropsWithChildren<{}>>
+const MemoCSSBaseline = React.memo(CSSBaseline) as MemoCssBaselineComponent<
+  React.PropsWithChildren<{}>
+>
 MemoCSSBaseline.flush = flush
 
 export default MemoCSSBaseline

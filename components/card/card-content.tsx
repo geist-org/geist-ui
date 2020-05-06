@@ -14,10 +14,12 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CardContentProps = Props & typeof defaultProps & NativeAttrs
 
 const CardContent: React.FC<React.PropsWithChildren<CardContentProps>> = ({
-  className, children, ...props
+  className,
+  children,
+  ...props
 }) => {
   const theme = useTheme()
-  
+
   return (
     <div className={`content ${className}`} {...props}>
       {children}
@@ -26,11 +28,11 @@ const CardContent: React.FC<React.PropsWithChildren<CardContentProps>> = ({
           width: 100%;
           padding: ${theme.layout.gap} ${theme.layout.gap};
         }
-        
+
         .content > :global(*:first-child) {
           margin-top: 0;
         }
-        
+
         .content > :global(*:last-child) {
           margin-bottom: 0;
         }

@@ -19,10 +19,15 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ColProps = Props & typeof defaultProps & NativeAttrs
 
 const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
-  component, children, span, offset, className, ...props
+  component,
+  children,
+  span,
+  offset,
+  className,
+  ...props
 }) => {
   const Component = component
-  
+
   return (
     <Component className={`col ${className}`} {...props}>
       {children}
@@ -32,8 +37,8 @@ const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
           box-sizing: border-box;
           padding-left: calc(var(--row-gap) / 2);
           padding-right: calc(var(--row-gap) / 2);
-          width: ${100 / 24 * span}%;
-          margin-left: ${100 / 24 * offset}%;
+          width: ${(100 / 24) * span}%;
+          margin-left: ${(100 / 24) * offset}%;
         }
       `}</style>
     </Component>

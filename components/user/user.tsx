@@ -18,10 +18,15 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type UserProps = Props & typeof defaultProps & NativeAttrs
 
 const User: React.FC<React.PropsWithChildren<UserProps>> = ({
-  src, text, name, children, className, ...props
+  src,
+  text,
+  name,
+  children,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
-  
+
   return (
     <div className={`user ${className}`} {...props}>
       <Avatar src={src} text={text} size={32} />
@@ -39,16 +44,16 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
           width: max-content;
           max-width: 100%;
         }
-        
+
         .names {
           margin-left: ${theme.layout.gapHalf};
           display: inline-flex;
           flex-direction: column;
           white-space: nowrap;
         }
-        
+
         .name {
-          font-size: .89rem;
+          font-size: 0.89rem;
           color: ${theme.palette.accents_8};
           line-height: 1.1rem;
           text-transform: capitalize;
@@ -57,16 +62,16 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
           text-overflow: ellipsis;
           overflow: hidden;
         }
-        
+
         .social {
-          font-size: .75rem;
+          font-size: 0.75rem;
           color: ${theme.palette.accents_6};
         }
-        
+
         .social :global(*:first-child) {
           margin-top: 0;
         }
-        
+
         .social :global(*:last-child) {
           margin-bottom: 0;
         }
@@ -78,7 +83,9 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
 type MemoUserComponent<P = {}> = React.NamedExoticComponent<P> & {
   Link: typeof UserLink
 }
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 User.defaultProps = defaultProps
 

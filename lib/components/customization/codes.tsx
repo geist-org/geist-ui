@@ -8,15 +8,15 @@ import useClipboard from 'components/utils/use-clipboard'
 import CopyIcon from 'components/snippet/snippet-icon'
 import { useConfigs } from 'lib/config-context'
 
-export const getDeepDifferents = <T extends MergeObject,>(source: T, target: T): T => {
+export const getDeepDifferents = <T extends MergeObject>(source: T, target: T): T => {
   if (!isObject(target) || !isObject(source)) return target
-  
+
   const sourceKeys = Object.keys(source) as Array<keyof T>
   let result = {} as T
   for (const key of sourceKeys) {
     const sourceValue = source[key]
     const targetValue = target[key]
-    
+
     if (isObject(sourceValue) && isObject(targetValue)) {
       const childrenDiff = getDeepDifferents(sourceValue, { ...targetValue })
       if (Object.keys(childrenDiff).length !== 0) {
@@ -36,10 +36,10 @@ const CustomizationCodes = () => {
   const { copy } = useClipboard()
   const [, setToast] = useToasts()
 
-  const deepDifferents = useMemo(
-    () => getDeepDifferents(DefaultTheme, theme),
-    [DefaultTheme, theme],
-  )
+  const deepDifferents = useMemo(() => getDeepDifferents(DefaultTheme, theme), [
+    DefaultTheme,
+    theme,
+  ])
   const userCodes = useMemo(() => {
     return `const myTheme = ${JSON.stringify(deepDifferents, null, 2)}
 
@@ -55,7 +55,7 @@ const CustomizationCodes = () => {
  *  }
  **/`
   }, [deepDifferents])
-  
+
   const copyCode = () => {
     copy(userCodes)
     setToast({ text: 'Theme code copied.' })
@@ -66,13 +66,19 @@ const CustomizationCodes = () => {
       <h3 className="title">{isChinese ? '主题代码' : 'Theme Codes'}</h3>
       <Spacer y={1} />
       {isChinese ? (
-        <Text>这里是你所有的变更，点击 <Code>copy</Code> 按钮即可使用在你自己的项目中。</Text>
+        <Text>
+          这里是你所有的变更，点击 <Code>copy</Code> 按钮即可使用在你自己的项目中。
+        </Text>
       ) : (
-        <Text>This is all your changes, click <Code>copy</Code> to use it in your own project.</Text>
+        <Text>
+          This is all your changes, click <Code>copy</Code> to use it in your own project.
+        </Text>
       )}
       <Spacer y={2} />
       <div className="codes">
-        <div className="copy" onClick={copyCode}><CopyIcon /></div>
+        <div className="copy" onClick={copyCode}>
+          <CopyIcon />
+        </div>
         <LiveProvider code={userCodes} disabled theme={codeTheme}>
           <LiveEditor />
         </LiveProvider>
@@ -86,7 +92,7 @@ const CustomizationCodes = () => {
           margin: 3rem auto 2.5rem;
           text-align: center;
         }
-        
+
         .title {
           text-align: center;
           width: 80%;
@@ -100,17 +106,17 @@ const CustomizationCodes = () => {
           text-transform: uppercase;
           letter-spacing: 1.5px;
         }
-        
+
         .codes {
           width: 80%;
           margin: 0 auto;
           border: 1px solid ${theme.palette.border};
           border-radius: ${theme.layout.radius};
           overflow: hidden;
-          padding: calc(.6 * ${theme.layout.gap}) ${theme.layout.gap};
+          padding: calc(0.6 * ${theme.layout.gap}) ${theme.layout.gap};
           position: relative;
         }
-        
+
         .copy {
           position: absolute;
           right: 1rem;
@@ -121,13 +127,14 @@ const CustomizationCodes = () => {
           user-select: none;
           transition: color 200ms ease;
         }
-        
+
         .copy:hover {
           color: ${theme.palette.accents_6};
         }
-        
+
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
-          .title, .codes {
+          .title,
+          .codes {
             width: 90vw;
           }
         }

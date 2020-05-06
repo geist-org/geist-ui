@@ -1,18 +1,13 @@
 import { SnippetTypes } from 'components/utils/prop-types'
 import { ZeitUIThemesPalette } from 'components/styles/themes'
 
-
 export type SnippetStyles = {
   color: string
   border: string
   bgColor: string
 }
 
-export const getStyles = (
-  type: SnippetTypes,
-  palette: ZeitUIThemesPalette,
-  fill?: boolean,
-) => {
+export const getStyles = (type: SnippetTypes, palette: ZeitUIThemesPalette, fill?: boolean) => {
   const styles: { [key in SnippetTypes]: SnippetStyles } = {
     default: {
       color: palette.foreground,
@@ -50,12 +45,12 @@ export const getStyles = (
       bgColor: palette.foreground,
     },
   }
-  
+
   const filledTypes: Array<SnippetTypes> = ['success', 'warning', 'error', 'secondary']
   const style = styles[type]
   const shouldFilled = filledTypes.includes(type)
   if (!fill || !shouldFilled) return style
-  
+
   return {
     ...style,
     color: style.bgColor,

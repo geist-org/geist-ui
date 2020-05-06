@@ -14,7 +14,9 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type RadioDescriptionProps = Props & typeof defaultProps & NativeAttrs
 
 const RadioDescription: React.FC<React.PropsWithChildren<RadioDescriptionProps>> = ({
-  className, children, ...props
+  className,
+  children,
+  ...props
 }) => {
   const theme = useTheme()
 
@@ -24,7 +26,7 @@ const RadioDescription: React.FC<React.PropsWithChildren<RadioDescriptionProps>>
       <style jsx>{`
         span {
           color: ${theme.palette.accents_3};
-          font-size: .875rem;
+          font-size: 0.875rem;
         }
       `}</style>
     </span>

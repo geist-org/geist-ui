@@ -43,8 +43,8 @@ const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact =>
   const rect = ref.current.getBoundingClientRect()
   return {
     ...rect,
-    width: rect.width || (rect.right - rect.left),
-    height: rect.height || (rect.bottom - rect.top),
+    width: rect.width || rect.right - rect.left,
+    height: rect.height || rect.bottom - rect.top,
     top: rect.top + document.documentElement.scrollTop,
     bottom: rect.bottom + document.documentElement.scrollTop,
     left: rect.left + document.documentElement.scrollLeft,
@@ -53,7 +53,14 @@ const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact =>
 }
 
 const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
-  children, parent, visible, offset, placement, type, className, hideArrow,
+  children,
+  parent,
+  visible,
+  offset,
+  placement,
+  type,
+  className,
+  hideArrow,
 }) => {
   const theme = useTheme()
   const el = usePortal('tooltip')
@@ -70,7 +77,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
 
   useResize(updateRect)
   useClickAnyWhere(() => updateRect())
-  
+
   useEffect(() => {
     updateRect()
   }, [visible])
@@ -81,37 +88,39 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   }
 
   if (!el) return null
-  return createPortal((
+  return createPortal(
     <CSSTransition visible={visible}>
-      <div className={`tooltip-content ${className}`} ref={selfRef}
-        onClick={preventHandler}>
+      <div className={`tooltip-content ${className}`} ref={selfRef} onClick={preventHandler}>
         <div className="inner">
-          {!hideArrow && <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={hasShadow} />}
+          {!hideArrow && (
+            <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={hasShadow} />
+          )}
           {children}
         </div>
         <style jsx>{`
-        .tooltip-content {
-          position: absolute;
-          width: auto;
-          top: ${rect.top};
-          left: ${rect.left};
-          transform: ${rect.transform};
-          background-color: ${colors.bgColor};
-          color: ${colors.color};
-          border-radius: ${theme.layout.radius};
-          padding: 0;
-          z-index: 1000;
-          box-shadow: ${hasShadow ? theme.expressiveness.shadowMedium : 'none'};
-        }
-        
-        .inner {
-          padding: ${theme.layout.gapHalf} ${theme.layout.gap};
-          position: relative;
-        }
-      `}</style>
+          .tooltip-content {
+            position: absolute;
+            width: auto;
+            top: ${rect.top};
+            left: ${rect.left};
+            transform: ${rect.transform};
+            background-color: ${colors.bgColor};
+            color: ${colors.color};
+            border-radius: ${theme.layout.radius};
+            padding: 0;
+            z-index: 1000;
+            box-shadow: ${hasShadow ? theme.expressiveness.shadowMedium : 'none'};
+          }
+
+          .inner {
+            padding: ${theme.layout.gapHalf} ${theme.layout.gap};
+            position: relative;
+          }
+        `}</style>
       </div>
-    </CSSTransition>
-  ), el)
+    </CSSTransition>,
+    el,
+  )
 }
 
 export default TooltipContent

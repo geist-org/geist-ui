@@ -23,7 +23,7 @@ const Icons: React.FC = () => {
   const { state: query, bindings } = useInput('')
   const [importStr, setImportStr] = useState({ title: '', single: '', normal: '' })
   const icons = Object.entries(Icon).filter(
-    ([name]) => !query || name.toLowerCase().includes(query.toLowerCase())
+    ([name]) => !query || name.toLowerCase().includes(query.toLowerCase()),
   )
   const onCellClick = (name: string) => {
     const { single, normal } = getImportString(name)
@@ -35,11 +35,20 @@ const Icons: React.FC = () => {
     <>
       <h3 className="title">{isChinese ? '图标画廊' : 'Icons Gallery'}</h3>
       <Card>
-        <Input width="100%" icon={<Icon.Search />} placeholder={isChinese ? '搜索' : 'Search'} {...bindings} />
+        <Input
+          width="100%"
+          icon={<Icon.Search />}
+          placeholder={isChinese ? '搜索' : 'Search'}
+          {...bindings}
+        />
         <div className="icons-grid">
           {icons.map(([name, component], index) => (
-            <IconsCell name={name} component={component} key={`${name}-${index}`}
-              onClick={onCellClick} />
+            <IconsCell
+              name={name}
+              component={component}
+              key={`${name}-${index}`}
+              onClick={onCellClick}
+            />
           ))}
         </div>
         <Modal {...modalBindings}>

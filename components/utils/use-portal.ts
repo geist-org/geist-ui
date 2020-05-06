@@ -11,8 +11,10 @@ const createElement = (id: string): HTMLElement => {
 const usePortal = (selectId: string = getId()): HTMLElement | null => {
   const id = `zeit-ui-${selectId}`
   const { isBrowser } = useSSR()
-  const [elSnapshot, setElSnapshot] = useState<HTMLElement | null>(isBrowser ? createElement(id) : null)
-  
+  const [elSnapshot, setElSnapshot] = useState<HTMLElement | null>(
+    isBrowser ? createElement(id) : null,
+  )
+
   useEffect(() => {
     const hasElement = document.querySelector<HTMLElement>(`#${id}`)
     const el = hasElement || createElement(id)

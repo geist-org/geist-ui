@@ -7,23 +7,23 @@ interface Props {
 }
 
 const defaultProps = {
-  className: ''
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type FieldsetSubtitleProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = ({
-  className, children, ...props
-}) => {
+const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = ({ className, children, ...props }) => {
   const theme = useTheme()
 
   return (
     <>
-      <p className={className} {...props}>{children}</p>
+      <p className={className} {...props}>
+        {children}
+      </p>
       <style jsx>{`
         p {
-          font-size: .875rem;
+          font-size: 0.875rem;
           line-height: 1.6;
           margin: ${theme.layout.gapHalf} 0;
         }

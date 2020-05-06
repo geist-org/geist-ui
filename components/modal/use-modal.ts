@@ -1,7 +1,9 @@
 import { Dispatch, MutableRefObject, SetStateAction } from 'react'
 import useCurrentState from '../utils/use-current-state'
 
-const useModal = (initialVisible: boolean = false): {
+const useModal = (
+  initialVisible: boolean = false,
+): {
   visible: boolean
   setVisible: Dispatch<SetStateAction<boolean>>
   currentRef: MutableRefObject<boolean>
@@ -11,7 +13,7 @@ const useModal = (initialVisible: boolean = false): {
   }
 } => {
   const [visible, setVisible, currentRef] = useCurrentState<boolean>(initialVisible)
-  
+
   return {
     visible,
     setVisible,

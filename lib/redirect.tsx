@@ -15,7 +15,7 @@ const redirect = (destination: string) => {
       </Head>
     )
   }
-  
+
   Home.getInitialProps = async ({ res }): Promise<Props> => {
     if (res) {
       res.writeHead(302, { Location: destination })
@@ -24,10 +24,10 @@ const redirect = (destination: string) => {
     } else {
       await Router.push(destination)
     }
-    
+
     return { metaRedirect: true }
   }
-  
+
   return Home
 }
 

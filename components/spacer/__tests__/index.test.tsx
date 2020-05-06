@@ -8,7 +8,7 @@ describe('Spacer', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should support x and y', () => {
     const wrapper = mount(
       <div>
@@ -16,12 +16,12 @@ describe('Spacer', () => {
         <Spacer x={15} />
         <Spacer y={15} />
         <Spacer y={2} />
-      </div>
+      </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should work with float', () => {
     const wrapper = mount(
       <div>
@@ -29,12 +29,12 @@ describe('Spacer', () => {
         <Spacer x={1.5} />
         <Spacer y={0.1} />
         <Spacer y={1.8} />
-      </div>
+      </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should work with inline mode', () => {
     const wrapper = mount(<Spacer inline />)
     expect(wrapper.html()).toMatchSnapshot()

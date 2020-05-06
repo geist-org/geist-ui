@@ -10,13 +10,15 @@ describe('Fieldset', () => {
         <Fieldset.Subtitle>subtitle</Fieldset.Subtitle>
         <Fieldset.Footer>
           <Fieldset.Footer.Status>status</Fieldset.Footer.Status>
-          <Fieldset.Footer.Actions><button>Actions</button></Fieldset.Footer.Actions>
+          <Fieldset.Footer.Actions>
+            <button>Actions</button>
+          </Fieldset.Footer.Actions>
         </Fieldset.Footer>
-      </Fieldset>
+      </Fieldset>,
     )
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should render correctly', () => {
     const wrapper = render(
       <Fieldset>
@@ -24,19 +26,21 @@ describe('Fieldset', () => {
         <Fieldset.Subtitle>subtitle</Fieldset.Subtitle>
         <Fieldset.Footer>
           <Fieldset.Footer.Status>status</Fieldset.Footer.Status>
-          <Fieldset.Footer.Actions><button>Actions</button></Fieldset.Footer.Actions>
+          <Fieldset.Footer.Actions>
+            <button>Actions</button>
+          </Fieldset.Footer.Actions>
         </Fieldset.Footer>
-      </Fieldset>
+      </Fieldset>,
     )
     expect(wrapper).toMatchSnapshot()
   })
-  
+
   it('the component Fieldset.Content should be injected automatically', () => {
     const fieldset = mount(
       <Fieldset>
         <Fieldset.Title>test-title</Fieldset.Title>
         <Fieldset.Subtitle>test-subtitle</Fieldset.Subtitle>
-      </Fieldset>
+      </Fieldset>,
     )
     const content = mount(
       <Fieldset>
@@ -44,19 +48,19 @@ describe('Fieldset', () => {
           <Fieldset.Title>test-title</Fieldset.Title>
           <Fieldset.Subtitle>test-subtitle</Fieldset.Subtitle>
         </Fieldset.Content>
-      </Fieldset>
+      </Fieldset>,
     )
-    
+
     expect(fieldset.html()).toEqual(content.html())
     expect(() => content.unmount()).not.toThrow()
   })
-  
+
   it('render children through props', () => {
     const fieldset = mount(
       <Fieldset>
         <Fieldset.Title>test-title</Fieldset.Title>
         <Fieldset.Subtitle>test-subtitle</Fieldset.Subtitle>
-      </Fieldset>
+      </Fieldset>,
     )
     const props = mount(<Fieldset title="test-title" subtitle="test-subtitle" />)
     expect(fieldset.html()).toEqual(props.html())

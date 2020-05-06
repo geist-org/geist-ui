@@ -34,14 +34,19 @@ type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type RadioProps = Props & typeof defaultProps & NativeAttrs
 
 const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
-  className, checked, onChange, disabled, value: radioValue,
-  children, ...props
+  className,
+  checked,
+  onChange,
+  disabled,
+  value: radioValue,
+  children,
+  ...props
 }) => {
   const theme = useTheme()
   const [selfChecked, setSelfChecked] = useState<boolean>(!!checked)
   const { value: groupValue, disabledAll, inGroup, updateState } = useRadioContext()
   const [withoutDescChildren, DescChildren] = pickChild(children, RadioDescription)
-  
+
   if (inGroup) {
     if (checked !== undefined) {
       useWarning('Remove props "checked" if in the Radio.Group.', 'Radio')
@@ -53,7 +58,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
       setSelfChecked(groupValue === radioValue)
     }, [groupValue, radioValue])
   }
-  
+
   const isDisabled = useMemo(() => disabled || disabledAll, [disabled, disabledAll])
   const changeHandler = (event: React.ChangeEvent) => {
     if (isDisabled) return
@@ -71,7 +76,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
     }
     onChange && onChange(selfEvent)
   }
-  
+
   useEffect(() => {
     if (checked === undefined) return
     setSelfChecked(!!checked)
@@ -80,15 +85,18 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
   return (
     <div className={`radio ${className}`}>
       <label>
-        <input type="radio" value={radioValue}
+        <input
+          type="radio"
+          value={radioValue}
           checked={selfChecked}
           onChange={changeHandler}
-          {...props} />
+          {...props}
+        />
         <span className="name">{withoutDescChildren}</span>
         {DescChildren && DescChildren}
         <span className="point" />
       </label>
-  
+
       <style jsx>{`
         input {
           opacity: 0;
@@ -100,7 +108,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           right: -1000px;
           position: fixed;
         }
-        
+
         .radio {
           display: flex;
           width: initial;
@@ -108,7 +116,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           line-height: 1.5rem;
           position: relative;
         }
-        
+
         label {
           display: flex;
           flex-direction: column;
@@ -117,31 +125,31 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           color: ${isDisabled ? theme.palette.accents_4 : theme.palette.foreground};
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
         }
-        
+
         .name {
           font-size: 1rem;
           font-weight: bold;
           user-select: none;
         }
-        
+
         .point {
           position: absolute;
           left: 0;
           top: 6px;
-          height: .875rem;
-          width: .875rem;
+          height: 0.875rem;
+          width: 0.875rem;
           border-radius: 50%;
           border: 1px solid ${theme.palette.border};
           transition: all 0.2s ease 0s;
         }
-        
+
         .point:before {
           content: '';
           position: absolute;
           left: -1px;
           top: -1px;
-          height: .875rem;
-          width: .875rem;
+          height: 0.875rem;
+          width: 0.875rem;
           border-radius: 50%;
           transform: scale(${selfChecked ? 1 : 0});
           transition: all 0.2s ease;
@@ -157,7 +165,9 @@ type RadioComponent<P = {}> = React.FC<P> & {
   Desc: typeof RadioDescription
   Description: typeof RadioDescription
 }
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 Radio.defaultProps = defaultProps
 

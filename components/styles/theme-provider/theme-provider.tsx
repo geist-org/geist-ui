@@ -20,9 +20,9 @@ export interface MergeObject {
 
 export const isObject = (target: any) => target && typeof target === 'object'
 
-export const deepMergeObject = <T extends MergeObject,>(source: T, target: T): T => {
+export const deepMergeObject = <T extends MergeObject>(source: T, target: T): T => {
   if (!isObject(target) || !isObject(source)) return source
-  
+
   const sourceKeys = Object.keys(source) as Array<keyof T>
   let result = {} as T
   for (const key of sourceKeys) {
@@ -59,7 +59,7 @@ const switchTheme = (mergedTheme: ZeitUIThemes): ZeitUIThemes => {
     light: lightTheme,
     dark: darkTheme,
   }
-  return {...mergedTheme, ...themes[mergedTheme.type]}
+  return { ...mergedTheme, ...themes[mergedTheme.type] }
 }
 
 const ThemeProvider: React.FC<PropsWithChildren<Props>> = ({ children, theme }) => {
@@ -68,9 +68,7 @@ const ThemeProvider: React.FC<PropsWithChildren<Props>> = ({ children, theme }) 
   const merged = mergeTheme(currentTheme, customTheme)
   const userTheme = currentTheme.type !== merged.type ? switchTheme(merged) : merged
 
-  return (
-    <ThemeContext.Provider value={userTheme}>{children}</ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={userTheme}>{children}</ThemeContext.Provider>
 }
 
 export default ThemeProvider

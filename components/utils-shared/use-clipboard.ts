@@ -14,19 +14,17 @@ const defaultOptions: UseClipboardOptions = {
   onError: () => useWarning('Failed to copy.', 'use-clipboard'),
 }
 
-const useClipboard = (
-  options: UseClipboardOptions = defaultOptions,
-): UseClipboardResult => {
+const useClipboard = (options: UseClipboardOptions = defaultOptions): UseClipboardResult => {
   const el = usePortal('clipboard')
-  
+
   const copyText = (el: HTMLElement | null, text: string) => {
     if (!el || !text) return
     const selection = window.getSelection()
     if (!selection) return
-  
+
     el.style.whiteSpace = 'pre'
     el.textContent = text
-  
+
     const range = window.document.createRange()
     selection.removeAllRanges()
     range.selectNode(el)
@@ -36,16 +34,19 @@ const useClipboard = (
     } catch (e) {
       options.onError && options.onError()
     }
-  
+
     selection.removeAllRanges()
     if (el) {
       el.textContent = ''
     }
   }
-  
-  const copy = useCallback((text: string) => {
-    copyText(el ,text)
-  }, [el])
+
+  const copy = useCallback(
+    (text: string) => {
+      copyText(el, text)
+    },
+    [el],
+  )
 
   return { copy }
 }

@@ -5,7 +5,6 @@ import Controls from 'lib/components/controls'
 import LogoIcon from 'lib/components/icons/logo'
 import { useConfigs } from '../../config-context'
 
-
 const MenuLinks = () => {
   const theme = useTheme()
   const { isChinese } = useConfigs()
@@ -36,7 +35,7 @@ const MenuLinks = () => {
           padding: 0 ${theme.layout.gap};
           height: 60px;
         }
-        
+
         .site-name {
           display: flex;
           align-items: center;

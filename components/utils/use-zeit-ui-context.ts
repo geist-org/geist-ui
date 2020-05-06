@@ -13,10 +13,13 @@ export interface ZeitUiContextParams {
 const defaultParams: ZeitUiContextParams = {
   toasts: [],
   toastHovering: false,
-  updateToasts: t => t,
-  updateToastHoverStatus: () => {}
+  updateToasts: (t) => t,
+  updateToastHoverStatus: () => {},
 }
 
-export const ZEITUIContent:React.Context<ZeitUiContextParams> = React.createContext<ZeitUiContextParams>(defaultParams)
+export const ZEITUIContent: React.Context<ZeitUiContextParams> = React.createContext<
+  ZeitUiContextParams
+>(defaultParams)
 
-export const useZEITUIContext = (): ZeitUiContextParams => React.useContext<ZeitUiContextParams>(ZEITUIContent)
+export const useZEITUIContext = (): ZeitUiContextParams =>
+  React.useContext<ZeitUiContextParams>(ZEITUIContent)

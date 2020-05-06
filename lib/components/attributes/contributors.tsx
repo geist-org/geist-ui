@@ -29,7 +29,7 @@ const Contributors: React.FC<Props> = ({ path }) => {
   const { isChinese } = useConfigs()
   const [users, setUsers] = useState<Array<Contributor>>([])
   const link = useMemo(() => `${GithubURL}/${path || '/pages'}`, [])
-  
+
   useEffect(() => {
     let unmount = false
     ;(async () => {
@@ -41,7 +41,7 @@ const Contributors: React.FC<Props> = ({ path }) => {
       unmount = true
     }
   }, [])
-  
+
   return (
     <div className="contributors">
       {users.map((user, index) => (
@@ -65,7 +65,7 @@ const Contributors: React.FC<Props> = ({ path }) => {
           display: flex;
           flex-wrap: wrap;
         }
-        
+
         .contributors :global(.tooltip) {
           margin-right: 3px;
         }

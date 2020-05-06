@@ -21,48 +21,55 @@ const Editor: React.FC<Props> = ({ code }) => {
     event.preventDefault()
     setVisible(!visible)
   }
-  
+
   const copyHandler = (event: React.MouseEvent) => {
     event.stopPropagation()
     event.preventDefault()
     copy(code)
     setToast({ text: isChinese ? '代码已拷贝至剪切板。' : 'code copied.' })
   }
-  
+
   return (
     <div className="editor">
       <details open={visible}>
         <summary onClick={clickHandler}>
           <Row justify="space-between" align="middle" style={{ height: '100%', width: '100%' }}>
             <Col className="action">
-              <span className="arrow"><RightIcon size={16} /></span>
+              <span className="arrow">
+                <RightIcon size={16} />
+              </span>
               <span>{isChinese ? '编辑代码' : 'Code Editor'}</span>
             </Col>
             <Col className="action">
               {visible && (
-                <span className="copy" onClick={copyHandler} title={isChinese ? '拷贝代码' : 'Copy Code'}>
+                <span
+                  className="copy"
+                  onClick={copyHandler}
+                  title={isChinese ? '拷贝代码' : 'Copy Code'}>
                   <CopyIcon size={18} />
                 </span>
               )}
             </Col>
           </Row>
         </summary>
-        <div className="area"><LiveEditor /></div>
+        <div className="area">
+          <LiveEditor />
+        </div>
       </details>
-      
+
       <style jsx>{`
         .editor {
           border-bottom-left-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
         }
-        
+
         details {
           transition: all 0.2s ease;
           overflow: hidden;
           border-bottom-left-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
         }
-        
+
         summary {
           display: flex;
           justify-content: space-between;
@@ -75,18 +82,18 @@ const Editor: React.FC<Props> = ({ code }) => {
           user-select: none;
           outline: none;
         }
-        
+
         summary :global(svg) {
           cursor: pointer;
         }
-        
+
         summary :global(.action) {
           width: auto;
           display: flex;
           align-items: center;
-          font-size: .8rem;
+          font-size: 0.8rem;
         }
-        
+
         .area {
           position: relative;
           box-sizing: border-box;
@@ -99,24 +106,24 @@ const Editor: React.FC<Props> = ({ code }) => {
           border-top: 1px solid ${theme.palette.accents_2};
           padding: ${theme.layout.gapHalf};
         }
-        
+
         .arrow {
-          transition: all .2s ease;
+          transition: all 0.2s ease;
           transform: rotate(${visible ? 90 : 0}deg);
           display: inline-flex;
           align-items: center;
           width: 1rem;
           height: 1rem;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
-        
+
         .copy {
           display: inline-flex;
           align-items: center;
           color: ${theme.palette.accents_4};
-          transition: color .2s ease;
+          transition: color 0.2s ease;
         }
-        
+
         .copy:hover {
           color: ${theme.palette.accents_6};
         }

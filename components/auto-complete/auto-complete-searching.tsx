@@ -13,7 +13,8 @@ const defaultProps = {
 export type AutoCompleteSearchProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
 const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchProps>> = ({
-  children, className,
+  children,
+  className,
 }) => {
   const theme = useTheme()
 
@@ -28,7 +29,7 @@ const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchPro
           align-items: center;
           font-weight: normal;
           white-space: pre;
-          font-size: .875rem;
+          font-size: 0.875rem;
           padding: ${theme.layout.gapHalf};
           line-height: 1;
           background-color: ${theme.palette.background};

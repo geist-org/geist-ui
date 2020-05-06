@@ -30,17 +30,23 @@ type NativeAttrs = Omit<React.FieldsetHTMLAttributes<any>, keyof Props>
 export type FieldsetProps = Props & typeof defaultProps & NativeAttrs
 
 const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
-  className, title, subtitle, children, value, label, ...props
+  className,
+  title,
+  subtitle,
+  children,
+  value,
+  label,
+  ...props
 }) => {
   const theme = useTheme()
   const { inGroup, currentValue, register } = useFieldset()
   const [hidden, setHidden] = useState<boolean>(inGroup)
-  
+
   const [withoutFooterChildren, FooterChildren] = pickChild(children, FieldsetFooter)
   const hasTitle = hasChild(withoutFooterChildren, FieldsetTitle)
   const hasSubtitle = hasChild(withoutFooterChildren, FieldsetSubtitle)
   const hasContent = hasChild(withoutFooterChildren, FieldsetContent)
-  
+
   if (inGroup) {
     if (!label) {
       useWarning('Props "label" is required when in a group.', 'Fieldset Group')
@@ -48,11 +54,11 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
     if (!value || value === '') {
       value = label
     }
-    
+
     useEffect(() => {
       register && register({ value, label })
     }, [])
-    
+
     useEffect(() => {
       // In a few cases, the user will set Fieldset state manually.
       // If the user incorrectly set the state, Group component should ignore it.
@@ -61,24 +67,21 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
       setHidden(currentValue !== value)
     }, [currentValue])
   }
-  
-  const content = useMemo(() => (
-    <>
-      {withoutFooterChildren}
-      {(!hasTitle && title) && (
-        <FieldsetTitle>{title}</FieldsetTitle>
-      )}
-      {(!hasSubtitle && subtitle) && (
-        <FieldsetSubtitle>{subtitle}</FieldsetSubtitle>
-      )}
-    </>
-  ), [withoutFooterChildren, hasTitle, hasSubtitle, title, subtitle])
-  
+
+  const content = useMemo(
+    () => (
+      <>
+        {withoutFooterChildren}
+        {!hasTitle && title && <FieldsetTitle>{title}</FieldsetTitle>}
+        {!hasSubtitle && subtitle && <FieldsetSubtitle>{subtitle}</FieldsetSubtitle>}
+      </>
+    ),
+    [withoutFooterChildren, hasTitle, hasSubtitle, title, subtitle],
+  )
+
   return (
     <div className={`fieldset ${className}`} {...props}>
-      {hasContent ? content : (
-        <FieldsetContent>{content}</FieldsetContent>
-      )}
+      {hasContent ? content : <FieldsetContent>{content}</FieldsetContent>}
       {FooterChildren && FooterChildren}
       <style jsx>{`
         .fieldset {
@@ -104,6 +107,8 @@ type FieldsetComponent<P = {}> = React.FC<P> & {
   Body: typeof FieldsetContent
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 export default Fieldset as FieldsetComponent<ComponentProps>

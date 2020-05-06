@@ -7,17 +7,20 @@ export interface ButtonColorGroup {
   color: string
 }
 
-export const getButtonGhostColors = (theme: ZeitUIThemes, type: ButtonTypes): ButtonColorGroup | null => {
+export const getButtonGhostColors = (
+  theme: ZeitUIThemes,
+  type: ButtonTypes,
+): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
       bg: theme.palette.background,
       border: theme.palette.foreground,
-      color: theme.palette.foreground
+      color: theme.palette.foreground,
     },
     success: {
       bg: theme.palette.background,
       border: theme.palette.success,
-      color: theme.palette.success
+      color: theme.palette.success,
     },
     warning: {
       bg: theme.palette.background,
@@ -28,9 +31,9 @@ export const getButtonGhostColors = (theme: ZeitUIThemes, type: ButtonTypes): Bu
       bg: theme.palette.background,
       border: theme.palette.error,
       color: theme.palette.error,
-    }
+    },
   }
-  
+
   return colors[type] || null
 }
 
@@ -70,31 +73,35 @@ export const getButtonColors = (
       bg: 'transparent',
       border: 'transparent',
       color: theme.palette.accents_5,
+    },
+  }
+  if (disabled)
+    return {
+      bg: theme.palette.accents_1,
+      border: theme.palette.accents_2,
+      color: '#ccc',
     }
-  }
-  if (disabled) return {
-    bg: theme.palette.accents_1,
-    border: theme.palette.accents_2,
-    color: '#ccc',
-  }
-  
+
   const defaultColor = colors['default'] as ButtonColorGroup
-  
+
   if (ghost) return getButtonGhostColors(theme, type) || defaultColor
   return colors[type] || defaultColor
 }
 
-export const getButtonGhostHoverColors = (theme: ZeitUIThemes, type: ButtonTypes): ButtonColorGroup | null => {
+export const getButtonGhostHoverColors = (
+  theme: ZeitUIThemes,
+  type: ButtonTypes,
+): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
       bg: theme.palette.foreground,
       border: theme.palette.background,
-      color: theme.palette.background
+      color: theme.palette.background,
     },
     success: {
       bg: theme.palette.success,
       border: theme.palette.background,
-      color: 'white'
+      color: 'white',
     },
     warning: {
       bg: theme.palette.warning,
@@ -105,9 +112,9 @@ export const getButtonGhostHoverColors = (theme: ZeitUIThemes, type: ButtonTypes
       bg: theme.palette.error,
       border: theme.palette.background,
       color: 'white',
-    }
+    },
   }
-  
+
   return colors[type] || null
 }
 
@@ -149,19 +156,21 @@ export const getButtonHoverColors = (
       bg: 'transparent',
       border: 'transparent',
       color: theme.palette.accents_5,
-    }
+    },
   }
   const defaultHover = colors['default']
-  
-  if (disabled) return {
-    bg: theme.palette.accents_1,
-    border: theme.palette.accents_2,
-    color: '#ccc',
-  }
-  if (loading) return {
-    ...getButtonColors(theme, type, disabled, ghost),
-    color: 'transparent',
-  }
+
+  if (disabled)
+    return {
+      bg: theme.palette.accents_1,
+      border: theme.palette.accents_2,
+      color: '#ccc',
+    }
+  if (loading)
+    return {
+      ...getButtonColors(theme, type, disabled, ghost),
+      color: 'transparent',
+    }
   if (shadow) return getButtonColors(theme, type, disabled, ghost)
   if (ghost) return getButtonGhostHoverColors(theme, type) || defaultHover
   return colors[type] || defaultHover
@@ -173,15 +182,17 @@ export interface ButtonCursorGroup {
 }
 
 export const getButtonCursor = (disabled: boolean, loading: boolean): ButtonCursorGroup => {
-  if (disabled) return {
-    cursor: 'not-allowed',
-    events: 'auto',
-  }
-  if (loading) return {
-    cursor: 'default',
-    events: 'none',
-  }
-  
+  if (disabled)
+    return {
+      cursor: 'not-allowed',
+      events: 'auto',
+    }
+  if (loading)
+    return {
+      cursor: 'default',
+      events: 'none',
+    }
+
   return {
     cursor: 'pointer',
     events: 'auto',
@@ -232,16 +243,16 @@ export const getButtonSize = (size: NormalSizes = 'medium', auto: boolean): Butt
       padding: '1.875rem',
       fontSize: '1rem',
       minWidth: '15.625rem',
+    },
+  }
+
+  if (auto)
+    return {
+      ...(layouts[size] || defaultLayout),
+      padding: autoPaddings[size] || autoPaddings.medium,
+      minWidth: 'min-content',
+      width: 'auto',
     }
-  }
-  
-  if (auto) return {
-    ...(layouts[size] || defaultLayout),
-    padding: autoPaddings[size] || autoPaddings.medium,
-    minWidth: 'min-content',
-    width: 'auto'
-  }
-  
-  
+
   return layouts[size] || defaultLayout
 }

@@ -7,20 +7,20 @@ interface Props {
 }
 
 const defaultProps = {
-  className: ''
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ModalTitleProps = Props & typeof defaultProps & NativeAttrs
 
-const ModalTitle: React.FC<ModalTitleProps> = ({
-  className, children, ...props
-}) => {
+const ModalTitle: React.FC<ModalTitleProps> = ({ className, children, ...props }) => {
   const theme = useTheme()
-  
+
   return (
     <>
-      <h2 className={className} {...props}>{children}</h2>
+      <h2 className={className} {...props}>
+        {children}
+      </h2>
       <style jsx>{`
         h2 {
           font-size: 1.5rem;

@@ -22,7 +22,14 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type RadioGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
-  disabled, onChange, value, children, className, initialValue, useRow, ...props
+  disabled,
+  onChange,
+  value,
+  children,
+  className,
+  initialValue,
+  useRow,
+  ...props
 }) => {
   const theme = useTheme()
   const [selfVal, setSelfVal] = useState<string | undefined>(initialValue)
@@ -39,8 +46,8 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
       inGroup: true,
       value: selfVal,
     }
-  },[disabled, selfVal])
-  
+  }, [disabled, selfVal])
+
   useEffect(() => {
     if (value === undefined) return
     setSelfVal(value)
@@ -56,12 +63,12 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
           display: flex;
           flex-direction: ${useRow ? 'col' : 'column'};
         }
-        
+
         .radio-group :global(.radio) {
           margin-top: ${useRow ? 0 : theme.layout.gap};
           margin-left: ${useRow ? theme.layout.gap : 0};
         }
-        
+
         .radio-group :global(.radio:first-of-type) {
           margin: 0;
         }

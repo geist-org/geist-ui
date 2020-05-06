@@ -15,7 +15,9 @@ const defaultProps = {
 export type ExpandProps = Props & typeof defaultProps
 
 const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
-  isExpanded, delay, children,
+  isExpanded,
+  delay,
+  children,
 }) => {
   const [height, setHeight] = useState<string>(isExpanded ? 'auto' : '0')
   const [selfExpanded, setSelfExpanded] = useState<boolean>(isExpanded)
@@ -37,7 +39,7 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
       updateShape()
       setHeight(`${state.height}px`)
     }
-    
+
     // show expand animation
     entryTimer.current = window.setTimeout(() => {
       setSelfExpanded(isExpanded)
@@ -56,7 +58,7 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
         clearTimeout(leaveTimer.current)
       }, delay / 2)
     }
-    
+
     return () => {
       clearTimeout(entryTimer.current)
       clearTimeout(leaveTimer.current)
@@ -66,8 +68,10 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
 
   return (
     <div className={`container ${selfExpanded ? 'expanded' : ''}`}>
-      <div ref={contentRef} className="content">{children}</div>
-  
+      <div ref={contentRef} className="content">
+        {children}
+      </div>
+
       <style jsx>{`
         .container {
           padding: 0;

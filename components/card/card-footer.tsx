@@ -16,13 +16,15 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CardFooterProps = Props & typeof defaultProps & NativeAttrs
 
 const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = ({
-  children, className, disableAutoMargin, ...props
+  children,
+  className,
+  disableAutoMargin,
+  ...props
 }) => {
   const theme = useTheme()
 
   return (
-    <footer className={`${disableAutoMargin ? '' : 'auto-margin'} ${className}`}
-      {...props}>
+    <footer className={`${disableAutoMargin ? '' : 'auto-margin'} ${className}`} {...props}>
       {children}
       <style jsx>{`
         footer {
@@ -32,13 +34,13 @@ const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = ({
           overflow: hidden;
           color: inherit;
           background-color: inherit;
-          font-size: .875rem;
+          font-size: 0.875rem;
           border-top: 1px solid ${theme.palette.border};
           border-bottom-left-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
           min-height: calc(2.5 * ${theme.layout.gap});
         }
-        
+
         .auto-margin :global(*) {
           margin-top: 0;
           margin-bottom: 0;

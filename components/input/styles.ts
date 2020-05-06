@@ -63,7 +63,7 @@ export const getColors = (palette: ZeitUIThemesPalette, status?: NormalTypes): I
       hoverBorder: palette.errorDark,
     },
   }
-  
+
   if (!status) return colors.default
   return colors[status]
 }

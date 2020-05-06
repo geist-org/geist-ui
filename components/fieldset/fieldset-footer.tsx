@@ -15,10 +15,12 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type FieldsetFooterProps = Props & typeof defaultProps & NativeAttrs
 
 const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = ({
-  className, children, ...props
+  className,
+  children,
+  ...props
 }) => {
   const theme = useTheme()
-  
+
   return (
     <footer className={className} {...props}>
       {children}
@@ -34,7 +36,7 @@ const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = (
           overflow: hidden;
           color: ${theme.palette.accents_6};
           padding: ${theme.layout.gapHalf} ${theme.layout.gap};
-          font-size: .875rem;
+          font-size: 0.875rem;
           min-height: 2.875rem;
           box-sizing: border-box;
         }
@@ -50,6 +52,8 @@ type FieldsetFooterComponent<P = {}> = React.FC<P> & {
   Actions: typeof FieldsetFooterActions
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 export default FieldsetFooter as FieldsetFooterComponent<ComponentProps>

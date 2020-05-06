@@ -42,7 +42,7 @@ const defaultProps = {
   type: 'default' as NormalTypes,
 }
 
-type ElementMap = { [key in (keyof JSX.IntrinsicElements)]?: boolean }
+type ElementMap = { [key in keyof JSX.IntrinsicElements]?: boolean }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TextProps = Props & typeof defaultProps & NativeAttrs
@@ -52,7 +52,7 @@ type TextRenderableElements = Array<keyof JSX.IntrinsicElements>
 const getModifierChild = (
   tags: TextRenderableElements,
   children: ReactNode,
-  size?: string | number
+  size?: string | number,
 ) => {
   if (!tags.length) return children
   const nextTag = tags.slice(1, tags.length)
@@ -64,16 +64,34 @@ const getModifierChild = (
 }
 
 const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
-  h1, h2, h3, h4, h5, h6, p, b, small, i, span, del, em, blockquote,
-  size, children, className, ...props
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  b,
+  small,
+  i,
+  span,
+  del,
+  em,
+  blockquote,
+  size,
+  children,
+  className,
+  ...props
 }) => {
   const elements: ElementMap = { h1, h2, h3, h4, h5, h6, p, blockquote }
   const inlineElements: ElementMap = { span, small, b, em, i, del }
-  const names = Object.keys(elements)
-    .filter((name: keyof JSX.IntrinsicElements) => elements[name]) as TextRenderableElements
-  const inlineNames = Object.keys(inlineElements)
-    .filter((name: keyof JSX.IntrinsicElements) => inlineElements[name]) as TextRenderableElements
-  
+  const names = Object.keys(elements).filter(
+    (name: keyof JSX.IntrinsicElements) => elements[name],
+  ) as TextRenderableElements
+  const inlineNames = Object.keys(inlineElements).filter(
+    (name: keyof JSX.IntrinsicElements) => inlineElements[name],
+  ) as TextRenderableElements
+
   /**
    *  Render element "p" only if no element is found.
    *  If there is only one modifier, just rendered one modifier element
@@ -89,9 +107,10 @@ const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
     if (inlineNames[0]) return inlineNames[0]
     return 'p' as keyof JSX.IntrinsicElements
   }, [names, inlineNames])
-  
-  const renderableChildElements = inlineNames
-    .filter((name: keyof JSX.IntrinsicElements) => name !== tag) as TextRenderableElements
+
+  const renderableChildElements = inlineNames.filter(
+    (name: keyof JSX.IntrinsicElements) => name !== tag,
+  ) as TextRenderableElements
 
   const modifers = useMemo(() => {
     if (!renderableChildElements.length) return children
@@ -99,11 +118,12 @@ const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
   }, [renderableChildElements, children, size])
 
   return (
-    <TextChild className={className} tag={tag} size={size} {...props}>{modifers}</TextChild>
+    <TextChild className={className} tag={tag} size={size} {...props}>
+      {modifers}
+    </TextChild>
   )
 }
 
 const MemoText = React.memo(Text)
 
 export default withDefaults(MemoText, defaultProps)
-

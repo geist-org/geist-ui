@@ -35,38 +35,51 @@ type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ButtonProps = Props & typeof defaultProps & NativeAttrs
 
 const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
-  children, disabled, type, loading, shadow, ghost, effect, onClick,
-  auto, size, className, ...props
+  children,
+  disabled,
+  type,
+  loading,
+  shadow,
+  ghost,
+  effect,
+  onClick,
+  auto,
+  size,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [dripShow, setDripShow] = useState<boolean>(false)
   const [dripX, setDripX] = useState<number>(0)
   const [dripY, setDripY] = useState<number>(0)
-  const { bg, border, color } = useMemo(
-    () => getButtonColors(theme, type, disabled, ghost),
-    [theme, type, disabled, ghost],
-  )
-  const hover = useMemo(
-    () => getButtonHoverColors(theme, type, disabled, loading, shadow, ghost),
-    [theme, type, disabled, loading, shadow, ghost],
-  )
-  const { cursor, events } = useMemo(
-    () => getButtonCursor(disabled, loading),
-    [disabled, loading],
-  )
-  const { height, minWidth, padding, width, fontSize } = useMemo(
-    () => getButtonSize(size, auto),
-    [size, auto],
-  )
-  
+  const { bg, border, color } = useMemo(() => getButtonColors(theme, type, disabled, ghost), [
+    theme,
+    type,
+    disabled,
+    ghost,
+  ])
+  const hover = useMemo(() => getButtonHoverColors(theme, type, disabled, loading, shadow, ghost), [
+    theme,
+    type,
+    disabled,
+    loading,
+    shadow,
+    ghost,
+  ])
+  const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading), [disabled, loading])
+  const { height, minWidth, padding, width, fontSize } = useMemo(() => getButtonSize(size, auto), [
+    size,
+    auto,
+  ])
+
   /* istanbul ignore next */
   const dripCompletedHandle = () => {
     setDripShow(false)
     setDripX(0)
     setDripY(0)
   }
-  
+
   const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     if (disabled || loading) return
     const showDrip = !shadow && !ghost && effect
@@ -77,18 +90,26 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
       setDripX(event.clientX - rect.left)
       setDripY(event.clientY - rect.top)
     }
-  
+
     onClick && onClick(event)
   }
-  
+
   return (
-    <button ref={buttonRef} className={`btn ${className}`} disabled={disabled} onClick={clickHandler} {...props}>
+    <button
+      ref={buttonRef}
+      className={`btn ${className}`}
+      disabled={disabled}
+      onClick={clickHandler}
+      {...props}>
       {loading ? <ButtonLoading /> : <div className="text">{children}</div>}
-      {dripShow && <ButtonDrip
-        x={dripX} y={dripY}
-        color={theme.palette.accents_2}
-        onCompleted={dripCompletedHandle}
-      />}
+      {dripShow && (
+        <ButtonDrip
+          x={dripX}
+          y={dripY}
+          color={theme.palette.accents_2}
+          onCompleted={dripCompletedHandle}
+        />
+      )}
       <style jsx>{`
         .btn {
           box-sizing: border-box;
@@ -117,7 +138,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           pointer-events: ${events};
           box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
         }
-        
+
         .btn:hover {
           color: ${hover.color};
           background-color: ${hover.bg};
@@ -127,7 +148,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
           transform: translate3d(0px, ${shadow ? '-1px' : '0px'}, 0px);
         }
-        
+
         .text {
           position: relative;
           z-index: 1;
@@ -138,8 +159,10 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           line-height: inherit;
           top: -1px;
         }
-        
-        .text :global(p), .text :global(pre), .text :global(div) {
+
+        .text :global(p),
+        .text :global(pre),
+        .text :global(div) {
           margin: 0;
         }
       `}</style>

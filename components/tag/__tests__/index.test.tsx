@@ -7,7 +7,7 @@ describe('Tag', () => {
     const wrapper = mount(<Tag>tag</Tag>)
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should work with types', () => {
     const wrapper = render(
       <div>
@@ -15,16 +15,20 @@ describe('Tag', () => {
         <Tag type="secondary">secondary</Tag>
         <Tag type="error">error</Tag>
         <Tag type="dark">dark</Tag>
-      </div>
+      </div>,
     )
     expect(wrapper).toMatchSnapshot()
   })
-  
+
   it('should work with invert', () => {
-    const wrapper = render(<Tag type="success" invert>success</Tag>)
+    const wrapper = render(
+      <Tag type="success" invert>
+        success
+      </Tag>,
+    )
     expect(wrapper).toMatchSnapshot()
   })
-  
+
   it('should work when child is null', () => {
     const wrapper = mount(<Tag />)
     expect(() => wrapper.unmount()).not.toThrow()

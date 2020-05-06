@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import withDefaults from '../utils/with-defaults'
 
 interface Props {
@@ -6,17 +6,22 @@ interface Props {
 }
 
 const defaultProps = {
-  width: '1.25em'
+  width: '1.25em',
 }
 
 export type SelectIconProps = Props & typeof defaultProps
 
-const SelectIcon: React.FC<SelectIconProps> = ({
-  width,
-}) => {
+const SelectIcon: React.FC<SelectIconProps> = ({ width }) => {
   return (
-    <svg viewBox="0 0 24 24" width={width} height={width} strokeWidth="1" strokeLinecap="round"
-      strokeLinejoin="round" fill="none" shapeRendering="geometricPrecision">
+    <svg
+      viewBox="0 0 24 24"
+      width={width}
+      height={width}
+      strokeWidth="1"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      fill="none"
+      shapeRendering="geometricPrecision">
       <path d="M6 9l6 6 6-6" />
       <style jsx>{`
         svg {

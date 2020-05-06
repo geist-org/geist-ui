@@ -7,30 +7,30 @@ interface Props {
 }
 
 const defaultProps = {
-  className: ''
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>
 export type ModalContentProps = Props & typeof defaultProps & NativeAttrs
 
-const ModalContent: React.FC<ModalContentProps> = ({
-  className, children, ...props
-}) => {
+const ModalContent: React.FC<ModalContentProps> = ({ className, children, ...props }) => {
   const theme = useTheme()
-  
+
   return (
     <>
-      <div className={`content ${className}`} {...props}>{children}</div>
+      <div className={`content ${className}`} {...props}>
+        {children}
+      </div>
       <style jsx>{`
         .content {
           margin: 0;
           padding: ${theme.layout.gap} 0 ${theme.layout.gapHalf} 0;
         }
-        
+
         .content > :global(*:first-child) {
           margin-top: 0;
         }
-        
+
         .content > :global(*:last-child) {
           margin-bottom: 0;
         }

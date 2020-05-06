@@ -54,19 +54,23 @@ const colorsData: { [key: string]: ColorEnum } = {
 
 export const getColorData = (type: string): ColorEnum => {
   const data = colorsData[type]
-  return data || colorsData.normal as ColorEnum
+  return data || (colorsData.normal as ColorEnum)
 }
 
-export const getCurrentColor = (palette: ZeitUIThemesPalette, type: string, index: number): string => {
+export const getCurrentColor = (
+  palette: ZeitUIThemesPalette,
+  type: string,
+  index: number,
+): string => {
   if (type === 'normal') {
     if (index >= 5) return palette.background
     return palette.foreground
   }
-  
+
   if (type === 'highlight') {
     if (index < 3) return 'white'
     return 'black'
   }
-  
+
   return palette.background
 }
