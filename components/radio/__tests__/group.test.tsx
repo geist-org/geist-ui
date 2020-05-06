@@ -15,24 +15,25 @@ describe('Radio Group', () => {
           <Radio value="1">1</Radio>
           <Radio value="2">2</Radio>
         </Radio.Group>
-      </div>
+      </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should trigger events in group', () => {
     let value = ''
-    const changeHandler = jest.fn()
-      .mockImplementation(val => value = val)
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(
       <Radio.Group onChange={changeHandler}>
         <Radio value="1">Option 1</Radio>
         <Radio value="2">Option 2</Radio>
-      </Radio.Group>
+      </Radio.Group>,
     )
 
-    wrapper.find('input').at(0)
+    wrapper
+      .find('input')
+      .at(0)
       .simulate('change', {
         ...nativeEvent,
         target: { checked: true },
@@ -48,10 +49,12 @@ describe('Radio Group', () => {
       <Radio.Group onChange={changeHandler} disabled>
         <Radio value="1">Option 1</Radio>
         <Radio value="2">Option 2</Radio>
-      </Radio.Group>
+      </Radio.Group>,
     )
 
-    wrapper.find('input').at(0)
+    wrapper
+      .find('input')
+      .at(0)
       .simulate('change', {
         ...nativeEvent,
         target: { checked: true },
@@ -65,54 +68,54 @@ describe('Radio Group', () => {
       <Radio.Group initialValue="2">
         <Radio value="1">Option 1</Radio>
         <Radio value="2">Option 2</Radio>
-      </Radio.Group>
+      </Radio.Group>,
     )
     const input = wrapper.find('input').at(1).getDOMNode() as HTMLInputElement
     expect(input.checked).toEqual(true)
   })
-  
+
   it('should be warning when value unset', () => {
-    const errorSpy = jest.spyOn(console, 'error')
-      .mockImplementation(() => {})
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
     mount(
       <Radio.Group>
         <Radio>Option 1</Radio>
         <Radio value="2">Option 2</Radio>
-      </Radio.Group>
+      </Radio.Group>,
     )
-    
+
     expect(errorSpy).toHaveBeenCalled()
     errorSpy.mockRestore()
   })
-  
+
   it('should be warning when checked is set', () => {
-    const errorSpy = jest.spyOn(console, 'error')
-      .mockImplementation(() => {})
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
     mount(
       <Radio.Group>
-        <Radio value="1" checked>Option 1</Radio>
+        <Radio value="1" checked>
+          Option 1
+        </Radio>
         <Radio value="2">Option 2</Radio>
-      </Radio.Group>
+      </Radio.Group>,
     )
-    
+
     expect(errorSpy).toHaveBeenCalled()
     errorSpy.mockRestore()
   })
-  
+
   it('should set state through value prop', () => {
     const wrapper = mount(
       <Radio.Group>
         <Radio value="1">Option 1</Radio>
         <Radio value="2">Option 2</Radio>
-      </Radio.Group>
+      </Radio.Group>,
     )
     let input = wrapper.find('input').at(0).getDOMNode() as HTMLInputElement
     expect(input.checked).toEqual(false)
-    
+
     wrapper.setProps({ value: '1' })
     input = wrapper.find('input').at(0).getDOMNode() as HTMLInputElement
     expect(input.checked).toEqual(true)
-  
+
     wrapper.setProps({ value: '2' })
     input = wrapper.find('input').at(1).getDOMNode() as HTMLInputElement
     expect(input.checked).toEqual(true)

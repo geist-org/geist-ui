@@ -24,7 +24,12 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TreeFileProps = Props & typeof defaultProps & NativeAttrs
 
 const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
-  name, parentPath, level, extra, className, ...props
+  name,
+  parentPath,
+  level,
+  extra,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const { onFileClick } = useTreeContext()
@@ -38,8 +43,13 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
     <div className={`file ${className}`} onClick={clickHandler} {...props}>
       <div className="names">
         <TreeIndents count={level} />
-        <span className="icon"><TreeFileIcon /></span>
-        <span className="name">{name}{extra && <span className="extra">{extra}</span>}</span>
+        <span className="icon">
+          <TreeFileIcon />
+        </span>
+        <span className="name">
+          {name}
+          {extra && <span className="extra">{extra}</span>}
+        </span>
       </div>
       <style jsx>{`
         .file {
@@ -48,14 +58,14 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
           user-select: none;
           margin-left: calc(1.875rem * ${level});
         }
-        
+
         .names {
           display: flex;
           height: 1.75rem;
           align-items: center;
           position: relative;
         }
-        
+
         .names > :global(.indent) {
           position: absolute;
           top: 50%;
@@ -65,31 +75,31 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
           background-color: ${theme.palette.accents_2};
           margin-left: -1px;
         }
-        
+
         .icon {
           width: 1.5rem;
           height: 100%;
           display: inline-flex;
           align-items: center;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
-        
+
         .name {
           transition: opacity 100ms ease 0ms;
           color: ${theme.palette.accents_8};
           white-space: nowrap;
-          font-size: .875rem;
+          font-size: 0.875rem;
         }
-        
+
         .extra {
-          font-size: .75rem;
+          font-size: 0.75rem;
           align-self: baseline;
           padding-left: 4px;
           color: ${theme.palette.accents_5};
         }
-        
+
         .name:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
       `}</style>
     </div>

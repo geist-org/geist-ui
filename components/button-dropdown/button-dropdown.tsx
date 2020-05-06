@@ -36,7 +36,14 @@ const stopPropagation = (event: MouseEvent<HTMLElement>) => {
 }
 
 const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = ({
-  children, type, size, auto, className, disabled, loading, ...props
+  children,
+  type,
+  size,
+  auto,
+  className,
+  disabled,
+  loading,
+  ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const theme = useTheme()
@@ -44,23 +51,33 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
   const sizes = getButtonSize(size, auto)
   const itemChildren = pickChild(children, ButtonDropdownItem)[1]
   const [itemChildrenWithoutMain, mainItemChildren] = pickChildByProps(itemChildren, 'main', true)
-  
+
   const [visible, setVisible] = useState<boolean>(false)
-  const clickHandler = useCallback((event: MouseEvent<HTMLDetailsElement>) => {
-    event.preventDefault()
-    stopPropagation(event)
-    if (disabled || loading) return
-    setVisible(!visible)
-  }, [visible])
-  
-  const initialValue = useMemo(() => ({
-    type, size, auto, disabled, loading,
-  }), [type, size])
+  const clickHandler = useCallback(
+    (event: MouseEvent<HTMLDetailsElement>) => {
+      event.preventDefault()
+      stopPropagation(event)
+      if (disabled || loading) return
+      setVisible(!visible)
+    },
+    [visible],
+  )
+
+  const initialValue = useMemo(
+    () => ({
+      type,
+      size,
+      auto,
+      disabled,
+      loading,
+    }),
+    [type, size],
+  )
   const bgColor = useMemo(() => {
     if (disabled || loading) return theme.palette.accents_1
     return visible ? colors.hoverBgColor : colors.bgColor
   }, [visible, colors, theme.palette])
-  
+
   useClickAway(ref, () => setVisible(false))
 
   return (
@@ -74,66 +91,66 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
           <div className="content">{itemChildrenWithoutMain}</div>
         </details>
         <style jsx>{`
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid ${theme.palette.border};
-          border-radius: ${theme.layout.radius};
-        }
-        
-        .btn-dropdown > :global(button) {
-          border-top-left-radius: ${theme.layout.radius};
-          border-bottom-left-radius: ${theme.layout.radius};
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: ${colors.color};
-          background-color: ${bgColor};
-          height: ${sizes.height};
-          border-left: 1px solid ${colors.borderLeftColor};
-          border-top-right-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
-          cursor: ${(disabled || loading) ? 'not-allowed' : 'pointer'};
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: ${colors.hoverBorder};
-          background-color: ${colors.hoverBgColor};
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: ${theme.layout.radius};
-          box-shadow: ${theme.expressiveness.shadowLarge};
-          transform: translateY(${theme.layout.gapHalf});
-          background-color: ${theme.palette.background};
-        }
-        
-        .content > :global(button:first-of-type) {
-          border-top-left-radius: ${theme.layout.radius};
-          border-top-right-radius: ${theme.layout.radius};
-        }
-        
-        .content > :global(button:last-of-type) {
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
-        }
-      `}</style>
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid ${theme.palette.border};
+            border-radius: ${theme.layout.radius};
+          }
+
+          .btn-dropdown > :global(button) {
+            border-top-left-radius: ${theme.layout.radius};
+            border-bottom-left-radius: ${theme.layout.radius};
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: ${colors.color};
+            background-color: ${bgColor};
+            height: ${sizes.height};
+            border-left: 1px solid ${colors.borderLeftColor};
+            border-top-right-radius: ${theme.layout.radius};
+            border-bottom-right-radius: ${theme.layout.radius};
+            cursor: ${disabled || loading ? 'not-allowed' : 'pointer'};
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: ${colors.hoverBorder};
+            background-color: ${colors.hoverBgColor};
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: ${theme.layout.radius};
+            box-shadow: ${theme.expressiveness.shadowLarge};
+            transform: translateY(${theme.layout.gapHalf});
+            background-color: ${theme.palette.background};
+          }
+
+          .content > :global(button:first-of-type) {
+            border-top-left-radius: ${theme.layout.radius};
+            border-top-right-radius: ${theme.layout.radius};
+          }
+
+          .content > :global(button:last-of-type) {
+            border-bottom-left-radius: ${theme.layout.radius};
+            border-bottom-right-radius: ${theme.layout.radius};
+          }
+        `}</style>
       </div>
     </ButtonDropdownContext.Provider>
   )
@@ -142,9 +159,10 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
 type MemoButtonDropdownComponent<P = {}> = React.NamedExoticComponent<P> & {
   Item: typeof ButtonDropdownItem
 }
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 ButtonDropdown.defaultProps = defaultProps
 
 export default React.memo(ButtonDropdown) as MemoButtonDropdownComponent<ComponentProps>
-

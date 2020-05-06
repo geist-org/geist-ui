@@ -6,15 +6,18 @@ import useLocale from 'lib/use-locale'
 import { useConfigs } from 'lib/config-context'
 import Metadatas from 'lib/data'
 
-export interface Props {
-}
+export interface Props {}
 
 export type SideChildren = Sides | Array<Sides>
 
 export const SideGroup: React.FC<{ sides?: SideChildren }> = React.memo(({ sides }) => {
   if (!sides) return null
   sides = Array.isArray(sides) ? sides : [sides]
-  return <SideItem sides={sides} ><SideGroup /></SideItem>
+  return (
+    <SideItem sides={sides}>
+      <SideGroup />
+    </SideItem>
+  )
 })
 
 export const Sidebar: React.FC<Props> = React.memo(() => {
@@ -52,7 +55,7 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
           width: 100%;
           padding-bottom: ${theme.layout.gap};
         }
-        
+
         .box {
           overflow-y: auto;
           overflow-x: hidden;
@@ -61,16 +64,16 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
           flex-direction: column;
           align-items: center;
         }
-        
+
         .box::-webkit-scrollbar {
           width: 0;
           background-color: transparent;
         }
-        
-        .box>:global(.item) {
+
+        .box > :global(.item) {
           margin-bottom: ${theme.layout.gap};
         }
-        
+
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .box {
             padding: calc(3.5 * ${theme.layout.gap}) 15vw;

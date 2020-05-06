@@ -7,16 +7,16 @@ describe('CSSBaseline', () => {
     const wrapper = render(
       <ZEITUIProvider>
         <CSSBaseline />
-      </ZEITUIProvider>
+      </ZEITUIProvider>,
     )
     expect(wrapper).toMatchSnapshot()
   })
-  
+
   it('should render dark mode correctly', () => {
     const wrapper = render(
       <ZEITUIProvider theme={{ type: 'dark' }}>
         <CSSBaseline />
-      </ZEITUIProvider>
+      </ZEITUIProvider>,
     )
     expect(wrapper).toMatchSnapshot()
   })

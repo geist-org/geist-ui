@@ -26,13 +26,21 @@ type ExcludeTooltipProps = {
 export type PopoverProps = Props & Omit<TooltipProps, keyof ExcludeTooltipProps>
 
 const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
-  content, children, trigger, placement, portalClassName, ...props
+  content,
+  children,
+  trigger,
+  placement,
+  portalClassName,
+  ...props
 }) => {
   const theme = useTheme()
   const textNode = useMemo(() => getReactNode(content), [content])
-  
+
   return (
-    <Tooltip text={textNode} trigger={trigger} placement={placement}
+    <Tooltip
+      text={textNode}
+      trigger={trigger}
+      placement={placement}
       portalClassName={`popover ${portalClassName}`}
       {...props}>
       {children}
@@ -46,14 +54,13 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   )
 }
 
-
 type PopoverComponent<P = {}> = React.FC<P> & {
   Item: typeof PopoverItem
   Option: typeof PopoverItem
 }
-type ComponentProps = Partial<typeof defaultProps>
-& Omit<Props, keyof typeof defaultProps>
-& Partial<Omit<TooltipProps, keyof ExcludeTooltipProps>>
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  Partial<Omit<TooltipProps, keyof ExcludeTooltipProps>>
 
 Popover.defaultProps = defaultProps
 

@@ -19,21 +19,26 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CheckboxGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
-  disabled, onChange, value, children, className, ...props
+  disabled,
+  onChange,
+  value,
+  children,
+  className,
+  ...props
 }) => {
   const [selfVal, setSelfVal] = useState<string[]>([])
   if (!value) {
     value = []
     useWarning('Props "value" is required.', 'Checkbox Group')
   }
-  
+
   const updateState = (val: string, checked: boolean) => {
     const removed = selfVal.filter(v => v !== val)
     const next = checked ? [...removed, val] : removed
     setSelfVal(next)
     onChange && onChange(next)
   }
-  
+
   const providerValue = useMemo(() => {
     return {
       updateState,
@@ -41,8 +46,8 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
       inGroup: true,
       values: selfVal,
     }
-  },[disabled, selfVal])
-  
+  }, [disabled, selfVal])
+
   useEffect(() => {
     setSelfVal(value)
   }, [value.join(',')])
@@ -52,10 +57,10 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
       <div className={`group ${className}`} {...props}>
         {children}
         <style jsx>{`
-        .group :global(label) {
-          margin-right: 1.875rem;
-        }
-      `}</style>
+          .group :global(label) {
+            margin-right: 1.875rem;
+          }
+        `}</style>
       </div>
     </CheckboxContext.Provider>
   )

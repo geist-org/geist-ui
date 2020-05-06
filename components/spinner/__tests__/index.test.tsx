@@ -8,7 +8,7 @@ describe('Spacer', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should work with different sizes', () => {
     const wrapper = mount(
       <div>
@@ -16,7 +16,7 @@ describe('Spacer', () => {
         <Spinner size="small" />
         <Spinner size="medium" />
         <Spinner size="large" />
-      </div>
+      </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()

@@ -1,14 +1,11 @@
 import React from 'react'
 import useTheme from '../styles/use-theme'
 
-export interface InputBlockLabelLabel {
-}
+export interface InputBlockLabelLabel {}
 
-const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> = ({
-  children,
-}) => {
+const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> = ({ children }) => {
   const theme = useTheme()
-  
+
   return (
     <label>
       {children}
@@ -22,11 +19,11 @@ const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> =
           font-size: 1rem;
           line-height: 1.5;
         }
-        
+
         label > :global(*:first-child) {
           margin-top: 0;
         }
-        
+
         label > :global(*:last-child) {
           margin-bottom: 0;
         }

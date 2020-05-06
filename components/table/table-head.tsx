@@ -32,9 +32,7 @@ const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
   )
 }
 
-const TableHead: React.FC<TableHeadProps> = ({
-  columns, width,
-}) => {
+const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
   const theme = useTheme()
   const isScalableWidth = useMemo(() => columns.find(item => !!item.width), [columns])
   const colgroup = useMemo(() => {
@@ -59,10 +57,10 @@ const TableHead: React.FC<TableHeadProps> = ({
           border-collapse: separate;
           border-spacing: 0;
         }
-        
+
         th {
           padding: 0 ${theme.layout.gapHalf};
-          font-size: .75rem;
+          font-size: 0.75rem;
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
@@ -74,7 +72,7 @@ const TableHead: React.FC<TableHeadProps> = ({
           border-top: 1px solid ${theme.palette.border};
           border-radius: 0;
         }
-        
+
         th:nth-child(1) {
           border-bottom: 1px solid ${theme.palette.border};
           border-left: 1px solid ${theme.palette.border};
@@ -82,7 +80,7 @@ const TableHead: React.FC<TableHeadProps> = ({
           border-top-left-radius: ${theme.layout.radius};
           border-bottom-left-radius: ${theme.layout.radius};
         }
-        
+
         th:last-child {
           border-bottom: 1px solid ${theme.palette.border};
           border-right: 1px solid ${theme.palette.border};
@@ -90,7 +88,7 @@ const TableHead: React.FC<TableHeadProps> = ({
           border-top-right-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
         }
-        
+
         .thead-box {
           display: flex;
           align-items: center;

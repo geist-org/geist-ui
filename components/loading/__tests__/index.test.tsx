@@ -8,7 +8,7 @@ describe('Loading', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).toMatchSnapshot()
   })
-  
+
   it('should work with different types', () => {
     const wrapper = mount(
       <div>
@@ -16,12 +16,12 @@ describe('Loading', () => {
         <Loading type="secondary" />
         <Loading type="warning" />
         <Loading type="error" />
-      </div>
+      </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).toMatchSnapshot()
   })
-  
+
   it('should work with different sizes', () => {
     const wrapper = mount(
       <div>
@@ -29,28 +29,26 @@ describe('Loading', () => {
         <Loading size="small" />
         <Loading size="medium" />
         <Loading size="large" />
-      </div>
+      </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).toMatchSnapshot()
   })
-  
+
   it('should work with custom styles', () => {
     const wrapper = mount(
       <div>
         <Loading color="#fff" />
         <Loading width="20%" />
         <Loading height="10px" />
-      </div>
+      </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).toMatchSnapshot()
   })
-  
+
   it('should work with children', () => {
     const wrapper = mount(<Loading>test-children</Loading>)
-    expect(wrapper.find('.loading').text())
-      .toContain('test-children')
+    expect(wrapper.find('.loading').text()).toContain('test-children')
   })
-  
 })

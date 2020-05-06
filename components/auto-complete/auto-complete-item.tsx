@@ -8,8 +8,7 @@ interface Props {
   value: string
 }
 
-const defaultProps = {
-}
+const defaultProps = {}
 
 export type AutoCompleteItemProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
@@ -24,17 +23,18 @@ const getSizes = (size: NormalSizes) => {
 }
 
 const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>> = ({
-  value: identValue, children,
+  value: identValue,
+  children,
 }) => {
   const theme = useTheme()
   const { value, updateValue, size } = useAutoCompleteContext()
   const selectHandler = () => {
     updateValue && updateValue(identValue)
   }
-  
+
   const isActive = useMemo(() => value === identValue, [identValue, value])
   const fontSize = useMemo(() => getSizes(size), [size])
-  
+
   return (
     <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
       {children}
@@ -55,21 +55,21 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           cursor: pointer;
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
         }
-        
+
         .item:first-of-type {
           border-top-left-radius: ${theme.layout.radius};
           border-top-right-radius: ${theme.layout.radius};
         }
-        
+
         .item:last-of-type {
           border-bottom-left-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
         }
-        
+
         .item:hover {
           background-color: ${theme.palette.accents_1};
         }
-        
+
         .item.active {
           background-color: ${theme.palette.accents_1};
           color: ${theme.palette.success};

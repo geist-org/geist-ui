@@ -25,11 +25,7 @@ export type TagColors = {
   borderColor: string
 }
 
-const getColors = (
-  type: SnippetTypes,
-  palette: ZeitUIThemesPalette,
-  invert: boolean,
-) => {
+const getColors = (type: SnippetTypes, palette: ZeitUIThemesPalette, invert: boolean) => {
   const colors: { [key in SnippetTypes]: Pick<TagColors, 'color'> & Partial<TagColors> } = {
     default: {
       color: palette.foreground,
@@ -53,40 +49,47 @@ const getColors = (
     lite: {
       color: palette.foreground,
       bgColor: palette.accents_2,
-    }
+    },
   }
   const hideBorder = invert || type === 'lite'
-  
+
   const cardStyle = {
     ...colors[type],
     bgColor: colors[type].bgColor || palette.background,
-    borderColor: hideBorder ? 'transparent' : colors[type].color
+    borderColor: hideBorder ? 'transparent' : colors[type].color,
   }
-  
-  return !invert ? cardStyle : {
-    ...cardStyle,
-    color: cardStyle.bgColor,
-    bgColor: cardStyle.color,
-  }
+
+  return !invert
+    ? cardStyle
+    : {
+        ...cardStyle,
+        color: cardStyle.bgColor,
+        bgColor: cardStyle.color,
+      }
 }
 
 const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({
-  type, children, className, invert, ...props
+  type,
+  children,
+  className,
+  invert,
+  ...props
 }) => {
   const theme = useTheme()
-  const { color, bgColor, borderColor } = useMemo(
-    () => getColors(type, theme.palette, invert),
-    [type, theme.palette, invert],
-  )
-  
+  const { color, bgColor, borderColor } = useMemo(() => getColors(type, theme.palette, invert), [
+    type,
+    theme.palette,
+    invert,
+  ])
+
   return (
     <span className={className} {...props}>
       {children}
       <style jsx>{`
         span {
           display: inline-block;
-          line-height: .875rem;
-          font-size: .875rem;
+          line-height: 0.875rem;
+          font-size: 0.875rem;
           height: 1.75rem;
           border-radius: ${theme.layout.radius};
           border: 1px solid ${borderColor};

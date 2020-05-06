@@ -41,11 +41,15 @@ const MenuSticker = () => {
         <div className="sticker">
           <div className="inner">
             <Tabs value={tabValue} onChange={val => setTabValue(val)}>
-              {tabbarData ? tabbarData.map((tab, index) => (
-                <Tabs.Item label={tab.localeName || tab.name}
-                  value={tab.name}
-                  key={`${tab.localeName || tab.name}-${index}`} />
-              )) : null}
+              {tabbarData
+                ? tabbarData.map((tab, index) => (
+                    <Tabs.Item
+                      label={tab.localeName || tab.name}
+                      value={tab.name}
+                      key={`${tab.localeName || tab.name}-${index}`}
+                    />
+                  ))
+                : null}
             </Tabs>
           </div>
         </div>
@@ -59,7 +63,7 @@ const MenuSticker = () => {
           pointer-events: none;
           background-color: ${theme.palette.background};
         }
-        
+
         .nav-fill.active {
           height: 48px;
           visibility: visible;
@@ -71,7 +75,7 @@ const MenuSticker = () => {
           height: 48px;
           background-color: ${theme.palette.background};
         }
-        
+
         nav.fixed {
           position: fixed;
           top: 0;
@@ -87,7 +91,7 @@ const MenuSticker = () => {
           height: 100%;
           width: 100%;
         }
-        
+
         .sticker:before {
           position: absolute;
           content: '';
@@ -97,7 +101,7 @@ const MenuSticker = () => {
           bottom: 0;
           background-color: ${theme.palette.border};
         }
-        
+
         .inner {
           max-width: ${theme.layout.pageWidth};
           padding: 0 ${theme.layout.gap};
@@ -109,28 +113,29 @@ const MenuSticker = () => {
           z-index: 900;
           margin: 0 auto;
         }
-        
+
         .inner :global(.content) {
           display: none;
         }
-        
-        .inner :global(.tabs), .inner :global(header) {
+
+        .inner :global(.tabs),
+        .inner :global(header) {
           height: 100%;
           border: none;
         }
-        
+
         .inner :global(.tab) {
           height: calc(100% - 2px);
           padding-top: 0;
           padding-bottom: 0;
           color: ${theme.palette.accents_5};
-          font-size: .875rem;
+          font-size: 0.875rem;
         }
-        
+
         .inner :global(.tab):hover {
           color: ${theme.palette.foreground};
         }
-        
+
         .inner :global(.active) {
           color: ${theme.palette.foreground};
         }

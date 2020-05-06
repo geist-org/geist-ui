@@ -43,7 +43,12 @@ const getBgColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
 }
 
 const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
-  type, size, className, children, dot, ...props
+  type,
+  size,
+  className,
+  children,
+  dot,
+  ...props
 }) => {
   const theme = useTheme()
   const bg = useMemo(() => getBgColor(type, theme.palette), [type, theme.palette])
@@ -52,7 +57,7 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
     if (!type || type === 'default') return theme.palette.background
     return 'white'
   }, [type, theme.palette.background])
-  
+
   return (
     <span className={`${dot ? 'dot' : ''} ${className}`} {...props}>
       {!dot && children}
@@ -69,7 +74,7 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
           font-size: ${font};
           border: 0;
         }
-        
+
         .dot {
           padding: 4px;
           border-radius: 50%;
@@ -82,7 +87,9 @@ const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
 type MemoBadgeComponent<P = {}> = React.NamedExoticComponent<P> & {
   Anchor: typeof BadgeAnchor
 }
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 Badge.defaultProps = defaultProps
 

@@ -19,4 +19,5 @@ const defaultContext = {
 
 export const ButtonDropdownContext = React.createContext<ButtonDropdownConfig>(defaultContext)
 
-export const useButtonDropdown = (): ButtonDropdownConfig => React.useContext<ButtonDropdownConfig>(ButtonDropdownContext)
+export const useButtonDropdown = (): ButtonDropdownConfig =>
+  React.useContext<ButtonDropdownConfig>(ButtonDropdownContext)

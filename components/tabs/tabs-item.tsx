@@ -15,7 +15,10 @@ const defaultProps = {
 export type TabsItemProps = Props & typeof defaultProps
 
 const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
-  children, value: userCustomValue, label, disabled,
+  children,
+  value: userCustomValue,
+  label,
+  disabled,
 }) => {
   const value = useMemo(() => userCustomValue || `${label}`, [userCustomValue, label])
   const { register, unregister, currentValue } = useTabsContext()

@@ -20,7 +20,10 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CollapseGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
-  children, accordion, className, ...props
+  children,
+  accordion,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const [state, setState, stateRef] = useCurrentState<Array<number>>([])
@@ -30,7 +33,7 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
       if (nextState) return setState([currentIndex])
       return setState([])
     }
-    
+
     if (nextState) {
       // In a few cases, the user will set Collapse Component state manually.
       // If the user incorrectly set the state, Group component should ignore it.
@@ -40,12 +43,15 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
     }
     setState(stateRef.current.filter(item => item !== currentIndex))
   }
-  
-  const initialValue = useMemo<CollapseConfig>(() => ({
-    values: state,
-    updateValues,
-  }), [state.join(',')])
-  
+
+  const initialValue = useMemo<CollapseConfig>(
+    () => ({
+      values: state,
+      updateValues,
+    }),
+    [state.join(',')],
+  )
+
   const hasIndexChildren = useMemo(() => setChildrenIndex(children, [Collapse]), [children])
 
   return (
@@ -57,8 +63,8 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
             width: auto;
             padding: 0 ${theme.layout.gapHalf};
           }
-          
-          .collapse-group > :global(div+div) {
+
+          .collapse-group > :global(div + div) {
             border-top: none;
           }
         `}</style>

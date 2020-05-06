@@ -24,12 +24,12 @@ describe('UseModal', () => {
         </Modal>
       )
     }
-    
+
     const wrapper = mount(<MockModal />)
     wrapper.setProps({ show: true })
     await updateWrapper(wrapper, 300)
     expectModalIsOpened(wrapper)
-  
+
     wrapper.setProps({ show: false })
     await updateWrapper(wrapper, 500)
     expectModalIsClosed(wrapper)

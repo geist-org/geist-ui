@@ -24,10 +24,14 @@ const toastActions = (actions: Toast['actions'], cancelHandle: Function) => {
   }
   if (!actions || !actions.length) return null
   return actions.map((action, index) => (
-    <Button auto size="mini" type={action.passive ? 'default' : 'secondary'}
+    <Button
+      auto
+      size="mini"
+      type={action.passive ? 'default' : 'secondary'}
       key={`action-${index}`}
-      onClick={(event: React.MouseEvent<HTMLButtonElement>) => handler(event, action.handler)}
-    >{action.name}</Button>
+      onClick={(event: React.MouseEvent<HTMLButtonElement>) => handler(event, action.handler)}>
+      {action.name}
+    </Button>
   ))
 }
 
@@ -40,10 +44,11 @@ const getColors = (palette: ZeitUIThemesPalette, type?: NormalTypes) => {
     error: palette.error,
   }
   const isDefault = !type || type === 'default'
-  if (isDefault) return {
-    bgColor: colors.default,
-    color: palette.foreground,
-  }
+  if (isDefault)
+    return {
+      bgColor: colors.default,
+      color: palette.foreground,
+    }
   /**
    * Prevent main color change in special types.
    * The color will only follow the theme when it is in the default type.
@@ -54,20 +59,20 @@ const getColors = (palette: ZeitUIThemesPalette, type?: NormalTypes) => {
   }
 }
 
-const ToastItem: React.FC<ToatItemProps> = React.memo(({
-  index, total, toast, onHover,
-}) => {
+const ToastItem: React.FC<ToatItemProps> = React.memo(({ index, total, toast, onHover }) => {
   const theme = useTheme()
   const { color, bgColor } = getColors(theme.palette, toast.type)
   const [visible, setVisible] = useState<boolean>(false)
   const [hide, setHide] = useState<boolean>(false)
-  
+
   const reverseIndex = useMemo(() => total - (index + 1), [total, index])
   const translate = useMemo(() => {
     const calc = `100% + -75px + -${20 * reverseIndex}px`
     if (reverseIndex > 5) return `translate3d(0, -75px, -${reverseIndex}px) scale(.01)`
     if (onHover) {
-      return `translate3d(0, ${reverseIndex * -75}px, -${reverseIndex}px) scale(${total === 1 ? 1 : 0.98205})`
+      return `translate3d(0, ${reverseIndex * -75}px, -${reverseIndex}px) scale(${
+        total === 1 ? 1 : 0.98205
+      })`
     }
     return `translate3d(0, calc(${calc}), -${reverseIndex}px) scale(${1 - 0.05 * reverseIndex})`
   }, [onHover, index, total])
@@ -95,11 +100,11 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({
   }, [reverseIndex, toast.willBeDestroy])
 
   return (
-    <div key={`${toast.id}-${index}`} className={`toast ${visible ? 'visible' : ''} ${hide ? 'hide': ''}`}>
+    <div
+      key={`${toast.id}-${index}`}
+      className={`toast ${visible ? 'visible' : ''} ${hide ? 'hide' : ''}`}>
       <div className="message">{toast.text}</div>
-      <div className="action">
-        {toastActions(toast.actions, toast.cancel)}
-      </div>
+      <div className="action">{toastActions(toast.actions, toast.cancel)}</div>
       <style jsx>{`
         .toast {
           width: 420px;
@@ -122,12 +127,12 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({
           transform: translate3d(0, 100%, 0px) scale(1);
           transition: all 400ms ease;
         }
-        
+
         .toast.visible {
           opacity: 1;
           transform: ${translate};
         }
-        
+
         .toast.hide {
           opacity: 0;
           visibility: hidden;
@@ -137,8 +142,8 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({
         .message {
           align-items: center;
           height: 100%;
-          transition: opacity .4s ease;
-          font-size: .875rem;
+          transition: opacity 0.4s ease;
+          font-size: 0.875rem;
           display: -webkit-box;
           word-break: break-all;
           padding-right: ${theme.layout.gapHalf};
@@ -149,7 +154,7 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({
           -webkit-line-clamp: 2;
           line-height: 1.1rem;
         }
-        
+
         .toast :global(button + button) {
           margin-left: ${theme.layout.gapQuarter};
         }

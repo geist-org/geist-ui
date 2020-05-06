@@ -16,7 +16,7 @@ describe('Popover', () => {
     const wrapper = mount(
       <Popover content="test">
         <div />
-      </Popover>
+      </Popover>,
     )
     expectPopoverIsHidden(wrapper)
 
@@ -35,7 +35,7 @@ describe('Popover', () => {
     const wrapper = mount(
       <Popover content={<p id="test">custom-content</p>}>
         <div />
-      </Popover>
+      </Popover>,
     )
     wrapper.find('.tooltip').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 350)
@@ -51,18 +51,18 @@ describe('Popover', () => {
     const wrapper = mount(
       <Popover content="test" trigger="hover">
         <div />
-      </Popover>
+      </Popover>,
     )
     wrapper.find('.tooltip').simulate('mouseEnter')
     await updateWrapper(wrapper, 350)
     expectPopoverIsShow(wrapper)
   })
-  
+
   it('should work with different placement', async () => {
     const wrapper = mount(
       <Popover content="test" placement="topEnd">
         <div />
-      </Popover>
+      </Popover>,
     )
     wrapper.find('.tooltip').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 350)
@@ -70,7 +70,7 @@ describe('Popover', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
-  
+
   it('should be render each popover item', async () => {
     const content = () => (
       <div>
@@ -83,11 +83,15 @@ describe('Popover', () => {
         </Popover.Item>
       </div>
     )
-    const wrapper = mount(<Popover content={content}><div /></Popover>)
+    const wrapper = mount(
+      <Popover content={content}>
+        <div />
+      </Popover>,
+    )
     wrapper.find('.tooltip').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 350)
     expectPopoverIsShow(wrapper)
-    
+
     const title = wrapper.find('.inner').find('.title')
     const line = wrapper.find('.inner').find('.line')
     expect(title.text()).toContain('settings')

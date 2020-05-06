@@ -11,23 +11,16 @@ export type MarkLeftValue = number
 
 export type Marks = Array<MarkLeftValue>
 
-const getMarks = (
-  min: number,
-  max: number,
-  step: number,
-): Marks => {
+const getMarks = (min: number, max: number, step: number): Marks => {
   const value = max - min
   const roundFunc = !(value % step) ? Math.floor : Math.ceil
   const count = roundFunc(value / step) - 1
   if (count >= 99) return []
-  
-  return [...new Array(count)]
-    .map((_, index) => (step * (index + 1) * 100) / value)
+
+  return [...new Array(count)].map((_, index) => (step * (index + 1) * 100) / value)
 }
 
-const SliderMark: React.FC<React.PropsWithChildren<Props>> = ({
-  step, max, min,
-}) => {
+const SliderMark: React.FC<React.PropsWithChildren<Props>> = ({ step, max, min }) => {
   const theme = useTheme()
   const marks = useMemo(() => getMarks(min, max, step), [min, max, step])
 

@@ -41,43 +41,56 @@ export type ToggleSize = {
 const getSizes = (size: NormalSizes) => {
   const sizes: { [key in NormalSizes]: ToggleSize } = {
     mini: {
-      width: '1.67rem', height: '.835rem',
+      width: '1.67rem',
+      height: '.835rem',
     },
     small: {
-      width: '1.67rem', height: '.835rem',
+      width: '1.67rem',
+      height: '.835rem',
     },
     medium: {
-      width: '1.75rem', height: '.875rem',
+      width: '1.75rem',
+      height: '.875rem',
     },
     large: {
-      width: '2rem', height: '1rem',
+      width: '2rem',
+      height: '1rem',
     },
   }
   return sizes[size]
 }
 
 const Toggle: React.FC<ToggleProps> = ({
-  initialChecked, checked, disabled, onChange, size, className, ...props
+  initialChecked,
+  checked,
+  disabled,
+  onChange,
+  size,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
   const { width, height } = useMemo(() => getSizes(size), [size])
-  
-  const changeHandle = useCallback((ev: React.ChangeEvent) => {
-    if (disabled) return
-    const selfEvent: ToggleEvent = {
-      target: {
-        checked: !selfChecked,
-      },
-      stopPropagation: ev.stopPropagation,
-      preventDefault: ev.preventDefault,
-      nativeEvent: ev,
-    }
-  
-    setSelfChecked(!selfChecked)
-    onChange && onChange(selfEvent)
-  }, [disabled, selfChecked, onChange])
-  
+
+  const changeHandle = useCallback(
+    (ev: React.ChangeEvent) => {
+      if (disabled) return
+      const selfEvent: ToggleEvent = {
+        target: {
+          checked: !selfChecked,
+        },
+        stopPropagation: ev.stopPropagation,
+        preventDefault: ev.preventDefault,
+        nativeEvent: ev,
+      }
+
+      setSelfChecked(!selfChecked)
+      onChange && onChange(selfEvent)
+    },
+    [disabled, selfChecked, onChange],
+  )
+
   useEffect(() => {
     if (checked === undefined) return
     setSelfChecked(checked)
@@ -100,7 +113,7 @@ const Toggle: React.FC<ToggleProps> = ({
           position: relative;
           cursor: ${disabled ? 'not-allowed' : 'pointer'};
         }
-        
+
         input {
           overflow: hidden;
           visibility: hidden;
@@ -111,7 +124,7 @@ const Toggle: React.FC<ToggleProps> = ({
           background-color: transparent;
           z-index: -1;
         }
-        
+
         .toggle {
           height: ${height};
           width: ${width};
@@ -125,7 +138,7 @@ const Toggle: React.FC<ToggleProps> = ({
           background-color: ${theme.palette.accents_2};
           padding: 0;
         }
-        
+
         .inner {
           width: calc(${height} - 2px);
           height: calc(${height} - 2px);
@@ -138,25 +151,25 @@ const Toggle: React.FC<ToggleProps> = ({
           border-radius: 50%;
           background-color: ${theme.palette.background};
         }
-        
+
         .disabled {
           border-color: ${theme.palette.accents_2};
           background-color: ${theme.palette.accents_1};
         }
-        
+
         .disabled > .inner {
           background-color: ${theme.palette.accents_2};
         }
-        
+
         .disabled.checked {
           border-color: ${theme.palette.accents_4};
           background-color: ${theme.palette.accents_4};
         }
-        
+
         .checked {
           background-color: ${theme.palette.success};
         }
-        
+
         .checked > .inner {
           left: calc(100% - (${height} - 2px));
           box-shadow: none;

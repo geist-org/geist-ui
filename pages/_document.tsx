@@ -6,7 +6,9 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body>
-          <script dangerouslySetInnerHTML={{ __html: `
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             (function(){
               if (!window.localStorage) return;
               if (window.localStorage.getItem('theme') === 'dark') {
@@ -14,7 +16,9 @@ class MyDocument extends Document {
                 document.body.style.background = '#000';
               };
             })()
-          `}} />
+          `,
+            }}
+          />
           <Main />
           <NextScript />
           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110371817-12" />
@@ -26,7 +30,7 @@ class MyDocument extends Document {
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'UA-110371817-12');
-              `
+              `,
             }}
           />
         </body>

@@ -20,7 +20,10 @@ const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = Omit<Partial<React.ImgHTMLAttributes<any> & React.HTMLAttributes<any>>, keyof Props>
+type NativeAttrs = Omit<
+  Partial<React.ImgHTMLAttributes<any> & React.HTMLAttributes<any>>,
+  keyof Props
+>
 export type AvatarProps = Props & typeof defaultProps & NativeAttrs
 
 const getSize = (size: NormalSizes | number): string => {
@@ -40,18 +43,28 @@ const safeText = (text: string): string => {
 }
 
 const Avatar: React.FC<AvatarProps> = ({
-  src, stacked, text, size, isSquare, className, ...props
+  src,
+  stacked,
+  text,
+  size,
+  isSquare,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const showText = !src
   const radius = isSquare ? theme.layout.radius : '50%'
   const marginLeft = stacked ? '-.625rem' : 0
   const width = useMemo(() => getSize(size), [size])
-  
+
   return (
     <span className={`avatar ${className}`}>
       {!showText && <img className="avatar-img" src={src} {...props} />}
-      {showText && <span className="avatar-text" {...props}>{safeText(text)}</span>}
+      {showText && (
+        <span className="avatar-text" {...props}>
+          {safeText(text)}
+        </span>
+      )}
 
       <style jsx>{`
         .avatar {
@@ -66,25 +79,25 @@ const Avatar: React.FC<AvatarProps> = ({
           background-color: ${theme.palette.background};
           margin: 0 0 0 ${marginLeft};
         }
-        
+
         .avatar:first-child {
           margin: 0;
         }
-        
+
         .avatar-img {
           display: inline-block;
           width: 100%;
           height: 100%;
           border-radius: ${radius};
         }
-        
+
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
           font-size: 1em;
           text-align: center;
-          transform: translate(-50%, -50%) scale(.65);
+          transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
           user-select: none;
         }
@@ -97,7 +110,9 @@ type MemoAvatarComponent<P = {}> = React.NamedExoticComponent<P> & {
   Group: typeof AvatarGroup
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 Avatar.defaultProps = defaultProps
 

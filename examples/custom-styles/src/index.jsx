@@ -13,12 +13,10 @@ const App = () => {
 }
 
 ReactDom.render(
-  (
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  ),
-  document.getElementById('app')
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('app'),
 )
 
 export default App

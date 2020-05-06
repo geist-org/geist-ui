@@ -4,9 +4,7 @@ import { pickChild } from '../utils/collections'
 import { tuple } from '../utils/prop-types'
 import Badge from './badge'
 
-const placement = tuple(
-  'topLeft', 'topRight', 'bottomLeft', 'bottomRight',
-)
+const placement = tuple('topLeft', 'topRight', 'bottomLeft', 'bottomRight')
 
 type BadgeAnchorPlacement = typeof placement[number]
 
@@ -35,44 +33,47 @@ type TransformStyles = {
 const getTransform = (placement: BadgeAnchorPlacement): TransformStyles => {
   const styles: { [key in BadgeAnchorPlacement]: TransformStyles } = {
     topLeft: {
-      top: '0', left: '0',
+      top: '0',
+      left: '0',
       value: 'translate(-50%, -50%)',
       origin: '0% 0%',
     },
     topRight: {
-      top: '0', right: '0',
+      top: '0',
+      right: '0',
       value: 'translate(50%, -50%)',
       origin: '100% 0%',
     },
     bottomLeft: {
-      left: '0', bottom: '0',
+      left: '0',
+      bottom: '0',
       value: 'translate(-50%, 50%)',
       origin: '0% 100%',
     },
     bottomRight: {
-      right: '0', bottom: '0',
+      right: '0',
+      bottom: '0',
       value: 'translate(50%, 50%)',
       origin: '100% 100%',
-    }
+    },
   }
   return styles[placement]
 }
 
 const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
-  children, placement,
+  children,
+  placement,
 }) => {
   const [withoutBadgeChildren, badgeChldren] = pickChild(children, Badge)
-  const {
-    top, bottom, left, right, value, origin,
-  } = useMemo(() => getTransform(placement), [placement])
-  
+  const { top, bottom, left, right, value, origin } = useMemo(() => getTransform(placement), [
+    placement,
+  ])
+
   return (
     <div className="anchor">
       {withoutBadgeChildren}
-      <sup>
-        {badgeChldren}
-      </sup>
-  
+      <sup>{badgeChldren}</sup>
+
       <style jsx>{`
         .anchor {
           position: relative;

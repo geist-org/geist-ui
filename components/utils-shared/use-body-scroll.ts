@@ -38,7 +38,7 @@ const useBodyScroll = (
     ...defaultOptions,
     ...(options || {}),
   }
-  
+
   // don't prevent touch event when layer contain scroll
   const isIosWithCustom = () => {
     if (safeOptions.scrollLayer) return false
@@ -60,7 +60,7 @@ const useBodyScroll = (
       })
       return
     }
-  
+
     // reset element overflow
     if (!elementStack.has(elRef.current)) return
     if (!isIosWithCustom()) {

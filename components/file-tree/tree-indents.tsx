@@ -13,7 +13,7 @@ const TreeIndents: React.FC<Props> = ({ count }) => {
         <span className="indent" key={`indent-${index}`}>
           <style jsx>{`
             span.indent {
-              left: calc(-1.875rem * ${index + 1}  + .75rem);
+              left: calc(-1.875rem * ${index + 1} + 0.75rem);
             }
           `}</style>
         </span>

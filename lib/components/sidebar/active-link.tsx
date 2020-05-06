@@ -9,18 +9,13 @@ export interface Props {
   text: string
 }
 
-const ActiveLink: React.FC<Props> = React.memo(({
-  href, text,
-}) => {
+const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
   const theme = useTheme()
   const { pathname } = useRouter()
   const [title, subtitle] = useMemo(() => {
     if (!/[\u4E00-\u9FA5]/.test(text)) return [text, null]
     if (/zeit|ui|ZEIT|UI/.test(text)) return [text, null]
-    return [
-      text.replace(/[^\u4E00-\u9FA5]/g, ''),
-      text.replace(/[^a-zA-Z]/g, ''),
-    ]
+    return [text.replace(/[^\u4E00-\u9FA5]/g, ''), text.replace(/[^a-zA-Z]/g, '')]
   }, [text])
   const isActive = pathname === href
 
@@ -28,7 +23,8 @@ const ActiveLink: React.FC<Props> = React.memo(({
     <div className="link">
       <Link href={href}>
         <a className={isActive ? 'active' : ''}>
-          {title}{subtitle && <span>&nbsp;{subtitle}</span>}
+          {title}
+          {subtitle && <span>&nbsp;{subtitle}</span>}
         </a>
       </Link>
       <style jsx>{`
@@ -42,7 +38,7 @@ const ActiveLink: React.FC<Props> = React.memo(({
           cursor: pointer;
           text-transform: capitalize;
         }
-        
+
         a {
           color: ${theme.palette.accents_7};
           font-size: 1rem;
@@ -51,18 +47,18 @@ const ActiveLink: React.FC<Props> = React.memo(({
           display: inline-flex;
           align-items: baseline;
         }
-        
+
         a.active {
           color: ${theme.palette.success};
           font-weight: 600;
         }
-        
+
         a.active span {
           color: ${theme.palette.successLight};
         }
-        
+
         span {
-          font-size: .75rem;
+          font-size: 0.75rem;
           color: ${theme.palette.accents_4};
           font-weight: 400;
         }

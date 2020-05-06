@@ -18,16 +18,18 @@ const ToastContainer: React.FC<React.PropsWithChildren<{}>> = () => {
   const [hover, setHover] = useState<boolean>(false)
   const timer = useRef<number | undefined>()
   const { toasts, updateToastHoverStatus } = useZEITUIContext()
-  const toastElements = useMemo(() =>
-    toasts.map((t, i) => (
-      <ToastItem index={i}
-        total={toasts.length}
-        toast={t}
-        onHover={hover}
-        key={`toast-${t.id}-${i}`}
-      />
-    )),
-  [toasts, hover],
+  const toastElements = useMemo(
+    () =>
+      toasts.map((t, i) => (
+        <ToastItem
+          index={i}
+          total={toasts.length}
+          toast={t}
+          onHover={hover}
+          key={`toast-${t.id}-${i}`}
+        />
+      )),
+    [toasts, hover],
   )
   const hoverHandler = (onHover: boolean) => {
     if (onHover) {
@@ -45,29 +47,30 @@ const ToastContainer: React.FC<React.PropsWithChildren<{}>> = () => {
   if (!portal) return null
   if (!toasts || toasts.length === 0) return null
   return createPortal(
-    (
-      <div className={`toast-container ${hover ? 'hover': ''}`}
-        onMouseEnter={() => hoverHandler(true)}
-        onMouseLeave={() => hoverHandler(false)}>
-        {toastElements}
-        <style jsx>{`
-          .toast-container {
-            position: fixed;
-            width: 420px;
-            max-width: 90vw;
-            bottom: ${theme.layout.gap};
-            right: ${theme.layout.gap};
-            z-index: 2000;
-            transition: all 400ms ease;
-            box-sizing: border-box;
-          }
-          
-          .toast-container.hover {
-            transform: translate3d(0, -10px, 0);
-          }
-        `}</style>
-      </div>
-    ), portal)
+    <div
+      className={`toast-container ${hover ? 'hover' : ''}`}
+      onMouseEnter={() => hoverHandler(true)}
+      onMouseLeave={() => hoverHandler(false)}>
+      {toastElements}
+      <style jsx>{`
+        .toast-container {
+          position: fixed;
+          width: 420px;
+          max-width: 90vw;
+          bottom: ${theme.layout.gap};
+          right: ${theme.layout.gap};
+          z-index: 2000;
+          transition: all 400ms ease;
+          box-sizing: border-box;
+        }
+
+        .toast-container.hover {
+          transform: translate3d(0, -10px, 0);
+        }
+      `}</style>
+    </div>,
+    portal,
+  )
 }
 
 export default ToastContainer

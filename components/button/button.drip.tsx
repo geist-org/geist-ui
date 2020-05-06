@@ -15,15 +15,13 @@ const defaultProps = {
 
 export type ButtonDrip = Props & typeof defaultProps
 
-const ButtonDrip: React.FC<ButtonDrip> = ({
-  x, y, color, onCompleted
-}) => {
+const ButtonDrip: React.FC<ButtonDrip> = ({ x, y, color, onCompleted }) => {
   const dripRef = useRef<HTMLDivElement>(null)
   /* istanbul ignore next */
   const top = Number.isNaN(+y) ? 0 : y - 10
   /* istanbul ignore next */
   const left = Number.isNaN(+x) ? 0 : x - 10
-  
+
   useEffect(() => {
     /* istanbul ignore next */
     if (!dripRef.current) return
@@ -34,16 +32,17 @@ const ButtonDrip: React.FC<ButtonDrip> = ({
       dripRef.current.removeEventListener('animationend', onCompleted)
     }
   })
-  
+
   return (
     <div ref={dripRef} className="drip">
-      <svg width="20" height="20" viewBox="0 0 20 20"
-        style={{ top, left }}>
+      <svg width="20" height="20" viewBox="0 0 20 20" style={{ top, left }}>
         <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-          <g fill={color}><rect width="100%" height="100%" rx="10" /></g>
+          <g fill={color}>
+            <rect width="100%" height="100%" rx="10" />
+          </g>
         </g>
       </svg>
-  
+
       <style jsx>{`
         .drip {
           position: absolute;
@@ -60,7 +59,7 @@ const ButtonDrip: React.FC<ButtonDrip> = ({
           width: 20px;
           height: 20px;
         }
-        
+
         @keyframes expand {
           0% {
             opacity: 0;
@@ -85,4 +84,3 @@ const ButtonDrip: React.FC<ButtonDrip> = ({
 const MemoButtonDrip = React.memo<ButtonDrip>(ButtonDrip)
 
 export default withDefaults(MemoButtonDrip, defaultProps)
-

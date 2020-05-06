@@ -7,16 +7,17 @@ initialize {
     "children": Array [
       Object {
         "data": "
-        html, body {
+        html,
+        body {
           background-color: #fff;
           color: #000;
         }
-        
+
         html {
           font-size: 16px;
           --zeit-icons-background: #fff;
         }
-        
+
         body {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
@@ -30,50 +31,53 @@ initialize {
           overflow-x: hidden;
           font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
         }
-        
+
         #__next {
           overflow-x: hidden;
         }
-        
-        *, *:before, *:after {
+
+        *,
+        *:before,
+        *:after {
           box-sizing: inherit;
           text-rendering: geometricPrecision;
           -webkit-tap-highlight-color: transparent;
         }
-        
-        p, small {
+
+        p,
+        small {
           font-weight: 400;
           color: inherit;
           letter-spacing: -0.005625rem;
           font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
         }
-        
+
         p {
           margin: 1rem 0;
           font-size: 1em;
           line-height: 1.625em;
         }
-        
+
         small {
           margin: 0;
           line-height: 1.5;
-          font-size: .875rem;
+          font-size: 0.875rem;
         }
-        
+
         b {
           font-weight: 600;
         }
-        
+
         span {
           font-size: inherit;
           color: inherit;
           font-weight: inherit;
         }
-        
+
         img {
           max-width: 100%;
         }
-        
+
         a {
           cursor: pointer;
           font-size: inherit;
@@ -84,28 +88,30 @@ initialize {
           color: #0070f3;
           text-decoration: none;
         }
-        
+
         a:hover {
           text-decoration: none;
         }
-        
-        ul, ol {
+
+        ul,
+        ol {
           padding: 0;
           list-style-type: none;
-          margin: 8pt 8pt 8pt 16pt;
+          margin: 8pt 8pt 8pt
+            16pt;
           color: #000;
         }
-        
+
         ol {
           list-style-type: decimal;
         }
-        
+
         li {
-          margin-bottom: .625rem;
+          margin-bottom: 0.625rem;
           font-size: 1em;
           line-height: 1.625em;
         }
-        
+
         ul li:before {
           content: &#x27;–&#x27;;
           display: inline-block;
@@ -113,50 +119,58 @@ initialize {
           position: absolute;
           margin-left: -0.9375rem;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
           color: inherit;
-          margin: 0 0 .625rem 0;
+          margin: 0 0 0.625rem 0;
         }
-        
+
         h1 {
           font-size: 3rem;
-          letter-spacing: -.066875rem;
+          letter-spacing: -0.066875rem;
           line-height: 1.5;
           font-weight: 700;
         }
-        
+
         h2 {
           font-size: 2.25rem;
-          letter-spacing: -.020625rem;
+          letter-spacing: -0.020625rem;
           font-weight: 600;
         }
-        
+
         h3 {
           font-size: 1.5rem;
-          letter-spacing: -.029375rem;
+          letter-spacing: -0.029375rem;
           font-weight: 600;
         }
-        
+
         h4 {
           font-size: 1.25rem;
-          letter-spacing: -.020625rem;
+          letter-spacing: -0.020625rem;
           font-weight: 600;
         }
-        
+
         h5 {
           font-size: 1rem;
-          letter-spacing: -.01125rem;
+          letter-spacing: -0.01125rem;
           font-weight: 600;
         }
-        
+
         h6 {
-          font-size: .875rem;
-          letter-spacing: -.005625rem;
+          font-size: 0.875rem;
+          letter-spacing: -0.005625rem;
           font-weight: 600;
         }
-        
-        button, input, select, textarea {
+
+        button,
+        input,
+        select,
+        textarea {
           font-family: inherit;
           font-size: inherit;
           line-height: inherit;
@@ -164,21 +178,25 @@ initialize {
           margin: 0;
         }
 
-        button:focus, input:focus, select:focus, textarea:focus {
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
           outline: none;
         }
-        
+
         code {
           color: #f81ce5;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
           font-size: 0.9em;
           white-space: pre-wrap;
         }
-        
-        code:before, code:after {
+
+        code:before,
+        code:after {
           content: &#x27;\`&#x27;;
         }
-        
+
         pre {
           border: 1px solid #eaeaea;
           border-radius: 5px;
@@ -192,79 +210,85 @@ initialize {
           font-size: 0.875rem;
           -webkit-overflow-scrolling: touch;
         }
-        
+
         pre code {
           color: #000;
           font-size: 0.75rem;
           line-height: 1.25rem;
           white-space: pre;
         }
-        
-        pre code:before, pre code:after {
+
+        pre code:before,
+        pre code:after {
           display: none;
         }
-        
+
         pre :global(p) {
           margin: 0;
         }
-        
+
         pre::-webkit-scrollbar {
           display: none;
           width: 0;
           height: 0;
           background: transparent;
         }
-        
+
         hr {
           border-color: #eaeaea;
         }
-        
+
         details {
           background-color: #fafafa;
           border: none;
         }
-        
-        details:focus, details:hover, details:active {
+
+        details:focus,
+        details:hover,
+        details:active {
           outline: none;
         }
-        
+
         summary {
           cursor: pointer;
           user-select: none;
           list-style: none;
           outline: none;
         }
-        
-        summary::-webkit-details-marker, summary::before {
+
+        summary::-webkit-details-marker,
+        summary::before {
           display: none;
         }
-        
+
         summary::-moz-list-bullet {
           font-size: 0;
         }
 
-        summary:focus, summary:hover, summary:active {
+        summary:focus,
+        summary:hover,
+        summary:active {
           outline: none;
           list-style: none;
         }
-        
+
         blockquote {
-          padding: calc(.667 * 16pt) 16pt;
+          padding: calc(0.667 * 16pt) 16pt;
           color: #666;
           background-color: #fafafa;
           border-radius: 5px;
           margin: 1.5rem 0;
           border: 1px solid #eaeaea;
         }
-        
+
         blockquote :global(*:first-child) {
           margin-top: 0;
         }
-        
+
         blockquote :global(*:last-child) {
           margin-bottom: 0;
         }
-        
+
         ::selection {
           background-color: #79ffe1;
           color: #000;
@@ -317,16 +341,17 @@ initialize {
     "children": Array [
       Object {
         "data": "
-        html, body {
+        html,
+        body {
           background-color: #000;
           color: #fff;
         }
-        
+
         html {
           font-size: 16px;
           --zeit-icons-background: #000;
         }
-        
+
         body {
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
@@ -340,50 +365,53 @@ initialize {
           overflow-x: hidden;
           font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
         }
-        
+
         #__next {
           overflow-x: hidden;
         }
-        
-        *, *:before, *:after {
+
+        *,
+        *:before,
+        *:after {
           box-sizing: inherit;
           text-rendering: geometricPrecision;
           -webkit-tap-highlight-color: transparent;
         }
-        
-        p, small {
+
+        p,
+        small {
           font-weight: 400;
           color: inherit;
           letter-spacing: -0.005625rem;
           font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
         }
-        
+
         p {
           margin: 1rem 0;
           font-size: 1em;
           line-height: 1.625em;
         }
-        
+
         small {
           margin: 0;
           line-height: 1.5;
-          font-size: .875rem;
+          font-size: 0.875rem;
         }
-        
+
         b {
           font-weight: 600;
         }
-        
+
         span {
           font-size: inherit;
           color: inherit;
           font-weight: inherit;
         }
-        
+
         img {
           max-width: 100%;
         }
-        
+
         a {
           cursor: pointer;
           font-size: inherit;
@@ -394,28 +422,30 @@ initialize {
           color: #3291ff;
           text-decoration: none;
         }
-        
+
         a:hover {
           text-decoration: none;
         }
-        
-        ul, ol {
+
+        ul,
+        ol {
           padding: 0;
           list-style-type: none;
-          margin: 8pt 8pt 8pt 16pt;
+          margin: 8pt 8pt 8pt
+            16pt;
           color: #fff;
         }
-        
+
         ol {
           list-style-type: decimal;
         }
-        
+
         li {
-          margin-bottom: .625rem;
+          margin-bottom: 0.625rem;
           font-size: 1em;
           line-height: 1.625em;
         }
-        
+
         ul li:before {
           content: &#x27;–&#x27;;
           display: inline-block;
@@ -423,50 +453,58 @@ initialize {
           position: absolute;
           margin-left: -0.9375rem;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
           color: inherit;
-          margin: 0 0 .625rem 0;
+          margin: 0 0 0.625rem 0;
         }
-        
+
         h1 {
           font-size: 3rem;
-          letter-spacing: -.066875rem;
+          letter-spacing: -0.066875rem;
           line-height: 1.5;
           font-weight: 700;
         }
-        
+
         h2 {
           font-size: 2.25rem;
-          letter-spacing: -.020625rem;
+          letter-spacing: -0.020625rem;
           font-weight: 600;
         }
-        
+
         h3 {
           font-size: 1.5rem;
-          letter-spacing: -.029375rem;
+          letter-spacing: -0.029375rem;
           font-weight: 600;
         }
-        
+
         h4 {
           font-size: 1.25rem;
-          letter-spacing: -.020625rem;
+          letter-spacing: -0.020625rem;
           font-weight: 600;
         }
-        
+
         h5 {
           font-size: 1rem;
-          letter-spacing: -.01125rem;
+          letter-spacing: -0.01125rem;
           font-weight: 600;
         }
-        
+
         h6 {
-          font-size: .875rem;
-          letter-spacing: -.005625rem;
+          font-size: 0.875rem;
+          letter-spacing: -0.005625rem;
           font-weight: 600;
         }
-        
-        button, input, select, textarea {
+
+        button,
+        input,
+        select,
+        textarea {
           font-family: inherit;
           font-size: inherit;
           line-height: inherit;
@@ -474,21 +512,25 @@ initialize {
           margin: 0;
         }
 
-        button:focus, input:focus, select:focus, textarea:focus {
+        button:focus,
+        input:focus,
+        select:focus,
+        textarea:focus {
           outline: none;
         }
-        
+
         code {
           color: #79ffe1;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
           font-size: 0.9em;
           white-space: pre-wrap;
         }
-        
-        code:before, code:after {
+
+        code:before,
+        code:after {
           content: &#x27;\`&#x27;;
         }
-        
+
         pre {
           border: 1px solid #333;
           border-radius: 5px;
@@ -502,79 +544,85 @@ initialize {
           font-size: 0.875rem;
           -webkit-overflow-scrolling: touch;
         }
-        
+
         pre code {
           color: #fff;
           font-size: 0.75rem;
           line-height: 1.25rem;
           white-space: pre;
         }
-        
-        pre code:before, pre code:after {
+
+        pre code:before,
+        pre code:after {
           display: none;
         }
-        
+
         pre :global(p) {
           margin: 0;
         }
-        
+
         pre::-webkit-scrollbar {
           display: none;
           width: 0;
           height: 0;
           background: transparent;
         }
-        
+
         hr {
           border-color: #333;
         }
-        
+
         details {
           background-color: #111;
           border: none;
         }
-        
-        details:focus, details:hover, details:active {
+
+        details:focus,
+        details:hover,
+        details:active {
           outline: none;
         }
-        
+
         summary {
           cursor: pointer;
           user-select: none;
           list-style: none;
           outline: none;
         }
-        
-        summary::-webkit-details-marker, summary::before {
+
+        summary::-webkit-details-marker,
+        summary::before {
           display: none;
         }
-        
+
         summary::-moz-list-bullet {
           font-size: 0;
         }
 
-        summary:focus, summary:hover, summary:active {
+        summary:focus,
+        summary:hover,
+        summary:active {
           outline: none;
           list-style: none;
         }
-        
+
         blockquote {
-          padding: calc(.667 * 16pt) 16pt;
+          padding: calc(0.667 * 16pt) 16pt;
           color: #888;
           background-color: #111;
           border-radius: 5px;
           margin: 1.5rem 0;
           border: 1px solid #333;
         }
-        
+
         blockquote :global(*:first-child) {
           margin-top: 0;
         }
-        
+
         blockquote :global(*:last-child) {
           margin-bottom: 0;
         }
-        
+
         ::selection {
           background-color: #f81ce5;
           color: #fff;

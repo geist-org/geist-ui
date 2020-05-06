@@ -30,34 +30,36 @@ export type cellData = {
   value: any
 }
 
-const TableBody: React.FC<TableBodyProps> = ({
-  data, hover, emptyText, onRow, onCell
-}) => {
+const TableBody: React.FC<TableBodyProps> = ({ data, hover, emptyText, onRow, onCell }) => {
   const theme = useTheme()
   const { columns } = useTableContext()
   const rowClickHandler = (row: any, index: number) => {
     onRow(row, index)
   }
-  
+
   return (
     <tbody>
       {data.map((row, index) => {
         return (
-          <tr key={`tbody-row-${index}`} className={hover ? 'hover' : ''}
+          <tr
+            key={`tbody-row-${index}`}
+            className={hover ? 'hover' : ''}
             onClick={() => rowClickHandler(row, index)}>
-            <TableCell columns={columns}
+            <TableCell
+              columns={columns}
               row={row}
               rowIndex={index}
               emptyText={emptyText}
-              onCellClick={onCell} />
+              onCellClick={onCell}
+            />
           </tr>
         )
       })}
       <style jsx>{`
         tr {
-          transition: background-color .25s ease;
+          transition: background-color 0.25s ease;
         }
-        
+
         tr.hover:hover {
           background-color: ${theme.palette.accents_1};
         }
@@ -69,7 +71,7 @@ const TableBody: React.FC<TableBodyProps> = ({
           font-size: 0.875rem;
           text-align: left;
         }
-        
+
         tr :global(.cell) {
           min-height: 3.125rem;
           display: flex;

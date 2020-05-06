@@ -18,22 +18,19 @@ const replaceCode = (desc: string) => {
   let count = 0
   return desc.replace(/`/g, () => {
     const val = count % 2 === 0 ? '<code>' : '</code>'
-    count ++
+    count++
     return val
   })
 }
 
-
-const Title: React.FC<TitleProps> = React.memo(({
-  title, desc,
-}) => {
+const Title: React.FC<TitleProps> = React.memo(({ title, desc }) => {
   return (
     <>
       <h3>
         <VirtualAnchor>{title}</VirtualAnchor>
       </h3>
       {desc && <p dangerouslySetInnerHTML={{ __html: replaceCode(desc) }} />}
-  
+
       <style jsx>{`
         h3 {
           margin-bottom: ${desc ? 0 : '30px'};
@@ -43,12 +40,13 @@ const Title: React.FC<TitleProps> = React.memo(({
           text-transform: capitalize;
           position: relative;
         }
-        
+
         h3 > p {
           margin: 0;
         }
-        
-        h3 > :global(code), h3 > :global(pre) {
+
+        h3 > :global(code),
+        h3 > :global(pre) {
           text-transform: none;
         }
       `}</style>

@@ -2,12 +2,22 @@ import React from 'react'
 import { Card, useTheme } from 'components'
 import { CardTypes } from 'components/utils/prop-types'
 
-const types = ['secondary', 'success', 'warning', 'error',
-  'dark', 'alert', 'purple', 'violet', 'cyan', 'lite']
+const types = [
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'dark',
+  'alert',
+  'purple',
+  'violet',
+  'cyan',
+  'lite',
+]
 
 const Colors: React.FC<React.PropsWithChildren<{}>> = () => {
   const theme = useTheme()
-  
+
   return (
     <div className="colors">
       {types.map((type, index) => {
@@ -22,7 +32,7 @@ const Colors: React.FC<React.PropsWithChildren<{}>> = () => {
           display: flex;
           flex-wrap: wrap;
         }
-        
+
         .color-card {
           display: flex;
           width: 9rem;

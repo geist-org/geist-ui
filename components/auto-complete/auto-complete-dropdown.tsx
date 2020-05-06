@@ -7,9 +7,7 @@ interface Props {
   visible: boolean
 }
 
-const AutoCompleteDropdown: React.FC<React.PropsWithChildren<Props>> = ({
-  children, visible
-}) => {
+const AutoCompleteDropdown: React.FC<React.PropsWithChildren<Props>> = ({ children, visible }) => {
   const theme = useTheme()
   const { ref } = useAutoCompleteContext()
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -17,18 +15,18 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<Props>> = ({
     event.stopPropagation()
     event.nativeEvent.stopImmediatePropagation()
   }
-  
+
   return (
     <Dropdown parent={ref} visible={visible}>
       <div className="auto-complete-dropdown" onClick={clickHandler}>
         {children}
         <style jsx>{`
-        .auto-complete-dropdown {
-          border-radius: ${theme.layout.radius};
-          box-shadow: ${theme.expressiveness.shadowLarge};
-          background-color: ${theme.palette.background};
-        }
-      `}</style>
+          .auto-complete-dropdown {
+            border-radius: ${theme.layout.radius};
+            box-shadow: ${theme.expressiveness.shadowLarge};
+            background-color: ${theme.palette.background};
+          }
+        `}</style>
       </div>
     </Dropdown>
   )

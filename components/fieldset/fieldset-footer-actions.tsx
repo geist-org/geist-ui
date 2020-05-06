@@ -6,18 +6,22 @@ interface Props {
 }
 
 const defaultProps = {
-  className: ''
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type FieldsetFooterActionsProps = Props & typeof defaultProps & NativeAttrs
 
 const FieldsetFooterActions: React.FC<FieldsetFooterActionsProps> = ({
-  className, children, ...props
+  className,
+  children,
+  ...props
 }) => {
   return (
     <>
-      <div className={className} {...props}>{children}</div>
+      <div className={className} {...props}>
+        {children}
+      </div>
       <style jsx>{`
         div {
           display: flex;

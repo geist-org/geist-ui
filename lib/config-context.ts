@@ -8,10 +8,10 @@ export interface Configs {
   updateChineseState: Function
   sidebarScrollHeight: number
   updateSidebarScrollHeight: Function
-  
+
   tabbarFixed: boolean
   updateTabbarFixed: Function
-  
+
   customTheme: DeepPartial<ZeitUIThemes>
   updateCustomTheme: (theme: DeepPartial<ZeitUIThemes>) => void
 }
@@ -20,7 +20,7 @@ export const defaultConfigs: Configs = {
   sidebarScrollHeight: 0,
   updateSidebarScrollHeight: () => {},
   updateChineseState: () => {},
-  
+
   tabbarFixed: false,
   updateTabbarFixed: () => {},
 

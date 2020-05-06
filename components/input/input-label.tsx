@@ -7,10 +7,12 @@ export interface InputLabel {
 }
 
 const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
-  children, isRight, fontSize,
+  children,
+  isRight,
+  fontSize,
 }) => {
   const theme = useTheme()
-  
+
   return (
     <span className={isRight ? 'right' : ''}>
       {children}
@@ -33,7 +35,7 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
           font-size: ${fontSize};
           line-height: 1;
         }
-        
+
         span.right {
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;

@@ -31,11 +31,12 @@ type CustomLayout = {
 }
 
 const getLayout = (small: boolean, theme: ZeitUIThemes): CustomLayout => {
-  if (small) return {
-    padding: 0,
-    fontSize: '.75rem',
-    minWidth: theme.layout.gap,
-  }
+  if (small)
+    return {
+      padding: 0,
+      fontSize: '.75rem',
+      minWidth: theme.layout.gap,
+    }
   return {
     padding: theme.layout.gapQuarter,
     fontSize: '0.875rem',
@@ -44,13 +45,20 @@ const getLayout = (small: boolean, theme: ZeitUIThemes): CustomLayout => {
 }
 
 const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
-  command, shift, option, ctrl, small, children, className, ...props
+  command,
+  shift,
+  option,
+  ctrl,
+  small,
+  children,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
-  const { padding, fontSize, minWidth } = useMemo<CustomLayout>(
-    () => getLayout(small, theme),
-    [small, theme],
-  )
+  const { padding, fontSize, minWidth } = useMemo<CustomLayout>(() => getLayout(small, theme), [
+    small,
+    theme,
+  ])
 
   return (
     <kbd className={className} {...props}>
@@ -75,17 +83,17 @@ const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
           min-width: ${minWidth};
           font-size: ${fontSize};
         }
-        
+
         kbd + kbd {
           margin-left: ${theme.layout.gapQuarter};
         }
-        
+
         span {
           line-height: 2em;
           font-size: 0.875rem;
           text-align: center;
         }
-        
+
         span + span {
           margin-left: ${theme.layout.gapQuarter};
         }

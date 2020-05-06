@@ -2,147 +2,147 @@
 
 exports[`Backdrop content should be offset 1`] = `
 "<div class=\\"backdrop  transition-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><span>test-value</span></div><div class=\\"offset\\"></div><style>
-        .backdrop {
-          position: fixed;
-          top: 0;
-          left: 0;
-          display: flex;
-          align-content: center;
-          align-items: center;
-          flex-direction: column;
-          justify-content: center;
-          height: 100vh;
-          width: 100vw;
-          overflow: auto;
-          z-index: 1000;
-        }
-        
-        .content {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          z-index: 1001;
-          outline: none;
-        }
-        
-        .offset {
-          height: 0vh;
-          opacity: 0;
-          background-color: transparent;
-        }
-        
-        .layer {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0.25;
-          background-color: black;
-          transition: opacity .35s cubic-bezier(.4, 0, .2, 1);
-          pointer-events: none;
-          z-index: 1000;
-        }
-      </style></div>"
+            .backdrop {
+              position: fixed;
+              top: 0;
+              left: 0;
+              display: flex;
+              align-content: center;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+              height: 100vh;
+              width: 100vw;
+              overflow: auto;
+              z-index: 1000;
+            }
+
+            .content {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              z-index: 1001;
+              outline: none;
+            }
+
+            .offset {
+              height: 0vh;
+              opacity: 0;
+              background-color: transparent;
+            }
+
+            .layer {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0.25;
+              background-color: black;
+              transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+              pointer-events: none;
+              z-index: 1000;
+            }
+          </style></div>"
 `;
 
 exports[`Backdrop content should be offset 2`] = `
 "<div class=\\"backdrop  transition-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><span>test-value</span></div><div class=\\"offset\\"></div><style>
-        .backdrop {
-          position: fixed;
-          top: 0;
-          left: 0;
-          display: flex;
-          align-content: center;
-          align-items: center;
-          flex-direction: column;
-          justify-content: center;
-          height: 100vh;
-          width: 100vw;
-          overflow: auto;
-          z-index: 1000;
-        }
-        
-        .content {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          z-index: 1001;
-          outline: none;
-        }
-        
-        .offset {
-          height: 100vh;
-          opacity: 0;
-          background-color: transparent;
-        }
-        
-        .layer {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0.25;
-          background-color: black;
-          transition: opacity .35s cubic-bezier(.4, 0, .2, 1);
-          pointer-events: none;
-          z-index: 1000;
-        }
-      </style></div>"
+            .backdrop {
+              position: fixed;
+              top: 0;
+              left: 0;
+              display: flex;
+              align-content: center;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+              height: 100vh;
+              width: 100vw;
+              overflow: auto;
+              z-index: 1000;
+            }
+
+            .content {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              z-index: 1001;
+              outline: none;
+            }
+
+            .offset {
+              height: 100vh;
+              opacity: 0;
+              background-color: transparent;
+            }
+
+            .layer {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0.25;
+              background-color: black;
+              transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+              pointer-events: none;
+              z-index: 1000;
+            }
+          </style></div>"
 `;
 
 exports[`Backdrop should render correctly 1`] = `
 "<div class=\\"backdrop  transition-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><span>test-value</span></div><div class=\\"offset\\"></div><style>
-        .backdrop {
-          position: fixed;
-          top: 0;
-          left: 0;
-          display: flex;
-          align-content: center;
-          align-items: center;
-          flex-direction: column;
-          justify-content: center;
-          height: 100vh;
-          width: 100vw;
-          overflow: auto;
-          z-index: 1000;
-        }
-        
-        .content {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          z-index: 1001;
-          outline: none;
-        }
-        
-        .offset {
-          height: 0vh;
-          opacity: 0;
-          background-color: transparent;
-        }
-        
-        .layer {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-          opacity: 0.25;
-          background-color: black;
-          transition: opacity .35s cubic-bezier(.4, 0, .2, 1);
-          pointer-events: none;
-          z-index: 1000;
-        }
-      </style></div>"
+            .backdrop {
+              position: fixed;
+              top: 0;
+              left: 0;
+              display: flex;
+              align-content: center;
+              align-items: center;
+              flex-direction: column;
+              justify-content: center;
+              height: 100vh;
+              width: 100vw;
+              overflow: auto;
+              z-index: 1000;
+            }
+
+            .content {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+              z-index: 1001;
+              outline: none;
+            }
+
+            .offset {
+              height: 0vh;
+              opacity: 0;
+              background-color: transparent;
+            }
+
+            .layer {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0.25;
+              background-color: black;
+              transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+              pointer-events: none;
+              z-index: 1000;
+            }
+          </style></div>"
 `;

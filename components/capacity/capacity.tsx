@@ -28,7 +28,11 @@ const getColor = (val: number, palette: ZeitUIThemesPalette): string => {
 }
 
 const Capacity: React.FC<CapacityProps> = ({
-  value, limit, color: userColor, className, ...props
+  value,
+  limit,
+  color: userColor,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const percentValue = useProportions(value, limit)
@@ -36,7 +40,7 @@ const Capacity: React.FC<CapacityProps> = ({
     if (userColor && userColor !== '') return userColor
     return getColor(percentValue, theme.palette)
   }, [userColor, percentValue, theme.palette])
-  
+
   return (
     <div className={`capacity ${className}`} title={`${percentValue}%`} {...props}>
       <span />

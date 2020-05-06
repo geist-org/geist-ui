@@ -1,7 +1,9 @@
 import { Dispatch, MutableRefObject, SetStateAction } from 'react'
 import useCurrentState from '../utils/use-current-state'
 
-const useTabs = (initialValue: string): {
+const useTabs = (
+  initialValue: string,
+): {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>
@@ -11,7 +13,7 @@ const useTabs = (initialValue: string): {
   }
 } => {
   const [state, setState, currentRef] = useCurrentState<string>(initialValue)
-  
+
   return {
     state,
     setState,

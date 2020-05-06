@@ -14,7 +14,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const themeChangeHandle = (theme: DeepPartial<ZeitUIThemes>) => {
     setCustomTheme(theme)
   }
-  
+
   useEffect(() => {
     const theme = window.localStorage.getItem('theme')
     if (theme !== 'dark') return
@@ -36,10 +36,23 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <meta name="generator" content="ZEIT UI" />
         <meta name="description" content="React implementation for ZEIT design." />
         <meta property="og:description" content="React implementation for ZEIT design." />
-        <meta itemProp="image" property="og:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
-        <meta property="og:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
-        <meta property="twitter:image" content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover" />
+        <meta
+          itemProp="image"
+          property="og:image"
+          content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+        />
+        <meta
+          property="og:image"
+          content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+        />
+        <meta
+          property="twitter:image"
+          content="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
+        />
+        <meta
+          name="viewport"
+          content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
+        />
       </Head>
       <ZEITUIProvider theme={customTheme}>
         <CSSBaseline />
@@ -51,53 +64,53 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           .tag {
             color: ${theme.palette.accents_5};
           }
-          
+
           .punctuation {
             color: ${theme.palette.accents_5};
           }
-          
+
           .attr-name {
             color: ${theme.palette.accents_6};
           }
-          
+
           .attr-value {
             color: ${theme.palette.accents_4};
           }
-          
+
           .language-javascript {
             color: ${theme.palette.accents_4};
           }
-          
+
           span.class-name {
             color: ${theme.palette.warning};
           }
-          
+
           span.maybe-class-name {
             color: ${theme.palette.purple};
           }
-          
+
           span.token.string {
             color: ${theme.palette.accents_5};
           }
-          
+
           span.keyword {
-            color: ${theme.palette.success}
+            color: ${theme.palette.success};
           }
-          
+
           span.plain-text {
             color: ${theme.palette.accents_3};
           }
-          
+
           body::-webkit-scrollbar {
             width: 0;
             background-color: ${theme.palette.accents_1};
           }
-          
+
           body::-webkit-scrollbar-thumb {
             background-color: ${theme.palette.accents_2};
             border-radius: ${theme.layout.radius};
           }
-      `}</style>
+        `}</style>
       </ZEITUIProvider>
     </>
   )

@@ -13,7 +13,7 @@ export const updateWrapper = async (wrapper: ReactWrapper, time: number = 0) => 
 }
 
 export const mockNativeEvent = (fn: Function = () => {}) => ({
-  nativeEvent: { stopImmediatePropagation: fn }
+  nativeEvent: { stopImmediatePropagation: fn },
 })
 
 export const nativeEvent = mockNativeEvent()

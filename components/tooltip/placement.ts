@@ -96,77 +96,96 @@ export const getPosition = (
       transform: 'translate(0, -100%)',
     },
   }
-  return positions[placement] || positions.top as TooltipPosition
+  return positions[placement] || (positions.top as TooltipPosition)
 }
 
-export const getIconPosition = (
-  placement: Placement,
-  offset: number,
-): TooltipIconPosition => {
+export const getIconPosition = (placement: Placement, offset: number): TooltipIconPosition => {
   const positions: { [key in Placement]?: TooltipIconPosition } = {
     top: {
-      top: 'auto', right: 'auto',
-      left: '50%', bottom: `${offset}px`,
-      transform: 'translate(-50%, 100%) rotate(-90deg)'
+      top: 'auto',
+      right: 'auto',
+      left: '50%',
+      bottom: `${offset}px`,
+      transform: 'translate(-50%, 100%) rotate(-90deg)',
     },
     topStart: {
-      top: 'auto', right: 'auto',
-      left: '5%', bottom: `${offset}px`,
-      transform: 'translate(0, 100%) rotate(-90deg)'
+      top: 'auto',
+      right: 'auto',
+      left: '5%',
+      bottom: `${offset}px`,
+      transform: 'translate(0, 100%) rotate(-90deg)',
     },
     topEnd: {
-      top: 'auto', right: '5%',
-      left: 'auto', bottom: `${offset}px`,
-      transform: 'translate(0, 100%) rotate(-90deg)'
+      top: 'auto',
+      right: '5%',
+      left: 'auto',
+      bottom: `${offset}px`,
+      transform: 'translate(0, 100%) rotate(-90deg)',
     },
     bottom: {
-      top: `${offset}px`, right: 'auto',
-      left: '50%', bottom: 'auto',
-      transform: 'translate(-50%, -100%) rotate(90deg)'
+      top: `${offset}px`,
+      right: 'auto',
+      left: '50%',
+      bottom: 'auto',
+      transform: 'translate(-50%, -100%) rotate(90deg)',
     },
     bottomStart: {
-      top: `${offset}px`, right: 'auto',
-      left: '5%', bottom: 'auto',
-      transform: 'translate(0, -100%) rotate(90deg)'
+      top: `${offset}px`,
+      right: 'auto',
+      left: '5%',
+      bottom: 'auto',
+      transform: 'translate(0, -100%) rotate(90deg)',
     },
     bottomEnd: {
-      top: `${offset}px`, right: '5%',
-      left: 'auto', bottom: 'auto',
-      transform: 'translate(0, -100%) rotate(90deg)'
+      top: `${offset}px`,
+      right: '5%',
+      left: 'auto',
+      bottom: 'auto',
+      transform: 'translate(0, -100%) rotate(90deg)',
     },
     left: {
-      top: '50%', right: '0',
-      left: 'auto', bottom: 'auto',
-      transform: 'translate(100%, -50%) rotate(180deg)'
+      top: '50%',
+      right: '0',
+      left: 'auto',
+      bottom: 'auto',
+      transform: 'translate(100%, -50%) rotate(180deg)',
     },
     leftStart: {
-      top: '10%', right: '0',
-      left: 'auto', bottom: 'auto',
-      transform: 'translate(100%, 0) rotate(180deg)'
+      top: '10%',
+      right: '0',
+      left: 'auto',
+      bottom: 'auto',
+      transform: 'translate(100%, 0) rotate(180deg)',
     },
     leftEnd: {
-      top: 'auto', right: '0',
-      left: 'auto', bottom: '10%',
-      transform: 'translate(100%, 0) rotate(180deg)'
+      top: 'auto',
+      right: '0',
+      left: 'auto',
+      bottom: '10%',
+      transform: 'translate(100%, 0) rotate(180deg)',
     },
     right: {
-      top: '50%', right: 'auto',
-      left: '0', bottom: 'auto',
-      transform: 'translate(-100%, -50%) rotate(0deg)'
+      top: '50%',
+      right: 'auto',
+      left: '0',
+      bottom: 'auto',
+      transform: 'translate(-100%, -50%) rotate(0deg)',
     },
     rightStart: {
-      top: '10%', right: 'auto',
-      left: '0', bottom: 'auto',
-      transform: 'translate(-100%, 0) rotate(0deg)'
+      top: '10%',
+      right: 'auto',
+      left: '0',
+      bottom: 'auto',
+      transform: 'translate(-100%, 0) rotate(0deg)',
     },
     rightEnd: {
-      top: 'auto', right: 'auto',
-      left: '0', bottom: '10%',
-      transform: 'translate(-100%, 0) rotate(0deg)'
+      top: 'auto',
+      right: 'auto',
+      left: '0',
+      bottom: '10%',
+      transform: 'translate(-100%, 0) rotate(0deg)',
     },
   }
-  
-  return positions[placement] || positions.top as TooltipIconPosition
+
+  return positions[placement] || (positions.top as TooltipIconPosition)
 }
-
-

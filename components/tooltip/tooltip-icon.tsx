@@ -9,18 +9,16 @@ interface Props {
   shadow: boolean
 }
 
-const TooltipIcon: React.FC<Props> = ({
-  placement, bgColor, shadow
-}) => {
+const TooltipIcon: React.FC<Props> = ({ placement, bgColor, shadow }) => {
   const theme = useTheme()
-  const {
-    transform, top, left, right, bottom,
-  } = useMemo(() => getIconPosition(placement, 3), [placement])
+  const { transform, top, left, right, bottom } = useMemo(() => getIconPosition(placement, 3), [
+    placement,
+  ])
   const bgColorWithDark = useMemo(() => {
     if (!shadow || theme.type !== 'dark') return bgColor
     return theme.palette.accents_2
   }, [theme.type, bgColor, shadow])
-  
+
   return (
     <span>
       <style jsx>{`

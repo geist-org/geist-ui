@@ -16,7 +16,7 @@ interface Props {
 const defaultProps = {
   className: '',
   showFullLink: false,
-  invert: false
+  invert: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -24,34 +24,29 @@ export type ImageBrowserProps = Props & typeof defaultProps & NativeAttrs
 
 const getHostFromUrl = (url: string) => {
   try {
-    return (new URL(url)).host
+    return new URL(url).host
   } catch (e) {
     return url
   }
 }
 
-const getTitle = (
-  title: string,
-  colors: BrowserColors,
-) => (
+const getTitle = (title: string, colors: BrowserColors) => (
   <div className="title">
     {title}
     <style jsx>{`
       .title {
         color: ${colors.titleColor};
-        font-size: .75rem;
+        font-size: 0.75rem;
       }
     `}</style>
   </div>
 )
 
-const getAddressInput = (
-  url: string,
-  showFullLink: boolean,
-  colors: BrowserColors,
-) => (
+const getAddressInput = (url: string, showFullLink: boolean, colors: BrowserColors) => (
   <div className="address-input">
-    <span className="https"><ImageBrowserHttpsIcon /></span>
+    <span className="https">
+      <ImageBrowserHttpsIcon />
+    </span>
     <Link pure href={url} title={url} target="_blank">
       {showFullLink ? url : getHostFromUrl(url)}
     </Link>
@@ -70,12 +65,12 @@ const getAddressInput = (
         overflow: hidden;
         position: relative;
       }
-      
+
       .address-input :global(*) {
-        font-size: .75rem;
+        font-size: 0.75rem;
         color: inherit;
       }
-      
+
       .address-input :global(a) {
         max-width: 90%;
         overflow: hidden;
@@ -84,7 +79,7 @@ const getAddressInput = (
         display: inline-block;
         color: inherit;
       }
-      
+
       .https {
         width: 12px;
         height: 12px;
@@ -97,94 +92,94 @@ const getAddressInput = (
   </div>
 )
 
-const ImageBrowser = React.forwardRef<HTMLDivElement, React.PropsWithChildren<ImageBrowserProps>>(({
-  url, title, children, showFullLink, invert, className, ...props
-}, ref: React.Ref<HTMLDivElement>) => {
-  const theme = useTheme()
-  const colors = useMemo(
-    () => getBrowserColors(invert, theme.palette),
-    [invert, theme.palette]
-  )
-  const input = useMemo(() => {
-    if (url) return getAddressInput(url, showFullLink, colors)
-    if (title) return getTitle(title, colors)
-    return null
-  }, [url, showFullLink, title, colors])
-  
-  return (
-    <div className={`bowser ${className}`} ref={ref} {...props}>
-      <header>
-        <div className="traffic">
-          <span className="close" />
-          <span className="mini" />
-          <span className="full" />
-        </div>
-        {input}
-      </header>
-      {children}
-      <style jsx>{`
-        .bowser {
-          background-color: transparent;
-          box-shadow: ${theme.expressiveness.shadowLarge};
-          width: max-content;
-          max-width: 100%;
-          margin: 0 auto;
-          border-radius: ${theme.layout.radius};
-          overflow: hidden;
-        }
-        
-        .bowser :global(.image) {
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
-        }
-        
-        header {
-          height: 2.5rem;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          color: ${colors.color};
-          background-color: ${colors.barBgColor};
-          border-bottom: 1px solid ${colors.borderColor};
-        }
-        
-        .traffic {
-          width: auto;
-          position: absolute;
-          left: ${theme.layout.gapHalf};
-          top: 50%;
-          transform: translateY(-50%);
-          bottom: 0;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          user-select: none;
-        }
-        
-        .traffic span {
-          border-radius: 50%;
-          width: .75rem;
-          height: .75rem;
-          display: inline-block;
-          margin-right: .5rem;
-        }
-        
-        .close {
-          background-color: #ff5f56;
-        }
-        
-        .mini {
-          background-color: #ffbd2e;
-        }
-        
-        .full {
-          background-color: #27c93f;
-        }
-      `}</style>
-    </div>
-  )
-})
+const ImageBrowser = React.forwardRef<HTMLDivElement, React.PropsWithChildren<ImageBrowserProps>>(
+  (
+    { url, title, children, showFullLink, invert, className, ...props },
+    ref: React.Ref<HTMLDivElement>,
+  ) => {
+    const theme = useTheme()
+    const colors = useMemo(() => getBrowserColors(invert, theme.palette), [invert, theme.palette])
+    const input = useMemo(() => {
+      if (url) return getAddressInput(url, showFullLink, colors)
+      if (title) return getTitle(title, colors)
+      return null
+    }, [url, showFullLink, title, colors])
+
+    return (
+      <div className={`bowser ${className}`} ref={ref} {...props}>
+        <header>
+          <div className="traffic">
+            <span className="close" />
+            <span className="mini" />
+            <span className="full" />
+          </div>
+          {input}
+        </header>
+        {children}
+        <style jsx>{`
+          .bowser {
+            background-color: transparent;
+            box-shadow: ${theme.expressiveness.shadowLarge};
+            width: max-content;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: ${theme.layout.radius};
+            overflow: hidden;
+          }
+
+          .bowser :global(.image) {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+          }
+
+          header {
+            height: 2.5rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: ${colors.color};
+            background-color: ${colors.barBgColor};
+            border-bottom: 1px solid ${colors.borderColor};
+          }
+
+          .traffic {
+            width: auto;
+            position: absolute;
+            left: ${theme.layout.gapHalf};
+            top: 50%;
+            transform: translateY(-50%);
+            bottom: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            user-select: none;
+          }
+
+          .traffic span {
+            border-radius: 50%;
+            width: 0.75rem;
+            height: 0.75rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+          }
+
+          .close {
+            background-color: #ff5f56;
+          }
+
+          .mini {
+            background-color: #ffbd2e;
+          }
+
+          .full {
+            background-color: #27c93f;
+          }
+        `}</style>
+      </div>
+    )
+  },
+)
 
 export default withDefaults(ImageBrowser, defaultProps)

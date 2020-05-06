@@ -35,16 +35,26 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type SelectProps = Props & typeof defaultProps & NativeAttrs
 
 const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
-  children, size, disabled, initialValue: init, value: customValue,
-  icon: Icon, onChange, className, pure, placeholder, dropdownClassName,
-  dropdownStyle, ...props
+  children,
+  size,
+  disabled,
+  initialValue: init,
+  value: customValue,
+  icon: Icon,
+  onChange,
+  className,
+  pure,
+  placeholder,
+  dropdownClassName,
+  dropdownStyle,
+  ...props
 }) => {
   const theme = useTheme()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(false)
   const [value, setValue] = useState<string | undefined>(init)
   const sizes = useMemo(() => getSizes(theme, size), [theme, size])
-  
+
   const updateVisible = (next: boolean) => setVisible(next)
   const updateValue = (next: string) => {
     setValue(next)
@@ -52,10 +62,18 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
     setVisible(false)
   }
 
-  const initialValue: SelectConfig = useMemo(() => ({
-    value, visible, updateValue, updateVisible, size, ref,
-    disableAll: disabled,
-  }), [visible, size, disabled, ref])
+  const initialValue: SelectConfig = useMemo(
+    () => ({
+      value,
+      visible,
+      updateValue,
+      updateVisible,
+      size,
+      ref,
+      disableAll: disabled,
+    }),
+    [visible, size, disabled, ref],
+  )
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation()
@@ -64,14 +82,14 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
     if (disabled) return
     setVisible(!visible)
   }
-  
+
   useClickAway(ref, () => setVisible(false))
-  
+
   useEffect(() => {
     if (customValue === undefined) return
     setValue(customValue)
   }, [customValue])
-  
+
   const selectedChild = useMemo(() => {
     const [, optionChildren] = pickChildByProps(children, 'value', value)
     const child = pickChildrenFirst(optionChildren)
@@ -84,10 +102,17 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
       <div className={`select ${className}`} ref={ref} onClick={clickHandler} {...props}>
         {!value && <span className="value placeholder">{placeholder}</span>}
         {value && <span className="value">{selectedChild}</span>}
-        <SelectDropdown visible={visible}
+        <SelectDropdown
+          visible={visible}
           className={dropdownClassName}
-          dropdownStyle={dropdownStyle}>{children}</SelectDropdown>
-        {!pure && <div className="icon"><Icon /></div>}
+          dropdownStyle={dropdownStyle}>
+          {children}
+        </SelectDropdown>
+        {!pure && (
+          <div className="icon">
+            <Icon />
+          </div>
+        )}
         <style jsx>{`
           .select {
             display: inline-flex;
@@ -107,15 +132,15 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             min-width: ${sizes.minWidth};
             background-color: ${disabled ? theme.palette.accents_1 : theme.palette.background};
           }
-          
+
           .select:hover {
             border-color: ${disabled ? theme.palette.border : theme.palette.foreground};
           }
-          
+
           .select:hover .icon {
-            color: ${disabled ? theme.palette.accents_5 : theme.palette.foreground}
+            color: ${disabled ? theme.palette.accents_5 : theme.palette.foreground};
           }
-          
+
           .value {
             display: inline-flex;
             flex: 1;
@@ -128,19 +153,20 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             color: ${disabled ? theme.palette.accents_4 : theme.palette.foreground};
             width: calc(100% - 1.25rem);
           }
-          
-          .value > :global(div), .value > :global(div:hover) {
+
+          .value > :global(div),
+          .value > :global(div:hover) {
             border-radius: 0;
             background-color: transparent;
             padding: 0;
             margin: 0;
             color: inherit;
           }
-          
+
           .placeholder {
             color: ${theme.palette.accents_3};
           }
-          
+
           .icon {
             position: absolute;
             right: ${theme.layout.gapQuarter};
@@ -164,8 +190,9 @@ type SelectComponent<P = {}> = React.FC<P> & {
   Option: typeof SelectOption
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
-
-(Select as SelectComponent<ComponentProps>).defaultProps = defaultProps
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
+;(Select as SelectComponent<ComponentProps>).defaultProps = defaultProps
 
 export default Select as SelectComponent<ComponentProps>

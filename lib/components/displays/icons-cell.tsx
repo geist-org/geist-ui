@@ -10,7 +10,8 @@ export const getImportString = (name: string) => {
   const single = `import ${name} from '@zeit-ui/react-icons/${fileName}'`
   const normal = `import { ${name} } from '@zeit-ui/react-icons'`
   return {
-    single, normal,
+    single,
+    normal,
   }
 }
 
@@ -20,14 +21,14 @@ interface Props {
   onClick: (name: string) => void
 }
 
-const IconsCell: React.FC<Props> = ({
-  component: Component, name, onClick
-}) => {
+const IconsCell: React.FC<Props> = ({ component: Component, name, onClick }) => {
   const theme = useTheme()
   return (
     <div className="icon-item" key={name} onClick={() => onClick(name)}>
       <Component />
-      <Text type="secondary" small>{name}</Text>
+      <Text type="secondary" small>
+        {name}
+      </Text>
       <style jsx>{`
         .icon-item {
           display: flex;
@@ -45,7 +46,7 @@ const IconsCell: React.FC<Props> = ({
           user-select: none;
           transition: all 150ms ease-in-out;
         }
-        
+
         .icon-item > :global(small) {
           display: inline-block;
           width: 90%;
@@ -53,11 +54,11 @@ const IconsCell: React.FC<Props> = ({
           overflow: hidden;
           text-overflow: ellipsis;
         }
-        
+
         .icon-item:hover {
           box-shadow: ${theme.expressiveness.shadowMedium};
         }
-        
+
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .icon-item {
             flex-basis: 30%;

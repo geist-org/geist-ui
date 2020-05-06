@@ -56,7 +56,7 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
   const setToast = (toast: Toast): void => {
     const id = `toast-${getId()}`
     const delay = toast.delay || defaultToast.delay
-    
+
     const cancel = (id: string, delay: number) => {
       updateToasts((currentToasts: Array<ToastWithID>) => {
         return currentToasts.map(item => {
@@ -70,7 +70,9 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
 
     updateToasts((currentToasts: Array<ToastWithID>) => {
       const newToast = {
-        ...toast, id, delay,
+        ...toast,
+        id,
+        delay,
         cancel: () => cancel(id, delay),
       }
       return [...currentToasts, newToast]
@@ -86,7 +88,7 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
         clearTimeout(hideTimer)
       }, delay)
     }
-    
+
     hideToast(id, delay)
   }
 

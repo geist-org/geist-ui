@@ -24,7 +24,12 @@ type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ModalActionProps = Props & typeof defaultProps & NativeAttrs
 
 const ModalAction: React.FC<ModalActionProps> = ({
-  className, children, onClick, passive, disabled, ...props
+  className,
+  children,
+  onClick,
+  passive,
+  disabled,
+  ...props
 }) => {
   const theme = useTheme()
   const { close } = useModalContext()
@@ -35,21 +40,23 @@ const ModalAction: React.FC<ModalActionProps> = ({
     })
     onClick && onClick(actionEvent)
   }
-  
+
   const color = useMemo(() => {
     return passive || disabled ? theme.palette.accents_5 : theme.palette.foreground
   }, [theme.palette, passive, disabled])
-  
+
   const bgColor = useMemo(() => {
     return disabled ? theme.palette.accents_1 : theme.palette.background
   }, [theme.palette, disabled])
 
   return (
     <>
-      <button className={className} onClick={clickHandler} {...props}>{children}</button>
+      <button className={className} onClick={clickHandler} {...props}>
+        {children}
+      </button>
       <style jsx>{`
         button {
-          font-size: .75rem;
+          font-size: 0.75rem;
           text-transform: uppercase;
           display: flex;
           -webkit-box-align: center;
@@ -65,7 +72,7 @@ const ModalAction: React.FC<ModalActionProps> = ({
           cursor: ${disabled ? 'not-allowed' : 'pointer'};
           flex: 1;
         }
-        
+
         button:hover {
           color: ${disabled ? color : theme.palette.foreground};
           background-color: ${disabled ? bgColor : theme.palette.accents_1};

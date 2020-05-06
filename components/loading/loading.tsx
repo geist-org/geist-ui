@@ -30,11 +30,7 @@ const getIconSize = (size: NormalSizes) => {
   return sizes[size]
 }
 
-const getIconBgColor = (
-  type: NormalTypes,
-  palette: ZeitUIThemesPalette,
-  color?: string,
-) => {
+const getIconBgColor = (type: NormalTypes, palette: ZeitUIThemesPalette, color?: string) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.accents_6,
     secondary: palette.secondary,
@@ -42,27 +38,28 @@ const getIconBgColor = (
     warning: palette.warning,
     error: palette.error,
   }
-  
+
   return color ? color : colors[type]
 }
 
 const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
-  children, size, type, color,
+  children,
+  size,
+  type,
+  color,
 }) => {
   const theme = useTheme()
   const width = useMemo(() => getIconSize(size), [size])
-  const bgColor = useMemo(
-    () => getIconBgColor(type, theme.palette, color),
-    [type, theme.palette, color],
-  )
-  
+  const bgColor = useMemo(() => getIconBgColor(type, theme.palette, color), [
+    type,
+    theme.palette,
+    color,
+  ])
+
   return (
     <div className="loading-container">
-      
       <span className="loading">
-        {children && (
-          <label>{children}</label>
-        )}
+        {children && <label>{children}</label>}
         <i />
         <i />
         <i />
@@ -75,16 +72,16 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
           width: 100%;
           height: 100%;
         }
-        
+
         label {
           margin-right: ${theme.layout.gapHalf};
           color: ${theme.palette.accents_5};
         }
-        
+
         label :global(*) {
           margin: 0;
         }
-        
+
         .loading {
           position: absolute;
           top: 0;
@@ -109,24 +106,24 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
-        
+
         i:nth-child(2) {
           animation-delay: 0.2s;
         }
-        
+
         i:nth-child(3) {
           animation-delay: 0.4s;
         }
-        
+
         @keyframes loading-blink {
           0% {
             opacity: 0.2;
           }
-          
+
           20% {
             opacity: 1;
           }
-          
+
           100% {
             opacity: 0.2;
           }

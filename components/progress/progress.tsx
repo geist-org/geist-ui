@@ -53,13 +53,20 @@ const getCurrentColor = (
 }
 
 const Progress: React.FC<ProgressProps> = ({
-  value, max, className, type, colors, fixedTop, fixedBottom, ...props
+  value,
+  max,
+  className,
+  type,
+  colors,
+  fixedTop,
+  fixedBottom,
+  ...props
 }) => {
   const theme = useTheme()
   const percentValue = useProportions(value, max)
   const currentColor = getCurrentColor(percentValue, theme.palette, type, colors)
   const fixed = fixedTop || fixedBottom
-  
+
   return (
     <div className={`progress ${className} ${fixed ? 'fixed' : ''}`}>
       <div className="inner" title={`${percentValue}%`} />
@@ -76,11 +83,11 @@ const Progress: React.FC<ProgressProps> = ({
         .progress {
           position: relative;
           width: 100%;
-          height: .625rem;
+          height: 0.625rem;
           background-color: ${theme.palette.accents_2};
           border-radius: ${theme.layout.radius};
         }
-        
+
         .fixed {
           position: fixed;
           top: ${fixedTop ? 0 : 'unset'};
@@ -88,7 +95,7 @@ const Progress: React.FC<ProgressProps> = ({
           left: 0;
           border-radius: 0;
         }
-        
+
         .fixed > .inner {
           border-radius: 0;
         }

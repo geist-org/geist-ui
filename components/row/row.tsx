@@ -42,30 +42,36 @@ const getFlexAlignment = (justify: Justify, align: Align) => {
 }
 
 const Container: React.FC<React.PropsWithChildren<RowProps>> = ({
-  children, component, gap, justify, align, className, ...props
+  children,
+  component,
+  gap,
+  justify,
+  align,
+  className,
+  ...props
 }) => {
   const Component = component
   const theme = useTheme()
-  const { justifyValue, alignValue } = useMemo(
-    () => getFlexAlignment(justify, align),
-    [justify, align],
-  )
-  
+  const { justifyValue, alignValue } = useMemo(() => getFlexAlignment(justify, align), [
+    justify,
+    align,
+  ])
+
   return (
     <Component className={`row ${className}`} {...props}>
       {children}
       <style jsx>{`
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(${gap} * ${theme.layout.gap} / 2);
-        margin-right: calc(${gap} * ${theme.layout.gap} / 2);
-        --row-gap: calc(${gap} * ${theme.layout.gap});
-        justify-content: ${justifyValue};
-        align-items: ${alignValue};
-      }
-    `}</style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(${gap} * ${theme.layout.gap} / 2);
+          margin-right: calc(${gap} * ${theme.layout.gap} / 2);
+          --row-gap: calc(${gap} * ${theme.layout.gap});
+          justify-content: ${justifyValue};
+          align-items: ${alignValue};
+        }
+      `}</style>
     </Component>
   )
 }

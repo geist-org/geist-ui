@@ -21,7 +21,12 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type SelectOptionProps = Props & typeof defaultProps & NativeAttrs
 
 const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
-  value: identValue, className, children, disabled, preventAllEvents, ...props
+  value: identValue,
+  className,
+  children,
+  disabled,
+  preventAllEvents,
+  ...props
 }) => {
   const theme = useTheme()
   const { updateValue, value, disableAll } = useSelectContext()
@@ -30,8 +35,8 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
     useWarning('The props "value" is required.', 'Select Option')
   }
 
-  const selected = useMemo(() => value ? identValue === value : false, [identValue, value])
-  
+  const selected = useMemo(() => (value ? identValue === value : false), [identValue, value])
+
   const bgColor = useMemo(() => {
     if (isDisabled) return theme.palette.accents_1
     return selected ? theme.palette.accents_1 : theme.palette.background
@@ -53,8 +58,10 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
 
   return (
     <>
-      <div className={`option ${className}`} onClick={clickHandler} {...props}>{children}</div>
-  
+      <div className={`option ${className}`} onClick={clickHandler} {...props}>
+        {children}
+      </div>
+
       <style jsx>{`
         .option {
           display: flex;
@@ -62,7 +69,7 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           align-items: center;
           font-weight: normal;
           white-space: pre;
-          font-size: .75rem;
+          font-size: 0.75rem;
           height: calc(1.688 * ${theme.layout.gap});
           padding: 0 ${theme.layout.gapHalf};
           background-color: ${bgColor};
@@ -72,17 +79,17 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
         }
-        
+
         .option:first-of-type {
           border-top-left-radius: ${theme.layout.radius};
           border-top-right-radius: ${theme.layout.radius};
         }
-        
+
         .option:last-of-type {
           border-bottom-left-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
         }
-        
+
         .option:hover {
           background-color: ${theme.palette.accents_1};
         }

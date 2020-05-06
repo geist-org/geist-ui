@@ -29,63 +29,64 @@ const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact =>
   const rect = ref.current.getBoundingClientRect()
   return {
     ...rect,
-    width: rect.width || (rect.right - rect.left),
+    width: rect.width || rect.right - rect.left,
     top: rect.bottom + document.documentElement.scrollTop,
     left: rect.left + document.documentElement.scrollLeft,
   }
 }
 
-const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
-  children, parent, visible,
-}) => {
-  const el = usePortal('dropdown')
-  const [rect, setRect] = useState<ReactiveDomReact>(defaultRect)
-  if (!parent) return null
-  
-  const updateRect = () => {
-    const { top, left, right, width: nativeWidth } = getRect(parent)
-    setRect({ top, left, right, width: nativeWidth })
-  }
+const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
+  ({ children, parent, visible }) => {
+    const el = usePortal('dropdown')
+    const [rect, setRect] = useState<ReactiveDomReact>(defaultRect)
+    if (!parent) return null
 
-  useResize(updateRect)
-  useClickAnyWhere(() => {
-    const { top, left } = getRect(parent)
-    const shouldUpdatePosition = top !== rect.top || left !== rect.left
-    if (!shouldUpdatePosition) return
-    updateRect()
-  })
-  useEffect(() => {
-    if (!parent || !parent.current) return
-    parent.current.addEventListener('mouseenter', updateRect)
-    /* istanbul ignore next */
-    return () => {
-      if (!parent || !parent.current) return
-      parent.current.removeEventListener('mouseenter', updateRect)
+    const updateRect = () => {
+      const { top, left, right, width: nativeWidth } = getRect(parent)
+      setRect({ top, left, right, width: nativeWidth })
     }
-  }, [parent])
 
-  const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation()
-    event.preventDefault()
-  }
+    useResize(updateRect)
+    useClickAnyWhere(() => {
+      const { top, left } = getRect(parent)
+      const shouldUpdatePosition = top !== rect.top || left !== rect.left
+      if (!shouldUpdatePosition) return
+      updateRect()
+    })
+    useEffect(() => {
+      if (!parent || !parent.current) return
+      parent.current.addEventListener('mouseenter', updateRect)
+      /* istanbul ignore next */
+      return () => {
+        if (!parent || !parent.current) return
+        parent.current.removeEventListener('mouseenter', updateRect)
+      }
+    }, [parent])
 
-  if (!el) return null
-  return createPortal((
-    <CSSTransition visible={visible}>
-      <div className="dropdown" onClick={clickHandler}>
-        {children}
-        <style jsx>{`
-        .dropdown {
-          position: absolute;
-          width: ${rect.width}px;
-          top: ${rect.top + 2}px;
-          left: ${rect.left}px;
-          z-index: 1100;
-        }
-      `}</style>
-      </div>
-    </CSSTransition>
-  ), el)
-})
+    const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+      event.stopPropagation()
+      event.preventDefault()
+    }
+
+    if (!el) return null
+    return createPortal(
+      <CSSTransition visible={visible}>
+        <div className="dropdown" onClick={clickHandler}>
+          {children}
+          <style jsx>{`
+            .dropdown {
+              position: absolute;
+              width: ${rect.width}px;
+              top: ${rect.top + 2}px;
+              left: ${rect.left}px;
+              z-index: 1100;
+            }
+          `}</style>
+        </div>
+      </CSSTransition>,
+      el,
+    )
+  },
+)
 
 export default Dropdown

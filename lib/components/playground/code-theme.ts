@@ -13,100 +13,100 @@ const makeCodeTheme = (theme: ZeitUIThemes): PrismTheme => ({
   },
   styles: [
     {
-      types: ["comment", "prolog", "doctype", "cdata", "punctuation"],
+      types: ['comment', 'prolog', 'doctype', 'cdata', 'punctuation'],
       style: {
         color: 'theme.palette.accents_3',
-        opacity: .5,
-      }
+        opacity: 0.5,
+      },
     },
     {
-      types: ["namespace"],
+      types: ['namespace'],
       style: {
-        opacity: 1
-      }
+        opacity: 1,
+      },
     },
     {
-      types: ["tag", "operator", "number"],
+      types: ['tag', 'operator', 'number'],
       style: {
         color: theme.palette.accents_6,
-      }
+      },
     },
     {
-      types: ["property", "function"],
+      types: ['property', 'function'],
       style: {
         color: theme.palette.success,
-      }
+      },
     },
     {
-      types: ["tag-id", "selector", "atrule-id"],
+      types: ['tag-id', 'selector', 'atrule-id'],
       style: {
-        color: "#eeebff"
-      }
+        color: '#eeebff',
+      },
     },
     {
-      types: ["attr-name"],
+      types: ['attr-name'],
       style: {
         color: theme.palette.warning,
-      }
+      },
     },
     {
       types: [
-        "boolean",
-        "string",
-        "entity",
-        "url",
-        "attr-value",
-        "keyword",
-        "control",
-        "directive",
-        "unit",
-        "statement",
-        "regex",
-        "at-rule",
-        "placeholder",
-        "variable"
+        'boolean',
+        'string',
+        'entity',
+        'url',
+        'attr-value',
+        'keyword',
+        'control',
+        'directive',
+        'unit',
+        'statement',
+        'regex',
+        'at-rule',
+        'placeholder',
+        'variable',
       ],
       style: {
         color: theme.palette.purple,
-      }
+      },
     },
     {
-      types: ["deleted"],
+      types: ['deleted'],
       style: {
-        textDecorationLine: "line-through"
-      }
+        textDecorationLine: 'line-through',
+      },
     },
     {
       types: ['language-javascript', 'script'],
       style: {
-        color: theme.palette.success
+        color: theme.palette.success,
       },
     },
     {
-      types: ["inserted"],
+      types: ['inserted'],
       style: {
-        textDecorationLine: "underline"
-      }
+        textDecorationLine: 'underline',
+      },
     },
     {
-      types: ["italic"],
+      types: ['italic'],
       style: {
-        fontStyle: "italic"
-      }
+        fontStyle: 'italic',
+      },
     },
     {
-      types: ["important", "bold"],
+      types: ['important', 'bold'],
       style: {
-        fontWeight: "bold"
-      }
+        fontWeight: 'bold',
+      },
     },
     {
-      types: ["important"],
+      types: ['important'],
       style: {
-        color: "#c4b9fe"
-      }
-    }
-  ]
+        color: '#c4b9fe',
+      },
+    },
+  ],
 })
 
 export default makeCodeTheme

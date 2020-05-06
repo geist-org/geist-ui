@@ -42,7 +42,14 @@ const getColor = (type: DividerTypes, palette: ZeitUIThemesPalette) => {
 }
 
 const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
-  volume, type, x, y, align, children, className, ...props
+  volume,
+  type,
+  x,
+  y,
+  align,
+  children,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const color = useMemo(() => getColor(type, theme.palette), [type, theme.palette])
@@ -54,7 +61,7 @@ const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
   const textColor = type === 'default' ? theme.palette.foreground : color
   const top = y ? getMargin(y / 2) : 0
   const left = x ? getMargin(x / 2) : 0
-  
+
   return (
     <div role="separator" className={`divider ${className}`} {...props}>
       {children && <span className={`text ${alignClassName}`}>{children}</span>}
@@ -67,7 +74,7 @@ const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
           margin: ${top} ${left};
           position: relative;
         }
-        
+
         .text {
           position: absolute;
           left: 50%;
@@ -85,12 +92,12 @@ const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
           color: ${textColor};
           z-index: 10;
         }
-        
+
         .text.start {
           transform: translateY(-50%);
           left: 7%;
         }
-        
+
         .text.end {
           transform: translateY(-50%);
           left: auto;

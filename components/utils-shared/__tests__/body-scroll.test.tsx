@@ -82,13 +82,15 @@ describe('UseBodyScroll', () => {
 
     expect(el.style.overflow).not.toEqual('hidden')
     expect(event.preventDefault).toHaveBeenCalled()
-  
+
     // Touch events with multiple fingers do nothing
-    document.dispatchEvent(new TouchEvent('touchmove', {
-      touches: [{}, {}, {}] as Array<Touch>
-    }))
+    document.dispatchEvent(
+      new TouchEvent('touchmove', {
+        touches: [{}, {}, {}] as Array<Touch>,
+      }),
+    )
     expect(event.preventDefault).toHaveBeenCalledTimes(1)
-    
+
     act(() => result.current[1](false))
     ;(window.navigator as any).platform = ''
   })
@@ -111,7 +113,6 @@ describe('UseBodyScroll', () => {
     expect(el.style.overflow).toEqual('hidden')
     expect(event.preventDefault).not.toHaveBeenCalled()
     act(() => result.current[1](false))
-
     ;(window.navigator as any).platform = ''
   })
 
@@ -122,23 +123,23 @@ describe('UseBodyScroll', () => {
     _ref = ref
     const el = ref.current as HTMLDivElement
     const { result, rerender } = renderHook(() => useBodyScroll(_ref))
-  
+
     act(() => result.current[1](true))
     expect(el.style.overflow).toEqual('hidden')
-    
+
     // Force tigger rerender at the same value
     _ref = React.createRef<HTMLDivElement>()
     rerender()
-  
+
     _ref = ref
     rerender()
     act(() => result.current[1](true))
     expect(el.style.overflow).toEqual('hidden')
   })
-  
+
   it('should set body when missing all params', () => {
     const { result } = renderHook(() => useBodyScroll())
-  
+
     act(() => result.current[1](true))
     expect(document.body.style.overflow).toEqual('hidden')
   })

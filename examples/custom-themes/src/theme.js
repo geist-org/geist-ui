@@ -1,5 +1,3 @@
-
-
 /**
  * Just customize what you need, deep merge themes by default.
  *
@@ -20,5 +18,5 @@ export default {
     success: '#ccc',
     warning: '#ccc',
     error: '#ccc',
-  }
+  },
 }

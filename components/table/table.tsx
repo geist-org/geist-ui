@@ -34,8 +34,15 @@ type NativeAttrs = Omit<React.TableHTMLAttributes<any>, keyof Props>
 export type TableProps = Props & typeof defaultProps & NativeAttrs
 
 const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
-  children, data, hover, emptyText, onRow, onCell, onChange,
-  className, ...props
+  children,
+  data,
+  hover,
+  emptyText,
+  onRow,
+  onCell,
+  onChange,
+  className,
+  ...props
 }) => {
   const ref = useRef<HTMLTableElement>(null)
   const [{ width }, updateShape] = useRealShape<HTMLTableElement>(ref)
@@ -51,26 +58,34 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
     setSelfData([...next])
   }
 
-  const initialValue = useMemo<TableConfig>(() => ({
-    columns,
-    appendColumn,
-    removeRow,
-  }), [columns])
-  
+  const initialValue = useMemo<TableConfig>(
+    () => ({
+      columns,
+      appendColumn,
+      removeRow,
+    }),
+    [columns],
+  )
+
   useEffect(() => {
     if (!data) return
     setSelfData(data)
   }, [data])
   useResize(() => updateShape())
-  
+
   return (
     <TableContext.Provider value={initialValue}>
       <table ref={ref} className={className} {...props}>
         <TableHead columns={columns} width={width} />
-        <TableBody data={selfData} hover={hover} emptyText={emptyText}
-          onRow={onRow} onCell={onCell} />
+        <TableBody
+          data={selfData}
+          hover={hover}
+          emptyText={emptyText}
+          onRow={onRow}
+          onCell={onCell}
+        />
         {children}
-  
+
         <style jsx>{`
           table {
             border-collapse: separate;
@@ -86,8 +101,9 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
 type TableComponent<P = {}> = React.FC<P> & {
   Column: typeof TableColumn
 }
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
-
-(Table as TableComponent<ComponentProps>).defaultProps = defaultProps
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
+;(Table as TableComponent<ComponentProps>).defaultProps = defaultProps
 
 export default Table as TableComponent<ComponentProps>

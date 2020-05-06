@@ -28,7 +28,13 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TreeFolderProps = Props & typeof defaultProps & NativeAttrs
 
 const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
-  name, children, parentPath, level: parentLevel, extra, className, ...props
+  name,
+  children,
+  parentPath,
+  level: parentLevel,
+  extra,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const { initialExpand, isImperative } = useTreeContext()
@@ -46,19 +52,28 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
     },
     [TreeFolder, TreeFile],
   )
-  
+
   const sortedChildren = isImperative ? nextChildren : sortChildren(nextChildren, TreeFolder)
 
   return (
     <div className={`folder ${className}`} onClick={clickHandler} {...props}>
       <div className="names">
         <TreeIndents count={parentLevel} />
-        <span className="status"><TreeStatusIcon active={expanded} /></span>
-        <span className="icon"><TreeFolderIcon /></span>
-        <span className="name">{name}{extra && <span className="extra">{extra}</span>}</span>
+        <span className="status">
+          <TreeStatusIcon active={expanded} />
+        </span>
+        <span className="icon">
+          <TreeFolderIcon />
+        </span>
+        <span className="name">
+          {name}
+          {extra && <span className="extra">{extra}</span>}
+        </span>
       </div>
       <Expand isExpanded={expanded}>
-        <div className="content" onClick={stopPropagation}>{sortedChildren}</div>
+        <div className="content" onClick={stopPropagation}>
+          {sortedChildren}
+        </div>
       </Expand>
 
       <style jsx>{`
@@ -67,7 +82,7 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
           line-height: 1;
           user-select: none;
         }
-        
+
         .names {
           display: flex;
           height: 1.75rem;
@@ -75,7 +90,7 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
           margin-left: calc(1.875rem * ${parentLevel});
           position: relative;
         }
-        
+
         .names > :global(.indent) {
           position: absolute;
           top: 50%;
@@ -85,48 +100,49 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
           background-color: ${theme.palette.accents_2};
           margin-left: -1px;
         }
-        
+
         .status {
           position: absolute;
           left: calc(-1.125rem);
           top: 50%;
           transform: translate(-50%, -50%);
-          width: .875rem;
-          height: .875rem;
+          width: 0.875rem;
+          height: 0.875rem;
           z-index: 10;
           background-color: ${theme.palette.background};
         }
-        
+
         .icon {
           width: 1.5rem;
           height: 100%;
-          margin-right: .5rem;
+          margin-right: 0.5rem;
         }
-        
-        .status, .icon {
+
+        .status,
+        .icon {
           display: inline-flex;
           align-items: center;
           justify-content: center;
         }
-        
+
         .name {
           transition: opacity 100ms ease 0ms;
           color: ${theme.palette.accents_8};
           white-space: nowrap;
-          font-size: .875rem;
+          font-size: 0.875rem;
         }
-        
+
         .extra {
-          font-size: .75rem;
+          font-size: 0.75rem;
           align-self: baseline;
           padding-left: 4px;
           color: ${theme.palette.accents_5};
         }
-        
+
         .name:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
-        
+
         .content {
           display: flex;
           flex-direction: column;

@@ -34,7 +34,7 @@ export type SliderProps = Props & typeof defaultProps & NativeAttrs
 const getRefWidth = (elementRef: RefObject<HTMLElement> | null): number => {
   if (!elementRef || !elementRef.current) return 0
   const rect = elementRef.current.getBoundingClientRect()
-  return rect.width || (rect.right - rect.left)
+  return rect.width || rect.right - rect.left
 }
 
 const getValue = (
@@ -46,42 +46,52 @@ const getValue = (
 ): number => {
   if (offsetX < 0) return min
   if (offsetX > railWidth) return max
-  const widthForEachStep = railWidth / (max - min) * step
+  const widthForEachStep = (railWidth / (max - min)) * step
   if (widthForEachStep <= 0) return min
-  
+
   const slideDistance = Math.round(offsetX / widthForEachStep) * step + min
-  return Number.isInteger(slideDistance) ? slideDistance : Number.parseFloat(slideDistance.toFixed(1))
+  return Number.isInteger(slideDistance)
+    ? slideDistance
+    : Number.parseFloat(slideDistance.toFixed(1))
 }
 
 const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
-  disabled, step, max, min, initialValue, value: customValue,
-  onChange, className, showMarkers, ...props
+  disabled,
+  step,
+  max,
+  min,
+  initialValue,
+  value: customValue,
+  onChange,
+  className,
+  showMarkers,
+  ...props
 }) => {
   const theme = useTheme()
   const [value, setValue] = useState<number>(initialValue)
   const [, setSliderWidth, sideWidthRef] = useCurrentState<number>(0)
   const [, setLastDargOffset, lastDargOffsetRef] = useCurrentState<number>(0)
   const [isClick, setIsClick] = useState<boolean>(false)
-  
+
   const sliderRef = useRef<HTMLDivElement>(null)
   const dotRef = useRef<HTMLDivElement>(null)
-  
-  const currentRatio = useMemo(
-    () => (value - min) / (max - min) * 100,
-    [value, max, min],
-  )
-  
+
+  const currentRatio = useMemo(() => ((value - min) / (max - min)) * 100, [value, max, min])
+
   const setLastOffsetManually = (val: number) => {
     const width = getRefWidth(sliderRef)
-    const shouldOffset = (val - min) / (max - min) * width
+    const shouldOffset = ((val - min) / (max - min)) * width
     setLastDargOffset(shouldOffset)
   }
-  
-  const updateValue = useCallback((offset) => {
-    const currentValue = getValue(max, min, step, offset, sideWidthRef.current)
-    setValue(currentValue)
-    onChange && onChange(currentValue)
-  }, [max, min, step, sideWidthRef])
+
+  const updateValue = useCallback(
+    offset => {
+      const currentValue = getValue(max, min, step, offset, sideWidthRef.current)
+      setValue(currentValue)
+      onChange && onChange(currentValue)
+    },
+    [max, min, step, sideWidthRef],
+  )
 
   const dragHandler = (event: DraggingEvent) => {
     if (disabled) return
@@ -116,24 +126,21 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
     if (customValue === value) return
     setValue(customValue)
   }, [customValue, value])
-  
+
   useEffect(() => {
     initialValue && setLastOffsetManually(initialValue)
   }, [])
 
   return (
-    <div className={`slider ${className}`}
-      onClick={clickHandler}
-      ref={sliderRef} {...props}>
-      <SliderDot disabled={disabled}
-        ref={dotRef}
-        isClick={isClick}
-        left={currentRatio}>{value}</SliderDot>
+    <div className={`slider ${className}`} onClick={clickHandler} ref={sliderRef} {...props}>
+      <SliderDot disabled={disabled} ref={dotRef} isClick={isClick} left={currentRatio}>
+        {value}
+      </SliderDot>
       {showMarkers && <SliderMark max={max} min={min} step={step} />}
       <style jsx>{`
         .slider {
           width: 100%;
-          height: .5rem;
+          height: 0.5rem;
           border-radius: 50px;
           background-color: ${disabled ? theme.palette.accents_2 : theme.palette.accents_8};
           position: relative;

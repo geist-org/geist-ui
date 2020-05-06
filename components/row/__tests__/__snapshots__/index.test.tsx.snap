@@ -2,32 +2,32 @@
 
 exports[`Row should render correctly 1`] = `
 "<div class=\\"row \\">row<style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div>"
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div>"
 `;
 
 exports[`Row should work with nested 1`] = `
 "<div class=\\"row \\"><div class=\\"row \\"><div class=\\"row \\"><div class=\\"col \\"><div class=\\"row \\">row<style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -37,39 +37,39 @@ exports[`Row should work with nested 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div>"
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div>"
 `;
 
 exports[`Row the children should be aligned correctly 1`] = `
@@ -83,17 +83,17 @@ exports[`Row the children should be aligned correctly 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: flex-end;
-        align-items: normal;
-      }
-    </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: flex-end;
+          align-items: normal;
+        }
+      </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -103,17 +103,17 @@ exports[`Row the children should be aligned correctly 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: center;
-        align-items: normal;
-      }
-    </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: center;
+          align-items: normal;
+        }
+      </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -123,17 +123,17 @@ exports[`Row the children should be aligned correctly 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: space-around;
-        align-items: normal;
-      }
-    </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: space-around;
+          align-items: normal;
+        }
+      </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -143,17 +143,17 @@ exports[`Row the children should be aligned correctly 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: space-between;
-        align-items: normal;
-      }
-    </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: space-between;
+          align-items: normal;
+        }
+      </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -163,17 +163,17 @@ exports[`Row the children should be aligned correctly 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -183,17 +183,17 @@ exports[`Row the children should be aligned correctly 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: normal;
-        align-items: center;
-      }
-    </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: normal;
+          align-items: center;
+        }
+      </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -203,17 +203,17 @@ exports[`Row the children should be aligned correctly 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(0 * 16pt / 2);
-        margin-right: calc(0 * 16pt / 2);
-        --row-gap: calc(0 * 16pt);
-        justify-content: normal;
-        align-items: flex-end;
-      }
-    </style></div></div>"
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(0 * 16pt / 2);
+          margin-right: calc(0 * 16pt / 2);
+          --row-gap: calc(0 * 16pt);
+          justify-content: normal;
+          align-items: flex-end;
+        }
+      </style></div></div>"
 `;
 
 exports[`Row the children should have the correct spacing 1`] = `
@@ -227,17 +227,17 @@ exports[`Row the children should have the correct spacing 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(1 * 16pt / 2);
-        margin-right: calc(1 * 16pt / 2);
-        --row-gap: calc(1 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(1 * 16pt / 2);
+          margin-right: calc(1 * 16pt / 2);
+          --row-gap: calc(1 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -247,17 +247,17 @@ exports[`Row the children should have the correct spacing 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(2 * 16pt / 2);
-        margin-right: calc(2 * 16pt / 2);
-        --row-gap: calc(2 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(2 * 16pt / 2);
+          margin-right: calc(2 * 16pt / 2);
+          --row-gap: calc(2 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div><div class=\\"row \\"><div class=\\"col \\"><style>
         .col {
           float: left;
           box-sizing: border-box;
@@ -267,15 +267,15 @@ exports[`Row the children should have the correct spacing 1`] = `
           margin-left: 0%;
         }
       </style></div><style>
-      .row {
-        display: flex;
-        position: relative;
-        box-sizing: border-box;
-        margin-left: calc(10 * 16pt / 2);
-        margin-right: calc(10 * 16pt / 2);
-        --row-gap: calc(10 * 16pt);
-        justify-content: normal;
-        align-items: normal;
-      }
-    </style></div></div>"
+        .row {
+          display: flex;
+          position: relative;
+          box-sizing: border-box;
+          margin-left: calc(10 * 16pt / 2);
+          margin-right: calc(10 * 16pt / 2);
+          --row-gap: calc(10 * 16pt);
+          justify-content: normal;
+          align-items: normal;
+        }
+      </style></div></div>"
 `;

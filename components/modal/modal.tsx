@@ -27,7 +27,11 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ModalProps = Props & typeof defaultProps & NativeAttrs
 
 const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
-  children, disableBackdropClick, onClose, onOpen, open
+  children,
+  disableBackdropClick,
+  onClose,
+  onOpen,
+  open,
 }) => {
   const portal = usePortal('modal')
   const [, setBodyHidden] = useBodyScroll()
@@ -44,35 +48,37 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
     if (open === undefined) return
     setVisible(open)
     setBodyHidden(open)
-  
+
     if (open) {
       onOpen && onOpen()
     } else {
       onClose && onClose()
     }
   }, [open])
-  
+
   const closeFromBackdrop = () => {
     if (disableBackdropClick && hasActions) return
     closeModal()
   }
 
-  const modalConfig: ModalConfig = useMemo(() => ({
-    close: closeModal,
-  }), [])
-  
+  const modalConfig: ModalConfig = useMemo(
+    () => ({
+      close: closeModal,
+    }),
+    [],
+  )
+
   if (!portal) return null
   return createPortal(
-    (
-      <ModalContext.Provider value={modalConfig}>
-        <Backdrop onClick={closeFromBackdrop} visible={visible} offsetY={25}>
-          <ModalWrapper visible={visible}>
-            {withoutActionsChildren}
-            {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}
-          </ModalWrapper>
-        </Backdrop>
-      </ModalContext.Provider>
-    ), portal
+    <ModalContext.Provider value={modalConfig}>
+      <Backdrop onClick={closeFromBackdrop} visible={visible} offsetY={25}>
+        <ModalWrapper visible={visible}>
+          {withoutActionsChildren}
+          {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}
+        </ModalWrapper>
+      </Backdrop>
+    </ModalContext.Provider>,
+    portal,
   )
 }
 
@@ -82,7 +88,9 @@ type ModalComponent<P = {}> = React.FC<P> & {
   Content: typeof ModalContent
   Action: typeof ModalAction
 }
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
 Modal.defaultProps = defaultProps
 

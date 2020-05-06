@@ -11,19 +11,23 @@ interface Props {
 export type TableColumnProps = Props
 
 const TableColumn: React.FC<React.PropsWithChildren<TableColumnProps>> = ({
-  children, prop, label, width,
+  children,
+  prop,
+  label,
+  width,
 }) => {
   const { appendColumn } = useTableContext()
   if (!prop || prop.trim() === '') {
     useWarning('The props "prop" is required.', 'Table.Column')
   }
-  
+
   useEffect(() => {
-    appendColumn && appendColumn({
-      label: children || label,
-      value: `${prop}`.trim(),
-      width,
-    })
+    appendColumn &&
+      appendColumn({
+        label: children || label,
+        value: `${prop}`.trim(),
+        width,
+      })
   }, [])
 
   return null

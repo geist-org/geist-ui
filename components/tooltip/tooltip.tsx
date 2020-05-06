@@ -40,9 +40,21 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TooltipProps = Props & typeof defaultProps & NativeAttrs
 
 const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
-  children, initialVisible, text, offset, placement, portalClassName,
-  enterDelay, leaveDelay, trigger, type, className, onVisibleChange,
-  hideArrow, visible: customVisible, ...props
+  children,
+  initialVisible,
+  text,
+  offset,
+  placement,
+  portalClassName,
+  enterDelay,
+  leaveDelay,
+  trigger,
+  type,
+  className,
+  onVisibleChange,
+  hideArrow,
+  visible: customVisible,
+  ...props
 }) => {
   const timer = useRef<number>()
   const ref = useRef<HTMLDivElement>(null)
@@ -56,7 +68,7 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
     parent: ref,
     className: portalClassName,
   }
-  
+
   const changeVisible = (nextState: boolean) => {
     const clear = () => {
       clearTimeout(timer.current)
@@ -74,19 +86,21 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
     }
     timer.current = window.setTimeout(() => handler(false), leaveDelay)
   }
-  
+
   const mouseEventHandler = (next: boolean) => trigger === 'hover' && changeVisible(next)
   const clickEventHandler = () => trigger === 'click' && changeVisible(!visible)
-  
+
   useClickAway(ref, () => trigger === 'click' && changeVisible(false))
-  
+
   useEffect(() => {
     if (customVisible === undefined) return
     changeVisible(customVisible)
   }, [customVisible])
-  
+
   return (
-    <div ref={ref} className={`tooltip ${className}`}
+    <div
+      ref={ref}
+      className={`tooltip ${className}`}
       onClick={clickEventHandler}
       onMouseEnter={() => mouseEventHandler(true)}
       onMouseLeave={() => mouseEventHandler(false)}

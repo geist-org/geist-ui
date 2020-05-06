@@ -33,17 +33,28 @@ type NativeAttrs = Omit<React.TextareaHTMLAttributes<any>, keyof Props>
 export type TextareaProps = Props & typeof defaultProps & NativeAttrs
 
 const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
-  width, status, minHeight, disabled, readOnly, onFocus, onBlur,
-  className, initialValue, onChange, value, placeholder, ...props
+  width,
+  status,
+  minHeight,
+  disabled,
+  readOnly,
+  onFocus,
+  onBlur,
+  className,
+  initialValue,
+  onChange,
+  value,
+  placeholder,
+  ...props
 }) => {
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string>(initialValue)
   const [hover, setHover] = useState<boolean>(false)
-  const { color, borderColor, hoverBorder } = useMemo(
-    () => getColors(theme.palette, status),
-    [theme.palette, status],
-  )
-  
+  const { color, borderColor, hoverBorder } = useMemo(() => getColors(theme.palette, status), [
+    theme.palette,
+    status,
+  ])
+
   const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (disabled || readOnly) return
     setSelfValue(event.target.value)
@@ -57,21 +68,24 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
     setHover(false)
     onBlur && onBlur(e)
   }
-  
+
   useEffect(() => {
     if (value === undefined) return
     setSelfValue(value)
   }, [value])
-  
+
   return (
     <div className={`wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${className}`}>
-      <textarea disabled={disabled} value={selfValue}
+      <textarea
+        disabled={disabled}
+        value={selfValue}
         placeholder={placeholder}
         readOnly={readOnly}
         onFocus={focusHandler}
         onBlur={blurHandler}
         onChange={changeHandler}
-        {...props} />
+        {...props}
+      />
       <style jsx>{`
         .wrapper {
           display: inline-flex;
@@ -86,23 +100,23 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
           color: ${color};
           transition: border 0.2s ease 0s, color 0.2s ease 0s;
         }
-        
+
         .wrapper.hover {
           border-color: ${hoverBorder};
         }
-        
+
         .wrapper.disabled {
           background-color: ${theme.palette.accents_1};
           border-color: ${theme.palette.accents_2};
           cursor: not-allowed;
         }
-        
+
         textarea {
           background-color: transparent;
           box-shadow: none;
           display: block;
           font-family: ${theme.font.sans};
-          font-size: .875rem;
+          font-size: 0.875rem;
           width: 100%;
           height: 100%;
           min-height: ${minHeight};
@@ -111,11 +125,11 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
           outline: none;
           padding: ${theme.layout.gapHalf};
         }
-        
+
         .disabled > textarea {
           cursor: not-allowed;
         }
-        
+
         textarea:-webkit-autofill,
         textarea:-webkit-autofill:hover,
         textarea:-webkit-autofill:active,

@@ -17,4 +17,5 @@ const defaultContext = {
 
 export const AutoCompleteContext = React.createContext<AutoCompleteConfig>(defaultContext)
 
-export const useAutoCompleteContext = (): AutoCompleteConfig => React.useContext<AutoCompleteConfig>(AutoCompleteContext)
+export const useAutoCompleteContext = (): AutoCompleteConfig =>
+  React.useContext<AutoCompleteConfig>(AutoCompleteContext)

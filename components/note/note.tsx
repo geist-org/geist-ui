@@ -31,12 +31,13 @@ const getStatusColor = (type: NormalTypes, filled: boolean, theme: ZeitUIThemes)
     error: theme.palette.error,
   }
   const statusColor = colors[type]
-  
-  if (!filled) return {
-    color: statusColor || theme.palette.foreground,
-    borderColor: statusColor || theme.palette.border,
-    bgColor: theme.palette.background,
-  }
+
+  if (!filled)
+    return {
+      color: statusColor || theme.palette.foreground,
+      borderColor: statusColor || theme.palette.border,
+      bgColor: theme.palette.background,
+    }
   const filledColor = statusColor ? 'white' : theme.palette.background
   return {
     color: filledColor,
@@ -46,22 +47,33 @@ const getStatusColor = (type: NormalTypes, filled: boolean, theme: ZeitUIThemes)
 }
 
 export const Note: React.FC<React.PropsWithChildren<NoteProps>> = ({
-  children, type, label, filled, small, className, ...props
+  children,
+  type,
+  label,
+  filled,
+  small,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
-  const { color, borderColor, bgColor } = useMemo(
-    () => getStatusColor(type, filled, theme),
-    [type, filled, theme]
-  )
+  const { color, borderColor, bgColor } = useMemo(() => getStatusColor(type, filled, theme), [
+    type,
+    filled,
+    theme,
+  ])
   const padding = small
     ? `calc(${theme.layout.gapHalf} / 2) calc(${theme.layout.gap} / 2)`
     : `${theme.layout.gapHalf} ${theme.layout.gap}`
-  
+
   return (
     <div className={`note ${className}`} {...props}>
-      {label && <span className="label"><b>{label}:</b></span>}
+      {label && (
+        <span className="label">
+          <b>{label}:</b>
+        </span>
+      )}
       {children}
-  
+
       <style jsx>{`
         .note {
           padding: ${padding};
@@ -72,25 +84,22 @@ export const Note: React.FC<React.PropsWithChildren<NoteProps>> = ({
           background-color: ${bgColor};
           border-radius: ${theme.layout.radius};
         }
-        
+
         .note :global(p) {
-          margin: 0
+          margin: 0;
         }
-        
+
         .label {
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
           padding-right: ${theme.layout.gapQuarter};
         }
-        
       `}</style>
     </div>
   )
-
 }
 
 const MemoNote = React.memo(Note)
 
 export default withDefaults(MemoNote, defaultProps)
-

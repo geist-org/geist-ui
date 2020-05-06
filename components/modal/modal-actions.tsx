@@ -1,16 +1,12 @@
 import React from 'react'
 import useTheme from '../styles/use-theme'
 
-const ModalActions: React.FC<React.PropsWithChildren<{}>> = ({
-  children, ...props
-}) => {
+const ModalActions: React.FC<React.PropsWithChildren<{}>> = ({ children, ...props }) => {
   const theme = useTheme()
   return (
     <>
       <div />
-      <footer {...props}>
-        {children}
-      </footer>
+      <footer {...props}>{children}</footer>
       <style jsx>{`
         footer {
           display: flex;
@@ -25,11 +21,11 @@ const ModalActions: React.FC<React.PropsWithChildren<{}>> = ({
           border-bottom-left-radius: ${theme.layout.radius};
           border-bottom-right-radius: ${theme.layout.radius};
         }
-        
-        footer > :global(button+button) {
+
+        footer > :global(button + button) {
           border-left: 1px solid ${theme.palette.border};
         }
-        
+
         div {
           height: 3.625rem;
         }

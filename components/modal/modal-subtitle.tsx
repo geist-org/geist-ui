@@ -7,23 +7,23 @@ interface Props {
 }
 
 const defaultProps = {
-  className: ''
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type ModalSubtitleProps = Props & typeof defaultProps & NativeAttrs
 
-const ModalSubtitle: React.FC<ModalSubtitleProps> = ({
-  className, children, ...props
-}) => {
+const ModalSubtitle: React.FC<ModalSubtitleProps> = ({ className, children, ...props }) => {
   const theme = useTheme()
-  
+
   return (
     <>
-      <p className={className} {...props}>{children}</p>
+      <p className={className} {...props}>
+        {children}
+      </p>
       <style jsx>{`
         p {
-          font-size: .875rem;
+          font-size: 0.875rem;
           line-height: 1.6;
           font-weight: normal;
           text-align: center;

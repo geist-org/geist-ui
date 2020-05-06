@@ -11,9 +11,7 @@ export const virtualAnchorEncode = (text?: string) => {
   return text.toLowerCase().replace(/ /g, '-')
 }
 
-const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({
-  children, pure,
-}) => {
+const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({ children, pure }) => {
   const theme = useTheme()
   const ref = useRef<HTMLAnchorElement>(null)
   const [id, setId] = useState<string | undefined>()
@@ -22,22 +20,28 @@ const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({
     if (!ref.current) return
     setId(virtualAnchorEncode(ref.current.textContent || undefined))
   }, [ref.current])
-  
+
   return (
     <span className="parent" ref={ref}>
-      <Link pure href={`#${id}`}>{children}</Link>
+      <Link pure href={`#${id}`}>
+        {children}
+      </Link>
       <span className="virtual" id={id} />
-      {!pure && <span className="icon"><AnchorIcon /></span>}
+      {!pure && (
+        <span className="icon">
+          <AnchorIcon />
+        </span>
+      )}
       <style jsx>{`
         .parent {
           position: relative;
           color: inherit;
         }
-        
+
         .parent :global(a) {
           color: inherit;
         }
-        
+
         .virtual {
           position: absolute;
           top: -65px;
@@ -46,7 +50,7 @@ const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({
           pointer-events: none;
           visibility: hidden;
         }
-        
+
         .icon {
           display: inline-flex;
           justify-content: center;
@@ -59,12 +63,12 @@ const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({
           opacity: 0;
           visibility: hidden;
           font-size: inherit;
-          width: .8em;
-          height: .8em;
+          width: 0.8em;
+          height: 0.8em;
           margin-top: 1px;
           color: ${theme.palette.accents_5};
         }
-        
+
         .parent:hover > .icon {
           opacity: 1;
           visibility: visible;

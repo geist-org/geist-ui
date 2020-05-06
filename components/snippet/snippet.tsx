@@ -35,15 +35,22 @@ const textArrayToString = (text: string[]): string => {
 }
 
 const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
-  type, filled, children, text, width, copy: copyType, className, ...props
+  type,
+  filled,
+  children,
+  text,
+  width,
+  copy: copyType,
+  className,
+  ...props
 }) => {
   const theme = useTheme()
   const { copy } = useClipboard()
   const [, setToast] = useToasts()
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
-  
-  const style = useMemo(() => getStyles(type, theme.palette, filled),[type, theme.palette, filled])
+
+  const style = useMemo(() => getStyles(type, theme.palette, filled), [type, theme.palette, filled])
   const showCopyIcon = useMemo(() => copyType !== 'prevent', [copyType])
   const childText = useMemo<string | undefined | null>(() => {
     if (isMultiLine) return textArrayToString(text as string[])
@@ -58,13 +65,19 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
     if (copyType === 'slient') return
     setToast({ text: 'Copied to clipboard!', type: 'success' })
   }
-  
+
   return (
     <div className={`snippet ${className}`} {...props}>
       {isMultiLine ? (
         (text as string[]).map((t, index) => <pre key={`snippet-${index}-${t}`}>{t}</pre>)
-      ) : <pre ref={ref}>{children || text}</pre>}
-      {showCopyIcon && <div className="copy" onClick={clickHandler}><SnippetIcon /></div>}
+      ) : (
+        <pre ref={ref}>{children || text}</pre>
+      )}
+      {showCopyIcon && (
+        <div className="copy" onClick={clickHandler}>
+          <SnippetIcon />
+        </div>
+      )}
       <style jsx>{`
         .snippet {
           position: relative;
@@ -77,28 +90,28 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           border: 1px solid ${style.border};
           border-radius: ${theme.layout.radius};
         }
-        
+
         pre {
           margin: 0;
           padding: 0;
           border: none;
           background-color: transparent;
           color: ${style.color};
-          font-size: .8125rem;
+          font-size: 0.8125rem;
         }
-        
+
         pre::before {
-          content: "$ ";
+          content: '$ ';
           user-select: none;
         }
-        
+
         pre :global(*) {
           margin: 0;
           padding: 0;
           font-size: inherit;
           color: inherit;
         }
-        
+
         .copy {
           position: absolute;
           right: 0;
@@ -115,9 +128,9 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           cursor: pointer;
           user-select: none;
         }
-        
+
         .copy:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
       `}</style>
     </div>

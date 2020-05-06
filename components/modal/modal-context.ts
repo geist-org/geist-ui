@@ -4,8 +4,7 @@ export interface ModalConfig {
   close?: () => void
 }
 
-const defaultContext = {
-}
+const defaultContext = {}
 
 export const ModalContext = React.createContext<ModalConfig>(defaultContext)
 

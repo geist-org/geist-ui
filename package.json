@@ -33,6 +33,7 @@
     "contributor-collect": "node scripts/collect-contributors.js",
     "clear": "rm -rf dist",
     "lint": "eslint \"{components,lib}/**/*.{js,ts,tsx}\"",
+    "prettier": "prettier --write .",
     "test": "jest --config .jest.config.js --no-cache",
     "test-update": "jest --config .jest.config.js --no-cache --update-snapshot",
     "coverage": "yarn test --coverage",
@@ -43,28 +44,6 @@
   "files": [
     "/dist"
   ],
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "eslint-config-ts-lambdas",
-      "eslint-config-ts-lambdas/react"
-    ],
-    "plugins": [
-      "@typescript-eslint"
-    ],
-    "settings": {
-      "react": {
-        "pragma": "React",
-        "version": "detect"
-      }
-    },
-    "parserOptions": {
-      "project": "./tsconfig.json",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    }
-  },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-typescript": "^7.8.3",
@@ -80,18 +59,20 @@
     "@types/styled-jsx": "^2.2.8",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
-    "@zeit-ui/react-icons": "^1.2.1",
+    "@zeit-ui/react-icons": "^1.2.2",
     "babel-jest": "^25.3.0",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-config-ts-lambdas": "^1.2.0",
     "eslint-plugin-react": "^7.19.0",
     "extract-mdx-metadata": "^1.0.0",
     "fs-extra": "^8.1.0",
     "jest": "^25.3.0",
     "next": "^9.3.6",
+    "prettier": "^2.0.5",
     "react": "^16.13.0",
     "react-color": "^2.18.0",
     "react-dom": "^16.13.0",

@@ -49,8 +49,7 @@ const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
     if (React.isValidElement(item)) return React.cloneElement(item, { key })
     const validItem = item as AutoCompleteOption
     return (
-      <AutoCompleteItem key={key}
-        value={validItem.value}>
+      <AutoCompleteItem key={key} value={validItem.value}>
         {validItem.label}
       </AutoCompleteItem>
     )
@@ -64,9 +63,20 @@ const getSearchIcon = (searching?: boolean) => {
 }
 
 const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
-  options, initialValue: customInitialValue, onSelect, onSearch, onChange,
-  searching, children, size, status, value, width, clearable,
-  disabled, ...props
+  options,
+  initialValue: customInitialValue,
+  onSelect,
+  onSearch,
+  onChange,
+  searching,
+  children,
+  size,
+  status,
+  value,
+  width,
+  clearable,
+  disabled,
+  ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const [state, setState] = useState<string>(customInitialValue)
@@ -77,7 +87,11 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     const hasSearchChild = searchChild && React.Children.count(searchChild) > 0
     const hasEmptyChild = emptyChild && React.Children.count(emptyChild) > 0
     if (searching) {
-      return hasSearchChild ? searchChild : <AutoCompleteSearching>Searching...</AutoCompleteSearching>
+      return hasSearchChild ? (
+        searchChild
+      ) : (
+        <AutoCompleteSearching>Searching...</AutoCompleteSearching>
+      )
     }
     if (options.length === 0) {
       if (state === '') return null
@@ -85,11 +99,8 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     }
     return childrenToOptionsNode(options as Array<AutoCompleteOption>)
   }, [searching, options])
-  const showClearIcon = useMemo(
-    () => clearable && searching === undefined,
-    [clearable, searching],
-  )
-  
+  const showClearIcon = useMemo(() => clearable && searching === undefined, [clearable, searching])
+
   const updateValue = (val: string) => {
     if (disabled) return
     onSelect && onSelect(val)
@@ -100,7 +111,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     onSearch && onSearch(event.target.value)
     setState(event.target.value)
   }
-  
+
   useEffect(() => {
     onChange && onChange(state)
   }, [state])
@@ -108,22 +119,26 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     if (value === undefined) return
     setState(value)
   }, [value])
-  
-  const initialValue = useMemo<AutoCompleteConfig>(() => ({
-    ref, size,
-    value: state,
-    updateValue,
-    visible,
-    updateVisible,
-  }), [state, visible, size])
-  
+
+  const initialValue = useMemo<AutoCompleteConfig>(
+    () => ({
+      ref,
+      size,
+      value: state,
+      updateValue,
+      visible,
+      updateVisible,
+    }),
+    [state, visible, size],
+  )
+
   const toggleFocusHandler = (next: boolean) => {
     setVisible(next)
     if (next) {
       onSearch && onSearch(state)
     }
   }
-  
+
   const inputProps = {
     ...props,
     width,
@@ -134,22 +149,23 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   return (
     <AutoCompleteContext.Provider value={initialValue}>
       <div ref={ref} className="auto-complete">
-        <Input size={size} status={status}
+        <Input
+          size={size}
+          status={status}
           onChange={onInputChange}
           onFocus={() => toggleFocusHandler(true)}
           onBlur={() => toggleFocusHandler(false)}
           clearable={showClearIcon}
           iconRight={getSearchIcon(searching)}
-          {...inputProps} />
-        <AutoCompleteDropdown visible={visible}>
-          {autoCompleteItems}
-        </AutoCompleteDropdown>
+          {...inputProps}
+        />
+        <AutoCompleteDropdown visible={visible}>{autoCompleteItems}</AutoCompleteDropdown>
 
         <style jsx>{`
           .auto-complete {
             width: ${width || 'max-content'};
           }
-          
+
           .auto-complete :global(.loading) {
             left: -3px;
             right: -3px;
@@ -168,8 +184,9 @@ type AutoCompleteComponent<P = {}> = React.FC<P> & {
   Empty: typeof AutoCompleteEmpty
 }
 
-type ComponentProps = Partial<typeof defaultProps> & Omit<Props, keyof typeof defaultProps> & NativeAttrs
-
-(AutoComplete as AutoCompleteComponent<ComponentProps>).defaultProps = defaultProps
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
+;(AutoComplete as AutoCompleteComponent<ComponentProps>).defaultProps = defaultProps
 
 export default AutoComplete as AutoCompleteComponent<ComponentProps>

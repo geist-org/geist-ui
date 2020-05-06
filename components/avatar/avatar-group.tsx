@@ -15,10 +15,12 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type AvatarGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const AvatarGroup: React.FC<React.PropsWithChildren<AvatarGroupProps>> = ({
-  count, className, children
+  count,
+  className,
+  children,
 }) => {
   const theme = useTheme()
-  
+
   return (
     <div className={`avatar-group ${className}`}>
       {children}
@@ -30,13 +32,13 @@ const AvatarGroup: React.FC<React.PropsWithChildren<AvatarGroupProps>> = ({
           height: auto;
           width: max-content;
         }
-        
+
         .avatar-group :global(.avatar) {
-          margin-left: -.625rem;
+          margin-left: -0.625rem;
         }
-        
+
         .count {
-          font-size: .875rem;
+          font-size: 0.875rem;
           display: inline-flex;
           align-items: center;
           padding-left: ${theme.layout.gapQuarter};

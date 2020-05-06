@@ -6,11 +6,11 @@ exports[`Card Footer should render correctly 1`] = `
           width: 100%;
           padding: 16pt 16pt;
         }
-        
+
         .content > :global(*:first-child) {
           margin-top: 0;
         }
-        
+
         .content > :global(*:last-child) {
           margin-bottom: 0;
         }
@@ -22,13 +22,13 @@ exports[`Card Footer should render correctly 1`] = `
           overflow: hidden;
           color: inherit;
           background-color: inherit;
-          font-size: .875rem;
+          font-size: 0.875rem;
           border-top: 1px solid #eaeaea;
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
           min-height: calc(2.5 * 16pt);
         }
-        
+
         .auto-margin :global(*) {
           margin-top: 0;
           margin-bottom: 0;
@@ -40,7 +40,7 @@ exports[`Card Footer should render correctly 1`] = `
           margin: 0;
           padding: 0;
           width: 100%;
-          transition: all .2s ease;
+          transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
           box-sizing: border-box;
@@ -48,15 +48,15 @@ exports[`Card Footer should render correctly 1`] = `
           background-color: #fff;
           border: 1px solid #eaeaea;
         }
-        
+
         .card:hover {
           box-shadow: none;
         }
-        
+
         .card :global(img) {
           width: 100%;
         }
-        
+
         .card :global(.image) {
           border-bottom-left-radius: 0;
           border-bottom-right-radius: 0;
@@ -73,13 +73,13 @@ exports[`Card Footer should work with disable-auto-margin 1`] = `
           overflow: hidden;
           color: inherit;
           background-color: inherit;
-          font-size: .875rem;
+          font-size: 0.875rem;
           border-top: 1px solid #eaeaea;
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px;
           min-height: calc(2.5 * 16pt);
         }
-        
+
         .auto-margin :global(*) {
           margin-top: 0;
           margin-bottom: 0;

@@ -19,9 +19,7 @@ export type cellData = {
   rowValue: any
 }
 
-const TableCell: React.FC<Props> = ({
-  columns, row, rowIndex, emptyText, onCellClick,
-}) => {
+const TableCell: React.FC<Props> = ({ columns, row, rowIndex, emptyText, onCellClick }) => {
   const { removeRow } = useTableContext()
   const actions: cellActions = {
     remove: () => {
@@ -38,11 +36,15 @@ const TableCell: React.FC<Props> = ({
           rowValue: row,
         }
         const rowLabel = row[column.value]
-        const cellValue = !rowLabel ? emptyText
-          : (typeof rowLabel === 'function' ? rowLabel(actions, data) : rowLabel)
-        
+        const cellValue = !rowLabel
+          ? emptyText
+          : typeof rowLabel === 'function'
+          ? rowLabel(actions, data)
+          : rowLabel
+
         return (
-          <td key={`row-td-${index}-${column.value}`}
+          <td
+            key={`row-td-${index}-${column.value}`}
             onClick={() => onCellClick(cellValue, rowIndex, index)}>
             <div className="cell">{cellValue}</div>
           </td>
