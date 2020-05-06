@@ -6,10 +6,10 @@ exports[`Table should be no erros when width is too large 1`] = `
           border-collapse: separate;
           border-spacing: 0;
         }
-        
+
         th {
           padding: 0 8pt;
-          font-size: .75rem;
+          font-size: 0.75rem;
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
@@ -21,7 +21,7 @@ exports[`Table should be no erros when width is too large 1`] = `
           border-top: 1px solid #eaeaea;
           border-radius: 0;
         }
-        
+
         th:nth-child(1) {
           border-bottom: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
@@ -29,7 +29,7 @@ exports[`Table should be no erros when width is too large 1`] = `
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
         }
-        
+
         th:last-child {
           border-bottom: 1px solid #eaeaea;
           border-right: 1px solid #eaeaea;
@@ -37,7 +37,7 @@ exports[`Table should be no erros when width is too large 1`] = `
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
         }
-        
+
         .thead-box {
           display: flex;
           align-items: center;
@@ -47,9 +47,9 @@ exports[`Table should be no erros when width is too large 1`] = `
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
         tr {
-          transition: background-color .25s ease;
+          transition: background-color 0.25s ease;
         }
-        
+
         tr.hover:hover {
           background-color: #fafafa;
         }
@@ -61,7 +61,7 @@ exports[`Table should be no erros when width is too large 1`] = `
           font-size: 0.875rem;
           text-align: left;
         }
-        
+
         tr :global(.cell) {
           min-height: 3.125rem;
           display: flex;
@@ -84,10 +84,10 @@ exports[`Table should render children for table head 1`] = `
           border-collapse: separate;
           border-spacing: 0;
         }
-        
+
         th {
           padding: 0 8pt;
-          font-size: .75rem;
+          font-size: 0.75rem;
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
@@ -99,7 +99,7 @@ exports[`Table should render children for table head 1`] = `
           border-top: 1px solid #eaeaea;
           border-radius: 0;
         }
-        
+
         th:nth-child(1) {
           border-bottom: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
@@ -107,7 +107,7 @@ exports[`Table should render children for table head 1`] = `
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
         }
-        
+
         th:last-child {
           border-bottom: 1px solid #eaeaea;
           border-right: 1px solid #eaeaea;
@@ -115,7 +115,7 @@ exports[`Table should render children for table head 1`] = `
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
         }
-        
+
         .thead-box {
           display: flex;
           align-items: center;
@@ -125,9 +125,9 @@ exports[`Table should render children for table head 1`] = `
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td></tr><style>
         tr {
-          transition: background-color .25s ease;
+          transition: background-color 0.25s ease;
         }
-        
+
         tr.hover:hover {
           background-color: #fafafa;
         }
@@ -139,7 +139,7 @@ exports[`Table should render children for table head 1`] = `
           font-size: 0.875rem;
           text-align: left;
         }
-        
+
         tr :global(.cell) {
           min-height: 3.125rem;
           display: flex;
@@ -162,10 +162,10 @@ exports[`Table should render correctly 1`] = `
           border-collapse: separate;
           border-spacing: 0;
         }
-        
+
         th {
           padding: 0 8pt;
-          font-size: .75rem;
+          font-size: 0.75rem;
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
@@ -177,7 +177,7 @@ exports[`Table should render correctly 1`] = `
           border-top: 1px solid #eaeaea;
           border-radius: 0;
         }
-        
+
         th:nth-child(1) {
           border-bottom: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
@@ -185,7 +185,7 @@ exports[`Table should render correctly 1`] = `
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
         }
-        
+
         th:last-child {
           border-bottom: 1px solid #eaeaea;
           border-right: 1px solid #eaeaea;
@@ -193,7 +193,7 @@ exports[`Table should render correctly 1`] = `
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
         }
-        
+
         .thead-box {
           display: flex;
           align-items: center;
@@ -203,9 +203,9 @@ exports[`Table should render correctly 1`] = `
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
         tr {
-          transition: background-color .25s ease;
+          transition: background-color 0.25s ease;
         }
-        
+
         tr.hover:hover {
           background-color: #fafafa;
         }
@@ -217,7 +217,7 @@ exports[`Table should render correctly 1`] = `
           font-size: 0.875rem;
           text-align: left;
         }
-        
+
         tr :global(.cell) {
           min-height: 3.125rem;
           display: flex;
@@ -240,10 +240,10 @@ exports[`Table should set width automatically 1`] = `
           border-collapse: separate;
           border-spacing: 0;
         }
-        
+
         th {
           padding: 0 8pt;
-          font-size: .75rem;
+          font-size: 0.75rem;
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
@@ -255,7 +255,7 @@ exports[`Table should set width automatically 1`] = `
           border-top: 1px solid #eaeaea;
           border-radius: 0;
         }
-        
+
         th:nth-child(1) {
           border-bottom: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
@@ -263,7 +263,7 @@ exports[`Table should set width automatically 1`] = `
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
         }
-        
+
         th:last-child {
           border-bottom: 1px solid #eaeaea;
           border-right: 1px solid #eaeaea;
@@ -271,7 +271,7 @@ exports[`Table should set width automatically 1`] = `
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
         }
-        
+
         .thead-box {
           display: flex;
           align-items: center;
@@ -281,9 +281,9 @@ exports[`Table should set width automatically 1`] = `
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
         tr {
-          transition: background-color .25s ease;
+          transition: background-color 0.25s ease;
         }
-        
+
         tr.hover:hover {
           background-color: #fafafa;
         }
@@ -295,7 +295,7 @@ exports[`Table should set width automatically 1`] = `
           font-size: 0.875rem;
           text-align: left;
         }
-        
+
         tr :global(.cell) {
           min-height: 3.125rem;
           display: flex;
@@ -318,10 +318,10 @@ exports[`Table should work with other components 1`] = `
           border-collapse: separate;
           border-spacing: 0;
         }
-        
+
         th {
           padding: 0 8pt;
-          font-size: .75rem;
+          font-size: 0.75rem;
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
@@ -333,7 +333,7 @@ exports[`Table should work with other components 1`] = `
           border-top: 1px solid #eaeaea;
           border-radius: 0;
         }
-        
+
         th:nth-child(1) {
           border-bottom: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
@@ -341,7 +341,7 @@ exports[`Table should work with other components 1`] = `
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
         }
-        
+
         th:last-child {
           border-bottom: 1px solid #eaeaea;
           border-right: 1px solid #eaeaea;
@@ -349,7 +349,7 @@ exports[`Table should work with other components 1`] = `
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
         }
-        
+
         .thead-box {
           display: flex;
           align-items: center;
@@ -359,9 +359,9 @@ exports[`Table should work with other components 1`] = `
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\"><code>boolean</code></div></td><td><div class=\\"cell\\">true</div></td></tr><style>
         tr {
-          transition: background-color .25s ease;
+          transition: background-color 0.25s ease;
         }
-        
+
         tr.hover:hover {
           background-color: #fafafa;
         }
@@ -373,7 +373,7 @@ exports[`Table should work with other components 1`] = `
           font-size: 0.875rem;
           text-align: left;
         }
-        
+
         tr :global(.cell) {
           min-height: 3.125rem;
           display: flex;
@@ -396,10 +396,10 @@ exports[`Table should work without hover effect 1`] = `
           border-collapse: separate;
           border-spacing: 0;
         }
-        
+
         th {
           padding: 0 8pt;
-          font-size: .75rem;
+          font-size: 0.75rem;
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
@@ -411,7 +411,7 @@ exports[`Table should work without hover effect 1`] = `
           border-top: 1px solid #eaeaea;
           border-radius: 0;
         }
-        
+
         th:nth-child(1) {
           border-bottom: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
@@ -419,7 +419,7 @@ exports[`Table should work without hover effect 1`] = `
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
         }
-        
+
         th:last-child {
           border-bottom: 1px solid #eaeaea;
           border-right: 1px solid #eaeaea;
@@ -427,7 +427,7 @@ exports[`Table should work without hover effect 1`] = `
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
         }
-        
+
         .thead-box {
           display: flex;
           align-items: center;
@@ -437,9 +437,9 @@ exports[`Table should work without hover effect 1`] = `
         }
       </style><tbody><tr class=\\"\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
         tr {
-          transition: background-color .25s ease;
+          transition: background-color 0.25s ease;
         }
-        
+
         tr.hover:hover {
           background-color: #fafafa;
         }
@@ -451,7 +451,7 @@ exports[`Table should work without hover effect 1`] = `
           font-size: 0.875rem;
           text-align: left;
         }
-        
+
         tr :global(.cell) {
           min-height: 3.125rem;
           display: flex;

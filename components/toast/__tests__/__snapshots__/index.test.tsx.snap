@@ -29,7 +29,7 @@ exports[`UseToast should render different actions 1`] = `
           pointer-events: auto;
           box-shadow: none;
         }
-        
+
         .btn:hover {
           color: #000;
           background-color: #fff;
@@ -39,7 +39,7 @@ exports[`UseToast should render different actions 1`] = `
           box-shadow: none;
           transform: translate3d(0px, 0px, 0px);
         }
-        
+
         .text {
           position: relative;
           z-index: 1;
@@ -50,8 +50,10 @@ exports[`UseToast should render different actions 1`] = `
           line-height: inherit;
           top: -1px;
         }
-        
-        .text :global(p), .text :global(pre), .text :global(div) {
+
+        .text :global(p),
+        .text :global(pre),
+        .text :global(div) {
           margin: 0;
         }
       </style></button><button class=\\"btn \\"><div class=\\"text\\">remove</div><style>
@@ -82,7 +84,7 @@ exports[`UseToast should render different actions 1`] = `
           pointer-events: auto;
           box-shadow: none;
         }
-        
+
         .btn:hover {
           color: #000;
           background-color: #fff;
@@ -92,7 +94,7 @@ exports[`UseToast should render different actions 1`] = `
           box-shadow: none;
           transform: translate3d(0px, 0px, 0px);
         }
-        
+
         .text {
           position: relative;
           z-index: 1;
@@ -103,8 +105,10 @@ exports[`UseToast should render different actions 1`] = `
           line-height: inherit;
           top: -1px;
         }
-        
-        .text :global(p), .text :global(pre), .text :global(div) {
+
+        .text :global(p),
+        .text :global(pre),
+        .text :global(div) {
           margin: 0;
         }
       </style></button></div><style>
@@ -129,12 +133,12 @@ exports[`UseToast should render different actions 1`] = `
           transform: translate3d(0, 100%, 0px) scale(1);
           transition: all 400ms ease;
         }
-        
+
         .toast.visible {
           opacity: 1;
           transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
         }
-        
+
         .toast.hide {
           opacity: 0;
           visibility: hidden;
@@ -144,8 +148,8 @@ exports[`UseToast should render different actions 1`] = `
         .message {
           align-items: center;
           height: 100%;
-          transition: opacity .4s ease;
-          font-size: .875rem;
+          transition: opacity 0.4s ease;
+          font-size: 0.875rem;
           display: -webkit-box;
           word-break: break-all;
           padding-right: 8pt;
@@ -156,26 +160,26 @@ exports[`UseToast should render different actions 1`] = `
           -webkit-line-clamp: 2;
           line-height: 1.1rem;
         }
-        
+
         .toast :global(button + button) {
           margin-left: 4pt;
         }
       </style></div><style>
-          .toast-container {
-            position: fixed;
-            width: 420px;
-            max-width: 90vw;
-            bottom: 16pt;
-            right: 16pt;
-            z-index: 2000;
-            transition: all 400ms ease;
-            box-sizing: border-box;
-          }
-          
-          .toast-container.hover {
-            transform: translate3d(0, -10px, 0);
-          }
-        </style></div>"
+        .toast-container {
+          position: fixed;
+          width: 420px;
+          max-width: 90vw;
+          bottom: 16pt;
+          right: 16pt;
+          z-index: 2000;
+          transition: all 400ms ease;
+          box-sizing: border-box;
+        }
+
+        .toast-container.hover {
+          transform: translate3d(0, -10px, 0);
+        }
+      </style></div>"
 `;
 
 exports[`UseToast should work with different types 1`] = `
@@ -201,12 +205,12 @@ exports[`UseToast should work with different types 1`] = `
           transform: translate3d(0, 100%, 0px) scale(1);
           transition: all 400ms ease;
         }
-        
+
         .toast.visible {
           opacity: 1;
           transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
         }
-        
+
         .toast.hide {
           opacity: 0;
           visibility: hidden;
@@ -216,8 +220,8 @@ exports[`UseToast should work with different types 1`] = `
         .message {
           align-items: center;
           height: 100%;
-          transition: opacity .4s ease;
-          font-size: .875rem;
+          transition: opacity 0.4s ease;
+          font-size: 0.875rem;
           display: -webkit-box;
           word-break: break-all;
           padding-right: 8pt;
@@ -228,24 +232,24 @@ exports[`UseToast should work with different types 1`] = `
           -webkit-line-clamp: 2;
           line-height: 1.1rem;
         }
-        
+
         .toast :global(button + button) {
           margin-left: 4pt;
         }
       </style></div><style>
-          .toast-container {
-            position: fixed;
-            width: 420px;
-            max-width: 90vw;
-            bottom: 16pt;
-            right: 16pt;
-            z-index: 2000;
-            transition: all 400ms ease;
-            box-sizing: border-box;
-          }
-          
-          .toast-container.hover {
-            transform: translate3d(0, -10px, 0);
-          }
-        </style></div>"
+        .toast-container {
+          position: fixed;
+          width: 420px;
+          max-width: 90vw;
+          bottom: 16pt;
+          right: 16pt;
+          z-index: 2000;
+          transition: all 400ms ease;
+          box-sizing: border-box;
+        }
+
+        .toast-container.hover {
+          transform: translate3d(0, -10px, 0);
+        }
+      </style></div>"
 `;

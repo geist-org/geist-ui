@@ -41,7 +41,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -93,7 +93,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -156,7 +156,7 @@ initialize {
                           Object {
                             "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                             "next": null,
@@ -190,7 +190,7 @@ initialize {
                         Object {
                           "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                           "next": null,
@@ -299,7 +299,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -351,7 +351,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -415,7 +415,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -467,7 +467,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -552,7 +552,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -604,7 +604,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -670,7 +670,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -722,7 +722,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -830,7 +830,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -882,7 +882,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -946,7 +946,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -998,7 +998,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -1083,7 +1083,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -1135,7 +1135,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -1201,7 +1201,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -1253,7 +1253,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -1337,7 +1337,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -1371,7 +1371,7 @@ initialize {
                           Object {
                             "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                             "next": null,
@@ -1464,66 +1464,66 @@ initialize {
             "children": Array [
               Object {
                 "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                 "next": null,
                 "parent": [Circular],
                 "prev": null,
@@ -1588,7 +1588,7 @@ initialize {
                         Object {
                           "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                           "next": null,
@@ -1622,7 +1622,7 @@ initialize {
                       Object {
                         "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                         "next": null,
@@ -1731,7 +1731,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -1783,7 +1783,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -1847,7 +1847,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -1899,7 +1899,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -1984,7 +1984,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -2036,7 +2036,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -2102,7 +2102,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -2154,7 +2154,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -2262,7 +2262,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -2314,7 +2314,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -2378,7 +2378,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -2430,7 +2430,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -2515,7 +2515,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -2567,7 +2567,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -2633,7 +2633,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -2685,7 +2685,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -2769,7 +2769,7 @@ initialize {
                           Object {
                             "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                             "next": null,
@@ -2803,7 +2803,7 @@ initialize {
                         Object {
                           "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                           "next": null,
@@ -2896,66 +2896,66 @@ initialize {
           "children": Array [
             Object {
               "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
               "next": null,
               "parent": [Circular],
               "prev": null,
@@ -3006,7 +3006,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -3058,7 +3058,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -3108,66 +3108,66 @@ initialize {
         "children": Array [
           Object {
             "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
             "next": null,
             "parent": [Circular],
             "prev": null,
@@ -3211,7 +3211,7 @@ initialize {
                           Object {
                             "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                             "next": null,
@@ -3245,7 +3245,7 @@ initialize {
                         Object {
                           "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                           "next": null,
@@ -3354,7 +3354,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -3406,7 +3406,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -3470,7 +3470,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -3522,7 +3522,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -3607,7 +3607,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -3659,7 +3659,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -3725,7 +3725,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -3777,7 +3777,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -3885,7 +3885,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -3937,7 +3937,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -4001,7 +4001,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -4053,7 +4053,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -4138,7 +4138,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -4190,7 +4190,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #c00;
           background-color: #c00;
@@ -4256,7 +4256,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -4308,7 +4308,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #f49b0b;
           background-color: #f49b0b;
@@ -4392,7 +4392,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -4426,7 +4426,7 @@ initialize {
                           Object {
                             "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                             "next": null,
@@ -4550,7 +4550,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -4602,7 +4602,7 @@ initialize {
           padding: 0 1.25rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -4734,7 +4734,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -4786,7 +4786,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -4849,7 +4849,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -4883,7 +4883,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -5016,7 +5016,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -5050,7 +5050,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -5143,66 +5143,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -5267,7 +5267,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -5301,7 +5301,7 @@ initialize {
                           Object {
                             "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                             "next": null,
@@ -5434,7 +5434,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -5468,7 +5468,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -5561,66 +5561,66 @@ initialize {
               "children": Array [
                 Object {
                   "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
@@ -5671,7 +5671,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -5723,7 +5723,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -5773,66 +5773,66 @@ initialize {
             "children": Array [
               Object {
                 "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                 "next": null,
                 "parent": [Circular],
                 "prev": null,
@@ -5876,7 +5876,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -5910,7 +5910,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -6043,7 +6043,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -6077,7 +6077,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -6201,7 +6201,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -6253,7 +6253,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -6344,7 +6344,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -6396,7 +6396,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -6459,7 +6459,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -6493,7 +6493,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -6626,7 +6626,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -6660,7 +6660,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -6753,66 +6753,66 @@ initialize {
                   "children": Array [
                     Object {
                       "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
@@ -6877,7 +6877,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -6911,7 +6911,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -7044,7 +7044,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -7078,7 +7078,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -7171,66 +7171,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -7281,7 +7281,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -7333,7 +7333,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -7383,66 +7383,66 @@ initialize {
               "children": Array [
                 Object {
                   "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
@@ -7486,7 +7486,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -7520,7 +7520,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -7653,7 +7653,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -7687,7 +7687,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -7811,7 +7811,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -7863,7 +7863,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -7954,7 +7954,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -8006,7 +8006,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -8069,7 +8069,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -8103,7 +8103,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -8236,7 +8236,7 @@ initialize {
                                     Object {
                                       "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                       "next": null,
@@ -8270,7 +8270,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -8363,66 +8363,66 @@ initialize {
                     "children": Array [
                       Object {
                         "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
@@ -8487,7 +8487,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -8521,7 +8521,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -8654,7 +8654,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -8688,7 +8688,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -8781,66 +8781,66 @@ initialize {
                   "children": Array [
                     Object {
                       "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
@@ -8891,7 +8891,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -8943,7 +8943,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -8993,66 +8993,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -9096,7 +9096,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -9130,7 +9130,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -9263,7 +9263,7 @@ initialize {
                                     Object {
                                       "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                       "next": null,
@@ -9297,7 +9297,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -9421,7 +9421,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -9473,7 +9473,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -9595,7 +9595,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -9647,7 +9647,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -9710,7 +9710,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -9744,7 +9744,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -9877,7 +9877,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -9911,7 +9911,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -10004,66 +10004,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -10128,7 +10128,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -10162,7 +10162,7 @@ initialize {
                           Object {
                             "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                             "next": null,
@@ -10295,7 +10295,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -10329,7 +10329,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -10422,66 +10422,66 @@ initialize {
               "children": Array [
                 Object {
                   "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
@@ -10532,7 +10532,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -10584,7 +10584,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -10634,66 +10634,66 @@ initialize {
             "children": Array [
               Object {
                 "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                 "next": null,
                 "parent": [Circular],
                 "prev": null,
@@ -10737,7 +10737,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -10771,7 +10771,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -10904,7 +10904,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -10938,7 +10938,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -11062,7 +11062,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -11114,7 +11114,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -11205,7 +11205,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -11257,7 +11257,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -11320,7 +11320,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -11354,7 +11354,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -11487,7 +11487,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -11521,7 +11521,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -11614,66 +11614,66 @@ initialize {
                   "children": Array [
                     Object {
                       "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
@@ -11738,7 +11738,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -11772,7 +11772,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -11905,7 +11905,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -11939,7 +11939,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -12032,66 +12032,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -12142,7 +12142,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -12194,7 +12194,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -12244,66 +12244,66 @@ initialize {
               "children": Array [
                 Object {
                   "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
@@ -12347,7 +12347,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -12381,7 +12381,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -12514,7 +12514,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -12548,7 +12548,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -12672,7 +12672,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -12724,7 +12724,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -12827,7 +12827,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -12879,7 +12879,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -12942,7 +12942,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -12976,7 +12976,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -13109,7 +13109,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -13143,7 +13143,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -13236,66 +13236,66 @@ initialize {
                   "children": Array [
                     Object {
                       "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
@@ -13360,7 +13360,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -13394,7 +13394,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -13527,7 +13527,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -13561,7 +13561,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -13654,66 +13654,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -13764,7 +13764,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -13816,7 +13816,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -13866,66 +13866,66 @@ initialize {
               "children": Array [
                 Object {
                   "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
@@ -13969,7 +13969,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -14003,7 +14003,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -14136,7 +14136,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -14170,7 +14170,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -14294,7 +14294,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -14346,7 +14346,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -14456,7 +14456,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -14508,7 +14508,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -14571,7 +14571,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -14605,7 +14605,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -14738,7 +14738,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -14772,7 +14772,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -14865,66 +14865,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -14989,7 +14989,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -15023,7 +15023,7 @@ initialize {
                           Object {
                             "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                             "next": null,
@@ -15156,7 +15156,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -15190,7 +15190,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -15283,66 +15283,66 @@ initialize {
               "children": Array [
                 Object {
                   "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
@@ -15393,7 +15393,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -15445,7 +15445,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -15495,66 +15495,66 @@ initialize {
             "children": Array [
               Object {
                 "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #fff;
-          background-color: #000;
-          height: 2.5rem;
-          border-left: 1px solid #333;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #333;
-          background-color: #333;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #fff;
+            background-color: #000;
+            height: 2.5rem;
+            border-left: 1px solid #333;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #333;
+            background-color: #333;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                 "next": null,
                 "parent": [Circular],
                 "prev": null,
@@ -15598,7 +15598,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -15632,7 +15632,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -15765,7 +15765,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -15799,7 +15799,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -15923,7 +15923,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -15975,7 +15975,7 @@ initialize {
           padding: 0 1.375rem;
           font-size: .875rem;
         }
-        
+
         button:hover {
           border-color: #333;
           background-color: #333;
@@ -16068,7 +16068,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -16120,7 +16120,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -16183,7 +16183,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -16217,7 +16217,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -16350,7 +16350,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -16384,7 +16384,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -16477,66 +16477,66 @@ initialize {
                   "children": Array [
                     Object {
                       "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
@@ -16601,7 +16601,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -16635,7 +16635,7 @@ initialize {
                             Object {
                               "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                               "next": null,
@@ -16768,7 +16768,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -16802,7 +16802,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -16895,66 +16895,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -17005,7 +17005,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -17057,7 +17057,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -17107,66 +17107,66 @@ initialize {
               "children": Array [
                 Object {
                   "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 2.75rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 2.75rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
@@ -17210,7 +17210,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -17244,7 +17244,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -17377,7 +17377,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -17411,7 +17411,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -17535,7 +17535,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -17587,7 +17587,7 @@ initialize {
           padding: 0 1.875rem;
           font-size: 1rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -17680,7 +17680,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -17732,7 +17732,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -17795,7 +17795,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -17829,7 +17829,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -17962,7 +17962,7 @@ initialize {
                                     Object {
                                       "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                       "next": null,
@@ -17996,7 +17996,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -18089,66 +18089,66 @@ initialize {
                     "children": Array [
                       Object {
                         "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                         "next": null,
                         "parent": [Circular],
                         "prev": null,
@@ -18213,7 +18213,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -18247,7 +18247,7 @@ initialize {
                               Object {
                                 "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                 "next": null,
@@ -18380,7 +18380,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -18414,7 +18414,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -18507,66 +18507,66 @@ initialize {
                   "children": Array [
                     Object {
                       "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
@@ -18617,7 +18617,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -18669,7 +18669,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -18719,66 +18719,66 @@ initialize {
                 "children": Array [
                   Object {
                     "data": "
-        .btn-dropdown {
-          display: inline-flex;
-          position: relative;
-          box-sizing: border-box;
-          border: 1px solid #eaeaea;
-          border-radius: 5px;
-        }
-        
-        .btn-dropdown &gt; :global(button) {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
-        }
-        
-        summary {
-          box-sizing: border-box;
-          -webkit-tap-highlight-color: transparent;
-          list-style: none;
-          outline: none;
-          color: #666;
-          background-color: #fff;
-          height: 1.5rem;
-          border-left: 1px solid #eaeaea;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: auto;
-          padding: 0 1px;
-          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-        
-        summary:hover {
-          border-color: #eaeaea;
-          background-color: #fafafa;
-        }
-        
-        .content {
-          position: absolute;
-          right: 0;
-          left: 0;
-          z-index: 90;
-          width: 100%;
-          border-radius: 5px;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-          transform: translateY(8pt);
-          background-color: #fff;
-        }
-        
-        .content &gt; :global(button:first-of-type) {
-          border-top-left-radius: 5px;
-          border-top-right-radius: 5px;
-        }
-        
-        .content &gt; :global(button:last-of-type) {
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-        }
-      ",
+          .btn-dropdown {
+            display: inline-flex;
+            position: relative;
+            box-sizing: border-box;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+          }
+
+          .btn-dropdown &gt; :global(button) {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          summary {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            list-style: none;
+            outline: none;
+            color: #666;
+            background-color: #fff;
+            height: 1.5rem;
+            border-left: 1px solid #eaeaea;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 0 1px;
+            transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          }
+
+          summary:hover {
+            border-color: #eaeaea;
+            background-color: #fafafa;
+          }
+
+          .content {
+            position: absolute;
+            right: 0;
+            left: 0;
+            z-index: 90;
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            transform: translateY(8pt);
+            background-color: #fff;
+          }
+
+          .content &gt; :global(button:first-of-type) {
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+
+          .content &gt; :global(button:last-of-type) {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        ",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
@@ -18822,7 +18822,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -18856,7 +18856,7 @@ initialize {
                                 Object {
                                   "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                   "next": null,
@@ -18989,7 +18989,7 @@ initialize {
                                     Object {
                                       "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                       "next": null,
@@ -19023,7 +19023,7 @@ initialize {
                                   Object {
                                     "data": "
         svg {
-          transform: scale(.6);
+          transform: scale(0.6);
         }
       ",
                                     "next": null,
@@ -19147,7 +19147,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
@@ -19199,7 +19199,7 @@ initialize {
           padding: 0 0.625rem;
           font-size: .75rem;
         }
-        
+
         button:hover {
           border-color: #eaeaea;
           background-color: #fafafa;
