@@ -34,7 +34,7 @@ describe('Textarea', () => {
 
   it('should trigger events when textarea changed', () => {
     let value = ''
-    const handler = jest.fn().mockImplementation((e) => (value = e.target.value))
+    const handler = jest.fn().mockImplementation(e => (value = e.target.value))
     const wrapper = mount(<Textarea onChange={handler} />)
     wrapper.find('textarea').simulate('change', { target: { value: 'test-value' } })
     expect(handler).toHaveBeenCalled()

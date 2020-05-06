@@ -45,7 +45,7 @@ const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
 
   useEffect(() => {
     if (!values.length) return
-    const isActive = !!values.find((item) => item === index)
+    const isActive = !!values.find(item => item === index)
     setVisible(isActive)
   }, [values.join(',')])
 

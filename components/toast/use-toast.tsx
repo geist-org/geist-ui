@@ -59,7 +59,7 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
 
     const cancel = (id: string, delay: number) => {
       updateToasts((currentToasts: Array<ToastWithID>) => {
-        return currentToasts.map((item) => {
+        return currentToasts.map(item => {
           if (item.id !== id) return item
           return { ...item, willBeDestroy: true }
         })

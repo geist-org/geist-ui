@@ -5,7 +5,7 @@ export const getId = () => {
 }
 
 export const hasChild = (children: ReactNode | undefined, child: React.ElementType): boolean => {
-  const types = React.Children.map(children, (item) => {
+  const types = React.Children.map(children, item => {
     if (!React.isValidElement(item)) return null
     return item.type
   })
@@ -18,7 +18,7 @@ export const pickChild = (
   targetChild: React.ElementType,
 ): [ReactNode | undefined, ReactNode | undefined] => {
   let target: ReactNode[] = []
-  const withoutTargetChildren = React.Children.map(children, (item) => {
+  const withoutTargetChildren = React.Children.map(children, item => {
     if (!React.isValidElement(item)) return item
     if (item.type === targetChild) {
       target.push(item)
@@ -38,7 +38,7 @@ export const pickChildByProps = (
   value: any,
 ): [ReactNode | undefined, ReactNode | undefined] => {
   let target: ReactNode[] = []
-  const withoutPropChildren = React.Children.map(children, (item) => {
+  const withoutPropChildren = React.Children.map(children, item => {
     if (!React.isValidElement(item)) return null
     if (!item.props) return item
     if (item.props[key] === value) {
@@ -66,11 +66,11 @@ export const setChildrenProps = (
   const allowAll = targetComponents.length === 0
   const clone = (child: React.ReactElement, props = {}) => React.cloneElement(child, props)
 
-  return React.Children.map(children, (item) => {
+  return React.Children.map(children, item => {
     if (!React.isValidElement(item)) return item
     if (allowAll) return clone(item, props)
 
-    const isAllowed = targetComponents.find((child) => child === item.type)
+    const isAllowed = targetComponents.find(child => child === item.type)
     if (isAllowed) return clone(item, props)
     return item
   })
@@ -85,12 +85,12 @@ export const setChildrenIndex = (
   const clone = (child: React.ReactElement, props = {}) => React.cloneElement(child, props)
   let index = 0
 
-  return React.Children.map(children, (item) => {
+  return React.Children.map(children, item => {
     if (!React.isValidElement(item)) return item
     index = index + 1
     if (allowAll) return clone(item, { index })
 
-    const isAllowed = targetComponents.find((child) => child === item.type)
+    const isAllowed = targetComponents.find(child => child === item.type)
     if (isAllowed) return clone(item, { index })
     index = index - 1
     return item

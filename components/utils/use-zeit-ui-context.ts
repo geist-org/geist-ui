@@ -13,7 +13,7 @@ export interface ZeitUiContextParams {
 const defaultParams: ZeitUiContextParams = {
   toasts: [],
   toastHovering: false,
-  updateToasts: (t) => t,
+  updateToasts: t => t,
   updateToastHoverStatus: () => {},
 }
 

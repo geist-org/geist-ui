@@ -17,7 +17,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TableHeadProps = Props & typeof defaultProps & NativeAttrs
 
 const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
-  const unsetWidthCount = columns.filter((c) => !c.width).length
+  const unsetWidthCount = columns.filter(c => !c.width).length
   const customWidthTotal = columns.reduce((pre, current) => {
     return current.width ? pre + current.width : pre
   }, 0)
@@ -34,7 +34,7 @@ const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
 
 const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
   const theme = useTheme()
-  const isScalableWidth = useMemo(() => columns.find((item) => !!item.width), [columns])
+  const isScalableWidth = useMemo(() => columns.find(item => !!item.width), [columns])
   const colgroup = useMemo(() => {
     if (!isScalableWidth) return <colgroup />
     return makeColgroup(width, columns)

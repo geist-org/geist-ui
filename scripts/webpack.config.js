@@ -6,7 +6,7 @@ module.exports = async () => {
   const files = await fs.readdir(componentsPath)
 
   const components = await Promise.all(
-    files.map(async (name) => {
+    files.map(async name => {
       const comPath = path.join(componentsPath, name)
       const entry = path.join(comPath, 'index.ts')
 
@@ -21,7 +21,7 @@ module.exports = async () => {
   )
 
   const componentsEntries = components
-    .filter((r) => r)
+    .filter(r => r)
     .reduce((pre, current) => {
       return Object.assign({}, pre, { [current.name]: current.url })
     }, {})

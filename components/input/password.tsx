@@ -25,7 +25,7 @@ const InputPassword = React.forwardRef<
   useImperativeHandle(ref, () => inputRef.current)
 
   const iconClickHandler = () => {
-    setVisible((v) => !v)
+    setVisible(v => !v)
     /* istanbul ignore next */
     if (inputRef && inputRef.current) {
       inputRef.current.focus()

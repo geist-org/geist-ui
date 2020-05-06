@@ -32,14 +32,14 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   const [tabs, setTabs, tabsRef] = useCurrentState<Array<TabsLabelItem>>([])
 
   const register = (next: TabsLabelItem) => {
-    const hasItem = tabsRef.current.find((item) => item.value === next.value)
+    const hasItem = tabsRef.current.find(item => item.value === next.value)
     if (hasItem) {
       useWarning('The "value" of each "Tabs.Item" must be unique.', 'Tabs')
     }
     setTabs([...tabsRef.current, next])
   }
   const unregister = (next: TabsLabelItem) => {
-    const nextTabs = tabsRef.current.filter((item) => item.value !== next.value)
+    const nextTabs = tabsRef.current.filter(item => item.value !== next.value)
     setTabs([...nextTabs])
   }
 

@@ -46,7 +46,7 @@ describe('Toggle', () => {
 
   it('should trigger events when toggle changed', async () => {
     let checked = false
-    const changeHandler = jest.fn().mockImplementation((e) => (checked = e.target.checked))
+    const changeHandler = jest.fn().mockImplementation(e => (checked = e.target.checked))
     const wrapper = mount(<Toggle onChange={changeHandler} />)
 
     wrapper.find('input').simulate('change', {

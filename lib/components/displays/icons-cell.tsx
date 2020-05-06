@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, useTheme } from 'components'
 
 export const getFileName = (name: string): string => {
-  return name.replace(/^(.)/, (g) => g.toLowerCase())
+  return name.replace(/^(.)/, g => g.toLowerCase())
 }
 
 export const getImportString = (name: string) => {

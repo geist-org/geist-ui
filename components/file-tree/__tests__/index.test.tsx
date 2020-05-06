@@ -66,7 +66,7 @@ describe('Tree', () => {
   })
 
   it('should show extra messages', () => {
-    const files = mockFiles.map((item) => ({ ...item, extra: 'extra' }))
+    const files = mockFiles.map(item => ({ ...item, extra: 'extra' }))
     const wrapper = mount(<Tree value={files} />)
     const firstName = wrapper.find('.name').at(0)
     expect(firstName.text()).toContain('extra')

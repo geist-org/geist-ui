@@ -41,7 +41,7 @@ describe('Collapse', () => {
   it('should throw error when title missing', () => {
     const Component = Collapse as any
     let errorMessage = ''
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation((msg) => (errorMessage = msg))
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
 
     mount(<Component subtitle="subtitle">content</Component>)
     expect(errorMessage.toLowerCase()).not.toEqual('')

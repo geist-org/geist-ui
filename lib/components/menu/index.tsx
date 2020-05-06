@@ -15,14 +15,14 @@ const Menu: React.FC<{}> = () => {
         ? ['/zh-cn/guide/introduction', '/zh-cn/components/text', '/zh-cn/customization']
         : ['/en-us/guide/introduction', '/en-us/components/text', '/en-us/customization']
       await Promise.all(
-        urls.map(async (url) => {
+        urls.map(async url => {
           await router.prefetch(url)
         }),
       )
     }
     prefetch()
       .then()
-      .catch((err) => console.log(err))
+      .catch(err => console.log(err))
   }, [isChinese])
 
   if (!showAfterRender) return null

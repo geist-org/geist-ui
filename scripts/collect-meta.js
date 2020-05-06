@@ -3,7 +3,7 @@ const path = require('path')
 const extractMetadata = require('extract-mdx-metadata')
 const metaLocales = require('./locales')
 const pagePrefix = path.join(__dirname, '../pages')
-const getTargetPath = (locale) => {
+const getTargetPath = locale => {
   return path.join(__dirname, '../lib/data/', `metadata-${locale}.json`)
 }
 
@@ -41,8 +41,8 @@ const groupWeights = {
 const getMetadata = async (files, parentPath) => {
   return Promise.all(
     files
-      .filter((name) => name.endsWith('.mdx') || !name.includes('.'))
-      .map(async (file) => {
+      .filter(name => name.endsWith('.mdx') || !name.includes('.'))
+      .map(async file => {
         const filePath = path.join(parentPath, file)
         const isDirectory = fs.statSync(filePath).isDirectory()
         if (isDirectory) {
@@ -51,13 +51,13 @@ const getMetadata = async (files, parentPath) => {
           const sorted = childrenMetadata.sort((a, b) => a.index - b.index)
 
           // grouping
-          const childrenHasGroup = sorted.find((item) => item.group)
+          const childrenHasGroup = sorted.find(item => item.group)
           if (childrenHasGroup) {
-            const groups = [...new Set(sorted.map((item) => item.group || 'others'))]
+            const groups = [...new Set(sorted.map(item => item.group || 'others'))]
             const groupChildren = groups
-              .map((groupName) => ({
+              .map(groupName => ({
                 name: groupName,
-                children: sorted.filter((item) => (item.group || 'others') === groupName),
+                children: sorted.filter(item => (item.group || 'others') === groupName),
               }))
               .sort((a, b) => {
                 const pre = a.name.toLowerCase()
@@ -87,7 +87,7 @@ const getMetadata = async (files, parentPath) => {
 
 const deepTranslate = (metadata, locales) => {
   if (!metadata || !Array.isArray(metadata)) return metadata
-  return metadata.map((data) => {
+  return metadata.map(data => {
     if (typeof data !== 'object') return data
     if (data.children) {
       data.children = deepTranslate(data.children, locales)
@@ -103,14 +103,14 @@ const deepTranslate = (metadata, locales) => {
 
 ;(async () => {
   try {
-    const locales = (await fs.readdir(pagePrefix)).filter((name) => {
+    const locales = (await fs.readdir(pagePrefix)).filter(name => {
       const fullPath = path.join(pagePrefix, name)
       if (name === 'docs') return false
       return fs.statSync(fullPath).isDirectory()
     })
 
     const sortdMetaData = await Promise.all(
-      locales.map(async (name) => {
+      locales.map(async name => {
         const currentLocale = metaLocales[name] || {}
         const dir = path.join(pagePrefix, name)
         const childDirs = await fs.readdir(dir)
@@ -126,7 +126,7 @@ const deepTranslate = (metadata, locales) => {
     )
 
     await Promise.all(
-      sortdMetaData.map(async (data) => {
+      sortdMetaData.map(async data => {
         const targetPath = getTargetPath(data.name)
         await fs.ensureFile(targetPath)
         await fs.writeJson(targetPath, data.content)

@@ -49,7 +49,7 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
   const [columns, setColumns, columnsRef] = useCurrentState<Array<TableColumnItem>>([])
   const [selfData, setSelfData, dataRef] = useCurrentState<Array<TableColumnItem>>([])
   const appendColumn = (column: TableColumnItem) => {
-    const pureCurrent = columnsRef.current.filter((item) => item.value !== column.value)
+    const pureCurrent = columnsRef.current.filter(item => item.value !== column.value)
     setColumns([...pureCurrent, column])
   }
   const removeRow = (rowIndex: number) => {

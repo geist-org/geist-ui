@@ -95,7 +95,7 @@ describe('Modal', () => {
     const wrapper = mount(
       <Modal open={true} onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
-        <Modal.Action passive onClick={(e) => e.close()}>
+        <Modal.Action passive onClick={e => e.close()}>
           Close
         </Modal.Action>
       </Modal>,

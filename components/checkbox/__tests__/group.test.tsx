@@ -34,7 +34,7 @@ describe('Checkbox Group', () => {
   it('should change value after click', () => {
     let value = ['sydney']
     const wrapper = mount(
-      <Checkbox.Group value={['sydney']} onChange={(val) => (value = val)}>
+      <Checkbox.Group value={['sydney']} onChange={val => (value = val)}>
         <Checkbox value="sydney">Sydney</Checkbox>
         <Checkbox value="beijing">BeiJing</Checkbox>
       </Checkbox.Group>,
@@ -51,7 +51,7 @@ describe('Checkbox Group', () => {
   it('should ignore events when disabled', () => {
     let value = ['sydney']
     const wrapper = mount(
-      <Checkbox.Group disabled value={['sydney']} onChange={(val) => (value = val)}>
+      <Checkbox.Group disabled value={['sydney']} onChange={val => (value = val)}>
         <Checkbox value="sydney">Sydney</Checkbox>
         <Checkbox value="beijing">BeiJing</Checkbox>
       </Checkbox.Group>,
@@ -68,7 +68,7 @@ describe('Checkbox Group', () => {
   it('should throw error when value missing', () => {
     let errorMessage = ''
     const Group = Checkbox.Group as any
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation((msg) => (errorMessage = msg))
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
     mount(
       <Group>
         <Checkbox value="sydney">Sydney</Checkbox>
@@ -82,7 +82,7 @@ describe('Checkbox Group', () => {
 
   it('should throw error when set check prop in group', () => {
     let errorMessage = ''
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation((msg) => (errorMessage = msg))
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
     mount(
       <Checkbox.Group value={[]}>
         <Checkbox value="sydney" checked>

@@ -28,7 +28,7 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
   const theme = useTheme()
   const [state, setState, stateRef] = useCurrentState<Array<number>>([])
   const updateValues = (currentIndex: number, nextState: boolean) => {
-    const hasChild = stateRef.current.find((val) => val === currentIndex)
+    const hasChild = stateRef.current.find(val => val === currentIndex)
     if (accordion) {
       if (nextState) return setState([currentIndex])
       return setState([])
@@ -41,7 +41,7 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
       if (hasChild) return
       return setState([...stateRef.current, currentIndex])
     }
-    setState(stateRef.current.filter((item) => item !== currentIndex))
+    setState(stateRef.current.filter(item => item !== currentIndex))
   }
 
   const initialValue = useMemo<CollapseConfig>(

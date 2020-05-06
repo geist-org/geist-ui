@@ -17,7 +17,7 @@ describe('UseCurrentState', () => {
     const { result } = renderHook(() => useCurrentState(0))
     expect(result.current[0]).toEqual(0)
 
-    act(() => result.current[1]((pre) => pre + 10))
+    act(() => result.current[1](pre => pre + 10))
     expect(result.current[0]).toEqual(10)
     expect(result.current[2].current).toEqual(10)
   })

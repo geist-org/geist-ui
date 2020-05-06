@@ -5,7 +5,7 @@ import { Input, useInput } from 'components'
 describe('UseInput', () => {
   it('should follow change with use-input', () => {
     let log = ''
-    const logSpy = jest.spyOn(console, 'log').mockImplementation((msg) => (log = msg))
+    const logSpy = jest.spyOn(console, 'log').mockImplementation(msg => (log = msg))
     const MockInput: React.FC<{ value?: string }> = ({ value }) => {
       const { state, setState, bindings } = useInput('')
       useEffect(() => {

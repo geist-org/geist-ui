@@ -23,7 +23,7 @@ describe('Radio Group', () => {
 
   it('should trigger events in group', () => {
     let value = ''
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(
       <Radio.Group onChange={changeHandler}>
         <Radio value="1">Option 1</Radio>

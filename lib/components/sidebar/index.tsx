@@ -28,7 +28,7 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
 
   const tabbarData = useMemo(() => {
     const allSides = Metadatas[locale]
-    const currentSide = allSides.filter((side) => side.name === tabbar)[0]
+    const currentSide = allSides.filter(side => side.name === tabbar)[0]
     return (currentSide.children || []) as Array<Sides>
   }, [locale, tabbar])
 

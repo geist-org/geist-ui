@@ -21,7 +21,7 @@ describe('Tabs', () => {
 
   it('should trigger events when tab changed', () => {
     let value = ''
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(
       <Tabs initialValue="1" onChange={changeHandler}>
         <Tabs.Item label="label1" value="1">

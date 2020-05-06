@@ -45,7 +45,7 @@ describe('Slider', () => {
 
   it('should trigger events when click', async () => {
     let value = 0
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(<Slider initialValue={20} onChange={changeHandler} />)
     wrapper.find('.slider').simulate('click', {
       ...nativeEvent,
@@ -59,7 +59,7 @@ describe('Slider', () => {
 
   it('should trigger events when drag', async () => {
     let value = 0
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(<Slider initialValue={0} onChange={changeHandler} />)
     const dot = wrapper.find('.dot').getDOMNode() as HTMLDivElement
 
@@ -71,7 +71,7 @@ describe('Slider', () => {
 
   it('should ignore events when disabled', async () => {
     let value = 0
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(<Slider initialValue={0} disabled onChange={changeHandler} />)
     const dot = wrapper.find('.dot').getDOMNode() as HTMLDivElement
 
@@ -91,7 +91,7 @@ describe('Slider', () => {
 
   it('should move unit length is step', async () => {
     let value = 0
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(<Slider step={10} onChange={changeHandler} />)
     const dot = wrapper.find('.dot').getDOMNode() as HTMLDivElement
 
@@ -103,7 +103,7 @@ describe('Slider', () => {
 
   it('should return the specified when the limit is exceeded', () => {
     let value = 0
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(<Slider min={10} max={20} onChange={changeHandler} />)
     const dot = wrapper.find('.dot').getDOMNode() as HTMLDivElement
 

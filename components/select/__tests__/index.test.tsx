@@ -38,7 +38,7 @@ describe('Select', () => {
 
   it('should trigger events when option changed', async () => {
     let value = ''
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(
       <Select onChange={changeHandler}>
         <Select.Option value="1">1</Select.Option>
@@ -68,7 +68,7 @@ describe('Select', () => {
 
   it('should ignore option when option disabled', async () => {
     let value = ''
-    const changeHandler = jest.fn().mockImplementation((val) => (value = val))
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
     const wrapper = mount(
       <Select onChange={changeHandler}>
         <Select.Option value="1">1</Select.Option>
@@ -104,7 +104,7 @@ describe('Select', () => {
 
   it('should be wraning when ident value missing', () => {
     let errorMessage = ''
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation((msg) => (errorMessage = msg))
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
     const SelectOption = Select.Option as any
     const wrapper = mount(
       <Select>

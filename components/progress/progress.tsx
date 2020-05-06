@@ -47,7 +47,7 @@ const getCurrentColor = (
   const colorKeys = Object.keys(colors)
   if (colorKeys.length === 0) return defaultColors[type]
 
-  const customColorKey = colorKeys.find((key) => ratio <= +key)
+  const customColorKey = colorKeys.find(key => ratio <= +key)
   if (!customColorKey || Number.isNaN(+customColorKey)) return defaultColors[type]
   return colors[+customColorKey]
 }

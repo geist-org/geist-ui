@@ -16,7 +16,7 @@ const useLocale = (): LocaleTypes => {
   const [tabbar, setTab, tabRef] = useCurrentState<string>(DEFAULT_TAB)
 
   useEffect(() => {
-    const names = pathname.split('/').filter((r) => !!r)
+    const names = pathname.split('/').filter(r => !!r)
     const currentLocale = names[0] || DEFAULT_LOCALE
     const currentTabbar = names[1] || DEFAULT_TAB
 

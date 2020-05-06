@@ -33,7 +33,7 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
   }
 
   const updateState = (val: string, checked: boolean) => {
-    const removed = selfVal.filter((v) => v !== val)
+    const removed = selfVal.filter(v => v !== val)
     const next = checked ? [...removed, val] : removed
     setSelfVal(next)
     onChange && onChange(next)

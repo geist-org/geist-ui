@@ -30,7 +30,7 @@ const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = ({
   const [items, setItems, ref] = useCurrentState<FieldItem[]>([])
 
   const register = (newItem: FieldItem) => {
-    const hasItem = ref.current.find((item) => item.value === newItem.value)
+    const hasItem = ref.current.find(item => item.value === newItem.value)
     if (hasItem) {
       useWarning('The "value" of each "Fieldset" must be unique.', 'Fieldset')
     }
@@ -58,7 +58,7 @@ const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = ({
     <FieldsetContext.Provider value={providerValue}>
       <div className={` ${className}`} {...props}>
         <div className="group">
-          {items.map((item) => (
+          {items.map(item => (
             <button
               onClick={() => clickHandle(item.value)}
               key={item.value}

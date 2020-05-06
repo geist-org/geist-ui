@@ -2,7 +2,7 @@ import { act } from 'react-dom/test-utils'
 import { ReactWrapper } from 'enzyme'
 
 export const sleep = (time: number) => {
-  return new Promise((resolve) => setTimeout(resolve, time))
+  return new Promise(resolve => setTimeout(resolve, time))
 }
 
 export const updateWrapper = async (wrapper: ReactWrapper, time: number = 0) => {

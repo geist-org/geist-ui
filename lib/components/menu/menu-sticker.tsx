@@ -40,7 +40,7 @@ const MenuSticker = () => {
       <nav className={fixed ? 'fixed' : ''}>
         <div className="sticker">
           <div className="inner">
-            <Tabs value={tabValue} onChange={(val) => setTabValue(val)}>
+            <Tabs value={tabValue} onChange={val => setTabValue(val)}>
               {tabbarData
                 ? tabbarData.map((tab, index) => (
                     <Tabs.Item

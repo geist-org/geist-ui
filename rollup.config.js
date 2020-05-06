@@ -51,6 +51,6 @@ export default {
     //   name: 'ZeitUI',
     // },
   ],
-  external: (id) => /^react|react-dom|styled-jsx/.test(id),
+  external: id => /^react|react-dom|styled-jsx/.test(id),
   plugins: plugins,
 }

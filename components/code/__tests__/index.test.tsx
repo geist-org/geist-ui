@@ -31,7 +31,7 @@ describe('Code', () => {
 
   it('should alert warning when use bash', () => {
     let errorMessage = ''
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation((msg) => (errorMessage = msg))
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
 
     mount(<Code bash>code</Code>)
     expect(errorMessage.toLowerCase()).toContain('deprecated')
@@ -40,7 +40,7 @@ describe('Code', () => {
 
   it('should alert warning when use darkBash', () => {
     let errorMessage = ''
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation((msg) => (errorMessage = msg))
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
 
     mount(<Code darkBash>code</Code>)
     expect(errorMessage.toLowerCase()).toContain('deprecated')
