@@ -1,0 +1,90 @@
+import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
+import { Page, Button } from 'components'
+import MockPage from 'lib/components/displays/mock-page'
+
+export const meta = {
+  title: 'page',
+  group: 'layout',
+}
+
+## Page
+
+Container of general for display page content.
+
+<Playground
+  desc="The content will be displayed in the center."
+  scope={{ Page, MockPage, Button }}
+  code={`
+() => {
+  const Child = () => (
+    <>
+      <h2>Hello, Everyone.</h2>
+      <p>This is a simulated page, you can click anywhere to close it.</p>
+    </>
+  )
+  const [visible, setVisible] = React.useState(false)
+  return (
+    <>
+      <Button onClick={() => setVisible(true)} auto>Show Page</Button>
+      <MockPage visible={visible} onClose={() => setVisible(false)}>
+        <Page><Child /></Page>
+      </MockPage>
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="Content"
+  desc="Add `Header` and `Footer` for better layout."
+  scope={{ Page, MockPage, Button }}
+  code={`
+() => {
+  const [visible, setVisible] = React.useState(false)
+  return (
+    <>
+      <Button onClick={() => setVisible(true)} auto>Header & Footer</Button>
+      <MockPage visible={visible} onClose={() => setVisible(false)}>
+        <Page size="small">
+          <Page.Header>
+            <h2>Header</h2>
+          </Page.Header>
+          <Page.Content>
+            <h2>Hello, Everyone.</h2>
+            <p>This is a simulated page, you can click anywhere to close it.</p>
+          </Page.Content>
+          <Page.Footer>
+            <h2>Footer</h2>
+          </Page.Footer>
+        </Page>
+      </MockPage>
+    </>
+  )
+}
+`} />
+
+<Attributes edit="/pages/en-us/components/page.mdx">
+<Attributes.Title>Page.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **size** | size of page | [PageSize](#pagesize) | - | `medium` |
+| **render** | render mode | [PageRenderMode](#pagerendermode) | - | `default` |
+
+<Attributes.Title>PageSize</Attributes.Title>
+
+```ts
+type PageSize = string | 'mini' | 'small' | 'medium' | 'large'
+```
+
+<Attributes.Title>PageRenderMode</Attributes.Title>
+
+```ts
+type PageRenderMode = 'default'   // Normal rendering
+  | 'effect'                      // Render after the first effect trigger
+  | 'effect-seo'                  // like "effect", but prerender strings for SEO
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
