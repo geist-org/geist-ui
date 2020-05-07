@@ -4,6 +4,7 @@ import useTheme from '../styles/use-theme'
 import { ButtonTypes, NormalSizes } from '../utils/prop-types'
 import ButtonDrip from './button.drip'
 import ButtonLoading from '../loading'
+import ButtonIcon from './button-icon'
 import { getButtonColors, getButtonCursor, getButtonHoverColors, getButtonSize } from './styles'
 
 interface Props {
@@ -15,6 +16,8 @@ interface Props {
   auto?: boolean
   effect?: boolean
   disabled?: boolean
+  icon?: React.ReactNode
+  iconRight?: React.ReactNode
   onClick?: React.MouseEventHandler<HTMLButtonElement>
   className?: string
 }
@@ -45,6 +48,8 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
   onClick,
   auto,
   size,
+  icon,
+  iconRight,
   className,
   ...props
 }) => {
@@ -94,6 +99,32 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
     onClick && onClick(event)
   }
 
+  const childrenWithIcon = useMemo(() => {
+    const hasIcon = icon || iconRight
+    const isRight = Boolean(iconRight)
+    const paddingForAutoMode =
+      auto || size === 'mini'
+        ? `calc(var(--zeit-ui-button-height) / 2 + var(--zeit-ui-button-padding) * .5)`
+        : 0
+    if (!hasIcon) return <div className="text">{children}</div>
+    return (
+      <>
+        <ButtonIcon isRight={isRight}>{hasIcon}</ButtonIcon>
+        <div className={`text ${isRight ? 'right' : 'left'}`}>
+          {children}
+          <style jsx>{`
+            .left {
+              padding-left: ${paddingForAutoMode};
+            }
+            .right {
+              padding-right: ${paddingForAutoMode};
+            }
+          `}</style>
+        </div>
+      </>
+    )
+  }, [children, icon, auto, size])
+
   return (
     <button
       ref={buttonRef}
@@ -101,7 +132,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
       disabled={disabled}
       onClick={clickHandler}
       {...props}>
-      {loading ? <ButtonLoading /> : <div className="text">{children}</div>}
+      {loading ? <ButtonLoading /> : childrenWithIcon}
       {dripShow && (
         <ButtonDrip
           x={dripX}
@@ -128,7 +159,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease;
+          transition: all 0.2s ease 0s;
           position: relative;
           overflow: hidden;
           color: ${color};
@@ -137,10 +168,14 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           cursor: ${cursor};
           pointer-events: ${events};
           box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
+          --zeit-ui-button-padding: ${padding};
+          --zeit-ui-button-height: ${height};
+          --zeit-ui-button-color: ${color};
         }
 
         .btn:hover {
           color: ${hover.color};
+          --zeit-ui-button-color: ${hover.color};
           background-color: ${hover.bg};
           border-color: ${hover.border};
           cursor: ${cursor};
@@ -149,7 +184,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           transform: translate3d(0px, ${shadow ? '-1px' : '0px'}, 0px);
         }
 
-        .text {
+        .btn :global(.text) {
           position: relative;
           z-index: 1;
           display: inline-flex;
@@ -160,9 +195,9 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           top: -1px;
         }
 
-        .text :global(p),
-        .text :global(pre),
-        .text :global(div) {
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
           margin: 0;
         }
       `}</style>
