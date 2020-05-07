@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageChild should work with child component 1`] = `
+"<section>outside string<header class=\\" \\">header<style>
+        header {
+          width: 100%;
+        }
+
+        .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      </style></header><main class=\\"\\">content<style>
+        main {
+          width: 100%;
+          padding: calc(16pt * 2.5) 0;
+        }
+      </style></main><footer class=\\"\\">Footer<style>
+        footer {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+        }
+      </style></footer>outside string<style>
+        section {
+          width: 750pt;
+          max-width: 100vw;
+          min-height: 100vh;
+          margin: 0 auto;
+          box-sizing: border-box;
+          position: relative;
+        }
+
+        @media only screen and (max-width: 720px) {
+          section {
+            max-width: 90vw;
+            min-height: -webkit-fill-available;
+          }
+        }
+      </style></section>"
+`;
