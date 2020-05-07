@@ -19,7 +19,7 @@ exports[`UseToast should render different actions 1`] = `
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease;
+          transition: all 0.2s ease 0s;
           position: relative;
           overflow: hidden;
           color: #fff;
@@ -28,10 +28,14 @@ exports[`UseToast should render different actions 1`] = `
           cursor: pointer;
           pointer-events: auto;
           box-shadow: none;
+          --zeit-ui-button-padding: 0.625rem;
+          --zeit-ui-button-height: 1.5rem;
+          --zeit-ui-button-color: #fff;
         }
 
         .btn:hover {
           color: #000;
+          --zeit-ui-button-color: #000;
           background-color: #fff;
           border-color: #000;
           cursor: pointer;
@@ -40,7 +44,7 @@ exports[`UseToast should render different actions 1`] = `
           transform: translate3d(0px, 0px, 0px);
         }
 
-        .text {
+        .btn :global(.text) {
           position: relative;
           z-index: 1;
           display: inline-flex;
@@ -51,9 +55,9 @@ exports[`UseToast should render different actions 1`] = `
           top: -1px;
         }
 
-        .text :global(p),
-        .text :global(pre),
-        .text :global(div) {
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
           margin: 0;
         }
       </style></button><button class=\\"btn \\"><div class=\\"text\\">remove</div><style>
@@ -74,7 +78,7 @@ exports[`UseToast should render different actions 1`] = `
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease;
+          transition: all 0.2s ease 0s;
           position: relative;
           overflow: hidden;
           color: #666;
@@ -83,10 +87,14 @@ exports[`UseToast should render different actions 1`] = `
           cursor: pointer;
           pointer-events: auto;
           box-shadow: none;
+          --zeit-ui-button-padding: 0.625rem;
+          --zeit-ui-button-height: 1.5rem;
+          --zeit-ui-button-color: #666;
         }
 
         .btn:hover {
           color: #000;
+          --zeit-ui-button-color: #000;
           background-color: #fff;
           border-color: #000;
           cursor: pointer;
@@ -95,7 +103,7 @@ exports[`UseToast should render different actions 1`] = `
           transform: translate3d(0px, 0px, 0px);
         }
 
-        .text {
+        .btn :global(.text) {
           position: relative;
           z-index: 1;
           display: inline-flex;
@@ -106,9 +114,9 @@ exports[`UseToast should render different actions 1`] = `
           top: -1px;
         }
 
-        .text :global(p),
-        .text :global(pre),
-        .text :global(div) {
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
           margin: 0;
         }
       </style></button></div><style>
