@@ -1,6 +1,10 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Button, Spacer } from 'components'
 import Router from 'next/router'
+import Settings from '@zeit-ui/react-icons/settings'
+import UserX from '@zeit-ui/react-icons/userX'
+import Power from '@zeit-ui/react-icons/power'
+
 
 export const meta = {
   title: 'button',
@@ -10,7 +14,6 @@ export const meta = {
 ## Button
 
 Used to trigger an operation.
-
 
 <Playground
   title="Basic"
@@ -86,21 +89,55 @@ Used to trigger an operation.
 </>
 `} />
 
+<Playground
+  title="With Icons"
+  desc="The `color` and `size` of the icon will be set automatically."
+  scope={{ Button, Spacer, Settings, UserX, Power }}
+  code={`
+<>
+  <Button iconRight={<Power />} auto size="small">shut off</Button>
+  <Spacer y={.5} />
+  <Button icon={<Settings />} auto>Action</Button>
+  <Spacer y={.5} />
+  <Button icon={<Settings />} type="success" size="small">Success</Button>
+  <Spacer y={.5} />
+  <Button icon={<Settings />} type="secondary">Success</Button>
+  <Spacer y={.5} />
+  <Button icon={<UserX />} type="error" ghost>Remove User</Button>
+  <Spacer y={.5} />
+  <Button icon={<UserX />} disabled>Remove User</Button>
+</>
+`} />
+
 <Attributes edit="/pages/en-us/components/button.mdx">
 <Attributes.Title>Button.Props</Attributes.Title>
 
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | button type | `ButtonTypes` | `'default', 'secondary', 'success', 'warning', 'error', 'abort'` | `default` |
-| **size** | button size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **type** | button type | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
+| **size** | button size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
 | **ghost** | the opposite color | `boolean` | - | `false` |
 | **loading** | display loading indicator | `boolean` | - | `false` |
 | **shadow** | display shadow | `boolean` | - | `false` |
 | **auto** | autoscale width | `boolean` | - | `false` |
 | **effect** | display animation | `boolean` | - | `true` |
 | **disabled** | disable button | `boolean` | - | `false` |
+| **icon** | show icon in button | `ReactNode` | - | - |
+| **iconRight** | show icon on the other side of the button | `ReactNode` | - | - |
 | **onClick** | click handler | `MouseEventHandler` | - | - |
-| ... | native props | `ButtonHTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>ButtonTypes</Attributes.Title>
+
+```ts
+type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
+```
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
 
 </Attributes>
 

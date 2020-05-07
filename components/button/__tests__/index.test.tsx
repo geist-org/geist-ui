@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { Button } from '../../'
+import { Button } from 'components'
 import { sleep } from 'tests/utils'
 
 describe('Button', () => {

@@ -225,9 +225,9 @@ export const getButtonSize = (size: NormalSizes = 'medium', auto: boolean): Butt
     mini: {
       height: '1.5rem',
       width: 'initial',
-      padding: '1.875rem',
+      padding: '1.375rem',
       fontSize: '.75rem',
-      minWidth: '6.25rem',
+      minWidth: '5.25rem',
     },
     small: {
       height: '2rem',

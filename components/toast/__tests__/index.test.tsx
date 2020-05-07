@@ -15,9 +15,9 @@ const MockToast: React.FC<{}> = () => {
     setToast(params)
   }
   return (
-    <button id="btn" onClick={clickHandler}>
+    <div id="btn" onClick={clickHandler}>
       btn
-    </button>
+    </div>
   )
 }
 
