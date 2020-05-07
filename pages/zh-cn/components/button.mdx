@@ -1,6 +1,9 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Button, Spacer } from 'components'
 import Router from 'next/router'
+import Settings from '@zeit-ui/react-icons/settings'
+import UserX from '@zeit-ui/react-icons/userX'
+import Power from '@zeit-ui/react-icons/power'
 
 export const meta = {
   title: '按钮 Button',
@@ -85,13 +88,33 @@ export const meta = {
 </>
 `} />
 
+<Playground
+  title="图标"
+  desc="按钮内的图标色彩和大小将会被自动设置。"
+  scope={{ Button, Spacer, Settings, UserX, Power }}
+  code={`
+<>
+  <Button iconRight={<Power />} auto size="small">关闭</Button>
+  <Spacer y={.5} />
+  <Button icon={<Settings />} auto>按钮</Button>
+  <Spacer y={.5} />
+  <Button icon={<Settings />} type="success" size="small">成功</Button>
+  <Spacer y={.5} />
+  <Button icon={<Settings />} type="secondary">成功</Button>
+  <Spacer y={.5} />
+  <Button icon={<UserX />} type="error" ghost>移除用户</Button>
+  <Spacer y={.5} />
+  <Button icon={<UserX />} disabled>移除用户</Button>
+</>
+`} />
+
 <Attributes edit="/pages/zh-cn/components/button.mdx">
 <Attributes.Title>Button.Props</Attributes.Title>
 
 | 属性 | 描述 | 类型 | 推荐值 | 默认
 | ---------- | ---------- | ---- | -------------- | ------ |
-| **type** | 按钮的类型 | `ButtonTypes` | `'default', 'secondary', 'success', 'warning', 'error', 'abort'` | `default` |
-| **size** | 按钮的大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **type** | 按钮的类型 | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
+| **size** | 按钮的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
 | **ghost** | 是否为反色按钮 | `boolean` | - | `false` |
 | **loading** | 是否显示加载中的指示器 | `boolean` | - | `false` |
 | **shadow** | 是否显示阴影 | `boolean` | - | `false` |
@@ -99,7 +122,21 @@ export const meta = {
 | **effect** | 是否显示动画效果 | `boolean` | - | `true` |
 | **disabled** | 是否禁用按钮 | `boolean` | - | `false` |
 | **onClick** | 点击事件 | `MouseEventHandler` | - | - |
-| ... | 原生属性 | `ButtonHTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| **icon** | 在按钮内显示图标 | `ReactNode` | - | - |
+| **iconRight** | 在按钮的另一侧显示图标 | `ReactNode` | - | - |
+| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>ButtonTypes</Attributes.Title>
+
+```ts
+type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
+```
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
 
 </Attributes>
 
