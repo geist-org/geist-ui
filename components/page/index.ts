@@ -6,5 +6,6 @@ import PageFooter from './page-footer'
 Page.Header = PageHeader
 Page.Content = PageContent
 Page.Footer = PageFooter
+Page.Body = PageContent
 
 export default Page

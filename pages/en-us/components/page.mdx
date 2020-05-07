@@ -3,7 +3,7 @@ import { Page, Button } from 'components'
 import MockPage from 'lib/components/displays/mock-page'
 
 export const meta = {
-  title: 'page',
+  title: 'Page',
   group: 'layout',
 }
 
@@ -70,6 +70,27 @@ Container of general for display page content.
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **size** | size of page | [PageSize](#pagesize) | - | `medium` |
 | **render** | render mode | [PageRenderMode](#pagerendermode) | - | `default` |
+| **dotBackdrop** | show decorations in the background | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Page.Header.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **center** | align center | `boolean` | - | `false` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title alias="Page.Body">Page.Content.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Page.Footer.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title>PageSize</Attributes.Title>
 

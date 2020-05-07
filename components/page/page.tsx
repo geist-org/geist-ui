@@ -107,6 +107,7 @@ const Page: React.FC<React.PropsWithChildren<NoteProps>> = ({
 type MemoPageComponent<P = {}> = React.NamedExoticComponent<P> & {
   Header: typeof PageHeader
   Content: typeof PageContent
+  Body: typeof PageContent
   Footer: typeof PageFooter
 }
 type ComponentProps = Partial<typeof defaultProps> &
