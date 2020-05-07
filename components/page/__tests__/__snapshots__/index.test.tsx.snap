@@ -1,0 +1,114 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page should render correctly 1`] = `
+"<section><main class=\\"\\">test-value<style>
+        main {
+          width: 100%;
+          padding: calc(16pt * 2.5) 0;
+        }
+      </style></main><style>
+        section {
+          width: 750pt;
+          max-width: 100vw;
+          min-height: 100vh;
+          margin: 0 auto;
+          box-sizing: border-box;
+          position: relative;
+        }
+
+        @media only screen and (max-width: 720px) {
+          section {
+            max-width: 90vw;
+            min-height: -webkit-fill-available;
+          }
+        }
+      </style></section>"
+`;
+
+exports[`Page should work with different size 1`] = `
+"<div><section><main class=\\"\\"><style>
+        main {
+          width: 100%;
+          padding: calc(16pt * 2.5) 0;
+        }
+      </style></main><style>
+        section {
+          width: calc(750pt - 180pt);
+          max-width: 100vw;
+          min-height: 100vh;
+          margin: 0 auto;
+          box-sizing: border-box;
+          position: relative;
+        }
+
+        @media only screen and (max-width: 720px) {
+          section {
+            max-width: 90vw;
+            min-height: -webkit-fill-available;
+          }
+        }
+      </style></section><section><main class=\\"\\"><style>
+        main {
+          width: 100%;
+          padding: calc(16pt * 2.5) 0;
+        }
+      </style></main><style>
+        section {
+          width: calc(750pt - 100pt);
+          max-width: 100vw;
+          min-height: 100vh;
+          margin: 0 auto;
+          box-sizing: border-box;
+          position: relative;
+        }
+
+        @media only screen and (max-width: 720px) {
+          section {
+            max-width: 90vw;
+            min-height: -webkit-fill-available;
+          }
+        }
+      </style></section><section><main class=\\"\\"><style>
+        main {
+          width: 100%;
+          padding: calc(16pt * 2.5) 0;
+        }
+      </style></main><style>
+        section {
+          width: calc(750pt + 100pt);
+          max-width: 100vw;
+          min-height: 100vh;
+          margin: 0 auto;
+          box-sizing: border-box;
+          position: relative;
+        }
+
+        @media only screen and (max-width: 720px) {
+          section {
+            max-width: 90vw;
+            min-height: -webkit-fill-available;
+          }
+        }
+      </style></section><section><main class=\\"\\"><style>
+        main {
+          width: 100%;
+          padding: calc(16pt * 2.5) 0;
+        }
+      </style></main><style>
+        section {
+          width: 100%;
+          max-width: 100vw;
+          min-height: 100vh;
+          margin: 0 auto;
+          box-sizing: border-box;
+          position: relative;
+        }
+
+        @media only screen and (max-width: 720px) {
+          section {
+            max-width: 90vw;
+            min-height: -webkit-fill-available;
+          }
+        }
+      </style></section></div>"
+`;
