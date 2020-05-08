@@ -10,7 +10,7 @@ describe('Link', () => {
         <Link href="https://react.zeit-ui.co" color>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" pure>
+        <Link href="https://react.zeit-ui.co" icon>
           link
         </Link>
         <Link href="https://react.zeit-ui.co" underline>

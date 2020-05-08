@@ -1,12 +1,14 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
+import useWarning from '../utils/use-warning'
 import LinkIcon from './icon'
 
 interface Props {
   href?: string
   color?: boolean
   pure?: boolean
+  icon?: boolean
   underline?: boolean
   block?: boolean
   className?: string
@@ -16,6 +18,7 @@ const defaultProps = {
   href: '',
   color: false,
   pure: false,
+  icon: false,
   underline: false,
   block: false,
   className: '',
@@ -26,18 +29,22 @@ export type LinkProps = Props & typeof defaultProps & NativeAttrs
 
 const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(
   (
-    { href, color, underline, pure, children, className, block, ...props },
+    { href, color, underline, pure, children, className, block, icon, ...props },
     ref: React.Ref<HTMLAnchorElement>,
   ) => {
     const theme = useTheme()
     const linkColor = color || block ? theme.palette.link : 'inherit'
+    const hoverColor = color || block ? theme.palette.successLight : 'inherit'
     const padding = block ? theme.layout.gapQuarter : '0'
     const decoration = underline ? 'underline' : 'none'
+    if (pure) {
+      useWarning('Props "pure" is deprecated, now the default Link is pure.')
+    }
 
     return (
       <a className={`link ${className}`} href={href} {...props} ref={ref}>
         {children}
-        {!pure && <LinkIcon color={linkColor} />}
+        {icon && <LinkIcon />}
         <style jsx>{`
           .link {
             display: inline-flex;
@@ -48,6 +55,7 @@ const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkPro
             padding: calc(${padding} * 0.8) calc(${padding} * 1.7);
             border-radius: ${block ? theme.layout.radius : 0};
             width: fit-content;
+            transition: color 200ms ease 0ms;
           }
 
           .link:hover,
@@ -58,6 +66,7 @@ const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkPro
 
           .link:hover {
             background-color: ${block ? '#0076ff1a' : 'unset'};
+            color: ${hoverColor};
           }
         `}</style>
       </a>
