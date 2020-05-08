@@ -2,7 +2,10 @@ import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import localResolve from 'rollup-plugin-local-resolve'
 import babel from 'rollup-plugin-babel'
-import pkg from './package.json'
+import fs from 'fs-extra'
+import path from 'path'
+const componentsPath = path.join(__dirname, 'components')
+const distPath = path.join(__dirname, 'dist')
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
 
@@ -26,31 +29,84 @@ const globals = {
   'react-dom': 'ReactDOM',
 }
 
-export default {
-  input: 'components/index.ts',
-  output: [
-    {
-      // file: pkg.main,
-      format: 'cjs',
-      exports: 'named',
-      dir: './dist',
-      globals,
-    },
-    // {
-    //   // file: 'dist/index.es.js',
-    //   format: 'es',
-    //   exports: 'named',
-    //   dir: 'dist',
-    //   globals,
-    // },
-    // {
-    //   file: pkg.browser,
-    //   format: 'umd',
-    //   exports: 'named',
-    //   globals,
-    //   name: 'ZeitUI',
-    // },
-  ],
-  external: id => /^react|react-dom|styled-jsx/.test(id),
-  plugins: plugins,
+const external = id => /^react|react-dom|styled-jsx|next\/link/.test(id)
+
+const cjsOutput = {
+  format: 'cjs',
+  exports: 'named',
+  entryFileNames: '[name]/index.js',
+  dir: 'dist',
+  globals,
 }
+
+export default (async () => {
+  await fs.remove(distPath)
+  const files = await fs.readdir(componentsPath)
+
+  const components = await Promise.all(
+    files.map(async name => {
+      const comPath = path.join(componentsPath, name)
+      const entry = path.join(comPath, 'index.ts')
+
+      const stat = await fs.stat(comPath)
+      if (!stat.isDirectory()) return null
+
+      const hasFile = await fs.pathExists(entry)
+      if (!hasFile) return null
+
+      return { name, url: entry }
+    }),
+  )
+
+  const makeConfig = (name, url) => ({
+    input: { [name]: url },
+    output: [
+      {
+        // file: 'dist/index.js',
+        format: 'cjs',
+        exports: 'named',
+        entryFileNames: '[name]/index.js',
+        dir: 'dist',
+        globals,
+      },
+      // {
+      //   // file: 'dist/index.es.js',
+      //   format: 'es',
+      //   exports: 'named',
+      //   dir: 'dist',
+      //   globals,
+      // },
+      // {
+      //   file: pkg.browser,
+      //   format: 'umd',
+      //   exports: 'named',
+      //   globals,
+      //   name: 'ZeitUI',
+      // },
+    ],
+    external,
+    plugins,
+  })
+
+  return [
+    ...components
+      .filter(r => r)
+      .map(({ name, url }) => ({
+        input: { [name]: url },
+        output: [cjsOutput],
+        external,
+        plugins,
+      })),
+    {
+      input: { index: path.join(componentsPath, 'index.ts') },
+      output: [
+        {
+          ...cjsOutput,
+          entryFileNames: 'index.js',
+        },
+      ],
+      external,
+      plugins,
+    },
+  ]
+})()
