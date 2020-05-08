@@ -126,6 +126,27 @@ export const meta = {
 }
 `} />
 
+<Playground
+  title="定制化"
+  desc="自定义 `width` 或是 `className`。"
+  scope={{ Modal, Button, useModal }}
+  code={`
+() => {
+  const { setVisible, bindings } = useModal()
+  return (
+    <div>
+      <Button auto onClick={() => setVisible(true)}>Show Modal</Button>
+      <Modal width="35rem" {...bindings}>
+        <Modal.Title>我的最爱</Modal.Title>
+        <Modal.Content>
+          <p>酷，这才是我想要的宽度。</p>
+        </Modal.Content>
+      </Modal>
+    </div>
+  )
+}
+`} />
+
 <Attributes edit="/pages/zh-cn/components/modal.mdx">
 <Attributes.Title>Modal.Props</Attributes.Title>
 
@@ -134,6 +155,8 @@ export const meta = {
 | **open** | 打开或关闭对话框 | `boolean` | - | `false` |
 | **onOpen** | 对话框打开的事件 | `() => void` | - | - |
 | **onClose** | 对话框关闭的事件 | `() => void` | - | - |
+| **width** | 对话框的宽度 | `string` | - | `26rem` |
+| **wrapClassName** | 对话框的自定义样式类名 | `string` | - | - |
 | **disableBackdropClick** | 点击背景层时是否关闭对话框  | `boolean` | - | `false` |
 | ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
 

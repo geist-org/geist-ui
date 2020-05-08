@@ -127,6 +127,28 @@ Display popup content that requires attention or provides additional information
 }
 `} />
 
+
+<Playground
+  title="Customizable"
+  desc="Custom `width` or `className`."
+  scope={{ Modal, Button, useModal }}
+  code={`
+() => {
+  const { setVisible, bindings } = useModal()
+  return (
+    <div>
+      <Button auto onClick={() => setVisible(true)}>Show Modal</Button>
+      <Modal width="35rem" {...bindings}>
+        <Modal.Title>My Favorites</Modal.Title>
+        <Modal.Content>
+          <p>This is the width I want.</p>
+        </Modal.Content>
+      </Modal>
+    </div>
+  )
+}
+`} />
+
 <Attributes edit="/pages/en-us/components/modal.mdx">
 <Attributes.Title>Modal.Props</Attributes.Title>
 
@@ -135,6 +157,8 @@ Display popup content that requires attention or provides additional information
 | **open** | open or close | `boolean` | - | `false` |
 | **onOpen** | open event | `() => void` | - | - |
 | **onClose** | open event | `() => void` | - | - |
+| **width** | width of the modal dialog | `string` | - | `26rem` |
+| **wrapClassName** | className of the modal dialog | `string` | - | - |
 | **disableBackdropClick** | click background and don't close  | `boolean` | - | `false` |
 | ... | native props | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
 
