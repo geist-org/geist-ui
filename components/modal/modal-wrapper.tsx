@@ -11,7 +11,6 @@ interface Props {
 
 const defaultProps = {
   className: '',
-  width: '26rem',
   visible: false,
 }
 

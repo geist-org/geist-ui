@@ -1,5 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Modal customization should be supported 1`] = `
+"<div class=\\"wrapper test-class  wrapper-enter\\"><h2 class=\\"\\">Modal</h2><style>
+        h2 {
+          font-size: 1.5rem;
+          line-height: 1.6;
+          font-weight: normal;
+          text-align: center;
+          margin: 0;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          word-break: break-word;
+          text-transform: capitalize;
+          color: #000;
+        }
+      </style><style>
+          .wrapper {
+            max-width: 85vw;
+            width: 100px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #000;
+            border-radius: 5px;
+            padding: 16pt;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            transform: translate3d(0px, -40px, 0px);
+            transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+              transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+          }
+
+          .wrapper-enter {
+            opacity: 0;
+            transform: translate3d(0px, -40px, 0px);
+          }
+
+          .wrapper-enter-active {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .wrapper-leave {
+            opacity: 1;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .wrapper-leave-active {
+            opacity: 0;
+            transform: translate3d(0px, -50px, 0px);
+          }
+        </style></div>"
+`;
+
 exports[`Modal should render correctly 1`] = `
 "<div class=\\"backdrop  transition-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper   wrapper-enter\\"><h2 class=\\"\\">Modal</h2><style>
         h2 {

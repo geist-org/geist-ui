@@ -17,9 +17,13 @@ interface Props {
   onClose?: () => void
   onOpen?: () => void
   open?: boolean
+  width?: string
+  wrapClassName?: string
 }
 
 const defaultProps = {
+  width: '26rem',
+  wrapClassName: '',
   disableBackdropClick: false,
 }
 
@@ -32,6 +36,8 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   onClose,
   onOpen,
   open,
+  width: wrapperWidth,
+  wrapClassName,
 }) => {
   const portal = usePortal('modal')
   const [, setBodyHidden] = useBodyScroll()
@@ -72,7 +78,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   return createPortal(
     <ModalContext.Provider value={modalConfig}>
       <Backdrop onClick={closeFromBackdrop} visible={visible} offsetY={25}>
-        <ModalWrapper visible={visible}>
+        <ModalWrapper visible={visible} className={wrapClassName} width={wrapperWidth}>
           {withoutActionsChildren}
           {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}
         </ModalWrapper>

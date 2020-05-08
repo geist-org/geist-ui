@@ -105,4 +105,16 @@ describe('Modal', () => {
     expectModalIsClosed(wrapper)
     expect(closeHandler).toHaveBeenCalled()
   })
+
+  it('customization should be supported', () => {
+    const wrapper = mount(
+      <Modal open={true} width="100px" wrapClassName="test-class">
+        <Modal.Title>Modal</Modal.Title>
+      </Modal>,
+    )
+    const html = wrapper.find('.wrapper').html()
+    expect(html).toMatchSnapshot()
+    expect(html).toContain('test-class')
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
