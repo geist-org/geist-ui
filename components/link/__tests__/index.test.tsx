@@ -10,7 +10,7 @@ describe('Link', () => {
         <Link href="https://react.zeit-ui.co" color>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" pure>
+        <Link href="https://react.zeit-ui.co" icon>
           link
         </Link>
         <Link href="https://react.zeit-ui.co" underline>
@@ -41,5 +41,13 @@ describe('Link', () => {
     expect(errorSpy).not.toHaveBeenCalled()
     expect(ref.current).not.toBeNull()
     expect(() => wrapper.unmount()).not.toThrow()
+    errorSpy.mockRestore()
+  })
+
+  it('an warning should be thrown when using the pure prop', () => {
+    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
+    mount(<Link pure />)
+    expect(errorSpy).toHaveBeenCalled()
+    errorSpy.mockRestore()
   })
 })

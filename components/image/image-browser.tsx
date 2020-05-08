@@ -47,7 +47,7 @@ const getAddressInput = (url: string, showFullLink: boolean, colors: BrowserColo
     <span className="https">
       <ImageBrowserHttpsIcon />
     </span>
-    <Link pure href={url} title={url} target="_blank">
+    <Link href={url} title={url} target="_blank">
       {showFullLink ? url : getHostFromUrl(url)}
     </Link>
     <style jsx>{`

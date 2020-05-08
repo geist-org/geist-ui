@@ -23,9 +23,7 @@ const VirtualAnchor: React.FC<React.PropsWithChildren<Props>> = ({ children, pur
 
   return (
     <span className="parent" ref={ref}>
-      <Link pure href={`#${id}`}>
-        {children}
-      </Link>
+      <Link href={`#${id}`}>{children}</Link>
       <span className="virtual" id={id} />
       {!pure && (
         <span className="icon">

@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Link, Text, Code } from 'components'
+import { Link, Text, Code, Spacer } from 'components'
 import NextLink from 'next/link'
 
 export const meta = {
@@ -32,10 +32,22 @@ export const meta = {
   scope={{ Link, Text }}
   code={`
 <>
-  <Text><Link href="#" pure>通过使用指南和教程来学习如何用 React</Link></Text>
-  <Text><Link href="#" color pure>通过使用指南和教程来学习如何用 React</Link></Text>
-  <Text><Link href="#" pure underline>通过使用指南和教程来学习如何用 React</Link></Text>
+  <Text><Link href="#">严格模式通过抛出错误来消除了一些原有静默错误</Link></Text>
+  <Text><Link href="#" color>严格模式通过抛出错误来消除了一些原有静默错误</Link></Text>
   <Text><Link href="#" underline>通过使用指南和教程来学习如何用 React</Link></Text>
+  <Text><Link href="#" underline>通过使用指南和教程来学习如何用 React</Link></Text>
+</>
+`} />
+
+<Playground
+  title="图标"
+  desc="在链接中显示修饰图标。"
+  scope={{ Link, Spacer }}
+  code={`
+<>
+  <Link href="#" icon>通过使用指南和教程来学习如何用 React</Link>
+  <Spacer y={.5} />
+  <Link href="#" icon color>通过使用指南和教程来学习如何用 React</Link>
 </>
 `} />
 
@@ -44,7 +56,7 @@ export const meta = {
   desc="将链接单独作为一个块显示。"
   scope={{ Link }}
   code={`
-<Link href="#" pure block>通过使用指南和教程来学习如何用 React</Link>
+<Link href="#" block>请参阅转换成严格模式</Link>
 `} />
 
 <Playground
@@ -53,7 +65,7 @@ export const meta = {
   scope={{ Link, NextLink }}
   code={`
 <NextLink href="/zh-cn/components/button">
-  <Link pure block>Docs of Button</Link>
+  <Link block>浏览更多文档</Link>
 </NextLink>
 `} />
 
@@ -64,7 +76,7 @@ export const meta = {
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **href** | 链接地址 | `string` | - | - |
 | **color** | 是否高亮显示 | `boolean` | - | `false` |
-| **pure** | 隐藏图标，仅显示文本 | `boolean` | - | `false` |
+| **icon** |  在文本后显示图标 | `boolean` | - | `false` |
 | **underline** | 显示下划线 | `boolean` | - | `false` |
 | **block** | 是否以块的方式显示链接 | `boolean` | - | `false` |
 | ... | 原生属性 | `AnchorHTMLAttributes` | `'rel', 'target', ...` | - |

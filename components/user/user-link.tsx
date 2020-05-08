@@ -18,7 +18,7 @@ const UserLink = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<Use
   ({ href, className, children, ...props }, ref: React.Ref<HTMLAnchorElement>) => {
     return (
       <div className={className} {...props}>
-        <Link ref={ref} href={href} pure color target="_blank" rel="noopener">
+        <Link ref={ref} href={href} color target="_blank" rel="noopener">
           {children}
         </Link>
         <style jsx>{`

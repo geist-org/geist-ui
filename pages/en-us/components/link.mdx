@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Link, Text, Code } from 'components'
+import { Link, Text, Code, Spacer } from 'components'
 import NextLink from 'next/link'
 
 export const meta = {
@@ -12,7 +12,6 @@ export const meta = {
 Hyperlinks between pages.
 
 <Playground
-  desc="The default component Link adds an icon to the link."
   scope={{ Link }}
   code={`
 <Link href="#">The Evil Rabbit Jumped over the Fence.</Link>
@@ -27,14 +26,27 @@ Hyperlinks between pages.
 `} />
 
 <Playground
+  title="With Icon"
+  desc="Show an icon in the link."
+  scope={{ Link, Spacer }}
+  code={`
+<>
+  <Link href="#" icon>The Evil Rabbit Jumped over the Fence.</Link>
+  <Spacer y={.5} />
+  <Link href="#" icon color>The Evil Rabbit Jumped over the Fence.</Link>
+</>
+`} />
+
+
+<Playground
   title="variant"
   desc="Different styles of links."
   scope={{ Link, Text }}
   code={`
 <>
-  <Text><Link href="#" pure>The Evil Rabbit Jumped over the Fence.</Link></Text>
-  <Text><Link href="#" color pure>The Evil Rabbit Jumped over the Fence.</Link></Text>
-  <Text><Link href="#" pure underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
+  <Text><Link href="#">The Evil Rabbit Jumped over the Fence.</Link></Text>
+  <Text><Link href="#" color>The Evil Rabbit Jumped over the Fence.</Link></Text>
+  <Text><Link href="#" underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
   <Text><Link href="#" underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
 </>
 `} />
@@ -44,7 +56,7 @@ Hyperlinks between pages.
   desc="Display as a separate block."
   scope={{ Link }}
   code={`
-<Link href="#" pure block>The Evil Rabbit Jumped over the Fence.</Link>
+<Link href="#" block>The Evil Rabbit Jumped over the Fence.</Link>
 `} />
 
 <Playground
@@ -53,7 +65,7 @@ Hyperlinks between pages.
   scope={{ Link, NextLink }}
   code={`
 <NextLink href="/en-us/components/button">
-  <Link pure block>Docs of Button</Link>
+  <Link block>Docs of Button</Link>
 </NextLink>
 `} />
 
@@ -64,7 +76,7 @@ Hyperlinks between pages.
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **href** | link url | `string` | - | - |
 | **color** | display color for link | `boolean` | - | `false` |
-| **pure** | hide icon | `boolean` | - | `false` |
+| **icon** | show icon | `boolean` | - | `false` |
 | **underline** | display underline | `boolean` | - | `false` |
 | **block** | display as a separate block | `boolean` | - | `false` |
 | ... | native props | `AnchorHTMLAttributes` | `'rel', 'target', ...` | - |

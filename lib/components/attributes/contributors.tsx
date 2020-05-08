@@ -46,13 +46,13 @@ const Contributors: React.FC<Props> = ({ path }) => {
     <div className="contributors">
       {users.map((user, index) => (
         <Tooltip text={<b>{user.name}</b>} key={`${user.url}-${index}`}>
-          <Link color pure target="_blank" rel="nofollow" href={user.url}>
+          <Link color target="_blank" rel="nofollow" href={user.url}>
             <Avatar src={user.avatar} />
           </Link>
         </Tooltip>
       ))}
       <Tooltip text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'} type="dark">
-        <Link color pure target="_blank" rel="nofollow" href={link}>
+        <Link color target="_blank" rel="nofollow" href={link}>
           <Avatar text="Add" />
         </Link>
       </Tooltip>
