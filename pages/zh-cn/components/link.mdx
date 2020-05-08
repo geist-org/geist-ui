@@ -1,6 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Link, Text, Code, Spacer } from 'components'
-import NextLink from 'next/link'
+import { Link, NextLink, Text, Code, Spacer } from 'components'
 
 export const meta = {
   title: '链接 Link',
@@ -60,12 +59,13 @@ export const meta = {
 `} />
 
 <Playground
-  title={<>与&nbsp;<Code>next/link</Code>&nbsp;组合</>}
-  desc="使用 `Link` 组件与 NextJS 组合使用不需要任何额外的配置。"
+  title={<>使用&nbsp;<Code>next/link</Code></>}
+  desc="`NextLink` 组件继承了 NextJS 的路由系统。"
   scope={{ Link, NextLink }}
   code={`
+// import { NextLink } from '@zeit-ui/react'
 <NextLink href="/zh-cn/components/button">
-  <Link block>浏览更多文档</Link>
+  浏览更多文档
 </NextLink>
 `} />
 
@@ -80,6 +80,22 @@ export const meta = {
 | **underline** | 显示下划线 | `boolean` | - | `false` |
 | **block** | 是否以块的方式显示链接 | `boolean` | - | `false` |
 | ... | 原生属性 | `AnchorHTMLAttributes` | `'rel', 'target', ...` | - |
+
+<Attributes.Title>NextLink.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **href** | NextJS 路由属性 | `string` / `UrlObject` | - | - |
+| **as** | NextJS 路由属性 | `string` / `UrlObject` | - | - |
+| **replace** | NextJS 路由属性 | `boolean` | - | `false` |
+| **scroll** | NextJS 路由属性 | `boolean` | - | `true` |
+| **shallow** | NextJS 路由属性 | `boolean` | - | `false` |
+| **passHref** | NextJS 路由属性 | `boolean` | - | `true` |
+| **prefetch** | NextJS 路由属性 | `boolean` | - | `true` |
+| **...** | Link 组件属性 | `LinkProps` | [LinkProps](#link.props) | - |
+
+<Spacer />
+<Link block target="_blank" href="https://nextjs.org/docs/api-reference/next/link">阅读 NextJS 路由系统详细属性</Link>
 
 </Attributes>
 

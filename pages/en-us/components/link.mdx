@@ -1,6 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Link, Text, Code, Spacer } from 'components'
-import NextLink from 'next/link'
+import { Link, Text, Code, Spacer, NextLink } from 'components'
 
 export const meta = {
   title: 'link',
@@ -61,11 +60,12 @@ Hyperlinks between pages.
 
 <Playground
   title={<>With <Code>next/link</Code></>}
-  desc="Use `Link` with NextJS without any configuration."
-  scope={{ Link, NextLink }}
+  desc="`Nextlink` allows you to use NextJS routing system."
+  scope={{ NextLink }}
   code={`
-<NextLink href="/en-us/components/button">
-  <Link block>Docs of Button</Link>
+// import { NextLink } from '@zeit-ui/react'
+<NextLink href="/en-us/components/button" block>
+  Docs of Button
 </NextLink>
 `} />
 
@@ -80,6 +80,22 @@ Hyperlinks between pages.
 | **underline** | display underline | `boolean` | - | `false` |
 | **block** | display as a separate block | `boolean` | - | `false` |
 | ... | native props | `AnchorHTMLAttributes` | `'rel', 'target', ...` | - |
+
+<Attributes.Title>NextLink.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **href** | NextJS props | `string` / `UrlObject` | - | - |
+| **as** | NextJS props | `string` / `UrlObject` | - | - |
+| **replace** | NextJS props | `boolean` | - | `false` |
+| **scroll** | NextJS props | `boolean` | - | `true` |
+| **shallow** | NextJS props | `boolean` | - | `false` |
+| **passHref** | NextJS props | `boolean` | - | `true` |
+| **prefetch** | NextJS props | `boolean` | - | `true` |
+| **...** | Link props | `LinkProps` | [LinkProps](#link.props) | - |
+
+<Spacer />
+<Link block target="_blank" href="https://nextjs.org/docs/api-reference/next/link">More about props of NextJS</Link>
 
 </Attributes>
 
