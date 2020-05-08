@@ -2,11 +2,7 @@ name: Publish
 
 on:
   release:
-    types:
-      - published
-  push:
-    tags:
-      - '*'
+    types: [created]
 
 jobs:
   build:
