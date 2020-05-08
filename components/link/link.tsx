@@ -14,7 +14,7 @@ interface Props {
   className?: string
 }
 
-const defaultProps = {
+export const defaultProps = {
   href: '',
   color: false,
   pure: false,
@@ -25,7 +25,8 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>
-export type LinkProps = Props & typeof defaultProps & NativeAttrs
+export type LinkInputs = Props & typeof defaultProps
+export type LinkProps = LinkInputs & NativeAttrs
 
 const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(
   (
