@@ -151,4 +151,12 @@ describe('Input', () => {
     wrapper.find('#test-icon').simulate('click', nativeEvent)
     expect(click).not.toHaveBeenCalled()
   })
+
+  // check ref is available: https://github.com/zeit-ui/react/issues/189
+  it('should forward ref by default', () => {
+    const ref = React.createRef<HTMLInputElement>()
+    const wrapper = mount(<Input ref={ref} />)
+    expect(ref.current).not.toBeNull()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
