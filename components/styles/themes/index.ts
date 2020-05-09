@@ -65,10 +65,24 @@ export interface ZeitUIThemesFont {
   mono: string
 }
 
+export interface BreakpointsItem {
+  min: string
+  max: string
+}
+
+export interface ZeitUIThemesBreakpoints {
+  xs: BreakpointsItem
+  sm: BreakpointsItem
+  md: BreakpointsItem
+  lg: BreakpointsItem
+  xl: BreakpointsItem
+}
+
 export interface ZeitUIThemes {
-  palette: ZeitUIThemesPalette
-  expressiveness: ZeitUIThemesExpressiveness
-  layout: ZeitUIThemesLayout
-  font: ZeitUIThemesFont
   type: ThemeTypes
+  font: ZeitUIThemesFont
+  layout: ZeitUIThemesLayout
+  palette: ZeitUIThemesPalette
+  breakpoints: ZeitUIThemesBreakpoints
+  expressiveness: ZeitUIThemesExpressiveness
 }
