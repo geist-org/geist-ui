@@ -1,4 +1,12 @@
-import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
+import React, {
+  PropsWithoutRef,
+  RefAttributes,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import useTheme from '../styles/use-theme'
 import InputLabel from './input-label'
 import InputBlockLabel from './input-block-label'
@@ -250,7 +258,9 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
   },
 )
 
-type InputComponent<P = {}> = React.ForwardRefExoticComponent<P> & {
+type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
+  PropsWithoutRef<P> & RefAttributes<T>
+> & {
   Textarea: typeof Textarea
   Password: typeof InputPassword
 }
@@ -260,4 +270,4 @@ type ComponentProps = Partial<typeof defaultProps> &
 
 Input.defaultProps = defaultProps
 
-export default Input as InputComponent<ComponentProps>
+export default Input as InputComponent<HTMLInputElement, ComponentProps>
