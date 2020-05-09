@@ -12,11 +12,12 @@ module.exports = {
   },
 
   testRegex: '.*\\.test\\.(j|t)sx?$',
-  // testRegex: 'fieldset\\/.*\\.test\\.(j|t)sx?$',
+  // testRegex: 'grid\\/.*\\.test\\.(j|t)sx?$',
 
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',
     '!components/**/styles.{ts,tsx}',
+    '!components/**/*types.{ts,tsx}',
     '!components/styles/*',
     '!components/index.ts',
     '!components/utils/*',

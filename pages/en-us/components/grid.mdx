@@ -1,0 +1,184 @@
+import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
+import { Grid, Card } from 'components'
+import PlaygroundTitle from 'lib/components/playground/title'
+
+export const meta = {
+  title: 'Grid',
+  group: 'layout',
+}
+
+## Grid
+
+Powerful fluid style layout container.
+
+The `Grid` component uses **dynamic CSS media query** to implement responsive layout, It has ultra-high preformance
+and very small size. Of course, it still supports dynamic props and custom breakpoints.
+
+<Playground
+  desc="Dynamically scale container width while maintaining spacing."
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '100px' }} />
+  }
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+    </Grid.Container>
+  )
+}
+`} />
+
+<Playground
+  title="Fluid layout"
+  desc="Containers for wrapping and scaling."
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '50px' }} />
+  }
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={24}><MockItem /></Grid>
+      <Grid xs={12}><MockItem /></Grid>
+      <Grid xs={12}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={12}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+    </Grid.Container>
+  )
+}
+`} />
+
+<Playground
+  title="Responsive layout"
+  desc="Use different layouts for different screen widths."
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '50px' }} />
+  }
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={24} md={12}><MockItem /></Grid>
+      <Grid xs={12} md={12}><MockItem /></Grid>
+      <Grid xs={12} md={6}><MockItem /></Grid>
+      <Grid xs={12} md={6}><MockItem /></Grid>
+      <Grid xs={12} md={6}><MockItem /></Grid>
+    </Grid.Container>
+  )
+}
+`} />
+
+<Playground
+  title="Auto width"
+  desc="Auto fill remaining width."
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '50px' }} />
+  }
+  return (
+    <>
+      <Grid.Container gap={2} justify="center">
+        <Grid xs><MockItem /></Grid>
+        <Grid xs><MockItem /></Grid>
+        <Grid xs><MockItem /></Grid>
+      </Grid.Container>
+      <Grid.Container gap={2} justify="center">
+        <Grid xs><MockItem /></Grid>
+        <Grid xs={12}><MockItem /></Grid>
+        <Grid xs><MockItem /></Grid>
+      </Grid.Container>
+    </>
+  )
+}
+`} />
+
+<PlaygroundTitle title="custom breakpoints" desc="Override the default breakpoints of the `@zeit-ui/react`." />
+
+```tsx
+const breakpoints: ZeitUIThemesBreakpoints = {
+  xs: { min: '0', max: '650px' },
+  sm: { min: '650px', max: '900px' },
+  md: { min: '900px', max: '1280px' },
+  lg: { min: '1280px', max: '1920px' },
+  xl: { min: '1920px', max: '10000px' },
+}
+
+const App = () => (
+  <ZEITUIProvider theme={{ breakpoints: breakpoints }}>
+    <CSSBaseline />
+    <AppComponent />
+  </ZEITUIProvider>
+)
+```
+
+<Attributes edit="/pages/en-us/components/grid.mdx">
+<Attributes.Title>Grid.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **justify** | CSS "justify-content" property | `Justify` | [Justify](#justify) | `flex-start` |
+| **alignItems** | CSS "align-items" property | `AlignItems` | [AlignItems](#alignitems) | `stretch` |
+| **alignContent** | CSS "align-content" property | `AlignContent` | [AlignContent](#aligncontent) | `flex-start` |
+| **direction** | CSS "flex-direction" property | `Direction` | [Direction](#direction) | `flex-start` |
+| **xs** | width of grid, for `xs` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
+| **sm** | width of grid, for `sm` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
+| **md** | width of grid, for `md` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
+| **lg** | width of grid, for `lg` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
+| **xl** | width of grid, for `xl` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+
+<Attributes.Title>Grid.Container.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **gap** | spacing of children | `number` / `float` | - | 0 |
+| **wrap** | CSS "flex-wrap" property | `Wrap` | [Wrap](#wrap) | `wrap` |
+| ... | Grid props | `Grid.Props` | [Grid.Props](#grid.props) | - |
+
+<Attributes.Title>Justify</Attributes.Title>
+
+```ts
+type Justify = 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
+```
+
+<Attributes.Title>AlignItems</Attributes.Title>
+
+```ts
+type AlignItems = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
+```
+
+<Attributes.Title>AlignContent</Attributes.Title>
+
+```ts
+type AlignContent = 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around'
+```
+
+<Attributes.Title>Direction</Attributes.Title>
+
+```ts
+type Direction = 'row' | 'row-reverse' | 'column' | 'column-reverse'
+```
+
+<Attributes.Title>Wrap</Attributes.Title>
+
+```ts
+type Wrap = 'nowrap' | 'wrap' | 'wrap-reverse'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

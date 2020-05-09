@@ -1,10 +1,5 @@
-import {
-  ZeitUIThemes,
-  ZeitUIThemesPalette,
-  ZeitUIThemesExpressiveness,
-  ZeitUIThemesLayout,
-  ZeitUIThemesFont,
-} from './index'
+import { ZeitUIThemes, ZeitUIThemesPalette, ZeitUIThemesExpressiveness } from './index'
+import { defaultFont, defaultBreakpoints, defaultLayout } from './shared'
 
 export const palette: ZeitUIThemesPalette = {
   /* eslint-disable @typescript-eslint/camelcase */
@@ -51,34 +46,19 @@ export const expressiveness: ZeitUIThemesExpressiveness = {
   portalOpacity: 0.75,
 }
 
-export const layout: ZeitUIThemesLayout = {
-  gap: '16pt',
-  gapNegative: '-16pt',
-  gapHalf: '8pt',
-  gapHalfNegative: '-8pt',
-  gapQuarter: '4pt',
-  gapQuarterNegative: '-4pt',
-  pageMargin: '16pt',
-  pageWidth: '750pt',
-  pageWidthWithMargin: '782pt',
-  breakpointMobile: '720px',
-  breakpointTablet: '960px',
-  radius: '5px',
-}
+export const font = defaultFont
 
-export const font: ZeitUIThemesFont = {
-  sans:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-  mono:
-    'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
-}
+export const breakpoints = defaultBreakpoints
+
+export const layout = defaultLayout
 
 export const themes: ZeitUIThemes = {
-  palette,
-  expressiveness,
-  layout,
-  font,
   type: 'dark',
+  font,
+  layout,
+  palette,
+  breakpoints,
+  expressiveness,
 }
 
 export default themes

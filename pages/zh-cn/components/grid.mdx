@@ -1,0 +1,184 @@
+import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
+import { Grid, Card } from 'components'
+import PlaygroundTitle from 'lib/components/playground/title'
+
+export const meta = {
+  title: '栅格 Grid',
+  group: '布局',
+}
+
+## Grid / 栅格
+
+强大的流体风格布局容器。
+
+`Grid` 组件使用 **动态 CSS 媒体查询** 实现响应式布局，同时具备超高的性能与极小的体积。
+当然，组件也支持动态属性与自定义断点。
+
+<Playground
+  desc="保持间距同时动态缩放容器宽度。"
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '100px' }} />
+  }
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+    </Grid.Container>
+  )
+}
+`} />
+
+<Playground
+  title="流体布局"
+  desc="容器的自动换行与缩放。"
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '50px' }} />
+  }
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={24}><MockItem /></Grid>
+      <Grid xs={12}><MockItem /></Grid>
+      <Grid xs={12}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+      <Grid xs={12}><MockItem /></Grid>
+      <Grid xs={6}><MockItem /></Grid>
+    </Grid.Container>
+  )
+}
+`} />
+
+<Playground
+  title="响应式布局"
+  desc="在不同屏幕宽度下自动使用不同布局方式。"
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '50px' }} />
+  }
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={24} md={12}><MockItem /></Grid>
+      <Grid xs={12} md={12}><MockItem /></Grid>
+      <Grid xs={12} md={6}><MockItem /></Grid>
+      <Grid xs={12} md={6}><MockItem /></Grid>
+      <Grid xs={12} md={6}><MockItem /></Grid>
+    </Grid.Container>
+  )
+}
+`} />
+
+<Playground
+  title="自动宽度"
+  desc="自动分配剩余宽度。"
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '50px' }} />
+  }
+  return (
+    <>
+      <Grid.Container gap={2} justify="center">
+        <Grid xs><MockItem /></Grid>
+        <Grid xs><MockItem /></Grid>
+        <Grid xs><MockItem /></Grid>
+      </Grid.Container>
+      <Grid.Container gap={2} justify="center">
+        <Grid xs><MockItem /></Grid>
+        <Grid xs={12}><MockItem /></Grid>
+        <Grid xs><MockItem /></Grid>
+      </Grid.Container>
+    </>
+  )
+}
+`} />
+
+<PlaygroundTitle title="定制断点" desc="您可以覆盖 `@zeit-ui/react` 组件库默认的断点值。" />
+
+```tsx
+const breakpoints: ZeitUIThemesBreakpoints = {
+  xs: { min: '0', max: '650px' },
+  sm: { min: '650px', max: '900px' },
+  md: { min: '900px', max: '1280px' },
+  lg: { min: '1280px', max: '1920px' },
+  xl: { min: '1920px', max: '10000px' },
+}
+
+const App = () => (
+  <ZEITUIProvider theme={{ breakpoints: breakpoints }}>
+    <CSSBaseline />
+    <AppComponent />
+  </ZEITUIProvider>
+)
+```
+
+<Attributes edit="/pages/zh-cn/components/grid.mdx">
+<Attributes.Title>Grid.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **justify** | CSS 属性 "justify-content" | `Justify` | [Justify](#justify) | `flex-start` |
+| **alignItems** | CSS 属性 "align-items" | `AlignItems` | [AlignItems](#alignitems) | `stretch` |
+| **alignContent** | CSS 属性 "align-content" | `AlignContent` | [AlignContent](#aligncontent) | `flex-start` |
+| **direction** | CSS 属性 "flex-direction" | `Direction` | [Direction](#direction) | `flex-start` |
+| **xs** | 栅格宽度，影响 `xs` 断点与更宽的屏幕 | `number` | `0 - 24`, `boolean` | `false` |
+| **sm** | 栅格宽度，影响 `sm` 断点与更宽的屏幕 | `number` | `0 - 24`, `boolean` | `false` |
+| **md** | 栅格宽度，影响 `md` 断点与更宽的屏幕 | `number` | `0 - 24`, `boolean` | `false` |
+| **lg** | 栅格宽度，影响 `lg` 断点与更宽的屏幕 | `number` | `0 - 24`, `boolean` | `false` |
+| **xl** | 栅格宽度，影响 `xl` 断点与更宽的屏幕 | `number` | `0 - 24`, `boolean` | `false` |
+| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+
+<Attributes.Title>Grid.Container.Props</Attributes.Title>
+
+| 属性 | 描述 | 类型 | 推荐值 | 默认
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **gap** | 子组件的间距 | `number` / `float` | - | 0 |
+| **wrap** | CSS 属性 "flex-wrap"，指定换行方式 | `Wrap` | [Wrap](#wrap) | `wrap` |
+| ... | 继承 Grid 的所有属性 | `Grid.Props` | [Grid.Props](#grid.props) | - |
+
+<Attributes.Title>Justify</Attributes.Title>
+
+```ts
+type Justify = 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
+```
+
+<Attributes.Title>AlignItems</Attributes.Title>
+
+```ts
+type AlignItems = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
+```
+
+<Attributes.Title>AlignContent</Attributes.Title>
+
+```ts
+type AlignContent = 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around'
+```
+
+<Attributes.Title>Direction</Attributes.Title>
+
+```ts
+type Direction = 'row' | 'row-reverse' | 'column' | 'column-reverse'
+```
+
+<Attributes.Title>Wrap</Attributes.Title>
+
+```ts
+type Wrap = 'nowrap' | 'wrap' | 'wrap-reverse'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
