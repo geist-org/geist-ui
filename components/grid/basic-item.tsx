@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
-import withDefaults from '../utils/with-defaults'
-import { Justify, Direction, AlignItems, AlignContent } from './grid-props'
+import { Justify, Direction, AlignItems, AlignContent } from './grid-types'
 
 type BreakpointsValue = number | boolean
 interface Props {
@@ -18,11 +17,11 @@ interface Props {
 }
 
 const defaultProps = {
-  xs: false,
-  sm: false,
-  md: false,
-  lg: false,
-  xl: false,
+  xs: false as BreakpointsValue,
+  sm: false as BreakpointsValue,
+  md: false as BreakpointsValue,
+  lg: false as BreakpointsValue,
+  xl: false as BreakpointsValue,
   className: '',
 }
 
@@ -36,11 +35,12 @@ type ItemLayoutValue = {
 }
 const getItemLayout = (val: BreakpointsValue): ItemLayoutValue => {
   if (typeof val === 'number') {
-    const widthRatio = `${(100 / 24) * val}%`
+    const width = (100 / 24) * val
+    const ratio = width > 100 ? '100%' : width < 0 ? '0' : `${width}%`
     return {
       grow: 0,
-      width: widthRatio,
-      basis: widthRatio,
+      width: ratio,
+      basis: ratio,
     }
   }
   return {
@@ -171,6 +171,11 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   )
 }
 
-const MemoBasicItem = React.memo(GridBasicItem)
+type MemoBasicItemComponent<P = {}> = React.NamedExoticComponent<P>
+export type GridBasicItemComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
 
-export default withDefaults(MemoBasicItem, defaultProps)
+GridBasicItem.defaultProps = defaultProps
+
+export default React.memo(GridBasicItem) as MemoBasicItemComponent<GridBasicItemComponentProps>

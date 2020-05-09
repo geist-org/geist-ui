@@ -1,0 +1,1472 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid all breakpoint values should be supported 1`] = `
+"<div class=\\"item xs sm md lg xl container \\"><div class=\\"item xs sm md lg xl gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 0;
+          max-width: 4.166666666666667%;
+          flex-basis: 4.166666666666667%;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 0;
+            max-width: 4.166666666666667%;
+            flex-basis: 4.166666666666667%;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 0;
+            max-width: 8.333333333333334%;
+            flex-basis: 8.333333333333334%;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 0;
+            max-width: 12.5%;
+            flex-basis: 12.5%;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 0;
+            max-width: 16.666666666666668%;
+            flex-basis: 16.666666666666668%;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 0;
+            max-width: 20.833333333333336%;
+            flex-basis: 20.833333333333336%;
+          }
+        }
+      </style></div><style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 0;
+          max-width: 4.166666666666667%;
+          flex-basis: 4.166666666666667%;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 0;
+            max-width: 4.166666666666667%;
+            flex-basis: 4.166666666666667%;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 0;
+            max-width: 8.333333333333334%;
+            flex-basis: 8.333333333333334%;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 0;
+            max-width: 12.5%;
+            flex-basis: 12.5%;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 0;
+            max-width: 16.666666666666668%;
+            flex-basis: 16.666666666666668%;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 0;
+            max-width: 20.833333333333336%;
+            flex-basis: 20.833333333333336%;
+          }
+        }
+      </style></div>"
+`;
+
+exports[`Grid css value should be passed through 1`] = `
+"<div class=\\"item justify direction alignItems alignContent container \\"><div class=\\"item justify direction alignItems alignContent gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: center;
+        }
+
+        .direction {
+          flex-direction: column;
+        }
+
+        .alignContent {
+          align-content: center;
+        }
+
+        .alignItems {
+          align-items: center;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: center;
+        }
+
+        .direction {
+          flex-direction: column;
+        }
+
+        .alignContent {
+          align-content: center;
+        }
+
+        .alignItems {
+          align-items: center;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div>"
+`;
+
+exports[`Grid decimal spacing should be supported 1`] = `
+"<div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0.11123 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div>"
+`;
+
+exports[`Grid nested components should be supported 1`] = `
+"<div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div>,<style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div>,<style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div>,<style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div>"
+`;
+
+exports[`Grid should render correctly 1`] = `
+"<div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><div class=\\"item  gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div>"
+`;
+
+exports[`Grid should work correctly when size exceeds 1`] = `
+"<div class=\\"item  container \\"><div class=\\"item xs gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 0;
+          max-width: 100%;
+          flex-basis: 100%;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 0;
+            max-width: 100%;
+            flex-basis: 100%;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><div class=\\"item xs gaid-item \\">test<style>
+        :global(.gaid-item) {
+          margin: 0;
+          box-sizing: border-box;
+          padding: var(--gaid-gap-unit);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 0;
+          max-width: 0;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 0;
+            max-width: 0;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><style>
+        :global(.container) {
+          --gaid-gap-unit: calc(0 * 4pt);
+          display: flex;
+          flex-wrap: wrap;
+          box-sizing: border-box;
+          margin: calc(-1 * var(--gaid-gap-unit));
+          width: calc(100% + var(--gaid-gap-unit) * 2);
+        }
+      </style><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div>"
+`;

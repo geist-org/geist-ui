@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
-import GridBasicItem, { GridBasicItemProps } from './basic-item'
-import { Wrap } from './grid-props'
+import GridBasicItem, { GridBasicItemComponentProps } from './basic-item'
+import { Wrap } from './grid-types'
 
 interface Props {
   gap: number
@@ -15,7 +15,7 @@ const defaultProps = {
   className: '',
 }
 
-export type GridContainerProps = Props & typeof defaultProps & GridBasicItemProps
+export type GridContainerProps = Props & typeof defaultProps & GridBasicItemComponentProps
 
 const GridContainer: React.FC<React.PropsWithChildren<GridContainerProps>> = ({
   gap,
@@ -49,7 +49,7 @@ const GridContainer: React.FC<React.PropsWithChildren<GridContainerProps>> = ({
 type MemoGridContainerComponent<P = {}> = React.NamedExoticComponent<P>
 type ComponentProps = Partial<typeof defaultProps> &
   Omit<Props, keyof typeof defaultProps> &
-  GridBasicItemProps
+  GridBasicItemComponentProps
 
 GridContainer.defaultProps = defaultProps
 

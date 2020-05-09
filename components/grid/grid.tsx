@@ -1,7 +1,6 @@
 import React from 'react'
 import GridContainer from './grid-container'
-import GridBasicItem, { GridBasicItemProps } from './basic-item'
-// import { tuple } from '../utils/prop-types'
+import GridBasicItem, { GridBasicItemComponentProps } from './basic-item'
 
 interface Props {
   className: string
@@ -11,7 +10,7 @@ const defaultProps = {
   className: '',
 }
 
-export type GridProps = Props & typeof defaultProps & GridBasicItemProps
+export type GridProps = Props & typeof defaultProps & GridBasicItemComponentProps
 
 const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({ children, className, ...props }) => {
   return (
@@ -33,7 +32,7 @@ type MemoGridComponent<P = {}> = React.NamedExoticComponent<P> & {
 }
 type ComponentProps = Partial<typeof defaultProps> &
   Omit<Props, keyof typeof defaultProps> &
-  GridBasicItemProps
+  GridBasicItemComponentProps
 
 Grid.defaultProps = defaultProps
 
