@@ -58,6 +58,10 @@ const Playground: React.FC<PlaygroundProps> = React.memo(
               flex-direction: column;
               box-sizing: border-box;
             }
+
+            .wrapper > :global(div) {
+              width: 100%;
+            }
           `}</style>
         </div>
       </>
