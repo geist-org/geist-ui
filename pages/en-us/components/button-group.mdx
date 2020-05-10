@@ -1,0 +1,47 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, Spacer, ButtonGroup } from 'components'
+
+export const meta = {
+  title: 'Button-Group',
+  group: 'Data Entry',
+}
+
+## Button Group
+
+A set of related buttons.
+
+<Playground
+  title="Basic"
+  scope={{ Button, ButtonGroup }}
+  code={`
+<ButtonGroup ghost type="success">
+  <Button >Action</Button>
+  <span />
+  <Button >Action</Button>
+</ButtonGroup>
+`} />
+
+<Attributes edit="/pages/en-us/components/button-group.mdx">
+<Attributes.Title>Button.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | button type | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
+| **size** | button size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
+| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>ButtonTypes</Attributes.Title>
+
+```ts
+type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
+```
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

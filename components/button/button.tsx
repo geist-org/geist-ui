@@ -1,10 +1,11 @@
 import React, { useRef, useState, MouseEvent, useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
-import { ButtonTypes, NormalSizes } from '../utils/prop-types'
+import withDefaults from '../utils/with-defaults'
 import ButtonDrip from './button.drip'
 import ButtonLoading from '../loading'
-import ButtonIcon from './button-icon'
+import { ButtonTypes, NormalSizes } from '../utils/prop-types'
+import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
+import { useButtonGroupContext } from '../button-group/button-group-context'
 import { getButtonColors, getButtonCursor, getButtonHoverColors, getButtonSize } from './styles'
 
 interface Props {
@@ -37,27 +38,30 @@ const defaultProps = {
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ButtonProps = Props & typeof defaultProps & NativeAttrs
 
-const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
-  children,
-  disabled,
-  type,
-  loading,
-  shadow,
-  ghost,
-  effect,
-  onClick,
-  auto,
-  size,
-  icon,
-  iconRight,
-  className,
-  ...props
-}) => {
+const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({ ...btnProps }) => {
   const theme = useTheme()
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [dripShow, setDripShow] = useState<boolean>(false)
   const [dripX, setDripX] = useState<number>(0)
   const [dripY, setDripY] = useState<number>(0)
+  const groupConfig = useButtonGroupContext()
+  const {
+    children,
+    disabled,
+    type,
+    loading,
+    shadow,
+    ghost,
+    effect,
+    onClick,
+    auto,
+    size,
+    icon,
+    iconRight,
+    className,
+    ...props
+  } = filterPropsWithGroup(btnProps, groupConfig)
+
   const { bg, border, color } = useMemo(() => getButtonColors(theme, type, disabled, ghost), [
     theme,
     type,
@@ -99,35 +103,19 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
     onClick && onClick(event)
   }
 
-  const childrenWithIcon = useMemo(() => {
-    const hasIcon = icon || iconRight
-    const isRight = Boolean(iconRight)
-    const paddingForAutoMode =
-      auto || size === 'mini'
-        ? `calc(var(--zeit-ui-button-height) / 2 + var(--zeit-ui-button-padding) * .5)`
-        : 0
-    if (!hasIcon) return <div className="text">{children}</div>
-    return (
-      <>
-        <ButtonIcon isRight={isRight}>{hasIcon}</ButtonIcon>
-        <div className={`text ${isRight ? 'right' : 'left'}`}>
-          {children}
-          <style jsx>{`
-            .left {
-              padding-left: ${paddingForAutoMode};
-            }
-            .right {
-              padding-right: ${paddingForAutoMode};
-            }
-          `}</style>
-        </div>
-      </>
-    )
-  }, [children, icon, auto, size])
+  const childrenWithIcon = useMemo(
+    () =>
+      getButtonChildrenWithIcon(auto, size, children, {
+        icon,
+        iconRight,
+      }),
+    [auto, size, children, icon, iconRight],
+  )
 
   return (
     <button
       ref={buttonRef}
+      type="button"
       className={`btn ${className}`}
       disabled={disabled}
       onClick={clickHandler}
@@ -159,7 +147,8 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease 0s;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms;
           position: relative;
           overflow: hidden;
           color: ${color};
