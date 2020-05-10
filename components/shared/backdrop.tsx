@@ -25,7 +25,6 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
     }, [])
     const childrenClickHandler = useCallback((event: MouseEvent<HTMLElement>) => {
       event.stopPropagation()
-      event.preventDefault()
     }, [])
 
     return (
