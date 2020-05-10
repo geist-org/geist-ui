@@ -10,7 +10,7 @@ const useInput = (
   reset: () => void
   bindings: {
     value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+    onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
   }
 } => {
   const [state, setState, currentRef] = useCurrentState<string>(initialValue)
@@ -22,7 +22,7 @@ const useInput = (
     reset: () => setState(initialValue),
     bindings: {
       value: state,
-      onChange: (event: React.ChangeEvent<HTMLInputElement>) => {
+      onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setState(event.target.value)
       },
     },
