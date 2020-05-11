@@ -61,7 +61,7 @@ describe('UseToast', () => {
 
     expectToastIsHidden(wrapper)
     triggerToast(wrapper, { type: 'success', text: 'hello' })
-    await updateWrapper(wrapper)
+    await updateWrapper(wrapper, 100)
     expectToastIsShow(wrapper)
     expect(wrapper.find('.toast-container').html()).toMatchSnapshot()
   })

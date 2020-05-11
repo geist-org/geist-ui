@@ -61,21 +61,23 @@ const getColors = (palette: ZeitUIThemesPalette, type?: NormalTypes) => {
 
 const ToastItem: React.FC<ToatItemProps> = React.memo(({ index, total, toast, onHover }) => {
   const theme = useTheme()
-  const { color, bgColor } = getColors(theme.palette, toast.type)
+  const { color, bgColor } = useMemo(() => getColors(theme.palette, toast.type), [
+    theme.palette,
+    toast.type,
+  ])
   const [visible, setVisible] = useState<boolean>(false)
   const [hide, setHide] = useState<boolean>(false)
-
   const reverseIndex = useMemo(() => total - (index + 1), [total, index])
   const translate = useMemo(() => {
     const calc = `100% + -75px + -${20 * reverseIndex}px`
-    if (reverseIndex > 5) return `translate3d(0, -75px, -${reverseIndex}px) scale(.01)`
+    if (reverseIndex >= 4) return `translate3d(0, -75px, -${reverseIndex}px) scale(.7)`
     if (onHover) {
       return `translate3d(0, ${reverseIndex * -75}px, -${reverseIndex}px) scale(${
         total === 1 ? 1 : 0.98205
       })`
     }
     return `translate3d(0, calc(${calc}), -${reverseIndex}px) scale(${1 - 0.05 * reverseIndex})`
-  }, [onHover, index, total])
+  }, [onHover, index, total, reverseIndex])
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -98,6 +100,8 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({ index, total, toast, on
       clearTimeout(timer)
     }
   }, [reverseIndex, toast.willBeDestroy])
+  /* istanbul ignore next */
+  if (reverseIndex > 10) return null
 
   return (
     <div
@@ -119,13 +123,13 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({ index, total, toast, on
           border: 0;
           border-radius: ${theme.layout.radius};
           padding: ${theme.layout.gap};
-          box-shadow: ${theme.expressiveness.shadowSmall};
           position: absolute;
           bottom: 0;
           right: 0;
-          opacity: 0;
+          opacity: ${reverseIndex > 4 ? 0 : 1};
+          box-shadow: ${reverseIndex > 4 ? 'none' : theme.expressiveness.shadowSmall};
           transform: translate3d(0, 100%, 0px) scale(1);
-          transition: all 400ms ease;
+          transition: transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms;
         }
 
         .toast.visible {

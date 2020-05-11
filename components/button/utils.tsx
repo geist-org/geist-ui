@@ -11,7 +11,7 @@ export const getButtonChildrenWithIcon = (
   icons: {
     icon?: React.ReactNode
     iconRight?: React.ReactNode
-  } = {},
+  },
 ) => {
   const { icon, iconRight } = icons
   const hasIcon = icon || iconRight
