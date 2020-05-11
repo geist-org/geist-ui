@@ -1,0 +1,116 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, Spacer, ButtonGroup } from 'components'
+
+export const meta = {
+  title: 'Button-Group',
+  group: 'Data Entry',
+}
+
+## Button Group
+
+A set of related buttons.
+
+<Playground
+  title="Basic"
+  scope={{ Button, ButtonGroup }}
+  code={`
+<ButtonGroup>
+  <Button>One</Button>
+  <Button>Two</Button>
+  <Button>Three</Button>
+</ButtonGroup>
+`} />
+
+<Playground
+  title="Variant"
+  desc="set the type or styles of all buttons in the group."
+  scope={{ Button, ButtonGroup }}
+  code={`
+<>
+  <ButtonGroup type="success">
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup type="abort">
+    <Button>Action1</Button>
+    <Button>Action2</Button>
+  </ButtonGroup>
+  <ButtonGroup type="warning" ghost>
+    <Button>Action1</Button>
+    <Button>Action2</Button>
+  </ButtonGroup>
+</>
+`} />
+
+<Playground
+  title="Sizes"
+  scope={{ Button, ButtonGroup }}
+  code={`
+<>
+  <ButtonGroup size="small">
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup size="mini">
+    <Button>Action1</Button>
+    <Button>Action2</Button>
+  </ButtonGroup>
+</>
+`} />
+
+<Playground
+  title="Vertical"
+  scope={{ Button, ButtonGroup }}
+  code={`
+<>
+  <ButtonGroup size="small" vertical>
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+    <Button>Four</Button>
+  </ButtonGroup>
+</>
+`} />
+
+<Playground
+  title="Disabled"
+  desc="disable all buttons in the group."
+  scope={{ Button, ButtonGroup }}
+  code={`
+<>
+  <ButtonGroup size="small" disabled>
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
+</>
+`} />
+<Attributes edit="/pages/en-us/components/button-group.mdx">
+<Attributes.Title>ButtonGroup.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **type** | button type | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
+| **size** | button size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
+| **ghost** | the opposite color | `boolean` | - | `false` |
+| **vertical** | show all buttons vertically | `boolean` | - | `false` |
+| **disabled** | disable all buttons | `boolean` | - | `false` |
+| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>ButtonTypes</Attributes.Title>
+
+```ts
+type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
+```
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

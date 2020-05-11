@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UseToast should render different actions 1`] = `
-"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button class=\\"btn \\"><div class=\\"text\\">remove</div><style>
+"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">remove</div><style>
         .btn {
           box-sizing: border-box;
           display: inline-block;
@@ -19,7 +19,8 @@ exports[`UseToast should render different actions 1`] = `
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease 0s;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms;
           position: relative;
           overflow: hidden;
           color: #fff;
@@ -60,7 +61,7 @@ exports[`UseToast should render different actions 1`] = `
         .btn :global(.text div) {
           margin: 0;
         }
-      </style></button><button class=\\"btn \\"><div class=\\"text\\">remove</div><style>
+      </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">remove</div><style>
         .btn {
           box-sizing: border-box;
           display: inline-block;
@@ -78,7 +79,8 @@ exports[`UseToast should render different actions 1`] = `
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease 0s;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms;
           position: relative;
           overflow: hidden;
           color: #666;
@@ -133,13 +135,13 @@ exports[`UseToast should render different actions 1`] = `
           border: 0;
           border-radius: 5px;
           padding: 16pt;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           position: absolute;
           bottom: 0;
           right: 0;
-          opacity: 0;
+          opacity: 1;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           transform: translate3d(0, 100%, 0px) scale(1);
-          transition: all 400ms ease;
+          transition: transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms;
         }
 
         .toast.visible {
@@ -191,7 +193,7 @@ exports[`UseToast should render different actions 1`] = `
 `;
 
 exports[`UseToast should work with different types 1`] = `
-"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"></div><style>
+"<div class=\\"toast-container \\"><div class=\\"toast visible \\"><div class=\\"message\\">hello</div><div class=\\"action\\"></div><style>
         .toast {
           width: 420px;
           max-width: 90vw;
@@ -205,13 +207,13 @@ exports[`UseToast should work with different types 1`] = `
           border: 0;
           border-radius: 5px;
           padding: 16pt;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           position: absolute;
           bottom: 0;
           right: 0;
-          opacity: 0;
+          opacity: 1;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
           transform: translate3d(0, 100%, 0px) scale(1);
-          transition: all 400ms ease;
+          transition: transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms;
         }
 
         .toast.visible {
