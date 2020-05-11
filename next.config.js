@@ -21,14 +21,7 @@ const nextConfig = {
     VERSION: require('./package.json').version,
   },
 
-  webpack(config) {
-    config.resolve.modules.push(__dirname)
-    return config
-  },
-
   experimental: {
-    reactRefresh: true,
-
     redirects() {
       return [
         {
