@@ -2,16 +2,16 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Button, Spacer, ButtonGroup } from 'components'
 
 export const meta = {
-  title: 'Button-Group',
-  group: 'Data Entry',
+  title: '按钮组 Button-Group',
+  group: '数据录入',
 }
 
-## Button Group
+## Button Group / 按钮组
 
-A set of related buttons.
+展示一组具备相关性的按钮。
 
 <Playground
-  title="Basic"
+  title="基础"
   scope={{ Button, ButtonGroup }}
   code={`
 <ButtonGroup>
@@ -22,8 +22,8 @@ A set of related buttons.
 `} />
 
 <Playground
-  title="Variant"
-  desc="set the type or styles of all buttons in the group."
+  title="变体"
+  desc="设置组内所有按钮的类型或样式。"
   scope={{ Button, ButtonGroup }}
   code={`
 <>
@@ -44,7 +44,7 @@ A set of related buttons.
 `} />
 
 <Playground
-  title="Sizes"
+  title="大小"
   scope={{ Button, ButtonGroup }}
   code={`
 <>
@@ -61,7 +61,7 @@ A set of related buttons.
 `} />
 
 <Playground
-  title="Vertical"
+  title="垂直的"
   scope={{ Button, ButtonGroup }}
   code={`
 <>
@@ -75,8 +75,8 @@ A set of related buttons.
 `} />
 
 <Playground
-  title="Disabled"
-  desc="disable all buttons in the group."
+  title="禁用"
+  desc="禁用组内所有的按钮。"
   scope={{ Button, ButtonGroup }}
   code={`
 <>
@@ -87,17 +87,17 @@ A set of related buttons.
   </ButtonGroup>
 </>
 `} />
-<Attributes edit="/pages/en-us/components/button-group.mdx">
+<Attributes edit="/pages/zh-cn/components/button-group.mdx">
 <Attributes.Title>ButtonGroup.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
+| 属性 | 描述 | 类型 | 推荐值 | 默认
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | button type | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
-| **size** | button size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **ghost** | the opposite color | `boolean` | - | `false` |
-| **vertical** | show all buttons vertically | `boolean` | - | `false` |
-| **disabled** | disable all buttons | `boolean` | - | `false` |
-| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| **type** |  按钮类型 | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
+| **size** | 按钮大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
+| **ghost** | 相反色彩模式的按钮 | `boolean` | - | `false` |
+| **vertical** | 以垂直方式显示所有按钮 | `boolean` | - | `false` |
+| **disabled** | 是否禁用所有按钮 | `boolean` | - | `false` |
+| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
 
