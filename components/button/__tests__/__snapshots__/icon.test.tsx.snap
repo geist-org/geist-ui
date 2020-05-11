@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonIcon should render correctly 1`] = `
-"<button class=\\"btn \\"><span class=\\"icon  \\"><svg></svg><style>
+"<button type=\\"button\\" class=\\"btn \\"><span class=\\"icon  \\"><svg></svg><style>
         .icon {
           position: absolute;
           left: var(--zeit-ui-button-padding);
@@ -26,13 +26,13 @@ exports[`ButtonIcon should render correctly 1`] = `
           width: calc(var(--zeit-ui-button-height) / 2.35);
         }
       </style></span><div class=\\"text left\\">action<style>
-            .left {
-              padding-left: 0;
-            }
-            .right {
-              padding-right: 0;
-            }
-          </style></div><style>
+          .left {
+            padding-left: 0;
+          }
+          .right {
+            padding-right: 0;
+          }
+        </style></div><style>
         .btn {
           box-sizing: border-box;
           display: inline-block;
@@ -50,7 +50,8 @@ exports[`ButtonIcon should render correctly 1`] = `
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease 0s;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms;
           position: relative;
           overflow: hidden;
           color: #666;
@@ -95,7 +96,7 @@ exports[`ButtonIcon should render correctly 1`] = `
 `;
 
 exports[`ButtonIcon should work with right 1`] = `
-"<button class=\\"btn \\"><span class=\\"icon right \\"><svg></svg><style>
+"<button type=\\"button\\" class=\\"btn \\"><span class=\\"icon right \\"><svg></svg><style>
         .icon {
           position: absolute;
           left: var(--zeit-ui-button-padding);
@@ -120,13 +121,13 @@ exports[`ButtonIcon should work with right 1`] = `
           width: calc(var(--zeit-ui-button-height) / 2.35);
         }
       </style></span><div class=\\"text right\\">action<style>
-            .left {
-              padding-left: 0;
-            }
-            .right {
-              padding-right: 0;
-            }
-          </style></div><style>
+          .left {
+            padding-left: 0;
+          }
+          .right {
+            padding-right: 0;
+          }
+        </style></div><style>
         .btn {
           box-sizing: border-box;
           display: inline-block;
@@ -144,7 +145,8 @@ exports[`ButtonIcon should work with right 1`] = `
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease 0s;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms;
           position: relative;
           overflow: hidden;
           color: #666;

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UseToast should render different actions 1`] = `
-"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button class=\\"btn \\"><div class=\\"text\\">remove</div><style>
+"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">remove</div><style>
         .btn {
           box-sizing: border-box;
           display: inline-block;
@@ -19,7 +19,8 @@ exports[`UseToast should render different actions 1`] = `
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease 0s;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms;
           position: relative;
           overflow: hidden;
           color: #fff;
@@ -60,7 +61,7 @@ exports[`UseToast should render different actions 1`] = `
         .btn :global(.text div) {
           margin: 0;
         }
-      </style></button><button class=\\"btn \\"><div class=\\"text\\">remove</div><style>
+      </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">remove</div><style>
         .btn {
           box-sizing: border-box;
           display: inline-block;
@@ -78,7 +79,8 @@ exports[`UseToast should render different actions 1`] = `
           justify-content: center;
           text-align: center;
           white-space: nowrap;
-          transition: all 0.2s ease 0s;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms;
           position: relative;
           overflow: hidden;
           color: #666;
