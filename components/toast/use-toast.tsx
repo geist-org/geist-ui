@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect } from 'react'
 import { NormalTypes } from '../utils/prop-types'
 import useCurrentState from '../utils/use-current-state'
 import { useZEITUIContext } from '../utils/use-zeit-ui-context'
@@ -22,31 +22,32 @@ const defaultToast = {
   delay: 2000,
 }
 
+let destoryStack: Array<string> = []
+let maxDestoryTime: number = 0
+let destoryTimer: number | undefined
+
 const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
   const { updateToasts, toastHovering, toasts } = useZEITUIContext()
-  const destoryStack = useRef<Array<string>>([])
-  const destoryTimer = useRef<number | undefined>()
-  const maxDestoryTime = useRef<number>(0)
   const [, setHovering, hoveringRef] = useCurrentState<boolean>(toastHovering)
 
   useEffect(() => setHovering(toastHovering), [toastHovering])
 
   const destoryAll = (delay: number, time: number) => {
     /* istanbul ignore next */
-    if (time <= maxDestoryTime.current) return
-    clearTimeout(destoryTimer.current)
-    maxDestoryTime.current = time
+    if (time <= maxDestoryTime) return
+    clearTimeout(destoryTimer)
+    maxDestoryTime = time
 
-    destoryTimer.current = window.setTimeout(() => {
+    destoryTimer = window.setTimeout(() => {
       /* istanbul ignore next */
       updateToasts((currentToasts: Array<ToastWithID>) => {
-        if (destoryStack.current.length < currentToasts.length) {
+        if (destoryStack.length < currentToasts.length) {
           return currentToasts
         }
-        destoryStack.current = []
+        destoryStack = []
         return []
       })
-      clearTimeout(destoryTimer.current)
+      clearTimeout(destoryTimer)
     }, delay + 350)
   }
 
@@ -61,7 +62,7 @@ const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
           return { ...item, willBeDestroy: true }
         })
       })
-      destoryStack.current.push(id)
+      destoryStack.push(id)
       destoryAll(delay, performance.now())
     }
 
