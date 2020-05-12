@@ -1,4 +1,5 @@
 import React from 'react'
+import css from 'styled-jsx/css'
 import GridContainer from './grid-container'
 import GridBasicItem, { GridBasicItemComponentProps } from './basic-item'
 
@@ -13,16 +14,15 @@ const defaultProps = {
 export type GridProps = Props & typeof defaultProps & GridBasicItemComponentProps
 
 const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({ children, className, ...props }) => {
+  const { className: resolveClassName, styles } = css.resolve`
+    margin: 0;
+    box-sizing: border-box;
+    padding: var(--gaid-gap-unit);
+  `
   return (
-    <GridBasicItem className={`gaid-item ${className}`} {...props}>
+    <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
       {children}
-      <style jsx>{`
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      `}</style>
+      {styles}
     </GridBasicItem>
   )
 }
