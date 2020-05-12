@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
 import GridBasicItem, { GridBasicItemComponentProps } from './basic-item'
 import { Wrap } from './grid-types'
+import css from 'styled-jsx/css'
 
 interface Props {
   gap: number
@@ -28,20 +29,19 @@ const GridContainer: React.FC<React.PropsWithChildren<GridContainerProps>> = ({
   const gapUnit = useMemo(() => {
     return `calc(${gap} * ${theme.layout.gapQuarter})`
   }, [gap, theme.layout.gapQuarter])
+  const { className: resolveClassName, styles } = css.resolve`
+    --gaid-gap-unit: ${gapUnit};
+    display: flex;
+    flex-wrap: ${wrap};
+    box-sizing: border-box;
+    margin: calc(-1 * var(--gaid-gap-unit));
+    width: calc(100% + var(--gaid-gap-unit) * 2);
+  `
 
   return (
-    <GridBasicItem className={`container ${className}`} {...props}>
+    <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
       {children}
-      <style jsx>{`
-        :global(.container) {
-          --gaid-gap-unit: ${gapUnit};
-          display: flex;
-          flex-wrap: ${wrap};
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      `}</style>
+      {styles}
     </GridBasicItem>
   )
 }

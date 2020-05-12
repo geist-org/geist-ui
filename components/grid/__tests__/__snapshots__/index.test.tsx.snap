@@ -1,13 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid all breakpoint values should be supported 1`] = `
-"<div class=\\"item xs sm md lg xl container \\"><div class=\\"item xs sm md lg xl gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+"<div class=\\"item xs sm md lg xl mock \\"><div class=\\"item xs sm md lg xl mock \\">test<style>
         .item {
         }
 
@@ -73,15 +67,6 @@ exports[`Grid all breakpoint values should be supported 1`] = `
           }
         }
       </style></div><style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
@@ -150,13 +135,7 @@ exports[`Grid all breakpoint values should be supported 1`] = `
 `;
 
 exports[`Grid css value should be passed through 1`] = `
-"<div class=\\"item justify direction alignItems alignContent container \\"><div class=\\"item justify direction alignItems alignContent gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+"<div class=\\"item justify direction alignItems alignContent mock \\"><div class=\\"item justify direction alignItems alignContent mock \\">test<style>
         .item {
         }
 
@@ -222,15 +201,6 @@ exports[`Grid css value should be passed through 1`] = `
           }
         }
       </style></div><style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
@@ -299,13 +269,7 @@ exports[`Grid css value should be passed through 1`] = `
 `;
 
 exports[`Grid decimal spacing should be supported 1`] = `
-"<div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+"<div class=\\"item  mock \\"><div class=\\"item  mock \\">test<style>
         .item {
         }
 
@@ -371,15 +335,6 @@ exports[`Grid decimal spacing should be supported 1`] = `
           }
         }
       </style></div><style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0.11123 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
@@ -448,13 +403,7 @@ exports[`Grid decimal spacing should be supported 1`] = `
 `;
 
 exports[`Grid nested components should be supported 1`] = `
-"<div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+"<div class=\\"item  mock \\"><div class=\\"item  mock \\">test<style>
         .item {
         }
 
@@ -519,13 +468,7 @@ exports[`Grid nested components should be supported 1`] = `
             flex-basis: 0;
           }
         }
-      </style></div><div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+      </style></div><div class=\\"item  mock \\"><div class=\\"item  mock \\">test<style>
         .item {
         }
 
@@ -590,13 +533,7 @@ exports[`Grid nested components should be supported 1`] = `
             flex-basis: 0;
           }
         }
-      </style></div><div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+      </style></div><div class=\\"item  mock \\"><div class=\\"item  mock \\">test<style>
         .item {
         }
 
@@ -661,13 +598,7 @@ exports[`Grid nested components should be supported 1`] = `
             flex-basis: 0;
           }
         }
-      </style></div><div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+      </style></div><div class=\\"item  mock \\"><div class=\\"item  mock \\">test<style>
         .item {
         }
 
@@ -733,15 +664,6 @@ exports[`Grid nested components should be supported 1`] = `
           }
         }
       </style></div><style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
@@ -807,15 +729,6 @@ exports[`Grid nested components should be supported 1`] = `
           }
         }
       </style></div>,<style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
@@ -881,15 +794,6 @@ exports[`Grid nested components should be supported 1`] = `
           }
         }
       </style></div>,<style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
@@ -955,15 +859,6 @@ exports[`Grid nested components should be supported 1`] = `
           }
         }
       </style></div>,<style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
@@ -1032,13 +927,7 @@ exports[`Grid nested components should be supported 1`] = `
 `;
 
 exports[`Grid should render correctly 1`] = `
-"<div class=\\"item  container \\"><div class=\\"item  gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+"<div class=\\"item  mock \\"><div class=\\"item  mock \\">test<style>
         .item {
         }
 
@@ -1103,13 +992,7 @@ exports[`Grid should render correctly 1`] = `
             flex-basis: 0;
           }
         }
-      </style></div><div class=\\"item  gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+      </style></div><div class=\\"item  mock \\">test<style>
         .item {
         }
 
@@ -1175,15 +1058,6 @@ exports[`Grid should render correctly 1`] = `
           }
         }
       </style></div><style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
@@ -1252,13 +1126,7 @@ exports[`Grid should render correctly 1`] = `
 `;
 
 exports[`Grid should work correctly when size exceeds 1`] = `
-"<div class=\\"item  container \\"><div class=\\"item xs gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+"<div class=\\"item  mock \\"><div class=\\"item xs mock \\">test<style>
         .item {
         }
 
@@ -1323,13 +1191,7 @@ exports[`Grid should work correctly when size exceeds 1`] = `
             flex-basis: 0;
           }
         }
-      </style></div><div class=\\"item xs gaid-item \\">test<style>
-        :global(.gaid-item) {
-          margin: 0;
-          box-sizing: border-box;
-          padding: var(--gaid-gap-unit);
-        }
-      </style><style>
+      </style></div><div class=\\"item xs mock \\">test<style>
         .item {
         }
 
@@ -1395,15 +1257,6 @@ exports[`Grid should work correctly when size exceeds 1`] = `
           }
         }
       </style></div><style>
-        :global(.container) {
-          --gaid-gap-unit: calc(0 * 4pt);
-          display: flex;
-          flex-wrap: wrap;
-          box-sizing: border-box;
-          margin: calc(-1 * var(--gaid-gap-unit));
-          width: calc(100% + var(--gaid-gap-unit) * 2);
-        }
-      </style><style>
         .item {
         }
 
