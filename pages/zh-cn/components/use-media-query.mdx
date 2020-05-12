@@ -1,0 +1,99 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Utils, Link, Code, Spacer } from 'components'
+import NextLink from 'next/link'
+import PlaygroundTitle from 'lib/components/playground/title'
+
+export const meta = {
+  title: '媒体查询 useMediaQuery',
+  group: '工具包',
+}
+
+## Use MediaQuery / 媒体查询
+
+用于 CSS 媒体查询的钩子，钩子通过 `MediaQuery` API 实现。如果你仅仅想要构建响应式的布局，
+请尝试 <NextLink href="/en-us/components/grid"><Link color>栅格组件</Link></NextLink>。
+
+这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
+
+<Spacer y={1.5} />
+
+### 引入工具
+
+```jsx
+import { Utils } from '@zeit-ui/react'
+const { useMediaQuery } = Utils
+```
+
+<Playground
+  scope={{ Utils, Code }}
+  code={`
+() => {
+  const { useMediaQuery } = Utils
+  const isXS = useMediaQuery('xs')
+  const isSM = useMediaQuery('sm')
+  const isMD = useMediaQuery('md')
+  const isLG = useMediaQuery('lg')
+  const isXL = useMediaQuery('xl')
+  return (
+    <>
+      媒体查询当前匹配: <Code>{isXS && 'xs'}{isSM && 'sm'}{isMD && 'md'}{isLG && 'lg'}{isXL && 'xl'}</Code>.
+    </>
+  )
+}
+`} />
+
+<Playground
+  title="匹配类型"
+  desc="你可以选择向上或是向下匹配媒体查询。"
+  scope={{ Utils, Code }}
+  code={`
+() => {
+  const { useMediaQuery } = Utils
+  const upMD = useMediaQuery('md', { match: 'up' })
+  return (
+    <>
+      当前屏幕宽度 <b>{upMD ? '大于' : '小于'}</b> <Code>md</Code>.
+    </>
+  )
+}
+`} />
+
+<PlaygroundTitle title="定制断点" desc="您可以覆盖 `@zeit-ui/react` 组件库默认的断点值。" />
+
+```tsx
+const breakpoints: ZeitUIThemesBreakpoints = {
+  xs: { min: '0', max: '650px' },
+  sm: { min: '650px', max: '900px' },
+  md: { min: '900px', max: '1280px' },
+  lg: { min: '1280px', max: '1920px' },
+  xl: { min: '1920px', max: '10000px' },
+}
+
+const App = () => (
+  <ZEITUIProvider theme={{ breakpoints: breakpoints }}>
+    <CSSBaseline />
+    <AppComponent />
+  </ZEITUIProvider>
+)
+```
+
+<Attributes edit="/pages/zh-cn/components/use-media-query.mdx">
+<Attributes.Title>useMediaQuery</Attributes.Title>
+
+```ts
+type ResponsiveBreakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'mobile'
+
+type ResponsiveOptions = {
+ match?: 'up'| 'down',
+ ssrMatchMedia?: (query: string) => { matches: boolean }
+}
+
+const useMediaQuery = (
+  breakpoint: ResponsiveBreakpoint,
+  options?: ResponsiveOptions,
+) => boolean
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
