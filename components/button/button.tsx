@@ -17,6 +17,7 @@ interface Props {
   auto?: boolean
   effect?: boolean
   disabled?: boolean
+  htmlType?: React.ButtonHTMLAttributes<any>['type']
   icon?: React.ReactNode
   iconRight?: React.ReactNode
   onClick?: React.MouseEventHandler<HTMLButtonElement>
@@ -26,6 +27,7 @@ interface Props {
 const defaultProps = {
   type: 'default' as ButtonTypes,
   size: 'medium' as NormalSizes,
+  htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],
   ghost: false,
   loading: false,
   shadow: false,
@@ -57,6 +59,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({ ...btnProps })
     auto,
     size,
     icon,
+    htmlType,
     iconRight,
     className,
     ...props
@@ -115,7 +118,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({ ...btnProps })
   return (
     <button
       ref={buttonRef}
-      type="button"
+      type={htmlType}
       className={`btn ${className}`}
       disabled={disabled}
       onClick={clickHandler}
