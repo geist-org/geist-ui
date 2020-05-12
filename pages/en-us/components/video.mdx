@@ -1,0 +1,63 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Video } from 'components'
+
+export const meta = {
+  title: 'Video',
+  group: 'Data Display',
+}
+
+## Video
+
+Display video content.
+
+<Playground
+  scope={{ Video }}
+  code={`
+<Video
+  src={
+    'https://assets.vercel.com/video/upload/v1542426673/front/design/examples/live-support.mp4'
+  }
+  width={2000 / 3.5}
+  height={1000 / 3.5}
+/>`} />
+
+<Playground
+  title="Disable fullscreen"
+  scope={{ Video }}
+  code={`
+<Video
+  src={
+    'https://assets.vercel.com/video/upload/v1542426673/front/design/examples/live-support.mp4'
+  }
+  width={2000 / 3.5}
+  height={1000 / 3.5}
+  fullscreenable={false}
+/>`} />
+
+<Playground
+  title="Loop"
+  scope={{ Video }}
+  code={`
+<Video
+  src={
+    'https://assets.vercel.com/video/upload/v1542426673/front/design/examples/live-support.mp4'
+  }
+  width={2000 / 3.5}
+  height={1000 / 3.5}
+  loop
+/>`} />
+
+<Attributes edit="/pages/en-us/components/video.mdx">
+<Attributes.Title>Video.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **src** | Video src | `string` | - | - |
+| **width** | Video width | `number` | - | - |
+| **height** | Video height | `number` | - | - |
+| **fullscreenable** | Allow fullscreen | `boolean` | - | `ture` |
+| ... | native props | `VideoHTMLAttributes` | `'mute', 'loop', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
