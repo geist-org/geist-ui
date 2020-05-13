@@ -110,6 +110,7 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       <style jsx>{`
         .tooltip {
           width: max-content;
+          display: inline-block;
         }
       `}</style>
     </div>
