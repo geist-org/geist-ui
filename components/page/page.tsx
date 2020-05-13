@@ -89,15 +89,9 @@ const Page: React.FC<React.PropsWithChildren<NoteProps>> = ({
           max-width: 100vw;
           min-height: 100vh;
           margin: 0 auto;
+          padding: 0 ${theme.layout.gap};
           box-sizing: border-box;
           position: relative;
-        }
-
-        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
-          section {
-            max-width: 90vw;
-            min-height: -webkit-fill-available;
-          }
         }
       `}</style>
     </section>
