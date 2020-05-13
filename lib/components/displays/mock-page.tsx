@@ -31,7 +31,7 @@ const MockPage: React.FC<React.PropsWithChildren<Props>> = ({
         section {
           position: fixed;
           width: 100vw;
-          height: 100vw;
+          height: 100vh;
           background-color: ${theme.palette.background};
           z-index: 5000;
           top: -5000px;
@@ -42,6 +42,7 @@ const MockPage: React.FC<React.PropsWithChildren<Props>> = ({
         .active {
           top: 0;
           left: 0;
+          bottom: 0;
           display: block;
         }
       `}</style>
