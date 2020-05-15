@@ -1,3 +1,3 @@
-import useCurrentState from '../utils-shared/use-current-state'
+import useCurrentState from '../use-current-state'
 
 export default useCurrentState

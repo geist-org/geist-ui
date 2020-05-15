@@ -7,13 +7,13 @@ import {
 import ThemeProvider from '../styles/theme-provider'
 import { ThemeParam } from '../styles/theme-provider/theme-provider'
 import useCurrentState from '../utils/use-current-state'
-import ToastContainer, { ToastWithID } from '../toast/toast-container'
+import ToastContainer, { ToastWithID } from '../use-toasts/toast-container'
 
 export interface Props {
   theme?: ThemeParam
 }
 
-const ZEITUIProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) => {
+const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) => {
   const [toasts, setToasts, toastsRef] = useCurrentState<Array<ToastWithID>>([])
   const [toastHovering, setToastHovering] = useState<boolean>(false)
   const updateToasts: UpdateToastsFunction<ToastWithID> = (
@@ -48,4 +48,4 @@ const ZEITUIProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children })
   )
 }
 
-export default ZEITUIProvider
+export default ZeitProvider

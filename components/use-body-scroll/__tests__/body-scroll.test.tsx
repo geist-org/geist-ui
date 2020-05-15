@@ -1,5 +1,5 @@
 import React, { RefObject } from 'react'
-import useBodyScroll from '../use-body-scroll'
+import { useBodyScroll } from 'components'
 import { act, renderHook } from '@testing-library/react-hooks'
 
 describe('UseBodyScroll', () => {

@@ -1,4 +1,4 @@
-import useClipboard from '../use-clipboard'
+import { useClipboard } from 'components'
 import { renderHook } from '@testing-library/react-hooks'
 
 describe('UseClipboard', () => {

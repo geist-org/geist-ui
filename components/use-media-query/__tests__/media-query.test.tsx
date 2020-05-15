@@ -1,8 +1,7 @@
-import { Utils } from 'components'
+import { useMediaQuery } from 'components'
 import { renderHook } from '@testing-library/react-hooks'
 // @ts-ignore
 import mediaQuery from 'css-mediaquery'
-const { useMediaQuery } = Utils
 
 const mediaListMock = (width: number) => {
   ;(window as any).listeners = [] as Array<Function>
