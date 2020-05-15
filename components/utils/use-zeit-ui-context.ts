@@ -1,5 +1,5 @@
 import React from 'react'
-import { ToastWithID } from '../toast/toast-container'
+import { ToastWithID } from '../use-toasts/toast-container'
 
 export type UpdateToastsFunction<T> = (fn: (toasts: Array<T>) => Array<T>) => any
 

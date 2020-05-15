@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
-import { Button, Tooltip, ZEITUIProvider } from 'components'
+import { Button, Tooltip, ZeitProvider } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 import { act } from 'react-dom/test-utils'
 
@@ -15,9 +15,9 @@ const expectTooltipIsHidden = (wrapper: ReactWrapper) => {
 describe('Tooltip', () => {
   it('should render correctly', async () => {
     const wrapper = mount(
-      <ZEITUIProvider theme={{ type: 'dark' }}>
+      <ZeitProvider theme={{ type: 'dark' }}>
         <Tooltip text={<p id="test">custom-content</p>}>some tips</Tooltip>
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
 
     expectTooltipIsHidden(wrapper)

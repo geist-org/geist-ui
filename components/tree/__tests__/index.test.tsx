@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Tree } from 'components'
 import { nativeEvent } from 'tests/utils'
-import { FileTreeValue } from 'components/file-tree/tree'
+import { FileTreeValue } from 'components/tree/tree'
 
 const mockFiles: Array<FileTreeValue> = [
   {
