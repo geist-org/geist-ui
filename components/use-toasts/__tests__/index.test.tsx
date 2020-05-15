@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
-import { useToasts, ZEITUIProvider } from 'components'
+import { useToasts, ZeitProvider } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 
 const MockToast: React.FC<{}> = () => {
@@ -41,9 +41,9 @@ const expectToastIsHidden = (wrapper: ReactWrapper) => {
 describe('UseToast', () => {
   it('should render correctly', async () => {
     const wrapper = mount(
-      <ZEITUIProvider>
+      <ZeitProvider>
         <MockToast />
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -54,9 +54,9 @@ describe('UseToast', () => {
 
   it('should work with different types', async () => {
     const wrapper = mount(
-      <ZEITUIProvider>
+      <ZeitProvider>
         <MockToast />
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -68,9 +68,9 @@ describe('UseToast', () => {
 
   it('should close toast', async () => {
     const wrapper = mount(
-      <ZEITUIProvider>
+      <ZeitProvider>
         <MockToast />
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -85,9 +85,9 @@ describe('UseToast', () => {
 
   it('the removeal should be delayed when hover is triggerd', async () => {
     const wrapper = mount(
-      <ZEITUIProvider>
+      <ZeitProvider>
         <MockToast />
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -111,9 +111,9 @@ describe('UseToast', () => {
 
   it('should render different actions', async () => {
     const wrapper = mount(
-      <ZEITUIProvider>
+      <ZeitProvider>
         <MockToast />
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
     const actions = [
       {
@@ -135,9 +135,9 @@ describe('UseToast', () => {
 
   it('should close toast when action triggered', async () => {
     const wrapper = mount(
-      <ZEITUIProvider>
+      <ZeitProvider>
         <MockToast />
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
     const actions = [
       {
@@ -160,9 +160,9 @@ describe('UseToast', () => {
 
   it('should work with multiple toasts', async () => {
     const wrapper = mount(
-      <ZEITUIProvider>
+      <ZeitProvider>
         <MockToast />
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
 
     expectToastIsHidden(wrapper)

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom/server'
 import { mount } from 'enzyme'
-import { Page, ZEITUIProvider } from 'components'
+import { Page, ZeitProvider } from 'components'
 
 describe('Page', () => {
   it('should render correctly', () => {
@@ -48,9 +48,9 @@ describe('Page', () => {
 
   it('should disable dot style when in dark mode', () => {
     const wrapper = mount(
-      <ZEITUIProvider theme={{ type: 'dark' }}>
+      <ZeitProvider theme={{ type: 'dark' }}>
         <Page dotBackdrop />
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
     expect(wrapper.html()).not.toContain('global(body)')
   })

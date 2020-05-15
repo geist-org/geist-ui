@@ -2,7 +2,7 @@ import React from 'react'
 import { render, mount } from 'enzyme'
 import { deepMergeObject } from '../theme-provider/theme-provider'
 import DefaultThemes from '../themes/default'
-import { ZEITUIProvider, ZeitUIThemes, Text } from 'components'
+import { ZeitProvider, ZeitUIThemes, Text } from 'components'
 import { DeepPartial } from 'components/utils/types'
 
 describe('ThemeProvider', () => {
@@ -51,9 +51,9 @@ describe('ThemeProvider', () => {
       }
     }
     const wrapper = render(
-      <ZEITUIProvider theme={customFunc}>
+      <ZeitProvider theme={customFunc}>
         <Text type="success">hello</Text>
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
     expect(wrapper).toMatchSnapshot()
   })
@@ -62,9 +62,9 @@ describe('ThemeProvider', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
     const customFunc = () => 0 as DeepPartial<ZeitUIThemes>
     const wrapper = mount(
-      <ZEITUIProvider theme={customFunc}>
+      <ZeitProvider theme={customFunc}>
         <p>test</p>
-      </ZEITUIProvider>,
+      </ZeitProvider>,
     )
 
     expect(errorSpy).toHaveBeenCalled()

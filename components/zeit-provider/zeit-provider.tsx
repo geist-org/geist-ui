@@ -7,7 +7,7 @@ import {
 import ThemeProvider from '../styles/theme-provider'
 import { ThemeParam } from '../styles/theme-provider/theme-provider'
 import useCurrentState from '../utils/use-current-state'
-import ToastContainer, { ToastWithID } from '../toast/toast-container'
+import ToastContainer, { ToastWithID } from '../use-toasts/toast-container'
 
 export interface Props {
   theme?: ThemeParam

@@ -3,7 +3,7 @@ import TreeFile from './tree-file'
 import TreeFolder from './tree-folder'
 import { TreeContext } from './tree-context'
 import { tuple } from '../utils/prop-types'
-import { sortChildren } from '../file-tree/tree-help'
+import { sortChildren } from './/tree-help'
 
 const FileTreeValueType = tuple('directory', 'file')
 
