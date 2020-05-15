@@ -1,3 +1,3 @@
-import useClipboard from '../utils-shared-deprecated/use-clipboard'
+import useClipboard from '../use-clipboard'
 
 export default useClipboard
