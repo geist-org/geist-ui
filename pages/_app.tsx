@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import React, { useEffect, useState } from 'react'
-import { CSSBaseline, ZEITUIProvider, useTheme, ZeitUIThemes } from 'components'
+import { CssBaseline, ZeitProvider, useTheme, ZeitUIThemes } from 'components'
 import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
@@ -54,8 +54,8 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
         />
       </Head>
-      <ZEITUIProvider theme={customTheme}>
-        <CSSBaseline />
+      <ZeitProvider theme={customTheme}>
+        <CssBaseline />
         <ConfigContext onThemeChange={themeChangeHandle}>
           <Menu />
           <Component {...pageProps} />
@@ -111,7 +111,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             border-radius: ${theme.layout.radius};
           }
         `}</style>
-      </ZEITUIProvider>
+      </ZeitProvider>
     </>
   )
 }

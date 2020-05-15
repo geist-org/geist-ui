@@ -7,7 +7,7 @@
 <img alt="CircleCI" src="https://img.shields.io/circleci/build/github/zeit-ui/react?style=for-the-badge&labelColor=000000">
 <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@zeit-ui/react?style=for-the-badge&labelColor=000000">
 </p>
-  
+
 > Modern and minimalist React UI library, originating from Vercel's design.
 
 
@@ -20,13 +20,13 @@
 2. import into project:
 
 ```jsx
-import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
+import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
 
 const Application = () => (
-  <ZEITUIProvider>      //  ---> Base provider
-    <CSSBaseline />     //  ---> normalize styles
+  <ZeitProvider>        //  ---> Base provider
+    <CssBaseline />     //  ---> normalize styles
     <AppComponent />    //  ---> Your App Component
-  </ZEITUIProvider>
+  </ZeitProvider>
 )
 ```
 
@@ -41,7 +41,7 @@ const Application = () => (
 
 ## Development
 
-- [Contributing Guide](https://github.com/zeit-ui/react/blob/master/.github/CONTRIBUTING.md) 
+- [Contributing Guide](https://github.com/zeit-ui/react/blob/master/.github/CONTRIBUTING.md)
 
 <br/>
 

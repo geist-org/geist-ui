@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Utils, Link, Button, useToasts, Spacer } from 'components'
+import { useClipboard, Link, Button, useToasts, Spacer } from 'components'
 
 export const meta = {
   title: 'use-clipboard',
@@ -12,21 +12,11 @@ Copy string to clipboard.
 
 This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
-<Spacer y={1.5} />
-
-### Import
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useClipboard } = Utils
-```
-
 <Playground
-  scope={{ Utils, Button, useToasts }}
+  scope={{ useClipboard, Button, useToasts }}
   code={`
 () => {
   const [, setToast] = useToasts()
-  const { useClipboard } = Utils
   const { copy } = useClipboard()
   const handler = () => {
     copy('hello, zeit-ui')
