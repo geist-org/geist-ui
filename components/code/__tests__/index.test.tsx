@@ -28,22 +28,4 @@ describe('Code', () => {
     wrapper.setProps({ block: true })
     expect(wrapper.find('pre').length).not.toBe(0)
   })
-
-  it('should alert warning when use bash', () => {
-    let errorMessage = ''
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
-
-    mount(<Code bash>code</Code>)
-    expect(errorMessage.toLowerCase()).toContain('deprecated')
-    errorSpy.mockRestore()
-  })
-
-  it('should alert warning when use darkBash', () => {
-    let errorMessage = ''
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
-
-    mount(<Code darkBash>code</Code>)
-    expect(errorMessage.toLowerCase()).toContain('deprecated')
-    errorSpy.mockRestore()
-  })
 })
