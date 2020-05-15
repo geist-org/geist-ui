@@ -2,7 +2,7 @@
   "name": "@zeit-ui/react",
   "version": "1.4.4",
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "esm/index.js",
   "types": "dist/index.d.ts",
   "unpkg": "dist/index.min.js",
   "license": "MIT",
@@ -31,19 +31,22 @@
     "docs-start": "next start",
     "docs-collect": "node scripts/collect-meta.js",
     "contributor-collect": "node scripts/collect-contributors.js",
-    "clear": "rm -rf dist",
+    "clear": "rm -rf ./dist ./esm",
     "lint": "eslint \"{components,lib}/**/*.{js,ts,tsx}\"",
     "prettier": "prettier --write .",
     "test": "jest --config .jest.config.js --no-cache",
     "test-update": "jest --config .jest.config.js --no-cache --update-snapshot",
     "coverage": "yarn test --coverage",
     "now-build": "yarn run docs-build",
-    "build:esm": "babel --config-file ./scripts/babel.config.js --extensions \".js,.ts,.tsx\" ./components --out-dir ./build/esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
-    "build": "yarn run clear && webpack --config scripts/webpack.config.js && tsc -p ./scripts",
-    "release": "yarn run build && yarn publish --access public --non-interactive"
+    "build:esm": "babel --config-file ./scripts/babel.config.js --extensions \".js,.ts,.tsx\" ./components --out-dir ./esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
+    "build:webpack": "webpack --config scripts/webpack.config.js",
+    "build:types": "tsc -p ./scripts",
+    "build": "yarn clear && yarn build:esm && yarn build:webpack && yarn build:types",
+    "release": "yarn build && yarn publish --access public --non-interactive"
   },
   "files": [
-    "/dist"
+    "/dist",
+    "/esm"
   ],
   "devDependencies": {
     "@babel/cli": "^7.8.4",
