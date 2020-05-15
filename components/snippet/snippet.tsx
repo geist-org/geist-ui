@@ -5,7 +5,7 @@ import { SnippetTypes, CopyTypes } from '../utils/prop-types'
 import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
-import useToasts from '../toast/use-toast'
+import useToasts from '../use-toasts'
 
 interface Props {
   text?: string | string[]
