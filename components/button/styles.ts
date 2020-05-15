@@ -1,5 +1,6 @@
 import { ZeitUIThemes } from '../styles/themes'
 import { NormalSizes, ButtonTypes } from '../utils/prop-types'
+import { ButtonProps } from 'components/button/button'
 
 export interface ButtonColorGroup {
   bg: string
@@ -37,12 +38,8 @@ export const getButtonGhostColors = (
   return colors[type] || null
 }
 
-export const getButtonColors = (
-  theme: ZeitUIThemes,
-  type: ButtonTypes,
-  disabled: boolean,
-  ghost: boolean,
-): ButtonColorGroup => {
+export const getButtonColors = (theme: ZeitUIThemes, props: ButtonProps): ButtonColorGroup => {
+  const { type, disabled, ghost } = props
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     default: {
       bg: theme.palette.background,
@@ -118,14 +115,8 @@ export const getButtonGhostHoverColors = (
   return colors[type] || null
 }
 
-export const getButtonHoverColors = (
-  theme: ZeitUIThemes,
-  type: ButtonTypes,
-  disabled: boolean,
-  loading: boolean,
-  shadow: boolean,
-  ghost: boolean,
-): ButtonColorGroup => {
+export const getButtonHoverColors = (theme: ZeitUIThemes, props: ButtonProps): ButtonColorGroup => {
+  const { type, disabled, loading, shadow, ghost } = props
   const colors: { [key in ButtonTypes]?: any } = {
     default: {
       bg: theme.palette.background,
@@ -168,10 +159,10 @@ export const getButtonHoverColors = (
     }
   if (loading)
     return {
-      ...getButtonColors(theme, type, disabled, ghost),
+      ...getButtonColors(theme, props),
       color: 'transparent',
     }
-  if (shadow) return getButtonColors(theme, type, disabled, ghost)
+  if (shadow) return getButtonColors(theme, props)
   if (ghost) return getButtonGhostHoverColors(theme, type) || defaultHover
   return colors[type] || defaultHover
 }
