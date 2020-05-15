@@ -1,11 +1,8 @@
 /// <reference types="styled-jsx" />
 
 export * from './styles/themes'
-export { default as Utils } from './utils-shared-deprecated/index'
 export { default as useTheme } from './styles/use-theme'
-export { default as ZEITUIProvider } from './zeit-provider-deprecated'
 export { default as ZeitProvider } from './zeit-provider'
-export { default as CSSBaseline } from './css-baseline-deprecated'
 export { default as CssBaseline } from './css-baseline'
 export { default as useToasts } from './use-toasts'
 export { default as useInput } from './input/use-input'
