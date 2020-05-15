@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { LiveEditor } from 'react-live'
 import { useConfigs } from 'lib/config-context'
-import { useTheme, useToasts, Row, Col, Utils } from 'components'
+import { useTheme, useToasts, Row, Col, useClipboard } from 'components'
 import CopyIcon from '@zeit-ui/react-icons/copy'
 import RightIcon from '@zeit-ui/react-icons/chevronRight'
-const { useClipboard } = Utils
 
 interface Props {
   code: string

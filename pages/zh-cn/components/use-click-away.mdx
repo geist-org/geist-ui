@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Utils, Link, Card, Spacer } from 'components'
+import { useClickAway, Link, Card, Spacer } from 'components'
 
 export const meta = {
   title: '点击他处 useClickAway',
@@ -12,21 +12,11 @@ export const meta = {
 
 这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
-<Spacer y={1.5} />
-
-### 引入工具
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useClickAway } = Utils
-```
-
 <Playground
   desc="点击绿色块外部才能触发回调。"
-  scope={{ Utils }}
+  scope={{ useClickAway }}
   code={`
 () => {
-  const { useClickAway } = Utils
   const ref = React.useRef()
   const [count, setCount] = React.useState(0)
   useClickAway(ref, () => setCount(last => last + 1))

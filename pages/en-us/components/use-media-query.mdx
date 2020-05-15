@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Utils, Link, Code, Spacer } from 'components'
+import { useMediaQuery, Link, Code, Spacer } from 'components'
 import NextLink from 'next/link'
 import PlaygroundTitle from 'lib/components/playground/title'
 
@@ -15,20 +15,10 @@ If you just want to build the layout, try <NextLink href="/en-us/components/grid
 
 This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
-<Spacer y={1.5} />
-
-### Import
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useMediaQuery } = Utils
-```
-
 <Playground
-  scope={{ Utils, Code }}
+  scope={{ useMediaQuery, Code }}
   code={`
 () => {
-  const { useMediaQuery } = Utils
   const isXS = useMediaQuery('xs')
   const isSM = useMediaQuery('sm')
   const isMD = useMediaQuery('md')
@@ -45,10 +35,9 @@ const { useMediaQuery } = Utils
 <Playground
   title="Match Type"
   desc="You can choose to match up or down."
-  scope={{ Utils, Code }}
+  scope={{ useMediaQuery, Code }}
   code={`
 () => {
-  const { useMediaQuery } = Utils
   const upMD = useMediaQuery('md', { match: 'up' })
   return (
     <>
@@ -71,10 +60,10 @@ const breakpoints: ZeitUIThemesBreakpoints = {
 }
 
 const App = () => (
-  <ZEITUIProvider theme={{ breakpoints: breakpoints }}>
-    <CSSBaseline />
+  <ZeitProvider theme={{ breakpoints: breakpoints }}>
+    <CssBaseline />
     <AppComponent />
-  </ZEITUIProvider>
+  </ZeitProvider>
 )
 ```
 
