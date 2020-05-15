@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Utils, Link, Code, Spacer } from 'components'
+import { useMediaQuery, Link, Code, Spacer } from 'components'
 import NextLink from 'next/link'
 import PlaygroundTitle from 'lib/components/playground/title'
 
@@ -15,20 +15,10 @@ export const meta = {
 
 这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
-<Spacer y={1.5} />
-
-### 引入工具
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useMediaQuery } = Utils
-```
-
 <Playground
-  scope={{ Utils, Code }}
+  scope={{ useMediaQuery, Code }}
   code={`
 () => {
-  const { useMediaQuery } = Utils
   const isXS = useMediaQuery('xs')
   const isSM = useMediaQuery('sm')
   const isMD = useMediaQuery('md')
@@ -45,10 +35,9 @@ const { useMediaQuery } = Utils
 <Playground
   title="匹配类型"
   desc="你可以选择向上或是向下匹配媒体查询。"
-  scope={{ Utils, Code }}
+  scope={{ useMediaQuery, Code }}
   code={`
 () => {
-  const { useMediaQuery } = Utils
   const upMD = useMediaQuery('md', { match: 'up' })
   return (
     <>
@@ -70,10 +59,10 @@ const breakpoints: ZeitUIThemesBreakpoints = {
 }
 
 const App = () => (
-  <ZEITUIProvider theme={{ breakpoints: breakpoints }}>
-    <CSSBaseline />
+  <ZeitProvider theme={{ breakpoints: breakpoints }}>
+    <CssBaseline />
     <AppComponent />
-  </ZEITUIProvider>
+  </ZeitProvider>
 )
 ```
 

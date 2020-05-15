@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, Utils, Text, Link } from 'components'
+import { Button, Spacer, Text, Link, useBodyScroll } from 'components'
 
 export const meta = {
   title: 'use-body-scroll',
@@ -12,29 +12,19 @@ Disable scrolling behavior for body or any element, it is useful for displaying 
 
 This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
-<Spacer y={1.5} />
-
-### Import
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useBodyScroll } = Utils
-```
-
 <Playground
   desc="Click button to disable scrolling."
-  scope={{ Button, Spacer, Utils, Text }}
+  scope={{ Button, Spacer, Text, useBodyScroll }}
   code={`
 () => {
-  const { useBodyScroll } = Utils
   const [hidden, setHidden] = useBodyScroll()
   return (
     <>
       <Text small b type={hidden ? 'error' : 'default'}>{hidden ? 'Body disabled.' : 'Body can be scrolled.'}</Text>
       <Spacer y={.75} />
-      <Button size="small" type="success" auto onClick={() => setHidden(true)}>disable scroll</Button>
+      <Button size="small" type="success-light" auto onClick={() => setHidden(true)}>disable scroll</Button>
       <Spacer y={.5} />
-      <Button size="small" type="secondary" auto onClick={() => setHidden(false)}>reset</Button>
+      <Button size="small" type="secondary-light" auto onClick={() => setHidden(false)}>reset</Button>
     </>
   )
 }

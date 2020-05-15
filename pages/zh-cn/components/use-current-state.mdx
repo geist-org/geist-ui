@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Utils, Link, Button, Spacer } from 'components'
+import { useCurrentState, Link, Button, Spacer } from 'components'
 
 export const meta = {
   title: ' 当前值 useCurrentState',
@@ -15,20 +15,10 @@ export const meta = {
 
 这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
-<Spacer y={1.5} />
-
-### 引入工具
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useCurrentState } = Utils
-```
-
 <Playground
-  scope={{ Utils, Button }}
+  scope={{ useCurrentState, Button }}
   code={`
 () => {
-  const { useCurrentState } = Utils
   const [value, setValue] = React.useState(0)
   const [value2, setValue2, value2Ref] = useCurrentState(0)
   const handler = () => {
@@ -38,9 +28,7 @@ const { useCurrentState } = Utils
     alert(str)
   }
   return (
-    <>
-      <Button size="small" auto onClick={handler}>点击显示</Button>
-    </>
+    <Button size="small" auto onClick={handler}>点击显示</Button>
   )
 }
 `} />

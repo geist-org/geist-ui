@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, Utils, Text, Link } from 'components'
+import { Button, Spacer, useBodyScroll, Text, Link } from 'components'
 
 export const meta = {
   title: '锁定滚动 useBodyScroll',
@@ -12,21 +12,11 @@ export const meta = {
 
 这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
-<Spacer y={1.5} />
-
-### 引入工具
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useBodyScroll } = Utils
-```
-
 <Playground
   desc="点击按钮以锁定滚动."
-  scope={{ Button, Spacer, Utils, Text }}
+  scope={{ Button, Spacer, useBodyScroll, Text }}
   code={`
 () => {
-  const { useBodyScroll } = Utils
   const [hidden, setHidden] = useBodyScroll()
   return (
     <>
