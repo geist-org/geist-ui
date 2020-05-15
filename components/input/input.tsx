@@ -117,7 +117,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
         clickable: iconClickable,
         onClick: iconClickHandler,
       }),
-      [heightRatio, iconClickable],
+      [heightRatio, iconClickable, iconClickHandler],
     )
 
     useEffect(() => {
