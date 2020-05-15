@@ -3,7 +3,7 @@ import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalSizes, ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
-import { getButtonColors } from '../button/styles'
+import { ZeitUIThemesPalette } from 'components/styles/themes'
 
 interface Props {
   disabled?: boolean
@@ -26,16 +26,23 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ButtonGroupProps = Props & typeof defaultProps & NativeAttrs
 
-const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = ({
-  disabled,
-  size,
-  type,
-  ghost,
-  vertical,
-  children,
-  className,
-}) => {
+const getGroupBorderColors = (palette: ZeitUIThemesPalette, props: ButtonGroupProps): string => {
+  const { ghost, type } = props
+  if (!ghost && type !== 'default') return palette.background
+  const colors: { [key in ButtonTypes]?: string } = {
+    default: palette.border,
+    success: palette.success,
+    secondary: palette.secondary,
+    error: palette.error,
+    warning: palette.warning,
+  }
+  const withoutLightType = type.replace('-light', '') as ButtonTypes
+  return colors[withoutLightType] || (colors.default as string)
+}
+
+const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupProps => {
   const theme = useTheme()
+  const { disabled, size, type, ghost, vertical, children, className, ...props } = groupProps
   const initialValue = useMemo<ButtonGroupConfig>(
     () => ({
       disabled,
@@ -47,19 +54,13 @@ const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = ({
     [disabled, size, type],
   )
 
-  const { border } = useMemo(() => {
-    const results = getButtonColors(theme, type, disabled, ghost)
-    if (!ghost && type !== 'default')
-      return {
-        ...results,
-        border: theme.palette.background,
-      }
-    return results
+  const border = useMemo(() => {
+    return getGroupBorderColors(theme.palette, groupProps)
   }, [theme, type, disabled, ghost])
 
   return (
     <ButtonGroupContext.Provider value={initialValue}>
-      <div className={`btn-group ${vertical ? 'vertical' : 'horizontal'} ${className}`}>
+      <div className={`btn-group ${vertical ? 'vertical' : 'horizontal'} ${className}`} {...props}>
         {children}
         <style jsx>{`
           .btn-group {
