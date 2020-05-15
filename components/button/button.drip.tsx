@@ -54,10 +54,10 @@ const ButtonDrip: React.FC<ButtonDrip> = ({ x, y, color, onCompleted }) => {
 
         svg {
           position: absolute;
-          animation: 400ms ease-in expand;
+          animation: 350ms ease-in expand;
           animation-fill-mode: forwards;
-          width: 20px;
-          height: 20px;
+          width: 1rem;
+          height: 1rem;
         }
 
         @keyframes expand {
@@ -72,7 +72,7 @@ const ButtonDrip: React.FC<ButtonDrip> = ({ x, y, color, onCompleted }) => {
             opacity: 0.5;
           }
           100% {
-            transform: scale(25);
+            transform: scale(28);
             opacity: 0;
           }
         }

@@ -287,5 +287,5 @@ export const getButtonDripColor = (palette: ZeitUIThemesPalette, props: ButtonPr
   const { type } = props
   const isLightHover = type.endsWith('light')
   const hoverColors = getButtonHoverColors(palette, props)
-  return isLightHover ? addColorAlpha(hoverColors.bg, 0.65) : palette.accents_2
+  return isLightHover ? addColorAlpha(hoverColors.bg, 0.65) : addColorAlpha(palette.accents_2, 0.65)
 }
