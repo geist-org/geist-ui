@@ -6,7 +6,13 @@ import ButtonLoading from '../loading'
 import { ButtonTypes, NormalSizes } from '../utils/prop-types'
 import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 import { useButtonGroupContext } from '../button-group/button-group-context'
-import { getButtonColors, getButtonCursor, getButtonHoverColors, getButtonSize } from './styles'
+import {
+  getButtonColors,
+  getButtonCursor,
+  getButtonDripColor,
+  getButtonHoverColors,
+  getButtonSize,
+} from './styles'
 
 interface Props {
   type?: ButtonTypes
@@ -66,15 +72,22 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({ ...btnProps })
     ...props
   } = filteredProps
 
-  const { bg, border, color } = useMemo(() => getButtonColors(theme, filteredProps), [
-    theme,
+  const { bg, border, color } = useMemo(() => getButtonColors(theme.palette, filteredProps), [
+    theme.palette,
     filteredProps,
   ])
-  const hover = useMemo(() => getButtonHoverColors(theme, filteredProps), [theme, filteredProps])
+  const hover = useMemo(() => getButtonHoverColors(theme.palette, filteredProps), [
+    theme.palette,
+    filteredProps,
+  ])
   const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading), [disabled, loading])
   const { height, minWidth, padding, width, fontSize } = useMemo(() => getButtonSize(size, auto), [
     size,
     auto,
+  ])
+  const dripColor = useMemo(() => getButtonDripColor(theme.palette, filteredProps), [
+    theme.palette,
+    filteredProps,
   ])
 
   /* istanbul ignore next */
@@ -117,12 +130,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({ ...btnProps })
       {...props}>
       {loading ? <ButtonLoading /> : childrenWithIcon}
       {dripShow && (
-        <ButtonDrip
-          x={dripX}
-          y={dripY}
-          color={theme.palette.accents_2}
-          onCompleted={dripCompletedHandle}
-        />
+        <ButtonDrip x={dripX} y={dripY} color={dripColor} onCompleted={dripCompletedHandle} />
       )}
       <style jsx>{`
         .btn {
