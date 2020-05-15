@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer } from 'components'
+import { Button, Spacer, Grid } from 'components'
 import Router from 'next/router'
 import Settings from '@zeit-ui/react-icons/settings'
 import UserX from '@zeit-ui/react-icons/userX'
@@ -49,15 +49,19 @@ export const meta = {
 <Playground
   title="类型"
   desc="不同状态下的按钮。"
-  scope={{ Button, Spacer }}
+  scope={{ Button, Grid }}
   code={`
-<>
-  <Button type="secondary">次要的</Button> <Spacer y={.5} />
-  <Button type="success">成功</Button> <Spacer y={.5} />
-  <Button type="warning">警告</Button> <Spacer y={.5} />
-  <Button type="error">错误</Button> <Spacer y={.5} />
-  <Button type="abort">中止</Button>
-</>
+<Grid.Container gap={2}>
+  <Grid><Button auto type="secondary">次要的</Button></Grid>
+  <Grid><Button auto type="success">成功</Button></Grid>
+  <Grid><Button auto type="warning">警告</Button></Grid>
+  <Grid><Button auto type="error">错误</Button></Grid>
+  <Grid><Button auto type="abort">中止</Button></Grid>
+  <Grid><Button auto type="secondary-light">次要的 浅色</Button></Grid>
+  <Grid><Button auto type="success-light">成功 浅色</Button></Grid>
+  <Grid><Button auto type="warning-light">警告 浅色</Button></Grid>
+  <Grid><Button auto type="error-light">错误 浅色</Button></Grid>
+</Grid.Container>
 `} />
 
 <Playground
@@ -131,6 +135,7 @@ export const meta = {
 
 ```ts
 type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
+  | 'secondary-light' | 'success-light' | 'warning-light' | 'error-light'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
