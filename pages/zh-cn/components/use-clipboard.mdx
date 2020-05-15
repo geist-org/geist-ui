@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Utils, Link, Button, useToasts, Spacer } from 'components'
+import { useClipboard, Link, Button, useToasts, Spacer } from 'components'
 
 export const meta = {
   title: '剪切板 useClipboard',
@@ -12,30 +12,18 @@ export const meta = {
 
 这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
-<Spacer y={1.5} />
-
-### 引入工具
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useClipboard } = Utils
-```
-
 <Playground
-  scope={{ Utils, Button, useToasts }}
+  scope={{ useClipboard, Button, useToasts }}
   code={`
 () => {
   const [, setToast] = useToasts()
-  const { useClipboard } = Utils
   const { copy } = useClipboard()
   const handler = () => {
     copy('hello, zeit-ui')
     setToast({ text: '文字已拷贝。' })
   }
   return (
-    <>
-      <Button size="small" auto onClick={handler}>点击拷贝</Button>
-    </>
+    <Button size="small" auto onClick={handler}>点击拷贝</Button>
   )
 }
 `} />

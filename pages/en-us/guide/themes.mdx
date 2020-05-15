@@ -14,21 +14,21 @@ export const meta = {
 
 ### Switch themes
 
-<Note>Before using any Components, you must add <Code>ZEITUIProvider</Code> to the root node.</Note>
+<Note>Before using any Components, you must add <Code>ZeitProvider</Code> to the root node.</Note>
 <Spacer y={0.5} />
-<Note type="success"><Code>CSSBaseline</Code> provides basic CSS support, which is similar to <Code>normalize</Code>.</Note>
+<Note type="success"><Code>CssBaseline</Code> provides basic CSS support, which is similar to <Code>normalize</Code>.</Note>
 <Spacer y={1} />
 
 **Now you can change the theme as follows:**
 
-  1. Make sure `ZEITUIProvider` and `CSSBaseline` are already on the root component.
+  1. Make sure `ZeitProvider` and `CssBaseline` are already on the root component.
 
   2. Get the current theme of the page through hook `useTheme`.
 
   3. Update the value of `theme.type`, and the theme of all components will follow automatically.
 
 ```jsx
-import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
+import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
 
 const App = () => {
   const [themeType, setThemeType] = useState('dark')
@@ -36,10 +36,10 @@ const App = () => {
     setThemeType(lastThemeType => lastThemeType === 'dark' ? 'light' : 'dark')
   }
   return (
-    <ZEITUIProvider theme={{ type: themeType }}>
-      <CSSBaseline />
+    <ZeitProvider theme={{ type: themeType }}>
+      <CssBaseline />
       <YourComponent onClick={switchThemes} />
-    </ZEITUIProvider>
+    </ZeitProvider>
   )
 }
 ```
@@ -58,7 +58,7 @@ Of course, if a *component* doesn't use your customize variables, it doesn't mak
 <Note type="warning">The more changes you custom, the more Components <b>Re-Render</b>.</Note>
 
 ```jsx
-import { CSSBaseline, ZEITUIProvider } from '@zeit-ui/react'
+import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
 
 const myTheme = {
   palette: {
@@ -67,10 +67,10 @@ const myTheme = {
 }
 
 const App = () => (
-  <ZEITUIProvider theme={myTheme}>
-    <CSSBaseline />
-      <YourAppComponent onClick={switchThemes}/>
-  </ZEITUIProvider>
+  <ZeitProvider theme={myTheme}>
+    <CssBaseline />
+    <YourAppComponent onClick={switchThemes}/>
+  </ZeitProvider>
 )
 ```
 
