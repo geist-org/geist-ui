@@ -1,18 +1,13 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useWarning from '../utils/use-warning'
 
 interface Props {
-  bash?: boolean
-  darkBash?: boolean
   block?: boolean
   width?: string
   className?: string
 }
 
 const defaultProps = {
-  bash: false,
-  darkBash: false,
   block: false,
   className: '',
 }
@@ -23,27 +18,15 @@ export type CodeProps = Props & typeof defaultProps & NativeAttrs
 const Code: React.FC<React.PropsWithChildren<CodeProps>> = ({
   children,
   block,
-  bash,
-  darkBash,
   className,
   width,
   ...props
 }) => {
-  if (bash) {
-    useWarning('Props "bash" is deprecated. Use `Snippet` instead of it.', 'code')
-  }
-  if (darkBash) {
-    useWarning('Props "darkBash" is deprecated. Use `Snippet` instead of it.', 'code')
-  }
-
-  const isBash = bash || darkBash
-  const isBlock = isBash || block
-  if (!isBlock) return <code {...props}>{children}</code>
-  const classes = useMemo(() => `${darkBash ? 'dark' : ''} ${className}`, [className, darkBash])
+  if (!block) return <code {...props}>{children}</code>
 
   return (
     <>
-      <pre className={classes} {...props}>
+      <pre className={className} {...props}>
         <code>{children}</code>
       </pre>
       <style jsx>{`
@@ -59,13 +42,6 @@ const Code: React.FC<React.PropsWithChildren<CodeProps>> = ({
 
         .dark code {
           color: white;
-        }
-
-        pre:before {
-          content: '$ ';
-          display: ${isBash ? 'inline-block' : 'none'};
-          font-weight: 500;
-          user-select: none;
         }
       `}</style>
     </>
