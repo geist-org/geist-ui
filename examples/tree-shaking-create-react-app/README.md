@@ -8,4 +8,17 @@ we use [react-app-rewired](https://github.com/timarney/react-app-rewired) to cha
 
   - Add `config-overrides.js` to your root folder.
   - Add deps: `yarn add babel-plugin-import  customize-cra react-app-rewired -D`
-  - Replace your default scripts(`react-script`) with `react-app-rewired`.
+  - Replace your default scripts(`react-scripts`) with `react-app-rewired`.
+
+
+### Previews
+
+**Before:**
+
+![before](public/esm-1.png)
+
+<br />
+
+**After:**
+
+![after](public/esm-2.png)
