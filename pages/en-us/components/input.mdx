@@ -105,10 +105,12 @@ Retrieve text input from a user.
 <Playground
   title="Icon"
   desc="Specify an icon component."
-  scope={{ Input, GitIcon }}
+  scope={{ Input, GitIcon, Spacer }}
   code={`
 <>
-  <Input icon={<GitIcon />} placeholder="The Evil Rabbit" />
+  <Input icon={<GitIcon />} placeholder="GitHub" />
+  <Spacer y={.5} />
+  <Input iconRight={<GitIcon />} placeholder="GitHub" />
 </>
 `} />
 

@@ -105,10 +105,12 @@ export const meta = {
 <Playground
   title="图标"
   desc="指定一个图标组件。"
-  scope={{ Input, GitIcon }}
+  scope={{ Input, GitIcon, Spacer }}
   code={`
 <>
   <Input icon={<GitIcon />} placeholder="输入 Git 地址" />
+  <Spacer y={.5} />
+  <Input iconRight={<GitIcon />} placeholder="输入 Git 地址" />
 </>
 `} />
 
