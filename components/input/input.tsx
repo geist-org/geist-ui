@@ -227,6 +227,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             outline: none;
             border-radius: 0;
             width: 100%;
+            min-width: 0;
             -webkit-appearance: none;
           }
 
