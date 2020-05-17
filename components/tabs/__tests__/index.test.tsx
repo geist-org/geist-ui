@@ -19,6 +19,18 @@ describe('Tabs', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work correctly with different styles', () => {
+    const wrapper = mount(
+      <Tabs hideDivider>
+        <Tabs.Item label="label1" value="1">
+          1
+        </Tabs.Item>
+      </Tabs>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
   it('should trigger events when tab changed', () => {
     let value = ''
     const changeHandler = jest.fn().mockImplementation(val => (value = val))
