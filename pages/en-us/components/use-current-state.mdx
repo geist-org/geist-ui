@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Utils, Link, Button, Spacer } from 'components'
+import { useCurrentState, Link, Button, Spacer } from 'components'
 
 export const meta = {
   title: 'use-current-state',
@@ -17,20 +17,10 @@ try <Link target="_blank" color href="https://reactjs.org/docs/hooks-reference.h
 
 This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
-<Spacer y={1.5} />
-
-### Import
-
-```jsx
-import { Utils } from '@zeit-ui/react'
-const { useCurrentState } = Utils
-```
-
 <Playground
-  scope={{ Utils, Button }}
+  scope={{ useCurrentState, Button }}
   code={`
 () => {
-  const { useCurrentState } = Utils
   const [value, setValue] = React.useState(0)
   const [value2, setValue2, value2Ref] = useCurrentState(0)
   const handler = () => {
@@ -40,9 +30,7 @@ const { useCurrentState } = Utils
     alert(str)
   }
   return (
-    <>
-      <Button size="small" auto onClick={handler}>Click to show</Button>
-    </>
+    <Button size="small" auto onClick={handler}>Click to show</Button>
   )
 }
 `} />

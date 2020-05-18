@@ -1,3 +1,3 @@
-import { default as useClickAway } from '../utils-shared/use-click-away'
+import { default as useClickAway } from '../use-click-away'
 
 export default useClickAway

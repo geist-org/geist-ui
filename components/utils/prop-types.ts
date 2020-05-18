@@ -1,6 +1,17 @@
 export const tuple = <T extends string[]>(...args: T) => args
 
-const buttonTypes = tuple('default', 'secondary', 'success', 'warning', 'error', 'abort')
+const buttonTypes = tuple(
+  'default',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'abort',
+  'secondary-light',
+  'success-light',
+  'warning-light',
+  'error-light',
+)
 
 const normalSizes = tuple('mini', 'small', 'medium', 'large')
 

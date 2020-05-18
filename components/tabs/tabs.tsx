@@ -8,12 +8,14 @@ import useWarning from '../utils/use-warning'
 interface Props {
   initialValue?: string
   value?: string
+  hideDivider?: boolean
   onChange?: (val: string) => void
   className?: string
 }
 
 const defaultProps = {
   className: '',
+  hideDivider: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -22,6 +24,7 @@ export type TabsProps = Props & typeof defaultProps & NativeAttrs
 const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   initialValue: userCustomInitialValue,
   value,
+  hideDivider,
   children,
   onChange,
   className,
@@ -67,7 +70,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   return (
     <TabsContext.Provider value={initialValue}>
       <div className={`tabs ${className}`} {...props}>
-        <header>
+        <header className={hideDivider ? 'hide-divider' : ''}>
           {tabs.map((item, index) => (
             <div
               className={`tab ${selfValue === item.value ? 'active' : ''} ${
@@ -90,6 +93,10 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
             flex-wrap: wrap;
             align-items: center;
             border-bottom: 1px solid ${theme.palette.border};
+          }
+
+          .hide-divider {
+            border-bottom: none;
           }
 
           .content {
@@ -120,7 +127,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
             right: 0;
             width: 100%;
             height: 2px;
-            transform: scaleX(0.85);
+            transform: scaleX(0.75);
             background-color: transparent;
             transition: all 200ms ease;
           }

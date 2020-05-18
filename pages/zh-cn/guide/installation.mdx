@@ -34,13 +34,13 @@ export const meta = {
 <Display width="90%">
 
 ```jsx
-import { ZEITUIProvider, CSSBaseline } from '@zeit-ui/react'
+import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
 
 const Application = () => (
-  <ZEITUIProvider>   // ---> Base provider
-    <CSSBaseline />  // ---> normalize styles
+  <ZeitProvider>     // ---> Base provider
+    <CssBaseline />  // ---> normalize styles
     <AppComponent />    // ---> Your App Component
-  </ZEITUIProvider>
+  </ZeitProvider>
 )
 ```
 

@@ -34,6 +34,21 @@ Display tab content.
 `} />
 
 <Playground
+  title="Hide Divider"
+  scope={{ Tabs }}
+  code={`
+<Tabs initialValue="html" hideDivider>
+  <Tabs.Item label="HTML" value="html">
+    <p>HTML is the language that we use to structure the different parts of our content and define what their meaning or purpose is.</p>
+  </Tabs.Item>
+  <Tabs.Item label="CSS" value="css">
+    <p>CSS is the language that we can use to style and lay out our web content,
+    as well as adding behavior like animation.</p>
+  </Tabs.Item>
+</Tabs>
+`} />
+
+<Playground
   title="With Icon"
   desc="Show icon component on label button."
   scope={{ Tabs, TwitchIcon, TwitterIcon, Link, Text }}
@@ -101,6 +116,7 @@ Display tab content.
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **initialValue** | initial value | `string` | - | - |
 | **value** | current selected value | `string` | - | - |
+| **hideDivider** | hide default divider | `boolean` | - | `false` |
 | **onChange** | change event | `(val: string) => void` | - | - |
 | ... | native props | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
 

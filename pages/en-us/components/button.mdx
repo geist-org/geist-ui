@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer } from 'components'
+import { Button, Spacer, Grid } from 'components'
 import Router from 'next/router'
 import Settings from '@zeit-ui/react-icons/settings'
 import UserX from '@zeit-ui/react-icons/userX'
@@ -50,15 +50,19 @@ Used to trigger an operation.
 <Playground
   title="Types"
   desc="Different state."
-  scope={{ Button, Spacer }}
+  scope={{ Button, Spacer, Grid }}
   code={`
-<>
-  <Button type="secondary">Secondary</Button> <Spacer y={.5} />
-  <Button type="success">Success</Button> <Spacer y={.5} />
-  <Button type="warning">Warning</Button> <Spacer y={.5} />
-  <Button type="error">Error</Button> <Spacer y={.5} />
-  <Button type="abort">Abort</Button>
-</>
+<Grid.Container gap={2}>
+  <Grid><Button auto type="secondary">Secondary</Button></Grid>
+  <Grid><Button auto type="success">Success</Button></Grid>
+  <Grid><Button auto type="warning">Warning</Button></Grid>
+  <Grid><Button auto type="error">Error</Button></Grid>
+  <Grid><Button auto type="abort">Abort</Button></Grid>
+  <Grid><Button auto type="secondary-light">Secondary Light</Button></Grid>
+  <Grid><Button auto type="success-light">Success Light</Button></Grid>
+  <Grid><Button auto type="warning-light">Warning Light</Button></Grid>
+  <Grid><Button auto type="error-light">Error Light</Button></Grid>
+</Grid.Container>
 `} />
 
 <Playground
@@ -73,7 +77,6 @@ Used to trigger an operation.
   <Button type="error" ghost>Error</Button>
 </>
 `} />
-
 
 <Playground
   title="Sizes"
@@ -132,6 +135,7 @@ Used to trigger an operation.
 
 ```ts
 type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
+  | 'secondary-light' | 'success-light' | 'warning-light' | 'error-light'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>

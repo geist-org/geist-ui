@@ -34,6 +34,20 @@ export const meta = {
 `} />
 
 <Playground
+  title="隐藏分割线"
+  scope={{ Tabs }}
+  code={`
+<Tabs initialValue="html" hideDivider>
+  <Tabs.Item label="HTML" value="html">
+    <p>HTML 是我们用来构造网站内容的不同部分并定义它们的意义或目的的语言。</p>
+  </Tabs.Item>
+  <Tabs.Item label="CSS" value="css">
+    <p>我们可以使用 CSS 这个语言来设计和布局我们的 Web 内容，以及添加像动画一类的行为。</p>
+  </Tabs.Item>
+</Tabs>
+`} />
+
+<Playground
   title="图标"
   desc="在选项卡的标签上显示图标组件。"
   scope={{ Tabs, TwitterIcon, TwitchIcon, Link, Text }}
@@ -99,6 +113,7 @@ export const meta = {
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **initialValue** | 初始值 | `string` | - | - |
 | **value** | 设定当前选项 | `string` | - | - |
+| **hideDivider** | 隐藏默认分割线 | `boolean` | - | `false` |
 | **onChange** | 选项卡切换事件 | `(val: string) => void` | - | - |
 | ... | 原生属性 | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
 

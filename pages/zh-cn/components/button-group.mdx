@@ -40,6 +40,11 @@ export const meta = {
     <Button>Action1</Button>
     <Button>Action2</Button>
   </ButtonGroup>
+  <ButtonGroup type="success-light" size="small">
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+  </ButtonGroup>
 </>
 `} />
 
@@ -103,6 +108,7 @@ export const meta = {
 
 ```ts
 type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
+  | 'secondary-light' | 'success-light' | 'warning-light' | 'error-light'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
