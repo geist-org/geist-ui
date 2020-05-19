@@ -72,17 +72,17 @@ class MyDocument extends Document {
 
 ### 定制服务端
 
-在你自定义的服务端或其他预渲染框架中，你可以通过函数 `CSSBaseLine.flush` 获取所有样式文本。
+在你自定义的服务端或其他预渲染框架中，你可以通过函数 `CssBaseline.flush` 获取所有样式文本。
 
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom/server'
-import { CSSBaseLine } from 'zeit-ui/react'
+import { CssBaseline } from 'zeit-ui/react'
 import App from './app'
 
 export default (req, res) => {
   const app = ReactDOM.renderToString(<App />)
-  const styles = CSSBaseLine.flush()
+  const styles = CssBaseline.flush()
   const html = ReactDOM.renderToStaticMarkup(<html>
     <head>{ styles }</head>
     <body>
