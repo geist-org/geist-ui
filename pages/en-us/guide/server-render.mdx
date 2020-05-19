@@ -72,17 +72,17 @@ Here's an examples that might help you: <Link href="https://github.com/unix/unix
 
 ### Custom Server
 
-In the custom server, also get the style set from function `CSSBaseLine.flush`.
+In the custom server, also get the style set from function `CssBaseline.flush`.
 
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom/server'
-import { CSSBaseLine } from 'zeit-ui/react'
+import { CssBaseline } from 'zeit-ui/react'
 import App from './app'
 
 export default (req, res) => {
   const app = ReactDOM.renderToString(<App />)
-  const styles = CSSBaseLine.flush()
+  const styles = CssBaseline.flush()
   const html = ReactDOM.renderToStaticMarkup(<html>
     <head>{ styles }</head>
     <body>
