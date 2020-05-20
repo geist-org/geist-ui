@@ -22,6 +22,8 @@ const nextConfig = {
   },
 
   experimental: {
+    reactStrictMode: true,
+
     redirects() {
       return [
         {

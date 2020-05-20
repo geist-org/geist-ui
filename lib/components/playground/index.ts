@@ -1,5 +1,3 @@
-import dynamic from 'next/dynamic'
+import Playground from './playground'
 
-const DynamicPlaygroundWithNoSSR = dynamic(() => import('./playground'), { ssr: false })
-
-export default DynamicPlaygroundWithNoSSR
+export default Playground
