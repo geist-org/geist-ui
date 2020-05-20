@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { useTheme, Loading, Spacer } from 'components'
+import { useTheme, Loading } from 'components'
 import withDefaults from 'components/utils/with-defaults'
 import { useConfigs } from 'lib/config-context'
 import Title from './title'
@@ -8,10 +8,8 @@ import Title from './title'
 const DynamicLive = dynamic(() => import('./dynamic-live'), {
   ssr: false,
   loading: () => (
-    <div>
-      <Spacer y={1.5} />
+    <div style={{ padding: '20pt 0' }}>
       <Loading />
-      <Spacer y={1.5} />
     </div>
   ),
 })
