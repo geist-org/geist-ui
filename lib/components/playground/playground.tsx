@@ -1,11 +1,20 @@
 import React from 'react'
-import { useTheme } from 'components'
+import dynamic from 'next/dynamic'
+import { useTheme, Loading, Spacer } from 'components'
 import withDefaults from 'components/utils/with-defaults'
-import { LivePreview, LiveProvider, LiveError } from 'react-live'
 import { useConfigs } from 'lib/config-context'
-import makeCodeTheme from './code-theme'
-import Editor from './editor'
 import Title from './title'
+
+const DynamicLive = dynamic(() => import('./dynamic-live'), {
+  ssr: false,
+  loading: () => (
+    <div>
+      <Spacer y={1.5} />
+      <Loading />
+      <Spacer y={1.5} />
+    </div>
+  ),
+})
 
 interface Props {
   title?: React.ReactNode | string
@@ -28,7 +37,6 @@ const Playground: React.FC<PlaygroundProps> = React.memo(
   ({ title: inputTitle, code: inputCode, desc, scope }) => {
     const theme = useTheme()
     const { isChinese } = useConfigs()
-    const codeTheme = makeCodeTheme(theme)
     const code = inputCode.trim()
     const title = inputTitle || (isChinese ? '基础的' : 'Default')
 
@@ -36,31 +44,12 @@ const Playground: React.FC<PlaygroundProps> = React.memo(
       <>
         <Title title={title} desc={desc} />
         <div className="playground">
-          <LiveProvider code={code} scope={scope} theme={codeTheme}>
-            <div className="wrapper">
-              <LivePreview />
-              <LiveError />
-            </div>
-            <Editor code={code} />
-          </LiveProvider>
-
+          <DynamicLive code={code} scope={scope} />
           <style jsx>{`
             .playground {
               width: 100%;
               border-radius: ${theme.layout.radius};
               border: 1px solid ${theme.palette.accents_2};
-            }
-
-            .wrapper {
-              width: 100%;
-              padding: ${theme.layout.pageMargin};
-              display: flex;
-              flex-direction: column;
-              box-sizing: border-box;
-            }
-
-            .wrapper > :global(div) {
-              width: 100%;
             }
           `}</style>
         </div>
