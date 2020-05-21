@@ -131,4 +131,11 @@ describe('Button', () => {
     await sleep(500)
     expect(wrapper.find('.loading-container').length).not.toBe(0)
   })
+
+  it('ref should be forwarded', () => {
+    const ref = React.createRef<HTMLButtonElement>()
+    const wrapper = mount(<Button ref={ref}>action</Button>)
+    expect(wrapper.find('button').getDOMNode()).toEqual(ref.current)
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
