@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, Grid } from 'components'
+import { Button, Spacer, Grid, Code } from 'components'
 import Router from 'next/router'
 import Settings from '@zeit-ui/react-icons/settings'
 import UserX from '@zeit-ui/react-icons/userX'
@@ -125,10 +125,11 @@ Used to trigger an operation.
 | **auto** | autoscale width | `boolean` | - | `false` |
 | **effect** | display animation | `boolean` | - | `true` |
 | **disabled** | disable button | `boolean` | - | `false` |
-| **icon** | show icon in button | `ReactNode` | - | - |
-| **htmlType** | native type of button element | `ButtonHTMLAttributes.type` | - | `button` |
-| **iconRight** | show icon on the other side of the button | `ReactNode` | - | - |
 | **onClick** | click handler | `MouseEventHandler` | - | - |
+| **icon** | show icon in button | `ReactNode` | - | - |
+| **iconRight** | show icon on the other side of the button | `ReactNode` | - | - |
+| **htmlType** | native type of button element | `ButtonHTMLAttributes.type` | - | `button` |
+| **ref** | forwardRef | <Code>Ref<HTMLButtonElement &#124; null></Code> | - | - |
 | ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>

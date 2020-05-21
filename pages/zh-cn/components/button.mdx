@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, Grid } from 'components'
+import { Button, Spacer, Grid, Code } from 'components'
 import Router from 'next/router'
 import Settings from '@zeit-ui/react-icons/settings'
 import UserX from '@zeit-ui/react-icons/userX'
@@ -129,6 +129,7 @@ export const meta = {
 | **icon** | 在按钮内显示图标 | `ReactNode` | - | - |
 | **iconRight** | 在按钮的另一侧显示图标 | `ReactNode` | - | - |
 | **htmlType** | 按钮的原生类型属性 | `ButtonHTMLAttributes.type` | - | `button` |
+| **ref** | 转发的原生按钮 Ref | <Code>Ref<HTMLButtonElement &#124; null></Code> | - | - |
 | ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
