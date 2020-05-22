@@ -54,6 +54,18 @@ const nextConfig = {
       ]
     },
   },
+
+  webpack: function (cfg) {
+    const originalEntry = cfg.entry
+    cfg.entry = async () => {
+      const entries = await originalEntry()
+      if (entries['main.js'] && !entries['main.js'].includes('./scripts/polyfills.js')) {
+        entries['main.js'].unshift('./scripts/polyfills.js')
+      }
+      return entries
+    }
+    return cfg
+  },
 }
 
 module.exports = withMDX(nextConfig)
