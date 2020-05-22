@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useCheckbox } from './checkbox-context'
-import CheckboxGroup from './checkbox-group'
+import CheckboxGroup, { getCheckboxSize } from './checkbox-group'
 import CheckboxIcon from './checkbox.icon'
 import useWarning from '../utils/use-warning'
+import { NormalSizes } from '../utils/prop-types'
 
 interface CheckboxEventTarget {
   checked: boolean
@@ -20,6 +21,7 @@ interface Props {
   disabled?: boolean
   initialChecked?: boolean
   onChange?: (e: CheckboxEvent) => void
+  size?: NormalSizes
   className?: string
   value?: string
 }
@@ -27,6 +29,7 @@ interface Props {
 const defaultProps = {
   disabled: false,
   initialChecked: false,
+  size: 'small' as NormalSizes,
   className: '',
   value: '',
 }
@@ -41,6 +44,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   onChange,
   className,
   children,
+  size,
   value,
   ...props
 }) => {
@@ -51,7 +55,6 @@ const Checkbox: React.FC<CheckboxProps> = ({
   if (inGroup && checked) {
     useWarning('Remove props "checked" when [Checkbox] component is in the group.', 'Checkbox')
   }
-
   if (inGroup) {
     useEffect(() => {
       const next = values.includes(value)
@@ -60,6 +63,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     }, [values.join(',')])
   }
 
+  const fontSize = useMemo(() => getCheckboxSize(size), [size])
   const changeHandle = useCallback(
     (ev: React.ChangeEvent) => {
       if (isDisabled) return
@@ -94,20 +98,21 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
       <style jsx>{`
         label {
-          height: 0.875rem;
-          line-height: 0.875rem;
+          --checkbox-size: ${fontSize};
           display: inline-flex;
           justify-content: center;
           align-items: center;
           width: auto;
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
           opacity: ${isDisabled ? 0.75 : 1};
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
         }
 
         .text {
-          font-size: 0.875rem;
-          line-height: 0.875rem;
-          padding-left: 0.5rem;
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
           user-select: none;
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
         }
