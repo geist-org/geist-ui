@@ -1,12 +1,13 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
 import { RadioContext } from './radio-context'
+import { NormalSizes } from 'components/utils/prop-types'
 
 interface Props {
   value?: string
   initialValue?: string
   disabled?: boolean
+  size?: NormalSizes
   onChange?: (value: string) => void
   className?: string
   useRow?: boolean
@@ -14,6 +15,7 @@ interface Props {
 
 const defaultProps = {
   disabled: false,
+  size: 'medium' as NormalSizes,
   className: '',
   useRow: false,
 }
@@ -21,19 +23,29 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type RadioGroupProps = Props & typeof defaultProps & NativeAttrs
 
+export const getRadioSize = (selfSize: NormalSizes, groupSize?: NormalSizes): string => {
+  const size = groupSize || selfSize
+  const sizes: { [key in NormalSizes]: string } = {
+    mini: '.75rem',
+    small: '.875rem',
+    medium: '1rem',
+    large: '1.125rem',
+  }
+  return sizes[size]
+}
+
 const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
   disabled,
   onChange,
   value,
+  size,
   children,
   className,
   initialValue,
   useRow,
   ...props
 }) => {
-  const theme = useTheme()
   const [selfVal, setSelfVal] = useState<string | undefined>(initialValue)
-
   const updateState = (nextValue: string) => {
     setSelfVal(nextValue)
     onChange && onChange(nextValue)
@@ -44,9 +56,13 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
       updateState,
       disabledAll: disabled,
       inGroup: true,
+      size,
       value: selfVal,
     }
-  }, [disabled, selfVal])
+  }, [disabled, selfVal, size])
+
+  const fontSize = useMemo(() => getRadioSize(size), [size])
+  const groupGap = `calc(${fontSize} * 1)`
 
   useEffect(() => {
     if (value === undefined) return
@@ -65,8 +81,8 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
         }
 
         .radio-group :global(.radio) {
-          margin-top: ${useRow ? 0 : theme.layout.gap};
-          margin-left: ${useRow ? theme.layout.gap : 0};
+          margin-top: ${useRow ? 0 : groupGap};
+          margin-left: ${useRow ? groupGap : 0};
         }
 
         .radio-group :global(.radio:first-of-type) {
