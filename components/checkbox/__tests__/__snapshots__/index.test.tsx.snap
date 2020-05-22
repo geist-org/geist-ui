@@ -10,9 +10,7 @@ initialize {
       Object {
         "attribs": Object {
           "fill": "none",
-          "height": "12px",
           "viewBox": "0 0 12 12",
-          "width": "12px",
           "xmlns": "http://www.w3.org/2000/svg",
         },
         "children": Array [
@@ -47,8 +45,8 @@ initialize {
               "data": "
         svg {
           display: inline-flex;
-          width: 12px;
-          height: 12px;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
           user-select: none;
           opacity: 1;
           cursor: pointer;
@@ -90,20 +88,21 @@ initialize {
                   Object {
                     "data": "
         label {
-          height: 0.875rem;
-          line-height: 0.875rem;
+          --checkbox-size: .875rem;
           display: inline-flex;
           justify-content: center;
           align-items: center;
           width: auto;
           cursor: pointer;
           opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
         }
 
         .text {
-          font-size: 0.875rem;
-          line-height: 0.875rem;
-          padding-left: 0.5rem;
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
           user-select: none;
           cursor: pointer;
         }
@@ -166,16 +165,12 @@ initialize {
         "type": "tag",
         "x-attribsNamespace": Object {
           "fill": undefined,
-          "height": undefined,
           "viewBox": undefined,
-          "width": undefined,
           "xmlns": "http://www.w3.org/2000/xmlns/",
         },
         "x-attribsPrefix": Object {
           "fill": undefined,
-          "height": undefined,
           "viewBox": undefined,
-          "width": undefined,
           "xmlns": "",
         },
       },
@@ -186,8 +181,8 @@ initialize {
             "data": "
         svg {
           display: inline-flex;
-          width: 12px;
-          height: 12px;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
           user-select: none;
           opacity: 1;
           cursor: pointer;
@@ -229,20 +224,21 @@ initialize {
                 Object {
                   "data": "
         label {
-          height: 0.875rem;
-          line-height: 0.875rem;
+          --checkbox-size: .875rem;
           display: inline-flex;
           justify-content: center;
           align-items: center;
           width: auto;
           cursor: pointer;
           opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
         }
 
         .text {
-          font-size: 0.875rem;
-          line-height: 0.875rem;
-          padding-left: 0.5rem;
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
           user-select: none;
           cursor: pointer;
         }
@@ -298,9 +294,7 @@ initialize {
         "prev": Object {
           "attribs": Object {
             "fill": "none",
-            "height": "12px",
             "viewBox": "0 0 12 12",
-            "width": "12px",
             "xmlns": "http://www.w3.org/2000/svg",
           },
           "children": Array [
@@ -334,16 +328,12 @@ initialize {
           "type": "tag",
           "x-attribsNamespace": Object {
             "fill": undefined,
-            "height": undefined,
             "viewBox": undefined,
-            "width": undefined,
             "xmlns": "http://www.w3.org/2000/xmlns/",
           },
           "x-attribsPrefix": Object {
             "fill": undefined,
-            "height": undefined,
             "viewBox": undefined,
-            "width": undefined,
             "xmlns": "",
           },
         },
@@ -379,20 +369,21 @@ initialize {
               Object {
                 "data": "
         label {
-          height: 0.875rem;
-          line-height: 0.875rem;
+          --checkbox-size: .875rem;
           display: inline-flex;
           justify-content: center;
           align-items: center;
           width: auto;
           cursor: pointer;
           opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
         }
 
         .text {
-          font-size: 0.875rem;
-          line-height: 0.875rem;
-          padding-left: 0.5rem;
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
           user-select: none;
           cursor: pointer;
         }
@@ -442,8 +433,8 @@ initialize {
               "data": "
         svg {
           display: inline-flex;
-          width: 12px;
-          height: 12px;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
           user-select: none;
           opacity: 1;
           cursor: pointer;
@@ -462,9 +453,7 @@ initialize {
           "prev": Object {
             "attribs": Object {
               "fill": "none",
-              "height": "12px",
               "viewBox": "0 0 12 12",
-              "width": "12px",
               "xmlns": "http://www.w3.org/2000/svg",
             },
             "children": Array [
@@ -498,16 +487,12 @@ initialize {
             "type": "tag",
             "x-attribsNamespace": Object {
               "fill": undefined,
-              "height": undefined,
               "viewBox": undefined,
-              "width": undefined,
               "xmlns": "http://www.w3.org/2000/xmlns/",
             },
             "x-attribsPrefix": Object {
               "fill": undefined,
-              "height": undefined,
               "viewBox": undefined,
-              "width": undefined,
               "xmlns": "",
             },
           },
@@ -544,20 +529,21 @@ initialize {
             Object {
               "data": "
         label {
-          height: 0.875rem;
-          line-height: 0.875rem;
+          --checkbox-size: .875rem;
           display: inline-flex;
           justify-content: center;
           align-items: center;
           width: auto;
           cursor: pointer;
           opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
         }
 
         .text {
-          font-size: 0.875rem;
-          line-height: 0.875rem;
-          padding-left: 0.5rem;
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
           user-select: none;
           cursor: pointer;
         }
@@ -606,8 +592,8 @@ initialize {
                 "data": "
         svg {
           display: inline-flex;
-          width: 12px;
-          height: 12px;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
           user-select: none;
           opacity: 1;
           cursor: pointer;
@@ -626,9 +612,7 @@ initialize {
             "prev": Object {
               "attribs": Object {
                 "fill": "none",
-                "height": "12px",
                 "viewBox": "0 0 12 12",
-                "width": "12px",
                 "xmlns": "http://www.w3.org/2000/svg",
               },
               "children": Array [
@@ -662,16 +646,12 @@ initialize {
               "type": "tag",
               "x-attribsNamespace": Object {
                 "fill": undefined,
-                "height": undefined,
                 "viewBox": undefined,
-                "width": undefined,
                 "xmlns": "http://www.w3.org/2000/xmlns/",
               },
               "x-attribsPrefix": Object {
                 "fill": undefined,
-                "height": undefined,
                 "viewBox": undefined,
-                "width": undefined,
                 "xmlns": "",
               },
             },
@@ -701,20 +681,21 @@ initialize {
           Object {
             "data": "
         label {
-          height: 0.875rem;
-          line-height: 0.875rem;
+          --checkbox-size: .875rem;
           display: inline-flex;
           justify-content: center;
           align-items: center;
           width: auto;
           cursor: pointer;
           opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
         }
 
         .text {
-          font-size: 0.875rem;
-          line-height: 0.875rem;
-          padding-left: 0.5rem;
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
           user-select: none;
           cursor: pointer;
         }
@@ -774,8 +755,8 @@ initialize {
                   "data": "
         svg {
           display: inline-flex;
-          width: 12px;
-          height: 12px;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
           user-select: none;
           opacity: 1;
           cursor: pointer;
@@ -794,9 +775,7 @@ initialize {
               "prev": Object {
                 "attribs": Object {
                   "fill": "none",
-                  "height": "12px",
                   "viewBox": "0 0 12 12",
-                  "width": "12px",
                   "xmlns": "http://www.w3.org/2000/svg",
                 },
                 "children": Array [
@@ -830,16 +809,12 @@ initialize {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "fill": undefined,
-                  "height": undefined,
                   "viewBox": undefined,
-                  "width": undefined,
                   "xmlns": "http://www.w3.org/2000/xmlns/",
                 },
                 "x-attribsPrefix": Object {
                   "fill": undefined,
-                  "height": undefined,
                   "viewBox": undefined,
-                  "width": undefined,
                   "xmlns": "",
                 },
               },
@@ -904,4 +879,172 @@ initialize {
     "xml": false,
   },
 }
+`;
+
+exports[`Checkbox should work correctly with different sizes 1`] = `
+"<div><label class=\\"\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
+        svg {
+          display: inline-flex;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
+          user-select: none;
+          opacity: 1;
+          cursor: pointer;
+        }
+      </style><input type=\\"checkbox\\"><span class=\\"text\\">mini</span><style>
+        label {
+          --checkbox-size: .75rem;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          cursor: pointer;
+          opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+        }
+
+        .text {
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
+          user-select: none;
+          cursor: pointer;
+        }
+
+        input {
+          opacity: 0;
+          outline: none;
+          position: absolute;
+          width: 0;
+          height: 0;
+          margin: 0;
+          padding: 0;
+          z-index: -1;
+          background-color: transparent;
+        }
+      </style></label><label class=\\"\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
+        svg {
+          display: inline-flex;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
+          user-select: none;
+          opacity: 1;
+          cursor: pointer;
+        }
+      </style><input type=\\"checkbox\\"><span class=\\"text\\">small</span><style>
+        label {
+          --checkbox-size: .875rem;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          cursor: pointer;
+          opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+        }
+
+        .text {
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
+          user-select: none;
+          cursor: pointer;
+        }
+
+        input {
+          opacity: 0;
+          outline: none;
+          position: absolute;
+          width: 0;
+          height: 0;
+          margin: 0;
+          padding: 0;
+          z-index: -1;
+          background-color: transparent;
+        }
+      </style></label><label class=\\"\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
+        svg {
+          display: inline-flex;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
+          user-select: none;
+          opacity: 1;
+          cursor: pointer;
+        }
+      </style><input type=\\"checkbox\\"><span class=\\"text\\">medium</span><style>
+        label {
+          --checkbox-size: 1rem;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          cursor: pointer;
+          opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+        }
+
+        .text {
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
+          user-select: none;
+          cursor: pointer;
+        }
+
+        input {
+          opacity: 0;
+          outline: none;
+          position: absolute;
+          width: 0;
+          height: 0;
+          margin: 0;
+          padding: 0;
+          z-index: -1;
+          background-color: transparent;
+        }
+      </style></label><label class=\\"\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
+        svg {
+          display: inline-flex;
+          width: calc(0.86 * var(--checkbox-size));
+          height: calc(0.86 * var(--checkbox-size));
+          user-select: none;
+          opacity: 1;
+          cursor: pointer;
+        }
+      </style><input type=\\"checkbox\\"><span class=\\"text\\">large</span><style>
+        label {
+          --checkbox-size: 1.125rem;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          width: auto;
+          cursor: pointer;
+          opacity: 1;
+          height: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+        }
+
+        .text {
+          font-size: var(--checkbox-size);
+          line-height: var(--checkbox-size);
+          padding-left: calc(var(--checkbox-size) * 0.57);
+          user-select: none;
+          cursor: pointer;
+        }
+
+        input {
+          opacity: 0;
+          outline: none;
+          position: absolute;
+          width: 0;
+          height: 0;
+          margin: 0;
+          padding: 0;
+          z-index: -1;
+          background-color: transparent;
+        }
+      </style></label></div>"
 `;
