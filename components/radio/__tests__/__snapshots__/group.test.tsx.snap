@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio Group should render correctly 1`] = `
-"<div><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\">1</span><span class=\\"point\\"></span></label><style>
+"<div><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -17,34 +17,36 @@ exports[`Radio Group should render correctly 1`] = `
           display: flex;
           width: initial;
           align-items: flex-start;
-          line-height: 1.5rem;
           position: relative;
+          --radio-size: 1rem;
         }
 
         label {
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-          margin-left: 1.375rem;
           color: #000;
           cursor: pointer;
         }
 
         .name {
-          font-size: 1rem;
+          font-size: var(--radio-size);
           font-weight: bold;
           user-select: none;
+          display: inline-flex;
+          align-items: center;
         }
 
         .point {
-          position: absolute;
-          left: 0;
-          top: 6px;
-          height: 0.875rem;
-          width: 0.875rem;
+          height: var(--radio-size);
+          width: var(--radio-size);
           border-radius: 50%;
           border: 1px solid #eaeaea;
           transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
         }
 
         .point:before {
@@ -52,70 +54,80 @@ exports[`Radio Group should render correctly 1`] = `
           position: absolute;
           left: -1px;
           top: -1px;
-          height: 0.875rem;
-          width: 0.875rem;
-          border-radius: 50%;
-          transform: scale(1);
-          transition: all 0.2s ease;
-          background-color: #000;
-        }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"2\\"><span class=\\"name\\">2</span><span class=\\"point\\"></span></label><style>
-        input {
-          opacity: 0;
-          visibility: hidden;
-          overflow: hidden;
-          width: 1px;
-          height: 1px;
-          top: -1000px;
-          right: -1000px;
-          position: fixed;
-        }
-
-        .radio {
-          display: flex;
-          width: initial;
-          align-items: flex-start;
-          line-height: 1.5rem;
-          position: relative;
-        }
-
-        label {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          margin-left: 1.375rem;
-          color: #000;
-          cursor: pointer;
-        }
-
-        .name {
-          font-size: 1rem;
-          font-weight: bold;
-          user-select: none;
-        }
-
-        .point {
-          position: absolute;
-          left: 0;
-          top: 6px;
-          height: 0.875rem;
-          width: 0.875rem;
-          border-radius: 50%;
-          border: 1px solid #eaeaea;
-          transition: all 0.2s ease 0s;
-        }
-
-        .point:before {
-          content: '';
-          position: absolute;
-          left: -1px;
-          top: -1px;
-          height: 0.875rem;
-          width: 0.875rem;
-          border-radius: 50%;
           transform: scale(0);
-          transition: all 0.2s ease;
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
           background-color: #000;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"2\\"><span class=\\"name\\"><span class=\\"point \\"></span>2</span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: 1rem;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #000;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #000;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
         }
       </style></div></div><style>
         .radio-group {
@@ -124,14 +136,14 @@ exports[`Radio Group should render correctly 1`] = `
         }
 
         .radio-group :global(.radio) {
-          margin-top: 16pt;
+          margin-top: calc(1rem * 1);
           margin-left: 0;
         }
 
         .radio-group :global(.radio:first-of-type) {
           margin: 0;
         }
-      </style><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\">1</span><span class=\\"point\\"></span></label><style>
+      </style><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -147,34 +159,36 @@ exports[`Radio Group should render correctly 1`] = `
           display: flex;
           width: initial;
           align-items: flex-start;
-          line-height: 1.5rem;
           position: relative;
+          --radio-size: 1rem;
         }
 
         label {
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-          margin-left: 1.375rem;
           color: #000;
           cursor: pointer;
         }
 
         .name {
-          font-size: 1rem;
+          font-size: var(--radio-size);
           font-weight: bold;
           user-select: none;
+          display: inline-flex;
+          align-items: center;
         }
 
         .point {
-          position: absolute;
-          left: 0;
-          top: 6px;
-          height: 0.875rem;
-          width: 0.875rem;
+          height: var(--radio-size);
+          width: var(--radio-size);
           border-radius: 50%;
           border: 1px solid #eaeaea;
           transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
         }
 
         .point:before {
@@ -182,70 +196,80 @@ exports[`Radio Group should render correctly 1`] = `
           position: absolute;
           left: -1px;
           top: -1px;
-          height: 0.875rem;
-          width: 0.875rem;
-          border-radius: 50%;
-          transform: scale(1);
-          transition: all 0.2s ease;
-          background-color: #000;
-        }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"2\\"><span class=\\"name\\">2</span><span class=\\"point\\"></span></label><style>
-        input {
-          opacity: 0;
-          visibility: hidden;
-          overflow: hidden;
-          width: 1px;
-          height: 1px;
-          top: -1000px;
-          right: -1000px;
-          position: fixed;
-        }
-
-        .radio {
-          display: flex;
-          width: initial;
-          align-items: flex-start;
-          line-height: 1.5rem;
-          position: relative;
-        }
-
-        label {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          margin-left: 1.375rem;
-          color: #000;
-          cursor: pointer;
-        }
-
-        .name {
-          font-size: 1rem;
-          font-weight: bold;
-          user-select: none;
-        }
-
-        .point {
-          position: absolute;
-          left: 0;
-          top: 6px;
-          height: 0.875rem;
-          width: 0.875rem;
-          border-radius: 50%;
-          border: 1px solid #eaeaea;
-          transition: all 0.2s ease 0s;
-        }
-
-        .point:before {
-          content: '';
-          position: absolute;
-          left: -1px;
-          top: -1px;
-          height: 0.875rem;
-          width: 0.875rem;
-          border-radius: 50%;
           transform: scale(0);
-          transition: all 0.2s ease;
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
           background-color: #000;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"2\\"><span class=\\"name\\"><span class=\\"point \\"></span>2</span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: 1rem;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #000;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #000;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
         }
       </style></div></div><style>
         .radio-group {
@@ -255,7 +279,245 @@ exports[`Radio Group should render correctly 1`] = `
 
         .radio-group :global(.radio) {
           margin-top: 0;
-          margin-left: 16pt;
+          margin-left: calc(1rem * 1);
+        }
+
+        .radio-group :global(.radio:first-of-type) {
+          margin: 0;
+        }
+      </style></div>"
+`;
+
+exports[`Radio Group should work correctly with different sizes 1`] = `
+"<div><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: .75rem;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #000;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #000;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div></div><style>
+        .radio-group {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .radio-group :global(.radio) {
+          margin-top: calc(.75rem * 1);
+          margin-left: 0;
+        }
+
+        .radio-group :global(.radio:first-of-type) {
+          margin: 0;
+        }
+      </style><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: .875rem;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #000;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #000;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div></div><style>
+        .radio-group {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .radio-group :global(.radio) {
+          margin-top: calc(.875rem * 1);
+          margin-left: 0;
+        }
+
+        .radio-group :global(.radio:first-of-type) {
+          margin: 0;
+        }
+      </style><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: 1.125rem;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #000;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #000;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div></div><style>
+        .radio-group {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .radio-group :global(.radio) {
+          margin-top: calc(1.125rem * 1);
+          margin-left: 0;
         }
 
         .radio-group :global(.radio:first-of-type) {
