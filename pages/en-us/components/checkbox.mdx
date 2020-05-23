@@ -10,12 +10,27 @@ export const meta = {
 
 Displays a boolean value.
 
-
 <Playground
   desc="Change state with `checked` props."
   scope={{ Checkbox }}
   code={`
   <Checkbox checked={true}>Sydney</Checkbox>
+`} />
+
+<Playground
+  title="sizes"
+  desc="Checkbox of different sizes."
+  scope={{ Checkbox, Spacer }}
+  code={`
+<>
+  <Checkbox checked={true} size="mini">mini</Checkbox>
+  <Spacer y={.5} />
+  <Checkbox checked={true} size="small">small</Checkbox>
+  <Spacer y={.5} />
+  <Checkbox checked={true} size="medium">medium</Checkbox>
+  <Spacer y={.5} />
+  <Checkbox checked={true} size="large">large</Checkbox>
+</>
 `} />
 
 <Playground
@@ -59,6 +74,7 @@ Displays a boolean value.
 | **onChange** | change event handler | `CheckboxEvent` | - | - |
 | **value** | unique identification value (only in group) | `string` | - | - |
 | **disabled** | disable checkbox | `boolean` | - | `false` |
+| **size** | checkbox size | `NormalSizes` | [NormalSizes](#normalsizes) | `small` |
 | ... | native props | `LabelHTMLAttributes` | `'form', 'className', ...` | - |
 
 <Attributes.Title>Checkbox.Group.Props</Attributes.Title>
@@ -68,7 +84,14 @@ Displays a boolean value.
 | **value** | checked children | `Array<string>` | - | `[]` |
 | **disabled** | disable checkbox group | `boolean` | - | `false` |
 | **onChange** | change event handler | `(values: string[]) => void` | - | - |
-| ... | native props | `HTMLAttributes` | `'spellCheck', 'style', 'className', ...` | - |
+| **size** | size of all checkboxes in the group | `NormalSizes` | [NormalSizes](#normalsizes) | `small` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
 
 <Attributes.Title>CheckboxEvent</Attributes.Title>
 
