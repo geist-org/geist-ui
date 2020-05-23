@@ -38,9 +38,17 @@ export const pickChildByProps = (
   value: any,
 ): [ReactNode | undefined, ReactNode | undefined] => {
   let target: ReactNode[] = []
+  const isArray = Array.isArray(value)
   const withoutPropChildren = React.Children.map(children, item => {
     if (!React.isValidElement(item)) return null
     if (!item.props) return item
+    if (isArray) {
+      if (value.includes(item.props[key])) {
+        target.push(item)
+        return null
+      }
+      return item
+    }
     if (item.props[key] === value) {
       target.push(item)
       return null
