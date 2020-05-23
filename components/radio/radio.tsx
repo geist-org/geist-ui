@@ -77,7 +77,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
     }
     setSelfChecked(!selfChecked)
     if (inGroup) {
-      updateState(radioValue as string)
+      updateState && updateState(radioValue as string)
     }
     onChange && onChange(selfEvent)
   }
