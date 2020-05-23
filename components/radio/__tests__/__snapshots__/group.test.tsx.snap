@@ -138,6 +138,7 @@ exports[`Radio Group should render correctly 1`] = `
         .radio-group :global(.radio) {
           margin-top: calc(1rem * 1);
           margin-left: 0;
+          --radio-size: 1rem;
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -280,6 +281,7 @@ exports[`Radio Group should render correctly 1`] = `
         .radio-group :global(.radio) {
           margin-top: 0;
           margin-left: calc(1rem * 1);
+          --radio-size: 1rem;
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -306,7 +308,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: .75rem;
+          --radio-size: 1rem;
         }
 
         label {
@@ -362,6 +364,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
         .radio-group :global(.radio) {
           margin-top: calc(.75rem * 1);
           margin-left: 0;
+          --radio-size: .75rem;
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -384,7 +387,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: .875rem;
+          --radio-size: 1rem;
         }
 
         label {
@@ -440,6 +443,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
         .radio-group :global(.radio) {
           margin-top: calc(.875rem * 1);
           margin-left: 0;
+          --radio-size: .875rem;
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -462,7 +466,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 1.125rem;
+          --radio-size: 1rem;
         }
 
         label {
@@ -518,6 +522,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
         .radio-group :global(.radio) {
           margin-top: calc(1.125rem * 1);
           margin-left: 0;
+          --radio-size: 1.125rem;
         }
 
         .radio-group :global(.radio:first-of-type) {
