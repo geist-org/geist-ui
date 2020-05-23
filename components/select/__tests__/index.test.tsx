@@ -17,6 +17,19 @@ describe('Select', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work correctly with labels', () => {
+    const wrapper = mount(
+      <Select>
+        <Select.Option label>1</Select.Option>
+        <Select.Option divider>1</Select.Option>
+        <Select.Option value="1">1</Select.Option>
+        <Select.Option value="2">Option 2</Select.Option>
+      </Select>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
   it('should work with different icons', () => {
     const MockIcon = () => <span>icon</span>
     const pure = render(<Select pure />)
