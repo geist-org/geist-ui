@@ -1,11 +1,9 @@
 import React from 'react'
-import { NormalSizes } from 'components/utils/prop-types'
 
 export interface RadioConfig {
   updateState: (value: string) => void
   disabledAll: boolean
   value?: string
-  size?: NormalSizes
   inGroup: boolean
 }
 

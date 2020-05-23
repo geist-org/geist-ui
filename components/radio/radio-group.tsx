@@ -23,8 +23,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type RadioGroupProps = Props & typeof defaultProps & NativeAttrs
 
-export const getRadioSize = (selfSize: NormalSizes, groupSize?: NormalSizes): string => {
-  const size = groupSize || selfSize
+export const getRadioSize = (size: NormalSizes): string => {
   const sizes: { [key in NormalSizes]: string } = {
     mini: '.75rem',
     small: '.875rem',
@@ -56,10 +55,9 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
       updateState,
       disabledAll: disabled,
       inGroup: true,
-      size,
       value: selfVal,
     }
-  }, [disabled, selfVal, size])
+  }, [disabled, selfVal])
 
   const fontSize = useMemo(() => getRadioSize(size), [size])
   const groupGap = `calc(${fontSize} * 1)`
@@ -83,6 +81,7 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
         .radio-group :global(.radio) {
           margin-top: ${useRow ? 0 : groupGap};
           margin-left: ${useRow ? groupGap : 0};
+          --radio-size: ${fontSize};
         }
 
         .radio-group :global(.radio:first-of-type) {

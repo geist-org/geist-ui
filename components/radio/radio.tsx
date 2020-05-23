@@ -48,13 +48,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
 }) => {
   const theme = useTheme()
   const [selfChecked, setSelfChecked] = useState<boolean>(!!checked)
-  const {
-    value: groupValue,
-    disabledAll,
-    inGroup,
-    updateState,
-    size: groupSize,
-  } = useRadioContext()
+  const { value: groupValue, disabledAll, inGroup, updateState } = useRadioContext()
   const [withoutDescChildren, DescChildren] = pickChild(children, RadioDescription)
 
   if (inGroup) {
@@ -69,7 +63,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
     }, [groupValue, radioValue])
   }
 
-  const fontSize = useMemo(() => getRadioSize(size, groupSize), [size, groupSize])
+  const fontSize = useMemo(() => getRadioSize(size), [size])
   const isDisabled = useMemo(() => disabled || disabledAll, [disabled, disabledAll])
   const changeHandler = (event: React.ChangeEvent) => {
     if (isDisabled) return
