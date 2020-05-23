@@ -2,8 +2,10 @@ import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef, useState
 
 export type CurrentStateType<S> = [S, Dispatch<SetStateAction<S>>, MutableRefObject<S>]
 
-const useCurrentState = <S>(initialState: S): CurrentStateType<S> => {
-  const [state, setState] = useState<S>(initialState as S)
+const useCurrentState = <S>(initialState: S | (() => S)): CurrentStateType<S> => {
+  const [state, setState] = useState<S>(() => {
+    return typeof initialState === 'function' ? (initialState as () => S)() : initialState
+  })
   const ref = useRef<S>(initialState as S)
 
   useEffect(() => {

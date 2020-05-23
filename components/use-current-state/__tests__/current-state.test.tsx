@@ -13,6 +13,14 @@ describe('UseCurrentState', () => {
     expect(result.current[2].current).toEqual('test')
   })
 
+  it('functional initial mode should be supported', () => {
+    const { result } = renderHook(() => useCurrentState(() => 1 + 1))
+    expect(result.current[0]).toEqual(2)
+    act(() => result.current[1](0))
+    expect(result.current[0]).toEqual(0)
+    expect(result.current[2].current).toEqual(0)
+  })
+
   it('functional update mode should be supported', () => {
     const { result } = renderHook(() => useCurrentState(0))
     expect(result.current[0]).toEqual(0)
