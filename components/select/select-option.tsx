@@ -5,14 +5,18 @@ import { useSelectContext } from './select-context'
 import useWarning from '../utils/use-warning'
 
 interface Props {
-  value: string
+  value?: string
   disabled?: boolean
   className?: string
+  divider?: boolean
+  label?: boolean
   preventAllEvents?: boolean
 }
 
 const defaultProps = {
   disabled: false,
+  divider: false,
+  label: false,
   className: '',
   preventAllEvents: false,
 }
@@ -25,22 +29,36 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   className,
   children,
   disabled,
+  divider,
+  label,
   preventAllEvents,
   ...props
 }) => {
   const theme = useTheme()
   const { updateValue, value, disableAll } = useSelectContext()
   const isDisabled = useMemo(() => disabled || disableAll, [disabled, disableAll])
-  if (identValue === undefined) {
+  const isLabel = useMemo(() => label || divider, [label, divider])
+  if (!isLabel && identValue === undefined) {
     useWarning('The props "value" is required.', 'Select Option')
   }
 
-  const selected = useMemo(() => (value ? identValue === value : false), [identValue, value])
+  const selected = useMemo(() => {
+    if (!value) return false
+    if (typeof value === 'string') {
+      return identValue === value
+    }
+    return value.includes(`${identValue}`)
+  }, [identValue, value])
 
   const bgColor = useMemo(() => {
     if (isDisabled) return theme.palette.accents_1
-    return selected ? theme.palette.accents_1 : theme.palette.background
+    return selected ? theme.palette.accents_2 : theme.palette.background
   }, [selected, isDisabled, theme.palette])
+
+  const hoverBgColor = useMemo(() => {
+    if (isDisabled || isLabel || selected) return bgColor
+    return theme.palette.accents_1
+  }, [selected, isDisabled, theme.palette, isLabel, bgColor])
 
   const color = useMemo(() => {
     if (isDisabled) return theme.palette.accents_4
@@ -52,13 +70,16 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
     event.stopPropagation()
     event.nativeEvent.stopImmediatePropagation()
     event.preventDefault()
-    if (isDisabled) return
+    if (isDisabled || isLabel) return
     updateValue && updateValue(identValue)
   }
 
   return (
     <>
-      <div className={`option ${className}`} onClick={clickHandler} {...props}>
+      <div
+        className={`option ${divider ? 'divider' : ''} ${label ? 'label' : ''} ${className}`}
+        onClick={clickHandler}
+        {...props}>
         {children}
       </div>
 
@@ -80,18 +101,27 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
         }
 
-        .option:first-of-type {
-          border-top-left-radius: ${theme.layout.radius};
-          border-top-right-radius: ${theme.layout.radius};
-        }
-
-        .option:last-of-type {
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
-        }
-
         .option:hover {
-          background-color: ${theme.palette.accents_1};
+          background-color: ${hoverBgColor};
+          color: ${theme.palette.accents_7};
+        }
+
+        .divider {
+          line-height: 0;
+          height: 0;
+          padding: 0;
+          overflow: hidden;
+          border-top: 1px solid ${theme.palette.border};
+          margin: 0.5rem 0;
+          width: 100%;
+        }
+
+        .label {
+          font-size: 0.875rem;
+          color: ${theme.palette.accents_7};
+          border-bottom: 1px solid ${theme.palette.border};
+          text-transform: capitalize;
+          cursor: default;
         }
       `}</style>
     </>
