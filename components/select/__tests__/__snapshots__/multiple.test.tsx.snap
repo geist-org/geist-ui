@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Multiple should render correctly 1`] = `
+"<div class=\\"select multiple \\"><span class=\\"value placeholder\\"></span><div class=\\"item  mock \\"><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+          }
+        }
+      </style></div><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+            padding: 0 4pt 0 8pt;
+            height: calc(1.688 * 16pt);
+            min-width: 10rem;
+            background-color: #fff;
+          }
+
+          .multiple {
+            height: auto;
+            min-height: calc(1.688 * 16pt);
+            padding: 4pt calc(.875rem * 2)
+              4pt 8pt;
+          }
+
+          .select:hover {
+            border-color: #000;
+          }
+
+          .select:hover .icon {
+            color: #000;
+          }
+
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: .875rem;
+            color: #000;
+            width: calc(100% - 1.25rem);
+          }
+
+          .value > :global(div),
+          .value > :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+
+          .placeholder {
+            color: #999;
+          }
+
+          .icon {
+            position: absolute;
+            right: 4pt;
+            font-size: .875rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #666;
+          }
+        </style></div>"
+`;

@@ -4,6 +4,7 @@ import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
 import CSSTransition from './css-transition'
 import useClickAnyWhere from '../utils/use-click-anywhere'
+import useDOMObserver from '../utils/use-dom-observer'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
@@ -51,6 +52,9 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
       const { top, left } = getRect(parent)
       const shouldUpdatePosition = top !== rect.top || left !== rect.left
       if (!shouldUpdatePosition) return
+      updateRect()
+    })
+    useDOMObserver(parent, () => {
       updateRect()
     })
     useEffect(() => {

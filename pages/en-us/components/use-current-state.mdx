@@ -46,7 +46,7 @@ type CurrentStateType<S> = [
 ]
 
 const useCurrentState<S> = (
-  initialState: S,
+  initialState: S | () => S,
 ) => CurrentStateType<S>
 ```
 

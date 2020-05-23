@@ -59,6 +59,52 @@ Display a dropdown list of items.
 `} />
 
 <Playground
+  title="Labels"
+  desc="show data as a group."
+  scope={{ Select }}
+  code={`
+<Select placeholder="Frameworks">
+  <Select.Option label>JavaScript</Select.Option>
+  <Select.Option value="react">React</Select.Option>
+  <Select.Option value="angular">Angular</Select.Option>
+  <Select.Option label>Ruby</Select.Option>
+  <Select.Option value="rails">Rails</Select.Option>
+  <Select.Option value="sinatra">Sinatra</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="Divider"
+  scope={{ Select }}
+  code={`
+<Select placeholder="Frameworks">
+  <Select.Option value="react">React</Select.Option>
+  <Select.Option value="angular">Angular</Select.Option>
+  <Select.Option divider />
+  <Select.Option value="rails">Rails</Select.Option>
+  <Select.Option value="sinatra">Sinatra</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="Multiple"
+  desc="`Select` supports multiple values to be selected."
+  scope={{ Select }}
+  code={`
+<Select placeholder="Frameworks" multiple width="200px" initialValue={['1', '3', '4', '6']}>
+  <Select.Option value="1">React</Select.Option>
+  <Select.Option value="2">Angular</Select.Option>
+  <Select.Option value="3">Vue</Select.Option>
+  <Select.Option divider />
+  <Select.Option value="4">Rails</Select.Option>
+  <Select.Option value="5">Sinatra</Select.Option>
+  <Select.Option divider />
+  <Select.Option value="6">Express</Select.Option>
+  <Select.Option value="7">Koa</Select.Option>
+</Select>
+`} />
+
+<Playground
   title="Compose"
   desc="Use with other components."
   scope={{ Select, Code }}
@@ -69,20 +115,21 @@ Display a dropdown list of items.
 </Select>
 `} />
 
-
 <Attributes edit="/pages/en-us/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
 
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | selected value | `string` | - | - |
-| **initialValue** | initial value | `string` | - | - |
+| **value** | selected value | `string`, `string[]` | - | - |
+| **initialValue** | initial value | `string`, `string[]` | - | - |
 | **placeholder** | placeholder string | `string` | - | - |
-| **size** | select component size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **width** | css width value of select | `string` | - | `initial` |
+| **size** | select component size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
 | **icon** | icon component | `ComponentType` | - | `SVG Component` |
 | **pure** | remove icon component | `boolean` | - | `false` |
+| **multiple** | support multiple selection | `boolean` | - | `false` |
 | **disabled** | disable current radio | `boolean` | - | `false` |
-| **onChange** | selected value | `(val: string) => void` | - | - |
+| **onChange** | selected value | <Code>(val: string &#124; string[]) => void </Code> | - | - |
 | **dropdownClassName** | className of dropdown menu | `string` | - | - |
 | **dropdownStyle** | style of dropdown menu | `object` | - | - |
 | ... | native props | `HTMLAttributes` | `'name', 'alt', 'className', ...` | - |
@@ -94,6 +141,12 @@ Display a dropdown list of items.
 | **value**(required) | unique ident value | `string` | - | - |
 | **disabled** | disable current option | `boolean` | - | `false` |
 | ... | native props | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
 
 </Attributes>
 
