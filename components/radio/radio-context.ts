@@ -1,7 +1,7 @@
 import React from 'react'
 
 export interface RadioConfig {
-  updateState: (value: string) => void
+  updateState?: (value: string) => void
   disabledAll: boolean
   value?: string
   inGroup: boolean
@@ -9,7 +9,6 @@ export interface RadioConfig {
 
 const defaultContext = {
   disabledAll: false,
-  updateState: () => {},
   inGroup: false,
 }
 
