@@ -58,6 +58,53 @@ export const meta = {
 `} />
 
 <Playground
+  title="标签"
+  desc="用标签将选项分组。"
+  scope={{ Select }}
+  code={`
+<Select placeholder="选择框架">
+  <Select.Option label>JavaScript</Select.Option>
+  <Select.Option value="react">React</Select.Option>
+  <Select.Option value="angular">Angular</Select.Option>
+  <Select.Option label>Ruby</Select.Option>
+  <Select.Option value="rails">Rails</Select.Option>
+  <Select.Option value="sinatra">Sinatra</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="分割线"
+  desc="在选项中加入修饰用的线条。"
+  scope={{ Select }}
+  code={`
+<Select placeholder="选择框架">
+  <Select.Option value="react">React</Select.Option>
+  <Select.Option value="angular">Angular</Select.Option>
+  <Select.Option divider />
+  <Select.Option value="rails">Rails</Select.Option>
+  <Select.Option value="sinatra">Sinatra</Select.Option>
+</Select>
+`} />
+
+<Playground
+  title="多选"
+  desc="Select 组件支持同时选中多个值。"
+  scope={{ Select }}
+  code={`
+<Select placeholder="选择框架" multiple width="200px" initialValue={['1', '3', '4', '6']}>
+  <Select.Option value="1">React</Select.Option>
+  <Select.Option value="2">Angular</Select.Option>
+  <Select.Option value="3">Vue</Select.Option>
+  <Select.Option divider />
+  <Select.Option value="4">Rails</Select.Option>
+  <Select.Option value="5">Sinatra</Select.Option>
+  <Select.Option divider />
+  <Select.Option value="6">Express</Select.Option>
+  <Select.Option value="7">Koa</Select.Option>
+</Select>
+`} />
+
+<Playground
   title="组合"
   desc="与其他组件组合使用。"
   scope={{ Select, Code }}
@@ -74,14 +121,16 @@ export const meta = {
 
 | 属性 | 描述 | 类型 | 推荐值 | 默认
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | 手动设置选择器的值 | `string` | - | - |
-| **initialValue** | 选择器初始值 | `string` | - | - |
+| **value** | 手动设置选择器的值 | `string`, `string[]` | - | - |
+| **initialValue** | 选择器初始值 | `string`, `string[]` | - | - |
 | **placeholder** | 占位文本内容 | `string` | - | - |
-| **size** | 选择器组件大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **width** | 组件的 CSS 宽度值 | `string` | - | `initial` |
+| **size** | 选择器组件大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
 | **icon** | 右侧图标组件 | `ComponentType` | - | `SVG Component` |
 | **pure** | 隐藏右侧图标组件 | `boolean` | - | `false` |
+| **multiple** | 是否支持多选 | `boolean` | - | `false` |
 | **disabled** | 禁用所有的交互 | `boolean` | - | `false` |
-| **onChange** | 选项被选中所触发的事件 | `(val: string) => void` | - | - |
+| **onChange** | 选项被选中所触发的事件 | <Code>(val: string &#124; string[]) => void </Code> | - | - |
 | **dropdownClassName** | 下拉框的自定义类名 | `string` | - | - |
 | **dropdownStyle** | 下拉框的自定义样式 | `object` | - | - |
 | ... | 原生属性 | `HTMLAttributes` | `'name', 'alt', 'className', ...` | - |
@@ -93,6 +142,12 @@ export const meta = {
 | **value**(必须的) | 唯一鉴别值 | `string` | - | - |
 | **disabled** | 禁用当前选项 | `boolean` | - | `false` |
 | ... | 原生属性 | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
 
 </Attributes>
 
