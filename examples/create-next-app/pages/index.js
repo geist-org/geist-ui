@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Text, Card, Note, Code, Spacer } from '@zeit-ui/react'
 
-export default function Home() {
+export default function Page() {
   return (
     <div className="container">
       <Head>
