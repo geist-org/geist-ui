@@ -47,6 +47,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
 
   const closeModal = () => {
     setVisible(false)
+    setBodyHidden(false)
     onClose && onClose()
   }
 
