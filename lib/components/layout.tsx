@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useTheme } from 'components'
 import Sidebar from './sidebar'
+import PageHeader from './header'
+import { useTheme } from 'components'
 import TabbarMobile from './sidebar/tabbar-mobile'
 import useBodyScroll from 'components/utils/use-body-scroll'
 import { useConfigs } from '../config-context'
@@ -14,7 +15,7 @@ export interface Props {
   getStaticProps?: any
 }
 
-export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ children }) => {
+export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ children, meta }) => {
   const theme = useTheme()
   const [showAfterRender, setShowAfterRender] = useState<boolean>(false)
   const { tabbarFixed } = useConfigs()
@@ -30,6 +31,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
   if (!showAfterRender)
     return (
       <section>
+        <PageHeader meta={meta} />
         {children}
         <style jsx>{`
           section {
@@ -41,6 +43,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
     )
   return (
     <div className="layout">
+      <PageHeader meta={meta} />
       <TabbarMobile onClick={mobileTabbarClickHandler} />
       <aside className="sidebar">
         <Sidebar />
