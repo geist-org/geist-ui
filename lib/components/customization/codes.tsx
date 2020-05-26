@@ -45,10 +45,11 @@ const CustomizationCodes = () => {
 
 /***
  *  Usage::
+ *
  *  export const App = () => {
  *    return (
- *      <ZEITUIProvider theme={myTheme}>
- *        <CSSBaseline />
+ *      <ZeitProvider theme={myTheme}>
+ *        <CssBaseline />
  *        <YourComponent />
  *      </ZEITUIProvider>
  *    )
