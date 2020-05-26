@@ -1,5 +1,5 @@
 import Layout from 'lib/components/layout'
-import { Note, Link, Code, Spacer, Tabs, Row, Dot, Display, Snippet } from 'components'
+import { Note, Link, Code, Spacer, Tabs, Dot, Snippet, Grid } from 'components'
 
 export const meta = {
   title: 'installation',
@@ -9,29 +9,28 @@ export const meta = {
 
 ## Installation
 
-### Install package
+### Setup
 
-<Note>
 Ensure your have the latest version of <Link href="https://nodejs.org/en/download/">NodeJS</Link>,
-and a package manager: <Link href="https://www.npmjs.com/">NPM</Link> or <Link href="https://yarnpkg.com/">Yarn</Link>.
-</Note>
+and a package manager: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> or <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
+If you want to see a complete example, please browser our <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/tree/master/examples">sample collection</Link>.
+
 <Spacer y={1} />
 <Dot type="success" /> 1. Run script to download:
 <Spacer y={.8} />
-<Tabs initialValue="yarn" style={{ width: '90%', margin: '0 auto' }}>
-  <Tabs.Item label={<span><Spacer x={.3} inline />Yarn<Spacer x={.3} inline /></span>} value="yarn">
-    <Spacer y={.6} />
+<Tabs initialValue="yarn" hideDivider>
+  <Tabs.Item label="Yarn" value="yarn">
     <Snippet width="400px">yarn add @zeit-ui/react</Snippet>
   </Tabs.Item>
-  <Tabs.Item label={<span><Spacer x={.3} inline />Npm<Spacer x={.3} inline /></span>} value="npm">
-    <Spacer y={.6} />
+  <Tabs.Item label="Npm" value="npm">
     <Snippet width="400px">npm i @zeit-ui/react</Snippet>
   </Tabs.Item>
 </Tabs>
 <Spacer y={1.5} />
-<Dot type="success" /> 2. Import package to React project:
+<Dot type="success" /> 2. Import package to your project:
 
-<Display width="90%">
+<Grid.Container>
+<Grid xs={24} sm={16}>
 
 ```jsx
 import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
@@ -44,12 +43,13 @@ const Application = () => (
 )
 ```
 
-</Display>
+</Grid>
+</Grid.Container>
+<Spacer y={.5} />
+<Dot type="success" /> 3. Use components in any where:
 
-<Spacer y={1.5} />
-<Dot type="success" /> 3. Use Components in any where:
-
-<Display width="90%">
+<Grid.Container>
+<Grid xs={24} sm={16}>
 
 ```jsx
 import { Button } from '@zeit-ui/react'
@@ -57,25 +57,30 @@ import { Button } from '@zeit-ui/react'
 const MyComponent = () => <Button>Click Me</Button>
 ```
 
-</Display>
+</Grid>
+</Grid.Container>
 
-<Spacer y={3} />
+<Spacer y={1.5} />
 
-### Import a component
+### Single component
 
-`@zeit-ui/react` supports import components when you actually need. e.g.:
+ZEIT UI supports import components when you actually need.(`tree-shaking`)
 
-<Display width="90%">
+E.g.
+
+<Grid.Container>
+<Grid xs={24} sm={16}>
 
 ```jsx
-import { Button } from '@zeit-ui/react/components/button'
+import Button from '@zeit-ui/react/esm/button'
 
 const MyComponent = () => <Button>Click Me</Button>
 ```
 
-</Display>
+</Grid>
+</Grid.Container>
 
-<Spacer y={3} />
+<Spacer y={1.5} />
 
 ### Create React App
 
@@ -83,8 +88,14 @@ A React project created by <Link color target="_blank" rel="nofollow" href="http
 also easily use `@zeit-ui/react`. You don't need to make any changes, just install and use.
 
 We have <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react-getting-started">a
-sample project related to create react app here</Link>.
+sample project related to create react app here</Link>. If you want to `tree-shaking`,
+please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.
 
+<Spacer y={2.5} />
 
+### Next.js
+
+In the `next.js` project, you need to customize the <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> entry file to load provider.
+Start your NextJS project with <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/create-next-app/README.md">this example</Link>.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
