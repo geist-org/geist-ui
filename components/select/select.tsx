@@ -11,6 +11,7 @@ import SelectMultipleValue from './select-multiple-value'
 import Grid from '../grid'
 import { SelectContext, SelectConfig } from './select-context'
 import { getSizes } from './styles'
+import Ellipsis from '../shared/ellipsis'
 
 interface Props {
   disabled?: boolean
@@ -136,7 +137,11 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
         ref={ref}
         onClick={clickHandler}
         {...props}>
-        {isEmpty && <span className="value placeholder">{placeholder}</span>}
+        {isEmpty && (
+          <span className="value placeholder">
+            <Ellipsis>{placeholder}</Ellipsis>
+          </span>
+        )}
         {value && !multiple && <span className="value">{selectedChild}</span>}
         {value && multiple && <Grid.Container gap={0.5}>{selectedChild}</Grid.Container>}
         <SelectDropdown

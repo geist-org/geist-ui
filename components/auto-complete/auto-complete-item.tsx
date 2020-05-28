@@ -2,7 +2,8 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { useAutoCompleteContext } from './auto-complete-context'
-import { NormalSizes } from 'components/utils/prop-types'
+import { NormalSizes } from '../utils/prop-types'
+import Ellipsis from '../shared/ellipsis'
 
 interface Props {
   value: string
@@ -37,7 +38,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
 
   return (
     <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
-      <span>{children}</span>
+      <Ellipsis>{children}</Ellipsis>
       <style jsx>{`
         .item {
           display: flex;
@@ -54,13 +55,6 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           border: 0;
           cursor: pointer;
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-
-        span {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          min-width: 0;
         }
 
         .item:first-of-type {
