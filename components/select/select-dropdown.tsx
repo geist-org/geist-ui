@@ -8,6 +8,7 @@ interface Props {
   visible: boolean
   className?: string
   dropdownStyle?: object
+  disableMatchWidth?: boolean
 }
 
 const defaultProps = {
@@ -23,12 +24,13 @@ const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = (
   children,
   className,
   dropdownStyle,
+  disableMatchWidth,
 }) => {
   const theme = useTheme()
   const { ref } = useSelectContext()
 
   return (
-    <Dropdown parent={ref} visible={visible}>
+    <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth}>
       <div className={`select-dropdown ${className}`} style={dropdownStyle}>
         {children}
         <style jsx>{`
