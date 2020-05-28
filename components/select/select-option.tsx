@@ -3,6 +3,7 @@ import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { useSelectContext } from './select-context'
 import useWarning from '../utils/use-warning'
+import Ellipsis from '../shared/ellipsis'
 
 interface Props {
   value?: string
@@ -80,7 +81,7 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
         className={`option ${divider ? 'divider' : ''} ${label ? 'label' : ''} ${className}`}
         onClick={clickHandler}
         {...props}>
-        <span>{children}</span>
+        <Ellipsis>{children}</Ellipsis>
       </div>
 
       <style jsx>{`
@@ -99,13 +100,6 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           border: 0;
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
-        }
-
-        span {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          min-width: 0;
         }
 
         .option:hover {

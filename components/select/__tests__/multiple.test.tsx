@@ -24,7 +24,10 @@ describe('Select Multiple', () => {
       </Select>,
     )
     expect(wrapper.find('.option').length).toBeGreaterThan(1)
-    const text = wrapper.find('.option').map(item => item.text())
+    const text = wrapper
+      .find('.option')
+      .map(item => item.text())
+      .reduce((pre, current) => `${pre}${current}`, '')
     expect(text.includes('test-1')).toBeTruthy()
     expect(text.includes('test-2')).toBeTruthy()
     expect(text.includes('test-3')).not.toBeTruthy()
