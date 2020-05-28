@@ -233,7 +233,10 @@ export const meta = {
 | **onChange** | 输入框的值发生变化触发此事件 | `(value: string) => void` | - | - |
 | **onSearch** | 搜索事件，当用户手动输入时触发 | `(value: string) => void` | - | - |
 | **onSelect** | 当备选框被选中后触发的事件 | `(value: string) => void` | - | - |
-| ... | 原生属性 | `InputHTMLAttributes` | `'autoComplete', 'type', 'className', ...` | - |
+| **dropdownClassName** | 自定义下拉框的类名 | `string` | - | - |
+| **dropdownStyle** | 自定义下拉框的样式 | `object` | - | - |
+| **disableMatchWidth** | 禁止 Option 跟随父元素的宽度 | `boolean` | - | `false` |
+| ... | 原生属性 | `InputHTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
 
