@@ -115,6 +115,24 @@ Display a dropdown list of items.
 </Select>
 `} />
 
+<Playground
+  title="Over width"
+  desc="`Option` to show more text with adaptive width."
+  scope={{ Select, Spacer }}
+  code={`
+<>
+  <Select placeholder="Choose one" value="1" width="150px">
+    <Select.Option value="1">Truncate an overly long string</Select.Option>
+    <Select.Option value="2">Option 2</Select.Option>
+  </Select>
+  <Spacer y={.5} />
+  <Select placeholder="Choose one" value="1" width="150px" disableMatchWidth>
+    <Select.Option value="1">Autoscale option width when text is too long</Select.Option>
+    <Select.Option value="2">Option 2</Select.Option>
+  </Select>
+</>
+`} />
+
 <Attributes edit="/pages/en-us/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
 
@@ -132,6 +150,7 @@ Display a dropdown list of items.
 | **onChange** | selected value | <Code>(val: string &#124; string[]) => void </Code> | - | - |
 | **dropdownClassName** | className of dropdown menu | `string` | - | - |
 | **dropdownStyle** | style of dropdown menu | `object` | - | - |
+| **disableMatchWidth** | disable Option from follow Select width | `boolean` | - | `false` |
 | ... | native props | `HTMLAttributes` | `'name', 'alt', 'className', ...` | - |
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>

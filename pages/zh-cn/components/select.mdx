@@ -115,6 +115,23 @@ export const meta = {
 </Select>
 `} />
 
+<Playground
+  title="超出宽度"
+  desc="`Option` 可以自适应宽度以展示更多文本。"
+  scope={{ Select, Spacer }}
+  code={`
+<>
+  <Select placeholder="选择内容" value="1" width="150px">
+    <Select.Option value="1">截断过程的文本内容当文本过长</Select.Option>
+    <Select.Option value="2">选项 2</Select.Option>
+  </Select>
+  <Spacer y={.5} />
+  <Select placeholder="选择内容" value="1" width="150px" disableMatchWidth>
+    <Select.Option value="1">自动伸缩选项宽度以显示更多文本</Select.Option>
+    <Select.Option value="2">选项 2</Select.Option>
+  </Select>
+</>
+`} />
 
 <Attributes edit="/pages/zh-cn/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
@@ -133,6 +150,7 @@ export const meta = {
 | **onChange** | 选项被选中所触发的事件 | <Code>(val: string &#124; string[]) => void </Code> | - | - |
 | **dropdownClassName** | 下拉框的自定义类名 | `string` | - | - |
 | **dropdownStyle** | 下拉框的自定义样式 | `object` | - | - |
+| **disableMatchWidth** | 禁止 Option 跟随单选框的宽度 | `boolean` | - | `false` |
 | ... | 原生属性 | `HTMLAttributes` | `'name', 'alt', 'className', ...` | - |
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
