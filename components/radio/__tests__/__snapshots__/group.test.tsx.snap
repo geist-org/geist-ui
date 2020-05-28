@@ -18,7 +18,7 @@ exports[`Radio Group should render correctly 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 1rem;
+          --radio-size: 16px;
         }
 
         label {
@@ -82,7 +82,7 @@ exports[`Radio Group should render correctly 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 1rem;
+          --radio-size: 16px;
         }
 
         label {
@@ -136,9 +136,9 @@ exports[`Radio Group should render correctly 1`] = `
         }
 
         .radio-group :global(.radio) {
-          margin-top: calc(1rem * 1);
+          margin-top: calc(16px * 1);
           margin-left: 0;
-          --radio-size: 1rem;
+          --radio-size: 16px;
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -161,7 +161,7 @@ exports[`Radio Group should render correctly 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 1rem;
+          --radio-size: 16px;
         }
 
         label {
@@ -225,7 +225,7 @@ exports[`Radio Group should render correctly 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 1rem;
+          --radio-size: 16px;
         }
 
         label {
@@ -280,8 +280,8 @@ exports[`Radio Group should render correctly 1`] = `
 
         .radio-group :global(.radio) {
           margin-top: 0;
-          margin-left: calc(1rem * 1);
-          --radio-size: 1rem;
+          margin-left: calc(16px * 1);
+          --radio-size: 16px;
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -308,7 +308,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 1rem;
+          --radio-size: 16px;
         }
 
         label {
@@ -362,9 +362,9 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
         }
 
         .radio-group :global(.radio) {
-          margin-top: calc(.75rem * 1);
+          margin-top: calc(12px * 1);
           margin-left: 0;
-          --radio-size: .75rem;
+          --radio-size: 12px;
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -387,7 +387,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 1rem;
+          --radio-size: 16px;
         }
 
         label {
@@ -441,9 +441,9 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
         }
 
         .radio-group :global(.radio) {
-          margin-top: calc(.875rem * 1);
+          margin-top: calc(14px * 1);
           margin-left: 0;
-          --radio-size: .875rem;
+          --radio-size: 14px;
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -466,7 +466,7 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
           width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 1rem;
+          --radio-size: 16px;
         }
 
         label {
@@ -520,9 +520,9 @@ exports[`Radio Group should work correctly with different sizes 1`] = `
         }
 
         .radio-group :global(.radio) {
-          margin-top: calc(1.125rem * 1);
+          margin-top: calc(18px * 1);
           margin-left: 0;
-          --radio-size: 1.125rem;
+          --radio-size: 18px;
         }
 
         .radio-group :global(.radio:first-of-type) {
