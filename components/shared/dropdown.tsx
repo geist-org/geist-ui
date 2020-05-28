@@ -9,6 +9,7 @@ import useDOMObserver from '../utils/use-dom-observer'
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
   visible: boolean
+  disableMatchWidth?: boolean
 }
 
 interface ReactiveDomReact {
@@ -37,7 +38,7 @@ const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact =>
 }
 
 const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
-  ({ children, parent, visible }) => {
+  ({ children, parent, visible, disableMatchWidth }) => {
     const el = usePortal('dropdown')
     const [rect, setRect] = useState<ReactiveDomReact>(defaultRect)
     if (!parent) return null
@@ -75,15 +76,24 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
     if (!el) return null
     return createPortal(
       <CSSTransition visible={visible}>
-        <div className="dropdown" onClick={clickHandler}>
+        <div
+          className={`dropdown ${disableMatchWidth ? 'disable-match' : 'width-match'}`}
+          onClick={clickHandler}>
           {children}
           <style jsx>{`
             .dropdown {
               position: absolute;
-              width: ${rect.width}px;
               top: ${rect.top + 2}px;
               left: ${rect.left}px;
               z-index: 1100;
+            }
+
+            .width-match {
+              width: ${rect.width}px;
+            }
+
+            .disable-match {
+              min-width: ${rect.width}px;
             }
           `}</style>
         </div>
