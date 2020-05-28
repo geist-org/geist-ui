@@ -80,16 +80,16 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
         className={`option ${divider ? 'divider' : ''} ${label ? 'label' : ''} ${className}`}
         onClick={clickHandler}
         {...props}>
-        {children}
+        <span>{children}</span>
       </div>
 
       <style jsx>{`
         .option {
           display: flex;
+          max-width: 100%;
           justify-content: flex-start;
           align-items: center;
           font-weight: normal;
-          white-space: pre;
           font-size: 0.75rem;
           height: calc(1.688 * ${theme.layout.gap});
           padding: 0 ${theme.layout.gapHalf};
@@ -99,6 +99,13 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           border: 0;
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+        }
+
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          min-width: 0;
         }
 
         .option:hover {
