@@ -25,10 +25,10 @@ export type RadioGroupProps = Props & typeof defaultProps & NativeAttrs
 
 export const getRadioSize = (size: NormalSizes): string => {
   const sizes: { [key in NormalSizes]: string } = {
-    mini: '.75rem',
-    small: '.875rem',
-    medium: '1rem',
-    large: '1.125rem',
+    mini: '12px',
+    small: '14px',
+    medium: '16px',
+    large: '18px',
   }
   return sizes[size]
 }
