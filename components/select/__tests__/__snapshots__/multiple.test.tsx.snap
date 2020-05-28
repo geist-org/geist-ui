@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select Multiple should render correctly 1`] = `
-"<div class=\\"select multiple \\"><span class=\\"value placeholder\\"></span><div class=\\"item  mock \\"><style>
+"<div class=\\"select multiple \\"><span class=\\"value placeholder\\"><span><style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          min-width: 0;
+        }
+      </style></span></span><div class=\\"item  mock \\"><style>
         .item {
         }
 
