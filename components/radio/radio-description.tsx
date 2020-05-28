@@ -26,7 +26,8 @@ const RadioDescription: React.FC<React.PropsWithChildren<RadioDescriptionProps>>
       <style jsx>{`
         span {
           color: ${theme.palette.accents_3};
-          font-size: 0.875rem;
+          font-size: calc(var(--radio-size) * 0.85);
+          padding-left: calc(var(--radio-size) + var(--radio-size) * 0.375);
         }
       `}</style>
     </span>

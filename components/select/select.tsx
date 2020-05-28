@@ -1,26 +1,32 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { NormalSizes } from '../utils/prop-types'
+import useTheme from '../styles/use-theme'
 import useClickAway from '../utils/use-click-away'
-import { pickChildByProps, pickChildrenFirst } from '../utils/collections'
+import useCurrentState from '../utils/use-current-state'
+import { pickChildByProps } from '../utils/collections'
 import SelectIcon from './select-icon'
 import SelectOption from './select-option'
-import useTheme from '../styles/use-theme'
 import SelectDropdown from './select-dropdown'
+import SelectMultipleValue from './select-multiple-value'
+import Grid from '../grid'
 import { SelectContext, SelectConfig } from './select-context'
 import { getSizes } from './styles'
 
 interface Props {
   disabled?: boolean
   size?: NormalSizes
-  value?: string
-  initialValue?: string
+  value?: string | string[]
+  initialValue?: string | string[]
   placeholder?: React.ReactNode | string
   icon?: React.ComponentType
-  onChange?: (value: string) => void
+  onChange?: (value: string | string[]) => void
   pure?: boolean
+  multiple?: boolean
   className?: string
+  width?: string
   dropdownClassName?: string
   dropdownStyle?: object
+  disableMatchWidth?: boolean
 }
 
 const defaultProps = {
@@ -28,7 +34,10 @@ const defaultProps = {
   size: 'medium' as NormalSizes,
   icon: SelectIcon as React.ComponentType,
   pure: false,
+  multiple: false,
+  width: 'initial',
   className: '',
+  disableMatchWidth: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -42,24 +51,41 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   value: customValue,
   icon: Icon,
   onChange,
-  className,
   pure,
+  multiple,
   placeholder,
+  width,
+  className,
   dropdownClassName,
   dropdownStyle,
+  disableMatchWidth,
   ...props
 }) => {
   const theme = useTheme()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(false)
-  const [value, setValue] = useState<string | undefined>(init)
+  const [value, setValue, valueRef] = useCurrentState<string | string[] | undefined>(() => {
+    if (!multiple) return init
+    if (Array.isArray(init)) return init
+    return typeof init === 'undefined' ? [] : [init]
+  })
+  const isEmpty = useMemo(() => {
+    if (!Array.isArray(value)) return !value
+    return value.length === 0
+  }, [value])
   const sizes = useMemo(() => getSizes(theme, size), [theme, size])
 
   const updateVisible = (next: boolean) => setVisible(next)
   const updateValue = (next: string) => {
-    setValue(next)
-    onChange && onChange(next)
-    setVisible(false)
+    setValue(last => {
+      if (!Array.isArray(last)) return next
+      if (!last.includes(next)) return [...last, next]
+      return last.filter(item => item !== next)
+    })
+    onChange && onChange(valueRef.current as string | string[])
+    if (!multiple) {
+      setVisible(false)
+    }
   }
 
   const initialValue: SelectConfig = useMemo(
@@ -72,7 +98,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
       ref,
       disableAll: disabled,
     }),
-    [visible, size, disabled, ref],
+    [visible, size, disabled, ref, value, multiple],
   )
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -84,7 +110,6 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   }
 
   useClickAway(ref, () => setVisible(false))
-
   useEffect(() => {
     if (customValue === undefined) return
     setValue(customValue)
@@ -92,20 +117,33 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
 
   const selectedChild = useMemo(() => {
     const [, optionChildren] = pickChildByProps(children, 'value', value)
-    const child = pickChildrenFirst(optionChildren)
-    if (!React.isValidElement(child)) return optionChildren
-    return React.cloneElement(child, { preventAllEvents: true })
-  }, [value, children])
+    return React.Children.map(optionChildren, child => {
+      if (!React.isValidElement(child)) return null
+      const el = React.cloneElement(child, { preventAllEvents: true })
+      if (!multiple) return el
+      return (
+        <SelectMultipleValue size={sizes.fontSize} disabled={disabled}>
+          {el}
+        </SelectMultipleValue>
+      )
+    })
+  }, [value, children, multiple])
 
   return (
     <SelectContext.Provider value={initialValue}>
-      <div className={`select ${className}`} ref={ref} onClick={clickHandler} {...props}>
-        {!value && <span className="value placeholder">{placeholder}</span>}
-        {value && <span className="value">{selectedChild}</span>}
+      <div
+        className={`select ${multiple ? 'multiple' : ''} ${className}`}
+        ref={ref}
+        onClick={clickHandler}
+        {...props}>
+        {isEmpty && <span className="value placeholder">{placeholder}</span>}
+        {value && !multiple && <span className="value">{selectedChild}</span>}
+        {value && multiple && <Grid.Container gap={0.5}>{selectedChild}</Grid.Container>}
         <SelectDropdown
           visible={visible}
           className={dropdownClassName}
-          dropdownStyle={dropdownStyle}>
+          dropdownStyle={dropdownStyle}
+          disableMatchWidth={disableMatchWidth}>
           {children}
         </SelectDropdown>
         {!pure && (
@@ -122,7 +160,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             position: relative;
             cursor: ${disabled ? 'not-allowed' : 'pointer'};
             max-width: 80vw;
-            width: initial;
+            width: ${width};
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
             border: 1px solid ${theme.palette.border};
@@ -131,6 +169,13 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             height: ${sizes.height};
             min-width: ${sizes.minWidth};
             background-color: ${disabled ? theme.palette.accents_1 : theme.palette.background};
+          }
+
+          .multiple {
+            height: auto;
+            min-height: ${sizes.height};
+            padding: ${theme.layout.gapQuarter} calc(${sizes.fontSize} * 2)
+              ${theme.layout.gapQuarter} ${theme.layout.gapHalf};
           }
 
           .select:hover {

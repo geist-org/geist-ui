@@ -2,7 +2,7 @@ import React, { MutableRefObject } from 'react'
 import { NormalSizes } from '../utils/prop-types'
 
 export interface SelectConfig {
-  value?: string
+  value?: string | string[]
   updateValue?: Function
   visible?: boolean
   updateVisible?: Function

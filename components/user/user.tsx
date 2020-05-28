@@ -8,6 +8,7 @@ interface Props {
   src?: string
   text?: string
   className?: string
+  altText?: string
 }
 
 const defaultProps = {
@@ -23,13 +24,14 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
   name,
   children,
   className,
+  altText,
   ...props
 }) => {
   const theme = useTheme()
 
   return (
     <div className={`user ${className}`} {...props}>
-      <Avatar src={src} text={text} size={32} />
+      <Avatar src={src} text={text} size={32} alt={altText} />
       <div className="names">
         <span className="name">{name}</span>
         <span className="social">{children}</span>

@@ -2,26 +2,40 @@ import React, { useEffect, useMemo, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
 import { CheckboxContext } from './checkbox-context'
 import useWarning from '../utils/use-warning'
+import { NormalSizes } from '../utils/prop-types'
 
 interface Props {
   value: string[]
   disabled?: boolean
+  size?: NormalSizes
   onChange?: (values: string[]) => void
   className?: string
 }
 
 const defaultProps = {
   disabled: false,
+  size: 'small' as NormalSizes,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CheckboxGroupProps = Props & typeof defaultProps & NativeAttrs
 
+export const getCheckboxSize = (size: NormalSizes): string => {
+  const sizes: { [key in NormalSizes]: string } = {
+    mini: '.75rem',
+    small: '.875rem',
+    medium: '1rem',
+    large: '1.125rem',
+  }
+  return sizes[size]
+}
+
 const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
   disabled,
   onChange,
   value,
+  size,
   children,
   className,
   ...props
@@ -47,6 +61,7 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
       values: selfVal,
     }
   }, [disabled, selfVal])
+  const fontSize = useMemo(() => getCheckboxSize(size), [size])
 
   useEffect(() => {
     setSelfVal(value)
@@ -58,7 +73,8 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
         {children}
         <style jsx>{`
           .group :global(label) {
-            margin-right: 1.875rem;
+            margin-right: calc(${fontSize} * 2);
+            --checkbox-size: ${fontSize};
           }
         `}</style>
       </div>

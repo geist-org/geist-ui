@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Radio, Spacer, Code } from 'components'
+import { Radio, Spacer, Code, Text } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -37,6 +37,31 @@ Provides single user input from a selection of options.
     </>
   )
 }
+`} />
+
+<Playground
+  title="Sizes"
+  desc="Radio of different sizes."
+  scope={{ Radio, Spacer, Text }}
+  code={`
+<>
+  <Text span size="12px" type="secondary">SINGLE</Text>
+  <div style={{ paddingLeft: '.25rem', marginTop: '.25rem' }}>
+    <Radio checked={false} size="mini">mini</Radio>
+    <Radio checked={false} size="small">small</Radio>
+    <Radio checked={false} size="medium">medium</Radio>
+    <Radio checked={false} size="large">large</Radio>
+  </div>
+  <Spacer y={.5} />
+  <Text span size="12px" type="secondary">GROUP</Text>
+  <div style={{ paddingLeft: '.25rem', marginTop: '.25rem' }}>
+    <Radio.Group size="mini">
+      <Radio value="1">Option 1</Radio>
+      <Radio value="2">Option 2</Radio>
+      <Radio value="3">Option 3</Radio>
+    </Radio.Group>
+  </div>
+</>
 `} />
 
 <Playground
@@ -95,8 +120,9 @@ Provides single user input from a selection of options.
 | **value** | unique ident value (in group) | `string` | - | - |
 | **id** | native attr | `string` | - | - |
 | **disabled** | disable current radio | `boolean` | - | `false` |
+| **size** | radio size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
 | **onChange** | change event | `(e: RadioEvent) => void` | - | - |
-| ... | native props | `InputHTMLAttributes` | `'name', 'alt', 'className', ...` | - |
+| ... | native props | `InputHTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title>Radio.Group.Props</Attributes.Title>
 
@@ -106,14 +132,21 @@ Provides single user input from a selection of options.
 | **value** | selected child radio | `string` | - | - |
 | **useRow** | horizontal layout | `boolean` | - | `false` |
 | **disabled** | disable all radios | `boolean` | - | `false` |
+| **size** | size of all radios in the group | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
 | **onChange** | change event | `(value: string) => void` | - | - |
-| ... | native props | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title alias="Radio.Desc">Radio.Description.Props</Attributes.Title>
 
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
 
 </Attributes>
 

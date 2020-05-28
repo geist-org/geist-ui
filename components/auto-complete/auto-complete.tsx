@@ -28,6 +28,9 @@ interface Props {
   onSelect?: (value: string) => void
   searching?: boolean | undefined
   clearable?: boolean
+  dropdownClassName?: string
+  dropdownStyle?: object
+  disableMatchWidth?: boolean
   className?: string
 }
 
@@ -37,6 +40,7 @@ const defaultProps = {
   disabled: false,
   clearable: false,
   size: 'medium' as NormalSizes,
+  disableMatchWidth: false,
   className: '',
 }
 
@@ -76,6 +80,9 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   width,
   clearable,
   disabled,
+  dropdownClassName,
+  dropdownStyle,
+  disableMatchWidth,
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -159,7 +166,13 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
           iconRight={getSearchIcon(searching)}
           {...inputProps}
         />
-        <AutoCompleteDropdown visible={visible}>{autoCompleteItems}</AutoCompleteDropdown>
+        <AutoCompleteDropdown
+          visible={visible}
+          disableMatchWidth={disableMatchWidth}
+          className={dropdownClassName}
+          dropdownStyle={dropdownStyle}>
+          {autoCompleteItems}
+        </AutoCompleteDropdown>
 
         <style jsx>{`
           .auto-complete {

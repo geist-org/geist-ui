@@ -1,6 +1,13 @@
-import React, { useRef, useState, MouseEvent, useMemo } from 'react'
+import React, {
+  useRef,
+  useState,
+  MouseEvent,
+  useMemo,
+  useImperativeHandle,
+  PropsWithoutRef,
+  RefAttributes,
+} from 'react'
 import useTheme from '../styles/use-theme'
-import withDefaults from '../utils/with-defaults'
 import ButtonDrip from './button.drip'
 import ButtonLoading from '../loading'
 import { ButtonTypes, NormalSizes } from '../utils/prop-types'
@@ -46,157 +53,171 @@ const defaultProps = {
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ButtonProps = Props & typeof defaultProps & NativeAttrs
 
-const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({ ...btnProps }) => {
-  const theme = useTheme()
-  const buttonRef = useRef<HTMLButtonElement>(null)
-  const [dripShow, setDripShow] = useState<boolean>(false)
-  const [dripX, setDripX] = useState<number>(0)
-  const [dripY, setDripY] = useState<number>(0)
-  const groupConfig = useButtonGroupContext()
-  const filteredProps = filterPropsWithGroup(btnProps, groupConfig)
-  const {
-    children,
-    disabled,
-    type,
-    loading,
-    shadow,
-    ghost,
-    effect,
-    onClick,
-    auto,
-    size,
-    icon,
-    htmlType,
-    iconRight,
-    className,
-    ...props
-  } = filteredProps
+const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(
+  ({ ...btnProps }, ref: React.Ref<HTMLButtonElement | null>) => {
+    const theme = useTheme()
+    const buttonRef = useRef<HTMLButtonElement>(null)
+    useImperativeHandle(ref, () => buttonRef.current)
 
-  const { bg, border, color } = useMemo(() => getButtonColors(theme.palette, filteredProps), [
-    theme.palette,
-    filteredProps,
-  ])
-  const hover = useMemo(() => getButtonHoverColors(theme.palette, filteredProps), [
-    theme.palette,
-    filteredProps,
-  ])
-  const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading), [disabled, loading])
-  const { height, minWidth, padding, width, fontSize } = useMemo(() => getButtonSize(size, auto), [
-    size,
-    auto,
-  ])
-  const dripColor = useMemo(() => getButtonDripColor(theme.palette, filteredProps), [
-    theme.palette,
-    filteredProps,
-  ])
+    const [dripShow, setDripShow] = useState<boolean>(false)
+    const [dripX, setDripX] = useState<number>(0)
+    const [dripY, setDripY] = useState<number>(0)
+    const groupConfig = useButtonGroupContext()
+    const filteredProps = filterPropsWithGroup(btnProps, groupConfig)
+    const {
+      children,
+      disabled,
+      type,
+      loading,
+      shadow,
+      ghost,
+      effect,
+      onClick,
+      auto,
+      size,
+      icon,
+      htmlType,
+      iconRight,
+      className,
+      ...props
+    } = filteredProps
 
-  /* istanbul ignore next */
-  const dripCompletedHandle = () => {
-    setDripShow(false)
-    setDripX(0)
-    setDripY(0)
-  }
+    const { bg, border, color } = useMemo(() => getButtonColors(theme.palette, filteredProps), [
+      theme.palette,
+      filteredProps,
+    ])
+    const hover = useMemo(() => getButtonHoverColors(theme.palette, filteredProps), [
+      theme.palette,
+      filteredProps,
+    ])
+    const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading), [
+      disabled,
+      loading,
+    ])
+    const { height, minWidth, padding, width, fontSize } = useMemo(
+      () => getButtonSize(size, auto),
+      [size, auto],
+    )
+    const dripColor = useMemo(() => getButtonDripColor(theme.palette, filteredProps), [
+      theme.palette,
+      filteredProps,
+    ])
 
-  const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
-    if (disabled || loading) return
-    const showDrip = !shadow && !ghost && effect
     /* istanbul ignore next */
-    if (showDrip && buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect()
-      setDripShow(true)
-      setDripX(event.clientX - rect.left)
-      setDripY(event.clientY - rect.top)
+    const dripCompletedHandle = () => {
+      setDripShow(false)
+      setDripX(0)
+      setDripY(0)
     }
 
-    onClick && onClick(event)
-  }
+    const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
+      if (disabled || loading) return
+      const showDrip = !shadow && !ghost && effect
+      /* istanbul ignore next */
+      if (showDrip && buttonRef.current) {
+        const rect = buttonRef.current.getBoundingClientRect()
+        setDripShow(true)
+        setDripX(event.clientX - rect.left)
+        setDripY(event.clientY - rect.top)
+      }
 
-  const childrenWithIcon = useMemo(
-    () =>
-      getButtonChildrenWithIcon(auto, size, children, {
-        icon,
-        iconRight,
-      }),
-    [auto, size, children, icon, iconRight],
-  )
+      onClick && onClick(event)
+    }
 
-  return (
-    <button
-      ref={buttonRef}
-      type={htmlType}
-      className={`btn ${className}`}
-      disabled={disabled}
-      onClick={clickHandler}
-      {...props}>
-      {loading ? <ButtonLoading /> : childrenWithIcon}
-      {dripShow && (
-        <ButtonDrip x={dripX} y={dripY} color={dripColor} onCompleted={dripCompletedHandle} />
-      )}
-      <style jsx>{`
-        .btn {
-          box-sizing: border-box;
-          display: inline-block;
-          padding: 0 ${padding};
-          height: ${height};
-          line-height: ${height};
-          min-width: ${minWidth};
-          width: ${width};
-          border-radius: ${theme.layout.radius};
-          font-weight: 400;
-          font-size: ${fontSize};
-          user-select: none;
-          outline: none;
-          text-transform: capitalize;
-          justify-content: center;
-          text-align: center;
-          white-space: nowrap;
-          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
-            border 200ms ease 0ms, color 200ms ease 0ms;
-          position: relative;
-          overflow: hidden;
-          color: ${color};
-          background-color: ${bg};
-          border: 1px solid ${border};
-          cursor: ${cursor};
-          pointer-events: ${events};
-          box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
-          --zeit-ui-button-padding: ${padding};
-          --zeit-ui-button-height: ${height};
-          --zeit-ui-button-color: ${color};
-        }
+    const childrenWithIcon = useMemo(
+      () =>
+        getButtonChildrenWithIcon(auto, size, children, {
+          icon,
+          iconRight,
+        }),
+      [auto, size, children, icon, iconRight],
+    )
 
-        .btn:hover {
-          color: ${hover.color};
-          --zeit-ui-button-color: ${hover.color};
-          background-color: ${hover.bg};
-          border-color: ${hover.border};
-          cursor: ${cursor};
-          pointer-events: ${events};
-          box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
-          transform: translate3d(0px, ${shadow ? '-1px' : '0px'}, 0px);
-        }
+    return (
+      <button
+        ref={buttonRef}
+        type={htmlType}
+        className={`btn ${className}`}
+        disabled={disabled}
+        onClick={clickHandler}
+        {...props}>
+        {loading ? <ButtonLoading /> : childrenWithIcon}
+        {dripShow && (
+          <ButtonDrip x={dripX} y={dripY} color={dripColor} onCompleted={dripCompletedHandle} />
+        )}
+        <style jsx>{`
+          .btn {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 0 ${padding};
+            height: ${height};
+            line-height: ${height};
+            min-width: ${minWidth};
+            width: ${width};
+            border-radius: ${theme.layout.radius};
+            font-weight: 400;
+            font-size: ${fontSize};
+            user-select: none;
+            outline: none;
+            text-transform: capitalize;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+              border 200ms ease 0ms, color 200ms ease 0ms;
+            position: relative;
+            overflow: hidden;
+            color: ${color};
+            background-color: ${bg};
+            border: 1px solid ${border};
+            cursor: ${cursor};
+            pointer-events: ${events};
+            box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
+            --zeit-ui-button-padding: ${padding};
+            --zeit-ui-button-height: ${height};
+            --zeit-ui-button-color: ${color};
+          }
 
-        .btn :global(.text) {
-          position: relative;
-          z-index: 1;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          line-height: inherit;
-          top: -1px;
-        }
+          .btn:hover {
+            color: ${hover.color};
+            --zeit-ui-button-color: ${hover.color};
+            background-color: ${hover.bg};
+            border-color: ${hover.border};
+            cursor: ${cursor};
+            pointer-events: ${events};
+            box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
+            transform: translate3d(0px, ${shadow ? '-1px' : '0px'}, 0px);
+          }
 
-        .btn :global(.text p),
-        .btn :global(.text pre),
-        .btn :global(.text div) {
-          margin: 0;
-        }
-      `}</style>
-    </button>
-  )
-}
+          .btn :global(.text) {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: inherit;
+            top: -1px;
+          }
 
-const MemoButton = React.memo<React.PropsWithChildren<ButtonProps>>(Button)
+          .btn :global(.text p),
+          .btn :global(.text pre),
+          .btn :global(.text div) {
+            margin: 0;
+          }
+        `}</style>
+      </button>
+    )
+  },
+)
 
-export default withDefaults(MemoButton, defaultProps)
+type ButtonComponent<T, P = {}> = React.ForwardRefExoticComponent<
+  PropsWithoutRef<P> & RefAttributes<T>
+>
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
+
+Button.defaultProps = defaultProps
+
+export default React.memo(Button) as ButtonComponent<HTMLButtonElement, ComponentProps>

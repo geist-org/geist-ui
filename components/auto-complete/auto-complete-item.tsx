@@ -37,7 +37,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
 
   return (
     <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
-      {children}
+      <span>{children}</span>
       <style jsx>{`
         .item {
           display: flex;
@@ -54,6 +54,13 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           border: 0;
           cursor: pointer;
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+        }
+
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          min-width: 0;
         }
 
         .item:first-of-type {

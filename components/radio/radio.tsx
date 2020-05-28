@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import { useRadioContext } from './radio-context'
-import RadioGroup from './radio-group'
+import RadioGroup, { getRadioSize } from './radio-group'
 import RadioDescription from './radio-description'
 import { pickChild } from '../utils/collections'
 import useWarning from '../utils/use-warning'
+import { NormalSizes } from '../utils/prop-types'
 
 interface RadioEventTarget {
   checked: boolean
@@ -20,12 +21,14 @@ export interface RadioEvent {
 interface Props {
   checked?: boolean
   value?: string
+  size?: NormalSizes
   className?: string
   disabled?: boolean
   onChange?: (e: RadioEvent) => void
 }
 
 const defaultProps = {
+  size: 'medium' as NormalSizes,
   disabled: false,
   className: '',
 }
@@ -38,6 +41,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
   checked,
   onChange,
   disabled,
+  size,
   value: radioValue,
   children,
   ...props
@@ -59,6 +63,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
     }, [groupValue, radioValue])
   }
 
+  const fontSize = useMemo(() => getRadioSize(size), [size])
   const isDisabled = useMemo(() => disabled || disabledAll, [disabled, disabledAll])
   const changeHandler = (event: React.ChangeEvent) => {
     if (isDisabled) return
@@ -72,14 +77,14 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
     }
     setSelfChecked(!selfChecked)
     if (inGroup) {
-      updateState(radioValue as string)
+      updateState && updateState(radioValue as string)
     }
     onChange && onChange(selfEvent)
   }
 
   useEffect(() => {
     if (checked === undefined) return
-    setSelfChecked(!!checked)
+    setSelfChecked(Boolean(checked))
   }, [checked])
 
   return (
@@ -92,9 +97,11 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           onChange={changeHandler}
           {...props}
         />
-        <span className="name">{withoutDescChildren}</span>
+        <span className="name">
+          <span className={`point ${selfChecked ? 'active' : ''}`} />
+          {withoutDescChildren}
+        </span>
         {DescChildren && DescChildren}
-        <span className="point" />
       </label>
 
       <style jsx>{`
@@ -113,34 +120,36 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           display: flex;
           width: initial;
           align-items: flex-start;
-          line-height: 1.5rem;
           position: relative;
+          --radio-size: ${fontSize};
         }
 
         label {
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-          margin-left: 1.375rem;
           color: ${isDisabled ? theme.palette.accents_4 : theme.palette.foreground};
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
         }
 
         .name {
-          font-size: 1rem;
+          font-size: var(--radio-size);
           font-weight: bold;
           user-select: none;
+          display: inline-flex;
+          align-items: center;
         }
 
         .point {
-          position: absolute;
-          left: 0;
-          top: 6px;
-          height: 0.875rem;
-          width: 0.875rem;
+          height: var(--radio-size);
+          width: var(--radio-size);
           border-radius: 50%;
           border: 1px solid ${theme.palette.border};
           transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
         }
 
         .point:before {
@@ -148,12 +157,16 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           position: absolute;
           left: -1px;
           top: -1px;
-          height: 0.875rem;
-          width: 0.875rem;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
           border-radius: 50%;
-          transform: scale(${selfChecked ? 1 : 0});
-          transition: all 0.2s ease;
           background-color: ${isDisabled ? theme.palette.accents_4 : theme.palette.foreground};
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
         }
       `}</style>
     </div>
