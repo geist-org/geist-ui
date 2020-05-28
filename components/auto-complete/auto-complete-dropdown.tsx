@@ -1,13 +1,31 @@
 import React from 'react'
 import useTheme from '../styles/use-theme'
+import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
 import Dropdown from '../shared/dropdown'
 
 interface Props {
   visible: boolean
+  className?: string
+  disableMatchWidth?: boolean
+  dropdownStyle?: object
 }
 
-const AutoCompleteDropdown: React.FC<React.PropsWithChildren<Props>> = ({ children, visible }) => {
+const defaultProps = {
+  className: '',
+  dropdownStyle: {},
+}
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type AutoCompleteDropdownProps = Props & typeof defaultProps & NativeAttrs
+
+const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdownProps>> = ({
+  children,
+  visible,
+  className,
+  dropdownStyle,
+  disableMatchWidth,
+}) => {
   const theme = useTheme()
   const { ref } = useAutoCompleteContext()
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -17,14 +35,20 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<Props>> = ({ childr
   }
 
   return (
-    <Dropdown parent={ref} visible={visible}>
-      <div className="auto-complete-dropdown" onClick={clickHandler}>
+    <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth}>
+      <div
+        className={`auto-complete-dropdown ${className}`}
+        style={dropdownStyle}
+        onClick={clickHandler}>
         {children}
         <style jsx>{`
           .auto-complete-dropdown {
             border-radius: ${theme.layout.radius};
             box-shadow: ${theme.expressiveness.shadowLarge};
             background-color: ${theme.palette.background};
+            overflow-y: auto;
+            max-height: 15rem;
+            overflow-anchor: none;
           }
         `}</style>
       </div>
@@ -32,4 +56,4 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<Props>> = ({ childr
   )
 }
 
-export default AutoCompleteDropdown
+export default withDefaults(AutoCompleteDropdown, defaultProps)
