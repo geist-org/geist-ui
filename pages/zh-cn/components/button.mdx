@@ -25,9 +25,15 @@ export const meta = {
 <Playground
   title="加载中"
   desc="表示正在运行或加载中的状态。"
-  scope={{ Button }}
+  scope={{ Button, Spacer }}
   code={`
-<Button loading>动作</Button>
+<>
+  <Button loading>Action</Button>
+  <Spacer y={.5} />
+  <Button loading auto>Action</Button>
+  <Spacer y={.5} />
+  <Button loading auto type="success" size="small">Action</Button>
+</>
 `} />
 
 <Playground
