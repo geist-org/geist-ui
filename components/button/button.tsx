@@ -9,7 +9,7 @@ import React, {
 } from 'react'
 import useTheme from '../styles/use-theme'
 import ButtonDrip from './button.drip'
-import ButtonLoading from '../loading'
+import ButtonLoading from './button-loading'
 import { ButtonTypes, NormalSizes } from '../utils/prop-types'
 import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 import { useButtonGroupContext } from '../button-group/button-group-context'
@@ -141,7 +141,8 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
         disabled={disabled}
         onClick={clickHandler}
         {...props}>
-        {loading ? <ButtonLoading /> : childrenWithIcon}
+        {loading && <ButtonLoading color={color} />}
+        {childrenWithIcon}
         {dripShow && (
           <ButtonDrip x={dripX} y={dripY} color={dripColor} onCompleted={dripCompletedHandle} />
         )}
@@ -176,6 +177,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             --zeit-ui-button-padding: ${padding};
             --zeit-ui-button-height: ${height};
             --zeit-ui-button-color: ${color};
+            --zeit-ui-button-bg: ${bg};
           }
 
           .btn:hover {

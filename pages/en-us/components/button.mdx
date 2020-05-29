@@ -26,9 +26,15 @@ Used to trigger an operation.
 <Playground
   title="Loading"
   desc="Show running status."
-  scope={{ Button }}
+  scope={{ Button, Spacer }}
   code={`
-<Button loading>Action</Button>
+<>
+  <Button loading>Action</Button>
+  <Spacer y={.5} />
+  <Button loading auto>Action</Button>
+  <Spacer y={.5} />
+  <Button loading auto type="success" size="small">Action</Button>
+</>
 `} />
 
 <Playground
