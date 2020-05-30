@@ -1,0 +1,104 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Breadcrumbs, Spacer } from 'components'
+import NextLink from 'next/link'
+import Home from '@zeit-ui/react-icons/home'
+import Inbox from '@zeit-ui/react-icons/inbox'
+
+export const meta = {
+  title: 'breadcrumbs',
+  group: 'Navigation',
+}
+
+## Breadcrumbs
+
+Show where users are in the application.
+
+<Playground
+  scope={{ Breadcrumbs }}
+  code={`
+<Breadcrumbs>
+  <Breadcrumbs.Item>Home</Breadcrumbs.Item>
+  <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+  <Breadcrumbs.Item >Page</Breadcrumbs.Item>
+</Breadcrumbs>
+`} />
+
+<Playground
+  title="Separator"
+  desc="Custom separator in characters."
+  scope={{ Breadcrumbs, Spacer }}
+  code={`
+<>
+  <Breadcrumbs separator="-">
+    <Breadcrumbs.Item>Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item >Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+  <Spacer y={.5} />
+  <Breadcrumbs separator=">">
+    <Breadcrumbs.Item>
+      Home
+      <Breadcrumbs.Separator>:</Breadcrumbs.Separator>
+    </Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Components</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Basic</Breadcrumbs.Item>
+    <Breadcrumbs.Item >Button</Breadcrumbs.Item>
+  </Breadcrumbs>
+</>
+`} />
+
+<Playground
+  title="Icons"
+  desc="Show more information with icons."
+  scope={{ Breadcrumbs, Home, Inbox }}
+  code={`
+<Breadcrumbs>
+  <Breadcrumbs.Item><Home /></Breadcrumbs.Item>
+  <Breadcrumbs.Item href=""><Inbox /> Inbox</Breadcrumbs.Item>
+  <Breadcrumbs.Item >Page</Breadcrumbs.Item>
+</Breadcrumbs>
+`} />
+
+<Playground
+  title="With NextJS"
+  desc="Example for use with `next.js`."
+  scope={{ Breadcrumbs, NextLink }}
+  code={`
+<Breadcrumbs>
+  <NextLink href="/">
+    <Breadcrumbs.Item nextLink>Home</Breadcrumbs.Item>
+  </NextLink>
+  <NextLink href="/en-us/components">
+    <Breadcrumbs.Item nextLink>Components</Breadcrumbs.Item>
+  </NextLink>
+  <Breadcrumbs.Item>Breadcrumbs</Breadcrumbs.Item>
+</Breadcrumbs>
+`} />
+
+<Attributes edit="/pages/en-us/components/breadcrumbs.mdx">
+<Attributes.Title>Breadcrumbs.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **separator** | separator string | `string` | - | `/` |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Breadcrumbs.Item.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **href** | link address | `string` | - | - |
+| **nextLink** | in `next.js` route | `boolean` | - | `false` |
+| **onClick** | click event | `(event: MouseEvent) => void` | - | - |
+| **onClick** | click event | `(event: MouseEvent) => void` | - | - |
+| ... | native props | `AnchorHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Breadcrumbs.Separator.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
