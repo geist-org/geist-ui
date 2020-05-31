@@ -24,6 +24,34 @@ export const meta = {
 `} />
 
 <Playground
+  title="大小"
+  scope={{ Breadcrumbs }}
+  code={`
+<>
+  <Breadcrumbs size="mini">
+    <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+  <Breadcrumbs size="small">
+    <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+  <Breadcrumbs size="medium">
+    <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+  <Breadcrumbs size="large">
+    <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+</>
+`} />
+
+<Playground
   title="分隔符"
   desc="定制字符中的分隔符。"
   scope={{ Breadcrumbs, Spacer }}
@@ -81,6 +109,7 @@ export const meta = {
 | 属性 | 描述 | 类型 | 推荐值 | 默认
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **separator** | 分隔符 | `string` | - | `/` |
+| **size** | 面包屑导航的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
 | ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title>Breadcrumbs.Item.Props</Attributes.Title>
@@ -97,6 +126,12 @@ export const meta = {
 | 属性 | 描述 | 类型 | 推荐值 | 默认
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
 
 </Attributes>
 

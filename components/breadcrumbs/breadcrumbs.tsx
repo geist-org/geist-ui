@@ -4,13 +4,16 @@ import BreadcrumbsItem from './breadcrumbs-item'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
 import { addColorAlpha } from '../utils/color'
 import { BreadcrumbsContext } from './breadcrumbs-context'
+import { NormalSizes } from 'components/utils/prop-types'
 
 interface Props {
+  size: NormalSizes
   separator?: string | ReactNode
   className?: string
 }
 
 const defaultProps = {
+  size: 'medium' as NormalSizes,
   separator: '/',
   className: '',
 }
@@ -18,7 +21,18 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type BreadcrumbsProps = Props & typeof defaultProps & NativeAttrs
 
+const getSize = (size: NormalSizes) => {
+  const sizes: { [key in NormalSizes]: string } = {
+    mini: '.75rem',
+    small: '.875rem',
+    medium: '1rem',
+    large: '1.125rem',
+  }
+  return sizes[size]
+}
+
 const Breadcrumbs: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
+  size,
   separator,
   children,
   className,
@@ -30,6 +44,7 @@ const Breadcrumbs: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
     }),
     [separator],
   )
+  const fontSize = useMemo(() => getSize(size), [size])
 
   return (
     <BreadcrumbsContext.Provider value={initialValue}>
@@ -41,7 +56,7 @@ const Breadcrumbs: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
             padding: 0;
             line-height: inherit;
             color: ${theme.palette.accents_4};
-            font-size: 1rem;
+            font-size: ${fontSize};
             box-sizing: border-box;
             display: flex;
             align-items: center;
