@@ -19,8 +19,36 @@ Show where users are in the application.
 <Breadcrumbs>
   <Breadcrumbs.Item>Home</Breadcrumbs.Item>
   <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
-  <Breadcrumbs.Item >Page</Breadcrumbs.Item>
+  <Breadcrumbs.Item>Page</Breadcrumbs.Item>
 </Breadcrumbs>
+`} />
+
+<Playground
+  title="Sizes"
+  scope={{ Breadcrumbs }}
+  code={`
+<>
+  <Breadcrumbs size="mini">
+    <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+  <Breadcrumbs size="small">
+    <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+  <Breadcrumbs size="medium">
+    <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+  <Breadcrumbs size="large">
+    <Breadcrumbs.Item href="">Home</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
+  </Breadcrumbs>
+</>
 `} />
 
 <Playground
@@ -32,7 +60,7 @@ Show where users are in the application.
   <Breadcrumbs separator="-">
     <Breadcrumbs.Item>Home</Breadcrumbs.Item>
     <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
-    <Breadcrumbs.Item >Page</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Page</Breadcrumbs.Item>
   </Breadcrumbs>
   <Spacer y={.5} />
   <Breadcrumbs separator=">">
@@ -42,7 +70,7 @@ Show where users are in the application.
     </Breadcrumbs.Item>
     <Breadcrumbs.Item href="">Components</Breadcrumbs.Item>
     <Breadcrumbs.Item href="">Basic</Breadcrumbs.Item>
-    <Breadcrumbs.Item >Button</Breadcrumbs.Item>
+    <Breadcrumbs.Item>Button</Breadcrumbs.Item>
   </Breadcrumbs>
 </>
 `} />
@@ -55,7 +83,7 @@ Show where users are in the application.
 <Breadcrumbs>
   <Breadcrumbs.Item><Home /></Breadcrumbs.Item>
   <Breadcrumbs.Item href=""><Inbox /> Inbox</Breadcrumbs.Item>
-  <Breadcrumbs.Item >Page</Breadcrumbs.Item>
+  <Breadcrumbs.Item>Page</Breadcrumbs.Item>
 </Breadcrumbs>
 `} />
 
@@ -81,6 +109,7 @@ Show where users are in the application.
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | **separator** | separator string | `string` | - | `/` |
+| **size** | breadcrumbs size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
 | ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title>Breadcrumbs.Item.Props</Attributes.Title>
@@ -97,6 +126,12 @@ Show where users are in the application.
 | Attribute | Description | Type | Accepted values | Default
 | ---------- | ---------- | ---- |  -------------- | ------ |
 | ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
 
 </Attributes>
 
