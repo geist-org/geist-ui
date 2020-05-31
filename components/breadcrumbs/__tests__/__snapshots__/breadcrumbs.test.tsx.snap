@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs should redefined all separators 1`] = `
+"<nav class=\\"\\"><span class=\\"breadcrums-item\\">test-1</span><div class=\\"separator \\">*<style>
+        .separator {
+          display: inline-flex;
+          margin: 0 8px;
+          user-select: none;
+          pointer-events: none;
+          align-items: center;
+        }
+      </style></div><span class=\\"breadcrums-item\\">test-2</span><div class=\\"separator \\">*<style>
+        .separator {
+          display: inline-flex;
+          margin: 0 8px;
+          user-select: none;
+          pointer-events: none;
+          align-items: center;
+        }
+      </style></div><style>
+          nav {
+            margin: 0;
+            padding: 0;
+            line-height: inherit;
+            color: #888;
+            font-size: 1rem;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+          }
+
+          nav :global(.link:hover) {
+            color: rgba(0, 112, 243, 0.85);
+          }
+
+          nav > :global(span:last-of-type) {
+            color: #444;
+          }
+
+          nav > :global(.separator:last-child) {
+            display: none;
+          }
+
+          nav :global(svg) {
+            width: 1em;
+            height: 1em;
+            margin: 0 4px;
+          }
+
+          nav :global(.breadcrums-item) {
+            display: inline-flex;
+            align-items: center;
+          }
+        </style></nav>"
+`;
+
+exports[`Breadcrumbs should render correctly 1`] = `
+"<nav class=\\"\\"><span class=\\"breadcrums-item\\">test-1</span><div class=\\"separator \\">/<style>
+        .separator {
+          display: inline-flex;
+          margin: 0 8px;
+          user-select: none;
+          pointer-events: none;
+          align-items: center;
+        }
+      </style></div><style>
+          nav {
+            margin: 0;
+            padding: 0;
+            line-height: inherit;
+            color: #888;
+            font-size: 1rem;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+          }
+
+          nav :global(.link:hover) {
+            color: rgba(0, 112, 243, 0.85);
+          }
+
+          nav > :global(span:last-of-type) {
+            color: #444;
+          }
+
+          nav > :global(.separator:last-child) {
+            display: none;
+          }
+
+          nav :global(svg) {
+            width: 1em;
+            height: 1em;
+            margin: 0 4px;
+          }
+
+          nav :global(.breadcrums-item) {
+            display: inline-flex;
+            align-items: center;
+          }
+        </style></nav>"
+`;
