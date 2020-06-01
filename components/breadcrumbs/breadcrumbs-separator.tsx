@@ -1,5 +1,4 @@
 import React from 'react'
-// import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 
 interface Props {
@@ -17,8 +16,6 @@ const BreadcrumbsSeparator: React.FC<React.PropsWithChildren<BreadcrumbsProps>> 
   children,
   className,
 }) => {
-  // const theme = useTheme()
-
   return (
     <div className={`separator ${className}`}>
       {children}

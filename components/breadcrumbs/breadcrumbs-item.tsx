@@ -4,7 +4,6 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import { pickChild } from '../utils/collections'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
-import { useBreadcrumbsContext } from './breadcrumbs-context'
 
 interface Props {
   href?: string
@@ -30,41 +29,29 @@ const BreadcrumbsItem = React.forwardRef<
     { href, nextLink, onClick, children, className, ...props },
     ref: React.Ref<HTMLAnchorElement>,
   ) => {
-    const { separator } = useBreadcrumbsContext()
     const isLink = useMemo(() => href !== undefined || nextLink, [href, nextLink])
-    const [withoutSepChildren, sepChildren] = pickChild(children, BreadcrumbsSeparator)
-    const composeSeparator = useMemo(() => {
-      if (React.Children.count(sepChildren) > 0) return sepChildren
-      return <BreadcrumbsSeparator>{separator}</BreadcrumbsSeparator>
-    }, [separator])
-
+    const [withoutSepChildren] = pickChild(children, BreadcrumbsSeparator)
     const clickHandler = (event: React.MouseEvent) => {
       onClick && onClick(event)
     }
 
     if (!isLink) {
       return (
-        <>
-          <span className="breadcrums-item" onClick={clickHandler}>
-            {withoutSepChildren}
-          </span>
-          {composeSeparator}
-        </>
+        <span className={`breadcrums-item ${className}`} onClick={clickHandler}>
+          {withoutSepChildren}
+        </span>
       )
     }
 
     return (
-      <>
-        <Link
-          className={`breadcrums-item ${className}`}
-          href={href}
-          onClick={clickHandler}
-          ref={ref}
-          {...props}>
-          {withoutSepChildren}
-        </Link>
-        {composeSeparator}
-      </>
+      <Link
+        className={`breadcrums-item ${className}`}
+        href={href}
+        onClick={clickHandler}
+        ref={ref}
+        {...props}>
+        {withoutSepChildren}
+      </Link>
     )
   },
 )
