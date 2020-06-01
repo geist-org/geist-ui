@@ -3,8 +3,7 @@ import useTheme from '../styles/use-theme'
 import BreadcrumbsItem from './breadcrumbs-item'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
 import { addColorAlpha } from '../utils/color'
-import { BreadcrumbsContext } from './breadcrumbs-context'
-import { NormalSizes } from 'components/utils/prop-types'
+import { NormalSizes } from '../utils/prop-types'
 
 interface Props {
   size: NormalSizes
@@ -38,55 +37,67 @@ const Breadcrumbs: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
   className,
 }) => {
   const theme = useTheme()
-  const initialValue = useMemo(
-    () => ({
-      separator,
-    }),
-    [separator],
-  )
   const fontSize = useMemo(() => getSize(size), [size])
+  const hoverColor = useMemo(() => {
+    return addColorAlpha(theme.palette.link, 0.85)
+  }, [theme.palette.link])
+
+  const childrenArray = React.Children.toArray(children)
+  const withSeparatorChildren = childrenArray.map((item, index) => {
+    if (!React.isValidElement(item)) return item
+    const last = childrenArray[index - 1]
+    const lastIsSeparator = React.isValidElement(last) && last.type === BreadcrumbsSeparator
+    const currentIsSeparator = item.type === BreadcrumbsSeparator
+    if (!lastIsSeparator && !currentIsSeparator && index > 0) {
+      return (
+        <React.Fragment key={index}>
+          <BreadcrumbsSeparator>{separator}</BreadcrumbsSeparator>
+          {item}
+        </React.Fragment>
+      )
+    }
+    return item
+  })
 
   return (
-    <BreadcrumbsContext.Provider value={initialValue}>
-      <nav className={className}>
-        {children}
-        <style jsx>{`
-          nav {
-            margin: 0;
-            padding: 0;
-            line-height: inherit;
-            color: ${theme.palette.accents_4};
-            font-size: ${fontSize};
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-          }
+    <nav className={className}>
+      {withSeparatorChildren}
+      <style jsx>{`
+        nav {
+          margin: 0;
+          padding: 0;
+          line-height: inherit;
+          color: ${theme.palette.accents_4};
+          font-size: ${fontSize};
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+        }
 
-          nav :global(.link:hover) {
-            color: ${addColorAlpha(theme.palette.link, 0.85)};
-          }
+        nav :global(.link:hover) {
+          color: ${hoverColor};
+        }
 
-          nav > :global(span:last-of-type) {
-            color: ${theme.palette.accents_6};
-          }
+        nav > :global(span:last-of-type) {
+          color: ${theme.palette.accents_6};
+        }
 
-          nav > :global(.separator:last-child) {
-            display: none;
-          }
+        nav > :global(.separator:last-child) {
+          display: none;
+        }
 
-          nav :global(svg) {
-            width: 1em;
-            height: 1em;
-            margin: 0 4px;
-          }
+        nav :global(svg) {
+          width: 1em;
+          height: 1em;
+          margin: 0 4px;
+        }
 
-          nav :global(.breadcrums-item) {
-            display: inline-flex;
-            align-items: center;
-          }
-        `}</style>
-      </nav>
-    </BreadcrumbsContext.Provider>
+        nav :global(.breadcrums-item) {
+          display: inline-flex;
+          align-items: center;
+        }
+      `}</style>
+    </nav>
   )
 }
 
