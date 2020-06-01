@@ -28,10 +28,8 @@ describe('Breadcrumbs', () => {
   it('the specified separator should be redefined', () => {
     const wrapper = mount(
       <Breadcrumbs separator="*">
-        <Breadcrumbs.Item>
-          test-1
-          <Breadcrumbs.Separator>%</Breadcrumbs.Separator>
-        </Breadcrumbs.Item>
+        <Breadcrumbs.Item>test-1</Breadcrumbs.Item>
+        <Breadcrumbs.Separator>%</Breadcrumbs.Separator>
         <Breadcrumbs.Item>test-2</Breadcrumbs.Item>
       </Breadcrumbs>,
     )
