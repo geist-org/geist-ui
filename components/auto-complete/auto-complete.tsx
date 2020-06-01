@@ -86,8 +86,10 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   const [state, setState] = useState<string>(customInitialValue)
   const [visible, setVisible] = useState<boolean>(false)
+
   const [, searchChild] = pickChild(children, AutoCompleteSearching)
   const [, emptyChild] = pickChild(children, AutoCompleteEmpty)
   const autoCompleteItems = useMemo(() => {
@@ -112,6 +114,10 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     if (disabled) return
     onSelect && onSelect(val)
     setState(val)
+    if (inputRef.current) {
+      inputRef.current.focus()
+      setVisible(false)
+    }
   }
   const updateVisible = (next: boolean) => setVisible(next)
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -157,6 +163,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     <AutoCompleteContext.Provider value={initialValue}>
       <div ref={ref} className="auto-complete">
         <Input
+          ref={inputRef}
           size={size}
           status={status}
           onChange={onInputChange}
