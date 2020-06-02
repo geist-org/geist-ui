@@ -2,6 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { AutoComplete } from 'components'
 import { nativeEvent } from 'tests/utils'
+import { act } from 'react-dom/test-utils'
 
 describe('AutoComplete', () => {
   it('should render correctly', () => {
@@ -32,11 +33,13 @@ describe('AutoComplete', () => {
     expect((input as HTMLInputElement).value).toEqual('value2')
   })
 
-  it('should render clear icon', () => {
+  it('should render clear icon', async () => {
     const wrapper = mount(<AutoComplete initialValue="value" />)
     expect(wrapper.find('svg').length).toBe(0)
 
-    wrapper.setProps({ clearable: true })
+    await act(async () => {
+      wrapper.setProps({ clearable: true })
+    })
     expect(wrapper.find('svg').length).toBe(1)
 
     wrapper.find('svg').simulate('click', nativeEvent)
@@ -44,11 +47,13 @@ describe('AutoComplete', () => {
     expect((input as HTMLInputElement).value).toEqual('')
   })
 
-  it('should reponse width change', () => {
+  it('should reponse width change', async () => {
     const wrapper = mount(<AutoComplete initialValue="value" width="100px" />)
     expect(wrapper.prop('width')).toEqual('100px')
+    await act(async () => {
+      wrapper.setProps({ width: '200px' })
+    })
 
-    wrapper.setProps({ width: '200px' })
     expect(wrapper.prop('width')).toEqual('200px')
   })
 })
