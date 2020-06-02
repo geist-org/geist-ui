@@ -27,6 +27,21 @@ export const meta = {
 `} />
 
 <Playground
+  title="只允许选择输入"
+  desc="只通过 Select 事件更改值。"
+  scope={{ AutoComplete }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return <AutoComplete disableFreeSolo options={options} initialValue="sydney" />
+}
+`} />
+
+<Playground
   desc="禁用所有的交互。"
   title="禁用"
   scope={{ AutoComplete }}
@@ -217,6 +232,32 @@ export const meta = {
 }
 `} />
 
+
+<Playground
+  title="可创建的"
+  desc="为任意值添加待选条目。"
+  scope={{ AutoComplete }}
+  code={`
+() => {
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = React.useState()
+  const searchHandler = (currentValue) => {
+    const createOptions = [{
+      value: currentValue, label: 'Add "' + currentValue + '"'
+    }]
+    if (!currentValue) return setOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const optionsWithCreatable = relatedOptions.length !== 0 ? relatedOptions : createOptions
+    setOptions(optionsWithCreatable)
+  }
+  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
+}
+`} />
+
 <Attributes edit="/pages/zh-cn/components/auto-complete.mdx">
 <Attributes.Title>AutoComplete.Props</Attributes.Title>
 
@@ -236,6 +277,7 @@ export const meta = {
 | **dropdownClassName** | 自定义下拉框的类名 | `string` | - | - |
 | **dropdownStyle** | 自定义下拉框的样式 | `object` | - | - |
 | **disableMatchWidth** | 禁止 Option 跟随父元素的宽度 | `boolean` | - | `false` |
+| **disableFreeSolo** | 只允许通过 Select 事件更改值 (禁止 Input 输入随意值) | `boolean` | - | `false` |
 | ... | 原生属性 | `InputHTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
