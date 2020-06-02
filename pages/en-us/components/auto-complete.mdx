@@ -41,9 +41,24 @@ AutoComplete control of input field.
 `} />
 
 <Playground
+  title="Only allow selected"
+  desc="You can only change the value of the input by select."
+  scope={{ AutoComplete }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return <AutoComplete disableFreeSolo options={options} initialValue="sydney" />
+}
+`} />
+
+<Playground
   desc="Update the contents of drop-down list based on input."
   title="search"
-  scope={{ AutoComplete, useState }}
+  scope={{ AutoComplete }}
   code={`
 () => {
   const allOptions = [
@@ -51,7 +66,7 @@ AutoComplete control of input field.
     { label: 'Sydney', value: 'sydney' },
     { label: 'Shanghai', value: 'shanghai' },
   ]
-  const [options, setOptions] = useState()
+  const [options, setOptions] = React.useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
     const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
@@ -216,6 +231,31 @@ AutoComplete control of input field.
 }
 `} />
 
+<Playground
+  title="Creatable"
+  desc="Add an entry to be selected for any value."
+  scope={{ AutoComplete }}
+  code={`
+() => {
+  const allOptions = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  const [options, setOptions] = React.useState()
+  const searchHandler = (currentValue) => {
+    const createOptions = [{
+      value: currentValue, label: 'Add "' + currentValue + '"'
+    }]
+    if (!currentValue) return setOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const optionsWithCreatable = relatedOptions.length !== 0 ? relatedOptions : createOptions
+    setOptions(optionsWithCreatable)
+  }
+  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
+}
+`} />
+
 <Attributes edit="/pages/en-us/components/auto-complete.mdx">
 <Attributes.Title>AutoComplete.Props</Attributes.Title>
 
@@ -235,6 +275,7 @@ AutoComplete control of input field.
 | **dropdownClassName** | className of dropdown box | `string` | - | - |
 | **dropdownStyle** | style of dropdown box | `object` | - | - |
 | **disableMatchWidth** | disable Option from follow parent width | `boolean` | - | `false` |
+| **disableFreeSolo** | only values can be changed through Select | `boolean` | - | `false` |
 | ... | native props | `InputHTMLAttributes` | `'id', 'className', ...` | - |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
