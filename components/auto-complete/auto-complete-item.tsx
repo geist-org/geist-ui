@@ -28,9 +28,10 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
   children,
 }) => {
   const theme = useTheme()
-  const { value, updateValue, size } = useAutoCompleteContext()
+  const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
     updateValue && updateValue(identValue)
+    updateVisible && updateVisible(false)
   }
 
   const isActive = useMemo(() => value === identValue, [identValue, value])
