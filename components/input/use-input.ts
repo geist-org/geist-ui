@@ -1,6 +1,10 @@
 import React, { Dispatch, MutableRefObject, SetStateAction } from 'react'
 import useCurrentState from '../utils/use-current-state'
 
+export type BindingsChangeTarget =
+  | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  | string
+
 const useInput = (
   initialValue: string,
 ): {
@@ -10,7 +14,7 @@ const useInput = (
   reset: () => void
   bindings: {
     value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+    onChange: (event: BindingsChangeTarget) => void
   }
 } => {
   const [state, setState, currentRef] = useCurrentState<string>(initialValue)
@@ -22,8 +26,12 @@ const useInput = (
     reset: () => setState(initialValue),
     bindings: {
       value: state,
-      onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setState(event.target.value)
+      onChange: (event: BindingsChangeTarget) => {
+        if (typeof event === 'object' && event.target) {
+          setState(event.target.value)
+        } else {
+          setState(event as string)
+        }
       },
     },
   }
