@@ -5,7 +5,7 @@ const Home = () => {
   const theme = useTheme()
 
   return (
-    <Card shadow style={{ width: '500px', margin: '100px auto' }}>
+    <Card shadow>
       <Text>Modern and minimalist React UI library.</Text>
       <Text type={'success'}>
         Modern and minimalist React UI library. <Tag>{theme.palette.success}</Tag>
