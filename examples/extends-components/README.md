@@ -1,6 +1,6 @@
-## Custom themes
+## Extends Components
 
-This is an example of **how to custom Themes in `zeit-ui`**.
+This is an example of **how to inherit components in `zeit-ui`**.
 
 ## Getting Started
 
