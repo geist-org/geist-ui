@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
-import { addColorAlpha } from 'components/utils/color'
+import { addColorAlpha } from '../utils/color'
 
 interface Props {
   active?: boolean
