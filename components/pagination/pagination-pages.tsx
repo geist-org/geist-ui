@@ -1,6 +1,6 @@
 import React, { Dispatch, SetStateAction, useCallback, useMemo } from 'react'
 import PaginationItem from './pagination-item'
-import PaginationEllipsis from 'components/pagination/pagination-ellipsis'
+import PaginationEllipsis from './pagination-ellipsis'
 
 interface Props {
   limit: number
