@@ -44,8 +44,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
           <div
             onClick={childrenClickHandler}
             className="content"
-            onMouseDown={() => setIsContentMouseDown(true)}
-            onMouseUp={mouseUpHandler}>
+            onMouseDown={() => setIsContentMouseDown(true)}>
             {children}
           </div>
           <div onClick={childrenClickHandler} className="offset" />
