@@ -5,7 +5,13 @@ import PlayIcon from '@zeit-ui/react-icons/playFill'
 import PauseIcon from '@zeit-ui/react-icons/pauseFill'
 import FullScreenIcon from '@zeit-ui/react-icons/fullScreen'
 import CloseFullScreenIcon from '@zeit-ui/react-icons/fullScreenClose'
-import { openFullscreen, onFullscreenChange, closeFullscreen, formatTime } from './utils'
+import {
+  openFullscreen,
+  onFullscreenChange,
+  closeFullscreen,
+  formatTime,
+  isFullscreenEnabled,
+} from './utils'
 
 interface Props {
   src: string
@@ -91,6 +97,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
         if (isDragging) updateHandlePosition(e)
       }
       const endDrag = () => {
+        if (!isDragging) return
         setDragging(false)
         if (videoRef?.current) {
           videoRef.current.currentTime = (handlePosition.current * duration) / 100
@@ -127,6 +134,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
                 src={src}
+                playsInline
                 {...props}
               />
               <div className="video-controls">
@@ -154,7 +162,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
                   <div className="handle" style={{ left: handlePosition.current + '%' }} />
                 </div>
                 <div className="time total-time">{formatTime(duration)}</div>
-                {fullscreenable && (
+                {fullscreenable && isFullscreenEnabled() && (
                   <button onClick={handleFullScreen} className="full-screen-button">
                     {isFullscreen ? (
                       <CloseFullScreenIcon size={14} />
@@ -178,7 +186,6 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
             margin: 0 auto;
             max-width: 100%;
             width: ${width}px;
-            height: ${height}px;
           }
           video {
             height: 100%;

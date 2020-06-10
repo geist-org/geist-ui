@@ -6,9 +6,13 @@ export const formatTime = (seconds: number) => {
   return `${hh ? pad(hh) + ':' : ''}${pad(mm)}:${pad(ss)}`
 }
 
+export const isFullscreenEnabled = () => {
+  const elem = document as any
+  return  elem.fullscreenEnabled || elem.webkitFullscreenEnabled || elem.mozFullScreenEnabled || elem.msFullscreenEnabled;
+}
+
 export const openFullscreen = (element: HTMLElement) => {
   const elem = element as any
-  console.log(elem)
   if (elem.requestFullscreen) {
     elem.requestFullscreen()
   } else if (elem.mozRequestFullScreen) {
