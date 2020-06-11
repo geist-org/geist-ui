@@ -170,7 +170,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
             <div className="time total-time">{formatTime(duration)}</div>
             {fullscreenable && isFullscreenEnabled() && (
               <button onClick={handleFullScreen} className="full-screen-button">
-                {isFullscreen ? <CloseFullScreenIcon size={14} /> : <FullScreenIcon />}
+                {isFullscreen ? <CloseFullScreenIcon /> : <FullScreenIcon />}
               </button>
             )}
           </div>
