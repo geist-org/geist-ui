@@ -4,11 +4,11 @@ import { RadioContext } from './radio-context'
 import { NormalSizes } from 'components/utils/prop-types'
 
 interface Props {
-  value?: string
-  initialValue?: string
+  value?: string | number
+  initialValue?: string | number
   disabled?: boolean
   size?: NormalSizes
-  onChange?: (value: string) => void
+  onChange?: (value: string | number) => void
   className?: string
   useRow?: boolean
 }
@@ -44,8 +44,8 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
   useRow,
   ...props
 }) => {
-  const [selfVal, setSelfVal] = useState<string | undefined>(initialValue)
-  const updateState = (nextValue: string) => {
+  const [selfVal, setSelfVal] = useState<string | number | undefined>(initialValue)
+  const updateState = (nextValue: string | number) => {
     setSelfVal(nextValue)
     onChange && onChange(nextValue)
   }
