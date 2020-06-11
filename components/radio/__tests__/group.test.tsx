@@ -61,6 +61,28 @@ describe('Radio Group', () => {
     changeHandler.mockRestore()
   })
 
+  it('the radio value should be support number', () => {
+    let value = ''
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
+    const wrapper = mount(
+      <Radio.Group onChange={changeHandler}>
+        <Radio value={5}>Option 1</Radio>
+        <Radio value={10}>Option 2</Radio>
+      </Radio.Group>,
+    )
+
+    wrapper
+      .find('input')
+      .at(0)
+      .simulate('change', {
+        ...nativeEvent,
+        target: { checked: true },
+      })
+    expect(changeHandler).toHaveBeenCalled()
+    expect(value).toEqual(5)
+    changeHandler.mockRestore()
+  })
+
   it('should ignore events when disabled', () => {
     const changeHandler = jest.fn()
     const wrapper = mount(
