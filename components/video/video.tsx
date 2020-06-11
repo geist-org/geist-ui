@@ -207,12 +207,6 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
             position: relative;
             padding-bottom: ${(height / width) * 100}%;
           }
-          p {
-            color: var(--accents-5);
-            font-size: 14px;
-            margin: 0;
-            text-align: center;
-          }
           .video-controls {
             position: absolute;
             bottom: 5%;
@@ -265,6 +259,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
           }
           .video-controls progress[value]::-webkit-progress-value {
             background-color: ${theme.palette.foreground};
+            ${isDragging ? '' : 'transition: width 300ms ease;'}
           }
           .video-controls .progress .handle {
             position: absolute;
@@ -277,6 +272,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
               transform 0.1s ease, background-color 0.1s ease;
             top: calc(50% - 6px);
             pointer-events: none;
+            ${isDragging ? '' : 'transition: left 300ms ease;'}
           }
           .video-controls .progress:hover .handle {
             transform: translateX(-4px) translateY(1px) scale(1);
@@ -300,7 +296,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
           .time {
             padding-left: 0;
           }
-          @media (max-width: 992px) {
+          @media (max-width: ${theme.breakpoints.sm.max}) {
             .container .video-controls {
               opacity: 1;
               transform: translate3d(0px, 0px 0px) scale(1, 0px);
