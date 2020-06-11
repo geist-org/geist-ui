@@ -11,6 +11,7 @@ import {
   closeFullscreen,
   formatTime,
   isFullscreenEnabled,
+  isSafari,
 } from './utils'
 
 interface Props {
@@ -44,7 +45,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
     const [currentTime, setCurrentTime] = useState(0)
     const [isPlaying, setPlaying] = useState(false)
     const [isFullscreen, setFullscreen] = useState(false)
-    const [mouseTimer, setMouseTimer] = useState(0)
+    const mouseTimer = useRef(0)
     const [controlsVisible, setControlsVisibility] = useState(false)
     const [isDragging, setDragging] = useState(false)
     const handlePosition = useRef(0)
@@ -53,42 +54,52 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
 
     const handleFullScreen = () => {
       onFullscreenChange(setFullscreen)
-      if (isFullscreen) {
-        closeFullscreen()
+      if (isFullscreen) return closeFullscreen()
+      if (isSafari()) {
+        openFullscreen(videoRef.current as HTMLElement)
       } else {
-        if (navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')) {
-          openFullscreen(videoRef.current as HTMLElement)
-        } else {
-          openFullscreen(containerRef.current as HTMLElement)
-        }
+        openFullscreen(containerRef.current as HTMLElement)
       }
     }
     const handleMouseMove = () => {
-      if (mouseTimer) clearTimeout(mouseTimer)
+      if (mouseTimer.current) clearTimeout(mouseTimer.current)
       setControlsVisibility(true)
-      const timeoutId: number = window.setTimeout(() => setControlsVisibility(false), 3000)
-      setMouseTimer(timeoutId)
+      mouseTimer.current = window.setTimeout(() => setControlsVisibility(false), 3000)
     }
     const handleProgress = () => {
-      const time = videoRef?.current?.currentTime || 0
-      if (!isDragging) {
+      if (!isDragging && videoRef.current) {
+        const time = videoRef.current.currentTime
         setCurrentTime(time)
         handlePosition.current = (time / duration) * 100
       }
     }
-    const play = () => videoRef?.current?.play()
-    const pause = () => videoRef?.current?.pause()
+    const onLoadedMetadata = () => {
+      if (videoRef.current) setDuration(videoRef.current.duration)
+    }
+    const play = () => {
+      if (videoRef.current) videoRef.current.play()
+    }
+    const pause = () => {
+      if (videoRef.current) videoRef.current.pause()
+    }
     const toggle = () => {
-      if (isPlaying) pause()
-      else play()
+      if (isPlaying) return pause()
+      play()
     }
-    const updateHandlePosition = (e: any) => {
-      const rect = dragHandlerRef?.current?.getBoundingClientRect()
-      const pageX = e.pageX || e.touches[0].pageX
-      const position = ((pageX - (rect?.left || 0)) / (rect?.width || 0)) * 100
-      handlePosition.current = parseInt(`${Math.min(Math.max(position, 0), 100)}`) || 0
+    const updateHandlePosition = (e: TouchEvent | MouseEvent) => {
+      let pageX
+      if (e instanceof TouchEvent) {
+        pageX = e.touches[0].pageX
+      } else {
+        pageX = e.pageX
+      }
+      if (dragHandlerRef.current) {
+        const rect = dragHandlerRef.current.getBoundingClientRect()
+        const position = ((pageX - (rect.left || 0)) / (rect.width || 0)) * 100
+        handlePosition.current = parseInt(`${Math.min(Math.max(position, 0), 100)}`) || 0
+      }
     }
-    const startDrag = (e: React.MouseEvent | React.TouchEvent) => {
+    const startDrag = (e: MouseEvent | TouchEvent) => {
       setDragging(true)
       updateHandlePosition(e)
     }
@@ -97,19 +108,16 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
         if (isDragging) updateHandlePosition(e)
       }
       const endDrag = () => {
-        if (!isDragging) return
         setDragging(false)
-        if (videoRef?.current) {
-          videoRef.current.currentTime = (handlePosition.current * duration) / 100
+        if (videoRef.current) {
+          videoRef.current.currentTime = (handlePosition.current * videoRef.current.duration) / 100
           setCurrentTime(videoRef.current.currentTime)
         }
       }
-
       window.addEventListener('mousemove', onDarg)
       window.addEventListener('touchmove', onDarg)
       window.addEventListener('mouseup', endDrag)
       window.addEventListener('touchend', endDrag)
-
       return () => {
         window.removeEventListener('mousemove', onDarg)
         window.removeEventListener('touchmove', onDarg)
@@ -129,7 +137,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
               <video
                 onClick={toggle}
                 ref={videoRef}
-                onLoadedMetadata={() => setDuration(videoRef?.current?.duration || 0)}
+                onLoadedMetadata={onLoadedMetadata}
                 onTimeUpdate={handleProgress}
                 onPlay={() => setPlaying(true)}
                 onPause={() => setPlaying(false)}
@@ -152,8 +160,8 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
                   <div
                     className="drag-handler"
                     ref={dragHandlerRef}
-                    onMouseDown={startDrag}
-                    onTouchStart={startDrag}
+                    onMouseDown={e => startDrag(e.nativeEvent)}
+                    onTouchStart={e => startDrag(e.nativeEvent)}
                   />
                   <progress
                     value={isDragging ? handlePosition.current / 100 : currentTime / duration || 0}
@@ -259,7 +267,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
           }
           .video-controls progress[value]::-webkit-progress-value {
             background-color: ${theme.palette.foreground};
-            ${isDragging ? '' : 'transition: width 300ms ease;'}
+            ${isDragging ? '' : 'transition: width 0.3s ease;'}
           }
           .video-controls .progress .handle {
             position: absolute;
@@ -268,11 +276,9 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
             border-radius: 50%;
             background: ${theme.palette.foreground};
             transform: translateX(-4px) translateY(1px) scale(0);
-            transition: width 0.1s ease, height 0.1s ease, border-radius 0.1s ease,
-              transform 0.1s ease, background-color 0.1s ease;
             top: calc(50% - 6px);
             pointer-events: none;
-            ${isDragging ? '' : 'transition: left 300ms ease;'}
+            transition: ${isDragging ? '' : 'left 0.3s ease, '} transform 0.1s ease;
           }
           .video-controls .progress:hover .handle {
             transform: translateX(-4px) translateY(1px) scale(1);

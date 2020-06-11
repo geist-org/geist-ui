@@ -8,7 +8,12 @@ export const formatTime = (seconds: number) => {
 
 export const isFullscreenEnabled = () => {
   const elem = document as any
-  return  elem.fullscreenEnabled || elem.webkitFullscreenEnabled || elem.mozFullScreenEnabled || elem.msFullscreenEnabled;
+  return (
+    elem.fullscreenEnabled ||
+    elem.webkitFullscreenEnabled ||
+    elem.mozFullScreenEnabled ||
+    elem.msFullscreenEnabled
+  )
 }
 
 export const openFullscreen = (element: HTMLElement) => {
@@ -44,3 +49,6 @@ export const onFullscreenChange = (func: (state: boolean) => void) => {
   doc.addEventListener('webkitfullscreenchange', () => func(!!doc.webkitIsFullScreen), true)
   doc.addEventListener('msfullscreenchange', () => func(!!doc.msFullscreenElement), true)
 }
+
+export const isSafari = () =>
+  navigator.userAgent.includes('Safari') && !navigator.userAgent.includes('Chrome')
