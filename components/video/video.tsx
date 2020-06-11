@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect, useImperativeHandle } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
-import PlayIcon from '@zeit-ui/react-icons/playFill'
-import PauseIcon from '@zeit-ui/react-icons/pauseFill'
-import FullScreenIcon from '@zeit-ui/react-icons/fullScreen'
-import CloseFullScreenIcon from '@zeit-ui/react-icons/fullScreenClose'
+import PlayIcon from './play-icon'
+import PauseIcon from './pause-icon'
+import FullScreenIcon from './fullscreen-icon'
+import CloseFullScreenIcon from './fullscreen-close-icon'
 import {
   openFullscreen,
   onFullscreenChange,
@@ -127,73 +127,66 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
     }, [isDragging])
 
     return (
-      <span className={className}>
-        <figure>
-          <main>
-            <div
-              className={`container ${controlsVisible ? 'controls-visible' : ''}`}
-              ref={containerRef}
-              onMouseMove={handleMouseMove}>
-              <video
-                onClick={toggle}
-                ref={videoRef}
-                onLoadedMetadata={onLoadedMetadata}
-                onTimeUpdate={handleProgress}
-                onPlay={() => setPlaying(true)}
-                onPause={() => setPlaying(false)}
-                src={src}
-                playsInline
-                {...props}
+      <div className={`video ${className}`}>
+        <div
+          className={`container ${controlsVisible ? 'controls-visible' : ''}`}
+          ref={containerRef}
+          onMouseMove={handleMouseMove}>
+          <video
+            onClick={toggle}
+            ref={videoRef}
+            onLoadedMetadata={onLoadedMetadata}
+            onTimeUpdate={handleProgress}
+            onPlay={() => setPlaying(true)}
+            onPause={() => setPlaying(false)}
+            src={src}
+            playsInline
+            {...props}
+          />
+          <div className="video-controls">
+            {isPlaying ? (
+              <button onClick={pause} className="play-button">
+                <PauseIcon />
+              </button>
+            ) : (
+              <button onClick={play} className="play-button">
+                <PlayIcon />
+              </button>
+            )}
+            <div className="time current-time">{formatTime(currentTime)}</div>
+            <div className="progress">
+              <div
+                className="drag-handler"
+                ref={dragHandlerRef}
+                onMouseDown={e => startDrag(e.nativeEvent)}
+                onTouchStart={e => startDrag(e.nativeEvent)}
               />
-              <div className="video-controls">
-                {isPlaying ? (
-                  <button onClick={pause} className="play-button">
-                    <PauseIcon size={14} />
-                  </button>
-                ) : (
-                  <button onClick={play} className="play-button">
-                    <PlayIcon size={14} />
-                  </button>
-                )}
-                <div className="time current-time">{formatTime(currentTime)}</div>
-                <div className="progress">
-                  <div
-                    className="drag-handler"
-                    ref={dragHandlerRef}
-                    onMouseDown={e => startDrag(e.nativeEvent)}
-                    onTouchStart={e => startDrag(e.nativeEvent)}
-                  />
-                  <progress
-                    value={isDragging ? handlePosition.current / 100 : currentTime / duration || 0}
-                    max={1}
-                  />
-                  <div className="handle" style={{ left: handlePosition.current + '%' }} />
-                </div>
-                <div className="time total-time">{formatTime(duration)}</div>
-                {fullscreenable && isFullscreenEnabled() && (
-                  <button onClick={handleFullScreen} className="full-screen-button">
-                    {isFullscreen ? (
-                      <CloseFullScreenIcon size={14} />
-                    ) : (
-                      <FullScreenIcon size={14} />
-                    )}
-                  </button>
-                )}
-              </div>
+              <progress
+                value={isDragging ? handlePosition.current / 100 : currentTime / duration || 0}
+                max={1}
+              />
+              <div className="handle" style={{ left: handlePosition.current + '%' }} />
             </div>
-          </main>
-        </figure>
+            <div className="time total-time">{formatTime(duration)}</div>
+            {fullscreenable && isFullscreenEnabled() && (
+              <button onClick={handleFullScreen} className="full-screen-button">
+                {isFullscreen ? <CloseFullScreenIcon size={14} /> : <FullScreenIcon />}
+              </button>
+            )}
+          </div>
+        </div>
 
         <style jsx>{`
-          figure {
-            display: block;
-            text-align: center;
-            margin: 40px 0;
-          }
-          main {
+          .video {
             margin: 0 auto;
             max-width: 100%;
             width: ${width}px;
+          }
+          .container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding-bottom: ${(height / width) * 100}%;
           }
           video {
             height: 100%;
@@ -208,12 +201,6 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
             height: 100%;
             max-height: 100%;
             z-index: 99999999;
-          }
-          .container {
-            display: flex;
-            justify-content: center;
-            position: relative;
-            padding-bottom: ${(height / width) * 100}%;
           }
           .video-controls {
             position: absolute;
@@ -309,7 +296,7 @@ const Video = React.forwardRef<HTMLVideoElement, VideoProps>(
             }
           }
         `}</style>
-      </span>
+      </div>
     )
   },
 )
