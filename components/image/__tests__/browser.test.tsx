@@ -59,4 +59,15 @@ describe('Image Browser', () => {
     const wrapper = mount(<Image.Browser />)
     expect(() => wrapper.unmount()).not.toThrow()
   })
+
+  it('anchor props should be passed through', () => {
+    const anchorRel = 'noreferrer'
+    const wrapper = mount(
+      <Image.Browser url={link} anchorProps={{ rel: anchorRel }}>
+        <Image src={url} />
+      </Image.Browser>,
+    )
+    const rel = wrapper.find('a').getDOMNode().getAttribute('rel')
+    expect(anchorRel).toEqual(anchorRel)
+  })
 })
