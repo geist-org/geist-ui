@@ -1,21 +1,26 @@
 import React, { useMemo } from 'react'
 import Link from '../link'
+import { Props as LinkProps } from '../link/link'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'
+
+type AnchorProps = Omit<React.AnchorHTMLAttributes<any>, keyof LinkProps>
 
 interface Props {
   title?: string
   url?: string
   showFullLink?: boolean
   invert?: boolean
+  anchorProps?: AnchorProps
   className?: string
 }
 
 const defaultProps = {
   className: '',
   showFullLink: false,
+  anchorProps: {} as AnchorProps,
   invert: false,
 }
 
@@ -42,12 +47,17 @@ const getTitle = (title: string, colors: BrowserColors) => (
   </div>
 )
 
-const getAddressInput = (url: string, showFullLink: boolean, colors: BrowserColors) => (
+const getAddressInput = (
+  url: string,
+  showFullLink: boolean,
+  colors: BrowserColors,
+  anchorProps: AnchorProps,
+) => (
   <div className="address-input">
     <span className="https">
       <ImageBrowserHttpsIcon />
     </span>
-    <Link href={url} title={url} target="_blank">
+    <Link href={url} title={url} target="_blank" {...anchorProps}>
       {showFullLink ? url : getHostFromUrl(url)}
     </Link>
     <style jsx>{`
@@ -94,16 +104,16 @@ const getAddressInput = (url: string, showFullLink: boolean, colors: BrowserColo
 
 const ImageBrowser = React.forwardRef<HTMLDivElement, React.PropsWithChildren<ImageBrowserProps>>(
   (
-    { url, title, children, showFullLink, invert, className, ...props },
+    { url, title, children, showFullLink, invert, anchorProps, className, ...props },
     ref: React.Ref<HTMLDivElement>,
   ) => {
     const theme = useTheme()
     const colors = useMemo(() => getBrowserColors(invert, theme.palette), [invert, theme.palette])
     const input = useMemo(() => {
-      if (url) return getAddressInput(url, showFullLink, colors)
+      if (url) return getAddressInput(url, showFullLink, colors, anchorProps)
       if (title) return getTitle(title, colors)
       return null
-    }, [url, showFullLink, title, colors])
+    }, [url, showFullLink, title, colors, anchorProps])
 
     return (
       <div className={`bowser ${className}`} ref={ref} {...props}>
