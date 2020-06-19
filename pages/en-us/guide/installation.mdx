@@ -13,7 +13,7 @@ export const meta = {
 
 Ensure your have the latest version of <Link href="https://nodejs.org/en/download/">NodeJS</Link>,
 and a package manager: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> or <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
-If you want to see a complete example, please browser our <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/tree/master/examples">sample collection</Link>.
+If you want to see a complete example, please browse our <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/tree/master/examples">sample collection</Link>.
 
 <Spacer y={1} />
 <Dot type="success" /> 1. Run script to download:
@@ -46,7 +46,7 @@ const Application = () => (
 </Grid>
 </Grid.Container>
 <Spacer y={.5} />
-<Dot type="success" /> 3. Use components in any where:
+<Dot type="success" /> 3. Use the Zeit UI components anywhere:
 
 <Grid.Container>
 <Grid xs={24} sm={16}>
@@ -64,7 +64,7 @@ const MyComponent = () => <Button>Click Me</Button>
 
 ### Single component
 
-ZEIT UI supports import components when you actually need.(`tree-shaking`)
+ZEIT UI supports importing single, specific components when you need them. This is referred to as `tree-shaking`.
 
 E.g.
 
@@ -85,17 +85,16 @@ const MyComponent = () => <Button>Click Me</Button>
 ### Create React App
 
 A React project created by <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> can
-also easily use `@zeit-ui/react`. You don't need to make any changes, just install and use.
+also easily use `@zeit-ui/react`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react-getting-started">a
+sample project related to create react app here</Link>. 
 
-We have <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react-getting-started">a
-sample project related to create react app here</Link>. If you want to `tree-shaking`,
-please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.
+If you want to eject certain configs, `tree-shaking`, please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.
 
 <Spacer y={2.5} />
 
 ### Next.js
 
-In the `next.js` project, you need to customize the <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> entry file to load provider.
+In the `next.js` project, you need to customize the <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> entry file to load the provider.
 Start your NextJS project with <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/create-next-app/README.md">this example</Link>.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
