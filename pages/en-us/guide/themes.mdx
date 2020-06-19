@@ -8,7 +8,7 @@ export const meta = {
 
 ## Themes
 
-`@zeit-ui/react` support **Dark Mode** now. You can switch theme at any time through a very simple API, no third-party styles or configs.
+`@zeit-ui/react` now support **Dark Mode**. You can switch theme at any time through a very simple API, no third-party styles or configs.
 
 <Spacer y={2} />
 
@@ -48,14 +48,14 @@ const App = () => {
 
 ### Customizing theme
 
-Customize theme is very simple in `@zeit-ui/react`, you just need to provide a new theme `Object`,
+Customizing a theme is very simple in `@zeit-ui/react`, you just need to provide a new theme `Object`,
 and all the components will change automatically.
 Here is <Link target="_blank" color href="https://github.com/zeit-ui/react/tree/master/examples/custom-themes">a complete sample project</Link> for reference.
 
-Of course, if a *component* doesn't use your customize variables, it doesn't make any additional **changes** or **rendering**.
+Of course, if a *component* doesn't use your customized variables, it doesn't make any additional **changes** or **rendering**.
 
 <Spacer y={1} />
-<Note type="warning">The more changes you custom, the more Components <b>Re-Render</b>.</Note>
+<Note type="warning">The more changes you customise, the more Components will <b>Re-Render</b>.</Note>
 
 ```jsx
 import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
@@ -103,7 +103,7 @@ If you don't use TypeScript, to learn more about preset types, see <Link color t
 
 #### Overriding styles with `className`
 
-You can override the style by define any `className` on the component
+You can override the style by defining a `className` on the component.
 
 ```jsx
 import { Button, Row } from '@zeit-ui/react'
@@ -124,7 +124,7 @@ const MyPage = () => (
 
 #### Overriding styles with `inline-style`
 
-Any `inline-style` works correctly on the component.
+Defining an `inline-style` will also correctly override the component.
 
 ```jsx
 const MyPage = () => (
