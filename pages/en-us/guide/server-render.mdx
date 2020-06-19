@@ -15,21 +15,20 @@ export const meta = {
 All Components of `@zeit-ui/react` are compatible with **Server Render**. In fact, the document you see now is rendered by the server.
 
 <Note label="readme">
-  You just need <Link href="https://en.wikipedia.org/wiki/Single-page_application" rel="nofollow" underline>a SPA application</Link>?
-  It is recommended to skip this section.
+  If you are looking to build a SPA <Link href="https://en.wikipedia.org/wiki/Single-page_application" rel="nofollow" underline>(single page application)</Link>,
+  please feel free to skip this section.
 </Note>
 
 <Spacer y={.5} />
 
-Will using server-side rendering make my application lose the advantages of SPA? Maybe you can use the `hybrid render` application,
-Read <Link color href="https://nextjs.org/blog/next-9-3#next-gen-static-site-generation-ssg-support" rel="nofollow">
+If you are concerned about losing the advantages of a Single Page Application by implementing server-side rendering, you can use the `hybrid render` application.
+Plese read <Link color href="https://nextjs.org/blog/next-9-3#next-gen-static-site-generation-ssg-support" rel="nofollow">
 the post from the Next.js team</Link> to learn more.
 
 <Text>In addition, for <Text b>server-side render</Text> and web applications,
 we strongly recommend that you read this famous post
 <Link color href="https://rauchg.com/2014/7-principles-of-rich-web-applications" rel="nofollow" target="_blank">
-  7-principles-of-rich-web-applications
-</Link> from <Text em>Guillermo Rauch</Text>.
+  7-principles-of-rich-web-applications</Link> from <Text em>Guillermo Rauch</Text>.
 </Text>
 
 <Spacer y={2.5} />
@@ -40,7 +39,7 @@ In `next.js` framework, you need customization file `_document.js`,
 please refer to <Link href="https://nextjs.org/docs/advanced-features/custom-document" rel="nofollow">Next.js document here</Link>
 to create file `_document.js`.
 
-Then we add the following codes to the file:
+Then we add the following code to the file:
 
 ```js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
@@ -66,13 +65,13 @@ class MyDocument extends Document {
 }
 ```
 
-Here's an examples that might help you: <Link href="https://github.com/unix/unix.bio/blob/template/pages/_document.jsx" rel="nofollow">_document.jsx</Link>.
+Here's an example of what your `_document.js` file should look like: <Link href="https://github.com/unix/unix.bio/blob/template/pages/_document.jsx" rel="nofollow">_document.jsx</Link>.
 
 <Spacer y={3} />
 
 ### Custom Server
 
-In the custom server, also get the style set from function `CssBaseline.flush`.
+In the custom server, also get the style set from function `CssBaseline.flush` as shown below.
 
 ```js
 import React from 'react'
