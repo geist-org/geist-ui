@@ -216,7 +216,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
         pre code {
           color: ${theme.palette.foreground};
-          font-size: 0.75rem;
+          font-size: 0.8125rem;
           line-height: 1.25rem;
           white-space: pre;
         }
