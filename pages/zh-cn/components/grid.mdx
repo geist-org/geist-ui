@@ -80,6 +80,26 @@ export const meta = {
 `} />
 
 <Playground
+  title="隐藏元素"
+  desc="当单位大小为 0 时会自动隐藏当前元素。"
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '50px' }} />
+  }
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={12} sm={0}><MockItem /></Grid>
+      <Grid xs={12} sm={0}><MockItem /></Grid>
+      <Grid xs={24}><MockItem /></Grid>
+      <Grid xs={24}><MockItem /></Grid>
+    </Grid.Container>
+  )
+}
+`} />
+
+<Playground
   title="自动宽度"
   desc="自动分配剩余宽度。"
   scope={{ Grid, Card }}
