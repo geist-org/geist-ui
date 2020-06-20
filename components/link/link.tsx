@@ -4,7 +4,7 @@ import useTheme from '../styles/use-theme'
 import useWarning from '../utils/use-warning'
 import LinkIcon from './icon'
 
-interface Props {
+export interface Props {
   href?: string
   color?: boolean
   pure?: boolean

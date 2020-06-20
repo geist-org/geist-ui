@@ -20,7 +20,7 @@ export interface RadioEvent {
 
 interface Props {
   checked?: boolean
-  value?: string
+  value?: string | number
   size?: NormalSizes
   className?: string
   disabled?: boolean
@@ -77,7 +77,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
     }
     setSelfChecked(!selfChecked)
     if (inGroup) {
-      updateState && updateState(radioValue as string)
+      updateState && updateState(radioValue as string | number)
     }
     onChange && onChange(selfEvent)
   }

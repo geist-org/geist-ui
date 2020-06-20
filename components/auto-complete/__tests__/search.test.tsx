@@ -1,7 +1,8 @@
 import React from 'react'
 import { mount, render } from 'enzyme'
 import { AutoComplete } from 'components'
-import { nativeEvent } from 'tests/utils'
+import { nativeEvent, updateWrapper } from 'tests/utils'
+import { act } from 'react-dom/test-utils'
 const mockOptions = [{ label: 'London', value: 'london' }]
 
 describe('AutoComplete Search', () => {
@@ -33,9 +34,11 @@ describe('AutoComplete Search', () => {
     expect(value).not.toEqual('london')
   })
 
-  it('should render searching component', () => {
+  it('should render searching component', async () => {
     let wrapper = mount(<AutoComplete searching={false} options={mockOptions} />)
-    wrapper.setProps({ searching: true })
+    await act(async () => {
+      wrapper.setProps({ searching: true })
+    })
     wrapper.find('input').at(0).simulate('focus')
     let dropdown = wrapper.find('.auto-complete-dropdown')
     expect(dropdown.text()).not.toContain('london')
@@ -135,5 +138,16 @@ describe('AutoComplete Search', () => {
   it('should work correctly without options', () => {
     const wrapper = mount(<AutoComplete options={[]} />)
     expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('value should be reset when freeSolo disabled', async () => {
+    const wrapper = mount(<AutoComplete initialValue="value" disableFreeSolo />)
+    const input = wrapper.find('input').at(0)
+    input.simulate('focus')
+    input.simulate('change', { target: { value: 'test' } })
+    expect((input.getDOMNode() as HTMLInputElement).value).toEqual('test')
+    input.simulate('blur')
+    await updateWrapper(wrapper, 200)
+    expect((input.getDOMNode() as HTMLInputElement).value).toEqual('value')
   })
 })

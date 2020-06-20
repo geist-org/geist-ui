@@ -111,4 +111,10 @@ describe('Grid', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
+
+  it('Grid should be hidden when value is 0', () => {
+    let wrapper = mount(<Grid.Container xs={0} />)
+    expect(wrapper.find('.item').hasClass('xs')).toBeTruthy()
+    expect(wrapper.find('.item').html()).toContain('display: none')
+  })
 })
