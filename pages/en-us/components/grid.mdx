@@ -80,6 +80,26 @@ and very small size. Of course, it still supports dynamic props and custom break
 `} />
 
 <Playground
+  title="Hide elements"
+  desc="Hide elements when unit size is 0."
+  scope={{ Grid, Card }}
+  code={`
+() => {
+  const MockItem = () => {
+    return <Card shadow style={{ width: '100%', height: '50px' }} />
+  }
+  return (
+    <Grid.Container gap={2} justify="center">
+      <Grid xs={12} sm={0}><MockItem /></Grid>
+      <Grid xs={12} sm={0}><MockItem /></Grid>
+      <Grid xs={24}><MockItem /></Grid>
+      <Grid xs={24}><MockItem /></Grid>
+    </Grid.Container>
+  )
+}
+`} />
+
+<Playground
   title="Auto width"
   desc="Auto fill remaining width."
   scope={{ Grid, Card }}
