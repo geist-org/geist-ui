@@ -20,28 +20,44 @@ const normal: ColorEnum = {
 /* eslint-enable camelcase */
 
 const error: ColorEnum = {
+  errorLighter: 'Lighter',
   errorLight: 'Light',
   error: 'Default',
   errorDark: 'Dark',
 }
 
 const success: ColorEnum = {
+  successLighter: 'Lighter',
   successLight: 'Light',
   success: 'Default',
   successDark: 'Dark',
 }
 
 const warning: ColorEnum = {
+  warningLighter: 'Lighter',
   warningLight: 'Light',
   warning: 'Default',
   warningDark: 'Dark',
 }
 
+const violet: ColorEnum = {
+  violetLighter: 'Lighter',
+  violetLight: 'Light',
+  violet: 'Default',
+  violetDark: 'Dark',
+}
+
+const cyan: ColorEnum = {
+  cyanLighter: 'Lighter',
+  cyanLight: 'Light',
+  cyan: 'Default',
+  cyanDark: 'Dark',
+}
+
 const highlight: ColorEnum = {
   alert: 'Alert',
   purple: 'Purple',
-  violet: 'Violet',
-  cyan: 'Cyan',
+  magenta: 'Violet',
 }
 
 const colorsData: { [key: string]: ColorEnum } = {
@@ -49,6 +65,8 @@ const colorsData: { [key: string]: ColorEnum } = {
   success,
   warning,
   error,
+  violet,
+  cyan,
   highlight,
 }
 
@@ -70,6 +88,16 @@ export const getCurrentColor = (
   if (type === 'highlight') {
     if (index < 3) return 'white'
     return 'black'
+  }
+
+  if (type === 'warning' || type === 'cyan') {
+    if (index < 3) return 'black'
+    return 'white'
+  }
+
+  if (Object.keys(colorsData[type]).find(key => key.endsWith('Lighter'))) {
+    if (index === 0) return 'black'
+    return 'white'
   }
 
   return palette.background
