@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { useTheme, useToasts, Code, ZeitUIThemesPalette } from 'components'
+import { useTheme, useToasts, Code, Grid, ZeitUIThemesPalette } from 'components'
 import useClipboard from 'components/utils/use-clipboard'
 import { getColorData, getCurrentColor } from './colors-data'
 
@@ -14,13 +14,21 @@ const getColorItem = (type: string, palette: ZeitUIThemesPalette, copy: Function
 
   return (keys as Array<keyof ZeitUIThemesPalette>).map((key, index) => (
     <div className="color" key={`color-item-${index}`}>
-      <h4>{data[key]}</h4>
-      <span className="usage" onClick={() => copy(`theme.palette.${key}`)}>
-        theme.palette.{key}
-      </span>
-      <span className="value" onClick={() => copy(palette[key])}>
-        {palette[key]}
-      </span>
+      <Grid.Container justify="space-between" style={{ height: '4.5rem' }}>
+        <Grid.Container alignItems="center" sm={8} xs={16}>
+          <h4>{data[key]}</h4>
+        </Grid.Container>
+        <Grid.Container alignItems="center" justify="center" sm={8} xs={0}>
+          <span className="usage" onClick={() => copy(`theme.palette.${key}`)}>
+            theme.palette.{key}
+          </span>
+        </Grid.Container>
+        <Grid.Container alignItems="center" justify="flex-end" sm={8} xs>
+          <span className="value" onClick={() => copy(palette[key])}>
+            {palette[key]}
+          </span>
+        </Grid.Container>
+      </Grid.Container>
       <style jsx>{`
         .color {
           background-color: ${palette[key]};
@@ -61,13 +69,8 @@ const Colors: React.FC<Props> = ({ type }) => {
         }
 
         .colors :global(.color) {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
           padding: ${theme.layout.gap};
-          height: 6rem;
           position: relative;
-          cursor: pointer;
           user-select: none;
         }
 
@@ -86,18 +89,16 @@ const Colors: React.FC<Props> = ({ type }) => {
         }
 
         .colors :global(.usage) {
-          font-size: 0.875rem;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
+          font-size: 1rem;
           padding: 1rem;
+          cursor: pointer;
         }
 
         .colors :global(.value) {
           font-size: 0.875rem;
           text-transform: uppercase;
-          padding: 1rem 0;
+          padding: 1rem;
+          cursor: pointer;
         }
       `}</style>
     </div>

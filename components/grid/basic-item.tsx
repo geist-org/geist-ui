@@ -66,6 +66,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   alignContent,
   children,
   className,
+  ...props
 }) => {
   const theme = useTheme()
   const classes = useMemo(() => {
@@ -103,7 +104,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   )
 
   return (
-    <div className={`item ${classes} ${className}`}>
+    <div className={`item ${classes} ${className}`} {...props}>
       {children}
       <style jsx>{`
         .item {
