@@ -7,7 +7,6 @@ import useCurrentState from '../utils/use-current-state'
 interface Props {
   onClick?: (event: MouseEvent<HTMLElement>) => void
   visible?: boolean
-  offsetY?: number
 }
 
 const defaultProps = {
@@ -19,7 +18,7 @@ const defaultProps = {
 export type BackdropProps = Props & typeof defaultProps
 
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
-  ({ children, onClick, visible, offsetY }) => {
+  ({ children, onClick, visible }) => {
     const theme = useTheme()
     const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false)
     const clickHandler = (event: MouseEvent<HTMLElement>) => {
@@ -57,7 +56,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               align-content: center;
               align-items: center;
               flex-direction: column;
-              justify-content: center;
+              justify-content: space-around;
               height: 100vh;
               width: 100vw;
               overflow: auto;
@@ -74,8 +73,9 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
             }
 
             .offset {
-              height: ${offsetY}vh;
+              height: 0;
               opacity: 0;
+              display: flex;
               background-color: transparent;
             }
 
