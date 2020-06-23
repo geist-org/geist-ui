@@ -9,6 +9,7 @@ exports[`Modal customization should be supported 1`] = `
           text-align: center;
           margin: 0;
           display: inline-flex;
+          flex-shrink: 0;
           justify-content: center;
           align-items: center;
           word-break: break-word;
@@ -18,6 +19,7 @@ exports[`Modal customization should be supported 1`] = `
       </style><style>
           .wrapper {
             max-width: 85vw;
+            max-height: 75vh;
             width: 100px;
             overflow: hidden;
             display: flex;
@@ -66,6 +68,7 @@ exports[`Modal should render correctly 1`] = `
           text-align: center;
           margin: 0;
           display: inline-flex;
+          flex-shrink: 0;
           justify-content: center;
           align-items: center;
           word-break: break-word;
@@ -88,8 +91,9 @@ exports[`Modal should render correctly 1`] = `
         }
       </style><div class=\\"content \\"><p>Some content contained within the modal.</p></div><style>
         .content {
-          margin: 0;
-          padding: 16pt 0 8pt 0;
+          margin: 0 -16pt;
+          padding: 16pt 16pt 8pt;
+          overflow-y: auto;
         }
 
         .content > :global(*:first-child) {
@@ -166,10 +170,12 @@ exports[`Modal should render correctly 1`] = `
 
         div {
           height: 3.625rem;
+          flex-shrink: 0;
         }
       </style><style>
           .wrapper {
             max-width: 85vw;
+            max-height: 75vh;
             width: 26rem;
             overflow: hidden;
             display: flex;
@@ -215,7 +221,7 @@ exports[`Modal should render correctly 1`] = `
               align-content: center;
               align-items: center;
               flex-direction: column;
-              justify-content: center;
+              justify-content: space-around;
               height: 100vh;
               width: 100vw;
               overflow: auto;
@@ -232,8 +238,9 @@ exports[`Modal should render correctly 1`] = `
             }
 
             .offset {
-              height: 25vh;
+              height: 0;
               opacity: 0;
+              display: flex;
               background-color: transparent;
             }
 

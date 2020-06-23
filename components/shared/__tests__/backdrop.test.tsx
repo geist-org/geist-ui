@@ -61,20 +61,6 @@ describe('Backdrop', () => {
     handler.mockRestore()
   })
 
-  it('content should be offset', () => {
-    const wrapper = mount(
-      <Backdrop visible>
-        <span>test-value</span>
-      </Backdrop>,
-    )
-    const notOffset = wrapper.html()
-    expect(wrapper.html()).toMatchSnapshot()
-
-    wrapper.setProps({ offsetY: '100' })
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(notOffset).not.toEqual(wrapper.html())
-  })
-
   it('backdrop handler should ignore click events from content', async () => {
     const handler = jest.fn()
     const wrapper = mount(

@@ -29,6 +29,7 @@ const ModalTitle: React.FC<ModalTitleProps> = ({ className, children, ...props }
           text-align: center;
           margin: 0;
           display: inline-flex;
+          flex-shrink: 0;
           justify-content: center;
           align-items: center;
           word-break: break-word;

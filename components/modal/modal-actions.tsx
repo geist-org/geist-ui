@@ -28,6 +28,7 @@ const ModalActions: React.FC<React.PropsWithChildren<{}>> = ({ children, ...prop
 
         div {
           height: 3.625rem;
+          flex-shrink: 0;
         }
       `}</style>
     </>
