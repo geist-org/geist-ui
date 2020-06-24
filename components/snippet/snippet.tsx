@@ -1,7 +1,7 @@
 import React, { useMemo, useRef } from 'react'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
-import { SnippetTypes, CopyTypes } from '../utils/prop-types'
+import { SnippetTypes, CopyTypes, NormalTypes } from '../utils/prop-types'
 import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
@@ -9,6 +9,9 @@ import useToasts from '../use-toasts'
 
 interface Props {
   text?: string | string[]
+  symbol?: string
+  toastText?: string
+  toastType?: NormalTypes
   filled?: boolean
   width?: string
   copy?: CopyTypes
@@ -18,6 +21,9 @@ interface Props {
 
 const defaultProps = {
   filled: false,
+  symbol: '$',
+  toastText: 'Copied to clipboard!',
+  toastType: 'success' as NormalTypes,
   width: 'initial',
   copy: 'default' as CopyTypes,
   type: 'default' as SnippetTypes,
@@ -38,6 +44,9 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   type,
   filled,
   children,
+  symbol,
+  toastText,
+  toastType,
   text,
   width,
   copy: copyType,
@@ -63,7 +72,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
     if (!childText || !showCopyIcon) return
     copy(childText)
     if (copyType === 'slient') return
-    setToast({ text: 'Copied to clipboard!', type: 'success' })
+    setToast({ text: toastText, type: toastType })
   }
 
   return (
@@ -101,7 +110,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
         }
 
         pre::before {
-          content: '$ ';
+          content: '${symbol} ';
           user-select: none;
         }
 
