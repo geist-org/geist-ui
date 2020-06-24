@@ -23,7 +23,7 @@ const defaultProps = {
   filled: false,
   symbol: '$',
   toastText: 'Copied to clipboard!',
-  toastType: 'success',
+  toastType: 'success' as NormalTypes,
   width: 'initial',
   copy: 'default' as CopyTypes,
   type: 'default' as SnippetTypes,
