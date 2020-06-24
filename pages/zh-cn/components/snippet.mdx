@@ -85,6 +85,9 @@ export const meta = {
 | **filled** | 填充风格的样式 | `boolean` | - | `false` |
 | **width** | 设置 CSS 宽度 | `string` | - | `initial` |
 | **copy** | 拷贝按钮的工作方式 | `CopyTypes` | `'default', 'slient', 'prevent'` | `default` |
+| **symbol** | 组件左侧显示的字符 | `string` | - | `$` |
+| **toastText** | 拷贝提示的字符 | `string` | - | `Copied to clipboard!` |
+| **toastType** | 拷贝提示的类型 | `NormalTypes` | [NormalTypes](#normaltypes) | `success` |
 | ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
 
 <Attributes.Title>SnippetTypes</Attributes.Title>
@@ -97,6 +100,16 @@ type SnippetTypes = 'default'
   | 'error'
   | 'dark'
   | 'lite'
+```
+
+<Attributes.Title>NormalTypes</Attributes.Title>
+
+```ts
+type NormalTypes = 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
 ```
 
 </Attributes>
