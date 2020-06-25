@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Ellipsis: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+export type EllipsisProps = {
+  height: string
+}
+
+const Ellipsis: React.FC<React.PropsWithChildren<EllipsisProps>> = ({ children, height }) => {
   return (
     <span>
       {children}
@@ -9,6 +13,7 @@ const Ellipsis: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
+          line-height: ${height};
           min-width: 0;
         }
       `}</style>
