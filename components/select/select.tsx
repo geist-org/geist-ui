@@ -139,7 +139,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
         {...props}>
         {isEmpty && (
           <span className="value placeholder">
-            <Ellipsis>{placeholder}</Ellipsis>
+            <Ellipsis height={sizes.height}>{placeholder}</Ellipsis>
           </span>
         )}
         {value && !multiple && <span className="value">{selectedChild}</span>}
