@@ -107,7 +107,8 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
     if (disabled) return
     const offset = event.currentX - event.startX
     const currentOffset = offset + lastDargOffsetRef.current
-    setLastDargOffset(currentOffset)
+    const boundOffset = currentOffset < 0 ? 0 : Math.min(currentOffset, sideWidthRef.current)
+    setLastDargOffset(boundOffset)
   }
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     if (disabled) return
