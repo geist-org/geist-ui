@@ -28,9 +28,10 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
   children,
 }) => {
   const theme = useTheme()
-  const { value, updateValue, size } = useAutoCompleteContext()
+  const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
     updateValue && updateValue(identValue)
+    updateVisible && updateVisible(false)
   }
 
   const isActive = useMemo(() => value === identValue, [identValue, value])
@@ -38,7 +39,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
 
   return (
     <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
-      <Ellipsis>{children}</Ellipsis>
+      <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
       <style jsx>{`
         .item {
           display: flex;
@@ -47,8 +48,8 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           font-weight: normal;
           white-space: pre;
           font-size: ${fontSize};
-          padding: ${theme.layout.gapHalf};
-          line-height: 1.2;
+          padding: 0 ${theme.layout.gapHalf};
+          height: calc(1.688 * ${theme.layout.gap});
           background-color: ${theme.palette.background};
           color: ${theme.palette.foreground};
           user-select: none;

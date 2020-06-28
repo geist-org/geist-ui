@@ -61,17 +61,28 @@ describe('Backdrop', () => {
     handler.mockRestore()
   })
 
-  it('content should be offset', () => {
+  it('backdrop handler should ignore click events from content', async () => {
+    const handler = jest.fn()
     const wrapper = mount(
-      <Backdrop visible>
+      <Backdrop visible onClick={handler}>
         <span>test-value</span>
       </Backdrop>,
     )
-    const notOffset = wrapper.html()
-    expect(wrapper.html()).toMatchSnapshot()
 
-    wrapper.setProps({ offsetY: '100' })
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(notOffset).not.toEqual(wrapper.html())
+    /**
+     * In simulation,`mousedown` and `mouseup`not directly triiger `click` event,
+     * the click event below is just for simulation.
+     */
+    wrapper.find('.content').simulate('mousedown')
+    wrapper.find('.backdrop').simulate('click', nativeEvent)
+    wrapper.find('.backdrop').simulate('mouseup')
+    await updateWrapper(wrapper)
+    expect(handler).not.toHaveBeenCalled()
+
+    wrapper.find('.backdrop').simulate('mousedown')
+    wrapper.find('.backdrop').simulate('click', nativeEvent)
+    wrapper.find('.backdrop').simulate('mouseup')
+    await updateWrapper(wrapper)
+    expect(handler).toHaveBeenCalled()
   })
 })

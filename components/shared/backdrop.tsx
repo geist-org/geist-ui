@@ -2,11 +2,11 @@ import React, { MouseEvent, useCallback } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import CSSTransition from './css-transition'
+import useCurrentState from '../utils/use-current-state'
 
 interface Props {
   onClick?: (event: MouseEvent<HTMLElement>) => void
   visible?: boolean
-  offsetY?: number
 }
 
 const defaultProps = {
@@ -18,20 +18,32 @@ const defaultProps = {
 export type BackdropProps = Props & typeof defaultProps
 
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
-  ({ children, onClick, visible, offsetY }) => {
+  ({ children, onClick, visible }) => {
     const theme = useTheme()
-    const clickHandler = useCallback((event: MouseEvent<HTMLElement>) => {
+    const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false)
+    const clickHandler = (event: MouseEvent<HTMLElement>) => {
+      if (IsContentMouseDownRef.current) return
       onClick && onClick(event)
-    }, [])
+    }
     const childrenClickHandler = useCallback((event: MouseEvent<HTMLElement>) => {
       event.stopPropagation()
     }, [])
+    const mouseUpHandler = () => {
+      if (!IsContentMouseDownRef.current) return
+      const timer = setTimeout(() => {
+        setIsContentMouseDown(false)
+        clearTimeout(timer)
+      }, 0)
+    }
 
     return (
       <CSSTransition visible={visible} clearTime={300}>
-        <div className="backdrop" onClick={clickHandler}>
+        <div className="backdrop" onClick={clickHandler} onMouseUp={mouseUpHandler}>
           <div className="layer" />
-          <div onClick={childrenClickHandler} className="content">
+          <div
+            onClick={childrenClickHandler}
+            className="content"
+            onMouseDown={() => setIsContentMouseDown(true)}>
             {children}
           </div>
           <div onClick={childrenClickHandler} className="offset" />
@@ -44,7 +56,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               align-content: center;
               align-items: center;
               flex-direction: column;
-              justify-content: center;
+              justify-content: space-around;
               height: 100vh;
               width: 100vw;
               overflow: auto;
@@ -61,8 +73,9 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
             }
 
             .offset {
-              height: ${offsetY}vh;
+              height: 0;
               opacity: 0;
+              display: flex;
               background-color: transparent;
             }
 

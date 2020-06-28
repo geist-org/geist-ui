@@ -1,0 +1,22 @@
+{
+  "name": "tree-shaking-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "analyze": "ANALYZE=true yarn build"
+  },
+  "dependencies": {
+    "@zeit-ui/react": "latest",
+    "next": "9.4.2",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^9.4.4",
+    "babel-plugin-import": "^1.13.0",
+    "next-transpile-modules": "^3.3.0"
+  }
+}

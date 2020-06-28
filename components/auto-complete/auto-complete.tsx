@@ -8,6 +8,7 @@ import { AutoCompleteContext, AutoCompleteConfig } from './auto-complete-context
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
 import Loading from '../loading'
 import { pickChild } from '../utils/collections'
+import useCurrentState from '../utils/use-current-state'
 
 export type AutoCompleteOption = {
   label: string
@@ -31,6 +32,7 @@ interface Props {
   dropdownClassName?: string
   dropdownStyle?: object
   disableMatchWidth?: boolean
+  disableFreeSolo?: boolean
   className?: string
 }
 
@@ -41,6 +43,7 @@ const defaultProps = {
   clearable: false,
   size: 'medium' as NormalSizes,
   disableMatchWidth: false,
+  disableFreeSolo: false,
   className: '',
 }
 
@@ -83,11 +86,16 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   dropdownClassName,
   dropdownStyle,
   disableMatchWidth,
+  disableFreeSolo,
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null)
-  const [state, setState] = useState<string>(customInitialValue)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const resetTimer = useRef<number>()
+  const [state, setState, stateRef] = useCurrentState<string>(customInitialValue)
+  const [selectVal, setSelectVal] = useState<string>(customInitialValue)
   const [visible, setVisible] = useState<boolean>(false)
+
   const [, searchChild] = pickChild(children, AutoCompleteSearching)
   const [, emptyChild] = pickChild(children, AutoCompleteEmpty)
   const autoCompleteItems = useMemo(() => {
@@ -110,13 +118,23 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 
   const updateValue = (val: string) => {
     if (disabled) return
+    setSelectVal(val)
     onSelect && onSelect(val)
     setState(val)
+    inputRef.current && inputRef.current.focus()
   }
   const updateVisible = (next: boolean) => setVisible(next)
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setVisible(true)
     onSearch && onSearch(event.target.value)
     setState(event.target.value)
+  }
+  const resetInputValue = () => {
+    if (!disableFreeSolo) return
+    if (!state || state === '') return
+    if (state !== selectVal) {
+      setState(selectVal)
+    }
   }
 
   useEffect(() => {
@@ -140,9 +158,15 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   )
 
   const toggleFocusHandler = (next: boolean) => {
+    clearTimeout(resetTimer.current)
     setVisible(next)
     if (next) {
-      onSearch && onSearch(state)
+      onSearch && onSearch(stateRef.current)
+    } else {
+      resetTimer.current = window.setTimeout(() => {
+        resetInputValue()
+        clearTimeout(resetTimer.current)
+      }, 100)
     }
   }
 
@@ -157,6 +181,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     <AutoCompleteContext.Provider value={initialValue}>
       <div ref={ref} className="auto-complete">
         <Input
+          ref={inputRef}
           size={size}
           status={status}
           onChange={onInputChange}

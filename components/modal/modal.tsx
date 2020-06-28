@@ -80,7 +80,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   if (!portal) return null
   return createPortal(
     <ModalContext.Provider value={modalConfig}>
-      <Backdrop onClick={closeFromBackdrop} visible={visible} offsetY={25}>
+      <Backdrop onClick={closeFromBackdrop} visible={visible}>
         <ModalWrapper visible={visible} className={wrapClassName} width={wrapperWidth}>
           {withoutActionsChildren}
           {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}

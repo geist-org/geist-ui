@@ -23,8 +23,9 @@ const ModalContent: React.FC<ModalContentProps> = ({ className, children, ...pro
       </div>
       <style jsx>{`
         .content {
-          margin: 0;
-          padding: ${theme.layout.gap} 0 ${theme.layout.gapHalf} 0;
+          margin: 0 -${theme.layout.gap};
+          padding: ${theme.layout.gap} ${theme.layout.gap} ${theme.layout.gapHalf};
+          overflow-y: auto;
         }
 
         .content > :global(*:first-child) {

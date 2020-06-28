@@ -56,14 +56,14 @@ const Controls: React.FC<{}> = React.memo(({}) => {
           value={isDark ? 'dark' : 'light'}
           title={isChinese ? '切换主题' : 'Switch Themes'}>
           <Select.Option value="light">
-            <div className="select-content">
+            <span className="select-content">
               <SunIcon size={14} /> {isChinese ? '明亮' : 'Light'}
-            </div>
+            </span>
           </Select.Option>
           <Select.Option value="dark">
-            <div className="select-content">
+            <span className="select-content">
               <MoonIcon size={14} /> {isChinese ? '暗黑' : 'Dark'}
-            </div>
+            </span>
           </Select.Option>
         </Select>
       </div>
@@ -82,7 +82,8 @@ const Controls: React.FC<{}> = React.memo(({}) => {
 
         .select-content {
           width: auto;
-          display: inline-flex;
+          height: 18px;
+          display: flex;
           justify-content: center;
           align-items: center;
         }

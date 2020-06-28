@@ -32,19 +32,23 @@ type ItemLayoutValue = {
   grow: number
   width: string
   basis: string
+  display: string
 }
 const getItemLayout = (val: BreakpointsValue): ItemLayoutValue => {
+  const display = val === 0 ? 'display: none;' : ''
   if (typeof val === 'number') {
     const width = (100 / 24) * val
     const ratio = width > 100 ? '100%' : width < 0 ? '0' : `${width}%`
     return {
       grow: 0,
+      display,
       width: ratio,
       basis: ratio,
     }
   }
   return {
     grow: 1,
+    display,
     width: '100%',
     basis: '0',
   }
@@ -62,6 +66,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   alignContent,
   children,
   className,
+  ...props
 }) => {
   const theme = useTheme()
   const classes = useMemo(() => {
@@ -77,11 +82,11 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
       xl,
     }
     const classString = Object.keys(aligns).reduce((pre, name) => {
-      if (Boolean(aligns[name]) && aligns[name] !== 0) return `${pre} ${name}`
+      if (aligns[name] !== undefined && aligns[name] !== false) return `${pre} ${name}`
       return pre
     }, '')
     return classString.trim()
-  }, [justify, direction, alignItems, alignContent])
+  }, [justify, direction, alignItems, alignContent, xs, sm, md, lg, xl])
 
   const layout = useMemo<
     {
@@ -99,7 +104,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   )
 
   return (
-    <div className={`item ${classes} ${className}`}>
+    <div className={`item ${classes} ${className}`} {...props}>
       {children}
       <style jsx>{`
         .item {
@@ -125,6 +130,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
           flex-grow: ${layout.xs.grow};
           max-width: ${layout.xs.width};
           flex-basis: ${layout.xs.basis};
+          ${layout.xs.display}
         }
 
         @media only screen and (max-width: ${theme.breakpoints.xs.max}) {
@@ -132,6 +138,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
             flex-grow: ${layout.xs.grow};
             max-width: ${layout.xs.width};
             flex-basis: ${layout.xs.basis};
+            ${layout.xs.display}
           }
         }
 
@@ -140,6 +147,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
             flex-grow: ${layout.sm.grow};
             max-width: ${layout.sm.width};
             flex-basis: ${layout.sm.basis};
+            ${layout.sm.display}
           }
         }
 
@@ -148,6 +156,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
             flex-grow: ${layout.md.grow};
             max-width: ${layout.md.width};
             flex-basis: ${layout.md.basis};
+            ${layout.md.display}
           }
         }
 
@@ -156,6 +165,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
             flex-grow: ${layout.lg.grow};
             max-width: ${layout.lg.width};
             flex-basis: ${layout.lg.basis};
+            ${layout.lg.display}
           }
         }
 
@@ -164,6 +174,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
             flex-grow: ${layout.xl.grow};
             max-width: ${layout.xl.width};
             flex-basis: ${layout.xl.basis};
+            ${layout.xl.display}
           }
         }
       `}</style>

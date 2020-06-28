@@ -1,0 +1,108 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Pagination, Spacer } from 'components'
+import ChevronRight from '@zeit-ui/react-icons/chevronRight'
+import ChevronLeft from '@zeit-ui/react-icons/chevronLeft'
+import ChevronRightCircle from '@zeit-ui/react-icons/chevronRightCircle'
+import ChevronLeftCircle from '@zeit-ui/react-icons/chevronLeftCircle'
+import ChevronRightCircleFill from '@zeit-ui/react-icons/chevronRightCircleFill'
+import ChevronLeftCircleFill from '@zeit-ui/react-icons/chevronLeftCircleFill'
+
+export const meta = {
+  title: 'Pagination',
+  group: 'Navigation',
+}
+
+## Pagination
+
+Navigation and identification between multiple pages.
+
+<Playground
+  scope={{ Pagination }}
+  code={`
+<Pagination count={20} initialPage={3} />
+`} />
+
+<Playground
+  title="Limit"
+  desc="The maximum number of pages that can be displayed"
+  scope={{ Pagination }}
+  code={`
+<>
+  <Pagination count={10} limit={10} />
+  <Pagination count={5} />
+  <Pagination count={10} initialPage={6} limit={5} />
+  <Pagination count={10} initialPage={6} />
+  <Pagination count={30} initialPage={6} limit={10} />
+</>
+`} />
+
+<Playground
+  title="Icon"
+  desc="Customize buttons as icons."
+  scope={{ Spacer, Pagination, ChevronRight, ChevronLeft, ChevronRightCircle, ChevronLeftCircle, ChevronRightCircleFill, ChevronLeftCircleFill }}
+  code={`
+<>
+  <Pagination count={5}>
+   <Pagination.Next><ChevronRight /></Pagination.Next>
+   <Pagination.Previous><ChevronLeft /></Pagination.Previous>
+  </Pagination>
+  <Spacer y={.5} />
+  <Pagination count={5}>
+   <Pagination.Next><ChevronRightCircle /></Pagination.Next>
+   <Pagination.Previous><ChevronLeftCircle /></Pagination.Previous>
+  </Pagination>
+  <Spacer y={.5} />
+  <Pagination count={5}>
+   <Pagination.Next><ChevronRightCircleFill /></Pagination.Next>
+   <Pagination.Previous><ChevronLeftCircleFill /></Pagination.Previous>
+  </Pagination>
+</>
+`} />
+
+<Playground
+  title="Sizes"
+  desc="Pagination of different sizes."
+  scope={{ Pagination }}
+  code={`
+<>
+  <Pagination count={20} size="mini" />
+  <Pagination count={20} size="small" />
+  <Pagination count={20} size="medium" />
+  <Pagination count={20} size="large" />
+</>
+`} />
+
+<Attributes edit="/pages/en-us/components/pagination.mdx">
+<Attributes.Title>Pagination.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| **initialPage** | the page selected by default | `number` | - | 1 |
+| **page** | current page | `number` | - | 1 |
+| **count** | the total number of pages | `number` | - | 1 |
+| **limit** | limit of display page | `number` | - | 7 |
+| **size** | pagination size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
+| **onChange** | change event | `(page: number) => void` | - | - |
+| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Pagination.Previous.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>Pagination.Next.Props</Attributes.Title>
+
+| Attribute | Description | Type | Accepted values | Default
+| ---------- | ---------- | ---- |  -------------- | ------ |
+| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+
+<Attributes.Title>NormalSizes</Attributes.Title>
+
+```ts
+type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

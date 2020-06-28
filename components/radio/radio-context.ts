@@ -1,9 +1,9 @@
 import React from 'react'
 
 export interface RadioConfig {
-  updateState?: (value: string) => void
+  updateState?: (value: string | number) => void
   disabledAll: boolean
-  value?: string
+  value?: string | number
   inGroup: boolean
 }
 

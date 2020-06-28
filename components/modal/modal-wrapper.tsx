@@ -32,6 +32,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
         <style jsx>{`
           .wrapper {
             max-width: 85vw;
+            max-height: 75vh;
             width: ${width};
             overflow: hidden;
             display: flex;
