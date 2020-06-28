@@ -37,7 +37,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
     }
 
     return (
-      <CSSTransition visible={visible} clearTime={300}>
+      <CSSTransition name="backdrop-wrapper" visible={visible} clearTime={300}>
         <div className="backdrop" onClick={clickHandler} onMouseUp={mouseUpHandler}>
           <div className="layer" />
           <div
@@ -92,6 +92,22 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
               pointer-events: none;
               z-index: 1000;
+            }
+
+            .backdrop-wrapper-enter .layer {
+              opacity: 0;
+            }
+
+            .backdrop-wrapper-enter-active .layer {
+              opacity: ${theme.expressiveness.portalOpacity};
+            }
+
+            .backdrop-wrapper-leave .layer {
+              opacity: ${theme.expressiveness.portalOpacity};
+            }
+
+            .backdrop-wrapper-leave-active .layer {
+              opacity: 0;
             }
           `}</style>
         </div>

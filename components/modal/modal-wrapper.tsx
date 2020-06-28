@@ -45,14 +45,14 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
             padding: ${theme.layout.gap};
             box-shadow: ${theme.expressiveness.shadowLarge};
             opacity: 0;
-            transform: translate3d(0px, -40px, 0px);
+            transform: translate3d(0px, -30px, 0px);
             transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
           }
 
           .wrapper-enter {
             opacity: 0;
-            transform: translate3d(0px, -40px, 0px);
+            transform: translate3d(0px, -30px, 0px);
           }
 
           .wrapper-enter-active {
@@ -67,7 +67,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
 
           .wrapper-leave-active {
             opacity: 0;
-            transform: translate3d(0px, -50px, 0px);
+            transform: translate3d(0px, -30px, 0px);
           }
         `}</style>
       </div>
