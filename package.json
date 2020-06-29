@@ -1,5 +1,5 @@
 {
-  "name": "@conflux/react-ui",
+  "name": "@confi/conflux-react-ui-test-package",
   "version": "0.0.0",
   "main": "dist/index.js",
   "module": "esm/index.js",
@@ -7,7 +7,7 @@
   "unpkg": "dist/index.min.js",
   "license": "MIT",
   "description": "Modern and minimalist React UI library.",
-  "homepage": "https://react-ui.conflux-chain.org",
+  "homepage": "https://conflux-react-ui.vercel.app",
   "bugs": {
     "url": "https://github.com/Conflux-Chain/react-ui/issues/new/choose"
   },
@@ -100,6 +100,7 @@
     "react-color": "^2.18.0",
     "react-dom": "^16.13.1",
     "react-live": "^2.2.2",
+    "semantic-release": "^17.1.1",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3",
     "webpack": "^4.41.6",
@@ -112,5 +113,12 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "release": {
+    "plugins": ["@semantic-release/commit-analyzer", "@semantic-release/release-notes-generator", "@semantic-release/npm", "@semantic-release/github"],
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x", "master",
+      { "name": "dev", "channel": "alpha", "prerelease": "alpha" }
+    ]
   }
 }
