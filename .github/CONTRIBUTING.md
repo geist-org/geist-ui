@@ -43,11 +43,15 @@ At any time, you think it's ok, you can start the following steps to submit your
 
 ### Q & A
 
-> I added a new document page, but it was not displayed locally?
+> How to choose the target branch of PR ?
+
+- If this is a `feature`, set to `rc` branch. All the others are set to `master` branch.
+
+> I added a new document page, but it was not displayed locally ?
 
 - Run `yarn dev` agian.
 
-> How can I update remote origin?
+> How can I update remote origin ?
 
 - refer to [here](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes).
 
