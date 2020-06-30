@@ -56,7 +56,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               align-content: center;
               align-items: center;
               flex-direction: column;
-              justify-content: space-around;
+              justify-content: center;
               height: 100vh;
               width: 100vw;
               overflow: auto;
