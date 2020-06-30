@@ -3,7 +3,7 @@ import Router from 'next/router'
 import { useTheme } from 'components'
 import Controls from 'lib/components/controls'
 import LogoIcon from 'lib/components/icons/logo'
-import { useConfigs } from '../../config-context'
+import { useConfigs } from 'lib/config-context'
 
 const MenuLinks = () => {
   const theme = useTheme()
