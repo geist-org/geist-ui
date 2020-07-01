@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { AutoComplete, Spacer, Badge, Row } from 'components'
+import { AutoComplete, Spacer, Badge, Grid, Text } from 'components'
 import { useState, useRef, useEffect } from 'react'
 
 export const meta = {
@@ -155,19 +155,18 @@ AutoComplete control of input field.
 <Playground
   title="custom option"
   desc="You can rewrite each item of the `AutoComplete` to express more."
-  scope={{ AutoComplete, useState, Spacer, Badge, Row }}
+  scope={{ AutoComplete, useState, Text, Badge, Grid }}
   code={`
 () => {
   const makeOption = (label, value) => (
     <AutoComplete.Option value={value}>
-      <div style={{ width: '100%' }}>
-        <div style={{ display: 'flex-inline', width: '100%', alignItems: 'space-between' }}>
-          <h4>Recent search results </h4>
-          <Badge type="success" style={{ float: 'right' }}>Recommended</Badge>
-        </div>
-        <Spacer y={.5} />
-        <span>{label}</span>
-      </div>
+      <Grid.Container style={{ padding: '10pt 0' }}>
+        <Grid xs={24}><Text span b size="1.2rem">Recent search results </Text></Grid>
+        <Grid.Container xs={24}>
+          <Grid xs><Text span>{label}</Text></Grid>
+          <Grid xs={4}><Badge type="success">Recommended</Badge></Grid>
+        </Grid.Container>
+      </Grid.Container>
     </AutoComplete.Option>
   )
   const allOptions = [

@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { AutoComplete, Spacer, Badge, Row } from 'components'
+import { AutoComplete, Spacer, Badge, Text, Grid } from 'components'
 import { useState, useRef, useEffect } from 'react'
 
 export const meta = {
@@ -156,19 +156,18 @@ export const meta = {
 <Playground
   title="定制选项"
   desc="你可以详细定制每一个备选项，让 `自动完成` 组件表达更多的信息。"
-  scope={{ AutoComplete, useState, Spacer, Badge, Row }}
+  scope={{ AutoComplete, useState, Text, Badge, Grid }}
   code={`
 () => {
   const makeOption = (label, value) => (
     <AutoComplete.Option value={value}>
-      <div style={{ width: '100%' }}>
-        <div style={{ display: 'flex-inline', width: '100%', alignItems: 'space-between' }}>
-          <h4>最近的搜索结果</h4>
-          <Badge type="success" style={{ float: 'right' }}>推荐的</Badge>
-        </div>
-        <Spacer y={.5} />
-        <span>{label}</span>
-      </div>
+      <Grid.Container style={{ padding: '10pt 0' }}>
+        <Grid xs={24}><Text span b size="1.2rem">最近的搜索结果</Text></Grid>
+        <Grid.Container xs={24}>
+          <Grid xs><Text span>{label}</Text></Grid>
+          <Grid xs={4}><Badge type="success">推荐的</Badge></Grid>
+        </Grid.Container>
+      </Grid.Container>
     </AutoComplete.Option>
   )
   const allOptions = [
