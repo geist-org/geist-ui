@@ -7,6 +7,7 @@ import Ellipsis from '../shared/ellipsis'
 
 interface Props {
   value: string
+  isLabelOnly?: boolean
 }
 
 const defaultProps = {}
@@ -26,6 +27,7 @@ const getSizes = (size: NormalSizes) => {
 const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>> = ({
   value: identValue,
   children,
+  isLabelOnly,
 }) => {
   const theme = useTheme()
   const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
@@ -37,9 +39,20 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
   const isActive = useMemo(() => value === identValue, [identValue, value])
   const fontSize = useMemo(() => getSizes(size), [size])
 
+  // The 'isLabelOnly' is only used inside the component,
+  // Automatically adjust width when only label children is included.
+  const itemHeight = useMemo(() => {
+    if (isLabelOnly) return `calc(1.688 * ${theme.layout.gap})`
+    return 'auto'
+  }, [isLabelOnly, theme.layout.gap])
+
   return (
     <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
-      <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
+      {isLabelOnly ? (
+        <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
+      ) : (
+        children
+      )}
       <style jsx>{`
         .item {
           display: flex;
@@ -49,7 +62,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           white-space: pre;
           font-size: ${fontSize};
           padding: 0 ${theme.layout.gapHalf};
-          height: calc(1.688 * ${theme.layout.gap});
+          height: ${itemHeight};
           background-color: ${theme.palette.background};
           color: ${theme.palette.foreground};
           user-select: none;
