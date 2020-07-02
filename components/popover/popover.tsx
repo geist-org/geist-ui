@@ -14,6 +14,7 @@ interface Props {
 const defaultProps = {
   trigger: 'click' as TriggerTypes,
   placement: 'bottom' as Placement,
+  portalClassName: '',
 }
 
 type ExcludeTooltipProps = {

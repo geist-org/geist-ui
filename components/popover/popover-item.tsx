@@ -10,6 +10,7 @@ interface Props {
 const defaultProps = {
   line: false,
   title: false,
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -71,7 +72,7 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
           }
         `}</style>
       </div>
-      {title && <PopoverItem line title={false} />}
+      {title && <PopoverItem line title={false} className="" />}
     </>
   )
 }
