@@ -56,7 +56,7 @@ const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
     if (React.isValidElement(item)) return React.cloneElement(item, { key })
     const validItem = item as AutoCompleteOption
     return (
-      <AutoCompleteItem key={key} value={validItem.value}>
+      <AutoCompleteItem key={key} value={validItem.value} isLabelOnly>
         {validItem.label}
       </AutoCompleteItem>
     )

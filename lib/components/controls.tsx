@@ -45,8 +45,8 @@ const Controls: React.FC<{}> = React.memo(({}) => {
           type="abort"
           size="small"
           onClick={redirectGithub}
-          title={isChinese ? '代码仓库' : 'Github Repository'}>
-          {isChinese ? '代码仓库' : 'Github'}
+          title={isChinese ? '代码仓库' : 'GitHub Repository'}>
+          {isChinese ? '代码仓库' : 'GitHub'}
         </Button>
         <Spacer x={0.75} />
         <Select

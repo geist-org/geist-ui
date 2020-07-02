@@ -23,6 +23,18 @@ module.exports = {
     '!components/utils/*',
   ],
 
+  // https://jestjs.io/docs/en/configuration#coveragethreshold-object
+  coverageThreshold: {
+    global: {
+      // meaning of each coverage
+      // https://www.guru99.com/code-coverage.html
+      branches: 96.1,
+      functions: 99.15,
+      lines: 100,
+      statements: 98.78,
+    },
+  },
+
   moduleNameMapper: {
     'tests/(.*)$': '<rootDir>/tests/$1',
     components: '<rootDir>/components/index.ts',

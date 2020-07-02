@@ -1,4 +1,4 @@
-import { ZeitProvider, CssBaseline } from '@zeit-ui/react';
+import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -6,6 +6,6 @@ function MyApp({ Component, pageProps }) {
       <CssBaseline />
       <Component {...pageProps} />
     </ZeitProvider>
-  );
+  )
 }
-export default MyApp;
+export default MyApp
