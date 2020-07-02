@@ -76,6 +76,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
               className={`tab ${selfValue === item.value ? 'active' : ''} ${
                 item.disabled ? 'disabled' : ''
               }`}
+              role="button"
               key={item.value + index}
               onClick={() => clickHandler(item)}>
               {item.label}
