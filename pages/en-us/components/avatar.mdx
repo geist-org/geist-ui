@@ -10,7 +10,6 @@ export const meta = {
 
 Avatars represent a user or a team. Stacked avatars represent a group of people.
 
-
 <Playground
   desc="The `Avatar` contains circle and square."
   scope={{ Avatar, Spacer }}
@@ -31,14 +30,14 @@ Avatars represent a user or a team. Stacked avatars represent a group of people.
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Playground
- title="Sizes"
- desc="You can specify different sizes of `Avatar`."
- scope={{ Avatar }}
- code={`
+  title="Sizes"
+  desc="You can specify different sizes of `Avatar`."
+  scope={{ Avatar }}
+  code={`
 () => {
   const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
   return (
@@ -50,7 +49,8 @@ Avatars represent a user or a team. Stacked avatars represent a group of people.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Text"
@@ -63,8 +63,8 @@ Avatars represent a user or a team. Stacked avatars represent a group of people.
   <Avatar text="W" />
   <Avatar text="Joe" />
 </>
-`} />
-
+`}
+/>
 
 <Playground
   title="Group"
@@ -90,26 +90,27 @@ Avatars represent a user or a team. Stacked avatars represent a group of people.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/avatar.mdx">
 <Attributes.Title>Avatar.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **src** | image src | `string` | - | - |
-| **stacked** | stacked display group | `boolean` | - | `false` |
-| **text** | display text when image is missing | `string` | - | - |
-| **size** | avatar size | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
-| **isSquare** | avatar shape | `boolean` | - | `false` |
-| ... | native props | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | - |
+| Attribute    | Description                        | Type                | Accepted values                              | Default  |
+| ------------ | ---------------------------------- | ------------------- | -------------------------------------------- | -------- |
+| **src**      | image src                          | `string`            | -                                            | -        |
+| **stacked**  | stacked display group              | `boolean`           | -                                            | `false`  |
+| **text**     | display text when image is missing | `string`            | -                                            | -        |
+| **size**     | avatar size                        | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
+| **isSquare** | avatar shape                       | `boolean`           | -                                            | `false`  |
+| ...          | native props                       | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...`     | -        |
 
 <Attributes.Title>Avatar.Group.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **count** | show total members | `number` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| Attribute | Description        | Type             | Accepted values                  | Default |
+| --------- | ------------------ | ---------------- | -------------------------------- | ------- |
+| **count** | show total members | `number`         | -                                | -       |
+| ...       | native props       | `HTMLAttributes` | `'id', 'name', 'className', ...` | -       |
 
 </Attributes>
 

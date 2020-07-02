@@ -11,13 +11,20 @@ export const meta = {
 
 表示一个动作正在进行中。
 
-<Note>想要表示加载中状态或后台运行任务? 试试 <NextLink href="/zh-cn/components/loading"><a>Loading / 加载中</a></NextLink> 组件。</Note>
+<Note>
+  想要表示加载中状态或后台运行任务? 试试{' '}
+  <NextLink href="/zh-cn/components/loading">
+    <a>Loading / 加载中</a>
+  </NextLink>{' '}
+  组件。
+</Note>
 
 <Playground
   scope={{ Spinner }}
   code={`
 <Spinner />
-`} />
+`}
+/>
 
 <Playground
   title="大小"
@@ -33,15 +40,16 @@ export const meta = {
   <Spacer y={.5} />
   <Spinner size="large" />
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/spinner.mdx">
 <Attributes.Title>Spinner.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **size** | 指示器大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性     | 描述       | 类型             | 推荐值                               | 默认     |
+| -------- | ---------- | ---------------- | ------------------------------------ | -------- |
+| **size** | 指示器大小 | `NormalSizes`    | `'mini', 'small', 'medium', 'large'` | `medium` |
+| ...      | 原生属性   | `HTMLAttributes` | `'id', 'className', ...`             | -        |
 
 </Attributes>
 

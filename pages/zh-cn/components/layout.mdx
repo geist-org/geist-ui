@@ -18,7 +18,8 @@ export const meta = {
   <Row style={{ marginBottom: '10px' }}> <ExampleBlock /> </Row>
   <Row> <ExampleBlock /> </Row>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="列"
@@ -30,13 +31,13 @@ export const meta = {
     <Col><ExampleBlock plain={2} /></Col>
     <Col><ExampleBlock plain={4} /></Col>
   </Row>
-
   <Row>
     <Col span={8}><ExampleBlock plain={2} /></Col>
     <Col><ExampleBlock plain={4} /></Col>
   </Row>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="间距"
@@ -49,14 +50,14 @@ export const meta = {
     <Col><ExampleBlock /></Col>
     <Col><ExampleBlock /></Col>
   </Row>
-
   <Row gap={.8}>
     <Col><ExampleBlock /></Col>
     <Col><ExampleBlock /></Col>
     <Col><ExampleBlock /></Col>
   </Row>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="组合"
@@ -68,21 +69,28 @@ export const meta = {
     <Col span={16}><ExampleBlock /></Col>
     <Col span={8}><ExampleBlock /></Col>
   </Row>
-
-  <Row gap={.8} style={{ marginBottom: '15px' }}>
-    <Col span={8}><ExampleBlock /></Col>
-    <Col span={8}><ExampleBlock /></Col>
-    <Col span={4}><ExampleBlock /></Col>
-    <Col span={4}><ExampleBlock /></Col>
+  <Row gap={0.8} style={{ marginBottom: '15px' }}>
+    <Col span={8}>
+      <ExampleBlock />
+    </Col>
+    <Col span={8}>
+      <ExampleBlock />
+    </Col>
+    <Col span={4}>
+      <ExampleBlock />
+    </Col>
+    <Col span={4}>
+      <ExampleBlock />
+    </Col>
   </Row>
-
   <Row gap={.8}>
     <Col span={4}><ExampleBlock /></Col>
     <Col span={16}><ExampleBlock /></Col>
     <Col span={4}><ExampleBlock /></Col>
   </Row>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="对齐"
@@ -93,15 +101,16 @@ export const meta = {
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col span={16}><ExampleBlock /></Col>
   </Row>
-
-  <Row gap={.8} justify="center" style={{ marginBottom: '15px' }}>
-    <Col span={16}><ExampleBlock /></Col>
+  <Row gap={0.8} justify="center" style={{ marginBottom: '15px' }}>
+    <Col span={16}>
+      <ExampleBlock />
+    </Col>
   </Row>
-
-  <Row gap={.8} justify="end" style={{ marginBottom: '15px' }}>
-    <Col span={16}><ExampleBlock /></Col>
+  <Row gap={0.8} justify="end" style={{ marginBottom: '15px' }}>
+    <Col span={16}>
+      <ExampleBlock />
+    </Col>
   </Row>
-
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col span={9}><ExampleBlock style={{ height: '60px' }}/></Col>
     <Col span={5}>
@@ -121,27 +130,28 @@ export const meta = {
     </Col>
   </Row>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/layout.mdx">
 <Attributes.Title>Row.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **gap** | 子元素列的间距 | `number` | - | 0 |
-| **justify** | 水平对齐方式 | `Justify` | `'start', 'end', 'center', 'space-around', 'space-between'` | `start` |
-| **align** | 垂直对齐方式 | `Align` | `'top', 'middle', 'bottom'` | `top` |
-| **component** | 生成的组件类型 | `keyof JSX.IntrinsicElements` | - | `div` |
-| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| 属性          | 描述           | 类型                          | 推荐值                                                      | 默认    |
+| ------------- | -------------- | ----------------------------- | ----------------------------------------------------------- | ------- |
+| **gap**       | 子元素列的间距 | `number`                      | -                                                           | 0       |
+| **justify**   | 水平对齐方式   | `Justify`                     | `'start', 'end', 'center', 'space-around', 'space-between'` | `start` |
+| **align**     | 垂直对齐方式   | `Align`                       | `'top', 'middle', 'bottom'`                                 | `top`   |
+| **component** | 生成的组件类型 | `keyof JSX.IntrinsicElements` | -                                                           | `div`   |
+| ...           | 原生属性       | `HTMLAttributes`              | `'autoFocus', 'name', 'className', ...`                     | -       |
 
 <Attributes.Title>Col.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **span** | 每列占据的网格大小 | `number` | 0 - 24 | 24 |
-| **offset** | 当前列的偏移位置 | `number` | - | 0 |
-| **component** | 生成的组件类型 | `keyof JSX.IntrinsicElements` | - | `div` |
-| ... | 原生属性 | `HTMLAttributes` | `'name', 'className', ...` | - |
+| 属性          | 描述               | 类型                          | 推荐值                     | 默认  |
+| ------------- | ------------------ | ----------------------------- | -------------------------- | ----- |
+| **span**      | 每列占据的网格大小 | `number`                      | 0 - 24                     | 24    |
+| **offset**    | 当前列的偏移位置   | `number`                      | -                          | 0     |
+| **component** | 生成的组件类型     | `keyof JSX.IntrinsicElements` | -                          | `div` |
+| ...           | 原生属性           | `HTMLAttributes`              | `'name', 'className', ...` | -     |
 
 </Attributes>
 

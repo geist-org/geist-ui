@@ -32,7 +32,8 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="内容块"
@@ -61,36 +62,37 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/page.mdx">
 <Attributes.Title>Page.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **size** |  页面大小 | [PageSize](#pagesize) | - | `medium` |
-| **render** | 渲染方式 | [PageRenderMode](#pagerendermode) | - | `default` |
-| **dotBackdrop** | 在背景中显示装饰样式 | `boolean` | - | `false` |
-| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| 属性            | 描述                 | 类型                              | 推荐值                                  | 默认      |
+| --------------- | -------------------- | --------------------------------- | --------------------------------------- | --------- |
+| **size**        | 页面大小             | [PageSize](#pagesize)             | -                                       | `medium`  |
+| **render**      | 渲染方式             | [PageRenderMode](#pagerendermode) | -                                       | `default` |
+| **dotBackdrop** | 在背景中显示装饰样式 | `boolean`                         | -                                       | `false`   |
+| ...             | 原生属性             | `HTMLAttributes`                  | `'autoFocus', 'name', 'className', ...` | -         |
 
 <Attributes.Title>Page.Header.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **center** | 居中对齐内容 | `boolean` | - | `false` |
-| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| 属性       | 描述         | 类型             | 推荐值                                  | 默认    |
+| ---------- | ------------ | ---------------- | --------------------------------------- | ------- |
+| **center** | 居中对齐内容 | `boolean`        | -                                       | `false` |
+| ...        | 原生属性     | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | -       |
 
 <Attributes.Title alias="Page.Body">Page.Content.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                                  | 默认 |
+| ---- | -------- | ---------------- | --------------------------------------- | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | -    |
 
 <Attributes.Title>Page.Footer.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                                  | 默认 |
+| ---- | -------- | ---------------- | --------------------------------------- | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | -    |
 
 <Attributes.Title>PageSize</Attributes.Title>
 
@@ -101,9 +103,10 @@ type PageSize = string | 'mini' | 'small' | 'medium' | 'large'
 <Attributes.Title>PageRenderMode</Attributes.Title>
 
 ```ts
-type PageRenderMode = 'default'   // 正常渲染
-  | 'effect'                      // 在 effect 第一次触发后渲染
-  | 'effect-seo'                  // 类似于 "effect"，但首屏为 SEO 额外返回字符串
+type PageRenderMode =
+  | 'default' // 正常渲染
+  | 'effect' // 在 effect 第一次触发后渲染
+  | 'effect-seo' // 类似于 "effect"，但首屏为 SEO 额外返回字符串
 ```
 
 </Attributes>

@@ -14,7 +14,8 @@ Display keyboard input that triggers an action.
   scope={{ Keyboard }}
   code={`
 <Keyboard>f</Keyboard>
-`} />
+`}
+/>
 
 <Playground
   title="modifiers"
@@ -26,7 +27,8 @@ Display keyboard input that triggers an action.
   <Keyboard option />
   <Keyboard ctrl />
 </div>
-`} />
+`}
+/>
 
 <Playground
   title="combination"
@@ -37,26 +39,28 @@ Display keyboard input that triggers an action.
   <Keyboard shift>e</Keyboard>
   <Keyboard option ctrl>b</Keyboard>
 </div>
-`} />
+`}
+/>
 
 <Playground
   title="small"
   scope={{ Keyboard }}
   code={`
 <Keyboard small>/</Keyboard>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/keyboard.mdx">
 <Attributes.Title>Keyboard.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **command** | show command key | `boolean` | - | `false` |
-| **shift** | show shift key | `boolean` | - | `false` |
-| **option** | show option key | `boolean` | - | `false` |
-| **ctrl** | show ctrl key | `boolean` | - | `false` |
-| **small** | small keyboard size | `boolean` | - | `false` |
-| ... | native props | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | - |
+| Attribute   | Description         | Type                   | Accepted values               | Default |
+| ----------- | ------------------- | ---------------------- | ----------------------------- | ------- |
+| **command** | show command key    | `boolean`              | -                             | `false` |
+| **shift**   | show shift key      | `boolean`              | -                             | `false` |
+| **option**  | show option key     | `boolean`              | -                             | `false` |
+| **ctrl**    | show ctrl key       | `boolean`              | -                             | `false` |
+| **small**   | small keyboard size | `boolean`              | -                             | `false` |
+| ...         | native props        | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | -       |
 
 </Attributes>
 

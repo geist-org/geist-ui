@@ -25,7 +25,8 @@ export const meta = {
     相关算法与具体的服务器相关，并没有在规范中进行规定。
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="分割文字"
@@ -47,7 +48,8 @@ export const meta = {
     HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （Accept、Accept-Charset、 Accept-Encoding、Accept-Language）。
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="间隔"
@@ -69,7 +71,8 @@ export const meta = {
     HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （Accept、Accept-Charset、 Accept-Encoding、Accept-Language）。
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="体积"
@@ -91,7 +94,8 @@ export const meta = {
     HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （Accept、Accept-Charset、 Accept-Encoding、Accept-Language）。
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="类型"
@@ -113,40 +117,31 @@ export const meta = {
     HTTP/1.1 规范指定了一系列的标准消息头用于启动服务端驱动型内容协商 （Accept、Accept-Charset、 Accept-Encoding、Accept-Language）。
   </Text>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/divider.mdx">
 <Attributes.Title>Divider.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **x** | x 轴间距 | `number` / `float` | - | 0 |
-| **y** | y 轴间距 | `number` / `float` | - | 2 |
-| **type** | 分割线的类型 | [DividerTypes](#dividertypes) | - | `default` |
-| **align** | 子组件的对齐方式 | [DividerAlign](#divideralign) | - | `center` |
-| **volume** | 组件的大小 | `number` / `float` | - | 1 |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| 属性       | 描述             | 类型                          | 推荐值                           | 默认      |
+| ---------- | ---------------- | ----------------------------- | -------------------------------- | --------- |
+| **x**      | x 轴间距         | `number` / `float`            | -                                | 0         |
+| **y**      | y 轴间距         | `number` / `float`            | -                                | 2         |
+| **type**   | 分割线的类型     | [DividerTypes](#dividertypes) | -                                | `default` |
+| **align**  | 子组件的对齐方式 | [DividerAlign](#divideralign) | -                                | `center`  |
+| **volume** | 组件的大小       | `number` / `float`            | -                                | 1         |
+| ...        | 原生属性         | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
 
 <Attributes.Title>DividerTypes</Attributes.Title>
 
 ```ts
-type DividerTypes = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+type DividerTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
 ```
 
 <Attributes.Title>DividerAlign</Attributes.Title>
 
 ```ts
-type DividerAlign = 'center'
-  | 'start'
-  | 'left'
-  | 'end'
-  | 'right'
+type DividerAlign = 'center' | 'start' | 'left' | 'end' | 'right'
 ```
 
 </Attributes>

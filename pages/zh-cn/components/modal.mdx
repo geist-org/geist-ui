@@ -13,8 +13,11 @@ export const meta = {
 弹出显示需要额外注意或重要的内容。
 
 <Note>
-仅仅需要弹出文本信息？
-试试 <NextLink href="/zh-cn/components/toast"><Link color>Toast / 通知</Link></NextLink> 组件。
+  仅仅需要弹出文本信息？ 试试{' '}
+  <NextLink href="/zh-cn/components/toast">
+    <Link color>Toast / 通知</Link>
+  </NextLink>{' '}
+  组件。
 </Note>
 
 <Playground
@@ -43,11 +46,15 @@ export const meta = {
     </div>
   )
 }
-`} />
-
+`}
+/>
 
 <Playground
-  title={<>与&nbsp;<Code>useModal</Code>&nbsp;组合</>}
+  title={
+    <>
+      与&nbsp;<Code>useModal</Code>&nbsp;组合
+    </>
+  }
   desc="使用 `hooks` 可以更简单的控制对话框。"
   scope={{ Modal, Button, useModal, Code }}
   code={`
@@ -68,7 +75,8 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="无按钮"
@@ -95,7 +103,8 @@ export const meta = {
     </div>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="禁用按钮"
@@ -124,7 +133,8 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="定制化"
@@ -145,58 +155,61 @@ export const meta = {
     </div>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/modal.mdx">
 <Attributes.Title>Modal.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **open** | 打开或关闭对话框 | `boolean` | - | `false` |
-| **onOpen** | 对话框打开的事件 | `() => void` | - | - |
-| **onClose** | 对话框关闭的事件 | `() => void` | - | - |
-| **width** | 对话框的宽度 | `string` | - | `26rem` |
-| **wrapClassName** | 对话框的自定义样式类名 | `string` | - | - |
-| **disableBackdropClick** | 点击背景层时是否关闭对话框  | `boolean` | - | `false` |
-| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| 属性                     | 描述                       | 类型             | 推荐值                                  | 默认    |
+| ------------------------ | -------------------------- | ---------------- | --------------------------------------- | ------- |
+| **open**                 | 打开或关闭对话框           | `boolean`        | -                                       | `false` |
+| **onOpen**               | 对话框打开的事件           | `() => void`     | -                                       | -       |
+| **onClose**              | 对话框关闭的事件           | `() => void`     | -                                       | -       |
+| **width**                | 对话框的宽度               | `string`         | -                                       | `26rem` |
+| **wrapClassName**        | 对话框的自定义样式类名     | `string`         | -                                       | -       |
+| **disableBackdropClick** | 点击背景层时是否关闭对话框 | `boolean`        | -                                       | `false` |
+| ...                      | 原生属性                   | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | -       |
 
 <Attributes.Title>Modal.Title.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
+| ---- | -------- | ---------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>Modal.Subtitle.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
+| ---- | -------- | ---------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>Modal.Content.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
+| ---- | -------- | ---------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>Modal.Actions.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| - | - | - | - | - |
+| 属性 | 描述 | 类型 | 推荐值 | 默认 |
+| ---- | ---- | ---- | ------ | ---- |
+| -    | -    | -    | -      | -    |
 
 <Attributes.Title>Modal.Action.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **passive** | 以消极的状态显示按钮 | `boolean` | - | `false` |
-| **disabled** | 禁用按钮 | `boolean` | - | `false` |
-| **onClick** | 按钮的点击事件 | [(event: ModalActionEvent) => void](#modalactionevent) | - | - |
-| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| 属性         | 描述                 | 类型                                                   | 推荐值                   | 默认    |
+| ------------ | -------------------- | ------------------------------------------------------ | ------------------------ | ------- |
+| **passive**  | 以消极的状态显示按钮 | `boolean`                                              | -                        | `false` |
+| **disabled** | 禁用按钮             | `boolean`                                              | -                        | `false` |
+| **onClick**  | 按钮的点击事件       | [(event: ModalActionEvent) => void](#modalactionevent) | -                        | -       |
+| ...          | 原生属性             | `ButtonHTMLAttributes`                                 | `'id', 'className', ...` | -       |
 
 <Attributes.Title>useModal</Attributes.Title>
 
 ```ts
-type useModal = (initialVisible: boolean) => {
+type useModal = (
+  initialVisible: boolean,
+) => {
   visible: boolean
   setVisible: Dispatch<SetStateAction<boolean>>
   currentRef: MutableRefObject<boolean>

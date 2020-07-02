@@ -6,10 +6,9 @@ we use [react-app-rewired](https://github.com/timarney/react-app-rewired) to cha
 
 ### About
 
-  - Add `config-overrides.js` to your root folder.
-  - Add deps: `yarn add babel-plugin-import  customize-cra react-app-rewired -D`
-  - Replace your default scripts(`react-scripts`) with `react-app-rewired`.
-
+- Add `config-overrides.js` to your root folder.
+- Add deps: `yarn add babel-plugin-import customize-cra react-app-rewired -D`
+- Replace your default scripts(`react-scripts`) with `react-app-rewired`.
 
 ### Previews
 

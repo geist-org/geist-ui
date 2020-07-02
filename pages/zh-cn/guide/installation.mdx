@@ -14,9 +14,10 @@ export const meta = {
 请确认你的 <Link href="https://nodejs.org/en/download/">NodeJS</Link> 处于最新版本，
 同时还需要准备包管理器: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> 或是 <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
 如果你想要一个完整的项目示例，请浏览我们的 <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/tree/master/examples">示例集合</Link>。
+
 <Spacer y={1} />
 <Dot type="success" /> 1. 运行命令下载包:
-<Spacer y={.8} />
+<Spacer y={0.8} />
 <Tabs initialValue="yarn" hideDivider>
   <Tabs.Item label="Yarn" value="yarn">
     <Snippet width="400px">yarn add @zeit-ui/react</Snippet>
@@ -28,7 +29,6 @@ export const meta = {
 <Spacer y={1.5} />
 <Dot type="success" /> 2. 引入包到你的 React 项目中：
 
-
 <Grid.Container>
 <Grid xs={24} sm={16}>
 
@@ -36,9 +36,9 @@ export const meta = {
 import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
 
 const Application = () => (
-  <ZeitProvider>        // ---> 默认配置
-    <CssBaseline />     // ---> 基础样式
-    <AppComponent />    // ---> 你的根组件
+  <ZeitProvider>
+    <CssBaseline /> // ---> 基础样式
+    <AppComponent /> // ---> 你的根组件
   </ZeitProvider>
 )
 ```
@@ -46,7 +46,7 @@ const Application = () => (
 </Grid>
 </Grid.Container>
 
-<Spacer y={.5} />
+<Spacer y={0.5} />
 <Dot type="success" /> 3. 在任意处使用组件：
 
 <Grid.Container>
@@ -96,6 +96,5 @@ const MyComponent = () => <Button>按钮组件</Button>
 
 在 `next.js` 项目中，你需要定制入口文件 <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> 以加载基础配置。
 请参考 <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/create-next-app/README.md">这个示例</Link> 开始你的 NextJS 项目。
-
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

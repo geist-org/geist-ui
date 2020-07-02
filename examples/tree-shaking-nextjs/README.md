@@ -48,6 +48,6 @@ If you don't use `tree shaking` in your porject, bundle `zeit-ui/react` as a `ch
 every time, you may notice that the hash name of `chunk` is still changing,
 this may cause you to not make full use of the cache.
 
-  - This issue from `next.js`, and they're improving that, you can track progress [here](https://github.com/vercel/next.js/issues/6303).
-  - If you want to customize config of webpack, to ensure that the `chunk` from `zeit-ui/react` is always the same,
-you can refer to [this docuemnt](https://webpack.js.org/guides/code-splitting/).
+- This issue from `next.js`, and they're improving that, you can track progress [here](https://github.com/vercel/next.js/issues/6303).
+- If you want to customize config of webpack, to ensure that the `chunk` from `zeit-ui/react` is always the same,
+  you can refer to [this docuemnt](https://webpack.js.org/guides/code-splitting/).

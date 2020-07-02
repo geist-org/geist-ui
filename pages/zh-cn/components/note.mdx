@@ -15,14 +15,16 @@ export const meta = {
   scope={{ Note, Code }}
   code={`
 <Note><Code>caller</Code> 和 <Code>arguments</Code> 属性已经废弃，因为它们会泄漏调用函数的对象。</Note>
-`} />
+`}
+/>
 
 <Playground
   title="次要的"
   scope={{ Note }}
   code={`
 <Note type="secondary">表达式闭包已被废弃。请用普通函数或箭头函数代替它。</Note>
-`} />
+`}
+/>
 
 <Playground
   title="状态"
@@ -35,28 +37,32 @@ export const meta = {
   <br/>
   <Note type="error">表达式闭包已被废弃。请用普通函数或箭头函数代替它。</Note>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="隐藏标签"
   scope={{ Note }}
   code={`
 <Note label={false}>这些过时的特性已经完全被删除。</Note>
-`} />
+`}
+/>
 
 <Playground
   title="定制标签"
   scope={{ Note }}
   code={`
 <Note label="重要信息">let 区块和 let 表达式已被废弃。</Note>
-`} />
+`}
+/>
 
 <Playground
   title="较小的提示"
   scope={{ Note }}
   code={`
 <Note small>详见 JavaScript 中的变量引用语法。</Note>
-`} />
+`}
+/>
 
 <Playground
   title="变体"
@@ -75,18 +81,19 @@ export const meta = {
   <br/>
   <Note type="secondary" filled>这些废弃的特性仍然可以使用，但是使用时一定要保持谨慎</Note>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/note.mdx">
 <Attributes.Title>Note.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | 提示类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **label** | 是否显示标签，或是自定义标签 | `boolean` / `string` | - | - |
-| **small** | 较小的提示框 | `boolean` | - | `false` |
-| **filled** | 填充色彩的变体提示框 | `boolean` | - | `false` |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性       | 描述                         | 类型                 | 推荐值                                                  | 默认      |
+| ---------- | ---------------------------- | -------------------- | ------------------------------------------------------- | --------- |
+| **type**   | 提示类型                     | `NormalTypes`        | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **label**  | 是否显示标签，或是自定义标签 | `boolean` / `string` | -                                                       | -         |
+| **small**  | 较小的提示框                 | `boolean`            | -                                                       | `false`   |
+| **filled** | 填充色彩的变体提示框         | `boolean`            | -                                                       | `false`   |
+| ...        | 原生属性                     | `HTMLAttributes`     | `'id', 'className', ...`                                | -         |
 
 </Attributes>
 

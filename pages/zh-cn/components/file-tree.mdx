@@ -28,8 +28,8 @@ export const meta = {
   </Tree.Folder>
   <Tree.File name="readme.md" />
 </Tree>
-`} />
-
+`}
+/>
 
 <Playground
   title="命令式"
@@ -63,8 +63,8 @@ export const meta = {
   }]
   return <Tree value={files} />
 }
-`} />
-
+`}
+/>
 
 <Playground
   title="额外信息"
@@ -105,7 +105,8 @@ export const meta = {
    }]
   return <Tree value={files} />
 }
-`} />
+`}
+/>
 
 <Playground
   title="事件"
@@ -131,34 +132,34 @@ export const meta = {
     </Tree>
   )
 }
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/file-tree.mdx">
 <Attributes.Title>Tree.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | 文件的集合数据 | [Array<FileTreeValue\>](#type-filetreevalue) | - | - |
-| **initialExpand** | 默认是否展开 | `boolean` | - | `false` |
-| **onClick** | 文件点击事件 | `(path: string) => void` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+| 属性              | 描述           | 类型                                         | 推荐值                            | 默认    |
+| ----------------- | -------------- | -------------------------------------------- | --------------------------------- | ------- |
+| **value**         | 文件的集合数据 | [Array<FileTreeValue\>](#type-filetreevalue) | -                                 | -       |
+| **initialExpand** | 默认是否展开   | `boolean`                                    | -                                 | `false` |
+| **onClick**       | 文件点击事件   | `(path: string) => void`                     | -                                 | -       |
+| ...               | 原生属性       | `HTMLAttributes`                             | `'id', 'title', 'className', ...` | -       |
 
 <Attributes.Title>Tree.File.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **name**(必须的) | 文件名 | `string` | - | - |
-| **extra** | 额外文本信息 | `string` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+| 属性             | 描述         | 类型             | 推荐值                            | 默认 |
+| ---------------- | ------------ | ---------------- | --------------------------------- | ---- |
+| **name**(必须的) | 文件名       | `string`         | -                                 | -    |
+| **extra**        | 额外文本信息 | `string`         | -                                 | -    |
+| ...              | 原生属性     | `HTMLAttributes` | `'id', 'title', 'className', ...` | -    |
 
 <Attributes.Title>Tree.Folder.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **name**(必须的) | 文件夹名 | `string` | - | - |
-| **extra** | 额外的文本信息 | `string` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+| 属性             | 描述           | 类型             | 推荐值                            | 默认 |
+| ---------------- | -------------- | ---------------- | --------------------------------- | ---- |
+| **name**(必须的) | 文件夹名       | `string`         | -                                 | -    |
+| **extra**        | 额外的文本信息 | `string`         | -                                 | -    |
+| ...              | 原生属性       | `HTMLAttributes` | `'id', 'title', 'className', ...` | -    |
 
 <Attributes.Title>type FileTreeValue</Attributes.Title>
 

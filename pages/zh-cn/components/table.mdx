@@ -29,7 +29,8 @@ export const meta = {
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="组合"
@@ -51,7 +52,8 @@ export const meta = {
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="宽度"
@@ -73,7 +75,8 @@ export const meta = {
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="操作"
@@ -97,7 +100,8 @@ export const meta = {
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="定制头"
@@ -122,28 +126,29 @@ export const meta = {
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/table.mdx">
 <Attributes.Title>Table.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **data** | 数据源 | `Array<any>` | - | - |
-| **emptyText** | 当数据为空时显示的文本 | `string` | - | - |
-| **hover** | 是否显示 hover 效果 | `boolean` | - | `true` |
-| **onRow** | 行的点击事件 | `(row: any, index: number) => void` | - | - |
-| **onCell** | 单元格的点击事件 | `(cell: any, index: number, colunm: number) => void` | - | - |
-| **onChange** | 数据变化的事件 | `(data: any) => void` | - | - |
-| ... | 原生属性 | `TableHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| 属性          | 描述                   | 类型                                                 | 推荐值                           | 默认   |
+| ------------- | ---------------------- | ---------------------------------------------------- | -------------------------------- | ------ |
+| **data**      | 数据源                 | `Array<any>`                                         | -                                | -      |
+| **emptyText** | 当数据为空时显示的文本 | `string`                                             | -                                | -      |
+| **hover**     | 是否显示 hover 效果    | `boolean`                                            | -                                | `true` |
+| **onRow**     | 行的点击事件           | `(row: any, index: number) => void`                  | -                                | -      |
+| **onCell**    | 单元格的点击事件       | `(cell: any, index: number, colunm: number) => void` | -                                | -      |
+| **onChange**  | 数据变化的事件         | `(data: any) => void`                                | -                                | -      |
+| ...           | 原生属性               | `TableHTMLAttributes`                                | `'id', 'name', 'className', ...` | -      |
 
 <Attributes.Title>Table.Column.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **prop**(必须的) | 列对应的数据属性 | `string` | - | - |
-| **label** | 每一列的标签文本 | `string` | - | - |
-| **width** | 指定宽度 | `number` | - | - |
+| 属性             | 描述             | 类型     | 推荐值 | 默认 |
+| ---------------- | ---------------- | -------- | ------ | ---- |
+| **prop**(必须的) | 列对应的数据属性 | `string` | -      | -    |
+| **label**        | 每一列的标签文本 | `string` | -      | -    |
+| **width**        | 指定宽度         | `number` | -      | -    |
 
 </Attributes>
 

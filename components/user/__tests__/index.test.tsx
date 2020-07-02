@@ -35,7 +35,7 @@ describe(' User', () => {
 
   it('should pass alt attribute', () => {
     const wrapper = mount(
-      <User name="witt" src="https://unix.bio/assets/avatar.png" altText="witt"/>
+      <User name="witt" src="https://unix.bio/assets/avatar.png" altText="witt" />,
     )
     expect(wrapper.find('img').prop('alt')).toEqual('witt')
   })

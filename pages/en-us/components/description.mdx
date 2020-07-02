@@ -15,7 +15,8 @@ Display brief information with a title and description.
   scope={{ Description }}
   code={`
 <Description title="Section Title" content="Data about this section." />
-`} />
+`}
+/>
 
 <Playground
   title="With Component"
@@ -23,18 +24,18 @@ Display brief information with a title and description.
   scope={{ Description, Code }}
   code={`
 <Description title="Section Title" content={<p><Code>code</Code> about this section.</p>} />
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/description.mdx">
 <Attributes.Title>Description.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **title** | title text | `ReactNode` / `string` | - | - |
-| **content** | title text | `ReactNode` / `string` | - | - |
-| ... | native props | `HTMLAttributes` | - | - |
+| Attribute   | Description  | Type                   | Accepted values | Default |
+| ----------- | ------------ | ---------------------- | --------------- | ------- |
+| **title**   | title text   | `ReactNode` / `string` | -               | -       |
+| **content** | title text   | `ReactNode` / `string` | -               | -       |
+| ...         | native props | `HTMLAttributes`       | -               | -       |
 
 </Attributes>
-
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
