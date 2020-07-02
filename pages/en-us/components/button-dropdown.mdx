@@ -13,7 +13,6 @@ export const meta = {
 
 Display related but alternate actions for a button.
 
-
 <Playground
   title="Basic"
   scope={{ ButtonDropdown }}
@@ -23,7 +22,8 @@ Display related but alternate actions for a button.
   <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
   <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
 </ButtonDropdown>
-`} />
+`}
+/>
 
 <Playground
   title="Disabled"
@@ -35,7 +35,8 @@ Display related but alternate actions for a button.
   <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
   <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
 </ButtonDropdown>
-`} />
+`}
+/>
 
 <Playground
   title="Loading"
@@ -47,7 +48,8 @@ Display related but alternate actions for a button.
   <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
   <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
 </ButtonDropdown>
-`} />
+`}
+/>
 
 <Playground
   title="Types"
@@ -70,7 +72,8 @@ Display related but alternate actions for a button.
     <ButtonDropdown.Item main>Error Action</ButtonDropdown.Item>
   </ButtonDropdown>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -106,7 +109,8 @@ Display related but alternate actions for a button.
     <ButtonDropdown.Item main>Large</ButtonDropdown.Item>
   </ButtonDropdown>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Multiple Type"
@@ -119,31 +123,30 @@ Display related but alternate actions for a button.
   <ButtonDropdown.Item>Lock Account</ButtonDropdown.Item>
   <ButtonDropdown.Item type="error">Destoy Account</ButtonDropdown.Item>
 </ButtonDropdown>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/button-dropdown.mdx">
 <Attributes.Title>ButtonDropdown.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | button type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size** | button size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
-| **loading** | display loading indicator | `boolean` | - | `false` |
-| **auto** | autoscale width | `boolean` | - | `false` |
-| **disabled** | disable button | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| Attribute    | Description               | Type             | Accepted values                                         | Default   |
+| ------------ | ------------------------- | ---------------- | ------------------------------------------------------- | --------- |
+| **type**     | button type               | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size**     | button size               | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
+| **loading**  | display loading indicator | `boolean`        | -                                                       | `false`   |
+| **auto**     | autoscale width           | `boolean`        | -                                                       | `false`   |
+| **disabled** | disable button            | `boolean`        | -                                                       | `false`   |
+| ...          | native props              | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...`                 | -         |
 
 <Attributes.Title>ButtonDropdown.Item.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | button type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **main** | the main action | `boolean` | - | `false` |
-| **onClick** | event handler | `MouseEventHandler` | - | - |
-| ... | native props | `ButtonHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| Attribute   | Description     | Type                   | Accepted values                                         | Default   |
+| ----------- | --------------- | ---------------------- | ------------------------------------------------------- | --------- |
+| **type**    | button type     | `NormalTypes`          | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **main**    | the main action | `boolean`              | -                                                       | `false`   |
+| **onClick** | event handler   | `MouseEventHandler`    | -                                                       | -         |
+| ...         | native props    | `ButtonHTMLAttributes` | `'id', 'name', 'className', ...`                        | -         |
 
 </Attributes>
-
-
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

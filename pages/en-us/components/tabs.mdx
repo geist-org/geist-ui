@@ -21,7 +21,8 @@ Display tab content.
   <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
   <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
 </Tabs>
-`} />
+`}
+/>
 
 <Playground
   title="Disabled"
@@ -31,7 +32,8 @@ Display tab content.
   <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
   <Tabs.Item label="jumped" value="2" disabled />
 </Tabs>
-`} />
+`}
+/>
 
 <Playground
   title="Hide Divider"
@@ -46,7 +48,8 @@ Display tab content.
     as well as adding behavior like animation.</p>
   </Tabs.Item>
 </Tabs>
-`} />
+`}
+/>
 
 <Playground
   title="With Icon"
@@ -62,7 +65,8 @@ Display tab content.
     <Text>The Components of React looks very cool.</Text>
   </Tabs.Item>
 </Tabs>
-`} />
+`}
+/>
 
 <Playground
   title="Imperatively"
@@ -84,10 +88,15 @@ Display tab content.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
-  title={<>with <Code>useTabs</Code></>}
+  title={
+    <>
+      with <Code>useTabs</Code>
+    </>
+  }
   desc="Control components with `hooks`."
   scope={{ Tabs, Button, Spacer, Code, Text, useTabs }}
   code={`
@@ -106,32 +115,34 @@ Display tab content.
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/tabs.mdx">
 <Attributes.Title>Tabs.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **initialValue** | initial value | `string` | - | - |
-| **value** | current selected value | `string` | - | - |
-| **hideDivider** | hide default divider | `boolean` | - | `false` |
-| **onChange** | change event | `(val: string) => void` | - | - |
-| ... | native props | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+| Attribute        | Description            | Type                    | Accepted values                 | Default |
+| ---------------- | ---------------------- | ----------------------- | ------------------------------- | ------- |
+| **initialValue** | initial value          | `string`                | -                               | -       |
+| **value**        | current selected value | `string`                | -                               | -       |
+| **hideDivider**  | hide default divider   | `boolean`               | -                               | `false` |
+| **onChange**     | change event           | `(val: string) => void` | -                               | -       |
+| ...              | native props           | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
 
 <Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **label**(required) | display tab's label | `string` | - | - |
-| **value** | unique ident value | `string` | - | - |
-| **disabled** | disable current tab | `boolean` | - | `false` |
+| Attribute           | Description         | Type      | Accepted values | Default |
+| ------------------- | ------------------- | --------- | --------------- | ------- |
+| **label**(required) | display tab's label | `string`  | -               | -       |
+| **value**           | unique ident value  | `string`  | -               | -       |
+| **disabled**        | disable current tab | `boolean` | -               | `false` |
 
 <Attributes.Title>useTabs</Attributes.Title>
 
 ```ts
-type useTabs = (initialValue: string) => {
+type useTabs = (
+  initialValue: string,
+) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

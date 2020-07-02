@@ -28,7 +28,8 @@ The floating box popped by clicking or hovering.
     </Popover>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Preset Item"
@@ -59,7 +60,8 @@ The floating box popped by clicking or hovering.
     </Popover>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Close Manual"
@@ -85,32 +87,33 @@ The floating box popped by clicking or hovering.
     </Popover>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/popover.mdx">
 <Attributes.Title>Popover.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **content** | content of pop-up | `ReactNode` `() => ReactNode` | - | - |
-| **visible** | visible or not | `boolean` | - | `false` |
-| **initialVisible** | visible on initial | `boolean` | - | `false` |
-| **hideArrow** | hide arrow icon | `boolean` | - | `false` |
-| **placement** | position of the popover relative to the target | [Placement](#placement) | - | `bottom` |
-| **trigger** | tooltip trigger mode | `'click' / 'hover'` | - | `click` |
-| **enterDelay**(ms) | delay before popover is shown | `number` | - | `100` |
-| **leaveDelay**(ms) | delay before popover is hidden | `number` | - | `0` |
-| **offset**(px) | distance between pop-up and target | `number` | - | `12` |
-| **portalClassName** | className of pop-up box | `string` | - | - |
-| **onVisibleChange** | call when visibility of the popover is changed | `(visible: boolean) => void` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| Attribute           | Description                                    | Type                          | Accepted values                  | Default  |
+| ------------------- | ---------------------------------------------- | ----------------------------- | -------------------------------- | -------- |
+| **content**         | content of pop-up                              | `ReactNode` `() => ReactNode` | -                                | -        |
+| **visible**         | visible or not                                 | `boolean`                     | -                                | `false`  |
+| **initialVisible**  | visible on initial                             | `boolean`                     | -                                | `false`  |
+| **hideArrow**       | hide arrow icon                                | `boolean`                     | -                                | `false`  |
+| **placement**       | position of the popover relative to the target | [Placement](#placement)       | -                                | `bottom` |
+| **trigger**         | tooltip trigger mode                           | `'click' / 'hover'`           | -                                | `click`  |
+| **enterDelay**(ms)  | delay before popover is shown                  | `number`                      | -                                | `100`    |
+| **leaveDelay**(ms)  | delay before popover is hidden                 | `number`                      | -                                | `0`      |
+| **offset**(px)      | distance between pop-up and target             | `number`                      | -                                | `12`     |
+| **portalClassName** | className of pop-up box                        | `string`                      | -                                | -        |
+| **onVisibleChange** | call when visibility of the popover is changed | `(visible: boolean) => void`  | -                                | -        |
+| ...                 | native props                                   | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -        |
 
 <Attributes.Title alias="Popover.Option">Popover.Item</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **line** | show a line | `boolean` | - | `false` |
-| **title** | show text with title style | `boolean` | - | `false` |
+| Attribute | Description                | Type      | Accepted values | Default |
+| --------- | -------------------------- | --------- | --------------- | ------- |
+| **line**  | show a line                | `boolean` | -               | `false` |
+| **title** | show text with title style | `boolean` | -               | `false` |
 
 <Attributes.Title>Placement</Attributes.Title>
 

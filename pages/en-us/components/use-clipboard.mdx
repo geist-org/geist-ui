@@ -28,7 +28,8 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
     </>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/use-clipboard.mdx">
 <Attributes.Title>useClipboard</Attributes.Title>
@@ -39,12 +40,10 @@ type UseClipboardOptions = {
 }
 
 type CopyResult = {
- copy: (text: string) => void
+  copy: (text: string) => void
 }
 
-const useClickAway = (
-  options?: UseClipboardOptions
-) => CopyResult
+const useClickAway = (options?: UseClipboardOptions) => CopyResult
 ```
 
 </Attributes>

@@ -26,7 +26,8 @@ export const meta = {
     <Button size="small" auto onClick={handler}>点击拷贝</Button>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/use-clipboard.mdx">
 <Attributes.Title>useClipboard</Attributes.Title>
@@ -37,12 +38,10 @@ type UseClipboardOptions = {
 }
 
 type CopyResult = {
- copy: (text: string) => void
+  copy: (text: string) => void
 }
 
-const useClickAway = (
-  options?: UseClipboardOptions
-) => CopyResult
+const useClickAway = (options?: UseClipboardOptions) => CopyResult
 ```
 
 </Attributes>

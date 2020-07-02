@@ -16,7 +16,8 @@ Display a unique keyword, optionally as a part of a set.
 <div>
   <Tag>Status: Unstable</Tag>
 </div>
-`} />
+`}
+/>
 
 <Playground
   title="Types"
@@ -34,7 +35,8 @@ Display a unique keyword, optionally as a part of a set.
   <Spacer y={.5} />
   <Tag type="lite">Lite</Tag>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Invert"
@@ -52,27 +54,22 @@ Display a unique keyword, optionally as a part of a set.
   <Spacer y={.5} />
   <Tag type="secondary" invert>Secondary</Tag>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/tag.mdx">
 <Attributes.Title>Tag.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | tag type | [TagTypes](#tagtypes) | - | `default` |
-| **invert** | invert color and background | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute  | Description                 | Type                  | Accepted values          | Default   |
+| ---------- | --------------------------- | --------------------- | ------------------------ | --------- |
+| **type**   | tag type                    | [TagTypes](#tagtypes) | -                        | `default` |
+| **invert** | invert color and background | `boolean`             | -                        | `false`   |
+| ...        | native props                | `HTMLAttributes`      | `'id', 'className', ...` | -         |
 
 <Attributes.Title>TagTypes</Attributes.Title>
 
 ```ts
-type TagTypes = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+type TagTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
 ```
 
 </Attributes>

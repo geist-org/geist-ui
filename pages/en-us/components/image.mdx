@@ -3,7 +3,7 @@ import { Image, Display, Code } from 'components'
 
 export const meta = {
   title: 'Image',
-  group: 'Data Display'
+  group: 'Data Display',
 }
 
 ## Image
@@ -15,7 +15,8 @@ Display image content.
   scope={{ Image }}
   code={`
 <Image width="540" height="160" src="/images/custom-domains.png" />
-`} />
+`}
+/>
 
 <Playground
   title="Skeleton"
@@ -24,7 +25,8 @@ Display image content.
   code={`
 <Image width="540" height="160"
   src="http://www.deelay.me/2000/https://react.zeit-ui.co/images/custom-domains.png" />
-`} />
+`}
+/>
 
 <Playground
   title="Browser"
@@ -34,7 +36,8 @@ Display image content.
 <Image.Browser url="https://react.zeit-ui.co/en-us/guide/introduction" anchorProps={{ rel: 'nofollow' }}>
   <Image width="540" height="246" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
 </Image.Browser>
-`} />
+`}
+/>
 
 <Playground
   title="Browser Invert"
@@ -43,7 +46,8 @@ Display image content.
 <Image.Browser url="https://react.zeit-ui.co/en-us/guide/introduction" invert>
   <Image width="540" height="246" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
 </Image.Browser>
-`} />
+`}
+/>
 
 <Playground
   title="Compose"
@@ -53,32 +57,33 @@ Display image content.
 <Display shadow caption={<p>Set the <Code>height</Code> to reduces the possibility of page rerender.</p>}>
   <Image width="540" height="246" src="/images/branch-domains.png" />
 </Display>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/image.mdx">
 <Attributes.Title>Image.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **src** | image src | `string` | - | - |
-| **disableSkeleton** | disable skeleton animation when loading  | `boolean` | - | `false` |
-| **disableAutoResize** | disable zooming when width is too small  | `boolean` | - | `false` |
-| **maxDelay**(ms) | max duration of animation | `number` | - | `3000` |
-| **width** | width | `number` | - | - |
-| **height** | height | `number` | - | - |
-| **scale** | scale value | `string` | - | `100%` |
-| ... | native props | `ImgHTMLAttributes` | `'alt', 'className', ...` | - |
+| Attribute             | Description                             | Type                | Accepted values           | Default |
+| --------------------- | --------------------------------------- | ------------------- | ------------------------- | ------- |
+| **src**               | image src                               | `string`            | -                         | -       |
+| **disableSkeleton**   | disable skeleton animation when loading | `boolean`           | -                         | `false` |
+| **disableAutoResize** | disable zooming when width is too small | `boolean`           | -                         | `false` |
+| **maxDelay**(ms)      | max duration of animation               | `number`            | -                         | `3000`  |
+| **width**             | width                                   | `number`            | -                         | -       |
+| **height**            | height                                  | `number`            | -                         | -       |
+| **scale**             | scale value                             | `string`            | -                         | `100%`  |
+| ...                   | native props                            | `ImgHTMLAttributes` | `'alt', 'className', ...` | -       |
 
 <Attributes.Title>Image.Browser.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **title** | show text title (when "url" is unset) | `string` | - | - |
-| **url** | show url on browser address input | `string` | - | - |
-| **showFullLink** | show full url | `boolean` | - | `false` |
-| **invert** | invert colors | `boolean` | - | `false` |
-| **anchorProps** | props of element `a` | `AnchorHTMLAttributes` | - | `{}` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute        | Description                           | Type                   | Accepted values          | Default |
+| ---------------- | ------------------------------------- | ---------------------- | ------------------------ | ------- |
+| **title**        | show text title (when "url" is unset) | `string`               | -                        | -       |
+| **url**          | show url on browser address input     | `string`               | -                        | -       |
+| **showFullLink** | show full url                         | `boolean`              | -                        | `false` |
+| **invert**       | invert colors                         | `boolean`              | -                        | `false` |
+| **anchorProps**  | props of element `a`                  | `AnchorHTMLAttributes` | -                        | `{}`    |
+| ...              | native props                          | `HTMLAttributes`       | `'id', 'className', ...` | -       |
 
 </Attributes>
 

@@ -29,7 +29,8 @@ Display text using well-defined typographic styles.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Paragraph"
@@ -69,7 +70,8 @@ Display text using well-defined typographic styles.
 <Text blockquote>
   Our mission is to make cloud computing accessible to everyone.
 </Text>
-`} />
+`}
+/>
 
 <Playground
   title="Types"
@@ -92,7 +94,8 @@ Display text using well-defined typographic styles.
     Our mission is to make cloud computing accessible to everyone.
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -105,7 +108,8 @@ Display text using well-defined typographic styles.
   <Text size="1.25rem">Font Size: 1.25rem;</Text>
   <Text size="2em">Font Size: 2em;</Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Compose"
@@ -127,29 +131,25 @@ Display text using well-defined typographic styles.
 <Attributes edit="/pages/en-us/components/text.mdx">
 <Attributes.Title>Text.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **p** | component name | `boolean` | - | `true` |
-| **h1 - h6** | component name | `boolean` | - | `false` |
-| **small** | component name | `boolean` | - | `false` |
-| **span** | component name | `boolean` | - | `false` |
-| **del** | component name | `boolean` | - | `false` |
-| **i** | component name | `boolean` | - | `false` |
-| **em** | component name | `boolean` | - | `false` |
-| **b** | component name | `boolean` | - | `false` |
-| **blockquote** | component name | `boolean` | - | `false` |
-| **size** | size of text | `string` / `number` | - | follow elements |
-| **type** | text type | `NormalTypes` | [TextTypes](#texttypes) | `default` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute      | Description    | Type                | Accepted values          | Default         |
+| -------------- | -------------- | ------------------- | ------------------------ | --------------- |
+| **p**          | component name | `boolean`           | -                        | `true`          |
+| **h1 - h6**    | component name | `boolean`           | -                        | `false`         |
+| **small**      | component name | `boolean`           | -                        | `false`         |
+| **span**       | component name | `boolean`           | -                        | `false`         |
+| **del**        | component name | `boolean`           | -                        | `false`         |
+| **i**          | component name | `boolean`           | -                        | `false`         |
+| **em**         | component name | `boolean`           | -                        | `false`         |
+| **b**          | component name | `boolean`           | -                        | `false`         |
+| **blockquote** | component name | `boolean`           | -                        | `false`         |
+| **size**       | size of text   | `string` / `number` | -                        | follow elements |
+| **type**       | text type      | `NormalTypes`       | [TextTypes](#texttypes)  | `default`       |
+| ...            | native props   | `HTMLAttributes`    | `'id', 'className', ...` | -               |
 
 <Attributes.Title>TextTypes</Attributes.Title>
 
 ```ts
-type TextTypes = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
+type TextTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

@@ -13,8 +13,11 @@ export const meta = {
 Display popup content that requires attention or provides additional information.
 
 <Note>
-  Just want a text notification?
-  Try <NextLink href="/en-us/components/toast"><Link color>Toast component</Link></NextLink>.
+  Just want a text notification? Try{' '}
+  <NextLink href="/en-us/components/toast">
+    <Link color>Toast component</Link>
+  </NextLink>
+  .
 </Note>
 
 <Playground
@@ -44,11 +47,15 @@ Display popup content that requires attention or provides additional information
     </div>
   )
 }
-`} />
-
+`}
+/>
 
 <Playground
-  title={<>With <Code>useModal</Code></>}
+  title={
+    <>
+      With <Code>useModal</Code>
+    </>
+  }
   desc="Use `hooks` for easier control `Modal`."
   scope={{ Modal, Button, useModal }}
   code={`
@@ -69,7 +76,8 @@ Display popup content that requires attention or provides additional information
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Without Actions"
@@ -96,7 +104,8 @@ Display popup content that requires attention or provides additional information
     </div>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Disable Action"
@@ -125,8 +134,8 @@ Display popup content that requires attention or provides additional information
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Playground
   title="Customizable"
@@ -147,58 +156,61 @@ Display popup content that requires attention or provides additional information
     </div>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/modal.mdx">
 <Attributes.Title>Modal.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **open** | open or close | `boolean` | - | `false` |
-| **onOpen** | open event | `() => void` | - | - |
-| **onClose** | open event | `() => void` | - | - |
-| **width** | width of the modal dialog | `string` | - | `26rem` |
-| **wrapClassName** | className of the modal dialog | `string` | - | - |
-| **disableBackdropClick** | click background and don't close  | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| Attribute                | Description                      | Type             | Accepted values                         | Default |
+| ------------------------ | -------------------------------- | ---------------- | --------------------------------------- | ------- |
+| **open**                 | open or close                    | `boolean`        | -                                       | `false` |
+| **onOpen**               | open event                       | `() => void`     | -                                       | -       |
+| **onClose**              | open event                       | `() => void`     | -                                       | -       |
+| **width**                | width of the modal dialog        | `string`         | -                                       | `26rem` |
+| **wrapClassName**        | className of the modal dialog    | `string`         | -                                       | -       |
+| **disableBackdropClick** | click background and don't close | `boolean`        | -                                       | `false` |
+| ...                      | native props                     | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | -       |
 
 <Attributes.Title>Modal.Title.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>Modal.Subtitle.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>Modal.Content.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>Modal.Actions.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| - | - | - | - | - |
+| Attribute | Description | Type | Accepted values | Default |
+| --------- | ----------- | ---- | --------------- | ------- |
+| -         | -           | -    | -               | -       |
 
 <Attributes.Title>Modal.Action.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **passive** | display passive mode | `boolean` | - | `false` |
-| **disabled** | disable current action | `boolean` | - | `false` |
-| **onClick** | click handler | [(event: ModalActionEvent) => void](#modalactionevent) | - | - |
-| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute    | Description            | Type                                                   | Accepted values          | Default |
+| ------------ | ---------------------- | ------------------------------------------------------ | ------------------------ | ------- |
+| **passive**  | display passive mode   | `boolean`                                              | -                        | `false` |
+| **disabled** | disable current action | `boolean`                                              | -                        | `false` |
+| **onClick**  | click handler          | [(event: ModalActionEvent) => void](#modalactionevent) | -                        | -       |
+| ...          | native props           | `ButtonHTMLAttributes`                                 | `'id', 'className', ...` | -       |
 
 <Attributes.Title>useModal</Attributes.Title>
 
 ```ts
-type useModal = (initialVisible: boolean) => {
+type useModal = (
+  initialVisible: boolean,
+) => {
   visible: boolean
   setVisible: Dispatch<SetStateAction<boolean>>
   currentRef: MutableRefObject<boolean>

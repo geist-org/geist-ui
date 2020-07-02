@@ -16,7 +16,8 @@ export const meta = {
 <Card>
   <p>一个基础的卡片。</p>
 </Card>
-`} />
+`}
+/>
 
 <Playground
   title="可悬停的"
@@ -25,7 +26,8 @@ export const meta = {
 <Card hoverable>
   <p>可悬停的卡片。</p>
 </Card>
-`} />
+`}
+/>
 
 <Playground
   title="阴影"
@@ -35,7 +37,8 @@ export const meta = {
   <h4>这是一个 React 组件。</h4>
   <p>阴影卡片组件。</p>
 </Card>
-`} />
+`}
+/>
 
 <Playground
   title="类型"
@@ -70,8 +73,8 @@ export const meta = {
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Playground
   title="卡片页脚"
@@ -93,7 +96,8 @@ export const meta = {
     </Card.Footer>
   </Card>
 </Row>
-`} />
+`}
+/>
 
 <Playground
   title="组合图片"
@@ -108,7 +112,8 @@ export const meta = {
     <Link block target="_blank" href="https://github.com/zeit-ui/react">在 GitHub 上查看源码</Link>
   </Card.Footer>
 </Card>
-`} />
+`}
+/>
 
 <Playground
   title="组合分割线"
@@ -125,36 +130,38 @@ export const meta = {
     <Text>当以非构造函数形式被调用时，Object 等同于 <Code>new Object()</Code>.</Text>
   </Card.Content>
 </Card>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **hoverable** | 是否在悬停时增加阴影 | `boolean` | - | `false` |
-| **shadow** | 是否总是显示阴影 | `boolean` | - | `false` |
-| **type** | 卡片的类型 | [CardType](#cardtype) | - | `default` |
-| **width** | CSS 宽度属性 | `string` | - | `100%` |
-| ... | 原生属性 | `HTMLAttributes` | `'id', className', ...` | - |
+| 属性          | 描述                 | 类型                  | 推荐值                  | 默认      |
+| ------------- | -------------------- | --------------------- | ----------------------- | --------- |
+| **hoverable** | 是否在悬停时增加阴影 | `boolean`             | -                       | `false`   |
+| **shadow**    | 是否总是显示阴影     | `boolean`             | -                       | `false`   |
+| **type**      | 卡片的类型           | [CardType](#cardtype) | -                       | `default` |
+| **width**     | CSS 宽度属性         | `string`              | -                       | `100%`    |
+| ...           | 原生属性             | `HTMLAttributes`      | `'id', className', ...` | -         |
 
 <Attributes.Title alias="Card.Body">Card.Content.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'id', className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                  | 默认 |
+| ---- | -------- | ---------------- | ----------------------- | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', className', ...` | -    |
 
 <Attributes.Title alias="Card.Actions">Card.Footer.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **disableAutoMargin** | 取消自动设置的 Margin 值 | `boolean` | - | `false` |
-| ... | 原生属性 | `HTMLAttributes` | `'id', className', ...` | - |
+| 属性                  | 描述                     | 类型             | 推荐值                  | 默认    |
+| --------------------- | ------------------------ | ---------------- | ----------------------- | ------- |
+| **disableAutoMargin** | 取消自动设置的 Margin 值 | `boolean`        | -                       | `false` |
+| ...                   | 原生属性                 | `HTMLAttributes` | `'id', className', ...` | -       |
 
 <Attributes.Title>CardType</Attributes.Title>
 
 ```ts
-type CardType = 'default'
+type CardType =
+  | 'default'
   | 'secondary'
   | 'success'
   | 'warning'

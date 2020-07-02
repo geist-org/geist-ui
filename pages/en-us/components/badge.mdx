@@ -20,7 +20,8 @@ Display an indicator that requires attention.
     <Badge>100</Badge> <Spacer y={.5} />
     <Badge>2020</Badge>
   </>
-`} />
+`}
+/>
 
 <Playground
   title="Type"
@@ -33,7 +34,8 @@ Display an indicator that requires attention.
     <Badge type="error">Error</Badge> <Spacer y={.5} />
     <Badge type="secondary">Secondary</Badge>
   </>
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -46,7 +48,8 @@ Display an indicator that requires attention.
     <Badge size="medium">Medium</Badge> <Spacer y={.5} />
     <Badge size="large">Large</Badge>
   </>
-`} />
+`}
+/>
 
 <Playground
   title="Anchor"
@@ -79,33 +82,30 @@ Display an indicator that requires attention.
     <Link target="_blank" href="https://github.com/zeit-ui/react/">Share Link</Link>
   </Badge.Anchor>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/badge.mdx">
 <Attributes.Title>Badge.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | badge type | `NormalTypes` | [NormalTypes](#normaltypes) | `default` |
-| **size** | badge size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **dot** | show dot and ignore content | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+| Attribute | Description                 | Type             | Accepted values                 | Default   |
+| --------- | --------------------------- | ---------------- | ------------------------------- | --------- |
+| **type**  | badge type                  | `NormalTypes`    | [NormalTypes](#normaltypes)     | `default` |
+| **size**  | badge size                  | `NormalSizes`    | [NormalSizes](#normalsizes)     | `medium`  |
+| **dot**   | show dot and ignore content | `boolean`        | -                               | `false`   |
+| ...       | native props                | `HTMLAttributes` | `'alt', 'id', 'className', ...` | -         |
 
 <Attributes.Title>Badge.Anchor.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
+| Attribute     | Description            | Type              | Accepted values                     | Default    |
+| ------------- | ---------------------- | ----------------- | ----------------------------------- | ---------- |
 | **placement** | fixe position of Badge | `AnchorPlacement` | [AnchorPlacement](#anchorplacement) | `topRight` |
-| ... | native props | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+| ...           | native props           | `HTMLAttributes`  | `'alt', 'id', 'className', ...`     | -          |
 
 <Attributes.Title>NormalTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
+type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>

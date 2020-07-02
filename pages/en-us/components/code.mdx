@@ -12,8 +12,11 @@ export const meta = {
 Show source code in a standardized way.
 
 <Note>
-  Want to display <Code>shell</Code> code snippets?
-  Try <NextLink href="/en-us/components/snippet"><Link color>Snippet</Link></NextLink>.
+  Want to display <Code>shell</Code> code snippets? Try{' '}
+  <NextLink href="/en-us/components/snippet">
+    <Link color>Snippet</Link>
+  </NextLink>
+  .
 </Note>
 
 <Playground
@@ -21,8 +24,8 @@ Show source code in a standardized way.
   scope={{ Code }}
   code={`
 <p>Run <Code>npm i @zeit-ui/react</Code> to install.</p>
-`} />
-
+`}
+/>
 
 <Playground
   title="Code Block"
@@ -34,7 +37,8 @@ Show source code in a standardized way.
 yarn add @zeit-ui/react\`
   return <Code block>{codes}</Code>
 }
-`} />
+`}
+/>
 
 <Playground
   title="width"
@@ -46,7 +50,8 @@ yarn add @zeit-ui/react\`
 yarn add @zeit-ui/react\`
   return <Code block width="50%">{codes}</Code>
 }
-`} />
+`}
+/>
 
 <Playground
   title="overlong"
@@ -58,16 +63,17 @@ yarn add @zeit-ui/react\`
 yarn add @zeit-ui/react\`
   return <Code block width="50%">{codes}</Code>
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/code.mdx">
 <Attributes.Title>Code.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **block** | show code in `pre` | `boolean` | - | `false` |
-| **width** | set CSS width | `string` | - | `initial` |
-| ... | native props | `HTMLAttributes` | `'className', ...` | - |
+| Attribute | Description        | Type             | Accepted values    | Default   |
+| --------- | ------------------ | ---------------- | ------------------ | --------- |
+| **block** | show code in `pre` | `boolean`        | -                  | `false`   |
+| **width** | set CSS width      | `string`         | -                  | `initial` |
+| ...       | native props       | `HTMLAttributes` | `'className', ...` | -         |
 
 </Attributes>
 

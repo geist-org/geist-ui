@@ -15,7 +15,8 @@ export const meta = {
   scope={{ Radio }}
   code={`
 <Radio checked={false}>选项 1</Radio>
-`} />
+`}
+/>
 
 <Playground
   title="组"
@@ -37,8 +38,8 @@ export const meta = {
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Playground
   title="大小"
@@ -63,7 +64,8 @@ export const meta = {
     </Radio.Group>
   </div>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="描述"
@@ -80,8 +82,8 @@ export const meta = {
     <Radio.Desc>服务器端会验证 <Text b>请求中所描述的缓存</Text> 是否过期</Radio.Desc>
   </Radio>
 </Radio.Group>
-`} />
-
+`}
+/>
 
 <Playground
   title="禁用"
@@ -92,7 +94,8 @@ export const meta = {
   <Radio value="1">郑州</Radio>
   <Radio value="2">南昌</Radio>
 </Radio.Group>
-`} />
+`}
+/>
 
 <Playground
   title="行"
@@ -109,38 +112,38 @@ export const meta = {
     <Radio.Desc>带指定根数的根号</Radio.Desc>
   </Radio>
 </Radio.Group>
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/radio.mdx">
 <Attributes.Title>Radio.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **checked** | 是否选择 (仅在单独使用时有效) | `boolean` | - | `false` |
-| **value** | 唯一的鉴别值 (仅在组内使用时有效) | `string` | - | - |
-| **disabled** | 禁用当前选项 | `boolean` | - | `false` |
-| **size** | 单选框的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **onChange** | 选项变化事件 | `(e: RadioEvent) => void` | - | - |
-| ... | 原生属性 | `InputHTMLAttributes` | `'id', 'alt', 'className', ...` | - |
+| 属性         | 描述                              | 类型                      | 推荐值                          | 默认     |
+| ------------ | --------------------------------- | ------------------------- | ------------------------------- | -------- |
+| **checked**  | 是否选择 (仅在单独使用时有效)     | `boolean`                 | -                               | `false`  |
+| **value**    | 唯一的鉴别值 (仅在组内使用时有效) | `string`                  | -                               | -        |
+| **disabled** | 禁用当前选项                      | `boolean`                 | -                               | `false`  |
+| **size**     | 单选框的大小                      | `NormalSizes`             | [NormalSizes](#normalsizes)     | `medium` |
+| **onChange** | 选项变化事件                      | `(e: RadioEvent) => void` | -                               | -        |
+| ...          | 原生属性                          | `InputHTMLAttributes`     | `'id', 'alt', 'className', ...` | -        |
 
 <Attributes.Title>Radio.Group.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **initialValue** | 初始值 | `string` | - | - |
-| **value** | 设置选中的子选项值 | `string` | - | - |
-| **useRow** | 水平对齐所有子单选框 | `boolean` | - | `false` |
-| **disabled** | 禁用组内所有单选框 | `boolean` | - | `false` |
-| **size** | 组内所有单选框的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **onChange** | 组的值变化事件 | `(value: string) => void` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+| 属性             | 描述                 | 类型                      | 推荐值                           | 默认     |
+| ---------------- | -------------------- | ------------------------- | -------------------------------- | -------- |
+| **initialValue** | 初始值               | `string`                  | -                                | -        |
+| **value**        | 设置选中的子选项值   | `string`                  | -                                | -        |
+| **useRow**       | 水平对齐所有子单选框 | `boolean`                 | -                                | `false`  |
+| **disabled**     | 禁用组内所有单选框   | `boolean`                 | -                                | `false`  |
+| **size**         | 组内所有单选框的大小 | `NormalSizes`             | [NormalSizes](#normalsizes)      | `medium` |
+| **onChange**     | 组的值变化事件       | `(value: string) => void` | -                                | -        |
+| ...              | 原生属性             | `HTMLAttributes`          | `'name', 'id', 'className', ...` | -        |
 
 <Attributes.Title alias="Radio.Desc">Radio.Description.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                           | 默认 |
+| ---- | -------- | ---------------- | -------------------------------- | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'name', 'id', 'className', ...` | -    |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 

@@ -19,7 +19,8 @@ export const meta = {
   <Button>Two</Button>
   <Button>Three</Button>
 </ButtonGroup>
-`} />
+`}
+/>
 
 <Playground
   title="变体"
@@ -46,7 +47,8 @@ export const meta = {
     <Button>Three</Button>
   </ButtonGroup>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="大小"
@@ -63,7 +65,8 @@ export const meta = {
     <Button>Action2</Button>
   </ButtonGroup>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="垂直的"
@@ -77,7 +80,8 @@ export const meta = {
     <Button>Four</Button>
   </ButtonGroup>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="禁用"
@@ -95,20 +99,29 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/button-group.mdx">
 <Attributes.Title>ButtonGroup.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** |  按钮类型 | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
-| **size** | 按钮大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **ghost** | 相反色彩模式的按钮 | `boolean` | - | `false` |
-| **vertical** | 以垂直方式显示所有按钮 | `boolean` | - | `false` |
-| **disabled** | 是否禁用所有按钮 | `boolean` | - | `false` |
-| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| 属性         | 描述                   | 类型                   | 推荐值                      | 默认      |
+| ------------ | ---------------------- | ---------------------- | --------------------------- | --------- |
+| **type**     | 按钮类型               | `ButtonTypes`          | [ButtonTypes](#buttontypes) | `default` |
+| **size**     | 按钮大小               | `NormalSizes`          | [NormalSizes](#normalsizes) | `medium`  |
+| **ghost**    | 相反色彩模式的按钮     | `boolean`              | -                           | `false`   |
+| **vertical** | 以垂直方式显示所有按钮 | `boolean`              | -                           | `false`   |
+| **disabled** | 是否禁用所有按钮       | `boolean`              | -                           | `false`   |
+| ...          | 原生属性               | `ButtonHTMLAttributes` | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
 
 ```ts
-type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
-  | 'secondary-light' | 'success-light' | 'warning-light' | 'error-light'
+type ButtonTypes =
+  | 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'abort'
+  | 'secondary-light'
+  | 'success-light'
+  | 'warning-light'
+  | 'error-light'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>

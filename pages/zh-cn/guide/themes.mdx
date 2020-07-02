@@ -15,18 +15,22 @@ export const meta = {
 
 ### 切换主题
 
-<Note>在使用任何组件前，请确保已添加 <Code>ZeitProvider</Code> 至应用的根节点。</Note>
+<Note>
+  在使用任何组件前，请确保已添加 <Code>ZeitProvider</Code> 至应用的根节点。
+</Note>
 <Spacer y={0.5} />
-<Note type="success"><Code>CssBaseline</Code> 提供了基础的 CSS 样式，这和你熟悉的 <Code>normalize</Code> 有些类似。</Note>
+<Note type="success">
+  <Code>CssBaseline</Code> 提供了基础的 CSS 样式，这和你熟悉的 <Code>normalize</Code> 有些类似。
+</Note>
 <Spacer y={1} />
 
 **现在你可以根据如下所示步骤切换主题：**
 
-  1. 确保 `ZeitProvider` 与 `CssBaseline` 已经添加至根节点。
+1. 确保 `ZeitProvider` 与 `CssBaseline` 已经添加至根节点。
 
-  2. (可选的) 通过钩子 `useTheme` 获取所有可用的主题变量。
+2. (可选的) 通过钩子 `useTheme` 获取所有可用的主题变量。
 
-  3. 更新 `theme.type` 的值，所有的组件都会随之自动变化。
+3. 更新 `theme.type` 的值，所有的组件都会随之自动变化。
 
 ```jsx
 import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
@@ -34,7 +38,7 @@ import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
 const App = () => {
   const [themeType, setThemeType] = useState('dark')
   const switchThemes = () => {
-    setThemeType(lastThemeType => lastThemeType === 'dark' ? 'light' : 'dark')
+    setThemeType(lastThemeType => (lastThemeType === 'dark' ? 'light' : 'dark'))
   }
   return (
     <ZeitProvider theme={{ type: themeType }}>
@@ -52,11 +56,12 @@ const App = () => {
 自定义主题样式在 `@zeit-ui/react` 中是非常简单的，你只需要提供一个新的样式对象给 `ZeitProvider`，所有的组件都会自然变化以适应你自定义的属性。
 这里有 <Link target="_blank" color href="https://github.com/zeit-ui/react/tree/master/examples/custom-themes">一个完整的示例项目</Link> 可供参考。
 
-
 当然，如果一个组件未使用到你自定义的变量，它不会发生任何变化也不会重新渲染。
 
 <Spacer y={1} />
-<Note type="warning">自定义越多的主题，就会有越多的 <b>重新渲染</b> 发生。</Note>
+<Note type="warning">
+  自定义越多的主题，就会有越多的 <b>重新渲染</b> 发生。
+</Note>
 
 ```jsx
 import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
@@ -70,7 +75,7 @@ const myTheme = {
 const App = () => (
   <ZeitProvider theme={myTheme}>
     <CssBaseline />
-    <YourAppComponent onClick={switchThemes}/>
+    <YourAppComponent onClick={switchThemes} />
   </ZeitProvider>
 )
 ```
@@ -91,8 +96,12 @@ import {
 } from '@zeit-ui/react'
 
 // 使用示例
-const myStyles: ZeitUIThemes = { /* ... */ }
-const myPalette: Partial<ZeitUIThemesPalette> = { /* ... */ }
+const myStyles: ZeitUIThemes = {
+  /* ... */
+}
+const myPalette: Partial<ZeitUIThemesPalette> = {
+  /* ... */
+}
 ```
 
 如果你没有使用 TypeScript，想要了解更多的预置类型，请看<Link color target="_blank" href="https://github.com/zeit-ui/react/blob/master/components/styles/themes/index.ts">这里的类型声明文件</Link>。
@@ -152,6 +161,5 @@ const MyComponent = () => (
   </div>
 )
 ```
-
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

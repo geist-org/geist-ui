@@ -20,7 +20,8 @@ export const meta = {
     <Badge>100</Badge> <Spacer y={.5} />
     <Badge>2020</Badge>
   </>
-`} />
+`}
+/>
 
 <Playground
   title="类型"
@@ -33,7 +34,8 @@ export const meta = {
     <Badge type="error">错误</Badge> <Spacer y={.5} />
     <Badge type="secondary">次要的</Badge>
   </>
-`} />
+`}
+/>
 
 <Playground
   title="大小"
@@ -46,7 +48,8 @@ export const meta = {
     <Badge size="medium">中等</Badge> <Spacer y={.5} />
     <Badge size="large">最大</Badge>
   </>
-`} />
+`}
+/>
 
 <Playground
   title="锚点"
@@ -79,33 +82,30 @@ export const meta = {
     <Link target="_blank" href="https://github.com/zeit-ui/react/">分享链接</Link>
   </Badge.Anchor>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/badge.mdx">
 <Attributes.Title>Badge.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | 徽章的类型 | `NormalTypes` | [NormalTypes](#normaltypes) | `default` |
-| **size** | 徽章的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **dot** | 忽略内容并显示圆点 | `boolean` | - | `false` |
-| ... | 原生属性 | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+| 属性     | 描述               | 类型             | 推荐值                          | 默认      |
+| -------- | ------------------ | ---------------- | ------------------------------- | --------- |
+| **type** | 徽章的类型         | `NormalTypes`    | [NormalTypes](#normaltypes)     | `default` |
+| **size** | 徽章的大小         | `NormalSizes`    | [NormalSizes](#normalsizes)     | `medium`  |
+| **dot**  | 忽略内容并显示圆点 | `boolean`        | -                               | `false`   |
+| ...      | 原生属性           | `HTMLAttributes` | `'alt', 'id', 'className', ...` | -         |
 
 <Attributes.Title>Badge.Anchor.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
+| 属性          | 描述           | 类型              | 推荐值                              | 默认       |
+| ------------- | -------------- | ----------------- | ----------------------------------- | ---------- |
 | **placement** | 固定徽章的位置 | `AnchorPlacement` | [AnchorPlacement](#anchorplacement) | `topRight` |
-| ... | 原生属性 | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+| ...           | 原生属性       | `HTMLAttributes`  | `'alt', 'id', 'className', ...`     | -          |
 
 <Attributes.Title>NormalTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
+type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
