@@ -30,7 +30,8 @@ and very small size. Of course, it still supports dynamic props and custom break
     </Grid.Container>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Fluid layout"
@@ -56,7 +57,8 @@ and very small size. Of course, it still supports dynamic props and custom break
     </Grid.Container>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Responsive layout"
@@ -77,7 +79,8 @@ and very small size. Of course, it still supports dynamic props and custom break
     </Grid.Container>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Hide elements"
@@ -97,7 +100,8 @@ and very small size. Of course, it still supports dynamic props and custom break
     </Grid.Container>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Auto width"
@@ -123,9 +127,13 @@ and very small size. Of course, it still supports dynamic props and custom break
     </>
   )
 }
-`} />
+`}
+/>
 
-<PlaygroundTitle title="custom breakpoints" desc="Override the default breakpoints of the `@zeit-ui/react`." />
+<PlaygroundTitle
+  title="custom breakpoints"
+  desc="Override the default breakpoints of the `@zeit-ui/react`."
+/>
 
 ```tsx
 const breakpoints: ZeitUIThemesBreakpoints = {
@@ -147,32 +155,37 @@ const App = () => (
 <Attributes edit="/pages/en-us/components/grid.mdx">
 <Attributes.Title>Grid.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **justify** | CSS "justify-content" property | `Justify` | [Justify](#justify) | `flex-start` |
-| **alignItems** | CSS "align-items" property | `AlignItems` | [AlignItems](#alignitems) | `stretch` |
-| **alignContent** | CSS "align-content" property | `AlignContent` | [AlignContent](#aligncontent) | `flex-start` |
-| **direction** | CSS "flex-direction" property | `Direction` | [Direction](#direction) | `flex-start` |
-| **xs** | width of grid, for `xs` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
-| **sm** | width of grid, for `sm` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
-| **md** | width of grid, for `md` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
-| **lg** | width of grid, for `lg` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
-| **xl** | width of grid, for `xl` breakpoints and wider screens | `number` | `0 - 24`, `boolean` | `false` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
-
+| Attribute        | Description                                           | Type             | Accepted values               | Default      |
+| ---------------- | ----------------------------------------------------- | ---------------- | ----------------------------- | ------------ |
+| **justify**      | CSS "justify-content" property                        | `Justify`        | [Justify](#justify)           | `flex-start` |
+| **alignItems**   | CSS "align-items" property                            | `AlignItems`     | [AlignItems](#alignitems)     | `stretch`    |
+| **alignContent** | CSS "align-content" property                          | `AlignContent`   | [AlignContent](#aligncontent) | `flex-start` |
+| **direction**    | CSS "flex-direction" property                         | `Direction`      | [Direction](#direction)       | `flex-start` |
+| **xs**           | width of grid, for `xs` breakpoints and wider screens | `number`         | `0 - 24`, `boolean`           | `false`      |
+| **sm**           | width of grid, for `sm` breakpoints and wider screens | `number`         | `0 - 24`, `boolean`           | `false`      |
+| **md**           | width of grid, for `md` breakpoints and wider screens | `number`         | `0 - 24`, `boolean`           | `false`      |
+| **lg**           | width of grid, for `lg` breakpoints and wider screens | `number`         | `0 - 24`, `boolean`           | `false`      |
+| **xl**           | width of grid, for `xl` breakpoints and wider screens | `number`         | `0 - 24`, `boolean`           | `false`      |
+| ...              | native props                                          | `HTMLAttributes` | `'id', 'className', ...`      | -            |
 
 <Attributes.Title>Grid.Container.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **gap** | spacing of children | `number` / `float` | - | 0 |
-| **wrap** | CSS "flex-wrap" property | `Wrap` | [Wrap](#wrap) | `wrap` |
-| ... | Grid props | `Grid.Props` | [Grid.Props](#grid.props) | - |
+| Attribute | Description              | Type               | Accepted values           | Default |
+| --------- | ------------------------ | ------------------ | ------------------------- | ------- |
+| **gap**   | spacing of children      | `number` / `float` | -                         | 0       |
+| **wrap**  | CSS "flex-wrap" property | `Wrap`             | [Wrap](#wrap)             | `wrap`  |
+| ...       | Grid props               | `Grid.Props`       | [Grid.Props](#grid.props) | -       |
 
 <Attributes.Title>Justify</Attributes.Title>
 
 ```ts
-type Justify = 'flex-start' | 'center' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
+type Justify =
+  | 'flex-start'
+  | 'center'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenly'
 ```
 
 <Attributes.Title>AlignItems</Attributes.Title>
@@ -184,7 +197,13 @@ type AlignItems = 'flex-start' | 'center' | 'flex-end' | 'stretch' | 'baseline'
 <Attributes.Title>AlignContent</Attributes.Title>
 
 ```ts
-type AlignContent = 'stretch' | 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around'
+type AlignContent =
+  | 'stretch'
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
 ```
 
 <Attributes.Title>Direction</Attributes.Title>

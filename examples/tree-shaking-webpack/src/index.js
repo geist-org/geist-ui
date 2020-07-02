@@ -18,5 +18,5 @@ ReactDOM.render(
       <App />
     </ZeitProvider>
   </React.StrictMode>,
-  document.getElementById('app')
+  document.getElementById('app'),
 )

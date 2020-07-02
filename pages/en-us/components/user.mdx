@@ -15,7 +15,8 @@ Display user profile or social information.
   scope={{ User, Spacer }}
   code={`
 <User src="https://zeit.co/api/www/avatar/?u=evilrabbit&s=160" name="Evil Rabbit" />
-`} />
+`}
+/>
 
 <Playground
   title="Description"
@@ -25,7 +26,8 @@ Display user profile or social information.
 <User src="https://unix.bio/assets/avatar.png" name="Witt">
   JavaScript engineer
 </User>
-`} />
+`}
+/>
 
 <Playground
   title="Social"
@@ -35,25 +37,26 @@ Display user profile or social information.
 <User src="https://unix.bio/assets/avatar.png" name="Witt">
   <User.Link href="https://twitter.com/echo_witt">@echo_witt</User.Link>
 </User>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/user.mdx">
 <Attributes.Title>User.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **name**(required) | user name | `ReactNode` / `string` | - | - |
-| **src** | avatar url | `string` | - | - |
-| **text** | display text when image is missing | `string` | - | - |
-| **altText** | alt attribute used by inner avatar image | `string` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| Attribute          | Description                              | Type                   | Accepted values                  | Default |
+| ------------------ | ---------------------------------------- | ---------------------- | -------------------------------- | ------- |
+| **name**(required) | user name                                | `ReactNode` / `string` | -                                | -       |
+| **src**            | avatar url                               | `string`               | -                                | -       |
+| **text**           | display text when image is missing       | `string`               | -                                | -       |
+| **altText**        | alt attribute used by inner avatar image | `string`               | -                                | -       |
+| ...                | native props                             | `HTMLAttributes`       | `'id', 'name', 'className', ...` | -       |
 
 <Attributes.Title>User.Link.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **href** | link address | `string` | - | - |
-| ... | native props | `AnchorHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| Attribute | Description  | Type                   | Accepted values                  | Default |
+| --------- | ------------ | ---------------------- | -------------------------------- | ------- |
+| **href**  | link address | `string`               | -                                | -       |
+| ...       | native props | `AnchorHTMLAttributes` | `'id', 'name', 'className', ...` | -       |
 
 </Attributes>
 

@@ -17,7 +17,8 @@ Retrieve text input from a user.
   scope={{ Input }}
   code={`
 <Input placeholder="The Evil Rabbit" />
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -30,7 +31,8 @@ Retrieve text input from a user.
   <Input size="medium" placeholder="Medium Input" /> <Spacer y={.5} />
   <Input size="large" placeholder="Large Input" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Set width"
@@ -38,7 +40,8 @@ Retrieve text input from a user.
   scope={{ Input }}
   code={`
 <Input placeholder="The Evil Rabbit" width="100%" />
-`} />
+`}
+/>
 
 <Playground
   title="unwritable"
@@ -50,7 +53,8 @@ Retrieve text input from a user.
   <Spacer y={.5} />
   <Input readOnly initialValue="readOnly" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="inline label"
@@ -62,7 +66,8 @@ Retrieve text input from a user.
   <Spacer y={.5} />
   <Input labelRight=".com" placeholder="https://github" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="block label"
@@ -84,7 +89,8 @@ Retrieve text input from a user.
     </Dot>
   </Input>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="status"
@@ -100,7 +106,8 @@ Retrieve text input from a user.
   <Spacer y={.5} />
   <Input status="error" initialValue="The Evil Rabbit" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Icon"
@@ -112,7 +119,8 @@ Retrieve text input from a user.
   <Spacer y={.5} />
   <Input iconRight={<GitIcon />} placeholder="GitHub" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Clearable"
@@ -122,14 +130,16 @@ Retrieve text input from a user.
 <>
   <Input clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Password"
   scope={{ Input }}
   code={`
 <Input.Password initialValue="123456abc" />
-`} />
+`}
+/>
 
 <Playground
   title="Get Change"
@@ -146,10 +156,15 @@ Retrieve text input from a user.
     <Input value={value} onChange={handler} placeholder="The Evil Rabbit" />
   )
 }
-`} />
+`}
+/>
 
 <Playground
-  title={<>With <Code>useInput</Code></>}
+  title={
+    <>
+      With <Code>useInput</Code>
+    </>
+  }
   desc="Use `hooks` to capture changes."
   scope={{ Input, useInput, useEffect, Button, Spacer }}
   code={`
@@ -167,63 +182,58 @@ Retrieve text input from a user.
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/input.mdx">
 <Attributes.Title>Input.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | input value | `string` | - | - |
-| **initialValue** | initial value | `string` | - | - |
-| **placeholder** | placeholder | `string` | - | - |
-| **size** | input size | `NormalSizes` | [InputSizes](#inputsizes) | `medium` |
-| **status** | current status | `NormalTypes` | [InputStatus](#inputstatus) | `default` |
-| **readOnly** | native attr | `boolean` | - | `false` |
-| **disabled** | disable input | `boolean` | - | `false` |
-| **clearable** | show clear icon | `boolean` | - | `false` |
-| **label** | text label for input | `string` | - | - |
-| **labelRight** | text label at right for input | `string` | - | - |
-| **icon** | icon for input | `React.ReactNode` | - | - |
-| **iconRight** | icon at right for input | `React.ReactNode` | - | - |
-| **iconClickable** | icons are clickable | `boolean` | - | `false` |
-| **onIconClick** | click icon event | `(e: React.ChangeEvent) => void` | - | - |
-| **onChange** | change event | `(e: React.ChangeEvent) => void` | - | - |
-| **onClearClick** | clear icon event | `(e: React.MouseEvent) => void` | - | - |
-| **ref** | forwardRef | <Code>Ref<HTMLInputElement &#124; null></Code> | - | - |
-| ... | native props | `InputHTMLAttributes` | `'alt', 'type', 'className', ...` | - |
+| Attribute         | Description                   | Type                                           | Accepted values                   | Default   |
+| ----------------- | ----------------------------- | ---------------------------------------------- | --------------------------------- | --------- |
+| **value**         | input value                   | `string`                                       | -                                 | -         |
+| **initialValue**  | initial value                 | `string`                                       | -                                 | -         |
+| **placeholder**   | placeholder                   | `string`                                       | -                                 | -         |
+| **size**          | input size                    | `NormalSizes`                                  | [InputSizes](#inputsizes)         | `medium`  |
+| **status**        | current status                | `NormalTypes`                                  | [InputStatus](#inputstatus)       | `default` |
+| **readOnly**      | native attr                   | `boolean`                                      | -                                 | `false`   |
+| **disabled**      | disable input                 | `boolean`                                      | -                                 | `false`   |
+| **clearable**     | show clear icon               | `boolean`                                      | -                                 | `false`   |
+| **label**         | text label for input          | `string`                                       | -                                 | -         |
+| **labelRight**    | text label at right for input | `string`                                       | -                                 | -         |
+| **icon**          | icon for input                | `React.ReactNode`                              | -                                 | -         |
+| **iconRight**     | icon at right for input       | `React.ReactNode`                              | -                                 | -         |
+| **iconClickable** | icons are clickable           | `boolean`                                      | -                                 | `false`   |
+| **onIconClick**   | click icon event              | `(e: React.ChangeEvent) => void`               | -                                 | -         |
+| **onChange**      | change event                  | `(e: React.ChangeEvent) => void`               | -                                 | -         |
+| **onClearClick**  | clear icon event              | `(e: React.MouseEvent) => void`                | -                                 | -         |
+| **ref**           | forwardRef                    | <Code>Ref<HTMLInputElement &#124; null></Code> | -                                 | -         |
+| ...               | native props                  | `InputHTMLAttributes`                          | `'alt', 'type', 'className', ...` | -         |
 
 <Attributes.Title>Input.Password.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **hideToggle** | hide toggle icon | `boolean` | - | `false` |
-| ... | input props | `Input.Props` | [Input.Props](#input.props) | - |
+| Attribute      | Description      | Type          | Accepted values             | Default |
+| -------------- | ---------------- | ------------- | --------------------------- | ------- |
+| **hideToggle** | hide toggle icon | `boolean`     | -                           | `false` |
+| ...            | input props      | `Input.Props` | [Input.Props](#input.props) | -       |
 
 <Attributes.Title>InputSizes</Attributes.Title>
 
 ```ts
-type InputSizes = 'mini'
-  | 'small'
-  | 'medium'
-  | 'large'
+type InputSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
 <Attributes.Title>InputStatus</Attributes.Title>
 
 ```ts
-type InputStatus = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
+type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
-type useInput = (initialValue: string) => {
+type useInput = (
+  initialValue: string,
+) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

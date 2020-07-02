@@ -1,7 +1,7 @@
 ## Checklist
 
 - [ ] Fix linting errors
-- [ ] Label has been added
+- [ ] Tests have been added / updated (or snapshots)
 
 ## Change information
 

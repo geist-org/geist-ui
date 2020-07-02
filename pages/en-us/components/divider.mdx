@@ -26,7 +26,8 @@ A divider line separates different content.
     The algorithm is server-specific and not defined in the standard.
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="With Text"
@@ -50,7 +51,8 @@ A divider line separates different content.
     (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Space"
@@ -74,7 +76,8 @@ A divider line separates different content.
     (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Volume"
@@ -98,7 +101,8 @@ A divider line separates different content.
     (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Types"
@@ -122,40 +126,31 @@ A divider line separates different content.
     (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
   </Text>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/divider.mdx">
 <Attributes.Title>Divider.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **x** | x-axis spacing | `number` / `float` | - | 0 |
-| **y** | y-axis spacing | `number` / `float` | - | 2 |
-| **type** | type of divier | [DividerTypes](#dividertypes) | - | `default` |
-| **align** | alignment of text | [DividerAlign](#divideralign) | - | `center` |
-| **volume** | size of component | `number` / `float` | - | 1 |
-| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| Attribute  | Description       | Type                          | Accepted values                  | Default   |
+| ---------- | ----------------- | ----------------------------- | -------------------------------- | --------- |
+| **x**      | x-axis spacing    | `number` / `float`            | -                                | 0         |
+| **y**      | y-axis spacing    | `number` / `float`            | -                                | 2         |
+| **type**   | type of divier    | [DividerTypes](#dividertypes) | -                                | `default` |
+| **align**  | alignment of text | [DividerAlign](#divideralign) | -                                | `center`  |
+| **volume** | size of component | `number` / `float`            | -                                | 1         |
+| ...        | native props      | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
 
 <Attributes.Title>DividerTypes</Attributes.Title>
 
 ```ts
-type DividerTypes = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+type DividerTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
 ```
 
 <Attributes.Title>DividerAlign</Attributes.Title>
 
 ```ts
-type DividerAlign = 'center'
-  | 'start'
-  | 'left'
-  | 'end'
-  | 'right'
+type DividerAlign = 'center' | 'start' | 'left' | 'end' | 'right'
 ```
 
 </Attributes>

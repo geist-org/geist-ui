@@ -21,7 +21,8 @@ Show where users are in the application.
   <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
   <Breadcrumbs.Item>Page</Breadcrumbs.Item>
 </Breadcrumbs>
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -49,7 +50,8 @@ Show where users are in the application.
     <Breadcrumbs.Item>Page</Breadcrumbs.Item>
   </Breadcrumbs>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Separator"
@@ -71,7 +73,8 @@ Show where users are in the application.
     <Breadcrumbs.Item>Button</Breadcrumbs.Item>
   </Breadcrumbs>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Icons"
@@ -83,7 +86,8 @@ Show where users are in the application.
   <Breadcrumbs.Item href=""><Inbox /> Inbox</Breadcrumbs.Item>
   <Breadcrumbs.Item>Page</Breadcrumbs.Item>
 </Breadcrumbs>
-`} />
+`}
+/>
 
 <Playground
   title="With NextJS"
@@ -99,31 +103,32 @@ Show where users are in the application.
   </NextLink>
   <Breadcrumbs.Item>Breadcrumbs</Breadcrumbs.Item>
 </Breadcrumbs>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/breadcrumbs.mdx">
 <Attributes.Title>Breadcrumbs.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **separator** | separator string | `string` | - | `/` |
-| **size** | breadcrumbs size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute     | Description      | Type             | Accepted values             | Default  |
+| ------------- | ---------------- | ---------------- | --------------------------- | -------- |
+| **separator** | separator string | `string`         | -                           | `/`      |
+| **size**      | breadcrumbs size | `NormalSizes`    | [NormalSizes](#normalsizes) | `medium` |
+| ...           | native props     | `HTMLAttributes` | `'id', 'className', ...`    | -        |
 
 <Attributes.Title>Breadcrumbs.Item.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **href** | link address | `string` | - | - |
-| **nextLink** | in `next.js` route | `boolean` | - | `false` |
-| **onClick** | click event | `(event: MouseEvent) => void` | - | - |
-| ... | native props | `AnchorHTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute    | Description        | Type                          | Accepted values          | Default |
+| ------------ | ------------------ | ----------------------------- | ------------------------ | ------- |
+| **href**     | link address       | `string`                      | -                        | -       |
+| **nextLink** | in `next.js` route | `boolean`                     | -                        | `false` |
+| **onClick**  | click event        | `(event: MouseEvent) => void` | -                        | -       |
+| ...          | native props       | `AnchorHTMLAttributes`        | `'id', 'className', ...` | -       |
 
 <Attributes.Title>Breadcrumbs.Separator.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 

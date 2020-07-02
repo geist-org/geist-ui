@@ -15,7 +15,8 @@ export const meta = {
   scope={{ User, Spacer }}
   code={`
 <User src="https://zeit.co/api/www/avatar/?u=evilrabbit&s=160" name="Evil Rabbit" />
-`} />
+`}
+/>
 
 <Playground
   title="描述"
@@ -25,7 +26,8 @@ export const meta = {
 <User src="https://unix.bio/assets/avatar.png" name="维特">
   JavaScript 工程师
 </User>
-`} />
+`}
+/>
 
 <Playground
   title="社交"
@@ -35,25 +37,26 @@ export const meta = {
 <User src="https://unix.bio/assets/avatar.png" name="Witt">
   <User.Link href="https://twitter.com/echo_witt">@echo_witt</User.Link>
 </User>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/user.mdx">
 <Attributes.Title>User.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **name**(必须值) | 用户名 | `ReactNode` / `string` | - | - |
-| **src** | 头像图片地址 | `string` | - | - |
-| **text** | 以文字方式显示头像 | `string` | - | - |
-| **altText** | 内部头像图像使用的alt属性 | `string` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| 属性             | 描述                        | 类型                   | 推荐值                           | 默认 |
+| ---------------- | --------------------------- | ---------------------- | -------------------------------- | ---- |
+| **name**(必须值) | 用户名                      | `ReactNode` / `string` | -                                | -    |
+| **src**          | 头像图片地址                | `string`               | -                                | -    |
+| **text**         | 以文字方式显示头像          | `string`               | -                                | -    |
+| **altText**      | 内部头像图像使用的 alt 属性 | `string`               | -                                | -    |
+| ...              | 原生属性                    | `HTMLAttributes`       | `'id', 'name', 'className', ...` | -    |
 
 <Attributes.Title>User.Link.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **href** | 链接地址 | `string` | - | - |
-| ... | 原生属性 | `AnchorHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| 属性     | 描述     | 类型                   | 推荐值                           | 默认 |
+| -------- | -------- | ---------------------- | -------------------------------- | ---- |
+| **href** | 链接地址 | `string`               | -                                | -    |
+| ...      | 原生属性 | `AnchorHTMLAttributes` | `'id', 'name', 'className', ...` | -    |
 
 </Attributes>
 

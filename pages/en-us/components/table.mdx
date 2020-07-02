@@ -29,7 +29,8 @@ Display tabular data in format.
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="compose"
@@ -51,7 +52,8 @@ Display tabular data in format.
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="width"
@@ -73,7 +75,8 @@ Display tabular data in format.
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="actions"
@@ -97,7 +100,8 @@ Display tabular data in format.
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="custom head"
@@ -122,28 +126,29 @@ Display tabular data in format.
     </Table>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/table.mdx">
 <Attributes.Title>Table.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **data** | data source | `Array<any>` | - | - |
-| **emptyText** | displayed text when table's content is empty | `string` | - | - |
-| **hover** | table's hover effect | `boolean` | - | `true` |
-| **onRow** | callback row's content by click | `(row: any, index: number) => void` | - | - |
-| **onCell** | callback cell's content by click | `(cell: any, index: number, colunm: number) => void` | - | - |
-| **onChange** | data change event | `(data: any) => void` | - | - |
-| ... | native props | `TableHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| Attribute     | Description                                  | Type                                                 | Accepted values                  | Default |
+| ------------- | -------------------------------------------- | ---------------------------------------------------- | -------------------------------- | ------- |
+| **data**      | data source                                  | `Array<any>`                                         | -                                | -       |
+| **emptyText** | displayed text when table's content is empty | `string`                                             | -                                | -       |
+| **hover**     | table's hover effect                         | `boolean`                                            | -                                | `true`  |
+| **onRow**     | callback row's content by click              | `(row: any, index: number) => void`                  | -                                | -       |
+| **onCell**    | callback cell's content by click             | `(cell: any, index: number, colunm: number) => void` | -                                | -       |
+| **onChange**  | data change event                            | `(data: any) => void`                                | -                                | -       |
+| ...           | native props                                 | `TableHTMLAttributes`                                | `'id', 'name', 'className', ...` | -       |
 
 <Attributes.Title>Table.Column.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **prop**(required) | table-column's prop | `string` | - | - |
-| **label** | table-column's label | `string` | - | - |
-| **width** | width number (px) | `number` | - | - |
+| Attribute          | Description          | Type     | Accepted values | Default |
+| ------------------ | -------------------- | -------- | --------------- | ------- |
+| **prop**(required) | table-column's prop  | `string` | -               | -       |
+| **label**          | table-column's label | `string` | -               | -       |
+| **width**          | width number (px)    | `number` | -               | -       |
 
 </Attributes>
 

@@ -18,7 +18,8 @@ export const meta = {
   <Capacity value={45} /> <Spacer />
   <Capacity value={95} />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="固定色彩"
@@ -29,17 +30,18 @@ export const meta = {
   const theme = useTheme()
   return <Capacity value={75} color={theme.palette.success} />
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/capacity.mdx">
 <Attributes.Title>Capacity.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | 当前的容量值 | `number` | - | 0 |
-| **limit** | 最大的容量值 | `number` | - | 100 |
-| **color** | CSS 颜色值 | `string` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'className', ...` | - |
+| 属性      | 描述         | 类型             | 推荐值             | 默认 |
+| --------- | ------------ | ---------------- | ------------------ | ---- |
+| **value** | 当前的容量值 | `number`         | -                  | 0    |
+| **limit** | 最大的容量值 | `number`         | -                  | 100  |
+| **color** | CSS 颜色值   | `string`         | -                  | -    |
+| ...       | 原生属性     | `HTMLAttributes` | `'className', ...` | -    |
 
 </Attributes>
 

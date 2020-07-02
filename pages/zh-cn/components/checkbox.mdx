@@ -10,13 +10,13 @@ export const meta = {
 
 用于表示多个可选项。
 
-
 <Playground
   desc="设置 `initialChecked` 属性初始的状态。"
   scope={{ Checkbox }}
   code={`
   <Checkbox initialChecked={true}>墨西哥</Checkbox>
-`} />
+`}
+/>
 
 <Playground
   title="大小"
@@ -32,7 +32,8 @@ export const meta = {
   <Spacer y={.5} />
   <Checkbox checked={true} size="large">最大</Checkbox>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="禁用的"
@@ -43,7 +44,8 @@ export const meta = {
   <Spacer y={.5} />
   <Checkbox disabled checked={true}>北京</Checkbox>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="组"
@@ -63,30 +65,31 @@ export const meta = {
     </Checkbox.Group>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/checkbox.mdx">
 <Attributes.Title>Checkbox.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **checked** | 是否选中 | `boolean` | - | - |
-| **initialChecked** | 初始状态是否选中 | `boolean` | - | `false` |
-| **onChange** | 复选框的变化事件 | `CheckboxEvent` | - | - |
-| **value** | 唯一的鉴别值 (仅在组内可用) | `string` | - | - |
-| **disabled** | 禁用复选框 | `boolean` | - | `false` |
-| **size** | 复选框的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `small` |
-| ... | 原生属性 | `LabelHTMLAttributes` | `'form', 'className', ...` | - |
+| 属性               | 描述                        | 类型                  | 推荐值                      | 默认    |
+| ------------------ | --------------------------- | --------------------- | --------------------------- | ------- |
+| **checked**        | 是否选中                    | `boolean`             | -                           | -       |
+| **initialChecked** | 初始状态是否选中            | `boolean`             | -                           | `false` |
+| **onChange**       | 复选框的变化事件            | `CheckboxEvent`       | -                           | -       |
+| **value**          | 唯一的鉴别值 (仅在组内可用) | `string`              | -                           | -       |
+| **disabled**       | 禁用复选框                  | `boolean`             | -                           | `false` |
+| **size**           | 复选框的大小                | `NormalSizes`         | [NormalSizes](#normalsizes) | `small` |
+| ...                | 原生属性                    | `LabelHTMLAttributes` | `'form', 'className', ...`  | -       |
 
 <Attributes.Title>Checkbox.Group.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | 选中的一组值 | `Array<string>` | - | `[]` |
-| **disabled** | 禁用一个组的复选框 | `boolean` | - | `false` |
-| **onChange** | 复选框的变化事件 | `(values: string[]) => void` | - | - |
-| **size** | 组内所有复选框的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `small` |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性         | 描述                 | 类型                         | 推荐值                      | 默认    |
+| ------------ | -------------------- | ---------------------------- | --------------------------- | ------- |
+| **value**    | 选中的一组值         | `Array<string>`              | -                           | `[]`    |
+| **disabled** | 禁用一个组的复选框   | `boolean`                    | -                           | `false` |
+| **onChange** | 复选框的变化事件     | `(values: string[]) => void` | -                           | -       |
+| **size**     | 组内所有复选框的大小 | `NormalSizes`                | [NormalSizes](#normalsizes) | `small` |
+| ...          | 原生属性             | `HTMLAttributes`             | `'id', 'className', ...`    | -       |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 

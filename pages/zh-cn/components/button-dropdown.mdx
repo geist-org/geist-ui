@@ -13,7 +13,6 @@ export const meta = {
 
 显示相关的操作。
 
-
 <Playground
   scope={{ ButtonDropdown }}
   code={`
@@ -22,7 +21,8 @@ export const meta = {
   <ButtonDropdown.Item>次要的按钮</ButtonDropdown.Item>
   <ButtonDropdown.Item>第三个按钮</ButtonDropdown.Item>
 </ButtonDropdown>
-`} />
+`}
+/>
 
 <Playground
   title="禁用"
@@ -34,7 +34,8 @@ export const meta = {
   <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
   <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
 </ButtonDropdown>
-`} />
+`}
+/>
 
 <Playground
   title="加载中"
@@ -46,7 +47,8 @@ export const meta = {
   <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
   <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
 </ButtonDropdown>
-`} />
+`}
+/>
 
 <Playground
   title="类型"
@@ -69,7 +71,8 @@ export const meta = {
     <ButtonDropdown.Item main>错误</ButtonDropdown.Item>
   </ButtonDropdown>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="大小"
@@ -105,7 +108,8 @@ export const meta = {
     <ButtonDropdown.Item main>最大的</ButtonDropdown.Item>
   </ButtonDropdown>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="多类型"
@@ -118,31 +122,30 @@ export const meta = {
   <ButtonDropdown.Item>锁定账户</ButtonDropdown.Item>
   <ButtonDropdown.Item type="error">移除账户</ButtonDropdown.Item>
 </ButtonDropdown>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/button-dropdown.mdx">
 <Attributes.Title>ButtonDropdown.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | 按钮类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size** | 按钮的大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
-| **loading** | 显示加载中的指示器 | `boolean` | - | `false` |
-| **auto** | 自动缩放宽度 | `boolean` | - | `false` |
-| **disabled** | 禁用所有按钮 | `boolean` | - | `false` |
-| ... | 原生属性 | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| 属性         | 描述               | 类型             | 推荐值                                                  | 默认      |
+| ------------ | ------------------ | ---------------- | ------------------------------------------------------- | --------- |
+| **type**     | 按钮类型           | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size**     | 按钮的大小         | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
+| **loading**  | 显示加载中的指示器 | `boolean`        | -                                                       | `false`   |
+| **auto**     | 自动缩放宽度       | `boolean`        | -                                                       | `false`   |
+| **disabled** | 禁用所有按钮       | `boolean`        | -                                                       | `false`   |
+| ...          | 原生属性           | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...`                 | -         |
 
 <Attributes.Title>ButtonDropdown.Item.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | 当前单个按钮类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **main** | 是否为主要按钮 | `boolean` | - | `false` |
-| **onClick** | 按钮的点击事件 | `MouseEventHandler` | - | - |
-| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| 属性        | 描述             | 类型                   | 推荐值                                                  | 默认      |
+| ----------- | ---------------- | ---------------------- | ------------------------------------------------------- | --------- |
+| **type**    | 当前单个按钮类型 | `NormalTypes`          | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **main**    | 是否为主要按钮   | `boolean`              | -                                                       | `false`   |
+| **onClick** | 按钮的点击事件   | `MouseEventHandler`    | -                                                       | -         |
+| ...         | 原生属性         | `ButtonHTMLAttributes` | `'id', 'name', 'className', ...`                        | -         |
 
 </Attributes>
-
-
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -17,8 +17,8 @@ export const meta = {
   <Display shadow caption="ZEIT Now 在 PR 上的自动部署。">
     <Image width="435" height="200" src="https://zeit.co/docs/static/docs/git-integrations/github-comment.png" />
   </Display>
-`} />
-
+`}
+/>
 
 <Playground
   title="与代码组件组合"
@@ -39,7 +39,8 @@ export const meta = {
     </Display>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="与片段组件组合"
@@ -49,7 +50,8 @@ export const meta = {
   <Display width="500px" caption="运行此命令以下载库。">
     <Snippet type="dark">yarn add @zeit-ui/react</Snippet>
   </Display>
-`} />
+`}
+/>
 
 <Playground
   title="组件标题"
@@ -59,17 +61,18 @@ export const meta = {
   <Display shadow caption={<p>将域名 <Code>www.zeit.rocks</Code> 重定向至 <Code>zeit.rocks</Code>。</p>}>
     <Image width="650" height="297" src="https://zeit.co/docs/static/docs/custom-domains/redirecting-domains.png" />
   </Display>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/display.mdx">
 <Attributes.Title>Display.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **caption** | description for display block | `ReactNode` / `string` | - | - |
-| **shadow** | show shadow | `boolean` | - | `false` |
-| **width** | set width | `string` | - | `fit-content` |
-| ... | 原生属性 | `HTMLAttributes` | - | - |
+| 属性        | 描述                          | 类型                   | 推荐值 | 默认          |
+| ----------- | ----------------------------- | ---------------------- | ------ | ------------- |
+| **caption** | description for display block | `ReactNode` / `string` | -      | -             |
+| **shadow**  | show shadow                   | `boolean`              | -      | `false`       |
+| **width**   | set width                     | `string`               | -      | `fit-content` |
+| ...         | 原生属性                      | `HTMLAttributes`       | -      | -             |
 
 </Attributes>
 

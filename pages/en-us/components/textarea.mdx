@@ -16,7 +16,8 @@ Retrieve multi-line user input.
   scope={{ Textarea }}
   code={`
 <Textarea placeholder="Please enter a description." />
-`} />
+`}
+/>
 
 <Playground
   title="width"
@@ -24,7 +25,8 @@ Retrieve multi-line user input.
   scope={{ Textarea }}
   code={`
 <Textarea width="100%" placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
-`} />
+`}
+/>
 
 <Playground
   title="disabled"
@@ -32,7 +34,8 @@ Retrieve multi-line user input.
   scope={{ Textarea }}
   code={`
 <Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
-`} />
+`}
+/>
 
 <Playground
   title="status"
@@ -48,7 +51,8 @@ Retrieve multi-line user input.
   <Spacer x={.5} inline />
   <Textarea status="error" minHeight="65px" value="Error" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="get change"
@@ -68,10 +72,15 @@ Retrieve multi-line user input.
      placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
   )
 }
-`} />
+`}
+/>
 
 <Playground
-  title={<>With <Code>useInput</Code></>}
+  title={
+    <>
+      With <Code>useInput</Code>
+    </>
+  }
   desc="Use `hooks` to capture changes."
   scope={{ Textarea, useInput, Button, Spacer }}
   code={`
@@ -87,28 +96,31 @@ Retrieve multi-line user input.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/textarea.mdx">
 <Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | textarea value | `string` | - | - |
-| **initialValue** | textarea value | `string` | - | - |
-| **placeholder** | placeholder | `string` | - | - |
-| **status** | current status | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **readOnly** | native attr | `boolean` | - | `false` |
-| **disabled** | disable input | `boolean` | - | `false` |
-| **width** | set width string | `string` | - | `initial` |
-| **minHeight** | set min-height string | `string` | - | - |
-| **onChange** | change event | `(e: React.ChangeEvent) => void` | - | - |
-| ... | native props | `TextareaHTMLAttributes` | `'form', 'id', 'className', ...` | - |
+| Attribute        | Description           | Type                             | Accepted values                                         | Default   |
+| ---------------- | --------------------- | -------------------------------- | ------------------------------------------------------- | --------- |
+| **value**        | textarea value        | `string`                         | -                                                       | -         |
+| **initialValue** | textarea value        | `string`                         | -                                                       | -         |
+| **placeholder**  | placeholder           | `string`                         | -                                                       | -         |
+| **status**       | current status        | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **readOnly**     | native attr           | `boolean`                        | -                                                       | `false`   |
+| **disabled**     | disable input         | `boolean`                        | -                                                       | `false`   |
+| **width**        | set width string      | `string`                         | -                                                       | `initial` |
+| **minHeight**    | set min-height string | `string`                         | -                                                       | -         |
+| **onChange**     | change event          | `(e: React.ChangeEvent) => void` | -                                                       | -         |
+| ...              | native props          | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
-type useInput = (initialValue: string) => {
+type useInput = (
+  initialValue: string,
+) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

@@ -3,7 +3,7 @@ import { Capacity, Spacer, useTheme } from 'components'
 
 export const meta = {
   title: 'Capacity',
-  group: 'Data Display'
+  group: 'Data Display',
 }
 
 ## Capacity
@@ -18,7 +18,8 @@ Display an capacity indicator.
   <Capacity value={45} /> <Spacer />
   <Capacity value={95} />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Fixed Color"
@@ -29,17 +30,18 @@ Display an capacity indicator.
   const theme = useTheme()
   return <Capacity value={75} color={theme.palette.success} />
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/capacity.mdx">
 <Attributes.Title>Capacity.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | value number | `number` | - | 0 |
-| **limit** | max value | `number` | - | 100 |
-| **color** | css color string | `string` | - | - |
-| ... | native props | `HTMLAttributes` | `'className', ...` | - |
+| Attribute | Description      | Type             | Accepted values    | Default |
+| --------- | ---------------- | ---------------- | ------------------ | ------- |
+| **value** | value number     | `number`         | -                  | 0       |
+| **limit** | max value        | `number`         | -                  | 100     |
+| **color** | css color string | `string`         | -                  | -       |
+| ...       | native props     | `HTMLAttributes` | `'className', ...` | -       |
 
 </Attributes>
 

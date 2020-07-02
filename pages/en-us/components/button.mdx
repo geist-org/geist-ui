@@ -5,7 +5,6 @@ import Settings from '@zeit-ui/react-icons/settings'
 import UserX from '@zeit-ui/react-icons/userX'
 import Power from '@zeit-ui/react-icons/power'
 
-
 export const meta = {
   title: 'button',
   group: 'General',
@@ -21,7 +20,8 @@ Used to trigger an operation.
   scope={{ Button }}
   code={`
 <Button>Action</Button>
-`} />
+`}
+/>
 
 <Playground
   title="Loading"
@@ -35,7 +35,8 @@ Used to trigger an operation.
   <Spacer y={.5} />
   <Button loading auto type="success" size="small">Action</Button>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Disabled"
@@ -43,7 +44,8 @@ Used to trigger an operation.
   scope={{ Button }}
   code={`
 <Button disabled>Action</Button>
-`} />
+`}
+/>
 
 <Playground
   title="Shadow"
@@ -51,7 +53,8 @@ Used to trigger an operation.
   scope={{ Button }}
   code={`
 <Button shadow type="secondary">Shadow</Button>
-`} />
+`}
+/>
 
 <Playground
   title="Types"
@@ -69,7 +72,8 @@ Used to trigger an operation.
   <Grid><Button auto type="warning-light">Warning Light</Button></Grid>
   <Grid><Button auto type="error-light">Error Light</Button></Grid>
 </Grid.Container>
-`} />
+`}
+/>
 
 <Playground
   title="GHOST"
@@ -82,7 +86,8 @@ Used to trigger an operation.
   <Button type="warning" ghost>Warning</Button> <Spacer y={.5} />
   <Button type="error" ghost>Error</Button>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -96,7 +101,8 @@ Used to trigger an operation.
   <Button size="large">large</Button> <Spacer y={.5} />
   <Button auto>auto width</Button>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="With Icons"
@@ -116,33 +122,43 @@ Used to trigger an operation.
   <Spacer y={.5} />
   <Button icon={<UserX />} disabled>Remove User</Button>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/button.mdx">
 <Attributes.Title>Button.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | button type | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
-| **size** | button size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **ghost** | the opposite color | `boolean` | - | `false` |
-| **loading** | display loading indicator | `boolean` | - | `false` |
-| **shadow** | display shadow | `boolean` | - | `false` |
-| **auto** | autoscale width | `boolean` | - | `false` |
-| **effect** | display animation | `boolean` | - | `true` |
-| **disabled** | disable button | `boolean` | - | `false` |
-| **onClick** | click handler | `MouseEventHandler` | - | - |
-| **icon** | show icon in button | `ReactNode` | - | - |
-| **iconRight** | show icon on the other side of the button | `ReactNode` | - | - |
-| **htmlType** | native type of button element | `ButtonHTMLAttributes.type` | - | `button` |
-| **ref** | forwardRef | <Code>Ref<HTMLButtonElement &#124; null></Code> | - | - |
-| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute     | Description                               | Type                                            | Accepted values             | Default   |
+| ------------- | ----------------------------------------- | ----------------------------------------------- | --------------------------- | --------- |
+| **type**      | button type                               | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
+| **size**      | button size                               | `NormalSizes`                                   | [NormalSizes](#normalsizes) | `medium`  |
+| **ghost**     | the opposite color                        | `boolean`                                       | -                           | `false`   |
+| **loading**   | display loading indicator                 | `boolean`                                       | -                           | `false`   |
+| **shadow**    | display shadow                            | `boolean`                                       | -                           | `false`   |
+| **auto**      | autoscale width                           | `boolean`                                       | -                           | `false`   |
+| **effect**    | display animation                         | `boolean`                                       | -                           | `true`    |
+| **disabled**  | disable button                            | `boolean`                                       | -                           | `false`   |
+| **onClick**   | click handler                             | `MouseEventHandler`                             | -                           | -         |
+| **icon**      | show icon in button                       | `ReactNode`                                     | -                           | -         |
+| **iconRight** | show icon on the other side of the button | `ReactNode`                                     | -                           | -         |
+| **htmlType**  | native type of button element             | `ButtonHTMLAttributes.type`                     | -                           | `button`  |
+| **ref**       | forwardRef                                | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                           | -         |
+| ...           | native props                              | `ButtonHTMLAttributes`                          | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
 
 ```ts
-type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
-  | 'secondary-light' | 'success-light' | 'warning-light' | 'error-light'
+type ButtonTypes =
+  | 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'abort'
+  | 'secondary-light'
+  | 'success-light'
+  | 'warning-light'
+  | 'error-light'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>

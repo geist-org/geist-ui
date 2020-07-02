@@ -15,14 +15,16 @@ Display text that requires attention or provides additional information.
   scope={{ Note }}
   code={`
 <Note>This note details something important.</Note>
-`} />
+`}
+/>
 
 <Playground
   title="secondary"
   scope={{ Note }}
   code={`
 <Note type="secondary">This note details something important.</Note>
-`} />
+`}
+/>
 
 <Playground
   title="status"
@@ -35,28 +37,32 @@ Display text that requires attention or provides additional information.
   <br/>
   <Note type="error">This note details something important.</Note>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="hidden label"
   scope={{ Note }}
   code={`
 <Note label={false}>Just a quick note!</Note>
-`} />
+`}
+/>
 
 <Playground
   title="custom label"
   scope={{ Note }}
   code={`
 <Note label="custom">This note uses a custom label.</Note>
-`} />
+`}
+/>
 
 <Playground
   title="small"
   scope={{ Note }}
   code={`
 <Note small>This note details something important.</Note>
-`} />
+`}
+/>
 
 <Playground
   title="Filled Variant"
@@ -75,18 +81,19 @@ Display text that requires attention or provides additional information.
   <br/>
   <Note type="secondary" filled>This note details something important.</Note>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/note.mdx">
 <Attributes.Title>Note.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **type** | note type | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **label** | show label or custom text | `boolean` / `string` | - | - |
-| **small** | small note | `boolean` | - | `false` |
-| **filled** | fill color | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute  | Description               | Type                 | Accepted values                                         | Default   |
+| ---------- | ------------------------- | -------------------- | ------------------------------------------------------- | --------- |
+| **type**   | note type                 | `NormalTypes`        | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **label**  | show label or custom text | `boolean` / `string` | -                                                       | -         |
+| **small**  | small note                | `boolean`            | -                                                       | `false`   |
+| **filled** | fill color                | `boolean`            | -                                                       | `false`   |
+| ...        | native props              | `HTMLAttributes`     | `'id', 'className', ...`                                | -         |
 
 </Attributes>
 

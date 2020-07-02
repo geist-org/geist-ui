@@ -28,8 +28,8 @@ Display a list of files and folders in a hierarchical tree structure.
   </Tree.Folder>
   <Tree.File name="readme.md" />
 </Tree>
-`} />
-
+`}
+/>
 
 <Playground
   title="Imperative"
@@ -63,8 +63,8 @@ Display a list of files and folders in a hierarchical tree structure.
   }]
   return <Tree value={files} />
 }
-`} />
-
+`}
+/>
 
 <Playground
   title="Extra Message"
@@ -105,7 +105,8 @@ Display a list of files and folders in a hierarchical tree structure.
    }]
   return <Tree value={files} />
 }
-`} />
+`}
+/>
 
 <Playground
   title="Event"
@@ -131,34 +132,34 @@ Display a list of files and folders in a hierarchical tree structure.
     </Tree>
   )
 }
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/file-tree.mdx">
 <Attributes.Title>Tree.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | value of files | `Array<FileTreeValue>` | - | - |
-| **initialExpand** | expand by default | `boolean` | - | `false` |
-| **onClick** | click file event | `(path: string) => void` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+| Attribute         | Description       | Type                     | Accepted values                   | Default |
+| ----------------- | ----------------- | ------------------------ | --------------------------------- | ------- |
+| **value**         | value of files    | `Array<FileTreeValue>`   | -                                 | -       |
+| **initialExpand** | expand by default | `boolean`                | -                                 | `false` |
+| **onClick**       | click file event  | `(path: string) => void` | -                                 | -       |
+| ...               | native props      | `HTMLAttributes`         | `'id', 'title', 'className', ...` | -       |
 
 <Attributes.Title>Tree.File.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **name**(required) | file name | `string` | - | - |
-| **extra** | extra message | `string` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+| Attribute          | Description   | Type             | Accepted values                   | Default |
+| ------------------ | ------------- | ---------------- | --------------------------------- | ------- |
+| **name**(required) | file name     | `string`         | -                                 | -       |
+| **extra**          | extra message | `string`         | -                                 | -       |
+| ...                | native props  | `HTMLAttributes` | `'id', 'title', 'className', ...` | -       |
 
 <Attributes.Title>Tree.Folder.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **name**(required) | folder name | `string` | - | - |
-| **extra** | extra message | `string` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'title', 'className', ...` | - |
+| Attribute          | Description   | Type             | Accepted values                   | Default |
+| ------------------ | ------------- | ---------------- | --------------------------------- | ------- |
+| **name**(required) | folder name   | `string`         | -                                 | -       |
+| **extra**          | extra message | `string`         | -                                 | -       |
+| ...                | native props  | `HTMLAttributes` | `'id', 'title', 'className', ...` | -       |
 
 <Attributes.Title>type FileTreeValue</Attributes.Title>
 

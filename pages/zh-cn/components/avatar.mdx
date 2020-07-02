@@ -30,14 +30,14 @@ export const meta = {
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Playground
- title="大小"
- desc="你可以指定每个 `Avatar` 组件的大小。"
- scope={{ Avatar }}
- code={`
+  title="大小"
+  desc="你可以指定每个 `Avatar` 组件的大小。"
+  scope={{ Avatar }}
+  code={`
 () => {
   const url = 'https://zeit.co/api/www/avatar/?u=evilrabbit&s=160'
   return (
@@ -49,7 +49,8 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="文本"
@@ -62,8 +63,8 @@ export const meta = {
   <Avatar text="W" />
   <Avatar text="Joe" />
 </>
-`} />
-
+`}
+/>
 
 <Playground
   title="头像组"
@@ -89,26 +90,27 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/avatar.mdx">
 <Attributes.Title>Avatar.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **src** | 图像链接 | `string` | - | - |
-| **stacked** | 是否堆叠显示 | `boolean` | - | `false` |
-| **text** | 文本，当无图像链接时才会显示 | `string` | - | - |
-| **size** | 头像大小 | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
-| **isSquare** | 是否为方形头像 | `boolean` | - | `false` |
-| ... | 原生属性 | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | - |
+| 属性         | 描述                         | 类型                | 推荐值                                       | 默认     |
+| ------------ | ---------------------------- | ------------------- | -------------------------------------------- | -------- |
+| **src**      | 图像链接                     | `string`            | -                                            | -        |
+| **stacked**  | 是否堆叠显示                 | `boolean`           | -                                            | `false`  |
+| **text**     | 文本，当无图像链接时才会显示 | `string`            | -                                            | -        |
+| **size**     | 头像大小                     | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
+| **isSquare** | 是否为方形头像               | `boolean`           | -                                            | `false`  |
+| ...          | 原生属性                     | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...`     | -        |
 
 <Attributes.Title>Avatar.Group.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **count** | 显示成员数量 | `number` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| 属性      | 描述         | 类型             | 推荐值                           | 默认 |
+| --------- | ------------ | ---------------- | -------------------------------- | ---- |
+| **count** | 显示成员数量 | `number`         | -                                | -    |
+| ...       | 原生属性     | `HTMLAttributes` | `'id', 'name', 'className', ...` | -    |
 
 </Attributes>
 

@@ -23,7 +23,8 @@ export const meta = {
   <Text h5>JavaScript 是一门编程语言。</Text>
   <Text h6>JavaScript 是一门编程语言。</Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="段落"
@@ -63,7 +64,8 @@ export const meta = {
 <Text blockquote>
   事件能为网页添加真实的交互能力。
 </Text>
-`} />
+`}
+/>
 
 <Playground
   title="色彩"
@@ -87,7 +89,8 @@ export const meta = {
     中间的代理服务器必须转发未经修改的端到端消息头，并且必须缓存它们。
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="组合"
@@ -117,7 +120,8 @@ export const meta = {
   <Text p type="error">事件能为网页添加真实的交互能力。</Text>
   <Text p type="secondary">事件能为网页添加真实的交互能力。</Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="字体大小"
@@ -130,34 +134,31 @@ export const meta = {
   <Text size="1.25rem">Font Size: 1.25rem;</Text>
   <Text size="2em">Font Size: 2em;</Text>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/text.mdx">
 <Attributes.Title>Text.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **p** | 渲染的组件名 | `boolean` | - | `true` |
-| **h1 - h6** | 渲染的组件名 | `boolean` | - | `false` |
-| **small** | 渲染的组件名 | `boolean` | - | `false` |
-| **span** | 渲染的组件名 | `boolean` | - | `false` |
-| **del** | 渲染的组件名 | `boolean` | - | `false` |
-| **i** | 渲染的组件名 | `boolean` | - | `false` |
-| **em** | 渲染的组件名 | `boolean` | - | `false` |
-| **b** | 渲染的组件名 | `boolean` | - | `false` |
-| **blockquote** | 渲染的组件名 | `boolean` | - | `false` |
-| **size** | 手动设置文字大小 | `string` / `number` | - | 跟随元素变化 |
-| **type** | 文字类型 | `NormalTypes` | [TextTypes](#texttypes) | `default` |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性           | 描述             | 类型                | 推荐值                   | 默认         |
+| -------------- | ---------------- | ------------------- | ------------------------ | ------------ |
+| **p**          | 渲染的组件名     | `boolean`           | -                        | `true`       |
+| **h1 - h6**    | 渲染的组件名     | `boolean`           | -                        | `false`      |
+| **small**      | 渲染的组件名     | `boolean`           | -                        | `false`      |
+| **span**       | 渲染的组件名     | `boolean`           | -                        | `false`      |
+| **del**        | 渲染的组件名     | `boolean`           | -                        | `false`      |
+| **i**          | 渲染的组件名     | `boolean`           | -                        | `false`      |
+| **em**         | 渲染的组件名     | `boolean`           | -                        | `false`      |
+| **b**          | 渲染的组件名     | `boolean`           | -                        | `false`      |
+| **blockquote** | 渲染的组件名     | `boolean`           | -                        | `false`      |
+| **size**       | 手动设置文字大小 | `string` / `number` | -                        | 跟随元素变化 |
+| **type**       | 文字类型         | `NormalTypes`       | [TextTypes](#texttypes)  | `default`    |
+| ...            | 原生属性         | `HTMLAttributes`    | `'id', 'className', ...` | -            |
 
 <Attributes.Title>TextTypes</Attributes.Title>
 
 ```ts
-type TextTypes = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
+type TextTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

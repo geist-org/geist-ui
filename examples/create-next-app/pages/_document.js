@@ -1,15 +1,10 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
-} from 'next/document';
-import { CssBaseline } from '@zeit-ui/react';
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { CssBaseline } from '@zeit-ui/react'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx);
-    const styles = CssBaseline.flush();
+    const initialProps = await Document.getInitialProps(ctx)
+    const styles = CssBaseline.flush()
 
     return {
       ...initialProps,
@@ -19,7 +14,7 @@ class MyDocument extends Document {
           {styles}
         </>
       ),
-    };
+    }
   }
 
   render() {
@@ -31,8 +26,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument

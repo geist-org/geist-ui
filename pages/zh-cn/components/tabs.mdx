@@ -21,7 +21,8 @@ export const meta = {
   <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
   <Tabs.Item label="八进制" value="2">八进制表示为开头是0后接大写或小写的O（0o或0O）。</Tabs.Item>
 </Tabs>
-`} />
+`}
+/>
 
 <Playground
   title="禁用"
@@ -31,7 +32,8 @@ export const meta = {
   <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
   <Tabs.Item label="八进制" value="2" disabled />
 </Tabs>
-`} />
+`}
+/>
 
 <Playground
   title="隐藏分割线"
@@ -45,7 +47,8 @@ export const meta = {
     <p>我们可以使用 CSS 这个语言来设计和布局我们的 Web 内容，以及添加像动画一类的行为。</p>
   </Tabs.Item>
 </Tabs>
-`} />
+`}
+/>
 
 <Playground
   title="图标"
@@ -61,7 +64,8 @@ export const meta = {
     <Text>这个组件看起来还不错。</Text>
   </Tabs.Item>
 </Tabs>
-`} />
+`}
+/>
 
 <Playground
   title="命令式"
@@ -83,10 +87,15 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
-  title={<>与&nbsp;<Code>useTabs</Code>&nbsp;组合</>}
+  title={
+    <>
+      与&nbsp;<Code>useTabs</Code>&nbsp;组合
+    </>
+  }
   desc="使用 `hooks` 以更简单的方式控制选项卡。"
   scope={{ Tabs, Button, Spacer, useTabs }}
   code={`
@@ -103,32 +112,34 @@ export const meta = {
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/tabs.mdx">
 <Attributes.Title>Tabs.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **initialValue** | 初始值 | `string` | - | - |
-| **value** | 设定当前选项 | `string` | - | - |
-| **hideDivider** | 隐藏默认分割线 | `boolean` | - | `false` |
-| **onChange** | 选项卡切换事件 | `(val: string) => void` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'alt', 'id', 'className', ...` | - |
+| 属性             | 描述           | 类型                    | 推荐值                          | 默认    |
+| ---------------- | -------------- | ----------------------- | ------------------------------- | ------- |
+| **initialValue** | 初始值         | `string`                | -                               | -       |
+| **value**        | 设定当前选项   | `string`                | -                               | -       |
+| **hideDivider**  | 隐藏默认分割线 | `boolean`               | -                               | `false` |
+| **onChange**     | 选项卡切换事件 | `(val: string) => void` | -                               | -       |
+| ...              | 原生属性       | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
 
 <Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **label**(必须的) | 选项卡标签文字 | `string` | - | - |
-| **value** | 唯一鉴别值 | `string` | - | - |
-| **disabled** | 禁用当前选项卡 | `boolean` | - | `false` |
+| 属性              | 描述           | 类型      | 推荐值 | 默认    |
+| ----------------- | -------------- | --------- | ------ | ------- |
+| **label**(必须的) | 选项卡标签文字 | `string`  | -      | -       |
+| **value**         | 唯一鉴别值     | `string`  | -      | -       |
+| **disabled**      | 禁用当前选项卡 | `boolean` | -      | `false` |
 
 <Attributes.Title>useTabs</Attributes.Title>
 
 ```ts
-type useTabs = (initialValue: string) => {
+type useTabs = (
+  initialValue: string,
+) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>
