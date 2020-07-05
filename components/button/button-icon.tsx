@@ -3,6 +3,7 @@ import withDefaults from '../utils/with-defaults'
 
 interface Props {
   isRight?: boolean
+  isSingle?: boolean
   className?: string
 }
 
@@ -16,12 +17,15 @@ export type ButtonIconProps = Props & typeof defaultProps & NativeAttrs
 
 const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
   isRight,
+  isSingle,
   children,
   className,
   ...props
 }) => {
   return (
-    <span className={`icon ${isRight ? 'right' : ''} ${className}`} {...props}>
+    <span
+      className={`icon ${isRight ? 'right' : ''} ${isSingle ? 'single' : ''} ${className}`}
+      {...props}>
       {children}
       <style jsx>{`
         .icon {
@@ -46,6 +50,11 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
           background: transparent;
           height: calc(var(--zeit-ui-button-height) / 2.35);
           width: calc(var(--zeit-ui-button-height) / 2.35);
+        }
+
+        .single {
+          position: static;
+          transform: none;
         }
       `}</style>
     </span>
