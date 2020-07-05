@@ -16,6 +16,13 @@ describe('ButtonIcon', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work without text', () => {
+    const wrapper = mount(<Button iconRight={<Icon />} />)
+    const text = wrapper.find('.text')
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(text.length).toBe(0)
+  })
+
   it('the width of the text should be filled', () => {
     const autoWrapper = mount(
       <Button auto icon={<Icon />}>
