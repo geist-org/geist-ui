@@ -32,7 +32,8 @@ Container of general for display page content.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Content"
@@ -61,36 +62,37 @@ Container of general for display page content.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/page.mdx">
 <Attributes.Title>Page.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **size** | size of page | [PageSize](#pagesize) | - | `medium` |
-| **render** | render mode | [PageRenderMode](#pagerendermode) | - | `default` |
-| **dotBackdrop** | show decorations in the background | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute       | Description                        | Type                              | Accepted values          | Default   |
+| --------------- | ---------------------------------- | --------------------------------- | ------------------------ | --------- |
+| **size**        | size of page                       | [PageSize](#pagesize)             | -                        | `medium`  |
+| **render**      | render mode                        | [PageRenderMode](#pagerendermode) | -                        | `default` |
+| **dotBackdrop** | show decorations in the background | `boolean`                         | -                        | `false`   |
+| ...             | native props                       | `HTMLAttributes`                  | `'id', 'className', ...` | -         |
 
 <Attributes.Title>Page.Header.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **center** | align center | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute  | Description  | Type             | Accepted values          | Default |
+| ---------- | ------------ | ---------------- | ------------------------ | ------- |
+| **center** | align center | `boolean`        | -                        | `false` |
+| ...        | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title alias="Page.Body">Page.Content.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>Page.Footer.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>PageSize</Attributes.Title>
 
@@ -101,9 +103,10 @@ type PageSize = string | 'mini' | 'small' | 'medium' | 'large'
 <Attributes.Title>PageRenderMode</Attributes.Title>
 
 ```ts
-type PageRenderMode = 'default'   // Normal rendering
-  | 'effect'                      // Render after the first effect trigger
-  | 'effect-seo'                  // like "effect", but prerender strings for SEO
+type PageRenderMode =
+  | 'default' // Normal rendering
+  | 'effect' // Render after the first effect trigger
+  | 'effect-seo' // like "effect", but prerender strings for SEO
 ```
 
 </Attributes>

@@ -11,13 +11,20 @@ export const meta = {
 
 Indicate an action running in the background.
 
-<Note>Looking for <Code>Loading</Code>? Use the <NextLink href="/en-us/components/loading"><a>Loading Component</a></NextLink>.</Note>
+<Note>
+  Looking for <Code>Loading</Code>? Use the{' '}
+  <NextLink href="/en-us/components/loading">
+    <a>Loading Component</a>
+  </NextLink>
+  .
+</Note>
 
 <Playground
   scope={{ Spinner }}
   code={`
 <Spinner />
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -33,15 +40,16 @@ Indicate an action running in the background.
   <Spacer y={.5} />
   <Spinner size="large" />
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/spinner.mdx">
 <Attributes.Title>Spinner.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **size** | spinner size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type             | Accepted values                      | Default  |
+| --------- | ------------ | ---------------- | ------------------------------------ | -------- |
+| **size**  | spinner size | `NormalSizes`    | `'mini', 'small', 'medium', 'large'` | `medium` |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...`             | -        |
 
 </Attributes>
 

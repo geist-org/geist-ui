@@ -15,7 +15,8 @@ export const meta = {
   scope={{ Progress }}
   code={`
 <Progress value={50} />
-`} />
+`}
+/>
 
 <Playground
   title="最大值"
@@ -23,7 +24,8 @@ export const meta = {
   scope={{ Progress }}
   code={`
 <Progress value={45} max={50} />
-`} />
+`}
+/>
 
 <Playground
   title="动态色彩"
@@ -49,7 +51,8 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="类型"
@@ -65,20 +68,21 @@ export const meta = {
   <Spacer />
   <Progress type="error" value={21} />
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/progress.mdx">
 <Attributes.Title>Progress.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | 进度条当前数值 | `number` | - | 0 |
-| **max** | 最大值 | `number` | - | 100 |
-| **fixedTop** | 固定进度条在顶部 | `boolean` | - | `false` |
-| **fixedBottom** | 固定进度条在底部 | `boolean` | - | `false` |
-| **colors** | 在范围内自定义颜色 | `{ [key: number]: string }` | - | - |
-| **type** | 预定义的状体类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| ... | 原生属性 | `ProgressHTMLAttributes` | `'aria-busy', 'className', ...` | - |
+| 属性            | 描述               | 类型                        | 推荐值                                                  | 默认      |
+| --------------- | ------------------ | --------------------------- | ------------------------------------------------------- | --------- |
+| **value**       | 进度条当前数值     | `number`                    | -                                                       | 0         |
+| **max**         | 最大值             | `number`                    | -                                                       | 100       |
+| **fixedTop**    | 固定进度条在顶部   | `boolean`                   | -                                                       | `false`   |
+| **fixedBottom** | 固定进度条在底部   | `boolean`                   | -                                                       | `false`   |
+| **colors**      | 在范围内自定义颜色 | `{ [key: number]: string }` | -                                                       | -         |
+| **type**        | 预定义的状体类型   | `NormalTypes`               | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ...             | 原生属性           | `ProgressHTMLAttributes`    | `'aria-busy', 'className', ...`                         | -         |
 
 </Attributes>
 

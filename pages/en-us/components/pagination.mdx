@@ -20,7 +20,8 @@ Navigation and identification between multiple pages.
   scope={{ Pagination }}
   code={`
 <Pagination count={20} initialPage={3} />
-`} />
+`}
+/>
 
 <Playground
   title="Limit"
@@ -34,12 +35,22 @@ Navigation and identification between multiple pages.
   <Pagination count={10} initialPage={6} />
   <Pagination count={30} initialPage={6} limit={10} />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Icon"
   desc="Customize buttons as icons."
-  scope={{ Spacer, Pagination, ChevronRight, ChevronLeft, ChevronRightCircle, ChevronLeftCircle, ChevronRightCircleFill, ChevronLeftCircleFill }}
+  scope={{
+    Spacer,
+    Pagination,
+    ChevronRight,
+    ChevronLeft,
+    ChevronRightCircle,
+    ChevronLeftCircle,
+    ChevronRightCircleFill,
+    ChevronLeftCircleFill,
+  }}
   code={`
 <>
   <Pagination count={5}>
@@ -57,7 +68,8 @@ Navigation and identification between multiple pages.
    <Pagination.Previous><ChevronLeftCircleFill /></Pagination.Previous>
   </Pagination>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -70,32 +82,33 @@ Navigation and identification between multiple pages.
   <Pagination count={20} size="medium" />
   <Pagination count={20} size="large" />
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/pagination.mdx">
 <Attributes.Title>Pagination.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **initialPage** | the page selected by default | `number` | - | 1 |
-| **page** | current page | `number` | - | 1 |
-| **count** | the total number of pages | `number` | - | 1 |
-| **limit** | limit of display page | `number` | - | 7 |
-| **size** | pagination size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **onChange** | change event | `(page: number) => void` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute       | Description                  | Type                     | Accepted values             | Default  |
+| --------------- | ---------------------------- | ------------------------ | --------------------------- | -------- |
+| **initialPage** | the page selected by default | `number`                 | -                           | 1        |
+| **page**        | current page                 | `number`                 | -                           | 1        |
+| **count**       | the total number of pages    | `number`                 | -                           | 1        |
+| **limit**       | limit of display page        | `number`                 | -                           | 7        |
+| **size**        | pagination size              | `NormalSizes`            | [NormalSizes](#normalsizes) | `medium` |
+| **onChange**    | change event                 | `(page: number) => void` | -                           | -        |
+| ...             | native props                 | `HTMLAttributes`         | `'id', 'className', ...`    | -        |
 
 <Attributes.Title>Pagination.Previous.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type                   | Accepted values          | Default |
+| --------- | ------------ | ---------------------- | ------------------------ | ------- |
+| ...       | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>Pagination.Next.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type                   | Accepted values          | Default |
+| --------- | ------------ | ---------------------- | ------------------------ | ------- |
+| ...       | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 

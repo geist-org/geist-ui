@@ -23,7 +23,8 @@ Display a dropdown list of items.
     </Select>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Disabled"
@@ -34,7 +35,8 @@ Display a dropdown list of items.
   <Select.Option value="1">Option 1</Select.Option>
   <Select.Option value="2">Option 2</Select.Option>
 </Select>
-`} />
+`}
+/>
 
 <Playground
   title="Disabled Option"
@@ -45,7 +47,8 @@ Display a dropdown list of items.
   <Select.Option value="1" disabled>Option 1</Select.Option>
   <Select.Option value="2">Option 2</Select.Option>
 </Select>
-`} />
+`}
+/>
 
 <Playground
   title="Without Icon"
@@ -56,7 +59,8 @@ Display a dropdown list of items.
   <Select.Option value="1">Option 1</Select.Option>
   <Select.Option value="2">Option 2</Select.Option>
 </Select>
-`} />
+`}
+/>
 
 <Playground
   title="Labels"
@@ -71,7 +75,8 @@ Display a dropdown list of items.
   <Select.Option value="rails">Rails</Select.Option>
   <Select.Option value="sinatra">Sinatra</Select.Option>
 </Select>
-`} />
+`}
+/>
 
 <Playground
   title="Divider"
@@ -84,7 +89,8 @@ Display a dropdown list of items.
   <Select.Option value="rails">Rails</Select.Option>
   <Select.Option value="sinatra">Sinatra</Select.Option>
 </Select>
-`} />
+`}
+/>
 
 <Playground
   title="Multiple"
@@ -102,7 +108,8 @@ Display a dropdown list of items.
   <Select.Option value="6">Express</Select.Option>
   <Select.Option value="7">Koa</Select.Option>
 </Select>
-`} />
+`}
+/>
 
 <Playground
   title="Compose"
@@ -113,7 +120,8 @@ Display a dropdown list of items.
   <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
   <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
 </Select>
-`} />
+`}
+/>
 
 <Playground
   title="Over width"
@@ -131,35 +139,36 @@ Display a dropdown list of items.
     <Select.Option value="2">Option 2</Select.Option>
   </Select>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | selected value | `string`, `string[]` | - | - |
-| **initialValue** | initial value | `string`, `string[]` | - | - |
-| **placeholder** | placeholder string | `string` | - | - |
-| **width** | css width value of select | `string` | - | `initial` |
-| **size** | select component size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **icon** | icon component | `ComponentType` | - | `SVG Component` |
-| **pure** | remove icon component | `boolean` | - | `false` |
-| **multiple** | support multiple selection | `boolean` | - | `false` |
-| **disabled** | disable current radio | `boolean` | - | `false` |
-| **onChange** | selected value | <Code>(val: string &#124; string[]) => void </Code> | - | - |
-| **dropdownClassName** | className of dropdown menu | `string` | - | - |
-| **dropdownStyle** | style of dropdown menu | `object` | - | - |
-| **disableMatchWidth** | disable Option from follow Select width | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'name', 'alt', 'className', ...` | - |
+| Attribute             | Description                             | Type                                                | Accepted values                   | Default         |
+| --------------------- | --------------------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
+| **value**             | selected value                          | `string`, `string[]`                                | -                                 | -               |
+| **initialValue**      | initial value                           | `string`, `string[]`                                | -                                 | -               |
+| **placeholder**       | placeholder string                      | `string`                                            | -                                 | -               |
+| **width**             | css width value of select               | `string`                                            | -                                 | `initial`       |
+| **size**              | select component size                   | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
+| **icon**              | icon component                          | `ComponentType`                                     | -                                 | `SVG Component` |
+| **pure**              | remove icon component                   | `boolean`                                           | -                                 | `false`         |
+| **multiple**          | support multiple selection              | `boolean`                                           | -                                 | `false`         |
+| **disabled**          | disable current radio                   | `boolean`                                           | -                                 | `false`         |
+| **onChange**          | selected value                          | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
+| **dropdownClassName** | className of dropdown menu              | `string`                                            | -                                 | -               |
+| **dropdownStyle**     | style of dropdown menu                  | `object`                                            | -                                 | -               |
+| **disableMatchWidth** | disable Option from follow Select width | `boolean`                                           | -                                 | `false`         |
+| ...                   | native props                            | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value**(required) | unique ident value | `string` | - | - |
-| **disabled** | disable current option | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'name', 'id', 'className', ...` | - |
+| Attribute           | Description            | Type             | Accepted values                  | Default |
+| ------------------- | ---------------------- | ---------------- | -------------------------------- | ------- |
+| **value**(required) | unique ident value     | `string`         | -                                | -       |
+| **disabled**        | disable current option | `boolean`        | -                                | `false` |
+| ...                 | native props           | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 

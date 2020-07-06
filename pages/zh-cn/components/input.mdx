@@ -17,7 +17,8 @@ export const meta = {
   scope={{ Input }}
   code={`
 <Input placeholder="一个基础示例" />
-`} />
+`}
+/>
 
 <Playground
   title="大小"
@@ -30,7 +31,8 @@ export const meta = {
   <Input size="medium" placeholder="中等的" /> <Spacer y={.5} />
   <Input size="large" placeholder="较大的" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="宽度"
@@ -38,7 +40,8 @@ export const meta = {
   scope={{ Input }}
   code={`
 <Input placeholder="一个基础示例" width="100%" />
-`} />
+`}
+/>
 
 <Playground
   title="不可交互地"
@@ -50,7 +53,8 @@ export const meta = {
   <Spacer y={.5} />
   <Input readOnly initialValue="只读" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="行内标签"
@@ -62,7 +66,8 @@ export const meta = {
   <Spacer y={.5} />
   <Input labelRight=".com" placeholder="https://github" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="块级标签"
@@ -84,7 +89,8 @@ export const meta = {
     </Dot>
   </Input>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="状态"
@@ -100,7 +106,8 @@ export const meta = {
   <Spacer y={.5} />
   <Input status="error" initialValue="包含错误" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="图标"
@@ -112,7 +119,8 @@ export const meta = {
   <Spacer y={.5} />
   <Input iconRight={<GitIcon />} placeholder="输入 Git 地址" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="密码"
@@ -120,7 +128,8 @@ export const meta = {
   scope={{ Input }}
   code={`
 <Input.Password initialValue="123456abc" />
-`} />
+`}
+/>
 
 <Playground
   title="清除按钮"
@@ -130,7 +139,8 @@ export const meta = {
 <>
   <Input clearable initialValue="示例文字" placeholder="输入文本" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="变化事件"
@@ -147,10 +157,15 @@ export const meta = {
     <Input value={value} onChange={handler} placeholder="一个基础示例" />
   )
 }
-`} />
+`}
+/>
 
 <Playground
-  title={<><Code>useInput</Code></>}
+  title={
+    <>
+      <Code>useInput</Code>
+    </>
+  }
   desc="使用 `hooks` 捕获输入框的文本变化。"
   scope={{ Input, useInput, useEffect, Button, Spacer }}
   code={`
@@ -168,63 +183,58 @@ export const meta = {
     </>
   )
 }
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/input.mdx">
 <Attributes.Title>Input.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | 命令式设定输入框的值 | `string` | - | - |
-| **initialValue** | 初始值 | `string` | - | - |
-| **placeholder** | 占位文本 | `string` | - | - |
-| **size** | 输入框大小 | `NormalSizes` | [InputSizes](#inputsizes) | `medium` |
-| **status** | 输入框状态 | `NormalTypes` | [InputStatus](#inputstatus) | `default` |
-| **readOnly** | 是否设置输入框为只读 | `boolean` | - | `false` |
-| **disabled** | 是否禁用输入框 | `boolean` | - | `false` |
-| **clearable** | 是否展示清除按钮 | `boolean` | - | `false` |
-| **label** | 文本标签 | `string` | - | - |
-| **icon** | 输入框图标 | `React.ReactNode` | - | - |
-| **labelRight** | 居于右侧的文本标签 | `string` | - | - |
-| **iconRight** | 居于右侧的图标 | `React.ReactNode` | - | - |
-| **iconClickable** | 图标是否可点击 | `boolean` | - | `false` |
-| **onIconClick** | 图标点击事件 | `(e: React.ChangeEvent) => void` | - | - |
-| **onChange** | 输入框变化事件 | `(e: React.ChangeEvent) => void` | - | - |
-| **onClearClick** | 清除按钮的点击事件 | `(e: React.MouseEvent) => void` | - | - |
-| **ref** | 转发的原生输入框 Ref | <Code>Ref<HTMLInputElement &#124; null></Code> | - | - |
-| ... | 原生属性 | `InputHTMLAttributes` | `'id', 'className', ...` | - |
+| 属性              | 描述                 | 类型                                           | 推荐值                      | 默认      |
+| ----------------- | -------------------- | ---------------------------------------------- | --------------------------- | --------- |
+| **value**         | 命令式设定输入框的值 | `string`                                       | -                           | -         |
+| **initialValue**  | 初始值               | `string`                                       | -                           | -         |
+| **placeholder**   | 占位文本             | `string`                                       | -                           | -         |
+| **size**          | 输入框大小           | `NormalSizes`                                  | [InputSizes](#inputsizes)   | `medium`  |
+| **status**        | 输入框状态           | `NormalTypes`                                  | [InputStatus](#inputstatus) | `default` |
+| **readOnly**      | 是否设置输入框为只读 | `boolean`                                      | -                           | `false`   |
+| **disabled**      | 是否禁用输入框       | `boolean`                                      | -                           | `false`   |
+| **clearable**     | 是否展示清除按钮     | `boolean`                                      | -                           | `false`   |
+| **label**         | 文本标签             | `string`                                       | -                           | -         |
+| **icon**          | 输入框图标           | `React.ReactNode`                              | -                           | -         |
+| **labelRight**    | 居于右侧的文本标签   | `string`                                       | -                           | -         |
+| **iconRight**     | 居于右侧的图标       | `React.ReactNode`                              | -                           | -         |
+| **iconClickable** | 图标是否可点击       | `boolean`                                      | -                           | `false`   |
+| **onIconClick**   | 图标点击事件         | `(e: React.ChangeEvent) => void`               | -                           | -         |
+| **onChange**      | 输入框变化事件       | `(e: React.ChangeEvent) => void`               | -                           | -         |
+| **onClearClick**  | 清除按钮的点击事件   | `(e: React.MouseEvent) => void`                | -                           | -         |
+| **ref**           | 转发的原生输入框 Ref | <Code>Ref<HTMLInputElement &#124; null></Code> | -                           | -         |
+| ...               | 原生属性             | `InputHTMLAttributes`                          | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>Input.Password.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **hideToggle** | 隐藏切换密码的按钮 | `boolean` | - | `false` |
-| ... | 输入框组件属性 | `Input.Props` | [Input.Props](#input.props) | - |
+| 属性           | 描述               | 类型          | 推荐值                      | 默认    |
+| -------------- | ------------------ | ------------- | --------------------------- | ------- |
+| **hideToggle** | 隐藏切换密码的按钮 | `boolean`     | -                           | `false` |
+| ...            | 输入框组件属性     | `Input.Props` | [Input.Props](#input.props) | -       |
 
 <Attributes.Title>InputSizes</Attributes.Title>
 
 ```ts
-type InputSizes = 'mini'
-  | 'small'
-  | 'medium'
-  | 'large'
+type InputSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
 <Attributes.Title>InputStatus</Attributes.Title>
 
 ```ts
-type InputStatus = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
+type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
-type useInput = (initialValue: string) => {
+type useInput = (
+  initialValue: string,
+) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

@@ -30,7 +30,8 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="匹配类型"
@@ -45,7 +46,8 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <PlaygroundTitle title="定制断点" desc="您可以覆盖 `@zeit-ui/react` 组件库默认的断点值。" />
 
@@ -73,14 +75,11 @@ const App = () => (
 type ResponsiveBreakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'mobile'
 
 type ResponsiveOptions = {
- match?: 'up'| 'down',
- ssrMatchMedia?: (query: string) => { matches: boolean }
+  match?: 'up' | 'down'
+  ssrMatchMedia?: (query: string) => { matches: boolean }
 }
 
-const useMediaQuery = (
-  breakpoint: ResponsiveBreakpoint,
-  options?: ResponsiveOptions,
-) => boolean
+const useMediaQuery = (breakpoint: ResponsiveBreakpoint, options?: ResponsiveOptions) => boolean
 ```
 
 </Attributes>

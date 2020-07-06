@@ -21,7 +21,8 @@ export const meta = {
   <Breadcrumbs.Item href="">Catalog</Breadcrumbs.Item>
   <Breadcrumbs.Item >Page</Breadcrumbs.Item>
 </Breadcrumbs>
-`} />
+`}
+/>
 
 <Playground
   title="大小"
@@ -49,7 +50,8 @@ export const meta = {
     <Breadcrumbs.Item>Page</Breadcrumbs.Item>
   </Breadcrumbs>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="分隔符"
@@ -71,7 +73,8 @@ export const meta = {
     <Breadcrumbs.Item >Button</Breadcrumbs.Item>
   </Breadcrumbs>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="图标"
@@ -83,7 +86,8 @@ export const meta = {
   <Breadcrumbs.Item href=""><Inbox /> Inbox</Breadcrumbs.Item>
   <Breadcrumbs.Item >Page</Breadcrumbs.Item>
 </Breadcrumbs>
-`} />
+`}
+/>
 
 <Playground
   title="结合 NextJS"
@@ -99,31 +103,32 @@ export const meta = {
   </NextLink>
   <Breadcrumbs.Item>Breadcrumbs</Breadcrumbs.Item>
 </Breadcrumbs>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/breadcrumbs.mdx">
 <Attributes.Title>Breadcrumbs.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **separator** | 分隔符 | `string` | - | `/` |
-| **size** | 面包屑导航的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性          | 描述             | 类型             | 推荐值                      | 默认     |
+| ------------- | ---------------- | ---------------- | --------------------------- | -------- |
+| **separator** | 分隔符           | `string`         | -                           | `/`      |
+| **size**      | 面包屑导航的大小 | `NormalSizes`    | [NormalSizes](#normalsizes) | `medium` |
+| ...           | 原生属性         | `HTMLAttributes` | `'id', 'className', ...`    | -        |
 
 <Attributes.Title>Breadcrumbs.Item.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **href** |  链接地址 | `string` | - | - |
-| **nextLink** | 是否为 `next.js` 路由 | `boolean` | - | `false` |
-| **onClick** | 点击事件 | `(event: MouseEvent) => void` | - | - |
-| ... | 原生属性 | `AnchorHTMLAttributes` | `'id', 'className', ...` | - |
+| 属性         | 描述                  | 类型                          | 推荐值                   | 默认    |
+| ------------ | --------------------- | ----------------------------- | ------------------------ | ------- |
+| **href**     | 链接地址              | `string`                      | -                        | -       |
+| **nextLink** | 是否为 `next.js` 路由 | `boolean`                     | -                        | `false` |
+| **onClick**  | 点击事件              | `(event: MouseEvent) => void` | -                        | -       |
+| ...          | 原生属性              | `AnchorHTMLAttributes`        | `'id', 'className', ...` | -       |
 
 <Attributes.Title>Breadcrumbs.Separator.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
+| ---- | -------- | ---------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 

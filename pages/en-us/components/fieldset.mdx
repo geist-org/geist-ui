@@ -27,7 +27,8 @@ Display a collection of related information in a single unit.
     </Fieldset.Footer.Actions>
   </Fieldset.Footer>
 </Fieldset>
-`} />
+`}
+/>
 
 <Playground
   title="Custom Text"
@@ -46,7 +47,8 @@ Display a collection of related information in a single unit.
     </Fieldset.Footer.Actions>
   </Fieldset.Footer>
 </Fieldset>
-`} />
+`}
+/>
 
 <Playground
   title="Tabs"
@@ -90,7 +92,8 @@ Display a collection of related information in a single unit.
     </Fieldset.Group>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="With Divider"
@@ -111,50 +114,51 @@ Display a collection of related information in a single unit.
     <small>Client-side web APIs</small>
   </Fieldset.Footer>
 </Fieldset>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/fieldset.mdx">
 <Attributes.Title>Fieldset.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | unique ident value (only in group) | `string` | - | - |
-| **label** | group tab text (only in group) | `string` |- | - |
-| **title** | title of fieldset | `ReactNode` / `string` | - | - |
-| **subtitle** | subtitle of fieldset | `ReactNode` / `string` | - | - |
-| ... | native props | `FieldsetHTMLAttributes` | `'name', 'className', ...` | - |
+| Attribute    | Description                        | Type                     | Accepted values            | Default |
+| ------------ | ---------------------------------- | ------------------------ | -------------------------- | ------- |
+| **value**    | unique ident value (only in group) | `string`                 | -                          | -       |
+| **label**    | group tab text (only in group)     | `string`                 | -                          | -       |
+| **title**    | title of fieldset                  | `ReactNode` / `string`   | -                          | -       |
+| **subtitle** | subtitle of fieldset               | `ReactNode` / `string`   | -                          | -       |
+| ...          | native props                       | `FieldsetHTMLAttributes` | `'name', 'className', ...` | -       |
 
 <Attributes.Title alias="Fieldset.Body">Fieldset.Content.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | - | - |
+| Attribute | Description  | Type             | Accepted values | Default |
+| --------- | ------------ | ---------------- | --------------- | ------- |
+| ...       | native props | `HTMLAttributes` | -               | -       |
 
 <Attributes.Title>Fieldset.Footer.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | - | - |
+| Attribute | Description  | Type             | Accepted values | Default |
+| --------- | ------------ | ---------------- | --------------- | ------- |
+| ...       | native props | `HTMLAttributes` | -               | -       |
 
 <Attributes.Title>Fieldset.Footer.Actions.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | - | - |
+| Attribute | Description  | Type             | Accepted values | Default |
+| --------- | ------------ | ---------------- | --------------- | ------- |
+| ...       | native props | `HTMLAttributes` | -               | -       |
 
 <Attributes.Title>Fieldset.Footer.Status.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | - | - |
+| Attribute | Description  | Type             | Accepted values | Default |
+| --------- | ------------ | ---------------- | --------------- | ------- |
+| ...       | native props | `HTMLAttributes` | -               | -       |
 
 <Attributes.Title>Fieldset.Group.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | selected tab value | `string` | - | - |
-| **onChange** | change tab event | `(value: string) => void` | - | - |
-| ... | native props | `HTMLAttributes` | - | - |
+| Attribute    | Description        | Type                      | Accepted values | Default |
+| ------------ | ------------------ | ------------------------- | --------------- | ------- |
+| **value**    | selected tab value | `string`                  | -               | -       |
+| **onChange** | change tab event   | `(value: string) => void` | -               | -       |
+| ...          | native props       | `HTMLAttributes`          | -               | -       |
 
 </Attributes>
 

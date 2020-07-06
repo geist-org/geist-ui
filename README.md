@@ -10,7 +10,6 @@
 
 > Modern and minimalist React UI library, originating from Vercel's design.
 
-
 <br/>
 
 ## Quick Start
@@ -23,9 +22,9 @@
 import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
 
 const Application = () => (
-  <ZeitProvider>        //  ---> Base provider
-    <CssBaseline />     //  ---> normalize styles
-    <AppComponent />    //  ---> Your App Component
+  <ZeitProvider>
+    <CssBaseline /> // ---> normalize styles
+    <AppComponent /> // ---> Your App Component
   </ZeitProvider>
 )
 ```
@@ -57,4 +56,5 @@ const Application = () => (
 <br/>
 
 ## LICENSE
+
 [MIT](./LICENSE)

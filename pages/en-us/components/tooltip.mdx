@@ -15,7 +15,8 @@ Displays additional information on hover.
   scope={{ Tooltip }}
   code={`
 <Tooltip text={'Push to Git and your website is live.'}>Tooltip</Tooltip>
-`} />
+`}
+/>
 
 <Playground
   title="Trigger"
@@ -25,7 +26,8 @@ Displays additional information on hover.
 <Tooltip text={'Push to Git and your website is live.'} trigger="click" type="dark">
   <span>Click me</span>
 </Tooltip>
-`} />
+`}
+/>
 
 <Playground
   title="With Components"
@@ -45,7 +47,8 @@ Displays additional information on hover.
     <Link href="#" color>Hyperlink</Link>
   </Tooltip>
 </Row>
-`} />
+`}
+/>
 
 <Playground
   title="Custom Content"
@@ -61,7 +64,8 @@ Displays additional information on hover.
     <span>Bottom</span>
   </Tooltip>
 </Row>
-`} />
+`}
+/>
 
 <Playground
   title="Types"
@@ -89,7 +93,8 @@ Displays additional information on hover.
     <span>Secondary</span>
   </Tooltip>
 </Row>
-`} />
+`}
+/>
 
 <Playground
   title="Variant"
@@ -105,7 +110,8 @@ Displays additional information on hover.
     <span>No Arrow</span>
   </Tooltip>
 </Row>
-`} />
+`}
+/>
 
 <Playground
   title="Placements"
@@ -170,37 +176,32 @@ Displays additional information on hover.
     </div>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/tooltip.mdx">
 <Attributes.Title>Tooltip.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **text** | text of pop-up | `string` `React.ReactNode` | - | - |
-| **visible** | visible or not | `boolean` | - | `false` |
-| **initialVisible** | visible on initial | `boolean` | - | `false` |
-| **hideArrow** | hide arrow icon | `boolean` | - | `false` |
-| **type** | preset style type | [TooltipTypes](#tooltiptypes) | - | `default` |
-| **placement** | position of the tooltip relative to the target | [Placement](#placement) | - | `top` |
-| **trigger** | tooltip trigger mode | `'click' / 'hover'` | - | `hover` |
-| **enterDelay**(ms) | delay before tooltip is shown | `number` | - | `100` |
-| **leaveDelay**(ms) | delay before tooltip is hidden | `number` | - | `0` |
-| **offset**(px) | distance between pop-up and target | `number` | - | `12` |
-| **portalClassName** | className of pop-up box | `string` | - | - |
-| **onVisibleChange** | call when visibility of the tooltip is changed | `(visible: boolean) => void` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| Attribute           | Description                                    | Type                          | Accepted values                  | Default   |
+| ------------------- | ---------------------------------------------- | ----------------------------- | -------------------------------- | --------- |
+| **text**            | text of pop-up                                 | `string` `React.ReactNode`    | -                                | -         |
+| **visible**         | visible or not                                 | `boolean`                     | -                                | `false`   |
+| **initialVisible**  | visible on initial                             | `boolean`                     | -                                | `false`   |
+| **hideArrow**       | hide arrow icon                                | `boolean`                     | -                                | `false`   |
+| **type**            | preset style type                              | [TooltipTypes](#tooltiptypes) | -                                | `default` |
+| **placement**       | position of the tooltip relative to the target | [Placement](#placement)       | -                                | `top`     |
+| **trigger**         | tooltip trigger mode                           | `'click' / 'hover'`           | -                                | `hover`   |
+| **enterDelay**(ms)  | delay before tooltip is shown                  | `number`                      | -                                | `100`     |
+| **leaveDelay**(ms)  | delay before tooltip is hidden                 | `number`                      | -                                | `0`       |
+| **offset**(px)      | distance between pop-up and target             | `number`                      | -                                | `12`      |
+| **portalClassName** | className of pop-up box                        | `string`                      | -                                | -         |
+| **onVisibleChange** | call when visibility of the tooltip is changed | `(visible: boolean) => void`  | -                                | -         |
+| ...                 | native props                                   | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
 
 <Attributes.Title>TooltipTypes</Attributes.Title>
 
 ```ts
-type TooltipTypes = 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'dark'
-  | 'lite'
+type TooltipTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
 ```
 
 <Attributes.Title>Placement</Attributes.Title>

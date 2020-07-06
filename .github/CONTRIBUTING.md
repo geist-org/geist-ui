@@ -47,6 +47,10 @@ At any time, you think it's ok, you can start the following steps to submit your
 
 - If this is a `feature`, set to `rc` branch. All the others are set to `master` branch.
 
+> How to check my code style?
+
+- Run `yarn prettier`
+
 > I added a new document page, but it was not displayed locally ?
 
 - Run `yarn dev` agian.

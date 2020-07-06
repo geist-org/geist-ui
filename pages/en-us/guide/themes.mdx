@@ -14,18 +14,22 @@ export const meta = {
 
 ### Switch themes
 
-<Note>Before using any Components, you must add <Code>ZeitProvider</Code> to the root node.</Note>
+<Note>
+  Before using any Components, you must add <Code>ZeitProvider</Code> to the root node.
+</Note>
 <Spacer y={0.5} />
-<Note type="success"><Code>CssBaseline</Code> provides basic CSS support, which is similar to <Code>normalize</Code>.</Note>
+<Note type="success">
+  <Code>CssBaseline</Code> provides basic CSS support, which is similar to <Code>normalize</Code>.
+</Note>
 <Spacer y={1} />
 
 **Now you can change the theme as follows:**
 
-  1. Make sure `ZeitProvider` and `CssBaseline` are already on the root component.
+1. Make sure `ZeitProvider` and `CssBaseline` are already on the root component.
 
-  2. Get the current theme of the page through hook `useTheme`.
+2. Get the current theme of the page through hook `useTheme`.
 
-  3. Update the value of `theme.type`, and the theme of all components will follow automatically.
+3. Update the value of `theme.type`, and the theme of all components will follow automatically.
 
 ```jsx
 import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
@@ -33,7 +37,7 @@ import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
 const App = () => {
   const [themeType, setThemeType] = useState('dark')
   const switchThemes = () => {
-    setThemeType(lastThemeType => lastThemeType === 'dark' ? 'light' : 'dark')
+    setThemeType(lastThemeType => (lastThemeType === 'dark' ? 'light' : 'dark'))
   }
   return (
     <ZeitProvider theme={{ type: themeType }}>
@@ -52,10 +56,12 @@ Customizing a theme is very simple in `@zeit-ui/react`, you just need to provide
 and all the components will change automatically.
 Here is <Link target="_blank" color href="https://github.com/zeit-ui/react/tree/master/examples/custom-themes">a complete sample project</Link> for reference.
 
-Of course, if a *component* doesn't use your customized variables, it doesn't make any additional **changes** or **rendering**.
+Of course, if a _component_ doesn't use your customized variables, it doesn't make any additional **changes** or **rendering**.
 
 <Spacer y={1} />
-<Note type="warning">The more changes you customise, the more Components will <b>Re-Render</b>.</Note>
+<Note type="warning">
+  The more changes you customise, the more Components will <b>Re-Render</b>.
+</Note>
 
 ```jsx
 import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
@@ -69,7 +75,7 @@ const myTheme = {
 const App = () => (
   <ZeitProvider theme={myTheme}>
     <CssBaseline />
-    <YourAppComponent onClick={switchThemes}/>
+    <YourAppComponent onClick={switchThemes} />
   </ZeitProvider>
 )
 ```
@@ -90,12 +96,15 @@ import {
 } from '@zeit-ui/react'
 
 // usage:
-const myStyles: ZeitUIThemes = { /* ... */ }
-const myPalette: Partial<ZeitUIThemesPalette> = { /* ... */ }
+const myStyles: ZeitUIThemes = {
+  /* ... */
+}
+const myPalette: Partial<ZeitUIThemesPalette> = {
+  /* ... */
+}
 ```
 
 If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" href="https://github.com/zeit-ui/react/blob/master/components/styles/themes/index.ts">here</Link>.
-
 
 <Spacer y={3} />
 
@@ -151,6 +160,5 @@ const MyComponent = () => (
   </div>
 )
 ```
-
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
