@@ -14,7 +14,8 @@ export const meta = {
   scope={{ Keyboard }}
   code={`
 <Keyboard>f</Keyboard>
-`} />
+`}
+/>
 
 <Playground
   title="修饰符"
@@ -26,7 +27,8 @@ export const meta = {
   <Keyboard option />
   <Keyboard ctrl />
 </div>
-`} />
+`}
+/>
 
 <Playground
   title="组合键"
@@ -37,26 +39,28 @@ export const meta = {
   <Keyboard shift>e</Keyboard>
   <Keyboard option ctrl>b</Keyboard>
 </div>
-`} />
+`}
+/>
 
 <Playground
   title="较小的"
   scope={{ Keyboard }}
   code={`
 <Keyboard small>/</Keyboard>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/keyboard.mdx">
 <Attributes.Title>Keyboard.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **command** | 显示 Command 按钮 | `boolean` | - | `false` |
-| **shift** | 显示 Shift 按钮 | `boolean` | - | `false` |
-| **option** | 显示 Option 按钮 | `boolean` | - | `false` |
-| **ctrl** | 显示 Control 按钮 | `boolean` | - | `false` |
-| **small** | 较小的键盘 | `boolean` | - | `false` |
-| ... | 原生属性 | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | - |
+| 属性        | 描述              | 类型                   | 推荐值                        | 默认    |
+| ----------- | ----------------- | ---------------------- | ----------------------------- | ------- |
+| **command** | 显示 Command 按钮 | `boolean`              | -                             | `false` |
+| **shift**   | 显示 Shift 按钮   | `boolean`              | -                             | `false` |
+| **option**  | 显示 Option 按钮  | `boolean`              | -                             | `false` |
+| **ctrl**    | 显示 Control 按钮 | `boolean`              | -                             | `false` |
+| **small**   | 较小的键盘        | `boolean`              | -                             | `false` |
+| ...         | 原生属性          | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | -       |
 
 </Attributes>
 

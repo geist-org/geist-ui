@@ -21,7 +21,8 @@ export const meta = {
   desc="默认的分页会自动收缩与扩展。"
   code={`
 <Pagination count={20} initialPage={3} />
-`} />
+`}
+/>
 
 <Playground
   title="Limit"
@@ -35,12 +36,22 @@ export const meta = {
   <Pagination count={10} initialPage={6} />
   <Pagination count={30} initialPage={6} limit={10} />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Icon"
   desc="用图标定制按钮。"
-  scope={{ Spacer, Pagination, ChevronRight, ChevronLeft, ChevronRightCircle, ChevronLeftCircle, ChevronRightCircleFill, ChevronLeftCircleFill }}
+  scope={{
+    Spacer,
+    Pagination,
+    ChevronRight,
+    ChevronLeft,
+    ChevronRightCircle,
+    ChevronLeftCircle,
+    ChevronRightCircleFill,
+    ChevronLeftCircleFill,
+  }}
   code={`
 <>
   <Pagination count={5}>
@@ -58,7 +69,8 @@ export const meta = {
    <Pagination.Previous><ChevronLeftCircleFill /></Pagination.Previous>
   </Pagination>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -71,32 +83,33 @@ export const meta = {
   <Pagination count={20} size="medium" />
   <Pagination count={20} size="large" />
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/pagination.mdx">
 <Attributes.Title>Pagination.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **initialPage** | 初始选中的页面 | `number` | - | 1 |
-| **page** | 当前页码 | `number` | - | 1 |
-| **count** | 页码数量 | `number` | - | 1 |
-| **limit** | 一次可展示页面的最大值 | `number` | - | 7 |
-| **size** | 组件的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **onChange** | 分页器的事件 | `(page: number) => void` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性            | 描述                   | 类型                     | 推荐值                      | 默认     |
+| --------------- | ---------------------- | ------------------------ | --------------------------- | -------- |
+| **initialPage** | 初始选中的页面         | `number`                 | -                           | 1        |
+| **page**        | 当前页码               | `number`                 | -                           | 1        |
+| **count**       | 页码数量               | `number`                 | -                           | 1        |
+| **limit**       | 一次可展示页面的最大值 | `number`                 | -                           | 7        |
+| **size**        | 组件的大小             | `NormalSizes`            | [NormalSizes](#normalsizes) | `medium` |
+| **onChange**    | 分页器的事件           | `(page: number) => void` | -                           | -        |
+| ...             | 原生属性               | `HTMLAttributes`         | `'id', 'className', ...`    | -        |
 
 <Attributes.Title>Pagination.Previous.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| 属性 | 描述     | 类型                   | 推荐值                   | 默认 |
+| ---- | -------- | ---------------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>Pagination.Next.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| 属性 | 描述     | 类型                   | 推荐值                   | 默认 |
+| ---- | -------- | ---------------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 

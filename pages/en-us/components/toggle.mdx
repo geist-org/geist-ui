@@ -18,7 +18,8 @@ Displays a boolean value.
   <Spacer y={.5} />
   <Toggle initialChecked />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="disabled"
@@ -29,7 +30,8 @@ Displays a boolean value.
   <Spacer y={.5} />
   <Toggle initialChecked disabled />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="sizes"
@@ -43,7 +45,8 @@ Displays a boolean value.
   <Spacer y={.5} />
   <Toggle initialChecked size="large" />
 </>
-`} />
+`}
+/>
 
 <Playground
   title="get change"
@@ -55,21 +58,20 @@ Displays a boolean value.
   }
   return <Toggle onChange={handler} />
 }
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/toggle.mdx">
 <Attributes.Title>Toggle.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **checked** | checked or not | `boolean` | - | - |
-| **initialChecked** | checked or not on initial | `boolean` | - | `false` |
-| **onChange** | change event handler | `ToggleEvent` | - | - |
-| **size** | input size | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
-| **disabled** | disable toggle | `boolean` | - | `false` |
-| ... | native props | `LabelHTMLAttributes` | `'from', 'name', 'className', ...` | - |
-
+| Attribute          | Description               | Type                  | Accepted values                      | Default  |
+| ------------------ | ------------------------- | --------------------- | ------------------------------------ | -------- |
+| **checked**        | checked or not            | `boolean`             | -                                    | -        |
+| **initialChecked** | checked or not on initial | `boolean`             | -                                    | `false`  |
+| **onChange**       | change event handler      | `ToggleEvent`         | -                                    | -        |
+| **size**           | input size                | `NormalSizes`         | `'mini', 'small', 'medium', 'large'` | `medium` |
+| **disabled**       | disable toggle            | `boolean`             | -                                    | `false`  |
+| ...                | native props              | `LabelHTMLAttributes` | `'from', 'name', 'className', ...`   | -        |
 
 <Attributes.Title>ToggleEvent</Attributes.Title>
 

@@ -29,7 +29,8 @@ export const meta = {
     </Popover>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="预置子选项"
@@ -60,7 +61,8 @@ export const meta = {
     </Popover>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="手动关闭"
@@ -86,32 +88,33 @@ export const meta = {
     </Popover>
   )
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/popover.mdx">
 <Attributes.Title>Popover.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **content** | 气泡卡片内容 | `ReactNode` `() => ReactNode` | - | - |
-| **visible** | 手动控制气泡的显示与隐藏 | `boolean` | - | `false` |
-| **initialVisible** | 初始是否可见 | `boolean` | - | `false` |
-| **hideArrow** | 隐藏箭头 | `boolean` | - | `false` |
-| **placement** | 气泡卡片与目标的对齐方式 | [Placement](#placement) | - | `bottom` |
-| **trigger** | 触发气泡卡片的方式 | `'click' / 'hover'` | - | `click` |
-| **enterDelay**(ms) | 在提示显示前的延迟 | `number` | - | `100` |
-| **leaveDelay**(ms) | 关闭提示前的延迟 | `number` | - | `0` |
-| **offset**(px) | 提示框与目标之间的偏移 | `number` | - | `12` |
-| **portalClassName** | 气泡卡片的类名 | `string` | - | - |
-| **onVisibleChange** | 当气泡卡片状态改变时触发 | `(visible: boolean) => void` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'name', 'className', ...` | - |
+| 属性                | 描述                     | 类型                          | 推荐值                           | 默认     |
+| ------------------- | ------------------------ | ----------------------------- | -------------------------------- | -------- |
+| **content**         | 气泡卡片内容             | `ReactNode` `() => ReactNode` | -                                | -        |
+| **visible**         | 手动控制气泡的显示与隐藏 | `boolean`                     | -                                | `false`  |
+| **initialVisible**  | 初始是否可见             | `boolean`                     | -                                | `false`  |
+| **hideArrow**       | 隐藏箭头                 | `boolean`                     | -                                | `false`  |
+| **placement**       | 气泡卡片与目标的对齐方式 | [Placement](#placement)       | -                                | `bottom` |
+| **trigger**         | 触发气泡卡片的方式       | `'click' / 'hover'`           | -                                | `click`  |
+| **enterDelay**(ms)  | 在提示显示前的延迟       | `number`                      | -                                | `100`    |
+| **leaveDelay**(ms)  | 关闭提示前的延迟         | `number`                      | -                                | `0`      |
+| **offset**(px)      | 提示框与目标之间的偏移   | `number`                      | -                                | `12`     |
+| **portalClassName** | 气泡卡片的类名           | `string`                      | -                                | -        |
+| **onVisibleChange** | 当气泡卡片状态改变时触发 | `(visible: boolean) => void`  | -                                | -        |
+| ...                 | 原生属性                 | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -        |
 
 <Attributes.Title alias="Popover.Option">Popover.Item</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **line** | 显示线条 | `boolean` | - | `false` |
-| **title** | 用标题的样式展示文字 | `boolean` | - | `false` |
+| 属性      | 描述                 | 类型      | 推荐值 | 默认    |
+| --------- | -------------------- | --------- | ------ | ------- |
+| **line**  | 显示线条             | `boolean` | -      | `false` |
+| **title** | 用标题的样式展示文字 | `boolean` | -      | `false` |
 
 <Attributes.Title>Placement</Attributes.Title>
 

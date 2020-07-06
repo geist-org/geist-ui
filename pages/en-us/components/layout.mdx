@@ -18,7 +18,8 @@ Smart and simple layout components.
   <Row style={{ marginBottom: '10px' }}> <ExampleBlock /> </Row>
   <Row> <ExampleBlock /> </Row>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="column"
@@ -68,21 +69,28 @@ Smart and simple layout components.
     <Col span={16}><ExampleBlock /></Col>
     <Col span={8}><ExampleBlock /></Col>
   </Row>
-
-  <Row gap={.8} style={{ marginBottom: '15px' }}>
-    <Col span={8}><ExampleBlock /></Col>
-    <Col span={8}><ExampleBlock /></Col>
-    <Col span={4}><ExampleBlock /></Col>
-    <Col span={4}><ExampleBlock /></Col>
+  <Row gap={0.8} style={{ marginBottom: '15px' }}>
+    <Col span={8}>
+      <ExampleBlock />
+    </Col>
+    <Col span={8}>
+      <ExampleBlock />
+    </Col>
+    <Col span={4}>
+      <ExampleBlock />
+    </Col>
+    <Col span={4}>
+      <ExampleBlock />
+    </Col>
   </Row>
-
   <Row gap={.8}>
     <Col span={4}><ExampleBlock /></Col>
     <Col span={16}><ExampleBlock /></Col>
     <Col span={4}><ExampleBlock /></Col>
   </Row>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="alignment"
@@ -93,15 +101,16 @@ Smart and simple layout components.
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col span={16}><ExampleBlock /></Col>
   </Row>
-
-  <Row gap={.8} justify="center" style={{ marginBottom: '15px' }}>
-    <Col span={16}><ExampleBlock /></Col>
+  <Row gap={0.8} justify="center" style={{ marginBottom: '15px' }}>
+    <Col span={16}>
+      <ExampleBlock />
+    </Col>
   </Row>
-
-  <Row gap={.8} justify="end" style={{ marginBottom: '15px' }}>
-    <Col span={16}><ExampleBlock /></Col>
+  <Row gap={0.8} justify="end" style={{ marginBottom: '15px' }}>
+    <Col span={16}>
+      <ExampleBlock />
+    </Col>
   </Row>
-
   <Row gap={.8} style={{ marginBottom: '15px' }}>
     <Col span={9}><ExampleBlock style={{ height: '60px' }}/></Col>
     <Col span={5}>
@@ -121,27 +130,28 @@ Smart and simple layout components.
     </Col>
   </Row>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/layout.mdx">
 <Attributes.Title>Row.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **gap** | grid spacing | `number` | - | 0 |
-| **justify** | horizontal alignment | `Justify` | `'start', 'end', 'center', 'space-around', 'space-between'` | `start` |
-| **align** | vertical alignment | `Align` | `'top', 'middle', 'bottom'` | `top` |
-| **component** | component name | `keyof JSX.IntrinsicElements` | - | `div` |
-| ... | native props | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | - |
+| Attribute     | Description          | Type                          | Accepted values                                             | Default |
+| ------------- | -------------------- | ----------------------------- | ----------------------------------------------------------- | ------- |
+| **gap**       | grid spacing         | `number`                      | -                                                           | 0       |
+| **justify**   | horizontal alignment | `Justify`                     | `'start', 'end', 'center', 'space-around', 'space-between'` | `start` |
+| **align**     | vertical alignment   | `Align`                       | `'top', 'middle', 'bottom'`                                 | `top`   |
+| **component** | component name       | `keyof JSX.IntrinsicElements` | -                                                           | `div`   |
+| ...           | native props         | `HTMLAttributes`              | `'autoFocus', 'name', 'className', ...`                     | -       |
 
 <Attributes.Title>Col.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **span** | number of column the grid spans | `number` | 0 - 24 | 24 |
-| **offset** | current column offset | `number` | - | 0 |
-| **component** | component name | `keyof JSX.IntrinsicElements` | - | `div` |
-| ... | native props | `HTMLAttributes` | `'name', 'className', ...` | - |
+| Attribute     | Description                     | Type                          | Accepted values            | Default |
+| ------------- | ------------------------------- | ----------------------------- | -------------------------- | ------- |
+| **span**      | number of column the grid spans | `number`                      | 0 - 24                     | 24      |
+| **offset**    | current column offset           | `number`                      | -                          | 0       |
+| **component** | component name                  | `keyof JSX.IntrinsicElements` | -                          | `div`   |
+| ...           | native props                    | `HTMLAttributes`              | `'name', 'className', ...` | -       |
 
 </Attributes>
 

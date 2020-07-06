@@ -17,7 +17,7 @@ If you want to see a complete example, please browse our <Link target="_blank" c
 
 <Spacer y={1} />
 <Dot type="success" /> 1. Run script to download:
-<Spacer y={.8} />
+<Spacer y={0.8} />
 <Tabs initialValue="yarn" hideDivider>
   <Tabs.Item label="Yarn" value="yarn">
     <Snippet width="400px">yarn add @zeit-ui/react</Snippet>
@@ -36,9 +36,9 @@ If you want to see a complete example, please browse our <Link target="_blank" c
 import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
 
 const Application = () => (
-  <ZeitProvider>      // ---> Base provider
-    <CssBaseline />     // ---> normalize styles
-    <AppComponent />    // ---> Your App Component
+  <ZeitProvider>
+    <CssBaseline /> // ---> normalize styles
+    <AppComponent /> // ---> Your App Component
   </ZeitProvider>
 )
 ```
@@ -86,7 +86,7 @@ const MyComponent = () => <Button>Click Me</Button>
 
 A React project created by <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> can
 also easily use `@zeit-ui/react`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react-getting-started">a
-sample project related to create react app here</Link>. 
+sample project related to create react app here</Link>.
 
 If you want to eject certain configs, `tree-shaking`, please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.
 

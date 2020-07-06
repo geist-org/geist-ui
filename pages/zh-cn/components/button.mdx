@@ -14,13 +14,13 @@ export const meta = {
 
 用于触发一个操作。
 
-
 <Playground
   desc="基础的 `Button` 包含一个动画效果。"
   scope={{ Button }}
   code={`
 <Button>动作</Button>
-`} />
+`}
+/>
 
 <Playground
   title="加载中"
@@ -34,7 +34,8 @@ export const meta = {
   <Spacer y={.5} />
   <Button loading auto type="success" size="small">Action</Button>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="禁用的"
@@ -42,7 +43,8 @@ export const meta = {
   scope={{ Button }}
   code={`
 <Button disabled>点击</Button>
-`} />
+`}
+/>
 
 <Playground
   title="阴影"
@@ -50,7 +52,8 @@ export const meta = {
   scope={{ Button }}
   code={`
 <Button shadow type="secondary">阴影</Button>
-`} />
+`}
+/>
 
 <Playground
   title="类型"
@@ -68,7 +71,8 @@ export const meta = {
   <Grid><Button auto type="warning-light">警告 浅色</Button></Grid>
   <Grid><Button auto type="error-light">错误 浅色</Button></Grid>
 </Grid.Container>
-`} />
+`}
+/>
 
 <Playground
   title='"幽灵"按钮'
@@ -81,8 +85,8 @@ export const meta = {
   <Button type="warning" ghost>警告</Button> <Spacer y={.5} />
   <Button type="error" ghost>错误</Button>
 </>
-`} />
-
+`}
+/>
 
 <Playground
   title="大小"
@@ -96,7 +100,8 @@ export const meta = {
   <Button size="large">最大</Button> <Spacer y={.5} />
   <Button auto>自动宽度</Button>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="图标"
@@ -116,33 +121,43 @@ export const meta = {
   <Spacer y={.5} />
   <Button icon={<UserX />} disabled>移除用户</Button>
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/button.mdx">
 <Attributes.Title>Button.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- | -------------- | ------ |
-| **type** | 按钮的类型 | `ButtonTypes` | [ButtonTypes](#buttontypes) | `default` |
-| **size** | 按钮的大小 | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **ghost** | 是否为反色按钮 | `boolean` | - | `false` |
-| **loading** | 是否显示加载中的指示器 | `boolean` | - | `false` |
-| **shadow** | 是否显示阴影 | `boolean` | - | `false` |
-| **auto** | 自动缩放宽度 | `boolean` | - | `false` |
-| **effect** | 是否显示动画效果 | `boolean` | - | `true` |
-| **disabled** | 是否禁用按钮 | `boolean` | - | `false` |
-| **onClick** | 点击事件 | `MouseEventHandler` | - | - |
-| **icon** | 在按钮内显示图标 | `ReactNode` | - | - |
-| **iconRight** | 在按钮的另一侧显示图标 | `ReactNode` | - | - |
-| **htmlType** | 按钮的原生类型属性 | `ButtonHTMLAttributes.type` | - | `button` |
-| **ref** | 转发的原生按钮 Ref | <Code>Ref<HTMLButtonElement &#124; null></Code> | - | - |
-| ... | 原生属性 | `ButtonHTMLAttributes` | `'id', 'className', ...` | - |
+| 属性          | 描述                   | 类型                                            | 推荐值                      | 默认      |
+| ------------- | ---------------------- | ----------------------------------------------- | --------------------------- | --------- |
+| **type**      | 按钮的类型             | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
+| **size**      | 按钮的大小             | `NormalSizes`                                   | [NormalSizes](#normalsizes) | `medium`  |
+| **ghost**     | 是否为反色按钮         | `boolean`                                       | -                           | `false`   |
+| **loading**   | 是否显示加载中的指示器 | `boolean`                                       | -                           | `false`   |
+| **shadow**    | 是否显示阴影           | `boolean`                                       | -                           | `false`   |
+| **auto**      | 自动缩放宽度           | `boolean`                                       | -                           | `false`   |
+| **effect**    | 是否显示动画效果       | `boolean`                                       | -                           | `true`    |
+| **disabled**  | 是否禁用按钮           | `boolean`                                       | -                           | `false`   |
+| **onClick**   | 点击事件               | `MouseEventHandler`                             | -                           | -         |
+| **icon**      | 在按钮内显示图标       | `ReactNode`                                     | -                           | -         |
+| **iconRight** | 在按钮的另一侧显示图标 | `ReactNode`                                     | -                           | -         |
+| **htmlType**  | 按钮的原生类型属性     | `ButtonHTMLAttributes.type`                     | -                           | `button`  |
+| **ref**       | 转发的原生按钮 Ref     | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                           | -         |
+| ...           | 原生属性               | `ButtonHTMLAttributes`                          | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
 
 ```ts
-type ButtonTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'abort'
-  | 'secondary-light' | 'success-light' | 'warning-light' | 'error-light'
+type ButtonTypes =
+  | 'default'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error'
+  | 'abort'
+  | 'secondary-light'
+  | 'success-light'
+  | 'warning-light'
+  | 'error-light'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>

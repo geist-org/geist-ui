@@ -17,7 +17,8 @@ A common container component.
 <Card>
   <p>A basic card.</p>
 </Card>
-`} />
+`}
+/>
 
 <Playground
   title="Hoverable"
@@ -26,7 +27,8 @@ A common container component.
 <Card hoverable>
   <p>hoverable card.</p>
 </Card>
-`} />
+`}
+/>
 
 <Playground
   title="Shadow"
@@ -36,7 +38,8 @@ A common container component.
   <h4>The Evil Rabbit</h4>
   <p>shadow card.</p>
 </Card>
-`} />
+`}
+/>
 
 <Playground
   title="Types"
@@ -67,7 +70,8 @@ A common container component.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="With Footer"
@@ -89,7 +93,8 @@ A common container component.
     </Card.Footer>
   </Card>
 </Row>
-`} />
+`}
+/>
 
 <Playground
   title="With Image"
@@ -104,7 +109,8 @@ A common container component.
     <Link block target="_blank" href="https://github.com/zeit-ui/react">Visit source code on GitHub.</Link>
   </Card.Footer>
 </Card>
-`} />
+`}
+/>
 
 <Playground
   title="With Divider"
@@ -121,36 +127,38 @@ A common container component.
     <Text>When called in a non-constructor context, Object behaves identically to <Code>new Object()</Code>.</Text>
   </Card.Content>
 </Card>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **hoverable** | add effect on hover | `boolean` | - | `false` |
-| **shadow** | show shadow | `boolean` | - | `false` |
-| **type** | card type | [CardType](#cardtype) | - | `default` |
-| **width** | CSS width value | `string` | - | `100%` |
-| ... | native props | `HTMLAttributes` | `'id', className', ...` | - |
+| Attribute     | Description         | Type                  | Accepted values         | Default   |
+| ------------- | ------------------- | --------------------- | ----------------------- | --------- |
+| **hoverable** | add effect on hover | `boolean`             | -                       | `false`   |
+| **shadow**    | show shadow         | `boolean`             | -                       | `false`   |
+| **type**      | card type           | [CardType](#cardtype) | -                       | `default` |
+| **width**     | CSS width value     | `string`              | -                       | `100%`    |
+| ...           | native props        | `HTMLAttributes`      | `'id', className', ...` | -         |
 
 <Attributes.Title alias="Card.Body">Card.Content.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'id', className', ...` | - |
+| Attribute | Description  | Type             | Accepted values         | Default |
+| --------- | ------------ | ---------------- | ----------------------- | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', className', ...` | -       |
 
 <Attributes.Title alias="Card.Actions">Card.Footer.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **disableAutoMargin** | cancel automatic margin value | `boolean` | - | `false` |
-| ... | native props | `HTMLAttributes` | `'id', className', ...` | - |
+| Attribute             | Description                   | Type             | Accepted values         | Default |
+| --------------------- | ----------------------------- | ---------------- | ----------------------- | ------- |
+| **disableAutoMargin** | cancel automatic margin value | `boolean`        | -                       | `false` |
+| ...                   | native props                  | `HTMLAttributes` | `'id', className', ...` | -       |
 
 <Attributes.Title>CardType</Attributes.Title>
 
 ```ts
-type CardType = 'default'
+type CardType =
+  | 'default'
   | 'secondary'
   | 'success'
   | 'warning'

@@ -30,7 +30,8 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Match Type"
@@ -45,10 +46,13 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
     </>
   )
 }
-`} />
+`}
+/>
 
-
-<PlaygroundTitle title="custom breakpoints" desc="Override the default breakpoints of the `@zeit-ui/react`." />
+<PlaygroundTitle
+  title="custom breakpoints"
+  desc="Override the default breakpoints of the `@zeit-ui/react`."
+/>
 
 ```tsx
 const breakpoints: ZeitUIThemesBreakpoints = {
@@ -74,14 +78,11 @@ const App = () => (
 type ResponsiveBreakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'mobile'
 
 type ResponsiveOptions = {
- match?: 'up'| 'down',
- ssrMatchMedia?: (query: string) => { matches: boolean }
+  match?: 'up' | 'down'
+  ssrMatchMedia?: (query: string) => { matches: boolean }
 }
 
-const useMediaQuery = (
-  breakpoint: ResponsiveBreakpoint,
-  options?: ResponsiveOptions,
-) => boolean
+const useMediaQuery = (breakpoint: ResponsiveBreakpoint, options?: ResponsiveOptions) => boolean
 ```
 
 </Attributes>

@@ -24,7 +24,8 @@ export const meta = {
   ]
   return <AutoComplete placeholder="在这里输入" options={options} />
 }
-`} />
+`}
+/>
 
 <Playground
   title="只允许选择输入"
@@ -39,7 +40,8 @@ export const meta = {
   ]
   return <AutoComplete disableFreeSolo options={options} initialValue="sydney" />
 }
-`} />
+`}
+/>
 
 <Playground
   desc="禁用所有的交互。"
@@ -54,7 +56,8 @@ export const meta = {
   ]
   return <AutoComplete disabled options={options} initialValue="London" />
 }
-`} />
+`}
+/>
 
 <Playground
   desc="根据当前输入内容变更备选的列表选项。"
@@ -75,7 +78,8 @@ export const meta = {
   }
   return <AutoComplete options={options} placeholder="在这里输入" onSearch={searchHandler} />
 }
-`} />
+`}
+/>
 
 <Playground
   title="搜索中"
@@ -112,7 +116,8 @@ export const meta = {
       onSearch={searchHandler} />
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="定制搜索中的提示"
@@ -124,7 +129,8 @@ export const meta = {
     <span style={{ color: 'red' }}>等待中...</span>
   </AutoComplete.Searching>
 </AutoComplete>
-`} />
+`}
+/>
 
 <Playground
   title="定制无结果"
@@ -151,7 +157,8 @@ export const meta = {
     </AutoComplete>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="定制选项"
@@ -189,7 +196,8 @@ export const meta = {
       onSearch={searchHandler} />
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="大小"
@@ -214,7 +222,8 @@ export const meta = {
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="可清除的"
@@ -229,8 +238,8 @@ export const meta = {
   ]
   return <AutoComplete placeholder="在这里输入" clearable options={options} />
 }
-`} />
-
+`}
+/>
 
 <Playground
   title="可创建的"
@@ -255,49 +264,50 @@ export const meta = {
   }
   return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
 }
-`} />
+`}
+/>
 
 <Attributes edit="/pages/zh-cn/components/auto-complete.mdx">
 <Attributes.Title>AutoComplete.Props</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **options** | 输入框的可选项 | [AutoCompleteOptions](#type-autocompleteoptions) | - | - |
-| **status** | 输入框类型 | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size** | 输入框大小 | `NormalSizes` | `'mini', 'small', 'medium', 'large'` | `medium` |
-| **initialValue** | 初始值 | `string` | - | - |
-| **value** | 命令式的输入框的值 | `string` | - | - |
-| **width** | 组件容器的宽度 | `string` | - | - |
-| **clearable** | 是否显示清除按钮 | `boolean` | - | `false` |
-| **searching** | 是否显示正在搜索中 | `boolean` | - | `false` |
-| **onChange** | 输入框的值发生变化触发此事件 | `(value: string) => void` | - | - |
-| **onSearch** | 搜索事件，当用户手动输入时触发 | `(value: string) => void` | - | - |
-| **onSelect** | 当备选框被选中后触发的事件 | `(value: string) => void` | - | - |
-| **dropdownClassName** | 自定义下拉框的类名 | `string` | - | - |
-| **dropdownStyle** | 自定义下拉框的样式 | `object` | - | - |
-| **disableMatchWidth** | 禁止 Option 跟随父元素的宽度 | `boolean` | - | `false` |
-| **disableFreeSolo** | 只允许通过 Select 事件更改值 (禁止 Input 输入随意值) | `boolean` | - | `false` |
-| ... | 原生属性 | `InputHTMLAttributes` | `'id', 'className', ...` | - |
+| 属性                  | 描述                                                 | 类型                                             | 推荐值                                                  | 默认      |
+| --------------------- | ---------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
+| **options**           | 输入框的可选项                                       | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
+| **status**            | 输入框类型                                           | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size**              | 输入框大小                                           | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
+| **initialValue**      | 初始值                                               | `string`                                         | -                                                       | -         |
+| **value**             | 命令式的输入框的值                                   | `string`                                         | -                                                       | -         |
+| **width**             | 组件容器的宽度                                       | `string`                                         | -                                                       | -         |
+| **clearable**         | 是否显示清除按钮                                     | `boolean`                                        | -                                                       | `false`   |
+| **searching**         | 是否显示正在搜索中                                   | `boolean`                                        | -                                                       | `false`   |
+| **onChange**          | 输入框的值发生变化触发此事件                         | `(value: string) => void`                        | -                                                       | -         |
+| **onSearch**          | 搜索事件，当用户手动输入时触发                       | `(value: string) => void`                        | -                                                       | -         |
+| **onSelect**          | 当备选框被选中后触发的事件                           | `(value: string) => void`                        | -                                                       | -         |
+| **dropdownClassName** | 自定义下拉框的类名                                   | `string`                                         | -                                                       | -         |
+| **dropdownStyle**     | 自定义下拉框的样式                                   | `object`                                         | -                                                       | -         |
+| **disableMatchWidth** | 禁止 Option 跟随父元素的宽度                         | `boolean`                                        | -                                                       | `false`   |
+| **disableFreeSolo**   | 只允许通过 Select 事件更改值 (禁止 Input 输入随意值) | `boolean`                                        | -                                                       | `false`   |
+| ...                   | 原生属性                                             | `InputHTMLAttributes`                            | `'id', 'className', ...`                                | -         |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | 用于鉴别多个备选项的唯一值 | `string` | - | - |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性      | 描述                       | 类型             | 推荐值                   | 默认 |
+| --------- | -------------------------- | ---------------- | ------------------------ | ---- |
+| **value** | 用于鉴别多个备选项的唯一值 | `string`         | -                        | -    |
+| ...       | 原生属性                   | `HTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>AutoComplete.Searching</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
+| ---- | -------- | ---------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
 
 <Attributes.Title>AutoComplete.Empty</Attributes.Title>
 
-| 属性 | 描述 | 类型 | 推荐值 | 默认
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| hidden | 隐藏无结果提示框 | `boolean` | - | `false` |
-| ... | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | - |
+| 属性   | 描述             | 类型             | 推荐值                   | 默认    |
+| ------ | ---------------- | ---------------- | ------------------------ | ------- |
+| hidden | 隐藏无结果提示框 | `boolean`        | -                        | `false` |
+| ...    | 原生属性         | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>type AutoCompleteOptions</Attributes.Title>
 

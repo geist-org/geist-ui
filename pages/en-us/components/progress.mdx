@@ -15,7 +15,8 @@ Display progress relative to a limit or related to a task.
   scope={{ Progress }}
   code={`
 <Progress value={50} />
-`} />
+`}
+/>
 
 <Playground
   title="Custom Max"
@@ -23,7 +24,8 @@ Display progress relative to a limit or related to a task.
   scope={{ Progress }}
   code={`
 <Progress value={45} max={50} />
-`} />
+`}
+/>
 
 <Playground
   title="Dynamic Colors"
@@ -49,7 +51,8 @@ Display progress relative to a limit or related to a task.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Type"
@@ -65,20 +68,21 @@ Display progress relative to a limit or related to a task.
   <Spacer />
   <Progress type="error" value={21} />
 </>
-`} />
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/progress.mdx">
 <Attributes.Title>Progress.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **value** | current value | `number` | - | 0 |
-| **max** | max value | `number` | - | 100 |
-| **fixedTop** | fix progress to top | `boolean` | - | `false` |
-| **fixedBottom** | fix progress to bottom | `boolean` | - | `false` |
-| **colors** | custom colors | `{ [key: number]: string }` | - | - |
-| **type** | predefined state types | `NormalTypes` | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| ... | native props | `ProgressHTMLAttributes` | `'aria-busy', 'className', ...` | - |
+| Attribute       | Description            | Type                        | Accepted values                                         | Default   |
+| --------------- | ---------------------- | --------------------------- | ------------------------------------------------------- | --------- |
+| **value**       | current value          | `number`                    | -                                                       | 0         |
+| **max**         | max value              | `number`                    | -                                                       | 100       |
+| **fixedTop**    | fix progress to top    | `boolean`                   | -                                                       | `false`   |
+| **fixedBottom** | fix progress to bottom | `boolean`                   | -                                                       | `false`   |
+| **colors**      | custom colors          | `{ [key: number]: string }` | -                                                       | -         |
+| **type**        | predefined state types | `NormalTypes`               | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| ...             | native props           | `ProgressHTMLAttributes`    | `'aria-busy', 'className', ...`                         | -         |
 
 </Attributes>
 

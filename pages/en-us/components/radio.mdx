@@ -15,7 +15,8 @@ Provides single user input from a selection of options.
   scope={{ Radio }}
   code={`
 <Radio checked={false}>Option 1</Radio>
-`} />
+`}
+/>
 
 <Playground
   title="Group"
@@ -37,7 +38,8 @@ Provides single user input from a selection of options.
     </>
   )
 }
-`} />
+`}
+/>
 
 <Playground
   title="Sizes"
@@ -62,7 +64,8 @@ Provides single user input from a selection of options.
     </Radio.Group>
   </div>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Description"
@@ -79,8 +82,8 @@ Provides single user input from a selection of options.
     <Radio.Desc><Code>Description</Code> for Option2</Radio.Desc>
   </Radio>
 </Radio.Group>
-`} />
-
+`}
+/>
 
 <Playground
   title="Disabled"
@@ -91,7 +94,8 @@ Provides single user input from a selection of options.
   <Radio value="1">Option 1</Radio>
   <Radio value="2">Option 2</Radio>
 </Radio.Group>
-`} />
+`}
+/>
 
 <Playground
   title="Row"
@@ -108,39 +112,39 @@ Provides single user input from a selection of options.
     <Radio.Desc>Description for Option2</Radio.Desc>
   </Radio>
 </Radio.Group>
-`} />
-
+`}
+/>
 
 <Attributes edit="/pages/en-us/components/radio.mdx">
 <Attributes.Title>Radio.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **checked** | selected or not (in single) | `boolean` | - | `false` |
-| **value** | unique ident value (in group) | `string` | - | - |
-| **id** | native attr | `string` | - | - |
-| **disabled** | disable current radio | `boolean` | - | `false` |
-| **size** | radio size | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **onChange** | change event | `(e: RadioEvent) => void` | - | - |
-| ... | native props | `InputHTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute    | Description                   | Type                      | Accepted values             | Default  |
+| ------------ | ----------------------------- | ------------------------- | --------------------------- | -------- |
+| **checked**  | selected or not (in single)   | `boolean`                 | -                           | `false`  |
+| **value**    | unique ident value (in group) | `string`                  | -                           | -        |
+| **id**       | native attr                   | `string`                  | -                           | -        |
+| **disabled** | disable current radio         | `boolean`                 | -                           | `false`  |
+| **size**     | radio size                    | `NormalSizes`             | [NormalSizes](#normalsizes) | `medium` |
+| **onChange** | change event                  | `(e: RadioEvent) => void` | -                           | -        |
+| ...          | native props                  | `InputHTMLAttributes`     | `'id', 'className', ...`    | -        |
 
 <Attributes.Title>Radio.Group.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| **initialValue** | initial value | `string` | - | - |
-| **value** | selected child radio | `string` | - | - |
-| **useRow** | horizontal layout | `boolean` | - | `false` |
-| **disabled** | disable all radios | `boolean` | - | `false` |
-| **size** | size of all radios in the group | `NormalSizes` | [NormalSizes](#normalsizes) | `medium` |
-| **onChange** | change event | `(value: string) => void` | - | - |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute        | Description                     | Type                      | Accepted values             | Default  |
+| ---------------- | ------------------------------- | ------------------------- | --------------------------- | -------- |
+| **initialValue** | initial value                   | `string`                  | -                           | -        |
+| **value**        | selected child radio            | `string`                  | -                           | -        |
+| **useRow**       | horizontal layout               | `boolean`                 | -                           | `false`  |
+| **disabled**     | disable all radios              | `boolean`                 | -                           | `false`  |
+| **size**         | size of all radios in the group | `NormalSizes`             | [NormalSizes](#normalsizes) | `medium` |
+| **onChange**     | change event                    | `(value: string) => void` | -                           | -        |
+| ...              | native props                    | `HTMLAttributes`          | `'id', 'className', ...`    | -        |
 
 <Attributes.Title alias="Radio.Desc">Radio.Description.Props</Attributes.Title>
 
-| Attribute | Description | Type | Accepted values | Default
-| ---------- | ---------- | ---- |  -------------- | ------ |
-| ... | native props | `HTMLAttributes` | `'id', 'className', ...` | - |
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 
