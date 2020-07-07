@@ -43,14 +43,14 @@ export interface ZeitUIThemesPalette {
   alert: string
 
   // conflux
-  cThem0: string
-  cThem1: string
-  cThem2: string
-  cThem3: string
-  cThem4: string
-  cThem5: string
-  cThem6: string
-  cThem7: string
+  cTheme0: string
+  cTheme1: string
+  cTheme2: string
+  cTheme3: string
+  cTheme4: string
+  cTheme5: string
+  cTheme6: string
+  cTheme7: string
   cBlack0: string
   cGray0: string
   cGray1: string
