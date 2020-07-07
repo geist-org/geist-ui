@@ -13,6 +13,26 @@ import DefaultTheme from 'components/styles/themes/default'
 import { useConfigs } from 'lib/config-context'
 
 const basicColors: Array<keyof ZeitUIThemesPalette> = [
+  'brandLight',
+  'brand',
+  'brandDark',
+  'cThem0',
+  'cThem1',
+  'cThem2',
+  'cThem3',
+  'cThem4',
+  'cThem5',
+  'cThem6',
+  'cThem7',
+  'cBlack0',
+  'cGray0',
+  'cGray1',
+  'cGray2',
+  'cGray3',
+  'cGray4',
+  'cGray5',
+  'cGray6',
+  'cWhite0',
   'accents_1',
   'accents_2',
   'accents_3',
@@ -54,6 +74,16 @@ const expressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
   'shadowMedium',
   'shadowLarge',
 ]
+const radiusExpressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
+  'R0',
+  'R1',
+  'R2',
+  'R3',
+  'R4',
+  'R5',
+]
+const shadowExpressiveness: Array<keyof ZeitUIThemesExpressiveness> = ['D0', 'D1', 'D2', 'D3', 'D4']
+
 const pageLayout: Array<keyof ZeitUIThemesLayout> = [
   'pageWidth',
   'pageWidthWithMargin',
@@ -115,6 +145,18 @@ const Editor = () => {
       <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
       <div className="content">
         {expressiveness.map((item, index) => (
+          <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
+        ))}
+      </div>
+      <p className="subtitle">{isChinese ? '圆角' : 'radius'}</p>
+      <div className="content">
+        {radiusExpressiveness.map((item, index) => (
+          <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
+        ))}
+      </div>
+      <p className="subtitle">box-shadow</p>
+      <div className="content">
+        {shadowExpressiveness.map((item, index) => (
           <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
         ))}
       </div>

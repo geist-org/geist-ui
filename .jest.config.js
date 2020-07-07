@@ -5,7 +5,7 @@ module.exports = {
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
 
-  testPathIgnorePatterns: ['/pages/', '/dist/', '/lib/'],
+  testPathIgnorePatterns: ['/pages/', '/dist/', '/lib/', '/esm/'],
 
   transform: {
     '^.+\\.tsx?$': ['babel-jest', { configFile: './tests/.babelrc.js' }],
