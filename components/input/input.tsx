@@ -216,6 +216,10 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             border-color: ${hoverBorder};
           }
 
+          .input-wrapper:hover {
+            border-color: ${hoverBorder};
+          }
+
           input {
             margin: 4px 10px;
             padding: 0;
