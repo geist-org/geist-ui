@@ -40,7 +40,7 @@ const ExampleBlock: React.FC<React.PropsWithChildren<ExampleBlockProps>> = React
             width: 100%;
             background: ${bg};
             padding: ${theme.layout.gapHalf};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             color: ${theme.palette.background};
             font-size: 0.75rem;
           }

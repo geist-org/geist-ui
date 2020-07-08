@@ -91,7 +91,7 @@ const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({
           line-height: 0.875rem;
           font-size: 0.875rem;
           height: 1.75rem;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           border: 1px solid ${borderColor};
           background-color: ${bgColor};
           color: ${color};

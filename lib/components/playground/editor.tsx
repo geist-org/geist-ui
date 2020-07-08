@@ -58,15 +58,15 @@ const Editor: React.FC<Props> = ({ code }) => {
 
       <style jsx>{`
         .editor {
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
+          border-bottom-left-radius: ${theme.expressiveness.R2};
+          border-bottom-right-radius: ${theme.expressiveness.R2};
         }
 
         details {
           transition: all 0.2s ease;
           overflow: hidden;
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
+          border-bottom-left-radius: ${theme.expressiveness.R2};
+          border-bottom-right-radius: ${theme.expressiveness.R2};
         }
 
         summary {

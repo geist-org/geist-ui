@@ -104,7 +104,7 @@ export interface ZeitUIThemesLayout {
   pageWidthWithMargin: string
   breakpointMobile: string
   breakpointTablet: string
-  radius: string
+  // radius: string
 }
 
 export interface ZeitUIThemesFont {

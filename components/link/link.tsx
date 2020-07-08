@@ -53,7 +53,7 @@ const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkPro
             color: ${linkColor};
             text-decoration: none;
             padding: calc(${padding} * 0.8) calc(${padding} * 1.7);
-            border-radius: ${block ? theme.layout.radius : 0};
+            border-radius: ${block ? theme.expressiveness.R2 : 0};
             width: fit-content;
             transition: color 200ms ease 0ms;
           }

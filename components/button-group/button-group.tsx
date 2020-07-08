@@ -65,7 +65,7 @@ const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupPr
         <style jsx>{`
           .btn-group {
             display: inline-flex;
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             margin: ${theme.layout.gapQuarter};
             border: 1px solid ${border};
             background-color: transparent;

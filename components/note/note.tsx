@@ -82,7 +82,7 @@ export const Note: React.FC<React.PropsWithChildren<NoteProps>> = ({
           border: 1px solid ${borderColor};
           color: ${color};
           background-color: ${bgColor};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
         }
 
         .note :global(p) {

@@ -115,11 +115,11 @@ const FieldsetGroup: React.FC<React.PropsWithChildren<FieldsetGroupProps>> = ({
           }
 
           button:first-of-type {
-            border-top-left-radius: ${theme.layout.radius};
+            border-top-left-radius: ${theme.expressiveness.R2};
           }
 
           button:last-of-type {
-            border-top-right-radius: ${theme.layout.radius};
+            border-top-right-radius: ${theme.expressiveness.R2};
           }
 
           button + button {

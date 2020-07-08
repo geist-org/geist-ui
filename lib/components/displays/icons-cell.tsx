@@ -40,7 +40,7 @@ const IconsCell: React.FC<Props> = ({ component: Component, name, onClick }) => 
           min-width: 0px;
           height: 95px;
           margin: 12px 5px;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           box-sizing: border-box;
           cursor: pointer;
           user-select: none;

@@ -108,7 +108,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
 
           body::-webkit-scrollbar-thumb {
             background-color: ${theme.palette.accents_2};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
           }
         `}</style>
       </ZeitProvider>

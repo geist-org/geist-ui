@@ -121,7 +121,7 @@ const ToastItem: React.FC<ToatItemProps> = React.memo(({ index, total, toast, on
           background-color: ${bgColor};
           color: ${color};
           border: 0;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           padding: ${theme.layout.gap};
           position: absolute;
           bottom: 0;

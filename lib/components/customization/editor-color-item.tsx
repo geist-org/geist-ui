@@ -63,7 +63,7 @@ const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({ keyName }) 
             display: inline-flex;
             align-items: center;
             border: 1px solid ${theme.palette.border};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             color: ${theme.palette.accents_5};
             margin-right: 0.75rem;
             margin-bottom: 0.5rem;

@@ -88,7 +88,7 @@ const pageLayout: Array<keyof ZeitUIThemesLayout> = [
   'pageWidth',
   'pageWidthWithMargin',
   'pageMargin',
-  'radius',
+  // 'radius',
 ]
 const gapLayout: Array<keyof ZeitUIThemesLayout> = [
   'gap',

@@ -48,7 +48,7 @@ const Capacity: React.FC<CapacityProps> = ({
         .capacity {
           width: 50px;
           height: 10px;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           overflow: hidden;
           background-color: ${theme.palette.accents_2};
         }

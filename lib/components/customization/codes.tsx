@@ -112,7 +112,7 @@ const CustomizationCodes = () => {
           width: 80%;
           margin: 0 auto;
           border: 1px solid ${theme.palette.border};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           overflow: hidden;
           padding: calc(0.6 * ${theme.layout.gap}) ${theme.layout.gap};
           position: relative;

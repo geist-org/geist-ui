@@ -155,7 +155,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             line-height: ${height};
             min-width: ${minWidth};
             width: ${width};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             font-weight: 400;
             font-size: ${fontSize};
             user-select: none;

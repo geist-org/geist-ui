@@ -202,7 +202,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
         pre {
           border: 1px solid ${theme.palette.accents_2};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           padding: calc(${theme.layout.gap} * 0.75) ${theme.layout.gap};
           margin: ${theme.layout.gap} 0;
           font-family: ${theme.font.mono};
@@ -279,7 +279,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           padding: calc(0.667 * ${theme.layout.gap}) ${theme.layout.gap};
           color: ${theme.palette.accents_5};
           background-color: ${theme.palette.accents_1};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           margin: 1.5rem 0;
           border: 1px solid ${theme.palette.border};
         }

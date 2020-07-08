@@ -59,7 +59,7 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
           font-size: inherit;
           cursor: pointer;
           color: ${theme.palette.success};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           background-color: ${theme.palette.background};
           transition: all linear 200ms 0ms;
         }

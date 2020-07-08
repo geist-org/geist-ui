@@ -53,7 +53,7 @@ const Avatar: React.FC<AvatarProps> = ({
 }) => {
   const theme = useTheme()
   const showText = !src
-  const radius = isSquare ? theme.layout.radius : '50%'
+  const radius = isSquare ? theme.expressiveness.R2 : '50%'
   const marginLeft = stacked ? '-.625rem' : 0
   const width = useMemo(() => getSize(size), [size])
 

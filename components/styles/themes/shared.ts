@@ -50,5 +50,5 @@ export const defaultLayout: ZeitUIThemesLayout = {
   pageWidthWithMargin: '782pt',
   breakpointMobile: defaultBreakpoints.xs.max,
   breakpointTablet: defaultBreakpoints.sm.max,
-  radius: '5px',
+  // radius: '5px',
 }

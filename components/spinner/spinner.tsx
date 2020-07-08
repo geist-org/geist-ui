@@ -28,7 +28,7 @@ const getSpans = (theme: ZeitUIThemes) => {
           width: 24%;
           height: 8%;
           left: -10%;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           animation: spinner 1.2s linear 0s infinite normal none running;
         }
 

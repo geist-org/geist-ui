@@ -36,7 +36,7 @@ const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchPro
           color: ${theme.palette.accents_5};
           user-select: none;
           border: 0;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
         }
       `}</style>
     </div>
