@@ -95,7 +95,7 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
           min-width: 12.5rem;
           max-width: 95vw;
           height: auto;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           border: 1px solid ${borderColor};
           color: ${color};
           transition: border 0.2s ease 0s, color 0.2s ease 0s;

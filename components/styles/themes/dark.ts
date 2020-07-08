@@ -42,6 +42,28 @@ export const palette: ZeitUIThemesPalette = {
   alert: '#ff0080',
   magenta: '#eb367f',
   link: '#3291ff',
+
+  // conflux ui
+  cTheme0: '#e8f4ff',
+  cTheme1: '#cce5ff',
+  cTheme2: '#c0d8fc',
+  cTheme3: '#a9bde6',
+  cTheme4: '#6d8bc8',
+  cTheme5: '#0054fe',
+  cTheme6: '#0433dc',
+  cTheme7: '#0626ae',
+  cBlack0: '#282d30',
+  cGray0: '#f9fafb',
+  cGray1: '#f1f3f6',
+  cGray2: '#ebeced',
+  cGray3: '#dbdde0',
+  cGray4: '#aaafbb',
+  cGray5: '#9b9eac',
+  cGray6: '#444',
+  cWhite0: '#fff',
+  brandLight: '#001b36',
+  brand: '#0054fe',
+  brandDark: '#0626ae',
 }
 
 export const expressiveness: ZeitUIThemesExpressiveness = {
@@ -54,6 +76,21 @@ export const expressiveness: ZeitUIThemesExpressiveness = {
   shadowMedium: '0 0 0 1px #333',
   shadowLarge: '0 0 0 1px #333',
   portalOpacity: 0.75,
+
+  // radius
+  R0: '0',
+  R1: '2px',
+  R2: '4px',
+  R3: '8px',
+  R4: '12px',
+  R5: '50%',
+
+  // drop shadows
+  D0: 'none',
+  D1: '0px 0px 2px rgba(0, 0, 0, 0.08)',
+  D2: '0px 4px 8px rgba(0, 0, 0, 0.08)',
+  D3: '0px 4px 8px rgba(0, 0, 0, 0.16)',
+  D4: '0px 8px 16px rgba(0, 0, 0, 0.24)',
 }
 
 export const font = defaultFont

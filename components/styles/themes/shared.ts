@@ -5,6 +5,10 @@ import {
 } from 'components/styles/themes/index'
 
 export const defaultFont: ZeitUIThemesFont = {
+  circular:
+    '"Circular Std", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+  pingfang:
+    '"PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
   sans:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
   mono:
@@ -46,5 +50,5 @@ export const defaultLayout: ZeitUIThemesLayout = {
   pageWidthWithMargin: '782pt',
   breakpointMobile: defaultBreakpoints.xs.max,
   breakpointTablet: defaultBreakpoints.sm.max,
-  radius: '5px',
+  // radius: '5px',
 }

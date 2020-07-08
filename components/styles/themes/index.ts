@@ -41,6 +41,28 @@ export interface ZeitUIThemesPalette {
   purple: string
   magenta: string
   alert: string
+
+  // conflux
+  cTheme0: string
+  cTheme1: string
+  cTheme2: string
+  cTheme3: string
+  cTheme4: string
+  cTheme5: string
+  cTheme6: string
+  cTheme7: string
+  cBlack0: string
+  cGray0: string
+  cGray1: string
+  cGray2: string
+  cGray3: string
+  cGray4: string
+  cGray5: string
+  cGray6: string
+  cWhite0: string
+  brandLight: string
+  brand: string
+  brandDark: string
 }
 
 export interface ZeitUIThemesExpressiveness {
@@ -53,6 +75,21 @@ export interface ZeitUIThemesExpressiveness {
   shadowMedium: string
   shadowLarge: string
   portalOpacity: number
+
+  // radius
+  R0: string
+  R1: string
+  R2: string
+  R3: string
+  R4: string
+  R5: string
+
+  // drop shadows
+  D0: string
+  D1: string
+  D2: string
+  D3: string
+  D4: string
 }
 
 export interface ZeitUIThemesLayout {
@@ -67,12 +104,14 @@ export interface ZeitUIThemesLayout {
   pageWidthWithMargin: string
   breakpointMobile: string
   breakpointTablet: string
-  radius: string
+  // radius: string
 }
 
 export interface ZeitUIThemesFont {
   sans: string
   mono: string
+  circular: string
+  pingfang: string
 }
 
 export interface BreakpointsItem {

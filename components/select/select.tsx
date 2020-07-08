@@ -169,7 +169,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
             border: 1px solid ${theme.palette.border};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             padding: 0 ${theme.layout.gapQuarter} 0 ${theme.layout.gapHalf};
             height: ${sizes.height};
             min-width: ${sizes.minWidth};

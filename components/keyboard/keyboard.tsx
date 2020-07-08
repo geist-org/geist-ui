@@ -77,7 +77,7 @@ const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
           color: ${theme.palette.accents_5};
           background-color: ${theme.palette.accents_1};
           font-family: ${theme.font.sans};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           border: 1px solid ${theme.palette.accents_2};
           padding: 0 ${padding};
           min-width: ${minWidth};

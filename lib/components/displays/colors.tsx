@@ -75,13 +75,13 @@ const Colors: React.FC<Props> = ({ type }) => {
         }
 
         .colors :global(.color:first-child) {
-          border-top-left-radius: ${theme.layout.radius};
-          border-top-right-radius: ${theme.layout.radius};
+          border-top-left-radius: ${theme.expressiveness.R2};
+          border-top-right-radius: ${theme.expressiveness.R2};
         }
 
         .colors :global(.color:last-child) {
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
+          border-bottom-left-radius: ${theme.expressiveness.R2};
+          border-bottom-right-radius: ${theme.expressiveness.R2};
         }
 
         .colors :global(.color h4) {

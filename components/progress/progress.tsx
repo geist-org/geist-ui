@@ -85,7 +85,7 @@ const Progress: React.FC<ProgressProps> = ({
           width: 100%;
           height: 0.625rem;
           background-color: ${theme.palette.accents_2};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
         }
 
         .fixed {
@@ -107,7 +107,7 @@ const Progress: React.FC<ProgressProps> = ({
           height: 100%;
           bottom: 0;
           transition: all 100ms ease-in;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           background-color: ${currentColor};
           width: ${percentValue}%;
         }

@@ -35,7 +35,7 @@ const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = (
         {children}
         <style jsx>{`
           .select-dropdown {
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             box-shadow: ${theme.expressiveness.shadowLarge};
             background-color: ${theme.palette.background};
             max-height: 15rem;

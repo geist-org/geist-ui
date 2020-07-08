@@ -43,7 +43,7 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
         {children}
         <style jsx>{`
           .auto-complete-dropdown {
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             box-shadow: ${theme.expressiveness.shadowLarge};
             background-color: ${theme.palette.background};
             overflow-y: auto;

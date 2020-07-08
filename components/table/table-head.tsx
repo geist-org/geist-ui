@@ -77,16 +77,16 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
           border-bottom: 1px solid ${theme.palette.border};
           border-left: 1px solid ${theme.palette.border};
           border-top: 1px solid ${theme.palette.border};
-          border-top-left-radius: ${theme.layout.radius};
-          border-bottom-left-radius: ${theme.layout.radius};
+          border-top-left-radius: ${theme.expressiveness.R2};
+          border-bottom-left-radius: ${theme.expressiveness.R2};
         }
 
         th:last-child {
           border-bottom: 1px solid ${theme.palette.border};
           border-right: 1px solid ${theme.palette.border};
           border-top: 1px solid ${theme.palette.border};
-          border-top-right-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
+          border-top-right-radius: ${theme.expressiveness.R2};
+          border-bottom-right-radius: ${theme.expressiveness.R2};
         }
 
         .thead-box {

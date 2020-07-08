@@ -88,7 +88,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           color: ${style.color};
           background-color: ${style.bgColor};
           border: 1px solid ${style.border};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
         }
 
         pre {
@@ -124,7 +124,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           width: calc(2 * ${theme.layout.gap});
           color: inherit;
           transition: opacity 0.2s ease 0s;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           cursor: pointer;
           user-select: none;
         }

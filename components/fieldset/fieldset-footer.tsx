@@ -28,8 +28,8 @@ const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = (
         footer {
           background-color: ${theme.palette.accents_1};
           border-top: 1px solid ${theme.palette.border};
-          border-bottom-left-radius: ${theme.layout.radius};
-          border-bottom-right-radius: ${theme.layout.radius};
+          border-bottom-left-radius: ${theme.expressiveness.R2};
+          border-bottom-right-radius: ${theme.expressiveness.R2};
           display: flex;
           justify-content: space-between;
           align-items: center;

@@ -18,18 +18,18 @@ export const palette: ZeitUIThemesPalette = {
   secondary: '#666',
   code: '#f81ce5',
   border: '#eaeaea',
-  error: '#e00',
-  errorLight: '#ff1a1a',
+  error: '#e15c56',
+  errorLight: '#ff8585',
   errorLighter: '#f7d4d6',
-  errorDark: '#c50000',
-  success: '#0070f3',
-  successLight: '#3291ff',
+  errorDark: '#b34a50',
+  success: '#58f17a',
+  successLight: '#8afb88',
   successLighter: '#d3e5ff',
-  successDark: '#0761d1',
-  warning: '#f5a623',
-  warningLight: '#f7b955',
+  successDark: '#61be8f',
+  warning: '#ffc438',
+  warningLight: '#ffde40',
   warningLighter: '#ffefcf',
-  warningDark: '#ab570a',
+  warningDark: '#f48b4f',
   cyan: '#50e3c2',
   cyanLighter: '#aaffec',
   cyanLight: '#79ffe1',
@@ -42,6 +42,28 @@ export const palette: ZeitUIThemesPalette = {
   alert: '#ff0080',
   magenta: '#eb367f',
   link: '#0070f3',
+
+  // conflux ui
+  cTheme0: '#e8f4ff',
+  cTheme1: '#cce5ff',
+  cTheme2: '#c0d8fc',
+  cTheme3: '#a9bde6',
+  cTheme4: '#6d8bc8',
+  cTheme5: '#0054fe',
+  cTheme6: '#0433dc',
+  cTheme7: '#0626ae',
+  cBlack0: '#282D30',
+  cGray0: '#f9fafb',
+  cGray1: '#f1f3f6',
+  cGray2: '#ebeced',
+  cGray3: '#dbdde0',
+  cGray4: '#aaafbb',
+  cGray5: '#9b9eac',
+  cGray6: '#444',
+  cWhite0: '#fff',
+  brandLight: '#001b36',
+  brand: '#0054fe',
+  brandDark: '#0626ae',
 }
 
 export const expressiveness: ZeitUIThemesExpressiveness = {
@@ -54,6 +76,21 @@ export const expressiveness: ZeitUIThemesExpressiveness = {
   shadowMedium: '0 8px 30px rgba(0, 0, 0, 0.12)',
   shadowLarge: '0 30px 60px rgba(0, 0, 0, 0.12)',
   portalOpacity: 0.25,
+
+  // radius
+  R0: '0',
+  R1: '2px',
+  R2: '4px',
+  R3: '8px',
+  R4: '12px',
+  R5: '50%',
+
+  // drop shadows
+  D0: 'none',
+  D1: '0px 0px 2px rgba(0, 0, 0, 0.08)',
+  D2: '0px 4px 8px rgba(0, 0, 0, 0.08)',
+  D3: '0px 4px 8px rgba(0, 0, 0, 0.16)',
+  D4: '0px 8px 16px rgba(0, 0, 0, 0.24)',
 }
 
 export const font = defaultFont

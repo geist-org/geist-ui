@@ -133,7 +133,7 @@ const ImageBrowser = React.forwardRef<HTMLDivElement, React.PropsWithChildren<Im
             width: max-content;
             max-width: 100%;
             margin: 0 auto;
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             overflow: hidden;
           }
 
