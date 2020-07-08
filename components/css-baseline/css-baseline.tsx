@@ -52,7 +52,6 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         p,
         small {
           font-weight: 400;
-          font-size: 0.8571rem;
           color: inherit;
           letter-spacing: 0.1429rem;
           font-family: ${theme.font.sans};
@@ -67,7 +66,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         small {
           margin: 0;
           line-height: 1.5;
-          font-size: 0.875rem;
+          font-size: 0.8571rem;
         }
 
         b {
