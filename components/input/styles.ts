@@ -38,9 +38,9 @@ export type InputColor = {
 export const getColors = (palette: ZeitUIThemesPalette, status?: NormalTypes): InputColor => {
   const colors: { [key in NormalTypes]: InputColor } = {
     default: {
-      color: palette.foreground,
-      borderColor: palette.border,
-      hoverBorder: palette.accents_5,
+      color: palette.brand,
+      borderColor: palette.cGray2,
+      hoverBorder: palette.cTheme5,
     },
     primary: {
       color: palette.foreground,
