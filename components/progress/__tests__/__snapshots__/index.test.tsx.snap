@@ -257,7 +257,47 @@ exports[`Progress should show different progress by maximum 1`] = `
 `;
 
 exports[`Progress should work with different types 1`] = `
-"<div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"59%\\"></div><progress class=\\"\\" value=\\"59\\" max=\\"100\\"></progress><style>
+"<div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"80%\\"></div><progress class=\\"\\" value=\\"80\\" max=\\"100\\"></progress><style>
+        progress {
+          position: fixed;
+          top: -1000px;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+
+        .progress {
+          position: relative;
+          width: 100%;
+          height: 0.625rem;
+          background-color: #eaeaea;
+          border-radius: 4px;
+        }
+
+        .fixed {
+          position: fixed;
+          top: unset;
+          bottom: unset;
+          left: 0;
+          border-radius: 0;
+        }
+
+        .fixed > .inner {
+          border-radius: 0;
+        }
+
+        .inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          bottom: 0;
+          transition: all 100ms ease-in;
+          border-radius: 4px;
+          background-color: #58f17a;
+          width: 80%;
+        }
+      </style></div><div class=\\"progress  \\"><div class=\\"inner\\" title=\\"59%\\"></div><progress class=\\"\\" value=\\"59\\" max=\\"100\\"></progress><style>
         progress {
           position: fixed;
           top: -1000px;

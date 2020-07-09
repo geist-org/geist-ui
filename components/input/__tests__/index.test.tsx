@@ -24,6 +24,7 @@ describe('Input', () => {
   it('should work with different status', () => {
     const wrapper = mount(
       <div>
+        <Input status="primary" />
         <Input status="secondary" />
         <Input status="success" />
         <Input status="warning" />

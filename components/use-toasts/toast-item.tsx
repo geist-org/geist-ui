@@ -38,6 +38,7 @@ const toastActions = (actions: Toast['actions'], cancelHandle: Function) => {
 const getColors = (palette: ZeitUIThemesPalette, type?: NormalTypes) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.background,
+    primary: palette.success,
     secondary: palette.secondary,
     success: palette.success,
     warning: palette.warning,

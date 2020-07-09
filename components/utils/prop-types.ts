@@ -15,7 +15,7 @@ const buttonTypes = tuple(
 
 const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
-const normalTypes = tuple('default', 'secondary', 'success', 'warning', 'error')
+const normalTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
 const themeTypes = tuple('dark', 'light')
 

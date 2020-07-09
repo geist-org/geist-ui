@@ -34,6 +34,7 @@ const getFontSize = (size: NormalSizes) => {
 const getBgColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.foreground,
+    primary: palette.success,
     success: palette.success,
     warning: palette.warning,
     error: palette.error,

@@ -13,6 +13,7 @@ describe('Text', () => {
   it('should work with different styles', () => {
     const wrapper = mount(
       <div>
+        <Text type="primary">test-value</Text>
         <Text type="secondary">test-value</Text>
         <Text type="success">test-value</Text>
         <Text type="warning">test-value</Text>

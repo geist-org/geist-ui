@@ -42,6 +42,11 @@ export const getColors = (palette: ZeitUIThemesPalette, status?: NormalTypes): I
       borderColor: palette.border,
       hoverBorder: palette.accents_5,
     },
+    primary: {
+      color: palette.foreground,
+      borderColor: palette.successLight,
+      hoverBorder: palette.success,
+    },
     secondary: {
       color: palette.foreground,
       borderColor: palette.secondary,
