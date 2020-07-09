@@ -20,7 +20,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
           font-size: 14px;
           line-height: 1.5714rem;
           --zeit-icons-background: ${theme.palette.background};
-          letter-spacing: 0.0714rem;
+          letter-spacing: 0.0071rem;
         }
 
         body {
@@ -53,7 +53,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         small {
           font-weight: 400;
           color: inherit;
-          letter-spacing: 0.1429rem;
+          letter-spacing: 0.0143rem;
           font-family: ${theme.font.sans};
         }
 
@@ -137,7 +137,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
         h1 {
           font-size: 3.7144rem;
-          letter-spacing: 0.1429rem;
+          letter-spacing: 0.0143rem;
           line-height: 4.5714rem;
           font-weight: 700;
         }
@@ -152,28 +152,28 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         h3 {
           font-size: 2.2857rem;
           line-height: 2.8571rem;
-          letter-spacing: 0.07143rem;
+          letter-spacing: 0.0071rem;
           font-weight: 600;
         }
 
         h4 {
           font-size: 1.8571rem;
           line-height: 2.2857rem;
-          letter-spacing: 0.1429rem;
+          letter-spacing: 0.0143rem;
           font-weight: 600;
         }
 
         h5 {
           font-size: 1.4286rem;
           line-height: 1.8571rem;
-          letter-spacing: 0.1429rem;
+          letter-spacing: 0.0143rem;
           font-weight: 600;
         }
 
         h6 {
           font-size: 1.2857rem;
           line-height: 1.7143rem;
-          letter-spacing: 0.1429rem;
+          letter-spacing: 0.0143rem;
           font-weight: 600;
         }
 
