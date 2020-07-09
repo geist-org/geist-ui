@@ -31,6 +31,7 @@ export const getSizes = (size?: NormalSizes) => {
 
 export type InputColor = {
   color: string
+  hoverColor?: string
   borderColor: string
   hoverBorder: string
 }
@@ -38,7 +39,8 @@ export type InputColor = {
 export const getColors = (palette: ZeitUIThemesPalette, status?: NormalTypes): InputColor => {
   const colors: { [key in NormalTypes]: InputColor } = {
     default: {
-      color: palette.brand,
+      color: palette.cBlack0,
+      hoverColor: palette.brand,
       borderColor: palette.cGray2,
       hoverBorder: palette.cTheme5,
     },

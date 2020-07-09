@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input should be work with icon 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: content-box;
           display: flex;
@@ -63,11 +63,11 @@ exports[`Input should be work with icon 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -78,7 +78,7 @@ exports[`Input should be work with icon 1`] = `
             font-size: .875rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -94,6 +94,14 @@ exports[`Input should be work with icon 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -106,9 +114,9 @@ exports[`Input should be work with icon 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: content-box;
           display: flex;
@@ -170,11 +178,11 @@ exports[`Input should be work with icon 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -185,7 +193,7 @@ exports[`Input should be work with icon 1`] = `
             font-size: .875rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -201,6 +209,14 @@ exports[`Input should be work with icon 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -213,7 +229,7 @@ exports[`Input should be work with icon 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
         </style></div></div>"
 `;
@@ -247,7 +263,7 @@ exports[`Input should be work with label 1`] = `
           border-left: 0;
           border-right: 1px solid #eaeaea;
         }
-      </style></span><div class=\\"input-wrapper   left-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></span><div class=\\"input-wrapper    left-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -294,11 +310,11 @@ exports[`Input should be work with label 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -309,7 +325,7 @@ exports[`Input should be work with label 1`] = `
             font-size: .875rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -325,6 +341,14 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -337,9 +361,9 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   right-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    right-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
         span {
           display: inline-flex;
           width: initial;
@@ -414,11 +438,11 @@ exports[`Input should be work with label 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -429,7 +453,7 @@ exports[`Input should be work with label 1`] = `
             font-size: .875rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -445,6 +469,14 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -457,7 +489,7 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
         </style></div><div class=\\"with-label\\"><label><span>Block Label</span><style>
         label {
@@ -477,7 +509,7 @@ exports[`Input should be work with label 1`] = `
         label > :global(*:last-child) {
           margin-bottom: 0;
         }
-      </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -524,11 +556,11 @@ exports[`Input should be work with label 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -539,7 +571,7 @@ exports[`Input should be work with label 1`] = `
             font-size: .875rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -555,6 +587,14 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -567,13 +607,13 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
         </style></div></div>"
 `;
 
 exports[`Input should work with different sizes 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -620,11 +660,11 @@ exports[`Input should work with different sizes 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -635,7 +675,7 @@ exports[`Input should work with different sizes 1`] = `
             font-size: .75rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -651,6 +691,14 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -663,9 +711,9 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -712,11 +760,11 @@ exports[`Input should work with different sizes 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -727,7 +775,7 @@ exports[`Input should work with different sizes 1`] = `
             font-size: .75rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -743,6 +791,14 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -755,9 +811,9 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -804,11 +860,11 @@ exports[`Input should work with different sizes 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -819,7 +875,7 @@ exports[`Input should work with different sizes 1`] = `
             font-size: 1rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -835,6 +891,14 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -847,9 +911,9 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: 50%;
@@ -896,11 +960,11 @@ exports[`Input should work with different sizes 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #0054fe;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #0054fe;
           }
 
@@ -911,7 +975,7 @@ exports[`Input should work with different sizes 1`] = `
             font-size: .875rem;
             background-color: transparent;
             border: none;
-            color: #0054fe;
+            color: #282D30;
             outline: none;
             border-radius: 0;
             width: 100%;
@@ -927,6 +991,14 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: #0054fe;
+          }
+
+          .input-wrapper.hover input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -939,13 +1011,13 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #0054fe !important;
+            -webkit-text-fill-color: #282D30 !important;
           }
         </style></div></div>"
 `;
 
 exports[`Input should work with different status 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -1080,11 +1152,11 @@ exports[`Input should work with different status 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #666;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #666;
           }
 
@@ -1111,6 +1183,14 @@ exports[`Input should work with different status 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: undefined;
+          }
+
+          .input-wrapper.hover input {
+            color: undefined;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -1125,7 +1205,7 @@ exports[`Input should work with different status 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #000 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -1172,11 +1252,11 @@ exports[`Input should work with different status 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #58f17a;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #58f17a;
           }
 
@@ -1203,6 +1283,14 @@ exports[`Input should work with different status 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus input {
+            color: undefined;
+          }
+
+          .input-wrapper.hover input {
+            color: undefined;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
@@ -1217,7 +1305,7 @@ exports[`Input should work with different status 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #000 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -1264,11 +1352,11 @@ exports[`Input should work with different status 1`] = `
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: #ffc438;
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: #ffc438;
           }
 
@@ -1293,6 +1381,14 @@ exports[`Input should work with different status 1`] = `
 
           input.right-icon {
             margin-right: 0;
+          }
+
+          .input-wrapper.focus input {
+            color: undefined;
+          }
+
+          .input-wrapper.hover input {
+            color: undefined;
           }
 
           ::placeholder,

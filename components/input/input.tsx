@@ -52,6 +52,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       className,
       onBlur,
       onFocus,
+      onMouseOver,
+      onMouseOut,
       autoComplete,
       placeholder,
       children,
@@ -65,6 +67,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     useImperativeHandle(ref, () => inputRef.current)
 
     const [selfValue, setSelfValue] = useState<string>(initialValue)
+    const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
     const { heightRatio, fontSize } = useMemo(() => getSizes(size), [size])
     const showClearIcon = useMemo(() => clearable && selfValue !== '', [selfValue, clearable])
@@ -76,16 +79,15 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       icon,
       iconRight,
     ])
-    const { color, borderColor, hoverBorder } = useMemo(() => getColors(theme.palette, status), [
-      theme.palette,
-      status,
-    ])
+    const { color, hoverColor, borderColor, hoverBorder } = useMemo(
+      () => getColors(theme.palette, status),
+      [theme.palette, status],
+    )
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return
       setSelfValue(event.target.value)
       onChange && onChange(event)
     }
-
     const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
       setSelfValue('')
       onClearClick && onClearClick(event)
@@ -97,16 +99,22 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       onChange && onChange(changeEvent)
       inputRef.current.focus()
     }
-
     const focusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
-      setHover(true)
+      setFocus(true)
       onFocus && onFocus(e)
     }
     const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
-      setHover(false)
+      setFocus(false)
       onBlur && onBlur(e)
     }
-
+    const mouseOverHandler = (e: React.MouseEvent<HTMLInputElement>) => {
+      setHover(true)
+      onMouseOver && onMouseOver(e)
+    }
+    const mouseOutHandler = (e: React.MouseEvent<HTMLInputElement>) => {
+      setHover(false)
+      onMouseOut && onMouseOut(e)
+    }
     const iconClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
       if (disabled) return
       onIconClick && onIconClick(e)
@@ -131,7 +139,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
         <div className={`input-container ${className}`}>
           {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
           <div
-            className={`input-wrapper ${hover ? 'hover' : ''} ${
+            className={`input-wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
               disabled ? 'disabled' : ''
             } ${labelClasses}`}>
             {icon && <InputIcon icon={icon} {...iconProps} />}
@@ -144,6 +152,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
               disabled={disabled}
               readOnly={readOnly}
               onFocus={focusHandler}
+              onMouseOver={mouseOverHandler}
+              onMouseOut={mouseOutHandler}
               onBlur={blurHandler}
               onChange={changeHandler}
               autoComplete={autoComplete}
@@ -212,11 +222,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             cursor: not-allowed;
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.focus {
             border-color: ${hoverBorder};
           }
 
-          .input-wrapper:hover {
+          .input-wrapper.hover {
             border-color: ${hoverBorder};
           }
 
@@ -241,6 +251,14 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
 
           input.right-icon {
             margin-right: 0;
+          }
+
+          .input-wrapper.focus input {
+            color: ${hoverColor};
+          }
+
+          .input-wrapper.hover input {
+            color: ${hoverColor};
           }
 
           ::placeholder,
