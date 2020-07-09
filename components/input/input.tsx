@@ -69,7 +69,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
-    const { heightRatio, fontSize } = useMemo(() => getSizes(size), [size])
+    const { heightRatio, fontSize, lineHeight, margin } = useMemo(() => getSizes(size), [size])
     const showClearIcon = useMemo(() => clearable && selfValue !== '', [selfValue, clearable])
     const labelClasses = useMemo(() => (labelRight ? 'right-label' : label ? 'left-label' : ''), [
       label,
@@ -137,7 +137,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       <div className="with-label">
         {children && <InputBlockLabel>{children}</InputBlockLabel>}
         <div className={`input-container ${className}`}>
-          {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
+          {label && (
+            <InputLabel fontSize={fontSize} lineHeight={lineHeight}>
+              {label}
+            </InputLabel>
+          )}
           <div
             className={`input-wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
               disabled ? 'disabled' : ''
@@ -170,7 +174,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
           </div>
           {labelRight && (
-            <InputLabel fontSize={fontSize} isRight={true}>
+            <InputLabel fontSize={fontSize} lineHeight={lineHeight} isRight={true}>
               {labelRight}
             </InputLabel>
           )}
@@ -230,11 +234,13 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           input {
-            margin: 4px 10px;
+            margin: ${margin};
             padding: 0;
             box-shadow: none;
             font-size: ${fontSize};
+            line-height: ${lineHeight};
             background-color: transparent;
+            font-weight: normal;
             border: none;
             color: ${color};
             outline: none;

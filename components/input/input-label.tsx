@@ -3,6 +3,7 @@ import useTheme from '../styles/use-theme'
 
 export interface InputLabel {
   isRight?: boolean
+  lineHeight: string
   fontSize: string
 }
 
@@ -10,6 +11,7 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
   children,
   isRight,
   fontSize,
+  lineHeight,
 }) => {
   const theme = useTheme()
 
@@ -33,7 +35,7 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
           border-left: 1px solid ${theme.palette.border};
           border-bottom: 1px solid ${theme.palette.border};
           font-size: ${fontSize};
-          line-height: 1;
+          line-height: ${lineHeight};
         }
 
         span.right {
