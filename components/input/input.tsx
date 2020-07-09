@@ -213,8 +213,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           .input-wrapper.disabled {
-            background-color: ${theme.palette.accents_1};
-            border-color: ${theme.palette.accents_2};
+            border-color: ${theme.palette.cGray2};
             cursor: not-allowed;
           }
 
