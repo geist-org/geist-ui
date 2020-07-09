@@ -17,8 +17,10 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         }
 
         html {
-          font-size: 16px;
+          font-size: 14px;
+          line-height: 1.5714rem;
           --zeit-icons-background: ${theme.palette.background};
+          letter-spacing: 0.0071rem;
         }
 
         body {
@@ -51,7 +53,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         small {
           font-weight: 400;
           color: inherit;
-          letter-spacing: -0.005625rem;
+          letter-spacing: 0.0143rem;
           font-family: ${theme.font.sans};
         }
 
@@ -64,7 +66,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         small {
           margin: 0;
           line-height: 1.5;
-          font-size: 0.875rem;
+          font-size: 0.8571rem;
         }
 
         b {
@@ -134,39 +136,44 @@ const CssBaseline: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
         }
 
         h1 {
-          font-size: 3rem;
-          letter-spacing: -0.066875rem;
-          line-height: 1.5;
+          font-size: 3.7144rem;
+          letter-spacing: 0.0143rem;
+          line-height: 4.5714rem;
           font-weight: 700;
         }
 
         h2 {
-          font-size: 2.25rem;
-          letter-spacing: -0.020625rem;
+          font-size: 3.1429rem;
+          line-height: 3.8571rem;
+          letter-spacing: 0rem;
           font-weight: 600;
         }
 
         h3 {
-          font-size: 1.5rem;
-          letter-spacing: -0.029375rem;
+          font-size: 2.2857rem;
+          line-height: 2.8571rem;
+          letter-spacing: 0.0071rem;
           font-weight: 600;
         }
 
         h4 {
-          font-size: 1.25rem;
-          letter-spacing: -0.020625rem;
+          font-size: 1.8571rem;
+          line-height: 2.2857rem;
+          letter-spacing: 0.0143rem;
           font-weight: 600;
         }
 
         h5 {
-          font-size: 1rem;
-          letter-spacing: -0.01125rem;
+          font-size: 1.4286rem;
+          line-height: 1.8571rem;
+          letter-spacing: 0.0143rem;
           font-weight: 600;
         }
 
         h6 {
-          font-size: 0.875rem;
-          letter-spacing: -0.005625rem;
+          font-size: 1.2857rem;
+          line-height: 1.7143rem;
+          letter-spacing: 0.0143rem;
           font-weight: 600;
         }
 
