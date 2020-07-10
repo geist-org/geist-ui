@@ -4,35 +4,30 @@ import { ZeitUIThemesPalette } from '../styles/themes'
 export type InputSize = {
   heightRatio: string
   fontSize: string
-  lineHeight: string
   margin: string
 }
 
 export const getSizes = (size?: NormalSizes) => {
   const sizes: { [key in NormalSizes]: InputSize } = {
     mini: {
-      heightRatio: '1.25',
-      fontSize: '0.7143rem',
-      lineHeight: '1.1429rem',
-      margin: '0.4286rem 1.1429rem',
+      heightRatio: '1.125',
+      fontSize: '0.5714rem',
+      margin: '0 1.1429rem',
     },
     small: {
       heightRatio: '1.5',
       fontSize: '0.8571rem',
-      lineHeight: '1.2857rem',
-      margin: '0.5rem 1.1429rem',
+      margin: '0 1.1429rem',
     },
     medium: {
       heightRatio: '1.875',
       fontSize: '1rem',
-      lineHeight: '1.5714rem',
-      margin: '0.6429rem 1.1429rem',
+      margin: '0 1.1429rem',
     },
     large: {
       heightRatio: '2.25',
       fontSize: '1.1429rem',
-      lineHeight: '2.1429rem',
-      margin: '0.6429rem 1.1429rem',
+      margin: '0 1.1429rem',
     },
   }
   if (!size) return sizes.medium

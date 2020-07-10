@@ -69,7 +69,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
-    const { heightRatio, fontSize, lineHeight, margin } = useMemo(() => getSizes(size), [size])
+    const { heightRatio, fontSize, margin } = useMemo(() => getSizes(size), [size])
     const showClearIcon = useMemo(() => clearable && selfValue !== '', [selfValue, clearable])
     const labelClasses = useMemo(() => (labelRight ? 'right-label' : label ? 'left-label' : ''), [
       label,
@@ -137,16 +137,12 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       <div className="with-label">
         {children && <InputBlockLabel>{children}</InputBlockLabel>}
         <div className={`input-container ${className}`}>
-          {label && (
-            <InputLabel fontSize={fontSize} lineHeight={lineHeight}>
-              {label}
-            </InputLabel>
-          )}
+          {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
           <div
             className={`input-wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
               disabled ? 'disabled' : ''
             } ${labelClasses}`}>
-            {icon && <InputIcon icon={icon} {...iconProps} />}
+            {icon && <InputIcon paddingRight="0.5714rem" icon={icon} {...iconProps} />}
             <input
               type="text"
               ref={inputRef}
@@ -174,7 +170,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
           </div>
           {labelRight && (
-            <InputLabel fontSize={fontSize} lineHeight={lineHeight} isRight={true}>
+            <InputLabel fontSize={fontSize} isRight={true}>
               {labelRight}
             </InputLabel>
           )}
@@ -238,7 +234,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             padding: 0;
             box-shadow: none;
             font-size: ${fontSize};
-            line-height: ${lineHeight};
+            line-height: calc(${heightRatio} * ${theme.layout.gap} - 2px);
             background-color: transparent;
             font-weight: normal;
             border: none;
