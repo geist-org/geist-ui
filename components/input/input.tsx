@@ -266,7 +266,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: ${theme.palette.cGray4};
+            color: ${theme.palette.cGray5};
           }
 
           input:-webkit-autofill,
