@@ -269,6 +269,10 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             color: ${theme.palette.cGray5};
           }
 
+          input::-moz-placeholder {
+            line-height: calc(${heightRatio} * ${theme.layout.gap} - 1px);
+          }
+
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
           input:-webkit-autofill:active,
