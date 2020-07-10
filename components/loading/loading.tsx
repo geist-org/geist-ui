@@ -33,6 +33,7 @@ const getIconSize = (size: NormalSizes) => {
 const getIconBgColor = (type: NormalTypes, palette: ZeitUIThemesPalette, color?: string) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.accents_6,
+    primary: palette.success,
     secondary: palette.secondary,
     success: palette.success,
     warning: palette.warning,

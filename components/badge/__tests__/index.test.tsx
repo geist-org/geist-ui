@@ -36,6 +36,7 @@ describe('Badge', () => {
   it('should render different types', () => {
     const wrapper = render(
       <div>
+        <Badge type="primary">badge</Badge>
         <Badge type="success">badge</Badge>
         <Badge type="secondary">badge</Badge>
         <Badge type="warning">badge</Badge>

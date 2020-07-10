@@ -39,6 +39,7 @@ const getCurrentColor = (
 ): string => {
   const defaultColors: { [key in NormalTypes]: string } = {
     default: palette.foreground,
+    primary: palette.success,
     success: palette.success,
     secondary: palette.secondary,
     warning: palette.warning,

@@ -22,6 +22,13 @@ export const getColor = (
       hoverBgColor: palette.accents_1,
       hoverBorder: palette.accents_2,
     },
+    primary: {
+      color: palette.background,
+      bgColor: palette.success,
+      borderLeftColor: palette.successDark,
+      hoverBgColor: palette.successDark,
+      hoverBorder: palette.successDark,
+    },
     secondary: {
       color: palette.background,
       bgColor: palette.foreground,
