@@ -221,11 +221,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             cursor: not-allowed;
           }
 
-          .input-wrapper.focus {
+          .input-wrapper.focus :not(.disabled) {
             border-color: ${hoverBorder};
           }
 
-          .input-wrapper.hover {
+          .input-wrapper.hover :not(.disabled) {
             border-color: ${hoverBorder};
           }
 
