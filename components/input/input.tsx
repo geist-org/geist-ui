@@ -259,11 +259,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           .input-wrapper.focus input {
-            color: ${hoverColor};
+            color: ${hoverColor || 'inherit'};
           }
 
           .input-wrapper.hover input {
-            color: ${hoverColor};
+            color: ${hoverColor || 'inherit'};
           }
 
           ::placeholder,
