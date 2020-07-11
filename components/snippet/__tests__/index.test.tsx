@@ -71,7 +71,11 @@ describe('Snippet', () => {
   })
 
   it('should work with custom symbol', () => {
-    const wrapper = mount(<Snippet text={command} symbol={'>'} />)
+    let wrapper = mount(<Snippet text={command} symbol={'>'} />)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+
+    wrapper = mount(<Snippet text={command} symbol={' '} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })

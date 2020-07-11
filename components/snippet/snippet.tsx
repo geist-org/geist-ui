@@ -110,7 +110,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
         }
 
         pre::before {
-          content: '${symbol} ';
+          content: '${symbol ? symbol + ' ' : ''}';
           user-select: none;
         }
 
