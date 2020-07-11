@@ -64,6 +64,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
     const [dripY, setDripY] = useState<number>(0)
     const groupConfig = useButtonGroupContext()
     const filteredProps = filterPropsWithGroup(btnProps, groupConfig)
+    /* eslint-disable @typescript-eslint/no-unused-vars */
     const {
       children,
       disabled,
@@ -81,6 +82,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
       className,
       ...props
     } = filteredProps
+    /* eslint-enable @typescript-eslint/no-unused-vars */
 
     const { bg, border, color } = useMemo(() => getButtonColors(theme.palette, filteredProps), [
       theme.palette,

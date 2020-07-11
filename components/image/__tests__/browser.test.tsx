@@ -68,6 +68,6 @@ describe('Image Browser', () => {
       </Image.Browser>,
     )
     const rel = wrapper.find('a').getDOMNode().getAttribute('rel')
-    expect(anchorRel).toEqual(anchorRel)
+    expect(rel).toEqual(anchorRel)
   })
 })

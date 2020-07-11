@@ -74,6 +74,15 @@ describe('Snippet', () => {
     const wrapper = mount(<Snippet text={command} symbol={'>'} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
+
+    const emptySymbolWrapper = mount(<Snippet text={command} symbol=" " />)
+    expect(emptySymbolWrapper.html()).toMatchSnapshot()
+
+    const emptySymbolWrapper2 = mount(<Snippet text={command} symbol="" />)
+    expect(emptySymbolWrapper2.html()).toEqual(emptySymbolWrapper.html())
+
+    expect(() => emptySymbolWrapper.unmount()).not.toThrow()
+    expect(() => emptySymbolWrapper2.unmount()).not.toThrow()
   })
 
   it('should work with custom toast', () => {
