@@ -67,6 +67,10 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
     if (!ref.current) return ''
     return ref.current.textContent
   }, [ref.current, children, text])
+  const symbolBefore = useMemo(() => {
+    const str = symbol.trim()
+    return str ? `${str} ` : ''
+  }, [symbol])
 
   const clickHandler = () => {
     if (!childText || !showCopyIcon) return
@@ -110,7 +114,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
         }
 
         pre::before {
-          content: '${symbol ? symbol + ' ' : ''}';
+          content: '${symbolBefore}';
           user-select: none;
         }
 
