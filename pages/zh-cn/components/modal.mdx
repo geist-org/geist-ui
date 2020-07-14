@@ -40,8 +40,8 @@ export const meta = {
         <Modal.Content>
           <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
         </Modal.Content>
-        <Modal.Action passive>放弃使用</Modal.Action>
-        <Modal.Action>明白了</Modal.Action>
+        <Modal.Action passive onClick={({ close }) => close()}>放弃使用</Modal.Action>
+        <Modal.Action onClick={({ close }) => close()}>明白了</Modal.Action>
       </Modal>
     </div>
   )
@@ -69,8 +69,8 @@ export const meta = {
         <Modal.Content>
           <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
         </Modal.Content>
-        <Modal.Action passive>放弃使用</Modal.Action>
-        <Modal.Action>明白了</Modal.Action>
+        <Modal.Action passive onClick={() => setVisible(false)}>放弃使用</Modal.Action>
+        <Modal.Action onClick={() => setVisible(false)}>明白了</Modal.Action>
       </Modal>
     </>
   )
@@ -127,8 +127,8 @@ export const meta = {
         <Modal.Content>
           <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
         </Modal.Content>
-        <Modal.Action passive>继续学习</Modal.Action>
-        <Modal.Action disabled>尝试箭头函数</Modal.Action>
+        <Modal.Action passive onClick={({ close }) => close()}>继续学习</Modal.Action>
+        <Modal.Action disabled onClick={close => close()}>尝试箭头函数</Modal.Action>
       </Modal>
     </>
   )
@@ -153,6 +153,30 @@ export const meta = {
         </Modal.Content>
       </Modal>
     </div>
+  )
+}
+`}
+/>
+
+<Playground
+  title="加载中"
+  scope={{ Modal, Button, useModal, Code }}
+  code={`
+() => {
+  const { visible, setVisible, bindings } = useModal()
+  return (
+    <>
+      <Button auto onClick={() => setVisible(true)}>Show Modal</Button>
+      <Modal {...bindings}>
+        <Modal.Title>箭头函数</Modal.Title>
+        <Modal.Subtitle>它不能用作构造函数</Modal.Subtitle>
+        <Modal.Content>
+          <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
+        </Modal.Content>
+        <Modal.Action passive onClick={() => setVisible(false)}>取消</Modal.Action>
+        <Modal.Action loading>提交</Modal.Action>
+      </Modal>
+    </>
   )
 }
 `}
@@ -189,12 +213,6 @@ export const meta = {
 | ---- | -------- | ---------------- | ------------------------ | ---- |
 | ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
 
-<Attributes.Title>Modal.Actions.Props</Attributes.Title>
-
-| 属性 | 描述 | 类型 | 推荐值 | 默认 |
-| ---- | ---- | ---- | ------ | ---- |
-| -    | -    | -    | -      | -    |
-
 <Attributes.Title>Modal.Action.Props</Attributes.Title>
 
 | 属性         | 描述                 | 类型                                                   | 推荐值                   | 默认    |
@@ -202,6 +220,7 @@ export const meta = {
 | **passive**  | 以消极的状态显示按钮 | `boolean`                                              | -                        | `false` |
 | **disabled** | 禁用按钮             | `boolean`                                              | -                        | `false` |
 | **onClick**  | 按钮的点击事件       | [(event: ModalActionEvent) => void](#modalactionevent) | -                        | -       |
+| **loading**  | 显示加载状态指示器   | `boolean`                                              | -                        | `false` |
 | ...          | 原生属性             | `ButtonHTMLAttributes`                                 | `'id', 'className', ...` | -       |
 
 <Attributes.Title>useModal</Attributes.Title>
