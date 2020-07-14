@@ -16,7 +16,7 @@ const DynamicLive = dynamic(() => import('./dynamic-live'), {
 
 interface Props {
   title?: React.ReactNode | string
-  desc?: string
+  desc?: React.ReactNode | string
   code: string
   scope: {
     [key: string]: any
