@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Badge, Spacer, Button, Link, Avatar } from 'components'
+import { Badge, Spacer, Button, Link, Avatar, useTheme } from 'components'
+import NextLink from 'next/link'
 
 export const meta = {
   title: '徽章 Badge',
@@ -34,6 +35,35 @@ export const meta = {
     <Badge type="error">错误</Badge> <Spacer y={.5} />
     <Badge type="secondary">次要的</Badge>
   </>
+`}
+/>
+
+<Playground
+  title="Custom color"
+  desc={
+    <>
+      了解更多颜色，请参考{' '}
+      <NextLink href="/zh-cn/guide/colors">
+        <Link color>色彩章节</Link>
+      </NextLink>
+      。
+    </>
+  }
+  scope={{ Badge, Spacer, useTheme }}
+  code={`
+() => {
+  const theme = useTheme()
+  return (
+    <>
+      <Badge style={{ backgroundColor: theme.palette.successLight }}>淡色成功状态</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.successDark }}>深色成功状态</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.alert }}>警告</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.purple }}>紫色</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.violet }}>紫罗兰</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.cyanLighter, color: theme.palette.foreground }}>淡青色</Badge> <Spacer y={.5} />
+    </>
+  )
+}
 `}
 />
 

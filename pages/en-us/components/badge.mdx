@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Badge, Spacer, Avatar, Button, Link } from 'components'
+import { Badge, Spacer, Avatar, Button, Link, useTheme } from 'components'
+import NextLink from 'next/link'
 
 export const meta = {
   title: 'Badge',
@@ -34,6 +35,35 @@ Display an indicator that requires attention.
     <Badge type="error">Error</Badge> <Spacer y={.5} />
     <Badge type="secondary">Secondary</Badge>
   </>
+`}
+/>
+
+<Playground
+  title="Custom color"
+  desc={
+    <>
+      For more colors, please refer to the{' '}
+      <NextLink href="/en-us/guide/colors">
+        <Link color>color section</Link>
+      </NextLink>
+      .
+    </>
+  }
+  scope={{ Badge, Spacer, useTheme }}
+  code={`
+() => {
+  const theme = useTheme()
+  return (
+    <>
+      <Badge style={{ backgroundColor: theme.palette.successLight }}>Success Light</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.successDark }}>Success Dark</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.alert }}>Alert</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.purple }}>Purple</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.violet }}>Violet</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.cyanLighter, color: theme.palette.foreground }}>Cyan Ligher</Badge> <Spacer y={.5} />
+    </>
+  )
+}
 `}
 />
 
