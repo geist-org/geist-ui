@@ -22,7 +22,7 @@ const ModalActions: React.FC<React.PropsWithChildren<{}>> = ({ children, ...prop
           border-bottom-right-radius: ${theme.layout.radius};
         }
 
-        footer > :global(button + button) {
+        footer > :global(button.btn + button.btn) {
           border-left: 1px solid ${theme.palette.border};
         }
 
