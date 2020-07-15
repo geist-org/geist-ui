@@ -2,8 +2,6 @@ import React, { useEffect, useMemo, useState } from 'react'
 import TabsItem from './tabs-item'
 import useTheme from '../styles/use-theme'
 import { TabsLabelItem, TabsConfig, TabsContext } from './tabs-context'
-import useCurrentState from '../utils/use-current-state'
-import useWarning from '../utils/use-warning'
 
 interface Props {
   initialValue?: string
@@ -32,24 +30,26 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
 }) => {
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string | undefined>(userCustomInitialValue)
-  const [tabs, setTabs, tabsRef] = useCurrentState<Array<TabsLabelItem>>([])
+  const [tabs, setTabs] = useState<Array<TabsLabelItem>>([])
 
   const register = (next: TabsLabelItem) => {
-    const hasItem = tabsRef.current.find(item => item.value === next.value)
-    if (hasItem) {
-      useWarning('The "value" of each "Tabs.Item" must be unique.', 'Tabs')
-    }
-    setTabs([...tabsRef.current, next])
-  }
-  const unregister = (next: TabsLabelItem) => {
-    const nextTabs = tabsRef.current.filter(item => item.value !== next.value)
-    setTabs([...nextTabs])
+    setTabs(last => {
+      const hasItem = last.find(item => item.value === next.value)
+      if (!hasItem) return [...last, next]
+      return last.map(item => {
+        if (item.value !== next.value) return item
+        return {
+          ...item,
+          label: next.label,
+          disabled: next.disabled,
+        }
+      })
+    })
   }
 
   const initialValue = useMemo<TabsConfig>(
     () => ({
       register,
-      unregister,
       currentValue: selfValue,
       inGroup: true,
     }),
@@ -71,13 +71,13 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
     <TabsContext.Provider value={initialValue}>
       <div className={`tabs ${className}`} {...props}>
         <header className={hideDivider ? 'hide-divider' : ''}>
-          {tabs.map((item, index) => (
+          {tabs.map(item => (
             <div
               className={`tab ${selfValue === item.value ? 'active' : ''} ${
                 item.disabled ? 'disabled' : ''
               }`}
               role="button"
-              key={item.value + index}
+              key={item.value}
               onClick={() => clickHandler(item)}>
               {item.label}
             </div>
