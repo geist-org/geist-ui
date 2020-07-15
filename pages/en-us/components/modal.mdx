@@ -159,6 +159,30 @@ Display popup content that requires attention or provides additional information
 `}
 />
 
+<Playground
+  title="Loading"
+  scope={{ Modal, Button, useModal }}
+  code={`
+() => {
+  const { visible, setVisible, bindings } = useModal()
+  return (
+    <>
+      <Button auto onClick={() => setVisible(true)}>Show Modal</Button>
+      <Modal {...bindings}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <p>Some content contained within the modal.</p>
+        </Modal.Content>
+        <Modal.Action passive onClick={() => setVisible(false)}>Cancel</Modal.Action>
+        <Modal.Action loading>Submit</Modal.Action>
+      </Modal>
+    </>
+  )
+}
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/modal.mdx">
 <Attributes.Title>Modal.Props</Attributes.Title>
 
@@ -190,12 +214,6 @@ Display popup content that requires attention or provides additional information
 | --------- | ------------ | ---------------- | ------------------------ | ------- |
 | ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
-<Attributes.Title>Modal.Actions.Props</Attributes.Title>
-
-| Attribute | Description | Type | Accepted values | Default |
-| --------- | ----------- | ---- | --------------- | ------- |
-| -         | -           | -    | -               | -       |
-
 <Attributes.Title>Modal.Action.Props</Attributes.Title>
 
 | Attribute    | Description            | Type                                                   | Accepted values          | Default |
@@ -203,6 +221,7 @@ Display popup content that requires attention or provides additional information
 | **passive**  | display passive mode   | `boolean`                                              | -                        | `false` |
 | **disabled** | disable current action | `boolean`                                              | -                        | `false` |
 | **onClick**  | click handler          | [(event: ModalActionEvent) => void](#modalactionevent) | -                        | -       |
+| **loading**  | show loading           | `boolean`                                              | -                        | `false` |
 | ...          | native props           | `ButtonHTMLAttributes`                                 | `'id', 'className', ...` | -       |
 
 <Attributes.Title>useModal</Attributes.Title>
