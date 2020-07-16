@@ -123,7 +123,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     useEffect(() => {
       if (value === undefined) return
       setSelfValue(value)
-    }, [value])
+    })
 
     return (
       <div className="with-label">
