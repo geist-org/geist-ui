@@ -185,6 +185,28 @@ Retrieve text input from a user.
 `}
 />
 
+<Playground
+  title="Imperative API"
+  desc="Update component in an uncontrolled way."
+  scope={{ Input, Spacer, Button }}
+  code={`
+() => {
+  const ref = React.useRef(null)
+  const setChange = () => {
+    ref && (ref.current.value = Math.random().toString(32))
+  }
+  return (
+    <>
+      <Input initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small"
+        onClick={setChange}>set value</Button>
+    </>
+  )
+}
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/input.mdx">
 <Attributes.Title>Input.Props</Attributes.Title>
 
