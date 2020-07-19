@@ -67,7 +67,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [hover, setHover] = useState<boolean>(false)
     const { heightRatio, fontSize } = useMemo(() => getSizes(size), [size])
-    const showClearIcon = useMemo(() => clearable && selfValue !== '', [selfValue, clearable])
+    const isControlledComponent = useMemo(() => value !== undefined, [value])
     const labelClasses = useMemo(() => (labelRight ? 'right-label' : label ? 'left-label' : ''), [
       label,
       labelRight,
@@ -80,12 +80,12 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       theme.palette,
       status,
     ])
+
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return
       setSelfValue(event.target.value)
       onChange && onChange(event)
     }
-
     const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
       setSelfValue('')
       onClearClick && onClearClick(event)
@@ -121,9 +121,18 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     )
 
     useEffect(() => {
-      if (value === undefined) return
-      setSelfValue(value)
-    }, [value])
+      if (isControlledComponent) {
+        setSelfValue(value as string)
+      }
+    })
+
+    const controlledValue = isControlledComponent
+      ? { value: selfValue }
+      : { defaultValue: initialValue }
+    const inputProps = {
+      ...props,
+      ...controlledValue,
+    }
 
     return (
       <div className="with-label">
@@ -139,7 +148,6 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
               type="text"
               ref={inputRef}
               className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
-              value={selfValue}
               placeholder={placeholder}
               disabled={disabled}
               readOnly={readOnly}
@@ -147,11 +155,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
               onBlur={blurHandler}
               onChange={changeHandler}
               autoComplete={autoComplete}
-              {...props}
+              {...inputProps}
             />
             {clearable && (
               <InputClearIcon
-                visible={showClearIcon}
+                visible={Boolean(inputRef.current && inputRef.current.value !== '')}
                 heightRatio={heightRatio}
                 disabled={disabled || readOnly}
                 onClick={clearHandler}
