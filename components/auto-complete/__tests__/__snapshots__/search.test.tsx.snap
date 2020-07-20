@@ -19,13 +19,13 @@ initialize {
             "children": Array [
               Object {
                 "attribs": Object {
-                  "class": "input-wrapper    ",
+                  "class": "input-wrapper lined    ",
                 },
                 "children": Array [
                   Object {
                     "attribs": Object {
                       "autocomplete": "off",
-                      "class": " ",
+                      "class": "",
                       "placeholder": "Enter here",
                       "type": "text",
                       "value": "",
@@ -96,8 +96,12 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -115,16 +119,23 @@ initialize {
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -231,8 +242,12 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -250,16 +265,23 @@ initialize {
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -331,13 +353,13 @@ initialize {
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "input-wrapper    ",
+                    "class": "input-wrapper lined    ",
                   },
                   "children": Array [
                     Object {
                       "attribs": Object {
                         "autocomplete": "off",
-                        "class": " ",
+                        "class": "",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
@@ -476,13 +498,13 @@ initialize {
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "input-wrapper    ",
+                    "class": "input-wrapper lined    ",
                   },
                   "children": Array [
                     Object {
                       "attribs": Object {
                         "autocomplete": "off",
-                        "class": " ",
+                        "class": "",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
@@ -553,8 +575,12 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -572,16 +598,23 @@ initialize {
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -688,8 +721,12 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -707,16 +744,23 @@ initialize {
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -788,13 +832,13 @@ initialize {
                 "children": Array [
                   Object {
                     "attribs": Object {
-                      "class": "input-wrapper    ",
+                      "class": "input-wrapper lined    ",
                     },
                     "children": Array [
                       Object {
                         "attribs": Object {
                           "autocomplete": "off",
-                          "class": " ",
+                          "class": "",
                           "placeholder": "Enter here",
                           "type": "text",
                           "value": "",
@@ -929,13 +973,13 @@ initialize {
             "children": Array [
               Object {
                 "attribs": Object {
-                  "class": "input-wrapper    ",
+                  "class": "input-wrapper lined    ",
                 },
                 "children": Array [
                   Object {
                     "attribs": Object {
                       "autocomplete": "off",
-                      "class": " ",
+                      "class": "",
                       "placeholder": "Enter here",
                       "type": "text",
                       "value": "",
@@ -1006,8 +1050,12 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -1025,16 +1073,23 @@ initialize {
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -1141,8 +1196,12 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -1160,16 +1219,23 @@ initialize {
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -1241,13 +1307,13 @@ initialize {
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "input-wrapper    ",
+                    "class": "input-wrapper lined    ",
                   },
                   "children": Array [
                     Object {
                       "attribs": Object {
                         "autocomplete": "off",
-                        "class": " ",
+                        "class": "",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
@@ -1386,13 +1452,13 @@ initialize {
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "input-wrapper    ",
+                    "class": "input-wrapper lined    ",
                   },
                   "children": Array [
                     Object {
                       "attribs": Object {
                         "autocomplete": "off",
-                        "class": " ",
+                        "class": "",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
@@ -1463,8 +1529,12 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -1482,16 +1552,23 @@ initialize {
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -1598,8 +1675,12 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -1617,16 +1698,23 @@ initialize {
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -1698,13 +1786,13 @@ initialize {
                 "children": Array [
                   Object {
                     "attribs": Object {
-                      "class": "input-wrapper    ",
+                      "class": "input-wrapper lined    ",
                     },
                     "children": Array [
                       Object {
                         "attribs": Object {
                           "autocomplete": "off",
-                          "class": " ",
+                          "class": "",
                           "placeholder": "Enter here",
                           "type": "text",
                           "value": "",

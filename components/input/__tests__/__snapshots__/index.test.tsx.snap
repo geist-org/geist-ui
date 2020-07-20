@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input should be work with icon 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: content-box;
           display: flex;
@@ -16,7 +16,7 @@ exports[`Input should be work with icon 1`] = `
           cursor: default;
           pointer-events: none;
         }
-      </style></span><input type=\\"text\\" class=\\" left-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></span><input type=\\"text\\" class=\\"left-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -39,8 +39,12 @@ exports[`Input should be work with icon 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -58,16 +62,23 @@ exports[`Input should be work with icon 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -121,7 +132,7 @@ exports[`Input should be work with icon 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: content-box;
           display: flex;
@@ -159,8 +170,12 @@ exports[`Input should be work with icon 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -178,16 +193,23 @@ exports[`Input should be work with icon 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -272,7 +294,7 @@ exports[`Input should be work with label 1`] = `
           border-left: 0;
           border-right: 1px solid #eaeaea;
         }
-      </style></span><div class=\\"input-wrapper    left-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></span><div class=\\"input-wrapper lined    left-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -295,8 +317,12 @@ exports[`Input should be work with label 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -314,16 +340,23 @@ exports[`Input should be work with label 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -377,7 +410,7 @@ exports[`Input should be work with label 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    right-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
         span {
           display: inline-flex;
           width: initial;
@@ -427,8 +460,12 @@ exports[`Input should be work with label 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -446,16 +483,23 @@ exports[`Input should be work with label 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -527,7 +571,7 @@ exports[`Input should be work with label 1`] = `
         label > :global(*:last-child) {
           margin-bottom: 0;
         }
-      </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -550,8 +594,12 @@ exports[`Input should be work with label 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -569,16 +617,23 @@ exports[`Input should be work with label 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -636,7 +691,7 @@ exports[`Input should be work with label 1`] = `
 `;
 
 exports[`Input should work with different sizes 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -659,8 +714,12 @@ exports[`Input should work with different sizes 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -678,16 +737,23 @@ exports[`Input should work with different sizes 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -741,7 +807,7 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -764,8 +830,12 @@ exports[`Input should work with different sizes 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -783,16 +853,23 @@ exports[`Input should work with different sizes 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -846,7 +923,7 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -869,8 +946,12 @@ exports[`Input should work with different sizes 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -888,16 +969,23 @@ exports[`Input should work with different sizes 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -951,7 +1039,7 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: 50%;
@@ -974,8 +1062,12 @@ exports[`Input should work with different sizes 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ebeced;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -993,16 +1085,23 @@ exports[`Input should work with different sizes 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -1060,7 +1159,7 @@ exports[`Input should work with different sizes 1`] = `
 `;
 
 exports[`Input should work with different status 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -1083,8 +1182,12 @@ exports[`Input should work with different status 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #0054fe;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #001b36;
           }
 
           .input-wrapper.left-label {
@@ -1102,16 +1205,23 @@ exports[`Input should work with different status 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #0054fe;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #0054fe;
+            color: #aaafbb;
           }
 
           input {
@@ -1165,7 +1275,7 @@ exports[`Input should work with different status 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -1188,8 +1298,12 @@ exports[`Input should work with different status 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
             border: 1px solid #666;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
 
           .input-wrapper.left-label {
@@ -1207,16 +1321,23 @@ exports[`Input should work with different status 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #666;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #666;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #666;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #666;
+            color: #aaafbb;
           }
 
           input {
@@ -1270,7 +1391,7 @@ exports[`Input should work with different status 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -1293,8 +1414,12 @@ exports[`Input should work with different status 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
             border: 1px solid #8afb88;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
 
           .input-wrapper.left-label {
@@ -1312,16 +1437,23 @@ exports[`Input should work with different status 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #58f17a;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #58f17a;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #58f17a;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #58f17a;
+            color: #aaafbb;
           }
 
           input {
@@ -1375,7 +1507,7 @@ exports[`Input should work with different status 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper    \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -1398,8 +1530,12 @@ exports[`Input should work with different status 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #ffde40;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: transparent;
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid #ffde40;
           }
 
           .input-wrapper.left-label {
@@ -1417,16 +1553,23 @@ exports[`Input should work with different status 1`] = `
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: #ffc438;
+            background-color: inherit;
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #ffc438;
+            background-color: inherit;
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: #ffc438;
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: #ffc438;
+            color: #aaafbb;
           }
 
           input {

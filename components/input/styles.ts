@@ -36,44 +36,66 @@ export const getSizes = (size?: NormalSizes) => {
 
 export type InputColor = {
   color: string
+  backgroundColor?: string
+  hoverBackgroundColor?: string
   hoverColor?: string
   borderColor: string
-  hoverBorder: string
+  hoverBorderColor: string
 }
 
-export const getColors = (palette: ZeitUIThemesPalette, status?: NormalTypes): InputColor => {
+export const getColors = (
+  palette: ZeitUIThemesPalette,
+  status?: NormalTypes,
+  solid?: boolean,
+): InputColor => {
   const colors: { [key in NormalTypes]: InputColor } = {
     default: {
       color: palette.cBlack0,
-      hoverColor: palette.brand,
+      hoverColor: solid ? 'inherit' : palette.brand,
+      backgroundColor: solid ? palette.cGray0 : 'transparent',
+      hoverBackgroundColor: solid ? palette.cTheme0 : 'inherit',
       borderColor: palette.cGray2,
-      hoverBorder: palette.cTheme5,
+      hoverBorderColor: palette.brand,
     },
     primary: {
       color: palette.cBlack0,
-      hoverColor: palette.brand,
-      borderColor: palette.brand,
-      hoverBorder: palette.brand,
+      hoverColor: solid ? 'inherit' : palette.brand,
+      backgroundColor: solid ? palette.cTheme0 : 'transparent',
+      hoverBackgroundColor: solid ? palette.brand : 'inherit',
+      borderColor: palette.brandLight,
+      hoverBorderColor: palette.brand,
     },
     secondary: {
       color: palette.cBlack0,
+      hoverColor: 'inherit',
+      backgroundColor: solid ? palette.cGray0 : 'transparent',
+      hoverBackgroundColor: solid ? palette.cTheme0 : 'inherit',
       borderColor: palette.secondary,
-      hoverBorder: palette.secondary,
+      hoverBorderColor: palette.secondary,
     },
     success: {
       color: palette.cBlack0,
+      hoverColor: 'inherit',
+      backgroundColor: solid ? palette.successLight : 'transparent',
+      hoverBackgroundColor: solid ? palette.success : 'inherit',
       borderColor: palette.successLight,
-      hoverBorder: palette.success,
+      hoverBorderColor: palette.success,
     },
     warning: {
       color: palette.cBlack0,
+      hoverColor: 'inherit',
+      backgroundColor: solid ? palette.warningLight : 'transparent',
+      hoverBackgroundColor: solid ? palette.warning : 'inherit',
       borderColor: palette.warningLight,
-      hoverBorder: palette.warning,
+      hoverBorderColor: palette.warning,
     },
     error: {
       color: palette.error,
+      hoverColor: palette.error,
+      backgroundColor: solid ? palette.errorLight : 'transparent',
+      hoverBackgroundColor: solid ? palette.errorLight : 'inherit',
       borderColor: palette.error,
-      hoverBorder: palette.errorDark,
+      hoverBorderColor: palette.errorDark,
     },
   }
 

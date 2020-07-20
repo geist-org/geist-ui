@@ -2,6 +2,7 @@ import React from 'react'
 import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
 
 export interface Props {
+  solid?: boolean
   value?: string
   initialValue?: string
   placeholder?: string

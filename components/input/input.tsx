@@ -34,6 +34,7 @@ const simulateChangeEvent = (
 const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputProps>>(
   (
     {
+      solid,
       label,
       labelRight,
       size,
@@ -79,10 +80,14 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       icon,
       iconRight,
     ])
-    const { color, hoverColor, borderColor, hoverBorder } = useMemo(
-      () => getColors(theme.palette, status),
-      [theme.palette, status],
-    )
+    const {
+      color,
+      hoverColor,
+      borderColor,
+      hoverBorderColor,
+      backgroundColor,
+      hoverBackgroundColor,
+    } = useMemo(() => getColors(theme.palette, status, solid), [theme.palette, status])
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return
       setSelfValue(event.target.value)
@@ -148,14 +153,14 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
         <div className={`input-container ${className}`}>
           {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
           <div
-            className={`input-wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
-              disabled ? 'disabled' : ''
-            } ${labelClasses}`}>
+            className={`input-wrapper ${solid ? 'solid' : 'lined'} ${hover ? 'hover' : ''} ${
+              focus ? 'focus' : ''
+            } ${disabled ? 'disabled' : ''} ${labelClasses}`}>
             {icon && <InputIcon paddingRight="0.5714rem" icon={icon} {...iconProps} />}
             <input
               type="text"
               ref={inputRef}
-              className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
+              className={`${iconClasses}`}
               placeholder={placeholder}
               disabled={disabled}
               readOnly={readOnly}
@@ -206,8 +211,12 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             flex: 1;
             user-select: none;
             border-radius: ${theme.expressiveness.R2};
-            border: 1px solid ${borderColor};
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: ${backgroundColor};
+          }
+
+          .lined.input-wrapper {
+            border: 1px solid ${borderColor};
           }
 
           .input-wrapper.left-label {
@@ -225,16 +234,23 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             cursor: not-allowed;
           }
 
-          input.disabled {
+          .solid.input-wrapper.disabled {
+            background-color: ${theme.palette.cGray3};
+          }
+
+          .focus.input-wrapper:not(.disabled) {
+            border-color: ${hoverBorderColor};
+            background-color: ${hoverBackgroundColor};
+          }
+
+          .hover.input-wrapper:not(.disabled) {
+            border-color: ${hoverBorderColor};
+            background-color: ${hoverBackgroundColor};
+          }
+
+          input:disabled {
             cursor: not-allowed;
-          }
-
-          .input-wrapper.focus :not(.disabled) {
-            border-color: ${hoverBorder};
-          }
-
-          .input-wrapper.hover :not(.disabled) {
-            border-color: ${hoverBorder};
+            color: ${theme.palette.cGray4};
           }
 
           input {
@@ -263,11 +279,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           .input-wrapper.focus input {
-            color: ${hoverColor || 'inherit'};
+            color: ${hoverColor};
           }
 
           .input-wrapper.hover input {
-            color: ${hoverColor || 'inherit'};
+            color: ${hoverColor};
           }
 
           ::placeholder,
