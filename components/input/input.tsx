@@ -151,7 +151,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             />
             {clearable && (
               <InputClearIcon
-                visibale={showClearIcon}
+                visible={showClearIcon}
                 heightRatio={heightRatio}
                 disabled={disabled || readOnly}
                 onClick={clearHandler}
