@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import InfoIcon from './test-icons.tsx'
+import AlertCircle from '@zeit-ui/react-icons/alertCircle'
 import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
 import { useState, useEffect } from 'react'
 
@@ -114,24 +114,24 @@ Retrieve text input from a user.
 <Playground
   title="Icon"
   desc="Specify an icon component."
-  scope={{ Input, InfoIcon, Spacer }}
+  scope={{ Input, AlertCircle, Spacer }}
   code={`
 <>
-  <Input size="mini" icon={<InfoIcon />} placeholder="GitHub" />
+  <Input size="mini" icon={<AlertCircle />} placeholder="GitHub" />
   <Spacer y={.5} />
-  <Input size="small" icon={<InfoIcon />} placeholder="GitHub" />
+  <Input size="small" icon={<AlertCircle />} placeholder="GitHub" />
   <Spacer y={.5} />
-  <Input size="medium" icon={<InfoIcon />} placeholder="GitHub" />
+  <Input size="medium" icon={<AlertCircle />} placeholder="GitHub" />
   <Spacer y={.5} />
-  <Input size="large" icon={<InfoIcon />} placeholder="GitHub" />
+  <Input size="large" icon={<AlertCircle />} placeholder="GitHub" />
   <Spacer y={.5} />
-  <Input size="mini" iconRight={<InfoIcon />} placeholder="GitHub" />
+  <Input size="mini" iconRight={<AlertCircle />} placeholder="GitHub" />
   <Spacer y={.5} />
-  <Input size="small" iconRight={<InfoIcon />} placeholder="GitHub" />
+  <Input size="small" iconRight={<AlertCircle />} placeholder="GitHub" />
   <Spacer y={.5} />
-  <Input size="medium" iconRight={<InfoIcon />} placeholder="GitHub" />
+  <Input size="medium" iconRight={<AlertCircle />} placeholder="GitHub" />
   <Spacer y={.5} />
-  <Input size="large" iconRight={<InfoIcon />} placeholder="GitHub" />
+  <Input size="large" iconRight={<AlertCircle />} placeholder="GitHub" />
   <Spacer y={.5} />
 </>
 `}
