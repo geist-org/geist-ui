@@ -16,6 +16,8 @@ interface Props {
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
+  onMouseOver?: (e: React.MouseEvent<HTMLTextAreaElement, MouseEvent>) => void
+  onMouseOut?: (e: React.MouseEvent<HTMLTextAreaElement, MouseEvent>) => void
   className?: string
 }
 
@@ -38,6 +40,8 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
   minHeight,
   disabled,
   readOnly,
+  onMouseOut,
+  onMouseOver,
   onFocus,
   onBlur,
   className,
@@ -49,6 +53,7 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
 }) => {
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string>(initialValue)
+  const [focus, setFocus] = useState<boolean>(false)
   const [hover, setHover] = useState<boolean>(false)
   const { color, borderColor, hoverBorderColor } = useMemo(() => getColors(theme.palette, status), [
     theme.palette,
@@ -61,12 +66,20 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
     onChange && onChange(event)
   }
   const focusHandler = (e: React.FocusEvent<HTMLTextAreaElement>) => {
-    setHover(true)
+    setFocus(true)
     onFocus && onFocus(e)
   }
   const blurHandler = (e: React.FocusEvent<HTMLTextAreaElement>) => {
-    setHover(false)
+    setFocus(false)
     onBlur && onBlur(e)
+  }
+  const mouseOverHandler = (e: React.MouseEvent<HTMLTextAreaElement, MouseEvent>) => {
+    setHover(true)
+    onMouseOver && onMouseOver(e)
+  }
+  const mouseOutHandler = (e: React.MouseEvent<HTMLTextAreaElement, MouseEvent>) => {
+    setHover(false)
+    onMouseOut && onMouseOut(e)
   }
 
   useEffect(() => {
@@ -75,7 +88,10 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
   }, [value])
 
   return (
-    <div className={`wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${className}`}>
+    <div
+      className={`wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
+        disabled ? 'disabled' : ''
+      } ${className}`}>
       <textarea
         disabled={disabled}
         value={selfValue}
@@ -83,6 +99,8 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
         readOnly={readOnly}
         onFocus={focusHandler}
         onBlur={blurHandler}
+        onMouseOver={mouseOverHandler}
+        onMouseOut={mouseOutHandler}
         onChange={changeHandler}
         {...props}
       />
@@ -101,7 +119,8 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
           transition: border 0.2s ease 0s, color 0.2s ease 0s;
         }
 
-        .wrapper.hover {
+        .wrapper.hover,
+        .wrapper.focus {
           border-color: ${hoverBorderColor};
         }
 
@@ -132,8 +151,10 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
         }
 
         textarea:-webkit-autofill,
+        textarea:-webkit-autofill:focus,
         textarea:-webkit-autofill:hover,
         textarea:-webkit-autofill:active,
+        textarea:-webkit-autofill:hover,
         textarea:-webkit-autofill:focus {
           -webkit-box-shadow: 0 0 0 30px ${theme.palette.background} inset !important;
         }
