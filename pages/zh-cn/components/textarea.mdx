@@ -99,6 +99,29 @@ export const meta = {
 `}
 />
 
+<Playground
+  title="命令式 API"
+  desc="使用非受控方式更新组件。"
+  scope={{ Textarea, Spacer, Button }}
+  code={`
+() => {
+  const ref = React.useRef(null)
+  const setChange = () => {
+    ref && (ref.current.value = Math.random().toString(32))
+  }
+  return (
+    <>
+      <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small"
+        onClick={setChange}>设置值</Button>
+    </>
+  )
+}
+`}
+/>
+
+
 <Attributes edit="/pages/zh-cn/components/textarea.mdx">
 <Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
 
