@@ -2,13 +2,13 @@ import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
 
 interface Props {
-  visibale: boolean
+  visible: boolean
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void
   heightRatio?: string | undefined
   disabled?: boolean
 }
 
-const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visibale }) => {
+const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visible }) => {
   const theme = useTheme()
   const width = useMemo(() => {
     return heightRatio ? `calc(10.66px * ${heightRatio})` : '18px'
@@ -20,7 +20,7 @@ const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visib
     onClick && onClick(event)
   }
   return (
-    <div onClick={clickHandler} className={`clear-icon ${visibale ? 'visibale' : ''}`}>
+    <div onClick={clickHandler} className={`clear-icon ${visible ? 'visible' : ''}`}>
       <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M7 1.75C4.1125 1.75 1.75 4.1125 1.75 7C1.75 9.8875 4.1125 12.25 7 12.25C9.8875 12.25 12.25 9.8875 12.25 7C12.25 4.1125 9.8875 1.75 7 1.75ZM9.29688 8.37812L8.37812 9.29688L7 7.91875L5.62188 9.29688L4.70312 8.37812L6.08125 7L4.70312 5.62188L5.62188 4.70312L7 6.08125L8.37812 4.70312L9.29688 5.62188L7.91875 7L9.29688 8.37812Z"
@@ -42,7 +42,7 @@ const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visib
           opacity: 0;
         }
 
-        .visibale {
+        .visible {
           visibility: visible;
           opacity: 1;
         }

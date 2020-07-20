@@ -174,7 +174,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             />
             {clearable && (
               <InputClearIcon
-                visibale={Boolean(inputRef.current && inputRef.current.value !== '')}
+                visible={Boolean(inputRef.current && inputRef.current.value !== '')}
                 heightRatio={heightRatio}
                 disabled={disabled || readOnly}
                 onClick={clearHandler}
