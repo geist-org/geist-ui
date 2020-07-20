@@ -68,8 +68,8 @@ export const getColors = (
     secondary: {
       color: palette.cBlack0,
       hoverColor: 'inherit',
-      backgroundColor: solid ? palette.cGray0 : 'transparent',
-      hoverBackgroundColor: solid ? palette.cTheme0 : 'inherit',
+      backgroundColor: solid ? palette.secondary : 'transparent',
+      hoverBackgroundColor: solid ? palette.secondary : 'inherit',
       borderColor: palette.secondary,
       hoverBorderColor: palette.secondary,
     },
