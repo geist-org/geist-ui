@@ -20,7 +20,7 @@ const InputIcon: React.FC<InputIconProps> = ({
 }) => {
   const theme = useTheme()
   const width = useMemo(() => {
-    return `calc(${ratio} * ${theme.layout.gap} * .42)`
+    return `calc(${ratio} * ${theme.layout.gap} * .35)`
   }, [theme.layout.gap, ratio])
   const padding = useMemo(() => {
     return `calc(${ratio} * ${theme.layout.gap} * .4)`
