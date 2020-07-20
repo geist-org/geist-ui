@@ -50,7 +50,7 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
   const theme = useTheme()
   const [selfValue, setSelfValue] = useState<string>(initialValue)
   const [hover, setHover] = useState<boolean>(false)
-  const { color, borderColor, hoverBorder } = useMemo(() => getColors(theme.palette, status), [
+  const { color, borderColor, hoverBorderColor } = useMemo(() => getColors(theme.palette, status), [
     theme.palette,
     status,
   ])
@@ -102,7 +102,7 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
         }
 
         .wrapper.hover {
-          border-color: ${hoverBorder};
+          border-color: ${hoverBorderColor};
         }
 
         .wrapper.disabled {
