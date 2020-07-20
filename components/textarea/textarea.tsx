@@ -106,9 +106,10 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
         }
 
         .wrapper.disabled {
-          background-color: ${theme.palette.accents_1};
-          border-color: ${theme.palette.accents_2};
+          color: ${theme.palette.cGray2};
+          border-color: ${theme.palette.cGray2};
           cursor: not-allowed;
+          opacity: 0.5;
         }
 
         textarea {
@@ -126,7 +127,7 @@ const Textarea: React.FC<React.PropsWithChildren<TextareaProps>> = ({
           padding: ${theme.layout.gapHalf};
         }
 
-        .disabled > textarea {
+        textarea:disabled {
           cursor: not-allowed;
         }
 

@@ -21,9 +21,10 @@ exports[`Textarea should render correctly 1`] = `
         }
 
         .wrapper.disabled {
-          background-color: #fafafa;
-          border-color: #eaeaea;
+          color: #ebeced;
+          border-color: #ebeced;
           cursor: not-allowed;
+          opacity: 0.5;
         }
 
         textarea {
@@ -41,7 +42,7 @@ exports[`Textarea should render correctly 1`] = `
           padding: 8px;
         }
 
-        .disabled > textarea {
+        textarea:disabled {
           cursor: not-allowed;
         }
 
@@ -75,9 +76,10 @@ exports[`Textarea should work with different styles 1`] = `
         }
 
         .wrapper.disabled {
-          background-color: #fafafa;
-          border-color: #eaeaea;
+          color: #ebeced;
+          border-color: #ebeced;
           cursor: not-allowed;
+          opacity: 0.5;
         }
 
         textarea {
@@ -95,7 +97,7 @@ exports[`Textarea should work with different styles 1`] = `
           padding: 8px;
         }
 
-        .disabled > textarea {
+        textarea:disabled {
           cursor: not-allowed;
         }
 
@@ -125,9 +127,10 @@ exports[`Textarea should work with different styles 1`] = `
         }
 
         .wrapper.disabled {
-          background-color: #fafafa;
-          border-color: #eaeaea;
+          color: #ebeced;
+          border-color: #ebeced;
           cursor: not-allowed;
+          opacity: 0.5;
         }
 
         textarea {
@@ -145,7 +148,7 @@ exports[`Textarea should work with different styles 1`] = `
           padding: 8px;
         }
 
-        .disabled > textarea {
+        textarea:disabled {
           cursor: not-allowed;
         }
 
@@ -175,9 +178,10 @@ exports[`Textarea should work with different styles 1`] = `
         }
 
         .wrapper.disabled {
-          background-color: #fafafa;
-          border-color: #eaeaea;
+          color: #ebeced;
+          border-color: #ebeced;
           cursor: not-allowed;
+          opacity: 0.5;
         }
 
         textarea {
@@ -195,7 +199,7 @@ exports[`Textarea should work with different styles 1`] = `
           padding: 8px;
         }
 
-        .disabled > textarea {
+        textarea:disabled {
           cursor: not-allowed;
         }
 
