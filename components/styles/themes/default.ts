@@ -61,7 +61,7 @@ export const palette: ZeitUIThemesPalette = {
   cGray5: '#9b9eac',
   cGray6: '#444',
   cWhite0: '#fff',
-  brandLight: '#001b36',
+  brandLight: '#c0d8fc',
   brand: '#0054fe',
   brandDark: '#0626ae',
 }
