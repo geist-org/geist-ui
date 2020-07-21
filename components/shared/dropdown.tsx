@@ -10,7 +10,7 @@ interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
   visible: boolean
   disableMatchWidth?: boolean
-  getPopupContainer?: () => HTMLElement
+  getPopupContainer?: () => HTMLElement | null
 }
 
 interface ReactiveDomReact {
@@ -39,7 +39,7 @@ const getOffset = (el?: HTMLElement | null | undefined) => {
 
 const getRect = (
   ref: MutableRefObject<HTMLElement | null>,
-  getContainer?: () => HTMLElement,
+  getContainer?: () => HTMLElement | null,
 ): ReactiveDomReact => {
   if (!ref || !ref.current) return defaultRect
   const rect = ref.current.getBoundingClientRect()

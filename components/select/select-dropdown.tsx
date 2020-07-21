@@ -9,7 +9,7 @@ interface Props {
   className?: string
   dropdownStyle?: object
   disableMatchWidth?: boolean
-  getPopupContainer?: () => HTMLElement
+  getPopupContainer?: () => HTMLElement | null
 }
 
 const defaultProps = {
