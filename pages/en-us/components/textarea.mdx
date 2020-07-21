@@ -13,9 +13,13 @@ Retrieve multi-line user input.
 
 <Playground
   desc="Basic usage."
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea placeholder="Please enter a description." />
+<>
+  <Textarea placeholder="Please enter a description." />
+  <Spacer inline />
+  <Textarea solid placeholder="Please enter a description." />
+</>
 `}
 />
 
@@ -31,9 +35,13 @@ Retrieve multi-line user input.
 <Playground
   title="disabled"
   desc="Disable interactive textarea."
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+<>
+  <Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+  <Spacer inline />
+  <Textarea solid width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+</>
 `}
 />
 
@@ -43,13 +51,17 @@ Retrieve multi-line user input.
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="success" minHeight="65px" value="Success" />
+  <Textarea status="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
   <Textarea status="secondary" minHeight="65px" value="Secondary" />
-  <Spacer y={.5} />
-  <Textarea status="warning" minHeight="65px" value="Warning" />
   <Spacer x={.5} inline />
   <Textarea status="error" minHeight="65px" value="Error" />
+  <Spacer y={.5} />
+  <Textarea solid status="primary" minHeight="65px" value="Primary" />
+  <Spacer x={.5} inline />
+  <Textarea solid status="secondary" minHeight="65px" value="Secondary" />
+  <Spacer y={.5} inline />
+  <Textarea solid status="error" minHeight="65px" value="Error" />
 </>
 `}
 />

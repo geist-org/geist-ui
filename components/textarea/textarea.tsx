@@ -5,6 +5,7 @@ import { NormalTypes } from '../utils/prop-types'
 import { getColors } from '../input/styles'
 
 interface Props {
+  solid?: boolean
   value?: string
   initialValue?: string
   placeholder?: string
@@ -37,6 +38,7 @@ export type TextareaProps = Props & typeof defaultProps & NativeAttrs
 const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<TextareaProps>>(
   (
     {
+      solid,
       width,
       status,
       minHeight,
@@ -62,8 +64,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
-    const { color, borderColor, hoverBorderColor } = useMemo(
-      () => getColors(theme.palette, status),
+    const { color, border, hoverBorderColor, backgroundColor, hoverBackgroundColor } = useMemo(
+      () => getColors(theme.palette, status, solid),
       [theme.palette, status],
     )
 
@@ -106,8 +108,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     return (
       <div
         className={`wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
-          disabled ? 'disabled' : ''
-        } ${className}`}>
+          solid ? 'solid' : 'lined'
+        } ${disabled ? 'disabled' : ''} ${className}`}>
         <textarea
           ref={textareaRef}
           disabled={disabled}
@@ -130,14 +132,16 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
             max-width: 95vw;
             height: auto;
             border-radius: ${theme.expressiveness.R2};
-            border: 1px solid ${borderColor};
             color: ${color};
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: ${backgroundColor};
+            border: ${border};
           }
 
           .wrapper.hover,
           .wrapper.focus {
             border-color: ${hoverBorderColor};
+            background-color: ${hoverBackgroundColor};
           }
 
           .wrapper.disabled {
