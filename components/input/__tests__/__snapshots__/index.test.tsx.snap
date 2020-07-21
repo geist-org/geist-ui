@@ -55,8 +55,11 @@ exports[`Input should be work with icon 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -67,11 +70,6 @@ exports[`Input should be work with icon 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -91,6 +89,11 @@ exports[`Input should be work with icon 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -99,11 +102,8 @@ exports[`Input should be work with icon 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -179,8 +179,11 @@ exports[`Input should be work with icon 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -191,11 +194,6 @@ exports[`Input should be work with icon 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -215,6 +213,11 @@ exports[`Input should be work with icon 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -223,11 +226,8 @@ exports[`Input should be work with icon 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -319,8 +319,11 @@ exports[`Input should be work with label 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -331,11 +334,6 @@ exports[`Input should be work with label 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -355,6 +353,11 @@ exports[`Input should be work with label 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -363,11 +366,8 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -455,8 +455,11 @@ exports[`Input should be work with label 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -467,11 +470,6 @@ exports[`Input should be work with label 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -491,6 +489,11 @@ exports[`Input should be work with label 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -499,11 +502,8 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -582,8 +582,11 @@ exports[`Input should be work with label 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -594,11 +597,6 @@ exports[`Input should be work with label 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -618,6 +616,11 @@ exports[`Input should be work with label 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -626,11 +629,8 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -695,8 +695,11 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -707,11 +710,6 @@ exports[`Input should work with different sizes 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -731,6 +729,11 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -739,11 +742,8 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -804,8 +804,11 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -816,11 +819,6 @@ exports[`Input should work with different sizes 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -840,6 +838,11 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -848,11 +851,8 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -913,8 +913,11 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -925,11 +928,6 @@ exports[`Input should work with different sizes 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -949,6 +947,11 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -957,11 +960,8 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -1022,8 +1022,11 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1034,11 +1037,6 @@ exports[`Input should work with different sizes 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1058,6 +1056,11 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1066,11 +1069,8 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -1135,8 +1135,11 @@ exports[`Input should work with different status 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1147,11 +1150,6 @@ exports[`Input should work with different status 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1171,6 +1169,11 @@ exports[`Input should work with different status 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1179,11 +1182,8 @@ exports[`Input should work with different status 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -1244,8 +1244,11 @@ exports[`Input should work with different status 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1256,11 +1259,6 @@ exports[`Input should work with different status 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1280,6 +1278,11 @@ exports[`Input should work with different status 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1288,11 +1291,8 @@ exports[`Input should work with different status 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -1353,8 +1353,11 @@ exports[`Input should work with different status 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1365,11 +1368,6 @@ exports[`Input should work with different status 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #58f17a;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1389,6 +1387,11 @@ exports[`Input should work with different status 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1397,11 +1400,8 @@ exports[`Input should work with different status 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: inherit;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: inherit;
           }
 
@@ -1462,8 +1462,11 @@ exports[`Input should work with different status 1`] = `
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1474,11 +1477,6 @@ exports[`Input should work with different status 1`] = `
           .hover.input-wrapper:not(.disabled) {
             border-color: #ffc438;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1498,6 +1496,11 @@ exports[`Input should work with different status 1`] = `
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1506,11 +1509,8 @@ exports[`Input should work with different status 1`] = `
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: inherit;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: inherit;
           }
 

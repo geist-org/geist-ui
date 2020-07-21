@@ -227,8 +227,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           .input-wrapper.disabled {
-            border-color: ${theme.palette.cGray2};
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: ${theme.palette.cGray2};
           }
 
           .solid.input-wrapper.disabled {
@@ -239,11 +242,6 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           .hover.input-wrapper:not(.disabled) {
             border-color: ${hoverBorderColor};
             background-color: ${hoverBackgroundColor};
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: ${theme.palette.cGray4};
           }
 
           input {
@@ -263,6 +261,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: ${theme.palette.cGray4};
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -271,11 +274,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: ${hoverColor};
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: ${hoverColor};
           }
 

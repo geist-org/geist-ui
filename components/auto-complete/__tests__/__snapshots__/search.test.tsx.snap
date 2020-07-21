@@ -112,8 +112,11 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -124,11 +127,6 @@ initialize {
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -148,6 +146,11 @@ initialize {
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -156,11 +159,8 @@ initialize {
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -251,8 +251,11 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -263,11 +266,6 @@ initialize {
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -287,6 +285,11 @@ initialize {
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -295,11 +298,8 @@ initialize {
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -577,8 +577,11 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -589,11 +592,6 @@ initialize {
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -613,6 +611,11 @@ initialize {
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -621,11 +624,8 @@ initialize {
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -716,8 +716,11 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -728,11 +731,6 @@ initialize {
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -752,6 +750,11 @@ initialize {
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -760,11 +763,8 @@ initialize {
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -1038,8 +1038,11 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1050,11 +1053,6 @@ initialize {
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1074,6 +1072,11 @@ initialize {
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1082,11 +1085,8 @@ initialize {
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -1177,8 +1177,11 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1189,11 +1192,6 @@ initialize {
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1213,6 +1211,11 @@ initialize {
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1221,11 +1224,8 @@ initialize {
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -1503,8 +1503,11 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1515,11 +1518,6 @@ initialize {
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1539,6 +1537,11 @@ initialize {
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1547,11 +1550,8 @@ initialize {
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
@@ -1642,8 +1642,11 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            border-color: #ebeced;
             cursor: not-allowed;
+          }
+
+          .lined.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
           .solid.input-wrapper.disabled {
@@ -1654,11 +1657,6 @@ initialize {
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
             background-color: inherit;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
           }
 
           input {
@@ -1678,6 +1676,11 @@ initialize {
             -webkit-appearance: none;
           }
 
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
           input.left-icon {
             margin-left: 0;
           }
@@ -1686,11 +1689,8 @@ initialize {
             margin-right: 0;
           }
 
-          .input-wrapper.focus input {
-            color: #0054fe;
-          }
-
-          .input-wrapper.hover input {
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
             color: #0054fe;
           }
 
