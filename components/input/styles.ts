@@ -39,7 +39,7 @@ export type InputColor = {
   backgroundColor?: string
   hoverBackgroundColor?: string
   hoverColor?: string
-  borderColor: string
+  border: string
   hoverBorderColor: string
 }
 
@@ -54,7 +54,7 @@ export const getColors = (
       hoverColor: solid ? 'inherit' : palette.brand,
       backgroundColor: solid ? palette.cGray0 : 'transparent',
       hoverBackgroundColor: solid ? palette.cTheme0 : 'inherit',
-      borderColor: palette.cGray2,
+      border: solid ? 'none' : `1px solid ${palette.cGray2}`,
       hoverBorderColor: palette.brand,
     },
     primary: {
@@ -62,7 +62,7 @@ export const getColors = (
       hoverColor: solid ? 'inherit' : palette.brand,
       backgroundColor: solid ? palette.cTheme0 : 'transparent',
       hoverBackgroundColor: solid ? palette.brand : 'inherit',
-      borderColor: palette.brandLight,
+      border: solid ? 'none' : `1px solid ${palette.brandLight}`,
       hoverBorderColor: palette.brand,
     },
     secondary: {
@@ -70,7 +70,7 @@ export const getColors = (
       hoverColor: 'inherit',
       backgroundColor: solid ? palette.secondary : 'transparent',
       hoverBackgroundColor: solid ? palette.secondary : 'inherit',
-      borderColor: palette.secondary,
+      border: solid ? 'none' : `1px solid ${palette.secondary}`,
       hoverBorderColor: palette.secondary,
     },
     success: {
@@ -78,7 +78,7 @@ export const getColors = (
       hoverColor: 'inherit',
       backgroundColor: solid ? palette.successLight : 'transparent',
       hoverBackgroundColor: solid ? palette.success : 'inherit',
-      borderColor: palette.successLight,
+      border: solid ? 'none' : `1px solid ${palette.successLight}`,
       hoverBorderColor: palette.success,
     },
     warning: {
@@ -86,7 +86,7 @@ export const getColors = (
       hoverColor: 'inherit',
       backgroundColor: solid ? palette.warningLight : 'transparent',
       hoverBackgroundColor: solid ? palette.warning : 'inherit',
-      borderColor: palette.warningLight,
+      border: solid ? 'none' : `1px solid ${palette.warningLight}`,
       hoverBorderColor: palette.warning,
     },
     error: {
@@ -94,7 +94,7 @@ export const getColors = (
       hoverColor: palette.error,
       backgroundColor: solid ? palette.errorLight : 'transparent',
       hoverBackgroundColor: solid ? palette.errorLight : 'inherit',
-      borderColor: palette.error,
+      border: solid ? 'none' : `1px solid ${palette.error}`,
       hoverBorderColor: palette.errorDark,
     },
   }

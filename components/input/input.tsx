@@ -83,7 +83,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     const {
       color,
       hoverColor,
-      borderColor,
+      border,
       hoverBorderColor,
       backgroundColor,
       hoverBackgroundColor,
@@ -213,10 +213,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             border-radius: ${theme.expressiveness.R2};
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
             background-color: ${backgroundColor};
-          }
-
-          .lined.input-wrapper {
-            border: 1px solid ${borderColor};
+            border: ${border};
           }
 
           .input-wrapper.left-label {
@@ -238,11 +235,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             background-color: ${theme.palette.cGray3};
           }
 
-          .focus.input-wrapper:not(.disabled) {
-            border-color: ${hoverBorderColor};
-            background-color: ${hoverBackgroundColor};
-          }
-
+          .focus.input-wrapper:not(.disabled),
           .hover.input-wrapper:not(.disabled) {
             border-color: ${hoverBorderColor};
             background-color: ${hoverBackgroundColor};
