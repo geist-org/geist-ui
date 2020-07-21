@@ -1230,7 +1230,7 @@ exports[`Input should work with different status 1`] = `
             border-radius: 4px;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
             background-color: transparent;
-            border: 1px solid #666;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -1254,7 +1254,7 @@ exports[`Input should work with different status 1`] = `
 
           .focus.input-wrapper:not(.disabled),
           .hover.input-wrapper:not(.disabled) {
-            border-color: #666;
+            border-color: #0054fe;
             background-color: inherit;
           }
 
@@ -1289,11 +1289,11 @@ exports[`Input should work with different status 1`] = `
           }
 
           .input-wrapper.focus input {
-            color: inherit;
+            color: #0054fe;
           }
 
           .input-wrapper.hover input {
-            color: inherit;
+            color: #0054fe;
           }
 
           ::placeholder,

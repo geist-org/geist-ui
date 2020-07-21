@@ -61,15 +61,15 @@ export const getColors = (
       color: palette.cBlack0,
       hoverColor: solid ? 'inherit' : palette.brand,
       backgroundColor: solid ? palette.cTheme0 : 'transparent',
-      hoverBackgroundColor: solid ? palette.brand : 'inherit',
+      hoverBackgroundColor: solid ? palette.cTheme1 : 'inherit',
       border: solid ? 'none' : `1px solid ${palette.brandLight}`,
       hoverBorderColor: palette.brand,
     },
     secondary: {
       color: palette.cBlack0,
       hoverColor: 'inherit',
-      backgroundColor: solid ? palette.secondary : 'transparent',
-      hoverBackgroundColor: solid ? palette.secondary : 'inherit',
+      backgroundColor: solid ? palette.cGray1 : 'transparent',
+      hoverBackgroundColor: solid ? palette.cGray2 : 'inherit',
       border: solid ? 'none' : `1px solid ${palette.secondary}`,
       hoverBorderColor: palette.secondary,
     },
@@ -92,13 +92,13 @@ export const getColors = (
     error: {
       color: palette.error,
       hoverColor: palette.error,
-      backgroundColor: solid ? palette.errorLight : 'transparent',
+      backgroundColor: solid ? palette.errorHover : 'transparent',
       hoverBackgroundColor: solid ? palette.errorLight : 'inherit',
-      border: solid ? 'none' : `1px solid ${palette.error}`,
-      hoverBorderColor: palette.errorDark,
+      border: solid ? 'none' : `1px solid ${palette.errorHover}`,
+      hoverBorderColor: palette.errorLight,
     },
   }
 
-  if (!status) return colors.default
+  if (!status || status === 'secondary') return colors.default
   return colors[status]
 }
