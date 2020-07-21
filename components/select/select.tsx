@@ -28,6 +28,7 @@ interface Props {
   dropdownClassName?: string
   dropdownStyle?: object
   disableMatchWidth?: boolean
+  getPopupContainer?: () => HTMLElement | null
 }
 
 const defaultProps = {
@@ -60,6 +61,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   dropdownClassName,
   dropdownStyle,
   disableMatchWidth,
+  getPopupContainer,
   ...props
 }) => {
   const theme = useTheme()
@@ -148,7 +150,8 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
           visible={visible}
           className={dropdownClassName}
           dropdownStyle={dropdownStyle}
-          disableMatchWidth={disableMatchWidth}>
+          disableMatchWidth={disableMatchWidth}
+          getPopupContainer={getPopupContainer}>
           {children}
         </SelectDropdown>
         {!pure && (

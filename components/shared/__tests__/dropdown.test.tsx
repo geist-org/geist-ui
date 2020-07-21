@@ -164,4 +164,24 @@ describe('Dropdown', () => {
 
     expect(() => wrapper.unmount()).not.toThrow()
   })
+
+  it('should render to specified container', () => {
+    const Mock: React.FC<{}> = () => {
+      const ref = useRef<HTMLDivElement>(null)
+      const customContainer = useRef<HTMLDivElement>(null)
+      return (
+        <div>
+          <div ref={customContainer} id="custom" />
+          <div ref={ref}>
+            <Dropdown parent={ref} visible getPopupContainer={() => customContainer.current}>
+              <span>test-value</span>
+            </Dropdown>
+          </div>
+        </div>
+      )
+    }
+    const wrapper = mount(<Mock />)
+    const customContainer = wrapper.find('#custom')
+    expect(customContainer.html()).toContain('dropdown')
+  })
 })
