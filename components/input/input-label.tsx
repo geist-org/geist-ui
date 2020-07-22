@@ -4,10 +4,12 @@ import useTheme from '../styles/use-theme'
 export interface InputLabel {
   isRight?: boolean
   fontSize: string
+  solid?: boolean
 }
 
 const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
   children,
+  solid,
   isRight,
   fontSize,
 }) => {
@@ -29,9 +31,10 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
           background-color: ${theme.palette.accents_1};
           border-top-left-radius: ${theme.expressiveness.R2};
           border-bottom-left-radius: ${theme.expressiveness.R2};
-          border-top: 1px solid ${theme.palette.border};
-          border-left: 1px solid ${theme.palette.border};
-          border-bottom: 1px solid ${theme.palette.border};
+          border-top: ${solid ? 'none' : '1px solid ' + theme.palette.border};
+          border-left: ${solid ? 'none' : '1px solid ' + theme.palette.border};
+          border-right: ${solid ? '1px solid ' + theme.palette.cWhite0 : 'none'};
+          border-bottom: ${solid ? 'none' : '1px solid ' + theme.palette.border};
           font-size: ${fontSize};
         }
 
@@ -40,8 +43,8 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
           border-bottom-left-radius: 0;
           border-top-right-radius: ${theme.expressiveness.R2};
           border-bottom-right-radius: ${theme.expressiveness.R2};
-          border-left: 0;
-          border-right: 1px solid ${theme.palette.border};
+          border-left: ${solid ? '1px solid ' + theme.palette.cWhite0 : 'none'};
+          border-right: ${solid ? 'none' : '1px solid ' + theme.palette.border};
         }
       `}</style>
     </span>

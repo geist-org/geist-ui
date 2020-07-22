@@ -151,7 +151,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       <div className="with-label">
         {children && <InputBlockLabel>{children}</InputBlockLabel>}
         <div className={`input-container ${className}`}>
-          {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
+          {label && (
+            <InputLabel solid={solid} fontSize={fontSize}>
+              {label}
+            </InputLabel>
+          )}
           <div
             className={`input-wrapper ${solid ? 'solid' : 'lined'} ${hover ? 'hover' : ''} ${
               focus ? 'focus' : ''
@@ -183,7 +187,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
           </div>
           {labelRight && (
-            <InputLabel fontSize={fontSize} isRight={true}>
+            <InputLabel solid={solid} fontSize={fontSize} isRight={true}>
               {labelRight}
             </InputLabel>
           )}
