@@ -291,11 +291,22 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px ${theme.palette.background} inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px ${backgroundColor} inset !important;
             -webkit-text-fill-color: ${color} !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px ${hoverBackgroundColor} inset !important;
+            -webkit-text-fill-color: ${hoverColor} !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         `}</style>
       </div>

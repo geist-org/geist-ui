@@ -1,8 +1,8 @@
-import React from 'react'
-import { mount } from 'enzyme'
 import { AutoComplete } from 'components'
-import { nativeEvent } from 'tests/utils'
+import { mount } from 'enzyme'
+import React from 'react'
 import { act } from 'react-dom/test-utils'
+import { nativeEvent } from 'tests/utils'
 
 describe('AutoComplete', () => {
   it('should render correctly', () => {
@@ -14,7 +14,7 @@ describe('AutoComplete', () => {
   it('should support sizes and status', () => {
     const wrapper = mount(
       <div>
-        <AutoComplete status="secondary" />
+        <AutoComplete status="primary" />
         <AutoComplete status="success" />
         <AutoComplete size="mini" />
         <AutoComplete size="large" />

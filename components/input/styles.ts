@@ -1,4 +1,4 @@
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalSizes, InputTypes } from '../utils/prop-types'
 import { ZeitUIThemesPalette } from '../styles/themes'
 
 export type InputSize = {
@@ -45,17 +45,17 @@ export type InputColor = {
 
 export const getColors = (
   palette: ZeitUIThemesPalette,
-  status?: NormalTypes,
+  status?: InputTypes,
   solid?: boolean,
 ): InputColor => {
-  const colors: { [key in NormalTypes]: InputColor } = {
+  const colors: { [key in InputTypes]: InputColor } = {
     default: {
       color: palette.cBlack0,
       hoverColor: solid ? 'inherit' : palette.brand,
       backgroundColor: solid ? palette.cGray0 : 'transparent',
       hoverBackgroundColor: solid ? palette.cTheme0 : 'inherit',
       border: solid ? 'none' : `1px solid ${palette.cGray2}`,
-      hoverBorderColor: palette.brand,
+      hoverBorderColor: solid ? 'none' : palette.brand,
     },
     primary: {
       color: palette.cBlack0,
@@ -63,15 +63,7 @@ export const getColors = (
       backgroundColor: solid ? palette.cTheme0 : 'transparent',
       hoverBackgroundColor: solid ? palette.cTheme1 : 'inherit',
       border: solid ? 'none' : `1px solid ${palette.brandLight}`,
-      hoverBorderColor: palette.brand,
-    },
-    secondary: {
-      color: palette.cBlack0,
-      hoverColor: 'inherit',
-      backgroundColor: solid ? palette.cGray1 : 'transparent',
-      hoverBackgroundColor: solid ? palette.cGray2 : 'inherit',
-      border: solid ? 'none' : `1px solid ${palette.secondary}`,
-      hoverBorderColor: palette.secondary,
+      hoverBorderColor: solid ? 'none' : palette.brand,
     },
     success: {
       color: palette.cBlack0,
@@ -79,7 +71,7 @@ export const getColors = (
       backgroundColor: solid ? palette.successLight : 'transparent',
       hoverBackgroundColor: solid ? palette.success : 'inherit',
       border: solid ? 'none' : `1px solid ${palette.successLight}`,
-      hoverBorderColor: palette.success,
+      hoverBorderColor: solid ? 'none' : palette.success,
     },
     warning: {
       color: palette.cBlack0,
@@ -87,7 +79,7 @@ export const getColors = (
       backgroundColor: solid ? palette.warningLight : 'transparent',
       hoverBackgroundColor: solid ? palette.warning : 'inherit',
       border: solid ? 'none' : `1px solid ${palette.warningLight}`,
-      hoverBorderColor: palette.warning,
+      hoverBorderColor: solid ? 'none' : palette.warning,
     },
     error: {
       color: palette.error,
@@ -95,10 +87,10 @@ export const getColors = (
       backgroundColor: solid ? palette.errorHover : 'transparent',
       hoverBackgroundColor: solid ? palette.errorLight : 'inherit',
       border: solid ? 'none' : `1px solid ${palette.errorHover}`,
-      hoverBorderColor: palette.errorLight,
+      hoverBorderColor: solid ? 'none' : palette.errorLight,
     },
   }
 
-  if (!status || status === 'secondary') return colors.default
+  if (!status) return colors.default
   return colors[status]
 }

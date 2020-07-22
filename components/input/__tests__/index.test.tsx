@@ -1,6 +1,6 @@
-import React from 'react'
-import { mount } from 'enzyme'
 import { Input } from 'components'
+import { mount } from 'enzyme'
+import React from 'react'
 import { nativeEvent } from 'tests/utils'
 
 describe('Input', () => {
@@ -25,7 +25,6 @@ describe('Input', () => {
     const wrapper = mount(
       <div>
         <Input status="primary" />
-        <Input status="secondary" />
         <Input status="success" />
         <Input status="warning" />
       </div>,

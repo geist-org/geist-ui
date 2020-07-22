@@ -25,6 +25,8 @@ const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
 const normalTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
+const inputTypes = tuple('default', 'primary', 'success', 'warning', 'error')
+
 const themeTypes = tuple('dark', 'light')
 
 const snippetTypes = tuple('default', 'secondary', 'success', 'warning', 'error', 'dark', 'lite')
@@ -75,6 +77,8 @@ export type NormalSizes = typeof normalSizes[number]
 export type SelectTypes = typeof selectTypes[number]
 
 export type NormalTypes = typeof normalTypes[number]
+
+export type InputTypes = typeof inputTypes[number]
 
 export type ThemeTypes = typeof themeTypes[number]
 

@@ -119,11 +119,22 @@ exports[`Input should be work with icon 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
@@ -243,11 +254,22 @@ exports[`Input should be work with icon 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div></div>"
 `;
@@ -383,11 +405,22 @@ exports[`Input should be work with label 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
         span {
@@ -519,11 +552,22 @@ exports[`Input should be work with label 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div><div class=\\"with-label\\"><label><span>Block Label</span><style>
         label {
@@ -646,11 +690,22 @@ exports[`Input should be work with label 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div></div>"
 `;
@@ -759,11 +814,22 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
@@ -868,11 +934,22 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
@@ -977,11 +1054,22 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
@@ -1086,11 +1174,22 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div></div>"
 `;
@@ -1199,10 +1298,8 @@ exports[`Input should work with different status 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
@@ -1220,99 +1317,17 @@ exports[`Input should work with different status 1`] = `
             height: calc(1.687 * 16px);
           }
 
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-            background-color: transparent;
-            border: 1px solid #ebeced;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            cursor: not-allowed;
-          }
-
-          .lined.input-wrapper.disabled {
-            border-color: #ebeced;
-          }
-
-          .solid.input-wrapper.disabled {
-            background-color: #dbdde0;
-          }
-
-          .focus.input-wrapper:not(.disabled),
-          .hover.input-wrapper:not(.disabled) {
-            border-color: #0054fe;
-            background-color: inherit;
-          }
-
-          input {
-            margin: 0 1.1429rem;
-            padding: 0;
-            box-shadow: none;
-            font-size: 1rem;
-            line-height: calc(1.875 * 16pt - 2px);
-            background-color: transparent;
-            font-weight: normal;
-            border: none;
-            color: #282D30;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          .input-wrapper.focus:not(.disabled) input,
-          .input-wrapper.hover:not(.disabled) input {
-            color: #0054fe;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #9b9eac;
-          }
-
-          input::-moz-placeholder {
-            line-height: calc(1.875 * 16pt - 1px);
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #282D30 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
@@ -1417,11 +1432,22 @@ exports[`Input should work with different status 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: inherit !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
@@ -1526,11 +1552,22 @@ exports[`Input should work with different status 1`] = `
           }
 
           input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px transparent inset !important;
             -webkit-text-fill-color: #282D30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px inherit inset !important;
+            -webkit-text-fill-color: inherit !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         </style></div></div>"
 `;
