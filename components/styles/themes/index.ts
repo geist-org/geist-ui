@@ -22,7 +22,7 @@ export interface ZeitUIThemesPalette {
   successLight: string
   successDark: string
   error: string
-  errorLighter: string
+  errorHover: string
   errorLight: string
   errorDark: string
   warning: string

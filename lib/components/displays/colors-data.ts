@@ -20,7 +20,7 @@ const normal: ColorEnum = {
 /* eslint-enable camelcase */
 
 const error: ColorEnum = {
-  errorLighter: 'Lighter',
+  errorHover: 'Hover',
   errorLight: 'Light',
   error: 'Default',
   errorDark: 'Dark',
