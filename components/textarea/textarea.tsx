@@ -185,12 +185,19 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
           }
 
           textarea:-webkit-autofill,
-          textarea:-webkit-autofill:focus,
-          textarea:-webkit-autofill:hover,
           textarea:-webkit-autofill:active,
           textarea:-webkit-autofill:hover,
           textarea:-webkit-autofill:focus {
+            -webkit-background-clip: text;
+          }
+
+          textarea:-webkit-autofill,
+          textarea:-webkit-autofill:active {
             -webkit-box-shadow: 0 0 0 30px ${theme.palette.background} inset !important;
+          }
+          textarea:-webkit-autofill:hover,
+          textarea:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px ${hoverBackgroundColor} inset !important;
           }
         `}</style>
       </div>
