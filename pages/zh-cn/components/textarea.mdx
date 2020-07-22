@@ -13,9 +13,13 @@ export const meta = {
 
 <Playground
   desc="基础示例。"
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea placeholder="请输入一段描述。" />
+<>
+  <Textarea placeholder="请输入一段描述。" />
+  <Spacer inline />
+  <Textarea solid placeholder="请输入一段描述。" />
+</>
 `}
 />
 
@@ -31,9 +35,26 @@ export const meta = {
 <Playground
   title="禁用"
   desc="禁用文本框所有交互。"
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+<>
+  <Textarea width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+  <Spacer inline />
+  <Textarea solid width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+</>
+`}
+/>
+
+<Playground
+  title="计数器"
+  desc="带计数器和最大字数限制"
+  scope={{ Textarea, Spacer }}
+  code={`
+<>
+  <Textarea counter maxLength={200} placeholder="限制最多 200 个字符" />
+  <Spacer inline />
+  <Textarea counter placeholder="字符计数器" />
+</>
 `}
 />
 
@@ -43,13 +64,13 @@ export const meta = {
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="success" minHeight="65px" value="成功" />
-  <Spacer x={.5} inline />
-  <Textarea status="secondary" minHeight="65px" value="次要的" />
-  <Spacer y={.5} />
-  <Textarea status="warning" minHeight="65px" value="警告" />
+  <Textarea status="primary" minHeight="65px" value="主要的" />
   <Spacer x={.5} inline />
   <Textarea status="error" minHeight="65px" value="错误" />
+  <Spacer y={.5} />
+  <Textarea solid status="primary" minHeight="65px" value="主要的" />
+  <Spacer x={.5} inline />
+  <Textarea solid status="error" minHeight="65px" value="错误" />
 </>
 `}
 />
