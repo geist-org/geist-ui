@@ -16,6 +16,7 @@ describe('Textarea', () => {
         <Textarea status="primary" />
         <Textarea width="20%" />
         <Textarea minHeight="100px" />
+        <Textarea solid />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -97,5 +98,12 @@ describe('Textarea', () => {
     changeEvent = { target: { value: 'fooo' } }
     wrapper.find('textarea').simulate('change', changeEvent)
     expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ target: { value: 'foo' } }))
+  })
+
+  it('should forward ref by default', () => {
+    const ref = React.createRef<HTMLTextAreaElement>()
+    const wrapper = mount(<Textarea ref={ref} />)
+    expect(ref.current).not.toBeNull()
+    expect(() => wrapper.unmount()).not.toThrow()
   })
 })

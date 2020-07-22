@@ -16,6 +16,7 @@ describe('Input', () => {
         <Input size="small" />
         <Input size="large" />
         <Input width="50%" />
+        <Input solid />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -36,7 +37,9 @@ describe('Input', () => {
     const wrapper = mount(
       <div>
         <Input label="label" />
+        <Input solid label="label" />
         <Input labelRight="label" />
+        <Input solid labelRight="label" />
         <Input>
           <span>Block Label</span>
         </Input>
@@ -44,6 +47,7 @@ describe('Input', () => {
     )
     expect(wrapper.html()).toMatchSnapshot()
   })
+
   it('should be work with icon', () => {
     const wrapper = mount(
       <div>
@@ -120,6 +124,7 @@ describe('Input', () => {
     wrapper.find('.clear-icon').at(0).simulate('click', nativeEvent)
     expect(clearHandler).toHaveBeenCalled()
     expect(value).toEqual('')
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('should trigger focus correctly', () => {

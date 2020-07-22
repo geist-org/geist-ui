@@ -31,10 +31,6 @@ describe('AutoComplete', () => {
     wrapper = mount(<AutoComplete value="value2" />)
     input = wrapper.find('input').at(0).getDOMNode()
     expect((input as HTMLInputElement).value).toEqual('value2')
-
-    wrapper = mount(<AutoComplete value="" />)
-    input = wrapper.find('input').at(0).getDOMNode()
-    expect((input as HTMLInputElement).value).toEqual('')
   })
 
   it('should render clear icon', async () => {
@@ -51,7 +47,7 @@ describe('AutoComplete', () => {
     expect((input as HTMLInputElement).value).toEqual('')
   })
 
-  it('should reponse width change', async () => {
+  it('should response width change', async () => {
     const wrapper = mount(<AutoComplete initialValue="value" width="100px" />)
     expect(wrapper.prop('width')).toEqual('100px')
     await act(async () => {

@@ -1,8 +1,8 @@
-import React, { useRef, useImperativeHandle, useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
-import withDefaults from '../utils/with-defaults'
-import { InputTypes } from '../utils/prop-types'
+import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { getColors } from '../input/styles'
+import useTheme from '../styles/use-theme'
+import { InputTypes } from '../utils/prop-types'
+import withDefaults from '../utils/with-defaults'
 import Counter from './counter'
 
 interface Props {
