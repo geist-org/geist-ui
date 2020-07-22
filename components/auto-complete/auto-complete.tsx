@@ -5,7 +5,7 @@ import AutoCompleteDropdown from './auto-complete-dropdown'
 import AutoCompleteSearching from './auto-complete-searching'
 import AutoCompleteEmpty from './auto-complete-empty'
 import { AutoCompleteContext, AutoCompleteConfig } from './auto-complete-context'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalSizes, InputTypes } from '../utils/prop-types'
 import Loading from '../loading'
 import { pickChild } from '../utils/collections'
 import useCurrentState from '../utils/use-current-state'
@@ -20,7 +20,7 @@ export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOp
 interface Props {
   options: AutoCompleteOptions
   size?: NormalSizes
-  status?: NormalTypes
+  status?: InputTypes
   initialValue?: string
   value?: string
   width?: string

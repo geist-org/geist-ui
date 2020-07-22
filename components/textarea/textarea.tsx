@@ -1,7 +1,7 @@
 import React, { useRef, useImperativeHandle, useEffect, useMemo, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
-import { NormalTypes } from '../utils/prop-types'
+import { InputTypes } from '../utils/prop-types'
 import { getColors } from '../input/styles'
 import Counter from './counter'
 
@@ -12,7 +12,7 @@ interface Props {
   value?: string
   initialValue?: string
   placeholder?: string
-  status?: NormalTypes
+  status?: InputTypes
   width?: string
   minHeight?: string
   disabled?: boolean
@@ -27,7 +27,7 @@ interface Props {
 
 const defaultProps = {
   initialValue: '',
-  status: 'default' as NormalTypes,
+  status: 'default' as InputTypes,
   width: 'initial',
   minHeight: '6.25rem',
   disabled: false,
