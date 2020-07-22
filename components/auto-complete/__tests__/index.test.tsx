@@ -31,6 +31,10 @@ describe('AutoComplete', () => {
     wrapper = mount(<AutoComplete value="value2" />)
     input = wrapper.find('input').at(0).getDOMNode()
     expect((input as HTMLInputElement).value).toEqual('value2')
+
+    wrapper = mount(<AutoComplete value="" />)
+    input = wrapper.find('input').at(0).getDOMNode()
+    expect((input as HTMLInputElement).value).toEqual('')
   })
 
   it('should render clear icon', async () => {

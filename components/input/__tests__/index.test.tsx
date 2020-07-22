@@ -134,6 +134,18 @@ describe('Input', () => {
     expect(blur).toHaveBeenCalled()
   })
 
+  it('should trigger hover correctly', () => {
+    const mouseOver = jest.fn()
+    const mouseOut = jest.fn()
+    const wrapper = mount(<Input onMouseOver={mouseOver} onMouseOut={mouseOut} />)
+
+    const input = wrapper.find('input').at(0)
+    input.simulate('mouseOver')
+    expect(mouseOver).toHaveBeenCalled()
+    input.simulate('mouseOut')
+    expect(mouseOut).toHaveBeenCalled()
+  })
+
   it('should trigger icon event', () => {
     const click = jest.fn()
     const wrapper = mount(
