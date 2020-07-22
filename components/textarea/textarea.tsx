@@ -3,8 +3,11 @@ import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from '../input/styles'
+import Counter from './counter'
 
 interface Props {
+  counter?: boolean
+  maxLength?: number
   solid?: boolean
   value?: string
   initialValue?: string
@@ -38,6 +41,8 @@ export type TextareaProps = Props & typeof defaultProps & NativeAttrs
 const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<TextareaProps>>(
   (
     {
+      counter,
+      maxLength,
       solid,
       width,
       status,
@@ -58,6 +63,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     ref: React.Ref<HTMLTextAreaElement | null>,
   ) => {
     const theme = useTheme()
+    const hasLimit = useMemo(() => Number.isInteger(maxLength) && (maxLength as number) > 0, [
+      maxLength,
+    ])
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     useImperativeHandle(ref, () => textareaRef.current)
     const isControlledComponent = useMemo(() => value !== undefined, [value])
@@ -71,6 +79,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
 
     const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       if (disabled || readOnly) return
+      if (hasLimit && event.target.value.length > (maxLength as number)) return
       setSelfValue(event.target.value)
       onChange && onChange(event)
     }
@@ -105,6 +114,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
       ...controlledValue,
     }
 
+    const count = selfValue.length
+
     return (
       <div
         className={`wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
@@ -120,10 +131,13 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
           onMouseOver={mouseOverHandler}
           onMouseOut={mouseOutHandler}
           onChange={changeHandler}
+          maxLength={maxLength}
           {...textareaProps}
         />
+        {counter && <Counter count={count} maxLength={maxLength} />}
         <style jsx>{`
           .wrapper {
+            position: ${counter ? 'relative' : 'inherit'};
             display: inline-flex;
             box-sizing: border-box;
             user-select: none;

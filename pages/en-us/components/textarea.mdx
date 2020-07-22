@@ -46,6 +46,19 @@ Retrieve multi-line user input.
 />
 
 <Playground
+  title="with counter"
+  desc="With build in counter"
+  scope={{ Textarea, Spacer }}
+  code={`
+<>
+  <Textarea counter maxLength={200} placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+  <Spacer inline />
+  <Textarea counter placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+</>
+`}
+/>
+
+<Playground
   title="status"
   desc="Differentiate states by color."
   scope={{ Textarea, Spacer }}
@@ -60,7 +73,7 @@ Retrieve multi-line user input.
   <Textarea solid status="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
   <Textarea solid status="secondary" minHeight="65px" value="Secondary" />
-  <Spacer y={.5} inline />
+  <Spacer x={.5} inline />
   <Textarea solid status="error" minHeight="65px" value="Error" />
 </>
 `}
