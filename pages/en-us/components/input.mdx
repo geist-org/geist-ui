@@ -153,38 +153,50 @@ Retrieve text input from a user.
   scope={{ Input, AlertCircle, Spacer }}
   code={`
 <>
-  <Input size="mini" icon={<AlertCircle />} placeholder="GitHub" />
+  <Input size="mini" icon={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
-  <Input solid size="mini" icon={<AlertCircle />} placeholder="GitHub" />
+  <Input solid size="mini" icon={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
-  <Input size="small" icon={<AlertCircle />} placeholder="GitHub" />
+  <Input size="small" icon={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
-  <Input solid size="small" icon={<AlertCircle />} placeholder="GitHub" />
+  <Input solid size="small" icon={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
-  <Input size="medium" icon={<AlertCircle />} placeholder="GitHub" />
+  <Input size="medium" icon={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
-  <Input solid size="medium" icon={<AlertCircle />} placeholder="GitHub" />
+  <Input solid size="medium" icon={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
-  <Input size="large" icon={<AlertCircle />} placeholder="GitHub" />
+  <Input size="large" icon={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
-  <Input solid size="large" icon={<AlertCircle />} placeholder="GitHub" />
+  <Input solid size="large" icon={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
-  <Input size="mini" iconRight={<AlertCircle />} placeholder="GitHub" />
+  <Input size="mini" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
-  <Input solid size="mini" iconRight={<AlertCircle />} placeholder="GitHub" />
+  <Input solid size="mini" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
-  <Input size="small" iconRight={<AlertCircle />} placeholder="GitHub" />
+  <Input size="small" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
-  <Input solid size="small" iconRight={<AlertCircle />} placeholder="GitHub" />
+  <Input solid size="small" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
-  <Input size="medium" iconRight={<AlertCircle />} placeholder="GitHub" />
+  <Input size="medium" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
-  <Input solid size="medium" iconRight={<AlertCircle />} placeholder="GitHub" />
+  <Input solid size="medium" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
-  <Input size="large" iconRight={<AlertCircle />} placeholder="GitHub" />
+  <Input size="large" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
-  <Input solid size="large" iconRight={<AlertCircle />} placeholder="GitHub" />
+  <Input solid size="large" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
+</>
+`}
+/>
+
+<Playground
+  title="Password"
+  scope={{ Input, Spacer }}
+  code={`
+<>
+  <Input.Password initialValue="123456abc" />
+  <Spacer inline />
+  <Input.Password solid initialValue="123456abc" />
 </>
 `}
 />
@@ -198,18 +210,6 @@ Retrieve text input from a user.
   <Input clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
   <Spacer inline />
   <Input solid clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
-</>
-`}
-/>
-
-<Playground
-  title="Password"
-  scope={{ Input, Spacer }}
-  code={`
-<>
-  <Input.Password initialValue="123456abc" />
-  <Spacer inline />
-  <Input.Password solid initialValue="123456abc" />
 </>
 `}
 />

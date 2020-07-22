@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import GitIcon from '@zeit-ui/react-icons/github'
+import AlertCircle from '@zeit-ui/react-icons/alertCircle'
 import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
 import { useState, useEffect } from 'react'
 
@@ -14,9 +14,13 @@ export const meta = {
 
 <Playground
   desc="基础的输入字段。"
-  scope={{ Input }}
+  scope={{ Input, Spacer }}
   code={`
-<Input placeholder="一个基础示例" />
+<>
+  <Input placeholder="一个基础示例" />
+  <Spacer inline />
+  <Input solid placeholder="一个基础示例" />
+</>
 `}
 />
 
@@ -26,10 +30,17 @@ export const meta = {
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input size="mini" placeholder="最小的" /> <Spacer y={.5} />
-  <Input size="small" placeholder="较小的" /> <Spacer y={.5} />
-  <Input size="medium" placeholder="中等的" /> <Spacer y={.5} />
+  <Input size="mini" placeholder="最小的" />
+  <Input solid size="mini" placeholder="最小的" />
+  <Spacer y={.5} />
+  <Input size="small" placeholder="较小的" />
+  <Input solid size="small" placeholder="较小的" />
+  <Spacer y={.5} />
+  <Input size="medium" placeholder="中等的" />
+  <Input solid size="medium" placeholder="中等的" />
+  <Spacer y={.5} />
   <Input size="large" placeholder="较大的" />
+  <Input solid size="large" placeholder="较大的" />
 </>
 `}
 />
@@ -50,8 +61,12 @@ export const meta = {
   code={`
 <>
   <Input disabled placeholder="禁用" />
+  <Spacer inline />
+  <Input solid disabled placeholder="禁用" />
   <Spacer y={.5} />
   <Input readOnly initialValue="只读" />
+  <Spacer inline />
+  <Input solid readOnly initialValue="只读" />
 </>
 `}
 />
@@ -63,8 +78,12 @@ export const meta = {
   code={`
 <>
   <Input label="用户名" placeholder="一个基础示例" />
+  <Spacer inline />
+  <Input solid label="用户名" placeholder="一个基础示例" />
   <Spacer y={.5} />
   <Input labelRight=".com" placeholder="https://github" />
+  <Spacer inline />
+  <Input solid labelRight=".com" placeholder="https://github" />
 </>
 `}
 />
@@ -99,14 +118,12 @@ export const meta = {
   code={`
 <>
   <Input status="primary" initialValue="主要" />
-  <Spacer y={.5} />
-  <Input status="secondary" initialValue="次要" />
-  <Spacer y={.5} />
-  <Input status="success" initialValue="成功" />
-  <Spacer y={.5} />
-  <Input status="warning" initialValue="警告" />
+  <Spacer inline />
+  <Input solid status="primary" initialValue="主要" />
   <Spacer y={.5} />
   <Input status="error" initialValue="包含错误" />
+  <Spacer inline />
+  <Input solid status="error" initialValue="包含错误" />
 </>
 `}
 />
@@ -114,24 +131,40 @@ export const meta = {
 <Playground
   title="图标"
   desc="指定一个图标组件。"
-  scope={{ Input, GitIcon, Spacer }}
+  scope={{ Input, AlertCircle, Spacer }}
   code={`
 <>
-  <Input size="mini" icon={<GitIcon />} placeholder="输入 Git 地址" />
+  <Input size="mini" icon={<AlertCircle />} placeholder="获取信息" />
+  <Spacer inline />
+  <Input solid size="mini" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
-  <Input size="small" icon={<GitIcon />} placeholder="输入 Git 地址" />
+  <Input size="small" icon={<AlertCircle />} placeholder="获取信息" />
+  <Spacer inline />
+  <Input solid size="small" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
-  <Input size="medium" icon={<GitIcon />} placeholder="输入 Git 地址" />
+  <Input size="medium" icon={<AlertCircle />} placeholder="获取信息" />
+  <Spacer inline />
+  <Input solid size="medium" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
-  <Input size="large" icon={<GitIcon />} placeholder="输入 Git 地址" />
+  <Input size="large" icon={<AlertCircle />} placeholder="获取信息" />
+  <Spacer inline />
+  <Input solid size="large" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
-  <Input size="mini" iconRight={<GitIcon />} placeholder="输入 Git 地址" />
+  <Input size="mini" iconRight={<AlertCircle />} placeholder="获取信息" />
+  <Spacer inline />
+  <Input solid size="mini" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
-  <Input size="small" iconRight={<GitIcon />} placeholder="输入 Git 地址" />
+  <Input size="small" iconRight={<AlertCircle />} placeholder="获取信息" />
+  <Spacer inline />
+  <Input solid size="small" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
-  <Input size="medium" iconRight={<GitIcon />} placeholder="输入 Git 地址" />
+  <Input size="medium" iconRight={<AlertCircle />} placeholder="获取信息" />
+  <Spacer inline />
+  <Input solid size="medium" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
-  <Input size="large" iconRight={<GitIcon />} placeholder="输入 Git 地址" />
+  <Input size="large" iconRight={<AlertCircle />} placeholder="获取信息" />
+  <Spacer inline />
+  <Input solid size="large" iconRight={<AlertCircle />} placeholder="获取信息" />
 </>
 `}
 />
@@ -148,10 +181,12 @@ export const meta = {
 <Playground
   title="清除按钮"
   desc="在输入框内增加一个用于清除文本的按钮。"
-  scope={{ Input }}
+  scope={{ Input, Spacer }}
   code={`
 <>
   <Input clearable initialValue="示例文字" placeholder="输入文本" />
+  <Spacer inline />
+  <Input solid clearable initialValue="示例文字" placeholder="输入文本" />
 </>
 `}
 />
