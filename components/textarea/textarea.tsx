@@ -152,8 +152,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
             border: ${border};
           }
 
-          .wrapper.hover,
-          .wrapper.focus {
+          .wrapper.hover:not(.disabled),
+          .wrapper.focus:not(.disabled) {
             border-color: ${hoverBorderColor};
             background-color: ${hoverBackgroundColor};
           }
