@@ -3,6 +3,7 @@ import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import useWarning from '../utils/use-warning'
 import LinkIcon from './icon'
+import { addColorAlpha } from '../utils/color'
 
 export interface Props {
   href?: string
@@ -65,7 +66,7 @@ const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkPro
           }
 
           .link:hover {
-            background-color: ${block ? '#0076ff1a' : 'unset'};
+            background-color: ${block ? addColorAlpha(theme.palette.link, 0.1) : 'unset'};
             color: ${hoverColor};
           }
         `}</style>
