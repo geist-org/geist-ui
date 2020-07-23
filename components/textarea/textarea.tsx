@@ -184,6 +184,13 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
             cursor: not-allowed;
           }
 
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-textarea-placeholder {
+            color: ${theme.palette.cGray5};
+          }
+
           textarea:-webkit-autofill,
           textarea:-webkit-autofill:active,
           textarea:-webkit-autofill:hover,
