@@ -37,6 +37,7 @@ const Description: React.FC<DescriptionProps> = ({ title, content, className, ..
           text-transform: uppercase;
           white-space: nowrap;
           color: ${theme.palette.accents_5};
+          font-weight: 500;
           display: flex;
         }
 
