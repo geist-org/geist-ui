@@ -136,6 +136,17 @@ exports[`Input should be work with icon 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: content-box;
@@ -270,6 +281,17 @@ exports[`Input should be work with icon 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
@@ -423,6 +445,17 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><span class=\\"\\">label<style>
         span {
           display: inline-flex;
@@ -570,6 +603,17 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
         span {
@@ -719,6 +763,17 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper solid    right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
         span {
           display: inline-flex;
@@ -866,6 +921,17 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div><div class=\\"with-label\\"><label><span>Block Label</span><style>
         label {
@@ -1150,6 +1216,17 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div>"
 `;
 
@@ -1274,6 +1351,17 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -1393,6 +1481,17 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
@@ -1514,6 +1613,17 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -1634,6 +1744,17 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper solid    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -1753,6 +1874,17 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
@@ -1892,6 +2024,17 @@ exports[`Input should work with different status 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -2012,6 +2155,17 @@ exports[`Input should work with different status 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -2131,6 +2285,17 @@ exports[`Input should work with different status 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;

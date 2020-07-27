@@ -312,6 +312,17 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         `}</style>
       </div>
     )

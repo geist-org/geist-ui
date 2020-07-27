@@ -4,7 +4,7 @@ exports[`AutoComplete Search should hide empty component 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "auto-complete",
+      "class": "auto-complete lined",
     },
     "children": Array [
       Object {
@@ -14,7 +14,7 @@ initialize {
         "children": Array [
           Object {
             "attribs": Object {
-              "class": "input-container ",
+              "class": "input-container has-dropdown",
             },
             "children": Array [
               Object {
@@ -193,6 +193,17 @@ initialize {
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         ",
                   "next": null,
                   "parent": [Circular],
@@ -343,6 +354,17 @@ initialize {
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         ",
                 "next": null,
                 "parent": [Circular],
@@ -356,7 +378,7 @@ initialize {
             "parent": [Circular],
             "prev": Object {
               "attribs": Object {
-                "class": "input-container ",
+                "class": "input-container has-dropdown",
               },
               "children": Array [
                 Object {
@@ -501,7 +523,7 @@ initialize {
           "children": Array [
             Object {
               "attribs": Object {
-                "class": "input-container ",
+                "class": "input-container has-dropdown",
               },
               "children": Array [
                 Object {
@@ -680,6 +702,17 @@ initialize {
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         ",
                     "next": null,
                     "parent": [Circular],
@@ -830,6 +863,17 @@ initialize {
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         ",
                   "next": null,
                   "parent": [Circular],
@@ -843,7 +887,7 @@ initialize {
               "parent": [Circular],
               "prev": Object {
                 "attribs": Object {
-                  "class": "input-container ",
+                  "class": "input-container has-dropdown",
                 },
                 "children": Array [
                   Object {
@@ -974,7 +1018,7 @@ exports[`AutoComplete Search should hide empty component 2`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "auto-complete",
+      "class": "auto-complete lined",
     },
     "children": Array [
       Object {
@@ -984,7 +1028,7 @@ initialize {
         "children": Array [
           Object {
             "attribs": Object {
-              "class": "input-container ",
+              "class": "input-container has-dropdown",
             },
             "children": Array [
               Object {
@@ -1163,6 +1207,17 @@ initialize {
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         ",
                   "next": null,
                   "parent": [Circular],
@@ -1313,6 +1368,17 @@ initialize {
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         ",
                 "next": null,
                 "parent": [Circular],
@@ -1326,7 +1392,7 @@ initialize {
             "parent": [Circular],
             "prev": Object {
               "attribs": Object {
-                "class": "input-container ",
+                "class": "input-container has-dropdown",
               },
               "children": Array [
                 Object {
@@ -1471,7 +1537,7 @@ initialize {
           "children": Array [
             Object {
               "attribs": Object {
-                "class": "input-container ",
+                "class": "input-container has-dropdown",
               },
               "children": Array [
                 Object {
@@ -1650,6 +1716,17 @@ initialize {
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         ",
                     "next": null,
                     "parent": [Circular],
@@ -1800,6 +1877,17 @@ initialize {
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .has-dropdown .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         ",
                   "next": null,
                   "parent": [Circular],
@@ -1813,7 +1901,7 @@ initialize {
               "parent": [Circular],
               "prev": Object {
                 "attribs": Object {
-                  "class": "input-container ",
+                  "class": "input-container has-dropdown",
                 },
                 "children": Array [
                   Object {

@@ -13,7 +13,7 @@ AutoComplete control of input field.
 
 <Playground
   desc="Basic usage, add auto-complete list for all inputs."
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
 () => {
   const options = [
@@ -21,8 +21,13 @@ AutoComplete control of input field.
     { label: 'Sydney', value: 'sydney' },
     { label: 'Shanghai', value: 'shanghai' },
   ]
-  return <AutoComplete placeholder="Enter here" options={options} />
-}
+  return (
+  <div style={{display: 'flex'}}>
+    <AutoComplete placeholder="Enter here" options={options} />
+    <Spacer inline />
+    <AutoComplete solid placeholder="Enter here" options={options} />
+  </div>)
+  }
 `}
 />
 

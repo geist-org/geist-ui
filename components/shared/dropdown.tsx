@@ -75,7 +75,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
 
     if (!el) return null
     return createPortal(
-      <CSSTransition visible={visible}>
+      <CSSTransition visible={visible} enterTime={0} leaveTime={0} clearTime={0}>
         <div
           className={`dropdown ${disableMatchWidth ? 'disable-match' : 'width-match'}`}
           onClick={clickHandler}>

@@ -18,6 +18,7 @@ export type AutoCompleteOption = {
 export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>
 
 interface Props {
+  solid?: boolean
   options: AutoCompleteOptions
   size?: NormalSizes
   status?: InputTypes
@@ -37,6 +38,7 @@ interface Props {
 }
 
 const defaultProps = {
+  solid: false,
   options: [] as AutoCompleteOptions,
   initialValue: '',
   disabled: false,
@@ -70,6 +72,7 @@ const getSearchIcon = (searching?: boolean) => {
 }
 
 const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
+  solid,
   options,
   initialValue: customInitialValue,
   onSelect,
@@ -114,6 +117,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     }
     return childrenToOptionsNode(options as Array<AutoCompleteOption>)
   }, [searching, options])
+
   const showClearIcon = useMemo(() => clearable && searching === undefined, [clearable, searching])
 
   const updateValue = (val: string) => {
@@ -170,6 +174,9 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     }
   }
 
+  props.className = props.className ? props.className + ' has-dropdown' : 'has-dropdown'
+  if (visible && Boolean(autoCompleteItems)) props.className += ' dropdown-visible'
+
   const inputProps = {
     ...props,
     width,
@@ -179,8 +186,9 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 
   return (
     <AutoCompleteContext.Provider value={initialValue}>
-      <div ref={ref} className="auto-complete">
+      <div ref={ref} className={`auto-complete ${solid ? 'solid' : 'lined'}`}>
         <Input
+          solid={solid}
           ref={inputRef}
           size={size}
           status={status}
@@ -192,6 +200,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
           {...inputProps}
         />
         <AutoCompleteDropdown
+          solid={solid}
           visible={visible}
           disableMatchWidth={disableMatchWidth}
           className={dropdownClassName}
