@@ -46,9 +46,9 @@ export const getButtonColors = (
   const { type, disabled, ghost } = props
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     default: {
-      bg: palette.background,
-      border: palette.border,
-      color: palette.accents_5,
+      bg: palette.cWhite0,
+      border: palette.cGray2,
+      color: palette.cGray6,
     },
     secondary: {
       bg: palette.foreground,
@@ -78,9 +78,9 @@ export const getButtonColors = (
   }
   if (disabled)
     return {
-      bg: palette.accents_1,
-      border: palette.accents_2,
-      color: '#ccc',
+      bg: palette.cWhite0,
+      border: palette.cGray3,
+      color: palette.cGray5,
     }
 
   /**
@@ -140,8 +140,9 @@ export const getButtonHoverColors = (
     }
   } = {
     default: {
-      bg: palette.background,
-      border: palette.foreground,
+      bg: palette.cWhite0,
+      border: palette.cGray4,
+      color: palette.cGray6,
     },
     secondary: {
       bg: palette.background,
@@ -183,9 +184,85 @@ export const getButtonHoverColors = (
   }
   if (disabled)
     return {
-      bg: palette.accents_1,
-      border: palette.accents_2,
-      color: '#ccc',
+      bg: palette.cWhite0,
+      border: palette.cGray3,
+      color: palette.cGray5,
+    }
+  if (loading)
+    return {
+      ...defaultColor,
+      color: 'transparent',
+    }
+  if (shadow) return defaultColor
+
+  const hoverColor =
+    (ghost ? getButtonGhostHoverColors(palette, type) : colors[type]) || colors.default
+  return {
+    ...hoverColor,
+    color: hoverColor.color || hoverColor.border,
+  }
+}
+
+export const getButtonActiveColors = (
+  palette: ZeitUIThemesPalette,
+  props: ButtonProps,
+): ButtonColorGroup => {
+  const { type, disabled, loading, shadow, ghost } = props
+  const defaultColor = getButtonColors(palette, props)
+  const alphaBackground = addColorAlpha(defaultColor.bg, 0.85)
+  const colors: {
+    [key in ButtonTypes]: Omit<ButtonColorGroup, 'color'> & {
+      color?: string
+    }
+  } = {
+    default: {
+      bg: palette.cWhite0,
+      border: palette.cGray5,
+      color: palette.cGray6,
+    },
+    secondary: {
+      bg: palette.background,
+      border: palette.foreground,
+    },
+    success: {
+      bg: palette.background,
+      border: palette.success,
+    },
+    warning: {
+      bg: palette.background,
+      border: palette.warning,
+    },
+    error: {
+      bg: palette.background,
+      border: palette.error,
+    },
+    abort: {
+      bg: 'transparent',
+      border: 'transparent',
+      color: palette.accents_5,
+    },
+    'secondary-light': {
+      ...defaultColor,
+      bg: alphaBackground,
+    },
+    'success-light': {
+      ...defaultColor,
+      bg: alphaBackground,
+    },
+    'warning-light': {
+      ...defaultColor,
+      bg: alphaBackground,
+    },
+    'error-light': {
+      ...defaultColor,
+      bg: alphaBackground,
+    },
+  }
+  if (disabled)
+    return {
+      bg: palette.cWhite0,
+      border: palette.cGray3,
+      color: palette.cGray5,
     }
   if (loading)
     return {
@@ -235,11 +312,11 @@ export type ButtonSizeGroup = {
 
 export const getButtonSize = (size: NormalSizes = 'medium', auto: boolean): ButtonSizeGroup => {
   const defaultLayout: ButtonSizeGroup = {
-    height: '2.5rem',
+    height: '2.8571rem',
     width: 'auto',
     padding: '1.375rem',
-    fontSize: '.875rem',
-    minWidth: '12.5rem',
+    fontSize: '1rem',
+    minWidth: '10rem',
   }
   const autoPaddings: { [key in NormalSizes]: string } = {
     medium: '1.25rem',

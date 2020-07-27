@@ -18,6 +18,7 @@ import {
   getButtonCursor,
   getButtonDripColor,
   getButtonHoverColors,
+  getButtonActiveColors,
   getButtonSize,
 } from './styles'
 
@@ -90,6 +91,10 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
       theme.palette,
       filteredProps,
     ])
+    const active = useMemo(() => getButtonActiveColors(theme.palette, filteredProps), [
+      theme.palette,
+      filteredProps,
+    ])
     const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading), [
       disabled,
       loading,
@@ -156,7 +161,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             min-width: ${minWidth};
             width: ${width};
             border-radius: ${theme.expressiveness.R2};
-            font-weight: 400;
+            font-weight: bold;
             font-size: ${fontSize};
             user-select: none;
             outline: none;
@@ -170,7 +175,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             overflow: hidden;
             color: ${color};
             background-color: ${bg};
-            border: 1px solid ${border};
+            border: 2px solid ${border};
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
@@ -185,6 +190,17 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             --zeit-ui-button-color: ${hover.color};
             background-color: ${hover.bg};
             border-color: ${hover.border};
+            cursor: ${cursor};
+            pointer-events: ${events};
+            box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
+            transform: translate3d(0px, ${shadow ? '-1px' : '0px'}, 0px);
+          }
+
+          .btn:active {
+            color: ${active.color};
+            --zeit-ui-button-color: ${active.color};
+            background-color: ${active.bg};
+            border-color: ${active.border};
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
