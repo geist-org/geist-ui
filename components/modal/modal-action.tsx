@@ -106,4 +106,4 @@ type ComponentProps = Partial<typeof defaultProps> &
 
 ModalAction.defaultProps = defaultProps
 
-export default ModalAction as ModalActionComponent<ComponentProps>
+export default ModalAction as ModalActionComponent<HTMLButtonElement, ComponentProps>
