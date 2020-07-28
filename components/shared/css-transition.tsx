@@ -8,14 +8,16 @@ interface Props {
   clearTime?: number
   className?: string
   name?: string
+  renderable?: boolean
 }
 
-const defaultProps = {
+export const defaultProps = {
   visible: false,
   enterTime: 60,
   leaveTime: 60,
   clearTime: 60,
   className: '',
+  renderable: false,
   name: 'transition',
 }
 
@@ -25,6 +27,7 @@ const CSSTransition: React.FC<React.PropsWithChildren<CSSTransitionProps>> = ({
   children,
   className,
   visible,
+  renderable,
   enterTime,
   leaveTime,
   clearTime,
@@ -32,13 +35,13 @@ const CSSTransition: React.FC<React.PropsWithChildren<CSSTransitionProps>> = ({
   ...props
 }) => {
   const [classes, setClasses] = useState<string>('')
-  const [renderable, setRenderable] = useState<boolean>(visible)
+  const [selfRenderable, setSelfRenderable] = useState<boolean>(renderable || visible)
 
   useEffect(() => {
     const statusClassName = visible ? 'enter' : 'leave'
     const time = visible ? enterTime : leaveTime
-    if (visible && !renderable) {
-      setRenderable(true)
+    if (visible && !selfRenderable) {
+      setSelfRenderable(true)
     }
 
     setClasses(`${name}-${statusClassName}`)
@@ -53,7 +56,7 @@ const CSSTransition: React.FC<React.PropsWithChildren<CSSTransitionProps>> = ({
     const clearClassesTimer = setTimeout(() => {
       if (!visible) {
         setClasses('')
-        setRenderable(false)
+        setSelfRenderable(renderable || false)
       }
       clearTimeout(clearClassesTimer)
     }, time + clearTime)
@@ -62,8 +65,8 @@ const CSSTransition: React.FC<React.PropsWithChildren<CSSTransitionProps>> = ({
       clearTimeout(timer)
       clearTimeout(clearClassesTimer)
     }
-  }, [visible, renderable])
-  if (!React.isValidElement(children) || !renderable) return null
+  }, [visible, selfRenderable])
+  if (!React.isValidElement(children) || !selfRenderable) return null
 
   return React.cloneElement(children, {
     ...props,

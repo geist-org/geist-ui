@@ -137,12 +137,13 @@ exports[`Input should be work with icon 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -283,12 +284,13 @@ exports[`Input should be work with icon 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -446,12 +448,13 @@ exports[`Input should be work with label 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -605,12 +608,13 @@ exports[`Input should be work with label 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -764,12 +768,13 @@ exports[`Input should be work with label 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -923,12 +928,13 @@ exports[`Input should be work with label 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1217,12 +1223,13 @@ exports[`Input should be work with label 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1352,12 +1359,13 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1483,12 +1491,13 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1614,12 +1623,13 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1745,12 +1755,13 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1876,12 +1887,13 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -2025,12 +2037,13 @@ exports[`Input should work with different status 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -2156,12 +2169,13 @@ exports[`Input should work with different status 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -2287,12 +2301,13 @@ exports[`Input should work with different status 1`] = `
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;

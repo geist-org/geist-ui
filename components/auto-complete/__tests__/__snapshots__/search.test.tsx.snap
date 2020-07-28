@@ -14,7 +14,7 @@ initialize {
         "children": Array [
           Object {
             "attribs": Object {
-              "class": "input-container has-dropdown",
+              "class": "input-container  in-auto-complete  ",
             },
             "children": Array [
               Object {
@@ -194,12 +194,13 @@ initialize {
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -355,12 +356,13 @@ initialize {
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -378,7 +380,7 @@ initialize {
             "parent": [Circular],
             "prev": Object {
               "attribs": Object {
-                "class": "input-container has-dropdown",
+                "class": "input-container  in-auto-complete  ",
               },
               "children": Array [
                 Object {
@@ -523,7 +525,7 @@ initialize {
           "children": Array [
             Object {
               "attribs": Object {
-                "class": "input-container has-dropdown",
+                "class": "input-container  in-auto-complete  ",
               },
               "children": Array [
                 Object {
@@ -703,12 +705,13 @@ initialize {
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -864,12 +867,13 @@ initialize {
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -887,7 +891,7 @@ initialize {
               "parent": [Circular],
               "prev": Object {
                 "attribs": Object {
-                  "class": "input-container has-dropdown",
+                  "class": "input-container  in-auto-complete  ",
                 },
                 "children": Array [
                   Object {
@@ -1028,7 +1032,7 @@ initialize {
         "children": Array [
           Object {
             "attribs": Object {
-              "class": "input-container has-dropdown",
+              "class": "input-container  in-auto-complete  ",
             },
             "children": Array [
               Object {
@@ -1208,12 +1212,13 @@ initialize {
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1369,12 +1374,13 @@ initialize {
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1392,7 +1398,7 @@ initialize {
             "parent": [Circular],
             "prev": Object {
               "attribs": Object {
-                "class": "input-container has-dropdown",
+                "class": "input-container  in-auto-complete  ",
               },
               "children": Array [
                 Object {
@@ -1537,7 +1543,7 @@ initialize {
           "children": Array [
             Object {
               "attribs": Object {
-                "class": "input-container has-dropdown",
+                "class": "input-container  in-auto-complete  ",
               },
               "children": Array [
                 Object {
@@ -1717,12 +1723,13 @@ initialize {
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1878,12 +1885,13 @@ initialize {
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;
@@ -1901,7 +1909,7 @@ initialize {
               "parent": [Circular],
               "prev": Object {
                 "attribs": Object {
-                  "class": "input-container has-dropdown",
+                  "class": "input-container  in-auto-complete  ",
                 },
                 "children": Array [
                   Object {

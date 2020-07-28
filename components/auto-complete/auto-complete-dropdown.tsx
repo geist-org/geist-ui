@@ -43,15 +43,13 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
     event.nativeEvent.stopImmediatePropagation()
   }
 
-  const dropdownVisible = visible && Boolean(children)
-
   return (
-    <Dropdown parent={ref} visible={dropdownVisible} disableMatchWidth={disableMatchWidth}>
+    <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth}>
       <div
         className={`auto-complete-dropdown ${className} ${solid ? 'solid' : 'lined'}`}
         style={dropdownStyle}
         onClick={clickHandler}>
-        {dropdownVisible && <div className="divider"></div>}
+        <div className="divider"></div>
         {children}
         <style jsx>{`
           .auto-complete-dropdown {

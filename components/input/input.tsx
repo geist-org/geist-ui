@@ -72,6 +72,13 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     const [hover, setHover] = useState<boolean>(false)
     const { heightRatio, fontSize, margin } = useMemo(() => getSizes(size), [size])
     const isControlledComponent = useMemo(() => value !== undefined, [value])
+    const inAutoComplete = useMemo(
+      () =>
+        className.includes('in-auto-complete') &&
+        (className.includes('transition-enter') || className.includes('transition-leave')),
+      [className],
+    )
+    const autoCompleteFocus = useMemo(() => className.includes('auto-complete-focus'), [className])
     const labelClasses = useMemo(() => (labelRight ? 'right-label' : label ? 'left-label' : ''), [
       label,
       labelRight,
@@ -109,6 +116,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       onFocus && onFocus(e)
     }
     const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+      if (inAutoComplete && autoCompleteFocus) return
       setFocus(false)
       onBlur && onBlur(e)
     }
@@ -132,6 +140,12 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       }),
       [heightRatio, iconClickable, iconClickHandler],
     )
+
+    useEffect(() => {
+      if (!autoCompleteFocus) {
+        setFocus(false)
+      }
+    }, [autoCompleteFocus])
 
     useEffect(() => {
       if (isControlledComponent) {
@@ -313,12 +327,13 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             -webkit-background-clip: text;
           }
 
-          .has-dropdown .input-wrapper {
+          .in-auto-complete .input-wrapper {
             transition: border 0s;
             transition: border-radius 0s;
           }
 
-          .has-dropdown.dropdown-visible .input-wrapper.focus:not(.disabled) {
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom-color: transparent;

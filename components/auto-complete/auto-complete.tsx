@@ -5,10 +5,15 @@ import AutoCompleteDropdown from './auto-complete-dropdown'
 import AutoCompleteSearching from './auto-complete-searching'
 import AutoCompleteEmpty from './auto-complete-empty'
 import { AutoCompleteContext, AutoCompleteConfig } from './auto-complete-context'
+import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { NormalSizes, InputTypes } from '../utils/prop-types'
 import Loading from '../loading'
 import { pickChild } from '../utils/collections'
 import useCurrentState from '../utils/use-current-state'
+import useClickAway from '../utils/use-click-away'
+
+const DEFAULT_CSS_TRANSITION_LEAVE_TIME =
+  CSSTransitionDefaultProps.leaveTime + CSSTransitionDefaultProps.clearTime
 
 export type AutoCompleteOption = {
   label: string
@@ -98,6 +103,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   const [state, setState, stateRef] = useCurrentState<string>(customInitialValue)
   const [selectVal, setSelectVal] = useState<string>(customInitialValue)
   const [visible, setVisible] = useState<boolean>(false)
+  const [focus, setFocus] = useState<boolean>(false)
 
   const [, searchChild] = pickChild(children, AutoCompleteSearching)
   const [, emptyChild] = pickChild(children, AutoCompleteEmpty)
@@ -133,6 +139,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     onSearch && onSearch(event.target.value)
     setState(event.target.value)
   }
+
   const resetInputValue = () => {
     if (!disableFreeSolo) return
     if (!state || state === '') return
@@ -161,21 +168,23 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     [state, visible, size],
   )
 
-  const toggleFocusHandler = (next: boolean) => {
+  const onInputFocus: React.EventHandler<
+    React.FocusEvent<HTMLInputElement> | React.MouseEvent<HTMLInputElement>
+  > = () => {
+    setFocus(true)
+    setVisible(true)
+    onSearch && onSearch(stateRef.current)
     clearTimeout(resetTimer.current)
-    setVisible(next)
-    if (next) {
-      onSearch && onSearch(stateRef.current)
-    } else {
-      resetTimer.current = window.setTimeout(() => {
-        resetInputValue()
-        clearTimeout(resetTimer.current)
-      }, 100)
-    }
   }
 
-  props.className = props.className ? props.className + ' has-dropdown' : 'has-dropdown'
-  if (visible && Boolean(autoCompleteItems)) props.className += ' dropdown-visible'
+  useClickAway(ref, () => {
+    setVisible(false)
+    resetTimer.current = window.setTimeout(() => {
+      resetInputValue()
+      clearTimeout(resetTimer.current)
+      setFocus(false)
+    }, DEFAULT_CSS_TRANSITION_LEAVE_TIME)
+  })
 
   const inputProps = {
     ...props,
@@ -184,24 +193,31 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     value: state,
   }
 
+  const dropdownVisible = visible && Boolean(autoCompleteItems)
+
   return (
     <AutoCompleteContext.Provider value={initialValue}>
       <div ref={ref} className={`auto-complete ${solid ? 'solid' : 'lined'}`}>
-        <Input
-          solid={solid}
-          ref={inputRef}
-          size={size}
-          status={status}
-          onChange={onInputChange}
-          onFocus={() => toggleFocusHandler(true)}
-          onBlur={() => toggleFocusHandler(false)}
-          clearable={showClearIcon}
-          iconRight={getSearchIcon(searching)}
-          {...inputProps}
-        />
+        <CSSTransition
+          renderable
+          visible={dropdownVisible}
+          className={`in-auto-complete ${focus ? 'auto-complete-focus' : ''}`}>
+          <Input
+            solid={solid}
+            ref={inputRef}
+            size={size}
+            status={status}
+            onChange={onInputChange}
+            onFocus={onInputFocus}
+            onClick={onInputFocus}
+            clearable={showClearIcon}
+            iconRight={getSearchIcon(searching)}
+            {...inputProps}
+          />
+        </CSSTransition>
         <AutoCompleteDropdown
           solid={solid}
-          visible={visible}
+          visible={dropdownVisible}
           disableMatchWidth={disableMatchWidth}
           className={dropdownClassName}
           dropdownStyle={dropdownStyle}>
