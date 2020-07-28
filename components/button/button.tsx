@@ -23,7 +23,7 @@ import {
 } from './styles'
 
 interface Props {
-  type?: ButtonTypes
+  status?: ButtonTypes
   size?: NormalSizes
   ghost?: boolean
   loading?: boolean
@@ -39,7 +39,7 @@ interface Props {
 }
 
 const defaultProps = {
-  type: 'default' as ButtonTypes,
+  status: 'default' as ButtonTypes,
   size: 'medium' as NormalSizes,
   htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],
   ghost: false,
@@ -68,7 +68,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
     const {
       children,
       disabled,
-      type,
+      status,
       loading,
       shadow,
       ghost,

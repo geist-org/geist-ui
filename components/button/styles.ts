@@ -11,7 +11,7 @@ export interface ButtonColorGroup {
 
 export const getButtonGhostColors = (
   palette: ZeitUIThemesPalette,
-  type: ButtonTypes,
+  status: ButtonTypes,
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
@@ -36,14 +36,14 @@ export const getButtonGhostColors = (
     },
   }
 
-  return colors[type] || null
+  return colors[status] || null
 }
 
 export const getButtonColors = (
   palette: ZeitUIThemesPalette,
   props: ButtonProps,
 ): ButtonColorGroup => {
-  const { type, disabled, ghost } = props
+  const { status, disabled, ghost } = props
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     default: {
       bg: palette.cWhite0,
@@ -84,13 +84,13 @@ export const getButtonColors = (
     }
 
   /**
-   * The '-light' type is the same color as the common type,
+   * The '-light' status is the same color as the common status,
    * only hover's color is different.
    * e.g.
    *   Color['success'] === Color['success-light']
    *   Color['warning'] === Color['warning-light']
    */
-  const withoutLightType = type.replace('-light', '') as ButtonTypes
+  const withoutLightType = status.replace('-light', '') as ButtonTypes
   const defaultColor = colors.default as ButtonColorGroup
 
   if (ghost) return getButtonGhostColors(palette, withoutLightType) || defaultColor
@@ -99,7 +99,7 @@ export const getButtonColors = (
 
 export const getButtonGhostHoverColors = (
   palette: ZeitUIThemesPalette,
-  type: ButtonTypes,
+  status: ButtonTypes,
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
@@ -123,7 +123,7 @@ export const getButtonGhostHoverColors = (
       color: 'white',
     },
   }
-  const withoutLightType = type.replace('-light', '') as ButtonTypes
+  const withoutLightType = status.replace('-light', '') as ButtonTypes
   return colors[withoutLightType] || null
 }
 
@@ -131,7 +131,7 @@ export const getButtonHoverColors = (
   palette: ZeitUIThemesPalette,
   props: ButtonProps,
 ): ButtonColorGroup => {
-  const { type, disabled, loading, shadow, ghost } = props
+  const { status, disabled, loading, shadow, ghost } = props
   const defaultColor = getButtonColors(palette, props)
   const alphaBackground = addColorAlpha(defaultColor.bg, 0.85)
   const colors: {
@@ -196,7 +196,7 @@ export const getButtonHoverColors = (
   if (shadow) return defaultColor
 
   const hoverColor =
-    (ghost ? getButtonGhostHoverColors(palette, type) : colors[type]) || colors.default
+    (ghost ? getButtonGhostHoverColors(palette, status) : colors[status]) || colors.default
   return {
     ...hoverColor,
     color: hoverColor.color || hoverColor.border,
@@ -207,7 +207,7 @@ export const getButtonActiveColors = (
   palette: ZeitUIThemesPalette,
   props: ButtonProps,
 ): ButtonColorGroup => {
-  const { type, disabled, loading, shadow, ghost } = props
+  const { status, disabled, loading, shadow, ghost } = props
   const defaultColor = getButtonColors(palette, props)
   const alphaBackground = addColorAlpha(defaultColor.bg, 0.85)
   const colors: {
@@ -272,7 +272,7 @@ export const getButtonActiveColors = (
   if (shadow) return defaultColor
 
   const hoverColor =
-    (ghost ? getButtonGhostHoverColors(palette, type) : colors[type]) || colors.default
+    (ghost ? getButtonGhostHoverColors(palette, status) : colors[status]) || colors.default
   return {
     ...hoverColor,
     color: hoverColor.color || hoverColor.border,
@@ -361,8 +361,8 @@ export const getButtonSize = (size: NormalSizes = 'medium', auto: boolean): Butt
 }
 
 export const getButtonDripColor = (palette: ZeitUIThemesPalette, props: ButtonProps) => {
-  const { type } = props
-  const isLightHover = type.endsWith('light')
+  const { status } = props
+  const isLightHover = status.endsWith('light')
   const hoverColors = getButtonHoverColors(palette, props)
   return isLightHover ? addColorAlpha(hoverColors.bg, 0.65) : addColorAlpha(palette.accents_2, 0.65)
 }

@@ -50,7 +50,7 @@ export const filterPropsWithGroup = (
     shadow: false,
     ghost: config.ghost || props.ghost,
     size: config.size || props.size,
-    type: config.type || props.type,
+    status: config.status || props.status,
     disabled: config.disabled || props.disabled,
   }
 }
