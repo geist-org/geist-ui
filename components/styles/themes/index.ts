@@ -52,17 +52,16 @@ export interface ZeitUIThemesPalette {
   cTheme6: string
   cTheme7: string
   cBlack0: string
-  cGray0: string
-  cGray1: string
-  cGray2: string
-  cGray3: string
-  cGray4: string
-  cGray5: string
-  cGray6: string
   cWhite0: string
-  brandLight: string
-  brand: string
-  brandDark: string
+  cNeutral0: string
+  cNeutral1: string
+  cNeutral2: string
+  cNeutral3: string
+  cNeutral4: string
+  cNeutral5: string
+  cNeutral6: string
+  cNeutral7: string
+  cNeutral8: string
 }
 
 export interface ZeitUIThemesExpressiveness {
