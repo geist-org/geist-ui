@@ -266,7 +266,7 @@ AutoComplete control of input field.
     const optionsWithCreatable = relatedOptions.length !== 0 ? relatedOptions : createOptions
     setOptions(optionsWithCreatable)
   }
-  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
+  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} onSelect={console.log} />
 }
 `}
 />
