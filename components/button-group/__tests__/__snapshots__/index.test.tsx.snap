@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonGroup buttons should be displayed vertically 1`] = `
-"<div class=\\"btn-group vertical \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action1</div><style>
+"<div class=\\"btn-group vertical \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action1</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
             padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            height: 2.8571rem;
+            line-height: 2.8571rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
-            font-size: .875rem;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 1rem;
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -23,23 +23,34 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #666;
-            background-color: #fff;
-            border: 1px solid #eaeaea;
+            color: #444;
+            background-color: #fdfdfe;
+            border: 2px solid #ebeced;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
             --zeit-ui-button-padding: 1.25rem;
-            --zeit-ui-button-height: 2.5rem;
-            --zeit-ui-button-color: #666;
-            --zeit-ui-button-bg: #fff;
+            --zeit-ui-button-height: 2.8571rem;
+            --zeit-ui-button-color: #444;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
-            color: #000;
-            --zeit-ui-button-color: #000;
-            background-color: #fff;
-            border-color: #000;
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #aaafbb;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #9b9eac;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
@@ -62,18 +73,21 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
           .btn :global(.text div) {
             margin: 0;
           }
-        </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action2</div><style>
+          .btn :global(.hidden) {
+            visibility: hidden;
+          }
+        </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action2</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
             padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            height: 2.8571rem;
+            line-height: 2.8571rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
-            font-size: .875rem;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 1rem;
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -84,23 +98,34 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #666;
-            background-color: #fff;
-            border: 1px solid #eaeaea;
+            color: #444;
+            background-color: #fdfdfe;
+            border: 2px solid #ebeced;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
             --zeit-ui-button-padding: 1.25rem;
-            --zeit-ui-button-height: 2.5rem;
-            --zeit-ui-button-color: #666;
-            --zeit-ui-button-bg: #fff;
+            --zeit-ui-button-height: 2.8571rem;
+            --zeit-ui-button-color: #444;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
-            color: #000;
-            --zeit-ui-button-color: #000;
-            background-color: #fff;
-            border-color: #000;
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #aaafbb;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #9b9eac;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
@@ -122,6 +147,9 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
           .btn :global(.text pre),
           .btn :global(.text div) {
             margin: 0;
+          }
+          .btn :global(.hidden) {
+            visibility: hidden;
           }
         </style></button><style>
           .btn-group {
@@ -171,7 +199,7 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
 `;
 
 exports[`ButtonGroup props should be passed to each button 1`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
+"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -180,8 +208,8 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
             line-height: 1.5rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
+            border-radius: 2px;
+            font-weight: bold;
             font-size: .75rem;
             user-select: none;
             outline: none;
@@ -193,23 +221,34 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #fff;
-            background-color: #58f17a;
-            border: 1px solid #58f17a;
+            color: #444;
+            background-color: #fdfdfe;
+            border: 2px solid #ebeced;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
             --zeit-ui-button-padding: 0.625rem;
             --zeit-ui-button-height: 1.5rem;
-            --zeit-ui-button-color: #fff;
-            --zeit-ui-button-bg: #58f17a;
+            --zeit-ui-button-color: #444;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
-            color: #58f17a;
-            --zeit-ui-button-color: #58f17a;
-            background-color: #fff;
-            border-color: #58f17a;
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #aaafbb;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #9b9eac;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
@@ -231,6 +270,9 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
           .btn :global(.text pre),
           .btn :global(.text div) {
             margin: 0;
+          }
+          .btn :global(.hidden) {
+            visibility: hidden;
           }
         </style></button><style>
           .btn-group {
@@ -280,7 +322,7 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
 `;
 
 exports[`ButtonGroup props should be passed to each button 2`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
+"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -289,8 +331,8 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
             line-height: 1.5rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
+            border-radius: 2px;
+            font-weight: bold;
             font-size: .75rem;
             user-select: none;
             outline: none;
@@ -302,23 +344,34 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #fff;
-            background-color: #58f17a;
-            border: 1px solid #58f17a;
+            color: #444;
+            background-color: #fdfdfe;
+            border: 2px solid #ebeced;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
             --zeit-ui-button-padding: 0.625rem;
             --zeit-ui-button-height: 1.5rem;
-            --zeit-ui-button-color: #fff;
-            --zeit-ui-button-bg: #58f17a;
+            --zeit-ui-button-color: #444;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
-            color: #58f17a;
-            --zeit-ui-button-color: #58f17a;
-            background-color: #fff;
-            border-color: #58f17a;
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #aaafbb;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #9b9eac;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
@@ -340,6 +393,9 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
           .btn :global(.text pre),
           .btn :global(.text div) {
             margin: 0;
+          }
+          .btn :global(.hidden) {
+            visibility: hidden;
           }
         </style></button><style>
           .btn-group {
@@ -389,18 +445,18 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
 `;
 
 exports[`ButtonGroup should render correctly 1`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
+"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
             padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            height: 2.8571rem;
+            line-height: 2.8571rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
-            font-size: .875rem;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 1rem;
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -411,23 +467,34 @@ exports[`ButtonGroup should render correctly 1`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #666;
-            background-color: #fff;
-            border: 1px solid #eaeaea;
+            color: #444;
+            background-color: #fdfdfe;
+            border: 2px solid #ebeced;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
             --zeit-ui-button-padding: 1.25rem;
-            --zeit-ui-button-height: 2.5rem;
-            --zeit-ui-button-color: #666;
-            --zeit-ui-button-bg: #fff;
+            --zeit-ui-button-height: 2.8571rem;
+            --zeit-ui-button-color: #444;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
-            color: #000;
-            --zeit-ui-button-color: #000;
-            background-color: #fff;
-            border-color: #000;
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #aaafbb;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #9b9eac;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
@@ -449,6 +516,9 @@ exports[`ButtonGroup should render correctly 1`] = `
           .btn :global(.text pre),
           .btn :global(.text div) {
             margin: 0;
+          }
+          .btn :global(.hidden) {
+            visibility: hidden;
           }
         </style></button><style>
           .btn-group {
