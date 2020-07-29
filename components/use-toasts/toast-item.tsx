@@ -27,7 +27,7 @@ const toastActions = (actions: Toast['actions'], cancelHandle: Function) => {
     <Button
       auto
       size="mini"
-      type={action.passive ? 'default' : 'secondary'}
+      color={action.passive ? 'default' : 'secondary'}
       key={`action-${index}`}
       onClick={(event: React.MouseEvent<HTMLButtonElement>) => handler(event, action.handler)}>
       {action.name}
