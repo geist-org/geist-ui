@@ -56,13 +56,17 @@ Indicate an action running in the background.
 />
 
 <Playground
-  title="type"
-  desc="Loading indicators in different states."
+  title="type&color"
+  desc="Loading indicators in different states(color). color take precedence of type, i.e. type is ignored when color present "
   scope={{ Loading, Row, Spacer }}
   code={`
 <>
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="success" />
+    <Loading type="default" />
+  </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading type="primary" />
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
@@ -70,12 +74,9 @@ Indicate an action running in the background.
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="warning" />
+    <Loading type="secondary" color="red" /> 
   </Row>
   <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="error" />
-  </Row>
 </>
 `}
 />
@@ -83,15 +84,18 @@ Indicate an action running in the background.
 <Attributes edit="/pages/en-us/components/loading.mdx">
 <Attributes.Title>Loading.Props</Attributes.Title>
 
-| Attribute  | Description     | Type             | Accepted values                                         | Default   |
-| ---------- | --------------- | ---------------- | ------------------------------------------------------- | --------- |
-| **type**   | bg-color type   | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**   | loading size    | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **color**  | custom bg color | `string`         | -                                                       | -         |
-| **width**  | custom width    | `string`         | -                                                       | `100%`    |
-| **height** | custom height   | `string`         | -                                                       | `100%`    |
-| ...        | native props    | `HTMLAttributes` | `'id', 'title', 'className', ...`                       | -         |
+| Attribute | Description     | Type             | Accepted values                              | Default  |
+| --------- | --------------- | ---------------- | -------------------------------------------- | -------- |
+| **type**  | stroke-color type   | `NormalTypes`    | `'default','primary', 'secondary' ` |  `default`
+| **color** | custom bg color | `string`         | -                                            | -        |
+| **size**  | loading size    | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`         | `medium` |
+| ...       | native props    | `HTMLAttributes` | `'id', 'title', 'className', ...`            | -        |
 
+`color` can override the color preset by `type` when both present
 </Attributes>
+
+ 
+
+
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
