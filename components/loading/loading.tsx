@@ -31,7 +31,6 @@ const getIconSize = (size: NormalSizes) => {
 }
 
 const getIconStrokeColor = (type: NormalTypes, palette: ZeitUIThemesPalette, color?: string) => {
-  // debugger
   if (color) {
     return color
   } else {

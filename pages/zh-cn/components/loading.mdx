@@ -56,13 +56,17 @@ export const meta = {
 />
 
 <Playground
-  title="类型"
+  title="类型和颜色"
   desc="加载指示器在不同状态(颜色)下的表现。color优先级高，覆盖type"
   scope={{ Loading, Row, Spacer }}
   code={`
 <>
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="success" />
+    <Loading type="default" />
+  </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading type="primary" />
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
@@ -70,12 +74,9 @@ export const meta = {
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="warning" />
+    <Loading type="secondary" color="red" /> 
   </Row>
   <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="error" />
-  </Row>
 </>
 `}
 />
@@ -85,7 +86,7 @@ export const meta = {
 
 | 属性      | 描述               | 类型             | 推荐值                               | 默认      |
 | --------- | ------------------ | ---------------- | ------------------------------------ | --------- |
-| **type**  | 指示器的类型       | `NormalTypes`    | `'default', 'primary', 'secondary'`  | `default` |
+| **type**  | 指示器的类型       | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'`  | `default` |
 | **size**  | 指示器的大小       | `NormalSizes`    | `'mini', 'small', 'medium', 'large'` | `medium`  |
 | **color** | 自定义指示器的色彩 | `string`         | -                                    | -         |
 | ...       | 原生属性           | `HTMLAttributes` | `'id', 'title', 'className', ...`    | -         |
