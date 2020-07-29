@@ -72,7 +72,7 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
           Action
         </Button>
         <Spacer inline x={0.5} />
-        <Button auto type="secondary" size="small">
+        <Button auto color="secondary" size="small">
           Action
         </Button>
         <Spacer y={0.5} />
