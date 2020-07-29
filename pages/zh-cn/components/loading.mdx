@@ -51,31 +51,45 @@ export const meta = {
   <Row style={{ padding: '10px 0', width: '50px' }}>
     <Loading size="large" />
   </Row>
+    <Spacer y={1.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading size="50px" />
+  </Row>
+  <Spacer y={2} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading size="5rem" />
+  </Row>
 </>
 `}
 />
 
 <Playground
-  title="类型"
-  desc="加载指示器在不同状态下的表现。"
+  title="颜色"
+  desc="加载指示器在不同状态(颜色)下的表现"
   scope={{ Loading, Row, Spacer }}
   code={`
 <>
+  <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="success" />
+    <Loading color="primary" />
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="secondary" />
+    <Loading color="secondary" />
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="warning" />
+    <Loading color="warning" />
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="error" />
+    <Loading color="error" />
   </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading color="rgba(111,222,34,0.6)" /> 
+  </Row>
+  <Spacer y={.5} />
 </>
 `}
 />
@@ -83,14 +97,17 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/loading.mdx">
 <Attributes.Title>Loading.Props</Attributes.Title>
 
-| 属性       | 描述               | 类型             | 推荐值                                                  | 默认      |
-| ---------- | ------------------ | ---------------- | ------------------------------------------------------- | --------- |
-| **type**   | 指示器的类型       | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**   | 指示器的大小       | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **color**  | 自定义指示器的色彩 | `string`         | -                                                       | -         |
-| **width**  | 定制 CSS 宽度      | `string`         | -                                                       | `100%`    |
-| **height** | 定制 CSS 高度      | `string`         | -                                                       | `100%`    |
-| ...        | 原生属性           | `HTMLAttributes` | `'id', 'title', 'className', ...`                       | -         |
+| 属性      | 描述         | 类型             | 推荐值                                                                                      | 默认      |
+| --------- | ------------ | ---------------- | ------------------------------------------------------------------------------------------- | --------- |
+| **color** | 指示器的颜色 | `string`         | `'default','primary','secondary', 'success','error','warning' '#121212', 'rgba(1,1,1,0.1)'` | `default` |
+| **size**  | 指示器的大小 | `string`         | `'mini', 'small', 'medium', 'large','10px' ,'10rem'`,                                       | `medium`  |
+| ...       | 原生属性     | `HTMLAttributes` | `'id', 'title', 'className', ...`                                                           | -         |
+
+`color` 或 `size` 首先匹配预设值，否则按照 css 字符处理
+
+color 预设值: `default`,`primary`,`secondary`,`success`,`error`,`warning`
+
+size 预设值: `mini`, `small`, `medium`, `large`
 
 </Attributes>
 

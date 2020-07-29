@@ -32,7 +32,7 @@ Indicate an action running in the background.
 
 <Playground
   title="sizes"
-  desc="Components of different sizes."
+  desc={`Components of different sizes.`}
   scope={{ Loading, Row, Spacer }}
   code={`
 <>
@@ -51,31 +51,45 @@ Indicate an action running in the background.
   <Row style={{ padding: '10px 0', width: '50px' }}>
     <Loading size="large" />
   </Row>
+    <Spacer y={1.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading size="50px" />
+  </Row>
+  <Spacer y={2} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading size="5rem" />
+  </Row>
 </>
 `}
 />
 
 <Playground
-  title="type"
-  desc="Loading indicators in different states."
+  title="Color"
+  desc="Components of different color"
   scope={{ Loading, Row, Spacer }}
   code={`
 <>
+  <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="success" />
+    <Loading color="primary" />
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="secondary" />
+    <Loading color="secondary" />
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="warning" />
+    <Loading color="warning" />
   </Row>
   <Spacer y={.5} />
   <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading type="error" />
+    <Loading color="error" />
   </Row>
+  <Spacer y={.5} />
+  <Row style={{ padding: '10px 0', width: '50px' }}>
+    <Loading color="rgba(111,222,34,0.6)" /> 
+  </Row>
+  <Spacer y={.5} />
 </>
 `}
 />
@@ -83,14 +97,17 @@ Indicate an action running in the background.
 <Attributes edit="/pages/en-us/components/loading.mdx">
 <Attributes.Title>Loading.Props</Attributes.Title>
 
-| Attribute  | Description     | Type             | Accepted values                                         | Default   |
-| ---------- | --------------- | ---------------- | ------------------------------------------------------- | --------- |
-| **type**   | bg-color type   | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**   | loading size    | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **color**  | custom bg color | `string`         | -                                                       | -         |
-| **width**  | custom width    | `string`         | -                                                       | `100%`    |
-| **height** | custom height   | `string`         | -                                                       | `100%`    |
-| ...        | native props    | `HTMLAttributes` | `'id', 'title', 'className', ...`                       | -         |
+| Attribute | Description     | Type             | Accepted values                                                                             | Default   |
+| --------- | --------------- | ---------------- | ------------------------------------------------------------------------------------------- | --------- |
+| **color** | indicator color | `string`         | `'default','primary', 'secondary','success','error','warning' '#121212', 'rgba(1,1,1,0.1)'` | `default` |
+| **size**  | indicator size  | `string`         | `'mini', 'small', 'medium', 'large','10px' ,'10rem'`,                                       | `medium`  |
+| ...       | native props    | `HTMLAttributes` | `'id', 'title', 'className', ...`                                                           | -         |
+
+`color` or `size` will be attampted to match the preset string value first, passed as normal css color/length string otherwise
+
+Preset colors: `default`,`primary`,`secondary`,`success`,`error`,`warning`
+
+Preset sizes: `mini`, `small`, `medium`, `large`
 
 </Attributes>
 
