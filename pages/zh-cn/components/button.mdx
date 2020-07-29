@@ -113,18 +113,25 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/button.mdx">
 <Attributes.Title>Button.Props</Attributes.Title>
 
-| 属性         | 描述                   | 类型                                            | 推荐值                       | 默认      |
-| ------------ | ---------------------- | ----------------------------------------------- | ---------------------------- | --------- |
-| **color**    | 按钮的类型             | `ButtonColors`                                  | [ButtonColors](#buttontypes) | `default` |
-| **size**     | 按钮的大小             | `NormalSizes`                                   | [NormalSizes](#normalsizes)  | `medium`  |
-| **loading**  | 是否显示加载中的指示器 | `boolean`                                       | -                            | `false`   |
-| **auto**     | 自动缩放宽度           | `boolean`                                       | -                            | `false`   |
-| **effect**   | 是否显示动画效果       | `boolean`                                       | -                            | `false`   |
-| **disabled** | 是否禁用按钮           | `boolean`                                       | -                            | `false`   |
-| **onClick**  | 点击事件               | `MouseEventHandler`                             | -                            | -         |
-| **htmlType** | 按钮的原生类型属性     | `ButtonHTMLAttributes.type`                     | -                            | `button`  |
-| **ref**      | 转发的原生按钮 Ref     | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                            | -         |
-| ...          | 原生属性               | `ButtonHTMLAttributes`                          | `'id', 'className', ...`     | -         |
+| 属性         | 描述                   | 类型                                            | 推荐值                            | 默认      |
+| ------------ | ---------------------- | ----------------------------------------------- | --------------------------------- | --------- |
+| **variant**  | 按钮的类型             | `ButtonVariants`                                | [ButtonVariants](#buttonVariants) | `default` |
+| **color**    | 按钮的颜色             | `ButtonColors`                                  | [ButtonColors](#buttontypes)      | `default` |
+| **size**     | 按钮的大小             | `NormalSizes`                                   | [NormalSizes](#normalsizes)       | `medium`  |
+| **loading**  | 是否显示加载中的指示器 | `boolean`                                       | -                                 | `false`   |
+| **auto**     | 自动缩放宽度           | `boolean`                                       | -                                 | `false`   |
+| **effect**   | 是否显示动画效果       | `boolean`                                       | -                                 | `false`   |
+| **disabled** | 是否禁用按钮           | `boolean`                                       | -                                 | `false`   |
+| **onClick**  | 点击事件               | `MouseEventHandler`                             | -                                 | -         |
+| **htmlType** | 按钮的原生类型属性     | `ButtonHTMLAttributes.type`                     | -                                 | `button`  |
+| **ref**      | 转发的原生按钮 Ref     | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                                 | -         |
+| ...          | 原生属性               | `ButtonHTMLAttributes`                          | `'id', 'className', ...`          | -         |
+
+<Attributes.Title>ButtonVariants</Attributes.Title>
+
+```ts
+type ButtonVariants = 'default' | 'solid' | 'text'
+```
 
 <Attributes.Title>ButtonColors</Attributes.Title>
 
