@@ -86,7 +86,7 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({ children, si
 
         label {
           margin-right: ${theme.layout.gapHalf};
-          color: ${theme.palette.accents_5};
+          color: ${theme.palette.cNeutral3};
         }
 
         label :global(*) {

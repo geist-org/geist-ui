@@ -13,7 +13,7 @@ const buttonTypes = tuple(
   'error-light',
 )
 
-export const normalSizes = tuple('mini', 'small', 'medium', 'large')
+const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
 const normalTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
