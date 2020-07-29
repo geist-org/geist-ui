@@ -11,11 +11,11 @@ describe('Loading', () => {
   it('should work with different types', () => {
     const wrapper = mount(
       <div>
-        <Loading type="primary" />
-        <Loading type="success" />
-        <Loading type="secondary" />
-        <Loading type="warning" />
-        <Loading type="error" />
+        <Loading color="primary" />
+        <Loading color="success" />
+        <Loading color="secondary" />
+        <Loading color="warning" />
+        <Loading color="error" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -36,9 +36,8 @@ describe('Loading', () => {
   it('should work with custom styles', () => {
     const wrapper = mount(
       <div>
-        <Loading color="#fff" />
-        <Loading width="20%" />
-        <Loading height="10px" />
+        <Loading color="#ffffff" />
+        <Loading size="20%" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
