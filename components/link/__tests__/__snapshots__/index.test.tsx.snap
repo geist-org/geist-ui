@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link should render correctly 1`] = `
-"<div><a class=\\"link \\" href=\\"https://react.zeit-ui.co\\">link<style>
+"<div><a href=\\"https://react.zeit-ui.co\\" class=\\"link \\">link<style>
           .link {
             display: inline-flex;
             align-items: baseline;
-            line-height: inherit;
-            color: inherit;
-            text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
-            border-radius: 0;
+            padding: 0;
             width: fit-content;
+            line-height: inherit;
+            text-decoration: none;
+            color: #0054fe;
+            border-radius: 0;
             transition: color 200ms ease 0ms;
           }
 
@@ -21,72 +21,33 @@ exports[`Link should render correctly 1`] = `
           }
 
           .link:hover {
+            color: #0433dc;
             background-color: unset;
-            color: inherit;
           }
-        </style></a><a class=\\"link \\" href=\\"https://react.zeit-ui.co\\">link<style>
+
+          .link.disabled {
+            color: #9b9eac;
+            pointer-events: none;
+            cursor: default;
+          }
+
+          .link :global(.left) {
+            margin-left: 0;
+          }
+
+          .link :global(.right) {
+            margin-right: 0;
+          }
+        </style></a><a href=\\"https://react.zeit-ui.co\\" class=\\"link \\">link<style>
           .link {
             display: inline-flex;
             align-items: baseline;
-            line-height: inherit;
-            color: #0070f3;
-            text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
-            border-radius: 0;
+            padding: 0;
             width: fit-content;
-            transition: color 200ms ease 0ms;
-          }
-
-          .link:hover,
-          .link:active,
-          .link:focus {
-            text-decoration: none;
-          }
-
-          .link:hover {
-            background-color: unset;
-            color: #8afb88;
-          }
-        </style></a><a class=\\"link \\" href=\\"https://react.zeit-ui.co\\">link<svg viewBox=\\"0 0 24 24\\" width=\\"1em\\" height=\\"1em\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" class=\\"icon\\"><path d=\\"M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6\\"></path><path d=\\"M15 3h6v6\\"></path><path d=\\"M10 14L21 3\\"></path><style>
-        .icon {
-          margin: 0 5px;
-          display: inline-flex;
-          align-self: center;
-          color: currentColor;
-        }
-      </style></svg><style>
-          .link {
-            display: inline-flex;
-            align-items: baseline;
             line-height: inherit;
-            color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
+            color: #0054fe;
             border-radius: 0;
-            width: fit-content;
-            transition: color 200ms ease 0ms;
-          }
-
-          .link:hover,
-          .link:active,
-          .link:focus {
-            text-decoration: none;
-          }
-
-          .link:hover {
-            background-color: unset;
-            color: inherit;
-          }
-        </style></a><a class=\\"link \\" href=\\"https://react.zeit-ui.co\\">link<style>
-          .link {
-            display: inline-flex;
-            align-items: baseline;
-            line-height: inherit;
-            color: inherit;
-            text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
-            border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
           }
 
@@ -97,19 +58,33 @@ exports[`Link should render correctly 1`] = `
           }
 
           .link:hover {
+            color: #0433dc;
             background-color: unset;
-            color: inherit;
           }
-        </style></a><a class=\\"link \\" href=\\"https://react.zeit-ui.co\\">link<style>
+
+          .link.disabled {
+            color: #9b9eac;
+            pointer-events: none;
+            cursor: default;
+          }
+
+          .link :global(.left) {
+            margin-left: 0;
+          }
+
+          .link :global(.right) {
+            margin-right: 0;
+          }
+        </style></a><a href=\\"https://react.zeit-ui.co\\" class=\\"link \\">link<style>
           .link {
             display: inline-flex;
             align-items: baseline;
-            line-height: inherit;
-            color: #0070f3;
-            text-decoration: none;
-            padding: calc(4pt * 0.8) calc(4pt * 1.7);
-            border-radius: 4px;
+            padding: 2px 4px;
             width: fit-content;
+            line-height: inherit;
+            text-decoration: none;
+            color: #0054fe;
+            border-radius: 4px;
             transition: color 200ms ease 0ms;
           }
 
@@ -120,8 +95,239 @@ exports[`Link should render correctly 1`] = `
           }
 
           .link:hover {
-            background-color: #0076ff1a;
-            color: #8afb88;
+            color: #0433dc;
+            background-color: #e8f4ff;
+          }
+
+          .link.disabled {
+            color: #9b9eac;
+            pointer-events: none;
+            cursor: default;
+          }
+
+          .link :global(.left) {
+            margin-left: 0;
+          }
+
+          .link :global(.right) {
+            margin-right: 0;
+          }
+        </style></a><a href=\\"https://react.zeit-ui.co\\" class=\\"link  disabled\\">link<style>
+          .link {
+            display: inline-flex;
+            align-items: baseline;
+            padding: 0;
+            width: fit-content;
+            line-height: inherit;
+            text-decoration: none;
+            color: #0054fe;
+            border-radius: 0;
+            transition: color 200ms ease 0ms;
+          }
+
+          .link:hover,
+          .link:active,
+          .link:focus {
+            text-decoration: none;
+          }
+
+          .link:hover {
+            color: #0433dc;
+            background-color: unset;
+          }
+
+          .link.disabled {
+            color: #9b9eac;
+            pointer-events: none;
+            cursor: default;
+          }
+
+          .link :global(.left) {
+            margin-left: 0;
+          }
+
+          .link :global(.right) {
+            margin-right: 0;
+          }
+        </style></a><a href=\\"https://react.zeit-ui.co\\" class=\\"link \\">link<style>
+          .link {
+            display: inline-flex;
+            align-items: baseline;
+            padding: 0;
+            width: fit-content;
+            line-height: inherit;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 0;
+            transition: color 200ms ease 0ms;
+          }
+
+          .link:hover,
+          .link:active,
+          .link:focus {
+            text-decoration: none;
+          }
+
+          .link:hover {
+            color: #0433dc;
+            background-color: unset;
+          }
+
+          .link.disabled {
+            color: #9b9eac;
+            pointer-events: none;
+            cursor: default;
+          }
+
+          .link :global(.left) {
+            margin-left: 0;
+          }
+
+          .link :global(.right) {
+            margin-right: 0;
+          }
+        </style></a><a href=\\"https://react.zeit-ui.co\\" class=\\"link \\"><span class=\\"icon left\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6\\"></path><path d=\\"M15 3h6v6\\"></path><path d=\\"M10 14L21 3\\"></path></svg><style>
+        .icon {
+          margin: 0 5px;
+          display: inline-flex;
+          align-self: center;
+          color: currentColor;
+          width: 1rem;
+        }
+      </style></span>link<style>
+          .link {
+            display: inline-flex;
+            align-items: baseline;
+            padding: 0;
+            width: fit-content;
+            line-height: inherit;
+            text-decoration: none;
+            color: #0054fe;
+            border-radius: 0;
+            transition: color 200ms ease 0ms;
+          }
+
+          .link:hover,
+          .link:active,
+          .link:focus {
+            text-decoration: none;
+          }
+
+          .link:hover {
+            color: #0433dc;
+            background-color: unset;
+          }
+
+          .link.disabled {
+            color: #9b9eac;
+            pointer-events: none;
+            cursor: default;
+          }
+
+          .link :global(.left) {
+            margin-left: 0;
+          }
+
+          .link :global(.right) {
+            margin-right: 0;
+          }
+        </style></a><a href=\\"https://react.zeit-ui.co\\" class=\\"link \\">link<span class=\\"icon right\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6\\"></path><path d=\\"M15 3h6v6\\"></path><path d=\\"M10 14L21 3\\"></path></svg><style>
+        .icon {
+          margin: 0 5px;
+          display: inline-flex;
+          align-self: center;
+          color: currentColor;
+          width: 1rem;
+        }
+      </style></span><style>
+          .link {
+            display: inline-flex;
+            align-items: baseline;
+            padding: 0;
+            width: fit-content;
+            line-height: inherit;
+            text-decoration: none;
+            color: #0054fe;
+            border-radius: 0;
+            transition: color 200ms ease 0ms;
+          }
+
+          .link:hover,
+          .link:active,
+          .link:focus {
+            text-decoration: none;
+          }
+
+          .link:hover {
+            color: #0433dc;
+            background-color: unset;
+          }
+
+          .link.disabled {
+            color: #9b9eac;
+            pointer-events: none;
+            cursor: default;
+          }
+
+          .link :global(.left) {
+            margin-left: 0;
+          }
+
+          .link :global(.right) {
+            margin-right: 0;
+          }
+        </style></a><a href=\\"https://react.zeit-ui.co\\" class=\\"link \\"><span class=\\"icon left\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6\\"></path><path d=\\"M15 3h6v6\\"></path><path d=\\"M10 14L21 3\\"></path></svg><style>
+        .icon {
+          margin: 0 5px;
+          display: inline-flex;
+          align-self: center;
+          color: currentColor;
+          width: 1rem;
+        }
+      </style></span>link<span class=\\"icon right\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6\\"></path><path d=\\"M15 3h6v6\\"></path><path d=\\"M10 14L21 3\\"></path></svg><style>
+        .icon {
+          margin: 0 5px;
+          display: inline-flex;
+          align-self: center;
+          color: currentColor;
+          width: 1rem;
+        }
+      </style></span><style>
+          .link {
+            display: inline-flex;
+            align-items: baseline;
+            padding: 0;
+            width: fit-content;
+            line-height: inherit;
+            text-decoration: none;
+            color: #0054fe;
+            border-radius: 0;
+            transition: color 200ms ease 0ms;
+          }
+
+          .link:hover,
+          .link:active,
+          .link:focus {
+            text-decoration: none;
+          }
+
+          .link:hover {
+            color: #0433dc;
+            background-color: unset;
+          }
+
+          .link.disabled {
+            color: #9b9eac;
+            pointer-events: none;
+            cursor: default;
+          }
+
+          .link :global(.left) {
+            margin-left: 0;
+          }
+
+          .link :global(.right) {
+            margin-right: 0;
           }
         </style></a></div>"
 `;

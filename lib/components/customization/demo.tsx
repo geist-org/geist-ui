@@ -44,9 +44,7 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
           <a>Hyperlink Text</a>{' '}
         </Text>
         <Text>
-          <Link href="#" color>
-            Link Component
-          </Link>
+          <Link href="#">Link Component</Link>
         </Text>
         <Text>
           Our mission is to make cloud computing accessible to everyone. We build products for

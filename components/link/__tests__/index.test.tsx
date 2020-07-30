@@ -1,5 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
+import { ExternalLink } from '@zeit-ui/react-icons'
 import { Link } from 'components'
 
 describe('Link', () => {
@@ -7,16 +8,28 @@ describe('Link', () => {
     const wrapper = mount(
       <div>
         <Link href="https://react.zeit-ui.co">link</Link>
-        <Link href="https://react.zeit-ui.co" color>
-          link
-        </Link>
-        <Link href="https://react.zeit-ui.co" icon>
-          link
-        </Link>
         <Link href="https://react.zeit-ui.co" underline>
           link
         </Link>
         <Link href="https://react.zeit-ui.co" block>
+          link
+        </Link>
+        <Link href="https://react.zeit-ui.co" disabled>
+          link
+        </Link>
+        <Link href="https://react.zeit-ui.co" plain>
+          link
+        </Link>
+        <Link href="https://react.zeit-ui.co" iconLeft={<ExternalLink />}>
+          link
+        </Link>
+        <Link href="https://react.zeit-ui.co" iconRight={<ExternalLink />}>
+          link
+        </Link>
+        <Link
+          href="https://react.zeit-ui.co"
+          iconLeft={<ExternalLink />}
+          iconRight={<ExternalLink />}>
           link
         </Link>
       </div>,
@@ -46,8 +59,25 @@ describe('Link', () => {
 
   it('an warning should be thrown when using the pure prop', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
-    mount(<Link pure />)
+    const link = mount(<Link pure />)
     expect(errorSpy).toHaveBeenCalled()
+    expect(() => link.unmount()).not.toThrow()
+    errorSpy.mockRestore()
+  })
+
+  it('an info should be shown when using the color prop', () => {
+    const errorSpy = jest.spyOn(console, 'info').mockImplementation(() => {})
+    const link = mount(<Link color />)
+    expect(errorSpy).toHaveBeenCalled()
+    expect(() => link.unmount()).not.toThrow()
+    errorSpy.mockRestore()
+  })
+
+  it('an info should be shown when using the icon prop', () => {
+    const errorSpy = jest.spyOn(console, 'info').mockImplementation(() => {})
+    const link = mount(<Link icon />)
+    expect(errorSpy).toHaveBeenCalled()
+    expect(() => link.unmount()).not.toThrow()
     errorSpy.mockRestore()
   })
 })
