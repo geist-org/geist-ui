@@ -1,8 +1,9 @@
-import React from 'react'
-import { mount, render } from 'enzyme'
 import { AutoComplete } from 'components'
-import { nativeEvent, updateWrapper } from 'tests/utils'
+import { mount, render } from 'enzyme'
+import React from 'react'
 import { act } from 'react-dom/test-utils'
+import { nativeEvent, updateWrapper } from 'tests/utils'
+
 const mockOptions = [{ label: 'London', value: 'london' }]
 
 describe('AutoComplete Search', () => {
@@ -141,12 +142,23 @@ describe('AutoComplete Search', () => {
   })
 
   it('value should be reset when freeSolo disabled', async () => {
+    const simulateNativeClick = (el: Element) => {
+      el.dispatchEvent(
+        new MouseEvent('click', {
+          view: window,
+          bubbles: true,
+          cancelable: true,
+        }),
+      )
+    }
+
     const wrapper = mount(<AutoComplete initialValue="value" disableFreeSolo />)
     const input = wrapper.find('input').at(0)
     input.simulate('focus')
     input.simulate('change', { target: { value: 'test' } })
+
     expect((input.getDOMNode() as HTMLInputElement).value).toEqual('test')
-    input.simulate('blur')
+    simulateNativeClick(document.body)
     await updateWrapper(wrapper, 200)
     expect((input.getDOMNode() as HTMLInputElement).value).toEqual('value')
   })

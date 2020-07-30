@@ -37,7 +37,7 @@ const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visib
           cursor: ${disabled ? 'not-allowed' : 'pointer'};
           box-sizing: border-box;
           transition: color 150ms ease 0s;
-          color: ${theme.palette.cGray2};
+          color: ${theme.palette.cNeutral2};
           visibility: hidden;
           opacity: 0;
         }

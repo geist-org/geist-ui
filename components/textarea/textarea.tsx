@@ -159,8 +159,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
           }
 
           .wrapper.disabled {
-            color: ${theme.palette.cGray2};
-            border-color: ${theme.palette.cGray2};
+            color: ${theme.palette.cNeutral2};
+            border-color: ${theme.palette.cNeutral2};
             cursor: not-allowed;
             opacity: 0.5;
           }
@@ -188,7 +188,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-textarea-placeholder {
-            color: ${theme.palette.cGray5};
+            color: ${theme.palette.cNeutral5};
           }
 
           textarea:-webkit-autofill,

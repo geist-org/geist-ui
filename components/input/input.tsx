@@ -249,11 +249,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           .lined.input-wrapper.disabled {
-            border-color: ${theme.palette.cGray2};
+            border-color: ${theme.palette.cNeutral2};
           }
 
           .solid.input-wrapper.disabled {
-            background-color: ${theme.palette.cGray3};
+            background-color: ${theme.palette.cNeutral3};
           }
 
           .focus.input-wrapper:not(.disabled),
@@ -281,7 +281,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
 
           input:disabled {
             cursor: not-allowed;
-            color: ${theme.palette.cGray4};
+            color: ${theme.palette.cNeutral4};
           }
 
           input.left-icon {
@@ -301,7 +301,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: ${theme.palette.cGray5};
+            color: ${theme.palette.cNeutral5};
           }
 
           input::-moz-placeholder {

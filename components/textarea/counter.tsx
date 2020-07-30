@@ -26,13 +26,13 @@ const Counter: React.FC<React.PropsWithChildren<CounterProps>> = ({ count, maxLe
           right: ${theme.layout.gapQuarter};
         }
         .counter .count {
-          color: ${hasLimit ? theme.palette.cTheme3 : theme.palette.brand};
+          color: ${hasLimit ? theme.palette.cTheme3 : theme.palette.cTheme5};
         }
         .counter .separator {
           color: ${theme.palette.cTheme3};
         }
         .counter .limit {
-          color: ${theme.palette.brand};
+          color: ${theme.palette.cTheme5};
         }
       `}</style>
     </div>

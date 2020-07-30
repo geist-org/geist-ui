@@ -1,16 +1,16 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import Input from '../input'
-import AutoCompleteItem from './auto-complete-item'
-import AutoCompleteDropdown from './auto-complete-dropdown'
-import AutoCompleteSearching from './auto-complete-searching'
-import AutoCompleteEmpty from './auto-complete-empty'
-import { AutoCompleteContext, AutoCompleteConfig } from './auto-complete-context'
-import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
-import { NormalSizes, InputTypes } from '../utils/prop-types'
 import Loading from '../loading'
+import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'
-import useCurrentState from '../utils/use-current-state'
+import { InputTypes, NormalSizes } from '../utils/prop-types'
 import useClickAway from '../utils/use-click-away'
+import useCurrentState from '../utils/use-current-state'
+import { AutoCompleteConfig, AutoCompleteContext } from './auto-complete-context'
+import AutoCompleteDropdown from './auto-complete-dropdown'
+import AutoCompleteEmpty from './auto-complete-empty'
+import AutoCompleteItem from './auto-complete-item'
+import AutoCompleteSearching from './auto-complete-searching'
 
 const DEFAULT_CSS_TRANSITION_LEAVE_TIME =
   CSSTransitionDefaultProps.leaveTime + CSSTransitionDefaultProps.clearTime
@@ -33,7 +33,7 @@ interface Props {
   onChange?: (value: string) => void
   onSearch?: (value: string) => void
   onSelect?: (value: string) => void
-  searching?: boolean | undefined
+  searching?: boolean
   clearable?: boolean
   dropdownClassName?: string
   dropdownStyle?: object
@@ -61,7 +61,7 @@ const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
   options.map((item, index) => {
     const key = `auto-complete-item-${index}`
     if (React.isValidElement(item)) return React.cloneElement(item, { key })
-    const validItem = item as AutoCompleteOption
+    const validItem = item
     return (
       <AutoCompleteItem key={key} value={validItem.value} isLabelOnly>
         {validItem.label}
@@ -70,7 +70,7 @@ const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
   })
 
 // When the search is not set, the "clearable" icon can be displayed in the original location.
-// When the search is seted, at least one element should exist to avoid re-render.
+// When the search is set, at least one element should exist to avoid re-render.
 const getSearchIcon = (searching?: boolean) => {
   if (searching === undefined) return null
   return searching ? <Loading size="medium" /> : <span />
