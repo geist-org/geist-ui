@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loading should render correctly 1`] = `
-"<div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+"<div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20px\\" height=\\"20px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#dbdde0\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#dbdde0\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -9,16 +9,6 @@ exports[`Loading should render correctly 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -34,44 +24,33 @@ exports[`Loading should render correctly 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
       </style></div>"
 `;
 
-exports[`Loading should render correctly 2`] = `[Function]`;
-
 exports[`Loading should work with custom styles 1`] = `
-"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20px\\" height=\\"20px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#ffffff\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#ffffff\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -79,16 +58,6 @@ exports[`Loading should work with custom styles 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -104,38 +73,29 @@ exports[`Loading should work with custom styles 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #fff;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20%\\" height=\\"20%\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#dbdde0\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#dbdde0\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -143,16 +103,6 @@ exports[`Loading should work with custom styles 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -168,108 +118,33 @@ exports[`Loading should work with custom styles 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
-        }
-
-        i:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-
-        i:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-
-        @keyframes loading-blink {
-          0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
-          }
-
-          100% {
-            opacity: 0.2;
-          }
-        }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
-        .loading-container {
-          display: inline-flex;
-          align-items: center;
-          position: relative;
-          width: 100%;
-          height: 100%;
-        }
-
         label {
           margin-right: 8pt;
-          color: #666;
+          color: #dbdde0;
         }
 
         label :global(*) {
           margin: 0;
         }
 
-        .loading {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: transparent;
-          user-select: none;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
-        }
-
-        i:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-
-        i:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
       </style></div></div>"
 `;
-
-exports[`Loading should work with custom styles 2`] = `[Function]`;
 
 exports[`Loading should work with different sizes 1`] = `
-"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"10px\\" height=\\"10px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#dbdde0\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#dbdde0\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -277,16 +152,6 @@ exports[`Loading should work with different sizes 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -302,38 +167,29 @@ exports[`Loading should work with different sizes 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 2px;
-          height: 2px;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"15px\\" height=\\"15px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#dbdde0\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#dbdde0\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -341,16 +197,6 @@ exports[`Loading should work with different sizes 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -366,38 +212,29 @@ exports[`Loading should work with different sizes 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 3px;
-          height: 3px;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20px\\" height=\\"20px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#dbdde0\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#dbdde0\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -405,16 +242,6 @@ exports[`Loading should work with different sizes 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -430,38 +257,29 @@ exports[`Loading should work with different sizes 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"25px\\" height=\\"25px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#dbdde0\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#dbdde0\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -469,16 +287,6 @@ exports[`Loading should work with different sizes 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -494,44 +302,33 @@ exports[`Loading should work with different sizes 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
       </style></div></div>"
 `;
-
-exports[`Loading should work with different sizes 2`] = `[Function]`;
 
 exports[`Loading should work with different types 1`] = `
-"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20px\\" height=\\"20px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#0054fe\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#0054fe\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -539,16 +336,6 @@ exports[`Loading should work with different types 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -564,38 +351,29 @@ exports[`Loading should work with different types 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #58f17a;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20px\\" height=\\"20px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#58f17a\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#58f17a\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -603,16 +381,6 @@ exports[`Loading should work with different types 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -628,38 +396,29 @@ exports[`Loading should work with different types 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #58f17a;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20px\\" height=\\"20px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#666\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#666\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -667,16 +426,6 @@ exports[`Loading should work with different types 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -692,38 +441,29 @@ exports[`Loading should work with different types 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #666;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20px\\" height=\\"20px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#ffc438\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#ffc438\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -731,16 +471,6 @@ exports[`Loading should work with different types 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -756,38 +486,29 @@ exports[`Loading should work with different types 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #ffc438;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><svg class=\\"svg\\" width=\\"20px\\" height=\\"20px\\" viewBox=\\"0 0 16 16\\" fill=\\"none\\"><path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14V16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8H14C14 4.68629 11.3137 2 8 2Z\\" fill=\\"#e15c56\\"></path><path d=\\"M15 12.5C15 13.3284 14.3284 14 13.5 14C12.6716 14 12 13.3284 12 12.5C12 11.6716 12.6716 11 13.5 11C14.3284 11 15 11.6716 15 12.5Z\\" fill=\\"#e15c56\\"></path></svg></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -795,16 +516,6 @@ exports[`Loading should work with different types 1`] = `
           width: 100%;
           height: 100%;
         }
-
-        label {
-          margin-right: 8pt;
-          color: #666;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
         .loading {
           position: absolute;
           top: 0;
@@ -820,38 +531,27 @@ exports[`Loading should work with different types 1`] = `
           user-select: none;
         }
 
-        i {
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #e15c56;
-          margin: 0 1px;
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
+        label {
+          margin-right: 8pt;
+          color: #dbdde0;
         }
 
-        i:nth-child(2) {
-          animation-delay: 0.2s;
+        label :global(*) {
+          margin: 0;
         }
 
-        i:nth-child(3) {
-          animation-delay: 0.4s;
+        .svg {
+          animation: loading-rotate 1.4s infinite;
         }
 
-        @keyframes loading-blink {
+        @keyframes loading-rotate {
           0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
+            transform: rotate(0);
           }
 
           100% {
-            opacity: 0.2;
+            transform: rotate(360deg);
           }
         }
       </style></div></div>"
 `;
-
-exports[`Loading should work with different types 2`] = `[Function]`;
