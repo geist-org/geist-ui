@@ -8,12 +8,18 @@ describe('AutoComplete', () => {
   it('should render correctly', () => {
     const wrapper = mount(<AutoComplete />)
     expect(() => wrapper.unmount()).not.toThrow()
-    expect(<AutoComplete />).toMatchSnapshot()
+    expect(
+      <div>
+        <AutoComplete />
+        <AutoComplete solid />
+      </div>,
+    ).toMatchSnapshot()
   })
 
   it('should support sizes and status', () => {
     const wrapper = mount(
       <div>
+        <AutoComplete solid />
         <AutoComplete status="primary" />
         <AutoComplete status="success" />
         <AutoComplete size="mini" />
