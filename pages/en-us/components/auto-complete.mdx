@@ -34,7 +34,7 @@ AutoComplete control of input field.
 <Playground
   desc="Disable all."
   title="disabled"
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
 () => {
   const options = [
@@ -42,7 +42,12 @@ AutoComplete control of input field.
     { label: 'Sydney', value: 'sydney' },
     { label: 'Shanghai', value: 'shanghai' },
   ]
-  return <AutoComplete disabled options={options} initialValue="London" />
+  return(
+  <div style={{display: 'flex'}}>
+    <AutoComplete disabled options={options} initialValue="London" />
+    <Spacer inline />
+    <AutoComplete solid disabled options={options} initialValue="London" />
+  </div>)
 }
 `}
 />
@@ -66,7 +71,7 @@ AutoComplete control of input field.
 <Playground
   desc="Update the contents of drop-down list based on input."
   title="search"
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
 () => {
   const allOptions = [
@@ -75,20 +80,31 @@ AutoComplete control of input field.
     { label: 'Shanghai', value: 'shanghai' },
   ]
   const [options, setOptions] = React.useState()
+  const [solidOptions, solidSetOptions] = React.useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
     const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
     setOptions(relatedOptions)
   }
-  return <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
-}
+  const solidSearchHandler = (currentValue) => {
+    if (!currentValue) return solidSetOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    solidSetOptions(relatedOptions)
+  }
+  return (
+  <div style={{display: 'flex'}}>
+  <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
+  <Spacer inline />
+  <AutoComplete solid options={solidOptions} placeholder="Enter here" onSearch={solidSearchHandler} />
+  </div>)
+  }
 `}
 />
 
 <Playground
   title="Waiting in search"
   desc="Show friendly tips and UI when searching."
-  scope={{ AutoComplete, useState, useEffect, useRef }}
+  scope={{ AutoComplete, useState, useEffect, useRef, Spacer }}
   code={`
 () => {
   const allOptions = [
@@ -97,8 +113,11 @@ AutoComplete control of input field.
     { label: 'Shanghai', value: 'shanghai' },
   ]
   const [options, setOptions] = useState()
+  const [solidOptions, solidSetOptions] = React.useState()
   const [searching, setSearching] = useState(false)
+  const [solidSearching, solidSetSearching] = useState(false)
   const timer = useRef()
+  const solidTimer = useRef()
   // triggered every time input
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
@@ -113,11 +132,34 @@ AutoComplete control of input field.
       clearTimeout(timer.current)
     }, 1000)
   }
+  const solidSearchHandler = (currentValue) => {
+    if (!currentValue) return solidSetOptions([])
+    solidSetSearching(true)
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    // this is mock async request
+    // you can get data in any way
+    solidTimer.current && clearTimeout(solidTimer.current)
+    solidTimer.current = setTimeout(() => {
+      solidSetOptions(relatedOptions)
+      solidSetSearching(false)
+      clearTimeout(solidTimer.current)
+    }, 1000)
+  }
   return (
-    <AutoComplete searching={searching}
+  <div style={{display: 'flex'}}>
+    <AutoComplete
+      searching={searching}
       options={options}
       placeholder="Enter here"
       onSearch={searchHandler} />
+    <Spacer inline />
+    <AutoComplete
+      solid
+      searching={solidSearching}
+      options={options}
+      placeholder="Enter here"
+      onSearch={solidSearchHandler} />
+  </div>
   )
 }
 `}
@@ -126,13 +168,24 @@ AutoComplete control of input field.
 <Playground
   title="custom searching text"
   desc="You can replace the default waiting text with any components."
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
-<AutoComplete searching placeholder="Enter here" width="100%">
-  <AutoComplete.Searching>
-    <span style={{ color: 'red' }}>waiting...</span>
-  </AutoComplete.Searching>
-</AutoComplete>
+  () => {
+return (
+<div style={{display: 'flex'}}>
+  <AutoComplete searching placeholder="Enter here" width="100%">
+    <AutoComplete.Searching>
+      <span style={{ color: 'red' }}>waiting...</span>
+    </AutoComplete.Searching>
+  </AutoComplete>
+  <Spacer inline />
+  <AutoComplete solid searching placeholder="Enter here" width="100%">
+    <AutoComplete.Searching>
+      <span style={{ color: 'red' }}>waiting...</span>
+    </AutoComplete.Searching>
+  </AutoComplete>
+</div>)
+}
 `}
 />
 
@@ -167,7 +220,7 @@ AutoComplete control of input field.
 <Playground
   title="custom option"
   desc="You can rewrite each item of the `AutoComplete` to express more."
-  scope={{ AutoComplete, useState, Text, Badge, Grid }}
+  scope={{ AutoComplete, useState, Text, Badge, Grid, Spacer }}
   code={`
 () => {
   const makeOption = (label, value) => (
@@ -193,11 +246,39 @@ AutoComplete control of input field.
     const customOptions = relatedOptions.map(({ label, value }) => makeOption(label, value))
     setOptions(customOptions)
   }
+  const solidMakeOption = (label, value) => (
+    <AutoComplete.Option value={value}>
+      <Grid.Container style={{ padding: '10pt 0' }}>
+        <Grid xs={24}><Text span b size="1.2rem">Recent search results </Text></Grid>
+        <Grid.Container xs={24}>
+          <Grid xs><Text span>{label}</Text></Grid>
+          <Grid xs={4}><Badge type="success">Recommended</Badge></Grid>
+        </Grid.Container>
+      </Grid.Container>
+    </AutoComplete.Option>
+  )
+  const [solidOptions, solidSetOptions] = useState()
+  const solidSearchHandler = (currentValue) => {
+    if (!currentValue) return solidSetOptions([])
+    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const customOptions = relatedOptions.map(({ label, value }) => solidMakeOption(label, value))
+    solidSetOptions(customOptions)
+  }
   return (
-    <AutoComplete placeholder="Enter here"
-      width="100%"
-      options={options}
-      onSearch={searchHandler} />
+<div>
+  <AutoComplete
+    placeholder="Enter here"
+    width="100%"
+    options={options}
+    onSearch={searchHandler} />
+  <Spacer y={1} />
+  <AutoComplete
+    solid
+    placeholder="Enter here"
+    width="100%"
+    options={solidOptions}
+    onSearch={solidSearchHandler} />
+</div>
   )
 }
 `}
@@ -232,7 +313,7 @@ AutoComplete control of input field.
 <Playground
   title="clearable"
   desc="Add a clear button in the input box."
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
 () => {
   const options = [
@@ -240,8 +321,13 @@ AutoComplete control of input field.
     { label: 'Sydney', value: 'sydney' },
     { label: 'Shanghai', value: 'shanghai' },
   ]
-  return <AutoComplete placeholder="Enter here" clearable options={options} />
-}
+  return (
+  <div  style={{display: 'flex'}}>
+  <AutoComplete placeholder="Enter here" clearable options={options} />
+  <Spacer inline />
+  <AutoComplete solid placeholder="Enter here" clearable options={options} />
+  </div>)
+  }
 `}
 />
 

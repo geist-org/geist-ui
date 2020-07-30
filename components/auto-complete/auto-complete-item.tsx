@@ -63,7 +63,6 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           font-size: ${fontSize};
           padding: 0 ${theme.layout.gapHalf};
           height: ${itemHeight};
-          background-color: ${theme.palette.background};
           color: ${theme.palette.foreground};
           user-select: none;
           border: 0;
