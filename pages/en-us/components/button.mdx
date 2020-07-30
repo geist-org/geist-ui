@@ -10,16 +10,22 @@ export const meta = {
   group: 'General',
 }
 
-## Button
+## Button / 按钮
 
 Used to trigger an operation.
 
 <Playground
   title="Basic"
   desc="The basic `Button` contains an animation effect."
-  scope={{ Button }}
+  scope={{ Button, Spacer }}
   code={`
-<Button>Action</Button>
+  <>
+    <Button>Action</Button>
+    <Spacer inline />
+    <Button variant="solid">Action</Button>
+    <Spacer inline />
+    <Button variant="text">Action</Button>
+  </>
 `}
 />
 
@@ -30,10 +36,12 @@ Used to trigger an operation.
   code={`
 <>
   <Button loading>Action</Button>
-  <Spacer y={.5} />
+  <Spacer inline />
   <Button loading auto>Action</Button>
-  <Spacer y={.5} />
-  <Button loading auto type="success" size="small">Action</Button>
+  <Spacer inline />
+  <Button variant="solid" color="primary" loading>Primary</Button>
+  <Spacer inline />
+  <Button variant="text" color="secondary" loading>Primary</Button>
 </>
 `}
 />
@@ -41,51 +49,51 @@ Used to trigger an operation.
 <Playground
   title="Disabled"
   desc="Do not respond to any action."
-  scope={{ Button }}
-  code={`
-<Button disabled>Action</Button>
-`}
-/>
-
-<Playground
-  title="Shadow"
-  desc="The shadow highlights the level of the button."
-  scope={{ Button }}
-  code={`
-<Button shadow type="secondary">Shadow</Button>
-`}
-/>
-
-<Playground
-  title="Types"
-  desc="Different state."
-  scope={{ Button, Spacer, Grid }}
-  code={`
-<Grid.Container gap={2}>
-  <Grid><Button auto type="secondary">Secondary</Button></Grid>
-  <Grid><Button auto type="success">Success</Button></Grid>
-  <Grid><Button auto type="warning">Warning</Button></Grid>
-  <Grid><Button auto type="error">Error</Button></Grid>
-  <Grid><Button auto type="abort">Abort</Button></Grid>
-  <Grid><Button auto type="secondary-light">Secondary Light</Button></Grid>
-  <Grid><Button auto type="success-light">Success Light</Button></Grid>
-  <Grid><Button auto type="warning-light">Warning Light</Button></Grid>
-  <Grid><Button auto type="error-light">Error Light</Button></Grid>
-</Grid.Container>
-`}
-/>
-
-<Playground
-  title="GHOST"
-  desc="The opposite color."
   scope={{ Button, Spacer }}
   code={`
-<>
-  <Button type="secondary" ghost>Secondary</Button> <Spacer y={.5} />
-  <Button type="success" ghost>Success</Button> <Spacer y={.5} />
-  <Button type="warning" ghost>Warning</Button> <Spacer y={.5} />
-  <Button type="error" ghost>Error</Button>
-</>
+    <>
+      <Button disabled>Action</Button>
+      <Spacer inline />
+      <Button variant="solid" disabled>Action</Button>
+      <Spacer inline />
+      <Button variant="text" disabled>Action</Button>
+    </>
+  `}
+/>
+
+<Playground
+  title="Colors"
+  desc="Different state."
+  scope={{ Button, Grid, Spacer }}
+  code={`
+  <>
+    <Grid.Container gap={2}>
+      <Grid><Button>Default</Button></Grid>
+      <Grid><Button color="primary">Primary</Button></Grid>
+      <Grid><Button color="secondary">Secondary</Button></Grid>
+      <Grid><Button color="success">success</Button></Grid>
+      <Grid><Button color="warning">warning</Button></Grid>
+      <Grid><Button color="error">error</Button></Grid>
+    </Grid.Container>
+    <Spacer y={.5} />
+    <Grid.Container gap={2}>
+      <Grid><Button variant="solid">Default</Button></Grid>
+      <Grid><Button variant="solid" color="primary">Solid Primary</Button></Grid>
+      <Grid><Button variant="solid" color="secondary">Solid Secondary</Button></Grid>
+      <Grid><Button variant="solid" color="success">success</Button></Grid>
+      <Grid><Button variant="solid" color="warning">warning</Button></Grid>
+      <Grid><Button variant="solid" color="error">error</Button></Grid>
+    </Grid.Container>
+    <Spacer y={.5} />
+    <Grid.Container gap={2}>
+      <Grid><Button variant="text">Default</Button></Grid>
+      <Grid><Button variant="text" color="primary">Text Primary</Button></Grid>
+      <Grid><Button variant="text" color="secondary">Text Secondary</Button></Grid>
+      <Grid><Button variant="text" color="success">success</Button></Grid>
+      <Grid><Button variant="text" color="warning">warning</Button></Grid>
+      <Grid><Button variant="text" color="error">error</Button></Grid>
+    </Grid.Container>
+  </>
 `}
 />
 
@@ -95,70 +103,42 @@ Used to trigger an operation.
   scope={{ Button, Spacer }}
   code={`
 <>
-  <Button size="mini">mini</Button> <Spacer y={.5} />
-  <Button size="small">small</Button> <Spacer y={.5} />
-  <Button>medium</Button> <Spacer y={.5} />
-  <Button size="large">large</Button> <Spacer y={.5} />
-  <Button auto>auto width</Button>
+  <Button size="mini">Mini</Button> <Spacer y={.5} />
+  <Button size="small">Small</Button> <Spacer y={.5} />
+  <Button>Medium</Button> <Spacer y={.5} />
+  <Button size="large">Large</Button> <Spacer y={.5} />
+  <Button auto>Auto Width</Button>
 </>
 `}
 />
 
-<Playground
-  title="With Icons"
-  desc="The `color` and `size` of the icon will be set automatically."
-  scope={{ Button, Spacer, Settings, UserX, Power }}
-  code={`
-<>
-  <Button iconRight={<Power />} auto size="small">shut off</Button>
-  <Spacer y={.5} />
-  <Button icon={<Settings />} auto>Action</Button>
-  <Spacer y={.5} />
-  <Button icon={<Settings />} type="success" size="small">Success</Button>
-  <Spacer y={.5} />
-  <Button icon={<Settings />} type="secondary">Success</Button>
-  <Spacer y={.5} />
-  <Button icon={<UserX />} type="error" ghost>Remove User</Button>
-  <Spacer y={.5} />
-  <Button icon={<UserX />} disabled>Remove User</Button>
-</>
-`}
-/>
-
-<Attributes edit="/pages/en-us/components/button.mdx">
+<Attributes edit="/pages/zh-cn/components/button.mdx">
 <Attributes.Title>Button.Props</Attributes.Title>
 
-| Attribute     | Description                               | Type                                            | Accepted values             | Default   |
-| ------------- | ----------------------------------------- | ----------------------------------------------- | --------------------------- | --------- |
-| **type**      | button type                               | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
-| **size**      | button size                               | `NormalSizes`                                   | [NormalSizes](#normalsizes) | `medium`  |
-| **ghost**     | the opposite color                        | `boolean`                                       | -                           | `false`   |
-| **loading**   | display loading indicator                 | `boolean`                                       | -                           | `false`   |
-| **shadow**    | display shadow                            | `boolean`                                       | -                           | `false`   |
-| **auto**      | autoscale width                           | `boolean`                                       | -                           | `false`   |
-| **effect**    | display animation                         | `boolean`                                       | -                           | `true`    |
-| **disabled**  | disable button                            | `boolean`                                       | -                           | `false`   |
-| **onClick**   | click handler                             | `MouseEventHandler`                             | -                           | -         |
-| **icon**      | show icon in button                       | `ReactNode`                                     | -                           | -         |
-| **iconRight** | show icon on the other side of the button | `ReactNode`                                     | -                           | -         |
-| **htmlType**  | native type of button element             | `ButtonHTMLAttributes.type`                     | -                           | `button`  |
-| **ref**       | forwardRef                                | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                           | -         |
-| ...           | native props                              | `ButtonHTMLAttributes`                          | `'id', 'className', ...`    | -         |
+| 属性         | 描述                          | 类型                                            | 推荐值                            | 默认      |
+| ------------ | ----------------------------- | ----------------------------------------------- | --------------------------------- | --------- |
+| **variant**  | button type                   | `ButtonVariants`                                | [ButtonVariants](#buttonVariants) | `default` |
+| **color**    | button color                  | `ButtonColors`                                  | [ButtonColors](#buttontypes)      | `default` |
+| **size**     | button size                   | `NormalSizes`                                   | [NormalSizes](#normalsizes)       | `medium`  |
+| **loading**  | display loading indicator     | `boolean`                                       | -                                 | `false`   |
+| **auto**     | autoscale width               | `boolean`                                       | -                                 | `false`   |
+| **effect**   | display animation             | `boolean`                                       | -                                 | `false`   |
+| **disabled** | disable button                | `boolean`                                       | -                                 | `false`   |
+| **onClick**  | click handler                 | `MouseEventHandler`                             | -                                 | -         |
+| **htmlType** | native type of button element | `ButtonHTMLAttributes.type`                     | -                                 | `button`  |
+| **ref**      | forwardRef                    | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                                 | -         |
+| ...          | native props                  | `ButtonHTMLAttributes`                          | `'id', 'className', ...`          | -         |
 
-<Attributes.Title>ButtonTypes</Attributes.Title>
+<Attributes.Title>ButtonVariants</Attributes.Title>
 
 ```ts
-type ButtonTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'abort'
-  | 'secondary-light'
-  | 'success-light'
-  | 'warning-light'
-  | 'error-light'
+type ButtonVariants = 'default' | 'solid' | 'text'
+```
+
+<Attributes.Title>ButtonColors</Attributes.Title>
+
+```ts
+type ButtonColors = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
