@@ -124,9 +124,9 @@ export const getButtonColors = (
   //     color: palette.cGray6,
   //   },
   //   secondary: {
-  //     bg: palette.foreground,
-  //     border: palette.foreground,
-  //     color: palette.background,
+  //     bg: palette.cBlack0,
+  //     border: palette.cBlack0,
+  //     color: palette.cWhite0,
   //   },
   //   success: {
   //     bg: palette.success,
@@ -290,19 +290,19 @@ export const getButtonHoverColors = (
   //     color: palette.cGray6,
   //   },
   //   secondary: {
-  //     bg: palette.background,
-  //     border: palette.foreground,
+  //     bg: palette.cWhite0,
+  //     border: palette.cBlack0,
   //   },
   //   success: {
-  //     bg: palette.background,
+  //     bg: palette.cWhite0,
   //     border: palette.success,
   //   },
   //   warning: {
-  //     bg: palette.background,
+  //     bg: palette.cWhite0,
   //     border: palette.warning,
   //   },
   //   error: {
-  //     bg: palette.background,
+  //     bg: palette.cWhite0,
   //     border: palette.error,
   //   },
   //   abort: {
@@ -595,22 +595,22 @@ export const getButtonGhostColors = (
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
-      bg: palette.background,
-      border: palette.foreground,
-      color: palette.foreground,
+      bg: palette.cWhite0,
+      border: palette.cBlack0,
+      color: palette.cBlack0,
     },
     success: {
-      bg: palette.background,
+      bg: palette.cWhite0,
       border: palette.success,
       color: palette.success,
     },
     warning: {
-      bg: palette.background,
+      bg: palette.cWhite0,
       border: palette.warning,
       color: palette.warning,
     },
     error: {
-      bg: palette.background,
+      bg: palette.cWhite0,
       border: palette.error,
       color: palette.error,
     },
@@ -625,23 +625,23 @@ export const getButtonGhostHoverColors = (
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
     secondary: {
-      bg: palette.foreground,
-      border: palette.background,
-      color: palette.background,
+      bg: palette.cBlack0,
+      border: palette.cWhite0,
+      color: palette.cWhite0,
     },
     success: {
       bg: palette.success,
-      border: palette.background,
+      border: palette.cWhite0,
       color: 'white',
     },
     warning: {
       bg: palette.warning,
-      border: palette.background,
+      border: palette.cWhite0,
       color: 'white',
     },
     error: {
       bg: palette.error,
-      border: palette.background,
+      border: palette.cWhite0,
       color: 'white',
     },
   }
