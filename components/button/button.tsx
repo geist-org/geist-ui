@@ -242,7 +242,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             align-items: center;
             text-align: center;
             line-height: inherit;
-            top: -1px;
+            top: -2px;
           }
 
           .btn :global(.text p),
