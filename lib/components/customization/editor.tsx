@@ -112,7 +112,7 @@ const Editor = () => {
     <div className="editor">
       <Text h3>
         {isChinese ? '色彩' : 'Colors'}
-        <Button color="abort" auto size="mini" onClick={restColors}>
+        <Button variant="text" auto size="mini" onClick={restColors}>
           {isChinese ? '重置' : 'Reset'}
         </Button>
       </Text>
@@ -137,7 +137,7 @@ const Editor = () => {
 
       <Text h3>
         {isChinese ? '表现力' : 'Expressiveness'}
-        <Button color="abort" auto size="mini" onClick={resetExpressiveness}>
+        <Button variant="text" auto size="mini" onClick={resetExpressiveness}>
           {isChinese ? '重置' : 'Reset'}
         </Button>
       </Text>
@@ -162,7 +162,7 @@ const Editor = () => {
 
       <Text h3>
         {isChinese ? '布局' : 'Layout'}
-        <Button color="abort" auto size="mini" onClick={resetLayout}>
+        <Button variant="text" auto size="mini" onClick={resetLayout}>
           {isChinese ? '重置' : 'Reset'}
         </Button>
       </Text>

@@ -17,7 +17,6 @@ describe('Button', () => {
         <Button color="success" />
         <Button color="warning" />
         <Button color="error" />
-        <Button color="abort" />
       </div>,
     )
     expect(() => wrapper.unmount()).not.toThrow()
