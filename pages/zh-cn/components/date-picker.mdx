@@ -1,0 +1,483 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Link, Text, Code, Spacer, DatePicker, Divider } from 'components'
+import NextLink from 'next/link'
+import moment from 'moment'
+import { useState } from 'react';
+
+export const meta = {
+  title: '日期选择框 DatePicker',
+  group: '数据录入',
+}
+
+## DatePicker / 日期选择框
+
+输入或选择日期。
+
+<Playground
+  desc="最简单的用法，在浮层中可以选择或者输入日期。"
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  function onChange(date, dateString) {
+    console.log(dateString, date);
+  }
+  return (
+    <>
+      <DatePicker locale="zh-CN" onChange={onChange} /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" onChange={onChange} picker="week" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" onChange={onChange} picker="month" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" onChange={onChange} picker="quarter" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" onChange={onChange} picker="year" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="范围选择器"
+  desc="通过设置 `picker` 属性，指定范围选择器类型。"
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <RangePicker locale="zh-CN" />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" showTime />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" picker="week" />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" picker="month" />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" picker="year" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="日期格式"
+  desc="使用 `format` 属性，可以自定义日期显示格式。"
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  const dateFormat = 'YYYY/MM/DD'
+  const monthFormat = 'YYYY/MM'
+  const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY']
+  return (
+    <>
+      <DatePicker locale="zh-CN" defaultValue={moment('2020/01/01', dateFormat)} format={dateFormat} />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" defaultValue={moment('01/01/2020', dateFormatList[0])} format={dateFormatList} />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" defaultValue={moment('2020/01', monthFormat)} format={monthFormat} picker="month" />
+      <Spacer y={0.5} />
+      <RangePicker
+        locale="zh-CN"
+        defaultValue={[moment('2020/01/01', dateFormat), moment('2015/01/01', dateFormat)]}
+        format={dateFormat}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="日期时间选择"
+  desc="增加选择时间功能，当 `showTime` 为一个对象时，其属性会传递给内建的 `TimePicker`。"
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  function onChange(value, dateString) {
+    console.log('Selected Time: ', value)
+    console.log('Formatted Selected Time: ', dateString)
+  }
+  function onOk(value) {
+    console.log('onOk: ', value)
+  }
+  return (
+    <>
+      <DatePicker locale="zh-CN" showTime onChange={onChange} onOk={onOk} />
+      <Spacer y={0.5} />
+      <RangePicker
+        locale="zh-CN"
+        showTime={{ format: 'HH:mm' }}
+        format="YYYY-MM-DD HH:mm"
+        onChange={onChange}
+        onOk={onOk}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="禁用"
+  desc="让选择框不可用。可以通过数组单独禁用 RangePicker 的其中一项。"
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  const dateFormat = 'YYYY-MM-DD'
+  return (
+    <>
+      <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} disabled />
+      <Spacer y={0.5} />
+      <DatePicker
+        locale="zh-CN"
+        picker="month"
+        defaultValue={moment('2020-06', 'YYYY-MM')}
+        disabled
+      />
+      <Spacer y={0.5} />
+      <RangePicker
+        locale="zh-CN"
+        defaultValue={[moment('2020-06-06', dateFormat), moment('2020-06-06', dateFormat)]}
+        disabled
+      />
+      <Spacer y={0.5} />
+      <RangePicker
+        locale="zh-CN"
+        defaultValue={[moment('2020-09-01', dateFormat), moment('2020-10-10', dateFormat)]}
+        disabled={[false, true]}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="不可选择日期和时间"
+  desc="可用 `disabledDate` 和 `disabledTime` 分别禁止选择部分日期和时间，其中 `disabledTime` 需要和 `showTime` 一起使用。"
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  function range(start, end) {
+    const result = []
+    for (let i = start; i < end; i++) {
+      result.push(i)
+    }
+    return result
+  }
+  function disabledDate(current) {
+    // Can not select days before today and today
+    return current && current < moment().endOf('day')
+  }
+  function disabledDateTime() {
+    return {
+      disabledHours: () => range(0, 24).splice(4, 20),
+      disabledMinutes: () => range(30, 60),
+      disabledSeconds: () => [55, 56],
+    }
+  }
+  function disabledRangeTime(_, type) {
+    if (type === 'start') {
+      return {
+        disabledHours: () => range(0, 60).splice(4, 20),
+        disabledMinutes: () => range(30, 60),
+        disabledSeconds: () => [55, 56],
+      }
+    }
+    return {
+      disabledHours: () => range(0, 60).splice(20, 4),
+      disabledMinutes: () => range(0, 31),
+      disabledSeconds: () => [55, 56],
+    }
+  }
+  return (
+    <>
+      <DatePicker
+        locale="zh-CN"
+        format="YYYY-MM-DD HH:mm:ss"
+        disabledDate={disabledDate}
+        disabledTime={disabledDateTime}
+        showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
+      />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" picker="month" disabledDate={disabledDate} />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" disabledDate={disabledDate} />
+      <Spacer y={0.5} />
+      <RangePicker
+        locale="zh-CN"
+        disabledDate={disabledDate}
+        disabledTime={disabledRangeTime}
+        showTime={{
+          hideDisabledOptions: true,
+          defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('11:59:59', 'HH:mm:ss')],
+        }}
+        format="YYYY-MM-DD HH:mm:ss"
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="选择不超过七天的范围"
+  desc="这里举例如何用 `onCalendarChange` 和 `disabledDate` 来限制动态的日期区间选择。"
+  scope={{ DatePicker, useState }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker;
+  const [dates, setDates] = useState([]);
+  const disabledDate = current => {
+    if (!dates || dates.length === 0) {
+      return false;
+    }
+    const tooLate = dates[0] && current.diff(dates[0], 'days') > 7;
+    const tooEarly = dates[1] && dates[1].diff(current, 'days') > 7;
+    return tooEarly || tooLate;
+  };
+  return (
+    <RangePicker
+      locale="zh-CN"
+      disabledDate={disabledDate}
+      onCalendarChange={value => {
+        setDates(value);
+      }}
+    />
+  );
+}
+`}
+/>
+
+<Playground
+  title="预设范围"
+  desc="可以预设常用的日期范围以提高用户体验。"
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker;
+  function onChange(dates, dateStrings) {
+    console.log('From: ', dates[0], ', to: ', dates[1])
+    console.log('From: ', dateStrings[0], ', to: ', dateStrings[1])
+  }
+  return (
+    <>
+      <RangePicker
+        locale="zh-CN"
+        ranges={{
+          '今天': [moment(), moment()],
+          '本月': [moment().startOf('month'), moment().endOf('month')],
+        }}
+        onChange={onChange}
+      />
+      <Spacer y={0.5} />
+      <RangePicker
+        locale="zh-CN"
+        ranges={{
+          '今天': [moment(), moment()],
+          '本月': [moment().startOf('month'), moment().endOf('month')],
+        }}
+        showTime
+        format="YYYY/MM/DD HH:mm:ss"
+        onChange={onChange}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="额外的页脚"
+  desc="在浮层中加入额外的页脚，以满足某些定制信息的需求。"
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker locale="zh-CN" renderExtraFooter={() => '页脚，么么哒'} />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" renderExtraFooter={() => '页脚，么么哒'} showTime />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" renderExtraFooter={() => '页脚，么么哒'} />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" renderExtraFooter={() => '页脚，么么哒'} showTime />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" renderExtraFooter={() => '页脚，么么哒'} picker="month" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="四种大小"
+  desc="四种大小的输入框，若不设置，则为 `medium`。"
+  scope={{ DatePicker, Spacer, Divider }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker locale="zh-CN" size="mini" />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" size="mini" showTime />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" size="mini" />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" size="mini" showTime />
+      <Divider />
+      <DatePicker locale="zh-CN" size="small" />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" size="small" showTime />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" size="small" />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" size="small" showTime />
+      <Divider />
+      <DatePicker locale="zh-CN" size="medium" />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" size="medium" showTime />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" size="medium" />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" size="medium" showTime />
+      <Divider />
+      <DatePicker locale="zh-CN" size="large" />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" size="large" showTime />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" size="large" />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" size="large" showTime />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="定制日期单元格"
+  desc="使用 `dateRender` 可以自定义日期单元格的内容和样式。"
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker
+        locale="zh-CN"
+        dateRender={current => {
+          const style = {};
+          if (current.date() === 1) {
+            style.border = '1px solid red';
+            style.borderRadius = '50%';
+          }
+          return (
+            <div className="cfx-picker-cell-inner" style={style}>
+              {current.date()}
+            </div>
+          );
+        }}
+      />
+      <Spacer x={0.5} />
+      <RangePicker
+        locale="zh-CN"
+        dateRender={current => {
+          const style = {};
+          if (current.date() === 1) {
+            style.border = '1px solid red';
+            style.borderRadius = '50%';
+          }
+          return (
+            <div className="cfx-picker-cell-inner" style={style}>
+              {current.date()}
+            </div>
+          );
+        }}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="无边框"
+  desc="无边框样式。"
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker locale="zh-CN" bordered={false} />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" picker="week" bordered={false} />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" picker="month" bordered={false} />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" picker="year" bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" picker="week" bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" picker="month" bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker locale="zh-CN" picker="year" bordered={false} />
+    </>
+  )
+}
+`}
+/>
+
+
+
+<Attributes edit="/pages/zh-cn/components/date-picker.mdx">
+
+日期类组件包括以下五种形式。
+
+- DatePicker
+- DatePicker\[picker="month"]
+- DatePicker\[picker="week"]
+- DatePicker\[picker="year"]
+- DatePicker\[picker="quarter"]
+- RangePicker
+
+<Spacer y={2} />
+
+<Attributes.Title>DatePicker.Props</Attributes.Title>
+
+| 属性          | 描述                   | 类型                                            | 推荐值                 | 默认    |
+| ------------- | ---------------------- | ----------------------------------------------- | ---------------------- | ------- |
+| **allowClear** | 是否显示清除按钮 | `boolean` | - | `true` |
+| **autoFocus** | 自动获取焦点 | `boolean` | - | `false` |
+| **className** | 额外 className | `string` | - | - |
+| **dateRender** | 自定义日期单元格的内容 | `function(currentDate: moment, today: moment) => React.ReactNode` | - | - |
+| **disabled** | 禁用 | `boolean` | - | `false` |
+| **disabledDate** | 不可选择的日期 | `(currentDate: moment) => boolean` | - | - |
+| **dropdownClassName** | 弹出日历的额外 className | `string` | - | - |
+| **getPopupContainer** | 定义浮层的容器，默认为 body 上新建 div | `function(trigger)` | - | - |
+| **locale** | 国际化配置 | `string` | `en-US` \| `zh-CN` | `en-US` |
+| **mode** | 日期面板的状态 | `string` | `time` \| `date` \| `month` \| `year` \| `decade` | - |
+| **open** | 控制弹层是否展开 | `boolean` | - | `false` |
+| **panelRender** | 自定义渲染面板 | `(panelNode) => ReactNode` | - | - |
+| **picker** | 设置选择器类型 | `string` | `date` \| `week` \| `month` \| `quarter` \| `year` | `date` |
+| **placeholder** | 输入框提示文字 | `string` \| `[string, string]` | - | - |
+| **popupStyle** | 额外的弹出日历样式 | `CSSProperties` | - | {} |
+| **size** | 输入框大小 | `string` | `large` \| `medium` \| `small` \| `mini` | `medium` |
+| **bordered** | 是否有边框 | `boolean` | - | `true` |
+| **suffixIcon** | 自定义的选择框后缀图标 | `ReactNode` | - | - |
+| **style** | 自定义输入框样式 | `CSSProperties` | {} | - |
+| **onOpenChange** | 弹出日历和关闭日历的回调 | `function(open)` | - | - |
+| **onPanelChange** | 日历面板切换的回调 | `function(value, mode)` | - | - |
+| **inputReadOnly** | 设置输入框为只读（避免在移动设备上打开虚拟键盘） | `boolean` | - | `false` |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
