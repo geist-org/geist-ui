@@ -8,9 +8,12 @@ import Ellipsis from '../shared/ellipsis'
 interface Props {
   value: string
   isLabelOnly?: boolean
+  solid?: boolean
 }
 
-const defaultProps = {}
+const defaultProps = {
+  solid: false,
+}
 
 export type AutoCompleteItemProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
@@ -81,12 +84,11 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
         }
 
         .item:hover {
-          background-color: ${theme.palette.accents_1};
+          background-color: ${theme.palette.cNeutral0};
         }
 
         .item.active {
-          background-color: ${theme.palette.accents_1};
-          color: ${theme.palette.success};
+          color: ${theme.palette.cTheme6};
         }
       `}</style>
     </div>
