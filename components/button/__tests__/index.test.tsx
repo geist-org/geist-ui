@@ -12,15 +12,11 @@ describe('Button', () => {
   it('should support all types', () => {
     const wrapper = mount(
       <div>
-        <Button type="secondary" />
-        <Button type="secondary-light" />
-        <Button type="success" />
-        <Button type="success-light" />
-        <Button type="warning" />
-        <Button type="warning-light" />
-        <Button type="error" />
-        <Button type="error-light" />
-        <Button type="abort" />
+        <Button color="primary" />
+        <Button color="secondary" />
+        <Button color="success" />
+        <Button color="warning" />
+        <Button color="error" />
       </div>,
     )
     expect(() => wrapper.unmount()).not.toThrow()
@@ -99,10 +95,10 @@ describe('Button', () => {
     const wrapper = mount(
       <div>
         <Button ghost>button</Button>
-        <Button ghost type="success">
+        <Button ghost color="success">
           button
         </Button>
-        <Button ghost type="warning">
+        <Button ghost color="warning">
           button
         </Button>
         <Button ghost loading>

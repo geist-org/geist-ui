@@ -10,19 +10,14 @@ import React, {
 import useTheme from '../styles/use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
-import { ButtonTypes, NormalSizes } from '../utils/prop-types'
+import { ButtonTypes, ButtonVariants, NormalSizes } from '../utils/prop-types'
 import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 import { useButtonGroupContext } from '../button-group/button-group-context'
-import {
-  getButtonColors,
-  getButtonCursor,
-  getButtonDripColor,
-  getButtonHoverColors,
-  getButtonSize,
-} from './styles'
+import { getButtonColors, getButtonCursor, getButtonDripColor, getButtonSize } from './styles'
 
 interface Props {
-  type?: ButtonTypes
+  variant?: ButtonVariants
+  color?: ButtonTypes
   size?: NormalSizes
   ghost?: boolean
   loading?: boolean
@@ -38,7 +33,8 @@ interface Props {
 }
 
 const defaultProps = {
-  type: 'default' as ButtonTypes,
+  variant: 'lined' as ButtonVariants,
+  color: 'default' as ButtonTypes,
   size: 'medium' as NormalSizes,
   htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],
   ghost: false,
@@ -67,7 +63,8 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
     const {
       children,
       disabled,
-      type,
+      variant,
+      color,
       loading,
       shadow,
       ghost,
@@ -82,11 +79,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
       ...props
     } = filteredProps
 
-    const { bg, border, color } = useMemo(() => getButtonColors(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
-    const hover = useMemo(() => getButtonHoverColors(theme.palette, filteredProps), [
+    const buttonColors = useMemo(() => getButtonColors(theme.palette, filteredProps), [
       theme.palette,
       filteredProps,
     ])
@@ -102,6 +95,15 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
       theme.palette,
       filteredProps,
     ])
+
+    let colors = buttonColors.default
+    let hoverColors = buttonColors.hover
+    let activeColors = buttonColors.active
+    if (loading) {
+      colors = buttonColors.active
+      hoverColors = buttonColors.active
+      activeColors = buttonColors.active
+    }
 
     /* istanbul ignore next */
     const dripCompletedHandle = () => {
@@ -126,11 +128,11 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
 
     const childrenWithIcon = useMemo(
       () =>
-        getButtonChildrenWithIcon(auto, size, children, {
+        getButtonChildrenWithIcon(loading, auto, size, children, {
           icon,
           iconRight,
         }),
-      [auto, size, children, icon, iconRight],
+      [loading, auto, size, children, icon, iconRight],
     )
 
     return (
@@ -141,7 +143,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
         disabled={disabled}
         onClick={clickHandler}
         {...props}>
-        {loading && <ButtonLoading color={color} />}
+        {loading && <ButtonLoading color={colors.color} />}
         {childrenWithIcon}
         {dripShow && (
           <ButtonDrip x={dripX} y={dripY} color={dripColor} onCompleted={dripCompletedHandle} />
@@ -155,8 +157,8 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             line-height: ${height};
             min-width: ${minWidth};
             width: ${width};
-            border-radius: ${theme.expressiveness.R2};
-            font-weight: 400;
+            border-radius: ${theme.expressiveness.R1};
+            font-weight: bold;
             font-size: ${fontSize};
             user-select: none;
             outline: none;
@@ -168,23 +170,34 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: ${color};
-            background-color: ${bg};
-            border: 1px solid ${border};
+            color: ${colors.color};
+            background-color: ${colors.bg};
+            border: 2px solid ${colors.border};
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
             --zeit-ui-button-padding: ${padding};
             --zeit-ui-button-height: ${height};
-            --zeit-ui-button-color: ${color};
-            --zeit-ui-button-bg: ${bg};
+            --zeit-ui-button-color: ${colors.color};
+            --zeit-ui-button-bg: ${colors.bg};
           }
 
           .btn:hover {
-            color: ${hover.color};
-            --zeit-ui-button-color: ${hover.color};
-            background-color: ${hover.bg};
-            border-color: ${hover.border};
+            color: ${hoverColors.color};
+            --zeit-ui-button-color: ${hoverColors.color};
+            background-color: ${hoverColors.bg};
+            border-color: ${hoverColors.border};
+            cursor: ${cursor};
+            pointer-events: ${events};
+            box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
+            transform: translate3d(0px, ${shadow ? '-1px' : '0px'}, 0px);
+          }
+
+          .btn:active {
+            color: ${activeColors.color};
+            --zeit-ui-button-color: ${activeColors.color};
+            background-color: ${activeColors.bg};
+            border-color: ${activeColors.border};
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowMedium : 'none'};
@@ -199,13 +212,16 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             align-items: center;
             text-align: center;
             line-height: inherit;
-            top: -1px;
+            top: -2px;
           }
 
           .btn :global(.text p),
           .btn :global(.text pre),
           .btn :global(.text div) {
             margin: 0;
+          }
+          .btn :global(.hidden) {
+            visibility: hidden;
           }
         `}</style>
       </button>
