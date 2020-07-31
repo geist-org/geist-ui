@@ -13,16 +13,7 @@ import ButtonLoading from './button-loading'
 import { ButtonTypes, ButtonVariants, NormalSizes } from '../utils/prop-types'
 import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 import { useButtonGroupContext } from '../button-group/button-group-context'
-import {
-  getButtonColors,
-  getButtonCursor,
-  getButtonDripColor,
-  getButtonHoverColors,
-  getButtonActiveColors,
-  getButtonLoadingColors,
-  getButtonDisabledColors,
-  getButtonSize,
-} from './styles'
+import { getButtonColors, getButtonCursor, getButtonDripColor, getButtonSize } from './styles'
 
 interface Props {
   variant?: ButtonVariants
@@ -88,23 +79,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
       ...props
     } = filteredProps
 
-    const defaultColors = useMemo(() => getButtonColors(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
-    let hoverColors = useMemo(() => getButtonHoverColors(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
-    let activeColors = useMemo(() => getButtonActiveColors(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
-    let loadingColors = useMemo(() => getButtonLoadingColors(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
-    let disabledColors = useMemo(() => getButtonDisabledColors(theme.palette, filteredProps), [
+    const buttonColors = useMemo(() => getButtonColors(theme.palette, filteredProps), [
       theme.palette,
       filteredProps,
     ])
@@ -121,18 +96,13 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
       filteredProps,
     ])
 
-    let colors = defaultColors
-
+    let colors = buttonColors.default
+    let hoverColors = buttonColors.hover
+    let activeColors = buttonColors.active
     if (loading) {
-      colors = loadingColors
-      hoverColors = loadingColors
-      activeColors = loadingColors
-    }
-
-    if (disabled) {
-      colors = disabledColors
-      hoverColors = disabledColors
-      activeColors = disabledColors
+      colors = buttonColors.active
+      hoverColors = buttonColors.active
+      activeColors = buttonColors.active
     }
 
     /* istanbul ignore next */
