@@ -17,6 +17,20 @@ describe('Select', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should render correctly when variant=text', () => {
+    const wrapper = mount(
+      <div>
+        <Select variant="text" initialValue="2">
+          <Select.Option value="1">Option 1</Select.Option>
+          <Select.Option value="2">Option 2</Select.Option>
+        </Select>
+        ,
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
   it('should work correctly with labels', () => {
     const wrapper = mount(
       <Select>
@@ -113,6 +127,20 @@ describe('Select', () => {
     wrapper.setProps({ value: '1' })
     await updateWrapper(wrapper, 300)
     expect(wrapper.find('.value').text()).toContain('Option 1')
+  })
+
+  it('should render right border with variant=text when hover', async () => {
+    const wrapper = mount(
+      <Select variant="text">
+        <Select.Option value="1">Option 1</Select.Option>
+        <Select.Option value="2">Option 2</Select.Option>
+      </Select>,
+    )
+    wrapper.find('.select').simulate('click', nativeEvent)
+    const option = wrapper.find('.select-dropdown').find('.option').at(0)
+    option.simulate('mouseover')
+    expect(option.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('should be wraning when ident value missing', () => {

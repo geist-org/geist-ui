@@ -19,6 +19,8 @@ const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
 //   'error-light',
 // )
 
+const selectTypes = tuple('line', 'text')
+
 const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
 const normalTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
@@ -69,6 +71,8 @@ export type ButtonVariants = typeof buttonVariants[number]
 export type ButtonStatus = typeof buttonStatus[number]
 
 export type NormalSizes = typeof normalSizes[number]
+
+export type SelectTypes = typeof selectTypes[number]
 
 export type NormalTypes = typeof normalTypes[number]
 

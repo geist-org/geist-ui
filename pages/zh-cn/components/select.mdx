@@ -26,6 +26,23 @@ export const meta = {
 />
 
 <Playground
+  title="文本"
+  desc="文本选择器"
+  scope={{ Select }}
+  code={`
+() => {
+  const handler = val => console.log(val)
+  return (
+    <Select variant="text" placeholder="选择工作方式" onChange={handler}>
+      <Select.Option value="1">远程工作</Select.Option>
+      <Select.Option value="2">线下工作</Select.Option>
+    </Select>
+  )
+}
+`}
+/>
+
+<Playground
   title="禁用"
   desc="禁用所有的交互。"
   scope={{ Select }}
@@ -147,20 +164,21 @@ export const meta = {
 
 | 属性                  | 描述                         | 类型                                                | 推荐值                            | 默认            |
 | --------------------- | ---------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
-| **value**             | 手动设置选择器的值           | `string`, `string[]`                                | -                                 | -               |
-| **initialValue**      | 选择器初始值                 | `string`, `string[]`                                | -                                 | -               |
-| **placeholder**       | 占位文本内容                 | `string`                                            | -                                 | -               |
-| **width**             | 组件的 CSS 宽度值            | `string`                                            | -                                 | `initial`       |
-| **size**              | 选择器组件大小               | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
-| **icon**              | 右侧图标组件                 | `ComponentType`                                     | -                                 | `SVG Component` |
-| **pure**              | 隐藏右侧图标组件             | `boolean`                                           | -                                 | `false`         |
-| **multiple**          | 是否支持多选                 | `boolean`                                           | -                                 | `false`         |
-| **disabled**          | 禁用所有的交互               | `boolean`                                           | -                                 | `false`         |
-| **onChange**          | 选项被选中所触发的事件       | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
-| **dropdownClassName** | 下拉框的自定义类名           | `string`                                            | -                                 | -               |
-| **dropdownStyle**     | 下拉框的自定义样式           | `object`                                            | -                                 | -               |
-| **disableMatchWidth** | 禁止 Option 跟随单选框的宽度 | `boolean`                                           | -                                 | `false`         |
-| ...                   | 原生属性                     | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
+| **value**             | 手动设置选择器的值              | `string`, `string[]`                                | -                                 | -               |
+| **initialValue**      | 选择器初始值                   | `string`, `string[]`                                | -                                 | -               |
+| **placeholder**       | 占位文本内容                   | `string`                                            | -                                 | -               |
+| **variant**           | 选择器的类型                   | `string`                                            | [SelectTypes](#selecttypes)       | `line`          |
+| **width**             | 组件的 CSS 宽度值              | `string`                                            | -                                 | `initial`       |
+| **size**              | 选择器组件大小                 | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
+| **icon**              | 右侧图标组件                   | `ComponentType`                                     | -                                 | `SVG Component` |
+| **pure**              | 隐藏右侧图标组件                | `boolean`                                           | -                                 | `false`         |
+| **multiple**          | 是否支持多选                   | `boolean`                                           | -                                 | `false`         |
+| **disabled**          | 禁用所有交互                   | `boolean`                                           | -                                 | `false`         |
+| **onChange**          | 选项被选中所触发的事件           | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
+| **dropdownClassName** | 下拉框的自定义类名              | `string`                                            | -                                 | -               |
+| **dropdownStyle**     | 下拉框的自定义样式              | `object`                                            | -                                 | -               |
+| **disableMatchWidth** | 禁止 Option 跟随单选框的宽度    | `boolean`                                           | -                                 | `false`         |
+| ...                   | 原生属性                      | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
 
@@ -174,6 +192,13 @@ export const meta = {
 
 ```ts
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
+
+
+<Attributes.Title>SelectTypes</Attributes.Title>
+
+```ts
+type SelectTypes = 'line' | 'text'
 ```
 
 </Attributes>

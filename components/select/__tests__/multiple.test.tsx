@@ -15,6 +15,16 @@ describe('Select Multiple', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should render value with string initial-value', () => {
+    const wrapper = mount(
+      <Select initialValue="1" multiple>
+        <Select.Option value="1">1</Select.Option>
+        <Select.Option value="2">Option 2</Select.Option>
+      </Select>,
+    )
+    expect(wrapper.find('.option').length).toEqual(1)
+  })
+
   it('should render value with initial-value', () => {
     const wrapper = mount(
       <Select initialValue={['1', '2']} multiple>
