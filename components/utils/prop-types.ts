@@ -1,6 +1,6 @@
 export const tuple = <T extends string[]>(...args: T) => args
 
-const buttonVariants = tuple('solid', 'lined', 'text')
+const buttonVariants = tuple('solid', 'line', 'text')
 
 const buttonTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 

@@ -33,7 +33,7 @@ interface Props {
 }
 
 const defaultProps = {
-  variant: 'lined' as ButtonVariants,
+  variant: 'line' as ButtonVariants,
   color: 'default' as ButtonTypes,
   size: 'medium' as NormalSizes,
   htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],

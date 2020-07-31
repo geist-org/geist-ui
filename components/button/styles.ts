@@ -26,7 +26,7 @@ export const getButtonColors = (
       border: palette.cNeutral3,
       color: palette.cNeutral5,
     },
-    lined: {
+    line: {
       bg: palette.cNeutral8,
       border: palette.cNeutral3,
       color: palette.cNeutral5,
@@ -147,7 +147,7 @@ export const getButtonColors = (
         active: disabledCategory.solid,
       },
     },
-    lined: {
+    line: {
       default: {
         default: {
           bg: palette.cNeutral8,
@@ -251,9 +251,9 @@ export const getButtonColors = (
         },
       },
       disabled: {
-        default: disabledCategory.lined,
-        hover: disabledCategory.lined,
-        active: disabledCategory.lined,
+        default: disabledCategory.line,
+        hover: disabledCategory.line,
+        active: disabledCategory.line,
       },
     },
     text: {
@@ -378,7 +378,7 @@ export const getButtonColors = (
     }
   } catch (e) {
     // if no match variant or color, return default button style
-    result = category.lined.default
+    result = category.line.default
   }
   return result
 }
