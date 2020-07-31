@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useEffect, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
@@ -31,7 +31,7 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
   disableMatchWidth,
 }) => {
   const theme = useTheme()
-  const { ref } = useAutoCompleteContext()
+  const { ref, value } = useAutoCompleteContext()
   const { border, hoverBorderColor, hoverBackgroundColor } = useMemo(
     () => getColors(theme.palette, 'default', solid),
     [theme.palette, status, solid],
@@ -44,7 +44,12 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
   }
 
   return (
-    <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth}>
+    <Dropdown
+      parent={ref}
+      visible={visible}
+      disableMatchWidth={disableMatchWidth}
+      clearTime={value === '' ? 0 : 60}
+      leaveTime={value === '' ? 0 : 60}>
       <div
         className={`auto-complete-dropdown ${className} ${solid ? 'solid' : 'lined'}`}
         style={dropdownStyle}

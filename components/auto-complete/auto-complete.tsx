@@ -201,6 +201,8 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
         <CSSTransition
           renderable
           visible={dropdownVisible}
+          clearTime={state === '' ? 0 : 60}
+          leaveTime={state === '' ? 0 : 60}
           className={`in-auto-complete ${focus ? 'auto-complete-focus' : ''}`}>
           <Input
             solid={solid}
