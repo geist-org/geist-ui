@@ -12,13 +12,13 @@ interface Props {
 const defaultProps = {
   onClick: () => {},
   visible: false,
-  offsetY: 0,
 }
 
-export type BackdropProps = Props & typeof defaultProps
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type BackdropProps = Props & typeof defaultProps & NativeAttrs
 
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
-  ({ children, onClick, visible }) => {
+  ({ children, onClick, visible, ...props }) => {
     const theme = useTheme()
     const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false)
     const clickHandler = (event: MouseEvent<HTMLElement>) => {
@@ -38,7 +38,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
 
     return (
       <CSSTransition name="backdrop-wrapper" visible={visible} clearTime={300}>
-        <div className="backdrop" onClick={clickHandler} onMouseUp={mouseUpHandler}>
+        <div className="backdrop" onClick={clickHandler} onMouseUp={mouseUpHandler} {...props}>
           <div className="layer" />
           <div
             onClick={childrenClickHandler}
