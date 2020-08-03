@@ -14,12 +14,19 @@ A set of related buttons.
   title="Basic"
   scope={{ Button, ButtonGroup }}
   code={`
-<ButtonGroup>
-  <Button>One</Button>
-  <Button>Two</Button>
-  <Button>Three</Button>
-</ButtonGroup>
-`}
+    <>
+      <ButtonGroup>
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+      <ButtonGroup variant="solid">
+        <Button>One</Button>
+        <Button>Two</Button>
+        <Button>Three</Button>
+      </ButtonGroup>
+    </>
+  `}
 />
 
 <Playground
@@ -28,23 +35,31 @@ A set of related buttons.
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup type="success">
+  <ButtonGroup color="secondary">
     <Button>One</Button>
     <Button>Two</Button>
     <Button>Three</Button>
   </ButtonGroup>
-  <ButtonGroup type="abort">
-    <Button>Action1</Button>
-    <Button>Action2</Button>
+  <ButtonGroup color="success">
+    <Button>One</Button>
+    <Button>Two</Button>
   </ButtonGroup>
-  <ButtonGroup type="warning" ghost>
-    <Button>Action1</Button>
-    <Button>Action2</Button>
+  <ButtonGroup color="error">
+    <Button>One</Button>
+    <Button>Two</Button>
   </ButtonGroup>
-  <ButtonGroup type="success-light" size="small">
+  <ButtonGroup variant="solid" color="secondary">
     <Button>One</Button>
     <Button>Two</Button>
     <Button>Three</Button>
+  </ButtonGroup>
+  <ButtonGroup variant="solid" color="success">
+    <Button>One</Button>
+    <Button>Two</Button>
+  </ButtonGroup>
+  <ButtonGroup variant="solid" color="error">
+    <Button>One</Button>
+    <Button>Two</Button>
   </ButtonGroup>
 </>
 `}
@@ -55,14 +70,22 @@ A set of related buttons.
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup size="small">
-    <Button>One</Button>
+  <ButtonGroup size="large">
+    <Button>Large</Button>
     <Button>Two</Button>
     <Button>Three</Button>
   </ButtonGroup>
+  <ButtonGroup size="medium">
+    <Button>Medium</Button>
+    <Button>Two</Button>
+  </ButtonGroup>
+  <ButtonGroup size="small">
+    <Button>Small</Button>
+    <Button>Two</Button>
+  </ButtonGroup>
   <ButtonGroup size="mini">
-    <Button>Action1</Button>
-    <Button>Action2</Button>
+    <Button>Mini</Button>
+    <Button>Two</Button>
   </ButtonGroup>
 </>
 `}
@@ -99,29 +122,25 @@ A set of related buttons.
 <Attributes edit="/pages/en-us/components/button-group.mdx">
 <Attributes.Title>ButtonGroup.Props</Attributes.Title>
 
-| Attribute    | Description                 | Type                   | Accepted values             | Default   |
-| ------------ | --------------------------- | ---------------------- | --------------------------- | --------- |
-| **type**     | button type                 | `ButtonTypes`          | [ButtonTypes](#buttontypes) | `default` |
-| **size**     | button size                 | `NormalSizes`          | [NormalSizes](#normalsizes) | `medium`  |
-| **ghost**    | the opposite color          | `boolean`              | -                           | `false`   |
-| **vertical** | show all buttons vertically | `boolean`              | -                           | `false`   |
-| **disabled** | disable all buttons         | `boolean`              | -                           | `false`   |
-| ...          | native props                | `ButtonHTMLAttributes` | `'id', 'className', ...`    | -         |
+| Attribute    | Description                 | Type                   | Accepted values                   | Default   |
+| ------------ | --------------------------- | ---------------------- | --------------------------------- | --------- |
+| **variant**  | button type                 | `ButtonVariants`       | [ButtonVariants](#buttonVariants) | `default` |
+| **color**    | button color                | `ButtonColors`         | [ButtonColors](#buttontypes)      | `default` |
+| **size**     | button size                 | `NormalSizes`          | [NormalSizes](#normalsizes)       | `medium`  |
+| **vertical** | show all buttons vertically | `boolean`              | -                                 | `false`   |
+| **disabled** | disable all buttons         | `boolean`              | -                                 | `false`   |
+| ...          | native props                | `ButtonHTMLAttributes` | `'id', 'className', ...`          | -         |
 
-<Attributes.Title>ButtonTypes</Attributes.Title>
+<Attributes.Title>ButtonVariants</Attributes.Title>
 
 ```ts
-type ButtonTypes =
-  | 'default'
-  | 'secondary'
-  | 'success'
-  | 'warning'
-  | 'error'
-  | 'abort'
-  | 'secondary-light'
-  | 'success-light'
-  | 'warning-light'
-  | 'error-light'
+type ButtonVariants = 'default' | 'solid'
+```
+
+<Attributes.Title>ButtonColors</Attributes.Title>
+
+```ts
+type ButtonColors = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
