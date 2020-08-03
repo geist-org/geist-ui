@@ -1,0 +1,749 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Link, Text, Code, Spacer, DatePicker, Divider, Button } from 'components'
+import NextLink from 'next/link'
+import moment from 'moment'
+import { useState } from 'react'
+
+export const meta = {
+  title: 'DatePicker',
+  group: 'Data Entry',
+}
+
+## DatePicker
+
+Select or input a date or time.
+
+<Playground
+  desc="Basic use case. Users can select or input a date in panel."
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  function onChange(date, dateString) {
+    console.log(dateString, date);
+  }
+  return (
+    <>
+      <DatePicker onChange={onChange} /><Spacer y={.5} />
+      <DatePicker onChange={onChange} picker="week" /><Spacer y={.5} />
+      <DatePicker onChange={onChange} picker="month" /><Spacer y={.5} />
+      <DatePicker onChange={onChange} picker="quarter" /><Spacer y={.5} />
+      <DatePicker onChange={onChange} picker="year" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Range Picker"
+  desc="Set range picker type by `picker` prop."
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <RangePicker />
+      <Spacer y={0.5} />
+      <RangePicker showTime />
+      <Spacer y={0.5} />
+      <RangePicker picker="week" />
+      <Spacer y={0.5} />
+      <RangePicker picker="month" />
+      <Spacer y={0.5} />
+      <RangePicker picker="year" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Date Format"
+  desc="We can set the date format by `format`."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  const dateFormat = 'YYYY/MM/DD'
+  const monthFormat = 'YYYY/MM'
+  const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY']
+  return (
+    <>
+      <DatePicker defaultValue={moment('2020/01/01', dateFormat)} format={dateFormat} />
+      <Spacer y={0.5} />
+      <DatePicker defaultValue={moment('01/01/2020', dateFormatList[0])} format={dateFormatList} />
+      <Spacer y={0.5} />
+      <DatePicker defaultValue={moment('2020/01', monthFormat)} format={monthFormat} picker="month" />
+      <Spacer y={0.5} />
+      <RangePicker
+        defaultValue={[moment('2020/01/01', dateFormat), moment('2015/01/01', dateFormat)]}
+        format={dateFormat}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Choose Time"
+  desc="This property provide an additional time selection. When `showTime` is an Object, its properties will be passed on to built-in `TimePicker`."
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  function onChange(value, dateString) {
+    console.log('Selected Time: ', value)
+    console.log('Formatted Selected Time: ', dateString)
+  }
+  function onOk(value) {
+    console.log('onOk: ', value)
+  }
+  return (
+    <>
+      <DatePicker showTime onChange={onChange} onOk={onOk} />
+      <Spacer y={0.5} />
+      <RangePicker
+        showTime={{ format: 'HH:mm' }}
+        format="YYYY-MM-DD HH:mm"
+        onChange={onChange}
+        onOk={onOk}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Disabled"
+  desc="A disabled state of the `DatePicker`. You can also set as array to disable one of input."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  const dateFormat = 'YYYY-MM-DD'
+  return (
+    <>
+      <DatePicker defaultValue={moment('2020-06-06', dateFormat)} disabled />
+      <Spacer y={0.5} />
+      <DatePicker picker="month" defaultValue={moment('2020-06', 'YYYY-MM')} disabled />
+      <Spacer y={0.5} />
+      <RangePicker
+        defaultValue={[moment('2020-06-06', dateFormat), moment('2020-06-06', dateFormat)]}
+        disabled
+      />
+      <Spacer y={0.5} />
+      <RangePicker
+        defaultValue={[moment('2020-09-01', dateFormat), moment('2020-10-10', dateFormat)]}
+        disabled={[false, true]}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Disabled Date & Time"
+  desc="Disabled part of dates and time by `disabledDate` and `disabledTime` respectively, and `disabledTime` only works with `showTime`."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  function range(start, end) {
+    const result = []
+    for (let i = start; i < end; i++) {
+      result.push(i)
+    }
+    return result
+  }
+  function disabledDate(current) {
+    // Can not select days before today and today
+    return current && current < moment().endOf('day')
+  }
+  function disabledDateTime() {
+    return {
+      disabledHours: () => range(0, 24).splice(4, 20),
+      disabledMinutes: () => range(30, 60),
+      disabledSeconds: () => [55, 56],
+    }
+  }
+  function disabledRangeTime(_, type) {
+    if (type === 'start') {
+      return {
+        disabledHours: () => range(0, 60).splice(4, 20),
+        disabledMinutes: () => range(30, 60),
+        disabledSeconds: () => [55, 56],
+      }
+    }
+    return {
+      disabledHours: () => range(0, 60).splice(20, 4),
+      disabledMinutes: () => range(0, 31),
+      disabledSeconds: () => [55, 56],
+    }
+  }
+  return (
+    <>
+      <DatePicker
+        format="YYYY-MM-DD HH:mm:ss"
+        disabledDate={disabledDate}
+        disabledTime={disabledDateTime}
+        showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
+      />
+      <Spacer y={0.5} />
+      <DatePicker picker="month" disabledDate={disabledDate} />
+      <Spacer y={0.5} />
+      <RangePicker disabledDate={disabledDate} />
+      <Spacer y={0.5} />
+      <RangePicker
+        disabledDate={disabledDate}
+        disabledTime={disabledRangeTime}
+        showTime={{
+          hideDisabledOptions: true,
+          defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('11:59:59', 'HH:mm:ss')],
+        }}
+        format="YYYY-MM-DD HH:mm:ss"
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Select range dates in 7 days"
+  desc="A example shows how to select a dynamic range by using `onCalendarChange` and `disabledDate`."
+  scope={{ DatePicker, useState }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker;
+  const [dates, setDates] = useState([]);
+  const disabledDate = current => {
+    if (!dates || dates.length === 0) {
+      return false;
+    }
+    const tooLate = dates[0] && current.diff(dates[0], 'days') > 7;
+    const tooEarly = dates[1] && dates[1].diff(current, 'days') > 7;
+    return tooEarly || tooLate;
+  };
+  return (
+    <RangePicker
+      disabledDate={disabledDate}
+      onCalendarChange={value => {
+        setDates(value);
+      }}
+    />
+  );
+}
+`}
+/>
+
+<Playground
+  title="Preset Ranges"
+  desc="We can set preset ranges to RangePicker to improve user experience."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker;
+  function onChange(dates, dateStrings) {
+    console.log('From: ', dates[0], ', to: ', dates[1])
+    console.log('From: ', dateStrings[0], ', to: ', dateStrings[1])
+  }
+  return (
+    <>
+      <RangePicker
+        ranges={{
+          Today: [moment(), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+        }}
+        onChange={onChange}
+      />
+      <Spacer y={0.5} />
+      <RangePicker
+        ranges={{
+          Today: [moment(), moment()],
+          'This Month': [moment().startOf('month'), moment().endOf('month')],
+        }}
+        showTime
+        format="YYYY/MM/DD HH:mm:ss"
+        onChange={onChange}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Extra Footer"
+  desc="Render extra footer in panel for customized requirements."
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker renderExtraFooter={() => 'Extra Footer'} />
+      <Spacer y={0.5} />
+      <DatePicker renderExtraFooter={() => 'Extra Footer'} showTime />
+      <Spacer y={0.5} />
+      <RangePicker renderExtraFooter={() => 'Extra Footer'} />
+      <Spacer y={0.5} />
+      <RangePicker renderExtraFooter={() => 'Extra Footer'} showTime />
+      <Spacer y={0.5} />
+      <DatePicker renderExtraFooter={() => 'Extra Footer'} picker="month" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Four Sizes"
+  desc="The input box comes in three sizes. `medium` will be used if `size` is omitted."
+  scope={{ DatePicker, Spacer, Divider }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker size="mini" />
+      <Spacer y={0.5} />
+      <DatePicker size="mini" showTime />
+      <Spacer y={0.5} />
+      <RangePicker size="mini" />
+      <Spacer y={0.5} />
+      <RangePicker size="mini" showTime />
+      <Divider />
+      <DatePicker size="small" />
+      <Spacer y={0.5} />
+      <DatePicker size="small" showTime />
+      <Spacer y={0.5} />
+      <RangePicker size="small" />
+      <Spacer y={0.5} />
+      <RangePicker size="small" showTime />
+      <Divider />
+      <DatePicker size="medium" />
+      <Spacer y={0.5} />
+      <DatePicker size="medium" showTime />
+      <Spacer y={0.5} />
+      <RangePicker size="medium" />
+      <Spacer y={0.5} />
+      <RangePicker size="medium" showTime />
+      <Divider />
+      <DatePicker size="large" />
+      <Spacer y={0.5} />
+      <DatePicker size="large" showTime />
+      <Spacer y={0.5} />
+      <RangePicker size="large" />
+      <Spacer y={0.5} />
+      <RangePicker size="large" showTime />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Customized Date Rendering"
+  desc="We can customize the rendering of date cells in the calendar by providing a `dateRender` function to `DatePicker`."
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker
+        dateRender={current => {
+          const style = {};
+          if (current.date() === 1) {
+            style.border = '1px solid red';
+            style.borderRadius = '50%';
+          }
+          return (
+            <div className="cfx-picker-cell-inner" style={style}>
+              {current.date()}
+            </div>
+          );
+        }}
+      />
+      <Spacer x={0.5} />
+      <RangePicker
+        dateRender={current => {
+          const style = {};
+          if (current.date() === 1) {
+            style.border = '1px solid red';
+            style.borderRadius = '50%';
+          }
+          return (
+            <div className="cfx-picker-cell-inner" style={style}>
+              {current.date()}
+            </div>
+          );
+        }}
+      />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Bordered-less"
+  desc="Bordered-less style component."
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker bordered={false} />
+      <Spacer y={0.5} />
+      <DatePicker picker="week" bordered={false} />
+      <Spacer y={0.5} />
+      <DatePicker picker="month" bordered={false} />
+      <Spacer y={0.5} />
+      <DatePicker picker="year" bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker picker="week" bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker picker="month" bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker picker="year" bordered={false} />
+    </>
+  )
+}
+`}
+/>
+
+<Spacer y={3} />
+
+### TimePicker
+
+<Playground
+  desc="Click `TimePicker`, and then we could select or input a time in panel."
+  scope={{ DatePicker, moment, Spacer }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  function onChange(time, timeString) {
+    console.log(timeString, time)
+  }
+  return (
+    <TimePicker onChange={onChange} />
+  )
+}
+`}
+/>
+
+<Playground
+  title="Under Control"
+  desc="`value` and `onChange` should be used together."
+  scope={{ DatePicker, useState, Spacer }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  const [value, setValue] = useState(null)
+  const onChange = time => {
+    setValue(time)
+  }
+  return <TimePicker value={value} onChange={onChange} />
+}
+`}
+/>
+
+<Playground
+  title="Four Sizes"
+  desc="The input box comes in three sizes. `medium` will be used if `size` is omitted."
+  scope={{ DatePicker, Spacer, Divider }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  return (
+    <>
+      <TimePicker size="mini" />
+      <Spacer y={0.5} />
+      <TimePicker size="small" />
+      <Spacer y={0.5} />
+      <TimePicker size="medium" />
+      <Spacer y={0.5} />
+      <TimePicker size="large" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Disabled"
+  desc="A disabled state of the `TimePicker`."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  return <TimePicker defaultValue={moment('12:00:00', 'HH:mm:ss')} disabled />
+}
+`}
+/>
+
+<Playground
+  title="Hour and minute"
+  desc="While part of `format` is omitted, the corresponding column in panel will disappear, too."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  const format = 'HH:mm'
+  return <TimePicker defaultValue={moment('12:00', format)} format={format} />
+}
+`}
+/>
+
+<Playground
+  title="Interval option"
+  desc="Show stepped options by `hourStep` `minuteStep` `secondStep`."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  return <TimePicker minuteStep={15} secondStep={10} />
+}
+`}
+/>
+
+<Playground
+  title="Addon"
+  desc="Render addon contents to time picker panel's bottom."
+  scope={{ DatePicker, Spacer, useState, Button }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  const [open, setOpen] = useState(false)
+  const handleOpenChange = open => setOpen(open)
+  const handleClose = () => setOpen(false)
+  return (
+    <TimePicker
+      open={open}
+      onOpenChange={handleOpenChange}
+      renderExtraFooter={() => (
+        <Button size="small" onClick={handleClose}>
+          Close
+        </Button>
+      )}
+    />
+  )
+}
+`}
+/>
+
+<Playground
+  title="12 Hours"
+  desc="TimePicker of 12 hours format, with default format `h:mm:ss a`."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  function onChange(time, timeString) {
+    console.log(timeString, time)
+  }
+  return (
+    <>
+      <TimePicker use12Hours onChange={onChange} />
+      <Spacer y={0.5} />
+      <TimePicker
+        use12Hours
+        format="h:mm:ss A"
+        onChange={onChange}
+        style={{ width: 140 }}
+      />
+      <Spacer y={0.5} />
+      <TimePicker use12Hours format="h:mm a" onChange={onChange} />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Range Picker"
+  desc="Use time range picker with `RangePicker`."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return <RangePicker picker="time" />
+}
+`}
+/>
+
+<Playground
+  title="Bordered-less"
+  desc="Bordered-less style component."
+  scope={{ DatePicker, Spacer, moment }}
+  code={`
+() => {
+  const { TimePicker } = DatePicker
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <TimePicker bordered={false} />
+      <Spacer y={0.5} />
+      <RangePicker picker="time" bordered={false} />
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/components/link.mdx">
+
+There are six kinds of picker:
+
+- DatePicker
+- DatePicker\[picker="time"]
+- DatePicker\[picker="month"]
+- DatePicker\[picker="week"]
+- DatePicker\[picker="year"]
+- DatePicker\[picker="quarter"]
+- RangePicker
+
+<Spacer y={2} />
+
+<Attributes.Title>Common Props</Attributes.Title>
+
+| Attribute             | Description                                                                                          | Type                                                              | Accepted values                                    | Default  |
+| --------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------- | -------- |
+| **allowClear**        | Whether to show clear button                                                                         | `boolean`                                                         | -                                                  | `true`   |
+| **autoFocus**         | If get focus when component mounted                                                                  | `boolean`                                                         | -                                                  | `false`  |
+| **className**         | The picker className                                                                                 | `string`                                                          | -                                                  | -        |
+| **dateRender**        | Custom rendering function for date cells                                                             | `function(currentDate: moment, today: moment) => React.ReactNode` | -                                                  | -        |
+| **disabled**          | Determine whether the DatePicker is disabled                                                         | `boolean`                                                         | -                                                  | `false`  |
+| **disabledDate**      | Specify the date that cannot be selected                                                             | `(currentDate: moment) => boolean`                                | -                                                  | -        |
+| **dropdownClassName** | To customize the className of the popup calendar                                                     | `string`                                                          | -                                                  | -        |
+| **getPopupContainer** | To set the container of the floating layer, while the default is to create a `div` element in `body` | `function(trigger)`                                               | -                                                  | -        |
+| **locale**            | Localization configuration                                                                           | `string`                                                          | `en-US` \| `zh-CN`                                 | `en-US`  |
+| **mode**              | The picker panel mode                                                                                | `string`                                                          | `time` \| `date` \| `month` \| `year` \| `decade`  | -        |
+| **open**              | The open state of picker                                                                             | `boolean`                                                         | -                                                  | `false`  |
+| **panelRender**       | Customize panel render                                                                               | `(panelNode) => ReactNode`                                        | -                                                  | -        |
+| **picker**            | Set picker type                                                                                      | `string`                                                          | `date` \| `week` \| `month` \| `quarter` \| `year` | `date`   |
+| **placeholder**       | The placeholder of date input                                                                        | `string` \| `[string, string]`                                    | -                                                  | -        |
+| **popupStyle**        | To customize the style of the popup calendar                                                         | `CSSProperties`                                                   | -                                                  | {}       |
+| **size**              | The determine the size of the input box.                                                             | `string`                                                          | `large` \| `medium` \| `small` \| `mini`           | `medium` |
+| **bordered**          | Whether has border style                                                                             | `boolean`                                                         | -                                                  | `true`   |
+| **suffixIcon**        | The custom suffix icon                                                                               | `ReactNode`                                                       | -                                                  | -        |
+| **style**             | To customize the style of the input box                                                              | `CSSProperties`                                                   | {}                                                 | -        |
+| **onOpenChange**      | Callback function, can be executed whether the popup calendar is popped up or closed                 | `function(open)`                                                  | -                                                  | -        |
+| **onPanelChange**     | Callback when picker panel mode is changed                                                           | `function(value, mode)`                                           | -                                                  | -        |
+| **inputReadOnly**     | Set the `readonly` attribute of the input tag (avoids virtual keyboard on touch devices)             | `boolean`                                                         | -                                                  | `false`  |
+
+<Attributes.Title>DatePicker Props</Attributes.Title>
+
+| Attribute                 | Description                                                                                                                                                           | Type                                         | Accepted values | Default                         |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | --------------- | ------------------------------- |
+| **defaultValue**          | To set default date, if start time or end time is null or undefined, the date range will be an open interval                                                          | [moment](http://momentjs.com/)               | -               | -                               |
+| **defaultPickerValue**    | To set default picker date                                                                                                                                            | [moment](http://momentjs.com/)               | -               | -                               |
+| **disabledTime**          | To specify the time that cannot be selected                                                                                                                           | `function(date)`                             | -               | -                               |
+| **format**                | To set the date format, refer to [moment.js](http://momentjs.com/). When an array is provided, all values are used for parsing and first value is used for formatting | `string` \| `string[]`                       | -               | `YYYY-MM-DD`                    |
+| **renderExtraFooter**     | Render extra footer in panel                                                                                                                                          | `(mode) => React.ReactNode`                  | -               | -                               |
+| **showTime**              | To provide an additional time selection                                                                                                                               | `Object` \| `boolean`                        | -               | `DatePicker[picker=time] Props` |
+| **showTime**.defaultValue | To set default time of selected date                                                                                                                                  | [moment](http://momentjs.com/)               | -               | `moment()`                      |
+| **showToday**             | Whether to show `Today` button                                                                                                                                        | `boolean`                                    | -               | `true`                          |
+| **value**                 | To set date                                                                                                                                                           | [moment](http://momentjs.com/)               | -               | -                               |
+| **onChange**              | Callback function, can be executed when the selected time is changing                                                                                                 | `function(date: moment, dateString: string)` | -               | -                               |
+| **onOk**                  | Callback when click ok button                                                                                                                                         | `function()`                                 | -               | -                               |
+| **onPanelChange**         | Callback function for panel changing                                                                                                                                  | `function(value, mode)`                      | -               | -                               |
+| **showNow**               | Whether to show 'Now' button on panel when `showTime` is set                                                                                                          | `boolean`                                    | -               | -                               |
+
+<Attributes.Title>DatePicker[picker=time] Props</Attributes.Title>
+
+| Attribute               | Description                                                             | Type                                               | Accepted values | Default    |
+| ----------------------- | ----------------------------------------------------------------------- | -------------------------------------------------- | --------------- | ---------- |
+| **defaultValue**        | To set default time                                                     | [moment](http://momentjs.com/)                     | -               | -          |
+| **disabledHours**       | To specify the hours that cannot be selected                            | `function()`                                       | -               | -          |
+| **disabledMinutes**     | To specify the minutes that cannot be selected                          | `function(selectedHour)`                           | -               | -          |
+| **disabledSeconds**     | To specify the seconds that cannot be selected                          | `function(selectedHour, selectedMinute)`           | -               | -          |
+| **format**              | To set the time format                                                  | `string`                                           | -               | `HH:mm:ss` |
+| **hideDisabledOptions** | Whether hide the options that can not be selected                       | `boolean`                                          | -               | `false`    |
+| **hourStep**            | Interval between hours in picker                                        | `number`                                           | -               | `1`        |
+| **minuteStep**          | Interval between minutes in picker                                      | `number`                                           | -               | `1`        |
+| **secondStep**          | Interval between seconds in picker                                      | `number`                                           | -               | `1`        |
+| **popupClassName**      | The className of panel                                                  | `string`                                           | -               | -          |
+| **renderExtraFooter**   | Called from time picker panel to render some addon to its bottom        | `() => ReactNode`                                  | -               | -          |
+| **use12Hours**          | Display as 12 hours format, with default format `h:mm:ss a`             | `boolean`                                          | -               | `false`    |
+| **value**               | To set time                                                             | [moment](http://momentjs.com/)                     | -               | -          |
+| **onChange**            | A callback function, can be executed when the selected time is changing | `function(time: moment, timeString: string): void` | -               | -          |
+| **onOpenChange**        | A callback function which will be called while panel opening/closing    | `(open: boolean) => void`                          | -               | -          |
+| **showNow**             | Whether to show `Now` button on panel                                   | `boolean`                                          | -               | -          |
+
+<Attributes.Title>DatePicker[picker=year] Props</Attributes.Title>
+
+| Attribute              | Description                                                           | Type                                         | Accepted values | Default |
+| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------- | --------------- | ------- |
+| **defaultValue**       | To set default date                                                   | [moment](http://momentjs.com/)               | -               | -       |
+| **defaultPickerValue** | To set default picker date                                            | [moment](http://momentjs.com/)               | -               | -       |
+| **format**             | To set the date format, refer to [moment.js](http://momentjs.com/)    | `string`                                     | -               | `YYYY`  |
+| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                      | -               | -       |
+| **value**              | To set date                                                           | [moment](http://momentjs.com/)               | -               | -       |
+| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: moment, dateString: string)` | -               | -       |
+
+<Attributes.Title>DatePicker[picker=quarter] Props</Attributes.Title>
+
+| Attribute              | Description                                                           | Type                                         | Accepted values | Default    |
+| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------- | --------------- | ---------- |
+| **defaultValue**       | To set default date                                                   | [moment](http://momentjs.com/)               | -               |            |
+| **defaultPickerValue** | To set default picker date                                            | [moment](http://momentjs.com/)               | -               | -          |
+| **format**             | To set the date format, refer to [moment.js](http://momentjs.com/)    | `string`                                     | -               | `YYYY-\QQ` |
+| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                      | -               | -          |
+| **value**              | To set date                                                           | [moment](http://momentjs.com/)               | -               | -          |
+| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: moment, dateString: string)` | -               | -          |
+
+<Attributes.Title>DatePicker[picker=month] Props</Attributes.Title>
+
+| Attribute              | Description                                                           | Type                                         | Accepted values | Default   |
+| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------- | --------------- | --------- |
+| **defaultValue**       | To set default date                                                   | [moment](http://momentjs.com/)               | -               | -         |
+| **defaultPickerValue** | To set default picker date                                            | [moment](http://momentjs.com/)               | -               | -         |
+| **format**             | To set the date format, refer to [moment.js](http://momentjs.com/)    | `string`                                     | -               | `YYYY-MM` |
+| **monthCellRender**    | Custom month cell content render method                               | `function(date, locale): ReactNode`          | -               | -         |
+| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                      | -               | -         |
+| **value**              | To set date                                                           | [moment](http://momentjs.com/)               | -               | -         |
+| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: moment, dateString: string)` | -               | -         |
+
+<Attributes.Title>DatePicker[picker=week] Props</Attributes.Title>
+
+| Attribute              | Description                                                           | Type                                         | Accepted values | Default   |
+| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------- | --------------- | --------- |
+| **defaultValue**       | To set default date                                                   | [moment](http://momentjs.com/)               | -               | -         |
+| **defaultPickerValue** | To set default picker date                                            | [moment](http://momentjs.com/)               | -               | -         |
+| **format**             | To set the date format, refer to [moment.js](http://momentjs.com/)    | `string`                                     | -               | `YYYY-wo` |
+| **renderExtraFooter**  | To set date                                                           | `(mode) => React.ReactNode`                  | -               | -         |
+| **value**              | Callback function, can be executed when the selected time is changing | [moment](http://momentjs.com/)               | -               | -         |
+| **onChange**           | Render extra footer in panel                                          | `function(date: moment, dateString: string)` | -               | -         |
+
+<Attributes.Title>RangePicker Props</Attributes.Title>
+
+| Attribute                 | Description                                                                                                                                                           | Type                                                                                             | Accepted values       | Default                         |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | --------------------- | ------------------------------- |
+| **allowEmpty**            | Allow start or end input leave empty                                                                                                                                  | `[boolean, boolean]`                                                                             | -                     | `[false, false]`                |
+| **dateRender**            | Customize date cell                                                                                                                                                   | `function(currentDate: moment, today: moment, info: { range: start / end }) => React.ReactNode`  | -                     | -                               |
+| **defaultValue**          | To set default date                                                                                                                                                   | `moment[]`                                                                                       | -                     | -                               |
+| **defaultPickerValue**    | To set default picker date                                                                                                                                            | `moment[]`                                                                                       | -                     | -                               |
+| **disabled**              | If disable start or end                                                                                                                                               | `[boolean, boolean]`                                                                             | -                     | -                               |
+| **disabledTime**          | To specify the time that cannot be selected                                                                                                                           | `function(dates: [moment, moment], partial: start / end)`                                        | -                     | -                               |
+| **format**                | To set the date format, refer to [moment.js](http://momentjs.com/). When an array is provided, all values are used for parsing and first value is used for formatting | `string`                                                                                         | `YYYY-MM-DD HH:mm:ss` | -                               |
+| **ranges**                | The preseted ranges for quick selection                                                                                                                               | `{ [range: string]: moment[] }` \| `{ [range: string]: () => moment[] }`                         | -                     | -                               |
+| **renderExtraFooter**     | Render extra footer in panel                                                                                                                                          | `() => React.ReactNode`                                                                          | -                     | -                               |
+| **separator**             | Set separator between inputs                                                                                                                                          | `string`                                                                                         | -                     | `~`                             |
+| **showTime**              | To provide an additional time selection                                                                                                                               | `Object` \| `boolean`                                                                            | -                     | `DatePicker[picker=time] Props` |
+| **showTime**.defaultValue | To set default time of selected date                                                                                                                                  | `moment[]`                                                                                       | -                     | `[moment(), moment()]`          |
+| **value**                 | To set date                                                                                                                                                           | `moment[]`                                                                                       | -                     | -                               |
+| **onCalendarChange**      | Callback function, can be executed when the start time or the end time of the range is changing                                                                       | `function(dates: [moment, moment], dateStrings: [string, string], info: { range: start / end })` | -                     | -                               |
+| **onChange**              | Callback function, can be executed when the selected time is changing                                                                                                 | `function(dates: [moment, moment], dateStrings: [string, string])`                               | -                     | -                               |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
