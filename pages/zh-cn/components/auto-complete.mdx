@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { AutoComplete, Spacer, Badge, Text, Grid } from 'components'
 import { useState, useRef, useEffect } from 'react'
+import SearchIcon from '@zeit-ui/react-icons/search'
 
 export const meta = {
   title: '自动完成 Auto-Complete',
@@ -318,9 +319,9 @@ export const meta = {
   ]
   return (
   <div  style={{display: 'flex'}}>
-  <AutoComplete placeholder="在这里输入" clearable options={options} />
+  <AutoComplete icon={<SearchIcon />}  placeholder="在这里输入" clearable options={options} />
   <Spacer inline />
-  <AutoComplete variant="solid" placeholder="Enter here" clearable options={options} />
+  <AutoComplete icon={<SearchIcon />}  variant="solid" placeholder="Enter here" clearable options={options} />
   </div>)
   }
 `}

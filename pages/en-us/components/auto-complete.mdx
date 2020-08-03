@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { AutoComplete, Spacer, Badge, Grid, Text } from 'components'
 import { useState, useRef, useEffect } from 'react'
+import SearchIcon from '@zeit-ui/react-icons/search'
 
 export const meta = {
   title: 'Auto-Complete',
@@ -313,7 +314,7 @@ return (
 <Playground
   title="clearable"
   desc="Add a clear button in the input box."
-  scope={{ AutoComplete, Spacer }}
+  scope={{ AutoComplete, Spacer, SearchIcon }}
   code={`
 () => {
   const options = [
@@ -323,9 +324,9 @@ return (
   ]
   return (
   <div  style={{display: 'flex'}}>
-  <AutoComplete placeholder="Enter here" clearable options={options} />
+  <AutoComplete icon={<SearchIcon />} placeholder="Enter here" clearable options={options} />
   <Spacer inline />
-  <AutoComplete variant="solid" placeholder="Enter here" clearable options={options} />
+  <AutoComplete icon={<SearchIcon />} variant="solid" placeholder="Enter here" clearable options={options} />
   </div>)
   }
 `}
