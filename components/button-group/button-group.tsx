@@ -82,7 +82,7 @@ const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupPr
             display: inline-flex;
             border-radius: ${theme.expressiveness.R2};
             margin: ${theme.layout.gapQuarter};
-            border: 2px solid ${border};
+            border: 1px solid ${border};
             background-color: transparent;
             overflow: hidden;
             height: min-content;
@@ -103,7 +103,7 @@ const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupPr
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
-            border-left: 2px solid ${border};
+            border-left: 1px solid ${border};
           }
 
           .horizontal :global(.btn:not(:last-child)) {
@@ -114,7 +114,7 @@ const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupPr
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-            border-top: 2px solid ${border};
+            border-top: 1px solid ${border};
           }
 
           .vertical :global(.btn:not(:last-child)) {
