@@ -3,10 +3,6 @@ import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { tuple } from '../utils/prop-types'
 
-const patterns = tuple('fuzzy', 'exact', 'regex')
-
-type Patterns = typeof patterns[number]
-
 const colorTypes = tuple('secondary', 'primary')
 
 type Color = typeof colorTypes[number]
@@ -15,12 +11,10 @@ interface Props {
   color?: string
   label: string
   query: string
-  pattern?: Patterns
   height: string
 }
 
 const defaultProps = {
-  pattern: 'fuzzy' as Patterns,
   color: 'default' as Color,
 }
 
@@ -32,7 +26,6 @@ const FuzzyMatchComponent: React.FC<React.PropsWithChildren<FuzzyMatchProps>> = 
   className,
   label,
   query,
-  pattern,
   height,
   ...props
 }) => {
@@ -42,23 +35,23 @@ const FuzzyMatchComponent: React.FC<React.PropsWithChildren<FuzzyMatchProps>> = 
     colorType
   ]
 
-  if (pattern === 'fuzzy') {
-    query = query.trim().replace(/\ /, '.*')
-  }
+  query = query
+    .trim()
+    // https://stackoverflow.com/a/6969486/5671288
+    .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    .replace(/\ /g, '.*')
 
   let beforeMatched = ''
   let matched = ''
   let afterMatched = ''
-  if (pattern === 'fuzzy' || pattern === 'regex') {
-    const matchResult = label.match(new RegExp(query, 'i'))
-    if (matchResult) {
-      beforeMatched = (matchResult.input as string).slice(0, matchResult.index)
-      matched = (matchResult as RegExpMatchArray)[0]
-      afterMatched = (matchResult.input as string).slice(
-        (matchResult.index as number) + matchResult[0].length,
-      )
-      if (matched === '') afterMatched = ''
-    }
+  const matchResult = label.match(new RegExp(query, 'i'))
+  if (matchResult) {
+    beforeMatched = (matchResult.input as string).slice(0, matchResult.index)
+    matched = (matchResult as RegExpMatchArray)[0]
+    afterMatched = (matchResult.input as string).slice(
+      (matchResult.index as number) + matchResult[0].length,
+    )
+    if (matched === '') afterMatched = ''
   }
 
   return (
