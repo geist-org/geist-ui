@@ -1,5 +1,6 @@
 import { NormalSizes, InputTypes } from '../utils/prop-types'
 import { ZeitUIThemesPalette } from '../styles/themes'
+import { addColorAlpha } from '../utils/color'
 
 export type InputSize = {
   heightRatio: string
@@ -84,9 +85,9 @@ export const getColors = (
     error: {
       color: palette.error,
       hoverColor: palette.error,
-      backgroundColor: solid ? palette.errorHover : palette.cNeutral8,
+      backgroundColor: solid ? addColorAlpha(palette.errorLight, 0.8) : palette.cNeutral8,
       hoverBackgroundColor: solid ? palette.errorLight : palette.cNeutral8,
-      border: solid ? 'transparent' : `1px solid ${palette.errorHover}`,
+      border: solid ? 'transparent' : `1px solid ${addColorAlpha(palette.errorLight, 0.8)}`,
       hoverBorderColor: solid ? 'transparent' : palette.errorLight,
     },
   }
