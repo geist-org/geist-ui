@@ -178,7 +178,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
             border: 1px solid ${colors.border};
             border-radius: ${theme.expressiveness.R2};
-            padding: 0 calc(${theme.layout.gapHalf} * 9 / 8) 0 calc(${theme.layout.gapHalf} * 1.5);
+            padding: 0 calc(${theme.layout.gapHalf} * 1.5) 0 ${theme.layout.gap};
             height: ${sizes.height};
             min-width: ${sizes.minWidth};
             background-color: transparent;
@@ -213,10 +213,10 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             width: calc(100% - 1.25rem);
           }
 
-          .value :global(svg) {
+          .select :global(svg) {
             display: none;
           }
-          .value :global(.option) {
+          .select :global(.option) {
             border: 1px solid transparent;
           }
 
@@ -235,7 +235,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
 
           .icon {
             position: absolute;
-            right: calc(${theme.layout.gapHalf} * 9 / 8);
+            right: calc(${theme.layout.gapHalf} * 1.5);
             font-size: ${sizes.fontSize};
             top: 50%;
             bottom: 0;

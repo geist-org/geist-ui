@@ -6,7 +6,7 @@ exports[`Select Multiple should render correctly 1`] = `
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.969 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"item  mock \\"><style>
@@ -100,17 +100,17 @@ exports[`Select Multiple should render correctly 1`] = `
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
             border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 calc(8pt * 9 / 8) 0 calc(8pt * 1.5);
-            height: calc(1.969 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
             background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.969 * 16pt);
-            padding: 4pt calc(1rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
@@ -135,10 +135,10 @@ exports[`Select Multiple should render correctly 1`] = `
             width: calc(100% - 1.25rem);
           }
 
-          .value :global(svg) {
+          .select :global(svg) {
             display: none;
           }
-          .value :global(.option) {
+          .select :global(.option) {
             border: 1px solid transparent;
           }
 
@@ -157,7 +157,7 @@ exports[`Select Multiple should render correctly 1`] = `
 
           .icon {
             position: absolute;
-            right: calc(8pt * 9 / 8);
+            right: calc(8px * 1.5);
             font-size: 1rem;
             top: 50%;
             bottom: 0;

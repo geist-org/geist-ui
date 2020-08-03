@@ -3,7 +3,7 @@
 exports[`Note should render correctly 1`] = `
 "<div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>note<style>
         .note {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #eaeaea;
@@ -20,7 +20,7 @@ exports[`Note should render correctly 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div>"
 `;
@@ -28,7 +28,7 @@ exports[`Note should render correctly 1`] = `
 exports[`Note should work with different styles 1`] = `
 "<div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>secondary<style>
         .note {
-          padding: calc(8pt / 2) calc(16pt / 2);
+          padding: calc(8px / 2) calc(16px / 2);
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #666;
@@ -45,11 +45,11 @@ exports[`Note should work with different styles 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>success<style>
         .note {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #58f17a;
@@ -66,11 +66,11 @@ exports[`Note should work with different styles 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>warning<style>
         .note {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #000;
@@ -87,11 +87,11 @@ exports[`Note should work with different styles 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>error<style>
         .note {
-          padding: calc(8pt / 2) calc(16pt / 2);
+          padding: calc(8px / 2) calc(16px / 2);
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #000;
@@ -108,7 +108,7 @@ exports[`Note should work with different styles 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div></div>"
 `;
@@ -116,7 +116,7 @@ exports[`Note should work with different styles 1`] = `
 exports[`Note should work with different types 1`] = `
 "<div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>secondary<style>
         .note {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #666;
@@ -133,11 +133,11 @@ exports[`Note should work with different types 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>success<style>
         .note {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #58f17a;
@@ -154,11 +154,11 @@ exports[`Note should work with different types 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>warning<style>
         .note {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #ffc438;
@@ -175,11 +175,11 @@ exports[`Note should work with different types 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>error<style>
         .note {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           font-size: 14px;
           line-height: 1.8;
           border: 1px solid #e15c56;
@@ -196,7 +196,7 @@ exports[`Note should work with different types 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 4px;
         }
       </style></div></div>"
 `;

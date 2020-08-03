@@ -74,7 +74,7 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
         className={`option ${divider ? 'divider' : ''} ${label ? 'label' : ''} ${className}`}
         onClick={clickHandler}
         {...props}>
-        <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
+        <Ellipsis height={`calc(2.25 * ${theme.layout.gap})`}>{children}</Ellipsis>
         {selected && <Check size={18} />}
       </div>
 
@@ -86,9 +86,9 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           align-items: center;
           font-weight: normal;
           font-size: 0.75rem;
-          height: calc(1.875 * ${theme.layout.gap});
+          height: calc(2.5 * ${theme.layout.gap});
           box-sizing: border-box;
-          padding: 0 calc(1.5 * ${theme.layout.gapHalf});
+          padding: 0 ${theme.layout.gap};
           background-color: ${colors.bgColor};
           color: ${colors.color};
           user-select: none;

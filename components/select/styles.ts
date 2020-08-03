@@ -26,22 +26,22 @@ type selectColors = {
 export const getSizes = (theme: ZeitUIThemes, size?: NormalSizes) => {
   const sizes: { [key in NormalSizes]: SelectSize } = {
     medium: {
-      height: `calc(1.969 * ${theme.layout.gap})`,
+      height: `calc(2.625 * ${theme.layout.gap})`,
       fontSize: '1rem',
       minWidth: '10rem',
     },
     small: {
-      height: `calc(1.344 * ${theme.layout.gap})`,
+      height: `calc(1.8 * ${theme.layout.gap})`,
       fontSize: '.75rem',
       minWidth: '8rem',
     },
     mini: {
-      height: `calc(1 * ${theme.layout.gap})`,
+      height: `calc(1.334 * ${theme.layout.gap})`,
       fontSize: '.75rem',
       minWidth: '6.5rem',
     },
     large: {
-      height: `calc(2 * ${theme.layout.gap})`,
+      height: `calc(2.667 * ${theme.layout.gap})`,
       fontSize: '1.225rem',
       minWidth: '12.5rem',
     },
