@@ -17,7 +17,9 @@ const Counter: React.FC<React.PropsWithChildren<CounterProps>> = ({ count, maxLe
     <div className="counter">
       <span className="count">{count}</span>
       {hasLimit && <span className="separator">/</span>}
-      {hasLimit && <span className="limit">{maxLength}</span>}
+      {hasLimit && (
+        <span className="limit">{Math.min(maxLength as number, Number.MAX_SAFE_INTEGER)}</span>
+      )}
       <style jsx>{`
         .counter {
           display: inline;
