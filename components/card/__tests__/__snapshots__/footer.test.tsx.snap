@@ -4,7 +4,7 @@ exports[`Card Footer should render correctly 1`] = `
 "<div class=\\"card \\"><div class=\\"content \\"><p>card</p><style>
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          padding: 16px 16px;
         }
 
         .content > :global(*:first-child) {
@@ -16,7 +16,7 @@ exports[`Card Footer should render correctly 1`] = `
         }
       </style></div><footer class=\\"auto-margin \\">footer<style>
         footer {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           display: flex;
           align-items: center;
           overflow: hidden;
@@ -26,13 +26,13 @@ exports[`Card Footer should render correctly 1`] = `
           border-top: 1px solid #eaeaea;
           border-bottom-left-radius: 4px;
           border-bottom-right-radius: 4px;
-          min-height: calc(2.5 * 16pt);
+          min-height: calc(2.5 * 16px);
         }
 
         .auto-margin :global(*) {
           margin-top: 0;
           margin-bottom: 0;
-          margin-right: 4pt;
+          margin-right: 4px;
         }
       </style></footer><style>
         .card {
@@ -67,7 +67,7 @@ exports[`Card Footer should render correctly 1`] = `
 exports[`Card Footer should work with disable-auto-margin 1`] = `
 "<footer class=\\" \\">footer<style>
         footer {
-          padding: 8pt 16pt;
+          padding: 8px 16px;
           display: flex;
           align-items: center;
           overflow: hidden;
@@ -77,13 +77,13 @@ exports[`Card Footer should work with disable-auto-margin 1`] = `
           border-top: 1px solid #eaeaea;
           border-bottom-left-radius: 4px;
           border-bottom-right-radius: 4px;
-          min-height: calc(2.5 * 16pt);
+          min-height: calc(2.5 * 16px);
         }
 
         .auto-margin :global(*) {
           margin-top: 0;
           margin-bottom: 0;
-          margin-right: 4pt;
+          margin-right: 4px;
         }
       </style></footer>"
 `;

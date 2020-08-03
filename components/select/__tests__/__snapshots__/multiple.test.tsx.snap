@@ -6,7 +6,7 @@ exports[`Select Multiple should render correctly 1`] = `
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"item  mock \\"><style>
@@ -98,27 +98,28 @@ exports[`Select Multiple should render correctly 1`] = `
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -129,9 +130,16 @@ exports[`Select Multiple should render correctly 1`] = `
             line-height: 1;
             padding: 0;
             margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
+            font-size: 1rem;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value > :global(div),
@@ -144,13 +152,13 @@ exports[`Select Multiple should render correctly 1`] = `
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
-            font-size: .875rem;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(0deg);
@@ -158,7 +166,7 @@ exports[`Select Multiple should render correctly 1`] = `
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         </style></div>"
 `;

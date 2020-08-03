@@ -118,6 +118,19 @@ describe('Slider', () => {
     changeHandler.mockRestore()
   })
 
+  it('should return the specified when the limit is float', () => {
+    let value = 0
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
+    const wrapper = mount(<Slider min={10.5} max={20} onChange={changeHandler} />)
+    const dot = wrapper.find('.dot').getDOMNode() as HTMLDivElement
+
+    act(() => triggerDrag(dot, 10))
+    expect(changeHandler).toHaveBeenCalled()
+    expect(value).toEqual(11.5)
+
+    changeHandler.mockRestore()
+  })
+
   it('should render number in dot', () => {
     let wrapper = mount(<Slider initialValue={20} />)
     expect(wrapper.find('.dot').text()).toContain('20')

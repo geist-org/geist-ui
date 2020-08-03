@@ -14,7 +14,7 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
 
   return (
     <div className="tabbar">
-      <Button className="toggle" auto type="abort" onClick={handler}>
+      <Button className="toggle" auto variant="text" onClick={handler}>
         <SlidersIcon size={16} />
       </Button>
       <span>ZEIT-UI React</span>

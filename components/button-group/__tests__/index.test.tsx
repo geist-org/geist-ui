@@ -16,12 +16,14 @@ describe('ButtonGroup', () => {
 
   it('props should be passed to each button', () => {
     const wrapper = mount(
-      <ButtonGroup size="mini" type="success">
+      <ButtonGroup size="mini" color="success">
         <Button>action</Button>
       </ButtonGroup>,
     )
     expect(wrapper.html()).toMatchSnapshot()
-    wrapper.setProps({ ghost: true })
+    wrapper.setProps({ variant: 'solid' })
+    expect(wrapper.html()).toMatchSnapshot()
+    wrapper.setProps({ variant: 'solid', color: 'error' })
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })

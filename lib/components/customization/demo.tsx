@@ -44,9 +44,7 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
           <a>Hyperlink Text</a>{' '}
         </Text>
         <Text>
-          <Link href="#" color>
-            Link Component
-          </Link>
+          <Link href="#">Link Component</Link>
         </Text>
         <Text>
           Our mission is to make cloud computing accessible to everyone. We build products for
@@ -74,7 +72,7 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
           Action
         </Button>
         <Spacer inline x={0.5} />
-        <Button auto type="secondary" size="small">
+        <Button auto color="secondary" size="small">
           Action
         </Button>
         <Spacer y={0.5} />

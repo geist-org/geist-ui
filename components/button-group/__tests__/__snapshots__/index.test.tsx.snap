@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonGroup buttons should be displayed vertically 1`] = `
-"<div class=\\"btn-group vertical \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action1</div><style>
+"<div class=\\"btn-group vertical \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action1</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
             padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            height: 2.8571rem;
+            line-height: 2.8571rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
-            font-size: .875rem;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 1rem;
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -23,23 +23,34 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #666;
-            background-color: #fff;
-            border: 1px solid #eaeaea;
+            color: #444;
+            background-color: #fdfdfe;
+            border: 2px solid #ebeced;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
             --zeit-ui-button-padding: 1.25rem;
-            --zeit-ui-button-height: 2.5rem;
-            --zeit-ui-button-color: #666;
-            --zeit-ui-button-bg: #fff;
+            --zeit-ui-button-height: 2.8571rem;
+            --zeit-ui-button-color: #444;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
-            color: #000;
-            --zeit-ui-button-color: #000;
-            background-color: #fff;
-            border-color: #000;
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #aaafbb;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #9b9eac;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
@@ -54,7 +65,7 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
             align-items: center;
             text-align: center;
             line-height: inherit;
-            top: -1px;
+            top: -2px;
           }
 
           .btn :global(.text p),
@@ -62,18 +73,21 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
           .btn :global(.text div) {
             margin: 0;
           }
-        </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action2</div><style>
+          .btn :global(.hidden) {
+            visibility: hidden;
+          }
+        </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action2</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
             padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            height: 2.8571rem;
+            line-height: 2.8571rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
-            font-size: .875rem;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 1rem;
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -84,23 +98,34 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #666;
-            background-color: #fff;
-            border: 1px solid #eaeaea;
+            color: #444;
+            background-color: #fdfdfe;
+            border: 2px solid #ebeced;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
             --zeit-ui-button-padding: 1.25rem;
-            --zeit-ui-button-height: 2.5rem;
-            --zeit-ui-button-color: #666;
-            --zeit-ui-button-bg: #fff;
+            --zeit-ui-button-height: 2.8571rem;
+            --zeit-ui-button-color: #444;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
-            color: #000;
-            --zeit-ui-button-color: #000;
-            background-color: #fff;
-            border-color: #000;
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #aaafbb;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #9b9eac;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
@@ -115,20 +140,23 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
             align-items: center;
             text-align: center;
             line-height: inherit;
-            top: -1px;
+            top: -2px;
           }
 
           .btn :global(.text p),
           .btn :global(.text pre),
           .btn :global(.text div) {
             margin: 0;
+          }
+          .btn :global(.hidden) {
+            visibility: hidden;
           }
         </style></button><style>
           .btn-group {
             display: inline-flex;
             border-radius: 4px;
-            margin: 4pt;
-            border: 1px solid #eaeaea;
+            margin: 4px;
+            border: 1px solid #ebeced;
             background-color: transparent;
             overflow: hidden;
             height: min-content;
@@ -149,7 +177,7 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
-            border-left: 1px solid #eaeaea;
+            border-left: 1px solid #ebeced;
           }
 
           .horizontal :global(.btn:not(:last-child)) {
@@ -160,7 +188,7 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-            border-top: 1px solid #eaeaea;
+            border-top: 1px solid #ebeced;
           }
 
           .vertical :global(.btn:not(:last-child)) {
@@ -171,7 +199,7 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
 `;
 
 exports[`ButtonGroup props should be passed to each button 1`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
+"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -180,8 +208,8 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
             line-height: 1.5rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
+            border-radius: 2px;
+            font-weight: bold;
             font-size: .75rem;
             user-select: none;
             outline: none;
@@ -193,22 +221,33 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #fff;
-            background-color: #58f17a;
-            border: 1px solid #58f17a;
+            color: #58f17a;
+            background-color: #fdfdfe;
+            border: 2px solid #58f17a;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
             --zeit-ui-button-padding: 0.625rem;
             --zeit-ui-button-height: 1.5rem;
-            --zeit-ui-button-color: #fff;
-            --zeit-ui-button-bg: #58f17a;
+            --zeit-ui-button-color: #58f17a;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
             color: #58f17a;
             --zeit-ui-button-color: #58f17a;
-            background-color: #fff;
+            background-color: #fdfdfe;
+            border-color: #58f17a;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #58f17a;
+            --zeit-ui-button-color: #58f17a;
+            background-color: #fdfdfe;
             border-color: #58f17a;
             cursor: pointer;
             pointer-events: auto;
@@ -224,7 +263,7 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
             align-items: center;
             text-align: center;
             line-height: inherit;
-            top: -1px;
+            top: -2px;
           }
 
           .btn :global(.text p),
@@ -232,120 +271,14 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
           .btn :global(.text div) {
             margin: 0;
           }
-        </style></button><style>
-          .btn-group {
-            display: inline-flex;
-            border-radius: 4px;
-            margin: 4pt;
-            border: 1px solid #fff;
-            background-color: transparent;
-            overflow: hidden;
-            height: min-content;
-          }
-
-          .vertical {
-            flex-direction: column;
-          }
-
-          .btn-group :global(.btn) {
-            border: none;
-          }
-
-          .btn-group :global(.btn .text) {
-            top: 0;
-          }
-
-          .horizontal :global(.btn:not(:first-child)) {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-left: 1px solid #fff;
-          }
-
-          .horizontal :global(.btn:not(:last-child)) {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .vertical :global(.btn:not(:first-child)) {
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-top: 1px solid #fff;
-          }
-
-          .vertical :global(.btn:not(:last-child)) {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-        </style></div>"
-`;
-
-exports[`ButtonGroup props should be passed to each button 2`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
-          .btn {
-            box-sizing: border-box;
-            display: inline-block;
-            padding: 0 0.625rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
-            min-width: min-content;
-            width: auto;
-            border-radius: 4px;
-            font-weight: 400;
-            font-size: .75rem;
-            user-select: none;
-            outline: none;
-            text-transform: capitalize;
-            justify-content: center;
-            text-align: center;
-            white-space: nowrap;
-            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
-              border 200ms ease 0ms, color 200ms ease 0ms;
-            position: relative;
-            overflow: hidden;
-            color: #fff;
-            background-color: #58f17a;
-            border: 1px solid #58f17a;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            --zeit-ui-button-padding: 0.625rem;
-            --zeit-ui-button-height: 1.5rem;
-            --zeit-ui-button-color: #fff;
-            --zeit-ui-button-bg: #58f17a;
-          }
-
-          .btn:hover {
-            color: #58f17a;
-            --zeit-ui-button-color: #58f17a;
-            background-color: #fff;
-            border-color: #58f17a;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
-          }
-
-          .btn :global(.text) {
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            line-height: inherit;
-            top: -1px;
-          }
-
-          .btn :global(.text p),
-          .btn :global(.text pre),
-          .btn :global(.text div) {
-            margin: 0;
+          .btn :global(.hidden) {
+            visibility: hidden;
           }
         </style></button><style>
           .btn-group {
             display: inline-flex;
             border-radius: 4px;
-            margin: 4pt;
+            margin: 4px;
             border: 1px solid #58f17a;
             background-color: transparent;
             overflow: hidden;
@@ -388,19 +321,19 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
         </style></div>"
 `;
 
-exports[`ButtonGroup should render correctly 1`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
+exports[`ButtonGroup props should be passed to each button 2`] = `
+"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            padding: 0 0.625rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
             min-width: min-content;
             width: auto;
-            border-radius: 4px;
-            font-weight: 400;
-            font-size: .875rem;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: .75rem;
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -411,23 +344,34 @@ exports[`ButtonGroup should render correctly 1`] = `
               border 200ms ease 0ms, color 200ms ease 0ms;
             position: relative;
             overflow: hidden;
-            color: #666;
-            background-color: #fff;
-            border: 1px solid #eaeaea;
+            color: #58f17a;
+            background-color: #fdfdfe;
+            border: 2px solid #58f17a;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --zeit-ui-button-padding: 1.25rem;
-            --zeit-ui-button-height: 2.5rem;
-            --zeit-ui-button-color: #666;
-            --zeit-ui-button-bg: #fff;
+            --zeit-ui-button-padding: 0.625rem;
+            --zeit-ui-button-height: 1.5rem;
+            --zeit-ui-button-color: #58f17a;
+            --zeit-ui-button-bg: #fdfdfe;
           }
 
           .btn:hover {
-            color: #000;
-            --zeit-ui-button-color: #000;
-            background-color: #fff;
-            border-color: #000;
+            color: #58f17a;
+            --zeit-ui-button-color: #58f17a;
+            background-color: #fdfdfe;
+            border-color: #58f17a;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #58f17a;
+            --zeit-ui-button-color: #58f17a;
+            background-color: #fdfdfe;
+            border-color: #58f17a;
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
@@ -442,7 +386,7 @@ exports[`ButtonGroup should render correctly 1`] = `
             align-items: center;
             text-align: center;
             line-height: inherit;
-            top: -1px;
+            top: -2px;
           }
 
           .btn :global(.text p),
@@ -450,12 +394,15 @@ exports[`ButtonGroup should render correctly 1`] = `
           .btn :global(.text div) {
             margin: 0;
           }
+          .btn :global(.hidden) {
+            visibility: hidden;
+          }
         </style></button><style>
           .btn-group {
             display: inline-flex;
             border-radius: 4px;
-            margin: 4pt;
-            border: 1px solid #eaeaea;
+            margin: 4px;
+            border: 1px solid #58f17a;
             background-color: transparent;
             overflow: hidden;
             height: min-content;
@@ -476,7 +423,7 @@ exports[`ButtonGroup should render correctly 1`] = `
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
-            border-left: 1px solid #eaeaea;
+            border-left: 1px solid #58f17a;
           }
 
           .horizontal :global(.btn:not(:last-child)) {
@@ -487,7 +434,253 @@ exports[`ButtonGroup should render correctly 1`] = `
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-            border-top: 1px solid #eaeaea;
+            border-top: 1px solid #58f17a;
+          }
+
+          .vertical :global(.btn:not(:last-child)) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        </style></div>"
+`;
+
+exports[`ButtonGroup props should be passed to each button 3`] = `
+"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action</div><style>
+          .btn {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 0 0.625rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            min-width: min-content;
+            width: auto;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: .75rem;
+            user-select: none;
+            outline: none;
+            text-transform: capitalize;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+              border 200ms ease 0ms, color 200ms ease 0ms;
+            position: relative;
+            overflow: hidden;
+            color: #fdfdfe;
+            background-color: #e15c56;
+            border: 2px solid #e15c56;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            --zeit-ui-button-padding: 0.625rem;
+            --zeit-ui-button-height: 1.5rem;
+            --zeit-ui-button-color: #fdfdfe;
+            --zeit-ui-button-bg: #e15c56;
+          }
+
+          .btn:hover {
+            color: #fdfdfe;
+            --zeit-ui-button-color: #fdfdfe;
+            background-color: #e15c56;
+            border-color: #e15c56;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #fdfdfe;
+            --zeit-ui-button-color: #fdfdfe;
+            background-color: #e15c56;
+            border-color: #e15c56;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn :global(.text) {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: inherit;
+            top: -2px;
+          }
+
+          .btn :global(.text p),
+          .btn :global(.text pre),
+          .btn :global(.text div) {
+            margin: 0;
+          }
+          .btn :global(.hidden) {
+            visibility: hidden;
+          }
+        </style></button><style>
+          .btn-group {
+            display: inline-flex;
+            border-radius: 4px;
+            margin: 4px;
+            border: 1px solid #fff;
+            background-color: transparent;
+            overflow: hidden;
+            height: min-content;
+          }
+
+          .vertical {
+            flex-direction: column;
+          }
+
+          .btn-group :global(.btn) {
+            border: none;
+          }
+
+          .btn-group :global(.btn .text) {
+            top: 0;
+          }
+
+          .horizontal :global(.btn:not(:first-child)) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 1px solid #fff;
+          }
+
+          .horizontal :global(.btn:not(:last-child)) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .vertical :global(.btn:not(:first-child)) {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-top: 1px solid #fff;
+          }
+
+          .vertical :global(.btn:not(:last-child)) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+        </style></div>"
+`;
+
+exports[`ButtonGroup should render correctly 1`] = `
+"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">action</div><style>
+          .btn {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 0 1.25rem;
+            height: 2.8571rem;
+            line-height: 2.8571rem;
+            min-width: min-content;
+            width: auto;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: 1rem;
+            user-select: none;
+            outline: none;
+            text-transform: capitalize;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+              border 200ms ease 0ms, color 200ms ease 0ms;
+            position: relative;
+            overflow: hidden;
+            color: #444;
+            background-color: #fdfdfe;
+            border: 2px solid #ebeced;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            --zeit-ui-button-padding: 1.25rem;
+            --zeit-ui-button-height: 2.8571rem;
+            --zeit-ui-button-color: #444;
+            --zeit-ui-button-bg: #fdfdfe;
+          }
+
+          .btn:hover {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #aaafbb;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn:active {
+            color: #444;
+            --zeit-ui-button-color: #444;
+            background-color: #fdfdfe;
+            border-color: #9b9eac;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn :global(.text) {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: inherit;
+            top: -2px;
+          }
+
+          .btn :global(.text p),
+          .btn :global(.text pre),
+          .btn :global(.text div) {
+            margin: 0;
+          }
+          .btn :global(.hidden) {
+            visibility: hidden;
+          }
+        </style></button><style>
+          .btn-group {
+            display: inline-flex;
+            border-radius: 4px;
+            margin: 4px;
+            border: 1px solid #ebeced;
+            background-color: transparent;
+            overflow: hidden;
+            height: min-content;
+          }
+
+          .vertical {
+            flex-direction: column;
+          }
+
+          .btn-group :global(.btn) {
+            border: none;
+          }
+
+          .btn-group :global(.btn .text) {
+            top: 0;
+          }
+
+          .horizontal :global(.btn:not(:first-child)) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 1px solid #ebeced;
+          }
+
+          .horizontal :global(.btn:not(:last-child)) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .vertical :global(.btn:not(:first-child)) {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-top: 1px solid #ebeced;
           }
 
           .vertical :global(.btn:not(:last-child)) {

@@ -18,15 +18,12 @@ export interface ZeitUIThemesPalette {
   code: string
   border: string
   success: string
-  successLighter: string
   successLight: string
   successDark: string
   error: string
-  errorHover: string
   errorLight: string
   errorDark: string
   warning: string
-  warningLighter: string
   warningLight: string
   warningDark: string
   cyan: string

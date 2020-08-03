@@ -6,7 +6,7 @@ exports[`Select should render correctly 1`] = `
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
@@ -27,27 +27,28 @@ exports[`Select should render correctly 1`] = `
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -58,9 +59,16 @@ exports[`Select should render correctly 1`] = `
             line-height: 1;
             padding: 0;
             margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
+            font-size: 1rem;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value > :global(div),
@@ -73,13 +81,13 @@ exports[`Select should render correctly 1`] = `
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
-            font-size: .875rem;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(0deg);
@@ -87,14 +95,14 @@ exports[`Select should render correctly 1`] = `
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1 * 16pt);
+          line-height: calc(1.334 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
@@ -115,27 +123,28 @@ exports[`Select should render correctly 1`] = `
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(1.334 * 16px);
             min-width: 6.5rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1 * 16pt);
-            padding: 4pt calc(.75rem * 2)
-              4pt 8pt;
+            min-height: calc(1.334 * 16px);
+            padding: 4px calc(.75rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -147,8 +156,15 @@ exports[`Select should render correctly 1`] = `
             padding: 0;
             margin-right: 1.25rem;
             font-size: .75rem;
-            color: #000;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value > :global(div),
@@ -161,12 +177,12 @@ exports[`Select should render correctly 1`] = `
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
+            right: calc(8px * 1.5);
             font-size: .75rem;
             top: 50%;
             bottom: 0;
@@ -175,14 +191,14 @@ exports[`Select should render correctly 1`] = `
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.344 * 16pt);
+          line-height: calc(1.8 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
@@ -203,27 +219,28 @@ exports[`Select should render correctly 1`] = `
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.344 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(1.8 * 16px);
             min-width: 8rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.344 * 16pt);
-            padding: 4pt calc(.75rem * 2)
-              4pt 8pt;
+            min-height: calc(1.8 * 16px);
+            padding: 4px calc(.75rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -235,8 +252,15 @@ exports[`Select should render correctly 1`] = `
             padding: 0;
             margin-right: 1.25rem;
             font-size: .75rem;
-            color: #000;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value > :global(div),
@@ -249,12 +273,12 @@ exports[`Select should render correctly 1`] = `
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
+            right: calc(8px * 1.5);
             font-size: .75rem;
             top: 50%;
             bottom: 0;
@@ -263,14 +287,14 @@ exports[`Select should render correctly 1`] = `
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(2 * 16pt);
+          line-height: calc(2.667 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
@@ -291,27 +315,28 @@ exports[`Select should render correctly 1`] = `
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(2 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.667 * 16px);
             min-width: 12.5rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(2 * 16pt);
-            padding: 4pt calc(1.225rem * 2)
-              4pt 8pt;
+            min-height: calc(2.667 * 16px);
+            padding: 4px calc(1.225rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -323,8 +348,15 @@ exports[`Select should render correctly 1`] = `
             padding: 0;
             margin-right: 1.25rem;
             font-size: 1.225rem;
-            color: #000;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value > :global(div),
@@ -337,12 +369,12 @@ exports[`Select should render correctly 1`] = `
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
+            right: calc(8px * 1.5);
             font-size: 1.225rem;
             top: 50%;
             bottom: 0;
@@ -351,9 +383,163 @@ exports[`Select should render correctly 1`] = `
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         </style></div></div>"
+`;
+
+exports[`Select should render correctly when variant=text 1`] = `
+"<div><div class=\\"select  \\"><span class=\\"value\\"><div class=\\"option   \\"><span>Option 2<style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: calc(2.25 * 16px);
+          min-width: 0;
+        }
+      </style></span><svg viewBox=\\"0 0 24 24\\" width=\\"18\\" height=\\"18\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M20 6L9 17l-5-5\\"></path></svg></div><style>
+        .option {
+          display: flex;
+          max-width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: normal;
+          font-size: 0.75rem;
+          height: calc(2.5 * 16px);
+          box-sizing: border-box;
+          padding: 0 16px;
+          background-color: #fdfdfe;
+          color: #0054fe;
+          user-select: none;
+          border: 1px solid #0054fe;
+          cursor: pointer;
+          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+        }
+
+        .option:hover {
+          background-color: #fdfdfe;
+          color: #0054fe;
+          border: 1px solid #0054fe;
+        }
+
+        .divider {
+          line-height: 0;
+          height: 0;
+          padding: 0;
+          overflow: hidden;
+          border-top: 1px solid #eaeaea;
+          margin: 0.5rem 0;
+          width: 100%;
+        }
+
+        .label {
+          font-size: 0.875rem;
+          color: #0054fe;
+          border-bottom: 1px solid #eaeaea;
+          text-transform: capitalize;
+          cursor: default;
+        }
+      </style></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+          .select {
+            display: inline-flex;
+            align-items: center;
+            user-select: none;
+            white-space: nowrap;
+            position: relative;
+            cursor: pointer;
+            max-width: 80vw;
+            width: initial;
+            overflow: hidden;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            border: 1px solid parent;
+            border-radius: 4px;
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
+            min-width: 10rem;
+            background-color: transparent;
+          }
+
+          .multiple {
+            height: auto;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
+          }
+
+          .select:hover {
+            border-color: #0054fe;
+          }
+
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
+          }
+
+          .value {
+            display: inline-flex;
+            flex: 1;
+            height: 100%;
+            align-items: center;
+            line-height: 1;
+            padding: 0;
+            margin-right: 1.25rem;
+            font-size: 1rem;
+            color: #444;
+            width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
+          }
+
+          .value > :global(div),
+          .value > :global(div:hover) {
+            border-radius: 0;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            color: inherit;
+          }
+
+          .placeholder {
+            color: #9b9eac;
+          }
+
+          .icon {
+            position: absolute;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
+            top: 50%;
+            bottom: 0;
+            transform: translateY(-50%) rotate(0deg);
+            pointer-events: none;
+            transition: transform 200ms ease;
+            display: flex;
+            align-items: center;
+            color: #444;
+          }
+        </style></div>,</div>"
+`;
+
+exports[`Select should render right border with variant=text when hover 1`] = `
+"<div class=\\"option   \\"><span>Option 1<style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: calc(2.25 * 16px);
+          min-width: 0;
+        }
+      </style></span></div>"
 `;
 
 exports[`Select should work correctly with labels 1`] = `
@@ -362,7 +548,7 @@ exports[`Select should work correctly with labels 1`] = `
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
@@ -383,27 +569,28 @@ exports[`Select should work correctly with labels 1`] = `
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -414,9 +601,16 @@ exports[`Select should work correctly with labels 1`] = `
             line-height: 1;
             padding: 0;
             margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
+            font-size: 1rem;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value > :global(div),
@@ -429,13 +623,13 @@ exports[`Select should work correctly with labels 1`] = `
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
-            font-size: .875rem;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(0deg);
@@ -443,7 +637,7 @@ exports[`Select should work correctly with labels 1`] = `
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         </style></div>"
 `;
@@ -472,7 +666,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       ",
@@ -520,27 +714,28 @@ initialize {
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -551,9 +746,16 @@ initialize {
             line-height: 1;
             padding: 0;
             margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
+            font-size: 1rem;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value &gt; :global(div),
@@ -566,13 +768,13 @@ initialize {
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
-            font-size: .875rem;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(0deg);
@@ -580,7 +782,7 @@ initialize {
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         ",
               "next": null,
@@ -624,27 +826,28 @@ initialize {
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -655,9 +858,16 @@ initialize {
             line-height: 1;
             padding: 0;
             margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
+            font-size: 1rem;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value &gt; :global(div),
@@ -670,13 +880,13 @@ initialize {
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
-            font-size: .875rem;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(0deg);
@@ -684,7 +894,7 @@ initialize {
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         ",
             "next": null,
@@ -714,7 +924,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       ",
@@ -824,7 +1034,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       ",
@@ -900,27 +1110,28 @@ initialize {
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -931,9 +1142,16 @@ initialize {
             line-height: 1;
             padding: 0;
             margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
+            font-size: 1rem;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value &gt; :global(div),
@@ -946,13 +1164,13 @@ initialize {
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
-            font-size: .875rem;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(0deg);
@@ -960,7 +1178,7 @@ initialize {
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         ",
                 "next": null,
@@ -1042,27 +1260,28 @@ initialize {
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -1073,9 +1292,16 @@ initialize {
             line-height: 1;
             padding: 0;
             margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
+            font-size: 1rem;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value &gt; :global(div),
@@ -1088,13 +1314,13 @@ initialize {
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
-            font-size: .875rem;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(0deg);
@@ -1102,7 +1328,7 @@ initialize {
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         ",
               "next": null,
@@ -1138,7 +1364,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       ",
@@ -1205,27 +1431,28 @@ initialize {
             width: initial;
             overflow: hidden;
             transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
+            border: 1px solid #dbdde0;
             border-radius: 4px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
+            padding: 0 calc(8px * 1.5) 0 16px;
+            height: calc(2.625 * 16px);
             min-width: 10rem;
-            background-color: #fff;
+            background-color: transparent;
           }
 
           .multiple {
             height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
+            min-height: calc(2.625 * 16px);
+            padding: 4px calc(1rem * 2)
+              4px 8px;
           }
 
           .select:hover {
-            border-color: #000;
+            border-color: #0054fe;
           }
 
-          .select:hover .icon {
-            color: #000;
+          .select:hover .icon,
+          .select:hover .value {
+            color: #0054fe;
           }
 
           .value {
@@ -1236,9 +1463,16 @@ initialize {
             line-height: 1;
             padding: 0;
             margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
+            font-size: 1rem;
+            color: #444;
             width: calc(100% - 1.25rem);
+          }
+
+          .select :global(svg) {
+            display: none;
+          }
+          .select :global(.option) {
+            border: 1px solid transparent;
           }
 
           .value &gt; :global(div),
@@ -1251,13 +1485,13 @@ initialize {
           }
 
           .placeholder {
-            color: #999;
+            color: #9b9eac;
           }
 
           .icon {
             position: absolute;
-            right: 4pt;
-            font-size: .875rem;
+            right: calc(8px * 1.5);
+            font-size: 1rem;
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(0deg);
@@ -1265,7 +1499,7 @@ initialize {
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: #666;
+            color: #444;
           }
         ",
             "next": null,
@@ -1325,7 +1559,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: calc(2.625 * 16px);
           min-width: 0;
         }
       ",

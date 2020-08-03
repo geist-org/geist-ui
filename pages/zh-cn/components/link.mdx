@@ -1,3 +1,4 @@
+import { ExternalLink, Link as LinkIcon1, Link2 as LinkIcon2 } from '@zeit-ui/react-icons'
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Link, Text, Code, Spacer } from 'components'
 import NextLink from 'next/link'
@@ -12,45 +13,52 @@ export const meta = {
 网页之间的超链接。
 
 <Playground
-  desc="组件默认会为链接添加一个图标。"
+  desc="默认的链接样式。"
   scope={{ Link }}
   code={`
-<Link href="#">通过使用指南和教程来学习如何用 React</Link>
+<Link href="#">气宇轩昂的超链接</Link>
 `}
 />
 
 <Playground
-  title="高亮"
-  desc="以不同的颜色区分链接。"
+  title="朴素"
+  desc="朴素的链接样式，默认颜色和正文一致。"
   scope={{ Link }}
   code={`
-<Link href="#" color>通过使用指南和教程来学习如何用 React</Link>
+<Link href="#" plain>气宇轩昂的超链接</Link>
 `}
 />
 
 <Playground
-  title="变体"
-  desc="链接的不同样式。"
-  scope={{ Link, Text }}
+  title="下划线"
+  desc="链接显示下划线。"
+  scope={{ Link }}
   code={`
-<>
-  <Text><Link href="#">严格模式通过抛出错误来消除了一些原有静默错误</Link></Text>
-  <Text><Link href="#" color>严格模式通过抛出错误来消除了一些原有静默错误</Link></Text>
-  <Text><Link href="#" underline>通过使用指南和教程来学习如何用 React</Link></Text>
-  <Text><Link href="#" underline>通过使用指南和教程来学习如何用 React</Link></Text>
-</>
+<Link href="#" underline>气宇轩昂的超链接</Link>
 `}
 />
 
 <Playground
   title="图标"
-  desc="在链接中显示修饰图标。"
-  scope={{ Link, Spacer }}
+  desc="在链接的左侧或者右侧显示自定义的修饰图标。"
+  scope={{ Link, Text, ExternalLink, LinkIcon1, LinkIcon2 }}
   code={`
 <>
-  <Link href="#" icon>通过使用指南和教程来学习如何用 React</Link>
-  <Spacer y={.5} />
-  <Link href="#" icon color>通过使用指南和教程来学习如何用 React</Link>
+  <Text>
+    <Link href="#" iconRight={<LinkIcon1 />}>
+      气宇轩昂的超链接
+    </Link>
+  </Text>
+  <Text>
+    <Link href="#" iconLeft={<LinkIcon2 />}>
+      气宇轩昂的超链接
+    </Link>
+  </Text>
+  <Text>
+    <Link href="#" iconLeft={<LinkIcon2 />} iconRight={<ExternalLink />}>
+      气宇轩昂的超链接
+    </Link>
+  </Text>
 </>
 `}
 />
@@ -60,7 +68,7 @@ export const meta = {
   desc="将链接单独作为一个块显示。"
   scope={{ Link }}
   code={`
-<Link href="#" block>请参阅转换成严格模式</Link>
+<Link href="#" block>气宇轩昂的超链接</Link>
 `}
 />
 
@@ -74,7 +82,7 @@ export const meta = {
   scope={{ Link, NextLink }}
   code={`
 <NextLink href="/zh-cn/components/button">
-  <Link block>浏览更多文档</Link>
+  <Link block>气宇轩昂的超链接</Link>
 </NextLink>
 `}
 />
@@ -82,15 +90,17 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/link.mdx">
 <Attributes.Title>Link.Props</Attributes.Title>
 
-| 属性          | 描述                   | 类型                                            | 推荐值                 | 默认    |
-| ------------- | ---------------------- | ----------------------------------------------- | ---------------------- | ------- |
-| **href**      | 链接地址               | `string`                                        | -                      | -       |
-| **color**     | 是否高亮显示           | `boolean`                                       | -                      | `false` |
-| **icon**      | 在文本后显示图标       | `boolean`                                       | -                      | `false` |
-| **underline** | 显示下划线             | `boolean`                                       | -                      | `false` |
-| **block**     | 是否以块的方式显示链接 | `boolean`                                       | -                      | `false` |
-| **ref**       | 转发的原生链接 Ref     | <Code>Ref<HTMLAnchorElement &#124; null></Code> | -                      | -       |
-| ...           | 原生属性               | `AnchorHTMLAttributes`                          | `'rel', 'target', ...` | -       |
+| 属性          | 描述                                 | 类型                                            | 推荐值          | 默认    |
+| ------------- | ------------------------------------ | ----------------------------------------------- | --------------- | ------- |
+| **href**      | 链接地址                             | `string`                                        | -               | -       |
+| **plain**     | 是否显示朴素样式，默认颜色和正文一致 | `boolean`                                       | -               | `false` |
+| **iconLeft**  | 在左侧显示图标                       | `React.ReactNode`                               | -               | -       |
+| **iconRight** | 在右侧显示图标                       | `React.ReactNode`                               | -               | -       |
+| **underline** | 是否显示下划线                       | `boolean`                                       | -               | `false` |
+| **block**     | 是否以块的方式显示链接               | `boolean`                                       | -               | `false` |
+| **disabled**  | 是否被禁用                           | `boolean`                                       | -               | `false` |
+| **ref**       | 转发的原生链接 Ref                   | <Code>Ref<HTMLAnchorElement &#124; null></Code> | -               | -       |
+| ...           | 原生属性                             | `AnchorHTMLAttributes`                          | `'target', ...` | -       |
 
 </Attributes>
 

@@ -5,6 +5,7 @@ import { ButtonProps } from 'components/button/button'
 import { ButtonGroupConfig } from 'components/button-group/button-group-context'
 
 export const getButtonChildrenWithIcon = (
+  loading: boolean,
   auto: boolean,
   size: NormalSizes,
   children: ReactNode,
@@ -20,11 +21,11 @@ export const getButtonChildrenWithIcon = (
     auto || size === 'mini'
       ? `calc(var(--zeit-ui-button-height) / 2 + var(--zeit-ui-button-padding) * .5)`
       : 0
-  if (!hasIcon) return <div className="text">{children}</div>
+  if (!hasIcon) return <div className={`text ${loading ? 'hidden' : ''}`}>{children}</div>
   return (
     <>
       <ButtonIcon isRight={isRight}>{hasIcon}</ButtonIcon>
-      <div className={`text ${isRight ? 'right' : 'left'}`}>
+      <div className={`text ${isRight ? 'right' : 'left'} ${loading ? 'hidden' : ''}`}>
         {children}
         <style jsx>{`
           .left {
@@ -50,7 +51,8 @@ export const filterPropsWithGroup = (
     shadow: false,
     ghost: config.ghost || props.ghost,
     size: config.size || props.size,
-    type: config.type || props.type,
+    variant: config.variant || props.variant,
+    color: config.color || props.color,
     disabled: config.disabled || props.disabled,
   }
 }

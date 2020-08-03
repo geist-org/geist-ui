@@ -27,6 +27,23 @@ Display a dropdown list of items.
 />
 
 <Playground
+  title="Text"
+  desc="Text usage."
+  scope={{ Select }}
+  code={`
+() => {
+  const handler = val => console.log(val)
+  return (
+    <Select variant="text" placeholder="Choose one" onChange={handler}>
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+  )
+}
+`}
+/>
+
+<Playground
   title="Disabled"
   desc="Disable all options."
   scope={{ Select }}
@@ -150,6 +167,7 @@ Display a dropdown list of items.
 | **value**             | selected value                          | `string`, `string[]`                                | -                                 | -               |
 | **initialValue**      | initial value                           | `string`, `string[]`                                | -                                 | -               |
 | **placeholder**       | placeholder string                      | `string`                                            | -                                 | -               |
+| **variant**           | select type                             | `string`                                            | [SelectTypes](#selecttypes)       | `line`          |
 | **width**             | css width value of select               | `string`                                            | -                                 | `initial`       |
 | **size**              | select component size                   | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
 | **icon**              | icon component                          | `ComponentType`                                     | -                                 | `SVG Component` |
@@ -174,6 +192,12 @@ Display a dropdown list of items.
 
 ```ts
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
+
+<Attributes.Title>SelectTypes</Attributes.Title>
+
+```ts
+type SelectTypes = 'line' | 'text'
 ```
 
 </Attributes>
