@@ -3,10 +3,10 @@ import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { useAutoCompleteContext } from './auto-complete-context'
 import { NormalSizes } from '../utils/prop-types'
-import Ellipsis from '../shared/ellipsis'
+import FuzzyMatch from '../shared/fuzzy-match'
 
 interface Props {
-  value: string
+  label: string
   isLabelOnly?: boolean
   solid?: boolean
 }
@@ -28,18 +28,18 @@ const getSizes = (size: NormalSizes) => {
 }
 
 const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>> = ({
-  value: identValue,
+  solid,
+  label,
   children,
   isLabelOnly,
 }) => {
   const theme = useTheme()
   const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
-    updateValue && updateValue(identValue)
+    updateValue && updateValue(label)
     updateVisible && updateVisible(false)
   }
 
-  const isActive = useMemo(() => value === identValue, [identValue, value])
   const fontSize = useMemo(() => getSizes(size), [size])
 
   // The 'isLabelOnly' is only used inside the component,
@@ -50,9 +50,14 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
   }, [isLabelOnly, theme.layout.gap])
 
   return (
-    <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
+    <div className="item" onClick={selectHandler}>
       {isLabelOnly ? (
-        <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
+        <FuzzyMatch
+          color={solid ? 'secondary' : 'primary'}
+          query={value || ''}
+          label={label}
+          height={`calc(1.688 * ${theme.layout.gap})`}
+        />
       ) : (
         children
       )}

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
+
 import Input from '../input'
 import Loading from '../loading'
 import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
@@ -17,7 +18,6 @@ const DEFAULT_CSS_TRANSITION_LEAVE_TIME =
 
 export type AutoCompleteOption = {
   label: string
-  value: string
 }
 
 export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>
@@ -57,16 +57,12 @@ const defaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
 
-const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
+const childrenToOptionsNode = (options: Array<AutoCompleteOption>, solid: boolean) =>
   options.map((item, index) => {
     const key = `auto-complete-item-${index}`
     if (React.isValidElement(item)) return React.cloneElement(item, { key })
     const validItem = item
-    return (
-      <AutoCompleteItem key={key} value={validItem.value} isLabelOnly>
-        {validItem.label}
-      </AutoCompleteItem>
-    )
+    return <AutoCompleteItem solid={solid} key={key} label={validItem.label} isLabelOnly />
   })
 
 // When the search is not set, the "clearable" icon can be displayed in the original location.
@@ -107,6 +103,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 
   const [, searchChild] = pickChild(children, AutoCompleteSearching)
   const [, emptyChild] = pickChild(children, AutoCompleteEmpty)
+
   const autoCompleteItems = useMemo(() => {
     const hasSearchChild = searchChild && React.Children.count(searchChild) > 0
     const hasEmptyChild = emptyChild && React.Children.count(emptyChild) > 0
@@ -121,8 +118,8 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
       if (state === '') return null
       return hasEmptyChild ? emptyChild : <AutoCompleteEmpty>No Options</AutoCompleteEmpty>
     }
-    return childrenToOptionsNode(options as Array<AutoCompleteOption>)
-  }, [searching, options])
+    return childrenToOptionsNode(options as Array<AutoCompleteOption>, solid)
+  }, [searching, options, solid])
 
   const showClearIcon = useMemo(() => clearable && searching === undefined, [clearable, searching])
 

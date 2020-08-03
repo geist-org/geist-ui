@@ -18,9 +18,9 @@ export const meta = {
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   return <AutoComplete placeholder="在这里输入" options={options} />
 }
@@ -34,11 +34,11 @@ export const meta = {
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
-  return <AutoComplete disableFreeSolo options={options} initialValue="sydney" />
+  return <AutoComplete disableFreeSolo options={options} initialValue="Sydney" />
 }
 `}
 />
@@ -50,9 +50,9 @@ export const meta = {
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   return <AutoComplete disabled options={options} initialValue="London" />
 }
@@ -66,14 +66,14 @@ export const meta = {
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     setOptions(relatedOptions)
   }
   return <AutoComplete options={options} placeholder="在这里输入" onSearch={searchHandler} />
@@ -88,9 +88,9 @@ export const meta = {
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const [searching, setSearching] = useState(false)
@@ -99,7 +99,7 @@ export const meta = {
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
     setSearching(true)
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     // this is mock async request
     // you can get data in any way
     timer.current && clearTimeout(timer.current)
@@ -139,14 +139,14 @@ export const meta = {
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     setOptions(relatedOptions)
   }
   return (
@@ -166,8 +166,8 @@ export const meta = {
   scope={{ AutoComplete, useState, Text, Badge, Grid }}
   code={`
 () => {
-  const makeOption = (label, value) => (
-    <AutoComplete.Option value={value}>
+  const makeOption = (label) => (
+    <AutoComplete.Option label={label}>
       <Grid.Container style={{ padding: '10pt 0' }}>
         <Grid xs={24}><Text span b size="1.2rem">最近的搜索结果</Text></Grid>
         <Grid.Container xs={24}>
@@ -178,15 +178,15 @@ export const meta = {
     </AutoComplete.Option>
   )
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    const customOptions = relatedOptions.map(({ label, value }) => makeOption(label, value))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
+    const customOptions = relatedOptions.map(({ label }) => makeOption(label))
     setOptions(customOptions)
   }
   return (
@@ -206,9 +206,9 @@ export const meta = {
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   return (
     <>
@@ -232,37 +232,11 @@ export const meta = {
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   return <AutoComplete placeholder="在这里输入" clearable options={options} />
-}
-`}
-/>
-
-<Playground
-  title="可创建的"
-  desc="为任意值添加待选条目。"
-  scope={{ AutoComplete }}
-  code={`
-() => {
-  const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
-  ]
-  const [options, setOptions] = React.useState()
-  const searchHandler = (currentValue) => {
-    const createOptions = [{
-      value: currentValue, label: 'Add "' + currentValue + '"'
-    }]
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    const optionsWithCreatable = relatedOptions.length !== 0 ? relatedOptions : createOptions
-    setOptions(optionsWithCreatable)
-  }
-  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} onSelect={console.log}/>
 }
 `}
 />
@@ -314,7 +288,6 @@ export const meta = {
 ```ts
 Array<{
   label: string
-  value: string
 } | AutoComplete.Item>
 ```
 

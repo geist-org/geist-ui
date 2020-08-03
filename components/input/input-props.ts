@@ -27,6 +27,7 @@ export interface Props {
 }
 
 export const defaultProps = {
+  solid: false,
   disabled: false,
   readOnly: false,
   clearable: false,

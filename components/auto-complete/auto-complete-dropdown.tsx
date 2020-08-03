@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useState } from 'react'
+import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
