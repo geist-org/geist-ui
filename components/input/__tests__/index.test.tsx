@@ -16,7 +16,7 @@ describe('Input', () => {
         <Input size="small" />
         <Input size="large" />
         <Input width="50%" />
-        <Input solid />
+        <Input variant="solid" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -37,9 +37,9 @@ describe('Input', () => {
     const wrapper = mount(
       <div>
         <Input label="label" />
-        <Input solid label="label" />
+        <Input variant="solid" olid label="label" />
         <Input labelRight="label" />
-        <Input solid labelRight="label" />
+        <Input variant="solid" labelRight="label" />
         <Input>
           <span>Block Label</span>
         </Input>

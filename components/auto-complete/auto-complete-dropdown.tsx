@@ -6,7 +6,7 @@ import Dropdown from '../shared/dropdown'
 import { getColors } from '../input/styles'
 
 interface Props {
-  solid?: boolean
+  variant?: string
   visible: boolean
   className?: string
   disableMatchWidth?: boolean
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const defaultProps = {
-  solid: false,
+  variant: 'line',
   className: '',
   dropdownStyle: {},
 }
@@ -24,17 +24,18 @@ export type AutoCompleteDropdownProps = Props & typeof defaultProps & NativeAttr
 
 const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdownProps>> = ({
   children,
-  solid,
+  variant,
   visible,
   className,
   dropdownStyle,
   disableMatchWidth,
 }) => {
+  const isSolid = useMemo(() => variant === 'solid', [variant])
   const theme = useTheme()
   const { ref, value } = useAutoCompleteContext()
   const { border, hoverBorderColor, hoverBackgroundColor } = useMemo(
-    () => getColors(theme.palette, 'default', solid),
-    [theme.palette, status, solid],
+    () => getColors(theme.palette, 'default', isSolid),
+    [theme.palette, status, isSolid],
   )
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -51,7 +52,7 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
       clearTime={value === '' ? 0 : 60}
       leaveTime={value === '' ? 0 : 60}>
       <div
-        className={`auto-complete-dropdown ${className} ${solid ? 'solid' : 'lined'}`}
+        className={`auto-complete-dropdown ${className} ${isSolid ? 'solid' : 'line'}`}
         style={dropdownStyle}
         onClick={clickHandler}>
         <div className="divider"></div>

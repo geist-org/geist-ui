@@ -1,8 +1,8 @@
 import React from 'react'
-import { NormalSizes, InputTypes } from 'components/utils/prop-types'
+import { NormalSizes, InputTypes, InputVariantTypes } from 'components/utils/prop-types'
 
 export interface Props {
-  solid?: boolean
+  variant?: InputVariantTypes
   value?: string
   initialValue?: string
   placeholder?: string
@@ -27,7 +27,7 @@ export interface Props {
 }
 
 export const defaultProps = {
-  solid: false,
+  variant: 'line' as InputVariantTypes,
   disabled: false,
   readOnly: false,
   clearable: false,

@@ -34,7 +34,7 @@ const simulateChangeEvent = (
 const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputProps>>(
   (
     {
-      solid,
+      variant,
       label,
       labelRight,
       size,
@@ -64,6 +64,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     ref: React.Ref<HTMLInputElement | null>,
   ) => {
     const theme = useTheme()
+    const isSolid = useMemo(() => variant === 'solid', [variant])
     const inputRef = useRef<HTMLInputElement>(null)
     useImperativeHandle(ref, () => inputRef.current)
 
@@ -94,7 +95,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       hoverBorderColor,
       backgroundColor,
       hoverBackgroundColor,
-    } = useMemo(() => getColors(theme.palette, status, solid), [theme.palette, status, solid])
+    } = useMemo(() => getColors(theme.palette, status, isSolid), [theme.palette, status, isSolid])
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return
       setSelfValue(event.target.value)
@@ -166,12 +167,12 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
         {children && <InputBlockLabel>{children}</InputBlockLabel>}
         <div className={`input-container ${className}`}>
           {label && (
-            <InputLabel solid={solid} fontSize={fontSize}>
+            <InputLabel variant={variant} fontSize={fontSize}>
               {label}
             </InputLabel>
           )}
           <div
-            className={`input-wrapper ${solid ? 'solid' : 'lined'} ${hover ? 'hover' : ''} ${
+            className={`input-wrapper ${isSolid ? 'solid' : 'line'} ${hover ? 'hover' : ''} ${
               focus ? 'focus' : ''
             } ${disabled ? 'disabled' : ''} ${labelClasses}`}>
             {icon && <InputIcon paddingRight="0.5714rem" icon={icon} {...iconProps} />}
@@ -201,7 +202,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
           </div>
           {labelRight && (
-            <InputLabel solid={solid} fontSize={fontSize} isRight={true}>
+            <InputLabel variant={variant} fontSize={fontSize} isRight={true}>
               {labelRight}
             </InputLabel>
           )}
@@ -248,7 +249,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             cursor: not-allowed;
           }
 
-          .lined.input-wrapper.disabled {
+          .line.input-wrapper.disabled {
             border-color: ${theme.palette.cNeutral2};
           }
 

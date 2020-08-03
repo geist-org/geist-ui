@@ -16,7 +16,7 @@ describe('Textarea', () => {
         <Textarea status="primary" />
         <Textarea width="20%" />
         <Textarea minHeight="100px" />
-        <Textarea solid />
+        <Textarea variant="solid" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

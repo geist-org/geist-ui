@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
+import withDefaults from '../utils/with-defaults'
+import { InputVariantTypes } from '../utils/prop-types'
 
 export interface InputLabel {
   isRight?: boolean
   fontSize: string
-  solid?: boolean
+  variant?: InputVariantTypes
 }
 
-const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
+const defaultProps = {
+  variant: 'line' as InputVariantTypes,
+}
+
+type InputLabelProps = InputLabel & typeof defaultProps
+
+const InputLabel: React.FC<React.PropsWithChildren<InputLabelProps>> = ({
   children,
-  solid,
+  variant,
   isRight,
   fontSize,
 }) => {
   const theme = useTheme()
+  const isSolid = useMemo(() => variant === 'solid', [variant])
 
   return (
     <span className={isRight ? 'right' : ''}>
@@ -31,10 +40,10 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
           background-color: ${theme.palette.accents_1};
           border-top-left-radius: ${theme.expressiveness.R2};
           border-bottom-left-radius: ${theme.expressiveness.R2};
-          border-top: ${solid ? 'none' : '1px solid ' + theme.palette.border};
-          border-left: ${solid ? 'none' : '1px solid ' + theme.palette.border};
-          border-right: ${solid ? '1px solid ' + theme.palette.cNeutral8 : 'none'};
-          border-bottom: ${solid ? 'none' : '1px solid ' + theme.palette.border};
+          border-top: ${isSolid ? 'none' : '1px solid ' + theme.palette.border};
+          border-left: ${isSolid ? 'none' : '1px solid ' + theme.palette.border};
+          border-right: ${isSolid ? '1px solid ' + theme.palette.cNeutral8 : 'none'};
+          border-bottom: ${isSolid ? 'none' : '1px solid ' + theme.palette.border};
           font-size: ${fontSize};
         }
 
@@ -43,14 +52,14 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
           border-bottom-left-radius: 0;
           border-top-right-radius: ${theme.expressiveness.R2};
           border-bottom-right-radius: ${theme.expressiveness.R2};
-          border-left: ${solid ? '1px solid ' + theme.palette.cNeutral8 : 'none'};
-          border-right: ${solid ? 'none' : '1px solid ' + theme.palette.border};
+          border-left: ${isSolid ? '1px solid ' + theme.palette.cNeutral8 : 'none'};
+          border-right: ${isSolid ? 'none' : '1px solid ' + theme.palette.border};
         }
       `}</style>
     </span>
   )
 }
 
-const MemoInputLabel = React.memo(InputLabel)
+const MemoInputLabel = withDefaults(React.memo(InputLabel), defaultProps)
 
 export default MemoInputLabel

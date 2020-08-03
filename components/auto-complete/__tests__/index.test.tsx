@@ -11,7 +11,7 @@ describe('AutoComplete', () => {
     expect(
       <div>
         <AutoComplete />
-        <AutoComplete solid />
+        <AutoComplete variant="solid" />
       </div>,
     ).toMatchSnapshot()
   })
@@ -19,7 +19,7 @@ describe('AutoComplete', () => {
   it('should support sizes and status', () => {
     const wrapper = mount(
       <div>
-        <AutoComplete solid />
+        <AutoComplete variant="solid" />
         <AutoComplete status="primary" />
         <AutoComplete status="success" />
         <AutoComplete size="mini" />

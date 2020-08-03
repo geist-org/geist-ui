@@ -8,7 +8,7 @@ describe('InputPassword', () => {
     const wrapper = mount(
       <div>
         <Input.Password />
-        <Input.Password solid />
+        <Input.Password variant="solid" />
       </div>,
     )
     let el = wrapper.find('input').at(0).getDOMNode() as HTMLInputElement

@@ -1,14 +1,14 @@
 import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { getColors } from '../input/styles'
 import useTheme from '../styles/use-theme'
-import { InputTypes } from '../utils/prop-types'
+import { InputTypes, InputVariantTypes } from '../utils/prop-types'
 import withDefaults from '../utils/with-defaults'
 import Counter from './counter'
 
 interface Props {
   counter?: boolean
   maxLength?: number
-  solid?: boolean
+  variant?: InputVariantTypes
   value?: string
   initialValue?: string
   placeholder?: string
@@ -26,6 +26,7 @@ interface Props {
 }
 
 const defaultProps = {
+  variant: 'line' as InputVariantTypes,
   initialValue: '',
   status: 'default' as InputTypes,
   width: 'initial',
@@ -43,7 +44,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     {
       counter,
       maxLength,
-      solid,
+      variant,
       width,
       status,
       minHeight,
@@ -62,6 +63,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     },
     ref: React.Ref<HTMLTextAreaElement | null>,
   ) => {
+    const isSolid = useMemo(() => variant === 'solid', [variant])
     const theme = useTheme()
     const hasLimit = useMemo(() => Number.isInteger(maxLength) && (maxLength as number) > 0, [
       maxLength,
@@ -73,8 +75,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
     const { color, border, hoverBorderColor, backgroundColor, hoverBackgroundColor } = useMemo(
-      () => getColors(theme.palette, status, solid),
-      [theme.palette, status],
+      () => getColors(theme.palette, status, isSolid),
+      [theme.palette, status, isSolid],
     )
 
     const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -119,7 +121,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     return (
       <div
         className={`wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
-          solid ? 'solid' : 'lined'
+          isSolid ? 'solid' : 'lined'
         } ${disabled ? 'disabled' : ''} ${className}`}>
         <textarea
           ref={textareaRef}

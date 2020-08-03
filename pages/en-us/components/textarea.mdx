@@ -18,7 +18,7 @@ Retrieve multi-line user input.
 <>
   <Textarea placeholder="Please enter a description." />
   <Spacer inline />
-  <Textarea solid placeholder="Please enter a description." />
+  <Textarea variant="solid" placeholder="Please enter a description." />
 </>
 `}
 />
@@ -40,7 +40,7 @@ Retrieve multi-line user input.
 <>
   <Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
   <Spacer inline />
-  <Textarea solid width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+  <Textarea variant="solid" width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
 </>
 `}
 />
@@ -68,9 +68,9 @@ Retrieve multi-line user input.
   <Spacer x={.5} inline />
   <Textarea status="error" minHeight="65px" value="Error" />
   <Spacer y={.5} />
-  <Textarea solid status="primary" minHeight="65px" value="Primary" />
+  <Textarea variant="solid" status="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
-  <Textarea solid status="error" minHeight="65px" value="Error" />
+  <Textarea variant="solid" status="error" minHeight="65px" value="Error" />
 </>
 `}
 />
@@ -147,6 +147,7 @@ Retrieve multi-line user input.
 
 | Attribute        | Description           | Type                             | Accepted values                                         | Default   |
 | ---------------- | --------------------- | -------------------------------- | ------------------------------------------------------- | --------- |
+| **variant**      | textarea variant      | `string`                         | `'solid', 'line'`                                       | `line`    |
 | **value**        | textarea value        | `string`                         | -                                                       | -         |
 | **initialValue** | textarea value        | `string`                         | -                                                       | -         |
 | **placeholder**  | placeholder           | `string`                         | -                                                       | -         |

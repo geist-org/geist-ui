@@ -25,7 +25,7 @@ AutoComplete control of input field.
   <div style={{display: 'flex'}}>
     <AutoComplete placeholder="Enter here" options={options} />
     <Spacer inline />
-    <AutoComplete solid placeholder="Enter here" options={options} />
+    <AutoComplete variant="solid" placeholder="Enter here" options={options} />
   </div>)
   }
 `}
@@ -46,7 +46,7 @@ AutoComplete control of input field.
   <div style={{display: 'flex'}}>
     <AutoComplete disabled options={options} initialValue="London" />
     <Spacer inline />
-    <AutoComplete solid disabled options={options} initialValue="London" />
+    <AutoComplete variant="solid" disabled options={options} initialValue="London" />
   </div>)
 }
 `}
@@ -93,9 +93,9 @@ AutoComplete control of input field.
   }
   return (
   <div style={{display: 'flex'}}>
-  <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
-  <Spacer inline />
-  <AutoComplete solid options={solidOptions} placeholder="Enter here" onSearch={solidSearchHandler} />
+    <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
+    <Spacer inline />
+    <AutoComplete variant="solid" options={solidOptions} placeholder="Enter here" onSearch={solidSearchHandler} />
   </div>)
   }
 `}
@@ -154,9 +154,9 @@ AutoComplete control of input field.
       onSearch={searchHandler} />
     <Spacer inline />
     <AutoComplete
-      solid
+      variant="solid"
       searching={solidSearching}
-      options={options}
+      options={solidOptions}
       placeholder="Enter here"
       onSearch={solidSearchHandler} />
   </div>
@@ -179,7 +179,7 @@ return (
     </AutoComplete.Searching>
   </AutoComplete>
   <Spacer inline />
-  <AutoComplete solid searching placeholder="Enter here" width="100%">
+  <AutoComplete variant="solid" searching placeholder="Enter here" width="100%">
     <AutoComplete.Searching>
       <span style={{ color: 'red' }}>waiting...</span>
     </AutoComplete.Searching>
@@ -273,7 +273,7 @@ return (
     onSearch={searchHandler} />
   <Spacer y={1} />
   <AutoComplete
-    solid
+    variant="solid"
     placeholder="Enter here"
     width="100%"
     options={solidOptions}
@@ -325,7 +325,7 @@ return (
   <div  style={{display: 'flex'}}>
   <AutoComplete placeholder="Enter here" clearable options={options} />
   <Spacer inline />
-  <AutoComplete solid placeholder="Enter here" clearable options={options} />
+  <AutoComplete variant="solid" placeholder="Enter here" clearable options={options} />
   </div>)
   }
 `}
@@ -336,6 +336,7 @@ return (
 
 | Attribute             | Description                               | Type                                             | Accepted values                                         | Default   |
 | --------------------- | ----------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
+| **variant**           | variant of input                          | string                                           | `'solid', 'line'`                                       | `line`    |
 | **options**           | options of input                          | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
 | **status**            | input type                                | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **size**              | input size                                | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |

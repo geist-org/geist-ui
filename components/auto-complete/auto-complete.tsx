@@ -4,7 +4,7 @@ import Input from '../input'
 import Loading from '../loading'
 import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'
-import { InputTypes, NormalSizes } from '../utils/prop-types'
+import { InputTypes, NormalSizes, InputVariantTypes } from '../utils/prop-types'
 import useClickAway from '../utils/use-click-away'
 import useCurrentState from '../utils/use-current-state'
 import { AutoCompleteConfig, AutoCompleteContext } from './auto-complete-context'
@@ -23,7 +23,7 @@ export type AutoCompleteOption = {
 export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>
 
 interface Props {
-  solid?: boolean
+  variant?: InputVariantTypes
   options: AutoCompleteOptions
   size?: NormalSizes
   status?: InputTypes
@@ -43,7 +43,7 @@ interface Props {
 }
 
 const defaultProps = {
-  solid: false,
+  variant: 'line' as InputVariantTypes,
   options: [] as AutoCompleteOptions,
   initialValue: '',
   disabled: false,
@@ -57,12 +57,12 @@ const defaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
 
-const childrenToOptionsNode = (options: Array<AutoCompleteOption>, solid: boolean) =>
+const childrenToOptionsNode = (options: Array<AutoCompleteOption>, variant: InputVariantTypes) =>
   options.map((item, index) => {
     const key = `auto-complete-item-${index}`
     if (React.isValidElement(item)) return React.cloneElement(item, { key })
     const validItem = item
-    return <AutoCompleteItem solid={solid} key={key} label={validItem.label} isLabelOnly />
+    return <AutoCompleteItem variant={variant} key={key} label={validItem.label} isLabelOnly />
   })
 
 // When the search is not set, the "clearable" icon can be displayed in the original location.
@@ -73,7 +73,7 @@ const getSearchIcon = (searching?: boolean) => {
 }
 
 const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
-  solid,
+  variant,
   options,
   initialValue: customInitialValue,
   onSelect,
@@ -118,8 +118,8 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
       if (state === '') return null
       return hasEmptyChild ? emptyChild : <AutoCompleteEmpty>No Options</AutoCompleteEmpty>
     }
-    return childrenToOptionsNode(options as Array<AutoCompleteOption>, solid)
-  }, [searching, options, solid])
+    return childrenToOptionsNode(options as Array<AutoCompleteOption>, variant)
+  }, [searching, options, variant])
 
   const showClearIcon = useMemo(() => clearable && searching === undefined, [clearable, searching])
 
@@ -194,7 +194,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
 
   return (
     <AutoCompleteContext.Provider value={initialValue}>
-      <div ref={ref} className={`auto-complete ${solid ? 'solid' : 'lined'}`}>
+      <div ref={ref} className={`auto-complete ${variant === 'solid' ? 'solid' : 'line'}`}>
         <CSSTransition
           renderable
           visible={dropdownVisible}
@@ -202,7 +202,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
           leaveTime={state === '' ? 0 : 60}
           className={`in-auto-complete ${focus ? 'auto-complete-focus' : ''}`}>
           <Input
-            solid={solid}
+            variant={variant}
             ref={inputRef}
             size={size}
             status={status}
@@ -215,7 +215,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
           />
         </CSSTransition>
         <AutoCompleteDropdown
-          solid={solid}
+          variant={variant}
           visible={dropdownVisible}
           disableMatchWidth={disableMatchWidth}
           className={dropdownClassName}

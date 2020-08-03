@@ -4,15 +4,16 @@ import useTheme from '../styles/use-theme'
 import { useAutoCompleteContext } from './auto-complete-context'
 import { NormalSizes } from '../utils/prop-types'
 import FuzzyMatch from '../shared/fuzzy-match'
+import { InputVariantTypes } from '../utils/prop-types'
 
 interface Props {
   label: string
   isLabelOnly?: boolean
-  solid?: boolean
+  variant?: InputVariantTypes
 }
 
 const defaultProps = {
-  solid: false,
+  variant: 'line' as InputVariantTypes,
 }
 
 export type AutoCompleteItemProps = Props & typeof defaultProps & React.HTMLAttributes<any>
@@ -28,7 +29,7 @@ const getSizes = (size: NormalSizes) => {
 }
 
 const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>> = ({
-  solid,
+  variant,
   label,
   children,
   isLabelOnly,
@@ -53,7 +54,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
     <div className="item" onClick={selectHandler}>
       {isLabelOnly ? (
         <FuzzyMatch
-          color={solid ? 'secondary' : 'primary'}
+          color={variant === 'solid' ? 'secondary' : 'primary'}
           query={value || ''}
           label={label}
           height={`calc(1.688 * ${theme.layout.gap})`}

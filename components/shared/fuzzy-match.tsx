@@ -27,9 +27,6 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type FuzzyMatchProps = Props & typeof defaultProps & NativeAttrs
 
-const color = { secondary: 'inherit', primary: 'inherit' }
-const highlightColor = { secondary: 'inherit', primary: 'inherit' }
-
 const FuzzyMatchComponent: React.FC<React.PropsWithChildren<FuzzyMatchProps>> = ({
   color: colorType,
   className,

@@ -18,7 +18,7 @@ export const meta = {
 <>
   <Textarea placeholder="请输入一段描述。" />
   <Spacer inline />
-  <Textarea solid placeholder="请输入一段描述。" />
+  <Textarea variant="solid" placeholder="请输入一段描述。" />
 </>
 `}
 />
@@ -40,7 +40,7 @@ export const meta = {
 <>
   <Textarea width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
   <Spacer inline />
-  <Textarea solid width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+  <Textarea variant="solid" width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
 </>
 `}
 />
@@ -68,9 +68,9 @@ export const meta = {
   <Spacer x={.5} inline />
   <Textarea status="error" minHeight="65px" value="错误" />
   <Spacer y={.5} />
-  <Textarea solid status="primary" minHeight="65px" value="主要的" />
+  <Textarea variant="solid" status="primary" minHeight="65px" value="主要的" />
   <Spacer x={.5} inline />
-  <Textarea solid status="error" minHeight="65px" value="错误" />
+  <Textarea variant="solid" status="error" minHeight="65px" value="错误" />
 </>
 `}
 />
@@ -147,6 +147,7 @@ export const meta = {
 
 | 属性             | 描述               | 类型                             | 推荐值                                                  | 默认      |
 | ---------------- | ------------------ | -------------------------------- | ------------------------------------------------------- | --------- |
+| **variant**      | 设置文本框的类型    | `string`                         | `'solid', 'line'`                                      | `line`    |
 | **value**        | 设置文本框的值     | `string`                         | -                                                       | -         |
 | **initialValue** | 文本框的初始值     | `string`                         | -                                                       | -         |
 | **placeholder**  | 占位文本           | `string`                         | -                                                       | -         |

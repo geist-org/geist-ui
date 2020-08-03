@@ -19,7 +19,7 @@ export const meta = {
 <>
   <Input placeholder="一个基础示例" />
   <Spacer inline />
-  <Input solid placeholder="一个基础示例" />
+  <Input variant="solid" placeholder="一个基础示例" />
 </>
 `}
 />
@@ -32,19 +32,19 @@ export const meta = {
 <>
   <Input size="mini" placeholder="mini" />
   <Spacer inline />
-  <Input solid size="mini" placeholder="mini" />
+  <Input variant="solid" size="mini" placeholder="mini" />
   <Spacer y={.5} />
   <Input size="small" placeholder="small" />
   <Spacer inline />
-  <Input solid size="small" placeholder="small" />
+  <Input variant="solid" size="small" placeholder="small" />
   <Spacer y={.5} />
   <Input size="medium" placeholder="medium" />
   <Spacer inline />
-  <Input solid size="medium" placeholder="medium" />
+  <Input variant="solid" size="medium" placeholder="medium" />
   <Spacer y={.5} />
   <Input size="large" placeholder="large" />
   <Spacer inline />
-  <Input solid size="large" placeholder="large" />
+  <Input variant="solid" size="large" placeholder="large" />
 </>
 `}
 />
@@ -66,11 +66,11 @@ export const meta = {
 <>
   <Input disabled placeholder="禁用" />
   <Spacer inline />
-  <Input solid disabled placeholder="禁用" />
+  <Input variant="solid" disabled placeholder="禁用" />
   <Spacer y={.5} />
   <Input readOnly initialValue="只读" />
   <Spacer inline />
-  <Input solid readOnly initialValue="只读" />
+  <Input variant="solid" readOnly initialValue="只读" />
 </>
 `}
 />
@@ -83,11 +83,11 @@ export const meta = {
 <>
   <Input label="用户名" placeholder="一个基础示例" />
   <Spacer inline />
-  <Input solid label="用户名" placeholder="一个基础示例" />
+  <Input variant="solid" label="用户名" placeholder="一个基础示例" />
   <Spacer y={.5} />
   <Input labelRight=".com" placeholder="https://github" />
   <Spacer inline />
-  <Input solid labelRight=".com" placeholder="https://github" />
+  <Input variant="solid" labelRight=".com" placeholder="https://github" />
 </>
 `}
 />
@@ -123,11 +123,11 @@ export const meta = {
 <>
   <Input status="primary" initialValue="主要" />
   <Spacer inline />
-  <Input solid status="primary" initialValue="主要" />
+  <Input variant="solid" status="primary" initialValue="主要" />
   <Spacer y={.5} />
   <Input status="error" initialValue="包含错误" />
   <Spacer inline />
-  <Input solid status="error" initialValue="包含错误" />
+  <Input variant="solid" status="error" initialValue="包含错误" />
 </>
 `}
 />
@@ -140,35 +140,35 @@ export const meta = {
 <>
   <Input size="mini" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer inline />
-  <Input solid size="mini" icon={<AlertCircle />} placeholder="获取信息" />
+  <Input variant="solid" size="mini" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
   <Input size="small" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer inline />
-  <Input solid size="small" icon={<AlertCircle />} placeholder="获取信息" />
+  <Input variant="solid" size="small" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
   <Input size="medium" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer inline />
-  <Input solid size="medium" icon={<AlertCircle />} placeholder="获取信息" />
+  <Input variant="solid" size="medium" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
   <Input size="large" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer inline />
-  <Input solid size="large" icon={<AlertCircle />} placeholder="获取信息" />
+  <Input variant="solid" size="large" icon={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
   <Input size="mini" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer inline />
-  <Input solid size="mini" iconRight={<AlertCircle />} placeholder="获取信息" />
+  <Input variant="solid" size="mini" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
   <Input size="small" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer inline />
-  <Input solid size="small" iconRight={<AlertCircle />} placeholder="获取信息" />
+  <Input variant="solid" size="small" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
   <Input size="medium" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer inline />
-  <Input solid size="medium" iconRight={<AlertCircle />} placeholder="获取信息" />
+  <Input variant="solid" size="medium" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer y={.5} />
   <Input size="large" iconRight={<AlertCircle />} placeholder="获取信息" />
   <Spacer inline />
-  <Input solid size="large" iconRight={<AlertCircle />} placeholder="获取信息" />
+  <Input variant="solid" size="large" iconRight={<AlertCircle />} placeholder="获取信息" />
 </>
 `}
 />
@@ -190,7 +190,7 @@ export const meta = {
 <>
   <Input clearable initialValue="示例文字" placeholder="输入文本" />
   <Spacer inline />
-  <Input solid clearable initialValue="示例文字" placeholder="输入文本" />
+  <Input variant="solid" clearable initialValue="示例文字" placeholder="输入文本" />
 </>
 `}
 />
@@ -264,10 +264,11 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/input.mdx">
 <Attributes.Title>Input.Props</Attributes.Title>
 
-| 属性              | 描述                 | 类型                                           | 推荐值                      | 默认      |
+| 属性              | 描述                   | 类型                                           | 推荐值                      | 默认      |
 | ----------------- | -------------------- | ---------------------------------------------- | --------------------------- | --------- |
-| **value**         | 命令式设定输入框的值 | `string`                                       | -                           | -         |
-| **initialValue**  | 初始值               | `string`                                       | -                           | -         |
+| **variant**       | 输入框的类型           | `string`                                       | [InputVariantTypes](#inputvarianttypes) | `line`    |
+| **value**         | 命令式设定输入框的值     | `string`                                       | -                           | -         |
+| **initialValue**  | 初始值                | `string`                                       | -                           | -         |
 | **placeholder**   | 占位文本             | `string`                                       | -                           | -         |
 | **size**          | 输入框大小           | `NormalSizes`                                  | [InputSizes](#inputsizes)   | `medium`  |
 | **status**        | 输入框状态           | `NormalTypes`                                  | [InputStatus](#inputstatus) | `default` |
@@ -291,6 +292,12 @@ export const meta = {
 | -------------- | ------------------ | ------------- | --------------------------- | ------- |
 | **hideToggle** | 隐藏切换密码的按钮 | `boolean`     | -                           | `false` |
 | ...            | 输入框组件属性     | `Input.Props` | [Input.Props](#input.props) | -       |
+
+<Attributes.Title>InputVariantTypes</Attributes.Title>
+
+```ts
+type InputVariantTypes = 'solid' | 'line'
+```
 
 <Attributes.Title>InputSizes</Attributes.Title>
 
