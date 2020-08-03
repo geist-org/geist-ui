@@ -1,5 +1,7 @@
 import { ZeitUIThemes } from '../styles/themes'
 
+const animationDuration = '0.2s'
+
 // picker animation lalala~
 export const animationStyle = (
   <style jsx global>{`
@@ -117,13 +119,13 @@ export const animationStyle = (
 
     .slide-up-enter,
     .slide-up-appear {
-      animation-duration: 0.2s;
+      animation-duration: ${animationDuration};
       animation-fill-mode: both;
       animation-play-state: paused;
     }
 
     .slide-up-leave {
-      animation-duration: 0.2s;
+      animation-duration: ${animationDuration};
       animation-fill-mode: both;
       animation-play-state: paused;
     }
@@ -152,13 +154,13 @@ export const animationStyle = (
 
     .slide-down-enter,
     .slide-down-appear {
-      animation-duration: 0.2s;
+      animation-duration: ${animationDuration};
       animation-fill-mode: both;
       animation-play-state: paused;
     }
 
     .slide-down-leave {
-      animation-duration: 0.2s;
+      animation-duration: ${animationDuration};
       animation-fill-mode: both;
       animation-play-state: paused;
     }
@@ -187,13 +189,13 @@ export const animationStyle = (
 
     .slide-left-enter,
     .slide-left-appear {
-      animation-duration: 0.2s;
+      animation-duration: ${animationDuration};
       animation-fill-mode: both;
       animation-play-state: paused;
     }
 
     .slide-left-leave {
-      animation-duration: 0.2s;
+      animation-duration: ${animationDuration};
       animation-fill-mode: both;
       animation-play-state: paused;
     }
@@ -222,13 +224,13 @@ export const animationStyle = (
 
     .slide-right-enter,
     .slide-right-appear {
-      animation-duration: 0.2s;
+      animation-duration: ${animationDuration};
       animation-fill-mode: both;
       animation-play-state: paused;
     }
 
     .slide-right-leave {
-      animation-duration: 0.2s;
+      animation-duration: ${animationDuration};
       animation-fill-mode: both;
       animation-play-state: paused;
     }
@@ -259,24 +261,26 @@ export const animationStyle = (
 
 // picker style
 export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 'cfx') => {
+
+  // TODO dark theme
+  // TODO use input style
   const pattern = {
     color: {
-      bg: '#fff',
-      bg2: '#e6f7ff',
-      bg3: '#cbe6ff',
-      bgHover: '#f5f5f5',
-      border: '#f0f0f0',
-      border2: '#7ec1ff',
-      border3: '#d9d9d9',
-      border4: '#91d5ff',
-      base1: '#1890ff',
-      hover: '#40a9ff',
-      active: '#096dd9',
-      placeholder: '#bfbfbf',
-      heading: 'rgba(0, 0, 0, 0.85)',
-      disabled: 'rgba(0, 0, 0, 0.25)',
-      text: 'rgba(0, 0, 0, 0.65)',
-      text2: 'rgba(0, 0, 0, 0.45)',
+      bg: theme.palette.background, // '#fff',
+      bg2: theme.palette.cTheme0, // '#e6f7ff',
+      bgHover: theme.palette.cTheme0, // '#f5f5f5',
+      border: theme.palette.cTheme5, // '#f0f0f0',
+      border2: theme.palette.cTheme5, // '#7ec1ff',
+      border3: theme.palette.cNeutral5, // '#d9d9d9',
+      // border4: '#91d5ff',
+      base: theme.palette.cTheme5, // '#1890ff',
+      hover: theme.palette.cTheme5, // '#40a9ff',
+      active: theme.palette.cTheme5, // '#096dd9',
+      placeholder: theme.palette.cNeutral5, // '#bfbfbf',
+      heading: theme.palette.cNeutral7, // ''rgba(0, 0, 0, 0.85)',
+      disabled: theme.palette.cNeutral5, // 'rgba(0, 0, 0, 0.25)',
+      text: theme.palette.cNeutral7, // 'rgba(0, 0, 0, 0.65)',
+      // text2: 'rgba(0, 0, 0, 0.45)',
       shadow: 'rgba(24, 144, 255, 0.2)',
       shadow2: 'rgba(0, 0, 0, 0.06)',
       containerShadow:
@@ -285,7 +289,10 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
       other2: 'rgba(230, 247, 255, 0.2)',
     },
     size: {
-      cell: '24px',
+      cell: '32px', // '24px',
+      cellRadius: '32px', // '24px',
+      icon: '7px',
+      fontHeader: '1.2rem',
       fontLarge: '1rem',
       fontMedium: '.875rem',
       fontSmall: '.75rem',
@@ -302,13 +309,11 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           flex-direction: column;
           text-align: center;
           background: ${pattern.color.bg};
-          border: 1px solid ${pattern.color.border};
-          border-radius: 2px;
           outline: none;
         }
 
         .${prefix}-picker-panel-focused {
-          border-color: ${pattern.color.base1};
+          border-color: ${pattern.color.base};
         }
 
         .${prefix}-picker-decade-panel,
@@ -320,14 +325,13 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-time-panel {
           display: flex;
           flex-direction: column;
-          width: 280px;
+          width: ${((parseInt(pattern.size.cell, 10) + 20) * 7 + 3 * 6) + 'px'};
         }
 
         .${prefix}-picker-header {
           display: flex;
-          padding: 0 8px;
+          padding: 0 16px;
           color: ${pattern.color.heading};
-          border-bottom: 1px solid ${pattern.color.border};
         }
 
         .${prefix}-picker-header > * {
@@ -336,7 +340,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
 
         .${prefix}-picker-header button {
           padding: 0;
-          color: ${pattern.color.disabled};
+          color: ${pattern.color.text};
           line-height: 40px;
           background: 0 0;
           border: 0;
@@ -346,22 +350,24 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
 
         .${prefix}-picker-header > button {
           min-width: 1.6em;
-          font-size: ${pattern.size.fontMedium};
+          font-size: ${pattern.size.fontHeader};
         }
 
         .${prefix}-picker-header > button:hover {
-          color: ${pattern.color.text};
+          color: ${pattern.color.hover};
         }
 
         .${prefix}-picker-header-view {
           flex: auto;
-          font-weight: 500;
+          font-weight: 700;
           line-height: 40px;
+          font-size: ${pattern.size.fontHeader};
         }
 
         .${prefix}-picker-header-view button {
           color: inherit;
           font-weight: inherit;
+          font-size: ${pattern.size.fontHeader};
         }
 
         .${prefix}-picker-header-view button:not(:first-child) {
@@ -369,7 +375,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-header-view button:hover {
-          color: ${pattern.color.base1};
+          color: ${pattern.color.base};
         }
 
         .${prefix}-picker-prev-icon,
@@ -378,8 +384,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-super-next-icon {
           position: relative;
           display: inline-block;
-          width: 7px;
-          height: 7px;
+          width: ${pattern.size.icon};
+          height: ${pattern.size.icon};
         }
 
         .${prefix}-picker-prev-icon::before,
@@ -390,8 +396,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           top: 0;
           left: 0;
           display: inline-block;
-          width: 7px;
-          height: 7px;
+          width: ${pattern.size.icon};
+          height: ${pattern.size.icon};
           border: 0 solid currentColor;
           border-width: 1.5px 0 0 1.5px;
           content: '';
@@ -403,8 +409,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           top: 4px;
           left: 4px;
           display: inline-block;
-          width: 7px;
-          height: 7px;
+          width: ${pattern.size.icon};
+          height: ${pattern.size.icon};
           border: 0 solid currentColor;
           border-width: 1.5px 0 0 1.5px;
           content: '';
@@ -437,10 +443,11 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           height: 30px;
           color: ${pattern.color.text};
           line-height: 30px;
+          font-weight: 500;
         }
 
         .${prefix}-picker-cell {
-          padding: 3px 0;
+          padding: 2px 2px;
           color: ${pattern.color.disabled};
           cursor: pointer;
         }
@@ -471,7 +478,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           min-width: ${pattern.size.cell};
           height: ${pattern.size.cell};
           line-height: ${pattern.size.cell};
-          border-radius: 2px;
+          border-radius: ${pattern.size.cellRadius};
           transition: background 0.3s, border 0.3s;
         }
 
@@ -488,9 +495,12 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           bottom: 0;
           left: 0;
           z-index: 1;
-          border: 1px solid ${pattern.color.base1};
-          border-radius: 2px;
+          border-radius: 50%;
           content: '';
+        }
+
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-today .${prefix}-picker-cell-inner {
+          background: ${pattern.color.bg2};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range {
@@ -498,19 +508,19 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range::before {
-          background: ${pattern.color.bg2};
+          // background: ${pattern.color.bg2};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-selected .${prefix}-picker-cell-inner,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start .${prefix}-picker-cell-inner,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end .${prefix}-picker-cell-inner {
           color: ${pattern.color.bg};
-          background: ${pattern.color.base1};
+          background: ${pattern.color.base};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:not(.${prefix}-picker-cell-range-start-single)::before,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:not(.${prefix}-picker-cell-range-end-single)::before {
-          background: ${pattern.color.bg2};
+          // background: ${pattern.color.bg2};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start::before {
@@ -525,7 +535,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end:not(.${prefix}-picker-cell-in-range):not(.${prefix}-picker-cell-range-start):not(.${prefix}-picker-cell-range-end)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start.${prefix}-picker-cell-range-start-single::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end.${prefix}-picker-cell-range-end-single::after,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover:not(.${prefix}-picker-cell-in-range)::after {
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover:not(.${prefix}-picker-cell-in-range)::after,
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range::after {
           position: absolute;
           top: 50%;
           z-index: 0;
@@ -538,7 +549,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
 
         .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-cell-range-hover-end::after,
-        .${prefix}-picker-cell-range-hover::after {
+        .${prefix}-picker-cell-range-hover::after,
+        .${prefix}-picker-cell-in-range::after {
           right: 0;
           left: 2px;
         }
@@ -554,17 +566,17 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-panel
           > :not(.${prefix}-picker-date-panel)
           .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range.${prefix}-picker-cell-range-hover-end::before {
-          background: ${pattern.color.bg3};
+          // background: ${pattern.color.bg2};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:not(.${prefix}-picker-cell-range-start-single):not(.${prefix}-picker-cell-range-end)
           .${prefix}-picker-cell-inner {
-          border-radius: 2px 0 0 2px;
+          border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:not(.${prefix}-picker-cell-range-end-single):not(.${prefix}-picker-cell-range-start)
           .${prefix}-picker-cell-inner {
-          border-radius: 0 2px 2px 0;
+          border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
         }
 
         .${prefix}-picker-date-panel
@@ -577,7 +589,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           top: 0;
           bottom: 0;
           z-index: -1;
-          background: ${pattern.color.bg3};
+          background: ${pattern.color.bg2};
           content: '';
         }
 
@@ -605,26 +617,29 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
 
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover:first-child::after,
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end:first-child::after,
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range:first-child::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-edge-start:not(.${prefix}-picker-cell-range-hover-edge-start-near-range)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start::after {
-          left: 6px;
+          left: 10px;
           border-left: 1px dashed ${pattern.color.border2};
-          border-top-left-radius: 2px;
-          border-bottom-left-radius: 2px;
+          border-top-left-radius: ${pattern.size.cellRadius};
+          border-bottom-left-radius: ${pattern.size.cellRadius};
         }
 
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover:last-child::after,
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start:last-child::after,
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range:last-child::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-edge-end:not(.${prefix}-picker-cell-range-hover-edge-end-near-range)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end::after {
-          right: 6px;
+          right: 10px;
           border-right: 1px dashed ${pattern.color.border2};
-          border-top-right-radius: 2px;
-          border-bottom-right-radius: 2px;
+          border-top-right-radius: ${pattern.size.cellRadius};
+          border-bottom-right-radius: ${pattern.size.cellRadius};
         }
 
         .${prefix}-picker-cell-disabled {
           pointer-events: none;
+          cursor: not-allowed;
         }
 
         .${prefix}-picker-cell-disabled .${prefix}-picker-cell-inner {
@@ -633,7 +648,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-cell-disabled::before {
-          background: ${pattern.color.bgHover};
+          background: ${pattern.color.bg};
         }
 
         .${prefix}-picker-cell-disabled.${prefix}-picker-cell-today .${prefix}-picker-cell-inner::before {
@@ -644,7 +659,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-year-panel .${prefix}-picker-content,
         .${prefix}-picker-quarter-panel .${prefix}-picker-content,
         .${prefix}-picker-month-panel .${prefix}-picker-content {
-          height: 264px;
+          // height: 264px;
         }
 
         .${prefix}-picker-decade-panel .${prefix}-picker-cell-inner,
@@ -670,11 +685,6 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           min-width: 100%;
           line-height: 38px;
           text-align: center;
-          border-bottom: 1px solid transparent;
-        }
-
-        .${prefix}-picker-panel .${prefix}-picker-footer {
-          border-top: 1px solid ${pattern.color.border};
         }
 
         .${prefix}-picker-footer-extra {
@@ -683,9 +693,9 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           text-align: left;
         }
 
-        .${prefix}-picker-footer-extra:not(:last-child) {
-          border-bottom: 1px solid ${pattern.color.border};
-        }
+        // .${prefix}-picker-footer-extra:not(:last-child) {
+        //   border-bottom: 1px solid ${pattern.color.border};
+        // }
 
         .${prefix}-picker-now {
           text-align: left;
@@ -695,16 +705,24 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           display: none;
         }
 
-        .${prefix}-picker-today-btn {
-          color: ${pattern.color.base1};
+        .${prefix}-picker-now-btn {
+          color: ${pattern.color.text};
         }
 
-        .${prefix}-picker-today-btn:hover {
+        .${prefix}-picker-now-btn:hover {
           color: ${pattern.color.hover};
         }
 
+        .${prefix}-picker-today-btn {
+          color: ${pattern.color.text};
+        }
+
+        .${prefix}-picker-today-btn:hover {
+          color: ${pattern.color.base};
+        }
+
         .${prefix}-picker-today-btn:active {
-          color: ${pattern.color.active};
+          color: ${pattern.color.base};
         }
 
         .${prefix}-picker-today-btn.${prefix}-picker-today-btn-disabled {
@@ -723,7 +741,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-year-panel .${prefix}-picker-body,
         .${prefix}-picker-quarter-panel .${prefix}-picker-body,
         .${prefix}-picker-month-panel .${prefix}-picker-body {
-          padding: 0 8px;
+          padding: 0 10px;
         }
 
         .${prefix}-picker-year-panel .${prefix}-picker-cell-inner,
@@ -735,37 +753,37 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-year-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-start::after {
-          left: 14px;
+          left: 18px;
           border-left: 1px dashed ${pattern.color.border2};
-          border-radius: 2px 0 0 2px;
+          border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
         }
 
         .${prefix}-picker-panel-rtl .${prefix}-picker-year-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-start::after {
-          right: 14px;
+          right: 18px;
           border-right: 1px dashed ${pattern.color.border2};
-          border-radius: 0 2px 2px 0;
+          border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
         }
 
         .${prefix}-picker-year-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-end::after {
-          right: 14px;
+          right: 18px;
           border-right: 1px dashed ${pattern.color.border2};
-          border-radius: 0 2px 2px 0;
+          border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
         }
 
         .${prefix}-picker-panel-rtl .${prefix}-picker-year-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-end::after {
-          left: 14px;
+          left: 18px;
           border-left: 1px dashed ${pattern.color.border2};
-          border-radius: 2px 0 0 2px;
+          border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
         }
 
         .${prefix}-picker-week-panel .${prefix}-picker-body {
-          padding: 8px 12px;
+          padding: 8px 10px;
         }
 
         .${prefix}-picker-week-panel .${prefix}-picker-cell:hover .${prefix}-picker-cell-inner,
@@ -778,13 +796,26 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           transition: background 0.3s;
         }
 
+        .${prefix}-picker-week-panel-row td:first-child {
+          border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
+        }
+
+        .${prefix}-picker-week-panel-row td:last-child {
+          border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
+        }
+
         .${prefix}-picker-week-panel-row:hover td {
           background: ${pattern.color.bgHover};
         }
 
         .${prefix}-picker-week-panel-row-selected td,
         .${prefix}-picker-week-panel-row-selected:hover td {
-          background: ${pattern.color.base1};
+          background: ${pattern.color.base};
+        }
+
+        .${prefix}-picker-week-panel-row-selected td,
+        .${prefix}-picker-week-panel-row-selected:hover td {
+          background: ${pattern.color.base};
         }
 
         .${prefix}-picker-week-panel-row-selected td.${prefix}-picker-cell-week,
@@ -805,15 +836,15 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-date-panel .${prefix}-picker-body {
-          padding: 8px 12px;
+          padding: 8px 8px;
         }
 
         .${prefix}-picker-date-panel .${prefix}-picker-content {
-          width: 252px;
+          width: ${(parseInt(pattern.size.cell, 10) + 20) * 7 + 'px'};
         }
 
         .${prefix}-picker-date-panel .${prefix}-picker-content th {
-          width: 36px;
+          width: ${(parseInt(pattern.size.cell, 10) + 20) + 'px'};
         }
 
         .${prefix}-picker-datetime-panel {
@@ -872,7 +903,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-time-panel-column:not(:first-child) {
-          border-left: 1px solid ${pattern.color.border};
+          border-left: 1px solid ${pattern.color.border3};
         }
 
         .${prefix}-picker-time-panel-column-active {
@@ -956,6 +987,20 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           border-color: ${pattern.color.hover};
           border-right-width: 1px !important;
         }
+
+        .${prefix}-picker:hover .${prefix}-picker-input > input,
+        .${prefix}-picker-focused .${prefix}-picker-input > input,
+        .${prefix}-picker:hover .${prefix}-picker-suffix,
+        .${prefix}-picker-focused .${prefix}-picker-suffix {
+          color: ${pattern.color.hover};
+        }
+
+        .${prefix}-picker.${prefix}-picker-disabled:hover .${prefix}-picker-input > input,
+        .${prefix}-picker-focused.${prefix}-picker-disabled .${prefix}-picker-input > input,
+        .${prefix}-picker:hover.${prefix}-picker-disabled .${prefix}-picker-suffix,
+        .${prefix}-picker-focused.${prefix}-picker-disabled .${prefix}-picker-suffix {
+          color: ${pattern.color.disabled};
+        }
         
         .${prefix}-picker svg {
           width: 1.2em;
@@ -967,11 +1012,10 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           border-color: ${pattern.color.hover};
           border-right-width: 1px !important;
           outline: 0;
-          box-shadow: 0 0 0 2px ${pattern.color.shadow};
         }
 
         .${prefix}-picker.${prefix}-picker-disabled {
-          background: ${pattern.color.bgHover};
+          background: ${pattern.color.bg};
           border-color: ${pattern.color.border3};
           cursor: not-allowed;
         }
@@ -1168,7 +1212,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-clear:hover {
-          color: ${pattern.color.text2};
+          color: ${pattern.color.hover};
         }
 
         .${prefix}-picker-separator {
@@ -1183,7 +1227,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-focused .${prefix}-picker-separator {
-          color: ${pattern.color.text2};
+          color: ${pattern.color.hover};
         }
 
         .${prefix}-picker-disabled .${prefix}-picker-range-separator .${prefix}-picker-separator {
@@ -1207,7 +1251,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           bottom: -1px;
           height: 2px;
           margin-left: 11px;
-          background: ${pattern.color.base1};
+          background: ${pattern.color.base};
           opacity: 0;
           transition: all 0.3s ease-out;
           pointer-events: none;
@@ -1245,17 +1289,17 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           display: none;
         }
 
-        .${prefix}-picker-dropdown-placement-bottomLeft .${prefix}-picker-range-arrow {
-          top: 1.66666667px;
-          display: block;
-          transform: rotate(-45deg);
-        }
+        // .${prefix}-picker-dropdown-placement-bottomLeft .${prefix}-picker-range-arrow {
+        //   top: 1.66666667px;
+        //   display: block;
+        //   transform: rotate(-45deg);
+        // }
 
-        .${prefix}-picker-dropdown-placement-topLeft .${prefix}-picker-range-arrow {
-          bottom: 1.66666667px;
-          display: block;
-          transform: rotate(135deg);
-        }
+        // .${prefix}-picker-dropdown-placement-topLeft .${prefix}-picker-range-arrow {
+        //   bottom: 1.66666667px;
+        //   display: block;
+        //   transform: rotate(135deg);
+        // }
 
         .${prefix}-picker-dropdown-range {
           padding: 6.66666667px 0;
@@ -1287,49 +1331,59 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-ranges .${prefix}-picker-preset > .tag {
-          color: ${pattern.color.base1};
-          background: ${pattern.color.bg2};
-          border-color: ${pattern.color.border4};
+          color: ${pattern.color.base};
+          border-color: ${pattern.color.border};
           margin-right: 8px;
           cursor: pointer;
+        }
+
+        .${prefix}-picker-ranges .${prefix}-picker-preset > .tag:hover {
+          background: ${pattern.color.bg2};
         }
 
         .${prefix}-picker-ranges .${prefix}-picker-ok {
           float: right;
           margin-left: 8px;
+          margin-top: 5px;
+        }
+
+        .${prefix}-picker-ranges .${prefix}-picker-ok .btn {
+          min-width: auto;
         }
 
         .${prefix}-picker-range-wrapper {
           display: flex;
         }
 
-        .${prefix}-picker-range-arrow {
-          position: absolute;
-          z-index: 1;
-          display: none;
-          width: 10px;
-          height: 10px;
-          margin-left: 16.5px;
-          box-shadow: 2px -2px 6px ${pattern.color.shadow2};
-          transition: left 0.3s ease-out;
-        }
+        // .${prefix}-picker-range-arrow {
+        //   position: absolute;
+        //   z-index: 1;
+        //   display: none;
+        //   width: 10px;
+        //   height: 10px;
+        //   margin-left: 16.5px;
+        //   box-shadow: 2px -2px 6px ${pattern.color.shadow2};
+        //   transition: left 0.3s ease-out;
+        // }
 
-        .${prefix}-picker-range-arrow::after {
-          position: absolute;
-          top: 1px;
-          right: 1px;
-          width: 10px;
-          height: 10px;
-          border: 5px solid ${pattern.color.border};
-          border-color: ${pattern.color.bg} ${pattern.color.bg} transparent transparent;
-          content: '';
-        }
+        // .${prefix}-picker-range-arrow::after {
+        //   position: absolute;
+        //   top: 1px;
+        //   right: 1px;
+        //   width: 10px;
+        //   height: 10px;
+        //   border: 5px solid ${pattern.color.border};
+        //   border-color: ${pattern.color.bg} ${pattern.color.bg} transparent transparent;
+        //   content: '';
+        // }
 
         .${prefix}-picker-panel-container {
           overflow: hidden;
           vertical-align: top;
+          padding: 10px;
           background: ${pattern.color.bg};
-          border-radius: 2px;
+          border: 1px solid ${pattern.color.border};
+          border-radius: 30px;
           box-shadow: ${pattern.color.containerShadow};
           transition: margin 0.3s;
         }
@@ -1349,17 +1403,6 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
 
         .${prefix}-picker-panel-container .${prefix}-picker-panel-focused {
           border-color: ${pattern.color.border};
-        }
-
-        .${prefix}-picker-cell .${prefix}-picker-cell-inner {
-          position: relative;
-          z-index: 2;
-          display: inline-block;
-          min-width: ${pattern.size.cell};
-          height: ${pattern.size.cell};
-          line-height: ${pattern.size.cell};
-          border-radius: 2px;
-          transition: background 0.3s, border 0.3s;
         }
       `}</style>
     </>
