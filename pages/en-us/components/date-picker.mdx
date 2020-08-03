@@ -51,6 +51,8 @@ Select or input a date or time.
       <Spacer y={0.5} />
       <RangePicker picker="month" />
       <Spacer y={0.5} />
+      <RangePicker picker="quarter" />
+      <Spacer y={0.5} />
       <RangePicker picker="year" />
     </>
   )
@@ -248,8 +250,8 @@ Select or input a date or time.
 () => {
   const { RangePicker } = DatePicker;
   function onChange(dates, dateStrings) {
-    console.log('From: ', dates[0], ', to: ', dates[1])
-    console.log('From: ', dateStrings[0], ', to: ', dateStrings[1])
+    if(dates) console.log('From: ', dates[0], ', to: ', dates[1])
+    if(dateStrings) console.log('From: ', dateStrings[0], ', to: ', dateStrings[1])
   }
   return (
     <>
