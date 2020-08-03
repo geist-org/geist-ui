@@ -16,12 +16,12 @@ describe('AutoComplete', () => {
     ).toMatchSnapshot()
   })
 
-  it('should support sizes and status', () => {
+  it('should support variants, sizes and color', () => {
     const wrapper = mount(
       <div>
         <AutoComplete variant="solid" />
-        <AutoComplete status="primary" />
-        <AutoComplete status="success" />
+        <AutoComplete color="primary" />
+        <AutoComplete color="success" />
         <AutoComplete size="mini" />
         <AutoComplete size="large" />
       </div>,

@@ -64,13 +64,13 @@ export const meta = {
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="primary" minHeight="65px" value="主要的" />
+  <Textarea color="primary" minHeight="65px" value="主要的" />
   <Spacer x={.5} inline />
-  <Textarea status="error" minHeight="65px" value="错误" />
+  <Textarea color="error" minHeight="65px" value="错误" />
   <Spacer y={.5} />
-  <Textarea variant="solid" status="primary" minHeight="65px" value="主要的" />
+  <Textarea variant="solid" color="primary" minHeight="65px" value="主要的" />
   <Spacer x={.5} inline />
-  <Textarea variant="solid" status="error" minHeight="65px" value="错误" />
+  <Textarea variant="solid" color="error" minHeight="65px" value="错误" />
 </>
 `}
 />
@@ -151,7 +151,7 @@ export const meta = {
 | **value**        | 设置文本框的值     | `string`                         | -                                                       | -         |
 | **initialValue** | 文本框的初始值     | `string`                         | -                                                       | -         |
 | **placeholder**  | 占位文本           | `string`                         | -                                                       | -         |
-| **status**       | 文本框当前状态     | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **color**        | 文本框当前颜色     | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **readOnly**     | 是否以只读方式显示 | `boolean`                        | -                                                       | `false`   |
 | **disabled**     | 是否禁用文本框     | `boolean`                        | -                                                       | `false`   |
 | **width**        | 设置 CSS 宽度      | `string`                         | -                                                       | `initial` |

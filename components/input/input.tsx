@@ -38,7 +38,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       label,
       labelRight,
       size,
-      status,
+      color: inputColor,
       icon,
       iconRight,
       iconClickable,
@@ -95,7 +95,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       hoverBorderColor,
       backgroundColor,
       hoverBackgroundColor,
-    } = useMemo(() => getColors(theme.palette, status, isSolid), [theme.palette, status, isSolid])
+    } = useMemo(() => getColors(theme.palette, inputColor, isSolid), [
+      theme.palette,
+      inputColor,
+      isSolid,
+    ])
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return
       setSelfValue(event.target.value)

@@ -131,18 +131,18 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="status"
+  title="color"
   desc="Differentiate states by color."
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input status="primary" initialValue="The Evil Rabbit" />
+  <Input color="primary" initialValue="The Evil Rabbit" />
   <Spacer inline />
-  <Input variant="solid" status="primary" initialValue="The Evil Rabbit" />
+  <Input variant="solid" color="primary" initialValue="The Evil Rabbit" />
   <Spacer y={.5} />
-  <Input status="error" initialValue="The Evil Rabbit" />
+  <Input color="error" initialValue="The Evil Rabbit" />
   <Spacer inline />
-  <Input variant="solid" status="error" initialValue="The Evil Rabbit" />
+  <Input variant="solid" color="error" initialValue="The Evil Rabbit" />
 </>
 `}
 />
@@ -290,7 +290,7 @@ Retrieve text input from a user.
 | **initialValue**  | initial value                 | `string`                                       | -                                       | -         |
 | **placeholder**   | placeholder                   | `string`                                       | -                                       | -         |
 | **size**          | input size                    | `NormalSizes`                                  | [InputSizes](#inputsizes)               | `medium`  |
-| **status**        | current status                | `NormalTypes`                                  | [InputStatus](#inputstatus)             | `default` |
+| **color**         | current color                 | `NormalTypes`                                  | [InputColor](#inputcolor)             | `default` |
 | **readOnly**      | native attr                   | `boolean`                                      | -                                       | `false`   |
 | **disabled**      | disable input                 | `boolean`                                      | -                                       | `false`   |
 | **clearable**     | show clear icon               | `boolean`                                      | -                                       | `false`   |
@@ -324,10 +324,10 @@ type InputVariantTypes = 'solid' | 'line'
 type InputSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
-<Attributes.Title>InputStatus</Attributes.Title>
+<Attributes.Title>InputColor</Attributes.Title>
 
 ```ts
-type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type InputColor = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>useInput</Attributes.Title>

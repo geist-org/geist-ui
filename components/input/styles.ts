@@ -1,4 +1,4 @@
-import { NormalSizes, InputTypes } from '../utils/prop-types'
+import { NormalSizes, InputColors } from '../utils/prop-types'
 import { ZeitUIThemesPalette } from '../styles/themes'
 import { addColorAlpha } from '../utils/color'
 
@@ -46,10 +46,10 @@ export type InputColor = {
 
 export const getColors = (
   palette: ZeitUIThemesPalette,
-  status?: InputTypes,
+  color?: InputColors,
   solid?: boolean,
 ): InputColor => {
-  const colors: { [key in InputTypes]: InputColor } = {
+  const colors: { [key in InputColors]: InputColor } = {
     default: {
       color: palette.cNeutral7,
       hoverColor: solid ? 'inherit' : palette.cTheme5,
@@ -92,6 +92,6 @@ export const getColors = (
     },
   }
 
-  if (!status) return colors.default
-  return colors[status]
+  if (!color) return colors.default
+  return colors[color]
 }

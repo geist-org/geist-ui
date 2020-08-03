@@ -22,12 +22,12 @@ describe('Input', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('should work with different status', () => {
+  it('should work with different color', () => {
     const wrapper = mount(
       <div>
-        <Input status="primary" />
-        <Input status="success" />
-        <Input status="warning" />
+        <Input color="primary" />
+        <Input color="success" />
+        <Input color="warning" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -37,7 +37,7 @@ describe('Input', () => {
     const wrapper = mount(
       <div>
         <Input label="label" />
-        <Input variant="solid" olid label="label" />
+        <Input variant="solid" label="label" />
         <Input labelRight="label" />
         <Input variant="solid" labelRight="label" />
         <Input>

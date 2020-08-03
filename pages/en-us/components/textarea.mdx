@@ -59,18 +59,18 @@ Retrieve multi-line user input.
 />
 
 <Playground
-  title="status"
+  title="color"
   desc="Differentiate states by color."
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="primary" minHeight="65px" value="Primary" />
+  <Textarea color="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
-  <Textarea status="error" minHeight="65px" value="Error" />
+  <Textarea color="error" minHeight="65px" value="Error" />
   <Spacer y={.5} />
-  <Textarea variant="solid" status="primary" minHeight="65px" value="Primary" />
+  <Textarea variant="solid" color="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
-  <Textarea variant="solid" status="error" minHeight="65px" value="Error" />
+  <Textarea variant="solid" color="error" minHeight="65px" value="Error" />
 </>
 `}
 />
@@ -151,7 +151,7 @@ Retrieve multi-line user input.
 | **value**        | textarea value        | `string`                         | -                                                       | -         |
 | **initialValue** | textarea value        | `string`                         | -                                                       | -         |
 | **placeholder**  | placeholder           | `string`                         | -                                                       | -         |
-| **status**       | current status        | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **color**        | current color         | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **readOnly**     | native attr           | `boolean`                        | -                                                       | `false`   |
 | **disabled**     | disable input         | `boolean`                        | -                                                       | `false`   |
 | **width**        | set width string      | `string`                         | -                                                       | `initial` |

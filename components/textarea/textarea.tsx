@@ -1,7 +1,7 @@
 import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { getColors } from '../input/styles'
 import useTheme from '../styles/use-theme'
-import { InputTypes, InputVariantTypes } from '../utils/prop-types'
+import { InputColors, InputVariantTypes } from '../utils/prop-types'
 import withDefaults from '../utils/with-defaults'
 import Counter from './counter'
 
@@ -12,7 +12,7 @@ interface Props {
   value?: string
   initialValue?: string
   placeholder?: string
-  status?: InputTypes
+  color?: InputColors
   width?: string
   minHeight?: string
   disabled?: boolean
@@ -28,7 +28,7 @@ interface Props {
 const defaultProps = {
   variant: 'line' as InputVariantTypes,
   initialValue: '',
-  status: 'default' as InputTypes,
+  color: 'default' as InputColors,
   width: 'initial',
   minHeight: '6.25rem',
   disabled: false,
@@ -46,7 +46,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
       maxLength,
       variant,
       width,
-      status,
+      color: textareaColor,
       minHeight,
       disabled,
       readOnly,
@@ -75,8 +75,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
     const { color, border, hoverBorderColor, backgroundColor, hoverBackgroundColor } = useMemo(
-      () => getColors(theme.palette, status, isSolid),
-      [theme.palette, status, isSolid],
+      () => getColors(theme.palette, textareaColor, isSolid),
+      [theme.palette, textareaColor, isSolid],
     )
 
     const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {

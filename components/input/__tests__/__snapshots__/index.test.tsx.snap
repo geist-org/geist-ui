@@ -1237,7 +1237,7 @@ exports[`Input should be work with label 1`] = `
         </style></div>"
 `;
 
-exports[`Input should work with different sizes 1`] = `
+exports[`Input should work with different color 1`] = `
 "<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -1251,6 +1251,406 @@ exports[`Input should work with different sizes 1`] = `
             align-items: center;
             width: initial;
             height: calc(1.313 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #c0d8fc;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(1.875 * 16pt - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(1.875 * 16pt - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(1.5 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #8afb88;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #58f17a;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(1.875 * 16pt - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: inherit;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(1.875 * 16pt - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: inherit !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(1.875 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ffde40;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #ffc438;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(1.875 * 16pt - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: inherit;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(1.875 * 16pt - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: inherit !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div></div>"
+`;
+
+exports[`Input should work with different sizes 1`] = `
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: 50%;
+            height: calc(1.687 * 16px);
           }
 
           .input-wrapper {
@@ -1382,7 +1782,7 @@ exports[`Input should work with different sizes 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.5 * 16px);
+            height: calc(1.5 * 16pt);
           }
 
           .input-wrapper {
@@ -1514,7 +1914,7 @@ exports[`Input should work with different sizes 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.875 * 16px);
+            height: calc(1.687 * 16px);
           }
 
           .input-wrapper {
@@ -1609,6 +2009,20 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
             -webkit-text-fill-color: #282d30 !important;
           }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(1.687 * 16px);
+          }
 
           input:-webkit-autofill:hover,
           input:-webkit-autofill:focus {
@@ -1645,7 +2059,7 @@ exports[`Input should work with different sizes 1`] = `
           .input-container {
             display: inline-flex;
             align-items: center;
-            width: 50%;
+            width: initial;
             height: calc(1.687 * 16px);
           }
 
@@ -1778,7 +2192,7 @@ exports[`Input should work with different sizes 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.875 * 16pt);
+            height: calc(1.687 * 16px);
           }
 
           .input-wrapper {
@@ -1877,420 +2291,6 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:hover,
           input:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #e8f4ff inset !important;
-            -webkit-text-fill-color: inherit !important;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:focus,
-          input:-webkit-autofill:active {
-            -webkit-background-clip: text;
-          }
-
-          .in-auto-complete .input-wrapper {
-            transition: border 0s;
-            transition: border-radius 0s;
-          }
-
-          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
-          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom-color: transparent;
-          }
-        </style></div></div>"
-`;
-
-exports[`Input should work with different status 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.687 * 16px);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-            background-color: #fdfdfe;
-            border: 1px solid #c0d8fc;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            cursor: not-allowed;
-          }
-
-          .line.input-wrapper.disabled {
-            border-color: #ebeced;
-          }
-
-          .solid.input-wrapper.disabled {
-            background-color: #dbdde0;
-          }
-
-          .focus.input-wrapper:not(.disabled),
-          .hover.input-wrapper:not(.disabled) {
-            border-color: #0054fe;
-            background-color: #fdfdfe;
-          }
-
-          input {
-            margin: 0 1.1429rem;
-            padding: 0;
-            box-shadow: none;
-            font-size: 1rem;
-            line-height: calc(1.875 * 16pt - 2px);
-            background-color: transparent;
-            font-weight: normal;
-            border: none;
-            color: #282d30;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          .input-wrapper.focus:not(.disabled) input,
-          .input-wrapper.hover:not(.disabled) input {
-            color: #0054fe;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #9b9eac;
-          }
-
-          input::-moz-placeholder {
-            line-height: calc(1.875 * 16pt - 1px);
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
-            -webkit-text-fill-color: #282d30 !important;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper lined    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.687 * 16px);
-          }
-
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
-            -webkit-text-fill-color: #0054fe !important;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:focus,
-          input:-webkit-autofill:active {
-            -webkit-background-clip: text;
-          }
-
-          .in-auto-complete .input-wrapper {
-            transition: border 0s;
-            transition: border-radius 0s;
-          }
-
-          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
-          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom-color: transparent;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.687 * 16px);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-            background-color: #fdfdfe;
-            border: 1px solid #8afb88;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            cursor: not-allowed;
-          }
-
-          .line.input-wrapper.disabled {
-            border-color: #ebeced;
-          }
-
-          .solid.input-wrapper.disabled {
-            background-color: #dbdde0;
-          }
-
-          .focus.input-wrapper:not(.disabled),
-          .hover.input-wrapper:not(.disabled) {
-            border-color: #58f17a;
-            background-color: #fdfdfe;
-          }
-
-          input {
-            margin: 0 1.1429rem;
-            padding: 0;
-            box-shadow: none;
-            font-size: 1rem;
-            line-height: calc(1.875 * 16pt - 2px);
-            background-color: transparent;
-            font-weight: normal;
-            border: none;
-            color: #282d30;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          .input-wrapper.focus:not(.disabled) input,
-          .input-wrapper.hover:not(.disabled) input {
-            color: inherit;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #9b9eac;
-          }
-
-          input::-moz-placeholder {
-            line-height: calc(1.875 * 16pt - 1px);
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
-            -webkit-text-fill-color: #282d30 !important;
-          }
-
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
-            -webkit-text-fill-color: inherit !important;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:focus,
-          input:-webkit-autofill:active {
-            -webkit-background-clip: text;
-          }
-
-          .in-auto-complete .input-wrapper {
-            transition: border 0s;
-            transition: border-radius 0s;
-          }
-
-          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
-          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom-color: transparent;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.687 * 16px);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-            background-color: #fdfdfe;
-            border: 1px solid #ffde40;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            cursor: not-allowed;
-          }
-
-          .line.input-wrapper.disabled {
-            border-color: #ebeced;
-          }
-
-          .solid.input-wrapper.disabled {
-            background-color: #dbdde0;
-          }
-
-          .focus.input-wrapper:not(.disabled),
-          .hover.input-wrapper:not(.disabled) {
-            border-color: #ffc438;
-            background-color: #fdfdfe;
-          }
-
-          input {
-            margin: 0 1.1429rem;
-            padding: 0;
-            box-shadow: none;
-            font-size: 1rem;
-            line-height: calc(1.875 * 16pt - 2px);
-            background-color: transparent;
-            font-weight: normal;
-            border: none;
-            color: #282d30;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input:disabled {
-            cursor: not-allowed;
-            color: #aaafbb;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          .input-wrapper.focus:not(.disabled) input,
-          .input-wrapper.hover:not(.disabled) input {
-            color: inherit;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #9b9eac;
-          }
-
-          input::-moz-placeholder {
-            line-height: calc(1.875 * 16pt - 1px);
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
-            -webkit-text-fill-color: #282d30 !important;
-          }
-
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
             -webkit-text-fill-color: inherit !important;
           }
 

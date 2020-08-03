@@ -4,7 +4,7 @@ import Input from '../input'
 import Loading from '../loading'
 import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'
-import { InputTypes, NormalSizes, InputVariantTypes } from '../utils/prop-types'
+import { InputColors, NormalSizes, InputVariantTypes } from '../utils/prop-types'
 import useClickAway from '../utils/use-click-away'
 import useCurrentState from '../utils/use-current-state'
 import { AutoCompleteConfig, AutoCompleteContext } from './auto-complete-context'
@@ -26,7 +26,7 @@ interface Props {
   variant?: InputVariantTypes
   options: AutoCompleteOptions
   size?: NormalSizes
-  status?: InputTypes
+  color?: InputColors
   initialValue?: string
   value?: string
   width?: string
@@ -82,7 +82,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   searching,
   children,
   size,
-  status,
+  color: inputColor,
   value,
   width,
   clearable,
@@ -205,7 +205,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
             variant={variant}
             ref={inputRef}
             size={size}
-            status={status}
+            color={inputColor}
             onChange={onInputChange}
             onFocus={onInputFocus}
             onClick={onInputFocus}

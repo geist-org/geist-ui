@@ -121,13 +121,13 @@ export const meta = {
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input status="primary" initialValue="主要" />
+  <Input color="primary" initialValue="主要" />
   <Spacer inline />
-  <Input variant="solid" status="primary" initialValue="主要" />
+  <Input variant="solid" color="primary" initialValue="主要" />
   <Spacer y={.5} />
-  <Input status="error" initialValue="包含错误" />
+  <Input color="error" initialValue="包含错误" />
   <Spacer inline />
-  <Input variant="solid" status="error" initialValue="包含错误" />
+  <Input variant="solid" color="error" initialValue="包含错误" />
 </>
 `}
 />
@@ -271,7 +271,7 @@ export const meta = {
 | **initialValue**  | 初始值                | `string`                                       | -                           | -         |
 | **placeholder**   | 占位文本             | `string`                                       | -                           | -         |
 | **size**          | 输入框大小           | `NormalSizes`                                  | [InputSizes](#inputsizes)   | `medium`  |
-| **status**        | 输入框状态           | `NormalTypes`                                  | [InputStatus](#inputstatus) | `default` |
+| **color**         | 输入框颜色          | `NormalTypes`                                  | [InputColor](#inputcolor) | `default` |
 | **readOnly**      | 是否设置输入框为只读 | `boolean`                                      | -                           | `false`   |
 | **disabled**      | 是否禁用输入框       | `boolean`                                      | -                           | `false`   |
 | **clearable**     | 是否展示清除按钮     | `boolean`                                      | -                           | `false`   |
@@ -305,10 +305,10 @@ type InputVariantTypes = 'solid' | 'line'
 type InputSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
-<Attributes.Title>InputStatus</Attributes.Title>
+<Attributes.Title>InputColor</Attributes.Title>
 
 ```ts
-type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type InputColor = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>useInput</Attributes.Title>
