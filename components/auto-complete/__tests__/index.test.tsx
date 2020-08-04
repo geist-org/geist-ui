@@ -1,21 +1,27 @@
-import React from 'react'
-import { mount } from 'enzyme'
 import { AutoComplete } from 'components'
-import { nativeEvent } from 'tests/utils'
+import { mount } from 'enzyme'
+import React from 'react'
 import { act } from 'react-dom/test-utils'
+import { nativeEvent } from 'tests/utils'
 
 describe('AutoComplete', () => {
   it('should render correctly', () => {
     const wrapper = mount(<AutoComplete />)
     expect(() => wrapper.unmount()).not.toThrow()
-    expect(<AutoComplete />).toMatchSnapshot()
+    expect(
+      <div>
+        <AutoComplete />
+        <AutoComplete variant="solid" />
+      </div>,
+    ).toMatchSnapshot()
   })
 
-  it('should support sizes and status', () => {
+  it('should support variants, sizes and color', () => {
     const wrapper = mount(
       <div>
-        <AutoComplete status="secondary" />
-        <AutoComplete status="success" />
+        <AutoComplete variant="solid" />
+        <AutoComplete color="primary" />
+        <AutoComplete color="success" />
         <AutoComplete size="mini" />
         <AutoComplete size="large" />
       </div>,
@@ -47,7 +53,7 @@ describe('AutoComplete', () => {
     expect((input as HTMLInputElement).value).toEqual('')
   })
 
-  it('should reponse width change', async () => {
+  it('should response width change', async () => {
     const wrapper = mount(<AutoComplete initialValue="value" width="100px" />)
     expect(wrapper.prop('width')).toEqual('100px')
     await act(async () => {

@@ -13,9 +13,13 @@ Retrieve multi-line user input.
 
 <Playground
   desc="Basic usage."
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea placeholder="Please enter a description." />
+<>
+  <Textarea placeholder="Please enter a description." />
+  <Spacer inline />
+  <Textarea variant="solid" placeholder="Please enter a description." />
+</>
 `}
 />
 
@@ -31,25 +35,42 @@ Retrieve multi-line user input.
 <Playground
   title="disabled"
   desc="Disable interactive textarea."
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+<>
+  <Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+  <Spacer inline />
+  <Textarea variant="solid" width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+</>
 `}
 />
 
 <Playground
-  title="status"
+  title="with counter"
+  desc="With build in counter"
+  scope={{ Textarea, Spacer }}
+  code={`
+<>
+  <Textarea counter maxLength={10} placeholder="Please enter a description." />
+  <Spacer inline />
+  <Textarea counter placeholder="Please enter a description." />
+</>
+`}
+/>
+
+<Playground
+  title="color"
   desc="Differentiate states by color."
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="success" minHeight="65px" value="Success" />
+  <Textarea color="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
-  <Textarea status="secondary" minHeight="65px" value="Secondary" />
+  <Textarea color="error" minHeight="65px" value="Error" />
   <Spacer y={.5} />
-  <Textarea status="warning" minHeight="65px" value="Warning" />
+  <Textarea variant="solid" color="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
-  <Textarea status="error" minHeight="65px" value="Error" />
+  <Textarea variant="solid" color="error" minHeight="65px" value="Error" />
 </>
 `}
 />
@@ -99,20 +120,44 @@ Retrieve multi-line user input.
 `}
 />
 
+<Playground
+  title="Imperative API"
+  desc="Update component in an uncontrolled way."
+  scope={{ Textarea, Spacer, Button }}
+  code={`
+() => {
+  const ref = React.useRef(null)
+  const setChange = () => {
+    ref && (ref.current.value = Math.random().toString(32))
+  }
+  return (
+    <>
+      <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small"
+        onClick={setChange}>set value</Button>
+    </>
+  )
+}
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/textarea.mdx">
 <Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
 
 | Attribute        | Description           | Type                             | Accepted values                                         | Default   |
 | ---------------- | --------------------- | -------------------------------- | ------------------------------------------------------- | --------- |
+| **variant**      | textarea variant      | `string`                         | `'solid', 'line'`                                       | `line`    |
 | **value**        | textarea value        | `string`                         | -                                                       | -         |
 | **initialValue** | textarea value        | `string`                         | -                                                       | -         |
 | **placeholder**  | placeholder           | `string`                         | -                                                       | -         |
-| **status**       | current status        | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **color**        | current color         | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **readOnly**     | native attr           | `boolean`                        | -                                                       | `false`   |
 | **disabled**     | disable input         | `boolean`                        | -                                                       | `false`   |
 | **width**        | set width string      | `string`                         | -                                                       | `initial` |
 | **minHeight**    | set min-height string | `string`                         | -                                                       | -         |
 | **onChange**     | change event          | `(e: React.ChangeEvent) => void` | -                                                       | -         |
+| **counter**      | add word counter ui   | `boolean`                        | -                                                       | `false`   |
 | ...              | native props          | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
 
 <Attributes.Title>useInput</Attributes.Title>

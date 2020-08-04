@@ -1,9 +1,10 @@
-import React from 'react'
-import { mount, render } from 'enzyme'
 import { AutoComplete } from 'components'
-import { nativeEvent, updateWrapper } from 'tests/utils'
+import { mount, render } from 'enzyme'
+import React from 'react'
 import { act } from 'react-dom/test-utils'
-const mockOptions = [{ label: 'London', value: 'london' }]
+import { nativeEvent, updateWrapper } from 'tests/utils'
+
+const mockOptions = [{ label: 'London' }]
 
 describe('AutoComplete Search', () => {
   it('should render options element', () => {
@@ -21,7 +22,7 @@ describe('AutoComplete Search', () => {
     const wrapper = mount(<AutoComplete options={mockOptions} onChange={val => (value = val)} />)
     wrapper.find('input').at(0).simulate('focus')
     wrapper.find('.item').at(0).simulate('click', nativeEvent)
-    expect(value).toEqual('london')
+    expect(value).toEqual('London')
   })
 
   it('should ignore events when disabled', () => {
@@ -31,7 +32,7 @@ describe('AutoComplete Search', () => {
     )
     wrapper.find('input').at(0).simulate('focus')
     wrapper.find('.item').at(0).simulate('click', nativeEvent)
-    expect(value).not.toEqual('london')
+    expect(value).not.toEqual('London')
   })
 
   it('should render searching component', async () => {
@@ -41,7 +42,7 @@ describe('AutoComplete Search', () => {
     })
     wrapper.find('input').at(0).simulate('focus')
     let dropdown = wrapper.find('.auto-complete-dropdown')
-    expect(dropdown.text()).not.toContain('london')
+    expect(dropdown.text()).not.toContain('London')
 
     const loading = wrapper.find('.loading')
     expect(loading.length).not.toBe(0)
@@ -121,14 +122,12 @@ describe('AutoComplete Search', () => {
 
   it('should work with custom options', () => {
     const changeHandler = jest.fn()
-    const makeOption = (label: string, value: string): any => (
-      <AutoComplete.Option value={value}>
+    const makeOption = (label: string): any => (
+      <AutoComplete.Option label={label}>
         <span>{label}</span>
       </AutoComplete.Option>
     )
-    const options = mockOptions.map(
-      ({ label, value }) => makeOption(label, value) as typeof AutoComplete.Option,
-    )
+    const options = mockOptions.map(({ label }) => makeOption(label) as typeof AutoComplete.Option)
     const wrapper = mount(<AutoComplete options={options} onChange={changeHandler} />)
     wrapper.find('input').at(0).simulate('focus')
     wrapper.find('.item').at(0).simulate('click', nativeEvent)
@@ -141,12 +140,23 @@ describe('AutoComplete Search', () => {
   })
 
   it('value should be reset when freeSolo disabled', async () => {
+    const simulateNativeClick = (el: Element) => {
+      el.dispatchEvent(
+        new MouseEvent('click', {
+          view: window,
+          bubbles: true,
+          cancelable: true,
+        }),
+      )
+    }
+
     const wrapper = mount(<AutoComplete initialValue="value" disableFreeSolo />)
     const input = wrapper.find('input').at(0)
     input.simulate('focus')
     input.simulate('change', { target: { value: 'test' } })
+
     expect((input.getDOMNode() as HTMLInputElement).value).toEqual('test')
-    input.simulate('blur')
+    simulateNativeClick(document.body)
     await updateWrapper(wrapper, 200)
     expect((input.getDOMNode() as HTMLInputElement).value).toEqual('value')
   })

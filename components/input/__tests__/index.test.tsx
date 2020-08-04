@@ -1,6 +1,6 @@
-import React from 'react'
-import { mount } from 'enzyme'
 import { Input } from 'components'
+import { mount } from 'enzyme'
+import React from 'react'
 import { nativeEvent } from 'tests/utils'
 
 describe('Input', () => {
@@ -16,18 +16,18 @@ describe('Input', () => {
         <Input size="small" />
         <Input size="large" />
         <Input width="50%" />
+        <Input variant="solid" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('should work with different status', () => {
+  it('should work with different color', () => {
     const wrapper = mount(
       <div>
-        <Input status="primary" />
-        <Input status="secondary" />
-        <Input status="success" />
-        <Input status="warning" />
+        <Input color="primary" />
+        <Input color="success" />
+        <Input color="warning" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -37,7 +37,9 @@ describe('Input', () => {
     const wrapper = mount(
       <div>
         <Input label="label" />
+        <Input variant="solid" label="label" />
         <Input labelRight="label" />
+        <Input variant="solid" labelRight="label" />
         <Input>
           <span>Block Label</span>
         </Input>
@@ -45,6 +47,7 @@ describe('Input', () => {
     )
     expect(wrapper.html()).toMatchSnapshot()
   })
+
   it('should be work with icon', () => {
     const wrapper = mount(
       <div>
@@ -121,6 +124,7 @@ describe('Input', () => {
     wrapper.find('.clear-icon').at(0).simulate('click', nativeEvent)
     expect(clearHandler).toHaveBeenCalled()
     expect(value).toEqual('')
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('should trigger focus correctly', () => {
@@ -133,6 +137,18 @@ describe('Input', () => {
     expect(focus).toHaveBeenCalled()
     input.simulate('blur')
     expect(blur).toHaveBeenCalled()
+  })
+
+  it('should trigger hover correctly', () => {
+    const mouseOver = jest.fn()
+    const mouseOut = jest.fn()
+    const wrapper = mount(<Input onMouseOver={mouseOver} onMouseOut={mouseOut} />)
+
+    const input = wrapper.find('input').at(0)
+    input.simulate('mouseOver')
+    expect(mouseOver).toHaveBeenCalled()
+    input.simulate('mouseOut')
+    expect(mouseOut).toHaveBeenCalled()
   })
 
   it('should trigger icon event', () => {

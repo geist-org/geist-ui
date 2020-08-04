@@ -32,8 +32,7 @@ const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchPro
           font-size: 0.875rem;
           padding: ${theme.layout.gapHalf};
           line-height: 1;
-          background-color: ${theme.palette.background};
-          color: ${theme.palette.accents_5};
+          color: ${theme.palette.cNeutral5};
           user-select: none;
           border: 0;
           border-radius: ${theme.expressiveness.R2};

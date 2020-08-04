@@ -13,9 +13,13 @@ export const meta = {
 
 <Playground
   desc="基础示例。"
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea placeholder="请输入一段描述。" />
+<>
+  <Textarea placeholder="请输入一段描述。" />
+  <Spacer inline />
+  <Textarea variant="solid" placeholder="请输入一段描述。" />
+</>
 `}
 />
 
@@ -31,9 +35,26 @@ export const meta = {
 <Playground
   title="禁用"
   desc="禁用文本框所有交互。"
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+<>
+  <Textarea width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+  <Spacer inline />
+  <Textarea variant="solid" width="100%" disabled placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
+</>
+`}
+/>
+
+<Playground
+  title="计数器"
+  desc="带计数器和最大字数限制"
+  scope={{ Textarea, Spacer }}
+  code={`
+<>
+  <Textarea counter maxLength={10} placeholder="限制最多 10 个字符" />
+  <Spacer inline />
+  <Textarea counter placeholder="字符计数器" />
+</>
 `}
 />
 
@@ -43,13 +64,13 @@ export const meta = {
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="success" minHeight="65px" value="成功" />
+  <Textarea color="primary" minHeight="65px" value="主要的" />
   <Spacer x={.5} inline />
-  <Textarea status="secondary" minHeight="65px" value="次要的" />
+  <Textarea color="error" minHeight="65px" value="错误" />
   <Spacer y={.5} />
-  <Textarea status="warning" minHeight="65px" value="警告" />
+  <Textarea variant="solid" color="primary" minHeight="65px" value="主要的" />
   <Spacer x={.5} inline />
-  <Textarea status="error" minHeight="65px" value="错误" />
+  <Textarea variant="solid" color="error" minHeight="65px" value="错误" />
 </>
 `}
 />
@@ -99,21 +120,45 @@ export const meta = {
 `}
 />
 
+<Playground
+  title="命令式 API"
+  desc="使用非受控方式更新组件。"
+  scope={{ Textarea, Spacer, Button }}
+  code={`
+() => {
+  const ref = React.useRef(null)
+  const setChange = () => {
+    ref && (ref.current.value = Math.random().toString(32))
+  }
+  return (
+    <>
+      <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small"
+        onClick={setChange}>设置值</Button>
+    </>
+  )
+}
+`}
+/>
+
 <Attributes edit="/pages/zh-cn/components/textarea.mdx">
 <Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
 
-| 属性             | 描述               | 类型                             | 推荐值                                                  | 默认      |
-| ---------------- | ------------------ | -------------------------------- | ------------------------------------------------------- | --------- |
-| **value**        | 设置文本框的值     | `string`                         | -                                                       | -         |
-| **initialValue** | 文本框的初始值     | `string`                         | -                                                       | -         |
-| **placeholder**  | 占位文本           | `string`                         | -                                                       | -         |
-| **status**       | 文本框当前状态     | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **readOnly**     | 是否以只读方式显示 | `boolean`                        | -                                                       | `false`   |
-| **disabled**     | 是否禁用文本框     | `boolean`                        | -                                                       | `false`   |
-| **width**        | 设置 CSS 宽度      | `string`                         | -                                                       | `initial` |
-| **minHeight**    | 设置 CSS 最小高度  | `string`                         | -                                                       | -         |
-| **onChange**     | 文本变化事件       | `(e: React.ChangeEvent) => void` | -                                                       | -         |
-| ...              | 原生属性           | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
+| 属性             | 描述                  | 类型                             | 推荐值                                                  | 默认      |
+| ---------------- | --------------------- | -------------------------------- | ------------------------------------------------------- | --------- |
+| **variant**      | 设置文本框的类型      | `string`                         | `'solid', 'line'`                                       | `line`    |
+| **value**        | 设置文本框的值        | `string`                         | -                                                       | -         |
+| **initialValue** | 文本框的初始值        | `string`                         | -                                                       | -         |
+| **placeholder**  | 占位文本              | `string`                         | -                                                       | -         |
+| **color**        | 文本框当前颜色        | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **readOnly**     | 是否以只读方式显示    | `boolean`                        | -                                                       | `false`   |
+| **disabled**     | 是否禁用文本框        | `boolean`                        | -                                                       | `false`   |
+| **width**        | 设置 CSS 宽度         | `string`                         | -                                                       | `initial` |
+| **minHeight**    | 设置 CSS 最小高度     | `string`                         | -                                                       | -         |
+| **onChange**     | 文本变化事件          | `(e: React.ChangeEvent) => void` | -                                                       | -         |
+| **counter**      | 增加一个记录字数的 UI | `boolean`                        | -                                                       | `false`   |
+| ...              | 原生属性              | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
 
 <Attributes.Title>useInput</Attributes.Title>
 

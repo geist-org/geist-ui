@@ -1,16 +1,19 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
+import FuzzyMatch from '../shared/fuzzy-match'
 import useTheme from '../styles/use-theme'
+import { InputVariantTypes, NormalSizes } from '../utils/prop-types'
+import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
-import { NormalSizes } from '../utils/prop-types'
-import Ellipsis from '../shared/ellipsis'
 
 interface Props {
-  value: string
+  label: string
   isLabelOnly?: boolean
+  variant?: InputVariantTypes
 }
 
-const defaultProps = {}
+const defaultProps = {
+  variant: 'line' as InputVariantTypes,
+}
 
 export type AutoCompleteItemProps = Props & typeof defaultProps & React.HTMLAttributes<any>
 
@@ -25,31 +28,36 @@ const getSizes = (size: NormalSizes) => {
 }
 
 const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>> = ({
-  value: identValue,
+  variant,
+  label,
   children,
   isLabelOnly,
 }) => {
   const theme = useTheme()
   const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
-    updateValue && updateValue(identValue)
+    updateValue && updateValue(label)
     updateVisible && updateVisible(false)
   }
 
-  const isActive = useMemo(() => value === identValue, [identValue, value])
   const fontSize = useMemo(() => getSizes(size), [size])
 
   // The 'isLabelOnly' is only used inside the component,
   // Automatically adjust width when only label children is included.
   const itemHeight = useMemo(() => {
-    if (isLabelOnly) return `calc(1.688 * ${theme.layout.gap})`
+    if (isLabelOnly) return `calc(2.4 * ${theme.layout.gap})`
     return 'auto'
   }, [isLabelOnly, theme.layout.gap])
 
   return (
-    <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
+    <div className="item" onClick={selectHandler}>
       {isLabelOnly ? (
-        <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
+        <FuzzyMatch
+          color={variant === 'solid' ? 'secondary' : 'primary'}
+          query={value || ''}
+          label={label}
+          height={`calc(2.4 * ${theme.layout.gap})`}
+        />
       ) : (
         children
       )}
@@ -63,8 +71,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           font-size: ${fontSize};
           padding: 0 ${theme.layout.gapHalf};
           height: ${itemHeight};
-          background-color: ${theme.palette.background};
-          color: ${theme.palette.foreground};
+          color: ${theme.palette.cNeutral7};
           user-select: none;
           border: 0;
           cursor: pointer;
@@ -82,12 +89,11 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
         }
 
         .item:hover {
-          background-color: ${theme.palette.accents_1};
+          background-color: ${theme.palette.cNeutral0};
         }
 
         .item.active {
-          background-color: ${theme.palette.accents_1};
-          color: ${theme.palette.success};
+          color: ${theme.palette.cTheme6};
         }
       `}</style>
     </div>

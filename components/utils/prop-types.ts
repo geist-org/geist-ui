@@ -1,5 +1,7 @@
 export const tuple = <T extends string[]>(...args: T) => args
 
+const inputVariants = tuple('solid', 'line')
+
 const buttonVariants = tuple('solid', 'line', 'text')
 
 const buttonTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
@@ -24,6 +26,8 @@ const selectTypes = tuple('line', 'text')
 const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
 const normalTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
+
+const inputColors = tuple('default', 'primary', 'success', 'warning', 'error')
 
 const themeTypes = tuple('dark', 'light')
 
@@ -75,6 +79,10 @@ export type NormalSizes = typeof normalSizes[number]
 export type SelectTypes = typeof selectTypes[number]
 
 export type NormalTypes = typeof normalTypes[number]
+
+export type InputColors = typeof inputColors[number]
+
+export type InputVariantTypes = typeof inputVariants[number]
 
 export type ThemeTypes = typeof themeTypes[number]
 

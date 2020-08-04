@@ -1,22 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input should be work with icon 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: content-box;
           display: flex;
-          width: calc(1.687 * 16px * .42);
+          width: calc(2.5 * 16px * .35);
           height: 100%;
           align-items: center;
-          vertical-align: center;
+          vertical-align: middle;
           margin: 0;
-          padding: 0 calc(1.687 * 16px * .3);
+          padding: 0 0.5714rem 0 calc(2.5 * 16px * .3);
           line-height: 1;
           position: relative;
           cursor: default;
           pointer-events: none;
         }
-      </style></span><input type=\\"text\\" class=\\" left-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></span><input type=\\"text\\" class=\\"left-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -28,7 +28,7 @@ exports[`Input should be work with icon 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -39,8 +39,9 @@ exports[`Input should be work with icon 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -54,32 +55,43 @@ exports[`Input should be work with icon 1`] = `
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -90,30 +102,62 @@ exports[`Input should be work with icon 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: content-box;
           display: flex;
-          width: calc(1.687 * 16px * .42);
+          width: calc(2.5 * 16px * .35);
           height: 100%;
           align-items: center;
-          vertical-align: center;
+          vertical-align: middle;
           margin: 0;
-          padding: 0 calc(1.687 * 16px * .3);
+          padding: 0 calc(2.5 * 16px * .3) 0 calc(2.5 * 16px * .3);
           line-height: 1;
           position: relative;
           cursor: default;
@@ -131,7 +175,7 @@ exports[`Input should be work with icon 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -142,8 +186,9 @@ exports[`Input should be work with icon 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -157,32 +202,43 @@ exports[`Input should be work with icon 1`] = `
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -193,19 +249,51 @@ exports[`Input should be work with icon 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
@@ -220,15 +308,15 @@ exports[`Input should be work with label 1`] = `
           pointer-events: none;
           margin: 0;
           padding: 0 8px;
-          color: #888;
-          background-color: #fafafa;
+          color: #9b9eac;
+          background-color: #f9fafb;
           border-top-left-radius: 4px;
           border-bottom-left-radius: 4px;
           border-top: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
+          border-right: none;
           border-bottom: 1px solid #eaeaea;
-          font-size: .875rem;
-          line-height: 1;
+          font-size: 1rem;
         }
 
         span.right {
@@ -236,10 +324,10 @@ exports[`Input should be work with label 1`] = `
           border-bottom-left-radius: 0;
           border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
-          border-left: 0;
+          border-left: none;
           border-right: 1px solid #eaeaea;
         }
-      </style></span><div class=\\"input-wrapper   left-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></span><div class=\\"input-wrapper line    left-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -251,7 +339,7 @@ exports[`Input should be work with label 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -262,8 +350,9 @@ exports[`Input should be work with label 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -277,32 +366,43 @@ exports[`Input should be work with label 1`] = `
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -313,21 +413,53 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   right-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><span class=\\"\\">label<style>
         span {
           display: inline-flex;
           width: initial;
@@ -336,15 +468,15 @@ exports[`Input should be work with label 1`] = `
           pointer-events: none;
           margin: 0;
           padding: 0 8px;
-          color: #888;
-          background-color: #fafafa;
+          color: #9b9eac;
+          background-color: #f9fafb;
           border-top-left-radius: 4px;
           border-bottom-left-radius: 4px;
-          border-top: 1px solid #eaeaea;
-          border-left: 1px solid #eaeaea;
-          border-bottom: 1px solid #eaeaea;
-          font-size: .875rem;
-          line-height: 1;
+          border-top: none;
+          border-left: none;
+          border-right: 1px solid #fdfdfe;
+          border-bottom: none;
+          font-size: 1rem;
         }
 
         span.right {
@@ -352,7 +484,167 @@ exports[`Input should be work with label 1`] = `
           border-bottom-left-radius: 0;
           border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
-          border-left: 0;
+          border-left: 1px solid #fdfdfe;
+          border-right: none;
+        }
+      </style></span><div class=\\"input-wrapper solid    left-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(2.5 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #f9fafb;
+            border: transparent;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: transparent;
+            background-color: #e8f4ff;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: inherit;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #f9fafb inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #e8f4ff inset !important;
+            -webkit-text-fill-color: inherit !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
+        span {
+          display: inline-flex;
+          width: initial;
+          height: 100%;
+          align-items: center;
+          pointer-events: none;
+          margin: 0;
+          padding: 0 8px;
+          color: #9b9eac;
+          background-color: #f9fafb;
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+          border-top: 1px solid #eaeaea;
+          border-left: 1px solid #eaeaea;
+          border-right: none;
+          border-bottom: 1px solid #eaeaea;
+          font-size: 1rem;
+        }
+
+        span.right {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+          border-left: none;
           border-right: 1px solid #eaeaea;
         }
       </style></span></div><style>
@@ -367,7 +659,7 @@ exports[`Input should be work with label 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -378,8 +670,9 @@ exports[`Input should be work with label 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -393,32 +686,43 @@ exports[`Input should be work with label 1`] = `
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -429,25 +733,217 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper solid    right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
+        span {
+          display: inline-flex;
+          width: initial;
+          height: 100%;
+          align-items: center;
+          pointer-events: none;
+          margin: 0;
+          padding: 0 8px;
+          color: #9b9eac;
+          background-color: #f9fafb;
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+          border-top: none;
+          border-left: none;
+          border-right: 1px solid #fdfdfe;
+          border-bottom: none;
+          font-size: 1rem;
+        }
+
+        span.right {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+          border-left: 1px solid #fdfdfe;
+          border-right: none;
+        }
+      </style></span></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(2.5 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #f9fafb;
+            border: transparent;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: transparent;
+            background-color: #e8f4ff;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: inherit;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #f9fafb inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
           input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+            -webkit-box-shadow: 0 0 0 30px #e8f4ff inset !important;
+            -webkit-text-fill-color: inherit !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div><div class=\\"with-label\\"><label><span>Block Label</span><style>
         label {
           display: block;
           font-weight: normal;
-          color: #444;
+          color: #282d30;
           padding: 0 0 0 1px;
           margin-bottom: 8px;
           font-size: 1rem;
@@ -461,7 +957,7 @@ exports[`Input should be work with label 1`] = `
         label > :global(*:last-child) {
           margin-bottom: 0;
         }
-      </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -473,7 +969,7 @@ exports[`Input should be work with label 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -484,8 +980,9 @@ exports[`Input should be work with label 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -499,32 +996,43 @@ exports[`Input should be work with label 1`] = `
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -535,113 +1043,622 @@ exports[`Input should be work with label 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div></div>"
+`;
+
+exports[`Input should clear text 1`] = `
+"<div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><div class=\\"clear-icon \\"><svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M7 1.75C4.1125 1.75 1.75 4.1125 1.75 7C1.75 9.8875 4.1125 12.25 7 12.25C9.8875 12.25 12.25 9.8875 12.25 7C12.25 4.1125 9.8875 1.75 7 1.75ZM9.29688 8.37812L8.37812 9.29688L7 7.91875L5.62188 9.29688L4.70312 8.37812L6.08125 7L4.70312 5.62188L5.62188 4.70312L7 6.08125L8.37812 4.70312L9.29688 5.62188L7.91875 7L9.29688 8.37812Z\\" fill=\\"currentColor\\"></path></svg><style>
+        .clear-icon {
+          padding: 0 8px;
+          margin: 0;
+          display: inline-flex;
+          align-items: center;
+          height: 100%;
+          cursor: pointer;
+          box-sizing: border-box;
+          transition: color 150ms ease 0s;
+          color: #ebeced;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .visible {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .clear-icon:hover {
+          color: #282d30;
+        }
+
+        svg {
+          color: currentColor;
+          width: calc(16px * 2.5 * .46);
+          height: calc(16px * 2.5 * .46);
+        }
+      </style></div></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(2.5 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
           input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div>"
+`;
+
+exports[`Input should work with different color 1`] = `
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(2.5 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #c0d8fc;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(2.5 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #8afb88;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #58f17a;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: inherit;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: inherit !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(2.5 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ffde40;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #ffc438;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: inherit;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: inherit !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
 
 exports[`Input should work with different sizes 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.313 * 16px);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            border: 1px solid #eaeaea;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #666;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: .75rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -664,8 +1681,9 @@ exports[`Input should work with different sizes 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -679,32 +1697,43 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .75rem;
+            font-size: 0.5714rem;
+            line-height: calc(1.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -715,21 +1744,53 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(1.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: initial;
@@ -741,7 +1802,7 @@ exports[`Input should work with different sizes 1`] = `
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.875 * 16px);
+            height: calc(2 * 16px);
           }
 
           .input-wrapper {
@@ -752,8 +1813,9 @@ exports[`Input should work with different sizes 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -767,32 +1829,307 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 0.8571rem;
+            line-height: calc(2 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: initial;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: initial;
+            height: calc(3 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 1.1429rem;
+            line-height: calc(3 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(3 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: 50%;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: 50%;
+            height: calc(2.5 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+          }
+
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
+          }
+
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
+          }
+
+          input {
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
             font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -803,24 +2140,56 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper solid    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: 50%;
+            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
           }
@@ -828,8 +2197,8 @@ exports[`Input should work with different sizes 1`] = `
           .input-container {
             display: inline-flex;
             align-items: center;
-            width: 50%;
-            height: calc(1.687 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -840,8 +2209,9 @@ exports[`Input should work with different sizes 1`] = `
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #f9fafb;
+            border: transparent;
           }
 
           .input-wrapper.left-label {
@@ -855,32 +2225,43 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: transparent;
+            background-color: #e8f4ff;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -891,375 +2272,51 @@ exports[`Input should work with different sizes 1`] = `
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: inherit;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #f9fafb inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #e8f4ff inset !important;
+            -webkit-text-fill-color: inherit !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div></div>"
-`;
-
-exports[`Input should work with different status 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
 
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.687 * 16px);
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
           }
 
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            border: 1px solid #8afb88;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
             border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #58f17a;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: .875rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.687 * 16px);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            border: 1px solid #666;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #666;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: .875rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.687 * 16px);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            border: 1px solid #8afb88;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #58f17a;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: .875rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.687 * 16px);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 4px;
-            border: 1px solid #ffde40;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #ffc438;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: .875rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;

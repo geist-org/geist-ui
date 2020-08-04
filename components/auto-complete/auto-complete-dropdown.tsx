@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
 import Dropdown from '../shared/dropdown'
+import { getColors } from '../input/styles'
 
 interface Props {
+  variant?: string
   visible: boolean
   className?: string
   disableMatchWidth?: boolean
@@ -12,6 +14,7 @@ interface Props {
 }
 
 const defaultProps = {
+  variant: 'line',
   className: '',
   dropdownStyle: {},
 }
@@ -21,13 +24,20 @@ export type AutoCompleteDropdownProps = Props & typeof defaultProps & NativeAttr
 
 const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdownProps>> = ({
   children,
+  variant,
   visible,
   className,
   dropdownStyle,
   disableMatchWidth,
 }) => {
+  const isSolid = variant === 'solid'
   const theme = useTheme()
-  const { ref } = useAutoCompleteContext()
+  const { ref, value } = useAutoCompleteContext()
+  const { border, hoverBorderColor, hoverBackgroundColor } = useMemo(
+    () => getColors(theme.palette, 'default', isSolid),
+    [theme.palette, status, isSolid],
+  )
+
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     event.stopPropagation()
@@ -35,20 +45,39 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
   }
 
   return (
-    <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth}>
+    <Dropdown
+      parent={ref}
+      visible={visible}
+      disableMatchWidth={disableMatchWidth}
+      clearTime={value === '' ? 0 : 60}
+      leaveTime={value === '' ? 0 : 60}>
       <div
-        className={`auto-complete-dropdown ${className}`}
+        className={`auto-complete-dropdown ${isSolid ? 'solid' : 'line'} ${className}`}
         style={dropdownStyle}
         onClick={clickHandler}>
+        <div className="divider"></div>
         {children}
         <style jsx>{`
           .auto-complete-dropdown {
+            margin-top: -3px;
             border-radius: ${theme.expressiveness.R2};
-            box-shadow: ${theme.expressiveness.shadowLarge};
-            background-color: ${theme.palette.background};
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            background-color: ${hoverBackgroundColor};
+            border: ${border};
+            border-top: 0;
+            border-color: ${hoverBorderColor};
             overflow-y: auto;
             max-height: 15rem;
             overflow-anchor: none;
+          }
+          .auto-complete-dropdown .divider {
+            height: 1px;
+            margin: auto;
+            margin-right: ${theme.layout.gapHalf};
+            margin-left: ${theme.layout.gapHalf};
+            border-bottom: 1px dashed ${hoverBorderColor};
+            z-index: 1110;
           }
         `}</style>
       </div>

@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { AutoComplete, Spacer, Badge, Text, Grid } from 'components'
 import { useState, useRef, useEffect } from 'react'
+import SearchIcon from '@zeit-ui/react-icons/search'
 
 export const meta = {
   title: '自动完成 Auto-Complete',
@@ -14,15 +15,20 @@ export const meta = {
 
 <Playground
   desc="基础示例，添加备选列表到输入框中。"
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
-  return <AutoComplete placeholder="在这里输入" options={options} />
+  return (
+  <div style={{display: 'flex'}}>
+    <AutoComplete placeholder="在这里输入" options={options} />
+    <Spacer inline />
+    <AutoComplete variant="solid" placeholder="在这里输入" options={options} />
+  </div>)
 }
 `}
 />
@@ -34,11 +40,15 @@ export const meta = {
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
-  return <AutoComplete disableFreeSolo options={options} initialValue="sydney" />
+  return (
+  <div style={{display: 'flex'}}>
+    <AutoComplete disableFreeSolo options={options} initialValue="Sydney" />
+  </div>
+  )
 }
 `}
 />
@@ -50,9 +60,9 @@ export const meta = {
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   return <AutoComplete disabled options={options} initialValue="London" />
 }
@@ -62,44 +72,52 @@ export const meta = {
 <Playground
   desc="根据当前输入内容变更备选的列表选项。"
   title="搜索"
-  scope={{ AutoComplete, useState }}
+  scope={{ AutoComplete, useState, Spacer }}
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     setOptions(relatedOptions)
   }
-  return <AutoComplete options={options} placeholder="在这里输入" onSearch={searchHandler} />
-}
+  return (
+    <div style={{display: 'flex'}}>
+      <AutoComplete options={options} placeholder="在这里输入" onSearch={searchHandler} />
+      <Spacer inline />
+      <AutoComplete variant="solid" options={options} placeholder="在这里输入" onSearch={searchHandler} />
+    </div>
+  )}
 `}
 />
 
 <Playground
   title="搜索中"
   desc="在搜索中的等待时显示友好的 UI 与提示。"
-  scope={{ AutoComplete, useState, useEffect, useRef }}
+  scope={{ AutoComplete, useState, useEffect, useRef, Spacer }}
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
+  const [solidOptions, solidSetOptions] = React.useState()
   const [searching, setSearching] = useState(false)
+  const [solidSearching, solidSetSearching] = useState(false)
   const timer = useRef()
+  const solidTimer = useRef()
   // triggered every time input
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
     setSearching(true)
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     // this is mock async request
     // you can get data in any way
     timer.current && clearTimeout(timer.current)
@@ -109,11 +127,34 @@ export const meta = {
       clearTimeout(timer.current)
     }, 1000)
   }
+  const solidSearchHandler = (currentValue) => {
+    if (!currentValue) return solidSetOptions([])
+    solidSetSearching(true)
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
+    // this is mock async request
+    // you can get data in any way
+    solidTimer.current && clearTimeout(solidTimer.current)
+    solidTimer.current = setTimeout(() => {
+      solidSetOptions(relatedOptions)
+      solidSetSearching(false)
+      clearTimeout(solidTimer.current)
+    }, 1000)
+  }
   return (
-    <AutoComplete searching={searching}
+  <div style={{display: 'flex'}}>
+    <AutoComplete
+      searching={searching}
       options={options}
       placeholder="在这里输入"
       onSearch={searchHandler} />
+    <Spacer inline />
+    <AutoComplete
+      variant="solid"
+      searching={solidSearching}
+      options={options}
+      placeholder="在这里输入"
+      onSearch={solidSearchHandler} />
+  </div>
   )
 }
 `}
@@ -122,14 +163,26 @@ export const meta = {
 <Playground
   title="定制搜索中的提示"
   desc="你可以用文字或任何组件替代默认的提示文字。"
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
-<AutoComplete searching placeholder="在这里输入" width="100%">
-  <AutoComplete.Searching>
-    <span style={{ color: 'red' }}>等待中...</span>
-  </AutoComplete.Searching>
-</AutoComplete>
-`}
+  () => {
+    return (
+    <div style={{display: 'flex'}}>
+      <AutoComplete searching placeholder="在这里输入" width="100%">
+        <AutoComplete.Searching>
+          <span style={{ color: 'red' }}>等待中...</span>
+        </AutoComplete.Searching>
+      </AutoComplete>
+      <Spacer inline />
+      <AutoComplete variant="solid" searching placeholder="在这里输入" width="100%">
+        <AutoComplete.Searching>
+          <span style={{ color: 'red' }}>等待中...</span>
+        </AutoComplete.Searching>
+      </AutoComplete>
+    </div>
+    )
+  }
+  `}
 />
 
 <Playground
@@ -139,14 +192,14 @@ export const meta = {
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     setOptions(relatedOptions)
   }
   return (
@@ -163,37 +216,65 @@ export const meta = {
 <Playground
   title="定制选项"
   desc="你可以详细定制每一个备选项，让 `自动完成` 组件表达更多的信息。"
-  scope={{ AutoComplete, useState, Text, Badge, Grid }}
+  scope={{ AutoComplete, useState, Text, Badge, Grid, Spacer }}
   code={`
 () => {
-  const makeOption = (label, value) => (
-    <AutoComplete.Option value={value}>
+  const makeOption = (label) => (
+    <AutoComplete.Option label={label}>
       <Grid.Container style={{ padding: '10pt 0' }}>
-        <Grid xs={24}><Text span b size="1.2rem">最近的搜索结果</Text></Grid>
+        <Grid xs={24}><Text span b size="1.2rem">Recent search results </Text></Grid>
         <Grid.Container xs={24}>
           <Grid xs><Text span>{label}</Text></Grid>
-          <Grid xs={4}><Badge type="success">推荐的</Badge></Grid>
+          <Grid xs={4}><Badge type="success">Recommended</Badge></Grid>
         </Grid.Container>
       </Grid.Container>
     </AutoComplete.Option>
   )
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    const customOptions = relatedOptions.map(({ label, value }) => makeOption(label, value))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
+    const customOptions = relatedOptions.map(({ label }) => makeOption(label))
     setOptions(customOptions)
   }
+  const solidMakeOption = (label) => (
+    <AutoComplete.Option label={label}>
+      <Grid.Container style={{ padding: '10pt 0' }}>
+        <Grid xs={24}><Text span b size="1.2rem">Recent search results </Text></Grid>
+        <Grid.Container xs={24}>
+          <Grid xs><Text span>{label}</Text></Grid>
+          <Grid xs={4}><Badge type="success">Recommended</Badge></Grid>
+        </Grid.Container>
+      </Grid.Container>
+    </AutoComplete.Option>
+  )
+  const [solidOptions, solidSetOptions] = useState()
+  const solidSearchHandler = (currentValue) => {
+    if (!currentValue) return solidSetOptions([])
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
+    const customOptions = relatedOptions.map(({ label }) => solidMakeOption(label))
+    solidSetOptions(customOptions)
+  }
   return (
-    <AutoComplete placeholder="在这里输入"
-      width="100%"
-      options={options}
-      onSearch={searchHandler} />
+<div>
+  <AutoComplete
+    placeholder="在这里输入"
+    width="100%"
+    options={options}
+    onSearch={searchHandler} />
+  <Spacer y={1} />
+  <AutoComplete
+    variant="solid"
+    placeholder="在这里输入"
+    width="100%"
+    options={solidOptions}
+    onSearch={solidSearchHandler} />
+</div>
   )
 }
 `}
@@ -206,9 +287,9 @@ export const meta = {
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   return (
     <>
@@ -228,42 +309,21 @@ export const meta = {
 <Playground
   title="可清除的"
   desc="在输入框内添加一个用作清除文字的按钮。"
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer, SearchIcon }}
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
-  return <AutoComplete placeholder="在这里输入" clearable options={options} />
-}
-`}
-/>
-
-<Playground
-  title="可创建的"
-  desc="为任意值添加待选条目。"
-  scope={{ AutoComplete }}
-  code={`
-() => {
-  const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
-  ]
-  const [options, setOptions] = React.useState()
-  const searchHandler = (currentValue) => {
-    const createOptions = [{
-      value: currentValue, label: 'Add "' + currentValue + '"'
-    }]
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    const optionsWithCreatable = relatedOptions.length !== 0 ? relatedOptions : createOptions
-    setOptions(optionsWithCreatable)
+  return (
+  <div  style={{display: 'flex'}}>
+  <AutoComplete icon={<SearchIcon />}  placeholder="在这里输入" clearable options={options} />
+  <Spacer inline />
+  <AutoComplete icon={<SearchIcon />}  variant="solid" placeholder="Enter here" clearable options={options} />
+  </div>)
   }
-  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
-}
 `}
 />
 
@@ -272,6 +332,7 @@ export const meta = {
 
 | 属性                  | 描述                                                 | 类型                                             | 推荐值                                                  | 默认      |
 | --------------------- | ---------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
+| **variant**           | 输入框的类型                                         | string                                           | `'solid', 'line'`                                       | `line`    |
 | **options**           | 输入框的可选项                                       | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
 | **status**            | 输入框类型                                           | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **size**              | 输入框大小                                           | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
@@ -314,7 +375,6 @@ export const meta = {
 ```ts
 Array<{
   label: string
-  value: string
 } | AutoComplete.Item>
 ```
 
