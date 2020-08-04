@@ -273,6 +273,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
       bg2: theme.palette.cTheme0, // '#e6f7ff',
       bgScroll: theme.palette.cNeutral0,
       bgHover: theme.palette.cTheme0, // '#f5f5f5',
+      bgDisabled: theme.palette.cNeutral0,
       border: theme.palette.cTheme5, // '#f0f0f0',
       border2: theme.palette.cTheme5, // '#7ec1ff',
       border3: theme.palette.cNeutral5, // '#d9d9d9',
@@ -723,7 +724,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-year-panel .${prefix}-picker-cell-disabled .${prefix}-picker-cell-inner,
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-disabled .${prefix}-picker-cell-inner,
         .${prefix}-picker-month-panel .${prefix}-picker-cell-disabled .${prefix}-picker-cell-inner {
-          background: ${pattern.color.bgHover};
+          background: ${pattern.color.bgDisabled};
         }
 
         .${prefix}-picker-quarter-panel .${prefix}-picker-content {

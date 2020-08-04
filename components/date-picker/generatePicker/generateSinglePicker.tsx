@@ -1,7 +1,5 @@
 import * as React from 'react'
-import Calendar from '@zeit-ui/react-icons/calendar'
-import Clock from '@zeit-ui/react-icons/clock'
-import XCircleFill from '@zeit-ui/react-icons/xCircleFill'
+import { Calendar, Clock, XCircleFill } from '@zeit-ui/react-icons'
 import RCPicker from '@jnoodle/rc-picker'
 import { PickerMode } from '@jnoodle/rc-picker/lib/interface'
 import { GenerateConfig } from '@jnoodle/rc-picker/lib/generate'

@@ -1,8 +1,5 @@
 import * as React from 'react'
-import Calendar from '@zeit-ui/react-icons/calendar'
-import Clock from '@zeit-ui/react-icons/clock'
-import XCircleFill from '@zeit-ui/react-icons/xCircleFill'
-import ArrowRight from '@zeit-ui/react-icons/arrowRight'
+import { Calendar, Clock, XCircleFill, Minus } from '@zeit-ui/react-icons'
 import { RangePicker as RCRangePicker } from '@jnoodle/rc-picker'
 import { GenerateConfig } from '@jnoodle/rc-picker/lib/generate'
 import { getLocale, getRangePlaceholder } from '../util'
@@ -36,7 +33,7 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
       <RCRangePicker<DateType>
         separator={
           <span aria-label="to" className={`${prefixCls}-separator`}>
-            <ArrowRight />
+            <Minus />
           </span>
         }
         placeholder={getRangePlaceholder(picker, locale, placeholder)}
