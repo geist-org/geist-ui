@@ -1,4 +1,6 @@
 import { ZeitUIThemes } from '../styles/themes'
+import { PickerProps, RangePickerProps } from './generatePicker'
+import { addColorAlpha } from '../utils/color'
 
 const animationDuration = '0.2s'
 
@@ -261,9 +263,128 @@ export const animationStyle = (
 )
 
 // picker style
-export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 'cfx') => {
+export const generatePickerGlobalStyle = <DateType extends any>(
+  theme: ZeitUIThemes,
+  props: PickerProps<DateType> | RangePickerProps<DateType>,
+) => {
+  const {
+    prefixCls: prefix = 'cfx',
+  } = props
+
+  const { palette } = theme
+
+  // sync with input styles
+  const inputPattern = {
+    solid: {
+      default: {
+        color: palette.cNeutral7,
+        hoverColor: 'inherit',
+        backgroundColor: palette.cNeutral0,
+        hoverBackgroundColor: palette.cTheme0,
+        border: 'transparent',
+        hoverBorderColor: 'transparent',
+      },
+      primary: {
+        color: palette.cNeutral7,
+        hoverColor: 'inherit',
+        backgroundColor: palette.cTheme0,
+        hoverBackgroundColor: palette.cTheme1,
+        border: 'transparent',
+        hoverBorderColor: 'transparent',
+      },
+      success: {
+        color: palette.cNeutral7,
+        hoverColor: 'inherit',
+        backgroundColor: palette.successLight,
+        hoverBackgroundColor: palette.success,
+        border: 'transparent',
+        hoverBorderColor: 'transparent',
+      },
+      warning: {
+        color: palette.cNeutral7,
+        hoverColor: 'inherit',
+        backgroundColor: palette.warningLight,
+        hoverBackgroundColor: palette.warning,
+        border: 'transparent',
+        hoverBorderColor: 'transparent',
+      },
+      error: {
+        color: palette.error,
+        hoverColor: palette.error,
+        backgroundColor: addColorAlpha(palette.errorLight, 0.8),
+        hoverBackgroundColor: palette.errorLight,
+        border: 'transparent',
+        hoverBorderColor: 'transparent',
+      },
+    },
+    line: {
+      default: {
+        color: palette.cNeutral7,
+        hoverColor: palette.cTheme5,
+        backgroundColor: palette.cNeutral8,
+        hoverBackgroundColor: palette.cNeutral8,
+        border: `1px solid ${palette.cNeutral2}`,
+        hoverBorderColor: palette.cTheme5,
+      },
+      primary: {
+        color: palette.cNeutral7,
+        hoverColor: palette.cTheme5,
+        backgroundColor: palette.cNeutral8,
+        hoverBackgroundColor: palette.cNeutral8,
+        border: `1px solid ${palette.cTheme2}`,
+        hoverBorderColor: palette.cTheme5,
+      },
+      success: {
+        color: palette.cNeutral7,
+        hoverColor: 'inherit',
+        backgroundColor: palette.cNeutral8,
+        hoverBackgroundColor: palette.cNeutral8,
+        border: `1px solid ${palette.successLight}`,
+        hoverBorderColor: palette.success,
+      },
+      warning: {
+        color: palette.cNeutral7,
+        hoverColor: 'inherit',
+        backgroundColor: palette.cNeutral8,
+        hoverBackgroundColor: palette.cNeutral8,
+        border: `1px solid ${palette.warningLight}`,
+        hoverBorderColor: palette.warning,
+      },
+      error: {
+        color: palette.error,
+        hoverColor: palette.error,
+        backgroundColor: palette.cNeutral8,
+        hoverBackgroundColor: palette.cNeutral8,
+        border: `1px solid ${addColorAlpha(palette.errorLight, 0.8)}`,
+        hoverBorderColor: palette.errorLight,
+      },
+    },
+    size: {
+      mini: {
+        heightRatio: '1.5',
+        fontSize: '0.5714rem',
+        margin: '0 1.1429rem',
+      },
+      small: {
+        heightRatio: '2',
+        fontSize: '0.8571rem',
+        margin: '0 1.1429rem',
+      },
+      medium: {
+        heightRatio: '2.5',
+        fontSize: '1rem',
+        margin: '0 1.1429rem',
+      },
+      large: {
+        heightRatio: '3',
+        fontSize: '1.1429rem',
+        margin: '0 1.1429rem',
+      },
+    },
+  }
+
   // TODO Dark theme
-  // TODO Unify input style
+  // TODO Change some style to local. Is it necessary?
 
   // TODO Although a lot of style adjustments have been made, extreme cases are not ruled out.
   //      Maybe need adjust the pseudo-element (::before or ::after) styles, it sucks.
@@ -283,7 +404,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
       active: theme.palette.cTheme5, // '#096dd9',
       placeholder: theme.palette.cNeutral5, // '#bfbfbf',
       heading: theme.palette.cNeutral7, // ''rgba(0, 0, 0, 0.85)',
-      disabled: theme.palette.cNeutral5, // 'rgba(0, 0, 0, 0.25)',
+      disabled: theme.palette.cNeutral4, // 'rgba(0, 0, 0, 0.25)',
       text: theme.palette.cNeutral7, // 'rgba(0, 0, 0, 0.65)',
       // text2: 'rgba(0, 0, 0, 0.45)',
       shadow: 'rgba(24, 144, 255, 0.2)',
@@ -300,12 +421,10 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
       fontHeader: '1.2rem',
       fontLarge: '1rem',
       fontMedium: '.875rem',
-      fontSmall: '.75rem',
-      fontMini: '.75rem',
     },
     other: {
       transitionDuration: '0.3s',
-    }
+    },
   }
 
   return (
@@ -1031,20 +1150,19 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           box-sizing: border-box;
           margin: 0;
           padding: 0;
-          color: ${pattern.color.text};
-          font-size: ${pattern.size.fontMedium};
+          color: ${inputPattern.line.default.color};
+          font-size: ${inputPattern.size.medium.fontSize};
           font-variant: tabular-nums;
-          line-height: 1.5715;
           list-style: none;
           font-feature-settings: 'tnum';
-          padding: 6px 11px;
           position: relative;
           display: inline-flex;
           align-items: center;
-          background: ${pattern.color.bg};
-          border: 1px solid ${pattern.color.border3};
-          border-radius: 2px;
-          transition: border ${pattern.other.transitionDuration}, box-shadow ${pattern.other.transitionDuration};
+          background-color: ${inputPattern.line.default.backgroundColor};
+          border: ${inputPattern.line.default.border};
+          border-radius: ${theme.expressiveness.R2};
+          transition: border 0.2s ease 0s, color 0.2s ease 0s;
+      };
         }
 
         .${prefix}-picker:hover,
@@ -1086,8 +1204,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
 
         .${prefix}-picker.${prefix}-picker-disabled {
           background: ${pattern.color.bg};
-          border-color: ${pattern.color.border3};
           cursor: not-allowed;
+          user-select: none;
         }
 
         .${prefix}-picker.${prefix}-picker-disabled .${prefix}-picker-suffix {
@@ -1105,6 +1223,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           display: inline-flex;
           align-items: center;
           width: 100%;
+          height: calc(${inputPattern.size.medium.heightRatio} * ${theme.layout.gap} - 2px);
+          line-height: calc(${inputPattern.size.medium.heightRatio} * ${theme.layout.gap} - 3px);
         }
 
         .${prefix}-picker-input > input {
@@ -1112,21 +1232,20 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           display: inline-block;
           width: 100%;
           min-width: 0;
-          padding: 4px 11px;
-          color: ${pattern.color.text};
-          font-size: ${pattern.size.fontMedium};
-          line-height: 1.5715;
-          background-color: ${pattern.color.bg};
-          background-image: none;
-          border: 1px solid ${pattern.color.border3};
-          border-radius: 2px;
+          color: ${inputPattern.line.default.color};
+          margin: ${inputPattern.size.medium.margin};
+          font-size: ${inputPattern.size.medium.fontSize};
+          font-weight: normal;
+          line-height: calc(${inputPattern.size.medium.heightRatio} * ${theme.layout.gap} - 4px);
           transition: all ${pattern.other.transitionDuration};
           flex: auto;
           min-width: 1px;
           height: auto;
           padding: 0;
-          background: 0 0;
-          border: 0;
+          background-color: transparent;
+          border: none;
+          outline: none;
+          -webkit-appearance: none;
         }
 
         .${prefix}-picker-input > input::-moz-placeholder {
@@ -1226,35 +1345,85 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           color: ${pattern.color.placeholder};
         }
         
-        // TODO set same size as input
+        // same size as input
 
-        .${prefix}-picker-large {
-          padding: 8px 11px;
+        .${prefix}-picker-size-large .${prefix}-picker-input {
+          height: calc(${inputPattern.size.large.heightRatio} * ${theme.layout.gap} - 2px);
+          line-height: calc(${inputPattern.size.large.heightRatio} * ${theme.layout.gap} - 3px);
         }
 
-        .${prefix}-picker-large .${prefix}-picker-input > input {
-          font-size: ${pattern.size.fontLarge};
+        .${prefix}-picker-size-large .${prefix}-picker-input > input {
+          margin: ${inputPattern.size.large.margin};
+          font-size: ${inputPattern.size.large.fontSize};
+          line-height: calc(${inputPattern.size.large.heightRatio} * ${theme.layout.gap} - 4px);
         }
 
-        .${prefix}-picker-small {
-          padding: 4px 7px;
+        .${prefix}-picker-size-small .${prefix}-picker-input {
+          height: calc(${inputPattern.size.small.heightRatio} * ${theme.layout.gap} - 2px);
+          line-height: calc(${inputPattern.size.small.heightRatio} * ${theme.layout.gap} - 3px);
         }
 
-        .${prefix}-picker-small .${prefix}-picker-input > input {
-          font-size: ${pattern.size.fontSmall};
+        .${prefix}-picker-size-small .${prefix}-picker-input > input {
+          margin: ${inputPattern.size.small.margin};
+          font-size: ${inputPattern.size.small.fontSize};
+          line-height: calc(${inputPattern.size.small.heightRatio} * ${theme.layout.gap} - 4px);
         }
 
-        .${prefix}-picker-mini {
-          padding: 2px 4px;
+        .${prefix}-picker-size-mini .${prefix}-picker-input {
+          height: calc(${inputPattern.size.mini.heightRatio} * ${theme.layout.gap} - 2px);
+          line-height: calc(${inputPattern.size.mini.heightRatio} * ${theme.layout.gap} - 3px);
         }
 
-        .${prefix}-picker-mini .${prefix}-picker-input > input {
-          font-size: ${pattern.size.fontMini};
+        .${prefix}-picker-size-mini .${prefix}-picker-input > input {
+          margin: ${inputPattern.size.mini.margin};
+          font-size: ${inputPattern.size.mini.fontSize};
+          line-height: calc(${inputPattern.size.mini.heightRatio} * ${theme.layout.gap} - 4px);
         }
+
+        // same variant as input
+
+        .${prefix}-picker.${prefix}-picker-variant-solid {
+          color: ${inputPattern.solid.default.color};
+          background-color: ${inputPattern.solid.default.backgroundColor};
+          border: ${inputPattern.solid.default.border};
+        }
+
+        .${prefix}-picker.${prefix}-picker-variant-solid .${prefix}-picker-clear {
+          background-color: ${inputPattern.solid.default.hoverBackgroundColor};
+        }
+
+        .${prefix}-picker.${prefix}-picker-variant-solid:hover,
+        .${prefix}-picker-focused.${prefix}-picker-variant-solid {
+          background-color: ${inputPattern.solid.default.hoverBackgroundColor};
+        }
+
+        .${prefix}-picker.${prefix}-picker-variant-solid:hover .${prefix}-picker-input > input,
+        .${prefix}-picker-focused.${prefix}-picker-variant-solid .${prefix}-picker-input > input,
+        .${prefix}-picker.${prefix}-picker-variant-solid:hover .${prefix}-picker-suffix,
+        .${prefix}-picker-focused.${prefix}-picker-variant-solid .${prefix}-picker-suffix {
+          color: ${inputPattern.solid.default.color};
+        }
+        
+        .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled {
+          background-color: ${theme.palette.cNeutral3};
+        }
+
+        .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled:hover .${prefix}-picker-input > input,
+        .${prefix}-picker-focused.${prefix}-picker-variant-solid.${prefix}-picker-disabled .${prefix}-picker-input > input,
+        .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled:hover .${prefix}-picker-suffix,
+        .${prefix}-picker-focused.${prefix}-picker-variant-solid.${prefix}-picker-disabled .${prefix}-picker-suffix {
+          color: ${pattern.color.disabled};
+        }
+
+        // same color as input
+
+
+
 
         .${prefix}-picker-suffix {
           align-self: center;
           margin-left: 4px;
+          margin-right: 1rem;
           color: ${pattern.color.disabled};
           line-height: 1;
           pointer-events: none;
@@ -1267,10 +1436,10 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-clear {
           position: absolute;
           top: 50%;
-          right: 0;
-          color: ${pattern.color.disabled};
+          right: 1rem;
+          color: ${theme.palette.cNeutral2};
           line-height: 1;
-          background: ${pattern.color.bg};
+          background-color: ${pattern.color.bg};
           transform: translateY(-50%);
           cursor: pointer;
           opacity: 0;
@@ -1283,7 +1452,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-clear:hover {
-          color: ${pattern.color.hover};
+          color: ${inputPattern.line.default.color};
         }
 
         .${prefix}-picker-separator {
@@ -1311,7 +1480,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-range .${prefix}-picker-clear {
-          right: 11px;
+          right: 1rem
         }
 
         .${prefix}-picker-range:hover .${prefix}-picker-clear {
@@ -1321,7 +1490,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-range .${prefix}-picker-active-bar {
           bottom: -1px;
           height: 2px;
-          margin-left: 11px;
+          margin-left: 0;
           background: ${pattern.color.base};
           opacity: 0;
           transition: all ${pattern.other.transitionDuration} ease-out;

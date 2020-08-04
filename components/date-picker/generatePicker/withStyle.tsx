@@ -11,7 +11,7 @@ const withStyle = <DateType extends any>(Picker: React.FC) => (
   return (
     <>
       <Picker {...props} />
-      {generatePickerGlobalStyle(theme, props.prefixCls)}
+      {generatePickerGlobalStyle(theme, props)}
     </>
   )
 }

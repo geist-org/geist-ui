@@ -35,6 +35,41 @@ export const meta = {
 />
 
 <Playground
+  title="预置样式"
+  desc="通过定义 `variant` 或者 `color` props 来更新输入框类型和颜色样式。"
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker locale="zh-CN" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" color="primary" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" color="success" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" color="warning" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" color="error" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" variant="solid" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" variant="solid" color="primary" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" variant="solid" color="success" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" variant="solid" color="warning" /><Spacer y={.5} />
+      <DatePicker locale="zh-CN" variant="solid" color="error" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" color="primary" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" color="success" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" color="warning" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" color="error" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" variant="solid" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" variant="solid" color="primary" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" variant="solid" color="success" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" variant="solid" color="warning" /><Spacer y={.5} />
+      <RangePicker locale="zh-CN" variant="solid" color="error" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
   title="范围选择器"
   desc="通过设置 `picker` 属性，指定范围选择器类型。"
   scope={{ DatePicker, Spacer }}
@@ -122,7 +157,7 @@ export const meta = {
 
 <Playground
   title="禁用"
-  desc="让选择框不可用。可以通过数组单独禁用 RangePicker 的其中一项。"
+  desc="让选择框不可用或只读。可以通过数组单独禁用 RangePicker 的其中一项。"
   scope={{ DatePicker, Spacer, moment }}
   code={`
 () => {
@@ -131,6 +166,12 @@ export const meta = {
   return (
     <>
       <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} disabled />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} variant="solid" disabled />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} inputReadOnly allowClear={false} />
+      <Spacer y={0.5} />
+      <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} variant="solid" inputReadOnly allowClear={false} />
       <Spacer y={0.5} />
       <DatePicker
         locale="zh-CN"
@@ -635,30 +676,32 @@ export const meta = {
 
 <Attributes.Title>共同的 Props</Attributes.Title>
 
-| 属性                  | 描述                                             | 类型                                                              | 推荐值                                             | 默认     |
-| --------------------- | ------------------------------------------------ | ----------------------------------------------------------------- | -------------------------------------------------- | -------- |
-| **allowClear**        | 是否显示清除按钮                                 | `boolean`                                                         | -                                                  | `true`   |
-| **autoFocus**         | 自动获取焦点                                     | `boolean`                                                         | -                                                  | `false`  |
-| **className**         | 额外 className                                   | `string`                                                          | -                                                  | -        |
-| **dateRender**        | 自定义日期单元格的内容                           | `function(currentDate: moment, today: moment) => React.ReactNode` | -                                                  | -        |
-| **disabled**          | 禁用                                             | `boolean`                                                         | -                                                  | `false`  |
-| **disabledDate**      | 不可选择的日期                                   | `(currentDate: moment) => boolean`                                | -                                                  | -        |
-| **dropdownClassName** | 弹出日历的额外 className                         | `string`                                                          | -                                                  | -        |
-| **getPopupContainer** | 定义浮层的容器，默认为 body 上新建 div           | `function(trigger)`                                               | -                                                  | -        |
-| **locale**            | 国际化配置                                       | `string`                                                          | `en-US` \| `zh-CN`                                 | `en-US`  |
-| **mode**              | 日期面板的模式                                   | `string`                                                          | `time` \| `date` \| `month` \| `year` \| `decade`  | -        |
-| **open**              | 控制弹层是否展开                                 | `boolean`                                                         | -                                                  | `false`  |
-| **panelRender**       | 自定义渲染面板                                   | `(panelNode) => ReactNode`                                        | -                                                  | -        |
-| **picker**            | 设置选择器类型                                   | `string`                                                          | `date` \| `week` \| `month` \| `quarter` \| `year` | `date`   |
-| **placeholder**       | 输入框提示文字                                   | `string` \| `[string, string]`                                    | -                                                  | -        |
-| **popupStyle**        | 额外的弹出日历样式                               | `CSSProperties`                                                   | -                                                  | {}       |
-| **size**              | 输入框大小                                       | `string`                                                          | `large` \| `medium` \| `small` \| `mini`           | `medium` |
-| **bordered**          | 是否有边框                                       | `boolean`                                                         | -                                                  | `true`   |
-| **suffixIcon**        | 自定义的选择框后缀图标                           | `ReactNode`                                                       | -                                                  | -        |
-| **style**             | 自定义输入框样式                                 | `CSSProperties`                                                   | {}                                                 | -        |
-| **onOpenChange**      | 弹出日历和关闭日历的回调                         | `function(open)`                                                  | -                                                  | -        |
-| **onPanelChange**     | 日历面板切换的回调                               | `function(value, mode)`                                           | -                                                  | -        |
-| **inputReadOnly**     | 设置输入框为只读（避免在移动设备上打开虚拟键盘） | `boolean`                                                         | -                                                  | `false`  |
+| 属性                  | 描述                                             | 类型                                                              | 推荐值                                                        | 默认      |
+| --------------------- | ------------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------- | --------- |
+| **variant**           | 输入框的类型                                     | `string`                                                          | `solid` \| `line`                                             | `line`    |
+| **color**             | 输入框颜色                                       | `NormalTypes`                                                     | `default` \| `secondary` \| `success` \| `warning` \| `error` | `default` |
+| **size**              | 输入框大小                                       | `string`                                                          | `large` \| `medium` \| `small` \| `mini`                      | `medium`  |
+| **allowClear**        | 是否显示清除按钮                                 | `boolean`                                                         | -                                                             | `true`    |
+| **autoFocus**         | 自动获取焦点                                     | `boolean`                                                         | -                                                             | `false`   |
+| **className**         | 额外 className                                   | `string`                                                          | -                                                             | -         |
+| **dateRender**        | 自定义日期单元格的内容                           | `function(currentDate: moment, today: moment) => React.ReactNode` | -                                                             | -         |
+| **disabled**          | 禁用                                             | `boolean`                                                         | -                                                             | `false`   |
+| **disabledDate**      | 不可选择的日期                                   | `(currentDate: moment) => boolean`                                | -                                                             | -         |
+| **dropdownClassName** | 弹出日历的额外 className                         | `string`                                                          | -                                                             | -         |
+| **getPopupContainer** | 定义浮层的容器，默认为 body 上新建 div           | `function(trigger)`                                               | -                                                             | -         |
+| **locale**            | 国际化配置                                       | `string`                                                          | `en-US` \| `zh-CN`                                            | `en-US`   |
+| **mode**              | 日期面板的模式                                   | `string`                                                          | `time` \| `date` \| `month` \| `year` \| `decade`             | -         |
+| **open**              | 控制弹层是否展开                                 | `boolean`                                                         | -                                                             | `false`   |
+| **panelRender**       | 自定义渲染面板                                   | `(panelNode) => ReactNode`                                        | -                                                             | -         |
+| **picker**            | 设置选择器类型                                   | `string`                                                          | `date` \| `week` \| `month` \| `quarter` \| `year`            | `date`    |
+| **placeholder**       | 输入框提示文字                                   | `string` \| `[string, string]`                                    | -                                                             | -         |
+| **popupStyle**        | 额外的弹出日历样式                               | `CSSProperties`                                                   | -                                                             | {}        |
+| **bordered**          | 是否有边框                                       | `boolean`                                                         | -                                                             | `true`    |
+| **suffixIcon**        | 自定义的选择框后缀图标                           | `ReactNode`                                                       | -                                                             | -         |
+| **style**             | 自定义输入框样式，如宽度，高度等                 | `CSSProperties`                                                   | {}                                                            | -         |
+| **onOpenChange**      | 弹出日历和关闭日历的回调                         | `function(open)`                                                  | -                                                             | -         |
+| **onPanelChange**     | 日历面板切换的回调                               | `function(value, mode)`                                           | -                                                             | -         |
+| **inputReadOnly**     | 设置输入框为只读（避免在移动设备上打开虚拟键盘） | `boolean`                                                         | -                                                             | `false`   |
 
 <Attributes.Title>DatePicker Props</Attributes.Title>
 

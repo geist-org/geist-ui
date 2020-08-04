@@ -14,6 +14,8 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
       className = '',
       locale = 'en-US',
       size: customizeSize = 'medium',
+      variant: customizeVariant = 'line',
+      color: customizeColor = 'default',
       bordered = true,
       placeholder,
       ...restProps
@@ -43,7 +45,7 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
         transitionName="slide-up"
         {...restProps}
         {...additionalOverrideProps}
-        className={`${customizeSize ? `${prefixCls}-${customizeSize}` : ''} ${
+        className={`${prefixCls}-size-${customizeSize} ${prefixCls}-variant-${customizeVariant} ${prefixCls}-color-${customizeColor} ${
           !bordered ? `${prefixCls}-borderless` : ''
         } ${className}`}
         locale={getLocale(locale)}

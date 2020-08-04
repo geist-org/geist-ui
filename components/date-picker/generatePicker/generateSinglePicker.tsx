@@ -18,6 +18,8 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
         className = '',
         locale = 'en-US',
         size: customizeSize = 'medium',
+        variant: customizeVariant = 'line',
+        color: customizeColor = 'default',
         bordered = true,
         placeholder,
         ...restProps
@@ -53,10 +55,11 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
           {...additionalProps}
           {...restProps}
           {...additionalOverrideProps}
+          inputReadOnly={true}
           locale={getLocale(locale)}
-          className={`${className} ${customizeSize ? `${prefixCls}-${customizeSize}` : ''} ${
+          className={`${prefixCls}-size-${customizeSize} ${prefixCls}-variant-${customizeVariant} ${prefixCls}-color-${customizeColor} ${
             !bordered ? `${prefixCls}-borderless` : ''
-          }`}
+          } ${className}`}
           prefixCls={prefixCls}
           getPopupContainer={customizeGetPopupContainer}
           generateConfig={generateConfig}

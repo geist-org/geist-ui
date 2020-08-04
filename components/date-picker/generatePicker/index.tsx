@@ -16,6 +16,7 @@ import PickerButton from '../PickerButton'
 import PickerTag from '../PickerTag'
 import generateSinglePicker from './generateSinglePicker'
 import generateRangePicker from './generateRangePicker'
+import { InputColors, InputVariantTypes, NormalSizes } from '../../utils/prop-types'
 
 export const Components = { button: PickerButton, rangeItem: PickerTag }
 
@@ -70,8 +71,10 @@ type InjectDefaultProps<Props> = Omit<
   | 'components'
 > & {
   locale?: string
-  size?: SizeType
   bordered?: boolean
+  size?: NormalSizes
+  color?: InputColors
+  variant?: InputVariantTypes
 }
 
 export type AdditionalPickerLocaleProps = {
@@ -112,8 +115,6 @@ export type RangePickerProps<DateType> =
   | RangePickerBaseProps<DateType>
   | RangePickerDateProps<DateType>
   | RangePickerTimeProps<DateType>
-
-export type SizeType = 'mini' | 'small' | 'medium' | 'large' | undefined
 
 function generatePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
   // Picker

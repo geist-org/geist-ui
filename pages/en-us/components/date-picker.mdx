@@ -35,6 +35,41 @@ Select or input a date or time.
 />
 
 <Playground
+  title="Variant & Color"
+  desc="Customize styles by define `variant` or `color` props."
+  scope={{ DatePicker, Spacer }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  return (
+    <>
+      <DatePicker /><Spacer y={.5} />
+      <DatePicker color="primary" /><Spacer y={.5} />
+      <DatePicker color="success" /><Spacer y={.5} />
+      <DatePicker color="warning" /><Spacer y={.5} />
+      <DatePicker color="error" /><Spacer y={.5} />
+      <DatePicker variant="solid" /><Spacer y={.5} />
+      <DatePicker variant="solid" color="primary" /><Spacer y={.5} />
+      <DatePicker variant="solid" color="success" /><Spacer y={.5} />
+      <DatePicker variant="solid" color="warning" /><Spacer y={.5} />
+      <DatePicker variant="solid" color="error" /><Spacer y={.5} />
+      <RangePicker /><Spacer y={.5} />
+      <RangePicker color="primary" /><Spacer y={.5} />
+      <RangePicker color="success" /><Spacer y={.5} />
+      <RangePicker color="warning" /><Spacer y={.5} />
+      <RangePicker color="error" /><Spacer y={.5} />
+      <RangePicker variant="solid" /><Spacer y={.5} />
+      <RangePicker variant="solid" color="primary" /><Spacer y={.5} />
+      <RangePicker variant="solid" color="success" /><Spacer y={.5} />
+      <RangePicker variant="solid" color="warning" /><Spacer y={.5} />
+      <RangePicker variant="solid" color="error" />
+    </>
+  )
+}
+`}
+/>
+
+<Playground
   title="Range Picker"
   desc="Set range picker type by `picker` prop."
   scope={{ DatePicker, Spacer }}
@@ -120,7 +155,7 @@ Select or input a date or time.
 
 <Playground
   title="Disabled"
-  desc="A disabled state of the `DatePicker`. You can also set as array to disable one of input."
+  desc="A disabled or readonly state of the `DatePicker`. You can also set as array to disable one of input."
   scope={{ DatePicker, Spacer, moment }}
   code={`
 () => {
@@ -129,6 +164,12 @@ Select or input a date or time.
   return (
     <>
       <DatePicker defaultValue={moment('2020-06-06', dateFormat)} disabled />
+      <Spacer y={0.5} />
+      <DatePicker defaultValue={moment('2020-06-06', dateFormat)} variant="solid" disabled />
+      <Spacer y={0.5} />
+      <DatePicker defaultValue={moment('2020-06-06', dateFormat)} inputReadOnly allowClear={false} />
+      <Spacer y={0.5} />
+      <DatePicker defaultValue={moment('2020-06-06', dateFormat)} variant="solid" inputReadOnly allowClear={false} />
       <Spacer y={0.5} />
       <DatePicker picker="month" defaultValue={moment('2020-06', 'YYYY-MM')} disabled />
       <Spacer y={0.5} />
@@ -617,30 +658,32 @@ There are six kinds of picker:
 
 <Attributes.Title>Common Props</Attributes.Title>
 
-| Attribute             | Description                                                                                          | Type                                                              | Accepted values                                    | Default  |
-| --------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | -------------------------------------------------- | -------- |
-| **allowClear**        | Whether to show clear button                                                                         | `boolean`                                                         | -                                                  | `true`   |
-| **autoFocus**         | If get focus when component mounted                                                                  | `boolean`                                                         | -                                                  | `false`  |
-| **className**         | The picker className                                                                                 | `string`                                                          | -                                                  | -        |
-| **dateRender**        | Custom rendering function for date cells                                                             | `function(currentDate: moment, today: moment) => React.ReactNode` | -                                                  | -        |
-| **disabled**          | Determine whether the DatePicker is disabled                                                         | `boolean`                                                         | -                                                  | `false`  |
-| **disabledDate**      | Specify the date that cannot be selected                                                             | `(currentDate: moment) => boolean`                                | -                                                  | -        |
-| **dropdownClassName** | To customize the className of the popup calendar                                                     | `string`                                                          | -                                                  | -        |
-| **getPopupContainer** | To set the container of the floating layer, while the default is to create a `div` element in `body` | `function(trigger)`                                               | -                                                  | -        |
-| **locale**            | Localization configuration                                                                           | `string`                                                          | `en-US` \| `zh-CN`                                 | `en-US`  |
-| **mode**              | The picker panel mode                                                                                | `string`                                                          | `time` \| `date` \| `month` \| `year` \| `decade`  | -        |
-| **open**              | The open state of picker                                                                             | `boolean`                                                         | -                                                  | `false`  |
-| **panelRender**       | Customize panel render                                                                               | `(panelNode) => ReactNode`                                        | -                                                  | -        |
-| **picker**            | Set picker type                                                                                      | `string`                                                          | `date` \| `week` \| `month` \| `quarter` \| `year` | `date`   |
-| **placeholder**       | The placeholder of date input                                                                        | `string` \| `[string, string]`                                    | -                                                  | -        |
-| **popupStyle**        | To customize the style of the popup calendar                                                         | `CSSProperties`                                                   | -                                                  | {}       |
-| **size**              | The determine the size of the input box.                                                             | `string`                                                          | `large` \| `medium` \| `small` \| `mini`           | `medium` |
-| **bordered**          | Whether has border style                                                                             | `boolean`                                                         | -                                                  | `true`   |
-| **suffixIcon**        | The custom suffix icon                                                                               | `ReactNode`                                                       | -                                                  | -        |
-| **style**             | To customize the style of the input box                                                              | `CSSProperties`                                                   | {}                                                 | -        |
-| **onOpenChange**      | Callback function, can be executed whether the popup calendar is popped up or closed                 | `function(open)`                                                  | -                                                  | -        |
-| **onPanelChange**     | Callback when picker panel mode is changed                                                           | `function(value, mode)`                                           | -                                                  | -        |
-| **inputReadOnly**     | Set the `readonly` attribute of the input tag (avoids virtual keyboard on touch devices)             | `boolean`                                                         | -                                                  | `false`  |
+| Attribute             | Description                                                                                          | Type                                                              | Accepted values                                               | Default   |
+| --------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------- | --------- |
+| **variant**           | datePicker variant                                                                                   | `string`                                                          | `solid` \| `line`                                             | `line`    |
+| **color**             | datePicker current color                                                                             | `NormalTypes`                                                     | `default` \| `secondary` \| `success` \| `warning` \| `error` | `default` |
+| **size**              | The determine the size of the input box                                                              | `string`                                                          | `large` \| `medium` \| `small` \| `mini`                      | `medium`  |
+| **allowClear**        | Whether to show clear button                                                                         | `boolean`                                                         | -                                                             | `true`    |
+| **autoFocus**         | If get focus when component mounted                                                                  | `boolean`                                                         | -                                                             | `false`   |
+| **className**         | The picker className                                                                                 | `string`                                                          | -                                                             | -         |
+| **dateRender**        | Custom rendering function for date cells                                                             | `function(currentDate: moment, today: moment) => React.ReactNode` | -                                                             | -         |
+| **disabled**          | Determine whether the DatePicker is disabled                                                         | `boolean`                                                         | -                                                             | `false`   |
+| **disabledDate**      | Specify the date that cannot be selected                                                             | `(currentDate: moment) => boolean`                                | -                                                             | -         |
+| **dropdownClassName** | To customize the className of the popup calendar                                                     | `string`                                                          | -                                                             | -         |
+| **getPopupContainer** | To set the container of the floating layer, while the default is to create a `div` element in `body` | `function(trigger)`                                               | -                                                             | -         |
+| **locale**            | Localization configuration                                                                           | `string`                                                          | `en-US` \| `zh-CN`                                            | `en-US`   |
+| **mode**              | The picker panel mode                                                                                | `string`                                                          | `time` \| `date` \| `month` \| `year` \| `decade`             | -         |
+| **open**              | The open state of picker                                                                             | `boolean`                                                         | -                                                             | `false`   |
+| **panelRender**       | Customize panel render                                                                               | `(panelNode) => ReactNode`                                        | -                                                             | -         |
+| **picker**            | Set picker type                                                                                      | `string`                                                          | `date` \| `week` \| `month` \| `quarter` \| `year`            | `date`    |
+| **placeholder**       | The placeholder of date input                                                                        | `string` \| `[string, string]`                                    | -                                                             | -         |
+| **popupStyle**        | To customize the style of the popup calendar                                                         | `CSSProperties`                                                   | -                                                             | {}        |
+| **bordered**          | Whether has border style                                                                             | `boolean`                                                         | -                                                             | `true`    |
+| **suffixIcon**        | The custom suffix icon                                                                               | `ReactNode`                                                       | -                                                             | -         |
+| **style**             | To customize the style of the input box, such as `width`, `height` ...                               | `CSSProperties`                                                   | {}                                                            | -         |
+| **onOpenChange**      | Callback function, can be executed whether the popup calendar is popped up or closed                 | `function(open)`                                                  | -                                                             | -         |
+| **onPanelChange**     | Callback when picker panel mode is changed                                                           | `function(value, mode)`                                           | -                                                             | -         |
+| **inputReadOnly**     | Set the `readonly` attribute of the input tag (avoids virtual keyboard on touch devices)             | `boolean`                                                         | -                                                             | `false`   |
 
 <Attributes.Title>DatePicker Props</Attributes.Title>
 
