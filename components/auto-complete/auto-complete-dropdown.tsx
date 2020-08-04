@@ -30,7 +30,7 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
   dropdownStyle,
   disableMatchWidth,
 }) => {
-  const isSolid = useMemo(() => variant === 'solid', [variant])
+  const isSolid = variant === 'solid'
   const theme = useTheme()
   const { ref, value } = useAutoCompleteContext()
   const { border, hoverBorderColor, hoverBackgroundColor } = useMemo(
@@ -52,7 +52,7 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
       clearTime={value === '' ? 0 : 60}
       leaveTime={value === '' ? 0 : 60}>
       <div
-        className={`auto-complete-dropdown ${className} ${isSolid ? 'solid' : 'line'}`}
+        className={`auto-complete-dropdown ${isSolid ? 'solid' : 'line'} ${className}`}
         style={dropdownStyle}
         onClick={clickHandler}>
         <div className="divider"></div>

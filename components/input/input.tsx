@@ -8,14 +8,14 @@ import React, {
   useState,
 } from 'react'
 import useTheme from '../styles/use-theme'
-import InputLabel from './input-label'
+import Textarea from '../textarea/textarea'
 import InputBlockLabel from './input-block-label'
 import InputIcon from './input-icon'
 import InputClearIcon from './input-icon-clear'
-import Textarea from '../textarea/textarea'
+import InputLabel from './input-label'
+import { defaultProps, Props } from './input-props'
 import InputPassword from './password'
-import { getSizes, getColors } from './styles'
-import { Props, defaultProps } from './input-props'
+import { getColors, getSizes } from './styles'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & typeof defaultProps & NativeAttrs
@@ -64,7 +64,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     ref: React.Ref<HTMLInputElement | null>,
   ) => {
     const theme = useTheme()
-    const isSolid = useMemo(() => variant === 'solid', [variant])
+    const isSolid = variant === 'solid'
     const inputRef = useRef<HTMLInputElement>(null)
     useImperativeHandle(ref, () => inputRef.current)
 

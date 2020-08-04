@@ -24,8 +24,8 @@ const Counter: React.FC<React.PropsWithChildren<CounterProps>> = ({ count, maxLe
         .counter {
           display: inline;
           position: absolute;
-          bottom: ${theme.layout.gapQuarter};
-          right: ${theme.layout.gapQuarter};
+          bottom: ${theme.layout.gapHalf};
+          right: ${theme.layout.gapHalf};
         }
         .counter .count {
           color: ${hasLimit ? theme.palette.cTheme3 : theme.palette.cTheme5};

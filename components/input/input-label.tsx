@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import useTheme from '../styles/use-theme'
-import withDefaults from '../utils/with-defaults'
 import { InputVariantTypes } from '../utils/prop-types'
+import withDefaults from '../utils/with-defaults'
 
 export interface InputLabel {
   isRight?: boolean
@@ -22,7 +22,7 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabelProps>> = ({
   fontSize,
 }) => {
   const theme = useTheme()
-  const isSolid = useMemo(() => variant === 'solid', [variant])
+  const isSolid = variant === 'solid'
 
   return (
     <span className={isRight ? 'right' : ''}>

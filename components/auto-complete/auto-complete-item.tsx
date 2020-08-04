@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
-import { useAutoCompleteContext } from './auto-complete-context'
-import { NormalSizes } from '../utils/prop-types'
 import FuzzyMatch from '../shared/fuzzy-match'
-import { InputVariantTypes } from '../utils/prop-types'
+import useTheme from '../styles/use-theme'
+import { InputVariantTypes, NormalSizes } from '../utils/prop-types'
+import withDefaults from '../utils/with-defaults'
+import { useAutoCompleteContext } from './auto-complete-context'
 
 interface Props {
   label: string
@@ -46,7 +45,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
   // The 'isLabelOnly' is only used inside the component,
   // Automatically adjust width when only label children is included.
   const itemHeight = useMemo(() => {
-    if (isLabelOnly) return `calc(1.688 * ${theme.layout.gap})`
+    if (isLabelOnly) return `calc(2.4 * ${theme.layout.gap})`
     return 'auto'
   }, [isLabelOnly, theme.layout.gap])
 
@@ -57,7 +56,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           color={variant === 'solid' ? 'secondary' : 'primary'}
           query={value || ''}
           label={label}
-          height={`calc(1.688 * ${theme.layout.gap})`}
+          height={`calc(2.4 * ${theme.layout.gap})`}
         />
       ) : (
         children
@@ -72,7 +71,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           font-size: ${fontSize};
           padding: 0 ${theme.layout.gapHalf};
           height: ${itemHeight};
-          color: ${theme.palette.foreground};
+          color: ${theme.palette.cNeutral7};
           user-select: none;
           border: 0;
           cursor: pointer;

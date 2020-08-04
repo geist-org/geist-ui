@@ -63,7 +63,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     },
     ref: React.Ref<HTMLTextAreaElement | null>,
   ) => {
-    const isSolid = useMemo(() => variant === 'solid', [variant])
+    const isSolid = variant === 'solid'
     const theme = useTheme()
     const hasLimit = useMemo(() => Number.isInteger(maxLength) && (maxLength as number) > 0, [
       maxLength,
@@ -179,7 +179,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
             resize: none;
             border: none;
             outline: none;
-            padding: ${theme.layout.gapHalf};
+            padding: calc(${theme.layout.gap} * 0.875) calc(${theme.layout.gap} * 0.75);
           }
 
           textarea:disabled {

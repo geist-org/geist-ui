@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-
 import Input from '../input'
 import Loading from '../loading'
 import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'
-import { InputColors, NormalSizes, InputVariantTypes } from '../utils/prop-types'
+import { InputColors, InputVariantTypes, NormalSizes } from '../utils/prop-types'
 import useClickAway from '../utils/use-click-away'
 import useCurrentState from '../utils/use-current-state'
 import { AutoCompleteConfig, AutoCompleteContext } from './auto-complete-context'
@@ -69,7 +68,7 @@ const childrenToOptionsNode = (options: Array<AutoCompleteOption>, variant: Inpu
 // When the search is set, at least one element should exist to avoid re-render.
 const getSearchIcon = (searching?: boolean) => {
   if (searching === undefined) return null
-  return searching ? <Loading size="medium" /> : <span />
+  return searching ? <Loading size="small" /> : <span />
 }
 
 const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
