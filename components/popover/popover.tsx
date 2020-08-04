@@ -6,12 +6,15 @@ import { Placement, TriggerTypes } from '../utils/prop-types'
 import { getReactNode } from '../utils/collections'
 
 interface Props {
+  title?: React.ReactNode | (() => React.ReactNode)
+  notSeperateTitle?: boolean
   content?: React.ReactNode | (() => React.ReactNode)
   trigger?: TriggerTypes
   placement?: Placement
 }
 
 const defaultProps = {
+  notSeperateTitle: false,
   trigger: 'click' as TriggerTypes,
   placement: 'bottom' as Placement,
   portalClassName: '',
@@ -27,6 +30,8 @@ type ExcludeTooltipProps = {
 export type PopoverProps = Props & Omit<TooltipProps, keyof ExcludeTooltipProps>
 
 const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
+  title,
+  notSeperateTitle,
   content,
   children,
   trigger,
@@ -35,20 +40,46 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
+  const titleNode = title && useMemo(() => getReactNode(title), [title])
   const textNode = useMemo(() => getReactNode(content), [content])
+  props.color = props.color || 'lite'
 
   return (
     <Tooltip
-      text={textNode}
+      text={
+        <div>
+          {title && (
+            <div className="title">
+              <PopoverItem title line={!notSeperateTitle}>
+                {titleNode}
+              </PopoverItem>
+            </div>
+          )}
+          <div className="items">{textNode}</div>
+        </div>
+      }
       trigger={trigger}
       placement={placement}
       portalClassName={`popover ${portalClassName}`}
       {...props}>
       {children}
       <style jsx>{`
+        :global(.tooltip-content.popover) {
+          filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+        }
         :global(.tooltip-content.popover > .inner) {
-          padding: ${theme.layout.gapHalf} 0;
-          text-align: center;
+          padding: 0;
+          text-align: left;
+        }
+        :global(.tooltip-content.popover > .inner .items) {
+          max-height: 17.1429rem;
+          overflow: scroll;
+        }
+        :global(.tooltip-content.popover > .inner .title .item.title) {
+          line-height: 1.1429rem;
+          font-weight: 500;
+          font-size: 1rem;
+          color: ${theme.palette.cNeutral7};
         }
       `}</style>
     </Tooltip>

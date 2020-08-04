@@ -2,9 +2,22 @@
 
 exports[`Popover should render react-node 1`] = `
 "<div class=\\"tooltip \\"><div></div><style>
+        :global(.tooltip-content.popover) {
+          filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+        }
         :global(.tooltip-content.popover > .inner) {
-          padding: 8px 0;
-          text-align: center;
+          padding: 0;
+          text-align: left;
+        }
+        :global(.tooltip-content.popover > .inner .items) {
+          max-height: 17.1429rem;
+          overflow: scroll;
+        }
+        :global(.tooltip-content.popover > .inner .title .item.title) {
+          line-height: 1.1429rem;
+          font-weight: 500;
+          font-size: 1rem;
+          color: #282d30;
         }
       </style><style>
         .tooltip {
@@ -16,9 +29,22 @@ exports[`Popover should render react-node 1`] = `
 
 exports[`Popover should work with different placement 1`] = `
 "<div class=\\"tooltip \\"><div></div><style>
+        :global(.tooltip-content.popover) {
+          filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+        }
         :global(.tooltip-content.popover > .inner) {
-          padding: 8px 0;
-          text-align: center;
+          padding: 0;
+          text-align: left;
+        }
+        :global(.tooltip-content.popover > .inner .items) {
+          max-height: 17.1429rem;
+          overflow: scroll;
+        }
+        :global(.tooltip-content.popover > .inner .title .item.title) {
+          line-height: 1.1429rem;
+          font-weight: 500;
+          font-size: 1rem;
+          color: #282d30;
         }
       </style><style>
         .tooltip {
