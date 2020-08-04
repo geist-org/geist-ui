@@ -262,9 +262,11 @@ export const animationStyle = (
 
 // picker style
 export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 'cfx') => {
-
   // TODO Dark theme
   // TODO Unify input style
+
+  // TODO Although a lot of style adjustments have been made, extreme cases are not ruled out.
+  //      Maybe need adjust the pseudo-element (::before or ::after) styles, it sucks.
   const pattern = {
     color: {
       bg: theme.palette.background, // '#fff',
@@ -327,7 +329,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-time-panel {
           display: flex;
           flex-direction: column;
-          width: ${((parseInt(pattern.size.cell, 10) + 20) * 7 + 3 * 6) + 'px'};
+          width: ${(parseInt(pattern.size.cell, 10) + 20) * 7 + 3 * 6 + 'px'};
         }
 
         .${prefix}-picker-header {
@@ -538,9 +540,6 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           display: none; // fix same day
         }
 
-        // TODO Although a lot of style adjustments have been made, extreme cases are not ruled out.
-        //      Maybe need adjust the pseudo-element (::before or ::after) styles, it sucks.
-
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start:not(.${prefix}-picker-cell-in-range):not(.${prefix}-picker-cell-range-start):not(.${prefix}-picker-cell-range-end)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end:not(.${prefix}-picker-cell-in-range):not(.${prefix}-picker-cell-range-start):not(.${prefix}-picker-cell-range-end)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start.${prefix}-picker-cell-range-start-single::after,
@@ -551,7 +550,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end::before {
           position: absolute;
           top: 50%;
-          z-index: 0;
+          z-index: 3;
           height: ${pattern.size.cell};
           border-top: 1px dashed ${pattern.color.border2};
           border-bottom: 1px dashed ${pattern.color.border2};
@@ -574,7 +573,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-year-panel tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:first-child::after {
           position: absolute;
           top: 50%;
-          z-index: 0;
+          z-index: 3;
           height: ${pattern.size.cell};
           border-top: 1px dashed ${pattern.color.border2};
           border-bottom: 1px dashed ${pattern.color.border2};
@@ -639,15 +638,19 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-date-panel
           .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range.${prefix}-picker-cell-range-hover-start
           .${prefix}-picker-cell-inner::after {
-          right: -7px;
+          right: 0;
           left: 0;
+          z-index: -2;
+          border-radius: ${pattern.size.cellRadius};
         }
 
         .${prefix}-picker-date-panel
           .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range.${prefix}-picker-cell-range-hover-end
           .${prefix}-picker-cell-inner::after {
           right: 0;
-          left: -7px;
+          left: 0;
+          z-index: -2;
+          border-radius: ${pattern.size.cellRadius};
         }
 
         .${prefix}-picker-cell-range-hover.${prefix}-picker-cell-range-start::after {
@@ -891,7 +894,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         }
 
         .${prefix}-picker-date-panel .${prefix}-picker-content th {
-          width: ${(parseInt(pattern.size.cell, 10) + 20) + 'px'};
+          width: ${parseInt(pattern.size.cell, 10) + 20 + 'px'};
         }
 
         .${prefix}-picker-datetime-panel {
