@@ -51,7 +51,9 @@ const Contributors: React.FC<Props> = ({ path }) => {
           </Link>
         </Tooltip>
       ))}
-      <Tooltip text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'} type="dark">
+      <Tooltip
+        text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'}
+        color="dark">
         <Link target="_blank" rel="nofollow" href={link}>
           <Avatar text="Add" />
         </Link>
