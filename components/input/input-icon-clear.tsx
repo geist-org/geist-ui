@@ -48,7 +48,7 @@ const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visib
         }
 
         .clear-icon:hover {
-          color: ${disabled ? theme.palette.accents_3 : theme.palette.foreground};
+          color: ${disabled ? theme.palette.cNeutral2 : theme.palette.cNeutral7};
         }
 
         svg {

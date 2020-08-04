@@ -36,8 +36,8 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabelProps>> = ({
           pointer-events: none;
           margin: 0;
           padding: 0 ${theme.layout.gapHalf};
-          color: ${theme.palette.accents_4};
-          background-color: ${theme.palette.accents_1};
+          color: ${theme.palette.cNeutral5};
+          background-color: ${theme.palette.cNeutral0};
           border-top-left-radius: ${theme.expressiveness.R2};
           border-bottom-left-radius: ${theme.expressiveness.R2};
           border-top: ${isSolid ? 'none' : '1px solid ' + theme.palette.border};
