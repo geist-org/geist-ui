@@ -62,5 +62,5 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
       />
     )
   }
-  return withStyle<DateType>(Picker)
+  return withStyle<DateType>(React.memo(Picker) as React.FC)
 }

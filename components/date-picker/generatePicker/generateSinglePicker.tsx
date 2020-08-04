@@ -72,7 +72,7 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
       )
     }
 
-    return withStyle(Picker)
+    return withStyle(React.memo(Picker) as React.FC)
   }
 
   const DatePicker = getPicker<DatePickerProps>()
