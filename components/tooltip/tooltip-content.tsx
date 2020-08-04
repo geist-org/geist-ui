@@ -113,7 +113,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
           }
 
           .inner {
-            padding: ${theme.layout.gapHalf} ${theme.layout.gap};
+            padding: calc(${theme.layout.gapHalf} * 0.75) ${theme.layout.gapHalf};
             position: relative;
           }
         `}</style>
