@@ -1,7 +1,7 @@
 import React, { useMemo, useRef } from 'react'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
-import { SnippetTypes, CopyTypes } from '../utils/prop-types'
+import { SnippetColors, CopyTypes } from '../utils/prop-types'
 import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
@@ -12,7 +12,7 @@ interface Props {
   filled?: boolean
   width?: string
   copy?: CopyTypes
-  type?: SnippetTypes
+  color?: SnippetColors
   className?: string
 }
 
@@ -20,7 +20,7 @@ const defaultProps = {
   filled: false,
   width: 'initial',
   copy: 'default' as CopyTypes,
-  type: 'default' as SnippetTypes,
+  color: 'default' as SnippetColors,
   className: '',
 }
 
@@ -35,7 +35,7 @@ const textArrayToString = (text: string[]): string => {
 }
 
 const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
-  type,
+  color,
   filled,
   children,
   text,
@@ -50,7 +50,11 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
 
-  const style = useMemo(() => getStyles(type, theme.palette, filled), [type, theme.palette, filled])
+  const style = useMemo(() => getStyles(color, theme.palette, filled), [
+    color,
+    theme.palette,
+    filled,
+  ])
   const showCopyIcon = useMemo(() => copyType !== 'prevent', [copyType])
   const childText = useMemo<string | undefined | null>(() => {
     if (isMultiLine) return textArrayToString(text as string[])

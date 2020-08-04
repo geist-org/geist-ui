@@ -26,15 +26,15 @@ export const meta = {
   scope={{ Tag, Spacer }}
   code={`
 <>
-  <Tag type="success">成功</Tag>
+  <Tag color="success">成功</Tag>
   <Spacer y={.5} />
-  <Tag type="warning">警告</Tag>
+  <Tag color="warning">警告</Tag>
   <Spacer y={.5} />
-  <Tag type="error">错误</Tag>
+  <Tag color="error">错误</Tag>
   <Spacer y={.5} />
-  <Tag type="secondary">次要的</Tag>
+  <Tag color="secondary">次要的</Tag>
   <Spacer y={.5} />
-  <Tag type="lite">精简的</Tag>
+  <Tag color="lite">精简的</Tag>
 </>
 `}
 />
@@ -45,15 +45,15 @@ export const meta = {
   scope={{ Tag, Spacer }}
   code={`
 <>
-  <Tag type="default" invert>默认的</Tag>
+  <Tag color="default" invert>默认的</Tag>
   <Spacer y={.5} />
-  <Tag type="success" invert>成功</Tag>
+  <Tag color="success" invert>成功</Tag>
   <Spacer y={.5} />
-  <Tag type="warning" invert>警告</Tag>
+  <Tag color="warning" invert>警告</Tag>
   <Spacer y={.5} />
-  <Tag type="error" invert>错误</Tag>
+  <Tag color="error" invert>错误</Tag>
   <Spacer y={.5} />
-  <Tag type="secondary" invert>次要的</Tag>
+  <Tag color="secondary" invert>次要的</Tag>
 </>
 `}
 />
@@ -61,16 +61,16 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/tag.mdx">
 <Attributes.Title>Tag.Props</Attributes.Title>
 
-| 属性       | 描述           | 类型                  | 推荐值                   | 默认      |
-| ---------- | -------------- | --------------------- | ------------------------ | --------- |
-| **type**   | 标签类型       | [TagTypes](#tagtypes) | -                        | `default` |
-| **invert** | 反转背景与主色 | `boolean`             | -                        | `false`   |
-| ...        | 原生属性       | `HTMLAttributes`      | `'id', 'className', ...` | -         |
+| 属性       | 描述           | 类型                    | 推荐值                   | 默认      |
+| ---------- | -------------- | ----------------------- | ------------------------ | --------- |
+| **color**  | 标签类型       | [TagColors](#tagcolors) | -                        | `default` |
+| **invert** | 反转背景与主色 | `boolean`               | -                        | `false`   |
+| ...        | 原生属性       | `HTMLAttributes`        | `'id', 'className', ...` | -         |
 
-<Attributes.Title>TagTypes</Attributes.Title>
+<Attributes.Title>TagColors</Attributes.Title>
 
 ```ts
-type TagTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
+type TagColors = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
 ```
 
 </Attributes>
