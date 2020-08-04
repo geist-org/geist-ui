@@ -2,6 +2,7 @@ import { ZeitUIThemes } from '../styles/themes'
 
 const animationDuration = '0.2s'
 
+// TODO Unify animation
 // picker animation lalala~
 export const animationStyle = (
   <style jsx global>{`
@@ -262,12 +263,13 @@ export const animationStyle = (
 // picker style
 export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 'cfx') => {
 
-  // TODO dark theme
-  // TODO use input style
+  // TODO Dark theme
+  // TODO Unify input style
   const pattern = {
     color: {
       bg: theme.palette.background, // '#fff',
       bg2: theme.palette.cTheme0, // '#e6f7ff',
+      bgScroll: theme.palette.cNeutral0,
       bgHover: theme.palette.cTheme0, // '#f5f5f5',
       border: theme.palette.cTheme5, // '#f0f0f0',
       border2: theme.palette.cTheme5, // '#7ec1ff',
@@ -345,7 +347,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           background: 0 0;
           border: 0;
           cursor: pointer;
-          transition: color 0.3s;
+          // transition: color 0.3s; // fix strange color problem
         }
 
         .${prefix}-picker-header > button {
@@ -529,14 +531,24 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end::before {
           right: 50%;
+          left: 2px; // fix dashed link
         }
+
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end.${prefix}-picker-cell-range-start::before {
+          display: none; // fix same day
+        }
+
+        // TODO Although a lot of style adjustments have been made, extreme cases are not ruled out.
+        //      Maybe need adjust the pseudo-element (::before or ::after) styles, it sucks.
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start:not(.${prefix}-picker-cell-in-range):not(.${prefix}-picker-cell-range-start):not(.${prefix}-picker-cell-range-end)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end:not(.${prefix}-picker-cell-in-range):not(.${prefix}-picker-cell-range-start):not(.${prefix}-picker-cell-range-end)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start.${prefix}-picker-cell-range-start-single::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end.${prefix}-picker-cell-range-end-single::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover:not(.${prefix}-picker-cell-in-range)::after,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range::after {
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range::after,
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start::before,
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end::before {
           position: absolute;
           top: 50%;
           z-index: 0;
@@ -545,6 +557,37 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           border-bottom: 1px dashed ${pattern.color.border2};
           transform: translateY(-50%);
           content: '';
+        }
+
+
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:last-child::before,
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:first-child::before {
+          display: none;
+        }
+
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:last-child::after,
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:first-child::after {
+          display: none;
+        }
+
+        .${prefix}-picker-year-panel tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:last-child::after,
+        .${prefix}-picker-year-panel tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:first-child::after {
+          position: absolute;
+          top: 50%;
+          z-index: 0;
+          height: ${pattern.size.cell};
+          border-top: 1px dashed ${pattern.color.border2};
+          border-bottom: 1px dashed ${pattern.color.border2};
+          transform: translateY(-50%);
+          content: '';
+        }
+
+        .${prefix}-picker-year-panel tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:last-child::after {
+          right: 50%;
+        }
+
+        .${prefix}-picker-year-panel tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:first-child::after {
+          left: 50%;
         }
 
         .${prefix}-picker-cell-range-hover-start::after,
@@ -569,15 +612,15 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           // background: ${pattern.color.bg2};
         }
 
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:not(.${prefix}-picker-cell-range-start-single):not(.${prefix}-picker-cell-range-end)
-          .${prefix}-picker-cell-inner {
-          border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
-        }
+        // .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:not(.${prefix}-picker-cell-range-start-single):not(.${prefix}-picker-cell-range-end)
+        //   .${prefix}-picker-cell-inner {
+        //   border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
+        // }
 
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:not(.${prefix}-picker-cell-range-end-single):not(.${prefix}-picker-cell-range-start)
-          .${prefix}-picker-cell-inner {
-          border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
-        }
+        // .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:not(.${prefix}-picker-cell-range-end-single):not(.${prefix}-picker-cell-range-start)
+        //   .${prefix}-picker-cell-inner {
+        //   border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
+        // }
 
         .${prefix}-picker-date-panel
           .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range.${prefix}-picker-cell-range-hover-start
@@ -618,6 +661,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover:first-child::after,
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end:first-child::after,
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range:first-child::after,
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-edge-start:not(.${prefix}-picker-cell-range-hover-edge-end-near-range):not(.${prefix}-picker-cell-range-hover-end):not(.${prefix}-picker-cell-range-hover)::after,
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:first-child::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-edge-start:not(.${prefix}-picker-cell-range-hover-edge-start-near-range)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start::after {
           left: 10px;
@@ -629,6 +674,8 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover:last-child::after,
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start:last-child::after,
         tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range:last-child::after,
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-edge-end:not(.${prefix}-picker-cell-range-hover-edge-end-near-range):not(.${prefix}-picker-cell-range-hover-start):not(.${prefix}-picker-cell-range-hover)::after,
+        tr > .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:last-child::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-edge-end:not(.${prefix}-picker-cell-range-hover-edge-end-near-range)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end::after {
           right: 10px;
@@ -747,13 +794,13 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-year-panel .${prefix}-picker-cell-inner,
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-inner,
         .${prefix}-picker-month-panel .${prefix}-picker-cell-inner {
-          width: 60px;
+          width: 100px;
         }
 
         .${prefix}-picker-year-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-start::after {
-          left: 18px;
+          left: 10px;
           border-left: 1px dashed ${pattern.color.border2};
           border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
         }
@@ -761,7 +808,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-panel-rtl .${prefix}-picker-year-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-start::after {
-          right: 18px;
+          right: 10px;
           border-right: 1px dashed ${pattern.color.border2};
           border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
         }
@@ -769,7 +816,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-year-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-end::after {
-          right: 18px;
+          right: 10px;
           border-right: 1px dashed ${pattern.color.border2};
           border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
         }
@@ -777,7 +824,7 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker-panel-rtl .${prefix}-picker-year-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-end::after {
-          left: 18px;
+          left: 10px;
           border-left: 1px dashed ${pattern.color.border2};
           border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
         }
@@ -892,6 +939,16 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
           transition: background 0.3s;
         }
 
+        .${prefix}-picker-time-panel-column::-webkit-scrollbar {
+          width: 2px;
+          height: 8px;
+          background-color: ${pattern.color.bgScroll};
+        }
+
+        .${prefix}-picker-time-panel-column::-webkit-scrollbar-thumb {
+          background-color: ${pattern.color.border3};
+        }
+
         .${prefix}-picker-time-panel-column::after {
           display: block;
           height: 196px;
@@ -993,6 +1050,11 @@ export const generatePickerGlobalStyle = (theme: ZeitUIThemes, prefix: string = 
         .${prefix}-picker:hover .${prefix}-picker-suffix,
         .${prefix}-picker-focused .${prefix}-picker-suffix {
           color: ${pattern.color.hover};
+        }
+
+        .${prefix}-picker:hover .${prefix}-picker-input > input[disabled],
+        .${prefix}-picker-focused .${prefix}-picker-input > input[disabled] {
+          color: ${pattern.color.disabled};
         }
 
         .${prefix}-picker.${prefix}-picker-disabled:hover .${prefix}-picker-input > input,

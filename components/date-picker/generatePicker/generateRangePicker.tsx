@@ -46,9 +46,9 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
         transitionName="slide-up"
         {...restProps}
         {...additionalOverrideProps}
-        className={`${className} ${customizeSize ? `${prefixCls}-${customizeSize}` : ''} ${
+        className={`${customizeSize ? `${prefixCls}-${customizeSize}` : ''} ${
           !bordered ? `${prefixCls}-borderless` : ''
-        }`}
+        } ${className}`}
         locale={getLocale(locale)}
         prefixCls={prefixCls}
         getPopupContainer={customGetPopupContainer}
