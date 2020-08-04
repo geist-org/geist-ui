@@ -23,7 +23,7 @@ export const meta = {
   desc="使用点击触发提示框。"
   scope={{ Tooltip }}
   code={`
-<Tooltip text={'缓存是达到高性能的重要组成部分'} trigger="click" color="dark">
+<Tooltip text={'缓存是达到高性能的重要组成部分'} trigger="click">
   <span>点击我</span>
 </Tooltip>
 `}
@@ -35,15 +35,15 @@ export const meta = {
   scope={{ Tooltip, Button, Link, Spacer, Row, Badge }}
   code={`
 <Row align="middle">
-  <Tooltip text={'缓存是达到高性能的重要组成部分'} color="dark">
+  <Tooltip text={'缓存是达到高性能的重要组成部分'}>
     <Button auto size="small">按钮</Button>
   </Tooltip>
   <Spacer inline x={1} />
-  <Tooltip text={'缓存是达到高性能的重要组成部分'} color="dark">
+  <Tooltip text={'缓存是达到高性能的重要组成部分'}>
     <Badge>1000+</Badge>
   </Tooltip>
   <Spacer inline x={1} />
-  <Tooltip text={'缓存是达到高性能的重要组成部分'} color="dark">
+  <Tooltip text={'缓存是达到高性能的重要组成部分'}>
     <Link href="#">超链接</Link>
   </Tooltip>
 </Row>
@@ -68,13 +68,13 @@ export const meta = {
 />
 
 <Playground
-  title="类型"
+  title="颜色"
   desc="我们为不同的类型预置了样式。"
   scope={{ Tooltip, Spacer, Row, Code, Text }}
   code={`
 <Row align="middle">
-  <Tooltip text="缓存是达到高性能的重要组成部分" color="dark">
-    <span>黑暗的</span>
+  <Tooltip text="缓存是达到高性能的重要组成部分" color="lite">
+    <span>明亮的</span>
   </Tooltip>
   <Spacer inline x={1.5} />
   <Tooltip text="缓存是达到高性能的重要组成部分" color="success">
@@ -99,17 +99,11 @@ export const meta = {
 <Playground
   title="变体"
   desc="特殊样式。"
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  scope={{ Tooltip }}
   code={`
-<Row align="middle">
-  <Tooltip text="缓存是达到高性能的重要组成部分" color="lite">
-    <span>精简的</span>
-  </Tooltip>
-  <Spacer inline x={2.5} />
   <Tooltip text="缓存是达到高性能的重要组成部分" hideArrow>
     <span>无箭头</span>
   </Tooltip>
-</Row>
 `}
 />
 
@@ -127,50 +121,50 @@ export const meta = {
     <div style={{ width: '80%', margin: '0 auto' }}>
       <Row justify="center">
         <Center span={5}>
-          <Tooltip text={text} placement="topStart" color="dark">topStart</Tooltip>
+          <Tooltip text={text} placement="topStart">topStart</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="top" color="dark">top</Tooltip>
+          <Tooltip text={text} placement="top">top</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="topEnd" color="dark">topEnd</Tooltip>
+          <Tooltip text={text} placement="topEnd">topEnd</Tooltip>
         </Center>
       </Row>
       <Row justify="space-between">
         <Center span={5}>
-          <Tooltip text={text} placement="leftStart" color="dark">leftStart</Tooltip>
+          <Tooltip text={text} placement="leftStart">leftStart</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="rightStart" color="dark">rightStart</Tooltip>
-        </Center>
-      </Row>
-      <Spacer y={.5} />
-      <Row justify="space-between">
-        <Center span={5}>
-          <Tooltip text={text} placement="left" color="dark">left</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="right" color="dark">right</Tooltip>
+          <Tooltip text={text} placement="rightStart">rightStart</Tooltip>
         </Center>
       </Row>
       <Spacer y={.5} />
       <Row justify="space-between">
         <Center span={5}>
-          <Tooltip text={text} placement="leftEnd" color="dark">leftEnd</Tooltip>
+          <Tooltip text={text} placement="left">left</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="rightEnd" color="dark">rightEnd</Tooltip>
+          <Tooltip text={text} placement="right">right</Tooltip>
+        </Center>
+      </Row>
+      <Spacer y={.5} />
+      <Row justify="space-between">
+        <Center span={5}>
+          <Tooltip text={text} placement="leftEnd">leftEnd</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="rightEnd">rightEnd</Tooltip>
         </Center>
       </Row>
       <Row justify="center">
         <Center span={5}>
-          <Tooltip text={text} placement="bottomStart" color="dark">bottomStart</Tooltip>
+          <Tooltip text={text} placement="bottomStart">bottomStart</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="bottom" color="dark">bottom</Tooltip>
+          <Tooltip text={text} placement="bottom">bottom</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="bottomEnd" color="dark">bottomEnd</Tooltip>
+          <Tooltip text={text} placement="bottomEnd">bottomEnd</Tooltip>
         </Center>
       </Row>
     </div>
@@ -203,6 +197,8 @@ export const meta = {
 ```ts
 type TooltipColors = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
 ```
+
+注意: `default` 与 `dark` 是相同的
 
 <Attributes.Title>Placement</Attributes.Title>
 

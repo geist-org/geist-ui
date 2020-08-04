@@ -67,7 +67,6 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   const selfRef = useRef<HTMLDivElement>(null)
   const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition)
   const colors = useMemo(() => getColors(color, theme.palette), [color, theme.palette])
-  const hasShadow = color === 'default'
   if (!parent) return null
 
   const updateRect = () => {
@@ -93,7 +92,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
       <div className={`tooltip-content ${className}`} ref={selfRef} onClick={preventHandler}>
         <div className="inner">
           {!hideArrow && (
-            <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={hasShadow} />
+            <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={true} />
           )}
           {children}
         </div>
@@ -109,7 +108,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
             border-radius: ${theme.expressiveness.R2};
             padding: 0;
             z-index: 1000;
-            box-shadow: ${hasShadow ? theme.expressiveness.shadowMedium : 'none'};
+            box-shadow: ${theme.expressiveness.shadowSmall};
           }
 
           .inner {
