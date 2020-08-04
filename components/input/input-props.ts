@@ -1,12 +1,13 @@
 import React from 'react'
-import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
+import { NormalSizes, InputColors, InputVariantTypes } from 'components/utils/prop-types'
 
 export interface Props {
+  variant?: InputVariantTypes
   value?: string
   initialValue?: string
   placeholder?: string
   size?: NormalSizes
-  status?: NormalTypes
+  color?: InputColors
   readOnly?: boolean
   disabled?: boolean
   label?: string
@@ -26,13 +27,14 @@ export interface Props {
 }
 
 export const defaultProps = {
+  variant: 'line' as InputVariantTypes,
   disabled: false,
   readOnly: false,
   clearable: false,
   iconClickable: false,
   width: 'initial',
   size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
+  color: 'default' as InputColors,
   autoComplete: 'off',
   className: '',
   placeholder: '',

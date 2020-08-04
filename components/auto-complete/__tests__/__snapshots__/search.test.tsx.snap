@@ -4,7 +4,7 @@ exports[`AutoComplete Search should hide empty component 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "auto-complete",
+      "class": "auto-complete line",
     },
     "children": Array [
       Object {
@@ -14,18 +14,18 @@ initialize {
         "children": Array [
           Object {
             "attribs": Object {
-              "class": "input-container ",
+              "class": "input-container  in-auto-complete  ",
             },
             "children": Array [
               Object {
                 "attribs": Object {
-                  "class": "input-wrapper   ",
+                  "class": "input-wrapper line    ",
                 },
                 "children": Array [
                   Object {
                     "attribs": Object {
                       "autocomplete": "off",
-                      "class": " ",
+                      "class": "",
                       "placeholder": "Enter here",
                       "type": "text",
                       "value": "",
@@ -85,7 +85,7 @@ initialize {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -96,8 +96,9 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -111,32 +112,43 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -147,19 +159,51 @@ initialize {
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         ",
                   "next": null,
@@ -203,7 +247,7 @@ initialize {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -214,8 +258,9 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -229,32 +274,43 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -265,19 +321,51 @@ initialize {
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         ",
                 "next": null,
@@ -292,18 +380,18 @@ initialize {
             "parent": [Circular],
             "prev": Object {
               "attribs": Object {
-                "class": "input-container ",
+                "class": "input-container  in-auto-complete  ",
               },
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "input-wrapper   ",
+                    "class": "input-wrapper line    ",
                   },
                   "children": Array [
                     Object {
                       "attribs": Object {
                         "autocomplete": "off",
-                        "class": " ",
+                        "class": "",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
@@ -437,18 +525,18 @@ initialize {
           "children": Array [
             Object {
               "attribs": Object {
-                "class": "input-container ",
+                "class": "input-container  in-auto-complete  ",
               },
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "input-wrapper   ",
+                    "class": "input-wrapper line    ",
                   },
                   "children": Array [
                     Object {
                       "attribs": Object {
                         "autocomplete": "off",
-                        "class": " ",
+                        "class": "",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
@@ -508,7 +596,7 @@ initialize {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -519,8 +607,9 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -534,32 +623,43 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -570,19 +670,51 @@ initialize {
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         ",
                     "next": null,
@@ -626,7 +758,7 @@ initialize {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -637,8 +769,9 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -652,32 +785,43 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -688,19 +832,51 @@ initialize {
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         ",
                   "next": null,
@@ -715,18 +891,18 @@ initialize {
               "parent": [Circular],
               "prev": Object {
                 "attribs": Object {
-                  "class": "input-container ",
+                  "class": "input-container  in-auto-complete  ",
                 },
                 "children": Array [
                   Object {
                     "attribs": Object {
-                      "class": "input-wrapper   ",
+                      "class": "input-wrapper line    ",
                     },
                     "children": Array [
                       Object {
                         "attribs": Object {
                           "autocomplete": "off",
-                          "class": " ",
+                          "class": "",
                           "placeholder": "Enter here",
                           "type": "text",
                           "value": "",
@@ -846,7 +1022,7 @@ exports[`AutoComplete Search should hide empty component 2`] = `
 initialize {
   "0": Object {
     "attribs": Object {
-      "class": "auto-complete",
+      "class": "auto-complete line",
     },
     "children": Array [
       Object {
@@ -856,18 +1032,18 @@ initialize {
         "children": Array [
           Object {
             "attribs": Object {
-              "class": "input-container ",
+              "class": "input-container  in-auto-complete  ",
             },
             "children": Array [
               Object {
                 "attribs": Object {
-                  "class": "input-wrapper   ",
+                  "class": "input-wrapper line    ",
                 },
                 "children": Array [
                   Object {
                     "attribs": Object {
                       "autocomplete": "off",
-                      "class": " ",
+                      "class": "",
                       "placeholder": "Enter here",
                       "type": "text",
                       "value": "",
@@ -927,7 +1103,7 @@ initialize {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -938,8 +1114,9 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -953,32 +1130,43 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -989,19 +1177,51 @@ initialize {
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         ",
                   "next": null,
@@ -1045,7 +1265,7 @@ initialize {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -1056,8 +1276,9 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -1071,32 +1292,43 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -1107,19 +1339,51 @@ initialize {
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         ",
                 "next": null,
@@ -1134,18 +1398,18 @@ initialize {
             "parent": [Circular],
             "prev": Object {
               "attribs": Object {
-                "class": "input-container ",
+                "class": "input-container  in-auto-complete  ",
               },
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "input-wrapper   ",
+                    "class": "input-wrapper line    ",
                   },
                   "children": Array [
                     Object {
                       "attribs": Object {
                         "autocomplete": "off",
-                        "class": " ",
+                        "class": "",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
@@ -1279,18 +1543,18 @@ initialize {
           "children": Array [
             Object {
               "attribs": Object {
-                "class": "input-container ",
+                "class": "input-container  in-auto-complete  ",
               },
               "children": Array [
                 Object {
                   "attribs": Object {
-                    "class": "input-wrapper   ",
+                    "class": "input-wrapper line    ",
                   },
                   "children": Array [
                     Object {
                       "attribs": Object {
                         "autocomplete": "off",
-                        "class": " ",
+                        "class": "",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
@@ -1350,7 +1614,7 @@ initialize {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -1361,8 +1625,9 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -1376,32 +1641,43 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -1412,19 +1688,51 @@ initialize {
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         ",
                     "next": null,
@@ -1468,7 +1776,7 @@ initialize {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16px);
+            height: calc(2.5 * 16px);
           }
 
           .input-wrapper {
@@ -1479,8 +1787,9 @@ initialize {
             flex: 1;
             user-select: none;
             border-radius: 4px;
-            border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fdfdfe;
+            border: 1px solid #ebeced;
           }
 
           .input-wrapper.left-label {
@@ -1494,32 +1803,43 @@ initialize {
           }
 
           .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
             cursor: not-allowed;
           }
 
-          input.disabled {
-            cursor: not-allowed;
+          .line.input-wrapper.disabled {
+            border-color: #ebeced;
           }
 
-          .input-wrapper.hover {
-            border-color: #666;
+          .solid.input-wrapper.disabled {
+            background-color: #dbdde0;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fdfdfe;
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0 1.1429rem;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: 1rem;
+            line-height: calc(2.5 * 16px - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
-            color: #000;
+            color: #282d30;
             outline: none;
             border-radius: 0;
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
           }
 
           input.left-icon {
@@ -1530,19 +1850,51 @@ initialize {
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: #999;
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2.5 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-text-fill-color: #0054fe !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         ",
                   "next": null,
@@ -1557,18 +1909,18 @@ initialize {
               "parent": [Circular],
               "prev": Object {
                 "attribs": Object {
-                  "class": "input-container ",
+                  "class": "input-container  in-auto-complete  ",
                 },
                 "children": Array [
                   Object {
                     "attribs": Object {
-                      "class": "input-wrapper   ",
+                      "class": "input-wrapper line    ",
                     },
                     "children": Array [
                       Object {
                         "attribs": Object {
                           "autocomplete": "off",
-                          "class": " ",
+                          "class": "",
                           "placeholder": "Enter here",
                           "type": "text",
                           "value": "",

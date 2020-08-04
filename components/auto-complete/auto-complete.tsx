@@ -1,33 +1,38 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import Input from '../input'
-import AutoCompleteItem from './auto-complete-item'
-import AutoCompleteDropdown from './auto-complete-dropdown'
-import AutoCompleteSearching from './auto-complete-searching'
-import AutoCompleteEmpty from './auto-complete-empty'
-import { AutoCompleteContext, AutoCompleteConfig } from './auto-complete-context'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
 import Loading from '../loading'
+import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'
+import { InputColors, InputVariantTypes, NormalSizes } from '../utils/prop-types'
+import useClickAway from '../utils/use-click-away'
 import useCurrentState from '../utils/use-current-state'
+import { AutoCompleteConfig, AutoCompleteContext } from './auto-complete-context'
+import AutoCompleteDropdown from './auto-complete-dropdown'
+import AutoCompleteEmpty from './auto-complete-empty'
+import AutoCompleteItem from './auto-complete-item'
+import AutoCompleteSearching from './auto-complete-searching'
+
+const DEFAULT_CSS_TRANSITION_LEAVE_TIME =
+  CSSTransitionDefaultProps.leaveTime + CSSTransitionDefaultProps.clearTime
 
 export type AutoCompleteOption = {
   label: string
-  value: string
 }
 
 export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>
 
 interface Props {
+  variant?: InputVariantTypes
   options: AutoCompleteOptions
   size?: NormalSizes
-  status?: NormalTypes
+  color?: InputColors
   initialValue?: string
   value?: string
   width?: string
   onChange?: (value: string) => void
   onSearch?: (value: string) => void
   onSelect?: (value: string) => void
-  searching?: boolean | undefined
+  searching?: boolean
   clearable?: boolean
   dropdownClassName?: string
   dropdownStyle?: object
@@ -37,6 +42,7 @@ interface Props {
 }
 
 const defaultProps = {
+  variant: 'line' as InputVariantTypes,
   options: [] as AutoCompleteOptions,
   initialValue: '',
   disabled: false,
@@ -50,26 +56,23 @@ const defaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
 
-const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
+const childrenToOptionsNode = (options: Array<AutoCompleteOption>, variant: InputVariantTypes) =>
   options.map((item, index) => {
     const key = `auto-complete-item-${index}`
     if (React.isValidElement(item)) return React.cloneElement(item, { key })
-    const validItem = item as AutoCompleteOption
-    return (
-      <AutoCompleteItem key={key} value={validItem.value} isLabelOnly>
-        {validItem.label}
-      </AutoCompleteItem>
-    )
+    const validItem = item
+    return <AutoCompleteItem variant={variant} key={key} label={validItem.label} isLabelOnly />
   })
 
 // When the search is not set, the "clearable" icon can be displayed in the original location.
-// When the search is seted, at least one element should exist to avoid re-render.
+// When the search is set, at least one element should exist to avoid re-render.
 const getSearchIcon = (searching?: boolean) => {
   if (searching === undefined) return null
-  return searching ? <Loading size="medium" /> : <span />
+  return searching ? <Loading size="small" /> : <span />
 }
 
 const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
+  variant,
   options,
   initialValue: customInitialValue,
   onSelect,
@@ -78,7 +81,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   searching,
   children,
   size,
-  status,
+  color: inputColor,
   value,
   width,
   clearable,
@@ -95,9 +98,11 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   const [state, setState, stateRef] = useCurrentState<string>(customInitialValue)
   const [selectVal, setSelectVal] = useState<string>(customInitialValue)
   const [visible, setVisible] = useState<boolean>(false)
+  const [focus, setFocus] = useState<boolean>(false)
 
   const [, searchChild] = pickChild(children, AutoCompleteSearching)
   const [, emptyChild] = pickChild(children, AutoCompleteEmpty)
+
   const autoCompleteItems = useMemo(() => {
     const hasSearchChild = searchChild && React.Children.count(searchChild) > 0
     const hasEmptyChild = emptyChild && React.Children.count(emptyChild) > 0
@@ -112,8 +117,9 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
       if (state === '') return null
       return hasEmptyChild ? emptyChild : <AutoCompleteEmpty>No Options</AutoCompleteEmpty>
     }
-    return childrenToOptionsNode(options as Array<AutoCompleteOption>)
-  }, [searching, options])
+    return childrenToOptionsNode(options as Array<AutoCompleteOption>, variant)
+  }, [searching, options, variant])
+
   const showClearIcon = useMemo(() => clearable && searching === undefined, [clearable, searching])
 
   const updateValue = (val: string) => {
@@ -129,6 +135,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     onSearch && onSearch(event.target.value)
     setState(event.target.value)
   }
+
   const resetInputValue = () => {
     if (!disableFreeSolo) return
     if (!state || state === '') return
@@ -157,18 +164,23 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     [state, visible, size],
   )
 
-  const toggleFocusHandler = (next: boolean) => {
+  const onInputFocus: React.EventHandler<
+    React.FocusEvent<HTMLInputElement> | React.MouseEvent<HTMLInputElement>
+  > = () => {
+    setFocus(true)
+    setVisible(true)
+    onSearch && onSearch(stateRef.current)
     clearTimeout(resetTimer.current)
-    setVisible(next)
-    if (next) {
-      onSearch && onSearch(stateRef.current)
-    } else {
-      resetTimer.current = window.setTimeout(() => {
-        resetInputValue()
-        clearTimeout(resetTimer.current)
-      }, 100)
-    }
   }
+
+  useClickAway(ref, () => {
+    setVisible(false)
+    resetTimer.current = window.setTimeout(() => {
+      resetInputValue()
+      clearTimeout(resetTimer.current)
+      setFocus(false)
+    }, DEFAULT_CSS_TRANSITION_LEAVE_TIME)
+  })
 
   const inputProps = {
     ...props,
@@ -177,22 +189,33 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     value: state,
   }
 
+  const dropdownVisible = visible && Boolean(autoCompleteItems)
+
   return (
     <AutoCompleteContext.Provider value={initialValue}>
-      <div ref={ref} className="auto-complete">
-        <Input
-          ref={inputRef}
-          size={size}
-          status={status}
-          onChange={onInputChange}
-          onFocus={() => toggleFocusHandler(true)}
-          onBlur={() => toggleFocusHandler(false)}
-          clearable={showClearIcon}
-          iconRight={getSearchIcon(searching)}
-          {...inputProps}
-        />
+      <div ref={ref} className={`auto-complete ${variant === 'solid' ? 'solid' : 'line'}`}>
+        <CSSTransition
+          renderable
+          visible={dropdownVisible}
+          clearTime={state === '' ? 0 : 60}
+          leaveTime={state === '' ? 0 : 60}
+          className={`in-auto-complete ${focus ? 'auto-complete-focus' : ''}`}>
+          <Input
+            variant={variant}
+            ref={inputRef}
+            size={size}
+            color={inputColor}
+            onChange={onInputChange}
+            onFocus={onInputFocus}
+            onClick={onInputFocus}
+            clearable={showClearIcon}
+            iconRight={getSearchIcon(searching)}
+            {...inputProps}
+          />
+        </CSSTransition>
         <AutoCompleteDropdown
-          visible={visible}
+          variant={variant}
+          visible={dropdownVisible}
           disableMatchWidth={disableMatchWidth}
           className={dropdownClassName}
           dropdownStyle={dropdownStyle}>

@@ -6,12 +6,21 @@ export interface InputIconProps {
   ratio: string
   clickable: boolean
   onClick: (e: React.MouseEvent<HTMLDivElement>) => void
+  paddingLeft?: string
+  paddingRight?: string
 }
 
-const InputIcon: React.FC<InputIconProps> = ({ icon, ratio, clickable, onClick }) => {
+const InputIcon: React.FC<InputIconProps> = ({
+  icon,
+  ratio,
+  clickable,
+  onClick,
+  paddingLeft,
+  paddingRight,
+}) => {
   const theme = useTheme()
   const width = useMemo(() => {
-    return `calc(${ratio} * ${theme.layout.gap} * .42)`
+    return `calc(${ratio} * ${theme.layout.gap} * .35)`
   }, [theme.layout.gap, ratio])
   const padding = useMemo(() => {
     return `calc(${ratio} * ${theme.layout.gap} * .3)`
@@ -27,9 +36,9 @@ const InputIcon: React.FC<InputIconProps> = ({ icon, ratio, clickable, onClick }
           width: ${width};
           height: 100%;
           align-items: center;
-          vertical-align: center;
+          vertical-align: middle;
           margin: 0;
-          padding: 0 ${padding};
+          padding: 0 ${paddingRight || padding} 0 ${paddingLeft || padding};
           line-height: 1;
           position: relative;
           cursor: ${clickable ? 'pointer' : 'default'};

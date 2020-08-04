@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { AutoComplete, Spacer, Badge, Grid, Text } from 'components'
 import { useState, useRef, useEffect } from 'react'
+import SearchIcon from '@zeit-ui/react-icons/search'
 
 export const meta = {
   title: 'Auto-Complete',
@@ -13,31 +14,41 @@ AutoComplete control of input field.
 
 <Playground
   desc="Basic usage, add auto-complete list for all inputs."
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
-  return <AutoComplete placeholder="Enter here" options={options} />
-}
+  return (
+  <div style={{display: 'flex'}}>
+    <AutoComplete placeholder="Enter here" options={options} />
+    <Spacer inline />
+    <AutoComplete variant="solid" placeholder="Enter here" options={options} />
+  </div>)
+  }
 `}
 />
 
 <Playground
   desc="Disable all."
   title="disabled"
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
-  return <AutoComplete disabled options={options} initialValue="London" />
+  return(
+  <div style={{display: 'flex'}}>
+    <AutoComplete disabled options={options} initialValue="London" />
+    <Spacer inline />
+    <AutoComplete variant="solid" disabled options={options} initialValue="London" />
+  </div>)
 }
 `}
 />
@@ -49,11 +60,11 @@ AutoComplete control of input field.
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
-  return <AutoComplete disableFreeSolo options={options} initialValue="sydney" />
+  return <AutoComplete disableFreeSolo options={options} initialValue="Sydney" />
 }
 `}
 />
@@ -61,44 +72,58 @@ AutoComplete control of input field.
 <Playground
   desc="Update the contents of drop-down list based on input."
   title="search"
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = React.useState()
+  const [solidOptions, solidSetOptions] = React.useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     setOptions(relatedOptions)
   }
-  return <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
-}
+  const solidSearchHandler = (currentValue) => {
+    if (!currentValue) return solidSetOptions([])
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
+    solidSetOptions(relatedOptions)
+  }
+  return (
+  <div style={{display: 'flex'}}>
+    <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
+    <Spacer inline />
+    <AutoComplete variant="solid" options={solidOptions} placeholder="Enter here" onSearch={solidSearchHandler} />
+  </div>)
+  }
 `}
 />
 
 <Playground
   title="Waiting in search"
   desc="Show friendly tips and UI when searching."
-  scope={{ AutoComplete, useState, useEffect, useRef }}
+  scope={{ AutoComplete, useState, useEffect, useRef, Spacer }}
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
+  const [solidOptions, solidSetOptions] = React.useState()
   const [searching, setSearching] = useState(false)
+  const [solidSearching, solidSetSearching] = useState(false)
   const timer = useRef()
+  const solidTimer = useRef()
   // triggered every time input
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
     setSearching(true)
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     // this is mock async request
     // you can get data in any way
     timer.current && clearTimeout(timer.current)
@@ -108,11 +133,34 @@ AutoComplete control of input field.
       clearTimeout(timer.current)
     }, 1000)
   }
+  const solidSearchHandler = (currentValue) => {
+    if (!currentValue) return solidSetOptions([])
+    solidSetSearching(true)
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
+    // this is mock async request
+    // you can get data in any way
+    solidTimer.current && clearTimeout(solidTimer.current)
+    solidTimer.current = setTimeout(() => {
+      solidSetOptions(relatedOptions)
+      solidSetSearching(false)
+      clearTimeout(solidTimer.current)
+    }, 1000)
+  }
   return (
-    <AutoComplete searching={searching}
+  <div style={{display: 'flex'}}>
+    <AutoComplete
+      searching={searching}
       options={options}
       placeholder="Enter here"
       onSearch={searchHandler} />
+    <Spacer inline />
+    <AutoComplete
+      variant="solid"
+      searching={solidSearching}
+      options={solidOptions}
+      placeholder="Enter here"
+      onSearch={solidSearchHandler} />
+  </div>
   )
 }
 `}
@@ -121,13 +169,24 @@ AutoComplete control of input field.
 <Playground
   title="custom searching text"
   desc="You can replace the default waiting text with any components."
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer }}
   code={`
-<AutoComplete searching placeholder="Enter here" width="100%">
-  <AutoComplete.Searching>
-    <span style={{ color: 'red' }}>waiting...</span>
-  </AutoComplete.Searching>
-</AutoComplete>
+  () => {
+return (
+<div style={{display: 'flex'}}>
+  <AutoComplete searching placeholder="Enter here" width="100%">
+    <AutoComplete.Searching>
+      <span style={{ color: 'red' }}>waiting...</span>
+    </AutoComplete.Searching>
+  </AutoComplete>
+  <Spacer inline />
+  <AutoComplete variant="solid" searching placeholder="Enter here" width="100%">
+    <AutoComplete.Searching>
+      <span style={{ color: 'red' }}>waiting...</span>
+    </AutoComplete.Searching>
+  </AutoComplete>
+</div>)
+}
 `}
 />
 
@@ -138,14 +197,14 @@ AutoComplete control of input field.
   code={`
 () => {
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     setOptions(relatedOptions)
   }
   return (
@@ -162,11 +221,11 @@ AutoComplete control of input field.
 <Playground
   title="custom option"
   desc="You can rewrite each item of the `AutoComplete` to express more."
-  scope={{ AutoComplete, useState, Text, Badge, Grid }}
+  scope={{ AutoComplete, useState, Text, Badge, Grid, Spacer }}
   code={`
 () => {
-  const makeOption = (label, value) => (
-    <AutoComplete.Option value={value}>
+  const makeOption = (label) => (
+    <AutoComplete.Option label={label}>
       <Grid.Container style={{ padding: '10pt 0' }}>
         <Grid xs={24}><Text span b size="1.2rem">Recent search results </Text></Grid>
         <Grid.Container xs={24}>
@@ -177,22 +236,50 @@ AutoComplete control of input field.
     </AutoComplete.Option>
   )
   const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   const [options, setOptions] = useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    const customOptions = relatedOptions.map(({ label, value }) => makeOption(label, value))
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
+    const customOptions = relatedOptions.map(({ label }) => makeOption(label))
     setOptions(customOptions)
   }
+  const solidMakeOption = (label) => (
+    <AutoComplete.Option label={label}>
+      <Grid.Container style={{ padding: '10pt 0' }}>
+        <Grid xs={24}><Text span b size="1.2rem">Recent search results </Text></Grid>
+        <Grid.Container xs={24}>
+          <Grid xs><Text span>{label}</Text></Grid>
+          <Grid xs={4}><Badge type="success">Recommended</Badge></Grid>
+        </Grid.Container>
+      </Grid.Container>
+    </AutoComplete.Option>
+  )
+  const [solidOptions, solidSetOptions] = useState()
+  const solidSearchHandler = (currentValue) => {
+    if (!currentValue) return solidSetOptions([])
+    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
+    const customOptions = relatedOptions.map(({ label }) => solidMakeOption(label))
+    solidSetOptions(customOptions)
+  }
   return (
-    <AutoComplete placeholder="Enter here"
-      width="100%"
-      options={options}
-      onSearch={searchHandler} />
+<div>
+  <AutoComplete
+    placeholder="Enter here"
+    width="100%"
+    options={options}
+    onSearch={searchHandler} />
+  <Spacer y={1} />
+  <AutoComplete
+    variant="solid"
+    placeholder="Enter here"
+    width="100%"
+    options={solidOptions}
+    onSearch={solidSearchHandler} />
+</div>
   )
 }
 `}
@@ -205,9 +292,9 @@ AutoComplete control of input field.
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
   return (
     <>
@@ -227,42 +314,21 @@ AutoComplete control of input field.
 <Playground
   title="clearable"
   desc="Add a clear button in the input box."
-  scope={{ AutoComplete }}
+  scope={{ AutoComplete, Spacer, SearchIcon }}
   code={`
 () => {
   const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
+    { label: 'London' },
+    { label: 'Sydney' },
+    { label: 'Shanghai' },
   ]
-  return <AutoComplete placeholder="Enter here" clearable options={options} />
-}
-`}
-/>
-
-<Playground
-  title="Creatable"
-  desc="Add an entry to be selected for any value."
-  scope={{ AutoComplete }}
-  code={`
-() => {
-  const allOptions = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
-  ]
-  const [options, setOptions] = React.useState()
-  const searchHandler = (currentValue) => {
-    const createOptions = [{
-      value: currentValue, label: 'Add "' + currentValue + '"'
-    }]
-    if (!currentValue) return setOptions([])
-    const relatedOptions = allOptions.filter(item => item.value.includes(currentValue))
-    const optionsWithCreatable = relatedOptions.length !== 0 ? relatedOptions : createOptions
-    setOptions(optionsWithCreatable)
+  return (
+  <div  style={{display: 'flex'}}>
+  <AutoComplete icon={<SearchIcon />} placeholder="Enter here" clearable options={options} />
+  <Spacer inline />
+  <AutoComplete icon={<SearchIcon />} variant="solid" placeholder="Enter here" clearable options={options} />
+  </div>)
   }
-  return <AutoComplete options={options} clearable disableFreeSolo placeholder="Enter here" onSearch={searchHandler} />
-}
 `}
 />
 
@@ -271,8 +337,9 @@ AutoComplete control of input field.
 
 | Attribute             | Description                               | Type                                             | Accepted values                                         | Default   |
 | --------------------- | ----------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
+| **variant**           | variant of input                          | string                                           | `'solid', 'line'`                                       | `line`    |
 | **options**           | options of input                          | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
-| **status**            | input type                                | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **color**             | input type                                | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **size**              | input size                                | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
 | **initialValue**      | initial value                             | `string`                                         | -                                                       | -         |
 | **value**             | current value                             | `string`                                         | -                                                       | -         |
@@ -313,7 +380,6 @@ AutoComplete control of input field.
 ```ts
 Array<{
   label: string
-  value: string
 } | AutoComplete.Item>
 ```
 

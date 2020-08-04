@@ -1,6 +1,6 @@
-import React from 'react'
-import { mount } from 'enzyme'
 import { Textarea } from 'components'
+import { mount } from 'enzyme'
+import React from 'react'
 import { nativeEvent } from 'tests/utils'
 
 describe('Textarea', () => {
@@ -13,9 +13,10 @@ describe('Textarea', () => {
   it('should work with different styles', () => {
     const wrapper = mount(
       <div>
-        <Textarea status="secondary" />
+        <Textarea color="primary" />
         <Textarea width="20%" />
         <Textarea minHeight="100px" />
+        <Textarea variant="solid" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -64,5 +65,45 @@ describe('Textarea', () => {
 
     wrapper.find('textarea').simulate('blur', nativeEvent)
     expect(blurHandler).toHaveBeenCalled()
+  })
+
+  it('should pass through onMouseOut event', () => {
+    const onMouseOver = jest.fn()
+    const onMouseOut = jest.fn()
+    const wrapper = mount(<Textarea onMouseOver={onMouseOver} onMouseOut={onMouseOut} />)
+
+    wrapper.find('textarea').simulate('mouseOver', nativeEvent)
+    expect(onMouseOver).toHaveBeenCalled()
+
+    wrapper.find('textarea').simulate('mouseOut', nativeEvent)
+    expect(onMouseOut).toHaveBeenCalled()
+  })
+
+  it('should show the right character count', () => {
+    const wrapper = mount(<Textarea counter initialValue="foo" />)
+    expect(wrapper.exists('.counter .separator')).toBeFalsy
+    expect(wrapper.exists('.counter .limit')).toBeFalsy
+    expect(wrapper.find('.counter .count').text()).toBe('3')
+  })
+
+  it("should limit and slice user's input if reaches the maxLength limit", () => {
+    const onChange = jest.fn()
+    const wrapper = mount(<Textarea counter maxLength={3} initialValue="f" onChange={onChange} />)
+    let changeEvent = { target: { value: 'fo' } }
+    wrapper.find('textarea').simulate('change', changeEvent)
+    expect(onChange).toHaveBeenCalledWith(expect.objectContaining(changeEvent))
+    changeEvent = { target: { value: 'foo' } }
+    wrapper.find('textarea').simulate('change', changeEvent)
+    expect(onChange).toHaveBeenCalledWith(expect.objectContaining(changeEvent))
+    changeEvent = { target: { value: 'fooo' } }
+    wrapper.find('textarea').simulate('change', changeEvent)
+    expect(onChange).toHaveBeenCalledWith(expect.objectContaining({ target: { value: 'foo' } }))
+  })
+
+  it('should forward ref by default', () => {
+    const ref = React.createRef<HTMLTextAreaElement>()
+    const wrapper = mount(<Textarea ref={ref} />)
+    expect(ref.current).not.toBeNull()
+    expect(() => wrapper.unmount()).not.toThrow()
   })
 })
