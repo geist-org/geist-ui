@@ -8,12 +8,12 @@ import useClickAnyWhere from '../utils/use-click-anywhere'
 import { getColors } from './styles'
 import { getPosition, TooltipPosition, defaultTooltipPosition } from './placement'
 import TooltipIcon from './tooltip-icon'
-import { Placement, SnippetTypes } from '../utils/prop-types'
+import { Placement, SnippetColors } from '../utils/prop-types'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
   placement: Placement
-  type: SnippetTypes
+  color: SnippetColors
   visible: boolean
   hideArrow: boolean
   offset: number
@@ -58,7 +58,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   visible,
   offset,
   placement,
-  type,
+  color,
   className,
   hideArrow,
 }) => {
@@ -66,8 +66,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   const el = usePortal('tooltip')
   const selfRef = useRef<HTMLDivElement>(null)
   const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition)
-  const colors = useMemo(() => getColors(type, theme.palette), [type, theme.palette])
-  const hasShadow = type === 'default'
+  const colors = useMemo(() => getColors(color, theme.palette), [color, theme.palette])
   if (!parent) return null
 
   const updateRect = () => {
@@ -93,7 +92,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
       <div className={`tooltip-content ${className}`} ref={selfRef} onClick={preventHandler}>
         <div className="inner">
           {!hideArrow && (
-            <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={hasShadow} />
+            <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={true} />
           )}
           {children}
         </div>
@@ -109,11 +108,11 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
             border-radius: ${theme.expressiveness.R2};
             padding: 0;
             z-index: 1000;
-            box-shadow: ${hasShadow ? theme.expressiveness.shadowMedium : 'none'};
+            box-shadow: ${theme.expressiveness.shadowSmall};
           }
 
           .inner {
-            padding: ${theme.layout.gapHalf} ${theme.layout.gap};
+            padding: calc(${theme.layout.gapHalf} * 0.75) ${theme.layout.gapHalf};
             position: relative;
           }
         `}</style>

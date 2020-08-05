@@ -33,8 +33,8 @@ describe('Snippet', () => {
       <div>
         <Snippet text={command} filled />
         <Snippet text={command} width="20%" />
-        <Snippet text={command} type="secondary" />
-        <Snippet text={command} type="success" filled />
+        <Snippet text={command} color="secondary" />
+        <Snippet text={command} color="success" filled />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

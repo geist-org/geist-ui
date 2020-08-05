@@ -1,130 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tag should work with invert 1`] = `
-initialize {
-  "0": Object {
-    "attribs": Object {
-      "class": "",
-    },
-    "children": Array [
-      Object {
-        "data": "success",
-        "next": Object {
-          "attribs": Object {},
-          "children": Array [
-            Object {
-              "data": "
-        span {
-          display: inline-block;
-          line-height: 0.875rem;
-          font-size: 0.875rem;
-          height: 1.75rem;
-          border-radius: 4px;
-          border: 1px solid transparent;
-          background-color: #58f17a;
-          color: #fff;
-          padding: 6px;
-          box-sizing: border-box;
-        }
-      ",
-              "next": null,
-              "parent": [Circular],
-              "prev": null,
-              "type": "text",
-            },
-          ],
-          "name": "style",
-          "namespace": "http://www.w3.org/1999/xhtml",
-          "next": null,
-          "parent": [Circular],
-          "prev": [Circular],
-          "type": "style",
-          "x-attribsNamespace": Object {},
-          "x-attribsPrefix": Object {},
-        },
-        "parent": [Circular],
-        "prev": null,
-        "type": "text",
-      },
-      Object {
-        "attribs": Object {},
-        "children": Array [
-          Object {
-            "data": "
-        span {
-          display: inline-block;
-          line-height: 0.875rem;
-          font-size: 0.875rem;
-          height: 1.75rem;
-          border-radius: 4px;
-          border: 1px solid transparent;
-          background-color: #58f17a;
-          color: #fff;
-          padding: 6px;
-          box-sizing: border-box;
-        }
-      ",
-            "next": null,
-            "parent": [Circular],
-            "prev": null,
-            "type": "text",
-          },
-        ],
-        "name": "style",
-        "namespace": "http://www.w3.org/1999/xhtml",
-        "next": null,
-        "parent": [Circular],
-        "prev": Object {
-          "data": "success",
-          "next": [Circular],
-          "parent": [Circular],
-          "prev": null,
-          "type": "text",
-        },
-        "type": "style",
-        "x-attribsNamespace": Object {},
-        "x-attribsPrefix": Object {},
-      },
-    ],
-    "name": "span",
-    "namespace": "http://www.w3.org/1999/xhtml",
-    "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
-      "children": Array [
-        [Circular],
-      ],
-      "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
-      "next": null,
-      "parent": null,
-      "prev": null,
-      "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
-    },
-    "type": "tag",
-    "x-attribsNamespace": Object {
-      "class": undefined,
-    },
-    "x-attribsPrefix": Object {
-      "class": undefined,
-    },
-  },
-  "_root": [Circular],
-  "length": 1,
-  "options": Object {
-    "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
-    "xml": false,
-  },
-}
-`;
-
-exports[`Tag should work with types 1`] = `
+exports[`Tag should work with colors 1`] = `
 initialize {
   "0": Object {
     "attribs": Object {},
@@ -1692,6 +1568,130 @@ initialize {
     "type": "tag",
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Tag should work with invert 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {
+      "class": "",
+    },
+    "children": Array [
+      Object {
+        "data": "success",
+        "next": Object {
+          "attribs": Object {},
+          "children": Array [
+            Object {
+              "data": "
+        span {
+          display: inline-block;
+          line-height: 0.875rem;
+          font-size: 0.875rem;
+          height: 1.75rem;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          background-color: #58f17a;
+          color: #fff;
+          padding: 6px;
+          box-sizing: border-box;
+        }
+      ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "text",
+      },
+      Object {
+        "attribs": Object {},
+        "children": Array [
+          Object {
+            "data": "
+        span {
+          display: inline-block;
+          line-height: 0.875rem;
+          font-size: 0.875rem;
+          height: 1.75rem;
+          border-radius: 4px;
+          border: 1px solid transparent;
+          background-color: #58f17a;
+          color: #fff;
+          padding: 6px;
+          box-sizing: border-box;
+        }
+      ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "data": "success",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "text",
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
+    ],
+    "name": "span",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
   },
   "_root": [Circular],
   "length": 1,

@@ -8,13 +8,13 @@ describe('Tag', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should work with types', () => {
+  it('should work with colors', () => {
     const wrapper = render(
       <div>
-        <Tag type="success">success</Tag>
-        <Tag type="secondary">secondary</Tag>
-        <Tag type="error">error</Tag>
-        <Tag type="dark">dark</Tag>
+        <Tag color="success">success</Tag>
+        <Tag color="secondary">secondary</Tag>
+        <Tag color="error">error</Tag>
+        <Tag color="dark">dark</Tag>
       </div>,
     )
     expect(wrapper).toMatchSnapshot()
@@ -22,7 +22,7 @@ describe('Tag', () => {
 
   it('should work with invert', () => {
     const wrapper = render(
-      <Tag type="success" invert>
+      <Tag color="success" invert>
         success
       </Tag>,
     )
