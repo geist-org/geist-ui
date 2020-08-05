@@ -1,6 +1,6 @@
 import * as React from 'react'
 import MyInput from './my-input'
-import { ZeitProvider, CssBaseline, Page } from '@zeit-ui/react'
+import { ZeitProvider, CssBaseline, Page } from '@cfxjs/react-ui'
 
 export default function App() {
   return (
