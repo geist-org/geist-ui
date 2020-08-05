@@ -37,7 +37,7 @@ export const meta = {
 <Playground
   title="预置样式"
   desc="通过定义 `variant` 或者 `color` props 来更新输入框类型和颜色样式。"
-  scope={{ DatePicker, Spacer }}
+  scope={{ DatePicker, Spacer, Divider }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -45,23 +45,18 @@ export const meta = {
     <>
       <DatePicker locale="zh-CN" /><Spacer y={.5} />
       <DatePicker locale="zh-CN" color="primary" /><Spacer y={.5} />
-      <DatePicker locale="zh-CN" color="success" /><Spacer y={.5} />
-      <DatePicker locale="zh-CN" color="warning" /><Spacer y={.5} />
       <DatePicker locale="zh-CN" color="error" /><Spacer y={.5} />
+      <Divider />
       <DatePicker locale="zh-CN" variant="solid" /><Spacer y={.5} />
       <DatePicker locale="zh-CN" variant="solid" color="primary" /><Spacer y={.5} />
-      <DatePicker locale="zh-CN" variant="solid" color="success" /><Spacer y={.5} />
-      <DatePicker locale="zh-CN" variant="solid" color="warning" /><Spacer y={.5} />
       <DatePicker locale="zh-CN" variant="solid" color="error" /><Spacer y={.5} />
+      <Divider />
       <RangePicker locale="zh-CN" /><Spacer y={.5} />
       <RangePicker locale="zh-CN" color="primary" /><Spacer y={.5} />
-      <RangePicker locale="zh-CN" color="success" /><Spacer y={.5} />
-      <RangePicker locale="zh-CN" color="warning" /><Spacer y={.5} />
       <RangePicker locale="zh-CN" color="error" /><Spacer y={.5} />
+      <Divider />
       <RangePicker locale="zh-CN" variant="solid" /><Spacer y={.5} />
       <RangePicker locale="zh-CN" variant="solid" color="primary" /><Spacer y={.5} />
-      <RangePicker locale="zh-CN" variant="solid" color="success" /><Spacer y={.5} />
-      <RangePicker locale="zh-CN" variant="solid" color="warning" /><Spacer y={.5} />
       <RangePicker locale="zh-CN" variant="solid" color="error" />
     </>
   )

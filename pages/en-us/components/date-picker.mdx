@@ -37,7 +37,7 @@ Select or input a date or time.
 <Playground
   title="Variant & Color"
   desc="Customize styles by define `variant` or `color` props."
-  scope={{ DatePicker, Spacer }}
+  scope={{ DatePicker, Spacer, Divider }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -45,23 +45,18 @@ Select or input a date or time.
     <>
       <DatePicker /><Spacer y={.5} />
       <DatePicker color="primary" /><Spacer y={.5} />
-      <DatePicker color="success" /><Spacer y={.5} />
-      <DatePicker color="warning" /><Spacer y={.5} />
       <DatePicker color="error" /><Spacer y={.5} />
+      <Divider />
       <DatePicker variant="solid" /><Spacer y={.5} />
       <DatePicker variant="solid" color="primary" /><Spacer y={.5} />
-      <DatePicker variant="solid" color="success" /><Spacer y={.5} />
-      <DatePicker variant="solid" color="warning" /><Spacer y={.5} />
       <DatePicker variant="solid" color="error" /><Spacer y={.5} />
+      <Divider />
       <RangePicker /><Spacer y={.5} />
       <RangePicker color="primary" /><Spacer y={.5} />
-      <RangePicker color="success" /><Spacer y={.5} />
-      <RangePicker color="warning" /><Spacer y={.5} />
       <RangePicker color="error" /><Spacer y={.5} />
+      <Divider />
       <RangePicker variant="solid" /><Spacer y={.5} />
       <RangePicker variant="solid" color="primary" /><Spacer y={.5} />
-      <RangePicker variant="solid" color="success" /><Spacer y={.5} />
-      <RangePicker variant="solid" color="warning" /><Spacer y={.5} />
       <RangePicker variant="solid" color="error" />
     </>
   )
