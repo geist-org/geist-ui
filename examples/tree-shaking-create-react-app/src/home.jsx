@@ -1,5 +1,5 @@
 import React from 'react'
-import { Page, Text, Button } from '@zeit-ui/react'
+import { Page, Text, Button } from '@cfxjs/react-ui'
 
 const Home = () => (
   <Page>

@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { ZeitProvider, CssBaseline, Page } from '@zeit-ui/react'
+import { ZeitProvider, CssBaseline, Page } from '@cfxjs/react-ui'
 import Home from './home'
 import Theme from './theme'
 

@@ -1,4 +1,4 @@
-import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
+import { ZeitProvider, CssBaseline } from '@cfxjs/react-ui'
 
 function MyApp({ Component, pageProps }) {
   return (

@@ -31,7 +31,15 @@ export const inputColors = tuple('default', 'primary', 'success', 'warning', 'er
 
 export const themeTypes = tuple('dark', 'light')
 
-export const snippetTypes = tuple('default', 'secondary', 'success', 'warning', 'error', 'dark', 'lite')
+export const snippetColors = tuple(
+  'default',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'dark',
+  'lite',
+)
 
 export const cardTypes = tuple(
   'default',
@@ -86,7 +94,7 @@ export type InputVariantTypes = typeof inputVariants[number]
 
 export type ThemeTypes = typeof themeTypes[number]
 
-export type SnippetTypes = typeof snippetTypes[number]
+export type SnippetColors = typeof snippetColors[number]
 
 export type CardTypes = typeof cardTypes[number]
 

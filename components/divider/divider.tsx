@@ -1,17 +1,17 @@
 import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
-import { DividerAlign, SnippetTypes } from '../utils/prop-types'
+import { DividerAlign, SnippetColors } from '../utils/prop-types'
 import { getMargin } from '../spacer/spacer'
 import { ZeitUIThemesPalette } from 'components/styles/themes'
 
-export type DividerTypes = SnippetTypes
+export type DividerColors = SnippetColors
 
 interface Props {
   x?: number
   y?: number
   volume?: number
-  type?: DividerTypes
+  color?: DividerColors
   align?: DividerAlign
   className?: string
 }
@@ -21,15 +21,15 @@ const defaultProps = {
   y: 2,
   volume: 1,
   align: 'center' as DividerAlign,
-  type: 'default' as DividerTypes,
+  color: 'default' as DividerColors,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DividerProps = Props & typeof defaultProps & NativeAttrs
 
-const getColor = (type: DividerTypes, palette: ZeitUIThemesPalette) => {
-  const colors: { [key in DividerTypes]: string } = {
+const getColor = (type: DividerColors, palette: ZeitUIThemesPalette) => {
+  const colors: { [key in DividerColors]: string } = {
     default: palette.border,
     lite: palette.accents_1,
     success: palette.successLight,
@@ -43,7 +43,7 @@ const getColor = (type: DividerTypes, palette: ZeitUIThemesPalette) => {
 
 const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
   volume,
-  type,
+  color: dividerColor,
   x,
   y,
   align,
@@ -52,13 +52,13 @@ const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
-  const color = useMemo(() => getColor(type, theme.palette), [type, theme.palette])
+  const color = useMemo(() => getColor(dividerColor, theme.palette), [dividerColor, theme.palette])
   const alignClassName = useMemo(() => {
     if (!align || align === 'center') return ''
     if (align === 'left' || align === 'start') return 'start'
     return 'end'
   }, [align])
-  const textColor = type === 'default' ? theme.palette.foreground : color
+  const textColor = dividerColor === 'default' ? theme.palette.foreground : color
   const top = y ? getMargin(y / 2) : 0
   const left = x ? getMargin(x / 2) : 0
 

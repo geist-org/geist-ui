@@ -2,7 +2,7 @@
  * Just customize what you need, deep merge themes by default.
  *
  * If you are using TypeScript, please use the following type definition.
- * If you are using JavaScript, refer to https://github.com/zeit-ui/react/blob/master/components/styles/themes/default.ts
+ * If you are using JavaScript, refer to https://github.com/Conflux-Chain/react-ui/blob/master/components/styles/themes/default.ts
  */
 
 // import {
@@ -11,7 +11,7 @@
 //   ZeitUIThemesExpressiveness,
 //   ZeitUIThemesLayout,
 //   ZeitUIThemesFont,
-// } from '@zeit-ui/react'
+// } from '@cfxjs/react-ui'
 
 export default {
   palette: {

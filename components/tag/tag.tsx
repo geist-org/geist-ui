@@ -1,17 +1,17 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
-import { SnippetTypes } from '../utils/prop-types'
+import { SnippetColors } from '../utils/prop-types'
 import { ZeitUIThemesPalette } from '../styles/themes'
 
 interface Props {
-  type?: SnippetTypes
+  color?: SnippetColors
   invert?: boolean
   className?: string
 }
 
 const defaultProps = {
-  type: 'default' as SnippetTypes,
+  color: 'default' as SnippetColors,
   invert: false,
   className: '',
 }
@@ -25,8 +25,8 @@ export type TagColors = {
   borderColor: string
 }
 
-const getColors = (type: SnippetTypes, palette: ZeitUIThemesPalette, invert: boolean) => {
-  const colors: { [key in SnippetTypes]: Pick<TagColors, 'color'> & Partial<TagColors> } = {
+const getColors = (color: SnippetColors, palette: ZeitUIThemesPalette, invert: boolean) => {
+  const colors: { [key in SnippetColors]: Pick<TagColors, 'color'> & Partial<TagColors> } = {
     default: {
       color: palette.foreground,
     },
@@ -51,12 +51,12 @@ const getColors = (type: SnippetTypes, palette: ZeitUIThemesPalette, invert: boo
       bgColor: palette.accents_2,
     },
   }
-  const hideBorder = invert || type === 'lite'
+  const hideBorder = invert || color === 'lite'
 
   const cardStyle = {
-    ...colors[type],
-    bgColor: colors[type].bgColor || palette.background,
-    borderColor: hideBorder ? 'transparent' : colors[type].color,
+    ...colors[color],
+    bgColor: colors[color].bgColor || palette.background,
+    borderColor: hideBorder ? 'transparent' : colors[color].color,
   }
 
   return !invert
@@ -69,18 +69,17 @@ const getColors = (type: SnippetTypes, palette: ZeitUIThemesPalette, invert: boo
 }
 
 const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({
-  type,
+  color: tagColor,
   children,
   className,
   invert,
   ...props
 }) => {
   const theme = useTheme()
-  const { color, bgColor, borderColor } = useMemo(() => getColors(type, theme.palette, invert), [
-    type,
-    theme.palette,
-    invert,
-  ])
+  const { color, bgColor, borderColor } = useMemo(
+    () => getColors(tagColor, theme.palette, invert),
+    [tagColor, theme.palette, invert],
+  )
 
   return (
     <span className={className} {...props}>

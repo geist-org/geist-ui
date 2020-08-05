@@ -23,7 +23,7 @@ Displays additional information on hover.
   desc="Trigger by click."
   scope={{ Tooltip }}
   code={`
-<Tooltip text={'Push to Git and your website is live.'} trigger="click" type="dark">
+<Tooltip text={'Push to Git and your website is live.'} trigger="click">
   <span>Click me</span>
 </Tooltip>
 `}
@@ -35,15 +35,15 @@ Displays additional information on hover.
   scope={{ Tooltip, Button, Link, Spacer, Row, Badge }}
   code={`
 <Row align="middle">
-  <Tooltip text={'Push to Git and your website is live.'} type="dark">
+  <Tooltip text={'Push to Git and your website is live.'}>
     <Button auto size="small">Button</Button>
   </Tooltip>
   <Spacer inline x={1} />
-  <Tooltip text={'Push to Git and your website is live.'} type="dark">
+  <Tooltip text={'Push to Git and your website is live.'}>
     <Badge>1000+</Badge>
   </Tooltip>
   <Spacer inline x={1} />
-  <Tooltip text={'Push to Git and your website is live.'} type="dark">
+  <Tooltip text={'Push to Git and your website is live.'}>
     <Link href="#">Hyperlink</Link>
   </Tooltip>
 </Row>
@@ -68,28 +68,28 @@ Displays additional information on hover.
 />
 
 <Playground
-  title="Types"
+  title="Colors"
   desc="Different state."
   scope={{ Tooltip, Spacer, Row, Code, Text }}
   code={`
 <Row align="middle">
-  <Tooltip text="Perfect for working with a CMS." type="dark">
-    <span>Dark</span>
+  <Tooltip text="Perfect for working with a CMS." color="lite">
+    <span>Lite</span>
   </Tooltip>
   <Spacer inline x={1.5} />
-  <Tooltip text="Perfect for working with a CMS." type="success">
+  <Tooltip text="Perfect for working with a CMS." color="success">
     <span>Success</span>
   </Tooltip>
   <Spacer inline x={1.5} />
-  <Tooltip text="Perfect for working with a CMS." type="warning">
+  <Tooltip text="Perfect for working with a CMS." color="warning">
     <span>Warning</span>
   </Tooltip>
   <Spacer inline x={1.5} />
-  <Tooltip text="Perfect for working with a CMS." type="error">
+  <Tooltip text="Perfect for working with a CMS." color="error">
     <span>Error</span>
   </Tooltip>
   <Spacer inline x={1.5} />
-  <Tooltip text="Perfect for working with a CMS." type="secondary">
+  <Tooltip text="Perfect for working with a CMS." color="secondary">
     <span>Secondary</span>
   </Tooltip>
 </Row>
@@ -99,17 +99,11 @@ Displays additional information on hover.
 <Playground
   title="Variant"
   desc="Special styles."
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  scope={{ Tooltip }}
   code={`
-<Row align="middle">
-  <Tooltip text="Push to Git and your website is live." type="lite">
-    <span>Lite</span>
-  </Tooltip>
-  <Spacer inline x={2.5} />
   <Tooltip text="Push to Git and your website is live." hideArrow>
     <span>No Arrow</span>
   </Tooltip>
-</Row>
 `}
 />
 
@@ -127,50 +121,50 @@ Displays additional information on hover.
     <div style={{ width: '80%', margin: '0 auto' }}>
       <Row justify="center">
         <Center span={5}>
-          <Tooltip text={text} placement="topStart" type="dark">topStart</Tooltip>
+          <Tooltip text={text} placement="topStart">topStart</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="top" type="dark">top</Tooltip>
+          <Tooltip text={text} placement="top">top</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="topEnd" type="dark">topEnd</Tooltip>
+          <Tooltip text={text} placement="topEnd">topEnd</Tooltip>
         </Center>
       </Row>
       <Row justify="space-between">
         <Center span={5}>
-          <Tooltip text={text} placement="leftStart" type="dark">leftStart</Tooltip>
+          <Tooltip text={text} placement="leftStart">leftStart</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="rightStart" type="dark">rightStart</Tooltip>
-        </Center>
-      </Row>
-      <Spacer y={.5} />
-      <Row justify="space-between">
-        <Center span={5}>
-          <Tooltip text={text} placement="left" type="dark">left</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="right" type="dark">right</Tooltip>
+          <Tooltip text={text} placement="rightStart">rightStart</Tooltip>
         </Center>
       </Row>
       <Spacer y={.5} />
       <Row justify="space-between">
         <Center span={5}>
-          <Tooltip text={text} placement="leftEnd" type="dark">leftEnd</Tooltip>
+          <Tooltip text={text} placement="left">left</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="rightEnd" type="dark">rightEnd</Tooltip>
+          <Tooltip text={text} placement="right">right</Tooltip>
+        </Center>
+      </Row>
+      <Spacer y={.5} />
+      <Row justify="space-between">
+        <Center span={5}>
+          <Tooltip text={text} placement="leftEnd">leftEnd</Tooltip>
+        </Center>
+        <Center span={5}>
+          <Tooltip text={text} placement="rightEnd">rightEnd</Tooltip>
         </Center>
       </Row>
       <Row justify="center">
         <Center span={5}>
-          <Tooltip text={text} placement="bottomStart" type="dark">bottomStart</Tooltip>
+          <Tooltip text={text} placement="bottomStart">bottomStart</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="bottom" type="dark">bottom</Tooltip>
+          <Tooltip text={text} placement="bottom">bottom</Tooltip>
         </Center>
         <Center span={5}>
-          <Tooltip text={text} placement="bottomEnd" type="dark">bottomEnd</Tooltip>
+          <Tooltip text={text} placement="bottomEnd">bottomEnd</Tooltip>
         </Center>
       </Row>
     </div>
@@ -182,27 +176,29 @@ Displays additional information on hover.
 <Attributes edit="/pages/en-us/components/tooltip.mdx">
 <Attributes.Title>Tooltip.Props</Attributes.Title>
 
-| Attribute           | Description                                    | Type                          | Accepted values                  | Default   |
-| ------------------- | ---------------------------------------------- | ----------------------------- | -------------------------------- | --------- |
-| **text**            | text of pop-up                                 | `string` `React.ReactNode`    | -                                | -         |
-| **visible**         | visible or not                                 | `boolean`                     | -                                | `false`   |
-| **initialVisible**  | visible on initial                             | `boolean`                     | -                                | `false`   |
-| **hideArrow**       | hide arrow icon                                | `boolean`                     | -                                | `false`   |
-| **type**            | preset style type                              | [TooltipTypes](#tooltiptypes) | -                                | `default` |
-| **placement**       | position of the tooltip relative to the target | [Placement](#placement)       | -                                | `top`     |
-| **trigger**         | tooltip trigger mode                           | `'click' / 'hover'`           | -                                | `hover`   |
-| **enterDelay**(ms)  | delay before tooltip is shown                  | `number`                      | -                                | `100`     |
-| **leaveDelay**(ms)  | delay before tooltip is hidden                 | `number`                      | -                                | `0`       |
-| **offset**(px)      | distance between pop-up and target             | `number`                      | -                                | `12`      |
-| **portalClassName** | className of pop-up box                        | `string`                      | -                                | -         |
-| **onVisibleChange** | call when visibility of the tooltip is changed | `(visible: boolean) => void`  | -                                | -         |
-| ...                 | native props                                   | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
+| Attribute           | Description                                    | Type                            | Accepted values                  | Default   |
+| ------------------- | ---------------------------------------------- | ------------------------------- | -------------------------------- | --------- |
+| **text**            | text of pop-up                                 | `string` `React.ReactNode`      | -                                | -         |
+| **visible**         | visible or not                                 | `boolean`                       | -                                | `false`   |
+| **initialVisible**  | visible on initial                             | `boolean`                       | -                                | `false`   |
+| **hideArrow**       | hide arrow icon                                | `boolean`                       | -                                | `false`   |
+| **color**           | preset style color                             | [TooltipColors](#tooltipcolors) | -                                | `default` |
+| **placement**       | position of the tooltip relative to the target | [Placement](#placement)         | -                                | `top`     |
+| **trigger**         | tooltip trigger mode                           | `'click' / 'hover'`             | -                                | `hover`   |
+| **enterDelay**(ms)  | delay before tooltip is shown                  | `number`                        | -                                | `100`     |
+| **leaveDelay**(ms)  | delay before tooltip is hidden                 | `number`                        | -                                | `0`       |
+| **offset**(px)      | distance between pop-up and target             | `number`                        | -                                | `12`      |
+| **portalClassName** | className of pop-up box                        | `string`                        | -                                | -         |
+| **onVisibleChange** | call when visibility of the tooltip is changed | `(visible: boolean) => void`    | -                                | -         |
+| ...                 | native props                                   | `HTMLAttributes`                | `'id', 'name', 'className', ...` | -         |
 
-<Attributes.Title>TooltipTypes</Attributes.Title>
+<Attributes.Title>TooltipColors</Attributes.Title>
 
 ```ts
-type TooltipTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
+type TooltipColors = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
 ```
+
+Note: `default` is the same as `dark`
 
 <Attributes.Title>Placement</Attributes.Title>
 
