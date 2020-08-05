@@ -1,6 +1,15 @@
 import { ZeitUIThemes } from '../styles/themes'
 import { PickerProps, RangePickerProps } from './generatePicker'
 import { addColorAlpha } from '../utils/color'
+import { getSizes, getColors } from '../input/styles'
+import {
+  NormalSizes,
+  normalSizes,
+  inputVariants,
+  InputVariantTypes,
+  inputColors,
+  InputColors,
+} from '../utils/prop-types'
 
 const animationDuration = '0.2s'
 
@@ -267,160 +276,116 @@ export const generatePickerGlobalStyle = <DateType extends any>(
   theme: ZeitUIThemes,
   props: PickerProps<DateType> | RangePickerProps<DateType>,
 ) => {
-  const {
-    prefixCls: prefix = 'cfx',
-  } = props
+  const { prefixCls: prefix = 'cfx' } = props
 
   const { palette } = theme
 
   // sync with input styles
-  const inputPattern = {
-    solid: {
-      default: {
-        color: palette.cNeutral7,
-        hoverColor: 'inherit',
-        backgroundColor: palette.cNeutral0,
-        hoverBackgroundColor: palette.cTheme0,
-        border: 'transparent',
-        hoverBorderColor: 'transparent',
-      },
-      primary: {
-        color: palette.cNeutral7,
-        hoverColor: 'inherit',
-        backgroundColor: palette.cTheme0,
-        hoverBackgroundColor: palette.cTheme1,
-        border: 'transparent',
-        hoverBorderColor: 'transparent',
-      },
-      success: {
-        color: palette.cNeutral7,
-        hoverColor: 'inherit',
-        backgroundColor: palette.successLight,
-        hoverBackgroundColor: palette.success,
-        border: 'transparent',
-        hoverBorderColor: 'transparent',
-      },
-      warning: {
-        color: palette.cNeutral7,
-        hoverColor: 'inherit',
-        backgroundColor: palette.warningLight,
-        hoverBackgroundColor: palette.warning,
-        border: 'transparent',
-        hoverBorderColor: 'transparent',
-      },
-      error: {
-        color: palette.error,
-        hoverColor: palette.error,
-        backgroundColor: addColorAlpha(palette.errorLight, 0.8),
-        hoverBackgroundColor: palette.errorLight,
-        border: 'transparent',
-        hoverBorderColor: 'transparent',
-      },
-    },
-    line: {
-      default: {
-        color: palette.cNeutral7,
-        hoverColor: palette.cTheme5,
-        backgroundColor: palette.cNeutral8,
-        hoverBackgroundColor: palette.cNeutral8,
-        border: `1px solid ${palette.cNeutral2}`,
-        hoverBorderColor: palette.cTheme5,
-      },
-      primary: {
-        color: palette.cNeutral7,
-        hoverColor: palette.cTheme5,
-        backgroundColor: palette.cNeutral8,
-        hoverBackgroundColor: palette.cNeutral8,
-        border: `1px solid ${palette.cTheme2}`,
-        hoverBorderColor: palette.cTheme5,
-      },
-      success: {
-        color: palette.cNeutral7,
-        hoverColor: 'inherit',
-        backgroundColor: palette.cNeutral8,
-        hoverBackgroundColor: palette.cNeutral8,
-        border: `1px solid ${palette.successLight}`,
-        hoverBorderColor: palette.success,
-      },
-      warning: {
-        color: palette.cNeutral7,
-        hoverColor: 'inherit',
-        backgroundColor: palette.cNeutral8,
-        hoverBackgroundColor: palette.cNeutral8,
-        border: `1px solid ${palette.warningLight}`,
-        hoverBorderColor: palette.warning,
-      },
-      error: {
-        color: palette.error,
-        hoverColor: palette.error,
-        backgroundColor: palette.cNeutral8,
-        hoverBackgroundColor: palette.cNeutral8,
-        border: `1px solid ${addColorAlpha(palette.errorLight, 0.8)}`,
-        hoverBorderColor: palette.errorLight,
-      },
-    },
-    size: {
-      mini: {
-        heightRatio: '1.5',
-        fontSize: '0.5714rem',
-        margin: '0 1.1429rem',
-      },
-      small: {
-        heightRatio: '2',
-        fontSize: '0.8571rem',
-        margin: '0 1.1429rem',
-      },
-      medium: {
-        heightRatio: '2.5',
-        fontSize: '1rem',
-        margin: '0 1.1429rem',
-      },
-      large: {
-        heightRatio: '3',
-        fontSize: '1.1429rem',
-        margin: '0 1.1429rem',
-      },
-    },
+
+  const generateSizeStyles = () => {
+    let styles = ''
+    normalSizes.forEach((size: NormalSizes) => {
+      const { heightRatio, fontSize, margin } = getSizes(size)
+      styles += `
+      .${prefix}-picker-size-${size} .${prefix}-picker-input {
+        height: calc(${heightRatio} * ${theme.layout.gap} - 2px);
+        line-height: calc(${heightRatio} * ${theme.layout.gap} - 3px);
+      }
+
+      .${prefix}-picker-size-${size} .${prefix}-picker-input > input {
+        margin: ${margin};
+        font-size: ${fontSize};
+        line-height: calc(${heightRatio} * ${theme.layout.gap} - 4px);
+      }
+    `
+    })
+    return styles
+  }
+
+  const generateVariantStyles = () => {
+    let styles = ''
+    inputColors.forEach((color: InputColors) => {
+      inputVariants.forEach((variant: InputVariantTypes) => {
+        const {
+          color: textColor,
+          hoverColor,
+          border,
+          hoverBorderColor,
+          backgroundColor,
+          hoverBackgroundColor,
+        } = getColors(palette, color, variant === 'solid')
+        styles += `
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} {
+            color: ${textColor};
+            background-color: ${backgroundColor};
+            border: ${border};
+          }
+        
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-clear {
+            color: ${addColorAlpha(textColor, 0.3)};
+            background-color: ${backgroundColor};
+          }
+        
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-clear:hover {
+            color: ${textColor};
+            background-color: ${hoverBackgroundColor};
+          }
+        
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color}:hover,
+          .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} {
+            border-color: ${hoverBorderColor};
+            background-color: ${hoverBackgroundColor};
+          }
+        
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color}:hover .${prefix}-picker-input > input,
+          .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-input > input,
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color}:hover .${prefix}-picker-suffix,
+          .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-suffix {
+            color: ${hoverColor};
+          }
+        `
+        if (variant === 'solid') {
+          styles += `
+            .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color}:hover .${prefix}-picker-clear,
+            .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-clear {
+              background-color: ${hoverBackgroundColor};
+            }
+          `
+        }
+      })
+    })
+    return styles
   }
 
   // TODO Dark theme
-  // TODO Change some style to local. Is it necessary?
-
-  // TODO Although a lot of style adjustments have been made, extreme cases are not ruled out.
+  // TODO Cross Browser Compatibility
+  // TODO Optimize the styles:
+  //      Although a lot of style adjustments have been made, extreme cases are not ruled out.
   //      Maybe need adjust the pseudo-element (::before or ::after) styles, it sucks.
   const pattern = {
     color: {
-      bg: theme.palette.background, // '#fff',
-      bg2: theme.palette.cTheme0, // '#e6f7ff',
-      bgScroll: theme.palette.cNeutral0,
-      bgHover: theme.palette.cTheme0, // '#f5f5f5',
-      bgDisabled: theme.palette.cNeutral0,
-      border: theme.palette.cTheme5, // '#f0f0f0',
-      border2: theme.palette.cTheme5, // '#7ec1ff',
-      border3: theme.palette.cNeutral5, // '#d9d9d9',
-      // border4: '#91d5ff',
-      base: theme.palette.cTheme5, // '#1890ff',
-      hover: theme.palette.cTheme5, // '#40a9ff',
-      active: theme.palette.cTheme5, // '#096dd9',
-      placeholder: theme.palette.cNeutral5, // '#bfbfbf',
-      heading: theme.palette.cNeutral7, // ''rgba(0, 0, 0, 0.85)',
-      disabled: theme.palette.cNeutral4, // 'rgba(0, 0, 0, 0.25)',
-      text: theme.palette.cNeutral7, // 'rgba(0, 0, 0, 0.65)',
-      // text2: 'rgba(0, 0, 0, 0.45)',
-      shadow: 'rgba(24, 144, 255, 0.2)',
-      shadow2: 'rgba(0, 0, 0, 0.06)',
+      bg: palette.background,
+      bgLight: palette.cTheme0,
+      bgScroll: palette.cNeutral0,
+      bgHover: palette.cTheme0,
+      bgDisabled: palette.cNeutral0,
+      border: palette.cTheme5,
+      borderDark: palette.cNeutral5,
+      base: palette.cTheme5,
+      hover: palette.cTheme5,
+      active: palette.cTheme5,
+      placeholder: palette.cNeutral5,
+      heading: palette.cNeutral7,
+      disabled: palette.cNeutral4,
+      text: palette.cNeutral7,
       containerShadow:
         '0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05)',
-      other1: 'rgba(255, 255, 255, 0.5)',
-      other2: 'rgba(230, 247, 255, 0.2)',
     },
     size: {
-      cell: '32px', // '24px',
-      cellRadius: '32px', // '24px',
+      cell: '32px',
+      cellRadius: '32px',
       icon: '7px',
       fontHeader: '1.2rem',
-      fontLarge: '1rem',
-      fontMedium: '.875rem',
     },
     other: {
       transitionDuration: '0.3s',
@@ -431,6 +396,9 @@ export const generatePickerGlobalStyle = <DateType extends any>(
     <>
       {animationStyle}
       <style jsx global>{`
+
+        // ***************** panel *****************
+
         .${prefix}-picker-panel {
           display: inline-flex;
           flex-direction: column;
@@ -455,6 +423,8 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           width: ${(parseInt(pattern.size.cell, 10) + 20) * 7 + 3 * 6 + 'px'};
         }
 
+        // ***************** panel header *****************
+
         .${prefix}-picker-header {
           display: flex;
           padding: 0 16px;
@@ -468,6 +438,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-header button {
           padding: 0;
           color: ${pattern.color.text};
+          font-size: ${pattern.size.fontHeader};
           line-height: 40px;
           background: 0 0;
           border: 0;
@@ -477,7 +448,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
 
         .${prefix}-picker-header > button {
           min-width: 1.6em;
-          font-size: ${pattern.size.fontHeader};
         }
 
         .${prefix}-picker-header > button:hover {
@@ -553,6 +523,8 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           transform: rotate(135deg);
         }
 
+        // ***************** panel content *****************
+
         .${prefix}-picker-content {
           width: 100%;
           table-layout: fixed;
@@ -611,8 +583,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-cell:hover:not(.${prefix}-picker-cell-in-view) .${prefix}-picker-cell-inner,
-        .${prefix}-picker-cell:hover:not(.${prefix}-picker-cell-selected):not(.${prefix}-picker-cell-range-start):not(.${prefix}-picker-cell-range-end):not(.${prefix}-picker-cell-range-hover-start):not(.${prefix}-picker-cell-range-hover-end)
-          .${prefix}-picker-cell-inner {
+        .${prefix}-picker-cell:hover:not(.${prefix}-picker-cell-selected):not(.${prefix}-picker-cell-range-start):not(.${prefix}-picker-cell-range-end):not(.${prefix}-picker-cell-range-hover-start):not(.${prefix}-picker-cell-range-hover-end) .${prefix}-picker-cell-inner {
           background: ${pattern.color.bgHover};
         }
 
@@ -628,15 +599,11 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-today .${prefix}-picker-cell-inner {
-          background: ${pattern.color.bg2};
+          border: 1px solid ${pattern.color.base};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range {
           position: relative;
-        }
-
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range::before {
-          // background: ${pattern.color.bg2};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-selected .${prefix}-picker-cell-inner,
@@ -644,11 +611,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end .${prefix}-picker-cell-inner {
           color: ${pattern.color.bg};
           background: ${pattern.color.base};
-        }
-
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:not(.${prefix}-picker-cell-range-start-single)::before,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:not(.${prefix}-picker-cell-range-end-single)::before {
-          // background: ${pattern.color.bg2};
         }
 
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start::before {
@@ -670,14 +632,18 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end.${prefix}-picker-cell-range-end-single::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover:not(.${prefix}-picker-cell-in-range)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range::after,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start::before,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end::before {
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start.${prefix}-picker-cell-range-hover-start::before,
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start.${prefix}-picker-cell-selected::before,
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:not(.${prefix}-picker-cell-range-start-single)::before,
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end.${prefix}-picker-cell-range-hover-end::before,
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end.${prefix}-picker-cell-selected::before,
+        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:not(.${prefix}-picker-cell-range-end-single)::before {
           position: absolute;
           top: 50%;
           z-index: 3;
           height: ${pattern.size.cell};
-          border-top: 1px dashed ${pattern.color.border2};
-          border-bottom: 1px dashed ${pattern.color.border2};
+          border-top: 1px dashed ${pattern.color.border};
+          border-bottom: 1px dashed ${pattern.color.border};
           transform: translateY(-50%);
           content: '';
         }
@@ -699,8 +665,8 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           top: 50%;
           z-index: 3;
           height: ${pattern.size.cell};
-          border-top: 1px dashed ${pattern.color.border2};
-          border-bottom: 1px dashed ${pattern.color.border2};
+          border-top: 1px dashed ${pattern.color.border};
+          border-bottom: 1px dashed ${pattern.color.border};
           transform: translateY(-50%);
           content: '';
         }
@@ -721,30 +687,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           left: 2px;
         }
 
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range.${prefix}-picker-cell-range-hover::before,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start.${prefix}-picker-cell-range-hover::before,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end.${prefix}-picker-cell-range-hover::before,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:not(.${prefix}-picker-cell-range-start-single).${prefix}-picker-cell-range-hover-start::before,
-        .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:not(.${prefix}-picker-cell-range-end-single).${prefix}-picker-cell-range-hover-end::before,
-        .${prefix}-picker-panel
-          > :not(.${prefix}-picker-date-panel)
-          .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range.${prefix}-picker-cell-range-hover-start::before,
-        .${prefix}-picker-panel
-          > :not(.${prefix}-picker-date-panel)
-          .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range.${prefix}-picker-cell-range-hover-end::before {
-          // background: ${pattern.color.bg2};
-        }
-
-        // .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-start:not(.${prefix}-picker-cell-range-start-single):not(.${prefix}-picker-cell-range-end)
-        //   .${prefix}-picker-cell-inner {
-        //   border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
-        // }
-
-        // .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-end:not(.${prefix}-picker-cell-range-end-single):not(.${prefix}-picker-cell-range-start)
-        //   .${prefix}-picker-cell-inner {
-        //   border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
-        // }
-
         .${prefix}-picker-date-panel
           .${prefix}-picker-cell-in-view.${prefix}-picker-cell-in-range.${prefix}-picker-cell-range-hover-start
           .${prefix}-picker-cell-inner::after,
@@ -755,7 +697,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           top: 0;
           bottom: 0;
           z-index: -1;
-          background: ${pattern.color.bg2};
+          background: ${pattern.color.bgLight};
           content: '';
         }
 
@@ -793,7 +735,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-edge-start:not(.${prefix}-picker-cell-range-hover-edge-start-near-range)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-start::after {
           left: 10px;
-          border-left: 1px dashed ${pattern.color.border2};
+          border-left: 1px dashed ${pattern.color.border};
           border-top-left-radius: ${pattern.size.cellRadius};
           border-bottom-left-radius: ${pattern.size.cellRadius};
         }
@@ -806,7 +748,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-edge-end:not(.${prefix}-picker-cell-range-hover-edge-end-near-range)::after,
         .${prefix}-picker-cell-in-view.${prefix}-picker-cell-range-hover-end::after {
           right: 10px;
-          border-right: 1px dashed ${pattern.color.border2};
+          border-right: 1px dashed ${pattern.color.border};
           border-top-right-radius: ${pattern.size.cellRadius};
           border-bottom-right-radius: ${pattern.size.cellRadius};
         }
@@ -829,13 +771,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           border-color: ${pattern.color.disabled};
         }
 
-        .${prefix}-picker-decade-panel .${prefix}-picker-content,
-        .${prefix}-picker-year-panel .${prefix}-picker-content,
-        .${prefix}-picker-quarter-panel .${prefix}-picker-content,
-        .${prefix}-picker-month-panel .${prefix}-picker-content {
-          // height: 264px;
-        }
-
         .${prefix}-picker-decade-panel .${prefix}-picker-cell-inner,
         .${prefix}-picker-year-panel .${prefix}-picker-cell-inner,
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-inner,
@@ -854,6 +789,8 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           height: 56px;
         }
 
+        // ***************** picker footer *****************
+
         .${prefix}-picker-footer {
           width: min-content;
           min-width: 100%;
@@ -867,9 +804,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           text-align: left;
         }
 
-        // .${prefix}-picker-footer-extra:not(:last-child) {
-        //   border-bottom: 1px solid ${pattern.color.border};
-        // }
+        // ***************** picker btn *****************
 
         .${prefix}-picker-now {
           text-align: left;
@@ -904,6 +839,8 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           cursor: not-allowed;
         }
 
+        // ***************** picker other panel *****************
+
         .${prefix}-picker-decade-panel .${prefix}-picker-cell-inner {
           padding: 0 4px;
         }
@@ -928,7 +865,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-start::after {
           left: 10px;
-          border-left: 1px dashed ${pattern.color.border2};
+          border-left: 1px dashed ${pattern.color.border};
           border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
         }
 
@@ -936,7 +873,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-panel-rtl .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-start::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-start::after {
           right: 10px;
-          border-right: 1px dashed ${pattern.color.border2};
+          border-right: 1px dashed ${pattern.color.border};
           border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
         }
 
@@ -944,7 +881,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-end::after {
           right: 10px;
-          border-right: 1px dashed ${pattern.color.border2};
+          border-right: 1px dashed ${pattern.color.border};
           border-radius: 0 ${pattern.size.cellRadius} ${pattern.size.cellRadius} 0;
         }
 
@@ -952,7 +889,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-panel-rtl .${prefix}-picker-quarter-panel .${prefix}-picker-cell-range-hover-end::after,
         .${prefix}-picker-panel-rtl .${prefix}-picker-month-panel .${prefix}-picker-cell-range-hover-end::after {
           left: 10px;
-          border-left: 1px dashed ${pattern.color.border2};
+          border-left: 1px dashed ${pattern.color.border};
           border-radius: ${pattern.size.cellRadius} 0 0 ${pattern.size.cellRadius};
         }
 
@@ -994,7 +931,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
 
         .${prefix}-picker-week-panel-row-selected td.${prefix}-picker-cell-week,
         .${prefix}-picker-week-panel-row-selected:hover td.${prefix}-picker-cell-week {
-          color: ${pattern.color.other1};
+          color: ${addColorAlpha(pattern.color.bg, 0.5)};
         }
 
         .${prefix}-picker-week-panel-row-selected td.${prefix}-picker-cell-today .${prefix}-picker-cell-inner::before,
@@ -1073,7 +1010,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-time-panel-column::-webkit-scrollbar-thumb {
-          background-color: ${pattern.color.border3};
+          background-color: ${palette.cNeutral4};
         }
 
         .${prefix}-picker-time-panel-column::after {
@@ -1087,11 +1024,11 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-time-panel-column:not(:first-child) {
-          border-left: 1px solid ${pattern.color.border3};
+          border-left: 1px solid ${palette.cNeutral3};
         }
 
         .${prefix}-picker-time-panel-column-active {
-          background: ${pattern.color.other2};
+          background: ${addColorAlpha(pattern.color.bgLight, 0.2)};
         }
 
         .${prefix}-picker-time-panel-column:hover {
@@ -1128,7 +1065,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-time-panel-column
           > li.${prefix}-picker-time-panel-cell-selected
           .${prefix}-picker-time-panel-cell-inner {
-          background: ${pattern.color.bg2};
+          background: ${pattern.color.bgLight};
         }
 
         .${prefix}-picker-time-panel-column
@@ -1146,48 +1083,41 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           padding: 21px 0;
         }
 
+        // ***************** picker *****************
+
         .${prefix}-picker {
           box-sizing: border-box;
           margin: 0;
           padding: 0;
-          color: ${inputPattern.line.default.color};
-          font-size: ${inputPattern.size.medium.fontSize};
           font-variant: tabular-nums;
           list-style: none;
           font-feature-settings: 'tnum';
           position: relative;
           display: inline-flex;
           align-items: center;
-          background-color: ${inputPattern.line.default.backgroundColor};
-          border: ${inputPattern.line.default.border};
           border-radius: ${theme.expressiveness.R2};
           transition: border 0.2s ease 0s, color 0.2s ease 0s;
-      };
         }
 
         .${prefix}-picker:hover,
         .${prefix}-picker-focused {
-          border-color: ${pattern.color.hover};
           border-right-width: 1px !important;
-        }
-
-        .${prefix}-picker:hover .${prefix}-picker-input > input,
-        .${prefix}-picker-focused .${prefix}-picker-input > input,
-        .${prefix}-picker:hover .${prefix}-picker-suffix,
-        .${prefix}-picker-focused .${prefix}-picker-suffix {
-          color: ${pattern.color.hover};
         }
 
         .${prefix}-picker:hover .${prefix}-picker-input > input[disabled],
         .${prefix}-picker-focused .${prefix}-picker-input > input[disabled] {
-          color: ${pattern.color.disabled};
+          color: ${pattern.color.disabled} !important;
+          cursor: not-allowed;
+          user-select: none;
         }
 
         .${prefix}-picker.${prefix}-picker-disabled:hover .${prefix}-picker-input > input,
         .${prefix}-picker-focused.${prefix}-picker-disabled .${prefix}-picker-input > input,
         .${prefix}-picker:hover.${prefix}-picker-disabled .${prefix}-picker-suffix,
         .${prefix}-picker-focused.${prefix}-picker-disabled .${prefix}-picker-suffix {
-          color: ${pattern.color.disabled};
+          color: ${pattern.color.disabled} !important;
+          cursor: not-allowed;
+          user-select: none;
         }
         
         .${prefix}-picker svg {
@@ -1203,7 +1133,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker.${prefix}-picker-disabled {
-          background: ${pattern.color.bg};
           cursor: not-allowed;
           user-select: none;
         }
@@ -1218,26 +1147,20 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           box-shadow: none !important;
         }
 
+        // ***************** picker input *****************
+
         .${prefix}-picker-input {
           position: relative;
           display: inline-flex;
           align-items: center;
           width: 100%;
-          height: calc(${inputPattern.size.medium.heightRatio} * ${theme.layout.gap} - 2px);
-          line-height: calc(${inputPattern.size.medium.heightRatio} * ${theme.layout.gap} - 3px);
         }
 
         .${prefix}-picker-input > input {
           position: relative;
           display: inline-block;
           width: 100%;
-          min-width: 0;
-          color: ${inputPattern.line.default.color};
-          margin: ${inputPattern.size.medium.margin};
-          font-size: ${inputPattern.size.medium.fontSize};
           font-weight: normal;
-          line-height: calc(${inputPattern.size.medium.heightRatio} * ${theme.layout.gap} - 4px);
-          transition: all ${pattern.other.transitionDuration};
           flex: auto;
           min-width: 1px;
           height: auto;
@@ -1246,26 +1169,18 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           border: none;
           outline: none;
           -webkit-appearance: none;
+          transition: all ${pattern.other.transitionDuration};
+        }
+
+        .${prefix}-picker-input > input::-webkit-input-placeholder,
+        .${prefix}-picker-input > input:-ms-input-placeholder,
+        .${prefix}-picker-input > input::-moz-placeholder,
+        .${prefix}-picker-input > input::placeholder {
+          color: ${pattern.color.placeholder};
         }
 
         .${prefix}-picker-input > input::-moz-placeholder {
           opacity: 1;
-        }
-
-        .${prefix}-picker-input > input::-webkit-input-placeholder {
-          color: ${pattern.color.placeholder};
-        }
-
-        .${prefix}-picker-input > input:-ms-input-placeholder {
-          color: ${pattern.color.placeholder};
-        }
-
-        .${prefix}-picker-input > input::-ms-input-placeholder {
-          color: ${pattern.color.placeholder};
-        }
-
-        .${prefix}-picker-input > input::placeholder {
-          color: ${pattern.color.placeholder};
         }
 
         .${prefix}-picker-input > input:placeholder-shown {
@@ -1278,43 +1193,18 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-input > input:focus,
-        .${prefix}-picker-input > input-focused {
+        .${prefix}-picker-input > .input-focused {
           border-color: ${pattern.color.hover};
           border-right-width: 1px !important;
           outline: 0;
-          box-shadow: 0 0 0 2px ${pattern.color.shadow};
         }
 
-        .${prefix}-picker-input > input-disabled {
-          color: ${pattern.color.disabled};
-          background-color: ${pattern.color.bgHover};
-          cursor: not-allowed;
-          opacity: 1;
-        }
-
-        .${prefix}-picker-input > input-disabled:hover {
-          border-color: ${pattern.color.border3};
-          border-right-width: 1px !important;
-        }
-
-        .${prefix}-picker-input > input[disabled] {
-          color: ${pattern.color.disabled};
-          background-color: ${pattern.color.bgHover};
-          cursor: not-allowed;
-          opacity: 1;
-        }
-
-        .${prefix}-picker-input > input[disabled]:hover {
-          border-color: ${pattern.color.border3};
-          border-right-width: 1px !important;
-        }
-
-        .${prefix}-picker-input > input-borderless,
-        .${prefix}-picker-input > input-borderless:hover,
-        .${prefix}-picker-input > input-borderless:focus,
-        .${prefix}-picker-input > input-borderless-focused,
-        .${prefix}-picker-input > input-borderless-disabled,
-        .${prefix}-picker-input > input-borderless[disabled] {
+        .${prefix}-picker-input > .input-borderless,
+        .${prefix}-picker-input > .input-borderless:hover,
+        .${prefix}-picker-input > .input-borderless:focus,
+        .${prefix}-picker-input > .input-borderless-focused,
+        .${prefix}-picker-input > .input-borderless-disabled,
+        .${prefix}-picker-input > .input-borderless[disabled] {
           background-color: transparent;
           border: none;
           box-shadow: none;
@@ -1344,81 +1234,31 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-input-placeholder > input {
           color: ${pattern.color.placeholder};
         }
+
+        // ***************** picker input size *****************
+
+        ${generateSizeStyles()}
+
+        // ***************** picker input variant & color *****************
+
+        ${generateVariantStyles()}
         
-        // same size as input
-
-        .${prefix}-picker-size-large .${prefix}-picker-input {
-          height: calc(${inputPattern.size.large.heightRatio} * ${theme.layout.gap} - 2px);
-          line-height: calc(${inputPattern.size.large.heightRatio} * ${theme.layout.gap} - 3px);
-        }
-
-        .${prefix}-picker-size-large .${prefix}-picker-input > input {
-          margin: ${inputPattern.size.large.margin};
-          font-size: ${inputPattern.size.large.fontSize};
-          line-height: calc(${inputPattern.size.large.heightRatio} * ${theme.layout.gap} - 4px);
-        }
-
-        .${prefix}-picker-size-small .${prefix}-picker-input {
-          height: calc(${inputPattern.size.small.heightRatio} * ${theme.layout.gap} - 2px);
-          line-height: calc(${inputPattern.size.small.heightRatio} * ${theme.layout.gap} - 3px);
-        }
-
-        .${prefix}-picker-size-small .${prefix}-picker-input > input {
-          margin: ${inputPattern.size.small.margin};
-          font-size: ${inputPattern.size.small.fontSize};
-          line-height: calc(${inputPattern.size.small.heightRatio} * ${theme.layout.gap} - 4px);
-        }
-
-        .${prefix}-picker-size-mini .${prefix}-picker-input {
-          height: calc(${inputPattern.size.mini.heightRatio} * ${theme.layout.gap} - 2px);
-          line-height: calc(${inputPattern.size.mini.heightRatio} * ${theme.layout.gap} - 3px);
-        }
-
-        .${prefix}-picker-size-mini .${prefix}-picker-input > input {
-          margin: ${inputPattern.size.mini.margin};
-          font-size: ${inputPattern.size.mini.fontSize};
-          line-height: calc(${inputPattern.size.mini.heightRatio} * ${theme.layout.gap} - 4px);
-        }
-
-        // same variant as input
-
-        .${prefix}-picker.${prefix}-picker-variant-solid {
-          color: ${inputPattern.solid.default.color};
-          background-color: ${inputPattern.solid.default.backgroundColor};
-          border: ${inputPattern.solid.default.border};
-        }
-
-        .${prefix}-picker.${prefix}-picker-variant-solid .${prefix}-picker-clear {
-          background-color: ${inputPattern.solid.default.hoverBackgroundColor};
-        }
-
-        .${prefix}-picker.${prefix}-picker-variant-solid:hover,
-        .${prefix}-picker-focused.${prefix}-picker-variant-solid {
-          background-color: ${inputPattern.solid.default.hoverBackgroundColor};
-        }
-
-        .${prefix}-picker.${prefix}-picker-variant-solid:hover .${prefix}-picker-input > input,
-        .${prefix}-picker-focused.${prefix}-picker-variant-solid .${prefix}-picker-input > input,
-        .${prefix}-picker.${prefix}-picker-variant-solid:hover .${prefix}-picker-suffix,
-        .${prefix}-picker-focused.${prefix}-picker-variant-solid .${prefix}-picker-suffix {
-          color: ${inputPattern.solid.default.color};
+        .${prefix}-picker.${prefix}-picker-variant-line.${prefix}-picker-disabled,
+        .${prefix}-picker.${prefix}-picker-variant-line.${prefix}-picker-disabled:hover {
+          border-color: ${palette.cNeutral2};
+          background-color: ${pattern.color.bg};
+          cursor: not-allowed;
+          opacity: 1;
         }
         
-        .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled {
-          background-color: ${theme.palette.cNeutral3};
+        .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled,
+        .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled:hover {
+          background-color: ${palette.cNeutral3};
+          cursor: not-allowed;
+          opacity: 1;
         }
 
-        .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled:hover .${prefix}-picker-input > input,
-        .${prefix}-picker-focused.${prefix}-picker-variant-solid.${prefix}-picker-disabled .${prefix}-picker-input > input,
-        .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled:hover .${prefix}-picker-suffix,
-        .${prefix}-picker-focused.${prefix}-picker-variant-solid.${prefix}-picker-disabled .${prefix}-picker-suffix {
-          color: ${pattern.color.disabled};
-        }
-
-        // same color as input
-
-
-
+        // ***************** picker other element *****************
 
         .${prefix}-picker-suffix {
           align-self: center;
@@ -1437,12 +1277,11 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           position: absolute;
           top: 50%;
           right: 1rem;
-          color: ${theme.palette.cNeutral2};
           line-height: 1;
-          background-color: ${pattern.color.bg};
           transform: translateY(-50%);
           cursor: pointer;
           opacity: 0;
+          color: ${palette.cNeutral2};
           transition: opacity ${pattern.other.transitionDuration};
           // transition: color ${pattern.other.transitionDuration};
         }
@@ -1451,17 +1290,12 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           vertical-align: top;
         }
 
-        .${prefix}-picker-clear:hover {
-          color: ${inputPattern.line.default.color};
-        }
-
         .${prefix}-picker-separator {
           position: relative;
           display: inline-block;
           width: 1em;
           height: 16px;
           color: ${pattern.color.disabled};
-          font-size: ${pattern.size.fontLarge};
           vertical-align: top;
           cursor: default;
         }
@@ -1516,7 +1350,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           margin: 0;
           padding: 0;
           color: ${pattern.color.text};
-          font-size: ${pattern.size.fontMedium};
           font-variant: tabular-nums;
           line-height: 1.5715;
           list-style: none;
@@ -1528,18 +1361,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-dropdown-hidden {
           display: none;
         }
-
-        // .${prefix}-picker-dropdown-placement-bottomLeft .${prefix}-picker-range-arrow {
-        //   top: 1.66666667px;
-        //   display: block;
-        //   transform: rotate(-45deg);
-        // }
-
-        // .${prefix}-picker-dropdown-placement-topLeft .${prefix}-picker-range-arrow {
-        //   bottom: 1.66666667px;
-        //   display: block;
-        //   transform: rotate(135deg);
-        // }
 
         .${prefix}-picker-dropdown-range {
           padding: 6.66666667px 0;
@@ -1578,7 +1399,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-ranges .${prefix}-picker-preset > .tag:hover {
-          background: ${pattern.color.bg2};
+          background: ${pattern.color.bgLight};
         }
 
         .${prefix}-picker-ranges .${prefix}-picker-ok {
@@ -1594,28 +1415,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-range-wrapper {
           display: flex;
         }
-
-        // .${prefix}-picker-range-arrow {
-        //   position: absolute;
-        //   z-index: 1;
-        //   display: none;
-        //   width: 10px;
-        //   height: 10px;
-        //   margin-left: 16.5px;
-        //   box-shadow: 2px -2px 6px ${pattern.color.shadow2};
-        //   transition: left ${pattern.other.transitionDuration} ease-out;
-        // }
-
-        // .${prefix}-picker-range-arrow::after {
-        //   position: absolute;
-        //   top: 1px;
-        //   right: 1px;
-        //   width: 10px;
-        //   height: 10px;
-        //   border: 5px solid ${pattern.color.border};
-        //   border-color: ${pattern.color.bg} ${pattern.color.bg} transparent transparent;
-        //   content: '';
-        // }
 
         .${prefix}-picker-panel-container {
           overflow: hidden;

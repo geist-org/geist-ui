@@ -55,7 +55,6 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
           {...additionalProps}
           {...restProps}
           {...additionalOverrideProps}
-          inputReadOnly={true}
           locale={getLocale(locale)}
           className={`${prefixCls}-size-${customizeSize} ${prefixCls}-variant-${customizeVariant} ${prefixCls}-color-${customizeColor} ${
             !bordered ? `${prefixCls}-borderless` : ''
