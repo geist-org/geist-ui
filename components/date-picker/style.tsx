@@ -1,5 +1,5 @@
 import { ZeitUIThemes } from '../styles/themes'
-import { PickerProps, RangePickerProps } from './generatePicker'
+import { PickerProps, RangePickerProps } from './generate-picker'
 import { addColorAlpha } from '../utils/color'
 import { getSizes, getColors } from '../input/styles'
 import {

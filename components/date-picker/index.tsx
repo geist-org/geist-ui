@@ -4,7 +4,7 @@ import generatePicker, {
   PickerProps,
   PickerDateProps,
   RangePickerProps as BaseRangePickerProps,
-} from './generatePicker'
+} from './generate-picker'
 
 export type DatePickerProps = PickerProps<Moment>
 export type MonthPickerProps = Omit<PickerDateProps<Moment>, 'picker'>
