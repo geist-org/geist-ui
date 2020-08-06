@@ -7,9 +7,18 @@ import { clearInput, nextMonth, nextYear, openPicker, selectCell } from './utils
 
 const { RangePicker } = DatePicker
 
+// ensure that the snapshots does not mismatch due to the changes of test date
+const defaultValue = moment('2020-07-01')
+
 describe('RangePicker Common', () => {
   it('should render correctly', () => {
-    const wrapper = mount(<RangePicker open placeholder={['placeholder', 'placeholder']} />)
+    const wrapper = mount(
+      <RangePicker
+        open
+        placeholder={['placeholder', 'placeholder']}
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
+    )
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
@@ -23,7 +32,7 @@ describe('RangePicker Common', () => {
   it('should support all variants', () => {
     const wrapper = mount(
       <div>
-        <RangePicker open variant="solid" />
+        <RangePicker open variant="solid" defaultPickerValue={[defaultValue, defaultValue]} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -33,10 +42,10 @@ describe('RangePicker Common', () => {
   it('should support all colors', () => {
     const wrapper = mount(
       <div>
-        <RangePicker open color="primary" />
-        <RangePicker open color="success" />
-        <RangePicker open color="warning" />
-        <RangePicker open color="error" />
+        <RangePicker open color="primary" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open color="success" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open color="warning" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open color="error" defaultPickerValue={[defaultValue, defaultValue]} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -46,9 +55,9 @@ describe('RangePicker Common', () => {
   it('should support all sizes', () => {
     const wrapper = mount(
       <div>
-        <RangePicker open size="mini" />
-        <RangePicker open size="small" />
-        <RangePicker open size="large" />
+        <RangePicker open size="mini" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open size="small" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open size="large" defaultPickerValue={[defaultValue, defaultValue]} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -58,18 +67,68 @@ describe('RangePicker Common', () => {
   it('prop `locale` should works', () => {
     const wrapper = mount(
       <div>
-        <RangePicker open locale="zh-CN" />
-        <RangePicker open picker="year" locale="zh-CN" />
-        <RangePicker open picker="quarter" locale="zh-CN" />
-        <RangePicker open picker="month" locale="zh-CN" />
-        <RangePicker open picker="week" locale="zh-CN" />
-        <RangePicker open picker="time" locale="zh-CN" />
-        <RangePicker open locale="en-US" />
-        <RangePicker open picker="year" locale="en-US" />
-        <RangePicker open picker="quarter" locale="en-US" />
-        <RangePicker open picker="month" locale="en-US" />
-        <RangePicker open picker="week" locale="en-US" />
-        <RangePicker open picker="time" locale="en-US" />
+        <RangePicker open locale="zh-CN" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker
+          open
+          picker="year"
+          locale="zh-CN"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          picker="quarter"
+          locale="zh-CN"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          picker="month"
+          locale="zh-CN"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          picker="week"
+          locale="zh-CN"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          picker="time"
+          locale="zh-CN"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker open locale="en-US" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker
+          open
+          picker="year"
+          locale="en-US"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          picker="quarter"
+          locale="en-US"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          picker="month"
+          locale="en-US"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          picker="week"
+          locale="en-US"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          picker="time"
+          locale="en-US"
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -79,11 +138,11 @@ describe('RangePicker Common', () => {
   it('prop `locale` should works with compatibility', () => {
     const wrapper = mount(
       <div>
-        <RangePicker open locale="zh_CN" />
-        <RangePicker open locale="zh" />
-        <RangePicker open locale="en_US" />
-        <RangePicker open locale="en" />
-        <RangePicker open locale="xxx" />
+        <RangePicker open locale="zh_CN" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open locale="zh" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open locale="en_US" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open locale="en" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open locale="xxx" defaultPickerValue={[defaultValue, defaultValue]} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -106,7 +165,11 @@ describe('RangePicker Common', () => {
     const customClass = 'blabla'
     const wrapper = mount(
       <div>
-        <RangePicker open className={customClass} />
+        <RangePicker
+          open
+          className={customClass}
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
       </div>,
     )
     expect(wrapper.find('.cfx-picker').hasClass(customClass)).toBe(true)
@@ -119,6 +182,7 @@ describe('RangePicker Common', () => {
       <div>
         <RangePicker
           open
+          defaultPickerValue={[defaultValue, defaultValue]}
           dateRender={(current: any) => {
             const style: any = {}
             if (current.date() === 1) {
@@ -144,9 +208,11 @@ describe('RangePicker Common', () => {
     element.className = customClass
     document.body.appendChild(element)
     const wrapper = mount(
-      <div>
-        <RangePicker open getPopupContainer={() => element} />
-      </div>,
+      <RangePicker
+        open
+        getPopupContainer={() => element}
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
     )
     expect(
       document.querySelectorAll(`.${customClass} .cfx-picker-dropdown`).length,
@@ -158,12 +224,36 @@ describe('RangePicker Common', () => {
   it('prop `mode` should works', () => {
     const wrapper = mount(
       <div>
-        <RangePicker open mode={['time', 'time']} />
-        <RangePicker open mode={['date', 'date']} />
-        <RangePicker open mode={['month', 'month']} />
-        <RangePicker open mode={['year', 'year']} />
-        <RangePicker open mode={['week', 'week']} />
-        <RangePicker open mode={['decade', 'decade']} />
+        <RangePicker
+          open
+          mode={['time', 'time']}
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          mode={['date', 'date']}
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          mode={['month', 'month']}
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          mode={['year', 'year']}
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          mode={['week', 'week']}
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
+        <RangePicker
+          open
+          mode={['decade', 'decade']}
+          defaultPickerValue={[defaultValue, defaultValue]}
+        />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -172,9 +262,11 @@ describe('RangePicker Common', () => {
 
   it('prop `panelRender` should works', () => {
     const wrapper = mount(
-      <div>
-        <RangePicker open panelRender={() => <div>panelRender</div>} />
-      </div>,
+      <RangePicker
+        open
+        panelRender={() => <div>panelRender</div>}
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -183,12 +275,12 @@ describe('RangePicker Common', () => {
   it('prop `picker` should works', () => {
     const wrapper = mount(
       <div>
-        <RangePicker open picker="time" />
-        <RangePicker open picker="date" />
-        <RangePicker open picker="month" />
-        <RangePicker open picker="year" />
-        <RangePicker open picker="week" />
-        <RangePicker open picker="quarter" />
+        <RangePicker open picker="time" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open picker="date" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open picker="month" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open picker="year" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open picker="week" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open picker="quarter" defaultPickerValue={[defaultValue, defaultValue]} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -197,9 +289,11 @@ describe('RangePicker Common', () => {
 
   it('prop `popupStyle` should works', () => {
     const wrapper = mount(
-      <div>
-        <RangePicker open popupStyle={{ color: 'red', background: 'green' }} />
-      </div>,
+      <RangePicker
+        open
+        popupStyle={{ color: 'red', background: 'green' }}
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -207,9 +301,7 @@ describe('RangePicker Common', () => {
 
   it('prop `bordered` should works', () => {
     const wrapper = mount(
-      <div>
-        <RangePicker open bordered={false} />
-      </div>,
+      <RangePicker open bordered={false} defaultPickerValue={[defaultValue, defaultValue]} />,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -217,9 +309,7 @@ describe('RangePicker Common', () => {
 
   it('prop `suffixIcon` should works', () => {
     const wrapper = mount(
-      <div>
-        <RangePicker open suffixIcon={<Wifi />} />
-      </div>,
+      <RangePicker open suffixIcon={<Wifi />} defaultPickerValue={[defaultValue, defaultValue]} />,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -227,9 +317,11 @@ describe('RangePicker Common', () => {
 
   it('prop `style` should works', () => {
     const wrapper = mount(
-      <div>
-        <RangePicker open style={{ width: 300, height: 50 }} />
-      </div>,
+      <RangePicker
+        open
+        style={{ width: 300, height: 50 }}
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -238,7 +330,9 @@ describe('RangePicker Common', () => {
   it('prop `onOpenChange` should works', () => {
     let state = false
     const callback = jest.fn().mockImplementation(open => (state = open))
-    const wrapper = mount(<RangePicker onOpenChange={callback} />)
+    const wrapper = mount(
+      <RangePicker onOpenChange={callback} defaultPickerValue={[defaultValue, defaultValue]} />,
+    )
     openPicker(wrapper)
     expect(callback).toHaveBeenCalled()
     expect(state).toEqual(true)
@@ -247,7 +341,13 @@ describe('RangePicker Common', () => {
 
   it('prop `onPanelChange` should works', () => {
     const callback = jest.fn()
-    const wrapper = mount(<RangePicker open onPanelChange={callback} />)
+    const wrapper = mount(
+      <RangePicker
+        open
+        onPanelChange={callback}
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
+    )
     nextMonth(wrapper)
     expect(callback).toHaveBeenCalled()
     nextYear(wrapper)
@@ -257,7 +357,9 @@ describe('RangePicker Common', () => {
 
   it('should trigger event when changed', () => {
     const callback = jest.fn()
-    const wrapper = mount(<RangePicker open onChange={callback} />)
+    const wrapper = mount(
+      <RangePicker open onChange={callback} defaultPickerValue={[defaultValue, defaultValue]} />,
+    )
     selectCell(wrapper, 3)
     selectCell(wrapper, 5)
     expect(callback).toHaveBeenCalled()
@@ -266,7 +368,13 @@ describe('RangePicker Common', () => {
 
   it('should ignore event when disabled', () => {
     const callback = jest.fn()
-    const wrapper = mount(<RangePicker onChange={callback} disabled />)
+    const wrapper = mount(
+      <RangePicker
+        onChange={callback}
+        disabled
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
+    )
     openPicker(wrapper)
     expect(callback).not.toHaveBeenCalled()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -274,7 +382,13 @@ describe('RangePicker Common', () => {
 
   it('should ignore event when readonly', () => {
     const callback = jest.fn()
-    const wrapper = mount(<RangePicker onChange={callback} inputReadOnly />)
+    const wrapper = mount(
+      <RangePicker
+        onChange={callback}
+        inputReadOnly
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
+    )
     openPicker(wrapper)
     expect(callback).not.toHaveBeenCalled()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -283,7 +397,14 @@ describe('RangePicker Common', () => {
   it('should clear text', () => {
     let value = ''
     const callback = jest.fn().mockImplementation((_date, dateString) => (value = dateString))
-    const wrapper = mount(<RangePicker open onChange={callback} allowClear />)
+    const wrapper = mount(
+      <RangePicker
+        open
+        onChange={callback}
+        allowClear
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
+    )
 
     selectCell(wrapper, 3)
     selectCell(wrapper, 5)
@@ -302,14 +423,26 @@ describe('RangePicker Common', () => {
     function disabledDate(current: any) {
       return current && current < moment().endOf('day')
     }
-    const wrapper = mount(<RangePicker disabledDate={disabledDate} open />)
+    const wrapper = mount(
+      <RangePicker
+        disabledDate={disabledDate}
+        open
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
+    )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('prop `dropdownClassName` should works', () => {
     const customClass = 'blabla'
-    const wrapper = mount(<RangePicker open dropdownClassName={customClass} />)
+    const wrapper = mount(
+      <RangePicker
+        open
+        dropdownClassName={customClass}
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
+    )
     expect(document.querySelectorAll(`.cfx-picker-dropdown.${customClass}`).length).toBeGreaterThan(
       0,
     )
@@ -318,7 +451,7 @@ describe('RangePicker Common', () => {
   })
 
   it("cannot select a date that doesn't exist", () => {
-    const wrapper = mount(<RangePicker open />)
+    const wrapper = mount(<RangePicker open defaultPickerValue={[defaultValue, defaultValue]} />)
     expect(() => selectCell(wrapper, 32)).toThrow('Cell not match in picker panel.')
     expect(() => wrapper.unmount()).not.toThrow()
   })

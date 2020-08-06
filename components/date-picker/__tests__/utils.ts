@@ -36,3 +36,11 @@ export function selectCell(wrapper: ReactWrapper, text: number | string, index =
 
   return matchCell
 }
+
+export function range(start: number, end: number) {
+  const result = []
+  for (let i = start; i < end; i++) {
+    result.push(i)
+  }
+  return result
+}
