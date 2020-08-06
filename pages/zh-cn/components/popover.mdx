@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Popover, Spacer, Link, Row, Col } from 'components'
+import { Popover, Spacer, Link, Row, Col, useTheme } from 'components'
 import { useState } from 'react'
+import { addColorAlpha } from 'components/utils/color'
 
 export const meta = {
   title: '气泡卡片 Popover',
@@ -13,20 +14,50 @@ export const meta = {
 
 <Playground
   desc="基础示例。"
-  scope={{ Popover, Spacer, Link }}
+  scope={{ Popover, Spacer, Link, useState, useTheme, addColorAlpha }}
   code={`
 () => {
+  const theme = useTheme()
   const content = () => (
     <div style={{ padding: '16px' }}>
       <Link href="#">A hyperlink</Link>
-      <Spacer y={.5} />
+      <Spacer y={0.5} />
       <Link href="#">External link</Link>
     </div>
   )
+  const Option = () => {
+    const [hover, setHover] = useState(false)
+    return (
+      <p
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+        style={{
+          margin: 0,
+          padding: theme.layout.gap,
+          color: hover ? theme.palette.cTheme5 : theme.palette.cNeutral5,
+          backgroundColor: hover ? addColorAlpha(theme.palette.cTheme5, 0.04) : 'transparent',
+        }}>
+        菜单内容
+      </p>
+    )
+  }
+  const contentWithBackgroundColor = () => (
+    <div>
+      <Option />
+      <Option />
+      <Option />
+    </div>
+  )
   return (
-    <Popover title='Popover title' content={content}>
-       菜单
-    </Popover>
+    <>
+      <Popover title="菜单标题" content={content}>
+        菜单
+      </Popover>
+      <Spacer inline />
+      <Popover title="菜单标题" content={contentWithBackgroundColor}>
+        带背景色
+      </Popover>
+    </>
   )
 }
 `}
@@ -43,6 +74,7 @@ export const meta = {
       <Popover.Item>
         <Link href="#">A hyperlink</Link>
       </Popover.Item>
+      <Popover.Item line />
       <Popover.Item>
         <Link href="#">A hyperlink for edit profile</Link>
       </Popover.Item>
@@ -100,15 +132,15 @@ export const meta = {
   )
   return (
     <>
-      <Popover title='Popover title' content={content}>
+      <Popover title='菜单标题' content={content}>
         菜单
       </Popover>
       <Spacer inline />
-      <Popover title='Popover title' notSeperateTitle content={content}>
+      <Popover title='菜单标题' notSeperateTitle content={content}>
         标题不带分割线
       </Popover>
       <Spacer inline />
-      <Popover title='Popover title' content={contentLong}>
+      <Popover title='菜单标题' content={contentLong}>
         带滚动条
       </Popover>
     </>
@@ -137,50 +169,50 @@ export const meta = {
     <div style={{ width: '80%', margin: '0 auto' }}>
       <Row justify="center">
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="topStart">topStart</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="topStart">topStart</Popover>
         </Center>
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="top">top</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="top">top</Popover>
         </Center>
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="topEnd">topEnd</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="topEnd">topEnd</Popover>
         </Center>
       </Row>
       <Row justify="space-between">
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="leftStart">leftStart</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="leftStart">leftStart</Popover>
         </Center>
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="rightStart">rightStart</Popover>
-        </Center>
-      </Row>
-      <Spacer y={.5} />
-      <Row justify="space-between">
-        <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="left">left</Popover>
-        </Center>
-        <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="right">right</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="rightStart">rightStart</Popover>
         </Center>
       </Row>
       <Spacer y={.5} />
       <Row justify="space-between">
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="leftEnd">leftEnd</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="left">left</Popover>
         </Center>
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="rightEnd">rightEnd</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="right">right</Popover>
+        </Center>
+      </Row>
+      <Spacer y={.5} />
+      <Row justify="space-between">
+        <Center span={5}>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="leftEnd">leftEnd</Popover>
+        </Center>
+        <Center span={5}>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="rightEnd">rightEnd</Popover>
         </Center>
       </Row>
       <Row justify="center">
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="bottomStart">bottomStart</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="bottomStart">bottomStart</Popover>
         </Center>
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="bottom">bottom</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="bottom">bottom</Popover>
         </Center>
         <Center span={5}>
-          <Popover notSeperateTitle title='Popover title' content={content} placement="bottomEnd">bottomEnd</Popover>
+          <Popover notSeperateTitle title='菜单标题' content={content} placement="bottomEnd">bottomEnd</Popover>
         </Center>
       </Row>
     </div>

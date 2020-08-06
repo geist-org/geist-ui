@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Popover, Spacer, Link, Row, Col } from 'components'
+import { Popover, Spacer, Link, Row, Col, useTheme } from 'components'
 import { useState } from 'react'
+import { addColorAlpha } from 'components/utils/color'
 
 export const meta = {
   title: 'Popover',
@@ -12,20 +13,50 @@ export const meta = {
 The floating box popped by clicking or hovering.
 
 <Playground
-  scope={{ Popover, Spacer, Link }}
+  scope={{ Popover, Spacer, Link, useState, useTheme, addColorAlpha }}
   code={`
 () => {
+  const theme = useTheme()
   const content = () => (
     <div style={{ padding: '16px' }}>
       <Link href="#">A hyperlink</Link>
-      <Spacer y={.5} />
+      <Spacer y={0.5} />
       <Link href="#">External link</Link>
     </div>
   )
+  const Option = () => {
+    const [hover, setHover] = useState(false)
+    return (
+      <p
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+        style={{
+          margin: 0,
+          padding: theme.layout.gap,
+          color: hover ? theme.palette.cTheme5 : theme.palette.cNeutral5,
+          backgroundColor: hover ? addColorAlpha(theme.palette.cTheme5, 0.04) : 'transparent',
+        }}>
+        content
+      </p>
+    )
+  }
+  const contentWithBackgroundColor = () => (
+    <div>
+      <Option />
+      <Option />
+      <Option />
+    </div>
+  )
   return (
-    <Popover title='Popover title' content={content}>
-      Menu
-    </Popover>
+    <>
+      <Popover title="Popover title" content={content}>
+        Menu
+      </Popover>
+      <Spacer inline />
+      <Popover title="Popover title" content={contentWithBackgroundColor}>
+        With background color
+      </Popover>
+    </>
   )
 }
 `}
@@ -42,6 +73,7 @@ The floating box popped by clicking or hovering.
       <Popover.Item>
         <Link href="#">A hyperlink</Link>
       </Popover.Item>
+      <Popover.Item line />
       <Popover.Item>
         <Link href="#">A hyperlink for edit profile</Link>
       </Popover.Item>

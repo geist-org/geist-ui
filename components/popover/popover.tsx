@@ -70,10 +70,11 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
         :global(.tooltip-content.popover > .inner) {
           padding: 0;
           text-align: left;
+          min-width: 17.1429rem;
         }
         :global(.tooltip-content.popover > .inner .items) {
           max-height: 17.1429rem;
-          overflow: scroll;
+          overflow: auto;
         }
         :global(.tooltip-content.popover > .inner .title .item.title) {
           line-height: 1.1429rem;
