@@ -52,8 +52,6 @@ export const normalizeLocaleString = (locale: string) => {
 // get date picker locale
 export const getLocale = (locale: string) => {
   switch (normalizeLocaleString(locale)) {
-    case 'en-US':
-      return enUS
     case 'zh-CN':
       return zhCN
     // TODO add more locale

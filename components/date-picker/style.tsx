@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { ZeitUIThemes } from '../styles/themes'
 import { PickerProps, RangePickerProps } from './generate-picker'
 import { addColorAlpha } from '../utils/color'

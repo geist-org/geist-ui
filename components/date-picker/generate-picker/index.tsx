@@ -60,22 +60,25 @@ export function getTimeProps<DateType>(
   }
 }
 
-type InjectDefaultProps<Props> = Omit<
-  Props,
-  | 'generateConfig'
-  | 'prevIcon'
-  | 'nextIcon'
-  | 'superPrevIcon'
-  | 'superNextIcon'
-  | 'hideHeader'
-  | 'components'
-> & {
-  locale?: string
-  bordered?: boolean
-  size?: NormalSizes
-  color?: InputColors
-  variant?: InputVariantTypes
-}
+type InjectDefaultProps<Props> = Partial<
+  Omit<
+    Props,
+    | 'generateConfig'
+    | 'prevIcon'
+    | 'nextIcon'
+    | 'superPrevIcon'
+    | 'superNextIcon'
+    | 'hideHeader'
+    | 'components'
+    | 'locale'
+  > & {
+    locale?: string
+    bordered?: boolean
+    size?: NormalSizes
+    color?: InputColors
+    variant?: InputVariantTypes
+  }
+>
 
 export type AdditionalPickerLocaleProps = {
   dateFormat?: string
