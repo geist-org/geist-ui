@@ -36,6 +36,7 @@
     "test": "jest --config .jest.config.js --no-cache",
     "test-update": "jest --config .jest.config.js --no-cache --update-snapshot",
     "coverage": "yarn test --coverage",
+    "test-update:coverage": "yarn test-update --coverage",
     "now-build": "yarn run docs-build",
     "build:esm": "babel --config-file ./scripts/babel.config.js --extensions \".js,.ts,.tsx\" ./components --out-dir ./esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
     "build:webpack": "webpack --config scripts/webpack.config.js",
