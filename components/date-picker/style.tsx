@@ -363,6 +363,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
   // TODO Optimize the styles:
   //      Although a lot of style adjustments have been made, extreme cases are not ruled out.
   //      Maybe need adjust the pseudo-element (::before or ::after) styles, it sucks.
+  // TODO extract variables if necessary
   const pattern = {
     color: {
       bg: palette.background,
@@ -379,12 +380,12 @@ export const generatePickerGlobalStyle = <DateType extends any>(
       heading: palette.cNeutral7,
       disabled: palette.cNeutral4,
       text: palette.cNeutral7,
-      containerShadow:
-        '0 3px 6px -4px rgba(0,0,0,.12),0 6px 16px 0 rgba(0,0,0,.08),0 9px 28px 8px rgba(0,0,0,.05)',
+      containerShadow: theme.expressiveness.D4,
     },
     size: {
       cell: '32px',
       cellRadius: '32px',
+      panelRadius: theme.expressiveness.R4,
       icon: '7px',
       fontHeader: '1.2rem',
     },
@@ -1423,7 +1424,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           padding: 10px;
           background: ${pattern.color.bg};
           border: 1px solid ${pattern.color.border};
-          border-radius: 30px;
+          border-radius: ${pattern.size.panelRadius};
           box-shadow: ${pattern.color.containerShadow};
           transition: margin ${pattern.other.transitionDuration};
         }
