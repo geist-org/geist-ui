@@ -5,11 +5,11 @@ export function clearInput(wrapper: ReactWrapper) {
 }
 
 export function nextYear(wrapper: ReactWrapper) {
-  wrapper.find('.cfx-picker-header-super-next-btn').simulate('click')
+  wrapper.find('.cfx-picker-header-super-next-btn').at(0).simulate('click')
 }
 
 export function nextMonth(wrapper: ReactWrapper) {
-  wrapper.find('.cfx-picker-header-next-btn').simulate('click')
+  wrapper.find('.cfx-picker-header-next-btn').at(0).simulate('click')
 }
 
 export function openPicker(wrapper: ReactWrapper, index = 0) {

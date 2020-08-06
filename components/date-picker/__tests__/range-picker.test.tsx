@@ -5,22 +5,25 @@ import { DatePicker } from 'components'
 import { Wifi } from '@zeit-ui/react-icons'
 import { clearInput, nextMonth, nextYear, openPicker, selectCell } from './utils'
 
-describe('DatePicker Common', () => {
+const { RangePicker } = DatePicker
+
+describe('RangePicker Common', () => {
   it('should render correctly', () => {
-    const wrapper = mount(<DatePicker open placeholder="placeholder" />)
+    const wrapper = mount(<RangePicker open placeholder={['placeholder', 'placeholder']} />)
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('should render correct placeholder', () => {
-    const wrapper = mount(<DatePicker placeholder={undefined} />)
-    expect(wrapper.find('input').props().placeholder).toEqual('Select date')
+    const wrapper = mount(<RangePicker placeholder={undefined} />)
+    expect(wrapper.find('input').at(0).props().placeholder).toEqual('Start date')
+    expect(wrapper.find('input').at(1).props().placeholder).toEqual('End date')
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('should support all variants', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open variant="solid" />
+        <RangePicker open variant="solid" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -30,10 +33,10 @@ describe('DatePicker Common', () => {
   it('should support all colors', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open color="primary" />
-        <DatePicker open color="success" />
-        <DatePicker open color="warning" />
-        <DatePicker open color="error" />
+        <RangePicker open color="primary" />
+        <RangePicker open color="success" />
+        <RangePicker open color="warning" />
+        <RangePicker open color="error" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -43,9 +46,9 @@ describe('DatePicker Common', () => {
   it('should support all sizes', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open size="mini" />
-        <DatePicker open size="small" />
-        <DatePicker open size="large" />
+        <RangePicker open size="mini" />
+        <RangePicker open size="small" />
+        <RangePicker open size="large" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -55,18 +58,18 @@ describe('DatePicker Common', () => {
   it('prop `locale` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open locale="zh-CN" />
-        <DatePicker open picker="year" locale="zh-CN" />
-        <DatePicker open picker="quarter" locale="zh-CN" />
-        <DatePicker open picker="month" locale="zh-CN" />
-        <DatePicker open picker="week" locale="zh-CN" />
-        <DatePicker open picker="time" locale="zh-CN" />
-        <DatePicker open locale="en-US" />
-        <DatePicker open picker="year" locale="en-US" />
-        <DatePicker open picker="quarter" locale="en-US" />
-        <DatePicker open picker="month" locale="en-US" />
-        <DatePicker open picker="week" locale="en-US" />
-        <DatePicker open picker="time" locale="en-US" />
+        <RangePicker open locale="zh-CN" />
+        <RangePicker open picker="year" locale="zh-CN" />
+        <RangePicker open picker="quarter" locale="zh-CN" />
+        <RangePicker open picker="month" locale="zh-CN" />
+        <RangePicker open picker="week" locale="zh-CN" />
+        <RangePicker open picker="time" locale="zh-CN" />
+        <RangePicker open locale="en-US" />
+        <RangePicker open picker="year" locale="en-US" />
+        <RangePicker open picker="quarter" locale="en-US" />
+        <RangePicker open picker="month" locale="en-US" />
+        <RangePicker open picker="week" locale="en-US" />
+        <RangePicker open picker="time" locale="en-US" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -76,11 +79,11 @@ describe('DatePicker Common', () => {
   it('prop `locale` should works with compatibility', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open locale="zh_CN" />
-        <DatePicker open locale="zh" />
-        <DatePicker open locale="en_US" />
-        <DatePicker open locale="en" />
-        <DatePicker open locale="xxx" />
+        <RangePicker open locale="zh_CN" />
+        <RangePicker open locale="zh" />
+        <RangePicker open locale="en_US" />
+        <RangePicker open locale="en" />
+        <RangePicker open locale="xxx" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -88,10 +91,11 @@ describe('DatePicker Common', () => {
   })
 
   it('prop `value` should works', () => {
-    const date = moment('2020-01-01', 'YYYY-MM-DD')
+    const dateStart = moment('2020-01-01', 'YYYY-MM-DD')
+    const dateEnd = moment('2020-02-01', 'YYYY-MM-DD')
     const wrapper = mount(
       <div>
-        <DatePicker open value={date} />
+        <RangePicker open value={[dateStart, dateEnd]} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -102,7 +106,7 @@ describe('DatePicker Common', () => {
     const customClass = 'blabla'
     const wrapper = mount(
       <div>
-        <DatePicker open className={customClass} />
+        <RangePicker open className={customClass} />
       </div>,
     )
     expect(wrapper.find('.cfx-picker').hasClass(customClass)).toBe(true)
@@ -113,7 +117,7 @@ describe('DatePicker Common', () => {
   it('prop `dateRender` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker
+        <RangePicker
           open
           dateRender={(current: any) => {
             const style: any = {}
@@ -141,7 +145,7 @@ describe('DatePicker Common', () => {
     document.body.appendChild(element)
     const wrapper = mount(
       <div>
-        <DatePicker open getPopupContainer={() => element} />
+        <RangePicker open getPopupContainer={() => element} />
       </div>,
     )
     expect(
@@ -154,12 +158,12 @@ describe('DatePicker Common', () => {
   it('prop `mode` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open mode="time" />
-        <DatePicker open mode="date" />
-        <DatePicker open mode="month" />
-        <DatePicker open mode="year" />
-        <DatePicker open mode="week" />
-        <DatePicker open mode="decade" />
+        <RangePicker open mode={['time', 'time']} />
+        <RangePicker open mode={['date', 'date']} />
+        <RangePicker open mode={['month', 'month']} />
+        <RangePicker open mode={['year', 'year']} />
+        <RangePicker open mode={['week', 'week']} />
+        <RangePicker open mode={['decade', 'decade']} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -169,7 +173,7 @@ describe('DatePicker Common', () => {
   it('prop `panelRender` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open panelRender={() => <div>panelRender</div>} />
+        <RangePicker open panelRender={() => <div>panelRender</div>} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -179,12 +183,12 @@ describe('DatePicker Common', () => {
   it('prop `picker` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open picker="time" />
-        <DatePicker open picker="date" />
-        <DatePicker open picker="month" />
-        <DatePicker open picker="year" />
-        <DatePicker open picker="week" />
-        <DatePicker open picker="quarter" />
+        <RangePicker open picker="time" />
+        <RangePicker open picker="date" />
+        <RangePicker open picker="month" />
+        <RangePicker open picker="year" />
+        <RangePicker open picker="week" />
+        <RangePicker open picker="quarter" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -194,7 +198,7 @@ describe('DatePicker Common', () => {
   it('prop `popupStyle` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open popupStyle={{ color: 'red', background: 'green' }} />
+        <RangePicker open popupStyle={{ color: 'red', background: 'green' }} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -204,7 +208,7 @@ describe('DatePicker Common', () => {
   it('prop `bordered` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open bordered={false} />
+        <RangePicker open bordered={false} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -214,7 +218,7 @@ describe('DatePicker Common', () => {
   it('prop `suffixIcon` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open suffixIcon={<Wifi />} />
+        <RangePicker open suffixIcon={<Wifi />} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -224,7 +228,7 @@ describe('DatePicker Common', () => {
   it('prop `style` should works', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open style={{ width: 300, height: 50 }} />
+        <RangePicker open style={{ width: 300, height: 50 }} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -234,7 +238,7 @@ describe('DatePicker Common', () => {
   it('prop `onOpenChange` should works', () => {
     let state = false
     const callback = jest.fn().mockImplementation(open => (state = open))
-    const wrapper = mount(<DatePicker onOpenChange={callback} />)
+    const wrapper = mount(<RangePicker onOpenChange={callback} />)
     openPicker(wrapper)
     expect(callback).toHaveBeenCalled()
     expect(state).toEqual(true)
@@ -243,7 +247,7 @@ describe('DatePicker Common', () => {
 
   it('prop `onPanelChange` should works', () => {
     const callback = jest.fn()
-    const wrapper = mount(<DatePicker open onPanelChange={callback} />)
+    const wrapper = mount(<RangePicker open onPanelChange={callback} />)
     nextMonth(wrapper)
     expect(callback).toHaveBeenCalled()
     nextYear(wrapper)
@@ -253,15 +257,16 @@ describe('DatePicker Common', () => {
 
   it('should trigger event when changed', () => {
     const callback = jest.fn()
-    const wrapper = mount(<DatePicker open onChange={callback} />)
+    const wrapper = mount(<RangePicker open onChange={callback} />)
     selectCell(wrapper, 3)
+    selectCell(wrapper, 5)
     expect(callback).toHaveBeenCalled()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('should ignore event when disabled', () => {
     const callback = jest.fn()
-    const wrapper = mount(<DatePicker onChange={callback} disabled />)
+    const wrapper = mount(<RangePicker onChange={callback} disabled />)
     openPicker(wrapper)
     expect(callback).not.toHaveBeenCalled()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -269,7 +274,7 @@ describe('DatePicker Common', () => {
 
   it('should ignore event when readonly', () => {
     const callback = jest.fn()
-    const wrapper = mount(<DatePicker onChange={callback} inputReadOnly />)
+    const wrapper = mount(<RangePicker onChange={callback} inputReadOnly />)
     openPicker(wrapper)
     expect(callback).not.toHaveBeenCalled()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -278,15 +283,17 @@ describe('DatePicker Common', () => {
   it('should clear text', () => {
     let value = ''
     const callback = jest.fn().mockImplementation((_date, dateString) => (value = dateString))
-    const wrapper = mount(<DatePicker open onChange={callback} allowClear />)
+    const wrapper = mount(<RangePicker open onChange={callback} allowClear />)
 
     selectCell(wrapper, 3)
+    selectCell(wrapper, 5)
     expect(callback).toHaveBeenCalled()
-    expect(value).toContain('-03')
+    expect(value[0]).toContain('-03')
+    expect(value[1]).toContain('-05')
 
     clearInput(wrapper)
     expect(callback).toHaveBeenCalled()
-    expect(value).toEqual('')
+    expect(value).toEqual(['', ''])
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
@@ -295,14 +302,14 @@ describe('DatePicker Common', () => {
     function disabledDate(current: any) {
       return current && current < moment().endOf('day')
     }
-    const wrapper = mount(<DatePicker disabledDate={disabledDate} open />)
+    const wrapper = mount(<RangePicker disabledDate={disabledDate} open />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('prop `dropdownClassName` should works', () => {
     const customClass = 'blabla'
-    const wrapper = mount(<DatePicker open dropdownClassName={customClass} />)
+    const wrapper = mount(<RangePicker open dropdownClassName={customClass} />)
     expect(document.querySelectorAll(`.cfx-picker-dropdown.${customClass}`).length).toBeGreaterThan(
       0,
     )
@@ -311,7 +318,7 @@ describe('DatePicker Common', () => {
   })
 
   it("cannot select a date that doesn't exist", () => {
-    const wrapper = mount(<DatePicker open />)
+    const wrapper = mount(<RangePicker open />)
     expect(() => selectCell(wrapper, 32)).toThrow('Cell not match in picker panel.')
     expect(() => wrapper.unmount()).not.toThrow()
   })
