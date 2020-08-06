@@ -15,6 +15,14 @@ describe('DatePicker[picker=`time`]', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('the alias should work correctly', () => {
+    const { TimePicker } = DatePicker
+    const wrapper = mount(
+      <TimePicker open placeholder="placeholder" defaultPickerValue={defaultValue} />,
+    )
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
   it('prop `defaultValue` should works', () => {
     const date = moment('2020-01-01', 'YYYY-MM-DD HH:mm:ss')
     const wrapper = mount(

@@ -455,4 +455,17 @@ describe('RangePicker Common', () => {
     expect(() => selectCell(wrapper, 32)).toThrow('Cell not match in picker panel.')
     expect(() => wrapper.unmount()).not.toThrow()
   })
+
+  it('specific `format` props with `showTime`', () => {
+    const wrapper = mount(
+      <RangePicker
+        open
+        showTime
+        defaultPickerValue={[defaultValue, defaultValue]}
+        format={['YYYY-MM-DD hh:mm:ss a', 'YYYY-MM-DD hh:mm a']}
+      />,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })

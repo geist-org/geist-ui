@@ -15,6 +15,14 @@ describe('DatePicker[picker=`year`]', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('the alias should work correctly', () => {
+    const { YearPicker } = DatePicker
+    const wrapper = mount(
+      <YearPicker open placeholder="placeholder" defaultPickerValue={defaultValue} />,
+    )
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
   it('prop `defaultValue` should works', () => {
     const date = moment('2020-01-01', 'YYYY-MM-DD')
     const wrapper = mount(

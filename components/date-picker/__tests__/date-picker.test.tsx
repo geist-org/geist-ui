@@ -323,4 +323,12 @@ describe('DatePicker Common', () => {
     expect(() => selectCell(wrapper, 32)).toThrow('Cell not match in picker panel.')
     expect(() => wrapper.unmount()).not.toThrow()
   })
+
+  it('specific `format` props with `showTime`', () => {
+    const wrapper = mount(
+      <DatePicker open showTime defaultPickerValue={defaultValue} format="YYYY-MM-DD a" />,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
