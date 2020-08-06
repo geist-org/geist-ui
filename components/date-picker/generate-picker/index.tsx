@@ -151,7 +151,6 @@ function generatePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
   MergedDatePicker.TimePicker = TimePicker
   MergedDatePicker.QuarterPicker = QuarterPicker
 
-  // TODO forwardRef if necessary
   return MergedDatePicker
 }
 
