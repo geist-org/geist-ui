@@ -14,17 +14,8 @@ describe('Tag', () => {
         <Tag color="success">success</Tag>
         <Tag color="secondary">secondary</Tag>
         <Tag color="error">error</Tag>
-        <Tag color="dark">dark</Tag>
+        <Tag color="success">dark</Tag>
       </div>,
-    )
-    expect(wrapper).toMatchSnapshot()
-  })
-
-  it('should work with invert', () => {
-    const wrapper = render(
-      <Tag color="success" invert>
-        success
-      </Tag>,
     )
     expect(wrapper).toMatchSnapshot()
   })
