@@ -272,50 +272,44 @@ export const animationStyle = (
   `}</style>
 )
 
-// picker style
-export const generatePickerGlobalStyle = <DateType extends any>(
-  theme: ZeitUIThemes,
-  props: PickerProps<DateType> | RangePickerProps<DateType>,
-) => {
-  const { prefixCls: prefix = 'cfx' } = props
+// sync with input size styles
+export const generateSizeStyles = (prefix: string, theme: ZeitUIThemes) => {
+  let styles: JSX.Element[] = []
+  normalSizes.forEach((size: NormalSizes) => {
+    const { heightRatio, fontSize, margin } = getSizes(size)
+    styles.push(
+      <style jsx global>{`
+        .${prefix}-picker-size-${size} .${prefix}-picker-input {
+          height: calc(${heightRatio} * ${theme.layout.gap} - 2px);
+          line-height: calc(${heightRatio} * ${theme.layout.gap} - 3px);
+        }
 
-  const { palette } = theme
+        .${prefix}-picker-size-${size} .${prefix}-picker-input > input {
+          margin: ${margin};
+          font-size: ${fontSize};
+          line-height: calc(${heightRatio} * ${theme.layout.gap} - 4px);
+        }
+      `}</style>,
+    )
+  })
+  return styles
+}
 
-  // sync with input styles
-
-  const generateSizeStyles = () => {
-    let styles = ''
-    normalSizes.forEach((size: NormalSizes) => {
-      const { heightRatio, fontSize, margin } = getSizes(size)
-      styles += `
-      .${prefix}-picker-size-${size} .${prefix}-picker-input {
-        height: calc(${heightRatio} * ${theme.layout.gap} - 2px);
-        line-height: calc(${heightRatio} * ${theme.layout.gap} - 3px);
-      }
-
-      .${prefix}-picker-size-${size} .${prefix}-picker-input > input {
-        margin: ${margin};
-        font-size: ${fontSize};
-        line-height: calc(${heightRatio} * ${theme.layout.gap} - 4px);
-      }
-    `
-    })
-    return styles
-  }
-
-  const generateVariantStyles = () => {
-    let styles = ''
-    inputColors.forEach((color: InputColors) => {
-      inputVariants.forEach((variant: InputVariantTypes) => {
-        const {
-          color: textColor,
-          hoverColor,
-          border,
-          hoverBorderColor,
-          backgroundColor,
-          hoverBackgroundColor,
-        } = getColors(palette, color, variant === 'solid')
-        styles += `
+// sync with input variant styles
+export const generateVariantStyles = (prefix: string, theme: ZeitUIThemes) => {
+  let styles: JSX.Element[] = []
+  inputColors.forEach((color: InputColors) => {
+    inputVariants.forEach((variant: InputVariantTypes) => {
+      const {
+        color: textColor,
+        hoverColor,
+        border,
+        hoverBorderColor,
+        backgroundColor,
+        hoverBackgroundColor,
+      } = getColors(theme.palette, color, variant === 'solid')
+      styles.push(
+        <style jsx global>{`
           .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} {
             color: ${textColor};
             background-color: ${backgroundColor};
@@ -344,19 +338,27 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-suffix {
             color: ${hoverColor};
           }
-        `
-        if (variant === 'solid') {
-          styles += `
-            .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color}:hover .${prefix}-picker-clear,
-            .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-clear {
-              background-color: ${hoverBackgroundColor};
-            }
-          `
-        }
-      })
+
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color}:hover .${prefix}-picker-clear,
+          .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-clear {
+            ${variant === 'solid' ? `background-color: ${hoverBackgroundColor}` : ''};
+          }
+
+        `}</style>,
+      )
     })
-    return styles
-  }
+  })
+  return styles
+}
+
+// picker style
+export const generatePickerGlobalStyle = <DateType extends any>(
+  theme: ZeitUIThemes,
+  props: PickerProps<DateType> | RangePickerProps<DateType>,
+) => {
+  const { prefixCls: prefix = 'cfx' } = props
+
+  const { palette } = theme
 
   // TODO Dark theme
   // TODO Cross Browser Compatibility
@@ -380,7 +382,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
       heading: palette.cNeutral7,
       disabled: palette.cNeutral4,
       text: palette.cNeutral7,
-      containerShadow: theme.expressiveness.D4,
+      containerShadow: theme.expressiveness.D3,
     },
     size: {
       cell: '32px',
@@ -1105,22 +1107,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-focused {
           border-right-width: 1px !important;
         }
-
-        .${prefix}-picker:hover .${prefix}-picker-input > input[disabled],
-        .${prefix}-picker-focused .${prefix}-picker-input > input[disabled] {
-          color: ${pattern.color.disabled} !important;
-          cursor: not-allowed;
-          user-select: none;
-        }
-
-        .${prefix}-picker.${prefix}-picker-disabled:hover .${prefix}-picker-input > input,
-        .${prefix}-picker-focused.${prefix}-picker-disabled .${prefix}-picker-input > input,
-        .${prefix}-picker:hover.${prefix}-picker-disabled .${prefix}-picker-suffix,
-        .${prefix}-picker-focused.${prefix}-picker-disabled .${prefix}-picker-suffix {
-          color: ${pattern.color.disabled} !important;
-          cursor: not-allowed;
-          user-select: none;
-        }
         
         .${prefix}-picker svg {
           width: 1.2em;
@@ -1132,15 +1118,6 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           border-color: ${pattern.color.hover};
           border-right-width: 1px !important;
           outline: 0;
-        }
-
-        .${prefix}-picker.${prefix}-picker-disabled {
-          cursor: not-allowed;
-          user-select: none;
-        }
-
-        .${prefix}-picker.${prefix}-picker-disabled .${prefix}-picker-suffix {
-          color: ${pattern.color.disabled};
         }
 
         .${prefix}-picker.${prefix}-picker-borderless {
@@ -1239,25 +1216,35 @@ export const generatePickerGlobalStyle = <DateType extends any>(
 
         // ***************** picker input size *****************
 
-        ${generateSizeStyles()}
+        // extracted for next build
 
         // ***************** picker input variant & color *****************
 
-        ${generateVariantStyles()}
+        // extracted for next build
+
+        // disabled styles need high priority
+
+        .${prefix}-picker .${prefix}-picker-input > input[disabled],
+        .${prefix}-picker-focused .${prefix}-picker-input > input[disabled],
+        .${prefix}-picker.${prefix}-picker-disabled .${prefix}-picker-suffix {
+          color: ${pattern.color.disabled} !important;
+          cursor: not-allowed !important;
+          user-select: none !important;
+        }
         
         .${prefix}-picker.${prefix}-picker-variant-line.${prefix}-picker-disabled,
         .${prefix}-picker.${prefix}-picker-variant-line.${prefix}-picker-disabled:hover {
-          border-color: ${palette.cNeutral2};
-          background-color: ${pattern.color.bg};
-          cursor: not-allowed;
-          opacity: 1;
+          border-color: ${palette.cNeutral2} !important;
+          background-color: ${pattern.color.bg} !important;
+          cursor: not-allowed !important;
+          opacity: 1 !important;
         }
         
         .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled,
         .${prefix}-picker.${prefix}-picker-variant-solid.${prefix}-picker-disabled:hover {
-          background-color: ${palette.cNeutral3};
-          cursor: not-allowed;
-          opacity: 1;
+          background-color: ${palette.cNeutral3} !important;
+          cursor: not-allowed !important;
+          opacity: 1 !important;
         }
 
         // ***************** picker other element *****************
@@ -1446,6 +1433,8 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           border-color: ${pattern.color.border};
         }
       `}</style>
+      {generateSizeStyles(prefix, theme)}
+      {generateVariantStyles(prefix, theme)}
     </>
   )
 }
