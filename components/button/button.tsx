@@ -6,17 +6,30 @@ import React, {
   useImperativeHandle,
   PropsWithoutRef,
   RefAttributes,
+  MouseEventHandler,
 } from 'react'
 import useTheme from '../styles/use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
-import { ButtonColors, ButtonVariants, NormalSizes } from '../utils/prop-types'
+import {
+  ButtonColors,
+  ButtonVariants,
+  TagVariants,
+  NormalSizes,
+  TagSizes,
+  TagTypes,
+} from '../utils/prop-types'
 import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 import { useButtonGroupContext } from '../button-group/button-group-context'
-import { getButtonColors, getButtonCursor, getButtonDripColor, getButtonSize } from './styles'
+import {
+  getButtonColors,
+  getButtonCursor,
+  getButtonDripColor,
+  getButtonSize,
+  getTagSize,
+} from './styles'
 
-interface Props {
-  toggleable: boolean
+interface ButtonBaseProps {
   variant?: ButtonVariants
   color?: ButtonColors
   size?: NormalSizes
@@ -34,7 +47,20 @@ interface Props {
   isTag?: boolean
 }
 
-const defaultProps = {
+interface TagBaseProps {
+  toggleable: boolean
+  variant?: TagVariants
+  color?: ButtonColors
+  size?: NormalSizes
+  disabled?: boolean
+  icon?: React.ReactNode
+  iconRight?: React.ReactNode
+  onClick?: React.MouseEventHandler<HTMLSpanElement>
+  className?: string
+  isTag?: boolean
+}
+
+const defaultButtonProps = {
   toggleable: false,
   isTag: false,
   variant: 'line' as ButtonVariants,
@@ -50,15 +76,29 @@ const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type ButtonProps = Props & typeof defaultProps & NativeAttrs
+const defaultTagProps = {
+  toggleable: false,
+  isTag: true,
+  variant: 'line' as TagVariants,
+  color: 'default' as TagTypes,
+  size: 'medium' as TagSizes,
+  effect: true,
+  disabled: false,
+  className: '',
+}
 
-const TagRender = (
-  { ...btnProps }: React.PropsWithChildren<ButtonProps>,
-  ref: React.Ref<HTMLButtonElement | null>,
+type ButtonNativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof ButtonBaseProps>
+export type ButtonProps = ButtonBaseProps & typeof defaultButtonProps & ButtonNativeAttrs
+
+type TagNativeAttrs = Omit<React.HTMLAttributes<any>, keyof TagBaseProps>
+export type TagProps = TagBaseProps & typeof defaultTagProps & TagNativeAttrs
+
+const TagOrButtonRender = <T, P>(
+  { ...btnProps }: React.PropsWithChildren<T>,
+  ref: React.Ref<P | null>,
 ) => {
   const theme = useTheme()
-  const buttonRef = useRef<HTMLButtonElement>(null)
+  const buttonRef = useRef<P>(null)
   useImperativeHandle(ref, () => buttonRef.current)
 
   const [active, setActive] = useState<boolean>(false)
@@ -66,7 +106,10 @@ const TagRender = (
   const [dripX, setDripX] = useState<number>(0)
   const [dripY, setDripY] = useState<number>(0)
   const groupConfig = useButtonGroupContext()
-  const filteredProps = filterPropsWithGroup(btnProps, groupConfig)
+  const filteredProps = filterPropsWithGroup(
+    (btnProps as unknown) as React.PropsWithChildren<ButtonProps>,
+    groupConfig,
+  )
   const {
     toggleable,
     children,
@@ -88,27 +131,27 @@ const TagRender = (
     ...props
   } = filteredProps
 
-  const buttonColors = useMemo(() => getButtonColors(theme.palette, filteredProps), [
+  const buttonOrTagColors = useMemo(() => getButtonColors(theme.palette, filteredProps, isTag), [
     theme.palette,
     filteredProps,
   ])
   const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading), [disabled, loading])
-  const { height, minWidth, padding, width, fontSize } = useMemo(() => getButtonSize(size, auto), [
-    size,
-    auto,
-  ])
+  const { height, minWidth, padding, width, fontSize } = useMemo(
+    () => (isTag ? getTagSize(size as TagSizes) : getButtonSize(size, auto)),
+    [size, auto, isTag],
+  )
   const dripColor = useMemo(() => getButtonDripColor(theme.palette, filteredProps), [
     theme.palette,
     filteredProps,
   ])
 
-  let colors = buttonColors.default
-  let hoverColors = buttonColors.hover
-  let activeColors = buttonColors.active
+  let colors = buttonOrTagColors.default
+  let hoverColors = buttonOrTagColors.hover
+  let activeColors = buttonOrTagColors.active
   if (loading) {
-    colors = buttonColors.active
-    hoverColors = buttonColors.active
-    activeColors = buttonColors.active
+    colors = buttonOrTagColors.active
+    hoverColors = buttonOrTagColors.active
+    activeColors = buttonOrTagColors.active
   }
 
   /* istanbul ignore next */
@@ -118,24 +161,25 @@ const TagRender = (
     setDripY(0)
   }
 
-  const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
+  const clickHandler: MouseEventHandler<P> = event => {
     if (disabled || loading) return
     if (isTag && toggleable) {
       setActive(!active)
     }
+
     const showDrip = !shadow && !ghost && effect
     /* istanbul ignore next */
     if (showDrip && buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect()
+      const rect = ((buttonRef.current as unknown) as HTMLButtonElement).getBoundingClientRect()
       setDripShow(true)
       setDripX(event.clientX - rect.left)
       setDripY(event.clientY - rect.top)
     }
 
-    onClick && onClick(event)
+    onClick && onClick((event as unknown) as MouseEvent<HTMLButtonElement>)
   }
 
-  const Tag = isTag ? 'span' : 'button'
+  const ButtonOrTag = isTag ? 'span' : 'button'
 
   const childrenWithIcon = useMemo(
     () =>
@@ -147,13 +191,14 @@ const TagRender = (
   )
 
   return (
-    <Tag
-      ref={buttonRef}
+    <ButtonOrTag
+      ref={(buttonRef as unknown) as React.RefObject<HTMLButtonElement>}
       type={isTag ? undefined : htmlType}
       className={`${isTag ? 'tag' : 'btn'} ${
         isTag && toggleable && active ? 'active' : ''
       } ${className}`}
       disabled={disabled}
+      // @ts-ignore https://github.com/microsoft/TypeScript/issues/28892
       onClick={clickHandler}
       {...props}>
       {loading && <ButtonLoading color={colors.color} />}
@@ -194,14 +239,6 @@ const TagRender = (
           --zeit-ui-button-height: ${height};
           --zeit-ui-button-color: ${colors.color};
           --zeit-ui-button-bg: ${colors.bg};
-        }
-
-        .tag {
-          min-width: 5rem;
-          font-size: 0.8571rem;
-          font-weight: 500;
-          height: 2.1429rem;
-          line-height: 2.1429rem;
         }
 
         .tag:hover,
@@ -254,28 +291,31 @@ const TagRender = (
           visibility: hidden;
         }
       `}</style>
-    </Tag>
+    </ButtonOrTag>
   )
 }
 
-const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(TagRender)
-const TagBase = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(TagRender)
+const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(
+  TagOrButtonRender,
+)
+const TagBase = React.forwardRef<HTMLSpanElement, React.PropsWithChildren<TagProps>>(
+  TagOrButtonRender,
+)
 
 type ButtonComponent<T, P = {}> = React.ForwardRefExoticComponent<
   PropsWithoutRef<P> & RefAttributes<T>
 >
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
+type ComponentProps = Partial<typeof defaultButtonProps> &
+  Omit<ButtonBaseProps, keyof typeof defaultButtonProps> &
+  ButtonNativeAttrs
 
-Button.defaultProps = defaultProps
+Button.defaultProps = defaultButtonProps
 
 type TagComponent<T, P = {}> = React.ForwardRefExoticComponent<
   PropsWithoutRef<P> & RefAttributes<T>
 >
 
-TagBase.defaultProps = Object.assign({}, defaultProps)
-TagBase.defaultProps.isTag = true
+TagBase.defaultProps = defaultTagProps
 
 export default React.memo(Button) as ButtonComponent<HTMLButtonElement, ComponentProps>
 export const Tag = React.memo(TagBase) as TagComponent<HTMLSpanElement, ComponentProps>
