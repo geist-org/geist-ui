@@ -71,7 +71,8 @@ const ModalAction = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<
         height: 100%;
         border-radius: 0;
       }
-      button.btn:hover {
+      button.btn:hover,
+      button.btn:focus {
         color: ${disabled ? color : theme.palette.foreground};
         background-color: ${disabled ? bgColor : theme.palette.accents_1};
       }

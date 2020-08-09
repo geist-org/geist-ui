@@ -35,7 +35,8 @@ exports[`UseToast should render different actions 1`] = `
             --zeit-ui-button-bg: #000;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #000;
             --zeit-ui-button-color: #000;
             background-color: #fff;
@@ -96,7 +97,8 @@ exports[`UseToast should render different actions 1`] = `
             --zeit-ui-button-bg: #fff;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #000;
             --zeit-ui-button-color: #000;
             background-color: #fff;
