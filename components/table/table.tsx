@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import TableColumn from './table-column'
 import TableHead from './table-head'
 import TableBody from './table-body'
@@ -46,11 +46,17 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
 }) => {
   const ref = useRef<HTMLTableElement>(null)
   const [{ width }, updateShape] = useRealShape<HTMLTableElement>(ref)
-  const [columns, setColumns, columnsRef] = useCurrentState<Array<TableColumnItem>>([])
+  const [columns, setColumns] = useState<Array<TableColumnItem>>([])
   const [selfData, setSelfData, dataRef] = useCurrentState<Array<TableColumnItem>>([])
-  const appendColumn = (column: TableColumnItem) => {
-    const pureCurrent = columnsRef.current.filter(item => item.value !== column.value)
-    setColumns([...pureCurrent, column])
+  const updateColumn = (column: TableColumnItem) => {
+    setColumns(last => {
+      const hasColumn = last.find(item => item.value === column.value)
+      if (!hasColumn) return [...last, column]
+      return last.map(item => {
+        if (item.value !== column.value) return item
+        return column
+      })
+    })
   }
   const removeRow = (rowIndex: number) => {
     const next = dataRef.current.filter((_, index) => index !== rowIndex)
@@ -61,7 +67,7 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
   const initialValue = useMemo<TableConfig>(
     () => ({
       columns,
-      appendColumn,
+      updateColumn,
       removeRow,
     }),
     [columns],

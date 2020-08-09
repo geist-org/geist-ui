@@ -8,7 +8,7 @@ export type TableColumnItem = {
 
 export interface TableConfig {
   columns: Array<TableColumnItem>
-  appendColumn?: (column: TableColumnItem) => void
+  updateColumn?: (column: TableColumnItem) => void
   removeRow?: (rowIndex: number) => void
 }
 
