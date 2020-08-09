@@ -3,6 +3,13 @@ import { mount } from 'enzyme'
 import { Modal } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 import { expectModalIsClosed, expectModalIsOpened } from './use-modal.test'
+import { act } from 'react-dom/test-utils'
+
+const TabEvent = {
+  key: 'TAB',
+  keyCode: 9,
+  which: 9,
+}
 
 describe('Modal', () => {
   it('should render correctly', () => {
@@ -116,5 +123,33 @@ describe('Modal', () => {
     expect(html).toMatchSnapshot()
     expect(html).toContain('test-class')
     expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('focus should only be switched within modal', () => {
+    const wrapper = mount(
+      <Modal open={true} width="100px" wrapClassName="test-class">
+        <Modal.Title>Modal</Modal.Title>
+      </Modal>,
+    )
+    const tabStart = wrapper.find('.hide-tab').at(0).getDOMNode()
+    const tabEnd = wrapper.find('.hide-tab').at(1).getDOMNode()
+    const eventElement = wrapper.find('.wrapper').at(0)
+    expect(document.activeElement).toBe(tabStart)
+
+    act(() => {
+      eventElement.simulate('keydown', {
+        ...TabEvent,
+        shiftKey: true,
+      })
+    })
+    expect(document.activeElement).toBe(tabEnd)
+
+    act(() => {
+      eventElement.simulate('keydown', {
+        ...TabEvent,
+        shiftKey: false,
+      })
+    })
+    expect(document.activeElement).toBe(tabStart)
   })
 })

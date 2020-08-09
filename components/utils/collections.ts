@@ -111,3 +111,16 @@ export const getReactNode = (node?: React.ReactNode | (() => React.ReactNode)): 
   if (typeof node !== 'function') return node
   return (node as () => React.ReactNode)()
 }
+
+export const isChildElement = (
+  parent: Element | null | undefined,
+  child: Element | null | undefined,
+): boolean => {
+  if (!parent || !child) return false
+  let node: (Node & ParentNode) | null = child
+  while (node) {
+    if (node === parent) return true
+    node = node.parentNode
+  }
+  return false
+}

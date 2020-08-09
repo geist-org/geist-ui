@@ -182,7 +182,8 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             --zeit-ui-button-bg: ${bg};
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: ${hover.color};
             --zeit-ui-button-color: ${hover.color};
             background-color: ${hover.bg};

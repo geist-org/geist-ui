@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal customization should be supported 1`] = `
-"<div class=\\"wrapper test-class  wrapper-enter\\"><h2 class=\\"\\">Modal</h2><style>
+"<div class=\\"wrapper test-class  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Modal</h2><style>
         h2 {
           font-size: 1.5rem;
           line-height: 1.6;
@@ -16,7 +16,7 @@ exports[`Modal customization should be supported 1`] = `
           text-transform: capitalize;
           color: #000;
         }
-      </style><style>
+      </style><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             max-width: 90vw;
             max-height: 90vh;
@@ -32,6 +32,7 @@ exports[`Modal customization should be supported 1`] = `
             padding: 16pt;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
+            outline: none;
             transform: translate3d(0px, -30px, 0px);
             transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
@@ -56,11 +57,19 @@ exports[`Modal customization should be supported 1`] = `
             opacity: 0;
             transform: translate3d(0px, -30px, 0px);
           }
+
+          .hide-tab {
+            outline: none;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            opacity: 0;
+          }
         </style></div>"
 `;
 
 exports[`Modal should render correctly 1`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper   wrapper-enter\\"><h2 class=\\"\\">Modal</h2><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Modal</h2><style>
         h2 {
           font-size: 1.5rem;
           line-height: 1.6;
@@ -138,7 +147,8 @@ exports[`Modal should render correctly 1`] = `
             --zeit-ui-button-bg: #fff;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #000;
             --zeit-ui-button-color: #000;
             background-color: #fff;
@@ -199,7 +209,8 @@ exports[`Modal should render correctly 1`] = `
             --zeit-ui-button-bg: #fff;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #000;
             --zeit-ui-button-color: #000;
             background-color: #fff;
@@ -249,7 +260,7 @@ exports[`Modal should render correctly 1`] = `
           height: 3.625rem;
           flex-shrink: 0;
         }
-      </style><style>
+      </style><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             max-width: 90vw;
             max-height: 90vh;
@@ -265,6 +276,7 @@ exports[`Modal should render correctly 1`] = `
             padding: 16pt;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
+            outline: none;
             transform: translate3d(0px, -30px, 0px);
             transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
@@ -288,6 +300,14 @@ exports[`Modal should render correctly 1`] = `
           .wrapper-leave-active {
             opacity: 0;
             transform: translate3d(0px, -30px, 0px);
+          }
+
+          .hide-tab {
+            outline: none;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            opacity: 0;
           }
         </style></div></div><div class=\\"offset\\"></div><style>
             .backdrop {
