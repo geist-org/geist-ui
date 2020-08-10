@@ -81,12 +81,23 @@ export const expressiveness: ZeitUIThemesExpressiveness = {
   R4: '12px',
   R5: '50%',
 
+  // border-width
+  L1: '1px',
+  L2: '2px',
+  L4: '4px',
+
+  // border-style
+  cLineStyle1: 'solid',
+  cLineStyle2: 'dashed',
+  cLineStyle3: 'dotted',
+
   // drop shadows
   D0: 'none',
-  D1: '0px 0px 2px rgba(0, 0, 0, 0.08)',
-  D2: '0px 4px 8px rgba(0, 0, 0, 0.08)',
-  D3: '0px 4px 8px rgba(0, 0, 0, 0.16)',
-  D4: '0px 8px 16px rgba(0, 0, 0, 0.24)',
+  D1: '0px 4px 6px -4px rgba(0, 0, 0, 0.12)',
+  D2: '0px 6px 16px rgba(0, 0, 0, 0.08)',
+  D3: '0px 8px 24px 8px rgba(0, 0, 0, 0.06)',
+  D4: '8px 12px 16px rgba(0, 0, 0, 0.08)',
+  D5: '12px 12px 24px rgba(0, 0, 0, 0.12)',
 }
 
 export const font = defaultFont
