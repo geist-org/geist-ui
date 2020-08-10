@@ -57,7 +57,7 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
             line-height: 0;
             height: 0;
             padding: 0;
-            border-top: 1px solid ${theme.palette.cNeutral3};
+            border-top: 1px solid ${theme.palette.cNeutral1};
             width: 100%;
           }
         `}</style>

@@ -71,6 +71,7 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
           padding: 0;
           text-align: left;
           min-width: 17.1429rem;
+          max-width: 34.2857rem;
         }
         :global(.tooltip-content.popover > .inner .items) {
           max-height: 17.1429rem;

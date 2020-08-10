@@ -47,6 +47,18 @@ describe('Popover', () => {
     expect(testNode.text()).toContain('custom-content')
   })
 
+  it('should work with prop title', async () => {
+    const wrapper = mount(
+      <Popover title="Popover title" content={<p>popover content</p>}>
+        Menu
+      </Popover>,
+    )
+    wrapper.find('.tooltip').simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expect(wrapper.find('.popover .title .item.title').length).toEqual(1)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('should work with different triggers', async () => {
     const wrapper = mount(
       <Popover content="test" trigger="hover">
