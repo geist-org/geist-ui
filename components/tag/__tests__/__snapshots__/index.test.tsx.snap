@@ -4459,3 +4459,1270 @@ initialize {
   },
 }
 `;
+
+exports[`Tag should work with toggleable 1`] = `
+"<div><span class=\\"tag active \\"><div class=\\"text \\">tag</div><div class=\\"drip\\"><svg width=\\"20\\" height=\\"20\\" viewBox=\\"0 0 20 20\\" style=\\"top: 0px; left: 0px;\\"><g stroke=\\"none\\" stroke-width=\\"1\\" fill=\\"none\\" fill-rule=\\"evenodd\\"><g fill=\\"rgba(234, 234, 234, 0.65)\\"><rect width=\\"100%\\" height=\\"100%\\" rx=\\"10\\"></rect></g></g></svg><style>
+        .drip {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
+
+        svg {
+          position: absolute;
+          animation: 350ms ease-in expand;
+          animation-fill-mode: forwards;
+          width: 1rem;
+          height: 1rem;
+        }
+
+        @keyframes expand {
+          0% {
+            opacity: 0;
+            transform: scale(1);
+          }
+          30% {
+            opacity: 1;
+          }
+          80% {
+            opacity: 0.5;
+          }
+          100% {
+            transform: scale(28);
+            opacity: 0;
+          }
+        }
+      </style></div><style>
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #444;
+          background-color: #fdfdfe;
+          border: 2px solid #ebeced;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #444;
+          --zeit-ui-button-bg: #fdfdfe;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #0054fe;
+          --zeit-ui-button-color: #0054fe;
+          background-color: #fdfdfe;
+          border-color: #0054fe;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #0626ae;
+          --zeit-ui-button-color: #0626ae;
+          background-color: #fdfdfe;
+          border-color: #0626ae;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      </style></span></div>"
+`;
+
+exports[`Tag should work with variants 1`] = `
+initialize {
+  "0": Object {
+    "attribs": Object {},
+    "children": Array [
+      Object {
+        "attribs": Object {
+          "class": "tag  ",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "text ",
+            },
+            "children": Array [
+              Object {
+                "data": "text",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #444;
+          background-color: transparent;
+          border: 2px solid transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #444;
+          --zeit-ui-button-bg: transparent;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #f9fafb;
+          border-color: transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #ebeced;
+          border-color: transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #444;
+          background-color: transparent;
+          border: 2px solid transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #444;
+          --zeit-ui-button-bg: transparent;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #f9fafb;
+          border-color: transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #ebeced;
+          border-color: transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "text ",
+              },
+              "children": Array [
+                Object {
+                  "data": "text",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Object {
+          "attribs": Object {
+            "class": "tag  ",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "text ",
+              },
+              "children": Array [
+                Object {
+                  "data": "solid",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #282d30;
+          background-color: #f9fafb;
+          border: 2px solid #f9fafb;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #282d30;
+          --zeit-ui-button-bg: #f9fafb;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #282d30;
+          --zeit-ui-button-color: #282d30;
+          background-color: #ebeced;
+          border-color: #ebeced;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #282d30;
+          --zeit-ui-button-color: #282d30;
+          background-color: #9b9eac;
+          border-color: #9b9eac;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #282d30;
+          background-color: #f9fafb;
+          border: 2px solid #f9fafb;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #282d30;
+          --zeit-ui-button-bg: #f9fafb;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #282d30;
+          --zeit-ui-button-color: #282d30;
+          background-color: #ebeced;
+          border-color: #ebeced;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #282d30;
+          --zeit-ui-button-color: #282d30;
+          background-color: #9b9eac;
+          border-color: #9b9eac;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "text ",
+                },
+                "children": Array [
+                  Object {
+                    "data": "solid",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+      Object {
+        "attribs": Object {
+          "class": "tag  ",
+        },
+        "children": Array [
+          Object {
+            "attribs": Object {
+              "class": "text ",
+            },
+            "children": Array [
+              Object {
+                "data": "solid",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #282d30;
+          background-color: #f9fafb;
+          border: 2px solid #f9fafb;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #282d30;
+          --zeit-ui-button-bg: #f9fafb;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #282d30;
+          --zeit-ui-button-color: #282d30;
+          background-color: #ebeced;
+          border-color: #ebeced;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #282d30;
+          --zeit-ui-button-color: #282d30;
+          background-color: #9b9eac;
+          border-color: #9b9eac;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          Object {
+            "attribs": Object {},
+            "children": Array [
+              Object {
+                "data": "
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #282d30;
+          background-color: #f9fafb;
+          border: 2px solid #f9fafb;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #282d30;
+          --zeit-ui-button-bg: #f9fafb;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #282d30;
+          --zeit-ui-button-color: #282d30;
+          background-color: #ebeced;
+          border-color: #ebeced;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #282d30;
+          --zeit-ui-button-color: #282d30;
+          background-color: #9b9eac;
+          border-color: #9b9eac;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Object {
+              "attribs": Object {
+                "class": "text ",
+              },
+              "children": Array [
+                Object {
+                  "data": "solid",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+        ],
+        "name": "span",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Object {
+          "attribs": Object {
+            "class": "tag  ",
+          },
+          "children": Array [
+            Object {
+              "attribs": Object {
+                "class": "text ",
+              },
+              "children": Array [
+                Object {
+                  "data": "text",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Object {
+                "attribs": Object {},
+                "children": Array [
+                  Object {
+                    "data": "
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #444;
+          background-color: transparent;
+          border: 2px solid transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #444;
+          --zeit-ui-button-bg: transparent;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #f9fafb;
+          border-color: transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #ebeced;
+          border-color: transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            Object {
+              "attribs": Object {},
+              "children": Array [
+                Object {
+                  "data": "
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.7143rem;
+          height: 2.2857rem;
+          line-height: 2.2857rem;
+          min-width: 2.2857rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #444;
+          background-color: transparent;
+          border: 2px solid transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.7143rem;
+          --zeit-ui-button-height: 2.2857rem;
+          --zeit-ui-button-color: #444;
+          --zeit-ui-button-bg: transparent;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #f9fafb;
+          border-color: transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #ebeced;
+          border-color: transparent;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Object {
+                "attribs": Object {
+                  "class": "text ",
+                },
+                "children": Array [
+                  Object {
+                    "data": "text",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "class": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "class": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": null,
+    "prev": null,
+    "root": Object {
+      "attribs": Object {},
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-attribsNamespace": Object {},
+      "x-attribsPrefix": Object {},
+    },
+    "type": "tag",
+    "x-attribsNamespace": Object {},
+    "x-attribsPrefix": Object {},
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "normalizeWhitespace": false,
+    "withDomLvl1": true,
+    "xml": false,
+  },
+}
+`;
