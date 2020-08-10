@@ -49,9 +49,11 @@ Used to trigger an operation.
 <Playground
   title="Disabled"
   desc="Do not respond to any action."
-  scope={{ Button, Spacer }}
+  scope={{ Button, Spacer, Power }}
   code={`
     <>
+      <Button iconRight={<Power />} auto size="small">shut off</Button>
+      <Spacer inline />
       <Button disabled>Action</Button>
       <Spacer inline />
       <Button variant="solid" disabled>Action</Button>

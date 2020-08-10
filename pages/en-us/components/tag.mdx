@@ -2,8 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Tag, Spacer, Grid, Code } from 'components'
 import Router from 'next/router'
 import Settings from '@zeit-ui/react-icons/settings'
-import UserX from '@zeit-ui/react-icons/userX'
-import Power from '@zeit-ui/react-icons/power'
+import Plus from '@zeit-ui/react-icons/plus'
 
 export const meta = {
   title: 'tag',
@@ -49,7 +48,20 @@ Used to trigger an operation.
   desc="Toggleable tag"
   scope={{ Tag }}
   code={`
-    <Tag color="primary" variant="text" toggleable>Tag</Tag>
+    <Tag variant="line" toggleable>Tag</Tag>
+  `}
+/>
+
+<Playground
+  title="Icon"
+  desc="Tag with icon"
+  scope={{ Tag, Spacer, Plus }}
+  code={`
+    <>
+      <Tag variant="line" icon={<Plus />}>Tag</Tag>
+      <Spacer inline />
+      <Tag variant="line" iconRight={<Plus />}>Tag</Tag>
+    </>
   `}
 />
 
@@ -66,6 +78,15 @@ Used to trigger an operation.
       <Grid><Tag color="success">success</Tag></Grid>
       <Grid><Tag color="warning">warning</Tag></Grid>
       <Grid><Tag color="error">error</Tag></Grid>
+    </Grid.Container>
+    <Spacer y={2} />
+    <Grid.Container gap={3}>
+      <Grid><Tag dashed>Default</Tag></Grid>
+      <Grid><Tag dashed color="primary">Primary</Tag></Grid>
+      <Grid><Tag dashed color="secondary">Secondary</Tag></Grid>
+      <Grid><Tag dashed color="success">success</Tag></Grid>
+      <Grid><Tag dashed color="warning">warning</Tag></Grid>
+      <Grid><Tag dashed color="error">error</Tag></Grid>
     </Grid.Container>
     <Spacer y={2} />
     <Grid.Container gap={3}>
@@ -105,14 +126,16 @@ Used to trigger an operation.
 <Attributes edit="/pages/zh-cn/components/tag.mdx">
 <Attributes.Title>Tag.Props</Attributes.Title>
 
-| Attribute    | Description       | Type                 | Accepted values                | Default   |
-| ------------ | ----------------- | -------------------- | ------------------------------ | --------- |
-| **variant**  | tag variant       | `TagVariants`        | [TagVariants](#buttonVariants) | `default` |
-| **color**    | tag color         | `TagColors`          | [TagColors](#buttontypes)      | `default` |
-| **effect**   | display animation | `boolean`            | -                              | `false`   |
-| **disabled** | disable tag       | `boolean`            | -                              | `false`   |
-| **onClick**  | click handler     | `MouseEventHandler`  | -                              | -         |
-| ...          | native props      | `SpanHTMLAttributes` | `'id', 'className', ...`       | -         |
+| Attribute    | Description                                                  | Type                 | Accepted values                | Default   |
+| ------------ | ------------------------------------------------------------ | -------------------- | ------------------------------ | --------- |
+| **variant**  | tag variant                                                  | `TagVariants`        | [TagVariants](#buttonVariants) | `default` |
+| **color**    | tag color                                                    | `TagColors`          | [TagColors](#buttontypes)      | `default` |
+| **size**     | tag size                                                     | `TagSizes`           | [TagSizes](#tagsizes)          | `medium`  |
+| **effect**   | display animation                                            | `boolean`            | -                              | `false`   |
+| **disabled** | disable tag                                                  | `boolean`            | -                              | `false`   |
+| **dashed**   | tag with dashed border, only works if `variant` is `default` | `boolean`            | -                              | `false`   |
+| **onClick**  | click handler                                                | `MouseEventHandler`  | -                              | -         |
+| ...          | native props                                                 | `SpanHTMLAttributes` | `'id', 'className', ...`       | -         |
 
 <Attributes.Title>TagVariants</Attributes.Title>
 
@@ -124,6 +147,12 @@ type TagVariants = 'default' | 'solid' | 'text'
 
 ```ts
 type TagColors = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>TagSizes</Attributes.Title>
+
+```ts
+type TagSizes = 'small' | 'medium' | 'large'
 ```
 
 </Attributes>

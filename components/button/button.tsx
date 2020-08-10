@@ -58,6 +58,7 @@ interface TagBaseProps {
   onClick?: React.MouseEventHandler<HTMLSpanElement>
   className?: string
   isTag?: boolean
+  dashed: boolean
 }
 
 const defaultButtonProps = {
@@ -74,6 +75,7 @@ const defaultButtonProps = {
   effect: true,
   disabled: false,
   className: '',
+  dashed: false,
 }
 
 const defaultTagProps = {
@@ -128,6 +130,7 @@ const TagOrButtonRender = <T, P>(
     iconRight,
     className,
     isTag,
+    dashed,
     ...props
   } = filteredProps
 
@@ -183,10 +186,17 @@ const TagOrButtonRender = <T, P>(
 
   const childrenWithIcon = useMemo(
     () =>
-      getButtonChildrenWithIcon(loading, auto, size, children, {
-        icon,
-        iconRight,
-      }),
+      getButtonChildrenWithIcon(
+        loading,
+        auto,
+        size,
+        children,
+        {
+          icon,
+          iconRight,
+        },
+        isTag,
+      ),
     [loading, auto, size, children, icon, iconRight],
   )
 
