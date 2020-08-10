@@ -6,7 +6,7 @@ const buttonVariants = tuple('solid', 'line', 'text')
 
 const buttonColors = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
-const tagTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
+const tagColors = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
 const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
 
@@ -53,7 +53,7 @@ const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
 export type ButtonColors = typeof buttonColors[number]
 
-export type TagTypes = typeof tagTypes[number]
+export type TagColors = typeof tagColors[number]
 
 export type ButtonVariants = typeof buttonVariants[number]
 

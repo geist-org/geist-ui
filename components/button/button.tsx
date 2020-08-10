@@ -17,7 +17,7 @@ import {
   TagVariants,
   NormalSizes,
   TagSizes,
-  TagTypes,
+  TagColors,
 } from '../utils/prop-types'
 import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 import { useButtonGroupContext } from '../button-group/button-group-context'
@@ -82,7 +82,7 @@ const defaultTagProps = {
   toggleable: false,
   isTag: true,
   variant: 'line' as TagVariants,
-  color: 'default' as TagTypes,
+  color: 'default' as TagColors,
   size: 'medium' as TagSizes,
   effect: true,
   disabled: false,
