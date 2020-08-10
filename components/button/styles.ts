@@ -1,6 +1,6 @@
 import { ZeitUIThemesPalette } from '../styles/themes'
 import { addColorAlpha } from '../utils/color'
-import { NormalSizes, ButtonTypes } from '../utils/prop-types'
+import { NormalSizes, ButtonColors } from '../utils/prop-types'
 import { ButtonProps } from './button'
 
 export interface ButtonColorGroup {
@@ -385,9 +385,9 @@ export const getButtonColors = (
 
 export const getButtonGhostColors = (
   palette: ZeitUIThemesPalette,
-  color: ButtonTypes,
+  color: ButtonColors,
 ): ButtonColorGroup | null => {
-  const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
+  const colors: { [key in ButtonColors]?: ButtonColorGroup } = {
     secondary: {
       bg: palette.cWhite0,
       border: palette.cBlack0,
@@ -415,9 +415,9 @@ export const getButtonGhostColors = (
 
 export const getButtonGhostHoverColors = (
   palette: ZeitUIThemesPalette,
-  color: ButtonTypes,
+  color: ButtonColors,
 ): ButtonColorGroup | null => {
-  const colors: { [key in ButtonTypes]?: ButtonColorGroup } = {
+  const colors: { [key in ButtonColors]?: ButtonColorGroup } = {
     secondary: {
       bg: palette.cBlack0,
       border: palette.cWhite0,
@@ -439,7 +439,7 @@ export const getButtonGhostHoverColors = (
       color: 'white',
     },
   }
-  const withoutLightType = color.replace('-light', '') as ButtonTypes
+  const withoutLightType = color.replace('-light', '') as ButtonColors
   return colors[withoutLightType] || null
 }
 
