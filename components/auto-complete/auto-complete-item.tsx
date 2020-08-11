@@ -36,9 +36,9 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
 }) => {
   const theme = useTheme()
   const isSolid = variant === 'solid'
-  const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
+  const { value, onSelect, size, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
-    updateValue && updateValue(label)
+    onSelect && onSelect(label)
     updateVisible && updateVisible(false)
   }
 

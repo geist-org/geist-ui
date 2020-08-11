@@ -75,7 +75,7 @@ describe('AutoComplete Search', () => {
     expect(wrapper).toMatchSnapshot()
 
     const mountWrapper = mount(
-      <AutoComplete placeholder="Enter here" initialValue="value">
+      <AutoComplete placeholder="Enter here" defaultValue="value">
         <AutoComplete.Empty>empty</AutoComplete.Empty>
       </AutoComplete>,
     )
@@ -84,7 +84,7 @@ describe('AutoComplete Search', () => {
     expect(text).toContain('empty')
 
     const mountWrapper2 = mount(
-      <AutoComplete placeholder="Enter here" initialValue="value">
+      <AutoComplete placeholder="Enter here" defaultValue="value">
         <AutoComplete.Empty hidden>empty</AutoComplete.Empty>
       </AutoComplete>,
     )
@@ -95,7 +95,7 @@ describe('AutoComplete Search', () => {
 
   it('should trigger search handler', () => {
     const handler = jest.fn()
-    const wrapper = mount(<AutoComplete initialValue="value" onSearch={handler} />)
+    const wrapper = mount(<AutoComplete defaultValue="value" onSearch={handler} />)
     const input = wrapper.find('input').at(0)
     input.simulate('focus')
     input.simulate('change')
@@ -109,7 +109,7 @@ describe('AutoComplete Search', () => {
     const wrapper = mount(
       <AutoComplete
         options={mockOptions}
-        initialValue="value"
+        defaultValue="value"
         onSelect={selectHandler}
         onChange={changeHandler}
       />,
@@ -150,10 +150,10 @@ describe('AutoComplete Search', () => {
       )
     }
 
-    const wrapper = mount(<AutoComplete initialValue="value" disableFreeSolo />)
+    const wrapper = mount(<AutoComplete defaultValue="value" disableFreeSolo />)
     const input = wrapper.find('input').at(0)
     input.simulate('focus')
-    input.simulate('change', { target: { value: 'test' } })
+    input.simulate('change', { ...nativeEvent, target: { value: 'test' } })
 
     expect((input.getDOMNode() as HTMLInputElement).value).toEqual('test')
     await act(async () => {
@@ -161,5 +161,8 @@ describe('AutoComplete Search', () => {
     })
     await updateWrapper(wrapper, 200)
     expect((input.getDOMNode() as HTMLInputElement).value).toEqual('value')
+
+    input.simulate('change', { ...nativeEvent, target: { value: '' } })
+    expect((input.getDOMNode() as HTMLInputElement).value).toEqual('')
   })
 })

@@ -4,7 +4,6 @@ import { NormalSizes, InputColors, InputVariantTypes } from 'components/utils/pr
 export interface Props {
   variant?: InputVariantTypes
   value?: string
-  initialValue?: string
   placeholder?: string
   size?: NormalSizes
   color?: InputColors
@@ -38,5 +37,4 @@ export const defaultProps = {
   autoComplete: 'off',
   className: '',
   placeholder: '',
-  initialValue: '',
 }

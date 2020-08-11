@@ -3,7 +3,7 @@ import { NormalSizes } from '../utils/prop-types'
 
 export interface AutoCompleteConfig {
   value?: string
-  updateValue?: Function
+  onSelect?: Function
   visible?: boolean
   updateVisible?: Function
   size: NormalSizes

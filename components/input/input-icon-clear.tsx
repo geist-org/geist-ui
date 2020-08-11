@@ -11,7 +11,7 @@ interface Props {
 const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visible }) => {
   const theme = useTheme()
   const width = useMemo(() => {
-    return heightRatio ? `calc(${theme.layout.gap} * ${heightRatio} * .46)` : '14px'
+    return `calc(${theme.layout.gap} * ${heightRatio} * .46)`
   }, [heightRatio])
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()

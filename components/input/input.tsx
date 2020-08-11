@@ -16,9 +16,17 @@ import InputLabel from './input-label'
 import { defaultProps, Props } from './input-props'
 import InputPassword from './password'
 import { getColors, getSizes } from './styles'
+import useImperativeInput from './use-imperative-input'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & typeof defaultProps & NativeAttrs
+
+export interface InputImperativeHandles {
+  getValue(): string
+  setValue(value?: string): void
+  focus(): void
+  blur(): void
+}
 
 const simulateChangeEvent = (
   el: HTMLInputElement,
@@ -43,10 +51,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       iconRight,
       iconClickable,
       onIconClick,
-      initialValue,
       onChange,
       readOnly,
-      value,
       onClearClick,
       clearable,
       width,
@@ -66,13 +72,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     const theme = useTheme()
     const isSolid = variant === 'solid'
     const inputRef = useRef<HTMLInputElement>(null)
-    useImperativeHandle(ref, () => inputRef.current)
+    const isControlled = props.value !== undefined
 
-    const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
     const { heightRatio, fontSize, margin } = useMemo(() => getSizes(size), [size])
-    const isControlledComponent = useMemo(() => value !== undefined, [value])
     const inAutoComplete = useMemo(
       () =>
         className.includes('in-auto-complete') &&
@@ -88,6 +92,9 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       icon,
       iconRight,
     ])
+
+    useImperativeHandle(ref, () => inputRef.current)
+
     const {
       color,
       hoverColor,
@@ -96,20 +103,26 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       backgroundColor,
       hoverBackgroundColor,
     } = useMemo(() => getColors(theme, inputColor, isSolid), [theme, inputColor, isSolid])
+
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return
-      setSelfValue(event.target.value)
       onChange && onChange(event)
     }
     const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
-      setSelfValue('')
-      onClearClick && onClearClick(event)
       /* istanbul ignore next */
       if (!inputRef.current) return
+      if (disabled || readOnly) return
 
-      const changeEvent = simulateChangeEvent(inputRef.current, event)
-      changeEvent.target.value = ''
-      onChange && onChange(changeEvent)
+      if (!isControlled) inputRef.current.value = ''
+
+      onClearClick && onClearClick(event)
+
+      if (!isControlled) {
+        const changeEvent = simulateChangeEvent(inputRef.current, event)
+        changeEvent.target.value = ''
+        onChange && onChange(changeEvent)
+      }
+
       inputRef.current.focus()
     }
     const focusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -148,18 +161,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       }
     }, [autoCompleteFocus])
 
-    useEffect(() => {
-      if (isControlledComponent) {
-        setSelfValue(value as string)
-      }
-    })
-
-    const controlledValue = isControlledComponent
-      ? { value: selfValue }
-      : { defaultValue: initialValue }
     const inputProps = {
       ...props,
-      ...controlledValue,
     }
 
     return (
@@ -350,7 +353,9 @@ type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
 > & {
   Textarea: typeof Textarea
   Password: typeof InputPassword
+  useImperativeInput: typeof useImperativeInput
 }
+
 type ComponentProps = Partial<typeof defaultProps> &
   Omit<Props, keyof typeof defaultProps> &
   NativeAttrs

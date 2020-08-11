@@ -1,4 +1,4 @@
-import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
+import React, { useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { getColors } from '../input/styles'
 import useTheme from '../styles/use-theme'
 import { InputColors, InputVariantTypes } from '../utils/prop-types'
@@ -10,7 +10,7 @@ interface Props {
   maxLength?: number
   variant?: InputVariantTypes
   value?: string
-  initialValue?: string
+  defaultValue?: string
   placeholder?: string
   color?: InputColors
   width?: string
@@ -27,7 +27,7 @@ interface Props {
 
 const defaultProps = {
   variant: 'line' as InputVariantTypes,
-  initialValue: '',
+  defaultValue: '',
   color: 'default' as InputColors,
   width: 'initial',
   minHeight: '6.25rem',
@@ -55,9 +55,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
       onFocus,
       onBlur,
       className,
-      initialValue,
       onChange,
-      value,
       placeholder,
       ...props
     },
@@ -70,19 +68,21 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     ])
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     useImperativeHandle(ref, () => textareaRef.current)
-    const isControlledComponent = useMemo(() => value !== undefined, [value])
-    const [selfValue, setSelfValue] = useState<string>(initialValue)
+    const isControlledComponent = useMemo(() => props.value !== undefined, [props.value])
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
+    const [count, setCount] = useState<number>(
+      isControlledComponent ? (props.value as string).length : props.defaultValue?.length || 0,
+    )
     const { color, border, hoverBorderColor, backgroundColor, hoverBackgroundColor } = useMemo(
       () => getColors(theme, textareaColor, isSolid),
       [theme, textareaColor, isSolid],
     )
 
     const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setCount(event.target.value?.length)
       if (disabled || readOnly) return
       if (hasLimit && event.target.value.length > (maxLength as number)) return
-      setSelfValue(event.target.value)
       onChange && onChange(event)
     }
     const focusHandler = (e: React.FocusEvent<HTMLTextAreaElement>) => {
@@ -102,22 +102,6 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
       onMouseOut && onMouseOut(e)
     }
 
-    useEffect(() => {
-      if (isControlledComponent) {
-        setSelfValue(value as string)
-      }
-    })
-
-    const controlledValue = isControlledComponent
-      ? { value: selfValue }
-      : { defaultValue: initialValue }
-    const textareaProps = {
-      ...props,
-      ...controlledValue,
-    }
-
-    const count = selfValue.length
-
     return (
       <div
         className={`wrapper ${hover ? 'hover' : ''} ${focus ? 'focus' : ''} ${
@@ -134,7 +118,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
           onMouseOut={mouseOutHandler}
           onChange={changeHandler}
           maxLength={maxLength}
-          {...textareaProps}
+          {...props}
         />
         {counter && <Counter count={count} maxLength={maxLength} />}
         <style jsx>{`
