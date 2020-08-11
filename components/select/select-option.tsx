@@ -92,7 +92,7 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           background-color: ${colors.bgColor};
           color: ${colors.color};
           user-select: none;
-          border: 1px solid ${colors.border};
+          border: ${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${colors.border};
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
         }

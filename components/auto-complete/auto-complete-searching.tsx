@@ -23,6 +23,7 @@ const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchPro
       {children}
       <style jsx>{`
         div {
+          margin-top: calc(-${theme.layout.gapHalf} * 0.875);
           display: flex;
           justify-content: center;
           text-align: center;
@@ -30,8 +31,8 @@ const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchPro
           font-weight: normal;
           white-space: pre;
           font-size: 0.875rem;
-          padding: ${theme.layout.gapHalf};
-          line-height: 1;
+          padding: 0 ${theme.layout.gapHalf};
+          line-height: calc(2.4 * ${theme.layout.gap});
           color: ${theme.palette.cNeutral5};
           user-select: none;
           border: 0;
