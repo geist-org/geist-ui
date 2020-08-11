@@ -307,7 +307,7 @@ export const generateVariantStyles = (prefix: string, theme: ZeitUIThemes) => {
         hoverBorderColor,
         backgroundColor,
         hoverBackgroundColor,
-      } = getColors(theme.palette, color, variant === 'solid')
+      } = getColors(theme, color, variant === 'solid')
       styles.push(
         <style jsx global>{`
           .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} {
