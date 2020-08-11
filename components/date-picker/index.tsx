@@ -15,7 +15,6 @@ export type RangePickerProps = BaseRangePickerProps<Moment>
 // TODO Mobile Compatibility:
 //      It's acceptable now, but the experience is not excellent.
 //      Think about `<input type="date/time" />`
-// TODO `forwardRef` wrapped if necessary
 
 export const DatePicker = generatePicker<Moment>(momentGenerateConfig)
 

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Calendar, Clock, XCircleFill, Minus } from '@zeit-ui/react-icons'
+import { Calendar, Clock, Minus, XCircleFill } from '@zeit-ui/react-icons'
 import { RangePicker as RCRangePicker } from '@jnoodle/rc-picker'
 import { GenerateConfig } from '@jnoodle/rc-picker/lib/generate'
 import { getLocale, getRangePlaceholder } from '../util'
@@ -9,6 +9,7 @@ import withStyle from './with-style'
 export default function generateRangePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
   const Picker: React.FC<RangePickerProps<DateType>> = props => {
     const {
+      forwardedRef,
       prefixCls: customizePrefixCls,
       getPopupContainer: customGetPopupContainer,
       className = '',
@@ -33,6 +34,7 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
 
     return (
       <RCRangePicker<DateType>
+        ref={forwardedRef}
         separator={
           <span aria-label="to" className={`${prefixCls}-separator`}>
             <Minus />
@@ -61,5 +63,5 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
       />
     )
   }
-  return withStyle<DateType>(React.memo(Picker) as React.FC)
+  return withStyle<DateType>(React.memo(Picker) as React.FC<RangePickerProps<DateType>>)
 }

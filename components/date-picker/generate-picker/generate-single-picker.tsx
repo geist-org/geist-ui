@@ -13,6 +13,7 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
   function getPicker<InnerPickerProps extends DatePickerProps>(picker?: PickerMode) {
     const Picker: React.FC<InnerPickerProps> = props => {
       const {
+        forwardedRef,
         prefixCls: customizePrefixCls,
         getPopupContainer: customizeGetPopupContainer,
         className = '',
@@ -47,6 +48,7 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
 
       return (
         <RCPicker<DateType>
+          ref={forwardedRef}
           placeholder={getPlaceholder(mergedPicker, locale, placeholder)}
           suffixIcon={mergedPicker === 'time' ? <Clock /> : <Calendar />}
           clearIcon={<XCircleFill />}
@@ -72,7 +74,7 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
       )
     }
 
-    return withStyle(React.memo(Picker) as React.FC)
+    return withStyle(React.memo(Picker) as React.FC<PickerProps<DateType>>)
   }
 
   const DatePicker = getPicker<DatePickerProps>()

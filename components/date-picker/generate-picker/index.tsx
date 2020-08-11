@@ -77,6 +77,7 @@ type InjectDefaultProps<Props> = Partial<
     size?: NormalSizes
     color?: InputColors
     variant?: InputVariantTypes
+    forwardedRef?: React.Ref<any>
   }
 >
 
