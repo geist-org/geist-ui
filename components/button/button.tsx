@@ -172,7 +172,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             overflow: hidden;
             color: ${colors.color};
             background-color: ${colors.bg};
-            border: 2px solid ${colors.border};
+            border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1} ${colors.border};
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
