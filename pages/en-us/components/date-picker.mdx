@@ -637,6 +637,48 @@ Select or input a date or time.
 `}
 />
 
+<Playground
+  title="Imperative API"
+  desc="Update component in an uncontrolled way."
+  scope={{ DatePicker, Spacer, Button, moment, Divider }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  const ref = React.useRef(null)
+  const ref2 = React.useRef(null)
+  const setChange = () => {
+    console.log(ref)
+    ref.current.setValue(moment())
+    setTimeout(() => {
+      ref.current.focus()
+    }, 0)
+  }
+  const setChange2 = () => {
+    console.log(ref2)
+    ref2.current.setValue([moment().add(-2, 'days'), moment()])
+    setTimeout(() => {
+      ref2.current.focus()
+    }, 0)
+  }
+  return (
+    <>
+      <DatePicker onChange={value => console.log(value)} ref={ref} showTime />
+      <Spacer y={0.5} />
+      <Button auto type="secondary" size="small" onClick={setChange}>
+        set value and focus
+      </Button>
+      <Divider />
+      <RangePicker onChange={value => console.log(value)} ref={ref2} showTime />
+      <Spacer y={0.5} />
+      <Button auto type="secondary" size="small" onClick={setChange2}>
+        set value and focus
+      </Button>
+    </>
+  )
+}
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/link.mdx">
 
 There are six kinds of picker:
@@ -679,6 +721,14 @@ There are six kinds of picker:
 | **onOpenChange**      | Callback function, can be executed whether the popup calendar is popped up or closed                 | `function(open)`                                                  | -                                                             | -         |
 | **onPanelChange**     | Callback when picker panel mode is changed                                                           | `function(value, mode)`                                           | -                                                             | -         |
 | **inputReadOnly**     | Set the `readonly` attribute of the input tag (avoids virtual keyboard on touch devices)             | `boolean`                                                         | -                                                             | `false`   |
+
+<Attributes.Title>Common Methods</Attributes.Title>
+
+| Name           | Description                                   | Params                 |
+| -------------- | --------------------------------------------- | ---------------------- |
+| **blur()**     | Remove focus                                  | -                      |
+| **focus()**    | Get focus                                     | -                      |
+| **setValue()** | To set default value(refer to `defaultValue`) | `moment` \| `moment[]` |
 
 <Attributes.Title>DatePicker Props</Attributes.Title>
 

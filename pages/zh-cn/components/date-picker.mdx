@@ -655,6 +655,48 @@ export const meta = {
 `}
 />
 
+<Playground
+  title="命令式 API"
+  desc="使用非受控方式更新组件。"
+  scope={{ DatePicker, Spacer, Button, moment, Divider }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  const ref = React.useRef(null)
+  const ref2 = React.useRef(null)
+  const setChange = () => {
+    console.log(ref)
+    ref.current.setValue(moment())
+    setTimeout(() => {
+      ref.current.focus()
+    }, 0)
+  }
+  const setChange2 = () => {
+    console.log(ref2)
+    ref2.current.setValue([moment().add(-2, 'days'), moment()])
+    setTimeout(() => {
+      ref2.current.focus()
+    }, 0)
+  }
+  return (
+    <>
+      <DatePicker locale="zh_CN" onChange={value => console.log(value)} ref={ref} showTime />
+      <Spacer y={0.5} />
+      <Button auto type="secondary" size="small" onClick={setChange}>
+        设置值并聚焦
+      </Button>
+      <Divider />
+      <RangePicker locale="zh_CN" onChange={value => console.log(value)} ref={ref2} showTime />
+      <Spacer y={0.5} />
+      <Button auto type="secondary" size="small" onClick={setChange2}>
+        设置值并聚焦
+      </Button>
+    </>
+  )
+}
+`}
+/>
+
 <Attributes edit="/pages/zh-cn/components/date-picker.mdx">
 
 日期类组件包括以下六种形式。
@@ -697,6 +739,14 @@ export const meta = {
 | **onOpenChange**      | 弹出日历和关闭日历的回调                         | `function(open)`                                                  | -                                                             | -         |
 | **onPanelChange**     | 日历面板切换的回调                               | `function(value, mode)`                                           | -                                                             | -         |
 | **inputReadOnly**     | 设置输入框为只读（避免在移动设备上打开虚拟键盘） | `boolean`                                                         | -                                                             | `false`   |
+
+<Attributes.Title>共同的方法</Attributes.Title>
+
+| 名称           | 描述                                    | 参数                   |
+| -------------- | --------------------------------------- | ---------------------- |
+| **blur()**     | 移除焦点                                | -                      |
+| **focus()**    | 获取焦点                                | -                      |
+| **setValue()** | 设置默认值（参考 `defaultValue` props） | `moment` \| `moment[]` |
 
 <Attributes.Title>DatePicker Props</Attributes.Title>
 
