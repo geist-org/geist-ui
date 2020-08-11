@@ -28,7 +28,7 @@ const TableColumn: React.FC<React.PropsWithChildren<TableColumnProps>> = ({
         value: `${prop}`.trim(),
         width,
       })
-  }, [label, prop, width])
+  }, [children, label, prop, width])
 
   return null
 }
