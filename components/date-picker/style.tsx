@@ -368,7 +368,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
   // TODO extract variables if necessary
   const pattern = {
     color: {
-      bg: palette.background,
+      bg: palette.cNeutral8,
       bgLight: palette.cTheme0,
       bgScroll: palette.cNeutral0,
       bgHover: palette.cTheme0,
@@ -392,7 +392,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
       fontHeader: '1.2rem',
     },
     other: {
-      transitionDuration: '0.3s',
+      transitionDuration: '0.2s',
     },
   }
 
