@@ -1,5 +1,5 @@
 import { NormalSizes, InputColors } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { ZeitUIThemes } from '../styles/themes'
 import { addColorAlpha } from '../utils/color'
 
 export type InputSize = {
@@ -45,50 +45,65 @@ export type InputColor = {
 }
 
 export const getColors = (
-  palette: ZeitUIThemesPalette,
+  theme: ZeitUIThemes,
   color?: InputColors,
   solid?: boolean,
 ): InputColor => {
   const colors: { [key in InputColors]: InputColor } = {
     default: {
-      color: palette.cNeutral7,
-      hoverColor: solid ? 'inherit' : palette.cTheme5,
-      backgroundColor: solid ? palette.cNeutral0 : palette.cNeutral8,
-      hoverBackgroundColor: solid ? palette.cTheme0 : palette.cNeutral8,
-      border: solid ? 'transparent' : `1px solid ${palette.cNeutral2}`,
-      hoverBorderColor: solid ? 'transparent' : palette.cTheme5,
+      color: theme.palette.cNeutral7,
+      hoverColor: solid ? 'inherit' : theme.palette.cTheme5,
+      backgroundColor: solid ? theme.palette.cNeutral0 : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.cTheme0 : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.cNeutral2}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.cTheme5,
     },
     primary: {
-      color: palette.cNeutral7,
-      hoverColor: solid ? 'inherit' : palette.cTheme5,
-      backgroundColor: solid ? palette.cTheme0 : palette.cNeutral8,
-      hoverBackgroundColor: solid ? palette.cTheme1 : palette.cNeutral8,
-      border: solid ? 'transparent' : `1px solid ${palette.cTheme2}`,
-      hoverBorderColor: solid ? 'transparent' : palette.cTheme5,
+      color: theme.palette.cNeutral7,
+      hoverColor: solid ? 'inherit' : theme.palette.cTheme5,
+      backgroundColor: solid ? theme.palette.cTheme0 : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.cTheme1 : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.cTheme2}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.cTheme5,
     },
     success: {
-      color: palette.cNeutral7,
+      color: theme.palette.cNeutral7,
       hoverColor: 'inherit',
-      backgroundColor: solid ? palette.successLight : palette.cNeutral8,
-      hoverBackgroundColor: solid ? palette.success : palette.cNeutral8,
-      border: solid ? 'transparent' : `1px solid ${palette.successLight}`,
-      hoverBorderColor: solid ? 'transparent' : palette.success,
+      backgroundColor: solid ? theme.palette.successLight : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.success : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.successLight}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.success,
     },
     warning: {
-      color: palette.cNeutral7,
+      color: theme.palette.cNeutral7,
       hoverColor: 'inherit',
-      backgroundColor: solid ? palette.warningLight : palette.cNeutral8,
-      hoverBackgroundColor: solid ? palette.warning : palette.cNeutral8,
-      border: solid ? 'transparent' : `1px solid ${palette.warningLight}`,
-      hoverBorderColor: solid ? 'transparent' : palette.warning,
+      backgroundColor: solid ? theme.palette.warningLight : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.warning : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.warningLight}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.warning,
     },
     error: {
-      color: palette.error,
-      hoverColor: palette.error,
-      backgroundColor: solid ? addColorAlpha(palette.errorLight, 0.8) : palette.cNeutral8,
-      hoverBackgroundColor: solid ? palette.errorLight : palette.cNeutral8,
-      border: solid ? 'transparent' : `1px solid ${addColorAlpha(palette.errorLight, 0.8)}`,
-      hoverBorderColor: solid ? 'transparent' : palette.errorLight,
+      color: theme.palette.error,
+      hoverColor: theme.palette.error,
+      backgroundColor: solid
+        ? addColorAlpha(theme.palette.errorLight, 0.8)
+        : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.errorLight : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${addColorAlpha(
+            theme.palette.errorLight,
+            0.8,
+          )}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.errorLight,
     },
   }
 
