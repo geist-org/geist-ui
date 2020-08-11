@@ -73,6 +73,14 @@ export const expressiveness: ZeitUIThemesExpressiveness = {
   shadowLarge: '0 0 0 1px #333',
   portalOpacity: 0.75,
 
+  L1: '1px',
+  L2: '2px',
+  L4: '4px',
+
+  cLineStyle1: 'solid',
+  cLineStyle2: 'dashed',
+  cLineStyle3: 'dotted',
+
   // radius
   R0: '0',
   R1: '2px',
@@ -87,6 +95,7 @@ export const expressiveness: ZeitUIThemesExpressiveness = {
   D2: '0px 4px 8px rgba(0, 0, 0, 0.08)',
   D3: '0px 4px 8px rgba(0, 0, 0, 0.16)',
   D4: '0px 8px 16px rgba(0, 0, 0, 0.24)',
+  D5: '12px 12px 24px rgba(0, 0, 0, 0.12)',
 }
 
 export const font = defaultFont

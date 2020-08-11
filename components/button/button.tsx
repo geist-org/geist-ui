@@ -10,14 +10,14 @@ import React, {
 import useTheme from '../styles/use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
-import { ButtonTypes, ButtonVariants, NormalSizes } from '../utils/prop-types'
+import { ButtonColors, ButtonVariants, NormalSizes } from '../utils/prop-types'
 import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 import { useButtonGroupContext } from '../button-group/button-group-context'
 import { getButtonColors, getButtonCursor, getButtonDripColor, getButtonSize } from './styles'
 
 interface Props {
   variant?: ButtonVariants
-  color?: ButtonTypes
+  color?: ButtonColors
   size?: NormalSizes
   ghost?: boolean
   loading?: boolean
@@ -34,7 +34,7 @@ interface Props {
 
 const defaultProps = {
   variant: 'line' as ButtonVariants,
-  color: 'default' as ButtonTypes,
+  color: 'default' as ButtonColors,
   size: 'medium' as NormalSizes,
   htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],
   ghost: false,
@@ -172,7 +172,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             overflow: hidden;
             color: ${colors.color};
             background-color: ${colors.bg};
-            border: 2px solid ${colors.border};
+            border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1} ${colors.border};
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};

@@ -34,8 +34,8 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
   const theme = useTheme()
   const { ref, value } = useAutoCompleteContext()
   const { border, hoverBorderColor, hoverBackgroundColor } = useMemo(
-    () => getColors(theme.palette, 'default', isSolid),
-    [theme.palette, status, isSolid],
+    () => getColors(theme, 'default', isSolid),
+    [theme, status, isSolid],
   )
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {

@@ -167,7 +167,7 @@ export const meta = {
 | **value**             | 手动设置选择器的值              | `string`, `string[]`                                | -                                 | -               |
 | **initialValue**      | 选择器初始值                   | `string`, `string[]`                                | -                                 | -               |
 | **placeholder**       | 占位文本内容                   | `string`                                            | -                                 | -               |
-| **variant**           | 选择器的类型                   | `string`                                            | [SelectTypes](#selecttypes)       | `line`          |
+| **variant**           | 选择器的类型                   | `string`                                            | [SelectVariants](#selectvariants) | `line`          |
 | **width**             | 组件的 CSS 宽度值              | `string`                                            | -                                 | `initial`       |
 | **size**              | 选择器组件大小                 | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
 | **icon**              | 右侧图标组件                   | `ComponentType`                                     | -                                 | `SVG Component` |
@@ -195,10 +195,10 @@ type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
 
-<Attributes.Title>SelectTypes</Attributes.Title>
+<Attributes.Title>SelectVariants</Attributes.Title>
 
 ```ts
-type SelectTypes = 'line' | 'text'
+type SelectVariants = 'line' | 'text'
 ```
 
 </Attributes>

@@ -75,8 +75,8 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
     const { color, border, hoverBorderColor, backgroundColor, hoverBackgroundColor } = useMemo(
-      () => getColors(theme.palette, textareaColor, isSolid),
-      [theme.palette, textareaColor, isSolid],
+      () => getColors(theme, textareaColor, isSolid),
+      [theme, textareaColor, isSolid],
     )
 
     const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {

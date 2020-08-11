@@ -4,11 +4,11 @@ export const inputVariants = tuple('solid', 'line')
 
 export const buttonVariants = tuple('solid', 'line', 'text')
 
-export const buttonTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
+const buttonColors = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
 export const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
 
-// const buttonTypes = tuple(
+// const buttonColors = tuple(
 //   'default',
 //   'secondary',
 //   'success',
@@ -21,7 +21,8 @@ export const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
 //   'error-light',
 // )
 
-export const selectTypes = tuple('line', 'text')
+
+const selectVariants = tuple('line', 'text')
 
 export const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
@@ -76,7 +77,7 @@ export const placement = tuple(
 
 export const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
-export type ButtonTypes = typeof buttonTypes[number]
+export type ButtonColors = typeof buttonColors[number]
 
 export type ButtonVariants = typeof buttonVariants[number]
 
@@ -84,7 +85,7 @@ export type ButtonStatus = typeof buttonStatus[number]
 
 export type NormalSizes = typeof normalSizes[number]
 
-export type SelectTypes = typeof selectTypes[number]
+export type SelectVariants = typeof selectVariants[number]
 
 export type NormalTypes = typeof normalTypes[number]
 

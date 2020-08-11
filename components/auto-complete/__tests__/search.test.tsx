@@ -156,7 +156,9 @@ describe('AutoComplete Search', () => {
     input.simulate('change', { target: { value: 'test' } })
 
     expect((input.getDOMNode() as HTMLInputElement).value).toEqual('test')
-    simulateNativeClick(document.body)
+    await act(async () => {
+      simulateNativeClick(document.body)
+    })
     await updateWrapper(wrapper, 200)
     expect((input.getDOMNode() as HTMLInputElement).value).toEqual('value')
   })

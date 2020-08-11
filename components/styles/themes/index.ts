@@ -80,12 +80,23 @@ export interface ZeitUIThemesExpressiveness {
   R4: string
   R5: string
 
+  // border-width
+  L1: string
+  L2: string
+  L4: string
+
+  // border-style
+  cLineStyle1: string
+  cLineStyle2: string
+  cLineStyle3: string
+
   // drop shadows
   D0: string
   D1: string
   D2: string
   D3: string
   D4: string
+  D5: string
 }
 
 export interface ZeitUIThemesLayout {
