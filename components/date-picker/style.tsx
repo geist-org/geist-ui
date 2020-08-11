@@ -17,7 +17,7 @@ const animationDuration = '0.2s'
 // TODO Unify animation
 // picker animation lalala~
 export const animationStyle = (
-  <style jsx global>{`
+  <style jsx global key="date-picker-style-animation">{`
     @keyframes cfxSlideUpIn {
       0% {
         transform: scaleY(0.8);
@@ -278,7 +278,7 @@ export const generateSizeStyles = (prefix: string, theme: ZeitUIThemes) => {
   normalSizes.forEach((size: NormalSizes) => {
     const { heightRatio, fontSize, margin } = getSizes(size)
     styles.push(
-      <style jsx global>{`
+      <style jsx global key={`date-picker-style-${size}`}>{`
         .${prefix}-picker-size-${size} .${prefix}-picker-input {
           height: calc(${heightRatio} * ${theme.layout.gap} - 2px);
           line-height: calc(${heightRatio} * ${theme.layout.gap} - 3px);
@@ -309,7 +309,7 @@ export const generateVariantStyles = (prefix: string, theme: ZeitUIThemes) => {
         hoverBackgroundColor,
       } = getColors(theme, color, variant === 'solid')
       styles.push(
-        <style jsx global>{`
+        <style jsx global key={`date-picker-style-${color}-${variant}`}>{`
           .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} {
             color: ${textColor};
             background-color: ${backgroundColor};
@@ -399,7 +399,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
   return (
     <>
       {animationStyle}
-      <style jsx global>{`
+      <style jsx global key="date-picker-style-general">{`
 
         // ***************** panel *****************
 
