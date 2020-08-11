@@ -185,4 +185,22 @@ describe('Table', () => {
     expect(wrapper.find('thead').find('tr').at(0).text()).toBe('test2')
     expect(() => wrapper.unmount()).not.toThrow()
   })
+
+  it('the changes of children should be tracked', () => {
+    const Mock = ({ label }: { label: string }) => {
+      return (
+        <Table data={data}>
+          <Table.Column prop="description">{label}</Table.Column>
+        </Table>
+      )
+    }
+    const wrapper = mount(<Mock label="test1" />)
+    expect(wrapper.find('thead').find('tr').at(0).text()).toBe('test1')
+
+    act(() => {
+      wrapper.setProps({ label: 'test2' })
+    })
+    expect(wrapper.find('thead').find('tr').at(0).text()).toBe('test2')
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
