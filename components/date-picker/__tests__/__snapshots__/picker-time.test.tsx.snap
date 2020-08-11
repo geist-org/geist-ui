@@ -261,7 +261,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -301,7 +301,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -436,8 +436,8 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -467,7 +467,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -622,7 +622,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -762,7 +762,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -789,19 +789,19 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -826,7 +826,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -911,7 +911,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -1002,7 +1002,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -1049,7 +1049,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -1089,7 +1089,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -1125,8 +1125,8 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -1170,7 +1170,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -1263,11 +1263,11 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -2019,7 +2019,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -2059,7 +2059,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -2194,8 +2194,8 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -2225,7 +2225,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -2380,7 +2380,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -2520,7 +2520,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -2547,19 +2547,19 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -2584,7 +2584,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -2669,7 +2669,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -2760,7 +2760,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -2807,7 +2807,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -2847,7 +2847,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -2883,8 +2883,8 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -2928,7 +2928,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -3021,11 +3021,11 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -3777,7 +3777,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -3817,7 +3817,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -3952,8 +3952,8 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -3983,7 +3983,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -4138,7 +4138,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -4278,7 +4278,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -4305,19 +4305,19 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -4342,7 +4342,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -4427,7 +4427,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -4518,7 +4518,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -4565,7 +4565,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -4605,7 +4605,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -4641,8 +4641,8 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -4686,7 +4686,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -4779,11 +4779,11 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -5535,7 +5535,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -5575,7 +5575,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -5710,8 +5710,8 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -5741,7 +5741,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -5896,7 +5896,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -6036,7 +6036,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -6063,19 +6063,19 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -6100,7 +6100,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -6185,7 +6185,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -6276,7 +6276,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -6323,7 +6323,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -6363,7 +6363,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -6399,8 +6399,8 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -6444,7 +6444,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -6537,11 +6537,11 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -7293,7 +7293,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -7333,7 +7333,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -7468,8 +7468,8 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -7499,7 +7499,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -7654,7 +7654,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -7794,7 +7794,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -7821,19 +7821,19 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -7858,7 +7858,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -7943,7 +7943,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -8034,7 +8034,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -8081,7 +8081,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -8121,7 +8121,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -8157,8 +8157,8 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -8202,7 +8202,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -8295,11 +8295,11 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -9051,7 +9051,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -9091,7 +9091,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -9226,8 +9226,8 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -9257,7 +9257,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -9412,7 +9412,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -9552,7 +9552,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -9579,19 +9579,19 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -9616,7 +9616,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -9701,7 +9701,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -9792,7 +9792,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -9839,7 +9839,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -9879,7 +9879,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -9915,8 +9915,8 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -9960,7 +9960,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -10053,11 +10053,11 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -10809,7 +10809,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -10849,7 +10849,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -10984,8 +10984,8 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -11015,7 +11015,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -11170,7 +11170,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -11310,7 +11310,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -11337,19 +11337,19 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -11374,7 +11374,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -11459,7 +11459,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -11550,7 +11550,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -11597,7 +11597,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -11637,7 +11637,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -11673,8 +11673,8 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -11718,7 +11718,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -11811,11 +11811,11 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -12567,7 +12567,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -12607,7 +12607,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -12742,8 +12742,8 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -12773,7 +12773,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -12928,7 +12928,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -13068,7 +13068,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -13095,19 +13095,19 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -13132,7 +13132,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -13217,7 +13217,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -13308,7 +13308,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -13355,7 +13355,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -13395,7 +13395,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -13431,8 +13431,8 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -13476,7 +13476,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -13569,11 +13569,11 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -14325,7 +14325,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -14365,7 +14365,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -14500,8 +14500,8 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -14531,7 +14531,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -14686,7 +14686,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -14826,7 +14826,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -14853,19 +14853,19 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -14890,7 +14890,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -14975,7 +14975,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -15066,7 +15066,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -15113,7 +15113,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -15153,7 +15153,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -15189,8 +15189,8 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -15234,7 +15234,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -15327,11 +15327,11 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -16083,7 +16083,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -16123,7 +16123,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -16258,8 +16258,8 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -16289,7 +16289,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -16444,7 +16444,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -16584,7 +16584,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -16611,19 +16611,19 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -16648,7 +16648,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -16733,7 +16733,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -16824,7 +16824,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -16871,7 +16871,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -16911,7 +16911,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -16947,8 +16947,8 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -16992,7 +16992,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -17085,11 +17085,11 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -17841,7 +17841,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -17881,7 +17881,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -18016,8 +18016,8 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -18047,7 +18047,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -18202,7 +18202,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -18342,7 +18342,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -18369,19 +18369,19 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -18406,7 +18406,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -18491,7 +18491,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -18582,7 +18582,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -18629,7 +18629,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -18669,7 +18669,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -18705,8 +18705,8 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -18750,7 +18750,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -18843,11 +18843,11 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -19599,7 +19599,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -19639,7 +19639,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -19774,8 +19774,8 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -19805,7 +19805,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -19960,7 +19960,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -20100,7 +20100,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -20127,19 +20127,19 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -20164,7 +20164,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -20249,7 +20249,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -20340,7 +20340,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -20387,7 +20387,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -20427,7 +20427,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -20463,8 +20463,8 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -20508,7 +20508,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -20601,11 +20601,11 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {

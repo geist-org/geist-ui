@@ -261,7 +261,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -301,7 +301,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -436,8 +436,8 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -467,7 +467,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -622,7 +622,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -762,7 +762,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -789,19 +789,19 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -826,7 +826,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -911,7 +911,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -1002,7 +1002,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -1049,7 +1049,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -1089,7 +1089,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -1125,8 +1125,8 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -1170,7 +1170,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -1263,11 +1263,11 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultPickerValue\` should works 1`
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -1944,7 +1944,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -1984,7 +1984,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -2119,8 +2119,8 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -2150,7 +2150,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -2305,7 +2305,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -2445,7 +2445,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -2472,19 +2472,19 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -2509,7 +2509,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -2594,7 +2594,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -2685,7 +2685,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -2732,7 +2732,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -2772,7 +2772,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -2808,8 +2808,8 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -2853,7 +2853,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -2946,11 +2946,11 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -3367,7 +3367,7 @@ exports[`DatePicker[picker=\`date\`] prop \`defaultValue\` should works 1`] = `
 `;
 
 exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
-"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"\\" size=\\"21\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-datetime-panel\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-time-panel\\"><div class=\\"cfx-picker-header\\"><div class=\\"cfx-picker-header-view\\">&nbsp;</div></div><div class=\\"cfx-picker-content\\"><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li></ul><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">24</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">25</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">26</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">27</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">28</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">29</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">30</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">31</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">32</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">33</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">34</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">35</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">36</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">37</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">38</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">39</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">40</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">41</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">42</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">43</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">44</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">45</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">46</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">47</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">48</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">49</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">50</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">51</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">52</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">53</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">54</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">55</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">56</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">57</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">58</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">59</div></li></ul><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">24</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">25</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">26</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">27</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">28</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">29</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">30</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">31</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">32</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">33</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">34</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">35</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">36</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">37</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">38</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">39</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">40</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">41</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">42</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">43</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">44</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">45</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">46</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">47</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">48</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">49</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">50</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">51</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">52</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">53</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">54</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">55</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">56</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">57</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">58</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">59</div></li></ul></div></div></div><div class=\\"cfx-picker-footer\\"><ul class=\\"cfx-picker-ranges\\"><li class=\\"cfx-picker-now\\"><a class=\\"cfx-picker-now-btn\\">Now</a></li><li class=\\"cfx-picker-ok\\"><button type=\\"button\\" class=\\"btn \\" disabled=\\"\\"><div class=\\"text \\">Ok</div><style>
+"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"\\" size=\\"21\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-datetime-panel\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-time-panel\\"><div class=\\"cfx-picker-header\\"><div class=\\"cfx-picker-header-view\\">&nbsp;</div></div><div class=\\"cfx-picker-content\\"><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li></ul><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">24</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">25</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">26</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">27</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">28</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">29</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">30</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">31</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">32</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">33</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">34</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">35</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">36</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">37</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">38</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">39</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">40</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">41</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">42</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">43</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">44</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">45</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">46</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">47</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">48</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">49</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">50</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">51</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">52</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">53</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">54</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">55</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">56</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">57</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">58</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">59</div></li></ul><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">24</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">25</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">26</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">27</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">28</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">29</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">30</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">31</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">32</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">33</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">34</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">35</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">36</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">37</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">38</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">39</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">40</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">41</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">42</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">43</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">44</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">45</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">46</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">47</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">48</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">49</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">50</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">51</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">52</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">53</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">54</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">55</div></li><li class=\\"cfx-picker-time-panel-cell cfx-picker-time-panel-cell-disabled\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">56</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">57</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">58</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">59</div></li></ul></div></div></div><div class=\\"cfx-picker-footer\\"><ul class=\\"cfx-picker-ranges\\"><li class=\\"cfx-picker-now\\"><a class=\\"cfx-picker-now-btn\\">Now</a></li><li class=\\"cfx-picker-ok\\"><button type=\\"button\\" class=\\"btn \\" disabled=\\"\\"><div class=\\"text \\">Ok</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -3702,7 +3702,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -3742,7 +3742,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -3877,8 +3877,8 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -3908,7 +3908,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -4063,7 +4063,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -4203,7 +4203,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -4230,19 +4230,19 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -4267,7 +4267,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -4352,7 +4352,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -4443,7 +4443,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -4490,7 +4490,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -4530,7 +4530,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -4566,8 +4566,8 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -4611,7 +4611,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -4704,11 +4704,11 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -5125,7 +5125,7 @@ exports[`DatePicker[picker=\`date\`] prop \`disabledTime\` should works 1`] = `
 `;
 
 exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
-"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"2020/08/03\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"2020/08/03\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span><span class=\\"cfx-picker-clear\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M15 9l-6 6\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M9 9l6 6\\" stroke=\\"var(--geist-stroke)\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-selected\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-footer\\"><a class=\\"cfx-picker-today-btn\\">Today</a></div></div></div></div></div><style>
+"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"2020/08/03\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"2020/08/03\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span><span class=\\"cfx-picker-clear\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M15 9l-6 6\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M9 9l6 6\\" stroke=\\"var(--geist-stroke)\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-selected\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-footer\\"><a class=\\"cfx-picker-today-btn\\">Today</a></div></div></div></div></div><style>
     @keyframes cfxSlideUpIn {
       0% {
         transform: scaleY(0.8);
@@ -5385,7 +5385,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -5425,7 +5425,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -5560,8 +5560,8 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -5591,7 +5591,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -5746,7 +5746,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -5886,7 +5886,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -5913,19 +5913,19 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -5950,7 +5950,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -6035,7 +6035,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -6126,7 +6126,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -6173,7 +6173,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -6213,7 +6213,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -6249,8 +6249,8 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -6294,7 +6294,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -6387,11 +6387,11 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -6808,7 +6808,7 @@ exports[`DatePicker[picker=\`date\`] prop \`format\` should works 1`] = `
 `;
 
 exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`] = `
-"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-footer\\"><div class=\\"cfx-picker-footer-extra\\"><span id=\\"renderExtraFooter\\">renderExtraFooter</span></div><a class=\\"cfx-picker-today-btn\\">Today</a></div></div></div></div></div><style>
+"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-footer\\"><div class=\\"cfx-picker-footer-extra\\"><span id=\\"renderExtraFooter\\">renderExtraFooter</span></div><a class=\\"cfx-picker-today-btn\\">Today</a></div></div></div></div></div><style>
     @keyframes cfxSlideUpIn {
       0% {
         transform: scaleY(0.8);
@@ -7068,7 +7068,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -7108,7 +7108,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -7243,8 +7243,8 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -7274,7 +7274,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -7429,7 +7429,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -7569,7 +7569,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -7596,19 +7596,19 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -7633,7 +7633,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -7718,7 +7718,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -7809,7 +7809,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -7856,7 +7856,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -7896,7 +7896,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -7932,8 +7932,8 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -7977,7 +7977,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -8070,11 +8070,11 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -8491,7 +8491,7 @@ exports[`DatePicker[picker=\`date\`] prop \`renderExtraFooter\` should works 1`]
 `;
 
 exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
-"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"\\" size=\\"21\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-datetime-panel\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-time-panel\\"><div class=\\"cfx-picker-header\\"><div class=\\"cfx-picker-header-view\\">&nbsp;</div></div><div class=\\"cfx-picker-content\\"><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li></ul><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">24</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">25</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">26</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">27</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">28</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">29</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">30</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">31</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">32</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">33</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">34</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">35</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">36</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">37</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">38</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">39</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">40</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">41</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">42</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">43</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">44</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">45</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">46</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">47</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">48</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">49</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">50</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">51</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">52</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">53</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">54</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">55</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">56</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">57</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">58</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">59</div></li></ul><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">24</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">25</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">26</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">27</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">28</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">29</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">30</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">31</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">32</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">33</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">34</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">35</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">36</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">37</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">38</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">39</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">40</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">41</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">42</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">43</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">44</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">45</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">46</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">47</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">48</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">49</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">50</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">51</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">52</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">53</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">54</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">55</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">56</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">57</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">58</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">59</div></li></ul></div></div></div><div class=\\"cfx-picker-footer\\"><ul class=\\"cfx-picker-ranges\\"><li class=\\"cfx-picker-now\\"><a class=\\"cfx-picker-now-btn\\">Now</a></li><li class=\\"cfx-picker-ok\\"><button type=\\"button\\" class=\\"btn \\" disabled=\\"\\"><div class=\\"text \\">Ok</div><style>
+"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"\\" size=\\"21\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-datetime-panel\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-time-panel\\"><div class=\\"cfx-picker-header\\"><div class=\\"cfx-picker-header-view\\">&nbsp;</div></div><div class=\\"cfx-picker-content\\"><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li></ul><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">24</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">25</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">26</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">27</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">28</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">29</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">30</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">31</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">32</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">33</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">34</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">35</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">36</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">37</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">38</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">39</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">40</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">41</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">42</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">43</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">44</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">45</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">46</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">47</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">48</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">49</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">50</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">51</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">52</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">53</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">54</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">55</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">56</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">57</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">58</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">59</div></li></ul><ul class=\\"cfx-picker-time-panel-column\\" style=\\"position: relative;\\"><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">00</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">01</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">02</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">03</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">04</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">05</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">06</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">07</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">08</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">09</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">10</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">11</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">12</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">13</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">14</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">15</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">16</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">17</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">18</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">19</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">20</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">21</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">22</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">23</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">24</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">25</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">26</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">27</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">28</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">29</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">30</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">31</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">32</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">33</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">34</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">35</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">36</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">37</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">38</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">39</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">40</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">41</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">42</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">43</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">44</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">45</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">46</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">47</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">48</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">49</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">50</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">51</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">52</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">53</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">54</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">55</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">56</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">57</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">58</div></li><li class=\\"cfx-picker-time-panel-cell\\"><div class=\\"cfx-picker-time-panel-cell-inner\\">59</div></li></ul></div></div></div><div class=\\"cfx-picker-footer\\"><ul class=\\"cfx-picker-ranges\\"><li class=\\"cfx-picker-now\\"><a class=\\"cfx-picker-now-btn\\">Now</a></li><li class=\\"cfx-picker-ok\\"><button type=\\"button\\" class=\\"btn \\" disabled=\\"\\"><div class=\\"text \\">Ok</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -8826,7 +8826,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -8866,7 +8866,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -9001,8 +9001,8 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -9032,7 +9032,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -9187,7 +9187,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -9327,7 +9327,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -9354,19 +9354,19 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -9391,7 +9391,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -9476,7 +9476,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -9567,7 +9567,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -9614,7 +9614,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -9654,7 +9654,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -9690,8 +9690,8 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -9735,7 +9735,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -9828,11 +9828,11 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -10249,7 +10249,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showTime\` should works 1`] = `
 `;
 
 exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
-"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-footer\\"><a class=\\"cfx-picker-today-btn\\">Today</a></div></div></div></div></div><style>
+"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select date\\" title=\\"\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-date-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Aug</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr><td title=\\"2020-07-26\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-07-27\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-07-28\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-07-29\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-07-30\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-07-31\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-08-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td></tr><tr><td title=\\"2020-08-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-08-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-08-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-08-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-08-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-08-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-08-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td></tr><tr><td title=\\"2020-08-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-08-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-08-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-today\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-08-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-08-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-08-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td><td title=\\"2020-08-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td></tr><tr><td title=\\"2020-08-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-08-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-08-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-08-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-08-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-08-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td><td title=\\"2020-08-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td></tr><tr><td title=\\"2020-08-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-08-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-08-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-08-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-08-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-08-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td><td title=\\"2020-08-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td></tr><tr><td title=\\"2020-08-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-08-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-09-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-09-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-09-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-09-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-09-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td></tr></tbody></table></div></div><div class=\\"cfx-picker-footer\\"><a class=\\"cfx-picker-today-btn\\">Today</a></div></div></div></div></div><style>
     @keyframes cfxSlideUpIn {
       0% {
         transform: scaleY(0.8);
@@ -10509,7 +10509,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -10549,7 +10549,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -10684,8 +10684,8 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -10715,7 +10715,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -10870,7 +10870,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -11010,7 +11010,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -11037,19 +11037,19 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -11074,7 +11074,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -11159,7 +11159,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -11250,7 +11250,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -11297,7 +11297,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -11337,7 +11337,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -11373,8 +11373,8 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -11418,7 +11418,7 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -11511,11 +11511,11 @@ exports[`DatePicker[picker=\`date\`] prop \`showToday\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
@@ -12192,7 +12192,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fff;
+          background: #fdfdfe;
           outline: none;
         }
 
@@ -12232,7 +12232,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           background: 0 0;
           border: 0;
           cursor: pointer;
-          // transition: color 0.3s; // fix strange color problem
+          // transition: color 0.2s; // fix strange color problem
         }
 
         .cfx-picker-header > button {
@@ -12367,8 +12367,8 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           height: 32px;
           line-height: 32px;
           border-radius: 32px;
-          transition: background 0.3s;
-          transition: border 0.3s;
+          transition: background 0.2s;
+          transition: border 0.2s;
         }
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
@@ -12398,7 +12398,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
           background: #0054fe;
         }
 
@@ -12553,7 +12553,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fff;
+          background: #fdfdfe;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -12693,7 +12693,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row td {
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-week-panel-row td:first-child {
@@ -12720,19 +12720,19 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(255, 255, 255, 0.5);
+          color: rgba(253, 253, 254, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fff;
+          border-color: #fdfdfe;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fff;
+          color: #fdfdfe;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -12757,7 +12757,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
 
         .cfx-picker-datetime-panel .cfx-picker-date-panel,
         .cfx-picker-datetime-panel .cfx-picker-time-panel {
-          transition: opacity 0.3s;
+          transition: opacity 0.2s;
         }
 
         .cfx-picker-datetime-panel-active .cfx-picker-date-panel,
@@ -12842,7 +12842,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           text-align: center;
           border-radius: 0;
           cursor: pointer;
-          transition: background 0.3s;
+          transition: background 0.2s;
         }
 
         .cfx-picker-time-panel-column
@@ -12933,7 +12933,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           border: none;
           outline: none;
           -webkit-appearance: none;
-          transition: all 0.3s;
+          transition: all 0.2s;
         }
 
         .cfx-picker-input > input::-webkit-input-placeholder,
@@ -12980,7 +12980,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           min-height: 32px;
           line-height: 1.5715;
           vertical-align: bottom;
-          transition: all 0.3s, height 0s;
+          transition: all 0.2s, height 0s;
         }
 
         .cfx-picker-input > input:focus {
@@ -13020,7 +13020,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fff !important;
+          background-color: #fdfdfe !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -13056,8 +13056,8 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           cursor: pointer;
           opacity: 0;
           color: #ebeced;
-          transition: opacity 0.3s;
-          // transition: color 0.3s;
+          transition: opacity 0.2s;
+          // transition: color 0.2s;
         }
 
         .cfx-picker-clear > * {
@@ -13101,7 +13101,7 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           margin-left: 0;
           background: #0054fe;
           opacity: 0;
-          transition: all 0.3s ease-out;
+          transition: all 0.2s ease-out;
           pointer-events: none;
         }
 
@@ -13194,11 +13194,11 @@ exports[`DatePicker[picker=\`date\`] prop \`value\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fff;
+          background: #fdfdfe;
           border: 1px solid #0054fe;
           border-radius: 12px;
-          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
-          transition: margin 0.3s;
+          box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
+          transition: margin 0.2s;
         }
 
         .cfx-picker-panel-container .cfx-picker-panels {
