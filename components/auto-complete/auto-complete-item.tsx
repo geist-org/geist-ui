@@ -4,6 +4,7 @@ import useTheme from '../styles/use-theme'
 import { InputVariantTypes, NormalSizes } from '../utils/prop-types'
 import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
+import { addColorAlpha } from '../utils/color'
 
 interface Props {
   label: string
@@ -34,6 +35,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
   isLabelOnly,
 }) => {
   const theme = useTheme()
+  const isSolid = variant === 'solid'
   const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
     updateValue && updateValue(label)
@@ -45,18 +47,18 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
   // The 'isLabelOnly' is only used inside the component,
   // Automatically adjust width when only label children is included.
   const itemHeight = useMemo(() => {
-    if (isLabelOnly) return `calc(2.4 * ${theme.layout.gap})`
+    if (isLabelOnly) return `calc(2.5 * ${theme.layout.gap})`
     return 'auto'
   }, [isLabelOnly, theme.layout.gap])
 
   return (
-    <div className="item" onClick={selectHandler}>
+    <div className={`item ${isSolid ? 'solid' : 'line'}`} onClick={selectHandler}>
       {isLabelOnly ? (
         <FuzzyMatch
-          color={variant === 'solid' ? 'secondary' : 'primary'}
+          color="primary"
           query={value || ''}
           label={label}
-          height={`calc(2.4 * ${theme.layout.gap})`}
+          height={`calc(2.5 * ${theme.layout.gap})`}
         />
       ) : (
         children
@@ -88,8 +90,12 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           border-bottom-right-radius: ${theme.expressiveness.R2};
         }
 
-        .item:hover {
-          background-color: ${theme.palette.cNeutral0};
+        .line.item:hover {
+          background-color: ${addColorAlpha(theme.palette.cTheme5, 0.04)};
+        }
+
+        .solid.item:hover {
+          background-color: ${theme.palette.cTheme2};
         }
 
         .item.active {

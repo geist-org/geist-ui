@@ -76,8 +76,16 @@ const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdow
             margin: auto;
             margin-right: ${theme.layout.gapHalf};
             margin-left: ${theme.layout.gapHalf};
-            border-bottom: 1px dashed ${hoverBorderColor};
+            margin-bottom: calc(${theme.layout.gapHalf} * 0.375);
             z-index: 1110;
+          }
+
+          .solid.auto-complete-dropdown .divider {
+            border-bottom: 1px dashed ${theme.palette.cTheme7};
+          }
+
+          .line.auto-complete-dropdown .divider {
+            border-bottom: 1px dashed ${hoverBorderColor};
           }
         `}</style>
       </div>
