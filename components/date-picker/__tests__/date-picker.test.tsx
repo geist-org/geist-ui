@@ -4,6 +4,7 @@ import moment from 'moment'
 import { DatePicker } from 'components'
 import { Wifi } from '@zeit-ui/react-icons'
 import { clearInput, nextMonth, nextYear, openPicker, selectCell } from './utils'
+import { act } from 'react-dom/test-utils'
 
 // ensure that the snapshots does not mismatch due to the changes of test date
 const defaultValue = moment('2020-08-01 12:00:00')
@@ -330,5 +331,52 @@ describe('DatePicker Common', () => {
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('method `focus` and `blur` should works', () => {
+    let focused = false
+    let blurred = false
+    const mockFocus = jest.spyOn(HTMLElement.prototype, 'focus')
+    const mockBlur = jest.spyOn(HTMLElement.prototype, 'blur')
+    mockFocus.mockImplementation(() => {
+      focused = true
+    })
+    mockBlur.mockImplementation(() => {
+      blurred = true
+    })
+    const ref = React.createRef<any>()
+    const onFocus = jest.fn()
+    const onBlur = jest.fn()
+
+    const wrapper = mount(<DatePicker open showTime ref={ref} onFocus={onFocus} onBlur={onBlur} />)
+    ref.current.focus()
+    expect(focused).toBeTruthy()
+    wrapper.find('input').first().simulate('focus')
+    expect(onFocus).toHaveBeenCalled()
+
+    jest.useRealTimers()
+
+    ref.current.blur()
+    expect(blurred).toBeTruthy()
+    wrapper.find('input').first().simulate('blur')
+    setTimeout(() => {
+      expect(onFocus).toHaveBeenCalled()
+      expect(() => wrapper.unmount()).not.toThrow()
+    }, 0)
+
+    mockFocus.mockRestore()
+    mockBlur.mockRestore()
+  })
+
+  it('method `setValue` should works', () => {
+    const ref = React.createRef<any>()
+
+    const wrapper = mount(<DatePicker open ref={ref} />)
+    act(() => ref.current.setValue(moment('2020-08-08')))
+
+    setTimeout(() => {
+      expect(wrapper.find('input').at(0).getDOMNode<HTMLInputElement>().value).toBe('2020-08-08')
+      expect(() => wrapper.unmount()).not.toThrow()
+    }, 0)
   })
 })
