@@ -36,12 +36,12 @@ const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = (
         <style jsx>{`
           .select-dropdown {
             border-radius: ${theme.expressiveness.R2};
-            box-shadow: ${theme.expressiveness.shadowLarge};
-            background-color: ${theme.palette.background};
+            box-shadow: ${theme.expressiveness.D2};
+            background-color: ${theme.palette.cNeutral8};
             max-height: 15rem;
             overflow-y: auto;
             overflow-anchor: none;
-            padding: ${theme.layout.gapQuarter} 0;
+            padding: ${theme.layout.gapHalf} 0;
           }
         `}</style>
       </div>

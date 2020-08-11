@@ -1,4 +1,4 @@
-import { NormalSizes, SelectTypes } from 'components/utils/prop-types'
+import { NormalSizes, SelectVariants } from 'components/utils/prop-types'
 import { ZeitUIThemes, ZeitUIThemesPalette } from 'components/styles/themes'
 
 export interface SelectSize {
@@ -55,11 +55,11 @@ export const getOptionColors = (
   disabled: boolean = false,
   palette: ZeitUIThemesPalette,
   isLabel: boolean = false,
-  variant: SelectTypes = 'line',
+  variant: SelectVariants = 'line',
   rgb: number[],
 ) => {
   const [r, g, b] = rgb
-  const colors: { [key in SelectTypes]: optionColors } = {
+  const colors: { [key in SelectVariants]: optionColors } = {
     line: {
       color: selected ? palette.cNeutral8 : palette.cNeutral6,
       bgColor: selected ? palette.cTheme5 : palette.cNeutral8,
@@ -103,7 +103,7 @@ export const getOptionColors = (
 export const getSelectColors = (
   disabled: boolean = false,
   palette: ZeitUIThemesPalette,
-  variant: SelectTypes = 'line',
+  variant: SelectVariants = 'line',
 ): selectColors => {
   if (disabled) {
     return {

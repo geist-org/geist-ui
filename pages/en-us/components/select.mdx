@@ -167,7 +167,7 @@ Display a dropdown list of items.
 | **value**             | selected value                          | `string`, `string[]`                                | -                                 | -               |
 | **initialValue**      | initial value                           | `string`, `string[]`                                | -                                 | -               |
 | **placeholder**       | placeholder string                      | `string`                                            | -                                 | -               |
-| **variant**           | select type                             | `string`                                            | [SelectTypes](#selecttypes)       | `line`          |
+| **variant**           | select type                             | `string`                                            | [SelectVariants](#selectvariants) | `line`          |
 | **width**             | css width value of select               | `string`                                            | -                                 | `initial`       |
 | **size**              | select component size                   | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
 | **icon**              | icon component                          | `ComponentType`                                     | -                                 | `SVG Component` |
@@ -194,10 +194,10 @@ Display a dropdown list of items.
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
-<Attributes.Title>SelectTypes</Attributes.Title>
+<Attributes.Title>SelectVariants</Attributes.Title>
 
 ```ts
-type SelectTypes = 'line' | 'text'
+type SelectVariants = 'line' | 'text'
 ```
 
 </Attributes>
