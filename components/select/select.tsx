@@ -213,10 +213,12 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             width: calc(100% - 1.25rem);
           }
 
-          .select :global(svg) {
+          .value :global(svg),
+          .multiple :global(svg) {
             display: none;
           }
-          .select :global(.option) {
+          .value :global(.option),
+          .multiple :global(.option) {
             border: 1px solid transparent;
           }
 
