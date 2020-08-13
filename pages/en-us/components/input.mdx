@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import AlertCircle from '@zeit-ui/react-icons/alertCircle'
-import { Input, Spacer, useImperativeInput, Button, Code, Text, Dot } from 'components'
+import { Spacer, Button, Code, Text, Dot } from 'components'
+import  Input, { useInputHandle } from 'components/input'
 import { useState, useEffect } from 'react'
 
 export const meta = {
@@ -235,14 +236,14 @@ Retrieve text input from a user.
 <Playground
   title={
     <>
-      With <Code>useImperativeInput</Code>
+      With <Code>useInputHandle</Code>
     </>
   }
   desc="Use `hooks` to capture changes."
-  scope={{ Input, useImperativeInput, Button, Spacer, useState }}
+  scope={{ Input, useInputHandle, Button, Spacer, useState }}
   code={`
 () => {
-  const { ref, getValue, setValue, focus, blur } = useImperativeInput()
+  const { ref, getValue, setValue, focus, blur } = useInputHandle()
   const [v, setV] = useState(getValue())
   return (
     <>
@@ -310,10 +311,10 @@ type InputSizes = 'mini' | 'small' | 'medium' | 'large'
 type InputColor = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
-<Attributes.Title>useImperativeInput</Attributes.Title>
+<Attributes.Title>useInputHandle</Attributes.Title>
 
 ```ts
-type useImperativeInput = () => {
+type useInputHandle = () => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

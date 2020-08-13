@@ -16,7 +16,7 @@ import InputLabel from './input-label'
 import { defaultProps, Props } from './input-props'
 import InputPassword from './password'
 import { getColors, getSizes } from './styles'
-import useImperativeInput from './use-imperative-input'
+import { useInputHandle } from './use-imperative-input'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & typeof defaultProps & NativeAttrs
@@ -353,7 +353,7 @@ type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
 > & {
   Textarea: typeof Textarea
   Password: typeof InputPassword
-  useImperativeInput: typeof useImperativeInput
+  useInputHandle: typeof useInputHandle
 }
 
 type ComponentProps = Partial<typeof defaultProps> &
@@ -363,3 +363,4 @@ type ComponentProps = Partial<typeof defaultProps> &
 Input.defaultProps = defaultProps
 
 export default Input as InputComponent<HTMLInputElement, ComponentProps>
+export { useInputHandle }

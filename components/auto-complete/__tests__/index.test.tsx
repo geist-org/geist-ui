@@ -1,5 +1,4 @@
-import { AutoComplete } from 'components'
-import { useImperativeInput } from 'components'
+import AutoComplete, { useAutoCompleteHandle } from '../'
 import { mount, render } from 'enzyme'
 import React, { useEffect } from 'react'
 import { act } from 'react-dom/test-utils'
@@ -82,11 +81,11 @@ describe('AutoComplete', () => {
       expect((input as HTMLInputElement).value).toEqual('value2')
     })
 
-    it('should work with useImeprativeInput', () => {
+    it('should work with useAutoCompleteHandle', () => {
       let log = ''
       jest.spyOn(console, 'log').mockImplementation(msg => (log = msg))
       function MockAutoComplete({ testSetValue = false, testGetValue = false }) {
-        const { ref, getValue, setValue } = useImperativeInput<HTMLInputElement>()
+        const { ref, getValue, setValue } = useAutoCompleteHandle()
         useEffect(() => {
           testGetValue && console.log(getValue())
         }, [testGetValue])

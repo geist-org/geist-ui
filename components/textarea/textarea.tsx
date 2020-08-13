@@ -1,8 +1,15 @@
-import React, { useImperativeHandle, useMemo, useRef, useState } from 'react'
+import React, {
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+  PropsWithoutRef,
+  RefAttributes,
+} from 'react'
+import { useTextareaHandle } from '../input/use-imperative-input'
 import { getColors } from '../input/styles'
 import useTheme from '../styles/use-theme'
 import { InputColors, InputVariantTypes } from '../utils/prop-types'
-import withDefaults from '../utils/with-defaults'
 import Counter from './counter'
 
 interface Props {
@@ -198,4 +205,17 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
   },
 )
 
-export default withDefaults(Textarea, defaultProps)
+type TextareaComponent<T, P = {}> = React.ForwardRefExoticComponent<
+  PropsWithoutRef<P> & RefAttributes<T>
+> & {
+  useTextareaHandle: typeof useTextareaHandle
+}
+
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  NativeAttrs
+
+Textarea.defaultProps = defaultProps
+
+export { useTextareaHandle }
+export default Textarea as TextareaComponent<HTMLTextAreaElement, ComponentProps>

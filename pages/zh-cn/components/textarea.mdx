@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Textarea, Spacer, useImperativeInput, Button, Code } from 'components'
+import { Spacer, Button, Code } from 'components'
+import Textarea, { useTextareaHandle } from 'components/textarea'
 import { useState } from 'react'
 
 export const meta = {
@@ -99,14 +100,14 @@ export const meta = {
 <Playground
   title={
     <>
-      与&nbsp;<Code>useImperativeInput</Code>&nbsp;组合
+      与&nbsp;<Code>useTextareaHandle</Code>&nbsp;组合
     </>
   }
   desc="通过 `hooks` 以更简单的方式驱动文本框。"
-  scope={{ Textarea, useImperativeInput, Button, Spacer }}
+  scope={{ Textarea, useTextareaHandle, Button, Spacer }}
   code={`
 () => {
-  const { ref, setValue } = useImperativeInput()
+  const { ref, setValue } = useTextareaHandle()
   return (
     <>
       <Textarea ref={ref} defaultValue='CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。' width="100%" />
@@ -160,10 +161,10 @@ export const meta = {
 | **counter**      | 增加一个记录字数的 UI | `boolean`                        | -                                                       | `false`   |
 | ...              | 原生属性              | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
 
-<Attributes.Title>useImperativeInput</Attributes.Title>
+<Attributes.Title>useTextareaHandle</Attributes.Title>
 
 ```ts
-type useImperativeInput = (
+type useTextareaHandle = (
   defaultValue: string,
 ) => {
   state: string

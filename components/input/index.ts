@@ -1,11 +1,10 @@
-import Input from './input'
+import Input, { useInputHandle } from './input'
 import Textarea from '../textarea'
 import InputPassword from './password'
-import useImperativeInput from './use-imperative-input'
 
 Input.Textarea = Textarea
 Input.Password = InputPassword
-Input.useImperativeInput = useImperativeInput
+Input.useInputHandle = useInputHandle
 
-export { useImperativeInput }
+export { useInputHandle }
 export default Input

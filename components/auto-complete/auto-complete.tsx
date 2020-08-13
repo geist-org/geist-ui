@@ -8,7 +8,7 @@ import React, {
   RefAttributes,
 } from 'react'
 import Input from '../input'
-import useImperativeInput from '../input/use-imperative-input'
+import { useAutoCompleteHandle } from '../input/use-imperative-input'
 import Loading from '../loading'
 import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'
@@ -120,7 +120,7 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
     const isOpenControlled = open !== undefined
 
     const autoCompleteDivRef = useRef<HTMLDivElement>(null)
-    const { ref: inputRef, focus: focusInput } = useImperativeInput<HTMLInputElement>()
+    const { ref: inputRef, focus: focusInput } = useAutoCompleteHandle()
     useImperativeHandle(ref, () => inputRef.current)
     const resetTimer = useRef<number>()
     const [inputValue, setInputValue] = useState(defaultValue || '')
@@ -289,6 +289,7 @@ type AutoCompleteComponent<T, P = {}> = React.ForwardRefExoticComponent<
   Option: typeof AutoCompleteItem
   Searching: typeof AutoCompleteSearching
   Empty: typeof AutoCompleteEmpty
+  useAutoCompleteHandle: typeof useAutoCompleteHandle
 }
 
 type ComponentProps = Partial<typeof defaultProps> &
@@ -297,4 +298,5 @@ type ComponentProps = Partial<typeof defaultProps> &
 
 AutoComplete.defaultProps = defaultProps
 
+export { useAutoCompleteHandle }
 export default AutoComplete as AutoCompleteComponent<HTMLInputElement, ComponentProps>

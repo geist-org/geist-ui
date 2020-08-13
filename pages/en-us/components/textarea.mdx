@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Textarea, Spacer, useImperativeInput, Button, Code } from 'components'
+import { Spacer, Button, Code } from 'components'
+import  Textarea, { useTextareaHandle } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -99,14 +100,14 @@ Retrieve multi-line user input.
 <Playground
   title={
     <>
-      With <Code>useImperativeInput</Code>
+      With <Code>useTextareaHandle</Code>
     </>
   }
   desc="Use `hooks` to capture changes."
-  scope={{ Textarea, useImperativeInput, Button, Spacer }}
+  scope={{ Textarea, useTextareaHandle, Button, Spacer }}
   code={`
 () => {
-  const { ref, setValue } = useImperativeInput()
+  const { ref, setValue } = useTextareaHandle()
   return (
     <>
       <Textarea ref={ref} defaultValue='ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.' width="100%" />
@@ -160,10 +161,10 @@ Retrieve multi-line user input.
 | **counter**      | add word counter ui   | `boolean`                        | -                                                       | `false`   |
 | ...              | native props          | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
 
-<Attributes.Title>useImperativeInput</Attributes.Title>
+<Attributes.Title>useTextareaHandle</Attributes.Title>
 
 ```ts
-type useImperativeInput = (
+type useTextareaHandle = (
   defaultValue: string,
 ) => {
   state: string

@@ -1,4 +1,4 @@
-import { Input, useImperativeInput } from 'components'
+import Input, { useInputHandle } from '../'
 import { mount } from 'enzyme'
 import React, { useEffect } from 'react'
 
@@ -13,7 +13,7 @@ describe('UseImperativeInput', () => {
       testFocus?: boolean
       testBlur?: boolean
     }> = ({ defaultValue, testSetValue, testSetEmptyValue, testFocus, testBlur }) => {
-      const { ref, setValue, getValue, focus, blur } = useImperativeInput<HTMLInputElement>()
+      const { ref, setValue, getValue, focus, blur } = useInputHandle()
       useEffect(() => {
         testSetValue && setValue('test set value')
       }, [testSetValue])
