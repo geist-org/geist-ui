@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useMemo } from 'react'
 import { Calendar, Clock, Minus } from '@zeit-ui/react-icons'
 import { RangePicker as RCRangePicker } from '@jnoodle/rc-picker'
 import { GenerateConfig } from '@jnoodle/rc-picker/lib/generate'
@@ -26,7 +27,9 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
     } = props
     const { format, showTime, picker } = props as any
     const prefixCls = `${customizePrefixCls || 'cfx'}-picker`
-    const { heightRatio: inputHeightRatio } = getSizes(customizeSize)
+    const { heightRatio: inputHeightRatio } = useMemo(() => getSizes(customizeSize), [
+      customizeSize,
+    ])
 
     let additionalOverrideProps: any = {}
 
@@ -47,19 +50,9 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
         placeholder={getRangePlaceholder(picker, locale, placeholder)}
         suffixIcon={
           picker === 'time' ? (
-            <InputIcon
-              icon={<Clock />}
-              ratio={inputHeightRatio}
-              clickable={false}
-              onClick={() => {}}
-            />
+            <InputIcon icon={<Clock />} ratio={inputHeightRatio} clickable={false} />
           ) : (
-            <InputIcon
-              icon={<Calendar />}
-              ratio={inputHeightRatio}
-              clickable={false}
-              onClick={() => {}}
-            />
+            <InputIcon icon={<Calendar />} ratio={inputHeightRatio} clickable={false} />
           )
         }
         clearIcon={
@@ -67,7 +60,6 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
             icon={<InputClearIcon visible heightRatio={inputHeightRatio} />}
             ratio={inputHeightRatio}
             clickable={false}
-            onClick={() => {}}
           />
         }
         allowClear

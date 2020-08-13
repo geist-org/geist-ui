@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useMemo } from 'react'
 import { Calendar, Clock } from '@zeit-ui/react-icons'
 import RCPicker from '@jnoodle/rc-picker'
 import { PickerMode } from '@jnoodle/rc-picker/lib/interface'
@@ -30,7 +31,9 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
       } = props
       const { format, showTime } = props as any
       const prefixCls = `${customizePrefixCls || 'cfx'}-picker`
-      const { heightRatio: inputHeightRatio } = getSizes(customizeSize)
+      const { heightRatio: inputHeightRatio } = useMemo(() => getSizes(customizeSize), [
+        customizeSize,
+      ])
 
       const additionalProps = {
         showToday: true,
@@ -56,19 +59,9 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
           placeholder={getPlaceholder(mergedPicker, locale, placeholder)}
           suffixIcon={
             mergedPicker === 'time' ? (
-              <InputIcon
-                icon={<Clock />}
-                ratio={inputHeightRatio}
-                clickable={false}
-                onClick={() => {}}
-              />
+              <InputIcon icon={<Clock />} ratio={inputHeightRatio} clickable={false} />
             ) : (
-              <InputIcon
-                icon={<Calendar />}
-                ratio={inputHeightRatio}
-                clickable={false}
-                onClick={() => {}}
-              />
+              <InputIcon icon={<Calendar />} ratio={inputHeightRatio} clickable={false} />
             )
           }
           clearIcon={
@@ -76,7 +69,6 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
               icon={<InputClearIcon visible heightRatio={inputHeightRatio} />}
               ratio={inputHeightRatio}
               clickable={false}
-              onClick={() => {}}
             />
           }
           allowClear
