@@ -5,7 +5,7 @@ export interface InputIconProps {
   icon: React.ReactNode
   ratio: string
   clickable: boolean
-  onClick: (e: React.MouseEvent<HTMLDivElement>) => void
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
   paddingLeft?: string
   paddingRight?: string
 }
