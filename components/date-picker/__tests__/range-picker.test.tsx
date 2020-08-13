@@ -58,6 +58,7 @@ describe('RangePicker Common', () => {
       <div>
         <RangePicker open size="mini" defaultPickerValue={[defaultValue, defaultValue]} />
         <RangePicker open size="small" defaultPickerValue={[defaultValue, defaultValue]} />
+        <RangePicker open size="medium" defaultPickerValue={[defaultValue, defaultValue]} />
         <RangePicker open size="large" defaultPickerValue={[defaultValue, defaultValue]} />
       </div>,
     )

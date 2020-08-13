@@ -51,6 +51,7 @@ describe('DatePicker Common', () => {
       <div>
         <DatePicker open size="mini" defaultPickerValue={defaultValue} />
         <DatePicker open size="small" defaultPickerValue={defaultValue} />
+        <DatePicker open size="medium" defaultPickerValue={defaultValue} />
         <DatePicker open size="large" defaultPickerValue={defaultValue} />
       </div>,
     )

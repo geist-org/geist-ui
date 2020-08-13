@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`] = `
-"<div><div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select week\\" title=\\"\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span></div></div><style>
+"<div><div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select week\\" title=\\"\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"cfx-picker-suffix\\"><span class=\\"input-icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg><style>
+        .input-icon {
+          box-sizing: content-box;
+          display: flex;
+          width: calc(2.5 * 16px * .35);
+          height: 100%;
+          align-items: center;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0 calc(2.5 * 16px * .3) 0 calc(2.5 * 16px * .3);
+          line-height: 1;
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+        }
+      </style></span></span></div></div><style>
     @keyframes cfxSlideUpIn {
       0% {
         transform: scaleY(0.8);
@@ -1105,21 +1120,20 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
 
         .cfx-picker-suffix {
           align-self: center;
-          margin-left: 4px;
-          margin-right: 1rem;
+          margin-right: 0;
           color: #aaafbb;
           line-height: 1;
           pointer-events: none;
         }
 
         .cfx-picker-suffix > * {
-          vertical-align: top;
+          vertical-align: middle;
         }
 
         .cfx-picker-clear {
           position: absolute;
           top: 50%;
-          right: 1rem;
+          right: 0;
           line-height: 1;
           transform: translateY(-50%);
           cursor: pointer;
@@ -1130,7 +1144,15 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
         }
 
         .cfx-picker-clear > * {
-          vertical-align: top;
+          vertical-align: middle;
+        }
+
+        .cfx-picker-clear .input-icon {
+          justify-content: center !important;
+        }
+
+        .cfx-picker-clear .clear-icon {
+          padding: 0 !important;
         }
 
         .cfx-picker-separator {
@@ -1157,7 +1179,7 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
         }
 
         .cfx-picker-range .cfx-picker-clear {
-          right: 1rem
+          right: 0;
         }
 
         .cfx-picker-range:hover .cfx-picker-clear {
@@ -1347,6 +1369,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
             background-color: #e8f4ff;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default {
             border-color: transparent;
@@ -1380,6 +1410,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover,
@@ -1417,6 +1455,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
             background-color: #cce5ff;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary {
             border-color: transparent;
@@ -1450,6 +1496,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover,
@@ -1487,6 +1541,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
             background-color: #58f17a;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success {
             border-color: transparent;
@@ -1520,6 +1582,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover,
@@ -1557,6 +1627,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
             background-color: #ffc438;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning {
             border-color: transparent;
@@ -1590,6 +1668,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover,
@@ -1627,6 +1713,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
             background-color: #ffc2c2;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear .clear-icon {
+            color: rgba(225, 92, 86, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear:hover .clear-icon {
+            color: #e15c56 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error {
             border-color: transparent;
@@ -1660,6 +1754,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear .clear-icon {
+            color: rgba(225, 92, 86, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover .clear-icon {
+            color: #e15c56 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover,
@@ -1684,7 +1786,66 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultPickerValue\` should works 1`
 `;
 
 exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
-"<div><div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select week\\" title=\\"2020-1st\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"2020-1st\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span><span class=\\"cfx-picker-clear\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M15 9l-6 6\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M9 9l6 6\\" stroke=\\"var(--geist-stroke)\\"></path></svg></span></div></div><style>
+"<div><div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select week\\" title=\\"2020-1st\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"2020-1st\\"><span class=\\"cfx-picker-suffix\\"><span class=\\"input-icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg><style>
+        .input-icon {
+          box-sizing: content-box;
+          display: flex;
+          width: calc(2.5 * 16px * .35);
+          height: 100%;
+          align-items: center;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0 calc(2.5 * 16px * .3) 0 calc(2.5 * 16px * .3);
+          line-height: 1;
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+        }
+      </style></span></span><span class=\\"cfx-picker-clear\\"><span class=\\"input-icon\\"><div class=\\"clear-icon visible\\"><svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M7 1.75C4.1125 1.75 1.75 4.1125 1.75 7C1.75 9.8875 4.1125 12.25 7 12.25C9.8875 12.25 12.25 9.8875 12.25 7C12.25 4.1125 9.8875 1.75 7 1.75ZM9.29688 8.37812L8.37812 9.29688L7 7.91875L5.62188 9.29688L4.70312 8.37812L6.08125 7L4.70312 5.62188L5.62188 4.70312L7 6.08125L8.37812 4.70312L9.29688 5.62188L7.91875 7L9.29688 8.37812Z\\" fill=\\"currentColor\\"></path></svg><style>
+        .clear-icon {
+          padding: 0 8px;
+          margin: 0;
+          display: inline-flex;
+          align-items: center;
+          height: 100%;
+          cursor: pointer;
+          box-sizing: border-box;
+          transition: color 150ms ease 0s;
+          color: #ebeced;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .visible {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .clear-icon:hover {
+          color: #282d30;
+        }
+
+        svg {
+          color: currentColor;
+          width: calc(16px * 2.5 * .46);
+          height: calc(16px * 2.5 * .46);
+        }
+      </style></div><style>
+        .input-icon {
+          box-sizing: content-box;
+          display: flex;
+          width: calc(2.5 * 16px * .35);
+          height: 100%;
+          align-items: center;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0 calc(2.5 * 16px * .3) 0 calc(2.5 * 16px * .3);
+          line-height: 1;
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+        }
+      </style></span></span></div></div><style>
     @keyframes cfxSlideUpIn {
       0% {
         transform: scaleY(0.8);
@@ -2788,21 +2949,20 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
 
         .cfx-picker-suffix {
           align-self: center;
-          margin-left: 4px;
-          margin-right: 1rem;
+          margin-right: 0;
           color: #aaafbb;
           line-height: 1;
           pointer-events: none;
         }
 
         .cfx-picker-suffix > * {
-          vertical-align: top;
+          vertical-align: middle;
         }
 
         .cfx-picker-clear {
           position: absolute;
           top: 50%;
-          right: 1rem;
+          right: 0;
           line-height: 1;
           transform: translateY(-50%);
           cursor: pointer;
@@ -2813,7 +2973,15 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
         }
 
         .cfx-picker-clear > * {
-          vertical-align: top;
+          vertical-align: middle;
+        }
+
+        .cfx-picker-clear .input-icon {
+          justify-content: center !important;
+        }
+
+        .cfx-picker-clear .clear-icon {
+          padding: 0 !important;
         }
 
         .cfx-picker-separator {
@@ -2840,7 +3008,7 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
         }
 
         .cfx-picker-range .cfx-picker-clear {
-          right: 1rem
+          right: 0;
         }
 
         .cfx-picker-range:hover .cfx-picker-clear {
@@ -3030,6 +3198,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
             background-color: #e8f4ff;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default {
             border-color: transparent;
@@ -3063,6 +3239,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover,
@@ -3100,6 +3284,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
             background-color: #cce5ff;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary {
             border-color: transparent;
@@ -3133,6 +3325,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover,
@@ -3170,6 +3370,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
             background-color: #58f17a;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success {
             border-color: transparent;
@@ -3203,6 +3411,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover,
@@ -3240,6 +3456,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
             background-color: #ffc438;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning {
             border-color: transparent;
@@ -3273,6 +3497,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover,
@@ -3310,6 +3542,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
             background-color: #ffc2c2;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear .clear-icon {
+            color: rgba(225, 92, 86, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear:hover .clear-icon {
+            color: #e15c56 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error {
             border-color: transparent;
@@ -3343,6 +3583,14 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear .clear-icon {
+            color: rgba(225, 92, 86, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover .clear-icon {
+            color: #e15c56 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover,
@@ -3367,7 +3615,66 @@ exports[`DatePicker[picker=\`week\`] prop \`defaultValue\` should works 1`] = `
 `;
 
 exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
-"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select week\\" title=\\"20-03-03\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"20-03-03\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span><span class=\\"cfx-picker-clear\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M15 9l-6 6\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M9 9l6 6\\" stroke=\\"var(--geist-stroke)\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-week-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Mar</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th aria-label=\\"empty cell\\"></th><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr class=\\"cfx-picker-week-panel-row cfx-picker-week-panel-row-selected\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">10</td><td title=\\"2020-03-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-03-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-03-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-selected\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-03-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-03-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-03-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-03-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">11</td><td title=\\"2020-03-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td><td title=\\"2020-03-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-03-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-03-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-03-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-03-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-03-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">12</td><td title=\\"2020-03-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td><td title=\\"2020-03-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-03-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-03-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-03-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-03-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-03-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">13</td><td title=\\"2020-03-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td><td title=\\"2020-03-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-03-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-03-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-03-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-03-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-03-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">14</td><td title=\\"2020-03-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-03-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-03-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-04-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-04-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-04-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-04-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">15</td><td title=\\"2020-04-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-04-06\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-04-07\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-04-08\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td><td title=\\"2020-04-09\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-04-10\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-04-11\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td></tr></tbody></table></div></div></div></div></div></div><style>
+"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select week\\" title=\\"20-03-03\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"20-03-03\\"><span class=\\"cfx-picker-suffix\\"><span class=\\"input-icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg><style>
+        .input-icon {
+          box-sizing: content-box;
+          display: flex;
+          width: calc(2.5 * 16px * .35);
+          height: 100%;
+          align-items: center;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0 calc(2.5 * 16px * .3) 0 calc(2.5 * 16px * .3);
+          line-height: 1;
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+        }
+      </style></span></span><span class=\\"cfx-picker-clear\\"><span class=\\"input-icon\\"><div class=\\"clear-icon visible\\"><svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M7 1.75C4.1125 1.75 1.75 4.1125 1.75 7C1.75 9.8875 4.1125 12.25 7 12.25C9.8875 12.25 12.25 9.8875 12.25 7C12.25 4.1125 9.8875 1.75 7 1.75ZM9.29688 8.37812L8.37812 9.29688L7 7.91875L5.62188 9.29688L4.70312 8.37812L6.08125 7L4.70312 5.62188L5.62188 4.70312L7 6.08125L8.37812 4.70312L9.29688 5.62188L7.91875 7L9.29688 8.37812Z\\" fill=\\"currentColor\\"></path></svg><style>
+        .clear-icon {
+          padding: 0 8px;
+          margin: 0;
+          display: inline-flex;
+          align-items: center;
+          height: 100%;
+          cursor: pointer;
+          box-sizing: border-box;
+          transition: color 150ms ease 0s;
+          color: #ebeced;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .visible {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .clear-icon:hover {
+          color: #282d30;
+        }
+
+        svg {
+          color: currentColor;
+          width: calc(16px * 2.5 * .46);
+          height: calc(16px * 2.5 * .46);
+        }
+      </style></div><style>
+        .input-icon {
+          box-sizing: content-box;
+          display: flex;
+          width: calc(2.5 * 16px * .35);
+          height: 100%;
+          align-items: center;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0 calc(2.5 * 16px * .3) 0 calc(2.5 * 16px * .3);
+          line-height: 1;
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+        }
+      </style></span></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-week-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Mar</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th aria-label=\\"empty cell\\"></th><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr class=\\"cfx-picker-week-panel-row cfx-picker-week-panel-row-selected\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">10</td><td title=\\"2020-03-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-03-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-03-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-selected\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-03-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-03-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-03-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-03-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">11</td><td title=\\"2020-03-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td><td title=\\"2020-03-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-03-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-03-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-03-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-03-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-03-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">12</td><td title=\\"2020-03-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td><td title=\\"2020-03-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-03-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-03-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-03-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-03-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-03-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">13</td><td title=\\"2020-03-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td><td title=\\"2020-03-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-03-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-03-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-03-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-03-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-03-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">14</td><td title=\\"2020-03-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-03-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-03-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-04-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-04-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-04-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-04-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">15</td><td title=\\"2020-04-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-04-06\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-04-07\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-04-08\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td><td title=\\"2020-04-09\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-04-10\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-04-11\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td></tr></tbody></table></div></div></div></div></div></div><style>
     @keyframes cfxSlideUpIn {
       0% {
         transform: scaleY(0.8);
@@ -4471,21 +4778,20 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
 
         .cfx-picker-suffix {
           align-self: center;
-          margin-left: 4px;
-          margin-right: 1rem;
+          margin-right: 0;
           color: #aaafbb;
           line-height: 1;
           pointer-events: none;
         }
 
         .cfx-picker-suffix > * {
-          vertical-align: top;
+          vertical-align: middle;
         }
 
         .cfx-picker-clear {
           position: absolute;
           top: 50%;
-          right: 1rem;
+          right: 0;
           line-height: 1;
           transform: translateY(-50%);
           cursor: pointer;
@@ -4496,7 +4802,15 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-clear > * {
-          vertical-align: top;
+          vertical-align: middle;
+        }
+
+        .cfx-picker-clear .input-icon {
+          justify-content: center !important;
+        }
+
+        .cfx-picker-clear .clear-icon {
+          padding: 0 !important;
         }
 
         .cfx-picker-separator {
@@ -4523,7 +4837,7 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-range .cfx-picker-clear {
-          right: 1rem
+          right: 0;
         }
 
         .cfx-picker-range:hover .cfx-picker-clear {
@@ -4713,6 +5027,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
             background-color: #e8f4ff;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default {
             border-color: transparent;
@@ -4746,6 +5068,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover,
@@ -4783,6 +5113,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
             background-color: #cce5ff;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary {
             border-color: transparent;
@@ -4816,6 +5154,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover,
@@ -4853,6 +5199,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
             background-color: #58f17a;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success {
             border-color: transparent;
@@ -4886,6 +5240,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover,
@@ -4923,6 +5285,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
             background-color: #ffc438;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning {
             border-color: transparent;
@@ -4956,6 +5326,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover,
@@ -4993,6 +5371,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
             background-color: #ffc2c2;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear .clear-icon {
+            color: rgba(225, 92, 86, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear:hover .clear-icon {
+            color: #e15c56 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error {
             border-color: transparent;
@@ -5026,6 +5412,14 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear .clear-icon {
+            color: rgba(225, 92, 86, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover .clear-icon {
+            color: #e15c56 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover,
@@ -5050,7 +5444,66 @@ exports[`DatePicker[picker=\`week\`] prop \`format\` should works 1`] = `
 `;
 
 exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
-"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select week\\" title=\\"2020-1st\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"2020-1st\\"><span class=\\"cfx-picker-suffix\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg></span><span class=\\"cfx-picker-clear\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M15 9l-6 6\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M9 9l6 6\\" stroke=\\"var(--geist-stroke)\\"></path></svg></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-week-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Mar</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th aria-label=\\"empty cell\\"></th><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">10</td><td title=\\"2020-03-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-03-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-03-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-03-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-03-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-03-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-03-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">11</td><td title=\\"2020-03-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td><td title=\\"2020-03-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-03-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-03-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-03-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-03-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-03-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">12</td><td title=\\"2020-03-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td><td title=\\"2020-03-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-03-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-03-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-03-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-03-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-03-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">13</td><td title=\\"2020-03-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td><td title=\\"2020-03-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-03-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-03-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-03-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-03-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-03-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">14</td><td title=\\"2020-03-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-03-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-03-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-04-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-04-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-04-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-04-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">15</td><td title=\\"2020-04-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-04-06\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-04-07\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-04-08\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td><td title=\\"2020-04-09\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-04-10\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-04-11\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td></tr></tbody></table></div></div></div></div></div></div><style>
+"<div class=\\"cfx-picker cfx-picker-size-medium cfx-picker-variant-line cfx-picker-color-default  \\"><div class=\\"cfx-picker-input\\"><input readonly=\\"\\" placeholder=\\"Select week\\" title=\\"2020-1st\\" size=\\"12\\" autocomplete=\\"off\\" value=\\"2020-1st\\"><span class=\\"cfx-picker-suffix\\"><span class=\\"input-icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><rect x=\\"3\\" y=\\"4\\" width=\\"18\\" height=\\"18\\" rx=\\"2\\" ry=\\"2\\"></rect><path d=\\"M16 2v4\\"></path><path d=\\"M8 2v4\\"></path><path d=\\"M3 10h18\\"></path></svg><style>
+        .input-icon {
+          box-sizing: content-box;
+          display: flex;
+          width: calc(2.5 * 16px * .35);
+          height: 100%;
+          align-items: center;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0 calc(2.5 * 16px * .3) 0 calc(2.5 * 16px * .3);
+          line-height: 1;
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+        }
+      </style></span></span><span class=\\"cfx-picker-clear\\"><span class=\\"input-icon\\"><div class=\\"clear-icon visible\\"><svg width=\\"14\\" height=\\"14\\" viewBox=\\"0 0 14 14\\" xmlns=\\"http://www.w3.org/2000/svg\\"><path d=\\"M7 1.75C4.1125 1.75 1.75 4.1125 1.75 7C1.75 9.8875 4.1125 12.25 7 12.25C9.8875 12.25 12.25 9.8875 12.25 7C12.25 4.1125 9.8875 1.75 7 1.75ZM9.29688 8.37812L8.37812 9.29688L7 7.91875L5.62188 9.29688L4.70312 8.37812L6.08125 7L4.70312 5.62188L5.62188 4.70312L7 6.08125L8.37812 4.70312L9.29688 5.62188L7.91875 7L9.29688 8.37812Z\\" fill=\\"currentColor\\"></path></svg><style>
+        .clear-icon {
+          padding: 0 8px;
+          margin: 0;
+          display: inline-flex;
+          align-items: center;
+          height: 100%;
+          cursor: pointer;
+          box-sizing: border-box;
+          transition: color 150ms ease 0s;
+          color: #ebeced;
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .visible {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .clear-icon:hover {
+          color: #282d30;
+        }
+
+        svg {
+          color: currentColor;
+          width: calc(16px * 2.5 * .46);
+          height: calc(16px * 2.5 * .46);
+        }
+      </style></div><style>
+        .input-icon {
+          box-sizing: content-box;
+          display: flex;
+          width: calc(2.5 * 16px * .35);
+          height: 100%;
+          align-items: center;
+          vertical-align: middle;
+          margin: 0;
+          padding: 0 calc(2.5 * 16px * .3) 0 calc(2.5 * 16px * .3);
+          line-height: 1;
+          position: relative;
+          cursor: default;
+          pointer-events: none;
+        }
+      </style></span></span></div></div><div><div class=\\"cfx-picker-dropdown\\" style=\\"opacity: 0;\\"><div class=\\"cfx-picker-panel-container\\"><div tabindex=\\"-1\\" class=\\"cfx-picker-panel cfx-picker-panel-focused\\"><div class=\\"cfx-picker-week-panel\\"><div class=\\"cfx-picker-header\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-prev-btn\\"><span class=\\"cfx-picker-super-prev-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-prev-btn\\"><span class=\\"cfx-picker-prev-icon\\"></span></button><div class=\\"cfx-picker-header-view\\"><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-month-btn\\">Mar</button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-year-btn\\">2020</button></div><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-next-btn\\"><span class=\\"cfx-picker-next-icon\\"></span></button><button type=\\"button\\" tabindex=\\"-1\\" class=\\"cfx-picker-header-super-next-btn\\"><span class=\\"cfx-picker-super-next-icon\\"></span></button></div><div class=\\"cfx-picker-body\\"><div class=\\"cfx-picker-tooltip\\"></div><table class=\\"cfx-picker-content\\"><thead><tr><th aria-label=\\"empty cell\\"></th><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr></thead><tbody><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">10</td><td title=\\"2020-03-01\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-start\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-03-02\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-03-03\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-03-04\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td><td title=\\"2020-03-05\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-03-06\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-03-07\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">11</td><td title=\\"2020-03-08\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td><td title=\\"2020-03-09\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-03-10\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-03-11\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td><td title=\\"2020-03-12\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">12</div></td><td title=\\"2020-03-13\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">13</div></td><td title=\\"2020-03-14\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">14</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">12</td><td title=\\"2020-03-15\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">15</div></td><td title=\\"2020-03-16\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">16</div></td><td title=\\"2020-03-17\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">17</div></td><td title=\\"2020-03-18\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">18</div></td><td title=\\"2020-03-19\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">19</div></td><td title=\\"2020-03-20\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">20</div></td><td title=\\"2020-03-21\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">21</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">13</td><td title=\\"2020-03-22\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">22</div></td><td title=\\"2020-03-23\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">23</div></td><td title=\\"2020-03-24\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">24</div></td><td title=\\"2020-03-25\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">25</div></td><td title=\\"2020-03-26\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">26</div></td><td title=\\"2020-03-27\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">27</div></td><td title=\\"2020-03-28\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">28</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">14</td><td title=\\"2020-03-29\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">29</div></td><td title=\\"2020-03-30\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view\\"><div class=\\"cfx-picker-cell-inner\\">30</div></td><td title=\\"2020-03-31\\" class=\\"cfx-picker-cell cfx-picker-cell-in-view cfx-picker-cell-range-edge-end\\"><div class=\\"cfx-picker-cell-inner\\">31</div></td><td title=\\"2020-04-01\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">1</div></td><td title=\\"2020-04-02\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">2</div></td><td title=\\"2020-04-03\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">3</div></td><td title=\\"2020-04-04\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">4</div></td></tr><tr class=\\"cfx-picker-week-panel-row\\"><td class=\\"cfx-picker-cell cfx-picker-cell-week\\">15</td><td title=\\"2020-04-05\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">5</div></td><td title=\\"2020-04-06\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">6</div></td><td title=\\"2020-04-07\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">7</div></td><td title=\\"2020-04-08\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">8</div></td><td title=\\"2020-04-09\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">9</div></td><td title=\\"2020-04-10\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">10</div></td><td title=\\"2020-04-11\\" class=\\"cfx-picker-cell\\"><div class=\\"cfx-picker-cell-inner\\">11</div></td></tr></tbody></table></div></div></div></div></div></div><style>
     @keyframes cfxSlideUpIn {
       0% {
         transform: scaleY(0.8);
@@ -6154,21 +6607,20 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
 
         .cfx-picker-suffix {
           align-self: center;
-          margin-left: 4px;
-          margin-right: 1rem;
+          margin-right: 0;
           color: #aaafbb;
           line-height: 1;
           pointer-events: none;
         }
 
         .cfx-picker-suffix > * {
-          vertical-align: top;
+          vertical-align: middle;
         }
 
         .cfx-picker-clear {
           position: absolute;
           top: 50%;
-          right: 1rem;
+          right: 0;
           line-height: 1;
           transform: translateY(-50%);
           cursor: pointer;
@@ -6179,7 +6631,15 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-clear > * {
-          vertical-align: top;
+          vertical-align: middle;
+        }
+
+        .cfx-picker-clear .input-icon {
+          justify-content: center !important;
+        }
+
+        .cfx-picker-clear .clear-icon {
+          padding: 0 !important;
         }
 
         .cfx-picker-separator {
@@ -6206,7 +6666,7 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-range .cfx-picker-clear {
-          right: 1rem
+          right: 0;
         }
 
         .cfx-picker-range:hover .cfx-picker-clear {
@@ -6396,6 +6856,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
             background-color: #e8f4ff;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default {
             border-color: transparent;
@@ -6429,6 +6897,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover,
@@ -6466,6 +6942,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
             background-color: #cce5ff;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary {
             border-color: transparent;
@@ -6499,6 +6983,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover,
@@ -6536,6 +7028,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
             background-color: #58f17a;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success {
             border-color: transparent;
@@ -6569,6 +7069,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover,
@@ -6606,6 +7114,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
             background-color: #ffc438;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning {
             border-color: transparent;
@@ -6639,6 +7155,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover {
             color: #282d30;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
+            color: rgba(40, 45, 48, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover .clear-icon {
+            color: #282d30 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover,
@@ -6676,6 +7200,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
             background-color: #ffc2c2;
           }
         
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear .clear-icon {
+            color: rgba(225, 92, 86, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear:hover .clear-icon {
+            color: #e15c56 !important;
+          }
+        
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error {
             border-color: transparent;
@@ -6709,6 +7241,14 @@ exports[`DatePicker[picker=\`week\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
             background-color: #fdfdfe;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear .clear-icon {
+            color: rgba(225, 92, 86, 0.3) !important;
+          }
+        
+          .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover .clear-icon {
+            color: #e15c56 !important;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover,
