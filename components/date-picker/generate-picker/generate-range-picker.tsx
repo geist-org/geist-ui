@@ -1,9 +1,12 @@
 import * as React from 'react'
-import { Calendar, Clock, Minus, XCircleFill } from '@zeit-ui/react-icons'
+import { Calendar, Clock, Minus } from '@zeit-ui/react-icons'
 import { RangePicker as RCRangePicker } from '@jnoodle/rc-picker'
 import { GenerateConfig } from '@jnoodle/rc-picker/lib/generate'
 import { getLocale, getRangePlaceholder } from '../util'
 import { Components, getTimeProps, RangePickerProps } from '.'
+import InputClearIcon from '../../input/input-icon-clear'
+import InputIcon from '../../input/input-icon'
+import { getSizes } from '../../input/styles'
 import withStyle from './with-style'
 
 export default function generateRangePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
@@ -23,6 +26,7 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
     } = props
     const { format, showTime, picker } = props as any
     const prefixCls = `${customizePrefixCls || 'cfx'}-picker`
+    const { heightRatio: inputHeightRatio } = getSizes(customizeSize)
 
     let additionalOverrideProps: any = {}
 
@@ -41,8 +45,31 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
           </span>
         }
         placeholder={getRangePlaceholder(picker, locale, placeholder)}
-        suffixIcon={picker === 'time' ? <Clock /> : <Calendar />}
-        clearIcon={<XCircleFill />}
+        suffixIcon={
+          picker === 'time' ? (
+            <InputIcon
+              icon={<Clock />}
+              ratio={inputHeightRatio}
+              clickable={false}
+              onClick={() => {}}
+            />
+          ) : (
+            <InputIcon
+              icon={<Calendar />}
+              ratio={inputHeightRatio}
+              clickable={false}
+              onClick={() => {}}
+            />
+          )
+        }
+        clearIcon={
+          <InputIcon
+            icon={<InputClearIcon visible heightRatio={inputHeightRatio} />}
+            ratio={inputHeightRatio}
+            clickable={false}
+            onClick={() => {}}
+          />
+        }
         allowClear
         transitionName="slide-up"
         {...restProps}

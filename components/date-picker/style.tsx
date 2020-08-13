@@ -326,6 +326,14 @@ export const generateVariantStyles = (prefix: string, theme: ZeitUIThemes) => {
             background-color: ${hoverBackgroundColor};
           }
         
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-clear .clear-icon {
+            color: ${addColorAlpha(textColor, 0.3)} !important;
+          }
+        
+          .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-clear:hover .clear-icon {
+            color: ${textColor} !important;
+          }
+        
           .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color}:hover,
           .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} {
             border-color: ${hoverBorderColor};
@@ -1251,21 +1259,20 @@ export const generatePickerGlobalStyle = <DateType extends any>(
 
         .${prefix}-picker-suffix {
           align-self: center;
-          margin-left: 4px;
-          margin-right: 1rem;
+          margin-right: 0;
           color: ${pattern.color.disabled};
           line-height: 1;
           pointer-events: none;
         }
 
         .${prefix}-picker-suffix > * {
-          vertical-align: top;
+          vertical-align: middle;
         }
 
         .${prefix}-picker-clear {
           position: absolute;
           top: 50%;
-          right: 1rem;
+          right: 0;
           line-height: 1;
           transform: translateY(-50%);
           cursor: pointer;
@@ -1276,7 +1283,15 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-clear > * {
-          vertical-align: top;
+          vertical-align: middle;
+        }
+
+        .${prefix}-picker-clear .input-icon {
+          justify-content: center !important;
+        }
+
+        .${prefix}-picker-clear .clear-icon {
+          padding: 0 !important;
         }
 
         .${prefix}-picker-separator {
@@ -1303,7 +1318,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-range .${prefix}-picker-clear {
-          right: 1rem
+          right: 0;
         }
 
         .${prefix}-picker-range:hover .${prefix}-picker-clear {

@@ -1,10 +1,13 @@
 import * as React from 'react'
-import { Calendar, Clock, XCircleFill } from '@zeit-ui/react-icons'
+import { Calendar, Clock } from '@zeit-ui/react-icons'
 import RCPicker from '@jnoodle/rc-picker'
 import { PickerMode } from '@jnoodle/rc-picker/lib/interface'
 import { GenerateConfig } from '@jnoodle/rc-picker/lib/generate'
 import { getLocale, getPlaceholder } from '../util'
 import { Components, getTimeProps, PickerDateProps, PickerProps, PickerTimeProps } from '.'
+import InputClearIcon from '../../input/input-icon-clear'
+import InputIcon from '../../input/input-icon'
+import { getSizes } from '../../input/styles'
 import withStyle from './with-style'
 
 export default function generatePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
@@ -27,6 +30,7 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
       } = props
       const { format, showTime } = props as any
       const prefixCls = `${customizePrefixCls || 'cfx'}-picker`
+      const { heightRatio: inputHeightRatio } = getSizes(customizeSize)
 
       const additionalProps = {
         showToday: true,
@@ -50,8 +54,31 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
         <RCPicker<DateType>
           ref={forwardedRef}
           placeholder={getPlaceholder(mergedPicker, locale, placeholder)}
-          suffixIcon={mergedPicker === 'time' ? <Clock /> : <Calendar />}
-          clearIcon={<XCircleFill />}
+          suffixIcon={
+            mergedPicker === 'time' ? (
+              <InputIcon
+                icon={<Clock />}
+                ratio={inputHeightRatio}
+                clickable={false}
+                onClick={() => {}}
+              />
+            ) : (
+              <InputIcon
+                icon={<Calendar />}
+                ratio={inputHeightRatio}
+                clickable={false}
+                onClick={() => {}}
+              />
+            )
+          }
+          clearIcon={
+            <InputIcon
+              icon={<InputClearIcon visible heightRatio={inputHeightRatio} />}
+              ratio={inputHeightRatio}
+              clickable={false}
+              onClick={() => {}}
+            />
+          }
           allowClear
           transitionName="slide-up"
           {...additionalProps}
