@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal customization should be supported 1`] = `
-"<div class=\\"wrapper test-class  wrapper-enter\\"><h2 class=\\"\\">Modal</h2><style>
+"<div class=\\"wrapper test-class  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Modal</h2><style>
         h2 {
           font-size: 1.5rem;
           line-height: 1.6;
@@ -16,10 +16,10 @@ exports[`Modal customization should be supported 1`] = `
           text-transform: capitalize;
           color: #000;
         }
-      </style><style>
+      </style><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
-            max-width: 85vw;
-            max-height: 75vh;
+            max-width: 90vw;
+            max-height: 90vh;
             width: 100px;
             overflow: hidden;
             display: flex;
@@ -32,14 +32,15 @@ exports[`Modal customization should be supported 1`] = `
             padding: 16pt;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
-            transform: translate3d(0px, -40px, 0px);
+            outline: none;
+            transform: translate3d(0px, -30px, 0px);
             transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
           }
 
           .wrapper-enter {
             opacity: 0;
-            transform: translate3d(0px, -40px, 0px);
+            transform: translate3d(0px, -30px, 0px);
           }
 
           .wrapper-enter-active {
@@ -54,13 +55,21 @@ exports[`Modal customization should be supported 1`] = `
 
           .wrapper-leave-active {
             opacity: 0;
-            transform: translate3d(0px, -50px, 0px);
+            transform: translate3d(0px, -30px, 0px);
+          }
+
+          .hide-tab {
+            outline: none;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            opacity: 0;
           }
         </style></div>"
 `;
 
 exports[`Modal should render correctly 1`] = `
-"<div class=\\"backdrop  transition-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper   wrapper-enter\\"><h2 class=\\"\\">Modal</h2><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Modal</h2><style>
         h2 {
           font-size: 1.5rem;
           line-height: 1.6;
@@ -94,6 +103,7 @@ exports[`Modal should render correctly 1`] = `
           margin: 0 -16pt;
           padding: 16pt 16pt 8pt;
           overflow-y: auto;
+          position: relative;
         }
 
         .content > :global(*:first-child) {
@@ -103,53 +113,131 @@ exports[`Modal should render correctly 1`] = `
         .content > :global(*:last-child) {
           margin-bottom: 0;
         }
-      </style><div></div><footer><button class=\\"\\">Cancel</button><style>
-        button {
-          font-size: 0.75rem;
-          text-transform: uppercase;
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          justify-content: center;
-          outline: none;
-          text-decoration: none;
-          transition: all 200ms ease-in-out 0s;
-          border: none;
-          color: #666;
-          background-color: #fff;
-          cursor: pointer;
-          flex: 1;
-        }
+      </style><div></div><footer><button type=\\"button\\" class=\\"btn mock \\"><div class=\\"text\\">Cancel</div><style>
+          .btn {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 0 1.375rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            min-width: 12.5rem;
+            width: auto;
+            border-radius: 5px;
+            font-weight: 400;
+            font-size: .875rem;
+            user-select: none;
+            outline: none;
+            text-transform: capitalize;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+              border 200ms ease 0ms, color 200ms ease 0ms;
+            position: relative;
+            overflow: hidden;
+            color: #666;
+            background-color: #fff;
+            border: 1px solid #eaeaea;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            --zeit-ui-button-padding: 1.375rem;
+            --zeit-ui-button-height: 2.5rem;
+            --zeit-ui-button-color: #666;
+            --zeit-ui-button-bg: #fff;
+          }
 
-        button:hover {
-          color: #000;
-          background-color: #fafafa;
-        }
-      </style><button class=\\"\\">Submit</button><style>
-        button {
-          font-size: 0.75rem;
-          text-transform: uppercase;
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          justify-content: center;
-          outline: none;
-          text-decoration: none;
-          transition: all 200ms ease-in-out 0s;
-          border: none;
-          color: #000;
-          background-color: #fff;
-          cursor: pointer;
-          flex: 1;
-        }
+          .btn:hover,
+          .btn:focus {
+            color: #000;
+            --zeit-ui-button-color: #000;
+            background-color: #fff;
+            border-color: #000;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
 
-        button:hover {
-          color: #000;
-          background-color: #fafafa;
-        }
-      </style></footer><style>
+          .btn :global(.text) {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: inherit;
+            top: -1px;
+          }
+
+          .btn :global(.text p),
+          .btn :global(.text pre),
+          .btn :global(.text div) {
+            margin: 0;
+          }
+        </style></button><button type=\\"button\\" class=\\"btn mock \\"><div class=\\"text\\">Submit</div><style>
+          .btn {
+            box-sizing: border-box;
+            display: inline-block;
+            padding: 0 1.375rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            min-width: 12.5rem;
+            width: auto;
+            border-radius: 5px;
+            font-weight: 400;
+            font-size: .875rem;
+            user-select: none;
+            outline: none;
+            text-transform: capitalize;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+              border 200ms ease 0ms, color 200ms ease 0ms;
+            position: relative;
+            overflow: hidden;
+            color: #666;
+            background-color: #fff;
+            border: 1px solid #eaeaea;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            --zeit-ui-button-padding: 1.375rem;
+            --zeit-ui-button-height: 2.5rem;
+            --zeit-ui-button-color: #666;
+            --zeit-ui-button-bg: #fff;
+          }
+
+          .btn:hover,
+          .btn:focus {
+            color: #000;
+            --zeit-ui-button-color: #000;
+            background-color: #fff;
+            border-color: #000;
+            cursor: pointer;
+            pointer-events: auto;
+            box-shadow: none;
+            transform: translate3d(0px, 0px, 0px);
+          }
+
+          .btn :global(.text) {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: inherit;
+            top: -1px;
+          }
+
+          .btn :global(.text p),
+          .btn :global(.text pre),
+          .btn :global(.text div) {
+            margin: 0;
+          }
+        </style></button></footer><style>
         footer {
           display: flex;
           overflow: hidden;
@@ -164,7 +252,7 @@ exports[`Modal should render correctly 1`] = `
           border-bottom-right-radius: 5px;
         }
 
-        footer > :global(button + button) {
+        footer > :global(button.btn + button.btn) {
           border-left: 1px solid #eaeaea;
         }
 
@@ -172,10 +260,10 @@ exports[`Modal should render correctly 1`] = `
           height: 3.625rem;
           flex-shrink: 0;
         }
-      </style><style>
+      </style><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
-            max-width: 85vw;
-            max-height: 75vh;
+            max-width: 90vw;
+            max-height: 90vh;
             width: 26rem;
             overflow: hidden;
             display: flex;
@@ -188,14 +276,15 @@ exports[`Modal should render correctly 1`] = `
             padding: 16pt;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
-            transform: translate3d(0px, -40px, 0px);
+            outline: none;
+            transform: translate3d(0px, -30px, 0px);
             transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
           }
 
           .wrapper-enter {
             opacity: 0;
-            transform: translate3d(0px, -40px, 0px);
+            transform: translate3d(0px, -30px, 0px);
           }
 
           .wrapper-enter-active {
@@ -210,7 +299,15 @@ exports[`Modal should render correctly 1`] = `
 
           .wrapper-leave-active {
             opacity: 0;
-            transform: translate3d(0px, -50px, 0px);
+            transform: translate3d(0px, -30px, 0px);
+          }
+
+          .hide-tab {
+            outline: none;
+            overflow: hidden;
+            width: 0;
+            height: 0;
+            opacity: 0;
           }
         </style></div></div><div class=\\"offset\\"></div><style>
             .backdrop {
@@ -221,7 +318,7 @@ exports[`Modal should render correctly 1`] = `
               align-content: center;
               align-items: center;
               flex-direction: column;
-              justify-content: space-around;
+              justify-content: center;
               height: 100vh;
               width: 100vw;
               overflow: auto;
@@ -257,6 +354,22 @@ exports[`Modal should render correctly 1`] = `
               transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
               pointer-events: none;
               z-index: 1000;
+            }
+
+            .backdrop-wrapper-enter .layer {
+              opacity: 0;
+            }
+
+            .backdrop-wrapper-enter-active .layer {
+              opacity: 0.25;
+            }
+
+            .backdrop-wrapper-leave .layer {
+              opacity: 0.25;
+            }
+
+            .backdrop-wrapper-leave-active .layer {
+              opacity: 0;
             }
           </style></div>"
 `;

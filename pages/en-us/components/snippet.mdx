@@ -66,6 +66,22 @@ Display a snippet of copyable code for the command line.
 />
 
 <Playground
+  title="custom symbol"
+  scope={{ Snippet }}
+  code={`
+<Snippet symbol=">" text="yarn add @zeit-ui/react" width="300px" />
+`}
+/>
+
+<Playground
+  title="custom toast"
+  scope={{ Snippet }}
+  code={`
+<Snippet toastText="Code copied!" toastType="secondary" text="yarn add @zeit-ui/react" width="300px" />
+`}
+/>
+
+<Playground
   title="filled"
   scope={{ Snippet, Spacer }}
   code={`
@@ -84,19 +100,28 @@ Display a snippet of copyable code for the command line.
 <Attributes edit="/pages/en-us/components/snippet.mdx">
 <Attributes.Title>Snippet.Props</Attributes.Title>
 
-| Attribute  | Description             | Type                          | Accepted values                  | Default   |
-| ---------- | ----------------------- | ----------------------------- | -------------------------------- | --------- |
-| **text**   | code snippet            | `string` `Array<string>`      | -                                | -         |
-| **type**   | snippet types           | [SnippetTypes](#snippettypes) | [SnippetTypes](#snippettypes)    | `default` |
-| **filled** | filled style            | `boolean`                     | -                                | `false`   |
-| **width**  | set CSS string          | `string`                      | -                                | `initial` |
-| **copy**   | function of copy button | `CopyTypes`                   | `'default', 'slient', 'prevent'` | `default` |
-| ...        | native props            | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
+| Attribute     | Description             | Type                          | Accepted values                  | Default                |
+| ------------- | ----------------------- | ----------------------------- | -------------------------------- | ---------------------- |
+| **text**      | code snippet            | `string` `Array<string>`      | -                                | -                      |
+| **type**      | snippet types           | [SnippetTypes](#snippettypes) | [SnippetTypes](#snippettypes)    | `default`              |
+| **filled**    | filled style            | `boolean`                     | -                                | `false`                |
+| **width**     | set CSS string          | `string`                      | -                                | `initial`              |
+| **copy**      | function of copy button | `CopyTypes`                   | `'default', 'slient', 'prevent'` | `default`              |
+| **symbol**    | symbol snippet          | `string`                      | -                                | `$`                    |
+| **toastText** | toast text              | `string`                      | -                                | `Copied to clipboard!` |
+| **toastType** | toast type              | `NormalTypes`                 | [NormalTypes](#normaltypes)      | `success`              |
+| ...           | native props            | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -                      |
 
 <Attributes.Title>SnippetTypes</Attributes.Title>
 
 ```ts
 type SnippetTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
+```
+
+<Attributes.Title>NormalTypes</Attributes.Title>
+
+```ts
+type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

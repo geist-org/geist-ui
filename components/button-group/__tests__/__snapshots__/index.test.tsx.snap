@@ -35,7 +35,8 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
             --zeit-ui-button-bg: #fff;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #000;
             --zeit-ui-button-color: #000;
             background-color: #fff;
@@ -96,7 +97,8 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
             --zeit-ui-button-bg: #fff;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #000;
             --zeit-ui-button-color: #000;
             background-color: #fff;
@@ -205,7 +207,8 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
             --zeit-ui-button-bg: #0070f3;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #0070f3;
             --zeit-ui-button-color: #0070f3;
             background-color: #fff;
@@ -314,7 +317,8 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
             --zeit-ui-button-bg: #0070f3;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #0070f3;
             --zeit-ui-button-color: #0070f3;
             background-color: #fff;
@@ -423,7 +427,8 @@ exports[`ButtonGroup should render correctly 1`] = `
             --zeit-ui-button-bg: #fff;
           }
 
-          .btn:hover {
+          .btn:hover,
+          .btn:focus {
             color: #000;
             --zeit-ui-button-color: #000;
             background-color: #fff;

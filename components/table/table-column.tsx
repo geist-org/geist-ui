@@ -16,19 +16,19 @@ const TableColumn: React.FC<React.PropsWithChildren<TableColumnProps>> = ({
   label,
   width,
 }) => {
-  const { appendColumn } = useTableContext()
+  const { updateColumn } = useTableContext()
   if (!prop || prop.trim() === '') {
     useWarning('The props "prop" is required.', 'Table.Column')
   }
 
   useEffect(() => {
-    appendColumn &&
-      appendColumn({
+    updateColumn &&
+      updateColumn({
         label: children || label,
         value: `${prop}`.trim(),
         width,
       })
-  }, [])
+  }, [children, label, prop, width])
 
   return null
 }

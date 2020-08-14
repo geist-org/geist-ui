@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Backdrop should render correctly 1`] = `
-"<div class=\\"backdrop  transition-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><span>test-value</span></div><div class=\\"offset\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><span>test-value</span></div><div class=\\"offset\\"></div><style>
             .backdrop {
               position: fixed;
               top: 0;
@@ -10,7 +10,7 @@ exports[`Backdrop should render correctly 1`] = `
               align-content: center;
               align-items: center;
               flex-direction: column;
-              justify-content: space-around;
+              justify-content: center;
               height: 100vh;
               width: 100vw;
               overflow: auto;
@@ -46,6 +46,22 @@ exports[`Backdrop should render correctly 1`] = `
               transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
               pointer-events: none;
               z-index: 1000;
+            }
+
+            .backdrop-wrapper-enter .layer {
+              opacity: 0;
+            }
+
+            .backdrop-wrapper-enter-active .layer {
+              opacity: 0.25;
+            }
+
+            .backdrop-wrapper-leave .layer {
+              opacity: 0.25;
+            }
+
+            .backdrop-wrapper-leave-active .layer {
+              opacity: 0;
             }
           </style></div>"
 `;

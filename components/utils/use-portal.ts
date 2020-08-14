@@ -8,7 +8,10 @@ const createElement = (id: string): HTMLElement => {
   return el
 }
 
-const usePortal = (selectId: string = getId()): HTMLElement | null => {
+const usePortal = (
+  selectId: string = getId(),
+  getContainer?: () => HTMLElement | null,
+): HTMLElement | null => {
   const id = `zeit-ui-${selectId}`
   const { isBrowser } = useSSR()
   const [elSnapshot, setElSnapshot] = useState<HTMLElement | null>(
@@ -16,11 +19,13 @@ const usePortal = (selectId: string = getId()): HTMLElement | null => {
   )
 
   useEffect(() => {
-    const hasElement = document.querySelector<HTMLElement>(`#${id}`)
+    const customContainer = getContainer ? getContainer() : null
+    const parentElement = customContainer || document.body
+    const hasElement = parentElement.querySelector<HTMLElement>(`#${id}`)
     const el = hasElement || createElement(id)
 
     if (!hasElement) {
-      document.body.appendChild(el)
+      parentElement.appendChild(el)
     }
     setElSnapshot(el)
   }, [])

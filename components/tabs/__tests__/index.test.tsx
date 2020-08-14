@@ -87,36 +87,26 @@ describe('Tabs', () => {
     expect(active.text()).toContain('label2')
   })
 
-  it('should warning when label duplicated', () => {
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
-    mount(
-      <Tabs>
-        <Tabs.Item label="label1" value="1">
-          test-1
-        </Tabs.Item>
-        <Tabs.Item label="label2" value="1">
-          test-2
-        </Tabs.Item>
-      </Tabs>,
-    )
-    expect(errorSpy).toHaveBeenCalled()
-    errorSpy.mockRestore()
-  })
+  it('should re-render when items updated', () => {
+    const Mock = ({ label = 'label1' }) => {
+      return (
+        <Tabs value="1">
+          <Tabs.Item label={label} value="1">
+            test-1
+          </Tabs.Item>
+          <Tabs.Item label="label-fixed" value="2">
+            test-label-fixed
+          </Tabs.Item>
+        </Tabs>
+      )
+    }
+    const wrapper = mount(<Mock />)
+    let active = wrapper.find('header').find('.active')
+    expect(active.text()).toContain('label1')
 
-  it('should use label as key when value is missing', async () => {
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
-    const wrapper = mount(
-      <Tabs>
-        <Tabs.Item label="label1">test-1</Tabs.Item>
-        <Tabs.Item label="label2">test-2</Tabs.Item>
-      </Tabs>,
-    )
-    expect(errorSpy).not.toHaveBeenCalled()
-
-    wrapper.setProps({ value: 'label2' })
-    await updateWrapper(wrapper, 350)
-    const active = wrapper.find('header').find('.active')
+    wrapper.setProps({ label: 'label2' })
+    active = wrapper.find('header').find('.active')
     expect(active.text()).toContain('label2')
-    errorSpy.mockRestore()
+    expect(() => wrapper.unmount()).not.toThrow()
   })
 })

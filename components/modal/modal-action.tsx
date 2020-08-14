@@ -1,7 +1,15 @@
-import React, { MouseEvent, useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
+import React, {
+  MouseEvent,
+  PropsWithoutRef,
+  RefAttributes,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+} from 'react'
+import css from 'styled-jsx/css'
 import useTheme from '../styles/use-theme'
 import { useModalContext } from './modal-context'
+import Button, { ButtonProps } from '../button/button'
 
 type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
   close: () => void
@@ -20,66 +28,83 @@ const defaultProps = {
   disabled: false,
 }
 
-type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type ModalActionProps = Props & typeof defaultProps & NativeAttrs
+export type ModalActionProps = Props & typeof defaultProps & Omit<ButtonProps, keyof Props>
 
-const ModalAction: React.FC<ModalActionProps> = ({
-  className,
-  children,
-  onClick,
-  passive,
-  disabled,
-  ...props
-}) => {
-  const theme = useTheme()
-  const { close } = useModalContext()
-  const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
-    if (disabled) return
-    const actionEvent = Object.assign({}, event, {
-      close: () => close && close(),
-    })
-    onClick && onClick(actionEvent)
-  }
+const ModalAction = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ModalActionProps>>(
+  (
+    { className, children, onClick, passive, disabled, ...props },
+    ref: React.Ref<HTMLButtonElement | null>,
+  ) => {
+    const theme = useTheme()
+    const btnRef = useRef<HTMLButtonElement>(null)
+    const { close } = useModalContext()
+    useImperativeHandle(ref, () => btnRef.current)
 
-  const color = useMemo(() => {
-    return passive || disabled ? theme.palette.accents_5 : theme.palette.foreground
-  }, [theme.palette, passive, disabled])
+    const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
+      if (disabled) return
+      const actionEvent = Object.assign({}, event, {
+        close: () => close && close(),
+      })
+      onClick && onClick(actionEvent)
+    }
 
-  const bgColor = useMemo(() => {
-    return disabled ? theme.palette.accents_1 : theme.palette.background
-  }, [theme.palette, disabled])
+    const color = useMemo(() => {
+      return passive ? theme.palette.accents_5 : theme.palette.foreground
+    }, [theme.palette, passive, disabled])
 
-  return (
-    <>
-      <button className={className} onClick={clickHandler} {...props}>
+    const bgColor = useMemo(() => {
+      return disabled ? theme.palette.accents_1 : theme.palette.background
+    }, [theme.palette, disabled])
+
+    const { className: resolveClassName, styles } = css.resolve`
+      button.btn {
+        font-size: 0.75rem;
+        border: none;
+        color: ${color};
+        background-color: ${theme.palette.background};
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex: 1;
+        height: 100%;
+        border-radius: 0;
+      }
+      button.btn:hover,
+      button.btn:focus {
+        color: ${disabled ? color : theme.palette.foreground};
+        background-color: ${disabled ? bgColor : theme.palette.accents_1};
+      }
+    `
+
+    const overrideProps = {
+      ...props,
+      effect: false,
+      ref: btnRef,
+    }
+
+    return (
+      <Button
+        className={`${resolveClassName} ${className}`}
+        onClick={clickHandler}
+        disabled={disabled}
+        {...overrideProps}>
         {children}
-      </button>
-      <style jsx>{`
-        button {
-          font-size: 0.75rem;
-          text-transform: uppercase;
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          justify-content: center;
-          outline: none;
-          text-decoration: none;
-          transition: all 200ms ease-in-out 0s;
-          border: none;
-          color: ${color};
-          background-color: ${bgColor};
-          cursor: ${disabled ? 'not-allowed' : 'pointer'};
-          flex: 1;
-        }
+        {styles}
+      </Button>
+    )
+  },
+)
 
-        button:hover {
-          color: ${disabled ? color : theme.palette.foreground};
-          background-color: ${disabled ? bgColor : theme.palette.accents_1};
-        }
-      `}</style>
-    </>
-  )
-}
+type ModalActionComponent<T, P = {}> = React.ForwardRefExoticComponent<
+  PropsWithoutRef<P> & RefAttributes<T>
+>
 
-export default withDefaults(ModalAction, defaultProps)
+type ComponentProps = Partial<typeof defaultProps> &
+  Omit<Props, keyof typeof defaultProps> &
+  Partial<Omit<ButtonProps, keyof Props>>
+
+ModalAction.defaultProps = defaultProps
+
+export default ModalAction as ModalActionComponent<HTMLButtonElement, ComponentProps>

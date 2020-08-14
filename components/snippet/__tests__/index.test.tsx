@@ -70,6 +70,29 @@ describe('Snippet', () => {
     expect(wrapper.find('.copy').length).toBe(0)
   })
 
+  it('should work with custom symbol', () => {
+    const wrapper = mount(<Snippet text={command} symbol={'>'} />)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+
+    const emptySymbolWrapper = mount(<Snippet text={command} symbol=" " />)
+    expect(emptySymbolWrapper.html()).toMatchSnapshot()
+
+    const emptySymbolWrapper2 = mount(<Snippet text={command} symbol="" />)
+    expect(emptySymbolWrapper2.html()).toEqual(emptySymbolWrapper.html())
+
+    expect(() => emptySymbolWrapper.unmount()).not.toThrow()
+    expect(() => emptySymbolWrapper2.unmount()).not.toThrow()
+  })
+
+  it('should work with custom toast', () => {
+    document.execCommand = jest.fn()
+    const wrapper = mount(<Snippet text={command} toastText="Code copied!" toastType="secondary" />)
+    wrapper.find('.copy').simulate('click')
+    expect(document.execCommand).toHaveBeenCalled()
+    ;(document.execCommand as jest.Mock).mockRestore()
+  })
+
   afterAll(() => {
     ;(window.getSelection as jest.Mock).mockRestore()
     ;(document.createRange as jest.Mock).mockRestore()

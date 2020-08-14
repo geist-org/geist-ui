@@ -12,13 +12,13 @@ interface Props {
 const defaultProps = {
   onClick: () => {},
   visible: false,
-  offsetY: 0,
 }
 
-export type BackdropProps = Props & typeof defaultProps
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type BackdropProps = Props & typeof defaultProps & NativeAttrs
 
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
-  ({ children, onClick, visible }) => {
+  ({ children, onClick, visible, ...props }) => {
     const theme = useTheme()
     const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false)
     const clickHandler = (event: MouseEvent<HTMLElement>) => {
@@ -37,8 +37,8 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
     }
 
     return (
-      <CSSTransition visible={visible} clearTime={300}>
-        <div className="backdrop" onClick={clickHandler} onMouseUp={mouseUpHandler}>
+      <CSSTransition name="backdrop-wrapper" visible={visible} clearTime={300}>
+        <div className="backdrop" onClick={clickHandler} onMouseUp={mouseUpHandler} {...props}>
           <div className="layer" />
           <div
             onClick={childrenClickHandler}
@@ -56,7 +56,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               align-content: center;
               align-items: center;
               flex-direction: column;
-              justify-content: space-around;
+              justify-content: center;
               height: 100vh;
               width: 100vw;
               overflow: auto;
@@ -92,6 +92,22 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
               pointer-events: none;
               z-index: 1000;
+            }
+
+            .backdrop-wrapper-enter .layer {
+              opacity: 0;
+            }
+
+            .backdrop-wrapper-enter-active .layer {
+              opacity: ${theme.expressiveness.portalOpacity};
+            }
+
+            .backdrop-wrapper-leave .layer {
+              opacity: ${theme.expressiveness.portalOpacity};
+            }
+
+            .backdrop-wrapper-leave-active .layer {
+              opacity: 0;
             }
           `}</style>
         </div>

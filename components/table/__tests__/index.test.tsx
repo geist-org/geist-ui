@@ -3,6 +3,7 @@ import { mount } from 'enzyme'
 import { Table, Code } from 'components'
 import { cellActions } from 'components/table/table-cell'
 import { nativeEvent, updateWrapper } from 'tests/utils'
+import { act } from 'react-dom/test-utils'
 
 const data = [
   { property: 'type', description: 'Content type', default: '-' },
@@ -165,5 +166,41 @@ describe('Table', () => {
     )
     expect(wrapper.find('thead').find('code').length).not.toBe(0)
     expect(wrapper.html()).toMatchSnapshot()
+  })
+
+  it('the changes of column should be tracked', () => {
+    const Mock = ({ label }: { label: string }) => {
+      return (
+        <Table data={data}>
+          <Table.Column prop="description" label={label} />
+        </Table>
+      )
+    }
+    const wrapper = mount(<Mock label="test1" />)
+    expect(wrapper.find('thead').find('tr').at(0).text()).toBe('test1')
+
+    act(() => {
+      wrapper.setProps({ label: 'test2' })
+    })
+    expect(wrapper.find('thead').find('tr').at(0).text()).toBe('test2')
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('the changes of children should be tracked', () => {
+    const Mock = ({ label }: { label: string }) => {
+      return (
+        <Table data={data}>
+          <Table.Column prop="description">{label}</Table.Column>
+        </Table>
+      )
+    }
+    const wrapper = mount(<Mock label="test1" />)
+    expect(wrapper.find('thead').find('tr').at(0).text()).toBe('test1')
+
+    act(() => {
+      wrapper.setProps({ label: 'test2' })
+    })
+    expect(wrapper.find('thead').find('tr').at(0).text()).toBe('test2')
+    expect(() => wrapper.unmount()).not.toThrow()
   })
 })

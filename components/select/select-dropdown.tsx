@@ -9,6 +9,7 @@ interface Props {
   className?: string
   dropdownStyle?: object
   disableMatchWidth?: boolean
+  getPopupContainer?: () => HTMLElement | null
 }
 
 const defaultProps = {
@@ -25,12 +26,17 @@ const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = (
   className,
   dropdownStyle,
   disableMatchWidth,
+  getPopupContainer,
 }) => {
   const theme = useTheme()
   const { ref } = useSelectContext()
 
   return (
-    <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth}>
+    <Dropdown
+      parent={ref}
+      visible={visible}
+      disableMatchWidth={disableMatchWidth}
+      getPopupContainer={getPopupContainer}>
       <div className={`select-dropdown ${className}`} style={dropdownStyle}>
         {children}
         <style jsx>{`

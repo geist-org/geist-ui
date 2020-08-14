@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Select, Spacer, Code } from 'components'
+import { Select, Spacer, Code, Modal, useModal, Button } from 'components'
 
 export const meta = {
   title: '选择器 Select',
@@ -142,25 +142,56 @@ export const meta = {
 `}
 />
 
+<Playground
+  title="设置渲染容器"
+  desc="你可以指定下拉框的元素渲染的容器。"
+  scope={{ Select, Spacer, useModal, Modal, Button, Code }}
+  code={`
+() => {
+  const { visible, setVisible, bindings } = useModal()
+    return (
+      <>
+        <Button auto onClick={() => setVisible(true)}>显示选择器</Button>
+        <Modal {...bindings}>
+          <Modal.Title>Modal</Modal.Title>
+          <Modal.Content id="customModalSelect">
+            <Select placeholder="选择语言" initialValue="1"
+              getPopupContainer={() => document.getElementById('customModalSelect')}>
+              <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
+              <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
+            </Select>
+            <p>滚动以查看下拉框的工作方式。(超出弹出层会被隐藏)</p>
+            <div style={{ height: '1200px' }}></div>
+            <p>滚动以查看下拉框的工作方式。</p>
+          </Modal.Content>
+          <Modal.Action passive onClick={() => setVisible(false)}>取消</Modal.Action>
+        </Modal>
+      </>
+    )
+}
+`}
+/>
+
 <Attributes edit="/pages/zh-cn/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
 
-| 属性                  | 描述                         | 类型                                                | 推荐值                            | 默认            |
-| --------------------- | ---------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
-| **value**             | 手动设置选择器的值           | `string`, `string[]`                                | -                                 | -               |
-| **initialValue**      | 选择器初始值                 | `string`, `string[]`                                | -                                 | -               |
-| **placeholder**       | 占位文本内容                 | `string`                                            | -                                 | -               |
-| **width**             | 组件的 CSS 宽度值            | `string`                                            | -                                 | `initial`       |
-| **size**              | 选择器组件大小               | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
-| **icon**              | 右侧图标组件                 | `ComponentType`                                     | -                                 | `SVG Component` |
-| **pure**              | 隐藏右侧图标组件             | `boolean`                                           | -                                 | `false`         |
-| **multiple**          | 是否支持多选                 | `boolean`                                           | -                                 | `false`         |
-| **disabled**          | 禁用所有的交互               | `boolean`                                           | -                                 | `false`         |
-| **onChange**          | 选项被选中所触发的事件       | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
-| **dropdownClassName** | 下拉框的自定义类名           | `string`                                            | -                                 | -               |
-| **dropdownStyle**     | 下拉框的自定义样式           | `object`                                            | -                                 | -               |
-| **disableMatchWidth** | 禁止 Option 跟随单选框的宽度 | `boolean`                                           | -                                 | `false`         |
-| ...                   | 原生属性                     | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
+| 属性                  | 描述                              | 类型                                                | 推荐值                            | 默认            |
+| --------------------- | --------------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
+| **value**             | 手动设置选择器的值                | `string`, `string[]`                                | -                                 | -               |
+| **initialValue**      | 选择器初始值                      | `string`, `string[]`                                | -                                 | -               |
+| **placeholder**       | 占位文本内容                      | `string`                                            | -                                 | -               |
+| **width**             | 组件的 CSS 宽度值                 | `string`                                            | -                                 | `initial`       |
+| **size**              | 选择器组件大小                    | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
+| **icon**              | 右侧图标组件                      | `ComponentType`                                     | -                                 | `SVG Component` |
+| **pure**              | 隐藏右侧图标组件                  | `boolean`                                           | -                                 | `false`         |
+| **multiple**          | 是否支持多选                      | `boolean`                                           | -                                 | `false`         |
+| **disabled**          | 禁用所有的交互                    | `boolean`                                           | -                                 | `false`         |
+| **onChange**          | 选项被选中所触发的事件            | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
+| **dropdownClassName** | 下拉框的自定义类名                | `string`                                            | -                                 | -               |
+| **dropdownStyle**     | 下拉框的自定义样式                | `object`                                            | -                                 | -               |
+| **disableMatchWidth** | 禁止 Option 跟随单选框的宽度      | `boolean`                                           | -                                 | `false`         |
+| **getPopupContainer** | 下拉框渲染的父元素，默认是 `body` | `() => HTMLElement`                                 | -                                 | -               |
+| ...                   | 原生属性                          | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
 

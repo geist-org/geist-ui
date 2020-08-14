@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Select, Spacer, Code } from 'components'
+import { Select, Spacer, Code, Modal, useModal, Button } from 'components'
 
 export const meta = {
   title: 'select',
@@ -142,25 +142,56 @@ Display a dropdown list of items.
 `}
 />
 
+<Playground
+  title="Set parent element"
+  desc="you can specify the container for drop-down box rendering."
+  scope={{ Select, Spacer, useModal, Modal, Button, Code }}
+  code={`
+() => {
+  const { visible, setVisible, bindings } = useModal()
+    return (
+      <>
+        <Button auto onClick={() => setVisible(true)}>Show Select</Button>
+        <Modal {...bindings}>
+          <Modal.Title>Modal</Modal.Title>
+          <Modal.Content id="customModalSelect">
+            <Select placeholder="Choose one" initialValue="1"
+              getPopupContainer={() => document.getElementById('customModalSelect')}>
+              <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
+              <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
+            </Select>
+            <p>Scroll through the content to see the changes.</p>
+            <div style={{ height: '1200px' }}></div>
+            <p>Scroll through the content to see the changes.</p>
+          </Modal.Content>
+          <Modal.Action passive onClick={() => setVisible(false)}>Cancel</Modal.Action>
+        </Modal>
+      </>
+    )
+}
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
 
-| Attribute             | Description                             | Type                                                | Accepted values                   | Default         |
-| --------------------- | --------------------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
-| **value**             | selected value                          | `string`, `string[]`                                | -                                 | -               |
-| **initialValue**      | initial value                           | `string`, `string[]`                                | -                                 | -               |
-| **placeholder**       | placeholder string                      | `string`                                            | -                                 | -               |
-| **width**             | css width value of select               | `string`                                            | -                                 | `initial`       |
-| **size**              | select component size                   | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
-| **icon**              | icon component                          | `ComponentType`                                     | -                                 | `SVG Component` |
-| **pure**              | remove icon component                   | `boolean`                                           | -                                 | `false`         |
-| **multiple**          | support multiple selection              | `boolean`                                           | -                                 | `false`         |
-| **disabled**          | disable current radio                   | `boolean`                                           | -                                 | `false`         |
-| **onChange**          | selected value                          | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
-| **dropdownClassName** | className of dropdown menu              | `string`                                            | -                                 | -               |
-| **dropdownStyle**     | style of dropdown menu                  | `object`                                            | -                                 | -               |
-| **disableMatchWidth** | disable Option from follow Select width | `boolean`                                           | -                                 | `false`         |
-| ...                   | native props                            | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
+| Attribute             | Description                                           | Type                                                | Accepted values                   | Default         |
+| --------------------- | ----------------------------------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
+| **value**             | selected value                                        | `string`, `string[]`                                | -                                 | -               |
+| **initialValue**      | initial value                                         | `string`, `string[]`                                | -                                 | -               |
+| **placeholder**       | placeholder string                                    | `string`                                            | -                                 | -               |
+| **width**             | css width value of select                             | `string`                                            | -                                 | `initial`       |
+| **size**              | select component size                                 | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
+| **icon**              | icon component                                        | `ComponentType`                                     | -                                 | `SVG Component` |
+| **pure**              | remove icon component                                 | `boolean`                                           | -                                 | `false`         |
+| **multiple**          | support multiple selection                            | `boolean`                                           | -                                 | `false`         |
+| **disabled**          | disable current radio                                 | `boolean`                                           | -                                 | `false`         |
+| **onChange**          | selected value                                        | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
+| **dropdownClassName** | className of dropdown menu                            | `string`                                            | -                                 | -               |
+| **dropdownStyle**     | style of dropdown menu                                | `object`                                            | -                                 | -               |
+| **disableMatchWidth** | disable Option from follow Select width               | `boolean`                                           | -                                 | `false`         |
+| **getPopupContainer** | dropdown render parent element, the default is `body` | `() => HTMLElement`                                 | -                                 | -               |
+| ...                   | native props                                          | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
 

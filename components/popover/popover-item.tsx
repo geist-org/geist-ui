@@ -39,7 +39,6 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
             line-height: 1.25rem;
             text-align: left;
             transition: color 0.1s ease 0s, background-color 0.1s ease 0s;
-            width: max-content;
           }
 
           .item:hover {
@@ -48,6 +47,12 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
 
           .item > :global(*) {
             margin: 0;
+          }
+
+          .item > :global(.link) {
+            width: 100%;
+            padding: 0.5rem ${theme.layout.gap};
+            margin: -0.5rem -${theme.layout.gap};
           }
 
           .item.line {
