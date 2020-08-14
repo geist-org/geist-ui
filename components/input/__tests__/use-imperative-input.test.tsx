@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import React, { useEffect } from 'react'
 
 describe('UseImperativeInput', () => {
-  it.only('should follow change with use-imperative-input', () => {
+  it('should follow change with use-imperative-input', () => {
     let log = ''
     jest.spyOn(console, 'log').mockImplementation(msg => (log = msg))
     const MockInput: React.FC<{
@@ -50,8 +50,10 @@ describe('UseImperativeInput', () => {
     expect(log).toEqual('')
 
     wrapper.setProps({ testFocus: true })
-    // expect(wrapper.find('div.input-wrapper.focus').length).toEqual(1)
+    setTimeout(() => {
+      expect(wrapper.find('div.input-wrapper.focus').length).toEqual(1)
+    }, 0)
     wrapper.setProps({ testBlur: true })
-    // expect(wrapper.find('div.input-wrapper.focus').length).toEqual(0)
+    setTimeout(() => expect(wrapper.find('div.input-wrapper.focus').length).toEqual(0), 0)
   })
 })
