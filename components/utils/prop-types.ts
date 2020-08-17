@@ -68,6 +68,8 @@ const placement = tuple(
 
 const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
+const paginationVariants = tuple('line', 'solid')
+
 export type ButtonColors = typeof buttonColors[number]
 
 export type ButtonVariants = typeof buttonVariants[number]
@@ -97,3 +99,5 @@ export type TriggerTypes = typeof triggerTypes[number]
 export type Placement = typeof placement[number]
 
 export type DividerAlign = typeof dividerAlign[number]
+
+export type PaginationVariants = typeof paginationVariants[number]

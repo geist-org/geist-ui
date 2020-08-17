@@ -1,5 +1,5 @@
 import React from 'react'
-import { tuple } from '../utils/prop-types'
+import { tuple, PaginationVariants } from '../utils/prop-types'
 const paginationUpdateTypes = tuple('prev', 'next', 'click')
 
 export type PaginationUpdateType = typeof paginationUpdateTypes[number]
@@ -8,9 +8,12 @@ export interface PaginationConfig {
   isFirst?: boolean
   isLast?: boolean
   update?: (type: PaginationUpdateType) => void
+  variant?: PaginationVariants
 }
 
-const defaultContext = {}
+const defaultContext = {
+  variant: 'line' as PaginationVariants,
+}
 
 export const PaginationContext = React.createContext<PaginationConfig>(defaultContext)
 
