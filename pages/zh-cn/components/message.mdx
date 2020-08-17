@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { useToasts, Button, Spacer } from 'components'
+import { useMessages, Button, Spacer } from 'components'
 
 export const meta = {
   title: '全局提示 Message',
@@ -8,117 +8,106 @@ export const meta = {
 
 ## Message / 全局提示
 
-显示重要的全局通知信息。
+显示重要的全局通知信息
 
 <Playground
-  desc="基础示例。"
-  scope={{ Button, useToasts }}
+  desc="基础示例"
+  scope={{ Button, useMessages }}
   code={`
-() => {
-  const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: '你正在浏览文档站点。' })
-  return <Button onClick={click}>显示通知</Button>
-}
-`}
-/>
-
-<Playground
-  title="多行"
-  desc="显示多行或过长的文本。"
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: 'CSS是一门基于规则的语言 —— 你能定义用于你的网页中特定元素样式的一组规则. 比如“我希望页面中的主标题是红色的大字”' })
-  return <Button onClick={click}>显示通知</Button>
-}
-`}
-/>
-
-<Playground
-  title="动作"
-  desc="在通知中附加一个按钮。"
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const action = {
-    name: '点击我',
-    handler: () => alert('由 Toast / 通知组件触发。')
-  }
-  const click = () => setToast({
-    text: '我正在浏览文档站点。',
-    actions: [action],
-  })
-  return <Button onClick={click} type="secondary">显示通知</Button>
-}
-`}
-/>
-
-<Playground
-  title="取消"
-  desc="使用 `passive` (消极地) 改变按钮的状态与样式。"
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const action = {
-    name: '取消',
-    passive: true,
-    handler: (event, cancel) => cancel()
-  }
-  const click = () => setToast({
-    text: '我正在浏览文档站点。',
-    actions: [action],
-  })
-  return <Button onClick={click}>显示通知</Button>
-}
-`}
+    () => {
+      const [messages, setMessage] = useMessages()
+      const click = () => setMessage({ 
+        text: '你正在浏览文档站点',
+      })
+      return <Button onClick={click}>显示通知</Button>
+    }
+  `}
 />
 
 <Playground
   title="类型"
-  scope={{ Button, useToasts, Spacer }}
+  scope={{ Button, useMessages, Spacer }}
   code={`
 () => {
-  const [, setToast] = useToasts()
-  const click = type => setToast({
-    text: '我正在浏览文档站点。',
-    type,
+  const [, setMessage] = useMessages()
+  const click = color => setMessage({
+    text: '我正在浏览文档站点',
+    color,
   })
   return (
     <>
-    <Button onClick={() => click('success')} type="success">显示成功状态</Button>
+    <Button onClick={() => click('primary')} variant="solid" color="primary">显示主要状态</Button>
     <Spacer y={.5} />
-    <Button onClick={() => click('warning')} type="warning">显示警告状态</Button>
+    <Button onClick={() => click('success')} variant="solid" color="success">显示成功状态</Button>
+    <Spacer y={.5} />
+    <Button onClick={() => click('warning')} variant="solid" color="warning">显示警告状态</Button>
+    <Spacer y={.5} />
+    <Button onClick={() => click('error')} variant="solid" color="error">显示错误状态</Button>
     </>
   )
 }
 `}
 />
 
-<Attributes edit="/pages/zh-cn/components/toast.mdx">
-<Attributes.Title>useToasts</Attributes.Title>
+<Playground
+  title="多行"
+  desc="显示多行或过长的文本"
+  scope={{ Button, useMessages }}
+  code={`
+() => {
+  const [messages, setMessage] = useMessages()
+  const click = () => setMessage({ 
+    text: 'CSS是一门基于规则的语言 —— 你能定义用于你的网页中特定元素样式的一组规则. 比如“我希望页面中的主标题是红色的大字”',
+    delay: 30000
+  })
+  return <Button onClick={click}>显示通知</Button>
+}
+`}
+/>
+
+<Playground
+  title="取消"
+  desc="使用 `passive` (消极地) 改变按钮的状态与样式"
+  scope={{ Button, useMessages }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  const action = {
+    name: '取消',
+    passive: true,
+    handler: (event, cancel) => cancel()
+  }
+  const click = () => setMessage({
+    text: '我正在浏览文档站点',
+    actions: [action],
+  })
+  return <Button onClick={click}>显示通知</Button>
+}
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/components/message.mdx">
+<Attributes.Title>useMessages</Attributes.Title>
 
 ```ts
-const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
+const [messages: Array<Message>, setMessage: (message: Message) => void] = useMessages()
 ```
 
-<Attributes.Title>Toast</Attributes.Title>
+<Attributes.Title>Message</Attributes.Title>
 
 ```ts
-interface Toast {
+interface Message {
   text?: string
   type?: NormalTypes
   delay?: number
-  actions?: Array<ToastAction>
+  actions?: Array<MessageAction>
 }
 ```
 
-<Attributes.Title>ToastAction</Attributes.Title>
+<Attributes.Title>MessageAction</Attributes.Title>
 
 ```ts
-interface ToastAction {
+interface MessageAction {
   name: string
   handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void
   passive?: boolean

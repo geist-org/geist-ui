@@ -22,6 +22,7 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
     fn: (toasts: ToastWithID[]) => ToastWithID[],
   ) => {
     const nextToasts = fn(toastsRef.current)
+    console.log(2, nextToasts)
     setToasts(nextToasts)
   }
   const updateToastHoverStatus = (fn: () => boolean) => {
@@ -30,8 +31,8 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
   }
 
   const [messages, setMessages, messagesRef] = useCurrentState<Array<MessageWithID>>([])
-  const updateMessages: UpdateMessagesFunction<ToastWithID> = (
-    fn: (messages: ToastWithID[]) => ToastWithID[],
+  const updateMessages: UpdateMessagesFunction<MessageWithID> = (
+    fn: (messages: MessageWithID[]) => MessageWithID[],
   ) => {
     const nextMessages = fn(messagesRef.current)
     setMessages(nextMessages)
@@ -46,7 +47,7 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
       updateToasts,
       updateToastHoverStatus,
     }),
-    [toasts, toastHovering],
+    [toasts, toastHovering, messages],
   )
 
   return (

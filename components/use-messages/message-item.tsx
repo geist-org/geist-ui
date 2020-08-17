@@ -1,171 +1,129 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import { Message } from './use-message'
-import Button from '../button'
-import { NormalTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import X from '@zeit-ui/react-icons/x'
+import { getStyles } from './styles'
 
-type MessageWithID = Message & {
+export interface MessageItemProps extends Message {
   id: string
-  willBeDestroy?: boolean
-  cancel: Function
+  destroy: Function
 }
+const transitionDuration = 150
 
-export interface ToatItemProps {
-  index: number
-  total: number
-  message: MessageWithID
-  onHover: boolean
-}
-
-const messageActions = (actions: Message['actions'], cancelHandle: Function) => {
-  const handler = (event: React.MouseEvent<HTMLButtonElement>, userHandler: Function) => {
-    userHandler && userHandler(event, cancelHandle)
-  }
-  if (!actions || !actions.length) return null
-  return actions.map((action, index) => (
-    <Button
-      auto
-      size="mini"
-      color={action.passive ? 'default' : 'secondary'}
-      key={`action-${index}`}
-      onClick={(event: React.MouseEvent<HTMLButtonElement>) => handler(event, action.handler)}>
-      {action.name}
-    </Button>
-  ))
-}
-
-const getColors = (palette: ZeitUIThemesPalette, type?: NormalTypes) => {
-  const colors: { [key in NormalTypes]: string } = {
-    default: palette.background,
-    primary: palette.success,
-    secondary: palette.secondary,
-    success: palette.success,
-    warning: palette.warning,
-    error: palette.error,
-  }
-  const isDefault = !type || type === 'default'
-  if (isDefault)
-    return {
-      bgColor: colors.default,
-      color: palette.foreground,
+const MessageItem: React.FC<MessageItemProps & Message> = React.memo(
+  ({ className, id, text, delay, destroy, onClose, closeable, ...rest }) => {
+    const theme = useTheme()
+    const { color, bgColor, icon } = useMemo(() => getStyles(theme.palette, rest.color), [
+      theme.palette,
+      rest.color,
+    ])
+    let boxShadow = theme.expressiveness.D2
+    if (rest.color !== 'default' && !rest.shadow) {
+      boxShadow = 'none'
     }
-  /**
-   * Prevent main color change in special types.
-   * The color will only follow the theme when it is in the default type.
-   */
-  return {
-    bgColor: colors[type as NormalTypes],
-    color: 'white',
-  }
-}
-
-const MessageItem: React.FC<ToatItemProps> = React.memo(({ index, total, message, onHover }) => {
-  const theme = useTheme()
-  const { color, bgColor } = useMemo(() => getColors(theme.palette, message.type), [
-    theme.palette,
-    message.type,
-  ])
-  const [visible, setVisible] = useState<boolean>(false)
-  const [hide, setHide] = useState<boolean>(false)
-  const reverseIndex = useMemo(() => total - (index + 1), [total, index])
-  const translate = useMemo(() => {
-    const calc = `100% + -75px + -${20 * reverseIndex}px`
-    if (reverseIndex >= 4) return `translate3d(0, -75px, -${reverseIndex}px) scale(.7)`
-    if (onHover) {
-      return `translate3d(0, ${reverseIndex * -75}px, -${reverseIndex}px) scale(${
-        total === 1 ? 1 : 0.98205
-      })`
-    }
-    return `translate3d(0, calc(${calc}), -${reverseIndex}px) scale(${1 - 0.05 * reverseIndex})`
-  }, [onHover, index, total, reverseIndex])
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setVisible(true)
-      clearTimeout(timer)
-    }, 10)
-    return () => clearTimeout(timer)
-  }, [])
-
-  useEffect(() => {
-    let unMount = false
-    const shouldBeHide = reverseIndex > 2 || message.willBeDestroy
-    if (!shouldBeHide || unMount) return
-    const timer = setTimeout(() => {
+    const [visible, setVisible] = useState<boolean>(false)
+    const [hide, setHide] = useState<boolean>(false)
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setVisible(true)
+        clearTimeout(timer)
+      }, 10)
+      return () => clearTimeout(timer)
+    }, [])
+    useEffect(() => {
+      let timer: any = null
+      if (delay) {
+        timer = setTimeout(() => {
+          setHide(true)
+          clearTimeout(timer)
+        }, delay)
+      }
+      return () => {
+        delay && clearTimeout(timer)
+      }
+    }, [delay])
+    useEffect(() => {
+      let timer: any = null
+      if (hide) {
+        timer = setTimeout(() => {
+          destroy && destroy(id)
+          onClose && onClose(id)
+          clearTimeout(timer)
+        }, transitionDuration)
+      }
+      return () => clearTimeout(timer)
+    }, [hide])
+    const handleClose = () => {
       setHide(true)
-      clearTimeout(timer)
-    }, 150)
-    return () => {
-      unMount = true
-      clearTimeout(timer)
     }
-  }, [reverseIndex, message.willBeDestroy])
-  /* istanbul ignore next */
-  if (reverseIndex > 10) return null
-
-  return (
-    <div
-      key={`${message.id}-${index}`}
-      className={`message ${visible ? 'visible' : ''} ${hide ? 'hide' : ''}`}>
-      <div className="message">{message.text}</div>
-      <div className="action">{messageActions(message.actions, message.cancel)}</div>
-      <style jsx>{`
-        .message {
-          width: 420px;
-          max-width: 90vw;
-          max-height: 75px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: ${theme.palette.foreground};
-          background-color: ${bgColor};
-          color: ${color};
-          border: 0;
-          border-radius: ${theme.expressiveness.R2};
-          padding: ${theme.layout.gap};
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          opacity: ${reverseIndex > 4 ? 0 : 1};
-          box-shadow: ${reverseIndex > 4 ? 'none' : theme.expressiveness.shadowSmall};
-          transform: translate3d(0, 100%, 0px) scale(1);
-          transition: transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms;
-        }
-
-        .message.visible {
-          opacity: 1;
-          transform: ${translate};
-        }
-
-        .message.hide {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-        }
-
-        .message {
-          align-items: center;
-          height: 100%;
-          transition: opacity 0.4s ease;
-          font-size: 0.875rem;
-          display: -webkit-box;
-          word-break: break-all;
-          padding-right: ${theme.layout.gapHalf};
-          overflow: hidden;
-          max-height: 100%;
-          text-overflow: ellipsis;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          line-height: 1.1rem;
-        }
-
-        .message :global(button + button) {
-          margin-left: ${theme.layout.gapQuarter};
-        }
-      `}</style>
-    </div>
-  )
-})
+    return (
+      <div
+        key={id}
+        className={`message ${className} ${visible ? 'visible' : ''} ${hide ? 'hide' : ''}`}
+        onMouseEnter={() => {}}
+        onMouseLeave={() => {}}>
+        <div className="icon">{rest.icon || icon}</div>
+        <div className="text">{text}</div>
+        {closeable && (
+          <div className="close" onClick={handleClose}>
+            <X />
+          </div>
+        )}
+        <style jsx>{`
+          .message {
+            max-width: 90%;
+            background-color: ${bgColor};
+            color: ${color};
+            border: 0;
+            border-radius: ${theme.expressiveness.R2};
+            padding: 16px;
+            box-shadow: ${boxShadow};
+            margin-top: 24px;
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: transform ${transitionDuration}ms, opacity ${transitionDuration}ms,
+              margin-top ${transitionDuration}ms;
+            display: flex;
+          }
+          .message:first-child {
+            margin-top: 0;
+          }
+          .message.visible {
+            transform: translate(0, 0);
+            opacity: 1;
+          }
+          .message.hide {
+            margin-top: -56px;
+            opacity: 0;
+          }
+          .icon {
+            height: 24px;
+            width: 24px;
+            margin-right: 12px;
+          }
+          .icon > span {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background-color: ${theme.palette.cNeutral4};
+            background-color: red;
+          }
+          .text {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 24px;
+          }
+          .close {
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+            margin-left: 12px;
+          }
+        `}</style>
+      </div>
+    )
+  },
+)
 
 export default MessageItem
