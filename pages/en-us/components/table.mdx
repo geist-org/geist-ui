@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Table, Spacer, Code, Text, Button } from 'components'
+import { Table, Spacer, Tooltip } from 'components'
+import { useState, AllHTMLAttributes } from 'react'
 
 export const meta = {
   title: 'Table',
@@ -11,121 +12,330 @@ export const meta = {
 Display tabular data in format.
 
 <Playground
+  title="Simple Table"
+  scope={{ Table, Spacer }}
+  code={`
+  () => {
+    const columns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { id: '123', title: 'title2', dataIndex: 'b', key: 'b', width: 100, align: 'right' },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 200 },
+      {
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render(_, record) {
+          return (
+            <a
+              onClick={e => {
+                e.preventDefault();
+                console.log('Operate on:', record);
+              }}
+              href="#"
+            >
+              Operations
+            </a>
+          );
+        },
+      },
+    ]
+    const data = [
+      { a: '123', key: '1' },
+      { a: 'cdd', b: 'edd', key: '2' },
+      { a: '1333', c: 'eee', d: 2, key: '3' },
+    ]
+    return (
+      <>
+        <Table columns={columns} data={data} />
+        <Spacer />
+        <Table variant='solid' columns={columns} data={data} />
+      </>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="JSX"
   desc="Display formatted data in rows and columns."
   scope={{ Table }}
   code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: 'string', default: '-' },
-    { property: 'bold', description: 'Bold style', type: 'boolean', default: 'true' },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="compose"
-  desc="Show other components in the table."
-  scope={{ Table, Code, Text }}
-  code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="width"
-  desc="Specifies the `width` of all or part of the columns."
-  scope={{ Table, Code, Text }}
-  code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" width={50} />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="actions"
-  desc="Custom elements can be displayed in the table, and any changes will be immediately rendered."
-  scope={{ Table, Text, Button }}
-  code={`
-() => {
-  const operation = (actions, rowData) => {
-    return <Button type="error" auto size="small" onClick={() => actions.remove()}>Remove</Button>
+  () => {
+    const { Column } = Table
+    const data = [
+      { a: '123', key: '1' },
+      { a: 'cdd', b: 'edd', key: '2' },
+      { a: '1333', c: 'eee', d: 2, key: '3' },
+    ]
+    return (
+      <Table variant='line' data={data}>
+        <Column title="title1" dataIndex="a" key="a" width={100} />
+        <Column title="title2" dataIndex="b" key="b" width={100} />
+        <Column title="title3" dataIndex="c" key="c" width={200} />
+        <Column title="Operations" dataIndex="" key="d" render={() => <a href="javascript:void(0)">Operations</a>} />
+      </Table>
+    )
   }
-  const data = [
-    { property: 'type', description: 'Content type', operation },
-    { property: 'Component', description: 'DOM element to use', operation },
-    { property: <Text b>bold</Text>, description: 'Bold style', operation },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="operation" label="operation" width={150} />
-    </Table>
-  )
-}
 `}
 />
 
 <Playground
-  title="custom head"
-  scope={{ Table, Code, Text }}
+  title="Ellipsis"
+  desc="Table content with ellipsis and tooltip"
+  scope={{ Table, Tooltip }}
   code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type">
-        <Code>type</Code>
-      </Table.Column>
-      <Table.Column prop="default">
-        <Text b>default</Text>
-      </Table.Column>
-    </Table>
-  )
-}
+  () => {
+    const createColumns = (length) => {
+      return Array.from({ length }, (_, i) => ({
+        title: 'description',
+        dataIndex: 'description',
+        key: 'description ' +  (i + 1),
+        ellipsis: {
+          showTitle: false,
+        },
+        ...(i === 0 ? { width: 50 } : null),
+        render(description) {
+          return (
+            <Tooltip placement="topStart" text={description}>
+              <span>{description}</span>
+            </Tooltip>
+          )
+        },
+      }))
+    }
+    const columns = [
+      {
+        title: 'name',
+        dataIndex: 'name',
+        width: 100,
+        ellipsis: {
+          showTitle: false,
+        },
+        render: (name) => {
+        console.log('name', name)
+        return (
+          <Tooltip placement="topStart" text={name}>
+            <span>{name}</span>
+          </Tooltip>
+        ) },
+      },
+      ...createColumns(10),
+      {
+        title: 'Operations',
+        key: 'operations',
+        ellipsis: {
+          showTitle: false,
+        },
+        render() {
+          return (
+            <Tooltip placement="topStart" text="Operations">
+              <a href="javascript:void(0)">Operations</a>
+            </Tooltip>
+          )
+        },
+      },
+    ]
+    const data = [
+      { name: 'jack', description: 'description description', key: '1' },
+      { name: 'jackjackjackjackjackjack', description: 'description description', key: '2' },
+      { name: 'jack ma', description: 'description description', key: '3' },
+      { name: 'jack nickson', description: 'description description', key: '4' },
+    ]
+    return (
+        <Table columns={columns} data={data} />
+    )
+  }
+`}
+/>
+
+<Playground
+  title="Group header"
+  desc="Table with grouped header"
+  scope={{ Table }}
+  code={`
+  () => {
+    const { ColumnGroup, Column } = Table
+    const data = [
+      { a: '123', key: '1' },
+      { a: 'cdd', b: 'edd', key: '2' },
+      { a: '1333', c: 'eee', d: 2, key: '3' },
+    ]
+    return (
+      <Table data={data}>
+        <ColumnGroup title="Bazinga">
+          <Column title="title1" dataIndex="a" key="a" width={100} />
+          <Column title="title2" dataIndex="b" key="b" width={100} />
+        </ColumnGroup>
+        <Column title="title3" dataIndex="c" key="c" width={200} />
+        <Column title="Operations" dataIndex="" key="d" render={() => <a href="javascript:void(0)">Operations</a>} />
+      </Table>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="Expand column, fix columns, fix headers"
+  desc="Display formatted data in rows and columns."
+  scope={{ Table, Spacer, useState, AllHTMLAttributes }}
+  code={`
+  () => {
+    function useCheckbox(defaultChecked) {
+      const [checked, setChecked] = useState(defaultChecked)
+      return [
+        checked,
+        {
+          type: 'checkbox',
+          checked,
+          onChange() {
+            setChecked(!checked)
+          },
+        },
+      ]
+    }
+    const tableData = [
+      { key: 0, a: '123' },
+      { key: 1, a: 'cdd', b: 'edd' },
+      { key: 2, a: '1333', c: 'eee', d: 2 },
+    ]
+    for (let i = 0; i < 10; i += 1) {
+      const str = '' + i
+      const item = {
+        key: i * 10 + 99,
+        a: str.repeat(3),
+        b: str.repeat(5),
+        c: str.repeat(7),
+        d: i,
+      }
+      tableData.push(item)
+    }
+    const [data, setData] = React.useState(tableData)
+    const [expandedRowKeys, setExpandedRowKeys] = React.useState([])
+    const [expandRowByClick, expandRowByClickProps] = useCheckbox(false)
+    const [fixColumns, fixColumnsProps] = useCheckbox(false)
+    const [scrollX, scrollXProps] = useCheckbox(false)
+    const [fixHeader, fixHeaderProps] = useCheckbox(false)
+    const [expandIconPosition, expandIconPositionProps] = useCheckbox(false)
+    const remove = (index) => {
+      const newData = data.slice()
+      newData.splice(index, 1)
+      setData(newData)
+    }
+    const renderAction = (o, row, index) => (
+      <a onClick={() => remove(index)}>
+        Delete
+      </a>
+    )
+    const columns = [
+      { title: 'title 1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title 2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title 3', dataIndex: 'c', key: 'c', width: 200 },
+      { title: 'Operation', dataIndex: '', key: 'x', render: renderAction },
+    ]
+    if (fixColumns) {
+      columns.unshift({ title: 'fix left 2', dataIndex: 'a', width: 100, fixed: 'left' })
+      columns.unshift({ title: 'fix left 1', dataIndex: 'a', width: 100, fixed: true })
+      columns.push({ title: 'fix right', dataIndex: 'a', width: 100, fixed: 'right' })
+    }
+    const onExpand = (expanded, record) => {
+      console.log('onExpand', expanded, record)
+    }
+    const onExpandedRowsChange = (rows) => {
+      setExpandedRowKeys(rows)
+    }
+    const rowExpandable = (record) => record.key !== 1
+    // Toggle Button
+    let toggleButton
+    if (expandedRowKeys.length) {
+      const closeAll = () => setExpandedRowKeys([])
+      toggleButton = (
+        <button type="button" onClick={closeAll}>
+          Close All
+        </button>
+      )
+    } else {
+      const openAll = () => setExpandedRowKeys([0, 1, 2])
+      toggleButton = (
+        <button type="button" onClick={openAll}>
+          Expand All
+        </button>
+      )
+    }
+    // Render
+    return (
+      <div>
+        {toggleButton}
+        <label>
+          <input {...expandRowByClickProps} />
+          Expand Row by Click
+        </label>
+        <label>
+          <input {...fixColumnsProps} />
+          Fix Columns
+        </label>
+        <label>
+          <input {...scrollXProps} />
+          ScrollX
+        </label>
+        <label>
+          <input {...fixHeaderProps} />
+          Fix Header
+        </label>
+        <label>
+          <input {...expandIconPositionProps} />
+          Change Expand Icon Position
+        </label>
+        <Table
+          columns={columns}
+          expandable={{
+            expandRowByClick,
+            expandedRowRender: (record, index, indent, expanded) =>
+              expanded ? <p>extra: {record.a}</p> : null,
+            expandedRowKeys,
+            onExpandedRowsChange,
+            onExpand,
+            rowExpandable,
+            expandIconColumnIndex: expandIconPosition ? 1 : null,
+          }}
+          scroll={{ x: fixColumns || scrollX ? 2000 : null, y: fixHeader ? 300 : null }}
+          data={data}
+        />
+      </div>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="No data"
+  desc="Empty data place holder"
+  scope={{ Table, Spacer }}
+  code={`
+  () => {
+    const columns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { id: '123', title: 'title2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 200 },
+      {
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render() {
+          return <a href="#">Operations</a>
+        },
+      },
+    ]
+    const data = []
+    return (
+      <>
+        <Table columns={columns} data={data} />
+        <Spacer />
+        <Table columns={columns} data={data} emptyText="customize!!" />
+        <Spacer />
+        <Table columns={columns} data={data} emptyText={() => <h1>No No No!</h1>} />
+      </>
+    )
+  }
 `}
 />
 
