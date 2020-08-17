@@ -281,12 +281,12 @@ export const getButtonColors = (
           color: palette.cTheme5,
         },
         hover: {
-          bg: addColorAlpha(palette.cTheme6, 0.04),
+          bg: palette.cTheme0,
           border: 'transparent',
           color: palette.cTheme6,
         },
         active: {
-          bg: addColorAlpha(palette.cTheme5, 0.12),
+          bg: palette.cTheme2,
           border: 'transparent',
           color: palette.cTheme7,
         },
@@ -298,12 +298,12 @@ export const getButtonColors = (
           color: palette.cTheme4,
         },
         hover: {
-          bg: addColorAlpha(palette.cTheme3, 0.12),
+          bg: palette.cTheme0,
           border: 'transparent',
           color: palette.cTheme4,
         },
         active: {
-          bg: addColorAlpha(palette.cTheme3, 0.24),
+          bg: palette.cTheme1,
           border: 'transparent',
           color: palette.cTheme4,
         },
@@ -315,12 +315,12 @@ export const getButtonColors = (
           color: palette.success,
         },
         hover: {
-          bg: addColorAlpha(palette.success, 0.12),
+          bg: palette.successLight,
           border: 'transparent',
           color: palette.success,
         },
         active: {
-          bg: addColorAlpha(palette.success, 0.24),
+          bg: palette.successLight,
           border: 'transparent',
           color: palette.success,
         },
@@ -332,12 +332,12 @@ export const getButtonColors = (
           color: palette.warning,
         },
         hover: {
-          bg: addColorAlpha(palette.warning, 0.12),
+          bg: palette.warningLight,
           border: 'transparent',
           color: palette.warning,
         },
         active: {
-          bg: addColorAlpha(palette.warning, 0.24),
+          bg: palette.warningLight,
           border: 'transparent',
           color: palette.warning,
         },
@@ -349,12 +349,12 @@ export const getButtonColors = (
           color: palette.error,
         },
         hover: {
-          bg: addColorAlpha(palette.error, 0.12),
+          bg: palette.errorLight,
           border: 'transparent',
           color: palette.error,
         },
         active: {
-          bg: addColorAlpha(palette.error, 0.24),
+          bg: palette.errorLight,
           border: 'transparent',
           color: palette.error,
         },
