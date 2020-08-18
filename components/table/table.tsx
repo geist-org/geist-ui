@@ -1,11 +1,27 @@
+import RcTable from '@cfxjs/rc-table'
 import React from 'react'
 import css from 'styled-jsx/css'
 import useTheme from '../styles/use-theme'
-import RcTable from '@cfxjs/rc-table'
+import { InputVariantTypes } from '../utils/prop-types'
 import ExpandIcon from './ExpandIcon'
-import { expectModalIsClosed } from 'components/modal/__tests__/use-modal.test'
+import { TableProps as RcTableProps } from '@cfxjs/rc-table/es/Table'
+export type { ColumnType, ColumnsType, CellType } from '@cfxjs/rc-table/lib/interface'
+export type TableVariants = InputVariantTypes
 
-const Table: React.FC = ({ variant, children, ...props }) => {
+export interface Props<RecordType> extends RcTableProps<RecordType> {
+  variant?: TableVariants
+}
+
+const defaultProps = {
+  variant: 'solid' as TableVariants,
+}
+
+type NativeAttrs<RecordType> = Omit<React.TableHTMLAttributes<any>, keyof Props<RecordType>>
+export type TableProps<RecordType> = Props<RecordType> &
+  typeof defaultProps &
+  NativeAttrs<RecordType>
+
+function Table<RecordType>({ variant, children, ...props }: TableProps<RecordType>) {
   const theme = useTheme()
   const { expressiveness, palette, layout } = theme
   if (props.expandable && !props.expandable.expandIcon) {
@@ -350,7 +366,7 @@ const Table: React.FC = ({ variant, children, ...props }) => {
   `
   return (
     <div>
-      <RcTable
+      <RcTable<RecordType>
         prefixCls="table"
         className={`${className} ${variant === 'solid' ? 'variant-solid' : 'variant-line'}`}
         {...props}>
@@ -361,6 +377,7 @@ const Table: React.FC = ({ variant, children, ...props }) => {
   )
 }
 
+Table.defaultProps = defaultProps
 Table.Column = RcTable.Column
 Table.ColumnGroup = RcTable.ColumnGroup
 
