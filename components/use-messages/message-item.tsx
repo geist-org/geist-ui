@@ -71,19 +71,20 @@ const MessageItem: React.FC<MessageItemProps & Message> = React.memo(
         )}
         <style jsx>{`
           .message {
-            max-width: 90%;
+            max-width: 71.4286rem;
             background-color: ${bgColor};
             color: ${color};
             border: 0;
             border-radius: ${theme.expressiveness.R2};
-            padding: 16px;
+            padding: ${theme.layout.gap};
             box-shadow: ${boxShadow};
-            margin-top: 24px;
+            margin-top: calc(${theme.layout.gap} * 1.5);
             transform: translate(0, -100%);
             opacity: 0;
             transition: transform ${transitionDuration}ms, opacity ${transitionDuration}ms,
               margin-top ${transitionDuration}ms;
             display: flex;
+            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -93,32 +94,38 @@ const MessageItem: React.FC<MessageItemProps & Message> = React.memo(
             opacity: 1;
           }
           .message.hide {
-            margin-top: -56px;
+            margin-top: -3.5714rem;
             opacity: 0;
           }
           .icon {
-            height: 24px;
-            width: 24px;
-            margin-right: 12px;
+            height: 1.1429rem;
+            width: 1.1429rem;
+            margin-right: calc(${theme.layout.gap} * 0.5);
+            flex-grow: 1;
+            flex-shrink: 0;
           }
-          .icon > span {
-            display: inline-block;
+          .icon > :global(svg) {
             width: 100%;
             height: 100%;
-            background-color: ${theme.palette.cNeutral4};
-            background-color: red;
           }
           .text {
             font-style: normal;
             font-weight: 600;
-            font-size: 16px;
-            line-height: 24px;
+            font-size: 1rem;
+            line-height: 1.2857rem;
           }
           .close {
-            height: 24px;
-            width: 24px;
+            height: 1.1429rem;
+            width: 1.1429rem;
             cursor: pointer;
-            margin-left: 12px;
+            margin-left: ${theme.layout.gap};
+            color: ${theme.palette.cNeutral3};
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .close > :global(svg) {
+            width: 100%;
+            height: 100%;
           }
         `}</style>
       </div>
