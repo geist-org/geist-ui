@@ -57,7 +57,6 @@ Display tabular data in format.
 
 <Playground
   title="JSX"
-  desc="Display formatted data in rows and columns."
   scope={{ Table }}
   code={`
   () => {
@@ -149,34 +148,7 @@ Display tabular data in format.
 />
 
 <Playground
-  title="Group header"
-  desc="Table with grouped header"
-  scope={{ Table }}
-  code={`
-  () => {
-    const { ColumnGroup, Column } = Table
-    const data = [
-      { a: '123', key: '1' },
-      { a: 'cdd', b: 'edd', key: '2' },
-      { a: '1333', c: 'eee', d: 2, key: '3' },
-    ]
-    return (
-      <Table data={data}>
-        <ColumnGroup title="Bazinga">
-          <Column title="title1" dataIndex="a" key="a" width={100} />
-          <Column title="title2" dataIndex="b" key="b" width={100} />
-        </ColumnGroup>
-        <Column title="title3" dataIndex="c" key="c" width={200} />
-        <Column title="Operations" dataIndex="" key="d" render={() => <a href="">Operations</a>} />
-      </Table>
-    )
-  }
-`}
-/>
-
-<Playground
   title="Expand column, fix columns, fix headers"
-  desc="Display formatted data in rows and columns."
   scope={{ Table, Spacer, useState, AllHTMLAttributes, Toggle }}
   code={`
   () => {
@@ -345,23 +317,54 @@ Display tabular data in format.
 <Attributes edit="/pages/en-us/components/table.mdx">
 <Attributes.Title>Table.Props</Attributes.Title>
 
-| Attribute     | Description                                  | Type                                                 | Accepted values                  | Default |
-| ------------- | -------------------------------------------- | ---------------------------------------------------- | -------------------------------- | ------- |
-| **data**      | data source                                  | `Array<any>`                                         | -                                | -       |
-| **emptyText** | displayed text when table's content is empty | `string`                                             | -                                | -       |
-| **hover**     | table's hover effect                         | `boolean`                                            | -                                | `true`  |
-| **onRow**     | callback row's content by click              | `(row: any, index: number) => void`                  | -                                | -       |
-| **onCell**    | callback cell's content by click             | `(cell: any, index: number, colunm: number) => void` | -                                | -       |
-| **onChange**  | data change event                            | `(data: any) => void`                                | -                                | -       |
-| ...           | native props                                 | `TableHTMLAttributes`                                | `'id', 'name', 'className', ...` | -       |
+| Name                              | Type                                                | Default                                                                   | Description                                                                                                                                |
+| --------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| tableLayout                       | `auto` \| `fixed`                                   | `auto` \| `fixed` for any columns is fixed or ellipsis or header is fixed | https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout                                                                              |
+| useFixedHeader                    | Boolean                                             | `false`                                                                   | whether use separator table for header. better set width for columns                                                                       |
+| scroll                            | Object                                              | `{x: false, y: false}`                                                    | whether table can be scroll in x/y direction, `x` or `y` can be a number that indicated the width and height of table body                 |
+| rowKey                            | string or Function(record):string                   | `'key'`                                                                   | If rowKey is string, `record[rowKey]` will be used as key. If rowKey is function, the return value of `rowKey(record)` will be use as key. |
+| rowClassName                      | string or Function(record, index, indent):string    |                                                                           | get row's className                                                                                                                        |
+| rowRef                            | Function(record, index, indent):string              |                                                                           | get row's ref key                                                                                                                          |
+| data                              | Object[]                                            |                                                                           | data record array to be rendered                                                                                                           |
+| onRow                             | Function(record, index)                             |                                                                           | Set custom props per each row.                                                                                                             |
+| onHeaderRow                       | Function(record, index)                             |                                                                           | Set custom props per each header row.                                                                                                      |
+| showHeader                        | Boolean                                             | `true`                                                                    | whether table head is shown                                                                                                                |
+| title                             | Function(currentData)                               |                                                                           | table title render function                                                                                                                |
+| footer                            | Function(currentData)                               |                                                                           | table footer render function                                                                                                               |
+| emptyText                         | React.Node or Function                              | `No Data`                                                                 | Display text when data is empty                                                                                                            |
+| columns                           | Object[]                                            |                                                                           | The columns config of table, see table below                                                                                               |
+| components                        | Object                                              |                                                                           | Override table elements, see [#171](https://github.com/react-component/table/pull/171) for more details                                    |
+| expandable                        | Object                                              |                                                                           | Config expand props                                                                                                                        |
+| expandable.defaultExpandAllRows   | Boolean                                             | `false`                                                                   | Expand All Rows initially                                                                                                                  |
+| expandable.defaultExpandedRowKeys | String[]                                            | `[]`                                                                      | initial expanded rows keys                                                                                                                 |
+| expandable.expandedRowKeys        | String[]                                            |                                                                           | current expanded rows keys                                                                                                                 |
+| expandable.expandedRowRender      | Function(recode, index, indent, expanded):ReactNode |                                                                           | Content render to expanded row                                                                                                             |
+| expandable.expandedRowClassName   | Function(recode, index, indent):string              |                                                                           | get expanded row's className                                                                                                               |
+| expandable.expandRowByClick       | boolean                                             |                                                                           | Support expand by click row                                                                                                                |
+| expandable.expandIconColumnIndex  | Number                                              | `0`                                                                       | The index of expandIcon which column will be inserted when expandIconAsCell is false                                                       |
+| expandable.expandIcon             | props => ReactNode                                  |                                                                           | Customize expand icon                                                                                                                      |
+| expandable.indentSize             | Number                                              | `15`                                                                      | indentSize for every level of data.i.children, better using with column.width specified                                                    |
+| expandable.rowExpandable          | (record) => boolean                                 |                                                                           | Config row support expandable                                                                                                              |
+| expandable.onExpand               | Function(expanded, record)                          |                                                                           | function to call when click expand icon                                                                                                    |
+| expandable.onExpandedRowsChange   | Function(expandedRows)                              |                                                                           | function to call when the expanded rows change                                                                                             |
+| `'id', 'name', 'className', ...`  | `TableHTMLAttributes`                               |                                                                           | native props                                                                                                                               |
 
 <Attributes.Title>Table.Column.Props</Attributes.Title>
 
-| Attribute          | Description          | Type     | Accepted values | Default |
-| ------------------ | -------------------- | -------- | --------------- | ------- |
-| **prop**(required) | table-column's prop  | `string` | -               | -       |
-| **label**          | table-column's label | `string` | -               | -       |
-| **width**          | width number (px)    | `number` | -               | -       |
+| Name         | Type                        | Default | Description                                                                                                                                                                                                                                                                                                                          |
+| ------------ | --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| key          | String                      |         | key of this column                                                                                                                                                                                                                                                                                                                   |
+| className    | String                      |         | className of this column                                                                                                                                                                                                                                                                                                             |
+| colSpan      | Number                      |         | thead colSpan of this column                                                                                                                                                                                                                                                                                                         |
+| title        | React Node                  |         | title of this column                                                                                                                                                                                                                                                                                                                 |
+| dataIndex    | String                      |         | display field of the data record                                                                                                                                                                                                                                                                                                     |
+| width        | String \| Number            |         | width of the specific proportion calculation according to the width of the columns                                                                                                                                                                                                                                                   |
+| fixed        | String \| Boolean           |         | this column will be fixed when table scroll horizontally: true or 'left' or 'right'                                                                                                                                                                                                                                                  |
+| align        | String                      |         | specify how cell content is aligned                                                                                                                                                                                                                                                                                                  |
+| ellipsis     | Boolean                     |         | specify whether cell content be ellipsized                                                                                                                                                                                                                                                                                           |
+| onCell       | Function(record, index)     |         | Set custom props per each cell.                                                                                                                                                                                                                                                                                                      |
+| onHeaderCell | Function(record)            |         | Set custom props per each header cell.                                                                                                                                                                                                                                                                                               |
+| render       | Function(value, row, index) |         | The render function of cell, has three params: the text of this cell, the record of this row, the index of this row, it's return an object:{ children: value, props: { colSpan: 1, rowSpan:1 } } ==> 'children' is the text of this cell, props is some setting of this cell, eg: 'colspan' set td colspan, 'rowspan' set td rowspan |
 
 </Attributes>
 
