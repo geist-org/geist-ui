@@ -9,7 +9,8 @@ import ThemeProvider from '../styles/theme-provider'
 import { ThemeParam } from '../styles/theme-provider/theme-provider'
 import useCurrentState from '../utils/use-current-state'
 import ToastContainer, { ToastWithID } from '../use-toasts/toast-container'
-import MessageContainer, { MessageWithID } from '../use-messages/message-container'
+import MessageContainer from '../use-messages/message-container'
+import { MessageItemProps } from '../use-messages/message-item'
 
 export interface Props {
   theme?: ThemeParam
@@ -30,9 +31,9 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
     setToastHovering(nextHoverStatus)
   }
 
-  const [messages, setMessages, messagesRef] = useCurrentState<Array<MessageWithID>>([])
-  const updateMessages: UpdateMessagesFunction<MessageWithID> = (
-    fn: (messages: MessageWithID[]) => MessageWithID[],
+  const [messages, setMessages, messagesRef] = useCurrentState<Array<MessageItemProps>>([])
+  const updateMessages: UpdateMessagesFunction<MessageItemProps> = (
+    fn: (messages: MessageItemProps[]) => MessageItemProps[],
   ) => {
     const nextMessages = fn(messagesRef.current)
     setMessages(nextMessages)

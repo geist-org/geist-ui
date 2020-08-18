@@ -1,13 +1,13 @@
 import React from 'react'
 import { ToastWithID } from '../use-toasts/toast-container'
-import { MessageWithID } from '../use-messages/message-container'
+import { MessageItemProps } from '../use-messages/message-item'
 
 export type UpdateToastsFunction<T> = (fn: (toasts: Array<T>) => Array<T>) => any
 export type UpdateMessagesFunction<T> = (fn: (messages: Array<T>) => Array<T>) => any
 
 export interface ZeitUiContextParams {
-  messages: Array<MessageWithID>
-  updateMessages: UpdateMessagesFunction<MessageWithID>
+  messages: Array<MessageItemProps>
+  updateMessages: UpdateMessagesFunction<MessageItemProps>
   toasts: Array<ToastWithID>
   toastHovering: boolean
   updateToasts: UpdateToastsFunction<ToastWithID>

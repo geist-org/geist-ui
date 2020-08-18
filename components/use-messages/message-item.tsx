@@ -4,13 +4,13 @@ import { Message } from './use-message'
 import X from '@zeit-ui/react-icons/x'
 import { getStyles } from './styles'
 
-export interface MessageItemProps extends Message {
-  id: string
-  destroy: Function
+export type MessageItemProps = Message & {
+  id?: string
+  destroy?: Function
 }
 const transitionDuration = 150
 
-const MessageItem: React.FC<MessageItemProps & Message> = React.memo(
+const MessageItem: React.FC<MessageItemProps> = React.memo(
   ({ className, id, text, delay, destroy, onClose, closeable, ...rest }) => {
     const theme = useTheme()
     const { color, bgColor, icon } = useMemo(() => getStyles(theme.palette, rest.color), [

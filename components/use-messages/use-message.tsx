@@ -16,7 +16,7 @@ export interface Message {
 }
 const defaultMessage = {
   delay: 2000,
-  color: 'default',
+  color: 'default' as MessageColors,
   closeable: false,
   shadow: true,
   onClose: () => {},
@@ -35,7 +35,7 @@ const useMessages = (): [Array<Message>, (t: Message) => void] => {
       })
     }
     updateMessages((currentMessages: Array<MessageItemProps>) => {
-      const newMessage = {
+      const newMessage: MessageItemProps = {
         ...defaultMessage,
         id,
         destroy,
