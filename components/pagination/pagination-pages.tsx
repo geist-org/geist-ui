@@ -15,7 +15,6 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
     return oddLimit - 2
   }, [limit])
   const middleNumber = (showPages + 1) / 2
-
   const [showBeforeEllipsis, showAfterEllipsis] = useMemo(() => {
     const showEllipsis = count > limit
     return [
@@ -57,8 +56,8 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
     return renderItem(value, current)
   })
   if (count <= limit) {
-    /* eslint-disable react/jsx-no-useless-fragment */
     return (
+      /* eslint-disable react/jsx-no-useless-fragment */
       <>
         {[...new Array(count)].map((_, index) => {
           const value = index + 1

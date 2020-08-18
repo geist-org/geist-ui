@@ -180,7 +180,6 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             border-radius: ${theme.expressiveness.R2};
             padding: 0 calc(${theme.layout.gapHalf} * 1.5) 0 ${theme.layout.gap};
             height: ${sizes.height};
-            min-width: ${sizes.minWidth};
             background-color: transparent;
           }
 

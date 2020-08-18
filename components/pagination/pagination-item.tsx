@@ -22,7 +22,7 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
   const theme = useTheme()
   const { variant } = usePaginationContext()
   const paginationColors = useMemo(() => {
-    return getColors(theme.palette, variant, disabled, active)
+    return getColors(theme.palette, variant, active)
   }, [theme.palette, variant, disabled, active])
   const clickHandler = (event: React.MouseEvent) => {
     if (disabled) return
@@ -39,7 +39,8 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
       </button>
       <style jsx>{`
         li {
-          margin-right: 7px;
+          margin-right: 0.5rem;
+          margin-bottom: initial;
           display: inline-block;
         }
         button {

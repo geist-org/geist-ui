@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction, useRef } from 'react'
 import Input from '../input'
 import { NormalSizes } from '../utils/prop-types'
-// import useTheme from '../styles/use-theme'
+import useTheme from '../styles/use-theme'
+import { usePaginationContext } from './pagination-context'
 
 interface Props {
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  count: number
   size?: NormalSizes
+  onChange?: Dispatch<SetStateAction<number>>
 }
 
 const defaultProps = {
@@ -15,26 +17,56 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type PaginationQuickJumperProps = Props & typeof defaultProps & NativeAttrs
 const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProps>> = ({
+  count,
+  size,
   onChange,
 }) => {
-  // const theme = useTheme()
-  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value
-    if (value && value.length > 0) {
-      onChange(event.target.value)
+  const theme = useTheme()
+  const inputRef = useRef<HTMLInputElement>(null)
+  const { variant } = usePaginationContext()
+  const changeHandler = (val: number) => {
+    onChange && onChange(val)
+    if (inputRef.current) inputRef.current.value = ''
+  }
+  const keyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const target = e.target as HTMLTextAreaElement
+    if (e.keyCode === 13) {
+      let val = Number(target.value)
+      if (Number.isInteger(val)) {
+        if (val > count) {
+          val = count
+        }
+        changeHandler(val)
+      }
     }
   }
   return (
     <div className="pagination-quickjumper">
       <span className="text left">GO TO</span>
-      <Input onChange={changeHandler}></Input>
-      <span className="text right">PAGES</span>
+      <Input
+        onKeyDown={keyDownHandler}
+        variant={variant}
+        width="4.7143rem"
+        size={size}
+        ref={inputRef}></Input>
+      <span className="text right">PAGE</span>
       <style jsx>
         {`
           .pagination-quickjumper {
             display: flex;
             align-items: center;
             font-size: inherit;
+          }
+          .pagination-quickjumper .text {
+            font-size: inherit;
+            color: ${theme.palette.cBlack0};
+            font-weight: bold;
+          }
+          .pagination-quickjumper .left {
+            margin-right: 0.5714rem;
+          }
+          .pagination-quickjumper .right {
+            margin-left: 0.5714rem;
           }
         `}
       </style>
