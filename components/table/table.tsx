@@ -3,6 +3,7 @@ import css from 'styled-jsx/css'
 import useTheme from '../styles/use-theme'
 import RcTable from '@cfxjs/rc-table'
 import ExpandIcon from './ExpandIcon'
+import { expectModalIsClosed } from 'components/modal/__tests__/use-modal.test'
 
 const Table: React.FC = ({ variant, children, ...props }) => {
   const theme = useTheme()
@@ -82,8 +83,8 @@ const Table: React.FC = ({ variant, children, ...props }) => {
     .table.table-rtl :global(.table-cell-fix-right-last) {
       box-shadow: none;
     }
-    .table :global(.table-cell-fix-right-first::after),
-    .table :global(.table-cell-fix-right-last::after) {
+    .table :global(.table-cell.table-cell-fix-right-first::after),
+    .table :global(.table-cell.table-cell-fix-right-last::after) {
       pointer-events: none;
       content: '';
       transition: box-shadow 0.3s;
@@ -116,13 +117,13 @@ const Table: React.FC = ({ variant, children, ...props }) => {
       text-overflow: ellipsis;
       display: block;
     }
-    .table :global(.table-ping-left .table-cell-fix-left-first::after),
-    .table :global(.table-ping-left .table-cell-fix-left-last::after) {
-      box-shadow: inset 10px 0 8px -8px #008000;
+    .table.table-ping-left :global(.table-cell-fix-left-first::after),
+    .table.table-ping-left :global(.table-cell-fix-left-last::after) {
+      box-shadow: inset 10px 0 8px -8px ${palette.cNeutral2};
     }
-    .table :global(.table-ping-right .table-cell-fix-right-first::after),
-    .table :global(.table-ping-right .table-cell-fix-right-last::after) {
-      box-shadow: inset -10px 0 8px -8px #008000;
+    .table.table-ping-right :global(.table-cell-fix-right-first::after),
+    .table.table-ping-right :global(.table-cell-fix-right-last::after) {
+      box-shadow: inset -10px 0 8px -8px ${palette.cNeutral2};
     }
     .table :global(.table-expand-icon-col) {
       width: 60px;
@@ -133,6 +134,7 @@ const Table: React.FC = ({ variant, children, ...props }) => {
     .table :global(thead td),
     .table :global(thead th) {
       text-align: left;
+      background: ${palette.cNeutral8};
       color: ${palette.cNeutral5};
     }
     .table.variant-line :global(thead td),
@@ -173,7 +175,7 @@ const Table: React.FC = ({ variant, children, ...props }) => {
       border-bottom: 0;
       border-top: 0;
     }
-    .table :global(.table-fixed-column .table-body::after) {
+    .table.table-fixed-column :global(.table-body::after) {
       content: '';
       position: absolute;
       right: 0;
@@ -183,7 +185,7 @@ const Table: React.FC = ({ variant, children, ...props }) => {
       z-index: 1;
     }
     .table :global(.table-expanded-row .table-cell) {
-      box-shadow: ${expressiveness.D2};
+      box-shadow: inset 0 8px 8px -8px ${palette.cNeutral2};
     }
     .table :global(.table-expanded-row-fixed) {
       box-sizing: border-box;
@@ -304,8 +306,8 @@ const Table: React.FC = ({ variant, children, ...props }) => {
     .table.variant-solid :global(*) {
       border: transparent;
     }
-    .table.variant-solid :global(tbody tr:nth-child(even) th),
-    .table.variant-solid :global(tbody tr:nth-child(even) td) {
+    .table.variant-solid :global(tbody tr.table-row-even th),
+    .table.variant-solid :global(tbody tr.table-row-even td) {
       background-color: ${palette.cNeutral0};
     }
     .table.variant-solid :global(tbody tr:hover td) {

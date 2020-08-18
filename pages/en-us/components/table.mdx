@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Table, Spacer, Tooltip } from 'components'
+import { Table, Spacer, Tooltip, Toggle } from 'components'
 import { useState, AllHTMLAttributes } from 'react'
 
 export const meta = {
@@ -72,7 +72,7 @@ Display tabular data in format.
         <Column title="title1" dataIndex="a" key="a" width={100} />
         <Column title="title2" dataIndex="b" key="b" width={100} />
         <Column title="title3" dataIndex="c" key="c" width={200} />
-        <Column title="Operations" dataIndex="" key="d" render={() => <a href="javascript:void(0)">Operations</a>} />
+        <Column title="Operations" dataIndex="" key="d" render={() => <a href="">Operations</a>} />
       </Table>
     )
   }
@@ -129,7 +129,7 @@ Display tabular data in format.
         render() {
           return (
             <Tooltip placement="topStart" text="Operations">
-              <a href="javascript:void(0)">Operations</a>
+              <a href="">Operations</a>
             </Tooltip>
           )
         },
@@ -167,7 +167,7 @@ Display tabular data in format.
           <Column title="title2" dataIndex="b" key="b" width={100} />
         </ColumnGroup>
         <Column title="title3" dataIndex="c" key="c" width={200} />
-        <Column title="Operations" dataIndex="" key="d" render={() => <a href="javascript:void(0)">Operations</a>} />
+        <Column title="Operations" dataIndex="" key="d" render={() => <a href="">Operations</a>} />
       </Table>
     )
   }
@@ -177,17 +177,16 @@ Display tabular data in format.
 <Playground
   title="Expand column, fix columns, fix headers"
   desc="Display formatted data in rows and columns."
-  scope={{ Table, Spacer, useState, AllHTMLAttributes }}
+  scope={{ Table, Spacer, useState, AllHTMLAttributes, Toggle }}
   code={`
   () => {
-    function useCheckbox(defaultChecked) {
+    function useCheckbox(defaultChecked = false) {
       const [checked, setChecked] = useState(defaultChecked)
       return [
         checked,
         {
-          type: 'checkbox',
           checked,
-          onChange() {
+          onChange:() => {
             setChecked(!checked)
           },
         },
@@ -211,11 +210,11 @@ Display tabular data in format.
     }
     const [data, setData] = React.useState(tableData)
     const [expandedRowKeys, setExpandedRowKeys] = React.useState([])
-    const [expandRowByClick, expandRowByClickProps] = useCheckbox(false)
-    const [fixColumns, fixColumnsProps] = useCheckbox(false)
-    const [scrollX, scrollXProps] = useCheckbox(false)
-    const [fixHeader, fixHeaderProps] = useCheckbox(false)
-    const [expandIconPosition, expandIconPositionProps] = useCheckbox(false)
+    const [expandRowByClick, expandRowByClickProps] = useCheckbox()
+    const [fixColumns, fixColumnsProps] = useCheckbox()
+    const [scrollX, scrollXProps] = useCheckbox()
+    const [fixHeader, fixHeaderProps] = useCheckbox()
+    const [expandIconPosition, expandIconPositionProps] = useCheckbox()
     const remove = (index) => {
       const newData = data.slice()
       newData.splice(index, 1)
@@ -255,37 +254,41 @@ Display tabular data in format.
       )
     } else {
       const openAll = () => setExpandedRowKeys([0, 1, 2])
-      toggleButton = (
-        <button type="button" onClick={openAll}>
-          Expand All
-        </button>
-      )
+      toggleButton = (<button type="button" onClick={openAll}> Expand All </button>)
     }
+    const ToggleLabel = ({ label, ...props }) => (
+        <label style={{display: 'flex', alignItems: 'center'}}>
+          <Toggle {...props} /> {label}
+        </label>
+    )
     // Render
     return (
       <div>
         {toggleButton}
-        <label>
-          <input {...expandRowByClickProps} />
-          Expand Row by Click
-        </label>
-        <label>
-          <input {...fixColumnsProps} />
-          Fix Columns
-        </label>
-        <label>
-          <input {...scrollXProps} />
-          ScrollX
-        </label>
-        <label>
-          <input {...fixHeaderProps} />
-          Fix Header
-        </label>
-        <label>
-          <input {...expandIconPositionProps} />
-          Change Expand Icon Position
-        </label>
+        <ToggleLabel label='Expand Row by Click' {...expandRowByClickProps} />
+        <ToggleLabel label='Fix Columns' {...fixColumnsProps} />
+        <ToggleLabel label='ScrollX' {...scrollXProps} />
+        <ToggleLabel label='Fix Header' {...fixHeaderProps} />
+        <ToggleLabel label='Change Expand Icon Position' {...expandIconPositionProps} />
+        <Spacer />
         <Table
+          columns={columns}
+          expandable={{
+            expandRowByClick,
+            expandedRowRender: (record, index, indent, expanded) =>
+              expanded ? <p>extra: {record.a}</p> : null,
+            expandedRowKeys,
+            onExpandedRowsChange,
+            onExpand,
+            rowExpandable,
+            expandIconColumnIndex: expandIconPosition ? 1 : null,
+          }}
+          scroll={{ x: fixColumns || scrollX ? 2000 : null, y: fixHeader ? 300 : null }}
+          data={data}
+        />
+        <Spacer />
+        <Table
+          variant='solid'
           columns={columns}
           expandable={{
             expandRowByClick,
