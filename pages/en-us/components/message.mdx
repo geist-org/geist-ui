@@ -1,8 +1,9 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { useToasts, Button, Spacer } from 'components'
+import { useMessages, Button, Spacer, Code } from 'components'
+import * as Icon from '@zeit-ui/react-icons'
 
 export const meta = {
-  title: 'message',
+  title: 'Message',
   group: 'Feedback',
 }
 
@@ -11,117 +12,209 @@ export const meta = {
 Display an important message globally.
 
 <Playground
-  desc="Basic usage."
-  scope={{ Button, useToasts }}
+  desc="Basic usage"
+  scope={{ Button, useMessages }}
   code={`
-() => {
-  const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: 'The Evil Rabbit jumped over the fence.' })
-  return <Button onClick={click}>Show Toast</Button>
-}
-`}
+    () => {
+      const [messages, setMessage] = useMessages()
+      const click = () => setMessage({ 
+        text: 'The Evil Rabbit jumped over the fence.',
+      })
+      return <Button onClick={click}>Show Message</Button>
+    }
+  `}
 />
 
 <Playground
-  title="Multiline"
-  desc="Display multiline or overlong text."
-  scope={{ Button, useToasts }}
+  title="Colors"
+  desc="Different state, include primary, success, warning, error."
+  scope={{ Button, useMessages, Spacer }}
   code={`
 () => {
-  const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: 'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.' })
-  return <Button onClick={click}>Show Toast</Button>
-}
-`}
-/>
-
-<Playground
-  title="Action"
-  desc="Add a custom button to the Toast."
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const action = {
-    name: 'alert',
-    handler: () => alert('alert from toast')
-  }
-  const click = () => setToast({
+  const [, setMessage] = useMessages()
+  const click = color => setMessage({
     text: 'The Evil Rabbit jumped over the fence.',
-    actions: [action],
+    color,
   })
-  return <Button onClick={click} type="secondary">Show Action</Button>
-}
-`}
-/>
-
-<Playground
-  title="Cancel"
-  desc="Use `passive` to change the style of the button."
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const action = {
-    name: 'cancel',
-    passive: true,
-    handler: (event, cancel) => cancel()
-  }
-  const click = () => setToast({
-    text: 'The Evil Rabbit jumped over the fence.',
-    actions: [action],
-  })
-  return <Button onClick={click}>Show Toast</Button>
-}
-`}
-/>
-
-<Playground
-  title="Type"
-  scope={{ Button, useToasts, Spacer }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const click = type => setToast({
-    text: 'The Evil Rabbit jumped over the fence.',
-    type,
-  })
+  const colors = [
+    ['primary', 'primary'], 
+    ['success', 'success'], 
+    ['warning', 'warning'], 
+    ['error', 'error']
+  ]
   return (
     <>
-    <Button onClick={() => click('success')} type="success">Show Success</Button>
-    <Spacer y={.5} />
-    <Button onClick={() => click('warning')} type="warning">Show Warning</Button>
+      {colors.map(c => {
+        return (
+          <div key={c[0]}>
+            <Button 
+              onClick={() => click(c[0])} 
+              variant="solid" 
+              color={c[0]}
+            >{c[1]}</Button>
+            <Spacer y={.5} />
+          </div>
+        )
+      })}
     </>
   )
 }
 `}
 />
 
-<Attributes edit="/pages/en-us/components/toast.mdx">
-<Attributes.Title>useToasts</Attributes.Title>
-
-```ts
-const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
-```
-
-<Attributes.Title>Toast</Attributes.Title>
-
-```ts
-interface Toast {
-  text?: string
-  type?: NormalTypes
-  delay?: number
-  actions?: Array<ToastAction>
+<Playground
+  title="Delay"
+  desc="Default delay is 3s. If set to 0s, message will not hide, stay display always."
+  scope={{ Button, useMessages }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  const click = () => setMessage({ 
+    text: 'The Evil Rabbit jumped over the fence.',
+    delay: 10000
+  })
+  return <Button onClick={click}>Show Message</Button>
 }
-```
+`}
+/>
 
-<Attributes.Title>ToastAction</Attributes.Title>
+<Playground
+  title="Closeable"
+  desc="Set props closeable to true, will display close icon and can close manually."
+  scope={{ Button, useMessages }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  const click = () => setMessage({ 
+    text: 'The Evil Rabbit jumped over the fence.',
+    delay: 0,
+    closeable: true,
+  })
+  return <Button onClick={click}>Show Message</Button>
+}
+`}
+/>
+
+<Playground
+  title="No shadow style"
+  desc="Set props shadow to true, will remove shadow style. Be aware, not working on default color message."
+  scope={{ Button, useMessages, Spacer }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  const click = color => setMessage({
+    text: 'The Evil Rabbit jumped over the fence.',
+    color,
+    shadow: false
+  })
+  const colors = [
+    ['primary', 'No shadow message'], 
+    ['default', 'Not working on default color message'], 
+  ]
+  return (
+    <>
+      {colors.map(c => {
+        return (
+          <div key={c[0]}>
+            <Button 
+              onClick={() => click(c[0])} 
+              variant="solid" 
+              color={c[0]}
+            >{c[1]}</Button>
+            <Spacer y={.5} />
+          </div>
+        )
+      })}
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Icon"
+  desc="Custom Icon."
+  scope={{ Button, useMessages, Icon, Spacer }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  return (
+    <>
+      <Button onClick={() => setMessage({ 
+        icon: <Icon.Emoji />,
+        text: 'The Evil Rabbit jumped over the fence.',
+      })}>Show Message</Button>
+      <Spacer y={.5} />
+      <Button onClick={() => setMessage({ 
+        icon: <Icon.AlertTriangleFill color="red" />,
+        text: 'The Evil Rabbit jumped over the fence.',
+      })}>Show Message</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Custom style"
+  desc="Set props className, custom message css style."
+  scope={{ Button, useMessages, Spacer, Code }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  return (
+    <>
+      <Button onClick={() => setMessage({ 
+        text: 'The Evil Rabbit jumped over the fence.',
+        className: 'right-top-message',
+      })}>Show Message</Button>
+    </>
+  )
+}
+`}
+/>
+
+<style jsx>
+  {`
+    :global(.right-top-message) {
+      align-self: flex-end;
+      margin-right: 20px;
+    }
+  `}
+</style>
+
+<Attributes edit="/pages/zh-cn/components/message.mdx">
+<Attributes.Title>useMessages</Attributes.Title>
+
+| Attribute     | Description                                 | Type                   | Accepted values                 | Default   |
+| ------------- | ------------------------------------------- | ---------------------- | ------------------------------- | --------- |
+| **icon**      | message icon                                | `React.ReactNode`      | -                               | `<Bell/>` |
+| **color**     | message color                               | `MessageColors`        | [MessageColors](#messagecolors) | `default` |
+| **text**      | message content                             | `string`               | -                               | -         |
+| **delay**     | message auto close delay time (millisecond) | `number`               | -                               | `3000`    |
+| **closeable** | auto close or not                           | `boolean`              | -                               | `false`   |
+| **shadow**    | show shadow or not                          | `boolean`              | -                               | `true`    |
+| **className** | custom css style                            | `string`               | -                               | -         |
+| ...           | native props                                | `ButtonHTMLAttributes` | `'id', 'className', ...`        | -         |
+
+<Attributes.Title>MessageColors</Attributes.Title>
 
 ```ts
-interface ToastAction {
-  name: string
-  handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void
-  passive?: boolean
+type MessageColors = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>Message</Attributes.Title>
+
+```ts
+interface Message {
+  icon?: React.ReactNode
+  text: string
+  color?: MessageColors
+  delay?: number
+  closeable?: boolean
+  shadow?: boolean
+  className?: string
+  onClose?: Function
 }
 ```
 
