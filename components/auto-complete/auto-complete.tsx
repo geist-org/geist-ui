@@ -8,7 +8,7 @@ import React, {
   RefAttributes,
 } from 'react'
 import Input from '../input'
-import { useAutoCompleteHandle } from '../input/use-imperative-input'
+import { useAutoCompleteHandle } from '../input/use-input-handle'
 import Loading from '../loading'
 import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'

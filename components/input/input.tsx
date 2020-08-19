@@ -16,7 +16,7 @@ import InputLabel from './input-label'
 import { defaultProps, Props } from './input-props'
 import InputPassword from './password'
 import { getColors, getSizes } from './styles'
-import { useInputHandle } from './use-imperative-input'
+import { useInputHandle } from './use-input-handle'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & typeof defaultProps & NativeAttrs

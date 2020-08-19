@@ -6,7 +6,7 @@ import React, {
   PropsWithoutRef,
   RefAttributes,
 } from 'react'
-import { useTextareaHandle } from '../input/use-imperative-input'
+import { useTextareaHandle } from '../input/use-input-handle'
 import { getColors } from '../input/styles'
 import useTheme from '../styles/use-theme'
 import { InputColors, InputVariantTypes } from '../utils/prop-types'

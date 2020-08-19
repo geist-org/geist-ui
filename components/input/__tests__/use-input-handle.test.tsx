@@ -3,7 +3,7 @@ import { mount } from 'enzyme'
 import React, { useEffect } from 'react'
 
 describe('UseImperativeInput', () => {
-  it('should follow change with use-imperative-input', () => {
+  it('should follow change with use-input-handle', () => {
     let log = ''
     jest.spyOn(console, 'log').mockImplementation(msg => (log = msg))
     const MockInput: React.FC<{
