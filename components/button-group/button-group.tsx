@@ -30,7 +30,7 @@ export type ButtonGroupProps = Props & typeof defaultProps & NativeAttrs
 
 const getGroupBorderColors = (palette: ZeitUIThemesPalette, props: ButtonGroupProps): string => {
   const { color, variant } = props
-  if (variant === 'solid') return palette.cWhite0
+  if (variant === 'solid') return palette.cNeutral8
   const colors: { [key in ButtonColors]?: string } = {
     default: palette.cNeutral2,
     primary: palette.cTheme5,

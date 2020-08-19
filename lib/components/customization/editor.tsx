@@ -21,8 +21,6 @@ const basicColors: Array<keyof ZeitUIThemesPalette> = [
   'cTheme5',
   'cTheme6',
   'cTheme7',
-  'cBlack0',
-  'cWhite0',
   'cNeutral0',
   'cNeutral1',
   'cNeutral2',
