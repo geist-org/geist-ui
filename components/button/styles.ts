@@ -389,22 +389,22 @@ export const getButtonGhostColors = (
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonColors]?: ButtonColorGroup } = {
     secondary: {
-      bg: palette.cWhite0,
-      border: palette.cBlack0,
-      color: palette.cBlack0,
+      bg: palette.cNeutral8,
+      border: palette.cNeutral7,
+      color: palette.cNeutral7,
     },
     success: {
-      bg: palette.cWhite0,
+      bg: palette.cNeutral8,
       border: palette.success,
       color: palette.success,
     },
     warning: {
-      bg: palette.cWhite0,
+      bg: palette.cNeutral8,
       border: palette.warning,
       color: palette.warning,
     },
     error: {
-      bg: palette.cWhite0,
+      bg: palette.cNeutral8,
       border: palette.error,
       color: palette.error,
     },
@@ -419,24 +419,24 @@ export const getButtonGhostHoverColors = (
 ): ButtonColorGroup | null => {
   const colors: { [key in ButtonColors]?: ButtonColorGroup } = {
     secondary: {
-      bg: palette.cBlack0,
-      border: palette.cWhite0,
-      color: palette.cWhite0,
+      bg: palette.cNeutral7,
+      border: palette.cNeutral8,
+      color: palette.cNeutral8,
     },
     success: {
       bg: palette.success,
-      border: palette.cWhite0,
-      color: 'white',
+      border: palette.cNeutral8,
+      color: palette.cNeutral8,
     },
     warning: {
       bg: palette.warning,
-      border: palette.cWhite0,
-      color: 'white',
+      border: palette.cNeutral8,
+      color: palette.cNeutral8,
     },
     error: {
       bg: palette.error,
-      border: palette.cWhite0,
-      color: 'white',
+      border: palette.cNeutral8,
+      color: palette.cNeutral8,
     },
   }
   const withoutLightType = color.replace('-light', '') as ButtonColors
