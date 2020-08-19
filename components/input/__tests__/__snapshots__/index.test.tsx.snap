@@ -136,6 +136,18 @@ exports[`Input should be work with icon 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: content-box;
@@ -270,6 +282,18 @@ exports[`Input should be work with icon 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
@@ -423,6 +447,18 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><span class=\\"\\">label<style>
         span {
           display: inline-flex;
@@ -570,6 +606,18 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div><span class=\\"right\\">label<style>
         span {
@@ -719,6 +767,18 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper solid    right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div><span class=\\"right\\">label<style>
         span {
           display: inline-flex;
@@ -867,6 +927,18 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><label><span>Block Label</span><style>
         label {
           display: block;
@@ -1004,6 +1076,18 @@ exports[`Input should be work with label 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
@@ -1158,6 +1242,18 @@ exports[`Input should clear text 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div>"
 `;
 
@@ -1215,7 +1311,7 @@ exports[`Input should ignore event when input disabled 1`] = `
             user-select: none;
             border-radius: 4px;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
-            background-color: #fdfdfe;
+            background-color: #fff;
             border: 1px solid #ebeced;
           }
 
@@ -1244,7 +1340,7 @@ exports[`Input should ignore event when input disabled 1`] = `
           .focus.input-wrapper:not(.disabled),
           .hover.input-wrapper:not(.disabled) {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
 
           input {
@@ -1295,13 +1391,13 @@ exports[`Input should ignore event when input disabled 1`] = `
 
           input:-webkit-autofill,
           input:-webkit-autofill:active {
-            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #282d30 !important;
           }
 
           input:-webkit-autofill:hover,
           input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fdfdfe inset !important;
+            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #0054fe !important;
           }
 
@@ -1310,6 +1406,18 @@ exports[`Input should ignore event when input disabled 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
@@ -1435,6 +1543,18 @@ exports[`Input should work with different color 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -1555,6 +1675,18 @@ exports[`Input should work with different color 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -1674,6 +1806,18 @@ exports[`Input should work with different color 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
@@ -1799,6 +1943,18 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -1918,6 +2074,18 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div></div><style>
           .with-label {
@@ -2039,6 +2207,18 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -2159,6 +2339,18 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
+          }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper solid    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div></div><style>
           .with-label {
             display: inline-block;
@@ -2278,6 +2470,18 @@ exports[`Input should work with different sizes 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
+          }
+
+          .in-auto-complete .input-wrapper {
+            transition: border 0s;
+            transition: border-radius 0s;
+          }
+
+          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
+          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-color: transparent;
           }
         </style></div></div>"
 `;
