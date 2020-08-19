@@ -2,6 +2,7 @@ import Table from '../'
 import { ColumnsType } from '../table'
 import { mount } from 'enzyme'
 import React, { useState } from 'react'
+import { nativeEvent } from 'tests/utils'
 
 describe('Table', () => {
   it('should render correctly', () => {
@@ -40,10 +41,11 @@ describe('Table', () => {
       { a: 'cdd', b: 'edd', key: '2' },
       { a: '1333', c: 'eee', d: 2, key: '3' },
     ]
+
     const wrapper = mount(
       <div>
+        <Table<Record> variant="line" columns={columns} data={data} />
         <Table<Record> columns={columns} data={data} />
-        <Table<Record> variant="solid" columns={columns} data={data} />
         <Table<Record> columns={columns} data={data} />
       </div>,
     )
@@ -80,13 +82,13 @@ describe('Table', () => {
             columns={columns}
             expandable={{
               expandedRowRender: (record, _, __, expanded) =>
-                expanded ? <p>extra: {record.a}</p> : null,
+                expanded ? <p id="test-expandable-row">extra: {record.a}</p> : null,
               rowExpandable,
             }}
             data={data}
           />
           <Table
-            variant="solid"
+            variant="line"
             columns={columns}
             expandable={{
               expandedRowRender: (record, _, __, expanded) =>
@@ -100,6 +102,10 @@ describe('Table', () => {
     }
 
     const wrapper = mount(<MockTable />)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.find('#test-expandable-row').length).toEqual(0)
+    wrapper.find('button.table-row-expand-icon').at(0).simulate('click', nativeEvent)
+    expect(wrapper.find('#test-expandable-row').length).toEqual(1)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
