@@ -1,295 +1,487 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UseToast should render different actions 1`] = `
-"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">remove</div><style>
-          .btn {
-            box-sizing: border-box;
-            display: inline-block;
-            padding: 0 0.625rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
-            min-width: min-content;
-            width: auto;
-            border-radius: 2px;
-            font-weight: bold;
-            font-size: .75rem;
-            user-select: none;
-            outline: none;
-            text-transform: capitalize;
-            justify-content: center;
-            text-align: center;
-            white-space: nowrap;
-            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
-              border 200ms ease 0ms, color 200ms ease 0ms;
-            position: relative;
-            overflow: hidden;
+exports[`UseMessage should render correctly 1`] = `
+"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9\\"></path><path d=\\"M13.73 21a2 2 0 01-3.46 0\\"></path></svg></div><div class=\\"text\\">test-value</div><style>
+          .message {
+            max-width: 71.4286rem;
+            background-color: #fff;
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 2px solid #282d30;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            --zeit-ui-button-padding: 0.625rem;
-            --zeit-ui-button-height: 1.5rem;
-            --zeit-ui-button-color: #282d30;
-            --zeit-ui-button-bg: #fdfdfe;
-          }
-
-          .btn:hover {
-            color: #282d30;
-            --zeit-ui-button-color: #282d30;
-            background-color: #fdfdfe;
-            border-color: #282d30;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
-          }
-
-          .btn:active {
-            color: #282d30;
-            --zeit-ui-button-color: #282d30;
-            background-color: #fdfdfe;
-            border-color: #282d30;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
-          }
-
-          .btn :global(.text) {
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
-            justify-content: center;
+            border: 0;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+            margin-top: calc(16px * 1.5);
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: transform 150ms, opacity 150ms,
+              margin-top 150ms;
+            display: flex;
             align-items: center;
-            text-align: center;
-            line-height: inherit;
-            top: -2px;
           }
-
-          .btn :global(.text p),
-          .btn :global(.text pre),
-          .btn :global(.text div) {
-            margin: 0;
+          .message:first-child {
+            margin-top: 0;
           }
-          .btn :global(.hidden) {
-            visibility: hidden;
+          .message.visible {
+            transform: translate(0, 0);
+            opacity: 1;
           }
-        </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text \\">remove</div><style>
-          .btn {
-            box-sizing: border-box;
-            display: inline-block;
-            padding: 0 0.625rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
-            min-width: min-content;
-            width: auto;
-            border-radius: 2px;
-            font-weight: bold;
-            font-size: .75rem;
-            user-select: none;
-            outline: none;
-            text-transform: capitalize;
-            justify-content: center;
-            text-align: center;
-            white-space: nowrap;
-            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
-              border 200ms ease 0ms, color 200ms ease 0ms;
-            position: relative;
-            overflow: hidden;
-            color: #444;
-            background-color: #fdfdfe;
-            border: 2px solid #ebeced;
+          .message.hide {
+            margin-top: -3.5714rem;
+            opacity: 0;
+          }
+          .icon {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            margin-right: calc(16px * 0.5);
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .icon > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+          .text {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.2857rem;
+          }
+          .close {
+            height: 1.1429rem;
+            width: 1.1429rem;
             cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            --zeit-ui-button-padding: 0.625rem;
-            --zeit-ui-button-height: 1.5rem;
-            --zeit-ui-button-color: #444;
-            --zeit-ui-button-bg: #fdfdfe;
+            margin-left: 16px;
+            color: #dbdde0;
+            flex-grow: 1;
+            flex-shrink: 0;
           }
-
-          .btn:hover {
-            color: #444;
-            --zeit-ui-button-color: #444;
-            background-color: #fdfdfe;
-            border-color: #aaafbb;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
+          .close > :global(svg) {
+            width: 100%;
+            height: 100%;
           }
-
-          .btn:active {
-            color: #444;
-            --zeit-ui-button-color: #444;
-            background-color: #fdfdfe;
-            border-color: #9b9eac;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
-          }
-
-          .btn :global(.text) {
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            line-height: inherit;
-            top: -2px;
-          }
-
-          .btn :global(.text p),
-          .btn :global(.text pre),
-          .btn :global(.text div) {
-            margin: 0;
-          }
-          .btn :global(.hidden) {
-            visibility: hidden;
-          }
-        </style></button></div><style>
-        .toast {
-          width: 420px;
-          max-width: 90vw;
-          max-height: 75px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: #000;
-          background-color: #fff;
-          color: #000;
-          border: 0;
-          border-radius: 4px;
-          padding: 16px;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          opacity: 1;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-          transform: translate3d(0, 100%, 0px) scale(1);
-          transition: transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms;
-        }
-
-        .toast.visible {
-          opacity: 1;
-          transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
-        }
-
-        .toast.hide {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-        }
-
-        .message {
-          align-items: center;
-          height: 100%;
-          transition: opacity 0.4s ease;
-          font-size: 0.875rem;
-          display: -webkit-box;
-          word-break: break-all;
-          padding-right: 8px;
-          overflow: hidden;
-          max-height: 100%;
-          text-overflow: ellipsis;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          line-height: 1.1rem;
-        }
-
-        .toast :global(button + button) {
-          margin-left: 4px;
-        }
-      </style></div><style>
-        .toast-container {
+        </style></div><style>
+        .message-container {
           position: fixed;
-          width: 420px;
-          max-width: 90vw;
-          bottom: 16px;
-          right: 16px;
+          min-height: 10px;
+          top: 20px;
+          left: 0;
+          right: 0;
           z-index: 2000;
-          transition: all 400ms ease;
           box-sizing: border-box;
-        }
-
-        .toast-container.hover {
-          transform: translate3d(0, -10px, 0);
+          overflow: visible;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 0;
+          visibility: visible;
         }
       </style></div>"
 `;
 
-exports[`UseToast should work with different types 1`] = `
-"<div class=\\"toast-container \\"><div class=\\"toast visible \\"><div class=\\"message\\">hello</div><div class=\\"action\\"></div><style>
-        .toast {
-          width: 420px;
-          max-width: 90vw;
-          max-height: 75px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: #000;
-          background-color: #58f17a;
-          color: white;
-          border: 0;
-          border-radius: 4px;
-          padding: 16px;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          opacity: 1;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-          transform: translate3d(0, 100%, 0px) scale(1);
-          transition: transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms;
-        }
-
-        .toast.visible {
-          opacity: 1;
-          transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
-        }
-
-        .toast.hide {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-        }
-
-        .message {
-          align-items: center;
-          height: 100%;
-          transition: opacity 0.4s ease;
-          font-size: 0.875rem;
-          display: -webkit-box;
-          word-break: break-all;
-          padding-right: 8px;
-          overflow: hidden;
-          max-height: 100%;
-          text-overflow: ellipsis;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          line-height: 1.1rem;
-        }
-
-        .toast :global(button + button) {
-          margin-left: 4px;
-        }
-      </style></div><style>
-        .toast-container {
+exports[`UseMessage should render no shadow correctly 1`] = `
+"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><path d=\\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z\\" fill=\\"var(--geist-fill)\\" stroke=\\"var(--geist-fill)\\"></path><path d=\\"M8 11.8571L10.5 14.3572L15.8572 9\\" fill=\\"none\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">no-shadow</div><div class=\\"close\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M18 6L6 18\\"></path><path d=\\"M6 6l12 12\\"></path></svg></div><style>
+          .message {
+            max-width: 71.4286rem;
+            background-color: #8afb88;
+            color: #58f17a;
+            border: 0;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: none;
+            margin-top: calc(16px * 1.5);
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: transform 150ms, opacity 150ms,
+              margin-top 150ms;
+            display: flex;
+            align-items: center;
+          }
+          .message:first-child {
+            margin-top: 0;
+          }
+          .message.visible {
+            transform: translate(0, 0);
+            opacity: 1;
+          }
+          .message.hide {
+            margin-top: -3.5714rem;
+            opacity: 0;
+          }
+          .icon {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            margin-right: calc(16px * 0.5);
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .icon > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+          .text {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.2857rem;
+          }
+          .close {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            cursor: pointer;
+            margin-left: 16px;
+            color: #dbdde0;
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .close > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+        </style></div><style>
+        .message-container {
           position: fixed;
-          width: 420px;
-          max-width: 90vw;
-          bottom: 16px;
-          right: 16px;
+          min-height: 10px;
+          top: 20px;
+          left: 0;
+          right: 0;
           z-index: 2000;
-          transition: all 400ms ease;
           box-sizing: border-box;
+          overflow: visible;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 0;
+          visibility: visible;
         }
+      </style></div>"
+`;
 
-        .toast-container.hover {
-          transform: translate3d(0, -10px, 0);
+exports[`UseMessage should render with custom icon correctly 1`] = `
+"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: red;\\"><path d=\\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22\\"></path></svg></div><div class=\\"text\\">custom icon</div><style>
+          .message {
+            max-width: 71.4286rem;
+            background-color: #fff;
+            color: #282d30;
+            border: 0;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+            margin-top: calc(16px * 1.5);
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: transform 150ms, opacity 150ms,
+              margin-top 150ms;
+            display: flex;
+            align-items: center;
+          }
+          .message:first-child {
+            margin-top: 0;
+          }
+          .message.visible {
+            transform: translate(0, 0);
+            opacity: 1;
+          }
+          .message.hide {
+            margin-top: -3.5714rem;
+            opacity: 0;
+          }
+          .icon {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            margin-right: calc(16px * 0.5);
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .icon > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+          .text {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.2857rem;
+          }
+          .close {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            cursor: pointer;
+            margin-left: 16px;
+            color: #dbdde0;
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .close > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+        </style></div><style>
+        .message-container {
+          position: fixed;
+          min-height: 10px;
+          top: 20px;
+          left: 0;
+          right: 0;
+          z-index: 2000;
+          box-sizing: border-box;
+          overflow: visible;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 0;
+          visibility: visible;
+        }
+      </style></div>"
+`;
+
+exports[`UseMessage should work with different colors 1`] = `
+"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M12 16v-4\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M12 8h.01\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">primary</div><style>
+          .message {
+            max-width: 71.4286rem;
+            background-color: #e8f4ff;
+            color: #0054fe;
+            border: 0;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+            margin-top: calc(16px * 1.5);
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: transform 150ms, opacity 150ms,
+              margin-top 150ms;
+            display: flex;
+            align-items: center;
+          }
+          .message:first-child {
+            margin-top: 0;
+          }
+          .message.visible {
+            transform: translate(0, 0);
+            opacity: 1;
+          }
+          .message.hide {
+            margin-top: -3.5714rem;
+            opacity: 0;
+          }
+          .icon {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            margin-right: calc(16px * 0.5);
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .icon > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+          .text {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.2857rem;
+          }
+          .close {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            cursor: pointer;
+            margin-left: 16px;
+            color: #dbdde0;
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .close > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><path d=\\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z\\" fill=\\"var(--geist-fill)\\" stroke=\\"var(--geist-fill)\\"></path><path d=\\"M8 11.8571L10.5 14.3572L15.8572 9\\" fill=\\"none\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">success</div><style>
+          .message {
+            max-width: 71.4286rem;
+            background-color: #8afb88;
+            color: #58f17a;
+            border: 0;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+            margin-top: calc(16px * 1.5);
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: transform 150ms, opacity 150ms,
+              margin-top 150ms;
+            display: flex;
+            align-items: center;
+          }
+          .message:first-child {
+            margin-top: 0;
+          }
+          .message.visible {
+            transform: translate(0, 0);
+            opacity: 1;
+          }
+          .message.hide {
+            margin-top: -3.5714rem;
+            opacity: 0;
+          }
+          .icon {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            margin-right: calc(16px * 0.5);
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .icon > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+          .text {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.2857rem;
+          }
+          .close {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            cursor: pointer;
+            margin-left: 16px;
+            color: #dbdde0;
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .close > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M12 8v4\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M12 16h.01\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">warning</div><style>
+          .message {
+            max-width: 71.4286rem;
+            background-color: #ffde40;
+            color: #ffc438;
+            border: 0;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+            margin-top: calc(16px * 1.5);
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: transform 150ms, opacity 150ms,
+              margin-top 150ms;
+            display: flex;
+            align-items: center;
+          }
+          .message:first-child {
+            margin-top: 0;
+          }
+          .message.visible {
+            transform: translate(0, 0);
+            opacity: 1;
+          }
+          .message.hide {
+            margin-top: -3.5714rem;
+            opacity: 0;
+          }
+          .icon {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            margin-right: calc(16px * 0.5);
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .icon > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+          .text {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.2857rem;
+          }
+          .close {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            cursor: pointer;
+            margin-left: 16px;
+            color: #dbdde0;
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .close > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M15 9l-6 6\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M9 9l6 6\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">error</div><style>
+          .message {
+            max-width: 71.4286rem;
+            background-color: #ffc2c2;
+            color: #e15c56;
+            border: 0;
+            border-radius: 4px;
+            padding: 16px;
+            box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+            margin-top: calc(16px * 1.5);
+            transform: translate(0, -100%);
+            opacity: 0;
+            transition: transform 150ms, opacity 150ms,
+              margin-top 150ms;
+            display: flex;
+            align-items: center;
+          }
+          .message:first-child {
+            margin-top: 0;
+          }
+          .message.visible {
+            transform: translate(0, 0);
+            opacity: 1;
+          }
+          .message.hide {
+            margin-top: -3.5714rem;
+            opacity: 0;
+          }
+          .icon {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            margin-right: calc(16px * 0.5);
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .icon > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+          .text {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.2857rem;
+          }
+          .close {
+            height: 1.1429rem;
+            width: 1.1429rem;
+            cursor: pointer;
+            margin-left: 16px;
+            color: #dbdde0;
+            flex-grow: 1;
+            flex-shrink: 0;
+          }
+          .close > :global(svg) {
+            width: 100%;
+            height: 100%;
+          }
+        </style></div><style>
+        .message-container {
+          position: fixed;
+          min-height: 10px;
+          top: 20px;
+          left: 0;
+          right: 0;
+          z-index: 2000;
+          box-sizing: border-box;
+          overflow: visible;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 0;
+          visibility: visible;
         }
       </style></div>"
 `;

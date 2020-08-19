@@ -6,7 +6,7 @@ import { MessageItemProps } from './message-item'
 
 export interface Message {
   icon?: React.ReactNode
-  text: string
+  text?: string
   color?: MessageColors
   delay?: number
   closeable?: boolean

@@ -23,7 +23,6 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
     fn: (toasts: ToastWithID[]) => ToastWithID[],
   ) => {
     const nextToasts = fn(toastsRef.current)
-    console.log(2, nextToasts)
     setToasts(nextToasts)
   }
   const updateToastHoverStatus = (fn: () => boolean) => {

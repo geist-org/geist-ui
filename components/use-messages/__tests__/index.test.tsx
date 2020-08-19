@@ -1,18 +1,19 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
-import { useToasts, ZeitProvider } from 'components'
+import { useMessages, ZeitProvider } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
+import Github from '@zeit-ui/react-icons/github'
 
-const MockToast: React.FC<{}> = () => {
-  const [, setToast] = useToasts()
+const MockMessage: React.FC<{}> = () => {
+  const [, setMessage] = useMessages()
   const clickHandler = (e: any = {}) => {
-    const keys = ['text', 'delay', 'type', 'actions']
+    const keys = ['text', 'delay', 'color', 'closeable', 'shadow', 'icon']
     const params = keys.reduce((pre, key) => {
       const value = e.target[key]
-      if (!value) return pre
+      if (value === undefined) return pre
       return { ...pre, [key]: value }
     }, {})
-    setToast(params)
+    setMessage(params)
   }
   return (
     <div id="btn" onClick={clickHandler}>
@@ -21,167 +22,172 @@ const MockToast: React.FC<{}> = () => {
   )
 }
 
-const triggerToast = (wrapper: ReactWrapper, params = {}) => {
+const triggerMessage = (wrapper: ReactWrapper, params = {}) => {
   wrapper.find('#btn').simulate('click', {
     ...nativeEvent,
     target: params,
   })
 }
 
-const expectToastIsShow = (wrapper: ReactWrapper) => {
-  const toast = wrapper.find('.toast-container').find('.toast')
-  expect(toast.length).not.toBe(0)
+const expectMessageIsShow = (wrapper: ReactWrapper) => {
+  const message = wrapper.find('.message-container').find('.message')
+  expect(message.length).not.toBe(0)
 }
 
-const expectToastIsHidden = (wrapper: ReactWrapper) => {
-  const toast = wrapper.find('.toast-container').find('.toast')
-  expect(toast.length).toBe(0)
+const expectMessageIsHidden = (wrapper: ReactWrapper) => {
+  const message = wrapper.find('.message-container').find('.message')
+  expect(message.length).toBe(0)
 }
 
-describe('UseToast', () => {
+describe('UseMessage', () => {
   it('should render correctly', async () => {
     const wrapper = mount(
       <ZeitProvider>
-        <MockToast />
+        <MockMessage />
       </ZeitProvider>,
     )
 
-    expectToastIsHidden(wrapper)
-    triggerToast(wrapper, { text: 'test-value' })
-    await updateWrapper(wrapper)
-    expectToastIsShow(wrapper)
-  })
-
-  it('should work with different types', async () => {
-    const wrapper = mount(
-      <ZeitProvider>
-        <MockToast />
-      </ZeitProvider>,
-    )
-
-    expectToastIsHidden(wrapper)
-    triggerToast(wrapper, { type: 'success', text: 'hello' })
+    expectMessageIsHidden(wrapper)
+    triggerMessage(wrapper, { text: 'test-value' })
     await updateWrapper(wrapper, 100)
-    expectToastIsShow(wrapper)
-    expect(wrapper.find('.toast-container').html()).toMatchSnapshot()
+    expectMessageIsShow(wrapper)
+    expect(wrapper.find('.message-container').html()).toMatchSnapshot()
   })
 
-  it('should close toast', async () => {
+  it('should work with different colors', async () => {
     const wrapper = mount(
       <ZeitProvider>
-        <MockToast />
+        <MockMessage />
       </ZeitProvider>,
     )
 
-    expectToastIsHidden(wrapper)
-    triggerToast(wrapper, { delay: 100, text: 'hello' })
-    await updateWrapper(wrapper, 0)
-    expectToastIsShow(wrapper)
+    expectMessageIsHidden(wrapper)
+    triggerMessage(wrapper, { color: 'primary', text: 'primary' })
+    triggerMessage(wrapper, { color: 'success', text: 'success' })
+    triggerMessage(wrapper, { color: 'warning', text: 'warning' })
+    triggerMessage(wrapper, { color: 'error', text: 'error' })
+    await updateWrapper(wrapper, 100)
+    expectMessageIsShow(wrapper)
+    expect(wrapper.find('.message-container').html()).toMatchSnapshot()
+  })
+
+  it('should render no shadow correctly', async () => {
+    const wrapper = mount(
+      <ZeitProvider>
+        <MockMessage />
+      </ZeitProvider>,
+    )
+
+    expectMessageIsHidden(wrapper)
+    triggerMessage(wrapper, {
+      text: 'no-shadow',
+      color: 'success',
+      shadow: false,
+      closeable: true,
+    })
+    await updateWrapper(wrapper, 100)
+    expectMessageIsShow(wrapper)
+    expect(wrapper.find('.message-container').html()).toMatchSnapshot()
+  })
+
+  it('should render with custom icon correctly', async () => {
+    const wrapper = mount(
+      <ZeitProvider>
+        <MockMessage />
+      </ZeitProvider>,
+    )
+
+    expectMessageIsHidden(wrapper)
+    triggerMessage(wrapper, { text: 'custom icon', icon: <Github color="red" /> })
+    await updateWrapper(wrapper, 100)
+    expectMessageIsShow(wrapper)
+    expect(wrapper.find('.message-container').html()).toMatchSnapshot()
+  })
+
+  it('should close message after delay config duration', async () => {
+    const wrapper = mount(
+      <ZeitProvider>
+        <MockMessage />
+      </ZeitProvider>,
+    )
+
+    expectMessageIsHidden(wrapper)
+    triggerMessage(wrapper, { delay: 100, text: 'close after delay' })
+    await updateWrapper(wrapper, 100)
+    expectMessageIsShow(wrapper)
     // Element already hidden, but Dom was removed after delay
     await updateWrapper(wrapper, 350)
-    const toast = wrapper.find('.toast-container').find('.hide')
-    expect(toast.length).not.toBe(0)
+    const message = wrapper.find('.message-container').find('.hide')
+    expect(message.length).toBe(0)
   })
 
-  it('the removeal should be delayed when hover is triggerd', async () => {
+  it('should close message manually', async () => {
     const wrapper = mount(
       <ZeitProvider>
-        <MockToast />
+        <MockMessage />
       </ZeitProvider>,
     )
 
-    expectToastIsHidden(wrapper)
-    triggerToast(wrapper, { delay: 100, text: 'hello' })
-    await updateWrapper(wrapper, 0)
-    expectToastIsShow(wrapper)
-
-    wrapper.find('.toast-container').simulate('mouseEnter', nativeEvent)
-    await updateWrapper(wrapper, 350)
-
-    // Hover event will postpone hidden event
-    let toast = wrapper.find('.toast-container').find('.hide')
-    expect(toast.length).toBe(0)
-
-    // Restart hidden event after mouse leave
-    wrapper.find('.toast-container').simulate('mouseLeave', nativeEvent)
-    await updateWrapper(wrapper, 350 + 200)
-    toast = wrapper.find('.toast-container').find('.hide')
-    expect(toast.length).not.toBe(0)
-  })
-
-  it('should render different actions', async () => {
-    const wrapper = mount(
-      <ZeitProvider>
-        <MockToast />
-      </ZeitProvider>,
-    )
-    const actions = [
-      {
-        name: 'remove',
-        handler: () => {},
-      },
-      {
-        name: 'remove',
-        handler: () => {},
-        passive: true,
-      },
-    ]
-
-    triggerToast(wrapper, { actions, text: 'hello' })
-    await updateWrapper(wrapper)
-    expectToastIsShow(wrapper)
-    expect(wrapper.find('.toast-container').html()).toMatchSnapshot()
-  })
-
-  it('should close toast when action triggered', async () => {
-    const wrapper = mount(
-      <ZeitProvider>
-        <MockToast />
-      </ZeitProvider>,
-    )
-    const actions = [
-      {
-        name: 'remove',
-        handler: (_event: any, cancel: Function) => cancel(),
-      },
-    ]
-
-    expectToastIsHidden(wrapper)
-    triggerToast(wrapper, { actions, text: 'hello' })
-    await updateWrapper(wrapper)
-    expectToastIsShow(wrapper)
-    wrapper.find('.action').find('.btn').at(0).simulate('click', nativeEvent)
-
+    expectMessageIsHidden(wrapper)
+    triggerMessage(wrapper, { delay: 0, text: 'close manually', closeable: true })
+    await updateWrapper(wrapper, 100)
+    expectMessageIsShow(wrapper)
+    wrapper.find('.message').find('.close').at(0).simulate('click', nativeEvent)
     // Element already hidden, but Dom was removed after delay
-    await updateWrapper(wrapper, 250)
-    const toast = wrapper.find('.toast-container').find('.hide')
-    expect(toast.length).not.toBe(0)
+    await updateWrapper(wrapper, 350)
+    const message = wrapper.find('.message-container').find('.message')
+    expect(message.length).toBe(0)
   })
 
-  it('should work with multiple toasts', async () => {
+  it('should work with multiple messages', async () => {
     const wrapper = mount(
       <ZeitProvider>
-        <MockToast />
+        <MockMessage />
       </ZeitProvider>,
     )
 
-    expectToastIsHidden(wrapper)
-    triggerToast(wrapper, { delay: 100, text: 'hello' })
-    triggerToast(wrapper, { delay: 100, text: 'hello' })
-    triggerToast(wrapper, { delay: 100, text: 'hello' })
-    triggerToast(wrapper, { delay: 100, text: 'hello' })
-    triggerToast(wrapper, { delay: 100, text: 'hello' })
-    triggerToast(wrapper, { delay: 200, text: 'hello' })
-
-    /**
-     * If there are multiple Toasts at different deplay in the stack,
-     * the destory Dom event will wait for the maximum delay time.
-     */
-    await updateWrapper(wrapper, 350)
-    expectToastIsShow(wrapper)
+    expectMessageIsHidden(wrapper)
+    triggerMessage(wrapper, { delay: 100, text: 'hello' })
+    triggerMessage(wrapper, { delay: 100, text: 'hello' })
+    triggerMessage(wrapper, { delay: 100, text: 'hello' })
+    triggerMessage(wrapper, { delay: 100, text: 'hello' })
+    triggerMessage(wrapper, { delay: 100, text: 'hello' })
+    triggerMessage(wrapper, { delay: 100, text: 'hello' })
 
     await updateWrapper(wrapper, 200)
-    const toast = wrapper.find('.toast-container').find('.hide')
-    expect(toast.length).not.toBe(0)
+    expectMessageIsShow(wrapper)
+    const visibleMessage = wrapper.find('.message-container').find('.visible')
+    expect(visibleMessage.length).toBe(6)
+
+    await updateWrapper(wrapper, 350)
+    const message = wrapper.find('.message-container').find('.hide')
+    expect(message.length).toBe(0)
   })
+
+  // todo.
+  // it('the removeal should be delayed when hover is triggerd', async () => {
+  //   const wrapper = mount(
+  //     <ZeitProvider>
+  //       <MockMessage />
+  //     </ZeitProvider>,
+  //   )
+
+  //   expectMessageIsHidden(wrapper)
+  //   triggerMessage(wrapper, { delay: 100, text: 'hello' })
+  //   await updateWrapper(wrapper, 100)
+  //   expectMessageIsShow(wrapper)
+
+  //   wrapper.find('.message-container').simulate('mouseEnter', nativeEvent)
+  //   await updateWrapper(wrapper, 350)
+
+  //   // Hover event will postpone hidden event
+  //   let message = wrapper.find('.message-container').find('.hide')
+  //   expect(message.length).toBe(0)
+
+  //   // Restart hidden event after mouse leave
+  //   wrapper.find('.message-container').simulate('mouseLeave', nativeEvent)
+  //   await updateWrapper(wrapper, 350 + 200)
+  //   message = wrapper.find('.message-container').find('.hide')
+  //   expect(message.length).not.toBe(0)
+  // })
 })

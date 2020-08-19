@@ -17,7 +17,7 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
       theme.palette,
       rest.color,
     ])
-    let boxShadow = theme.expressiveness.D2
+    let boxShadow: string = theme.expressiveness.D2
     if (rest.color !== 'default' && !rest.shadow) {
       boxShadow = 'none'
     }
@@ -31,13 +31,12 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
       return () => clearTimeout(timer)
     }, [])
     useEffect(() => {
-      let timer: any = null
-      if (delay) {
-        timer = setTimeout(() => {
-          setHide(true)
-          clearTimeout(timer)
-        }, delay)
-      }
+      let timer: any = delay
+        ? setTimeout(() => {
+            setHide(true)
+            clearTimeout(timer)
+          }, delay)
+        : null
       return () => {
         delay && clearTimeout(timer)
       }
@@ -60,8 +59,9 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
       <div
         key={id}
         className={`message ${className} ${visible ? 'visible' : ''} ${hide ? 'hide' : ''}`}
-        onMouseEnter={() => {}}
-        onMouseLeave={() => {}}>
+        // onMouseEnter={() => {}}
+        // onMouseLeave={() => {}}
+      >
         <div className="icon">{rest.icon || icon}</div>
         <div className="text">{text}</div>
         {closeable && (
