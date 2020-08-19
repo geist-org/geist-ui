@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Table, Spacer, Tooltip, Toggle } from 'components'
+import { Table, Spacer, Tooltip, Toggle, Link } from 'components'
 import { useState, AllHTMLAttributes } from 'react'
 
 export const meta = {
@@ -13,28 +13,51 @@ export const meta = {
 
 <Playground
   title="简单的表格"
-  scope={{ Table, Spacer }}
+  scope={{ Table, Spacer, Link }}
   code={`
   () => {
     const columns = [
       { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
-      { title: 'title2', dataIndex: 'b', key: 'b', width: 100, align: 'right' },
-      { title: 'title3', dataIndex: 'c', key: 'c', width: 200 },
+      { title: 'title2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 100 },
       {
+        width: 100,
         title: 'Operations',
         dataIndex: '',
         key: 'd',
         render(_, record) {
           return (
-            <a
-              onClick={e => {
+            <Link plain onClick={e => {
                 e.preventDefault();
                 console.log('Operate on:', record);
               }}
               href="#"
             >
               Operations
-            </a>
+            </Link>
+          );
+        },
+      },
+    ]
+    const otherColumns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title2', dataIndex: 'b', key: 'b', width: 100, align: 'right' },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 100 },
+      {
+        width: 100,
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render(_, record) {
+          return (
+            <Link plain onClick={e => {
+                e.preventDefault();
+                console.log('Operate on:', record);
+              }}
+              href="#"
+            >
+              Operations
+            </Link>
           );
         },
       },
@@ -46,9 +69,9 @@ export const meta = {
     ]
     return (
       <>
-        <Table columns={columns} data={data} />
+        <Table tableLayout="fixed" columns={columns} data={data} />
         <Spacer />
-        <Table variant='solid' columns={columns} data={data} />
+        <Table variant='line' columns={otherColumns} data={data} />
       </>
     )
   }
@@ -57,7 +80,7 @@ export const meta = {
 
 <Playground
   title="JSX"
-  scope={{ Table }}
+  scope={{ Table, Link }}
   code={`
   () => {
     const { Column } = Table
@@ -71,7 +94,7 @@ export const meta = {
         <Column title="title1" dataIndex="a" key="a" width={100} />
         <Column title="title2" dataIndex="b" key="b" width={100} />
         <Column title="title3" dataIndex="c" key="c" width={200} />
-        <Column title="Operations" dataIndex="" key="d" render={() => <a href="">Operations</a>} />
+        <Column title="Operations" dataIndex="" key="d" render={() => <Link plain href="">Operations</Link>} />
       </Table>
     )
   }
@@ -81,7 +104,7 @@ export const meta = {
 <Playground
   title="省略"
   desc="Table content with ellipsis and tooltip"
-  scope={{ Table, Tooltip }}
+  scope={{ Table, Tooltip, Link }}
   code={`
   () => {
     const createColumns = (length) => {
@@ -128,7 +151,7 @@ export const meta = {
         render() {
           return (
             <Tooltip placement="topStart" text="Operations">
-              <a href="">Operations</a>
+              <Link plain href="">Operations</Link>
             </Tooltip>
           )
         },
@@ -149,7 +172,7 @@ export const meta = {
 
 <Playground
   title="包含展开列, 固定列或表头"
-  scope={{ Table, Spacer, useState, AllHTMLAttributes, Toggle }}
+  scope={{ Table, Spacer, useState, AllHTMLAttributes, Toggle, Link }}
   code={`
   () => {
     function useCheckbox(defaultChecked = false) {
@@ -193,9 +216,9 @@ export const meta = {
       setData(newData)
     }
     const renderAction = (o, row, index) => (
-      <a onClick={() => remove(index)}>
+      <Link plain onClick={() => remove(index)}>
         Delete
-      </a>
+      </Link>
     )
     const columns = [
       { title: 'title 1', dataIndex: 'a', key: 'a', width: 100 },
@@ -260,7 +283,7 @@ export const meta = {
         />
         <Spacer />
         <Table
-          variant='solid'
+          variant='line'
           columns={columns}
           expandable={{
             expandRowByClick,
@@ -284,7 +307,7 @@ export const meta = {
 <Playground
   title="空数据"
   desc="Empty data place holder"
-  scope={{ Table, Spacer }}
+  scope={{ Table, Spacer, Link }}
   code={`
   () => {
     const columns = [
@@ -296,7 +319,7 @@ export const meta = {
         dataIndex: '',
         key: 'd',
         render() {
-          return <a href="#">Operations</a>
+          return <Link plain href="#">Operations</Link>
         },
       },
     ]
