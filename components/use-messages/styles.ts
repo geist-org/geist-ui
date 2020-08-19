@@ -20,7 +20,7 @@ export const getStyles = (
   const category: { [key in MessageColors]: MessageColorGroup } = {
     default: {
       color: palette.cNeutral7,
-      bgColor: palette.cWhite0,
+      bgColor: palette.cNeutral8,
       icon: React.createElement(Bell),
     },
     primary: {
