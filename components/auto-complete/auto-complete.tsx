@@ -181,6 +181,7 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
       () => ({
         ref: autoCompleteDivRef,
         size,
+        focus,
         value: computedInputValue,
         onSelect: onSelectHandler,
         visible: isDropdownOpen,
@@ -188,7 +189,7 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
           if (!isOpenControlled) setDropdownOpen(open)
         },
       }),
-      [computedInputValue, isDropdownOpen, size],
+      [computedInputValue, isDropdownOpen, size, focus],
     )
 
     const onInputFocus: React.EventHandler<
@@ -274,6 +275,19 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
               left: -3px;
               right: -3px;
               width: max-content;
+            }
+
+            .auto-complete :global(.in-auto-complete .input-wrapper) {
+              transition: 0s;
+            }
+
+            .auto-complete
+              :global(.in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled)),
+            .auto-complete
+              :global(.in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled)) {
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+              border-bottom-color: transparent;
             }
           `}</style>
         </div>

@@ -17,6 +17,7 @@ import { defaultProps, Props } from './input-props'
 import InputPassword from './password'
 import { getColors, getSizes } from './styles'
 import { useInputHandle } from './use-input-handle'
+import { useAutoCompleteContext } from '../auto-complete/auto-complete-context'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & typeof defaultProps & NativeAttrs
@@ -77,13 +78,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
     const { heightRatio, fontSize, margin } = useMemo(() => getSizes(size), [size])
-    const inAutoComplete = useMemo(
-      () =>
-        className.includes('in-auto-complete') &&
-        (className.includes('transition-enter') || className.includes('transition-leave')),
-      [className],
-    )
-    const autoCompleteFocus = useMemo(() => className.includes('auto-complete-focus'), [className])
+    const { ref: autoCompleteRef, focus: autoCompleteFocus } = useAutoCompleteContext()
+    const inAutoComplete = Boolean(autoCompleteRef && autoCompleteRef.current)
     const labelClasses = useMemo(() => (labelRight ? 'right-label' : label ? 'left-label' : ''), [
       label,
       labelRight,
@@ -329,18 +325,6 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
-          }
-
-          .in-auto-complete .input-wrapper {
-            transition: border 0s;
-            transition: border-radius 0s;
-          }
-
-          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
-          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom-color: transparent;
           }
         `}</style>
       </div>

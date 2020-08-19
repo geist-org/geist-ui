@@ -5,6 +5,7 @@ export interface AutoCompleteConfig {
   value?: string
   onSelect?: Function
   visible?: boolean
+  focus?: boolean
   updateVisible?: Function
   size: NormalSizes
   ref?: MutableRefObject<HTMLElement | null>
