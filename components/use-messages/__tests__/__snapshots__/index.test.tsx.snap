@@ -16,7 +16,6 @@ exports[`UseMessage should render correctly 1`] = `
             transition: transform 150ms, opacity 150ms,
               margin-top 150ms;
             display: flex;
-            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -24,10 +23,12 @@ exports[`UseMessage should render correctly 1`] = `
           .message.visible {
             transform: translate(0, 0);
             opacity: 1;
+            z-index: 2;
           }
           .message.hide {
             margin-top: -3.5714rem;
             opacity: 0;
+            z-index: 1;
           }
           .icon {
             height: 1.1429rem;
@@ -94,7 +95,6 @@ exports[`UseMessage should render no shadow correctly 1`] = `
             transition: transform 150ms, opacity 150ms,
               margin-top 150ms;
             display: flex;
-            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -102,10 +102,12 @@ exports[`UseMessage should render no shadow correctly 1`] = `
           .message.visible {
             transform: translate(0, 0);
             opacity: 1;
+            z-index: 2;
           }
           .message.hide {
             margin-top: -3.5714rem;
             opacity: 0;
+            z-index: 1;
           }
           .icon {
             height: 1.1429rem;
@@ -172,7 +174,6 @@ exports[`UseMessage should render with custom icon correctly 1`] = `
             transition: transform 150ms, opacity 150ms,
               margin-top 150ms;
             display: flex;
-            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -180,10 +181,12 @@ exports[`UseMessage should render with custom icon correctly 1`] = `
           .message.visible {
             transform: translate(0, 0);
             opacity: 1;
+            z-index: 2;
           }
           .message.hide {
             margin-top: -3.5714rem;
             opacity: 0;
+            z-index: 1;
           }
           .icon {
             height: 1.1429rem;
@@ -250,7 +253,6 @@ exports[`UseMessage should work with different colors 1`] = `
             transition: transform 150ms, opacity 150ms,
               margin-top 150ms;
             display: flex;
-            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -258,10 +260,12 @@ exports[`UseMessage should work with different colors 1`] = `
           .message.visible {
             transform: translate(0, 0);
             opacity: 1;
+            z-index: 2;
           }
           .message.hide {
             margin-top: -3.5714rem;
             opacity: 0;
+            z-index: 1;
           }
           .icon {
             height: 1.1429rem;
@@ -308,7 +312,6 @@ exports[`UseMessage should work with different colors 1`] = `
             transition: transform 150ms, opacity 150ms,
               margin-top 150ms;
             display: flex;
-            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -316,10 +319,12 @@ exports[`UseMessage should work with different colors 1`] = `
           .message.visible {
             transform: translate(0, 0);
             opacity: 1;
+            z-index: 2;
           }
           .message.hide {
             margin-top: -3.5714rem;
             opacity: 0;
+            z-index: 1;
           }
           .icon {
             height: 1.1429rem;
@@ -366,7 +371,6 @@ exports[`UseMessage should work with different colors 1`] = `
             transition: transform 150ms, opacity 150ms,
               margin-top 150ms;
             display: flex;
-            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -374,10 +378,12 @@ exports[`UseMessage should work with different colors 1`] = `
           .message.visible {
             transform: translate(0, 0);
             opacity: 1;
+            z-index: 2;
           }
           .message.hide {
             margin-top: -3.5714rem;
             opacity: 0;
+            z-index: 1;
           }
           .icon {
             height: 1.1429rem;
@@ -424,7 +430,6 @@ exports[`UseMessage should work with different colors 1`] = `
             transition: transform 150ms, opacity 150ms,
               margin-top 150ms;
             display: flex;
-            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -432,10 +437,12 @@ exports[`UseMessage should work with different colors 1`] = `
           .message.visible {
             transform: translate(0, 0);
             opacity: 1;
+            z-index: 2;
           }
           .message.hide {
             margin-top: -3.5714rem;
             opacity: 0;
+            z-index: 1;
           }
           .icon {
             height: 1.1429rem;

@@ -23,6 +23,7 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
     }
     const [visible, setVisible] = useState<boolean>(false)
     const [hide, setHide] = useState<boolean>(false)
+    const [hover, setHover] = useState<boolean>(false)
     useEffect(() => {
       const timer = setTimeout(() => {
         setVisible(true)
@@ -31,16 +32,21 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
       return () => clearTimeout(timer)
     }, [])
     useEffect(() => {
-      let timer: any = delay
-        ? setTimeout(() => {
+      let timer: any = null
+      if (hover) {
+        clearTimeout(timer)
+      } else {
+        if (delay) {
+          timer = setTimeout(() => {
             setHide(true)
             clearTimeout(timer)
           }, delay)
-        : null
+        }
+      }
       return () => {
         delay && clearTimeout(timer)
       }
-    }, [delay])
+    }, [delay, hover])
     useEffect(() => {
       let timer: any = null
       if (hide) {
@@ -55,13 +61,18 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
     const handleClose = () => {
       setHide(true)
     }
+    const handleMouseEnter = () => {
+      setHover(true)
+    }
+    const handleMouseLeave = () => {
+      setHover(false)
+    }
     return (
       <div
         key={id}
         className={`message ${className} ${visible ? 'visible' : ''} ${hide ? 'hide' : ''}`}
-        // onMouseEnter={() => {}}
-        // onMouseLeave={() => {}}
-      >
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}>
         <div className="icon">{rest.icon || icon}</div>
         <div className="text">{text}</div>
         {closeable && (
@@ -84,7 +95,6 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
             transition: transform ${transitionDuration}ms, opacity ${transitionDuration}ms,
               margin-top ${transitionDuration}ms;
             display: flex;
-            align-items: center;
           }
           .message:first-child {
             margin-top: 0;
@@ -92,10 +102,12 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
           .message.visible {
             transform: translate(0, 0);
             opacity: 1;
+            z-index: 2;
           }
           .message.hide {
             margin-top: -3.5714rem;
             opacity: 0;
+            z-index: 1;
           }
           .icon {
             height: 1.1429rem;
