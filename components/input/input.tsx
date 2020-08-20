@@ -163,10 +163,10 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
 
     return (
       <div className="with-label">
-        {children && <InputBlockLabel>{children}</InputBlockLabel>}
+        {children && <InputBlockLabel htmlFor={props.id}>{children}</InputBlockLabel>}
         <div className={`input-container ${className}`}>
           {label && (
-            <InputLabel variant={variant} fontSize={fontSize}>
+            <InputLabel htmlFor={props.id} variant={variant} fontSize={fontSize}>
               {label}
             </InputLabel>
           )}
@@ -201,7 +201,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
           </div>
           {labelRight && (
-            <InputLabel variant={variant} fontSize={fontSize} isRight={true}>
+            <InputLabel htmlFor={props.id} variant={variant} fontSize={fontSize} isRight={true}>
               {labelRight}
             </InputLabel>
           )}

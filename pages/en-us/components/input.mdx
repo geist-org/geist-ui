@@ -85,13 +85,13 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input label="username" placeholder="Input with label" />
+  <Input id="username-1" label="username" placeholder="Input with label" />
   <Spacer inline />
-  <Input label="username" variant="solid" placeholder="Solid Input with label" />
+  <Input id="username-2" label="username" variant="solid" placeholder="Solid Input with label" />
   <Spacer y={.5} />
-  <Input labelRight=".com" placeholder="https://github" />
+  <Input id="site-1" labelRight=".com" placeholder="https://github" />
   <Spacer inline />
-  <Input labelRight=".com" variant="solid" placeholder="https://github" />
+  <Input id="site-2" labelRight=".com" variant="solid" placeholder="https://github" />
 </>
 `}
 />
@@ -102,27 +102,27 @@ Retrieve text input from a user.
   scope={{ Input, Spacer, Text, Code, Dot }}
   code={`
 <>
-  <Input placeholder="Username">
+  <Input id="username-3" placeholder="Username">
     Username
   </Input>
   <Spacer />
-  <Input variant="solid" placeholder="Username">
+  <Input id="username-4" variant="solid" placeholder="Username">
     Username
   </Input>
   <Spacer />
-  <Input placeholder="Post title" width="50%">
+  <Input id="title-1" placeholder="Post title" width="50%">
     <Text h3>Title</Text>
   </Input>
-  <Input variant="solid" placeholder="Post title" width="50%">
+  <Input id="title-2" variant="solid" placeholder="Post title" width="50%">
     <Text h3>Title</Text>
   </Input>
   <Spacer />
-  <Input placeholder="GitHub Actions" width="50%">
+  <Input id="action-1" placeholder="GitHub Actions" width="50%">
     <Dot type="warning">
       <Text small>Problem area for <Code>deployment</Code></Text>
     </Dot>
   </Input>
-  <Input variant="solid" placeholder="GitHub Actions" width="50%">
+  <Input id="action-2" variant="solid" placeholder="GitHub Actions" width="50%">
     <Dot type="warning">
       <Text small>Problem area for <Code>deployment</Code></Text>
     </Dot>

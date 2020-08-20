@@ -82,13 +82,13 @@ export const meta = {
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input label="用户名" placeholder="一个基础示例" />
+  <Input id="username-1" label="用户名" placeholder="一个基础示例" />
   <Spacer inline />
-  <Input variant="solid" label="用户名" placeholder="一个基础示例" />
+  <Input id="username-2" variant="solid" label="用户名" placeholder="一个基础示例" />
   <Spacer y={.5} />
-  <Input labelRight=".com" placeholder="https://github" />
+  <Input id="site-1" labelRight=".com" placeholder="https://github" />
   <Spacer inline />
-  <Input variant="solid" labelRight=".com" placeholder="https://github" />
+  <Input id="site-2" variant="solid" labelRight=".com" placeholder="https://github" />
 </>
 `}
 />
@@ -99,15 +99,15 @@ export const meta = {
   scope={{ Input, Spacer, Text, Code, Dot }}
   code={`
 <>
-  <Input placeholder="小维特">
+  <Input id="username-3" placeholder="小维特">
     用户名
   </Input>
   <Spacer />
-  <Input placeholder="文章标题" width="50%">
+  <Input id="title-1" placeholder="文章标题" width="50%">
     <Text h3>标题</Text>
   </Input>
   <Spacer />
-  <Input placeholder="GitHub Actions" width="50%">
+  <Input id="title-2" placeholder="GitHub Actions" width="50%">
     <Dot type="warning">
       <Text small><Code>部署</Code> 问题详情</Text>
     </Dot>
