@@ -67,7 +67,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
           }
           .pagination-pagesize .text {
             color: ${theme.palette.cNeutral6};
-            font-weight: bold;
+            font-weight: 500;
           }
           .pagination-pagesize .left {
             margin-right: 0.5714rem;

@@ -65,6 +65,7 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
           border-radius: ${theme.expressiveness.R1};
           background-color: ${paginationColors.bgColor};
           transition: all linear 200ms 0ms;
+          font-weight: 500;
         }
 
         button:hover {

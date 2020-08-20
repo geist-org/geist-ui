@@ -57,7 +57,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
           .pagination-quickjumper .text {
             font-size: inherit;
             color: ${theme.palette.cNeutral7};
-            font-weight: bold;
+            font-weight: 500;
           }
           .pagination-quickjumper .left {
             margin-right: 0.5714rem;
