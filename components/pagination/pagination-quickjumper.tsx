@@ -26,7 +26,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
   const { variant } = usePaginationContext()
   const changeHandler = (val: number) => {
     onChange && onChange(val)
-    if (inputRef.current) inputRef.current.value = ''
+    inputRef.current && (inputRef.current.value = '')
   }
   const keyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const target = e.target as HTMLTextAreaElement

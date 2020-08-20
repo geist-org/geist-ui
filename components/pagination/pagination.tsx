@@ -21,7 +21,7 @@ import PaginationPageSize from './pagination-pageSize'
 import PaginationQuickJumper from './pagination-quickjumper'
 interface Props {
   total: number
-  pageSize: number
+  pageSize?: number
   page?: number
   initialPage?: number
   variant?: PaginationVariants
@@ -35,12 +35,12 @@ interface Props {
   onPageSizeChange?: (current: number, pageSize: number) => void
 }
 const defaultProps = {
-  size: 'medium' as NormalSizes,
-  initialPage: 1,
   total: 0,
-  limit: 7,
-  defaultPageSize: 10,
+  initialPage: 1,
   variant: 'line' as PaginationVariants,
+  limit: 7,
+  size: 'medium' as NormalSizes,
+  defaultPageSize: 10,
   pageSizeOptions: ['10', '20', '50', '100'],
   showQuickJumper: false,
   showPageSizeChanger: false,
@@ -68,9 +68,6 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   const [, prevChildren] = pickChild(children, PaginationPrevious)
   const [, nextChildren] = pickChild(children, PaginationNext)
   const pageCount = useMemo(() => getPageCount(total, pageSize), [pageSize])
-  if (page > pageCount) {
-    setPage(pageCount)
-  }
   const arrowRightIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
