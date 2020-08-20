@@ -87,7 +87,7 @@ function Table<RecordType>({ variant, children, ...props }: TableProps<RecordTyp
       position: absolute;
       top: 0;
       bottom: -1px;
-      width: 20px;
+      width: 1.4286rem;
       right: -1px;
       transform: translateX(100%);
     }
@@ -107,7 +107,7 @@ function Table<RecordType>({ variant, children, ...props }: TableProps<RecordTyp
       position: absolute;
       top: 0;
       bottom: -1px;
-      width: 20px;
+      width: 1.4286rem;
       left: -1px;
       transform: translateX(-100%);
     }
@@ -142,7 +142,7 @@ function Table<RecordType>({ variant, children, ...props }: TableProps<RecordTyp
       box-shadow: inset -10px 0 8px -8px ${palette.cNeutral2};
     }
     .table :global(.table-expand-icon-col) {
-      width: 60px;
+      width: 4.2857rem;
     }
     .table :global(.table-row-expand-icon-cell) {
       text-align: left;
@@ -205,9 +205,9 @@ function Table<RecordType>({ variant, children, ...props }: TableProps<RecordTyp
     }
     .table :global(.table-expanded-row-fixed) {
       box-sizing: border-box;
-      margin: -16px -8px;
+      margin: -${layout.gap} -${layout.gapHalf};
       padding: ${layout.gap} ${layout.gapHalf};
-      margin-right: -10px;
+      margin-right: -calc((${layout.gapQuarter} * 5) / 2);
     }
     .table :global(.table-expanded-row-fixed::after) {
       content: '';
@@ -309,8 +309,8 @@ function Table<RecordType>({ variant, children, ...props }: TableProps<RecordTyp
       transform-origin: center bottom;
     }
     .table :global(.table-sticky-scroll-bar) {
-      height: 8px;
-      border-radius: 4px;
+      height: ${layout.gapHalf};
+      border-radius: ${expressiveness.R2};
       background-color: #bbb;
     }
     .table :global(.table-sticky-scroll-bar:hover) {
@@ -350,17 +350,17 @@ function Table<RecordType>({ variant, children, ...props }: TableProps<RecordTyp
       border-right: ${expressiveness.L1} ${expressiveness.cLineStyle1} ${palette.cNeutral2};
     }
     .table.variant-line :global(tbody tr:hover td) {
-      padding-top: calc(${layout.gap} - 1px);
-      padding-bottom: calc(${layout.gap} - 1px);
+      padding-top: calc(${layout.gap} - ${expressiveness.L1});
+      padding-bottom: calc(${layout.gap} - ${expressiveness.L1});
       border-top: ${expressiveness.L2} ${expressiveness.cLineStyle1} ${palette.cTheme5};
       border-bottom: ${expressiveness.L2} ${expressiveness.cLineStyle1} ${palette.cTheme5};
     }
     .table.variant-line :global(tbody tr:hover td:first-child) {
-      padding-left: calc((${layout.gapHalf} / 2) * 3 - 1px);
+      padding-left: calc((${layout.gapHalf} / 2) * 3 - ${expressiveness.L1});
       border-left: ${expressiveness.L2} ${expressiveness.cLineStyle1} ${palette.cTheme5};
     }
     .table.variant-line :global(tbody tr:hover td:last-child) {
-      padding-right: calc((${layout.gapHalf} / 2) * 3 - 1px);
+      padding-right: calc((${layout.gapHalf} / 2) * 3 - ${expressiveness.L1});
       border-right: ${expressiveness.L2} ${expressiveness.cLineStyle1} ${palette.cTheme5};
     }
   `
