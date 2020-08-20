@@ -56,7 +56,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
           }
           .pagination-quickjumper .text {
             font-size: inherit;
-            color: ${theme.palette.cBlack0};
+            color: ${theme.palette.cNeutral7};
             font-weight: bold;
           }
           .pagination-quickjumper .left {
