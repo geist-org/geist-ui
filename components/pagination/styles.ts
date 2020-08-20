@@ -46,13 +46,13 @@ export const getColors = (
     line: {
       color: active ? palette.cTheme5 : palette.cNeutral6,
       borderColor: active ? palette.cTheme5 : palette.cNeutral2,
-      bgColor: palette.cWhite0,
+      bgColor: palette.cNeutral8,
       hoverColor: palette.cNeutral6,
       hoverBorderColor: palette.cTheme0,
-      hoverBgColor: palette.cWhite0,
+      hoverBgColor: palette.cNeutral8,
     },
     solid: {
-      color: active ? palette.cWhite0 : palette.cBlack0,
+      color: active ? palette.cNeutral8 : palette.cNeutral7,
       bgColor: active ? palette.cTheme5 : palette.cTheme0,
       borderColor: 'transparent',
       hoverBgColor: palette.cTheme1,

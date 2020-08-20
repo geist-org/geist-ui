@@ -24,10 +24,6 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
   const theme = useTheme()
   const inputRef = useRef<HTMLInputElement>(null)
   const { variant } = usePaginationContext()
-  const changeHandler = (val: number) => {
-    onChange && onChange(val)
-    inputRef.current && (inputRef.current.value = '')
-  }
   const keyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const target = e.target as HTMLTextAreaElement
     if (e.keyCode === 13) {
@@ -36,8 +32,9 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
         if (val > count) {
           val = count
         }
-        changeHandler(val)
+        onChange && onChange(val)
       }
+      inputRef.current && (inputRef.current.value = '')
     }
   }
   return (

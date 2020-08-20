@@ -4,7 +4,6 @@ import { ZeitUIThemes, ZeitUIThemesPalette } from 'components/styles/themes'
 export interface SelectSize {
   height: string
   fontSize: string
-  minWidth: string
 }
 
 type optionColors = {
@@ -28,22 +27,22 @@ export const getSizes = (theme: ZeitUIThemes, size?: NormalSizes) => {
     medium: {
       height: `calc(2.625 * ${theme.layout.gap})`,
       fontSize: '1rem',
-      minWidth: '10rem',
+      // minWidth: '10rem',
     },
     small: {
       height: `calc(1.8 * ${theme.layout.gap})`,
       fontSize: '.75rem',
-      minWidth: '8rem',
+      // minWidth: '8rem',
     },
     mini: {
       height: `calc(1.334 * ${theme.layout.gap})`,
       fontSize: '.75rem',
-      minWidth: '6.5rem',
+      // minWidth: '6.5rem',
     },
     large: {
       height: `calc(2.667 * ${theme.layout.gap})`,
       fontSize: '1.225rem',
-      minWidth: '12.5rem',
+      // minWidth: '12.5rem',
     },
   }
 

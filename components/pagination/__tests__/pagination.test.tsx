@@ -203,7 +203,6 @@ describe('Pagination', () => {
     wrapper.find('input').at(0).simulate('keydown', { keyCode: 38 })
     expect(onChangehandler).toHaveBeenCalled()
     expect(current).toEqual(2)
-    expect(input.value).toEqual('')
   })
 
   it('should no change when you type a non-integer value', async () => {
