@@ -164,17 +164,12 @@ export const meta = {
 <Attributes.Title>useTextareaHandle</Attributes.Title>
 
 ```ts
-type useTextareaHandle = (
-  defaultValue: string,
-) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
+type useTextareaHandle = () => {
+  ref: React.RefObject<HTMLTextareaElement>
+  setValue: (value: string = '') => void
+  getValue: () => string | undefined
+  focus: () => void
+  blur: () => void
 }
 ```
 

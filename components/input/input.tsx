@@ -246,14 +246,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
 
           .input-wrapper.disabled {
             cursor: not-allowed;
-          }
-
-          .line.input-wrapper.disabled {
-            border-color: ${theme.palette.cNeutral2};
-          }
-
-          .solid.input-wrapper.disabled {
-            background-color: ${theme.palette.cNeutral3};
+            border: 0;
+            background-color: ${theme.palette.cNeutral2};
           }
 
           .focus.input-wrapper:not(.disabled),

@@ -1,6 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Spacer, Button, Code } from 'components'
-import  Textarea, { useTextareaHandle } from 'components'
+import  { Textarea } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -104,10 +104,10 @@ Retrieve multi-line user input.
     </>
   }
   desc="Use `hooks` to capture changes."
-  scope={{ Textarea, useTextareaHandle, Button, Spacer }}
+  scope={{ Textarea, Button, Spacer }}
   code={`
 () => {
-  const { ref, setValue } = useTextareaHandle()
+  const { ref, setValue } = Textarea.useTextareaHandle()
   return (
     <>
       <Textarea ref={ref} defaultValue='ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.' width="100%" />
@@ -164,17 +164,12 @@ Retrieve multi-line user input.
 <Attributes.Title>useTextareaHandle</Attributes.Title>
 
 ```ts
-type useTextareaHandle = (
-  defaultValue: string,
-) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
+type useTextareaHandle = () => {
+  ref: React.RefObject<HTMLTextareaElement>
+  setValue: (value: string = '') => void
+  getValue: () => string | undefined
+  focus: () => void
+  blur: () => void
 }
 ```
 

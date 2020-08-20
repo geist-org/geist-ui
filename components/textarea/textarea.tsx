@@ -34,7 +34,6 @@ interface Props {
 
 const defaultProps = {
   variant: 'line' as InputVariantTypes,
-  defaultValue: '',
   color: 'default' as InputColors,
   width: 'initial',
   minHeight: '6.25rem',
