@@ -5,8 +5,8 @@ import X from '@zeit-ui/react-icons/x'
 import { getStyles } from './styles'
 
 export type MessageItemProps = Message & {
-  id?: string
-  destroy?: Function
+  id: string
+  destroy?: (id: string) => void
 }
 const transitionDuration = 150
 
@@ -25,32 +25,28 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
     const [hide, setHide] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
     useEffect(() => {
-      const timer = setTimeout(() => {
+      const timer = window.setTimeout(() => {
         setVisible(true)
         clearTimeout(timer)
       }, 10)
       return () => clearTimeout(timer)
     }, [])
     useEffect(() => {
-      let timer: any = null
-      if (hover) {
-        clearTimeout(timer)
-      } else {
-        if (delay) {
-          timer = setTimeout(() => {
-            setHide(true)
-            clearTimeout(timer)
-          }, delay)
-        }
+      let timer: number | undefined
+      if (delay && !hover) {
+        timer = window.setTimeout(() => {
+          setHide(true)
+          clearTimeout(timer)
+        }, delay)
       }
       return () => {
         delay && clearTimeout(timer)
       }
     }, [delay, hover])
     useEffect(() => {
-      let timer: any = null
+      let timer: number | undefined
       if (hide) {
-        timer = setTimeout(() => {
+        timer = window.setTimeout(() => {
           destroy && destroy(id)
           onClose && onClose(id)
           clearTimeout(timer)

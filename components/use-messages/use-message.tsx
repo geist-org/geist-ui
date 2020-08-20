@@ -12,14 +12,13 @@ export interface Message {
   closeable?: boolean
   shadow?: boolean
   className?: string
-  onClose?: Function
+  onClose?: (id: string) => void
 }
 const defaultMessage = {
   delay: 2000,
   color: 'default' as MessageColors,
   closeable: false,
   shadow: true,
-  onClose: () => {},
   className: '',
 }
 
