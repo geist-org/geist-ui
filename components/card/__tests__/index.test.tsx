@@ -12,6 +12,9 @@ describe('Card', () => {
     const wrapper = render(
       <div>
         <Card hoverable>card</Card>
+        <Card hoverable variant="line">
+          card
+        </Card>
         <Card shadow>card</Card>
         <Card shadow hoverable>
           card
@@ -24,13 +27,10 @@ describe('Card', () => {
   it('should support card types', () => {
     const wrapper = mount(
       <div>
-        <Card type="secondary">card</Card>
-        <Card type="success">card</Card>
-        <Card type="violet">card</Card>
-        <Card type="lite">card</Card>
-        <Card type="cyan">card</Card>
-        <Card type="secondary">card</Card>
-        <Card type="warning">card</Card>
+        <Card color="success">card</Card>
+        <Card color="error">card</Card>
+        <Card color="warning">card</Card>
+        <Card color="primary">card</Card>
       </div>,
     )
     expect(() => wrapper.unmount()).not.toThrow()
