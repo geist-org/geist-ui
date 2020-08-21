@@ -59,6 +59,20 @@ export const meta = {
 />
 
 <Playground
+  title="Variant"
+  desc="类型"
+  scope={{ Pagination,Spacer }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={100} />
+  <Spacer y={.5} />
+  <Pagination total={100} variant={'solid'} />
+</>
+`}
+/>
+
+<Playground
   title="Icon"
   desc="用图标定制按钮"
   scope={{

@@ -47,8 +47,8 @@ export const getColors = (
       color: active ? palette.cTheme5 : palette.cNeutral6,
       borderColor: active ? palette.cTheme5 : palette.cNeutral2,
       bgColor: palette.cNeutral8,
-      hoverColor: palette.cNeutral6,
-      hoverBorderColor: palette.cTheme0,
+      hoverColor: palette.cTheme5,
+      hoverBorderColor: palette.cTheme5,
       hoverBgColor: palette.cNeutral8,
     },
     solid: {
@@ -56,7 +56,7 @@ export const getColors = (
       bgColor: active ? palette.cTheme5 : palette.cTheme0,
       borderColor: 'transparent',
       hoverBgColor: palette.cTheme1,
-      hoverColor: palette.cNeutral6,
+      hoverColor: palette.cTheme5,
       hoverBorderColor: 'transparent',
     },
   }

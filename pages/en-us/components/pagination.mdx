@@ -60,6 +60,20 @@ A long list can be divided into several pages, and only one page will be loaded 
 />
 
 <Playground
+  title="Variant"
+  desc="Variant"
+  scope={{ Pagination,Spacer }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={100} />
+  <Spacer y={.5} />
+  <Pagination total={100} variant={'solid'} />
+</>
+`}
+/>
+
+<Playground
   title="Icon"
   desc="Customize buttons as icons"
   scope={{
