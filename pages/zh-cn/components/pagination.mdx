@@ -19,7 +19,7 @@ export const meta = {
   scope={{ Pagination }}
   width="750px"
   code={`
-      <Pagination total={50}  initialPage={3} />
+      <Pagination total={50}  defaultPage={3} />
 `}
 />
 
@@ -49,11 +49,11 @@ export const meta = {
   <Spacer y={.5} />
   <Pagination total={100} />
   <Spacer y={.5} />
-  <Pagination total={100} initialPage={6} limit={5} />
+  <Pagination total={100} defaultPage={6} limit={5} />
   <Spacer y={.5} />
-  <Pagination total={100} initialPage={6} />
+  <Pagination total={100} defaultPage={6} />
   <Spacer y={.5} />
-  <Pagination total={240} initialPage={6} limit={10} />
+  <Pagination total={240} defaultPage={6} limit={10} />
 </>
 `}
 />
@@ -160,7 +160,7 @@ export const meta = {
 | **total**               | 数据总数                   | `number`                                 |                                           | 1                         |
 | **pageSize**            | 每页条数                   | `number`                                 | -                                         | -                         |
 | **page**                | 当前页码                   | `number`                                 | -                                         | 1                         |
-| **initialPage**         | 初始选中的页码              | `number`                                 | -                                         | 1                         |
+| **defaultPage**         | 初始选中的页码              | `number`                                 | -                                         | 1                         |
 | **variant**             | Pagination的类型           | `string`                                 | [PaginationVariants](#paginationvariants) | `line`                    |
 | **limit**               | 一次可展示页面的最大值       | `number`                                 | -                                         | 7                         |
 | **size**                | 组件的大小                 | `NormalSizes`                            | [NormalSizes](#normalsizes)               | `medium`                  |

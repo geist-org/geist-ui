@@ -20,7 +20,7 @@ A long list can be divided into several pages, and only one page will be loaded 
   scope={{ Pagination }}
   width="750px"
   code={`
-      <Pagination total={50}  initialPage={3} />
+      <Pagination total={50}  defaultPage={3} />
 `}
 />
 
@@ -50,11 +50,11 @@ A long list can be divided into several pages, and only one page will be loaded 
   <Spacer y={.5} />
   <Pagination total={100} />
   <Spacer y={.5} />
-  <Pagination total={100} initialPage={6} limit={5} />
+  <Pagination total={100} defaultPage={6} limit={5} />
   <Spacer y={.5} />
-  <Pagination total={100} initialPage={6} />
+  <Pagination total={100} defaultPage={6} />
   <Spacer y={.5} />
-  <Pagination total={240} initialPage={6} limit={10} />
+  <Pagination total={240} defaultPage={6} limit={10} />
 </>
 `}
 />
@@ -161,7 +161,7 @@ A long list can be divided into several pages, and only one page will be loaded 
 | **total**               | Total number of data items                                                                                | `number`                                 |                                           | 1                         |
 | **pageSize**            | Number of data items per page                                                                             | `number`                                 | -                                         | -                         |
 | **page**                | Current page number                                                                                       | `number`                                 | -                                         | 1                         |
-| **initialPage**         | Default initial page number                                                                               | `number`                                 | -                                         | 1                         |
+| **defaultPage**         | Default initial page number                                                                               | `number`                                 | -                                         | 1                         |
 | **variant**             | Pagination variant                                                                                        | `string`                                 | [PaginationVariants](#paginationvariants) | `line`                    |
 | **limit**               | Limit of display page                                                                                     | `number`                                 | -                                         | 7                         |
 | **size**                | Pagination size                                                                                           | `NormalSizes`                            | [NormalSizes](#normalsizes)               | `medium`                  |

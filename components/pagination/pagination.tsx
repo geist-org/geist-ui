@@ -23,7 +23,7 @@ interface Props {
   total: number
   pageSize?: number
   page?: number
-  initialPage?: number
+  defaultPage?: number
   variant?: PaginationVariants
   limit?: number
   size?: NormalSizes
@@ -36,7 +36,7 @@ interface Props {
 }
 const defaultProps = {
   total: 0,
-  initialPage: 1,
+  defaultPage: 1,
   variant: 'line' as PaginationVariants,
   limit: 7,
   size: 'medium' as NormalSizes,
@@ -49,7 +49,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type PaginationProps = Props & typeof defaultProps & NativeAttrs
 const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   page: customPage,
-  initialPage,
+  defaultPage,
   total,
   limit,
   size,
@@ -63,7 +63,7 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   onPageSizeChange,
   onChange,
 }) => {
-  const [page, setPage, pageRef] = useCurrentState(initialPage)
+  const [page, setPage, pageRef] = useCurrentState(defaultPage)
   const [pageSize, setPageSize] = useCurrentState(defaultPageSize)
   const [, prevChildren] = pickChild(children, PaginationPrevious)
   const [, nextChildren] = pickChild(children, PaginationNext)

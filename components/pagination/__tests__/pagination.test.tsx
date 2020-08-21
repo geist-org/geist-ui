@@ -23,7 +23,7 @@ describe('Pagination', () => {
   })
 
   it('the specified page should be activated', async () => {
-    const wrapper = mount(<Pagination total={100} initialPage={2} />)
+    const wrapper = mount(<Pagination total={100} defaultPage={2} />)
     expect(wrapper.find('.active').text()).toEqual('2')
     await act(async () => {
       wrapper.setProps({ page: 10 })
@@ -35,7 +35,7 @@ describe('Pagination', () => {
   it('should trigger change event', async () => {
     let current = 1
     const handler = jest.fn().mockImplementation(val => (current = val))
-    const wrapper = mount(<Pagination total={100} initialPage={2} onChange={handler} />)
+    const wrapper = mount(<Pagination total={100} defaultPage={2} onChange={handler} />)
 
     await act(async () => {
       wrapper.setProps({ page: 10 })
@@ -114,7 +114,7 @@ describe('Pagination', () => {
     const handler = jest.fn().mockImplementation(val => {
       current = val
     })
-    const wrapper = mount(<Pagination total={200} initialPage={10} onChange={handler} />)
+    const wrapper = mount(<Pagination total={200} defaultPage={10} onChange={handler} />)
     const btn = wrapper.find('svg').at(1).parents('button')
     btn.at(0).simulate('click', nativeEvent)
     await updateWrapper(wrapper, 200)
@@ -127,7 +127,7 @@ describe('Pagination', () => {
     const handler = jest.fn().mockImplementation(val => {
       current = val
     })
-    const wrapper = mount(<Pagination total={200} initialPage={10} onChange={handler} />)
+    const wrapper = mount(<Pagination total={200} defaultPage={10} onChange={handler} />)
     const btn = wrapper.find('svg').at(1).parents('button')
     btn.at(0).simulate('click', nativeEvent)
     await updateWrapper(wrapper, 200)
@@ -144,7 +144,7 @@ describe('Pagination', () => {
     const handler = jest.fn().mockImplementation(val => {
       current = val
     })
-    const wrapper = mount(<Pagination total={200} initialPage={11} onChange={handler} />)
+    const wrapper = mount(<Pagination total={200} defaultPage={11} onChange={handler} />)
     const lastBtn = wrapper.find('svg').at(2).parents('button')
     lastBtn.at(0).simulate('click', nativeEvent)
     await updateWrapper(wrapper, 200)
@@ -157,7 +157,7 @@ describe('Pagination', () => {
   })
 
   it('another SVG should be displayed when the mouse is moved in', async () => {
-    const wrapper = mount(<Pagination total={200} initialPage={20} />)
+    const wrapper = mount(<Pagination total={200} defaultPage={20} />)
     const svg = wrapper.find('svg').at(1)
     const btn = svg.parents('button')
 
@@ -195,7 +195,7 @@ describe('Pagination', () => {
     let current = ''
     const onChangehandler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination initialPage={2} total={200} onChange={onChangehandler} showQuickJumper />,
+      <Pagination defaultPage={2} total={200} onChange={onChangehandler} showQuickJumper />,
     )
     await updateWrapper(wrapper, 200)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
@@ -209,7 +209,7 @@ describe('Pagination', () => {
     let current = ''
     const onChangehandler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination initialPage={2} total={200} onChange={onChangehandler} showQuickJumper />,
+      <Pagination defaultPage={2} total={200} onChange={onChangehandler} showQuickJumper />,
     )
     await updateWrapper(wrapper, 200)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
@@ -224,7 +224,7 @@ describe('Pagination', () => {
     let current = ''
     const handler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination initialPage={2} total={200} onChange={handler} showQuickJumper />,
+      <Pagination defaultPage={2} total={200} onChange={handler} showQuickJumper />,
     )
     await updateWrapper(wrapper, 200)
     expect(handler).toHaveBeenCalled()
@@ -240,7 +240,7 @@ describe('Pagination', () => {
     let current = ''
     const handler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination initialPage={20} total={200} onChange={handler} showQuickJumper />,
+      <Pagination defaultPage={20} total={200} onChange={handler} showQuickJumper />,
     )
     expect(current).toEqual(20)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
@@ -286,7 +286,7 @@ describe('Pagination', () => {
     const wrapper = mount(
       <Pagination
         total={200}
-        initialPage={20}
+        defaultPage={20}
         onPageSizeChange={pageSizeChangeHandler}
         onChange={changeHandler}
         showPageSizeChanger
