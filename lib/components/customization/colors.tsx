@@ -1,29 +1,18 @@
 import React from 'react'
 import { Card, useTheme } from 'components'
-import { CardTypes } from 'components/utils/prop-types'
+import { CardColors } from 'components/utils/prop-types'
 
-const types = [
-  'secondary',
-  'success',
-  'warning',
-  'error',
-  'dark',
-  'alert',
-  'purple',
-  'violet',
-  'cyan',
-  'lite',
-]
+const colors = ['primary', 'success', 'warning', 'error']
 
 const Colors: React.FC<React.PropsWithChildren<{}>> = () => {
   const theme = useTheme()
 
   return (
     <div className="colors">
-      {types.map((type, index) => {
+      {colors.map((color, index) => {
         return (
-          <div key={`${type}-${index}`} className="color-card">
-            <Card type={type as CardTypes}>{type}</Card>
+          <div key={`${color}-${index}`} className="color-card">
+            <Card color={color as CardColors}>{color}</Card>
           </div>
         )
       })}
