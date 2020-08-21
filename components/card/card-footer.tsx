@@ -34,7 +34,7 @@ const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = ({
           overflow: hidden;
           color: inherit;
           background-color: inherit;
-          font-size: 0.875rem;
+          font-size: 1rem;
           border-top: 1px solid ${theme.palette.border};
           border-bottom-left-radius: ${theme.expressiveness.R2};
           border-bottom-right-radius: ${theme.expressiveness.R2};
