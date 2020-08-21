@@ -11,61 +11,78 @@ export const meta = {
 基础的组件容器。
 
 <Playground
-  scope={{ Card }}
+  scope={{ Card, Text, Row, Spacer }}
   code={`
-<Card>
-  <p>一个基础的卡片。</p>
-</Card>
+<Row style={{ flexWrap: 'wrap' }} justify="space-around">
+  <Card>
+    <Text p>一个基础的卡片。</Text>
+  </Card>
+  <Spacer y={1.5} />
+  <Card variant="line">
+    <Text p>一个 Line 的卡片。</Text>
+  </Card>
+</Row>
 `}
 />
 
 <Playground
   title="可悬停的"
-  scope={{ Card }}
+  scope={{ Card, Text, Row, Spacer }}
   code={`
-<Card hoverable>
-  <p>可悬停的卡片。</p>
-</Card>
+<Row style={{ flexWrap: 'wrap' }} justify="space-around">
+  <Card hoverable>
+    <Text p>可悬停的卡片。</Text>
+  </Card>
+  <Spacer y={1.5} />
+  <Card variant="line" hoverable>
+    <Text p>可悬停的 Line 的卡片。</Text>
+  </Card>
+</Row>
 `}
 />
 
 <Playground
   title="阴影"
-  scope={{ Card }}
+  scope={{ Card, Text, Row, Spacer }}
   code={`
-<Card shadow>
-  <h4>这是一个 React 组件。</h4>
-  <p>阴影卡片组件。</p>
-</Card>
+<Row style={{ flexWrap: 'wrap' }} justify="space-around">
+  <Card shadow>
+    <Text h4>这是一个 React 组件。</Text>
+    <Text p>阴影卡片组件</Text>
+  </Card>
+  <Spacer y={1.5} />
+  <Card variant="line" shadow>
+    <Text h4>这是一个 React 组件。</Text>
+    <Text p>阴影 Line 卡片组件。</Text>
+  </Card>
+</Row>
 `}
 />
 
 <Playground
-  title="类型"
+  title="颜色"
   desc="以各式色彩表达不同的类型或状态。"
-  scope={{ Card, Row, Col }}
+  scope={{ Card, Row, Col, Text }}
   code={`
 () => {
-  const typeLeft = ['secondary', 'success', 'warning', 'error', 'dark']
-  const typeRight = ['alert', 'purple', 'violet', 'cyan', 'lite']
+  const colors = ['default', 'primary', 'success', 'warning', 'error']
   const locales = {
-    secondary: '次要的', success: '成功', warning: '警告', error: '错误', dark: '暗黑',
-    alert: '提示', purple: '紫色', violet: '紫罗兰', cyan: '青色', lite: '精简',
+    default:'默认的', primary:'重要的', success: '成功', warning: '警告', error: '错误',
   }
   return (
     <>
-      {typeLeft.map((left, index) => (
-        <Row justify="space-around" key={left} style={{ marginBottom: '18px' }}>
+      {colors.map((color, index) => (
+        <Row justify="space-around" key={color} style={{ marginBottom: '18px' }}>
           <Col span="10">
-            <Card type={left}>
-              <h4 style={{ textTransform: 'capitalize' }}>{locales[left]}</h4>
-              <span>{left}</span>
+            <Card color={color} hoverable>
+              <Text h4 style={{ textTransform: 'capitalize' }}>{locales[color]}</Text>
+              <Text span>{color}</Text>
             </Card>
           </Col>
           <Col span="10">
-            <Card type={typeRight[index]}>
-              <h4 style={{ textTransform: 'capitalize' }}>{locales[typeRight[index]]}</h4>
-              <span>{typeRight[index]}</span>
+            <Card color={color} variant="line" horizontal>
+              <Text h4 style={{ textTransform: 'capitalize' }}>{locales[color]}</Text>
+              <Text span>{color}</Text>
             </Card>
           </Col>
         </Row>
@@ -78,19 +95,19 @@ export const meta = {
 
 <Playground
   title="卡片页脚"
-  scope={{ Card, Link, Spacer, Row }}
+  scope={{ Card, Link, Row, Text }}
   code={`
 <Row style={{ flexWrap: 'wrap' }} justify="space-around">
-  <Card width="330px">
-    <h4>ZEIT UI React</h4>
-    <p>现代化、极简风格的 UI 库。</p>
+  <Card width="280px">
+    <Text h4>ZEIT UI React</Text>
+    <Text p>现代化、极简风格的 UI 库。</Text>
     <Card.Footer>
       <Link target="_blank" href="https://github.com/zeit-ui/react">在 GitHub 上查看源码</Link>
     </Card.Footer>
   </Card>
-  <Card width="330px" type="dark">
-    <h4>ZEIT UI React</h4>
-    <p>现代化、极简风格的 UI 库。</p>
+  <Card width="280px" color="primary">
+    <Text h4>ZEIT UI React</Text>
+    <Text p>现代化、极简风格的 UI 库。</Text>
     <Card.Footer>
       <Link target="_blank" href="https://github.com/zeit-ui/react">在 GitHub 上查看源码</Link>
     </Card.Footer>
@@ -101,13 +118,13 @@ export const meta = {
 
 <Playground
   title="组合图片"
-  scope={{ Card, Link, Spacer, Text, Image }}
+  scope={{ Card, Link, Text, Image }}
   code={`
 <Card width="400px">
   <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
-   height="200" width="400" style={{ objectFit: 'cover' }} />
+    height="200" width="400" style={{ objectFit: 'cover' }} />
   <Text h4 style={{ marginBottom: '0' }}>ZEIT UI React</Text>
-  <Text type="secondary" small>现代化、极简风格的 UI 库。</Text>
+  <Text color="secondary" small>现代化、极简风格的 UI 库。</Text>
   <Card.Footer>
     <Link block target="_blank" href="https://github.com/zeit-ui/react">在 GitHub 上查看源码</Link>
   </Card.Footer>
@@ -136,13 +153,14 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/card.mdx">
 <Attributes.Title>Card.Props</Attributes.Title>
 
-| 属性          | 描述                 | 类型                  | 推荐值                  | 默认      |
-| ------------- | -------------------- | --------------------- | ----------------------- | --------- |
-| **hoverable** | 是否在悬停时增加阴影 | `boolean`             | -                       | `false`   |
-| **shadow**    | 是否总是显示阴影     | `boolean`             | -                       | `false`   |
-| **type**      | 卡片的类型           | [CardType](#cardtype) | -                       | `default` |
-| **width**     | CSS 宽度属性         | `string`              | -                       | `100%`    |
-| ...           | 原生属性             | `HTMLAttributes`      | `'id', className', ...` | -         |
+| 属性           | 描述                  | 类型                          | 推荐值                   | 默认      |
+| ------------- | --------------------- | ---------------------------- | ----------------------- | --------- |
+| **hoverable** | 是否在悬停时增加阴影     | `boolean`                     | -                       | `false`   |
+| **shadow**    | 是否总是显示阴影        | `boolean`                     | -                       | `false`   |
+| **color**     | 卡片的颜色             | [CardColors](#cardcolors)     | -                       | `default` |
+| **variant**   | 卡片的类型             | [CardVariants](#cardvariants) | -                       | `solid`   |
+| **width**     | CSS 宽度属性           | `string`                      | -                       | `100%`    |
+| ...           | 原生属性               | `HTMLAttributes`              | `'id', className', ...` | -         |
 
 <Attributes.Title alias="Card.Body">Card.Content.Props</Attributes.Title>
 
@@ -152,26 +170,26 @@ export const meta = {
 
 <Attributes.Title alias="Card.Actions">Card.Footer.Props</Attributes.Title>
 
-| 属性                  | 描述                     | 类型             | 推荐值                  | 默认    |
+| 属性                   | 描述                     | 类型              | 推荐值                   | 默认    |
 | --------------------- | ------------------------ | ---------------- | ----------------------- | ------- |
-| **disableAutoMargin** | 取消自动设置的 Margin 值 | `boolean`        | -                       | `false` |
-| ...                   | 原生属性                 | `HTMLAttributes` | `'id', className', ...` | -       |
+| **disableAutoMargin** | 取消自动设置的 Margin 值    | `boolean`        | -                       | `false` |
+| ...                   | 原生属性                   | `HTMLAttributes` | `'id', className', ...` | -       |
 
-<Attributes.Title>CardType</Attributes.Title>
+<Attributes.Title>CardColors</Attributes.Title>
 
 ```ts
-type CardType =
+type CardColors =
   | 'default'
-  | 'secondary'
+  | 'primary'
   | 'success'
   | 'warning'
   | 'error'
-  | 'dark'
-  | 'lite'
-  | 'alert'
-  | 'purple'
-  | 'violet'
-  | 'cyan'
+```
+
+<Attributes.Title>CardVariants</Attributes.Title>
+
+```ts
+type CardVariants = 'solid' | 'line'
 ```
 
 </Attributes>
