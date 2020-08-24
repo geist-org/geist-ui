@@ -2,11 +2,11 @@ export const tuple = <T extends string[]>(...args: T) => args
 
 export const inputVariants = tuple('solid', 'line')
 
-export const buttonVariants = tuple('solid', 'line', 'text')
+const buttonVariants = tuple('solid', 'line', 'text')
 
 const buttonColors = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
-export const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
+const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
 
 // const buttonColors = tuple(
 //   'default',
@@ -21,7 +21,6 @@ export const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
 //   'error-light',
 // )
 
-
 const selectVariants = tuple('line', 'text')
 
 export const normalSizes = tuple('mini', 'small', 'medium', 'large')
@@ -30,37 +29,19 @@ export const normalTypes = tuple('default', 'primary', 'secondary', 'success', '
 
 export const inputColors = tuple('default', 'primary', 'success', 'warning', 'error')
 
-export const themeTypes = tuple('dark', 'light')
+const themeTypes = tuple('dark', 'light')
 
-export const snippetColors = tuple(
-  'default',
-  'secondary',
-  'success',
-  'warning',
-  'error',
-  'dark',
-  'lite',
-)
+const snippetColors = tuple('default', 'secondary', 'success', 'warning', 'error', 'dark', 'lite')
 
-export const cardTypes = tuple(
-  'default',
-  'secondary',
-  'success',
-  'warning',
-  'error',
-  'dark',
-  'lite',
-  'alert',
-  'purple',
-  'violet',
-  'cyan',
-)
+const cardVariants = tuple('solid', 'line')
 
-export const copyTypes = tuple('default', 'slient', 'prevent')
+const cardColors = tuple('default', 'primary', 'success', 'warning', 'error')
 
-export const triggerTypes = tuple('hover', 'click')
+const copyTypes = tuple('default', 'slient', 'prevent')
 
-export const placement = tuple(
+const triggerTypes = tuple('hover', 'click')
+
+const placement = tuple(
   'top',
   'topStart',
   'topEnd',
@@ -75,7 +56,7 @@ export const placement = tuple(
   'rightEnd',
 )
 
-export const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
+const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
 export type ButtonColors = typeof buttonColors[number]
 
@@ -97,7 +78,9 @@ export type ThemeTypes = typeof themeTypes[number]
 
 export type SnippetColors = typeof snippetColors[number]
 
-export type CardTypes = typeof cardTypes[number]
+export type CardColors = typeof cardColors[number]
+
+export type CardVariants = typeof cardVariants[number]
 
 export type CopyTypes = typeof copyTypes[number]
 
