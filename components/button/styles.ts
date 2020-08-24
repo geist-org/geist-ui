@@ -22,19 +22,19 @@ export const getButtonColors = (
   const { variant, color, disabled } = props
   const disabledCategory = {
     solid: {
-      bg: palette.cNeutral3,
-      border: palette.cNeutral3,
-      color: palette.cNeutral5,
+      bg: palette.cNeutral2,
+      border: palette.cNeutral2,
+      color: palette.cNeutral4,
     },
     line: {
-      bg: palette.cNeutral8,
+      bg: palette.cNeutral2,
       border: palette.cNeutral3,
-      color: palette.cNeutral5,
+      color: palette.cNeutral4,
     },
     text: {
       bg: 'transparent',
       border: 'transparent',
-      color: palette.cNeutral5,
+      color: palette.cNeutral4,
     },
   }
   const category = {
