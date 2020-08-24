@@ -1,11 +1,11 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { DatePicker } from 'components'
 import { selectCell } from './utils'
 
 // ensure that the snapshots does not mismatch due to the changes of test date
-const defaultValue = moment('2020-05-01')
+const defaultValue = dayjs('2020-05-01')
 
 describe('DatePicker[picker=`year`]', () => {
   it('should render correctly', () => {
@@ -24,7 +24,7 @@ describe('DatePicker[picker=`year`]', () => {
   })
 
   it('prop `defaultValue` should works', () => {
-    const date = moment('2020-01-01', 'YYYY-MM-DD')
+    const date = dayjs('2020-01-01', 'YYYY-MM-DD')
     const wrapper = mount(
       <div>
         <DatePicker picker="year" open defaultValue={date} />
@@ -35,7 +35,7 @@ describe('DatePicker[picker=`year`]', () => {
   })
 
   it('prop `defaultPickerValue` should works', () => {
-    const date = moment('2020-01-01', 'YYYY-MM-DD')
+    const date = dayjs('2020-01-01', 'YYYY-MM-DD')
     const wrapper = mount(
       <div>
         <DatePicker picker="year" open defaultPickerValue={date} />
@@ -55,7 +55,7 @@ describe('DatePicker[picker=`year`]', () => {
   })
 
   it('prop `value` should works', () => {
-    const date = moment('2020-01-01', 'YYYY-MM-DD')
+    const date = dayjs('2020-01-01', 'YYYY-MM-DD')
     const wrapper = mount(
       <DatePicker picker="year" open value={date} defaultPickerValue={defaultValue} />,
     )

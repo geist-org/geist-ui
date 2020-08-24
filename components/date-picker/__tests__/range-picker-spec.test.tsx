@@ -1,13 +1,13 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { DatePicker } from 'components'
 import { openPicker, selectCell } from './utils'
 
 const { RangePicker } = DatePicker
 
 // ensure that the snapshots does not mismatch due to the changes of test date
-const defaultValue = moment('2020-01-01')
+const defaultValue = dayjs('2020-01-01')
 
 describe('RangePicker Spec Props', () => {
   it('prop `allowEmpty` should works', () => {
@@ -26,24 +26,24 @@ describe('RangePicker Spec Props', () => {
   })
 
   it('prop `defaultValue` should works', () => {
-    const dateStart = moment('2020-01-01', 'YYYY-MM-DD')
-    const dateEnd = moment('2020-02-01', 'YYYY-MM-DD')
+    const dateStart = dayjs('2020-01-01', 'YYYY-MM-DD')
+    const dateEnd = dayjs('2020-02-01', 'YYYY-MM-DD')
     const wrapper = mount(<RangePicker open defaultValue={[dateStart, dateEnd]} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('prop `defaultPickerValue` should works', () => {
-    const dateStart = moment('2020-01-01', 'YYYY-MM-DD')
-    const dateEnd = moment('2020-02-01', 'YYYY-MM-DD')
+    const dateStart = dayjs('2020-01-01', 'YYYY-MM-DD')
+    const dateEnd = dayjs('2020-02-01', 'YYYY-MM-DD')
     const wrapper = mount(<RangePicker open defaultPickerValue={[dateStart, dateEnd]} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('prop `value` should works', () => {
-    const dateStart = moment('2020-01-01', 'YYYY-MM-DD')
-    const dateEnd = moment('2020-02-01', 'YYYY-MM-DD')
+    const dateStart = dayjs('2020-01-01', 'YYYY-MM-DD')
+    const dateEnd = dayjs('2020-02-01', 'YYYY-MM-DD')
     const wrapper = mount(<RangePicker open value={[dateStart, dateEnd]} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -75,7 +75,7 @@ describe('RangePicker Spec Props', () => {
         open
         defaultPickerValue={[defaultValue, defaultValue]}
         ranges={{
-          Today: [moment(), moment()],
+          Today: [dayjs(), dayjs()],
         }}
       />,
     )

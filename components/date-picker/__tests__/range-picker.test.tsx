@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { DatePicker } from 'components'
 import { Wifi } from '@zeit-ui/react-icons'
 import { clearInput, nextMonth, nextYear, openPicker, selectCell } from './utils'
@@ -9,7 +9,7 @@ import { act } from 'react-dom/test-utils'
 const { RangePicker } = DatePicker
 
 // ensure that the snapshots does not mismatch due to the changes of test date
-const defaultValue = moment('2020-07-01')
+const defaultValue = dayjs('2020-07-01')
 
 describe('RangePicker Common', () => {
   it('should render correctly', () => {
@@ -152,8 +152,8 @@ describe('RangePicker Common', () => {
   })
 
   it('prop `value` should works', () => {
-    const dateStart = moment('2020-01-01', 'YYYY-MM-DD')
-    const dateEnd = moment('2020-02-01', 'YYYY-MM-DD')
+    const dateStart = dayjs('2020-01-01', 'YYYY-MM-DD')
+    const dateEnd = dayjs('2020-02-01', 'YYYY-MM-DD')
     const wrapper = mount(
       <div>
         <RangePicker open value={[dateStart, dateEnd]} />
@@ -423,7 +423,7 @@ describe('RangePicker Common', () => {
 
   it('prop `disabledDate` should works', () => {
     function disabledDate(current: any) {
-      return current && current < moment().endOf('day')
+      return current && current < dayjs().endOf('day')
     }
     const wrapper = mount(
       <RangePicker
@@ -510,7 +510,7 @@ describe('RangePicker Common', () => {
     const ref = React.createRef<any>()
 
     const wrapper = mount(<RangePicker open ref={ref} />)
-    act(() => ref.current.setValue(moment('2020-08-08')))
+    act(() => ref.current.setValue(dayjs('2020-08-08')))
 
     setTimeout(() => {
       expect(wrapper.find('input').at(0).getDOMNode<HTMLInputElement>().value).toBe('2020-08-08')

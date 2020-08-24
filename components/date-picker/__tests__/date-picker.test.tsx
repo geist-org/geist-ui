@@ -1,13 +1,13 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { DatePicker } from 'components'
 import { Wifi } from '@zeit-ui/react-icons'
 import { clearInput, nextMonth, nextYear, openPicker, selectCell } from './utils'
 import { act } from 'react-dom/test-utils'
 
 // ensure that the snapshots does not mismatch due to the changes of test date
-const defaultValue = moment('2020-08-01 12:00:00')
+const defaultValue = dayjs('2020-08-01 12:00:00')
 
 describe('DatePicker Common', () => {
   it('should render correctly', () => {
@@ -95,7 +95,7 @@ describe('DatePicker Common', () => {
   })
 
   it('prop `value` should works', () => {
-    const date = moment('2020-01-01', 'YYYY-MM-DD')
+    const date = dayjs('2020-01-01', 'YYYY-MM-DD')
     const wrapper = mount(
       <div>
         <DatePicker open value={date} />
@@ -299,7 +299,7 @@ describe('DatePicker Common', () => {
 
   it('prop `disabledDate` should works', () => {
     function disabledDate(current: any) {
-      return current && current < moment().endOf('day')
+      return current && current < dayjs().endOf('day')
     }
     const wrapper = mount(
       <DatePicker disabledDate={disabledDate} open defaultPickerValue={defaultValue} />,
@@ -373,7 +373,7 @@ describe('DatePicker Common', () => {
     const ref = React.createRef<any>()
 
     const wrapper = mount(<DatePicker open ref={ref} />)
-    act(() => ref.current.setValue(moment('2020-08-08')))
+    act(() => ref.current.setValue(dayjs('2020-08-08')))
 
     setTimeout(() => {
       expect(wrapper.find('input').at(0).getDOMNode<HTMLInputElement>().value).toBe('2020-08-08')

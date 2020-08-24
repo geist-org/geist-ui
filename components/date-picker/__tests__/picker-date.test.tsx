@@ -1,11 +1,11 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { DatePicker } from 'components'
 import { range, selectCell } from './utils'
 
 // ensure that the snapshots does not mismatch due to the changes of test date
-const defaultValue = moment('2020-08-01 12:00:00')
+const defaultValue = dayjs('2020-08-01 12:00:00')
 
 describe('DatePicker[picker=`date`]', () => {
   it('should render correctly', () => {
@@ -16,7 +16,7 @@ describe('DatePicker[picker=`date`]', () => {
   })
 
   it('prop `defaultValue` should works', () => {
-    const date = moment('2020-01-01', 'YYYY-MM-DD')
+    const date = dayjs('2020-01-01', 'YYYY-MM-DD')
     const wrapper = mount(
       <div>
         <DatePicker picker="date" open defaultValue={date} />
@@ -27,7 +27,7 @@ describe('DatePicker[picker=`date`]', () => {
   })
 
   it('prop `defaultPickerValue` should works', () => {
-    const date = moment('2020-01-01', 'YYYY-MM-DD')
+    const date = dayjs('2020-01-01', 'YYYY-MM-DD')
     const wrapper = mount(
       <div>
         <DatePicker picker="date" open defaultPickerValue={date} />
@@ -103,7 +103,7 @@ describe('DatePicker[picker=`date`]', () => {
   })
 
   it('prop `value` should works', () => {
-    const date = moment('2020-01-01', 'YYYY-MM-DD')
+    const date = dayjs('2020-01-01', 'YYYY-MM-DD')
     const wrapper = mount(<DatePicker picker="date" open value={date} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
