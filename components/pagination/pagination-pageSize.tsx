@@ -70,10 +70,10 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
             font-weight: 500;
           }
           .pagination-pagesize .left {
-            margin-right: 0.5714rem;
+            margin-right: ${theme.layout.gapHalf};
           }
           .pagination-pagesize .right {
-            margin-left: 0.5714rem;
+            margin-left: ${theme.layout.gapHalf};
           }
         `}
       </style>

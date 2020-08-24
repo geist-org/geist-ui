@@ -60,10 +60,10 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
             font-weight: 500;
           }
           .pagination-quickjumper .left {
-            margin-right: 0.5714rem;
+            margin-right: ${theme.layout.gapHalf};
           }
           .pagination-quickjumper .right {
-            margin-left: 0.5714rem;
+            margin-left: ${theme.layout.gapHalf};
           }
         `}
       </style>
