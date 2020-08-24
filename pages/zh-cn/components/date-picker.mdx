@@ -1,7 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Link, Text, Code, Spacer, DatePicker, Divider, Button } from 'components'
 import NextLink from 'next/link'
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { useState } from 'react'
 
 export const meta = {
@@ -93,7 +93,7 @@ export const meta = {
 <Playground
   title="日期格式"
   desc="使用 `format` 属性，可以自定义日期显示格式。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -102,15 +102,15 @@ export const meta = {
   const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY']
   return (
     <>
-      <DatePicker locale="zh-CN" defaultValue={moment('2020/01/01', dateFormat)} format={dateFormat} />
+      <DatePicker locale="zh-CN" defaultValue={dayjs('2020/01/01', dateFormat)} format={dateFormat} />
       <Spacer y={0.5} />
-      <DatePicker locale="zh-CN" defaultValue={moment('01/01/2020', dateFormatList[0])} format={dateFormatList} />
+      <DatePicker locale="zh-CN" defaultValue={dayjs('01/01/2020', dateFormatList[0])} format={dateFormatList} />
       <Spacer y={0.5} />
-      <DatePicker locale="zh-CN" defaultValue={moment('2020/01', monthFormat)} format={monthFormat} picker="month" />
+      <DatePicker locale="zh-CN" defaultValue={dayjs('2020/01', monthFormat)} format={monthFormat} picker="month" />
       <Spacer y={0.5} />
       <RangePicker
         locale="zh-CN"
-        defaultValue={[moment('2020/01/01', dateFormat), moment('2015/01/01', dateFormat)]}
+        defaultValue={[dayjs('2020/01/01', dateFormat), dayjs('2015/01/01', dateFormat)]}
         format={dateFormat}
       />
     </>
@@ -153,37 +153,37 @@ export const meta = {
 <Playground
   title="禁用"
   desc="让选择框不可用或只读。可以通过数组单独禁用 RangePicker 的其中一项。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker
   const dateFormat = 'YYYY-MM-DD'
   return (
     <>
-      <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} disabled />
+      <DatePicker locale="zh-CN" defaultValue={dayjs('2020-06-06', dateFormat)} disabled />
       <Spacer y={0.5} />
-      <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} variant="solid" disabled />
+      <DatePicker locale="zh-CN" defaultValue={dayjs('2020-06-06', dateFormat)} variant="solid" disabled />
       <Spacer y={0.5} />
-      <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} inputReadOnly allowClear={false} />
+      <DatePicker locale="zh-CN" defaultValue={dayjs('2020-06-06', dateFormat)} inputReadOnly allowClear={false} />
       <Spacer y={0.5} />
-      <DatePicker locale="zh-CN" defaultValue={moment('2020-06-06', dateFormat)} variant="solid" inputReadOnly allowClear={false} />
+      <DatePicker locale="zh-CN" defaultValue={dayjs('2020-06-06', dateFormat)} variant="solid" inputReadOnly allowClear={false} />
       <Spacer y={0.5} />
       <DatePicker
         locale="zh-CN"
         picker="month"
-        defaultValue={moment('2020-06', 'YYYY-MM')}
+        defaultValue={dayjs('2020-06', 'YYYY-MM')}
         disabled
       />
       <Spacer y={0.5} />
       <RangePicker
         locale="zh-CN"
-        defaultValue={[moment('2020-06-06', dateFormat), moment('2020-06-06', dateFormat)]}
+        defaultValue={[dayjs('2020-06-06', dateFormat), dayjs('2020-06-06', dateFormat)]}
         disabled
       />
       <Spacer y={0.5} />
       <RangePicker
         locale="zh-CN"
-        defaultValue={[moment('2020-09-01', dateFormat), moment('2020-10-10', dateFormat)]}
+        defaultValue={[dayjs('2020-09-01', dateFormat), dayjs('2020-10-10', dateFormat)]}
         disabled={[false, true]}
       />
     </>
@@ -195,7 +195,7 @@ export const meta = {
 <Playground
   title="不可选择日期和时间"
   desc="可用 `disabledDate` 和 `disabledTime` 分别禁止选择部分日期和时间，其中 `disabledTime` 需要和 `showTime` 一起使用。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -208,7 +208,7 @@ export const meta = {
   }
   function disabledDate(current) {
     // Can not select days before today and today
-    return current && current < moment().endOf('day')
+    return current && current < dayjs().endOf('day')
   }
   function disabledDateTime() {
     return {
@@ -238,7 +238,7 @@ export const meta = {
         format="YYYY-MM-DD HH:mm:ss"
         disabledDate={disabledDate}
         disabledTime={disabledDateTime}
-        showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
+        showTime={{ defaultValue: dayjs('00:00:00', 'HH:mm:ss') }}
       />
       <Spacer y={0.5} />
       <DatePicker locale="zh-CN" picker="month" disabledDate={disabledDate} />
@@ -251,7 +251,7 @@ export const meta = {
         disabledTime={disabledRangeTime}
         showTime={{
           hideDisabledOptions: true,
-          defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('11:59:59', 'HH:mm:ss')],
+          defaultValue: [dayjs('00:00:00', 'HH:mm:ss'), dayjs('11:59:59', 'HH:mm:ss')],
         }}
         format="YYYY-MM-DD HH:mm:ss"
       />
@@ -293,7 +293,7 @@ export const meta = {
 <Playground
   title="预设范围"
   desc="可以预设常用的日期范围以提高用户体验。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker;
@@ -306,8 +306,8 @@ export const meta = {
       <RangePicker
         locale="zh-CN"
         ranges={{
-          '今天': [moment(), moment()],
-          '本月': [moment().startOf('month'), moment().endOf('month')],
+          '今天': [dayjs(), dayjs()],
+          '本月': [dayjs().startOf('month'), dayjs().endOf('month')],
         }}
         onChange={onChange}
       />
@@ -315,8 +315,8 @@ export const meta = {
       <RangePicker
         locale="zh-CN"
         ranges={{
-          '今天': [moment(), moment()],
-          '本月': [moment().startOf('month'), moment().endOf('month')],
+          '今天': [dayjs().startOf('day'), dayjs().endOf('day')],
+          '本月': [dayjs().startOf('month'), dayjs().endOf('month')],
         }}
         showTime
         format="YYYY/MM/DD HH:mm:ss"
@@ -480,7 +480,7 @@ export const meta = {
 
 <Playground
   desc="点击 TimePicker，然后可以在浮层中选择或者输入某一时间。"
-  scope={{ DatePicker, moment, Spacer }}
+  scope={{ DatePicker, dayjs, Spacer }}
   code={`
 () => {
   const { TimePicker } = DatePicker
@@ -535,11 +535,11 @@ export const meta = {
 <Playground
   title="禁用"
   desc="禁用时间选择。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
-  return <TimePicker locale="zh-CN" defaultValue={moment('12:00:00', 'HH:mm:ss')} disabled />
+  return <TimePicker locale="zh-CN" defaultValue={dayjs('12:00:00', 'HH:mm:ss')} disabled />
 }
 `}
 />
@@ -547,12 +547,12 @@ export const meta = {
 <Playground
   title="选择时分"
   desc="TimePicker 浮层中的列会随着 `format` 变化，当略去 `format` 中的某部分时，浮层中对应的列也会消失。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
   const format = 'HH:mm'
-  return <TimePicker locale="zh_CN" defaultValue={moment('12:00', format)} format={format} />
+  return <TimePicker locale="zh_CN" defaultValue={dayjs('12:00', format)} format={format} />
 }
 `}
 />
@@ -560,7 +560,7 @@ export const meta = {
 <Playground
   title="步长选项"
   desc="可以使用 `hourStep` `minuteStep` `secondStep` 按步长展示可选的时分秒。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
@@ -598,7 +598,7 @@ export const meta = {
 <Playground
   title="12 小时制"
   desc="12 小时制的时间选择器，默认的 format 为 `h:mm:ss a`。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
@@ -627,7 +627,7 @@ export const meta = {
 <Playground
   title="范围选择器"
   desc="通过 `RangePicker` 使用时间范围选择器。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -639,7 +639,7 @@ export const meta = {
 <Playground
   title="无边框"
   desc="无边框样式。"
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
@@ -658,7 +658,7 @@ export const meta = {
 <Playground
   title="命令式 API"
   desc="使用非受控方式更新组件。"
-  scope={{ DatePicker, Spacer, Button, moment, Divider }}
+  scope={{ DatePicker, Spacer, Button, dayjs, Divider }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -666,14 +666,14 @@ export const meta = {
   const ref2 = React.useRef(null)
   const setChange = () => {
     console.log(ref)
-    ref.current.setValue(moment())
+    ref.current.setValue(dayjs())
     setTimeout(() => {
       ref.current.focus()
     }, 0)
   }
   const setChange2 = () => {
     console.log(ref2)
-    ref2.current.setValue([moment().add(-2, 'days'), moment()])
+    ref2.current.setValue([dayjs().add(-2, 'days'), dayjs()])
     setTimeout(() => {
       ref2.current.focus()
     }, 0)
@@ -713,143 +713,143 @@ export const meta = {
 
 <Attributes.Title>共同的 Props</Attributes.Title>
 
-| 属性                  | 描述                                             | 类型                                                              | 推荐值                                                        | 默认      |
-| --------------------- | ------------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------- | --------- |
-| **variant**           | 输入框的类型                                     | `string`                                                          | `solid` \| `line`                                             | `line`    |
-| **color**             | 输入框颜色                                       | `NormalTypes`                                                     | `default` \| `secondary` \| `success` \| `warning` \| `error` | `default` |
-| **size**              | 输入框大小                                       | `string`                                                          | `large` \| `medium` \| `small` \| `mini`                      | `medium`  |
-| **allowClear**        | 是否显示清除按钮                                 | `boolean`                                                         | -                                                             | `true`    |
-| **autoFocus**         | 自动获取焦点                                     | `boolean`                                                         | -                                                             | `false`   |
-| **className**         | 额外 className                                   | `string`                                                          | -                                                             | -         |
-| **dateRender**        | 自定义日期单元格的内容                           | `function(currentDate: moment, today: moment) => React.ReactNode` | -                                                             | -         |
-| **disabled**          | 禁用                                             | `boolean`                                                         | -                                                             | `false`   |
-| **disabledDate**      | 不可选择的日期                                   | `(currentDate: moment) => boolean`                                | -                                                             | -         |
-| **dropdownClassName** | 弹出日历的额外 className                         | `string`                                                          | -                                                             | -         |
-| **getPopupContainer** | 定义浮层的容器，默认为 body 上新建 div           | `function(trigger)`                                               | -                                                             | -         |
-| **locale**            | 国际化配置                                       | `string`                                                          | `en-US` \| `zh-CN`                                            | `en-US`   |
-| **mode**              | 日期面板的模式                                   | `string`                                                          | `time` \| `date` \| `month` \| `year` \| `decade`             | -         |
-| **open**              | 控制弹层是否展开                                 | `boolean`                                                         | -                                                             | `false`   |
-| **panelRender**       | 自定义渲染面板                                   | `(panelNode) => ReactNode`                                        | -                                                             | -         |
-| **picker**            | 设置选择器类型                                   | `string`                                                          | `date` \| `week` \| `month` \| `quarter` \| `year`            | `date`    |
-| **placeholder**       | 输入框提示文字                                   | `string` \| `[string, string]`                                    | -                                                             | -         |
-| **popupStyle**        | 额外的弹出日历样式                               | `CSSProperties`                                                   | -                                                             | {}        |
-| **bordered**          | 是否有边框                                       | `boolean`                                                         | -                                                             | `true`    |
-| **suffixIcon**        | 自定义的选择框后缀图标                           | `ReactNode`                                                       | -                                                             | -         |
-| **style**             | 自定义输入框样式，如宽度，高度等                 | `CSSProperties`                                                   | {}                                                            | -         |
-| **onOpenChange**      | 弹出日历和关闭日历的回调                         | `function(open)`                                                  | -                                                             | -         |
-| **onPanelChange**     | 日历面板切换的回调                               | `function(value, mode)`                                           | -                                                             | -         |
-| **inputReadOnly**     | 设置输入框为只读（避免在移动设备上打开虚拟键盘） | `boolean`                                                         | -                                                             | `false`   |
+| 属性                  | 描述                                             | 类型                                                            | 推荐值                                                        | 默认      |
+| --------------------- | ------------------------------------------------ | --------------------------------------------------------------- | ------------------------------------------------------------- | --------- |
+| **variant**           | 输入框的类型                                     | `string`                                                        | `solid` \| `line`                                             | `line`    |
+| **color**             | 输入框颜色                                       | `NormalTypes`                                                   | `default` \| `secondary` \| `success` \| `warning` \| `error` | `default` |
+| **size**              | 输入框大小                                       | `string`                                                        | `large` \| `medium` \| `small` \| `mini`                      | `medium`  |
+| **allowClear**        | 是否显示清除按钮                                 | `boolean`                                                       | -                                                             | `true`    |
+| **autoFocus**         | 自动获取焦点                                     | `boolean`                                                       | -                                                             | `false`   |
+| **className**         | 额外 className                                   | `string`                                                        | -                                                             | -         |
+| **dateRender**        | 自定义日期单元格的内容                           | `function(currentDate: dayjs, today: dayjs) => React.ReactNode` | -                                                             | -         |
+| **disabled**          | 禁用                                             | `boolean`                                                       | -                                                             | `false`   |
+| **disabledDate**      | 不可选择的日期                                   | `(currentDate: dayjs) => boolean`                               | -                                                             | -         |
+| **dropdownClassName** | 弹出日历的额外 className                         | `string`                                                        | -                                                             | -         |
+| **getPopupContainer** | 定义浮层的容器，默认为 body 上新建 div           | `function(trigger)`                                             | -                                                             | -         |
+| **locale**            | 国际化配置                                       | `string`                                                        | `en-US` \| `zh-CN`                                            | `en-US`   |
+| **mode**              | 日期面板的模式                                   | `string`                                                        | `time` \| `date` \| `month` \| `year` \| `decade`             | -         |
+| **open**              | 控制弹层是否展开                                 | `boolean`                                                       | -                                                             | `false`   |
+| **panelRender**       | 自定义渲染面板                                   | `(panelNode) => ReactNode`                                      | -                                                             | -         |
+| **picker**            | 设置选择器类型                                   | `string`                                                        | `date` \| `week` \| `month` \| `quarter` \| `year`            | `date`    |
+| **placeholder**       | 输入框提示文字                                   | `string` \| `[string, string]`                                  | -                                                             | -         |
+| **popupStyle**        | 额外的弹出日历样式                               | `CSSProperties`                                                 | -                                                             | {}        |
+| **bordered**          | 是否有边框                                       | `boolean`                                                       | -                                                             | `true`    |
+| **suffixIcon**        | 自定义的选择框后缀图标                           | `ReactNode`                                                     | -                                                             | -         |
+| **style**             | 自定义输入框样式，如宽度，高度等                 | `CSSProperties`                                                 | {}                                                            | -         |
+| **onOpenChange**      | 弹出日历和关闭日历的回调                         | `function(open)`                                                | -                                                             | -         |
+| **onPanelChange**     | 日历面板切换的回调                               | `function(value, mode)`                                         | -                                                             | -         |
+| **inputReadOnly**     | 设置输入框为只读（避免在移动设备上打开虚拟键盘） | `boolean`                                                       | -                                                             | `false`   |
 
 <Attributes.Title>共同的方法</Attributes.Title>
 
-| 名称           | 描述                                    | 参数                   |
-| -------------- | --------------------------------------- | ---------------------- |
-| **blur()**     | 移除焦点                                | -                      |
-| **focus()**    | 获取焦点                                | -                      |
-| **setValue()** | 设置默认值（参考 `defaultValue` props） | `moment` \| `moment[]` |
+| 名称           | 描述                                    | 参数                 |
+| -------------- | --------------------------------------- | -------------------- |
+| **blur()**     | 移除焦点                                | -                    |
+| **focus()**    | 获取焦点                                | -                    |
+| **setValue()** | 设置默认值（参考 `defaultValue` props） | `dayjs` \| `dayjs[]` |
 
 <Attributes.Title>DatePicker Props</Attributes.Title>
 
-| 属性                      | 描述                                                                                               | 类型                                         | 推荐值 | 默认                            |
-| ------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------- | ------ | ------------------------------- |
-| **defaultValue**          | 默认日期，如果开始时间或结束时间为 `null` 或者 `undefined`，日期范围将是一个开区间                 | [moment](http://momentjs.com/)               | -      | -                               |
-| **defaultPickerValue**    | 默认面板日期                                                                                       | [moment](http://momentjs.com/)               | -      | -                               |
-| **disabledTime**          | 不可选择的时间                                                                                     | `function(date)`                             | -      | -                               |
-| **format**                | 设置日期格式，为数组时支持多格式匹配，展示以第一个为准。配置参考 [moment.js](http://momentjs.com/) | `string` \| `string[]`                       | -      | `YYYY-MM-DD`                    |
-| **renderExtraFooter**     | 在面板中添加额外的页脚                                                                             | `(mode) => React.ReactNode`                  | -      | -                               |
-| **showTime**              | 增加时间选择功能                                                                                   | `Object` \| `boolean`                        | -      | `DatePicker[picker=time] Props` |
-| **showTime**.defaultValue | 设置用户选择日期时默认的时分秒                                                                     | [moment](http://momentjs.com/)               | -      | `moment()`                      |
-| **showToday**             | 是否展示“今天”按钮                                                                                 | `boolean`                                    | -      | `true`                          |
-| **value**                 | 日期                                                                                               | [moment](http://momentjs.com/)               | -      | -                               |
-| **onChange**              | 时间发生变化的回调                                                                                 | `function(date: moment, dateString: string)` | -      | -                               |
-| **onOk**                  | 点击确定按钮的回调                                                                                 | `function()`                                 | -      | -                               |
-| **onPanelChange**         | 日期面板变化时的回调                                                                               | `function(value, mode)`                      | -      | -                               |
-| **showNow**               | 当设定了 `showTime` 的时候，面板是否显示“此刻”按钮                                                 | `boolean`                                    | -      | -                               |
+| 属性                      | 描述                                                                                           | 类型                                        | 推荐值 | 默认                            |
+| ------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------- | ------ | ------------------------------- |
+| **defaultValue**          | 默认日期，如果开始时间或结束时间为 `null` 或者 `undefined`，日期范围将是一个开区间             | [dayjs](https://day.js.org/)                | -      | -                               |
+| **defaultPickerValue**    | 默认面板日期                                                                                   | [dayjs](https://day.js.org/)                | -      | -                               |
+| **disabledTime**          | 不可选择的时间                                                                                 | `function(date)`                            | -      | -                               |
+| **format**                | 设置日期格式，为数组时支持多格式匹配，展示以第一个为准。配置参考 [day.js](https://day.js.org/) | `string` \| `string[]`                      | -      | `YYYY-MM-DD`                    |
+| **renderExtraFooter**     | 在面板中添加额外的页脚                                                                         | `(mode) => React.ReactNode`                 | -      | -                               |
+| **showTime**              | 增加时间选择功能                                                                               | `Object` \| `boolean`                       | -      | `DatePicker[picker=time] Props` |
+| **showTime**.defaultValue | 设置用户选择日期时默认的时分秒                                                                 | [dayjs](https://day.js.org/)                | -      | `dayjs()`                       |
+| **showToday**             | 是否展示“今天”按钮                                                                             | `boolean`                                   | -      | `true`                          |
+| **value**                 | 日期                                                                                           | [dayjs](https://day.js.org/)                | -      | -                               |
+| **onChange**              | 时间发生变化的回调                                                                             | `function(date: dayjs, dateString: string)` | -      | -                               |
+| **onOk**                  | 点击确定按钮的回调                                                                             | `function()`                                | -      | -                               |
+| **onPanelChange**         | 日期面板变化时的回调                                                                           | `function(value, mode)`                     | -      | -                               |
+| **showNow**               | 当设定了 `showTime` 的时候，面板是否显示“此刻”按钮                                             | `boolean`                                   | -      | -                               |
 
 <Attributes.Title>DatePicker[picker=time] Props</Attributes.Title>
 
-| 属性                    | 描述                                                   | 类型                                               | 推荐值 | 默认       |
-| ----------------------- | ------------------------------------------------------ | -------------------------------------------------- | ------ | ---------- |
-| **defaultValue**        | 默认时间                                               | [moment](http://momentjs.com/)                     | -      | -          |
-| **disabledHours**       | 禁止选择部分小时选项                                   | `function()`                                       | -      | -          |
-| **disabledMinutes**     | 禁止选择部分分钟选项                                   | `function(selectedHour)`                           | -      | -          |
-| **disabledSeconds**     | 禁止选择部分秒选项                                     | `function(selectedHour, selectedMinute)`           | -      | -          |
-| **format**              | 展示的时间格式                                         | `string`                                           | -      | `HH:mm:ss` |
-| **hideDisabledOptions** | 隐藏禁止选择的选项                                     | `boolean`                                          | -      | `false`    |
-| **hourStep**            | 小时选项间隔                                           | `number`                                           | -      | `1`        |
-| **minuteStep**          | 分钟选项间隔                                           | `number`                                           | -      | `1`        |
-| **secondStep**          | 秒选项间隔                                             | `number`                                           | -      | `1`        |
-| **renderExtraFooter**   | 选择框底部显示自定义的内容                             | `() => ReactNode`                                  | -      | -          |
-| **use12Hours**          | 使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a` | `boolean`                                          | -      | `false`    |
-| **value**               | 当前时间                                               | [moment](http://momentjs.com/)                     | -      | -          |
-| **onChange**            | 时间发生变化的回调                                     | `function(time: moment, timeString: string): void` | -      | -          |
-| **onOpenChange**        | 面板打开/关闭时的回调                                  | `(open: boolean) => void`                          | -      | -          |
-| **showNow**             | 面板是否显示“此刻”按钮                                 | `boolean`                                          | -      | -          |
+| 属性                    | 描述                                                   | 类型                                              | 推荐值 | 默认       |
+| ----------------------- | ------------------------------------------------------ | ------------------------------------------------- | ------ | ---------- |
+| **defaultValue**        | 默认时间                                               | [dayjs](https://day.js.org/)                      | -      | -          |
+| **disabledHours**       | 禁止选择部分小时选项                                   | `function()`                                      | -      | -          |
+| **disabledMinutes**     | 禁止选择部分分钟选项                                   | `function(selectedHour)`                          | -      | -          |
+| **disabledSeconds**     | 禁止选择部分秒选项                                     | `function(selectedHour, selectedMinute)`          | -      | -          |
+| **format**              | 展示的时间格式                                         | `string`                                          | -      | `HH:mm:ss` |
+| **hideDisabledOptions** | 隐藏禁止选择的选项                                     | `boolean`                                         | -      | `false`    |
+| **hourStep**            | 小时选项间隔                                           | `number`                                          | -      | `1`        |
+| **minuteStep**          | 分钟选项间隔                                           | `number`                                          | -      | `1`        |
+| **secondStep**          | 秒选项间隔                                             | `number`                                          | -      | `1`        |
+| **renderExtraFooter**   | 选择框底部显示自定义的内容                             | `() => ReactNode`                                 | -      | -          |
+| **use12Hours**          | 使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a` | `boolean`                                         | -      | `false`    |
+| **value**               | 当前时间                                               | [dayjs](https://day.js.org/)                      | -      | -          |
+| **onChange**            | 时间发生变化的回调                                     | `function(time: dayjs, timeString: string): void` | -      | -          |
+| **onOpenChange**        | 面板打开/关闭时的回调                                  | `(open: boolean) => void`                         | -      | -          |
+| **showNow**             | 面板是否显示“此刻”按钮                                 | `boolean`                                         | -      | -          |
 
 <Attributes.Title>DatePicker[picker=year] Props</Attributes.Title>
 
-| 属性                   | 描述                                                       | 类型                                         | 推荐值 | 默认   |
-| ---------------------- | ---------------------------------------------------------- | -------------------------------------------- | ------ | ------ |
-| **defaultValue**       | 默认日期                                                   | [moment](http://momentjs.com/)               | -      | -      |
-| **defaultPickerValue** | 默认面板日期                                               | [moment](http://momentjs.com/)               | -      | -      |
-| **format**             | 展示的日期格式，配置参考 [moment.js](http://momentjs.com/) | `string`                                     | -      | `YYYY` |
-| **renderExtraFooter**  | 在面板中添加额外的页脚                                     | `() => React.ReactNode`                      | -      | -      |
-| **value**              | 日期                                                       | [moment](http://momentjs.com/)               | -      | -      |
-| **onChange**           | 时间发生变化的回调，发生在用户选择时间时                   | `function(date: moment, dateString: string)` | -      | -      |
+| 属性                   | 描述                                                   | 类型                                        | 推荐值 | 默认   |
+| ---------------------- | ------------------------------------------------------ | ------------------------------------------- | ------ | ------ |
+| **defaultValue**       | 默认日期                                               | [dayjs](https://day.js.org/)                | -      | -      |
+| **defaultPickerValue** | 默认面板日期                                           | [dayjs](https://day.js.org/)                | -      | -      |
+| **format**             | 展示的日期格式，配置参考 [day.js](https://day.js.org/) | `string`                                    | -      | `YYYY` |
+| **renderExtraFooter**  | 在面板中添加额外的页脚                                 | `() => React.ReactNode`                     | -      | -      |
+| **value**              | 日期                                                   | [dayjs](https://day.js.org/)                | -      | -      |
+| **onChange**           | 时间发生变化的回调，发生在用户选择时间时               | `function(date: dayjs, dateString: string)` | -      | -      |
 
 <Attributes.Title>DatePicker[picker=quarter] Props</Attributes.Title>
 
-| 属性                   | 描述                                                       | 类型                                         | 推荐值 | 默认       |
-| ---------------------- | ---------------------------------------------------------- | -------------------------------------------- | ------ | ---------- |
-| **defaultValue**       | 默认日期                                                   | [moment](http://momentjs.com/)               | -      |            |
-| **defaultPickerValue** | 默认面板日期                                               | [moment](http://momentjs.com/)               | -      | -          |
-| **format**             | 展示的日期格式，配置参考 [moment.js](http://momentjs.com/) | `string`                                     | -      | `YYYY-\QQ` |
-| **renderExtraFooter**  | 在面板中添加额外的页脚                                     | `() => React.ReactNode`                      | -      | -          |
-| **value**              | 日期                                                       | [moment](http://momentjs.com/)               | -      | -          |
-| **onChange**           | 时间发生变化的回调，发生在用户选择时间时                   | `function(date: moment, dateString: string)` | -      | -          |
+| 属性                   | 描述                                                   | 类型                                        | 推荐值 | 默认       |
+| ---------------------- | ------------------------------------------------------ | ------------------------------------------- | ------ | ---------- |
+| **defaultValue**       | 默认日期                                               | [dayjs](https://day.js.org/)                | -      |            |
+| **defaultPickerValue** | 默认面板日期                                           | [dayjs](https://day.js.org/)                | -      | -          |
+| **format**             | 展示的日期格式，配置参考 [day.js](https://day.js.org/) | `string`                                    | -      | `YYYY-\QQ` |
+| **renderExtraFooter**  | 在面板中添加额外的页脚                                 | `() => React.ReactNode`                     | -      | -          |
+| **value**              | 日期                                                   | [dayjs](https://day.js.org/)                | -      | -          |
+| **onChange**           | 时间发生变化的回调，发生在用户选择时间时               | `function(date: dayjs, dateString: string)` | -      | -          |
 
 <Attributes.Title>DatePicker[picker=month] Props</Attributes.Title>
 
-| 属性                   | 描述                                                       | 类型                                         | 推荐值 | 默认      |
-| ---------------------- | ---------------------------------------------------------- | -------------------------------------------- | ------ | --------- |
-| **defaultValue**       | 默认日期                                                   | [moment](http://momentjs.com/)               | -      | -         |
-| **defaultPickerValue** | 默认面板日期                                               | [moment](http://momentjs.com/)               | -      | -         |
-| **format**             | 展示的日期格式，配置参考 [moment.js](http://momentjs.com/) | `string`                                     | -      | `YYYY-MM` |
-| **monthCellRender**    | 自定义的月份内容渲染方法                                   | `function(date, locale): ReactNode`          | -      | -         |
-| **renderExtraFooter**  | 在面板中添加额外的页脚                                     | `() => React.ReactNode`                      | -      | -         |
-| **value**              | 日期                                                       | [moment](http://momentjs.com/)               | -      | -         |
-| **onChange**           | 时间发生变化的回调，发生在用户选择时间时                   | `function(date: moment, dateString: string)` | -      | -         |
+| 属性                   | 描述                                                   | 类型                                        | 推荐值 | 默认      |
+| ---------------------- | ------------------------------------------------------ | ------------------------------------------- | ------ | --------- |
+| **defaultValue**       | 默认日期                                               | [dayjs](https://day.js.org/)                | -      | -         |
+| **defaultPickerValue** | 默认面板日期                                           | [dayjs](https://day.js.org/)                | -      | -         |
+| **format**             | 展示的日期格式，配置参考 [day.js](https://day.js.org/) | `string`                                    | -      | `YYYY-MM` |
+| **monthCellRender**    | 自定义的月份内容渲染方法                               | `function(date, locale): ReactNode`         | -      | -         |
+| **renderExtraFooter**  | 在面板中添加额外的页脚                                 | `() => React.ReactNode`                     | -      | -         |
+| **value**              | 日期                                                   | [dayjs](https://day.js.org/)                | -      | -         |
+| **onChange**           | 时间发生变化的回调，发生在用户选择时间时               | `function(date: dayjs, dateString: string)` | -      | -         |
 
 <Attributes.Title>DatePicker[picker=week] Props</Attributes.Title>
 
-| 属性                   | 描述                                                       | 类型                                         | 推荐值 | 默认      |
-| ---------------------- | ---------------------------------------------------------- | -------------------------------------------- | ------ | --------- |
-| **defaultValue**       | 默认日期                                                   | [moment](http://momentjs.com/)               | -      | -         |
-| **defaultPickerValue** | 默认面板日期                                               | [moment](http://momentjs.com/)               | -      | -         |
-| **format**             | 展示的日期格式，配置参考 [moment.js](http://momentjs.com/) | `string`                                     | -      | `YYYY-wo` |
-| **renderExtraFooter**  | 在面板中添加额外的页脚                                     | `(mode) => React.ReactNode`                  | -      | -         |
-| **value**              | 日期                                                       | [moment](http://momentjs.com/)               | -      | -         |
-| **onChange**           | 时间发生变化的回调，发生在用户选择时间时                   | `function(date: moment, dateString: string)` | -      | -         |
+| 属性                   | 描述                                                   | 类型                                        | 推荐值 | 默认      |
+| ---------------------- | ------------------------------------------------------ | ------------------------------------------- | ------ | --------- |
+| **defaultValue**       | 默认日期                                               | [dayjs](https://day.js.org/)                | -      | -         |
+| **defaultPickerValue** | 默认面板日期                                           | [dayjs](https://day.js.org/)                | -      | -         |
+| **format**             | 展示的日期格式，配置参考 [day.js](https://day.js.org/) | `string`                                    | -      | `YYYY-wo` |
+| **renderExtraFooter**  | 在面板中添加额外的页脚                                 | `(mode) => React.ReactNode`                 | -      | -         |
+| **value**              | 日期                                                   | [dayjs](https://day.js.org/)                | -      | -         |
+| **onChange**           | 时间发生变化的回调，发生在用户选择时间时               | `function(date: dayjs, dateString: string)` | -      | -         |
 
 <Attributes.Title>RangePicker Props</Attributes.Title>
 
-| 属性                      | 描述                           | 类型                                                                                             | 推荐值                | 默认                            |
-| ------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------ | --------------------- | ------------------------------- |
-| **allowEmpty**            | 允许起始项部分为空             | `[boolean, boolean]`                                                                             | -                     | `[false, false]`                |
-| **dateRender**            | 自定义日期单元格的内容         | `function(currentDate: moment, today: moment, info: { range: start / end }) => React.ReactNode`  | -                     | -                               |
-| **defaultValue**          | 默认日期                       | `moment[]`                                                                                       | -                     | -                               |
-| **defaultPickerValue**    | 默认面板日期                   | `moment[]`                                                                                       | -                     | -                               |
-| **disabled**              | 禁用起始项                     | `[boolean, boolean]`                                                                             | -                     | -                               |
-| **disabledTime**          | 不可选择的时间                 | `function(dates: [moment, moment], partial: start / end)`                                        | -                     | -                               |
-| **format**                | 展示的日期格式                 | `string`                                                                                         | `YYYY-MM-DD HH:mm:ss` | -                               |
-| **ranges**                | 预设时间范围快捷选择           | `{ [range: string]: moment[] }` \| `{ [range: string]: () => moment[] }`                         | -                     | -                               |
-| **renderExtraFooter**     | 在面板中添加额外的页脚         | `() => React.ReactNode`                                                                          | -                     | -                               |
-| **separator**             | 设置分隔符                     | `string`                                                                                         | -                     | `~`                             |
-| **showTime**              | 增加时间选择功能               | `Object` \| `boolean`                                                                            | -                     | `DatePicker[picker=time] Props` |
-| **showTime**.defaultValue | 设置用户选择日期时默认的时分秒 | `moment[]`                                                                                       | -                     | `[moment(), moment()]`          |
-| **value**                 | 日期                           | `moment[]`                                                                                       | -                     | -                               |
-| **onCalendarChange**      | 待选日期发生变化的回调         | `function(dates: [moment, moment], dateStrings: [string, string], info: { range: start / end })` | -                     | -                               |
-| **onChange**              | 日期范围发生变化的回调         | `function(dates: [moment, moment], dateStrings: [string, string])`                               | -                     | -                               |
+| 属性                      | 描述                           | 类型                                                                                           | 推荐值                | 默认                            |
+| ------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------- | --------------------- | ------------------------------- |
+| **allowEmpty**            | 允许起始项部分为空             | `[boolean, boolean]`                                                                           | -                     | `[false, false]`                |
+| **dateRender**            | 自定义日期单元格的内容         | `function(currentDate: dayjs, today: dayjs, info: { range: start / end }) => React.ReactNode`  | -                     | -                               |
+| **defaultValue**          | 默认日期                       | `dayjs[]`                                                                                      | -                     | -                               |
+| **defaultPickerValue**    | 默认面板日期                   | `dayjs[]`                                                                                      | -                     | -                               |
+| **disabled**              | 禁用起始项                     | `[boolean, boolean]`                                                                           | -                     | -                               |
+| **disabledTime**          | 不可选择的时间                 | `function(dates: [dayjs, dayjs], partial: start / end)`                                        | -                     | -                               |
+| **format**                | 展示的日期格式                 | `string`                                                                                       | `YYYY-MM-DD HH:mm:ss` | -                               |
+| **ranges**                | 预设时间范围快捷选择           | `{ [range: string]: dayjs[] }` \| `{ [range: string]: () => dayjs[] }`                         | -                     | -                               |
+| **renderExtraFooter**     | 在面板中添加额外的页脚         | `() => React.ReactNode`                                                                        | -                     | -                               |
+| **separator**             | 设置分隔符                     | `string`                                                                                       | -                     | `~`                             |
+| **showTime**              | 增加时间选择功能               | `Object` \| `boolean`                                                                          | -                     | `DatePicker[picker=time] Props` |
+| **showTime**.defaultValue | 设置用户选择日期时默认的时分秒 | `dayjs[]`                                                                                      | -                     | `[dayjs(), dayjs()]`            |
+| **value**                 | 日期                           | `dayjs[]`                                                                                      | -                     | -                               |
+| **onCalendarChange**      | 待选日期发生变化的回调         | `function(dates: [dayjs, dayjs], dateStrings: [string, string], info: { range: start / end })` | -                     | -                               |
+| **onChange**              | 日期范围发生变化的回调         | `function(dates: [dayjs, dayjs], dateStrings: [string, string])`                               | -                     | -                               |
 
 </Attributes>
 

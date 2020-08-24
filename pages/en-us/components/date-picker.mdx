@@ -1,4 +1,4 @@
-import moment from 'moment'
+import dayjs from 'dayjs'
 import { useState } from 'react'
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Link, Text, Code, Spacer, DatePicker, Divider, Button } from 'components'
@@ -93,7 +93,7 @@ Select or input a date or time.
 <Playground
   title="Date Format"
   desc="We can set the date format by `format`."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -102,14 +102,14 @@ Select or input a date or time.
   const dateFormatList = ['DD/MM/YYYY', 'DD/MM/YY']
   return (
     <>
-      <DatePicker defaultValue={moment('2020/01/01', dateFormat)} format={dateFormat} />
+      <DatePicker defaultValue={dayjs('2020/01/01', dateFormat)} format={dateFormat} />
       <Spacer y={0.5} />
-      <DatePicker defaultValue={moment('01/01/2020', dateFormatList[0])} format={dateFormatList} />
+      <DatePicker defaultValue={dayjs('01/01/2020', dateFormatList[0])} format={dateFormatList} />
       <Spacer y={0.5} />
-      <DatePicker defaultValue={moment('2020/01', monthFormat)} format={monthFormat} picker="month" />
+      <DatePicker defaultValue={dayjs('2020/01', monthFormat)} format={monthFormat} picker="month" />
       <Spacer y={0.5} />
       <RangePicker
-        defaultValue={[moment('2020/01/01', dateFormat), moment('2015/01/01', dateFormat)]}
+        defaultValue={[dayjs('2020/01/01', dateFormat), dayjs('2015/01/01', dateFormat)]}
         format={dateFormat}
       />
     </>
@@ -151,30 +151,30 @@ Select or input a date or time.
 <Playground
   title="Disabled"
   desc="A disabled or readonly state of the `DatePicker`. You can also set as array to disable one of input."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker
   const dateFormat = 'YYYY-MM-DD'
   return (
     <>
-      <DatePicker defaultValue={moment('2020-06-06', dateFormat)} disabled />
+      <DatePicker defaultValue={dayjs('2020-06-06', dateFormat)} disabled />
       <Spacer y={0.5} />
-      <DatePicker defaultValue={moment('2020-06-06', dateFormat)} variant="solid" disabled />
+      <DatePicker defaultValue={dayjs('2020-06-06', dateFormat)} variant="solid" disabled />
       <Spacer y={0.5} />
-      <DatePicker defaultValue={moment('2020-06-06', dateFormat)} inputReadOnly allowClear={false} />
+      <DatePicker defaultValue={dayjs('2020-06-06', dateFormat)} inputReadOnly allowClear={false} />
       <Spacer y={0.5} />
-      <DatePicker defaultValue={moment('2020-06-06', dateFormat)} variant="solid" inputReadOnly allowClear={false} />
+      <DatePicker defaultValue={dayjs('2020-06-06', dateFormat)} variant="solid" inputReadOnly allowClear={false} />
       <Spacer y={0.5} />
-      <DatePicker picker="month" defaultValue={moment('2020-06', 'YYYY-MM')} disabled />
+      <DatePicker picker="month" defaultValue={dayjs('2020-06', 'YYYY-MM')} disabled />
       <Spacer y={0.5} />
       <RangePicker
-        defaultValue={[moment('2020-06-06', dateFormat), moment('2020-06-06', dateFormat)]}
+        defaultValue={[dayjs('2020-06-06', dateFormat), dayjs('2020-06-06', dateFormat)]}
         disabled
       />
       <Spacer y={0.5} />
       <RangePicker
-        defaultValue={[moment('2020-09-01', dateFormat), moment('2020-10-10', dateFormat)]}
+        defaultValue={[dayjs('2020-09-01', dateFormat), dayjs('2020-10-10', dateFormat)]}
         disabled={[false, true]}
       />
     </>
@@ -186,7 +186,7 @@ Select or input a date or time.
 <Playground
   title="Disabled Date & Time"
   desc="Disabled part of dates and time by `disabledDate` and `disabledTime` respectively, and `disabledTime` only works with `showTime`."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -199,7 +199,7 @@ Select or input a date or time.
   }
   function disabledDate(current) {
     // Can not select days before today and today
-    return current && current < moment().endOf('day')
+    return current && current < dayjs().endOf('day')
   }
   function disabledDateTime() {
     return {
@@ -228,7 +228,7 @@ Select or input a date or time.
         format="YYYY-MM-DD HH:mm:ss"
         disabledDate={disabledDate}
         disabledTime={disabledDateTime}
-        showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }}
+        showTime={{ defaultValue: dayjs('00:00:00', 'HH:mm:ss') }}
       />
       <Spacer y={0.5} />
       <DatePicker picker="month" disabledDate={disabledDate} />
@@ -240,7 +240,7 @@ Select or input a date or time.
         disabledTime={disabledRangeTime}
         showTime={{
           hideDisabledOptions: true,
-          defaultValue: [moment('00:00:00', 'HH:mm:ss'), moment('11:59:59', 'HH:mm:ss')],
+          defaultValue: [dayjs('00:00:00', 'HH:mm:ss'), dayjs('11:59:59', 'HH:mm:ss')],
         }}
         format="YYYY-MM-DD HH:mm:ss"
       />
@@ -281,7 +281,7 @@ Select or input a date or time.
 <Playground
   title="Preset Ranges"
   desc="We can set preset ranges to RangePicker to improve user experience."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker;
@@ -293,16 +293,16 @@ Select or input a date or time.
     <>
       <RangePicker
         ranges={{
-          Today: [moment(), moment()],
-          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          Today: [dayjs(), dayjs()],
+          'This Month': [dayjs().startOf('month'), dayjs().endOf('month')],
         }}
         onChange={onChange}
       />
       <Spacer y={0.5} />
       <RangePicker
         ranges={{
-          Today: [moment(), moment()],
-          'This Month': [moment().startOf('month'), moment().endOf('month')],
+          Today: [dayjs().startOf('day'), dayjs().endOf('day')],
+          'This Month': [dayjs().startOf('month'), dayjs().endOf('month')],
         }}
         showTime
         format="YYYY/MM/DD HH:mm:ss"
@@ -464,7 +464,7 @@ Select or input a date or time.
 
 <Playground
   desc="Click `TimePicker`, and then we could select or input a time in panel."
-  scope={{ DatePicker, moment, Spacer }}
+  scope={{ DatePicker, dayjs, Spacer }}
   code={`
 () => {
   const { TimePicker } = DatePicker
@@ -519,11 +519,11 @@ Select or input a date or time.
 <Playground
   title="Disabled"
   desc="A disabled state of the `TimePicker`."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
-  return <TimePicker defaultValue={moment('12:00:00', 'HH:mm:ss')} disabled />
+  return <TimePicker defaultValue={dayjs('12:00:00', 'HH:mm:ss')} disabled />
 }
 `}
 />
@@ -531,12 +531,12 @@ Select or input a date or time.
 <Playground
   title="Hour and minute"
   desc="While part of `format` is omitted, the corresponding column in panel will disappear, too."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
   const format = 'HH:mm'
-  return <TimePicker defaultValue={moment('12:00', format)} format={format} />
+  return <TimePicker defaultValue={dayjs('12:00', format)} format={format} />
 }
 `}
 />
@@ -544,7 +544,7 @@ Select or input a date or time.
 <Playground
   title="Interval option"
   desc="Show stepped options by `hourStep` `minuteStep` `secondStep`."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
@@ -581,7 +581,7 @@ Select or input a date or time.
 <Playground
   title="12 Hours"
   desc="TimePicker of 12 hours format, with default format `h:mm:ss a`."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
@@ -609,7 +609,7 @@ Select or input a date or time.
 <Playground
   title="Range Picker"
   desc="Use time range picker with `RangePicker`."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -621,7 +621,7 @@ Select or input a date or time.
 <Playground
   title="Bordered-less"
   desc="Bordered-less style component."
-  scope={{ DatePicker, Spacer, moment }}
+  scope={{ DatePicker, Spacer, dayjs }}
   code={`
 () => {
   const { TimePicker } = DatePicker
@@ -640,7 +640,7 @@ Select or input a date or time.
 <Playground
   title="Imperative API"
   desc="Update component in an uncontrolled way."
-  scope={{ DatePicker, Spacer, Button, moment, Divider }}
+  scope={{ DatePicker, Spacer, Button, dayjs, Divider }}
   code={`
 () => {
   const { RangePicker } = DatePicker
@@ -648,14 +648,14 @@ Select or input a date or time.
   const ref2 = React.useRef(null)
   const setChange = () => {
     console.log(ref)
-    ref.current.setValue(moment())
+    ref.current.setValue(dayjs())
     setTimeout(() => {
       ref.current.focus()
     }, 0)
   }
   const setChange2 = () => {
     console.log(ref2)
-    ref2.current.setValue([moment().add(-2, 'days'), moment()])
+    ref2.current.setValue([dayjs().add(-2, 'days'), dayjs()])
     setTimeout(() => {
       ref2.current.focus()
     }, 0)
@@ -695,143 +695,143 @@ There are six kinds of picker:
 
 <Attributes.Title>Common Props</Attributes.Title>
 
-| Attribute             | Description                                                                                          | Type                                                              | Accepted values                                               | Default   |
-| --------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------- | --------- |
-| **variant**           | datePicker variant                                                                                   | `string`                                                          | `solid` \| `line`                                             | `line`    |
-| **color**             | datePicker current color                                                                             | `NormalTypes`                                                     | `default` \| `secondary` \| `success` \| `warning` \| `error` | `default` |
-| **size**              | The determine the size of the input box                                                              | `string`                                                          | `large` \| `medium` \| `small` \| `mini`                      | `medium`  |
-| **allowClear**        | Whether to show clear button                                                                         | `boolean`                                                         | -                                                             | `true`    |
-| **autoFocus**         | If get focus when component mounted                                                                  | `boolean`                                                         | -                                                             | `false`   |
-| **className**         | The picker className                                                                                 | `string`                                                          | -                                                             | -         |
-| **dateRender**        | Custom rendering function for date cells                                                             | `function(currentDate: moment, today: moment) => React.ReactNode` | -                                                             | -         |
-| **disabled**          | Determine whether the DatePicker is disabled                                                         | `boolean`                                                         | -                                                             | `false`   |
-| **disabledDate**      | Specify the date that cannot be selected                                                             | `(currentDate: moment) => boolean`                                | -                                                             | -         |
-| **dropdownClassName** | To customize the className of the popup calendar                                                     | `string`                                                          | -                                                             | -         |
-| **getPopupContainer** | To set the container of the floating layer, while the default is to create a `div` element in `body` | `function(trigger)`                                               | -                                                             | -         |
-| **locale**            | Localization configuration                                                                           | `string`                                                          | `en-US` \| `zh-CN`                                            | `en-US`   |
-| **mode**              | The picker panel mode                                                                                | `string`                                                          | `time` \| `date` \| `month` \| `year` \| `decade`             | -         |
-| **open**              | The open state of picker                                                                             | `boolean`                                                         | -                                                             | `false`   |
-| **panelRender**       | Customize panel render                                                                               | `(panelNode) => ReactNode`                                        | -                                                             | -         |
-| **picker**            | Set picker type                                                                                      | `string`                                                          | `date` \| `week` \| `month` \| `quarter` \| `year`            | `date`    |
-| **placeholder**       | The placeholder of date input                                                                        | `string` \| `[string, string]`                                    | -                                                             | -         |
-| **popupStyle**        | To customize the style of the popup calendar                                                         | `CSSProperties`                                                   | -                                                             | {}        |
-| **bordered**          | Whether has border style                                                                             | `boolean`                                                         | -                                                             | `true`    |
-| **suffixIcon**        | The custom suffix icon                                                                               | `ReactNode`                                                       | -                                                             | -         |
-| **style**             | To customize the style of the input box, such as `width`, `height` ...                               | `CSSProperties`                                                   | {}                                                            | -         |
-| **onOpenChange**      | Callback function, can be executed whether the popup calendar is popped up or closed                 | `function(open)`                                                  | -                                                             | -         |
-| **onPanelChange**     | Callback when picker panel mode is changed                                                           | `function(value, mode)`                                           | -                                                             | -         |
-| **inputReadOnly**     | Set the `readonly` attribute of the input tag (avoids virtual keyboard on touch devices)             | `boolean`                                                         | -                                                             | `false`   |
+| Attribute             | Description                                                                                          | Type                                                            | Accepted values                                               | Default   |
+| --------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------- | --------- |
+| **variant**           | datePicker variant                                                                                   | `string`                                                        | `solid` \| `line`                                             | `line`    |
+| **color**             | datePicker current color                                                                             | `NormalTypes`                                                   | `default` \| `secondary` \| `success` \| `warning` \| `error` | `default` |
+| **size**              | The determine the size of the input box                                                              | `string`                                                        | `large` \| `medium` \| `small` \| `mini`                      | `medium`  |
+| **allowClear**        | Whether to show clear button                                                                         | `boolean`                                                       | -                                                             | `true`    |
+| **autoFocus**         | If get focus when component mounted                                                                  | `boolean`                                                       | -                                                             | `false`   |
+| **className**         | The picker className                                                                                 | `string`                                                        | -                                                             | -         |
+| **dateRender**        | Custom rendering function for date cells                                                             | `function(currentDate: dayjs, today: dayjs) => React.ReactNode` | -                                                             | -         |
+| **disabled**          | Determine whether the DatePicker is disabled                                                         | `boolean`                                                       | -                                                             | `false`   |
+| **disabledDate**      | Specify the date that cannot be selected                                                             | `(currentDate: dayjs) => boolean`                               | -                                                             | -         |
+| **dropdownClassName** | To customize the className of the popup calendar                                                     | `string`                                                        | -                                                             | -         |
+| **getPopupContainer** | To set the container of the floating layer, while the default is to create a `div` element in `body` | `function(trigger)`                                             | -                                                             | -         |
+| **locale**            | Localization configuration                                                                           | `string`                                                        | `en-US` \| `zh-CN`                                            | `en-US`   |
+| **mode**              | The picker panel mode                                                                                | `string`                                                        | `time` \| `date` \| `month` \| `year` \| `decade`             | -         |
+| **open**              | The open state of picker                                                                             | `boolean`                                                       | -                                                             | `false`   |
+| **panelRender**       | Customize panel render                                                                               | `(panelNode) => ReactNode`                                      | -                                                             | -         |
+| **picker**            | Set picker type                                                                                      | `string`                                                        | `date` \| `week` \| `month` \| `quarter` \| `year`            | `date`    |
+| **placeholder**       | The placeholder of date input                                                                        | `string` \| `[string, string]`                                  | -                                                             | -         |
+| **popupStyle**        | To customize the style of the popup calendar                                                         | `CSSProperties`                                                 | -                                                             | {}        |
+| **bordered**          | Whether has border style                                                                             | `boolean`                                                       | -                                                             | `true`    |
+| **suffixIcon**        | The custom suffix icon                                                                               | `ReactNode`                                                     | -                                                             | -         |
+| **style**             | To customize the style of the input box, such as `width`, `height` ...                               | `CSSProperties`                                                 | {}                                                            | -         |
+| **onOpenChange**      | Callback function, can be executed whether the popup calendar is popped up or closed                 | `function(open)`                                                | -                                                             | -         |
+| **onPanelChange**     | Callback when picker panel mode is changed                                                           | `function(value, mode)`                                         | -                                                             | -         |
+| **inputReadOnly**     | Set the `readonly` attribute of the input tag (avoids virtual keyboard on touch devices)             | `boolean`                                                       | -                                                             | `false`   |
 
 <Attributes.Title>Common Methods</Attributes.Title>
 
-| Name           | Description                                   | Params                 |
-| -------------- | --------------------------------------------- | ---------------------- |
-| **blur()**     | Remove focus                                  | -                      |
-| **focus()**    | Get focus                                     | -                      |
-| **setValue()** | To set default value(refer to `defaultValue`) | `moment` \| `moment[]` |
+| Name           | Description                                   | Params               |
+| -------------- | --------------------------------------------- | -------------------- |
+| **blur()**     | Remove focus                                  | -                    |
+| **focus()**    | Get focus                                     | -                    |
+| **setValue()** | To set default value(refer to `defaultValue`) | `dayjs` \| `dayjs[]` |
 
 <Attributes.Title>DatePicker Props</Attributes.Title>
 
-| Attribute                 | Description                                                                                                                                                           | Type                                         | Accepted values | Default                         |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- | --------------- | ------------------------------- |
-| **defaultValue**          | To set default date, if start time or end time is null or undefined, the date range will be an open interval                                                          | [moment](http://momentjs.com/)               | -               | -                               |
-| **defaultPickerValue**    | To set default picker date                                                                                                                                            | [moment](http://momentjs.com/)               | -               | -                               |
-| **disabledTime**          | To specify the time that cannot be selected                                                                                                                           | `function(date)`                             | -               | -                               |
-| **format**                | To set the date format, refer to [moment.js](http://momentjs.com/). When an array is provided, all values are used for parsing and first value is used for formatting | `string` \| `string[]`                       | -               | `YYYY-MM-DD`                    |
-| **renderExtraFooter**     | Render extra footer in panel                                                                                                                                          | `(mode) => React.ReactNode`                  | -               | -                               |
-| **showTime**              | To provide an additional time selection                                                                                                                               | `Object` \| `boolean`                        | -               | `DatePicker[picker=time] Props` |
-| **showTime**.defaultValue | To set default time of selected date                                                                                                                                  | [moment](http://momentjs.com/)               | -               | `moment()`                      |
-| **showToday**             | Whether to show `Today` button                                                                                                                                        | `boolean`                                    | -               | `true`                          |
-| **value**                 | To set date                                                                                                                                                           | [moment](http://momentjs.com/)               | -               | -                               |
-| **onChange**              | Callback function, can be executed when the selected time is changing                                                                                                 | `function(date: moment, dateString: string)` | -               | -                               |
-| **onOk**                  | Callback when click ok button                                                                                                                                         | `function()`                                 | -               | -                               |
-| **onPanelChange**         | Callback function for panel changing                                                                                                                                  | `function(value, mode)`                      | -               | -                               |
-| **showNow**               | Whether to show 'Now' button on panel when `showTime` is set                                                                                                          | `boolean`                                    | -               | -                               |
+| Attribute                 | Description                                                                                                                                                       | Type                                        | Accepted values | Default                         |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | --------------- | ------------------------------- |
+| **defaultValue**          | To set default date, if start time or end time is null or undefined, the date range will be an open interval                                                      | [dayjs](https://day.js.org/)                | -               | -                               |
+| **defaultPickerValue**    | To set default picker date                                                                                                                                        | [dayjs](https://day.js.org/)                | -               | -                               |
+| **disabledTime**          | To specify the time that cannot be selected                                                                                                                       | `function(date)`                            | -               | -                               |
+| **format**                | To set the date format, refer to [day.js](https://day.js.org/). When an array is provided, all values are used for parsing and first value is used for formatting | `string` \| `string[]`                      | -               | `YYYY-MM-DD`                    |
+| **renderExtraFooter**     | Render extra footer in panel                                                                                                                                      | `(mode) => React.ReactNode`                 | -               | -                               |
+| **showTime**              | To provide an additional time selection                                                                                                                           | `Object` \| `boolean`                       | -               | `DatePicker[picker=time] Props` |
+| **showTime**.defaultValue | To set default time of selected date                                                                                                                              | [dayjs](https://day.js.org/)                | -               | `dayjs()`                       |
+| **showToday**             | Whether to show `Today` button                                                                                                                                    | `boolean`                                   | -               | `true`                          |
+| **value**                 | To set date                                                                                                                                                       | [dayjs](https://day.js.org/)                | -               | -                               |
+| **onChange**              | Callback function, can be executed when the selected time is changing                                                                                             | `function(date: dayjs, dateString: string)` | -               | -                               |
+| **onOk**                  | Callback when click ok button                                                                                                                                     | `function()`                                | -               | -                               |
+| **onPanelChange**         | Callback function for panel changing                                                                                                                              | `function(value, mode)`                     | -               | -                               |
+| **showNow**               | Whether to show 'Now' button on panel when `showTime` is set                                                                                                      | `boolean`                                   | -               | -                               |
 
 <Attributes.Title>DatePicker[picker=time] Props</Attributes.Title>
 
-| Attribute               | Description                                                             | Type                                               | Accepted values | Default    |
-| ----------------------- | ----------------------------------------------------------------------- | -------------------------------------------------- | --------------- | ---------- |
-| **defaultValue**        | To set default time                                                     | [moment](http://momentjs.com/)                     | -               | -          |
-| **disabledHours**       | To specify the hours that cannot be selected                            | `function()`                                       | -               | -          |
-| **disabledMinutes**     | To specify the minutes that cannot be selected                          | `function(selectedHour)`                           | -               | -          |
-| **disabledSeconds**     | To specify the seconds that cannot be selected                          | `function(selectedHour, selectedMinute)`           | -               | -          |
-| **format**              | To set the time format                                                  | `string`                                           | -               | `HH:mm:ss` |
-| **hideDisabledOptions** | Whether hide the options that can not be selected                       | `boolean`                                          | -               | `false`    |
-| **hourStep**            | Interval between hours in picker                                        | `number`                                           | -               | `1`        |
-| **minuteStep**          | Interval between minutes in picker                                      | `number`                                           | -               | `1`        |
-| **secondStep**          | Interval between seconds in picker                                      | `number`                                           | -               | `1`        |
-| **renderExtraFooter**   | Called from time picker panel to render some addon to its bottom        | `() => ReactNode`                                  | -               | -          |
-| **use12Hours**          | Display as 12 hours format, with default format `h:mm:ss a`             | `boolean`                                          | -               | `false`    |
-| **value**               | To set time                                                             | [moment](http://momentjs.com/)                     | -               | -          |
-| **onChange**            | A callback function, can be executed when the selected time is changing | `function(time: moment, timeString: string): void` | -               | -          |
-| **onOpenChange**        | A callback function which will be called while panel opening/closing    | `(open: boolean) => void`                          | -               | -          |
-| **showNow**             | Whether to show `Now` button on panel                                   | `boolean`                                          | -               | -          |
+| Attribute               | Description                                                             | Type                                              | Accepted values | Default    |
+| ----------------------- | ----------------------------------------------------------------------- | ------------------------------------------------- | --------------- | ---------- |
+| **defaultValue**        | To set default time                                                     | [dayjs](https://day.js.org/)                      | -               | -          |
+| **disabledHours**       | To specify the hours that cannot be selected                            | `function()`                                      | -               | -          |
+| **disabledMinutes**     | To specify the minutes that cannot be selected                          | `function(selectedHour)`                          | -               | -          |
+| **disabledSeconds**     | To specify the seconds that cannot be selected                          | `function(selectedHour, selectedMinute)`          | -               | -          |
+| **format**              | To set the time format                                                  | `string`                                          | -               | `HH:mm:ss` |
+| **hideDisabledOptions** | Whether hide the options that can not be selected                       | `boolean`                                         | -               | `false`    |
+| **hourStep**            | Interval between hours in picker                                        | `number`                                          | -               | `1`        |
+| **minuteStep**          | Interval between minutes in picker                                      | `number`                                          | -               | `1`        |
+| **secondStep**          | Interval between seconds in picker                                      | `number`                                          | -               | `1`        |
+| **renderExtraFooter**   | Called from time picker panel to render some addon to its bottom        | `() => ReactNode`                                 | -               | -          |
+| **use12Hours**          | Display as 12 hours format, with default format `h:mm:ss a`             | `boolean`                                         | -               | `false`    |
+| **value**               | To set time                                                             | [dayjs](https://day.js.org/)                      | -               | -          |
+| **onChange**            | A callback function, can be executed when the selected time is changing | `function(time: dayjs, timeString: string): void` | -               | -          |
+| **onOpenChange**        | A callback function which will be called while panel opening/closing    | `(open: boolean) => void`                         | -               | -          |
+| **showNow**             | Whether to show `Now` button on panel                                   | `boolean`                                         | -               | -          |
 
 <Attributes.Title>DatePicker[picker=year] Props</Attributes.Title>
 
-| Attribute              | Description                                                           | Type                                         | Accepted values | Default |
-| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------- | --------------- | ------- |
-| **defaultValue**       | To set default date                                                   | [moment](http://momentjs.com/)               | -               | -       |
-| **defaultPickerValue** | To set default picker date                                            | [moment](http://momentjs.com/)               | -               | -       |
-| **format**             | To set the date format, refer to [moment.js](http://momentjs.com/)    | `string`                                     | -               | `YYYY`  |
-| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                      | -               | -       |
-| **value**              | To set date                                                           | [moment](http://momentjs.com/)               | -               | -       |
-| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: moment, dateString: string)` | -               | -       |
+| Attribute              | Description                                                           | Type                                        | Accepted values | Default |
+| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------- | --------------- | ------- |
+| **defaultValue**       | To set default date                                                   | [dayjs](https://day.js.org/)                | -               | -       |
+| **defaultPickerValue** | To set default picker date                                            | [dayjs](https://day.js.org/)                | -               | -       |
+| **format**             | To set the date format, refer to [day.js](https://day.js.org/)        | `string`                                    | -               | `YYYY`  |
+| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                     | -               | -       |
+| **value**              | To set date                                                           | [dayjs](https://day.js.org/)                | -               | -       |
+| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: dayjs, dateString: string)` | -               | -       |
 
 <Attributes.Title>DatePicker[picker=quarter] Props</Attributes.Title>
 
-| Attribute              | Description                                                           | Type                                         | Accepted values | Default    |
-| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------- | --------------- | ---------- |
-| **defaultValue**       | To set default date                                                   | [moment](http://momentjs.com/)               | -               |            |
-| **defaultPickerValue** | To set default picker date                                            | [moment](http://momentjs.com/)               | -               | -          |
-| **format**             | To set the date format, refer to [moment.js](http://momentjs.com/)    | `string`                                     | -               | `YYYY-\QQ` |
-| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                      | -               | -          |
-| **value**              | To set date                                                           | [moment](http://momentjs.com/)               | -               | -          |
-| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: moment, dateString: string)` | -               | -          |
+| Attribute              | Description                                                           | Type                                        | Accepted values | Default    |
+| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------- | --------------- | ---------- |
+| **defaultValue**       | To set default date                                                   | [dayjs](https://day.js.org/)                | -               |            |
+| **defaultPickerValue** | To set default picker date                                            | [dayjs](https://day.js.org/)                | -               | -          |
+| **format**             | To set the date format, refer to [day.js](https://day.js.org/)        | `string`                                    | -               | `YYYY-\QQ` |
+| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                     | -               | -          |
+| **value**              | To set date                                                           | [dayjs](https://day.js.org/)                | -               | -          |
+| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: dayjs, dateString: string)` | -               | -          |
 
 <Attributes.Title>DatePicker[picker=month] Props</Attributes.Title>
 
-| Attribute              | Description                                                           | Type                                         | Accepted values | Default   |
-| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------- | --------------- | --------- |
-| **defaultValue**       | To set default date                                                   | [moment](http://momentjs.com/)               | -               | -         |
-| **defaultPickerValue** | To set default picker date                                            | [moment](http://momentjs.com/)               | -               | -         |
-| **format**             | To set the date format, refer to [moment.js](http://momentjs.com/)    | `string`                                     | -               | `YYYY-MM` |
-| **monthCellRender**    | Custom month cell content render method                               | `function(date, locale): ReactNode`          | -               | -         |
-| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                      | -               | -         |
-| **value**              | To set date                                                           | [moment](http://momentjs.com/)               | -               | -         |
-| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: moment, dateString: string)` | -               | -         |
+| Attribute              | Description                                                           | Type                                        | Accepted values | Default   |
+| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------- | --------------- | --------- |
+| **defaultValue**       | To set default date                                                   | [dayjs](https://day.js.org/)                | -               | -         |
+| **defaultPickerValue** | To set default picker date                                            | [dayjs](https://day.js.org/)                | -               | -         |
+| **format**             | To set the date format, refer to [day.js](https://day.js.org/)        | `string`                                    | -               | `YYYY-MM` |
+| **monthCellRender**    | Custom month cell content render method                               | `function(date, locale): ReactNode`         | -               | -         |
+| **renderExtraFooter**  | Render extra footer in panel                                          | `() => React.ReactNode`                     | -               | -         |
+| **value**              | To set date                                                           | [dayjs](https://day.js.org/)                | -               | -         |
+| **onChange**           | Callback function, can be executed when the selected time is changing | `function(date: dayjs, dateString: string)` | -               | -         |
 
 <Attributes.Title>DatePicker[picker=week] Props</Attributes.Title>
 
-| Attribute              | Description                                                           | Type                                         | Accepted values | Default   |
-| ---------------------- | --------------------------------------------------------------------- | -------------------------------------------- | --------------- | --------- |
-| **defaultValue**       | To set default date                                                   | [moment](http://momentjs.com/)               | -               | -         |
-| **defaultPickerValue** | To set default picker date                                            | [moment](http://momentjs.com/)               | -               | -         |
-| **format**             | To set the date format, refer to [moment.js](http://momentjs.com/)    | `string`                                     | -               | `YYYY-wo` |
-| **renderExtraFooter**  | To set date                                                           | `(mode) => React.ReactNode`                  | -               | -         |
-| **value**              | Callback function, can be executed when the selected time is changing | [moment](http://momentjs.com/)               | -               | -         |
-| **onChange**           | Render extra footer in panel                                          | `function(date: moment, dateString: string)` | -               | -         |
+| Attribute              | Description                                                           | Type                                        | Accepted values | Default   |
+| ---------------------- | --------------------------------------------------------------------- | ------------------------------------------- | --------------- | --------- |
+| **defaultValue**       | To set default date                                                   | [dayjs](https://day.js.org/)                | -               | -         |
+| **defaultPickerValue** | To set default picker date                                            | [dayjs](https://day.js.org/)                | -               | -         |
+| **format**             | To set the date format, refer to [day.js](https://day.js.org/)        | `string`                                    | -               | `YYYY-wo` |
+| **renderExtraFooter**  | To set date                                                           | `(mode) => React.ReactNode`                 | -               | -         |
+| **value**              | Callback function, can be executed when the selected time is changing | [dayjs](https://day.js.org/)                | -               | -         |
+| **onChange**           | Render extra footer in panel                                          | `function(date: dayjs, dateString: string)` | -               | -         |
 
 <Attributes.Title>RangePicker Props</Attributes.Title>
 
-| Attribute                 | Description                                                                                                                                                           | Type                                                                                             | Accepted values       | Default                         |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | --------------------- | ------------------------------- |
-| **allowEmpty**            | Allow start or end input leave empty                                                                                                                                  | `[boolean, boolean]`                                                                             | -                     | `[false, false]`                |
-| **dateRender**            | Customize date cell                                                                                                                                                   | `function(currentDate: moment, today: moment, info: { range: start / end }) => React.ReactNode`  | -                     | -                               |
-| **defaultValue**          | To set default date                                                                                                                                                   | `moment[]`                                                                                       | -                     | -                               |
-| **defaultPickerValue**    | To set default picker date                                                                                                                                            | `moment[]`                                                                                       | -                     | -                               |
-| **disabled**              | If disable start or end                                                                                                                                               | `[boolean, boolean]`                                                                             | -                     | -                               |
-| **disabledTime**          | To specify the time that cannot be selected                                                                                                                           | `function(dates: [moment, moment], partial: start / end)`                                        | -                     | -                               |
-| **format**                | To set the date format, refer to [moment.js](http://momentjs.com/). When an array is provided, all values are used for parsing and first value is used for formatting | `string`                                                                                         | `YYYY-MM-DD HH:mm:ss` | -                               |
-| **ranges**                | The preseted ranges for quick selection                                                                                                                               | `{ [range: string]: moment[] }` \| `{ [range: string]: () => moment[] }`                         | -                     | -                               |
-| **renderExtraFooter**     | Render extra footer in panel                                                                                                                                          | `() => React.ReactNode`                                                                          | -                     | -                               |
-| **separator**             | Set separator between inputs                                                                                                                                          | `string`                                                                                         | -                     | `~`                             |
-| **showTime**              | To provide an additional time selection                                                                                                                               | `Object` \| `boolean`                                                                            | -                     | `DatePicker[picker=time] Props` |
-| **showTime**.defaultValue | To set default time of selected date                                                                                                                                  | `moment[]`                                                                                       | -                     | `[moment(), moment()]`          |
-| **value**                 | To set date                                                                                                                                                           | `moment[]`                                                                                       | -                     | -                               |
-| **onCalendarChange**      | Callback function, can be executed when the start time or the end time of the range is changing                                                                       | `function(dates: [moment, moment], dateStrings: [string, string], info: { range: start / end })` | -                     | -                               |
-| **onChange**              | Callback function, can be executed when the selected time is changing                                                                                                 | `function(dates: [moment, moment], dateStrings: [string, string])`                               | -                     | -                               |
+| Attribute                 | Description                                                                                                                                                       | Type                                                                                           | Accepted values       | Default                         |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------- | ------------------------------- |
+| **allowEmpty**            | Allow start or end input leave empty                                                                                                                              | `[boolean, boolean]`                                                                           | -                     | `[false, false]`                |
+| **dateRender**            | Customize date cell                                                                                                                                               | `function(currentDate: dayjs, today: dayjs, info: { range: start / end }) => React.ReactNode`  | -                     | -                               |
+| **defaultValue**          | To set default date                                                                                                                                               | `dayjs[]`                                                                                      | -                     | -                               |
+| **defaultPickerValue**    | To set default picker date                                                                                                                                        | `dayjs[]`                                                                                      | -                     | -                               |
+| **disabled**              | If disable start or end                                                                                                                                           | `[boolean, boolean]`                                                                           | -                     | -                               |
+| **disabledTime**          | To specify the time that cannot be selected                                                                                                                       | `function(dates: [dayjs, dayjs], partial: start / end)`                                        | -                     | -                               |
+| **format**                | To set the date format, refer to [day.js](https://day.js.org/). When an array is provided, all values are used for parsing and first value is used for formatting | `string`                                                                                       | `YYYY-MM-DD HH:mm:ss` | -                               |
+| **ranges**                | The preseted ranges for quick selection                                                                                                                           | `{ [range: string]: dayjs[] }` \| `{ [range: string]: () => dayjs[] }`                         | -                     | -                               |
+| **renderExtraFooter**     | Render extra footer in panel                                                                                                                                      | `() => React.ReactNode`                                                                        | -                     | -                               |
+| **separator**             | Set separator between inputs                                                                                                                                      | `string`                                                                                       | -                     | `~`                             |
+| **showTime**              | To provide an additional time selection                                                                                                                           | `Object` \| `boolean`                                                                          | -                     | `DatePicker[picker=time] Props` |
+| **showTime**.defaultValue | To set default time of selected date                                                                                                                              | `dayjs[]`                                                                                      | -                     | `[dayjs(), dayjs()]`            |
+| **value**                 | To set date                                                                                                                                                       | `dayjs[]`                                                                                      | -                     | -                               |
+| **onCalendarChange**      | Callback function, can be executed when the start time or the end time of the range is changing                                                                   | `function(dates: [dayjs, dayjs], dateStrings: [string, string], info: { range: start / end })` | -                     | -                               |
+| **onChange**              | Callback function, can be executed when the selected time is changing                                                                                             | `function(dates: [dayjs, dayjs], dateStrings: [string, string])`                               | -                     | -                               |
 
 </Attributes>
 
