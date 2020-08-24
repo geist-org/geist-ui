@@ -276,7 +276,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fdfdfe;
+          background: #fff;
           outline: none;
         }
 
@@ -457,7 +457,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
         .cfx-picker-cell:hover:not(.cfx-picker-cell-selected):not(.cfx-picker-cell-range-start):not(.cfx-picker-cell-range-end):not(.cfx-picker-cell-range-hover-start):not(.cfx-picker-cell-range-hover-end) .cfx-picker-cell-inner {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-cell-in-view.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -482,7 +482,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fdfdfe;
+          color: #fff;
           background: #0054fe;
         }
 
@@ -570,7 +570,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           top: 0;
           bottom: 0;
           z-index: -1;
-          background: #e8f4ff;
+          background: #f0f5ff;
           content: '';
         }
 
@@ -637,7 +637,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fdfdfe;
+          background: #fff;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -789,7 +789,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         }
 
         .cfx-picker-week-panel-row:hover td {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-week-panel-row-selected td,
@@ -804,19 +804,19 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(253, 253, 254, 0.5);
+          color: rgba(255, 255, 255, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fdfdfe;
+          border-color: #fff;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fdfdfe;
+          color: #fff;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -901,7 +901,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         }
 
         .cfx-picker-time-panel-column-active {
-          background: rgba(232, 244, 255, 0.2);
+          background: rgba(240, 245, 255, 0.2);
         }
 
         .cfx-picker-time-panel-column:hover {
@@ -932,13 +932,13 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         .cfx-picker-time-panel-column
           > li.cfx-picker-time-panel-cell
           .cfx-picker-time-panel-cell-inner:hover {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-time-panel-column
           > li.cfx-picker-time-panel-cell-selected
           .cfx-picker-time-panel-cell-inner {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-time-panel-column
@@ -1104,7 +1104,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fdfdfe !important;
+          background-color: #fff !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -1264,7 +1264,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         }
 
         .cfx-picker-ranges .cfx-picker-preset > .tag:hover {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-ranges .cfx-picker-ok {
@@ -1285,7 +1285,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fdfdfe;
+          background: #fff;
           border: 1px solid #0054fe;
           border-radius: 12px;
           box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
@@ -1366,7 +1366,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear .clear-icon {
@@ -1380,7 +1380,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default {
             border-color: transparent;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-input > input,
@@ -1392,24 +1392,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
             border: 1px solid #ebeced;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear .clear-icon {
@@ -1423,7 +1423,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-input > input,
@@ -1441,18 +1441,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary {
             color: #282d30;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
@@ -1466,7 +1466,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary {
             border-color: transparent;
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-input > input,
@@ -1478,24 +1478,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #c0d8fc;
+            background-color: #fff;
+            border: 1px solid #ccddff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
@@ -1509,7 +1509,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-input > input,
@@ -1527,18 +1527,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success {
             color: #282d30;
-            background-color: #8afb88;
+            background-color: #effaef;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #8afb88;
+            background-color: #effaef;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear .clear-icon {
@@ -1552,7 +1552,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success {
             border-color: transparent;
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-input > input,
@@ -1564,24 +1564,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #8afb88;
+            background-color: #fff;
+            border: 1px solid #effaef;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear .clear-icon {
@@ -1594,8 +1594,8 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success {
-            border-color: #58f17a;
-            background-color: #fdfdfe;
+            border-color: #7cd77b;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-input > input,
@@ -1613,13 +1613,13 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning {
             color: #282d30;
-            background-color: #ffde40;
+            background-color: #fef1ea;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #ffde40;
+            background-color: #fef1ea;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear:hover {
@@ -1656,18 +1656,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #ffde40;
+            background-color: #fff;
+            border: 1px solid #fef1ea;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
@@ -1681,7 +1681,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning {
             border-color: #ffc438;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-input > input,
@@ -1699,18 +1699,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error {
             color: #e15c56;
-            background-color: rgba(255, 194, 194, 0.8);
+            background-color: rgba(251, 235, 235, 0.8);
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             color: rgba(225, 92, 86, 0.3);
-            background-color: rgba(255, 194, 194, 0.8);
+            background-color: rgba(251, 235, 235, 0.8);
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear .clear-icon {
@@ -1724,7 +1724,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error {
             border-color: transparent;
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-input > input,
@@ -1736,24 +1736,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error {
             color: #e15c56;
-            background-color: #fdfdfe;
-            border: 1px solid rgba(255, 194, 194, 0.8);
+            background-color: #fff;
+            border: 1px solid rgba(251, 235, 235, 0.8);
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear {
             color: rgba(225, 92, 86, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear .clear-icon {
@@ -1766,8 +1766,8 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultPickerValue\` should works
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error {
-            border-color: #ffc2c2;
-            background-color: #fdfdfe;
+            border-color: #fbebeb;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-input > input,
@@ -2105,7 +2105,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fdfdfe;
+          background: #fff;
           outline: none;
         }
 
@@ -2286,7 +2286,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
         .cfx-picker-cell:hover:not(.cfx-picker-cell-selected):not(.cfx-picker-cell-range-start):not(.cfx-picker-cell-range-end):not(.cfx-picker-cell-range-hover-start):not(.cfx-picker-cell-range-hover-end) .cfx-picker-cell-inner {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-cell-in-view.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -2311,7 +2311,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fdfdfe;
+          color: #fff;
           background: #0054fe;
         }
 
@@ -2399,7 +2399,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           top: 0;
           bottom: 0;
           z-index: -1;
-          background: #e8f4ff;
+          background: #f0f5ff;
           content: '';
         }
 
@@ -2466,7 +2466,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fdfdfe;
+          background: #fff;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -2618,7 +2618,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         }
 
         .cfx-picker-week-panel-row:hover td {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-week-panel-row-selected td,
@@ -2633,19 +2633,19 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(253, 253, 254, 0.5);
+          color: rgba(255, 255, 255, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fdfdfe;
+          border-color: #fff;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fdfdfe;
+          color: #fff;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -2730,7 +2730,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         }
 
         .cfx-picker-time-panel-column-active {
-          background: rgba(232, 244, 255, 0.2);
+          background: rgba(240, 245, 255, 0.2);
         }
 
         .cfx-picker-time-panel-column:hover {
@@ -2761,13 +2761,13 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         .cfx-picker-time-panel-column
           > li.cfx-picker-time-panel-cell
           .cfx-picker-time-panel-cell-inner:hover {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-time-panel-column
           > li.cfx-picker-time-panel-cell-selected
           .cfx-picker-time-panel-cell-inner {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-time-panel-column
@@ -2933,7 +2933,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fdfdfe !important;
+          background-color: #fff !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -3093,7 +3093,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         }
 
         .cfx-picker-ranges .cfx-picker-preset > .tag:hover {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-ranges .cfx-picker-ok {
@@ -3114,7 +3114,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fdfdfe;
+          background: #fff;
           border: 1px solid #0054fe;
           border-radius: 12px;
           box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
@@ -3195,7 +3195,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear .clear-icon {
@@ -3209,7 +3209,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default {
             border-color: transparent;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-input > input,
@@ -3221,24 +3221,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
             border: 1px solid #ebeced;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear .clear-icon {
@@ -3252,7 +3252,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-input > input,
@@ -3270,18 +3270,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary {
             color: #282d30;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
@@ -3295,7 +3295,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary {
             border-color: transparent;
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-input > input,
@@ -3307,24 +3307,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #c0d8fc;
+            background-color: #fff;
+            border: 1px solid #ccddff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
@@ -3338,7 +3338,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-input > input,
@@ -3356,18 +3356,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success {
             color: #282d30;
-            background-color: #8afb88;
+            background-color: #effaef;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #8afb88;
+            background-color: #effaef;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear .clear-icon {
@@ -3381,7 +3381,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success {
             border-color: transparent;
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-input > input,
@@ -3393,24 +3393,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #8afb88;
+            background-color: #fff;
+            border: 1px solid #effaef;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear .clear-icon {
@@ -3423,8 +3423,8 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success {
-            border-color: #58f17a;
-            background-color: #fdfdfe;
+            border-color: #7cd77b;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-input > input,
@@ -3442,13 +3442,13 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning {
             color: #282d30;
-            background-color: #ffde40;
+            background-color: #fef1ea;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #ffde40;
+            background-color: #fef1ea;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear:hover {
@@ -3485,18 +3485,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #ffde40;
+            background-color: #fff;
+            border: 1px solid #fef1ea;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
@@ -3510,7 +3510,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning {
             border-color: #ffc438;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-input > input,
@@ -3528,18 +3528,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error {
             color: #e15c56;
-            background-color: rgba(255, 194, 194, 0.8);
+            background-color: rgba(251, 235, 235, 0.8);
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             color: rgba(225, 92, 86, 0.3);
-            background-color: rgba(255, 194, 194, 0.8);
+            background-color: rgba(251, 235, 235, 0.8);
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear .clear-icon {
@@ -3553,7 +3553,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error {
             border-color: transparent;
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-input > input,
@@ -3565,24 +3565,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error {
             color: #e15c56;
-            background-color: #fdfdfe;
-            border: 1px solid rgba(255, 194, 194, 0.8);
+            background-color: #fff;
+            border: 1px solid rgba(251, 235, 235, 0.8);
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear {
             color: rgba(225, 92, 86, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear .clear-icon {
@@ -3595,8 +3595,8 @@ exports[`DatePicker[picker=\`quarter\`] prop \`defaultValue\` should works 1`] =
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error {
-            border-color: #ffc2c2;
-            background-color: #fdfdfe;
+            border-color: #fbebeb;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-input > input,
@@ -3934,7 +3934,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fdfdfe;
+          background: #fff;
           outline: none;
         }
 
@@ -4115,7 +4115,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
         .cfx-picker-cell:hover:not(.cfx-picker-cell-selected):not(.cfx-picker-cell-range-start):not(.cfx-picker-cell-range-end):not(.cfx-picker-cell-range-hover-start):not(.cfx-picker-cell-range-hover-end) .cfx-picker-cell-inner {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-cell-in-view.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -4140,7 +4140,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fdfdfe;
+          color: #fff;
           background: #0054fe;
         }
 
@@ -4228,7 +4228,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           top: 0;
           bottom: 0;
           z-index: -1;
-          background: #e8f4ff;
+          background: #f0f5ff;
           content: '';
         }
 
@@ -4295,7 +4295,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fdfdfe;
+          background: #fff;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -4447,7 +4447,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row:hover td {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-week-panel-row-selected td,
@@ -4462,19 +4462,19 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(253, 253, 254, 0.5);
+          color: rgba(255, 255, 255, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fdfdfe;
+          border-color: #fff;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fdfdfe;
+          color: #fff;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -4559,7 +4559,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-time-panel-column-active {
-          background: rgba(232, 244, 255, 0.2);
+          background: rgba(240, 245, 255, 0.2);
         }
 
         .cfx-picker-time-panel-column:hover {
@@ -4590,13 +4590,13 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         .cfx-picker-time-panel-column
           > li.cfx-picker-time-panel-cell
           .cfx-picker-time-panel-cell-inner:hover {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-time-panel-column
           > li.cfx-picker-time-panel-cell-selected
           .cfx-picker-time-panel-cell-inner {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-time-panel-column
@@ -4762,7 +4762,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fdfdfe !important;
+          background-color: #fff !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -4922,7 +4922,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-ranges .cfx-picker-preset > .tag:hover {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-ranges .cfx-picker-ok {
@@ -4943,7 +4943,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fdfdfe;
+          background: #fff;
           border: 1px solid #0054fe;
           border-radius: 12px;
           box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
@@ -5024,7 +5024,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear .clear-icon {
@@ -5038,7 +5038,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default {
             border-color: transparent;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-input > input,
@@ -5050,24 +5050,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
             border: 1px solid #ebeced;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear .clear-icon {
@@ -5081,7 +5081,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-input > input,
@@ -5099,18 +5099,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary {
             color: #282d30;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
@@ -5124,7 +5124,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary {
             border-color: transparent;
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-input > input,
@@ -5136,24 +5136,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #c0d8fc;
+            background-color: #fff;
+            border: 1px solid #ccddff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
@@ -5167,7 +5167,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-input > input,
@@ -5185,18 +5185,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success {
             color: #282d30;
-            background-color: #8afb88;
+            background-color: #effaef;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #8afb88;
+            background-color: #effaef;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear .clear-icon {
@@ -5210,7 +5210,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success {
             border-color: transparent;
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-input > input,
@@ -5222,24 +5222,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #8afb88;
+            background-color: #fff;
+            border: 1px solid #effaef;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear .clear-icon {
@@ -5252,8 +5252,8 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success {
-            border-color: #58f17a;
-            background-color: #fdfdfe;
+            border-color: #7cd77b;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-input > input,
@@ -5271,13 +5271,13 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning {
             color: #282d30;
-            background-color: #ffde40;
+            background-color: #fef1ea;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #ffde40;
+            background-color: #fef1ea;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear:hover {
@@ -5314,18 +5314,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #ffde40;
+            background-color: #fff;
+            border: 1px solid #fef1ea;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
@@ -5339,7 +5339,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning {
             border-color: #ffc438;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-input > input,
@@ -5357,18 +5357,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error {
             color: #e15c56;
-            background-color: rgba(255, 194, 194, 0.8);
+            background-color: rgba(251, 235, 235, 0.8);
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             color: rgba(225, 92, 86, 0.3);
-            background-color: rgba(255, 194, 194, 0.8);
+            background-color: rgba(251, 235, 235, 0.8);
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear .clear-icon {
@@ -5382,7 +5382,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error {
             border-color: transparent;
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-input > input,
@@ -5394,24 +5394,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error {
             color: #e15c56;
-            background-color: #fdfdfe;
-            border: 1px solid rgba(255, 194, 194, 0.8);
+            background-color: #fff;
+            border: 1px solid rgba(251, 235, 235, 0.8);
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear {
             color: rgba(225, 92, 86, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear .clear-icon {
@@ -5424,8 +5424,8 @@ exports[`DatePicker[picker=\`quarter\`] prop \`format\` should works 1`] = `
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error {
-            border-color: #ffc2c2;
-            background-color: #fdfdfe;
+            border-color: #fbebeb;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-input > input,
@@ -5763,7 +5763,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           display: inline-flex;
           flex-direction: column;
           text-align: center;
-          background: #fdfdfe;
+          background: #fff;
           outline: none;
         }
 
@@ -5944,7 +5944,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
 
         .cfx-picker-cell:hover:not(.cfx-picker-cell-in-view) .cfx-picker-cell-inner,
         .cfx-picker-cell:hover:not(.cfx-picker-cell-selected):not(.cfx-picker-cell-range-start):not(.cfx-picker-cell-range-end):not(.cfx-picker-cell-range-hover-start):not(.cfx-picker-cell-range-hover-end) .cfx-picker-cell-inner {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-cell-in-view.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -5969,7 +5969,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         .cfx-picker-cell-in-view.cfx-picker-cell-selected .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-start .cfx-picker-cell-inner,
         .cfx-picker-cell-in-view.cfx-picker-cell-range-end .cfx-picker-cell-inner {
-          color: #fdfdfe;
+          color: #fff;
           background: #0054fe;
         }
 
@@ -6057,7 +6057,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           top: 0;
           bottom: 0;
           z-index: -1;
-          background: #e8f4ff;
+          background: #f0f5ff;
           content: '';
         }
 
@@ -6124,7 +6124,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-cell-disabled::before {
-          background: #fdfdfe;
+          background: #fff;
         }
 
         .cfx-picker-cell-disabled.cfx-picker-cell-today .cfx-picker-cell-inner::before {
@@ -6276,7 +6276,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-week-panel-row:hover td {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-week-panel-row-selected td,
@@ -6291,19 +6291,19 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-week,
         .cfx-picker-week-panel-row-selected:hover td.cfx-picker-cell-week {
-          color: rgba(253, 253, 254, 0.5);
+          color: rgba(255, 255, 255, 0.5);
         }
 
         .cfx-picker-week-panel-row-selected td.cfx-picker-cell-today .cfx-picker-cell-inner::before,
         .cfx-picker-week-panel-row-selected:hover
           td.cfx-picker-cell-today
           .cfx-picker-cell-inner::before {
-          border-color: #fdfdfe;
+          border-color: #fff;
         }
 
         .cfx-picker-week-panel-row-selected td .cfx-picker-cell-inner,
         .cfx-picker-week-panel-row-selected:hover td .cfx-picker-cell-inner {
-          color: #fdfdfe;
+          color: #fff;
         }
 
         .cfx-picker-date-panel .cfx-picker-body {
@@ -6388,7 +6388,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-time-panel-column-active {
-          background: rgba(232, 244, 255, 0.2);
+          background: rgba(240, 245, 255, 0.2);
         }
 
         .cfx-picker-time-panel-column:hover {
@@ -6419,13 +6419,13 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         .cfx-picker-time-panel-column
           > li.cfx-picker-time-panel-cell
           .cfx-picker-time-panel-cell-inner:hover {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-time-panel-column
           > li.cfx-picker-time-panel-cell-selected
           .cfx-picker-time-panel-cell-inner {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-time-panel-column
@@ -6591,7 +6591,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled,
         .cfx-picker.cfx-picker-variant-line.cfx-picker-disabled:hover {
           border-color: #ebeced !important;
-          background-color: #fdfdfe !important;
+          background-color: #fff !important;
           cursor: not-allowed !important;
           opacity: 1 !important;
         }
@@ -6751,7 +6751,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-ranges .cfx-picker-preset > .tag:hover {
-          background: #e8f4ff;
+          background: #f0f5ff;
         }
 
         .cfx-picker-ranges .cfx-picker-ok {
@@ -6772,7 +6772,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           overflow: hidden;
           vertical-align: top;
           padding: 10px;
-          background: #fdfdfe;
+          background: #fff;
           border: 1px solid #0054fe;
           border-radius: 12px;
           box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.06);
@@ -6853,7 +6853,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear .clear-icon {
@@ -6867,7 +6867,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default {
             border-color: transparent;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-input > input,
@@ -6879,24 +6879,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
             border: 1px solid #ebeced;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-clear .clear-icon {
@@ -6910,7 +6910,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-input > input,
@@ -6928,18 +6928,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary {
             color: #282d30;
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #e8f4ff;
+            background-color: #f0f5ff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
@@ -6953,7 +6953,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary {
             border-color: transparent;
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-input > input,
@@ -6965,24 +6965,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
-            background-color: #cce5ff;
+            background-color: #e0eaff;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #c0d8fc;
+            background-color: #fff;
+            border: 1px solid #ccddff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-clear .clear-icon {
@@ -6996,7 +6996,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary {
             border-color: #0054fe;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-input > input,
@@ -7014,18 +7014,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success {
             color: #282d30;
-            background-color: #8afb88;
+            background-color: #effaef;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #8afb88;
+            background-color: #effaef;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear .clear-icon {
@@ -7039,7 +7039,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success {
             border-color: transparent;
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-input > input,
@@ -7051,24 +7051,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
-            background-color: #58f17a;
+            background-color: #7cd77b;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #8afb88;
+            background-color: #fff;
+            border: 1px solid #effaef;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-clear .clear-icon {
@@ -7081,8 +7081,8 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success {
-            border-color: #58f17a;
-            background-color: #fdfdfe;
+            border-color: #7cd77b;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-input > input,
@@ -7100,13 +7100,13 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning {
             color: #282d30;
-            background-color: #ffde40;
+            background-color: #fef1ea;
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #ffde40;
+            background-color: #fef1ea;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear:hover {
@@ -7143,18 +7143,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning {
             color: #282d30;
-            background-color: #fdfdfe;
-            border: 1px solid #ffde40;
+            background-color: #fff;
+            border: 1px solid #fef1ea;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear {
             color: rgba(40, 45, 48, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear:hover {
             color: #282d30;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-clear .clear-icon {
@@ -7168,7 +7168,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning {
             border-color: #ffc438;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-input > input,
@@ -7186,18 +7186,18 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         </style><style>
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error {
             color: #e15c56;
-            background-color: rgba(255, 194, 194, 0.8);
+            background-color: rgba(251, 235, 235, 0.8);
             border: transparent;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             color: rgba(225, 92, 86, 0.3);
-            background-color: rgba(255, 194, 194, 0.8);
+            background-color: rgba(251, 235, 235, 0.8);
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear .clear-icon {
@@ -7211,7 +7211,7 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error {
             border-color: transparent;
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
         
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-input > input,
@@ -7223,24 +7223,24 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
 
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
-            background-color: #ffc2c2;
+            background-color: #fbebeb;
           }
 
         </style><style>
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error {
             color: #e15c56;
-            background-color: #fdfdfe;
-            border: 1px solid rgba(255, 194, 194, 0.8);
+            background-color: #fff;
+            border: 1px solid rgba(251, 235, 235, 0.8);
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear {
             color: rgba(225, 92, 86, 0.3);
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear:hover {
             color: #e15c56;
-            background-color: #fdfdfe;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-clear .clear-icon {
@@ -7253,8 +7253,8 @@ exports[`DatePicker[picker=\`quarter\`] prop \`value\` should works 1`] = `
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error {
-            border-color: #ffc2c2;
-            background-color: #fdfdfe;
+            border-color: #fbebeb;
+            background-color: #fff;
           }
         
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-input > input,
