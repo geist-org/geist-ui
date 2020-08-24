@@ -3,8 +3,8 @@ import { Button, useTheme, Select, Spacer } from 'components'
 import { useConfigs } from 'lib/config-context'
 import useLocale from 'lib/use-locale'
 import Router, { useRouter } from 'next/router'
-import MoonIcon from '@zeit-ui/react-icons/moon'
-import SunIcon from '@zeit-ui/react-icons/sun'
+import MoonIcon from '@geist-ui/react-icons/moon'
+import SunIcon from '@geist-ui/react-icons/sun'
 
 const Controls: React.FC<{}> = React.memo(({}) => {
   const theme = useTheme()
@@ -29,7 +29,7 @@ const Controls: React.FC<{}> = React.memo(({}) => {
   }
   const redirectGithub = () => {
     if (typeof window !== 'undefined') {
-      window.open('https://github.com/zeit-ui/react')
+      window.open('https://github.com/geist-org/react')
     }
   }
 

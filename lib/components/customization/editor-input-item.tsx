@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
-import { useTheme, Input, ZeitUIThemes } from 'components'
+import { useTheme, Input, GeistUIThemes } from 'components'
 import { useConfigs } from 'lib/config-context'
 
 type Props = {
   value?: string
-  groupName: keyof ZeitUIThemes
+  groupName: keyof GeistUIThemes
   keyName: string
 }
 

@@ -1,8 +1,8 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import Title from 'lib/components/playground/title'
 import { Spacer, Tabs, Snippet } from 'components'
-import * as Icon from '@zeit-ui/react-icons'
-import Github from '@zeit-ui/react-icons/github'
+import * as Icon from '@geist-ui/react-icons'
+import Github from '@geist-ui/react-icons/github'
 import IconsGallery from 'lib/components/displays/icons'
 
 export const meta = {
@@ -18,11 +18,11 @@ export const meta = {
 <Tabs initialValue="yarn">
   <Tabs.Item label="Yarn" value="yarn">
     <Spacer y={0.6} />
-    <Snippet width="400px">yarn add @zeit-ui/react-icons</Snippet>
+    <Snippet width="400px">yarn add @geist-ui/react-icons</Snippet>
   </Tabs.Item>
   <Tabs.Item label="npm" value="npm">
     <Spacer y={0.6} />
-    <Snippet width="400px">npm i @zeit-ui/react-icons</Snippet>
+    <Snippet width="400px">npm i @geist-ui/react-icons</Snippet>
   </Tabs.Item>
 </Tabs>
 
@@ -30,11 +30,11 @@ export const meta = {
   title="引入图标库"
   scope={{ Icon, Github, Spacer }}
   code={`
-// import * as Icon from '@zeit-ui/react-icons'
+// import * as Icon from '@geist-ui/react-icons'
 // 或是
-// import { Github } from '@zeit-ui/react-icons'
+// import { Github } from '@geist-ui/react-icons'
 // 或是引入单个
-// import Github from '@zeit-ui/react-icons/github'
+// import Github from '@geist-ui/react-icons/github'
 
 <>
   <Icon.Github />

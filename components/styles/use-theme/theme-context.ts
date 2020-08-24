@@ -1,7 +1,7 @@
 import React from 'react'
-import { ZeitUIThemes } from '../themes/index'
+import { GeistUIThemes } from '../themes/index'
 import defaultTheme from '../themes/default'
 
-const ThemeContext: React.Context<ZeitUIThemes> = React.createContext<ZeitUIThemes>(defaultTheme)
+const ThemeContext: React.Context<GeistUIThemes> = React.createContext<GeistUIThemes>(defaultTheme)
 
 export default ThemeContext

@@ -13,7 +13,7 @@ const Customization = () => {
       <PageHeader meta={meta} />
       <Spacer y={1.2} />
       <Text h2>定制化</Text>
-      <Text>在 ZEIT UI 中自定义主题非常简单，点击更改，然后拷贝或是分享。</Text>
+      <Text>在 Geist UI 中自定义主题非常简单，点击更改，然后拷贝或是分享。</Text>
       <CustomizationEditor />
       <Spacer y={2} />
     </CustomizationLayout>

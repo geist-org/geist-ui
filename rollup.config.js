@@ -81,7 +81,7 @@ export default (async () => {
       //   format: 'umd',
       //   exports: 'named',
       //   globals,
-      //   name: 'ZeitUI',
+      //   name: 'GeistUI',
       // },
     ],
     external,

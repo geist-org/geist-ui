@@ -13,17 +13,17 @@ export const meta = {
 
 请确认你的 <Link href="https://nodejs.org/en/download/">NodeJS</Link> 处于最新版本，
 同时还需要准备包管理器: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> 或是 <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
-如果你想要一个完整的项目示例，请浏览我们的 <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/tree/master/examples">示例集合</Link>。
+如果你想要一个完整的项目示例，请浏览我们的 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/tree/master/examples">示例集合</Link>。
 
 <Spacer y={1} />
 <Dot type="success" /> 1. 运行命令下载包:
 <Spacer y={0.8} />
 <Tabs initialValue="yarn" hideDivider>
   <Tabs.Item label="Yarn" value="yarn">
-    <Snippet width="400px">yarn add @zeit-ui/react</Snippet>
+    <Snippet width="400px">yarn add @geist-ui/react</Snippet>
   </Tabs.Item>
   <Tabs.Item label="Npm" value="npm">
-    <Snippet width="400px">npm i @zeit-ui/react</Snippet>
+    <Snippet width="400px">npm i @geist-ui/react</Snippet>
   </Tabs.Item>
 </Tabs>
 <Spacer y={1.5} />
@@ -33,13 +33,13 @@ export const meta = {
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
+import { GeistProvider, CssBaseline } from '@geist-ui/react'
 
 const Application = () => (
-  <ZeitProvider>
+  <GeistProvider>
     <CssBaseline /> // ---> 基础样式
     <AppComponent /> // ---> 你的根组件
-  </ZeitProvider>
+  </GeistProvider>
 )
 ```
 
@@ -53,7 +53,7 @@ const Application = () => (
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { Button } from '@zeit-ui/react'
+import { Button } from '@geist-ui/react'
 
 const MyComponent = () => <Button>按钮</Button>
 ```
@@ -65,13 +65,13 @@ const MyComponent = () => <Button>按钮</Button>
 
 ### 单个组件
 
-`@zeit-ui/react` 支持仅引入你需要的单个组件，例如：
+`@geist-ui/react` 支持仅引入你需要的单个组件，例如：
 
 <Grid.Container>
 <Grid xs={24} sm={16}>
 
 ```jsx
-import Button from '@zeit-ui/react/esm/button'
+import Button from '@geist-ui/react/esm/button'
 
 const MyComponent = () => <Button>按钮组件</Button>
 ```
@@ -83,18 +83,18 @@ const MyComponent = () => <Button>按钮组件</Button>
 
 ### Create React App 项目
 
-使用 <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> 创建的 React 项目也能轻易的使用 `@zeit-ui/react`。
+使用 <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> 创建的 React 项目也能轻易的使用 `@geist-ui/react`。
 你不需要做任何改变，只需要引入组件库即可。
 
-我们准备了 <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react-getting-started">一个用 create react app 创建的示例项目</Link> 供作参考。
+我们准备了 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">一个用 create react app 创建的示例项目</Link> 供作参考。
 如果你想在 Create React App 中使用 `tree-shaking`,
-请参考 <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/tree-shaking-create-react-app/README.md">这个示例</Link>。
+请参考 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/tree-shaking-create-react-app/README.md">这个示例</Link>。
 
 <Spacer y={2.5} />
 
 ### Next.js 项目
 
 在 `next.js` 项目中，你需要定制入口文件 <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> 以加载基础配置。
-请参考 <Link target="_blank" color rel="nofollow" href="https://github.com/zeit-ui/react/blob/master/examples/create-next-app/README.md">这个示例</Link> 开始你的 NextJS 项目。
+请参考 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/create-next-app/README.md">这个示例</Link> 开始你的 NextJS 项目。
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

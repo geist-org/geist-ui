@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import React, { useEffect, useState } from 'react'
-import { CssBaseline, ZeitProvider, useTheme, ZeitUIThemes } from 'components'
+import { CssBaseline, GeistProvider, useTheme, GeistUIThemes } from 'components'
 import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
@@ -10,8 +10,8 @@ import { DeepPartial } from 'components/utils/types'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
-  const [customTheme, setCustomTheme] = useState<DeepPartial<ZeitUIThemes>>({})
-  const themeChangeHandle = (theme: DeepPartial<ZeitUIThemes>) => {
+  const [customTheme, setCustomTheme] = useState<DeepPartial<GeistUIThemes>>({})
+  const themeChangeHandle = (theme: DeepPartial<GeistUIThemes>) => {
     setCustomTheme(theme)
   }
 
@@ -25,17 +25,17 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>React - ZEIT UI</title>
+        <title>React - Geist UI</title>
         <meta name="google" content="notranslate" />
         <meta name="twitter:creator" content="@echo_witt" />
         <meta name="referrer" content="strict-origin" />
-        <meta property="og:title" content="React - ZEIT UI" />
-        <meta property="og:url" content="https://react.zeit-ui.co" />
-        <link rel="dns-prefetch" href="//react.zeit-ui.co" />
+        <meta property="og:title" content="React - Geist UI" />
+        <meta property="og:url" content="https://react.geist-ui.dev" />
+        <link rel="dns-prefetch" href="//react.geist-ui.dev" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="generator" content="ZEIT UI" />
-        <meta name="description" content="React implementation for ZEIT design." />
-        <meta property="og:description" content="React implementation for ZEIT design." />
+        <meta name="generator" content="Geist UI" />
+        <meta name="description" content="React implementation for Geist design." />
+        <meta property="og:description" content="React implementation for Geist design." />
         <meta
           itemProp="image"
           property="og:image"
@@ -54,7 +54,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
         />
       </Head>
-      <ZeitProvider theme={customTheme}>
+      <GeistProvider theme={customTheme}>
         <CssBaseline />
         <ConfigContext onThemeChange={themeChangeHandle}>
           <Menu />
@@ -111,7 +111,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             border-radius: ${theme.layout.radius};
           }
         `}</style>
-      </ZeitProvider>
+      </GeistProvider>
     </>
   )
 }

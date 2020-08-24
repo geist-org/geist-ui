@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { Input, Spacer, Text } from '@zeit-ui/react'
+import { Input, Spacer, Text } from '@geist-ui/react'
 
 type InputErrorType = {
   error?: string

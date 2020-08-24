@@ -9,9 +9,9 @@ export const meta = {
 
 ## Server Render
 
-### ZEIT-UI React on the Server
+### Geist UI on the Server
 
-All Components of `@zeit-ui/react` are compatible with **Server Render**. In fact, the document you see now is rendered by the server.
+All Components of `@geist-ui/react` are compatible with **Server Render**. In fact, the document you see now is rendered by the server.
 
 <Note label="readme">
   If you are looking to build a SPA{' '}
@@ -52,7 +52,7 @@ Then we add the following code to the file:
 
 ```js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { CssBaseline } from '@zeit-ui/react'
+import { CssBaseline } from '@geist-ui/react'
 
 class MyDocument extends Document {
   static async getInitialProps (ctx) {
@@ -85,7 +85,7 @@ In the custom server, also get the style set from function `CssBaseline.flush` a
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom/server'
-import { CssBaseline } from 'zeit-ui/react'
+import { CssBaseline } from 'geist-ui/react'
 import App from './app'
 
 export default (req, res) => {

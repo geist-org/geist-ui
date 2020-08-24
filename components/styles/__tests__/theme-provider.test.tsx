@@ -2,7 +2,7 @@ import React from 'react'
 import { render, mount } from 'enzyme'
 import { deepMergeObject } from '../theme-provider/theme-provider'
 import DefaultThemes from '../themes/default'
-import { ZeitProvider, ZeitUIThemes, Text } from 'components'
+import { GeistProvider, GeistUIThemes, Text } from 'components'
 import { DeepPartial } from 'components/utils/types'
 
 describe('ThemeProvider', () => {
@@ -42,7 +42,7 @@ describe('ThemeProvider', () => {
   })
 
   it('should merge themes with custom function', () => {
-    const customFunc = (): DeepPartial<ZeitUIThemes> => {
+    const customFunc = (): DeepPartial<GeistUIThemes> => {
       return {
         ...DefaultThemes,
         palette: {
@@ -51,20 +51,20 @@ describe('ThemeProvider', () => {
       }
     }
     const wrapper = render(
-      <ZeitProvider theme={customFunc}>
+      <GeistProvider theme={customFunc}>
         <Text type="success">hello</Text>
-      </ZeitProvider>,
+      </GeistProvider>,
     )
     expect(wrapper).toMatchSnapshot()
   })
 
   it('should warning when using the wrong merge function', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
-    const customFunc = () => 0 as DeepPartial<ZeitUIThemes>
+    const customFunc = () => 0 as DeepPartial<GeistUIThemes>
     const wrapper = mount(
-      <ZeitProvider theme={customFunc}>
+      <GeistProvider theme={customFunc}>
         <p>test</p>
-      </ZeitProvider>,
+      </GeistProvider>,
     )
 
     expect(errorSpy).toHaveBeenCalled()

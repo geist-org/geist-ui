@@ -176,16 +176,16 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
-            --zeit-ui-button-padding: ${padding};
-            --zeit-ui-button-height: ${height};
-            --zeit-ui-button-color: ${color};
-            --zeit-ui-button-bg: ${bg};
+            --geist-ui-button-padding: ${padding};
+            --geist-ui-button-height: ${height};
+            --geist-ui-button-color: ${color};
+            --geist-ui-button-bg: ${bg};
           }
 
           .btn:hover,
           .btn:focus {
             color: ${hover.color};
-            --zeit-ui-button-color: ${hover.color};
+            --geist-ui-button-color: ${hover.color};
             background-color: ${hover.bg};
             border-color: ${hover.border};
             cursor: ${cursor};

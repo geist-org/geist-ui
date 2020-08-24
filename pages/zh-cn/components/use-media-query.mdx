@@ -49,10 +49,10 @@ export const meta = {
 `}
 />
 
-<PlaygroundTitle title="定制断点" desc="您可以覆盖 `@zeit-ui/react` 组件库默认的断点值。" />
+<PlaygroundTitle title="定制断点" desc="您可以覆盖 `@geist-ui/react` 组件库默认的断点值。" />
 
 ```tsx
-const breakpoints: ZeitUIThemesBreakpoints = {
+const breakpoints: GeistUIThemesBreakpoints = {
   xs: { min: '0', max: '650px' },
   sm: { min: '650px', max: '900px' },
   md: { min: '900px', max: '1280px' },
@@ -61,10 +61,10 @@ const breakpoints: ZeitUIThemesBreakpoints = {
 }
 
 const App = () => (
-  <ZeitProvider theme={{ breakpoints: breakpoints }}>
+  <GeistProvider theme={{ breakpoints: breakpoints }}>
     <CssBaseline />
     <AppComponent />
-  </ZeitProvider>
+  </GeistProvider>
 )
 ```
 

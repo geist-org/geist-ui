@@ -1,11 +1,11 @@
-import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
+import { GeistProvider, CssBaseline } from '@geist-ui/react'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ZeitProvider>
+    <GeistProvider>
       <CssBaseline />
       <Component {...pageProps} />
-    </ZeitProvider>
+    </GeistProvider>
   )
 }
 export default MyApp

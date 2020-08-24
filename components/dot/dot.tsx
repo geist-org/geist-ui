@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { NormalTypes } from '../utils/prop-types'
-import { ZeitUIThemes } from '../styles/themes'
+import { GeistUIThemes } from '../styles/themes'
 
 interface Props {
   type?: NormalTypes
@@ -17,7 +17,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DotProps = Props & typeof defaultProps & NativeAttrs
 
-const getColor = (type: NormalTypes, theme: ZeitUIThemes): string => {
+const getColor = (type: NormalTypes, theme: GeistUIThemes): string => {
   const colors: { [key in NormalTypes]?: string } = {
     default: theme.palette.accents_2,
     success: theme.palette.success,

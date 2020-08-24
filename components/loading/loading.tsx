@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/styles/themes'
 
 interface Props {
   size?: NormalSizes
@@ -30,7 +30,7 @@ const getIconSize = (size: NormalSizes) => {
   return sizes[size]
 }
 
-const getIconBgColor = (type: NormalTypes, palette: ZeitUIThemesPalette, color?: string) => {
+const getIconBgColor = (type: NormalTypes, palette: GeistUIThemesPalette, color?: string) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.accents_6,
     secondary: palette.secondary,

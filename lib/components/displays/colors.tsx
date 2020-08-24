@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { useTheme, useToasts, Code, Grid, ZeitUIThemesPalette } from 'components'
+import { useTheme, useToasts, Code, Grid, GeistUIThemesPalette } from 'components'
 import useClipboard from 'components/utils/use-clipboard'
 import { getColorData, getCurrentColor } from './colors-data'
 
@@ -7,12 +7,12 @@ interface Props {
   type: string
 }
 
-const getColorItem = (type: string, palette: ZeitUIThemesPalette, copy: Function) => {
+const getColorItem = (type: string, palette: GeistUIThemesPalette, copy: Function) => {
   const data = getColorData(type)
   const getColor = (index: number) => getCurrentColor(palette, type, index)
   const keys = Object.keys(data)
 
-  return (keys as Array<keyof ZeitUIThemesPalette>).map((key, index) => (
+  return (keys as Array<keyof GeistUIThemesPalette>).map((key, index) => (
     <div className="color" key={`color-item-${index}`}>
       <Grid.Container justify="space-between" style={{ height: '4.5rem' }}>
         <Grid.Container alignItems="center" sm={8} xs={16}>

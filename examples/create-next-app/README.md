@@ -1,8 +1,8 @@
-# Next.js demo for ZEIT UI React
+# Next.js demo for Geist UI React
 
 ## About
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app), the [zeit-ui](https://react.zeit-ui.co/en-us/guide/introduction) implementation follows the [documentation](https://react.zeit-ui.co/en-us/guide/installation).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app), the [geist-ui](https://react.geist-ui.dev/en-us/guide/introduction) implementation follows the [documentation](https://react.geist-ui.dev/en-us/guide/installation).
 
 ## Getting Started
 

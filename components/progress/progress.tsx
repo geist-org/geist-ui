@@ -2,7 +2,7 @@ import React from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { useProportions } from '../utils/calculations'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/styles/themes'
 import { NormalTypes } from 'components/utils/prop-types'
 
 export type ProgressColors = {
@@ -33,7 +33,7 @@ export type ProgressProps = Props & typeof defaultProps & NativeAttrs
 
 const getCurrentColor = (
   ratio: number,
-  palette: ZeitUIThemesPalette,
+  palette: GeistUIThemesPalette,
   type: NormalTypes,
   colors: ProgressColors = {},
 ): string => {

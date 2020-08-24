@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Page, Text, Card, Note, Code, Spacer } from '@zeit-ui/react'
+import { Page, Text, Card, Note, Code, Spacer } from '@geist-ui/react'
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
         Welcome to <a href="https://nextjs.org">Next.js!</a>
       </Text>
       <Card>
-        hello, world. I am using <Code>@zeit-ui/react</Code> !
+        hello, world. I am using <Code>@geist-ui/react</Code> !
       </Card>
       <Spacer y={1.5} />
       <Card shadow>

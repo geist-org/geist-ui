@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react'
-import { useTheme, ZeitUIThemesPalette, Popover } from 'components'
+import { useTheme, GeistUIThemesPalette, Popover } from 'components'
 import { ColorResult, TwitterPicker } from 'react-color'
 import { useConfigs } from 'lib/config-context'
 import DefaultTheme from 'components/styles/themes/default'
 
 interface Props {
   value?: string
-  keyName: keyof ZeitUIThemesPalette
+  keyName: keyof GeistUIThemesPalette
 }
 
 const getRandomColor = () => {
@@ -15,7 +15,7 @@ const getRandomColor = () => {
 }
 
 const getRandomColors = () => {
-  const kyes = Object.keys(DefaultTheme.palette) as Array<keyof ZeitUIThemesPalette>
+  const kyes = Object.keys(DefaultTheme.palette) as Array<keyof GeistUIThemesPalette>
   const basicColors = new Array(5).fill('').map(() => {
     const index = Math.round(Math.random() * kyes.length) + kyes.length
     return DefaultTheme.palette[kyes[index]]

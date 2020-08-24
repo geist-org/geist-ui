@@ -24,7 +24,7 @@ Retrieve multi-line user input.
   desc="Specify width manually."
   scope={{ Textarea }}
   code={`
-<Textarea width="100%" placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+<Textarea width="100%" placeholder="Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
 `}
 />
 
@@ -33,7 +33,7 @@ Retrieve multi-line user input.
   desc="Disable interactive textarea."
   scope={{ Textarea }}
   code={`
-<Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+<Textarea width="100%" disabled placeholder="Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
 `}
 />
 
@@ -69,7 +69,7 @@ Retrieve multi-line user input.
     <Textarea width="100%"
      value={value}
      onChange={handler}
-     placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+     placeholder="Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
   )
 }
 `}
@@ -85,7 +85,7 @@ Retrieve multi-line user input.
   scope={{ Textarea, useInput, Button, Spacer }}
   code={`
 () => {
-  const { setState, reset, bindings } = useInput('ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.')
+  const { setState, reset, bindings } = useInput('Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.')
   return (
     <>
       <Textarea width="100%" {...bindings}/>

@@ -1,6 +1,6 @@
 ## Custom themes
 
-This is an example of **how to custom Themes in `zeit-ui`**.
+This is an example of **how to custom Themes in `geist-ui`**.
 
 ## Getting Started
 

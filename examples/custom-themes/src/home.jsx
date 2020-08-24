@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Text, Tag, useTheme } from '@zeit-ui/react'
+import { Card, Text, Tag, useTheme } from '@geist-ui/react'
 
 const Home = () => {
   const theme = useTheme()

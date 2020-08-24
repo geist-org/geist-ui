@@ -1,5 +1,5 @@
 import { SnippetTypes } from 'components/utils/prop-types'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/styles/themes'
 
 export type SnippetStyles = {
   color: string
@@ -7,7 +7,7 @@ export type SnippetStyles = {
   bgColor: string
 }
 
-export const getStyles = (type: SnippetTypes, palette: ZeitUIThemesPalette, fill?: boolean) => {
+export const getStyles = (type: SnippetTypes, palette: GeistUIThemesPalette, fill?: boolean) => {
   const styles: { [key in SnippetTypes]: SnippetStyles } = {
     default: {
       color: palette.foreground,

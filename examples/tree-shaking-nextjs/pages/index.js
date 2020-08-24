@@ -1,4 +1,4 @@
-import { Page, Text, Button } from '@zeit-ui/react'
+import { Page, Text, Button } from '@geist-ui/react'
 
 export default function Home() {
   return (

@@ -18,7 +18,7 @@ export const getButtonChildrenWithIcon = (
   const isRight = Boolean(iconRight)
   const paddingForAutoMode =
     auto || size === 'mini'
-      ? `calc(var(--zeit-ui-button-height) / 2 + var(--zeit-ui-button-padding) * .5)`
+      ? `calc(var(--geist-ui-button-height) / 2 + var(--geist-ui-button-padding) * .5)`
       : 0
   if (!hasIcon) return <div className="text">{children}</div>
   if (React.Children.count(children) === 0) {

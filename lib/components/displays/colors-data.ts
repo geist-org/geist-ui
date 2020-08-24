@@ -1,7 +1,7 @@
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/styles/themes'
 
 export type ColorEnum = {
-  [key in keyof ZeitUIThemesPalette]?: string
+  [key in keyof GeistUIThemesPalette]?: string
 }
 
 /* eslint-disable @typescript-eslint/camelcase */
@@ -76,7 +76,7 @@ export const getColorData = (type: string): ColorEnum => {
 }
 
 export const getCurrentColor = (
-  palette: ZeitUIThemesPalette,
+  palette: GeistUIThemesPalette,
   type: string,
   index: number,
 ): string => {

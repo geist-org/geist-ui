@@ -17,7 +17,7 @@ const ButtonLoading: React.FC<React.PropsWithChildren<Props>> = ({ color }) => {
           right: 0;
           bottom: 0;
           z-index: 2;
-          background-color: var(--zeit-ui-button-bg);
+          background-color: var(--geist-ui-button-bg);
         }
       `}</style>
     </div>

@@ -1,5 +1,5 @@
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../styles/themes'
 
 export type InputSize = {
   heightRatio: string
@@ -35,7 +35,7 @@ export type InputColor = {
   hoverBorder: string
 }
 
-export const getColors = (palette: ZeitUIThemesPalette, status?: NormalTypes): InputColor => {
+export const getColors = (palette: GeistUIThemesPalette, status?: NormalTypes): InputColor => {
   const colors: { [key in NormalTypes]: InputColor } = {
     default: {
       color: palette.foreground,

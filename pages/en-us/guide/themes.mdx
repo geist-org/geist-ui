@@ -8,14 +8,14 @@ export const meta = {
 
 ## Themes
 
-`@zeit-ui/react` now support **Dark Mode**. You can switch theme at any time through a very simple API, no third-party styles or configs.
+`@geist-ui/react` now support **Dark Mode**. You can switch theme at any time through a very simple API, no third-party styles or configs.
 
 <Spacer y={2} />
 
 ### Switch themes
 
 <Note>
-  Before using any Components, you must add <Code>ZeitProvider</Code> to the root node.
+  Before using any Components, you must add <Code>GeistProvider</Code> to the root node.
 </Note>
 <Spacer y={0.5} />
 <Note type="success">
@@ -25,14 +25,14 @@ export const meta = {
 
 **Now you can change the theme as follows:**
 
-1. Make sure `ZeitProvider` and `CssBaseline` are already on the root component.
+1. Make sure `GeistProvider` and `CssBaseline` are already on the root component.
 
 2. Get the current theme of the page through hook `useTheme`.
 
 3. Update the value of `theme.type`, and the theme of all components will follow automatically.
 
 ```jsx
-import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
+import { CssBaseline, GeistProvider } from '@geist-ui/react'
 
 const App = () => {
   const [themeType, setThemeType] = useState('dark')
@@ -40,10 +40,10 @@ const App = () => {
     setThemeType(lastThemeType => (lastThemeType === 'dark' ? 'light' : 'dark'))
   }
   return (
-    <ZeitProvider theme={{ type: themeType }}>
+    <GeistProvider theme={{ type: themeType }}>
       <CssBaseline />
       <YourComponent onClick={switchThemes} />
-    </ZeitProvider>
+    </GeistProvider>
   )
 }
 ```
@@ -52,9 +52,9 @@ const App = () => {
 
 ### Customizing theme
 
-Customizing a theme is very simple in `@zeit-ui/react`, you just need to provide a new theme `Object`,
+Customizing a theme is very simple in `@geist-ui/react`, you just need to provide a new theme `Object`,
 and all the components will change automatically.
-Here is <Link target="_blank" color href="https://github.com/zeit-ui/react/tree/master/examples/custom-themes">a complete sample project</Link> for reference.
+Here is <Link target="_blank" color href="https://github.com/geist-org/react/tree/master/examples/custom-themes">a complete sample project</Link> for reference.
 
 Of course, if a _component_ doesn't use your customized variables, it doesn't make any additional **changes** or **rendering**.
 
@@ -64,7 +64,7 @@ Of course, if a _component_ doesn't use your customized variables, it doesn't ma
 </Note>
 
 ```jsx
-import { CssBaseline, ZeitProvider } from '@zeit-ui/react'
+import { CssBaseline, GeistProvider } from '@geist-ui/react'
 
 const myTheme = {
   palette: {
@@ -73,10 +73,10 @@ const myTheme = {
 }
 
 const App = () => (
-  <ZeitProvider theme={myTheme}>
+  <GeistProvider theme={myTheme}>
     <CssBaseline />
     <YourAppComponent onClick={switchThemes} />
-  </ZeitProvider>
+  </GeistProvider>
 )
 ```
 
@@ -88,23 +88,23 @@ If you are using TypeScript, you can import various preset types:
 
 ```ts
 import {
-  ZeitUIThemes,
-  ZeitUIThemesFont,
-  ZeitUIThemesPalette,
-  ZeitUIThemesExpressiveness,
-  ZeitUIThemesLayout,
-} from '@zeit-ui/react'
+  GeistUIThemes,
+  GeistUIThemesFont,
+  GeistUIThemesPalette,
+  GeistUIThemesExpressiveness,
+  GeistUIThemesLayout,
+} from '@geist-ui/react'
 
 // usage:
-const myStyles: ZeitUIThemes = {
+const myStyles: GeistUIThemes = {
   /* ... */
 }
-const myPalette: Partial<ZeitUIThemesPalette> = {
+const myPalette: Partial<GeistUIThemesPalette> = {
   /* ... */
 }
 ```
 
-If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" href="https://github.com/zeit-ui/react/blob/master/components/styles/themes/index.ts">here</Link>.
+If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" href="https://github.com/geist-org/react/blob/master/components/styles/themes/index.ts">here</Link>.
 
 <Spacer y={3} />
 
@@ -115,7 +115,7 @@ If you don't use TypeScript, to learn more about preset types, see <Link color t
 You can override the style by defining a `className` on the component.
 
 ```jsx
-import { Button, Row } from '@zeit-ui/react'
+import { Button, Row } from '@geist-ui/react'
 
 const MyPage = () => (
   <Row>
@@ -150,7 +150,7 @@ const MyPage = () => (
 Sometimes you want to create new components, but you want to be consistent with the current theme. Now you can try using **theme variables** in your components
 
 ```jsx
-import { useTheme } from '@zeit-ui/react'
+import { useTheme } from '@geist-ui/react'
 
 const currentTheme = useTheme()
 

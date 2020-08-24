@@ -1,6 +1,6 @@
 import { ThemeTypes } from '../../utils/prop-types'
 
-export interface ZeitUIThemesPalette {
+export interface GeistUIThemesPalette {
   /* eslint-disable @typescript-eslint/camelcase */
   accents_1: string
   accents_2: string
@@ -43,7 +43,7 @@ export interface ZeitUIThemesPalette {
   alert: string
 }
 
-export interface ZeitUIThemesExpressiveness {
+export interface GeistUIThemesExpressiveness {
   linkStyle: string
   linkHoverStyle: string
   dropdownBoxShadow: string
@@ -55,7 +55,7 @@ export interface ZeitUIThemesExpressiveness {
   portalOpacity: number
 }
 
-export interface ZeitUIThemesLayout {
+export interface GeistUIThemesLayout {
   gap: string
   gapNegative: string
   gapHalf: string
@@ -70,7 +70,7 @@ export interface ZeitUIThemesLayout {
   radius: string
 }
 
-export interface ZeitUIThemesFont {
+export interface GeistUIThemesFont {
   sans: string
   mono: string
 }
@@ -80,7 +80,7 @@ export interface BreakpointsItem {
   max: string
 }
 
-export interface ZeitUIThemesBreakpoints {
+export interface GeistUIThemesBreakpoints {
   xs: BreakpointsItem
   sm: BreakpointsItem
   md: BreakpointsItem
@@ -88,11 +88,11 @@ export interface ZeitUIThemesBreakpoints {
   xl: BreakpointsItem
 }
 
-export interface ZeitUIThemes {
+export interface GeistUIThemes {
   type: ThemeTypes
-  font: ZeitUIThemesFont
-  layout: ZeitUIThemesLayout
-  palette: ZeitUIThemesPalette
-  breakpoints: ZeitUIThemesBreakpoints
-  expressiveness: ZeitUIThemesExpressiveness
+  font: GeistUIThemesFont
+  layout: GeistUIThemesLayout
+  palette: GeistUIThemesPalette
+  breakpoints: GeistUIThemesBreakpoints
+  expressiveness: GeistUIThemesExpressiveness
 }

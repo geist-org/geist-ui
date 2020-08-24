@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { NormalTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../styles/themes'
 
 export interface Props {
   tag: keyof JSX.IntrinsicElements
@@ -16,7 +16,7 @@ const defaultProps = {
   className: '',
 }
 
-const getTypeColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
+const getTypeColor = (type: NormalTypes, palette: GeistUIThemesPalette) => {
   const colors: { [key in NormalTypes]: string } = {
     default: 'inherit',
     secondary: palette.secondary,

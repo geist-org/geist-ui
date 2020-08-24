@@ -1,22 +1,22 @@
 import React from 'react'
 import { render } from 'enzyme'
-import { CssBaseline, ZeitProvider } from 'components'
+import { CssBaseline, GeistProvider } from 'components'
 
 describe('CSSBaseline', () => {
   it('should render correctly', () => {
     const wrapper = render(
-      <ZeitProvider>
+      <GeistProvider>
         <CssBaseline />
-      </ZeitProvider>,
+      </GeistProvider>,
     )
     expect(wrapper).toMatchSnapshot()
   })
 
   it('should render dark mode correctly', () => {
     const wrapper = render(
-      <ZeitProvider theme={{ type: 'dark' }}>
+      <GeistProvider theme={{ type: 'dark' }}>
         <CssBaseline />
-      </ZeitProvider>,
+      </GeistProvider>,
     )
     expect(wrapper).toMatchSnapshot()
   })

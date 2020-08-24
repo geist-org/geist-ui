@@ -12,7 +12,7 @@ const usePortal = (
   selectId: string = getId(),
   getContainer?: () => HTMLElement | null,
 ): HTMLElement | null => {
-  const id = `zeit-ui-${selectId}`
+  const id = `geist-ui-${selectId}`
   const { isBrowser } = useSSR()
   const [elSnapshot, setElSnapshot] = useState<HTMLElement | null>(
     isBrowser ? createElement(id) : null,

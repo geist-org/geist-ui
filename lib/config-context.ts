@@ -1,5 +1,5 @@
 import React from 'react'
-import { ZeitUIThemes } from 'components/styles/themes'
+import { GeistUIThemes } from 'components/styles/themes'
 import { DeepPartial } from 'components/utils/types'
 
 export interface Configs {
@@ -12,8 +12,8 @@ export interface Configs {
   tabbarFixed: boolean
   updateTabbarFixed: Function
 
-  customTheme: DeepPartial<ZeitUIThemes>
-  updateCustomTheme: (theme: DeepPartial<ZeitUIThemes>) => void
+  customTheme: DeepPartial<GeistUIThemes>
+  updateCustomTheme: (theme: DeepPartial<GeistUIThemes>) => void
 }
 
 export const defaultConfigs: Configs = {

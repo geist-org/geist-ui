@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Avatar, Link, Tooltip, useTheme } from 'components'
 import { useConfigs } from 'lib/config-context'
-const GithubURL = 'https://github.com/zeit-ui/react/blob/master'
-const host = 'https://contributors.zeit-ui.co/api/users'
+const GithubURL = 'https://github.com/geist-org/react/blob/master'
+const host = 'https://contributors.geist-ui.dev/api/users'
 
 export interface Contributor {
   name: string
@@ -17,7 +17,7 @@ interface Props {
 const getContributors = async (path: string): Promise<Array<Contributor>> => {
   try {
     const response = await fetch(`${host}?path=${path}`)
-    if (!response.ok) return []
+    if (!response.ok || response.status === 204) return []
     return response.json()
   } catch (e) {
     return []

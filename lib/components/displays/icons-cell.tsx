@@ -7,8 +7,8 @@ export const getFileName = (name: string): string => {
 
 export const getImportString = (name: string) => {
   const fileName = getFileName(name)
-  const single = `import ${name} from '@zeit-ui/react-icons/${fileName}'`
-  const normal = `import { ${name} } from '@zeit-ui/react-icons'`
+  const single = `import ${name} from '@geist-ui/react-icons/${fileName}'`
+  const normal = `import { ${name} } from '@geist-ui/react-icons'`
   return {
     single,
     normal,

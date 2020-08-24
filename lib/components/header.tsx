@@ -12,7 +12,7 @@ const toCapitalize = (name: string) => {
 
 const PageHeader: React.FC<{ meta: Meta }> = ({ meta }) => (
   <Head>
-    <title>{meta.title ? `${toCapitalize(meta.title)} | ` : ''}React - ZEIT UI</title>
+    <title>{meta.title ? `${toCapitalize(meta.title)} | ` : ''}React - Geist UI</title>
   </Head>
 )
 

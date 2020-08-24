@@ -1,17 +1,17 @@
 import {
-  ZeitUIThemesBreakpoints,
-  ZeitUIThemesFont,
-  ZeitUIThemesLayout,
+  GeistUIThemesBreakpoints,
+  GeistUIThemesFont,
+  GeistUIThemesLayout,
 } from 'components/styles/themes/index'
 
-export const defaultFont: ZeitUIThemesFont = {
+export const defaultFont: GeistUIThemesFont = {
   sans:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
   mono:
     'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
 }
 
-export const defaultBreakpoints: ZeitUIThemesBreakpoints = {
+export const defaultBreakpoints: GeistUIThemesBreakpoints = {
   xs: {
     min: '0',
     max: '650px',
@@ -34,7 +34,7 @@ export const defaultBreakpoints: ZeitUIThemesBreakpoints = {
   },
 }
 
-export const defaultLayout: ZeitUIThemesLayout = {
+export const defaultLayout: GeistUIThemesLayout = {
   gap: '16pt',
   gapNegative: '-16pt',
   gapHalf: '8pt',

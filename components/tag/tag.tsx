@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { SnippetTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../styles/themes'
 
 interface Props {
   type?: SnippetTypes
@@ -25,7 +25,7 @@ export type TagColors = {
   borderColor: string
 }
 
-const getColors = (type: SnippetTypes, palette: ZeitUIThemesPalette, invert: boolean) => {
+const getColors = (type: SnippetTypes, palette: GeistUIThemesPalette, invert: boolean) => {
   const colors: { [key in SnippetTypes]: Pick<TagColors, 'color'> & Partial<TagColors> } = {
     default: {
       color: palette.foreground,

@@ -2,7 +2,7 @@ import React from 'react'
 import { mount, render } from 'enzyme'
 import { Image } from 'components'
 
-const link = 'https://react.zeit-ui.co/en-us/guide/introduction'
+const link = 'https://react.geist-ui.dev/en-us/guide/introduction'
 const url =
   'data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA' +
   'AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO' +

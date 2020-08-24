@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
+import { GeistProvider, CssBaseline } from '@geist-ui/react'
 import Home from './home'
 
 const App = () => {
   return (
-    <ZeitProvider>
+    <GeistProvider>
       <CssBaseline />
       <Home />
-    </ZeitProvider>
+    </GeistProvider>
   )
 }
 

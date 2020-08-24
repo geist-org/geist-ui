@@ -3,16 +3,16 @@ import {
   Text,
   Button,
   useTheme,
-  ZeitUIThemesPalette,
-  ZeitUIThemesExpressiveness,
-  ZeitUIThemesLayout,
+  GeistUIThemesPalette,
+  GeistUIThemesExpressiveness,
+  GeistUIThemesLayout,
 } from 'components'
 import EditorColorItem from './editor-color-item'
 import EditorInputItem from './editor-input-item'
 import DefaultTheme from 'components/styles/themes/default'
 import { useConfigs } from 'lib/config-context'
 
-const basicColors: Array<keyof ZeitUIThemesPalette> = [
+const basicColors: Array<keyof GeistUIThemesPalette> = [
   'accents_1',
   'accents_2',
   'accents_3',
@@ -24,7 +24,7 @@ const basicColors: Array<keyof ZeitUIThemesPalette> = [
   'foreground',
   'background',
 ]
-const statusColors: Array<keyof ZeitUIThemesPalette> = [
+const statusColors: Array<keyof GeistUIThemesPalette> = [
   'success',
   'successLight',
   'successDark',
@@ -35,7 +35,7 @@ const statusColors: Array<keyof ZeitUIThemesPalette> = [
   'warningLight',
   'warningDark',
 ]
-const otherColors: Array<keyof ZeitUIThemesPalette> = [
+const otherColors: Array<keyof GeistUIThemesPalette> = [
   'selection',
   'secondary',
   'link',
@@ -46,7 +46,7 @@ const otherColors: Array<keyof ZeitUIThemesPalette> = [
   'alert',
   'violet',
 ]
-const expressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
+const expressiveness: Array<keyof GeistUIThemesExpressiveness> = [
   'linkStyle',
   'linkHoverStyle',
   'dropdownBoxShadow',
@@ -54,13 +54,13 @@ const expressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
   'shadowMedium',
   'shadowLarge',
 ]
-const pageLayout: Array<keyof ZeitUIThemesLayout> = [
+const pageLayout: Array<keyof GeistUIThemesLayout> = [
   'pageWidth',
   'pageWidthWithMargin',
   'pageMargin',
   'radius',
 ]
-const gapLayout: Array<keyof ZeitUIThemesLayout> = [
+const gapLayout: Array<keyof GeistUIThemesLayout> = [
   'gap',
   'gapNegative',
   'gapHalf',

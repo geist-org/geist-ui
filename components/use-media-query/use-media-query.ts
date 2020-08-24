@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import { tuple } from '../utils/prop-types'
-import { BreakpointsItem, ZeitUIThemesBreakpoints } from '../styles/themes'
+import { BreakpointsItem, GeistUIThemesBreakpoints } from '../styles/themes'
 
 const breakpoints = tuple('xs', 'sm', 'md', 'lg', 'xl', 'mobile')
 export type ResponsiveBreakpoint = typeof breakpoints[number]
@@ -18,7 +18,7 @@ const defaultResponsiveOptions = {
 }
 
 const makeQueries = (
-  bp: ZeitUIThemesBreakpoints,
+  bp: GeistUIThemesBreakpoints,
   up: boolean,
   down: boolean,
 ): {

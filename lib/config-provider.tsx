@@ -3,7 +3,7 @@ import withDefaults from 'components/utils/with-defaults'
 import { ConfigContext, Configs } from 'lib/config-context'
 import { useRouter } from 'next/router'
 import { DeepPartial } from 'components/utils/types'
-import { ZeitUIThemes } from 'components/styles/themes'
+import { GeistUIThemes } from 'components/styles/themes'
 import { deepMergeObject } from 'components/styles/theme-provider/theme-provider'
 import useCurrentState from 'components/utils/use-current-state'
 import { useTheme } from 'components'
@@ -24,13 +24,13 @@ const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = R
     const [scrollHeight, setScrollHeight] = useState<number>(0)
     const [tabbarFixed, setTabbarFixed] = useState<boolean>(false)
     const [customTheme, setCustomTheme, customThemeRef] = useCurrentState<
-      DeepPartial<ZeitUIThemes>
+      DeepPartial<GeistUIThemes>
     >(theme)
 
     const updateSidebarScrollHeight = (height: number) => setScrollHeight(height)
     const updateChineseState = (state: boolean) => setIsChinese(state)
     const updateTabbarFixed = (state: boolean) => setTabbarFixed(state)
-    const updateCustomTheme = (nextTheme: DeepPartial<ZeitUIThemes>) => {
+    const updateCustomTheme = (nextTheme: DeepPartial<GeistUIThemes>) => {
       const mergedTheme = deepMergeObject(customThemeRef.current, nextTheme)
       setCustomTheme(mergedTheme)
       onThemeChange && onThemeChange(mergedTheme)

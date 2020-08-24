@@ -1,12 +1,12 @@
 import { SnippetTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../styles/themes'
 
 export type TooltipColors = {
   bgColor: string
   color: string
 }
 
-export const getColors = (type: SnippetTypes, palette: ZeitUIThemesPalette): TooltipColors => {
+export const getColors = (type: SnippetTypes, palette: GeistUIThemesPalette): TooltipColors => {
   const colors: { [key in SnippetTypes]: string } = {
     default: palette.background,
     success: palette.success,

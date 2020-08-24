@@ -6,17 +6,17 @@ describe('Link', () => {
   it('should render correctly', () => {
     const wrapper = mount(
       <div>
-        <Link href="https://react.zeit-ui.co">link</Link>
-        <Link href="https://react.zeit-ui.co" color>
+        <Link href="https://react.geist-ui.dev">link</Link>
+        <Link href="https://react.geist-ui.dev" color>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" icon>
+        <Link href="https://react.geist-ui.dev" icon>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" underline>
+        <Link href="https://react.geist-ui.dev" underline>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" block>
+        <Link href="https://react.geist-ui.dev" block>
           link
         </Link>
       </div>,

@@ -1,7 +1,7 @@
-import { ZeitUIThemes, ZeitUIThemesPalette, ZeitUIThemesExpressiveness } from './index'
+import { GeistUIThemes, GeistUIThemesPalette, GeistUIThemesExpressiveness } from './index'
 import { defaultFont, defaultBreakpoints, defaultLayout } from './shared'
 
-export const palette: ZeitUIThemesPalette = {
+export const palette: GeistUIThemesPalette = {
   /* eslint-disable @typescript-eslint/camelcase */
   accents_1: '#111',
   accents_2: '#333',
@@ -44,7 +44,7 @@ export const palette: ZeitUIThemesPalette = {
   link: '#3291ff',
 }
 
-export const expressiveness: ZeitUIThemesExpressiveness = {
+export const expressiveness: GeistUIThemesExpressiveness = {
   linkStyle: 'none',
   linkHoverStyle: 'none',
   dropdownBoxShadow: '0 0 0 1px #333',
@@ -62,7 +62,7 @@ export const breakpoints = defaultBreakpoints
 
 export const layout = defaultLayout
 
-export const themes: ZeitUIThemes = {
+export const themes: GeistUIThemes = {
   type: 'dark',
   font,
   layout,

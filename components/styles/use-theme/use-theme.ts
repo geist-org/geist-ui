@@ -1,7 +1,7 @@
 import React from 'react'
 import ThemeContext from './theme-context'
-import { ZeitUIThemes } from '../themes/index'
+import { GeistUIThemes } from '../themes/index'
 
-const useTheme = (): ZeitUIThemes => React.useContext<ZeitUIThemes>(ThemeContext)
+const useTheme = (): GeistUIThemes => React.useContext<GeistUIThemes>(ThemeContext)
 
 export default useTheme

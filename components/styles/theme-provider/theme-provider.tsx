@@ -2,12 +2,12 @@ import React, { PropsWithChildren } from 'react'
 import useTheme from '../use-theme'
 import darkTheme from '../themes/dark'
 import lightTheme from '../themes/default'
-import { ZeitUIThemes } from '../themes/index'
+import { GeistUIThemes } from '../themes/index'
 import ThemeContext from '../use-theme/theme-context'
 import useWarning from '../../utils/use-warning'
 import { DeepPartial } from '../../utils/types'
 
-type PartialTheme = DeepPartial<ZeitUIThemes>
+type PartialTheme = DeepPartial<GeistUIThemes>
 export type ThemeParam = PartialTheme | ((theme: PartialTheme) => PartialTheme) | undefined
 
 export interface Props {
@@ -42,20 +42,20 @@ export const deepMergeObject = <T extends MergeObject>(source: T, target: T): T 
   return result
 }
 
-const mergeTheme = (current: ZeitUIThemes, custom: ThemeParam): ZeitUIThemes => {
+const mergeTheme = (current: GeistUIThemes, custom: ThemeParam): GeistUIThemes => {
   if (!custom) return current
   if (typeof custom === 'function') {
     const merged = custom(current)
     if (!merged || typeof merged !== 'object') {
       useWarning('The theme function must return object value.')
     }
-    return merged as ZeitUIThemes
+    return merged as GeistUIThemes
   }
-  return deepMergeObject<ZeitUIThemes>(current, custom as ZeitUIThemes)
+  return deepMergeObject<GeistUIThemes>(current, custom as GeistUIThemes)
 }
 
-const switchTheme = (mergedTheme: ZeitUIThemes): ZeitUIThemes => {
-  const themes: { [key in ZeitUIThemes['type']]: ZeitUIThemes } = {
+const switchTheme = (mergedTheme: GeistUIThemes): GeistUIThemes => {
+  const themes: { [key in GeistUIThemes['type']]: GeistUIThemes } = {
     light: lightTheme,
     dark: darkTheme,
   }

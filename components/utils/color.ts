@@ -3,7 +3,7 @@ const hexToRgb = (color: string): [number, number, number] => {
   const full = color.replace(fullReg, (_, r, g, b) => `${r}${r}${g}${g}${b}${b}`)
   const values = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(full)
   if (!values) {
-    throw new Error(`ZEIT UI: Unsupported ${color} color.`)
+    throw new Error(`Geist UI: Unsupported ${color} color.`)
   }
   return [
     Number.parseInt(values[1], 16),
@@ -21,7 +21,7 @@ export const colorToRgbValues = (color: string) => {
   const regArray = safeColor.match(/\((.+)\)/)
   if (!colorType.startsWith('rgb') || !regArray) {
     console.log(color)
-    throw new Error(`ZEIT UI: Only support ["RGB", "RGBA", "HEX"] color.`)
+    throw new Error(`Geist UI: Only support ["RGB", "RGBA", "HEX"] color.`)
   }
 
   return regArray[1].split(',').map(str => Number.parseFloat(str))

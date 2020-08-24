@@ -152,7 +152,7 @@ describe('Input', () => {
     expect(click).not.toHaveBeenCalled()
   })
 
-  // check ref is available: https://github.com/zeit-ui/react/issues/189
+  // check ref is available: https://github.com/geist-org/react/issues/189
   it('should forward ref by default', () => {
     const ref = React.createRef<HTMLInputElement>()
     const wrapper = mount(<Input ref={ref} />)

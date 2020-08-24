@@ -1,9 +1,9 @@
 import React, { PropsWithChildren, useMemo, useState } from 'react'
 import {
-  ZEITUIContent,
-  ZeitUiContextParams,
+  GeistUIContent,
+  GeistUIContextParams,
   UpdateToastsFunction,
-} from '../utils/use-zeit-ui-context'
+} from '../utils/use-geist-ui-context'
 import ThemeProvider from '../styles/theme-provider'
 import { ThemeParam } from '../styles/theme-provider/theme-provider'
 import useCurrentState from '../utils/use-current-state'
@@ -13,7 +13,7 @@ export interface Props {
   theme?: ThemeParam
 }
 
-const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) => {
+const GeistProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) => {
   const [toasts, setToasts, toastsRef] = useCurrentState<Array<ToastWithID>>([])
   const [toastHovering, setToastHovering] = useState<boolean>(false)
   const updateToasts: UpdateToastsFunction<ToastWithID> = (
@@ -28,7 +28,7 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
     setToastHovering(nextHoverStatus)
   }
 
-  const initialValue = useMemo<ZeitUiContextParams>(
+  const initialValue = useMemo<GeistUIContextParams>(
     () => ({
       toasts,
       toastHovering,
@@ -39,13 +39,13 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
   )
 
   return (
-    <ZEITUIContent.Provider value={initialValue}>
+    <GeistUIContent.Provider value={initialValue}>
       <ThemeProvider theme={theme}>
         {children}
         <ToastContainer />
       </ThemeProvider>
-    </ZEITUIContent.Provider>
+    </GeistUIContent.Provider>
   )
 }
 
-export default ZeitProvider
+export default GeistProvider

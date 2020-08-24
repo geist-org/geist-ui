@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, useTheme } from 'components'
-import SlidersIcon from '@zeit-ui/react-icons/sliders'
+import SlidersIcon from '@geist-ui/react-icons/sliders'
 
 interface Props {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void
@@ -17,7 +17,7 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
       <Button className="toggle" auto type="abort" onClick={handler}>
         <SlidersIcon size={16} />
       </Button>
-      <span>ZEIT-UI React</span>
+      <span>Geist UI</span>
       <style jsx>{`
         .tabbar {
           position: fixed;

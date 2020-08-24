@@ -9,9 +9,9 @@ export const meta = {
 
 ## 服务端渲染
 
-### 在服务端的 ZEIT-UI React
+### 在服务端的 Geist UI
 
-`@zeit-ui/react` 的所有组件都能完美的适应 **服务端渲染**，实际上，你现在所见的文档站点就是来自服务端渲染。
+`@geist-ui/react` 的所有组件都能完美的适应 **服务端渲染**，实际上，你现在所见的文档站点就是来自服务端渲染。
 
 <Note label="阅读提示">
   如果你只想创建{' '}
@@ -51,7 +51,7 @@ export const meta = {
 
 ```js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { CssBaseline } from '@zeit-ui/react'
+import { CssBaseline } from '@geist-ui/react'
 
 class MyDocument extends Document {
   static async getInitialProps (ctx) {
@@ -84,7 +84,7 @@ class MyDocument extends Document {
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom/server'
-import { CssBaseline } from 'zeit-ui/react'
+import { CssBaseline } from 'geist-ui/react'
 import App from './app'
 
 export default (req, res) => {

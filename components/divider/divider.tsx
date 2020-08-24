@@ -3,7 +3,7 @@ import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { DividerAlign, SnippetTypes } from '../utils/prop-types'
 import { getMargin } from '../spacer/spacer'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/styles/themes'
 
 export type DividerTypes = SnippetTypes
 
@@ -28,7 +28,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DividerProps = Props & typeof defaultProps & NativeAttrs
 
-const getColor = (type: DividerTypes, palette: ZeitUIThemesPalette) => {
+const getColor = (type: DividerTypes, palette: GeistUIThemesPalette) => {
   const colors: { [key in DividerTypes]: string } = {
     default: palette.border,
     lite: palette.accents_1,

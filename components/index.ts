@@ -2,7 +2,7 @@
 
 export * from './styles/themes'
 export { default as useTheme } from './styles/use-theme'
-export { default as ZeitProvider } from './zeit-provider'
+export { default as GeistProvider } from './geist-provider'
 export { default as CssBaseline } from './css-baseline'
 export { default as useToasts } from './use-toasts'
 export { default as useInput } from './input/use-input'

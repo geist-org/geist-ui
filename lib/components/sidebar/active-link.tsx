@@ -14,7 +14,7 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
   const { pathname } = useRouter()
   const [title, subtitle] = useMemo(() => {
     if (!/[\u4E00-\u9FA5]/.test(text)) return [text, null]
-    if (/zeit|ui|ZEIT|UI/.test(text)) return [text, null]
+    if (/zeit|ui|ZEIT|geist|Geist|UI/.test(text)) return [text, null]
     return [text.replace(/[^\u4E00-\u9FA5]/g, ''), text.replace(/[^a-zA-Z]/g, '')]
   }, [text])
   const isActive = pathname === href
