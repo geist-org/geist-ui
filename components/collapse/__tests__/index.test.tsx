@@ -30,7 +30,7 @@ describe('Collapse', () => {
         <Collapse title="title" subtitle="subtitle">
           content
         </Collapse>
-        <Collapse title="title" initialVisible>
+        <Collapse title="title" defaultVisible>
           content
         </Collapse>
       </div>,

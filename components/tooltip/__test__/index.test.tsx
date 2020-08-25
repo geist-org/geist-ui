@@ -103,13 +103,13 @@ describe('Tooltip', () => {
     const wrapper = mount(
       <div>
         <Tooltip
-          text={<p id="initial-visible">custom-content</p>}
-          initialVisible={true}
+          text={<p id="default-visible">custom-content</p>}
+          defaultVisible
           placement={'test' as any}>
           some tips
         </Tooltip>
       </div>,
     )
-    expect(wrapper.find('#initial-visible').length).toBe(1)
+    expect(wrapper.find('#default-visible').length).toBe(1)
   })
 })
