@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useRef } from 'react'
+import React, { Dispatch, SetStateAction, useRef, ReactNode } from 'react'
 import Input from '../input'
 import { NormalSizes } from '../utils/prop-types'
 import useTheme from '../styles/use-theme'
@@ -7,6 +7,8 @@ import { usePaginationContext } from './pagination-context'
 interface Props {
   count: number
   size?: NormalSizes
+  labelQuickJumperBefore?: ReactNode | string
+  labelQuickJumperAfter?: ReactNode | string
   onChange?: Dispatch<SetStateAction<number>>
 }
 
@@ -19,6 +21,8 @@ export type PaginationQuickJumperProps = Props & typeof defaultProps & NativeAtt
 const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProps>> = ({
   count,
   size,
+  labelQuickJumperBefore,
+  labelQuickJumperAfter,
   onChange,
 }) => {
   const theme = useTheme()
@@ -39,14 +43,14 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
   }
   return (
     <div className="pagination-quickjumper">
-      <span className="text left">GO TO</span>
+      <div className="text before">{labelQuickJumperBefore}</div>
       <Input
         onKeyDown={keyDownHandler}
         variant={variant}
         width="4.7143rem"
         size={size}
         ref={inputRef}></Input>
-      <span className="text right">PAGE</span>
+      <div className="text after">{labelQuickJumperAfter}</div>
       <style jsx>
         {`
           .pagination-quickjumper {
@@ -59,10 +63,10 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
             color: ${theme.palette.cNeutral7};
             font-weight: 500;
           }
-          .pagination-quickjumper .left {
+          .pagination-quickjumper .before {
             margin-right: ${theme.layout.gapHalf};
           }
-          .pagination-quickjumper .right {
+          .pagination-quickjumper .after {
             margin-left: ${theme.layout.gapHalf};
           }
         `}

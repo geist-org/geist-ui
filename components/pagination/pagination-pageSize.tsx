@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from 'react'
+import React, { Dispatch, SetStateAction, ReactNode } from 'react'
 import Select from '../select'
 import { NormalSizes } from '../utils/prop-types'
 import useTheme from '../styles/use-theme'
@@ -8,6 +8,8 @@ interface Props {
   size?: NormalSizes
   total?: number
   current: number
+  labelPageSizeChangerBefore?: ReactNode | string
+  labelPageSizeChangerAfter?: ReactNode | string
   onPageSizeChange?: (current: number, pageSize: number) => void
   setPageSize: Dispatch<SetStateAction<number>>
   setPage: Dispatch<SetStateAction<number>>
@@ -25,6 +27,8 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
   size,
   total,
   current,
+  labelPageSizeChangerBefore,
+  labelPageSizeChangerAfter,
   onPageSizeChange,
   setPageSize,
   setPage,
@@ -41,7 +45,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
   }
   return (
     <div className="pagination-pagesize">
-      <span className="text left">SHOW</span>
+      <div className="text before">{labelPageSizeChangerBefore}</div>
       <Select
         variant="line"
         size={size}
@@ -57,7 +61,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
           )
         })}
       </Select>
-      <span className="text right">RECORDS</span>
+      <div className="text after">{labelPageSizeChangerAfter}</div>
       <style jsx>
         {`
           .pagination-pagesize {
@@ -69,10 +73,10 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
             color: ${theme.palette.cNeutral6};
             font-weight: 500;
           }
-          .pagination-pagesize .left {
+          .pagination-pagesize .before {
             margin-right: ${theme.layout.gapHalf};
           }
-          .pagination-pagesize .right {
+          .pagination-pagesize .after {
             margin-left: ${theme.layout.gapHalf};
           }
         `}

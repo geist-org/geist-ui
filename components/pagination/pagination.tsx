@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, ReactNode } from 'react'
 import { PaginationContext, PaginationConfig, PaginationUpdateType } from './pagination-context'
 import useCurrentState from '../utils/use-current-state'
 import { NormalSizes, PaginationVariants } from '../utils/prop-types'
@@ -29,6 +29,10 @@ interface Props {
   size?: NormalSizes
   defaultPageSize?: number
   pageSizeOptions?: string[]
+  labelPageSizeChangerBefore?: ReactNode | string
+  labelPageSizeChangerAfter?: ReactNode | string
+  labelQuickJumperBefore?: ReactNode | string
+  labelQuickJumperAfter?: ReactNode | string
   showQuickJumper?: boolean
   showPageSizeChanger?: boolean
   onChange?: (val: number, pageSize: number) => void
@@ -42,6 +46,10 @@ const defaultProps = {
   size: 'medium' as NormalSizes,
   defaultPageSize: 10,
   pageSizeOptions: ['10', '20', '50', '100'],
+  labelPageSizeChangerBefore: 'SHOW',
+  labelPageSizeChangerAfter: 'RECORDS',
+  labelQuickJumperBefore: 'GO TO',
+  labelQuickJumperAfter: 'PAGE',
   showQuickJumper: false,
   showPageSizeChanger: false,
 }
@@ -58,6 +66,10 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   pageSize: customPageSize,
   variant,
   pageSizeOptions,
+  labelPageSizeChangerBefore,
+  labelPageSizeChangerAfter,
+  labelQuickJumperBefore,
+  labelQuickJumperAfter,
   showQuickJumper,
   showPageSizeChanger,
   onPageSizeChange,
@@ -154,7 +166,9 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
               onPageSizeChange={onPageSizeChange}
               total={total}
               current={page}
-              setPage={setPage}></PaginationPageSize>
+              setPage={setPage}
+              labelPageSizeChangerBefore={labelPageSizeChangerBefore}
+              labelPageSizeChangerAfter={labelPageSizeChangerAfter}></PaginationPageSize>
           </div>
         )}
         <div className="right">
@@ -167,7 +181,9 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
             <PaginationQuickJumper
               onChange={setPage}
               count={pageCount}
-              size={size}></PaginationQuickJumper>
+              size={size}
+              labelQuickJumperBefore={labelQuickJumperBefore}
+              labelQuickJumperAfter={labelQuickJumperAfter}></PaginationQuickJumper>
           )}
         </div>
       </div>
