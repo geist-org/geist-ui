@@ -10,7 +10,7 @@ For basic operation of Git, you can refer to [GitHub's help documentation](https
 1. [Fork this repository](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) to your own account and then clone it.
 2. Create a new branch for your changes: `git checkout -b {BRANCH_NAME}`.
 3. Install [Yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable) and then update project dependenices: `yarn`.
-4. Run `yarn dev` and view your changes on your local document site. (If you add a new document page, you need to run `yarn dev` agian)
+4. Run `yarn dev` and view your changes on your local document site. (If you add a new document page, you need to run `yarn dev` again)
 
 At any time, you think it's ok, you can start the following steps to submit your amazing works:
 
