@@ -8,18 +8,7 @@ const buttonColors = tuple('default', 'primary', 'secondary', 'success', 'warnin
 
 const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
 
-// const buttonColors = tuple(
-//   'default',
-//   'secondary',
-//   'success',
-//   'warning',
-//   'error',
-//   'abort',
-//   'secondary-light',
-//   'success-light',
-//   'warning-light',
-//   'error-light',
-// )
+const messageColors = tuple('default', 'primary', 'success', 'warning', 'error')
 
 const selectVariants = tuple('line', 'text')
 
@@ -63,6 +52,8 @@ export type ButtonColors = typeof buttonColors[number]
 export type ButtonVariants = typeof buttonVariants[number]
 
 export type ButtonStatus = typeof buttonStatus[number]
+
+export type MessageColors = typeof messageColors[number]
 
 export type NormalSizes = typeof normalSizes[number]
 

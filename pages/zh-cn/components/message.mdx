@@ -1,0 +1,223 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useMessages, Button, Spacer, Code } from 'components'
+import * as Icon from '@zeit-ui/react-icons'
+
+export const meta = {
+  title: '全局提示 Message',
+  group: '反馈',
+}
+
+## Message / 全局提示
+
+显示重要的全局通知信息
+
+<Playground
+  desc="基础示例"
+  scope={{ Button, useMessages }}
+  code={`
+    () => {
+      const [messages, setMessage] = useMessages()
+      const click = () => setMessage({ 
+        text: '你正在浏览文档站点',
+      })
+      return <Button onClick={click}>显示通知</Button>
+    }
+  `}
+/>
+
+<Playground
+  title="类型"
+  desc="包含 primary，success，warning，error 四种类型"
+  scope={{ Button, useMessages, Spacer }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  const click = color => setMessage({
+    text: '我正在浏览文档站点',
+    color,
+  })
+  const colors = [
+    ['primary', '主要'], 
+    ['success', '成功'], 
+    ['warning', '警告'], 
+    ['error', '错误']
+  ]
+  return (
+    <>
+      {colors.map(c => {
+        return (
+          <div key={c[0]}>
+            <Button 
+              onClick={() => click(c[0])} 
+              variant="solid" 
+              color={c[0]}
+            >显示{c[1]}状态</Button>
+            <Spacer y={.5} />
+          </div>
+        )
+      })}
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="修改延时"
+  desc="默认时长为 3s，可修改 delay 改变延时；如设置为 0s，则一直保持显示状态"
+  scope={{ Button, useMessages }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  const click = () => setMessage({ 
+    text: '我正在浏览文档站点',
+    delay: 10000
+  })
+  return <Button onClick={click}>显示通知</Button>
+}
+`}
+/>
+
+<Playground
+  title="手动关闭"
+  desc="传入 closeable，可设置为手动关闭通知"
+  scope={{ Button, useMessages }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  const click = () => setMessage({ 
+    text: '我正在浏览文档站点',
+    delay: 0,
+    closeable: true,
+  })
+  return <Button onClick={click}>显示通知</Button>
+}
+`}
+/>
+
+<Playground
+  title="扁平样式"
+  desc="修改 shadow 可设置为无阴影样式；需注意默认通知修改此值无效"
+  scope={{ Button, useMessages, Spacer }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  const click = color => setMessage({
+    text: '我正在浏览文档站点',
+    color,
+    shadow: false
+  })
+  const colors = [
+    ['primary', '扁平样式，无阴影'], 
+    ['default', '默认状态修改无效'], 
+  ]
+  return (
+    <>
+      {colors.map(c => {
+        return (
+          <div key={c[0]}>
+            <Button 
+              onClick={() => click(c[0])} 
+              variant="solid" 
+              color={c[0]}
+            >{c[1]}</Button>
+            <Spacer y={.5} />
+          </div>
+        )
+      })}
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="修改 icon"
+  desc="自定义 icon 图标样式"
+  scope={{ Button, useMessages, Icon, Spacer }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  return (
+    <>
+      <Button onClick={() => setMessage({ 
+        icon: <Icon.Emoji />,
+        text: '我正在浏览文档站点',
+      })}>显示通知</Button>
+      <Spacer y={.5} />
+      <Button onClick={() => setMessage({ 
+        icon: <Icon.AlertTriangleFill color="red" />,
+        text: '我正在浏览文档站点',
+      })}>显示通知</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="自定义样式"
+  desc="使用 className 来定义样式"
+  scope={{ Button, useMessages, Spacer, Code }}
+  code={`
+() => {
+  const [, setMessage] = useMessages()
+  return (
+    <>
+      <Button onClick={() => setMessage({ 
+        text: '我正在浏览文档站点',
+        className: 'right-top-message',
+      })}>显示通知</Button>
+    </>
+  )
+}
+`}
+/>
+
+<style jsx>
+  {`
+    :global(.right-top-message) {
+      align-self: flex-end;
+      margin-right: 20px;
+    }
+  `}
+</style>
+
+<Attributes edit="/pages/zh-cn/components/message.mdx">
+<Attributes.Title>useMessages</Attributes.Title>
+
+| 属性          | 描述                       | 类型                   | 推荐值                          | 默认      |
+| ------------- | -------------------------- | ---------------------- | ------------------------------- | --------- |
+| **icon**      | 通知左侧图标               | `React.ReactNode`      | -                               | `<Bell/>` |
+| **color**     | 通知的颜色                 | `MessageColors`        | [MessageColors](#messagecolors) | `default` |
+| **text**      | 通知的内容                 | `string`               | -                               | -         |
+| **delay**     | 通知关闭的延迟时间（毫秒） | `number`               | -                               | `3000`    |
+| **closeable** | 是否手动关闭               | `boolean`              | -                               | `false`   |
+| **shadow**    | 是否显示阴影               | `boolean`              | -                               | `true`    |
+| **className** | 自定义样式                 | `string`               | -                               | -         |
+| ...           | 原生属性                   | `ButtonHTMLAttributes` | `'id', 'className', ...`        | -         |
+
+<Attributes.Title>MessageColors</Attributes.Title>
+
+```ts
+type MessageColors = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>Message</Attributes.Title>
+
+```ts
+interface Message {
+  icon?: React.ReactNode
+  text: string
+  color?: MessageColors
+  delay?: number
+  closeable?: boolean
+  shadow?: boolean
+  className?: string
+  onClose?: Function
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
