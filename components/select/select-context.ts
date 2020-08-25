@@ -1,19 +1,19 @@
-import React, { MutableRefObject } from 'react'
+import React from 'react'
 import { NormalSizes, SelectVariants } from '../utils/prop-types'
 
 export interface SelectConfig {
   value?: string | string[]
   variant?: SelectVariants
   updateValue?: Function
-  visible?: boolean
-  updateVisible?: Function
   size?: NormalSizes
   disableAll?: boolean
-  ref?: MutableRefObject<HTMLElement | null>
+}
+export interface SelectHandles {
+  setValue: (value?: string | string[]) => void
+  getValue: () => string | string[] | undefined
 }
 
 const defaultContext = {
-  visible: false,
   variant: 'line' as SelectVariants,
   size: 'medium' as NormalSizes,
   disableAll: false,

@@ -11,12 +11,12 @@ export const meta = {
 显示下拉列表选框。
 
 <Playground
-  scope={{ Select }}
+  desc="基本用法 受控的"
   code={`
 () => {
-  const handler = val => console.log(val)
+   const [value, setValue] = React.useState("1")
   return (
-    <Select placeholder="选择工作方式" onChange={handler}>
+    <Select placeholder="选择工作方式" value={value} onChange={(val) => setValue(val)}>
       <Select.Option value="1">远程工作</Select.Option>
       <Select.Option value="2">线下工作</Select.Option>
     </Select>
@@ -27,7 +27,7 @@ export const meta = {
 
 <Playground
   title="文本"
-  desc="文本选择器"
+  desc="文本选择器 不受控的"
   scope={{ Select }}
   code={`
 () => {
@@ -79,22 +79,6 @@ export const meta = {
 />
 
 <Playground
-  title="标签"
-  desc="用标签将选项分组。"
-  scope={{ Select }}
-  code={`
-<Select placeholder="选择框架">
-  <Select.Option label>JavaScript</Select.Option>
-  <Select.Option value="react">React</Select.Option>
-  <Select.Option value="angular">Angular</Select.Option>
-  <Select.Option label>Ruby</Select.Option>
-  <Select.Option value="rails">Rails</Select.Option>
-  <Select.Option value="sinatra">Sinatra</Select.Option>
-</Select>
-`}
-/>
-
-<Playground
   title="分割线"
   desc="在选项中加入修饰用的线条。"
   scope={{ Select }}
@@ -110,11 +94,41 @@ export const meta = {
 />
 
 <Playground
+  title="尺寸"
+  desc="四种大小的选择器"
+  scope={{ Select, Spacer }}
+  code={`
+<>
+  <Select size="mini" placeholder="工作方式">
+    <Select.Option value="1">远程办公</Select.Option>
+    <Select.Option value="2">线下工作</Select.Option>
+  </Select>
+  <Spacer y={.5} />
+  <Select size="small" placeholder="工作方式">
+    <Select.Option value="1">远程办公</Select.Option>
+    <Select.Option value="2">线下工作</Select.Option>
+  </Select>
+  <Spacer y={.5} />
+  <Select placeholder="工作方式">
+    <Select.Option value="1">远程办公</Select.Option>
+    <Select.Option value="2">线下工作</Select.Option>
+  </Select>
+  <Spacer y={.5} />
+  <Select size="large" placeholder="工作方式">
+    <Select.Option value="1">远程办公</Select.Option>
+    <Select.Option value="2">线下工作</Select.Option>
+  </Select>
+</>
+`}
+/>
+
+
+<Playground
   title="多选"
   desc="Select 组件支持同时选中多个值。"
   scope={{ Select }}
   code={`
-<Select placeholder="选择框架" multiple width="200px" initialValue={['1', '3', '4', '6']}>
+<Select placeholder="选择框架" multiple width="200px" defaultValue={['1', '3', '4', '6']}>
   <Select.Option value="1">React</Select.Option>
   <Select.Option value="2">Angular</Select.Option>
   <Select.Option value="3">Vue</Select.Option>
@@ -133,7 +147,7 @@ export const meta = {
   desc="与其他组件组合使用。"
   scope={{ Select, Code }}
   code={`
-<Select placeholder="选择语言" initialValue="1">
+<Select placeholder="选择语言" defaultValue="1">
   <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
   <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
 </Select>
@@ -165,7 +179,7 @@ export const meta = {
 | 属性                  | 描述                         | 类型                                                | 推荐值                            | 默认            |
 | --------------------- | ---------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
 | **value**             | 手动设置选择器的值              | `string`, `string[]`                                | -                                 | -               |
-| **initialValue**      | 选择器初始值                   | `string`, `string[]`                                | -                                 | -               |
+| **defaultValue**      | 选择器初始值                   | `string`, `string[]`                                | -                                 | -               |
 | **placeholder**       | 占位文本内容                   | `string`                                            | -                                 | -               |
 | **variant**           | 选择器的类型                   | `string`                                            | [SelectVariants](#selectvariants) | `line`          |
 | **width**             | 组件的 CSS 宽度值              | `string`                                            | -                                 | `initial`       |
@@ -182,11 +196,12 @@ export const meta = {
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
 
-| 属性              | 描述         | 类型             | 推荐值                           | 默认    |
-| ----------------- | ------------ | ---------------- | -------------------------------- | ------- |
-| **value**(必须的) | 唯一鉴别值   | `string`         | -                                | -       |
-| **disabled**      | 禁用当前选项 | `boolean`        | -                                | `false` |
-| ...               | 原生属性     | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
+| 属性               | 描述          | 类型              | 推荐值                            | 默认     |
+| ----------------- | ------------- | ---------------- | -------------------------------- | ------- |
+| **value**(必须的)  | 唯一鉴别值      | `string`         | -                                | -       |
+| **disabled**      | 禁用当前选项    | `boolean`        | -                                | `false` |
+| **divider**       | 分割线         | `boolean`        | -                                | `false` |
+| ...               | 原生属性       | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 
@@ -201,6 +216,17 @@ type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 type SelectVariants = 'line' | 'text'
 ```
 
+<Attributes.Title>useSelectHandle</Attributes.Title>
+
+```ts
+type useSelectHandle = () => {
+  ref: RefObject
+  setValue: (value?: string | string[]) => void
+  getValue: () => string | string[]
+}
+```
+
 </Attributes>
+
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
