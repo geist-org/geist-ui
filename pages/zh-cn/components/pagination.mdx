@@ -166,6 +166,10 @@ export const meta = {
 | **size**                | 组件的大小                 | `NormalSizes`                            | [NormalSizes](#normalsizes)               | `medium`                  |
 | **defaultPageSize**     | 默认的每页条数              | `number`                                 | -                                         | 10                        |
 | **pageSizeOptions**     | 指定每页可以显示多少条       | `string[]`                               | -                                         | ['10', '20', '50', '100'] |
+| **labelPageSizeChangerBefore** | 自定义pageSizeChanger组件之前的文本  | `ReactNode` / `string`    | -                                         | `SHOW`                    |
+| **labelPageSizeChangerAfter**  | 自定义pageSizeChanger组件之后的文本  | `ReactNode` / `string`    | -                                         | `RECORDS`                 |
+| **labelQuickJumperBefore**     | 自定义quickJumper组件之前的文本      | `ReactNode` / `string`    | -                                         | `GO TO`                   |
+| **labelQuickJumperAfter**      | 自定义quickJumper组件之后的文本      | `ReactNode` / `string`    | -                                         | `PAGE`                    |
 | **showQuickJumper**     | 是否展示快速跳转至某页       | `boolean`                                | -                                         | false                     |
 | **showPageSizeChanger** | 是否展示 pageSize 切换器    | `boolean`                                | -                                         | false                     |
 | **onChange**            | 分页器的事件                | `(page: number,pageSize:number) => void` | -                                         | -                         |
