@@ -34,7 +34,7 @@ const defaultProps = {
   value: '',
 }
 
-type NativeAttrs = Omit<React.LabelHTMLAttributes<any>, keyof Props>
+type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type CheckboxProps = Props & typeof defaultProps & NativeAttrs
 
 const Checkbox: React.FC<CheckboxProps> = ({
@@ -91,9 +91,15 @@ const Checkbox: React.FC<CheckboxProps> = ({
   }, [checked])
 
   return (
-    <label className={`${className}`} {...props}>
+    <label className={`${className}`}>
       <CheckboxIcon disabled={isDisabled} checked={selfChecked} />
-      <input type="checkbox" disabled={isDisabled} checked={selfChecked} onChange={changeHandle} />
+      <input
+        type="checkbox"
+        disabled={isDisabled}
+        checked={selfChecked}
+        onChange={changeHandle}
+        {...props}
+      />
       <span className="text">{children}</span>
 
       <style jsx>{`
