@@ -10,6 +10,7 @@ interface Props {
 }
 
 export type cellActions = {
+  update: Function
   remove: Function
 }
 
@@ -20,8 +21,11 @@ export type cellData = {
 }
 
 const TableCell: React.FC<Props> = ({ columns, row, rowIndex, emptyText, onCellClick }) => {
-  const { removeRow } = useTableContext()
+  const { removeRow, updateRow } = useTableContext()
   const actions: cellActions = {
+    update: function <T>(data: T) {
+      updateRow && updateRow(rowIndex, data)
+    },
     remove: () => {
       removeRow && removeRow(rowIndex)
     },

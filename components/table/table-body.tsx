@@ -21,6 +21,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TableBodyProps = Props & typeof defaultProps & NativeAttrs
 
 export type cellActions = {
+  update: Function
   remove: Function
 }
 

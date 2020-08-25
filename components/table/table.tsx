@@ -63,12 +63,20 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
     onChange(next)
     setSelfData([...next])
   }
+  const updateRow = (rowIndex: number, newData: any) => {
+    const next = dataRef.current.map((data, index) =>
+      index === rowIndex ? { ...data, ...newData } : data,
+    )
+    onChange(next)
+    setSelfData([...next])
+  }
 
   const initialValue = useMemo<TableConfig>(
     () => ({
       columns,
       updateColumn,
       removeRow,
+      updateRow,
     }),
     [columns],
   )
