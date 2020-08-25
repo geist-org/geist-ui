@@ -2,7 +2,7 @@ import Input, { useInputHandle } from '../'
 import { mount } from 'enzyme'
 import React, { useEffect } from 'react'
 
-describe('UseImperativeInput', () => {
+describe('UseInputHandle', () => {
   it('should follow change with use-input-handle', () => {
     let log = ''
     jest.spyOn(console, 'log').mockImplementation(msg => (log = msg))
