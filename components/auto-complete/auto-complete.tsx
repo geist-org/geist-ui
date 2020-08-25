@@ -1,18 +1,10 @@
-import React, {
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  useImperativeHandle,
-  PropsWithoutRef,
-  RefAttributes,
-} from 'react'
-import Input from '../input'
+import React, { useEffect, useMemo, useRef, useState, useImperativeHandle } from 'react'
+import Input, { InputProps, defaultProps as inputDefaultProps } from '../input/input'
 import { useAutoCompleteHandle } from '../input/use-input-handle'
 import Loading from '../loading'
 import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'
-import { InputColors, InputVariantTypes, NormalSizes } from '../utils/prop-types'
+import { InputVariantTypes } from '../utils/prop-types'
 import useClickAway from '../utils/use-click-away'
 import { AutoCompleteConfig, AutoCompleteContext } from './auto-complete-context'
 import AutoCompleteDropdown from './auto-complete-dropdown'
@@ -29,19 +21,20 @@ export type AutoCompleteOption = {
 
 export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>
 
-interface Props {
-  variant?: InputVariantTypes
+interface Props
+  extends Omit<
+    InputProps,
+    'onBlur' | 'onChange' | 'onFocus' | 'onSelect' | 'value' | 'defaultValue'
+  > {
+  defaultValue: string
+  value: string
   options: AutoCompleteOptions
-  size?: NormalSizes
-  color?: InputColors
-  defaultValue?: string
-  value?: string
   width?: string
   onFocus?: React.EventHandler<
     React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>
   >
   onBlur?: (event: Event) => void
-  onChange?: (value: string) => void
+  onChange?: (value: InputProps['value']) => void
   onSearch?: (value: string) => void
   onSelect?: (value: string) => void
   onClearClick?: React.EventHandler<React.MouseEvent<HTMLDivElement>>
@@ -56,20 +49,15 @@ interface Props {
   open?: boolean
 }
 
-const defaultProps = {
+export const defaultProps = Object.assign({}, inputDefaultProps, {
   defaultOpen: false,
-  variant: 'line' as InputVariantTypes,
   options: [] as AutoCompleteOptions,
-  disabled: false,
-  clearable: false,
-  size: 'medium' as NormalSizes,
   disableMatchWidth: false,
   disableFreeSolo: false,
-  className: '',
-}
+})
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
+export type AutoCompleteProps = React.PropsWithChildren<Props & NativeAttrs>
 
 const childrenToOptionsNode = (options: Array<AutoCompleteOption>, variant: InputVariantTypes) =>
   options.map((item, index) => {
@@ -86,7 +74,7 @@ const getSearchIcon = (searching?: boolean) => {
   return searching ? <Loading size="small" /> : <span />
 }
 
-const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<AutoCompleteProps>>(
+const AutoComplete = React.forwardRef<HTMLInputElement, AutoCompleteProps>(
   (
     {
       variant,
@@ -99,7 +87,6 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
       onClearClick,
       children,
       size,
-      color: inputColor,
       value,
       width,
       clearable,
@@ -113,7 +100,7 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
       onBlur,
       defaultOpen,
       ...props
-    },
+    }: AutoCompleteProps & typeof defaultProps,
     ref: React.RefObject<HTMLInputElement | null>,
   ) => {
     const isValueControlled = value !== undefined
@@ -124,7 +111,7 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
     useImperativeHandle(ref, () => inputRef.current)
     const resetTimer = useRef<number>()
     const [inputValue, setInputValue] = useState(defaultValue || '')
-    const computedInputValue = isValueControlled ? (value as string) : inputValue
+    const computedInputValue = isValueControlled ? value : inputValue
     const [selectVal, setSelectVal] = useState(defaultValue || '')
     const [dropdownOpen, setDropdownOpen] = useState<boolean>(defaultOpen)
     const isDropdownOpen = isOpenControlled ? open : dropdownOpen
@@ -220,7 +207,7 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
       ...props,
       value: computedInputValue,
       defaultValue: undefined,
-      width,
+      width: width || 'initial',
       disabled,
     }
 
@@ -247,7 +234,6 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
               variant={variant}
               ref={inputRef}
               size={size}
-              color={inputColor}
               onChange={onInputChange}
               onFocus={onInputFocus}
               onClick={onInputFocus}
@@ -296,21 +282,20 @@ const AutoComplete = React.forwardRef<HTMLInputElement, React.PropsWithChildren<
   },
 )
 
-type AutoCompleteComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
-> & {
+const AutoCompleteComponent = AutoComplete as typeof AutoComplete & {
   Item: typeof AutoCompleteItem
+  Empty: typeof AutoCompleteEmpty
   Option: typeof AutoCompleteItem
   Searching: typeof AutoCompleteSearching
-  Empty: typeof AutoCompleteEmpty
   useAutoCompleteHandle: typeof useAutoCompleteHandle
 }
 
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-AutoComplete.defaultProps = defaultProps
+AutoCompleteComponent.defaultProps = defaultProps
+AutoCompleteComponent.Item = AutoCompleteItem
+AutoCompleteComponent.Option = AutoCompleteItem
+AutoCompleteComponent.Searching = AutoCompleteSearching
+AutoCompleteComponent.Empty = AutoCompleteEmpty
+AutoCompleteComponent.useAutoCompleteHandle = useAutoCompleteHandle
 
 export { useAutoCompleteHandle }
-export default AutoComplete as AutoCompleteComponent<HTMLInputElement, ComponentProps>
+export default AutoCompleteComponent

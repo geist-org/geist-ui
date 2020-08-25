@@ -1,12 +1,4 @@
-import React, {
-  PropsWithoutRef,
-  RefAttributes,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import Textarea from '../textarea/textarea'
 import InputBlockLabel from './input-block-label'
@@ -20,7 +12,8 @@ import { useInputHandle } from './use-input-handle'
 import { useAutoCompleteContext } from '../auto-complete/auto-complete-context'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type InputProps = Props & typeof defaultProps & NativeAttrs
+export type InputProps = React.PropsWithChildren<Props & NativeAttrs>
+export { defaultProps }
 
 export interface InputImperativeHandles {
   getValue(): string
@@ -40,13 +33,14 @@ const simulateChangeEvent = (
   }
 }
 
-const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputProps>>(
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
       variant,
       label,
       labelRight,
       size,
+      htmlSize,
       color: inputColor,
       icon,
       iconRight,
@@ -57,6 +51,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       onClearClick,
       clearable,
       width,
+      htmlWidth,
       className,
       onBlur,
       onFocus,
@@ -67,7 +62,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       children,
       disabled,
       ...props
-    },
+    }: InputProps & typeof defaultProps,
     ref: React.Ref<HTMLInputElement | null>,
   ) => {
     const theme = useTheme()
@@ -177,7 +172,9 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {icon && <InputIcon paddingRight="0.5714rem" icon={icon} {...iconProps} />}
             <input
               type="text"
+              size={htmlSize}
               ref={inputRef}
+              width={htmlWidth}
               className={`${iconClasses}`}
               placeholder={placeholder}
               disabled={disabled}
@@ -326,19 +323,17 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
   },
 )
 
-type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
-> & {
+Input.defaultProps = defaultProps
+
+const InputComponent = Input as typeof Input & {
   Textarea: typeof Textarea
   Password: typeof InputPassword
   useInputHandle: typeof useInputHandle
 }
 
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
+InputComponent.Textarea = Textarea
+InputComponent.Password = InputPassword
+InputComponent.useInputHandle = useInputHandle
 
-Input.defaultProps = defaultProps
-
-export default Input as InputComponent<HTMLInputElement, ComponentProps>
+export default InputComponent
 export { useInputHandle }

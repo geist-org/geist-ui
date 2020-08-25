@@ -3,8 +3,7 @@ import React, {
   useMemo,
   useRef,
   useState,
-  PropsWithoutRef,
-  RefAttributes,
+  TextareaHTMLAttributes,
 } from 'react'
 import { useTextareaHandle } from '../input/use-input-handle'
 import { getColors } from '../input/styles'
@@ -12,23 +11,15 @@ import useTheme from '../styles/use-theme'
 import { InputColors, InputVariantTypes } from '../utils/prop-types'
 import Counter from './counter'
 
-interface Props {
+interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+  value: string
+  defaultValue: string
   counter?: boolean
-  maxLength?: number
   variant?: InputVariantTypes
-  value?: string
-  defaultValue?: string
   placeholder?: string
   color?: InputColors
   width?: string
   minHeight?: string
-  disabled?: boolean
-  readOnly?: boolean
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
-  onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
-  onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
-  onMouseOver?: (e: React.MouseEvent<HTMLTextAreaElement, MouseEvent>) => void
-  onMouseOut?: (e: React.MouseEvent<HTMLTextAreaElement, MouseEvent>) => void
   className?: string
 }
 
@@ -43,9 +34,9 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.TextareaHTMLAttributes<any>, keyof Props>
-export type TextareaProps = Props & typeof defaultProps & NativeAttrs
+export type TextareaProps = React.PropsWithChildren<Props & NativeAttrs>
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<TextareaProps>>(
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   (
     {
       counter,
@@ -64,7 +55,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
       onChange,
       placeholder,
       ...props
-    },
+    }: TextareaProps & typeof defaultProps,
     ref: React.Ref<HTMLTextAreaElement | null>,
   ) => {
     const isSolid = variant === 'solid'
@@ -204,17 +195,11 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
   },
 )
 
-type TextareaComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
-> & {
+Textarea.defaultProps = defaultProps
+const TextareaComponent = Textarea as typeof Textarea & {
   useTextareaHandle: typeof useTextareaHandle
 }
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Textarea.defaultProps = defaultProps
+TextareaComponent.useTextareaHandle = useTextareaHandle
 
 export { useTextareaHandle }
-export default Textarea as TextareaComponent<HTMLTextAreaElement, ComponentProps>
+export default TextareaComponent
