@@ -11,7 +11,7 @@ type EventHandlerWithChangeVisible = (
   changeVisible: (nextState: boolean) => void,
 ) => void | undefined
 
-interface Props {
+export interface TooltipProps {
   text: string | React.ReactNode
   color?: SnippetColors
   placement?: Placement
@@ -31,7 +31,7 @@ interface Props {
   onClickAway?: (event: Event, changeVisible: (nextState: boolean) => void) => void
 }
 
-const defaultProps = {
+export const defaultProps = {
   defaultVisible: false,
   hideArrow: false,
   color: 'default' as SnippetColors,
@@ -45,10 +45,10 @@ const defaultProps = {
   onVisibleChange: (() => {}) as TooltipOnVisibleChange,
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TooltipProps = Props & typeof defaultProps & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof TooltipProps>
+type Props = TooltipProps & NativeAttrs
 
-const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
+const Tooltip: React.FC<React.PropsWithChildren<Props>> = ({
   children,
   defaultVisible,
   text,
@@ -68,7 +68,7 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   onClick,
   onClickAway,
   ...props
-}) => {
+}: Props & typeof defaultProps) => {
   const timer = useRef<number>()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(
