@@ -3,7 +3,7 @@
 exports[`Popover should render react-node 1`] = `
 "<div class=\\"tooltip \\"><div></div><style>
         :global(.tooltip-content.popover) {
-          filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+          filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
         }
         :global(.tooltip-content.popover > .inner) {
           padding: 0;
@@ -32,7 +32,7 @@ exports[`Popover should render react-node 1`] = `
 exports[`Popover should work with different placement 1`] = `
 "<div class=\\"tooltip \\"><div></div><style>
         :global(.tooltip-content.popover) {
-          filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+          filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
         }
         :global(.tooltip-content.popover > .inner) {
           padding: 0;
@@ -61,7 +61,7 @@ exports[`Popover should work with different placement 1`] = `
 exports[`Popover should work with prop title 1`] = `
 "<div class=\\"tooltip \\">Menu<style>
         :global(.tooltip-content.popover) {
-          filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+          filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
         }
         :global(.tooltip-content.popover > .inner) {
           padding: 0;

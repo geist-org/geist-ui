@@ -65,7 +65,7 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
       {children}
       <style jsx>{`
         :global(.tooltip-content.popover) {
-          filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+          filter: drop-shadow(${theme.expressiveness.D2});
         }
         :global(.tooltip-content.popover > .inner) {
           padding: 0;

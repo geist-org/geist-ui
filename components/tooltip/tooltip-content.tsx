@@ -108,7 +108,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
             border-radius: ${theme.expressiveness.R2};
             padding: 0;
             z-index: 1000;
-            box-shadow: ${theme.expressiveness.shadowSmall};
+            box-shadow: ${theme.expressiveness.D2};
           }
 
           .inner {
