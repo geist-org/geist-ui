@@ -7,8 +7,8 @@ import { usePaginationContext } from './pagination-context'
 interface Props {
   count: number
   size?: NormalSizes
-  labelQuickJumperBefore?: ReactNode | string
-  labelQuickJumperAfter?: ReactNode | string
+  labelJumperBefore?: ReactNode | string
+  labelJumperAfter?: ReactNode | string
   onChange?: Dispatch<SetStateAction<number>>
 }
 
@@ -21,8 +21,8 @@ export type PaginationQuickJumperProps = Props & typeof defaultProps & NativeAtt
 const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProps>> = ({
   count,
   size,
-  labelQuickJumperBefore,
-  labelQuickJumperAfter,
+  labelJumperBefore,
+  labelJumperAfter,
   onChange,
 }) => {
   const theme = useTheme()
@@ -43,14 +43,14 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProp
   }
   return (
     <div className="pagination-quickjumper">
-      <div className="text before">{labelQuickJumperBefore}</div>
+      <div className="text before">{labelJumperBefore}</div>
       <Input
         onKeyDown={keyDownHandler}
         variant={variant}
         width="4.7143rem"
         size={size}
         ref={inputRef}></Input>
-      <div className="text after">{labelQuickJumperAfter}</div>
+      <div className="text after">{labelJumperAfter}</div>
       <style jsx>
         {`
           .pagination-quickjumper {

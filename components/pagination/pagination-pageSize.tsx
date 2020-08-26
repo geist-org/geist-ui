@@ -8,8 +8,8 @@ interface Props {
   size?: NormalSizes
   total?: number
   current: number
-  labelPageSizeChangerBefore?: ReactNode | string
-  labelPageSizeChangerAfter?: ReactNode | string
+  labelPageSizeBefore?: ReactNode | string
+  labelPageSizeAfter?: ReactNode | string
   onPageSizeChange?: (current: number, pageSize: number) => void
   setPageSize: Dispatch<SetStateAction<number>>
   setPage: Dispatch<SetStateAction<number>>
@@ -27,8 +27,8 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
   size,
   total,
   current,
-  labelPageSizeChangerBefore,
-  labelPageSizeChangerAfter,
+  labelPageSizeBefore,
+  labelPageSizeAfter,
   onPageSizeChange,
   setPageSize,
   setPage,
@@ -45,12 +45,11 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
   }
   return (
     <div className="pagination-pagesize">
-      <div className="text before">{labelPageSizeChangerBefore}</div>
+      <div className="text before">{labelPageSizeBefore}</div>
       <Select
         variant="line"
         size={size}
         onChange={changeHandler}
-        width="4.7143rem"
         placeholder={placeHolderVal}
         defaultValue={placeHolderVal}>
         {pageSizeOptions?.map(pageSize => {
@@ -61,7 +60,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
           )
         })}
       </Select>
-      <div className="text after">{labelPageSizeChangerAfter}</div>
+      <div className="text after">{labelPageSizeAfter}</div>
       <style jsx>
         {`
           .pagination-pagesize {
