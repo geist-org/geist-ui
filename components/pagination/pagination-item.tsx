@@ -10,9 +10,9 @@ interface Props {
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type PaginationItemProps = Props & NativeAttrs
+export type PaginationItemProps = React.PropsWithChildren<Props & NativeAttrs>
 
-const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = ({
+const PaginationItem: React.FC<PaginationItemProps> = ({
   active,
   children,
   disabled,

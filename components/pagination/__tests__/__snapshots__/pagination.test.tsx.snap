@@ -2732,7 +2732,7 @@ exports[`Pagination should work with showQuickJumper 1`] = `
           width: 1.3em;
           height: 1.3em;
         }
-      </style></li></section><div class=\\"pagination-quickjumper\\"><div class=\\"text before\\">GO TO</div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></li></section><div class=\\"pagination-quickjumper\\"><div class=\\"text before\\">GO TO</div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div></div><style>
           .with-label {
             display: inline-block;
             width: 4.7143rem;
@@ -2772,14 +2772,8 @@ exports[`Pagination should work with showQuickJumper 1`] = `
 
           .input-wrapper.disabled {
             cursor: not-allowed;
-          }
-
-          .line.input-wrapper.disabled {
-            border-color: #ebeced;
-          }
-
-          .solid.input-wrapper.disabled {
-            background-color: #dbdde0;
+            border: 0;
+            background-color: #ebeced;
           }
 
           .focus.input-wrapper:not(.disabled),
@@ -2851,18 +2845,6 @@ exports[`Pagination should work with showQuickJumper 1`] = `
           input:-webkit-autofill:focus,
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
-          }
-
-          .in-auto-complete .input-wrapper {
-            transition: border 0s;
-            transition: border-radius 0s;
-          }
-
-          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
-          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom-color: transparent;
           }
         </style></div><div class=\\"text after\\">PAGE</div><style>
           .pagination-quickjumper {

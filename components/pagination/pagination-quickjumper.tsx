@@ -17,14 +17,14 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PaginationQuickJumperProps = Props & typeof defaultProps & NativeAttrs
-const PaginationNext: React.FC<React.PropsWithChildren<PaginationQuickJumperProps>> = ({
+export type PaginationQuickJumperProps = React.PropsWithChildren<Props & NativeAttrs>
+const PaginationNext: React.FC<PaginationQuickJumperProps> = ({
   count,
   size,
   labelJumperBefore,
   labelJumperAfter,
   onChange,
-}) => {
+}: PaginationQuickJumperProps & typeof defaultProps) => {
   const theme = useTheme()
   const inputRef = useRef<HTMLInputElement>(null)
   const { variant } = usePaginationContext()
