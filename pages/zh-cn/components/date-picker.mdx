@@ -1,8 +1,9 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Link, Text, Code, Spacer, DatePicker, Divider, Button } from 'components'
-import NextLink from 'next/link'
 import dayjs from 'dayjs'
 import { useState } from 'react'
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Link, Text, Code, Spacer, DatePicker, Divider, Button } from 'components'
+import { useDatePickerHandle } from 'components/date-picker'
+import NextLink from 'next/link'
 
 export const meta = {
   title: '日期选择框 Date-Picker',
@@ -667,26 +668,72 @@ export const meta = {
   const setChange = () => {
     console.log(ref)
     ref.current.setValue(dayjs())
+    ref.current.focus()
     setTimeout(() => {
-      ref.current.focus()
+      console.log(ref.current.getValue())
     }, 0)
   }
   const setChange2 = () => {
     console.log(ref2)
     ref2.current.setValue([dayjs().add(-2, 'days'), dayjs()])
+    ref2.current.focus()
     setTimeout(() => {
-      ref2.current.focus()
+      console.log(ref2.current.getValue())
     }, 0)
   }
   return (
     <>
-      <DatePicker locale="zh_CN" onChange={value => console.log(value)} ref={ref} showTime />
+      <DatePicker key="ref1" locale="zh_CN" onChange={value => console.log(value)} ref={ref} showTime />
       <Spacer y={0.5} />
       <Button auto type="secondary" size="small" onClick={setChange}>
         设置值并聚焦
       </Button>
       <Divider />
-      <RangePicker locale="zh_CN" onChange={value => console.log(value)} ref={ref2} showTime />
+      <RangePicker key="ref2" locale="zh_CN" onChange={value => console.log(value)} ref={ref2} showTime />
+      <Spacer y={0.5} />
+      <Button auto type="secondary" size="small" onClick={setChange2}>
+        设置值并聚焦
+      </Button>
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="使用 `UseDatePickerHandle`"
+  desc="使用 `hooks` 捕获日期选择框的变化。"
+  scope={{ DatePicker, Spacer, Button, dayjs, Divider, useDatePickerHandle }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  const { ref, setValue, getValue, focus, blur } = useDatePickerHandle()
+  const { ref: ref2, setValue: setValue2, getValue: getValue2, focus: focus2, blur: blur2 } = useDatePickerHandle()
+  const setChange = () => {
+    console.log(ref)
+    setValue(dayjs())
+    focus()
+    setTimeout(() => {
+      console.log(getValue())
+    }, 0)
+  }
+  const setChange2 = () => {
+    console.log(ref2)
+    setValue2([dayjs().add(-2, 'days'), dayjs()])
+    focus2()
+    setTimeout(() => {
+      console.log(getValue2())
+    }, 0)
+  }
+  return (
+    <>
+      <DatePicker key="ref1" locale="zh_CN" onChange={value => console.log(value)} ref={ref} showTime />
+      <Spacer y={0.5} />
+      <Button auto type="secondary" size="small" onClick={setChange}>
+        设置值并聚焦
+      </Button>
+      <Divider />
+      <RangePicker key="ref2" locale="zh_CN" onChange={value => console.log(value)} ref={ref2} showTime />
       <Spacer y={0.5} />
       <Button auto type="secondary" size="small" onClick={setChange2}>
         设置值并聚焦
@@ -739,14 +786,6 @@ export const meta = {
 | **onOpenChange**      | 弹出日历和关闭日历的回调                         | `function(open)`                                                | -                                                             | -         |
 | **onPanelChange**     | 日历面板切换的回调                               | `function(value, mode)`                                         | -                                                             | -         |
 | **inputReadOnly**     | 设置输入框为只读（避免在移动设备上打开虚拟键盘） | `boolean`                                                       | -                                                             | `false`   |
-
-<Attributes.Title>共同的方法</Attributes.Title>
-
-| 名称           | 描述                                    | 参数                 |
-| -------------- | --------------------------------------- | -------------------- |
-| **blur()**     | 移除焦点                                | -                    |
-| **focus()**    | 获取焦点                                | -                    |
-| **setValue()** | 设置默认值（参考 `defaultValue` props） | `dayjs` \| `dayjs[]` |
 
 <Attributes.Title>DatePicker Props</Attributes.Title>
 
@@ -850,6 +889,27 @@ export const meta = {
 | **value**                 | 日期                           | `dayjs[]`                                                                                      | -                     | -                               |
 | **onCalendarChange**      | 待选日期发生变化的回调         | `function(dates: [dayjs, dayjs], dateStrings: [string, string], info: { range: start / end })` | -                     | -                               |
 | **onChange**              | 日期范围发生变化的回调         | `function(dates: [dayjs, dayjs], dateStrings: [string, string])`                               | -                     | -                               |
+
+<Attributes.Title>共同的方法</Attributes.Title>
+
+| 名称           | 描述     | 参数                 | 返回值               |
+| -------------- | -------- | -------------------- | -------------------- |
+| **blur()**     | 移除焦点 | -                    | -                    |
+| **focus()**    | 获取焦点 | -                    | -                    |
+| **setValue()** | 设置值   | `dayjs` \| `dayjs[]` \| `null` | -                    |
+| **getValue()** | 获取值   | -                    | `dayjs` \| `dayjs[]` \| `null` |
+
+<Attributes.Title>useDatePickerHandle</Attributes.Title>
+
+```ts
+type useDatePickerHandle = () => {
+  ref: React.RefObject<PickerRefConfig<Dayjs>>
+  setValue: (value: DateType | null | RangeValue<DateType>) => void
+  getValue: () => DateType | null | RangeValue<DateType>
+  focus: () => void
+  blur: () => void
+}
+```
 
 </Attributes>
 

@@ -2,6 +2,7 @@ import dayjs from 'dayjs'
 import { useState } from 'react'
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Link, Text, Code, Spacer, DatePicker, Divider, Button } from 'components'
+import { useDatePickerHandle } from 'components/date-picker'
 import NextLink from 'next/link'
 
 export const meta = {
@@ -649,26 +650,72 @@ Select or input a date or time.
   const setChange = () => {
     console.log(ref)
     ref.current.setValue(dayjs())
+    ref.current.focus()
     setTimeout(() => {
-      ref.current.focus()
+      console.log(ref.current.getValue())
     }, 0)
   }
   const setChange2 = () => {
     console.log(ref2)
     ref2.current.setValue([dayjs().add(-2, 'days'), dayjs()])
+    ref2.current.focus()
     setTimeout(() => {
-      ref2.current.focus()
+      console.log(ref2.current.getValue())
     }, 0)
   }
   return (
     <>
-      <DatePicker onChange={value => console.log(value)} ref={ref} showTime />
+      <DatePicker key="ref1" onChange={value => console.log(value)} ref={ref} showTime />
       <Spacer y={0.5} />
       <Button auto type="secondary" size="small" onClick={setChange}>
         set value and focus
       </Button>
       <Divider />
-      <RangePicker onChange={value => console.log(value)} ref={ref2} showTime />
+      <RangePicker key="ref2" onChange={value => console.log(value)} ref={ref2} showTime />
+      <Spacer y={0.5} />
+      <Button auto type="secondary" size="small" onClick={setChange2}>
+        set value and focus
+      </Button>
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="With `UseDatePickerHandle`"
+  desc="Use `hooks` to capture changes."
+  scope={{ DatePicker, Spacer, Button, dayjs, Divider, useDatePickerHandle }}
+  code={`
+() => {
+  const { RangePicker } = DatePicker
+  const { ref, setValue, getValue, focus, blur } = useDatePickerHandle()
+  const { ref: ref2, setValue: setValue2, getValue: getValue2, focus: focus2, blur: blur2 } = useDatePickerHandle()
+  const setChange = () => {
+    console.log(ref)
+    setValue(dayjs())
+    focus()
+    setTimeout(() => {
+      console.log(getValue())
+    }, 0)
+  }
+  const setChange2 = () => {
+    console.log(ref2)
+    setValue2([dayjs().add(-2, 'days'), dayjs()])
+    focus2()
+    setTimeout(() => {
+      console.log(getValue2())
+    }, 0)
+  }
+  return (
+    <>
+      <DatePicker key="ref1" onChange={value => console.log(value)} ref={ref} showTime />
+      <Spacer y={0.5} />
+      <Button auto type="secondary" size="small" onClick={setChange}>
+        set value and focus
+      </Button>
+      <Divider />
+      <RangePicker key="ref2" onChange={value => console.log(value)} ref={ref2} showTime />
       <Spacer y={0.5} />
       <Button auto type="secondary" size="small" onClick={setChange2}>
         set value and focus
@@ -721,14 +768,6 @@ There are six kinds of picker:
 | **onOpenChange**      | Callback function, can be executed whether the popup calendar is popped up or closed                 | `function(open)`                                                | -                                                             | -         |
 | **onPanelChange**     | Callback when picker panel mode is changed                                                           | `function(value, mode)`                                         | -                                                             | -         |
 | **inputReadOnly**     | Set the `readonly` attribute of the input tag (avoids virtual keyboard on touch devices)             | `boolean`                                                       | -                                                             | `false`   |
-
-<Attributes.Title>Common Methods</Attributes.Title>
-
-| Name           | Description                                   | Params               |
-| -------------- | --------------------------------------------- | -------------------- |
-| **blur()**     | Remove focus                                  | -                    |
-| **focus()**    | Get focus                                     | -                    |
-| **setValue()** | To set default value(refer to `defaultValue`) | `dayjs` \| `dayjs[]` |
 
 <Attributes.Title>DatePicker Props</Attributes.Title>
 
@@ -832,6 +871,27 @@ There are six kinds of picker:
 | **value**                 | To set date                                                                                                                                                       | `dayjs[]`                                                                                      | -                     | -                               |
 | **onCalendarChange**      | Callback function, can be executed when the start time or the end time of the range is changing                                                                   | `function(dates: [dayjs, dayjs], dateStrings: [string, string], info: { range: start / end })` | -                     | -                               |
 | **onChange**              | Callback function, can be executed when the selected time is changing                                                                                             | `function(dates: [dayjs, dayjs], dateStrings: [string, string])`                               | -                     | -                               |
+
+<Attributes.Title>Common Methods</Attributes.Title>
+
+| Name           | Description  | Params                         | Return                         |
+| -------------- | ------------ | ------------------------------ | ------------------------------ |
+| **blur()**     | Remove focus | -                              | -                              |
+| **focus()**    | Get focus    | -                              | -                              |
+| **setValue()** | To set value | `dayjs` \| `dayjs[]` \| `null` | -                              |
+| **getValue()** | To get value | -                              | `dayjs` \| `dayjs[]` \| `null` |
+
+<Attributes.Title>useDatePickerHandle</Attributes.Title>
+
+```ts
+type useDatePickerHandle = () => {
+  ref: React.RefObject<PickerRefConfig<Dayjs>>
+  setValue: (value: DateType | null | RangeValue<DateType>) => void
+  getValue: () => DateType | null | RangeValue<DateType>
+  focus: () => void
+  blur: () => void
+}
+```
 
 </Attributes>
 
