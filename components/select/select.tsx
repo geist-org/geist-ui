@@ -53,7 +53,8 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type SelectProps = Props & NativeAttrs
+export type SelectProps = React.PropsWithChildren<Props & NativeAttrs>
+type SelectPropsWithDefault = SelectProps & typeof defaultProps
 
 const Select = forwardRef<SelectHandles, React.PropsWithChildren<SelectProps>>(
   (
@@ -75,7 +76,7 @@ const Select = forwardRef<SelectHandles, React.PropsWithChildren<SelectProps>>(
       dropdownStyle,
       disableMatchWidth,
       ...props
-    }: React.PropsWithChildren<SelectProps & typeof defaultProps>,
+    }: SelectPropsWithDefault,
     ref: RefObject<SelectHandles>,
   ) => {
     const theme = useTheme()

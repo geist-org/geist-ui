@@ -27,7 +27,7 @@ jobs:
             - v2-dependencies-{{ checksum "package.json" }}
             - v2-dependencies-
 
-      - run: yarn
+      - run: yarn --frozen-lockfile
 
       - save_cache:
           paths:
