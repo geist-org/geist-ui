@@ -21,8 +21,8 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PaginationPageSizeProps = Props & typeof defaultProps & NativeAttrs
-const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>> = ({
+export type PaginationPageSizeProps = React.PropsWithChildren<Props & NativeAttrs>
+const PaginationNext: React.FC<PaginationPageSizeProps> = ({
   pageSizeOptions,
   size,
   total,
@@ -32,7 +32,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
   onPageSizeChange,
   setPageSize,
   setPage,
-}) => {
+}: PaginationPageSizeProps & typeof defaultProps) => {
   const theme = useTheme()
   const placeHolderVal = pageSizeOptions[0]
   const changeHandler = (val: string) => {

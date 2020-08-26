@@ -54,8 +54,8 @@ const defaultProps = {
   showPageSizeChanger: false,
 }
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PaginationProps = Props & typeof defaultProps & NativeAttrs
-const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
+export type PaginationProps = React.PropsWithChildren<Props & NativeAttrs>
+const Pagination: React.FC<PaginationProps> = ({
   page: customPage,
   defaultPage,
   total,
@@ -74,7 +74,7 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   showPageSizeChanger,
   onPageSizeChange,
   onChange,
-}) => {
+}: PaginationProps & typeof defaultProps) => {
   const [page, setPage, pageRef] = useCurrentState(defaultPage)
   const [pageSize, setPageSize] = useCurrentState(defaultPageSize)
   const [, prevChildren] = pickChild(children, PaginationPrevious)
