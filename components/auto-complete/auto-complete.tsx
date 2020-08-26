@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import Input from '../input'
+import React, { useEffect, useMemo, useRef, useState, useImperativeHandle } from 'react'
+import Input, { InputProps, defaultProps as inputDefaultProps } from '../input/input'
+import { useAutoCompleteHandle } from '../input/use-input-handle'
 import Loading from '../loading'
 import CSSTransition, { defaultProps as CSSTransitionDefaultProps } from '../shared/css-transition'
 import { pickChild } from '../utils/collections'
-import { InputColors, InputVariantTypes, NormalSizes } from '../utils/prop-types'
+import { InputVariantTypes } from '../utils/prop-types'
 import useClickAway from '../utils/use-click-away'
-import useCurrentState from '../utils/use-current-state'
 import { AutoCompleteConfig, AutoCompleteContext } from './auto-complete-context'
 import AutoCompleteDropdown from './auto-complete-dropdown'
 import AutoCompleteEmpty from './auto-complete-empty'
@@ -21,17 +21,23 @@ export type AutoCompleteOption = {
 
 export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>
 
-interface Props {
-  variant?: InputVariantTypes
+interface Props
+  extends Omit<
+    InputProps,
+    'onBlur' | 'onChange' | 'onFocus' | 'onSelect' | 'value' | 'defaultValue'
+  > {
+  defaultValue: string
+  value: string
   options: AutoCompleteOptions
-  size?: NormalSizes
-  color?: InputColors
-  initialValue?: string
-  value?: string
   width?: string
-  onChange?: (value: string) => void
+  onFocus?: React.EventHandler<
+    React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>
+  >
+  onBlur?: (event: Event) => void
+  onChange?: (value: InputProps['value']) => void
   onSearch?: (value: string) => void
   onSelect?: (value: string) => void
+  onClearClick?: React.EventHandler<React.MouseEvent<HTMLDivElement>>
   searching?: boolean
   clearable?: boolean
   dropdownClassName?: string
@@ -39,22 +45,19 @@ interface Props {
   disableMatchWidth?: boolean
   disableFreeSolo?: boolean
   className?: string
+  defaultOpen?: boolean
+  open?: boolean
 }
 
-const defaultProps = {
-  variant: 'line' as InputVariantTypes,
+export const defaultProps = Object.assign({}, inputDefaultProps, {
+  defaultOpen: false,
   options: [] as AutoCompleteOptions,
-  initialValue: '',
-  disabled: false,
-  clearable: false,
-  size: 'medium' as NormalSizes,
   disableMatchWidth: false,
   disableFreeSolo: false,
-  className: '',
-}
+})
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
+export type AutoCompleteProps = React.PropsWithChildren<Props & NativeAttrs>
 
 const childrenToOptionsNode = (options: Array<AutoCompleteOption>, variant: InputVariantTypes) =>
   options.map((item, index) => {
@@ -71,183 +74,228 @@ const getSearchIcon = (searching?: boolean) => {
   return searching ? <Loading size="small" /> : <span />
 }
 
-const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
-  variant,
-  options,
-  initialValue: customInitialValue,
-  onSelect,
-  onSearch,
-  onChange,
-  searching,
-  children,
-  size,
-  color: inputColor,
-  value,
-  width,
-  clearable,
-  disabled,
-  dropdownClassName,
-  dropdownStyle,
-  disableMatchWidth,
-  disableFreeSolo,
-  ...props
-}) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const inputRef = useRef<HTMLInputElement>(null)
-  const resetTimer = useRef<number>()
-  const [state, setState, stateRef] = useCurrentState<string>(customInitialValue)
-  const [selectVal, setSelectVal] = useState<string>(customInitialValue)
-  const [visible, setVisible] = useState<boolean>(false)
-  const [focus, setFocus] = useState<boolean>(false)
-
-  const [, searchChild] = pickChild(children, AutoCompleteSearching)
-  const [, emptyChild] = pickChild(children, AutoCompleteEmpty)
-
-  const autoCompleteItems = useMemo(() => {
-    const hasSearchChild = searchChild && React.Children.count(searchChild) > 0
-    const hasEmptyChild = emptyChild && React.Children.count(emptyChild) > 0
-    if (searching) {
-      return hasSearchChild ? (
-        searchChild
-      ) : (
-        <AutoCompleteSearching>Searching...</AutoCompleteSearching>
-      )
-    }
-    if (options.length === 0) {
-      if (state === '') return null
-      return hasEmptyChild ? emptyChild : <AutoCompleteEmpty>No Options</AutoCompleteEmpty>
-    }
-    return childrenToOptionsNode(options as Array<AutoCompleteOption>, variant)
-  }, [searching, options, variant])
-
-  const showClearIcon = useMemo(() => clearable && searching === undefined, [clearable, searching])
-
-  const updateValue = (val: string) => {
-    if (disabled) return
-    setSelectVal(val)
-    onSelect && onSelect(val)
-    setState(val)
-    inputRef.current && inputRef.current.focus()
-  }
-  const updateVisible = (next: boolean) => setVisible(next)
-  const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setVisible(true)
-    onSearch && onSearch(event.target.value)
-    setState(event.target.value)
-  }
-
-  const resetInputValue = () => {
-    if (!disableFreeSolo) return
-    if (!state || state === '') return
-    if (state !== selectVal) {
-      setState(selectVal)
-    }
-  }
-
-  useEffect(() => {
-    onChange && onChange(state)
-  }, [state])
-  useEffect(() => {
-    if (value === undefined) return
-    setState(value)
-  }, [value])
-
-  const initialValue = useMemo<AutoCompleteConfig>(
-    () => ({
-      ref,
+const AutoComplete = React.forwardRef<HTMLInputElement, AutoCompleteProps>(
+  (
+    {
+      variant,
+      options,
+      defaultValue,
+      onSelect,
+      onSearch,
+      onChange,
+      searching,
+      onClearClick,
+      children,
       size,
-      value: state,
-      updateValue,
-      visible,
-      updateVisible,
-    }),
-    [state, visible, size],
-  )
+      value,
+      width,
+      clearable,
+      disabled,
+      dropdownClassName,
+      dropdownStyle,
+      disableMatchWidth,
+      disableFreeSolo,
+      open,
+      onFocus,
+      onBlur,
+      defaultOpen,
+      ...props
+    }: AutoCompleteProps & typeof defaultProps,
+    ref: React.RefObject<HTMLInputElement | null>,
+  ) => {
+    const isValueControlled = value !== undefined
+    const isOpenControlled = open !== undefined
 
-  const onInputFocus: React.EventHandler<
-    React.FocusEvent<HTMLInputElement> | React.MouseEvent<HTMLInputElement>
-  > = () => {
-    setFocus(true)
-    setVisible(true)
-    onSearch && onSearch(stateRef.current)
-    clearTimeout(resetTimer.current)
-  }
+    const autoCompleteDivRef = useRef<HTMLDivElement>(null)
+    const { ref: inputRef, focus: focusInput } = useAutoCompleteHandle()
+    useImperativeHandle(ref, () => inputRef.current)
+    const resetTimer = useRef<number>()
+    const [inputValue, setInputValue] = useState(defaultValue || '')
+    const computedInputValue = isValueControlled ? value : inputValue
+    const [selectVal, setSelectVal] = useState(defaultValue || '')
+    const [dropdownOpen, setDropdownOpen] = useState<boolean>(defaultOpen)
+    const isDropdownOpen = isOpenControlled ? open : dropdownOpen
+    const [focus, setFocus] = useState<boolean>(false)
 
-  useClickAway(ref, () => {
-    setVisible(false)
-    resetTimer.current = window.setTimeout(() => {
-      resetInputValue()
+    const [, searchChild] = pickChild(children, AutoCompleteSearching)
+    const [, emptyChild] = pickChild(children, AutoCompleteEmpty)
+
+    const autoCompleteItems = useMemo(() => {
+      const hasSearchChild = searchChild && React.Children.count(searchChild) > 0
+      const hasEmptyChild = emptyChild && React.Children.count(emptyChild) > 0
+      if (searching) {
+        return hasSearchChild ? (
+          searchChild
+        ) : (
+          <AutoCompleteSearching>Searching...</AutoCompleteSearching>
+        )
+      }
+      if (options.length === 0) {
+        if (computedInputValue === '') return null
+        return hasEmptyChild ? emptyChild : <AutoCompleteEmpty>No Options</AutoCompleteEmpty>
+      }
+      return childrenToOptionsNode(options as Array<AutoCompleteOption>, variant)
+    }, [searching, options, variant])
+
+    const showClearIcon = useMemo(() => clearable && searching === undefined, [
+      clearable,
+      searching,
+    ])
+
+    const onSelectHandler = (val: string) => {
+      if (disabled) return
+      setSelectVal(val)
+      onSelect && onSelect(val)
+      if (!isValueControlled) setInputValue(val)
+      focusInput()
+    }
+    const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      if (!isOpenControlled) setDropdownOpen(true)
+      if (!isValueControlled) setInputValue(event.target.value)
+      onSearch && onSearch(event.target.value)
+    }
+
+    const resetInputValueOnClickAway = () => {
+      if (isValueControlled) return
+      if (!disableFreeSolo) return
+      if (!computedInputValue || computedInputValue === '') return
+      if (computedInputValue !== selectVal) {
+        setInputValue(selectVal)
+      }
+    }
+
+    const defaultContextValue = useMemo<AutoCompleteConfig>(
+      () => ({
+        ref: autoCompleteDivRef,
+        size,
+        focus,
+        value: computedInputValue,
+        onSelect: onSelectHandler,
+        visible: isDropdownOpen,
+        updateVisible: (open: boolean) => {
+          if (!isOpenControlled) setDropdownOpen(open)
+        },
+      }),
+      [computedInputValue, isDropdownOpen, size, focus],
+    )
+
+    const onInputFocus: React.EventHandler<
+      React.MouseEvent<HTMLInputElement> | React.FocusEvent<HTMLInputElement>
+    > = e => {
+      setFocus(true)
+      onFocus && onFocus(e)
+      if (!isOpenControlled) setDropdownOpen(true)
       clearTimeout(resetTimer.current)
-      setFocus(false)
-    }, DEFAULT_CSS_TRANSITION_LEAVE_TIME)
-  })
+    }
 
-  const inputProps = {
-    ...props,
-    width,
-    disabled,
-    value: state,
-  }
+    const onInputClearClick = (event: React.MouseEvent<HTMLDivElement>) => {
+      if (!isValueControlled) setInputValue('')
+      onClearClick && onClearClick(event)
+    }
 
-  const dropdownVisible = visible && Boolean(autoCompleteItems)
+    useClickAway(autoCompleteDivRef, e => {
+      if (!isOpenControlled) setDropdownOpen(false)
+      resetTimer.current = window.setTimeout(() => {
+        resetInputValueOnClickAway()
+        clearTimeout(resetTimer.current)
+        onBlur && onBlur(e)
+        setFocus(false)
+      }, DEFAULT_CSS_TRANSITION_LEAVE_TIME)
+    })
 
-  return (
-    <AutoCompleteContext.Provider value={initialValue}>
-      <div ref={ref} className={`auto-complete ${variant === 'solid' ? 'solid' : 'line'}`}>
-        <CSSTransition
-          renderable
-          visible={dropdownVisible}
-          clearTime={state === '' ? 0 : 60}
-          leaveTime={state === '' ? 0 : 60}
-          className={`in-auto-complete ${focus ? 'auto-complete-focus' : ''}`}>
-          <Input
+    const inputProps = {
+      ...props,
+      value: computedInputValue,
+      defaultValue: undefined,
+      width: width || 'initial',
+      disabled,
+    }
+
+    const dropdownVisible = isOpenControlled
+      ? (open as boolean)
+      : dropdownOpen && Boolean(autoCompleteItems)
+
+    useEffect(() => {
+      onChange && onChange(computedInputValue)
+    }, [computedInputValue])
+
+    return (
+      <AutoCompleteContext.Provider value={defaultContextValue}>
+        <div
+          ref={autoCompleteDivRef}
+          className={`auto-complete ${variant === 'solid' ? 'solid' : 'line'}`}>
+          <CSSTransition
+            renderable
+            visible={dropdownVisible}
+            clearTime={computedInputValue === '' ? 0 : 60}
+            leaveTime={computedInputValue === '' ? 0 : 60}
+            className={`in-auto-complete ${focus ? 'auto-complete-focus' : ''}`}>
+            <Input
+              variant={variant}
+              ref={inputRef}
+              size={size}
+              onChange={onInputChange}
+              onFocus={onInputFocus}
+              onClick={onInputFocus}
+              clearable={showClearIcon}
+              onClearClick={onInputClearClick}
+              iconRight={getSearchIcon(searching)}
+              {...inputProps}
+            />
+          </CSSTransition>
+          <AutoCompleteDropdown
             variant={variant}
-            ref={inputRef}
-            size={size}
-            color={inputColor}
-            onChange={onInputChange}
-            onFocus={onInputFocus}
-            onClick={onInputFocus}
-            clearable={showClearIcon}
-            iconRight={getSearchIcon(searching)}
-            {...inputProps}
-          />
-        </CSSTransition>
-        <AutoCompleteDropdown
-          variant={variant}
-          visible={dropdownVisible}
-          disableMatchWidth={disableMatchWidth}
-          className={dropdownClassName}
-          dropdownStyle={dropdownStyle}>
-          {autoCompleteItems}
-        </AutoCompleteDropdown>
+            visible={dropdownVisible}
+            disableMatchWidth={disableMatchWidth}
+            className={dropdownClassName}
+            dropdownStyle={dropdownStyle}>
+            {autoCompleteItems}
+          </AutoCompleteDropdown>
 
-        <style jsx>{`
-          .auto-complete {
-            width: ${width || 'max-content'};
-          }
+          <style jsx>{`
+            .auto-complete {
+              width: ${width || 'max-content'};
+            }
 
-          .auto-complete :global(.loading) {
-            left: -3px;
-            right: -3px;
-            width: max-content;
-          }
-        `}</style>
-      </div>
-    </AutoCompleteContext.Provider>
-  )
-}
+            .auto-complete :global(.loading) {
+              left: -3px;
+              right: -3px;
+              width: max-content;
+            }
 
-type AutoCompleteComponent<P = {}> = React.FC<P> & {
+            .auto-complete :global(.in-auto-complete .input-wrapper) {
+              transition: 0s;
+            }
+
+            .auto-complete
+              :global(.in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled)),
+            .auto-complete
+              :global(.in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled)) {
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+              border-bottom-color: transparent;
+            }
+          `}</style>
+        </div>
+      </AutoCompleteContext.Provider>
+    )
+  },
+)
+
+const AutoCompleteComponent = AutoComplete as typeof AutoComplete & {
   Item: typeof AutoCompleteItem
+  Empty: typeof AutoCompleteEmpty
   Option: typeof AutoCompleteItem
   Searching: typeof AutoCompleteSearching
-  Empty: typeof AutoCompleteEmpty
+  useAutoCompleteHandle: typeof useAutoCompleteHandle
 }
 
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-;(AutoComplete as AutoCompleteComponent<ComponentProps>).defaultProps = defaultProps
+AutoCompleteComponent.defaultProps = defaultProps
+AutoCompleteComponent.Item = AutoCompleteItem
+AutoCompleteComponent.Option = AutoCompleteItem
+AutoCompleteComponent.Searching = AutoCompleteSearching
+AutoCompleteComponent.Empty = AutoCompleteEmpty
+AutoCompleteComponent.useAutoCompleteHandle = useAutoCompleteHandle
 
-export default AutoComplete as AutoCompleteComponent<ComponentProps>
+export { useAutoCompleteHandle }
+export default AutoCompleteComponent

@@ -59,7 +59,7 @@ describe('Input', () => {
   })
 
   it('should set input from value', () => {
-    let wrapper = mount(<Input initialValue="test" />)
+    let wrapper = mount(<Input defaultValue="test" />)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     expect(input.value).toEqual('test')
 
@@ -88,12 +88,19 @@ describe('Input', () => {
 
   it('should ignore event when input disabled', () => {
     const callback = jest.fn()
-    const wrapper = mount(<Input onChange={callback} disabled />)
+    const wrapper = mount(
+      <div>
+        <Input onChange={callback} clearable disabled />
+      </div>,
+    )
     wrapper
       .find('input')
       .at(0)
       .simulate('change', { target: { value: 'test' } })
     expect(callback).not.toHaveBeenCalled()
+    wrapper.find('div.clear-icon').at(0).simulate('click', nativeEvent)
+    expect(callback).not.toHaveBeenCalled()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('should ignore event when input readonly', () => {

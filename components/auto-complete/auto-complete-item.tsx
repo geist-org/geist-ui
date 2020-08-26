@@ -4,7 +4,6 @@ import useTheme from '../styles/use-theme'
 import { InputVariantTypes, NormalSizes } from '../utils/prop-types'
 import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
-import { addColorAlpha } from '../utils/color'
 
 interface Props {
   label: string
@@ -36,9 +35,9 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
 }) => {
   const theme = useTheme()
   const isSolid = variant === 'solid'
-  const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
+  const { value, onSelect, size, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
-    updateValue && updateValue(label)
+    onSelect && onSelect(label)
     updateVisible && updateVisible(false)
   }
 
@@ -90,12 +89,8 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           border-bottom-right-radius: ${theme.expressiveness.R2};
         }
 
-        .line.item:hover {
-          background-color: ${addColorAlpha(theme.palette.cTheme5, 0.04)};
-        }
-
-        .solid.item:hover {
-          background-color: ${theme.palette.cTheme2};
+        .item:hover {
+          background-color: ${theme.palette.cTheme1};
         }
 
         .item.active {

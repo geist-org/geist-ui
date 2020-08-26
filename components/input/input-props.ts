@@ -1,12 +1,11 @@
 import React from 'react'
 import { NormalSizes, InputColors, InputVariantTypes } from 'components/utils/prop-types'
 
-export interface Props {
+export interface Props extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'width'> {
   variant?: InputVariantTypes
-  value?: string
-  initialValue?: string
   placeholder?: string
   size?: NormalSizes
+  htmlSize?: React.InputHTMLAttributes<HTMLInputElement>['size']
   color?: InputColors
   readOnly?: boolean
   disabled?: boolean
@@ -15,15 +14,12 @@ export interface Props {
   icon?: React.ReactNode
   iconRight?: React.ReactNode
   iconClickable?: boolean
+  htmlWidth?: React.InputHTMLAttributes<HTMLInputElement>['width']
   width?: string
   className?: string
   clearable?: boolean
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
-  onClearClick?: (e: React.MouseEvent<HTMLDivElement>) => void
-  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
-  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
+  onClearClick?: React.EventHandler<React.MouseEvent<HTMLDivElement>>
   onIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void
-  autoComplete: string
 }
 
 export const defaultProps = {
@@ -38,5 +34,4 @@ export const defaultProps = {
   autoComplete: 'off',
   className: '',
   placeholder: '',
-  initialValue: '',
 }

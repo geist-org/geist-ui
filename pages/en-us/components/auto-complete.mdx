@@ -45,9 +45,9 @@ AutoComplete control of input field.
   ]
   return(
   <div style={{display: 'flex'}}>
-    <AutoComplete disabled options={options} initialValue="London" />
+    <AutoComplete disabled options={options} defaultValue="London" />
     <Spacer inline />
-    <AutoComplete variant="solid" disabled options={options} initialValue="London" />
+    <AutoComplete variant="solid" disabled options={options} defaultValue="London" />
   </div>)
 }
 `}
@@ -64,7 +64,7 @@ AutoComplete control of input field.
     { label: 'Sydney' },
     { label: 'Shanghai' },
   ]
-  return <AutoComplete disableFreeSolo options={options} initialValue="Sydney" />
+  return <AutoComplete disableFreeSolo options={options} defaultValue="Sydney" />
 }
 `}
 />
@@ -72,7 +72,7 @@ AutoComplete control of input field.
 <Playground
   desc="Update the contents of drop-down list based on input."
   title="search"
-  scope={{ AutoComplete, Spacer }}
+  scope={{ AutoComplete }}
   code={`
 () => {
   const allOptions = [
@@ -81,23 +81,12 @@ AutoComplete control of input field.
     { label: 'Shanghai' },
   ]
   const [options, setOptions] = React.useState()
-  const [solidOptions, solidSetOptions] = React.useState()
   const searchHandler = (currentValue) => {
     if (!currentValue) return setOptions([])
     const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     setOptions(relatedOptions)
   }
-  const solidSearchHandler = (currentValue) => {
-    if (!currentValue) return solidSetOptions([])
-    const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
-    solidSetOptions(relatedOptions)
-  }
-  return (
-  <div style={{display: 'flex'}}>
-    <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
-    <Spacer inline />
-    <AutoComplete variant="solid" options={solidOptions} placeholder="Enter here" onSearch={solidSearchHandler} />
-  </div>)
+  return <AutoComplete options={options} placeholder="Enter here" onSearch={searchHandler} />
   }
 `}
 />
@@ -335,25 +324,30 @@ return (
 <Attributes edit="/pages/en-us/components/auto-complete.mdx">
 <Attributes.Title>AutoComplete.Props</Attributes.Title>
 
-| Attribute             | Description                               | Type                                             | Accepted values                                         | Default   |
-| --------------------- | ----------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
-| **variant**           | variant of input                          | string                                           | `'solid', 'line'`                                       | `line`    |
-| **options**           | options of input                          | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
-| **color**             | input type                                | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**              | input size                                | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **initialValue**      | initial value                             | `string`                                         | -                                                       | -         |
-| **value**             | current value                             | `string`                                         | -                                                       | -         |
-| **width**             | container width                           | `string`                                         | -                                                       | -         |
-| **clearable**         | show clear icon                           | `boolean`                                        | -                                                       | `false`   |
-| **searching**         | show loading icon for search              | `boolean`                                        | -                                                       | `false`   |
-| **onChange**          | value of input is changed                 | `(value: string) => void`                        | -                                                       | -         |
-| **onSearch**          | called when searching items               | `(value: string) => void`                        | -                                                       | -         |
-| **onSelect**          | called when a option is selected          | `(value: string) => void`                        | -                                                       | -         |
-| **dropdownClassName** | className of dropdown box                 | `string`                                         | -                                                       | -         |
-| **dropdownStyle**     | style of dropdown box                     | `object`                                         | -                                                       | -         |
-| **disableMatchWidth** | disable Option from follow parent width   | `boolean`                                        | -                                                       | `false`   |
-| **disableFreeSolo**   | only values can be changed through Select | `boolean`                                        | -                                                       | `false`   |
-| ...                   | native props                              | `InputHTMLAttributes`                            | `'id', 'className', ...`                                | -         |
+| Attribute             | Description                                        | Type                                             | Accepted values                                         | Default   |
+| --------------------- | -------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
+| **variant**           | variant of input                                   | string                                           | `'solid', 'line'`                                       | `line`    |
+| **options**           | options of input                                   | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
+| **color**             | input type                                         | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **size**              | input size                                         | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
+| **defaultValue**      | initial value                                      | `string`                                         | -                                                       | -         |
+| **value**             | current value                                      | `string`                                         | -                                                       | -         |
+| **width**             | container width                                    | `string`                                         | -                                                       | -         |
+| **open**              | controle is auto-complete dropdown open            | `boolean`                                        | -                                                       | -         |
+| **defaultOpen**       | controle is auto-complete dropdown open by default | `boolean`                                        | -                                                       | false     |
+| **clearable**         | show clear icon                                    | `boolean`                                        | -                                                       | `false`   |
+| **searching**         | show loading icon for search                       | `boolean`                                        | -                                                       | `false`   |
+| **onFocus**           | input is focused                                   | `(event) => void`                                | -                                                       | -         |
+| **onBlur**            | user click outside of auto-complete                | `(event) => void`                                | -                                                       | -         |
+| **onChange**          | value of input is changed                          | `(value: string) => void`                        | -                                                       | -         |
+| **onSearch**          | called when searching items                        | `(value: string) => void`                        | -                                                       | -         |
+| **onSelect**          | called when a option is selected                   | `(value: string) => void`                        | -                                                       | -         |
+| **onClearClick**      | called when clicked on the clear icon              | `(event) => void`                                | -                                                       | -         |
+| **dropdownClassName** | className of dropdown box                          | `string`                                         | -                                                       | -         |
+| **dropdownStyle**     | style of dropdown box                              | `object`                                         | -                                                       | -         |
+| **disableMatchWidth** | disable Option from follow parent width            | `boolean`                                        | -                                                       | `false`   |
+| **disableFreeSolo**   | only values can be changed through Select          | `boolean`                                        | -                                                       | `false`   |
+| ...                   | native props                                       | `InputHTMLAttributes`                            | `'id', 'className', ...`                                | -         |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
 

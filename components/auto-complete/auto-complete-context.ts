@@ -3,8 +3,9 @@ import { NormalSizes } from '../utils/prop-types'
 
 export interface AutoCompleteConfig {
   value?: string
-  updateValue?: Function
+  onSelect?: Function
   visible?: boolean
+  focus?: boolean
   updateVisible?: Function
   size: NormalSizes
   ref?: MutableRefObject<HTMLElement | null>

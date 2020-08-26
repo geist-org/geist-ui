@@ -24,7 +24,7 @@ describe('Textarea', () => {
   })
 
   it('should set textarea from value', () => {
-    const wrapper = mount(<Textarea initialValue="test-value" />)
+    const wrapper = mount(<Textarea defaultValue="test-value" />)
     let el = wrapper.find('textarea').getDOMNode() as HTMLTextAreaElement
     expect(el.value).toEqual('test-value')
 
@@ -80,7 +80,7 @@ describe('Textarea', () => {
   })
 
   it('should show the right character count', () => {
-    const wrapper = mount(<Textarea counter initialValue="foo" />)
+    const wrapper = mount(<Textarea counter defaultValue="foo" />)
     expect(wrapper.exists('.counter .separator')).toBeFalsy
     expect(wrapper.exists('.counter .limit')).toBeFalsy
     expect(wrapper.find('.counter .count').text()).toBe('3')
@@ -88,7 +88,7 @@ describe('Textarea', () => {
 
   it("should limit and slice user's input if reaches the maxLength limit", () => {
     const onChange = jest.fn()
-    const wrapper = mount(<Textarea counter maxLength={3} initialValue="f" onChange={onChange} />)
+    const wrapper = mount(<Textarea counter maxLength={3} defaultValue="f" onChange={onChange} />)
     let changeEvent = { target: { value: 'fo' } }
     wrapper.find('textarea').simulate('change', changeEvent)
     expect(onChange).toHaveBeenCalledWith(expect.objectContaining(changeEvent))

@@ -94,16 +94,16 @@ export const getColors = (
       color: theme.palette.error,
       hoverColor: theme.palette.error,
       backgroundColor: solid
-        ? addColorAlpha(theme.palette.errorLight, 0.8)
+        ? addColorAlpha(theme.palette.errorLight, 0.4)
         : theme.palette.cNeutral8,
       hoverBackgroundColor: solid ? theme.palette.errorLight : theme.palette.cNeutral8,
       border: solid
         ? 'transparent'
         : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${addColorAlpha(
-            theme.palette.errorLight,
-            0.8,
+            theme.palette.error,
+            0.4,
           )}`,
-      hoverBorderColor: solid ? 'transparent' : theme.palette.errorLight,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.error,
     },
   }
 
