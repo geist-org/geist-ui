@@ -2,9 +2,8 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import Check from '@zeit-ui/react-icons/check'
 import useTheme from '../styles/use-theme'
-import { colorToRgbValues } from '../utils/color'
 import { useSelectContext } from './select-context'
-import { getOptionColors } from './styles'
+import { getSizes, getOptionColors } from './styles'
 import useWarning from '../utils/use-warning'
 import Ellipsis from '../shared/ellipsis'
 
@@ -39,12 +38,14 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
-  const { updateValue, value, disableAll, variant } = useSelectContext()
+  const { updateValue, value, disableAll, variant, size } = useSelectContext()
   const isDisabled = useMemo(() => disabled || disableAll, [disabled, disableAll])
   const isLabel = useMemo(() => label || divider, [label, divider])
   if (!isLabel && identValue === undefined) {
     useWarning('The props "value" is required.', 'Select Option')
   }
+
+  const sizes = useMemo(() => getSizes(theme, size), [theme, size])
 
   const selected = useMemo(() => {
     if (!value) return false
@@ -54,9 +55,8 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
     return value.includes(`${identValue}`)
   }, [identValue, value])
 
-  const rgb = colorToRgbValues(theme.palette.cTheme5)
   const colors = useMemo(() => {
-    return getOptionColors(selected, isDisabled, theme.palette, isLabel, variant, rgb)
+    return getOptionColors(selected, isDisabled, theme.palette, isLabel, variant)
   }, [selected, isDisabled, theme.palette, isLabel])
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -84,8 +84,8 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           max-width: 100%;
           justify-content: space-between;
           align-items: center;
-          font-weight: normal;
-          font-size: 0.75rem;
+          font-weight: 500;
+          font-size: ${sizes.fontSize};
           height: calc(2.5 * ${theme.layout.gap});
           box-sizing: border-box;
           padding: 0 ${theme.layout.gap};
@@ -108,17 +108,27 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
           height: 0;
           padding: 0;
           overflow: hidden;
-          border-top: 1px solid ${theme.palette.border};
-          margin: 0.5rem 0;
+          border-top: ${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1}
+            ${theme.palette.border};
+          margin: ${theme.layout.gapHalf} 0;
           width: 100%;
+        }
+        .divider:hover {
+          border-top: ${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1}
+            ${theme.palette.border};
         }
 
         .label {
-          font-size: 0.875rem;
+          font-size: ${sizes.labelFontSize};
           color: ${colors.color};
-          border-bottom: 1px solid ${theme.palette.border};
+          border-bottom: ${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1}
+            ${theme.palette.border};
           text-transform: capitalize;
           cursor: default;
+        }
+        .label:hover {
+          border-bottom: ${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1}
+            ${theme.palette.border};
         }
       `}</style>
     </>

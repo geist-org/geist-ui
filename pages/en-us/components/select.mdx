@@ -11,13 +11,13 @@ export const meta = {
 Display a dropdown list of items.
 
 <Playground
-  desc="Basic usage."
+  desc="Basic usage.(controlled)"
   scope={{ Select }}
   code={`
 () => {
-  const handler = val => console.log(val)
+  const [value, setValue] = React.useState("1")
   return (
-    <Select placeholder="Choose one" onChange={handler}>
+    <Select placeholder="Choose one" value={value} onChange={(val) => setValue(val)}>
       <Select.Option value="1">Option 1</Select.Option>
       <Select.Option value="2">Option 2</Select.Option>
     </Select>
@@ -28,7 +28,7 @@ Display a dropdown list of items.
 
 <Playground
   title="Text"
-  desc="Text usage."
+  desc="Text usage.(uncontrolled)"
   scope={{ Select }}
   code={`
 () => {
@@ -80,22 +80,6 @@ Display a dropdown list of items.
 />
 
 <Playground
-  title="Labels"
-  desc="show data as a group."
-  scope={{ Select }}
-  code={`
-<Select placeholder="Frameworks">
-  <Select.Option label>JavaScript</Select.Option>
-  <Select.Option value="react">React</Select.Option>
-  <Select.Option value="angular">Angular</Select.Option>
-  <Select.Option label>Ruby</Select.Option>
-  <Select.Option value="rails">Rails</Select.Option>
-  <Select.Option value="sinatra">Sinatra</Select.Option>
-</Select>
-`}
-/>
-
-<Playground
   title="Divider"
   scope={{ Select }}
   code={`
@@ -110,11 +94,39 @@ Display a dropdown list of items.
 />
 
 <Playground
+  title="Size"
+  scope={{ Select, Spacer }}
+  code={`
+<>
+  <Select size="mini" placeholder="choose mini">
+    <Select.Option value="1">Option 1</Select.Option>
+    <Select.Option value="2">Option 2</Select.Option>
+  </Select>
+  <Spacer y={.5} />
+  <Select size="small" placeholder="choose small">
+    <Select.Option value="1">Option 1</Select.Option>
+    <Select.Option value="2">Option 2</Select.Option>
+  </Select>
+  <Spacer y={.5} />
+  <Select placeholder="choose medium">
+    <Select.Option value="1">Option 1</Select.Option>
+    <Select.Option value="2">Option 2</Select.Option>
+  </Select>
+  <Spacer y={.5} />
+  <Select size="large" placeholder="choose large">
+    <Select.Option value="1">Option 1</Select.Option>
+    <Select.Option value="2">Option 2</Select.Option>
+  </Select>
+</>
+`}
+/>
+
+<Playground
   title="Multiple"
   desc="`Select` supports multiple values to be selected."
   scope={{ Select }}
   code={`
-<Select placeholder="Frameworks" multiple width="200px" initialValue={['1', '3', '4', '6']}>
+<Select placeholder="Frameworks" multiple width="200px" defaultValue={['1', '3', '4', '6']}>
   <Select.Option value="1">React</Select.Option>
   <Select.Option value="2">Angular</Select.Option>
   <Select.Option value="3">Vue</Select.Option>
@@ -133,7 +145,7 @@ Display a dropdown list of items.
   desc="Use with other components."
   scope={{ Select, Code }}
   code={`
-<Select placeholder="Choose one" initialValue="1">
+<Select placeholder="Choose one" defaultValue="1">
   <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
   <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
 </Select>
@@ -165,7 +177,7 @@ Display a dropdown list of items.
 | Attribute             | Description                             | Type                                                | Accepted values                   | Default         |
 | --------------------- | --------------------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
 | **value**             | selected value                          | `string`, `string[]`                                | -                                 | -               |
-| **initialValue**      | initial value                           | `string`, `string[]`                                | -                                 | -               |
+| **defaultValue**      | default value                           | `string`, `string[]`                                | -                                 | -               |
 | **placeholder**       | placeholder string                      | `string`                                            | -                                 | -               |
 | **variant**           | select type                             | `string`                                            | [SelectVariants](#selectvariants) | `line`          |
 | **width**             | css width value of select               | `string`                                            | -                                 | `initial`       |
@@ -186,6 +198,7 @@ Display a dropdown list of items.
 | ------------------- | ---------------------- | ---------------- | -------------------------------- | ------- |
 | **value**(required) | unique ident value     | `string`         | -                                | -       |
 | **disabled**        | disable current option | `boolean`        | -                                | `false` |
+| **divider**         | make option divider    | `boolean`        | -                                | `false` |
 | ...                 | native props           | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
 
 <Attributes.Title>NormalSizes</Attributes.Title>
@@ -198,6 +211,16 @@ type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 
 ```ts
 type SelectVariants = 'line' | 'text'
+```
+
+<Attributes.Title>useSelectHandle</Attributes.Title>
+
+```ts
+type useSelectHandle = () => {
+  ref: RefObject
+  setValue: (value?: string | string[]) => void
+  getValue: () => string | string[]
+}
 ```
 
 </Attributes>
