@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import AlertCircle from '@zeit-ui/react-icons/alertCircle'
-import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
+import { Spacer, Button, Code, Text, Dot } from 'components'
+import  Input, { useInputHandle } from 'components/input'
 import { useState, useEffect } from 'react'
 
 export const meta = {
@@ -68,9 +69,9 @@ export const meta = {
   <Spacer inline />
   <Input variant="solid" disabled placeholder="禁用" />
   <Spacer y={.5} />
-  <Input readOnly initialValue="只读" />
+  <Input readOnly defaultValue="只读" />
   <Spacer inline />
-  <Input variant="solid" readOnly initialValue="只读" />
+  <Input variant="solid" readOnly defaultValue="只读" />
 </>
 `}
 />
@@ -81,13 +82,13 @@ export const meta = {
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input label="用户名" placeholder="一个基础示例" />
+  <Input id="username-1" label="用户名" placeholder="一个基础示例" />
   <Spacer inline />
-  <Input variant="solid" label="用户名" placeholder="一个基础示例" />
+  <Input id="username-2" variant="solid" label="用户名" placeholder="一个基础示例" />
   <Spacer y={.5} />
-  <Input labelRight=".com" placeholder="https://github" />
+  <Input id="site-1" labelRight=".com" placeholder="https://github" />
   <Spacer inline />
-  <Input variant="solid" labelRight=".com" placeholder="https://github" />
+  <Input id="site-2" variant="solid" labelRight=".com" placeholder="https://github" />
 </>
 `}
 />
@@ -98,15 +99,15 @@ export const meta = {
   scope={{ Input, Spacer, Text, Code, Dot }}
   code={`
 <>
-  <Input placeholder="小维特">
+  <Input id="username-3" placeholder="小维特">
     用户名
   </Input>
   <Spacer />
-  <Input placeholder="文章标题" width="50%">
+  <Input id="title-1" placeholder="文章标题" width="50%">
     <Text h3>标题</Text>
   </Input>
   <Spacer />
-  <Input placeholder="GitHub Actions" width="50%">
+  <Input id="title-2" placeholder="GitHub Actions" width="50%">
     <Dot type="warning">
       <Text small><Code>部署</Code> 问题详情</Text>
     </Dot>
@@ -121,13 +122,13 @@ export const meta = {
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input color="primary" initialValue="主要" />
+  <Input color="primary" defaultValue="主要" />
   <Spacer inline />
-  <Input variant="solid" color="primary" initialValue="主要" />
+  <Input variant="solid" color="primary" defaultValue="主要" />
   <Spacer y={.5} />
-  <Input color="error" initialValue="包含错误" />
+  <Input color="error" defaultValue="包含错误" />
   <Spacer inline />
-  <Input variant="solid" color="error" initialValue="包含错误" />
+  <Input variant="solid" color="error" defaultValue="包含错误" />
 </>
 `}
 />
@@ -178,7 +179,7 @@ export const meta = {
   desc="显示或隐藏密码文本。"
   scope={{ Input }}
   code={`
-<Input.Password initialValue="123456abc" />
+<Input.Password defaultValue="123456abc" />
 `}
 />
 
@@ -188,9 +189,9 @@ export const meta = {
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input clearable initialValue="示例文字" placeholder="输入文本" />
+  <Input clearable defaultValue="示例文字" placeholder="输入文本" />
   <Spacer inline />
-  <Input variant="solid" clearable initialValue="示例文字" placeholder="输入文本" />
+  <Input variant="solid" clearable defaultValue="示例文字" placeholder="输入文本" />
 </>
 `}
 />
@@ -201,7 +202,7 @@ export const meta = {
   scope={{ Input, useState }}
   code={`
 () => {
-  const [value, setValue] = useState()
+  const [value, setValue] = useState('')
   const handler = (e) => {
     setValue(e.target.value)
     console.log(e.target.value)
@@ -216,45 +217,25 @@ export const meta = {
 <Playground
   title={
     <>
-      <Code>useInput</Code>
+      <Code>useInputHandle</Code>
     </>
   }
   desc="使用 `hooks` 捕获输入框的文本变化。"
-  scope={{ Input, useInput, useEffect, Button, Spacer }}
+  scope={{ Input, useInputHandle, Button, Spacer, useState }}
   code={`
 () => {
-  const { state, setState, reset, bindings } = useInput('The Evil Rabbit')
-  useEffect(() => console.log(state), [state])
+  const { ref, getValue, setValue, focus, blur } = useInputHandle()
+  const [v, setV] = useState(getValue())
   return (
     <>
-      <Input {...bindings} />
+      <Input ref={ref} defaultValue="初始值" />
       <Spacer y={.5} />
       <Button auto type="secondary" size="small"
-        onClick={() => setState(Math.random().toString(32))}>随机设置值</Button>
+        onClick={() => setValue(Math.random().toString(32))}>随机设置值</Button>
       <Spacer y={.5} />
-      <Button auto size="small"onClick={() => reset()}>重置值</Button>
-    </>
-  )
-}
-`}
-/>
-
-<Playground
-  title="命令式 API"
-  desc="使用非受控方式更新组件。"
-  scope={{ Input, Spacer, Button }}
-  code={`
-() => {
-  const ref = React.useRef(null)
-  const setChange = () => {
-    ref && (ref.current.value = Math.random().toString(32))
-  }
-  return (
-    <>
-      <Input initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Button auto size="small"onClick={() => setValue()}>重置值</Button>
       <Spacer y={.5} />
-      <Button auto type="secondary" size="small"
-        onClick={setChange}>设置值</Button>
+      <Button auto size="small"onClick={() => setV(getValue())}>获取值: {v}</Button>
     </>
   )
 }
@@ -268,7 +249,7 @@ export const meta = {
 | ----------------- | -------------------- | ---------------------------------------------- | --------------------------------------- | --------- |
 | **variant**       | 输入框的类型         | `string`                                       | [InputVariantTypes](#inputvarianttypes) | `line`    |
 | **value**         | 命令式设定输入框的值 | `string`                                       | -                                       | -         |
-| **initialValue**  | 初始值               | `string`                                       | -                                       | -         |
+| **defaultValue**  | 初始值               | `string`                                       | -                                       | -         |
 | **placeholder**   | 占位文本             | `string`                                       | -                                       | -         |
 | **size**          | 输入框大小           | `NormalSizes`                                  | [InputSizes](#inputsizes)               | `medium`  |
 | **color**         | 输入框颜色           | `NormalTypes`                                  | [InputColor](#inputcolor)               | `default` |
@@ -311,20 +292,15 @@ type InputSizes = 'mini' | 'small' | 'medium' | 'large'
 type InputColor = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
-<Attributes.Title>useInput</Attributes.Title>
+<Attributes.Title>useInputHandle</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
+type useInputHandle = () => {
+  ref: React.RefObject<HTMLInputElement>
+  setValue: (value: string = '') => void
+  getValue: () => string | undefined
+  focus: () => void
+  blur: () => void
 }
 ```
 

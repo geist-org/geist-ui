@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonIcon should render correctly 1`] = `
-"<button type=\\"button\\" class=\\"btn \\"><span class=\\"icon  \\"><svg></svg><style>
+"<button type=\\"button\\" class=\\"btn  \\"><span class=\\"icon  \\"><svg></svg><style>
         .icon {
           position: absolute;
           left: var(--zeit-ui-button-padding);
@@ -33,85 +33,94 @@ exports[`ButtonIcon should render correctly 1`] = `
             padding-right: 0;
           }
         </style></div><style>
-          .btn {
-            box-sizing: border-box;
-            display: inline-block;
-            padding: 0 1.375rem;
-            height: 2.8571rem;
-            line-height: 2.8571rem;
-            min-width: 10rem;
-            width: auto;
-            border-radius: 2px;
-            font-weight: bold;
-            font-size: 1rem;
-            user-select: none;
-            outline: none;
-            text-transform: capitalize;
-            justify-content: center;
-            text-align: center;
-            white-space: nowrap;
-            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
-              border 200ms ease 0ms, color 200ms ease 0ms;
-            position: relative;
-            overflow: hidden;
-            color: #444;
-            background-color: #fff;
-            border: 2px solid #ebeced;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            --zeit-ui-button-padding: 1.375rem;
-            --zeit-ui-button-height: 2.8571rem;
-            --zeit-ui-button-color: #444;
-            --zeit-ui-button-bg: #fff;
-          }
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.375rem;
+          height: 2.8571rem;
+          line-height: 2.8571rem;
+          min-width: 10rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid #ebeced;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.375rem;
+          --zeit-ui-button-height: 2.8571rem;
+          --zeit-ui-button-color: #444;
+          --zeit-ui-button-bg: #fff;
+        }
 
-          .btn:hover {
-            color: #444;
-            --zeit-ui-button-color: #444;
-            background-color: #fff;
-            border-color: #aaafbb;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
-          }
+        .tag:hover,
+        .btn:hover {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #fff;
+          border-color: #aaafbb;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
 
-          .btn:active {
-            color: #444;
-            --zeit-ui-button-color: #444;
-            background-color: #fff;
-            border-color: #9b9eac;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
-          }
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #fff;
+          border-color: #9b9eac;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
 
-          .btn :global(.text) {
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            line-height: inherit;
-            top: -2px;
-          }
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
 
-          .btn :global(.text p),
-          .btn :global(.text pre),
-          .btn :global(.text div) {
-            margin: 0;
-          }
-          .btn :global(.hidden) {
-            visibility: hidden;
-          }
-        </style></button>"
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      </style></button>"
 `;
 
 exports[`ButtonIcon should work with right 1`] = `
-"<button type=\\"button\\" class=\\"btn \\"><span class=\\"icon right \\"><svg></svg><style>
+"<button type=\\"button\\" class=\\"btn  \\"><span class=\\"icon right \\"><svg></svg><style>
         .icon {
           position: absolute;
           left: var(--zeit-ui-button-padding);
@@ -143,79 +152,88 @@ exports[`ButtonIcon should work with right 1`] = `
             padding-right: 0;
           }
         </style></div><style>
-          .btn {
-            box-sizing: border-box;
-            display: inline-block;
-            padding: 0 1.375rem;
-            height: 2.8571rem;
-            line-height: 2.8571rem;
-            min-width: 10rem;
-            width: auto;
-            border-radius: 2px;
-            font-weight: bold;
-            font-size: 1rem;
-            user-select: none;
-            outline: none;
-            text-transform: capitalize;
-            justify-content: center;
-            text-align: center;
-            white-space: nowrap;
-            transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
-              border 200ms ease 0ms, color 200ms ease 0ms;
-            position: relative;
-            overflow: hidden;
-            color: #444;
-            background-color: #fff;
-            border: 2px solid #ebeced;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            --zeit-ui-button-padding: 1.375rem;
-            --zeit-ui-button-height: 2.8571rem;
-            --zeit-ui-button-color: #444;
-            --zeit-ui-button-bg: #fff;
-          }
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.375rem;
+          height: 2.8571rem;
+          line-height: 2.8571rem;
+          min-width: 10rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid #ebeced;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.375rem;
+          --zeit-ui-button-height: 2.8571rem;
+          --zeit-ui-button-color: #444;
+          --zeit-ui-button-bg: #fff;
+        }
 
-          .btn:hover {
-            color: #444;
-            --zeit-ui-button-color: #444;
-            background-color: #fff;
-            border-color: #aaafbb;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
-          }
+        .tag:hover,
+        .btn:hover {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #fff;
+          border-color: #aaafbb;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
 
-          .btn:active {
-            color: #444;
-            --zeit-ui-button-color: #444;
-            background-color: #fff;
-            border-color: #9b9eac;
-            cursor: pointer;
-            pointer-events: auto;
-            box-shadow: none;
-            transform: translate3d(0px, 0px, 0px);
-          }
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #444;
+          --zeit-ui-button-color: #444;
+          background-color: #fff;
+          border-color: #9b9eac;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
 
-          .btn :global(.text) {
-            position: relative;
-            z-index: 1;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            line-height: inherit;
-            top: -2px;
-          }
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
 
-          .btn :global(.text p),
-          .btn :global(.text pre),
-          .btn :global(.text div) {
-            margin: 0;
-          }
-          .btn :global(.hidden) {
-            visibility: hidden;
-          }
-        </style></button>"
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      </style></button>"
 `;

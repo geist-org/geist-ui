@@ -1,6 +1,6 @@
-import React from 'react'
-import { mount, ReactWrapper } from 'enzyme'
 import { useToasts, ZeitProvider } from 'components'
+import { mount, ReactWrapper } from 'enzyme'
+import React from 'react'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 
 const MockToast: React.FC<{}> = () => {
@@ -83,7 +83,7 @@ describe('UseToast', () => {
     expect(toast.length).not.toBe(0)
   })
 
-  it('the removeal should be delayed when hover is triggerd', async () => {
+  it('the removal should be delayed when hover is triggered', async () => {
     const wrapper = mount(
       <ZeitProvider>
         <MockToast />
@@ -174,8 +174,8 @@ describe('UseToast', () => {
     triggerToast(wrapper, { delay: 200, text: 'hello' })
 
     /**
-     * If there are multiple Toasts at different deplay in the stack,
-     * the destory Dom event will wait for the maximum delay time.
+     * If there are multiple Toasts at different display in the stack,
+     * the destroy Dom event will wait for the maximum delay time.
      */
     await updateWrapper(wrapper, 350)
     expectToastIsShow(wrapper)

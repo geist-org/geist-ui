@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react'
 import { NormalSizes } from '../utils/prop-types'
 import ButtonIcon from './button-icon'
-import { ButtonProps } from 'components/button/button'
-import { ButtonGroupConfig } from 'components/button-group/button-group-context'
+import { ButtonProps } from './button'
+import { ButtonGroupConfig } from '../button-group/button-group-context'
 
 export const getButtonChildrenWithIcon = (
   loading: boolean,
@@ -13,12 +13,13 @@ export const getButtonChildrenWithIcon = (
     icon?: React.ReactNode
     iconRight?: React.ReactNode
   },
+  isTag: boolean,
 ) => {
   const { icon, iconRight } = icons
   const hasIcon = icon || iconRight
   const isRight = Boolean(iconRight)
   const paddingForAutoMode =
-    auto || size === 'mini'
+    auto || size === 'mini' || isTag
       ? `calc(var(--zeit-ui-button-height) / 2 + var(--zeit-ui-button-padding) * .5)`
       : 0
   if (!hasIcon) return <div className={`text ${loading ? 'hidden' : ''}`}>{children}</div>

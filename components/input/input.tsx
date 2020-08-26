@@ -1,12 +1,4 @@
-import React, {
-  PropsWithoutRef,
-  RefAttributes,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import useTheme from '../styles/use-theme'
 import Textarea from '../textarea/textarea'
 import InputBlockLabel from './input-block-label'
@@ -16,9 +8,19 @@ import InputLabel from './input-label'
 import { defaultProps, Props } from './input-props'
 import InputPassword from './password'
 import { getColors, getSizes } from './styles'
+import { useInputHandle } from './use-input-handle'
+import { useAutoCompleteContext } from '../auto-complete/auto-complete-context'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type InputProps = Props & typeof defaultProps & NativeAttrs
+export type InputProps = React.PropsWithChildren<Props & NativeAttrs>
+export { defaultProps }
+
+export interface InputImperativeHandles {
+  getValue(): string
+  setValue(value?: string): void
+  focus(): void
+  blur(): void
+}
 
 const simulateChangeEvent = (
   el: HTMLInputElement,
@@ -31,25 +33,25 @@ const simulateChangeEvent = (
   }
 }
 
-const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputProps>>(
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
       variant,
       label,
       labelRight,
       size,
+      htmlSize,
       color: inputColor,
       icon,
       iconRight,
       iconClickable,
       onIconClick,
-      initialValue,
       onChange,
       readOnly,
-      value,
       onClearClick,
       clearable,
       width,
+      htmlWidth,
       className,
       onBlur,
       onFocus,
@@ -60,26 +62,19 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       children,
       disabled,
       ...props
-    },
+    }: InputProps & typeof defaultProps,
     ref: React.Ref<HTMLInputElement | null>,
   ) => {
     const theme = useTheme()
     const isSolid = variant === 'solid'
     const inputRef = useRef<HTMLInputElement>(null)
-    useImperativeHandle(ref, () => inputRef.current)
+    const isControlled = props.value !== undefined
 
-    const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
     const { heightRatio, fontSize, margin } = useMemo(() => getSizes(size), [size])
-    const isControlledComponent = useMemo(() => value !== undefined, [value])
-    const inAutoComplete = useMemo(
-      () =>
-        className.includes('in-auto-complete') &&
-        (className.includes('transition-enter') || className.includes('transition-leave')),
-      [className],
-    )
-    const autoCompleteFocus = useMemo(() => className.includes('auto-complete-focus'), [className])
+    const { ref: autoCompleteRef, focus: autoCompleteFocus } = useAutoCompleteContext()
+    const inAutoComplete = Boolean(autoCompleteRef && autoCompleteRef.current)
     const labelClasses = useMemo(() => (labelRight ? 'right-label' : label ? 'left-label' : ''), [
       label,
       labelRight,
@@ -88,6 +83,9 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       icon,
       iconRight,
     ])
+
+    useImperativeHandle(ref, () => inputRef.current)
+
     const {
       color,
       hoverColor,
@@ -96,20 +94,26 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       backgroundColor,
       hoverBackgroundColor,
     } = useMemo(() => getColors(theme, inputColor, isSolid), [theme, inputColor, isSolid])
+
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return
-      setSelfValue(event.target.value)
       onChange && onChange(event)
     }
     const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
-      setSelfValue('')
-      onClearClick && onClearClick(event)
       /* istanbul ignore next */
       if (!inputRef.current) return
+      if (disabled || readOnly) return
 
-      const changeEvent = simulateChangeEvent(inputRef.current, event)
-      changeEvent.target.value = ''
-      onChange && onChange(changeEvent)
+      if (!isControlled) inputRef.current.value = ''
+
+      onClearClick && onClearClick(event)
+
+      if (!isControlled) {
+        const changeEvent = simulateChangeEvent(inputRef.current, event)
+        changeEvent.target.value = ''
+        onChange && onChange(changeEvent)
+      }
+
       inputRef.current.focus()
     }
     const focusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
@@ -148,26 +152,16 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       }
     }, [autoCompleteFocus])
 
-    useEffect(() => {
-      if (isControlledComponent) {
-        setSelfValue(value as string)
-      }
-    })
-
-    const controlledValue = isControlledComponent
-      ? { value: selfValue }
-      : { defaultValue: initialValue }
     const inputProps = {
       ...props,
-      ...controlledValue,
     }
 
     return (
       <div className="with-label">
-        {children && <InputBlockLabel>{children}</InputBlockLabel>}
+        {children && <InputBlockLabel htmlFor={props.id}>{children}</InputBlockLabel>}
         <div className={`input-container ${className}`}>
           {label && (
-            <InputLabel variant={variant} fontSize={fontSize}>
+            <InputLabel htmlFor={props.id} variant={variant} fontSize={fontSize}>
               {label}
             </InputLabel>
           )}
@@ -178,7 +172,9 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {icon && <InputIcon paddingRight="0.5714rem" icon={icon} {...iconProps} />}
             <input
               type="text"
+              size={htmlSize}
               ref={inputRef}
+              width={htmlWidth}
               className={`${iconClasses}`}
               placeholder={placeholder}
               disabled={disabled}
@@ -202,7 +198,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
           </div>
           {labelRight && (
-            <InputLabel variant={variant} fontSize={fontSize} isRight={true}>
+            <InputLabel htmlFor={props.id} variant={variant} fontSize={fontSize} isRight={true}>
               {labelRight}
             </InputLabel>
           )}
@@ -247,14 +243,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
 
           .input-wrapper.disabled {
             cursor: not-allowed;
-          }
-
-          .line.input-wrapper.disabled {
-            border-color: ${theme.palette.cNeutral2};
-          }
-
-          .solid.input-wrapper.disabled {
-            background-color: ${theme.palette.cNeutral3};
+            border: 0;
+            background-color: ${theme.palette.cNeutral2};
           }
 
           .focus.input-wrapper:not(.disabled),
@@ -327,34 +317,23 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           input:-webkit-autofill:active {
             -webkit-background-clip: text;
           }
-
-          .in-auto-complete .input-wrapper {
-            transition: border 0s;
-            transition: border-radius 0s;
-          }
-
-          .in-auto-complete.transition-leave .input-wrapper.focus:not(.disabled),
-          .in-auto-complete.transition-enter .input-wrapper.focus:not(.disabled) {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom-color: transparent;
-          }
         `}</style>
       </div>
     )
   },
 )
 
-type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
-> & {
-  Textarea: typeof Textarea
-  Password: typeof InputPassword
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
 Input.defaultProps = defaultProps
 
-export default Input as InputComponent<HTMLInputElement, ComponentProps>
+const InputComponent = Input as typeof Input & {
+  Textarea: typeof Textarea
+  Password: typeof InputPassword
+  useInputHandle: typeof useInputHandle
+}
+
+InputComponent.Textarea = Textarea
+InputComponent.Password = InputPassword
+InputComponent.useInputHandle = useInputHandle
+
+export default InputComponent
+export { useInputHandle }

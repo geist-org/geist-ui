@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import AlertCircle from '@zeit-ui/react-icons/alertCircle'
-import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
+import { Spacer, Button, Code, Text, Dot } from 'components'
+import  Input, { useInputHandle } from 'components/input'
 import { useState, useEffect } from 'react'
 
 export const meta = {
@@ -17,9 +18,9 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input placeholder="The Evil Rabbit" />
+  <Input placeholder="Default Input" />
   <Spacer inline />
-  <Input variant="solid" placeholder="The Evil Rabbit" />
+  <Input variant="solid" placeholder="Solid Input" />
 </>
 `}
 />
@@ -32,19 +33,19 @@ Retrieve text input from a user.
 <>
   <Input size="mini" placeholder="Mini Input" />
   <Spacer inline />
-  <Input variant="solid" size="mini" placeholder="Mini Input" />
+  <Input variant="solid" size="mini" placeholder="Solid Mini Input" />
   <Spacer y={.5} />
   <Input size="small" placeholder="Small Input" />
   <Spacer inline />
-  <Input variant="solid" size="small" placeholder="Small Input" />
+  <Input variant="solid" size="small" placeholder="Solid Small Input" />
   <Spacer y={.5} />
   <Input size="medium" placeholder="Medium Input" />
   <Spacer inline />
-  <Input variant="solid" size="medium" placeholder="Medium Input" />
+  <Input variant="solid" size="medium" placeholder="Solid Medium Input" />
   <Spacer y={.5} />
   <Input size="large" placeholder="Large Input" />
   <Spacer inline />
-  <Input variant="solid" size="large" placeholder="Large Input" />
+  <Input variant="solid" size="large" placeholder="Solid Large Input" />
 </>
 `}
 />
@@ -55,25 +56,25 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input placeholder="The Evil Rabbit" width="100%" /> <Spacer y={.5} />
-  <Input variant="solid" placeholder="The Evil Rabbit" width="100%" />
+  <Input placeholder="Input with Width" width="100%" /> <Spacer y={.5} />
+  <Input variant="solid" placeholder="Solid Input with Width" width="100%" />
 </>
 `}
 />
 
 <Playground
-  title="unwritable"
+  title="Unwritable"
   desc="Disable interactive inputs."
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input disabled placeholder="Disabled" />
+  <Input disabled placeholder="Disabled Input" />
   <Spacer inline />
-  <Input readOnly initialValue="readOnly" />
+  <Input variant="solid" disabled placeholder="Solid Disabled Input" />
   <Spacer y={.5} />
-  <Input variant="solid" disabled placeholder="Disabled" />
+  <Input readOnly defaultValue="ReadOnly Input" />
   <Spacer inline />
-  <Input variant="solid" readOnly initialValue="readOnly" />
+  <Input variant="solid" readOnly defaultValue="Solid ReadOnly Input" />
 </>
 `}
 />
@@ -84,44 +85,44 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input label="username" placeholder="The Evil Rabbit" />
+  <Input id="username-1" label="username" placeholder="Input with label" />
   <Spacer inline />
-  <Input labelRight=".com" placeholder="https://github" />
+  <Input id="username-2" label="username" variant="solid" placeholder="Solid Input with label" />
   <Spacer y={.5} />
-  <Input label="username" variant="solid" placeholder="The Evil Rabbit" />
+  <Input id="site-1" labelRight=".com" placeholder="https://github" />
   <Spacer inline />
-  <Input labelRight=".com" variant="solid" placeholder="https://github" />
+  <Input id="site-2" labelRight=".com" variant="solid" placeholder="https://github" />
 </>
 `}
 />
 
 <Playground
-  title="block label"
+  title="Block label"
   desc="Labels for custom styles."
   scope={{ Input, Spacer, Text, Code, Dot }}
   code={`
 <>
-  <Input placeholder="Evil Rabbit">
+  <Input id="username-3" placeholder="Username">
     Username
   </Input>
   <Spacer />
-  <Input variant="solid" placeholder="Evil Rabbit">
+  <Input id="username-4" variant="solid" placeholder="Username">
     Username
   </Input>
   <Spacer />
-  <Input placeholder="Post title" width="50%">
+  <Input id="title-1" placeholder="Post title" width="50%">
     <Text h3>Title</Text>
   </Input>
-  <Input variant="solid" placeholder="Post title" width="50%">
+  <Input id="title-2" variant="solid" placeholder="Post title" width="50%">
     <Text h3>Title</Text>
   </Input>
   <Spacer />
-  <Input placeholder="GitHub Actions" width="50%">
+  <Input id="action-1" placeholder="GitHub Actions" width="50%">
     <Dot type="warning">
       <Text small>Problem area for <Code>deployment</Code></Text>
     </Dot>
   </Input>
-  <Input variant="solid" placeholder="GitHub Actions" width="50%">
+  <Input id="action-2" variant="solid" placeholder="GitHub Actions" width="50%">
     <Dot type="warning">
       <Text small>Problem area for <Code>deployment</Code></Text>
     </Dot>
@@ -136,13 +137,13 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input color="primary" initialValue="The Evil Rabbit" />
+  <Input color="primary" defaultValue="Primary" />
   <Spacer inline />
-  <Input variant="solid" color="primary" initialValue="The Evil Rabbit" />
+  <Input variant="solid" color="primary" defaultValue="Solid Primary" />
   <Spacer y={.5} />
-  <Input color="error" initialValue="The Evil Rabbit" />
+  <Input color="error" defaultValue="Error" />
   <Spacer inline />
-  <Input variant="solid" color="error" initialValue="The Evil Rabbit" />
+  <Input variant="solid" color="error" defaultValue="Solid Error" />
 </>
 `}
 />
@@ -194,9 +195,9 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input.Password initialValue="123456abc" />
+  <Input.Password defaultValue="123456abc" />
   <Spacer inline />
-  <Input.Password variant="solid" initialValue="123456abc" />
+  <Input.Password variant="solid" defaultValue="123456abc" />
 </>
 `}
 />
@@ -207,26 +208,26 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
+  <Input clearable defaultValue="Clear me" placeholder="placeholder" />
   <Spacer inline />
-  <Input variant="solid" clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
+  <Input variant="solid" clearable defaultValue="Clear me" placeholder="placeholder" />
 </>
 `}
 />
 
 <Playground
-  title="Get Change"
-  desc="Capture changes in input."
+  title="Controlled"
+  desc="Use Input as a controlled component."
   scope={{ Input, useState }}
   code={`
 () => {
-  const [value, setValue] = useState()
-  const handler = (e) => {
+  const [value, setValue] = useState('')
+  const onChange = (e) => {
     setValue(e.target.value)
     console.log(e.target.value)
   }
   return (
-    <Input value={value} onChange={handler} placeholder="The Evil Rabbit" />
+    <Input value={value} onChange={onChange} placeholder="The Evil Rabbit" />
   )
 }
 `}
@@ -235,45 +236,25 @@ Retrieve text input from a user.
 <Playground
   title={
     <>
-      With <Code>useInput</Code>
+      With <Code>useInputHandle</Code>
     </>
   }
   desc="Use `hooks` to capture changes."
-  scope={{ Input, useInput, useEffect, Button, Spacer }}
+  scope={{ Input, useInputHandle, Button, Spacer, useState }}
   code={`
 () => {
-  const { state, setState, reset, bindings } = useInput('The Evil Rabbit')
-  useEffect(() => console.log(state), [state])
+  const { ref, getValue, setValue, focus, blur } = useInputHandle()
+  const [v, setV] = useState(getValue())
   return (
     <>
-      <Input {...bindings} />
+      <Input ref={ref} defaultValue="Initial value" />
       <Spacer y={.5} />
       <Button auto type="secondary" size="small"
-        onClick={() => setState(Math.random().toString(32))}>set value</Button>
+        onClick={() => setValue(Math.random().toString(32))}>set value</Button>
       <Spacer y={.5} />
-      <Button auto size="small"onClick={() => reset()}>reset value</Button>
-    </>
-  )
-}
-`}
-/>
-
-<Playground
-  title="Imperative API"
-  desc="Update component in an uncontrolled way."
-  scope={{ Input, Spacer, Button }}
-  code={`
-() => {
-  const ref = React.useRef(null)
-  const setChange = () => {
-    ref && (ref.current.value = Math.random().toString(32))
-  }
-  return (
-    <>
-      <Input initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Button auto size="small" onClick={() => setValue()}>reset value</Button>
       <Spacer y={.5} />
-      <Button auto type="secondary" size="small"
-        onClick={setChange}>set value</Button>
+      <Button auto size="small" onClick={() => setV(getValue())}>Get value, the value is: {v}</Button>
     </>
   )
 }
@@ -287,7 +268,7 @@ Retrieve text input from a user.
 | ----------------- | ----------------------------- | ---------------------------------------------- | --------------------------------------- | --------- |
 | **variant**       | input variant                 | `string`                                       | [InputVariantTypes](#inputvarianttypes) | `line`    |
 | **value**         | input value                   | `string`                                       | -                                       | -         |
-| **initialValue**  | initial value                 | `string`                                       | -                                       | -         |
+| **defaultValue**  | initial value                 | `string`                                       | -                                       | -         |
 | **placeholder**   | placeholder                   | `string`                                       | -                                       | -         |
 | **size**          | input size                    | `NormalSizes`                                  | [InputSizes](#inputsizes)               | `medium`  |
 | **color**         | current color                 | `NormalTypes`                                  | [InputColor](#inputcolor)               | `default` |
@@ -330,20 +311,15 @@ type InputSizes = 'mini' | 'small' | 'medium' | 'large'
 type InputColor = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
-<Attributes.Title>useInput</Attributes.Title>
+<Attributes.Title>useInputHandle</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
+type useInputHandle = () => {
+  ref: React.RefObject<HTMLInputElement>
+  setValue: (value: string = '') => void
+  getValue: () => string | undefined
+  focus: () => void
+  blur: () => void
 }
 ```
 

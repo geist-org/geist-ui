@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, MouseEvent } from 'react'
 import withDefaults from '../utils/with-defaults'
 import TooltipContent from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
@@ -6,12 +6,17 @@ import { TriggerTypes, Placement, SnippetColors } from '../utils/prop-types'
 
 export type TooltipOnVisibleChange = (visible: boolean) => void
 
-interface Props {
+type EventHandlerWithChangeVisible = (
+  event: React.MouseEvent<any, globalThis.MouseEvent>,
+  changeVisible: (nextState: boolean) => void,
+) => void | undefined
+
+export interface TooltipProps {
   text: string | React.ReactNode
   color?: SnippetColors
   placement?: Placement
   visible?: boolean
-  initialVisible?: boolean
+  defaultVisible?: boolean
   hideArrow?: boolean
   trigger?: TriggerTypes
   enterDelay?: number
@@ -20,10 +25,14 @@ interface Props {
   className?: string
   portalClassName?: string
   onVisibleChange?: TooltipOnVisibleChange
+  onMouseEnter?: EventHandlerWithChangeVisible
+  onMouseLeave?: EventHandlerWithChangeVisible
+  onClick?: EventHandlerWithChangeVisible
+  onClickAway?: (event: Event, changeVisible: (nextState: boolean) => void) => void
 }
 
-const defaultProps = {
-  initialVisible: false,
+export const defaultProps = {
+  defaultVisible: false,
   hideArrow: false,
   color: 'default' as SnippetColors,
   trigger: 'hover' as TriggerTypes,
@@ -36,12 +45,12 @@ const defaultProps = {
   onVisibleChange: (() => {}) as TooltipOnVisibleChange,
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TooltipProps = Props & typeof defaultProps & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof TooltipProps>
+type Props = TooltipProps & NativeAttrs
 
-const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
+const Tooltip: React.FC<React.PropsWithChildren<Props>> = ({
   children,
-  initialVisible,
+  defaultVisible,
   text,
   offset,
   placement,
@@ -54,20 +63,17 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   onVisibleChange,
   hideArrow,
   visible: customVisible,
+  onMouseEnter,
+  onMouseLeave,
+  onClick,
+  onClickAway,
   ...props
-}) => {
+}: Props & typeof defaultProps) => {
   const timer = useRef<number>()
   const ref = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState<boolean>(initialVisible)
-  const contentProps = {
-    color,
-    visible,
-    offset,
-    placement,
-    hideArrow,
-    parent: ref,
-    className: portalClassName,
-  }
+  const [visible, setVisible] = useState<boolean>(
+    customVisible === undefined ? defaultVisible : customVisible,
+  )
 
   const changeVisible = (nextState: boolean) => {
     const clear = () => {
@@ -87,23 +93,42 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
     timer.current = window.setTimeout(() => handler(false), leaveDelay)
   }
 
-  const mouseEventHandler = (next: boolean) => trigger === 'hover' && changeVisible(next)
+  const mouseEventHandler = (e: MouseEvent, next: boolean) => {
+    if (customVisible === undefined) trigger === 'hover' && changeVisible(next)
+    if (next) onMouseEnter && onMouseEnter(e, changeVisible)
+    else onMouseLeave && onMouseLeave(e, changeVisible)
+  }
   const clickEventHandler = () => trigger === 'click' && changeVisible(!visible)
 
-  useClickAway(ref, () => trigger === 'click' && changeVisible(false))
+  const clickAwayHandler: (e: Event) => void = e => {
+    if (customVisible === undefined) trigger === 'click' && changeVisible(false)
+    onClickAway && onClickAway(e, changeVisible)
+  }
+
+  useClickAway(ref, clickAwayHandler)
 
   useEffect(() => {
     if (customVisible === undefined) return
     changeVisible(customVisible)
   }, [customVisible])
 
+  const contentProps = {
+    color,
+    visible,
+    offset,
+    placement,
+    hideArrow,
+    parent: ref,
+    className: portalClassName,
+  }
+
   return (
     <div
       ref={ref}
       className={`tooltip ${className}`}
       onClick={clickEventHandler}
-      onMouseEnter={() => mouseEventHandler(true)}
-      onMouseLeave={() => mouseEventHandler(false)}
+      onMouseEnter={e => mouseEventHandler(e, true)}
+      onMouseLeave={e => mouseEventHandler(e, false)}
       {...props}>
       {children}
       <TooltipContent {...contentProps}>{text}</TooltipContent>

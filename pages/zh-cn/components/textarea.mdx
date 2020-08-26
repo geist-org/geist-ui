@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Textarea, Spacer, useInput, Button, Code } from 'components'
+import { Spacer, Button, Code } from 'components'
+import Textarea, { useTextareaHandle } from 'components/textarea'
 import { useState } from 'react'
 
 export const meta = {
@@ -99,21 +100,21 @@ export const meta = {
 <Playground
   title={
     <>
-      与&nbsp;<Code>useInput</Code>&nbsp;组合
+      与&nbsp;<Code>useTextareaHandle</Code>&nbsp;组合
     </>
   }
   desc="通过 `hooks` 以更简单的方式驱动文本框。"
-  scope={{ Textarea, useInput, Button, Spacer }}
+  scope={{ Textarea, useTextareaHandle, Button, Spacer }}
   code={`
 () => {
-  const { setState, reset, bindings } = useInput('CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。')
+  const { ref, setValue } = useTextareaHandle()
   return (
     <>
-      <Textarea width="100%" {...bindings}/>
+      <Textarea ref={ref} defaultValue='CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。' width="100%" />
       <Spacer y={.5} />
-      <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>设置随机文本</Button>
+      <Button auto type="secondary" size="small" onClick={() => setValue(Math.random().toString(32))}>设置随机文本</Button>
       <Spacer y={.5} />
-      <Button auto size="small" onClick={() => reset()}>重置文本</Button>
+      <Button auto size="small" onClick={() => setValue()}>重置文本</Button>
     </>
   )
 }
@@ -132,7 +133,7 @@ export const meta = {
   }
   return (
     <>
-      <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Textarea defaultValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
       <Spacer y={.5} />
       <Button auto type="secondary" size="small"
         onClick={setChange}>设置值</Button>
@@ -149,7 +150,7 @@ export const meta = {
 | ---------------- | --------------------- | -------------------------------- | ------------------------------------------------------- | --------- |
 | **variant**      | 设置文本框的类型      | `string`                         | `'solid', 'line'`                                       | `line`    |
 | **value**        | 设置文本框的值        | `string`                         | -                                                       | -         |
-| **initialValue** | 文本框的初始值        | `string`                         | -                                                       | -         |
+| **defaultValue** | 文本框的初始值        | `string`                         | -                                                       | -         |
 | **placeholder**  | 占位文本              | `string`                         | -                                                       | -         |
 | **color**        | 文本框当前颜色        | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **readOnly**     | 是否以只读方式显示    | `boolean`                        | -                                                       | `false`   |
@@ -160,20 +161,15 @@ export const meta = {
 | **counter**      | 增加一个记录字数的 UI | `boolean`                        | -                                                       | `false`   |
 | ...              | 原生属性              | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
 
-<Attributes.Title>useInput</Attributes.Title>
+<Attributes.Title>useTextareaHandle</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
+type useTextareaHandle = () => {
+  ref: React.RefObject<HTMLTextareaElement>
+  setValue: (value: string = '') => void
+  getValue: () => string | undefined
+  focus: () => void
+  blur: () => void
 }
 ```
 
