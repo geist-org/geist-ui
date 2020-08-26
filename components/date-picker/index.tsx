@@ -5,6 +5,7 @@ import generatePicker, {
   PickerDateProps,
   RangePickerProps as BaseRangePickerProps,
 } from './generate-picker'
+import useDatePickerHandle from './use-date-picker-handle'
 
 export type DatePickerProps = PickerProps<Dayjs>
 export type MonthPickerProps = Omit<PickerDateProps<Dayjs>, 'picker'>
@@ -19,3 +20,5 @@ export type RangePickerProps = BaseRangePickerProps<Dayjs>
 export const DatePicker = generatePicker<Dayjs>(generateConfig)
 
 export default DatePicker
+
+export { useDatePickerHandle }
