@@ -16,95 +16,109 @@ exports[`Select should render correctly 1`] = `
           transition: all 200ms ease;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.334 * 16px);
+          line-height: calc(1.5 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
@@ -114,95 +128,109 @@ exports[`Select should render correctly 1`] = `
           transition: all 200ms ease;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(1.334 * 16px);
-            min-width: 6.5rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(1.5 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.334 * 16px);
-            padding: 4px calc(.75rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(1.5 * 16px);
+              padding: 4px calc(.8571rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .75rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(.8571rem * 1.5);
+              font-size: .8571rem;
+              color: #444;
+              width: calc(100% - .8571rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: .75rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: .8571rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.8 * 16px);
+          line-height: calc(2 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
@@ -212,95 +240,109 @@ exports[`Select should render correctly 1`] = `
           transition: all 200ms ease;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(1.8 * 16px);
-            min-width: 8rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.8 * 16px);
-            padding: 4px calc(.75rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2 * 16px);
+              padding: 4px calc(.8571rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .75rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(.8571rem * 1.5);
+              font-size: .8571rem;
+              color: #444;
+              width: calc(100% - .8571rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: .75rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: .8571rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(2.667 * 16px);
+          line-height: calc(3 * 16px);
           min-width: 0;
         }
       </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
@@ -310,90 +352,104 @@ exports[`Select should render correctly 1`] = `
           transition: all 200ms ease;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.667 * 16px);
-            min-width: 12.5rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(3 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.667 * 16px);
-            padding: 4px calc(1.225rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(3 * 16px);
+              padding: 4px calc(1.225rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1.225rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1.225rem * 1.5);
+              font-size: 1.225rem;
+              color: #444;
+              width: calc(100% - 1.225rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1.225rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        </style></div></div>"
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1.225rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div></div>"
 `;
 
 exports[`Select should render correctly when variant=text 1`] = `
@@ -411,8 +467,8 @@ exports[`Select should render correctly when variant=text 1`] = `
           max-width: 100%;
           justify-content: space-between;
           align-items: center;
-          font-weight: normal;
-          font-size: 0.75rem;
+          font-weight: 500;
+          font-size: 1rem;
           height: calc(2.5 * 16px);
           box-sizing: border-box;
           padding: 0 16px;
@@ -435,17 +491,27 @@ exports[`Select should render correctly when variant=text 1`] = `
           height: 0;
           padding: 0;
           overflow: hidden;
-          border-top: 1px solid #eaeaea;
-          margin: 0.5rem 0;
+          border-top: 1px solid
+            #eaeaea;
+          margin: 8px 0;
           width: 100%;
+        }
+        .divider:hover {
+          border-top: 1px solid
+            #eaeaea;
         }
 
         .label {
-          font-size: 0.875rem;
+          font-size: 1.1428rem;
           color: #0054fe;
-          border-bottom: 1px solid #eaeaea;
+          border-bottom: 1px solid
+            #eaeaea;
           text-transform: capitalize;
           cursor: default;
+        }
+        .label:hover {
+          border-bottom: 1px solid
+            #eaeaea;
         }
       </style></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
         svg {
@@ -454,90 +520,104 @@ exports[`Select should render correctly when variant=text 1`] = `
           transition: all 200ms ease;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid parent;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                transparent;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: transparent;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        </style></div>,</div>"
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div>,</div>"
 `;
 
 exports[`Select should render right border with variant=text when hover 1`] = `
@@ -568,90 +648,104 @@ exports[`Select should work correctly with labels 1`] = `
           transition: all 200ms ease;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        </style></div>"
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div>"
 `;
 
 exports[`Select should work with different icons 1`] = `
@@ -715,90 +809,104 @@ initialize {
           "children": Array [
             Object {
               "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        ",
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          ",
               "next": null,
               "parent": [Circular],
               "prev": null,
@@ -829,90 +937,104 @@ initialize {
         "children": Array [
           Object {
             "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        ",
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          ",
             "next": null,
             "parent": [Circular],
             "prev": null,
@@ -1115,90 +1237,104 @@ initialize {
             "children": Array [
               Object {
                 "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        ",
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          ",
                 "next": null,
                 "parent": [Circular],
                 "prev": null,
@@ -1267,90 +1403,104 @@ initialize {
           "children": Array [
             Object {
               "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        ",
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          ",
               "next": null,
               "parent": [Circular],
               "prev": null,
@@ -1440,90 +1590,104 @@ initialize {
         "children": Array [
           Object {
             "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        ",
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          ",
             "next": null,
             "parent": [Circular],
             "prev": null,

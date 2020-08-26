@@ -1,5 +1,192 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Select Multiple should ignore events when disabled 1`] = `
+"<div class=\\"select multiple \\"><span class=\\"value placeholder\\"><span><style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: calc(2.625 * 16px);
+          min-width: 0;
+        }
+      </style></span></span><div class=\\"item  mock \\"><style>
+        .item {
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+          
+        }
+
+        @media only screen and (max-width: 650px) {
+          .xs {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            
+          }
+        }
+
+        @media only screen and (min-width: 650px) {
+          .sm {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            
+          }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            
+          }
+        }
+      </style></div><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
+
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
+
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
+
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
+
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #9b9eac;
+            }
+
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div>"
+`;
+
 exports[`Select Multiple should render correctly 1`] = `
 "<div class=\\"select multiple \\"><span class=\\"value placeholder\\"><span><style>
         span {
@@ -87,88 +274,102 @@ exports[`Select Multiple should render correctly 1`] = `
           transition: all 200ms ease;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
-            border: 1px solid #dbdde0;
-            border-radius: 4px;
-            padding: 0 calc(8px * 1.5) 0 16px;
-            height: calc(2.625 * 16px);
-            min-width: 10rem;
-            background-color: transparent;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(2.625 * 16px);
-            padding: 4px calc(1rem * 2)
-              4px 8px;
-          }
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
 
-          .select:hover {
-            border-color: #0054fe;
-          }
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
 
-          .select:hover .icon,
-          .select:hover .value {
-            color: #0054fe;
-          }
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1rem;
-            color: #444;
-            width: calc(100% - 1.25rem);
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
 
-          .value :global(svg),
-          .multiple :global(svg) {
-            display: none;
-          }
-          .value :global(.option),
-          .multiple :global(.option) {
-            border: 1px solid transparent;
-          }
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .placeholder {
-            color: #9b9eac;
-          }
+            .placeholder {
+              color: #9b9eac;
+            }
 
-          .icon {
-            position: absolute;
-            right: calc(8px * 1.5);
-            font-size: 1rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #444;
-          }
-        </style></div>"
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div>"
 `;

@@ -20,7 +20,7 @@ describe('Select', () => {
   it('should render correctly when variant=text', () => {
     const wrapper = mount(
       <div>
-        <Select variant="text" initialValue="2">
+        <Select variant="text" defaultValue="2">
           <Select.Option value="1">Option 1</Select.Option>
           <Select.Option value="2">Option 2</Select.Option>
         </Select>
@@ -53,9 +53,9 @@ describe('Select', () => {
     expect(icon).toMatchSnapshot()
   })
 
-  it('should render value with initial-value', () => {
+  it('should render value with default-value', () => {
     const wrapper = mount(
-      <Select initialValue="2">
+      <Select defaultValue="2">
         <Select.Option value="1">1</Select.Option>
         <Select.Option value="2">Option 2</Select.Option>
       </Select>,

@@ -59,7 +59,7 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
 
         <Spacer y={1.7} />
         <Text h4>{isChinese ? '基础组件' : 'Basic Components'}</Text>
-        <Select placeholder="Choose one" initialValue="1">
+        <Select placeholder="Choose one" defaultValue="1">
           <Select.Option value="1">Option 1</Select.Option>
           <Select.Option value="2">Option 2</Select.Option>
         </Select>

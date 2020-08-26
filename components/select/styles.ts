@@ -4,7 +4,7 @@ import { ZeitUIThemes, ZeitUIThemesPalette } from 'components/styles/themes'
 export interface SelectSize {
   height: string
   fontSize: string
-  minWidth: string
+  labelFontSize: string
 }
 
 type optionColors = {
@@ -18,8 +18,11 @@ type optionColors = {
 
 type selectColors = {
   color: string
-  hoverColor: string
+  bgColor: string
   border: string
+  hoverColor: string
+  hoverBgColor: string
+  hoverBorder: string
   placeholderColor: string
 }
 
@@ -28,22 +31,22 @@ export const getSizes = (theme: ZeitUIThemes, size?: NormalSizes) => {
     medium: {
       height: `calc(2.625 * ${theme.layout.gap})`,
       fontSize: '1rem',
-      minWidth: '10rem',
+      labelFontSize: '1.1428rem',
     },
     small: {
-      height: `calc(1.8 * ${theme.layout.gap})`,
-      fontSize: '.75rem',
-      minWidth: '8rem',
+      height: `calc(2 * ${theme.layout.gap})`,
+      fontSize: '.8571rem',
+      labelFontSize: '1rem',
     },
     mini: {
-      height: `calc(1.334 * ${theme.layout.gap})`,
-      fontSize: '.75rem',
-      minWidth: '6.5rem',
+      height: `calc(1.5 * ${theme.layout.gap})`,
+      fontSize: '.8571rem',
+      labelFontSize: '1rem',
     },
     large: {
-      height: `calc(2.667 * ${theme.layout.gap})`,
+      height: `calc(3 * ${theme.layout.gap})`,
       fontSize: '1.225rem',
-      minWidth: '12.5rem',
+      labelFontSize: '1.375rem',
     },
   }
 
@@ -56,16 +59,14 @@ export const getOptionColors = (
   palette: ZeitUIThemesPalette,
   isLabel: boolean = false,
   variant: SelectVariants = 'line',
-  rgb: number[],
 ) => {
-  const [r, g, b] = rgb
   const colors: { [key in SelectVariants]: optionColors } = {
     line: {
       color: selected ? palette.cNeutral8 : palette.cNeutral6,
       bgColor: selected ? palette.cTheme5 : palette.cNeutral8,
       border: 'transparent',
       hoverColor: selected ? palette.cNeutral8 : palette.cTheme5,
-      hoverBgColor: selected ? palette.cTheme5 : `rgba(${r}, ${g}, ${b}, 0.04)`,
+      hoverBgColor: selected ? palette.cTheme5 : palette.cTheme0,
       hoverBorder: 'transparent',
     },
     text: {
@@ -74,16 +75,16 @@ export const getOptionColors = (
       border: selected ? palette.cTheme5 : 'transparent',
       hoverColor: palette.cTheme5,
       hoverBgColor: palette.cNeutral8,
-      hoverBorder: selected ? palette.cTheme5 : `rgba(${r}, ${g}, ${b}, 0.12)`,
+      hoverBorder: selected ? palette.cTheme5 : palette.cTheme0,
     },
   }
   if (disabled) {
     return {
       color: palette.cNeutral4,
-      bgColor: palette.cNeutral3,
+      bgColor: palette.cNeutral8,
       border: 'transparent',
       hoverColor: palette.cNeutral4,
-      hoverBgColor: palette.cNeutral3,
+      hoverBgColor: palette.cNeutral8,
       hoverBorder: 'transparent',
     }
   }
@@ -107,16 +108,22 @@ export const getSelectColors = (
 ): selectColors => {
   if (disabled) {
     return {
-      color: palette.cNeutral3,
-      hoverColor: palette.cNeutral3,
-      placeholderColor: palette.cNeutral3,
-      border: variant === 'text' ? 'parent' : palette.cNeutral3,
+      color: palette.cNeutral4,
+      bgColor: palette.cNeutral2,
+      border: variant === 'text' ? 'transparent' : palette.cNeutral3,
+      placeholderColor: palette.cNeutral4,
+      hoverColor: palette.cNeutral4,
+      hoverBgColor: palette.cNeutral2,
+      hoverBorder: palette.cNeutral3,
     }
   }
   return {
     color: palette.cNeutral6,
-    hoverColor: palette.cTheme5,
+    bgColor: palette.cNeutral8,
+    border: variant === 'text' ? 'transparent' : palette.cNeutral3,
     placeholderColor: palette.cNeutral5,
-    border: variant === 'text' ? 'parent' : palette.cNeutral3,
+    hoverColor: palette.cTheme5,
+    hoverBgColor: palette.cNeutral8,
+    hoverBorder: variant === 'text' ? 'transparent' : palette.cTheme5,
   }
 }
