@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Popover, Spacer, Link } from 'components'
+import { Popover, Spacer, Link, Row, Col, useTheme } from 'components'
 import { useState } from 'react'
+import { addColorAlpha } from 'components/utils/color'
 
 export const meta = {
   title: 'Popover',
@@ -12,20 +13,50 @@ export const meta = {
 The floating box popped by clicking or hovering.
 
 <Playground
-  scope={{ Popover, Spacer, Link }}
+  scope={{ Popover, Spacer, Link, useState, useTheme, addColorAlpha }}
   code={`
 () => {
+  const theme = useTheme()
   const content = () => (
-    <div style={{ padding: '0 10px' }}>
+    <div style={{ padding: '16px' }}>
       <Link href="#">A hyperlink</Link>
-      <Spacer y={.5} />
+      <Spacer y={0.5} />
       <Link href="#">External link</Link>
     </div>
   )
+  const Option = () => {
+    const [hover, setHover] = useState(false)
+    return (
+      <p
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+        style={{
+          margin: 0,
+          padding: theme.layout.gap,
+          color: hover ? theme.palette.cTheme5 : theme.palette.cNeutral5,
+          backgroundColor: hover ? addColorAlpha(theme.palette.cTheme5, 0.04) : 'transparent',
+        }}>
+        content
+      </p>
+    )
+  }
+  const contentWithBackgroundColor = () => (
+    <div>
+      <Option />
+      <Option />
+      <Option />
+    </div>
+  )
   return (
-    <Popover content={content}>
-      Menu
-    </Popover>
+    <>
+      <Popover title="Popover title" content={content}>
+        Menu
+      </Popover>
+      <Spacer inline />
+      <Popover title="Popover title" content={contentWithBackgroundColor}>
+        With background color
+      </Popover>
+    </>
   )
 }
 `}
@@ -39,12 +70,10 @@ The floating box popped by clicking or hovering.
 () => {
   const content = () => (
     <>
-      <Popover.Item title>
-        <span>User Settings</span>
-      </Popover.Item>
       <Popover.Item>
         <Link href="#">A hyperlink</Link>
       </Popover.Item>
+      <Popover.Item line />
       <Popover.Item>
         <Link href="#">A hyperlink for edit profile</Link>
       </Popover.Item>
@@ -54,10 +83,138 @@ The floating box popped by clicking or hovering.
       </Popover.Item>
     </>
   )
+  const contentLong = () => (
+    <>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+      <Popover.Item>
+        Popover content
+      </Popover.Item>
+    </>
+  )
   return (
-    <Popover content={content}>
-      Menu
-    </Popover>
+    <>
+      <Popover title='Popover title' content={content}>
+        Menu
+      </Popover>
+      <Spacer inline />
+      <Popover title='Popover title' notSeperateTitle content={content}>
+        Menu title without divider line
+      </Popover>
+      <Spacer inline />
+      <Popover title='Popover title' content={contentLong}>
+        Menu with scroll bar
+      </Popover>
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Placements"
+  desc="There are 12 `placement` options available."
+  scope={{ Popover, Link, Spacer, Row, Col }}
+  code={`
+() => {
+  const content = () => (
+    <>
+      <Popover.Item>
+        Popover content goes here and here and here
+      </Popover.Item>
+    </>
+  )
+  const Center = ({ children, ...props }) => (
+    <Col style={{ display: 'flex', justifyContent: 'center' }} {...props}>{children}</Col>
+  )
+  return (
+    <div style={{ width: '80%', margin: '0 auto' }}>
+      <Row justify="center">
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="topStart">topStart</Popover>
+        </Center>
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="top">top</Popover>
+        </Center>
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="topEnd">topEnd</Popover>
+        </Center>
+      </Row>
+      <Row justify="space-between">
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="leftStart">leftStart</Popover>
+        </Center>
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="rightStart">rightStart</Popover>
+        </Center>
+      </Row>
+      <Spacer y={.5} />
+      <Row justify="space-between">
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="left">left</Popover>
+        </Center>
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="right">right</Popover>
+        </Center>
+      </Row>
+      <Spacer y={.5} />
+      <Row justify="space-between">
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="leftEnd">leftEnd</Popover>
+        </Center>
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="rightEnd">rightEnd</Popover>
+        </Center>
+      </Row>
+      <Row justify="center">
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="bottomStart">bottomStart</Popover>
+        </Center>
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="bottom">bottom</Popover>
+        </Center>
+        <Center span={5}>
+          <Popover title='Popover title' content={content} placement="bottomEnd">bottomEnd</Popover>
+        </Center>
+      </Row>
+    </div>
   )
 }
 `}
@@ -74,14 +231,14 @@ The floating box popped by clicking or hovering.
     setVisible(next)
   }
   const content = () => (
-    <div style={{ padding: '0 10px' }}>
+    <div style={{ padding: '16px' }}>
       <span onClick={() => setVisible(false)}>Click to close</span>
       <Spacer y={.5} />
       <span>Nothing</span>
     </div>
   )
   return (
-    <Popover content={content} visible={visible}
+    <Popover title='Popover title' content={content} visible={visible}
       onVisibleChange={changeHandler}>
       Menu
     </Popover>
@@ -93,27 +250,28 @@ The floating box popped by clicking or hovering.
 <Attributes edit="/pages/en-us/components/popover.mdx">
 <Attributes.Title>Popover.Props</Attributes.Title>
 
-| Attribute           | Description                                    | Type                          | Accepted values                  | Default  |
-| ------------------- | ---------------------------------------------- | ----------------------------- | -------------------------------- | -------- |
-| **content**         | content of pop-up                              | `ReactNode` `() => ReactNode` | -                                | -        |
-| **visible**         | visible or not                                 | `boolean`                     | -                                | `false`  |
-| **initialVisible**  | visible on initial                             | `boolean`                     | -                                | `false`  |
-| **hideArrow**       | hide arrow icon                                | `boolean`                     | -                                | `false`  |
-| **placement**       | position of the popover relative to the target | [Placement](#placement)       | -                                | `bottom` |
-| **trigger**         | tooltip trigger mode                           | `'click' / 'hover'`           | -                                | `click`  |
-| **enterDelay**(ms)  | delay before popover is shown                  | `number`                      | -                                | `100`    |
-| **leaveDelay**(ms)  | delay before popover is hidden                 | `number`                      | -                                | `0`      |
-| **offset**(px)      | distance between pop-up and target             | `number`                      | -                                | `12`     |
-| **portalClassName** | className of pop-up box                        | `string`                      | -                                | -        |
-| **onVisibleChange** | call when visibility of the popover is changed | `(visible: boolean) => void`  | -                                | -        |
-| ...                 | native props                                   | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -        |
+| Attribute            | Description                                         | Type                          | Accepted values                  | Default  |
+| -------------------- | --------------------------------------------------- | ----------------------------- | -------------------------------- | -------- |
+| **title**            | title of pop-up                                     | `ReactNode` `() => ReactNode` | -                                | -        |
+| **notSeperateTitle** | don't add a deivider line between title and content | `boolean`                     | -                                | `false`  |
+| **content**          | content of pop-up                                   | `ReactNode` `() => ReactNode` | -                                | -        |
+| **visible**          | visible or not                                      | `boolean`                     | -                                | `false`  |
+| **defaultVisible**   | visible on initial                                  | `boolean`                     | -                                | `false`  |
+| **hideArrow**        | hide arrow icon                                     | `boolean`                     | -                                | `false`  |
+| **placement**        | position of the popover relative to the target      | [Placement](#placement)       | -                                | `bottom` |
+| **trigger**          | tooltip trigger mode                                | `'click' / 'hover'`           | -                                | `click`  |
+| **enterDelay**(ms)   | delay before popover is shown                       | `number`                      | -                                | `100`    |
+| **leaveDelay**(ms)   | delay before popover is hidden                      | `number`                      | -                                | `0`      |
+| **offset**(px)       | distance between pop-up and target                  | `number`                      | -                                | `12`     |
+| **portalClassName**  | className of pop-up box                             | `string`                      | -                                | -        |
+| **onVisibleChange**  | call when visibility of the popover is changed      | `(visible: boolean) => void`  | -                                | -        |
+| ...                  | native props                                        | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -        |
 
 <Attributes.Title alias="Popover.Option">Popover.Item</Attributes.Title>
 
-| Attribute | Description                | Type      | Accepted values | Default |
-| --------- | -------------------------- | --------- | --------------- | ------- |
-| **line**  | show a line                | `boolean` | -               | `false` |
-| **title** | show text with title style | `boolean` | -               | `false` |
+| Attribute | Description | Type      | Accepted values | Default |
+| --------- | ----------- | --------- | --------------- | ------- |
+| **line**  | show a line | `boolean` | -               | `false` |
 
 <Attributes.Title>Placement</Attributes.Title>
 

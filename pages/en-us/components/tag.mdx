@@ -1,58 +1,124 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Tag, Spacer } from 'components'
+import { Tag, Spacer, Grid, Code } from 'components'
+import Router from 'next/router'
+import Settings from '@zeit-ui/react-icons/settings'
+import Plus from '@zeit-ui/react-icons/plus'
 
 export const meta = {
-  title: 'Tag',
+  title: 'tag',
   group: 'Data Display',
 }
 
 ## Tag
 
-Display a unique keyword, optionally as a part of a set.
+Used to trigger an operation.
 
 <Playground
+  title="Basic"
+  desc="The basic `Tag` contains an animation effect."
+  scope={{ Tag, Spacer }}
+  code={`
+  <>
+    <Tag>Tag</Tag>
+    <Spacer inline />
+    <Tag variant="solid">Tag</Tag>
+    <Spacer inline />
+    <Tag variant="text">Tag</Tag>
+  </>
+`}
+/>
+
+<Playground
+  title="Disabled"
+  desc="Do not respond to any action."
+  scope={{ Tag, Spacer }}
+  code={`
+    <>
+      <Tag disabled>Tag</Tag>
+      <Spacer inline />
+      <Tag variant="solid" disabled>Tag</Tag>
+      <Spacer inline />
+      <Tag variant="text" disabled>Tag</Tag>
+    </>
+  `}
+/>
+
+<Playground
+  title="Toggleable"
+  desc="Toggleable tag"
   scope={{ Tag }}
   code={`
-<div>
-  <Tag>Status: Unstable</Tag>
-</div>
+    <Tag variant="line" toggleable>Tag</Tag>
+  `}
+/>
+
+<Playground
+  title="Icon"
+  desc="Tag with icon"
+  scope={{ Tag, Spacer, Plus }}
+  code={`
+    <>
+      <Tag variant="line" icon={<Plus />}>Tag</Tag>
+      <Spacer inline />
+      <Tag variant="line" iconRight={<Plus />}>Tag</Tag>
+    </>
+  `}
+/>
+
+<Playground
+  title="Colors"
+  desc="Different state."
+  scope={{ Tag, Grid, Spacer }}
+  code={`
+  <>
+    <Grid.Container gap={3}>
+      <Grid><Tag>Default</Tag></Grid>
+      <Grid><Tag color="primary">Primary</Tag></Grid>
+      <Grid><Tag color="secondary">Secondary</Tag></Grid>
+      <Grid><Tag color="success">success</Tag></Grid>
+      <Grid><Tag color="warning">warning</Tag></Grid>
+      <Grid><Tag color="error">error</Tag></Grid>
+    </Grid.Container>
+    <Spacer y={2} />
+    <Grid.Container gap={3}>
+      <Grid><Tag dashed>Default</Tag></Grid>
+      <Grid><Tag dashed color="primary">Primary</Tag></Grid>
+      <Grid><Tag dashed color="secondary">Secondary</Tag></Grid>
+      <Grid><Tag dashed color="success">success</Tag></Grid>
+      <Grid><Tag dashed color="warning">warning</Tag></Grid>
+      <Grid><Tag dashed color="error">error</Tag></Grid>
+    </Grid.Container>
+    <Spacer y={2} />
+    <Grid.Container gap={3}>
+      <Grid><Tag variant="solid">Default</Tag></Grid>
+      <Grid><Tag variant="solid" color="primary">Solid Primary</Tag></Grid>
+      <Grid><Tag variant="solid" color="secondary">Solid Secondary</Tag></Grid>
+      <Grid><Tag variant="solid" color="success">success</Tag></Grid>
+      <Grid><Tag variant="solid" color="warning">warning</Tag></Grid>
+      <Grid><Tag variant="solid" color="error">error</Tag></Grid>
+    </Grid.Container>
+    <Spacer y={2} />
+    <Grid.Container gap={3}>
+      <Grid><Tag variant="text">Default</Tag></Grid>
+      <Grid><Tag variant="text" color="primary">Text Primary</Tag></Grid>
+      <Grid><Tag variant="text" color="secondary">Text Secondary</Tag></Grid>
+      <Grid><Tag variant="text" color="success">success</Tag></Grid>
+      <Grid><Tag variant="text" color="warning">warning</Tag></Grid>
+      <Grid><Tag variant="text" color="error">error</Tag></Grid>
+    </Grid.Container>
+  </>
 `}
 />
 
 <Playground
-  title="Types"
-  desc="Show different states with colors."
+  title="Sizes"
+  desc="Tags of different sizes."
   scope={{ Tag, Spacer }}
   code={`
 <>
-  <Tag color="success">Success</Tag>
-  <Spacer y={.5} />
-  <Tag color="warning">Warning</Tag>
-  <Spacer y={.5} />
-  <Tag color="error">Error</Tag>
-  <Spacer y={.5} />
-  <Tag color="secondary">Secondary</Tag>
-  <Spacer y={.5} />
-  <Tag color="lite">Lite</Tag>
-</>
-`}
-/>
-
-<Playground
-  title="Invert"
-  desc="Invert color and background."
-  scope={{ Tag, Spacer }}
-  code={`
-<>
-  <Tag color="default" invert>Default</Tag>
-  <Spacer y={.5} />
-  <Tag color="success" invert>Success</Tag>
-  <Spacer y={.5} />
-  <Tag color="warning" invert>Warning</Tag>
-  <Spacer y={.5} />
-  <Tag color="error" invert>Error</Tag>
-  <Spacer y={.5} />
-  <Tag color="secondary" invert>Secondary</Tag>
+  <Tag size="small">Small</Tag> <Spacer y={.5} />
+  <Tag>Medium</Tag> <Spacer y={.5} />
+  <Tag size="large">Large</Tag> <Spacer y={.5} />
 </>
 `}
 />
@@ -60,16 +126,34 @@ Display a unique keyword, optionally as a part of a set.
 <Attributes edit="/pages/en-us/components/tag.mdx">
 <Attributes.Title>Tag.Props</Attributes.Title>
 
-| Attribute  | Description                 | Type                    | Accepted values          | Default   |
-| ---------- | --------------------------- | ----------------------- | ------------------------ | --------- |
-| **color**  | tag color                   | [TagColors](#tagcolors) | -                        | `default` |
-| **invert** | invert color and background | `boolean`               | -                        | `false`   |
-| ...        | native props                | `HTMLAttributes`        | `'id', 'className', ...` | -         |
+| Attribute    | Description                                                  | Type                 | Accepted values                | Default   |
+| ------------ | ------------------------------------------------------------ | -------------------- | ------------------------------ | --------- |
+| **variant**  | tag variant                                                  | `TagVariants`        | [TagVariants](#buttonVariants) | `default` |
+| **color**    | tag color                                                    | `TagColors`          | [TagColors](#buttontypes)      | `default` |
+| **size**     | tag size                                                     | `TagSizes`           | [TagSizes](#tagsizes)          | `medium`  |
+| **toggable** | make tag toggable                                            | `boolean`            |                                | `false`   |
+| **effect**   | display animation                                            | `boolean`            | -                              | `false`   |
+| **disabled** | disable tag                                                  | `boolean`            | -                              | `false`   |
+| **dashed**   | tag with dashed border, only works if `variant` is `default` | `boolean`            | -                              | `false`   |
+| **onClick**  | click handler                                                | `MouseEventHandler`  | -                              | -         |
+| ...          | native props                                                 | `SpanHTMLAttributes` | `'id', 'className', ...`       | -         |
+
+<Attributes.Title>TagVariants</Attributes.Title>
+
+```ts
+type TagVariants = 'default' | 'solid' | 'text'
+```
 
 <Attributes.Title>TagColors</Attributes.Title>
 
 ```ts
-type TagColors = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
+type TagColors = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>TagSizes</Attributes.Title>
+
+```ts
+type TagSizes = 'small' | 'medium' | 'large'
 ```
 
 </Attributes>

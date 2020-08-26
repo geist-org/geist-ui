@@ -1,5 +1,8 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Tag, Spacer } from 'components'
+import { Tag, Spacer, Grid, Code } from 'components'
+import Router from 'next/router'
+import Settings from '@zeit-ui/react-icons/settings'
+import Plus from '@zeit-ui/react-icons/plus'
 
 export const meta = {
   title: '标签 Tag',
@@ -8,69 +11,136 @@ export const meta = {
 
 ## Tag / 标签
 
-标记文档的状态与功能。
+标记文档状态与功能, 同时具备开关的功能.
 
 <Playground
+  title="基础的"
+  desc="基础的 `Tag`."
   scope={{ Tag, Spacer }}
   code={`
-<>
-  <Tag>状态: 不稳定的</Tag>
-  <Spacer />
-  <Tag>作者：佚名</Tag>
-</>
+  <>
+    <Tag>Tag</Tag>
+    <Spacer inline />
+    <Tag variant="solid">Tag</Tag>
+    <Spacer inline />
+    <Tag variant="text">Tag</Tag>
+  </>
 `}
 />
 
 <Playground
-  title="类型"
+  title="禁用的"
+  desc="无交互"
   scope={{ Tag, Spacer }}
   code={`
-<>
-  <Tag color="success">成功</Tag>
-  <Spacer y={.5} />
-  <Tag color="warning">警告</Tag>
-  <Spacer y={.5} />
-  <Tag color="error">错误</Tag>
-  <Spacer y={.5} />
-  <Tag color="secondary">次要的</Tag>
-  <Spacer y={.5} />
-  <Tag color="lite">精简的</Tag>
-</>
-`}
+    <>
+      <Tag disabled>Tag</Tag>
+      <Spacer inline />
+      <Tag variant="solid" disabled>Tag</Tag>
+      <Spacer inline />
+      <Tag variant="text" disabled>Tag</Tag>
+    </>
+  `}
 />
 
 <Playground
-  title="反转"
-  desc="反转展示背景与主色。"
-  scope={{ Tag, Spacer }}
+  title="开关"
+  desc="可以开关的 Tag"
+  scope={{ Tag }}
   code={`
-<>
-  <Tag color="default" invert>默认的</Tag>
-  <Spacer y={.5} />
-  <Tag color="success" invert>成功</Tag>
-  <Spacer y={.5} />
-  <Tag color="warning" invert>警告</Tag>
-  <Spacer y={.5} />
-  <Tag color="error" invert>错误</Tag>
-  <Spacer y={.5} />
-  <Tag color="secondary" invert>次要的</Tag>
-</>
+    <Tag variant="line" toggleable>Tag</Tag>
+  `}
+/>
+
+<Playground
+  title="图标"
+  desc="带图标的 Tag"
+  scope={{ Tag, Spacer, Plus }}
+  code={`
+    <>
+      <Tag variant="line" icon={<Plus />}>Tag</Tag>
+      <Spacer inline />
+      <Tag variant="line" iconRight={<Plus />}>Tag</Tag>
+    </>
+  `}
+/>
+
+<Playground
+  title="颜色"
+  desc="不同的样式"
+  scope={{ Tag, Grid, Spacer }}
+  code={`
+  <>
+    <Grid.Container gap={3}>
+      <Grid><Tag>Default</Tag></Grid>
+      <Grid><Tag color="primary">Primary</Tag></Grid>
+      <Grid><Tag color="secondary">Secondary</Tag></Grid>
+      <Grid><Tag color="success">success</Tag></Grid>
+      <Grid><Tag color="warning">warning</Tag></Grid>
+      <Grid><Tag color="error">error</Tag></Grid>
+    </Grid.Container>
+    <Spacer y={2} />
+    <Grid.Container gap={3}>
+      <Grid><Tag dashed>Default</Tag></Grid>
+      <Grid><Tag dashed color="primary">Primary</Tag></Grid>
+      <Grid><Tag dashed color="secondary">Secondary</Tag></Grid>
+      <Grid><Tag dashed color="success">success</Tag></Grid>
+      <Grid><Tag dashed color="warning">warning</Tag></Grid>
+      <Grid><Tag dashed color="error">error</Tag></Grid>
+    </Grid.Container>
+    <Spacer y={2} />
+    <Grid.Container gap={3}>
+      <Grid><Tag variant="solid">Default</Tag></Grid>
+      <Grid><Tag variant="solid" color="primary">Solid Primary</Tag></Grid>
+      <Grid><Tag variant="solid" color="secondary">Solid Secondary</Tag></Grid>
+      <Grid><Tag variant="solid" color="success">success</Tag></Grid>
+      <Grid><Tag variant="solid" color="warning">warning</Tag></Grid>
+      <Grid><Tag variant="solid" color="error">error</Tag></Grid>
+    </Grid.Container>
+    <Spacer y={2} />
+    <Grid.Container gap={3}>
+      <Grid><Tag variant="text">Default</Tag></Grid>
+      <Grid><Tag variant="text" color="primary">Text Primary</Tag></Grid>
+      <Grid><Tag variant="text" color="secondary">Text Secondary</Tag></Grid>
+      <Grid><Tag variant="text" color="success">success</Tag></Grid>
+      <Grid><Tag variant="text" color="warning">warning</Tag></Grid>
+      <Grid><Tag variant="text" color="error">error</Tag></Grid>
+    </Grid.Container>
+  </>
 `}
 />
 
 <Attributes edit="/pages/zh-cn/components/tag.mdx">
 <Attributes.Title>Tag.Props</Attributes.Title>
 
-| 属性       | 描述           | 类型                    | 推荐值                   | 默认      |
-| ---------- | -------------- | ----------------------- | ------------------------ | --------- |
-| **color**  | 标签类型       | [TagColors](#tagcolors) | -                        | `default` |
-| **invert** | 反转背景与主色 | `boolean`               | -                        | `false`   |
-| ...        | 原生属性       | `HTMLAttributes`        | `'id', 'className', ...` | -         |
+| 属性           | 描述                                                           | 类型                 | 推荐值                      | 默认      |
+| -------------- | -------------------------------------------------------------- | -------------------- | --------------------------- | --------- |
+| **variant**    | 标签的类型                                                     | `TagVariants`        | [TagVariants](#tagVariants) | `default` |
+| **color**      | 标签的颜色                                                     | `TagColors`          | [TagColors](#tagcolors)     | `default` |
+| **size**       | 标签的大小                                                     | `TagSizes`           | [TagSizes](#tagsizes)       | `medium`  |
+| **toggleable** | 设置标签为开关                                                 | `boolean`            |                             | `false`   |
+| **effect**     | 是否显示动画效果                                               | `boolean`            | -                           | `true`    |
+| **dashed**     | 标签带 dashed border, 只有在 `variant` 是 `default` 的时候有效 | `boolean`            | -                           | `false`   |
+| **disabled**   | 是否禁用标签                                                   | `boolean`            | -                           | `false`   |
+| **onClick**    | 点击事件                                                       | `MouseEventHandler`  | -                           | -         |
+| ...            | 原生属性                                                       | `SpanHTMLAttributes` | `'id', 'className', ...`    | -         |
+
+<Attributes.Title>TagVariants</Attributes.Title>
+
+```ts
+type TagVariants = 'default' | 'solid' | 'text'
+```
 
 <Attributes.Title>TagColors</Attributes.Title>
 
 ```ts
-type TagColors = 'default' | 'secondary' | 'success' | 'warning' | 'error' | 'dark' | 'lite'
+type TagColors = 'default' | 'primary' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>TagSizes</Attributes.Title>
+
+```ts
+type TagSizes = 'small' | 'medium' | 'large'
 ```
 
 </Attributes>

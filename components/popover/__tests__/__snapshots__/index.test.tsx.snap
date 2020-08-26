@@ -2,9 +2,24 @@
 
 exports[`Popover should render react-node 1`] = `
 "<div class=\\"tooltip \\"><div></div><style>
+        :global(.tooltip-content.popover) {
+          filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
+        }
         :global(.tooltip-content.popover > .inner) {
-          padding: 8px 0;
-          text-align: center;
+          padding: 0;
+          text-align: left;
+          min-width: 17.1429rem;
+          max-width: 34.2857rem;
+        }
+        :global(.tooltip-content.popover > .inner .items) {
+          max-height: 17.1429rem;
+          overflow: auto;
+        }
+        :global(.tooltip-content.popover > .inner .title .item.title) {
+          line-height: 1.1429rem;
+          font-weight: 500;
+          font-size: 1rem;
+          color: #282d30;
         }
       </style><style>
         .tooltip {
@@ -16,9 +31,53 @@ exports[`Popover should render react-node 1`] = `
 
 exports[`Popover should work with different placement 1`] = `
 "<div class=\\"tooltip \\"><div></div><style>
+        :global(.tooltip-content.popover) {
+          filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
+        }
         :global(.tooltip-content.popover > .inner) {
-          padding: 8px 0;
-          text-align: center;
+          padding: 0;
+          text-align: left;
+          min-width: 17.1429rem;
+          max-width: 34.2857rem;
+        }
+        :global(.tooltip-content.popover > .inner .items) {
+          max-height: 17.1429rem;
+          overflow: auto;
+        }
+        :global(.tooltip-content.popover > .inner .title .item.title) {
+          line-height: 1.1429rem;
+          font-weight: 500;
+          font-size: 1rem;
+          color: #282d30;
+        }
+      </style><style>
+        .tooltip {
+          width: max-content;
+          display: inline-block;
+        }
+      </style></div>"
+`;
+
+exports[`Popover should work with prop title 1`] = `
+"<div class=\\"tooltip \\">Menu<style>
+        :global(.tooltip-content.popover) {
+          filter: drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.08));
+        }
+        :global(.tooltip-content.popover > .inner) {
+          padding: 0;
+          text-align: left;
+          min-width: 17.1429rem;
+          max-width: 34.2857rem;
+        }
+        :global(.tooltip-content.popover > .inner .items) {
+          max-height: 17.1429rem;
+          overflow: auto;
+        }
+        :global(.tooltip-content.popover > .inner .title .item.title) {
+          line-height: 1.1429rem;
+          font-weight: 500;
+          font-size: 1rem;
+          color: #282d30;
         }
       </style><style>
         .tooltip {

@@ -1,24 +1,25 @@
 import { ZeitUIThemesPalette } from '../styles/themes'
 import { addColorAlpha } from '../utils/color'
-import { NormalSizes, ButtonColors } from '../utils/prop-types'
+import { NormalSizes, TagSizes, ButtonColors } from '../utils/prop-types'
 import { ButtonProps } from './button'
 
-export interface ButtonColorGroup {
+export interface ButtonOrTagColorGroup {
   bg: string
   border: string
   color: string
 }
 
-export interface ButtonStatusGroup {
-  default: ButtonColorGroup
-  hover: ButtonColorGroup
-  active: ButtonColorGroup
+export interface ButtonOrTagStatusGroup {
+  default: ButtonOrTagColorGroup
+  hover: ButtonOrTagColorGroup
+  active: ButtonOrTagColorGroup
 }
 
 export const getButtonColors = (
   palette: ZeitUIThemesPalette,
   props: ButtonProps,
-): ButtonStatusGroup => {
+  isTag: boolean,
+): ButtonOrTagStatusGroup => {
   const { variant, color, disabled } = props
   const disabledCategory = {
     solid: {
@@ -366,10 +367,38 @@ export const getButtonColors = (
       },
     },
   }
+  const tagCategory = {
+    solid: { ...category.solid },
+    line: {
+      ...category.line,
+      default: {
+        default: {
+          bg: palette.cNeutral8,
+          border: palette.cNeutral2,
+          color: palette.cNeutral6,
+        },
+        hover: {
+          bg: palette.cNeutral8,
+          border: palette.cTheme5,
+          color: palette.cTheme5,
+        },
+        active: {
+          bg: palette.cNeutral8,
+          border: palette.cTheme7,
+          color: palette.cTheme7,
+        },
+      },
+    },
+    text: {
+      ...category.text,
+    },
+  }
 
-  let result: ButtonStatusGroup
+  let result: ButtonOrTagStatusGroup
+
   try {
-    result = category[variant][color]
+    if (isTag) result = tagCategory[variant][color]
+    else result = category[variant][color]
     if (disabled) {
       result = category[variant].disabled
     }
@@ -386,8 +415,8 @@ export const getButtonColors = (
 export const getButtonGhostColors = (
   palette: ZeitUIThemesPalette,
   color: ButtonColors,
-): ButtonColorGroup | null => {
-  const colors: { [key in ButtonColors]?: ButtonColorGroup } = {
+): ButtonOrTagColorGroup | null => {
+  const colors: { [key in ButtonColors]?: ButtonOrTagColorGroup } = {
     secondary: {
       bg: palette.cNeutral8,
       border: palette.cNeutral7,
@@ -416,8 +445,8 @@ export const getButtonGhostColors = (
 export const getButtonGhostHoverColors = (
   palette: ZeitUIThemesPalette,
   color: ButtonColors,
-): ButtonColorGroup | null => {
-  const colors: { [key in ButtonColors]?: ButtonColorGroup } = {
+): ButtonOrTagColorGroup | null => {
+  const colors: { [key in ButtonColors]?: ButtonOrTagColorGroup } = {
     secondary: {
       bg: palette.cNeutral7,
       border: palette.cNeutral8,
@@ -473,6 +502,7 @@ export type ButtonSizeGroup = {
   minWidth: string
   fontSize: string
 }
+export type TagSizeGroup = ButtonSizeGroup
 
 export const getButtonSize = (size: NormalSizes = 'medium', auto: boolean): ButtonSizeGroup => {
   const defaultLayout: ButtonSizeGroup = {
@@ -524,9 +554,38 @@ export const getButtonSize = (size: NormalSizes = 'medium', auto: boolean): Butt
   return layouts[size] || defaultLayout
 }
 
+export const getTagSize = (size: TagSizes = 'medium'): TagSizeGroup => {
+  const defaultLayout: TagSizeGroup = {
+    height: '2.2857rem',
+    width: 'auto',
+    padding: '1.7143rem',
+    fontSize: '1rem',
+    minWidth: '2.2857rem',
+  }
+  const layouts: { [key in TagSizes]: TagSizeGroup } = {
+    small: {
+      height: '2rem',
+      width: 'initial',
+      padding: '1.1429rem',
+      fontSize: '0.8571rem',
+      minWidth: '3.7143rem',
+    },
+    medium: defaultLayout,
+    large: {
+      height: '2.8571rem',
+      width: 'initial',
+      padding: '1.7143rem',
+      fontSize: '1rem',
+      minWidth: '2.8571rem',
+    },
+  }
+
+  return layouts[size] || defaultLayout
+}
+
 export const getButtonDripColor = (palette: ZeitUIThemesPalette, props: ButtonProps) => {
   const { color } = props
   const isLightHover = color.endsWith('light')
-  const hoverColors = getButtonColors(palette, props).hover
+  const hoverColors = getButtonColors(palette, props, false).hover
   return isLightHover ? addColorAlpha(hoverColors.bg, 0.65) : addColorAlpha(palette.accents_2, 0.65)
 }
