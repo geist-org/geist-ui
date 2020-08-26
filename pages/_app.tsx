@@ -30,12 +30,19 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <meta name="twitter:creator" content="@echo_witt" />
         <meta name="referrer" content="strict-origin" />
         <meta property="og:title" content="React - Geist UI" />
+        <meta property="og:site_name" content="React - Geist UI" />
         <meta property="og:url" content="https://react.geist-ui.dev" />
         <link rel="dns-prefetch" href="//react.geist-ui.dev" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="generator" content="Geist UI" />
-        <meta name="description" content="React implementation for Geist design." />
-        <meta property="og:description" content="React implementation for Geist design." />
+        <meta
+          name="description"
+          content="An open-source design system for building modern websites and applications."
+        />
+        <meta
+          property="og:description"
+          content="An open-source design system for building modern websites and applications."
+        />
         <meta
           itemProp="image"
           property="og:image"
