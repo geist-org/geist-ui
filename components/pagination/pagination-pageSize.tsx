@@ -52,7 +52,7 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationPageSizeProps>>
         onChange={changeHandler}
         width="4.7143rem"
         placeholder={placeHolderVal}
-        initialValue={placeHolderVal}>
+        defaultValue={placeHolderVal}>
         {pageSizeOptions?.map(pageSize => {
           return (
             <Select.Option value={pageSize} key={pageSize}>
