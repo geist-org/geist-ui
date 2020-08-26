@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { mount } from 'enzyme'
 import dayjs from 'dayjs'
 import { DatePicker } from 'components'
 import { Wifi } from '@zeit-ui/react-icons'
 import { clearInput, nextMonth, nextYear, openPicker, selectCell } from './utils'
 import { act } from 'react-dom/test-utils'
+import { useDatePickerHandle } from '../index'
 
 const { RangePicker } = DatePicker
 
@@ -498,7 +499,7 @@ describe('RangePicker Common', () => {
     expect(blurred).toBeTruthy()
     wrapper.find('input').first().simulate('blur')
     setTimeout(() => {
-      expect(onFocus).toHaveBeenCalled()
+      expect(onBlur).toHaveBeenCalled()
       expect(() => wrapper.unmount()).not.toThrow()
     }, 0)
 
@@ -510,11 +511,79 @@ describe('RangePicker Common', () => {
     const ref = React.createRef<any>()
 
     const wrapper = mount(<RangePicker open ref={ref} />)
-    act(() => ref.current.setValue(dayjs('2020-08-08')))
+    act(() => ref.current.setValue([dayjs('2020-08-08'), dayjs('2020-08-10')]))
 
     setTimeout(() => {
       expect(wrapper.find('input').at(0).getDOMNode<HTMLInputElement>().value).toBe('2020-08-08')
       expect(() => wrapper.unmount()).not.toThrow()
     }, 0)
+  })
+
+  it('method `getValue` should works', () => {
+    const ref = React.createRef<any>()
+
+    const wrapper = mount(<RangePicker open ref={ref} />)
+    act(() => ref.current.setValue([dayjs('2020-08-08'), dayjs('2020-08-10')]))
+
+    setTimeout(() => {
+      expect(ref.current.getValue()).toBe([dayjs('2020-08-08'), dayjs('2020-08-10')])
+      expect(() => wrapper.unmount()).not.toThrow()
+    }, 0)
+  })
+
+  it('`useDatePickerHandle` should works', () => {
+    let focused = false
+    let blurred = false
+    const mockFocus = jest.spyOn(HTMLElement.prototype, 'focus')
+    const mockBlur = jest.spyOn(HTMLElement.prototype, 'blur')
+    mockFocus.mockImplementation(() => {
+      focused = true
+    })
+    mockBlur.mockImplementation(() => {
+      blurred = true
+    })
+
+    let wrapper: any
+    const onFocus = jest.fn()
+    const onBlur = jest.fn()
+
+    const WithHookPicker: React.FC<{
+      doTest?: boolean
+    }> = ({ doTest }) => {
+      const { ref, setValue, getValue, focus, blur } = useDatePickerHandle()
+
+      useEffect(() => {
+        if (doTest) {
+          expect(ref).toHaveProperty('current')
+
+          focus()
+          expect(focused).toBeTruthy()
+          wrapper.find('input').first().simulate('focus')
+          expect(onFocus).toHaveBeenCalled()
+
+          jest.useRealTimers()
+
+          blur()
+          expect(blurred).toBeTruthy()
+          wrapper.find('input').first().simulate('blur')
+          expect(onBlur).toHaveBeenCalled()
+
+          setValue([dayjs('2020-08-08'), dayjs('2020-08-10')])
+
+          console.log(getValue())
+
+          setTimeout(() => {
+            expect(wrapper.find('input').at(0).getDOMNode<HTMLInputElement>().value).toBe(
+              '2020-08-08',
+            )
+            expect(getValue()).toBe([dayjs('2020-08-08'), dayjs('2020-08-10')])
+          }, 0)
+        }
+      }, [doTest])
+
+      return <RangePicker ref={ref} onFocus={onFocus} onBlur={onBlur} />
+    }
+    wrapper = mount(<WithHookPicker doTest={false} />)
+    wrapper.setProps({ doTest: true })
   })
 })
