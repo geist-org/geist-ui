@@ -1,8 +1,4 @@
-import Input from './input'
-import Textarea from '../textarea'
-import InputPassword from './password'
+import Input, { useInputHandle } from './input'
 
-Input.Textarea = Textarea
-Input.Password = InputPassword
-
+export { useInputHandle }
 export default Input

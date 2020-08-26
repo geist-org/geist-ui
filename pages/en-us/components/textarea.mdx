@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Textarea, Spacer, useInput, Button, Code } from 'components'
+import { Spacer, Button, Code } from 'components'
+import  { Textarea } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -99,21 +100,21 @@ Retrieve multi-line user input.
 <Playground
   title={
     <>
-      With <Code>useInput</Code>
+      With <Code>useTextareaHandle</Code>
     </>
   }
   desc="Use `hooks` to capture changes."
-  scope={{ Textarea, useInput, Button, Spacer }}
+  scope={{ Textarea, Button, Spacer }}
   code={`
 () => {
-  const { setState, reset, bindings } = useInput('ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.')
+  const { ref, setValue } = Textarea.useTextareaHandle()
   return (
     <>
-      <Textarea width="100%" {...bindings}/>
+      <Textarea ref={ref} defaultValue='ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.' width="100%" />
       <Spacer y={.5} />
-      <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>set value</Button>
+      <Button auto type="secondary" size="small" onClick={() => setValue(Math.random().toString(32))}>set value</Button>
       <Spacer y={.5} />
-      <Button auto size="small" onClick={() => reset()}>reset value</Button>
+      <Button auto size="small" onClick={() => setValue()}>reset value</Button>
     </>
   )
 }
@@ -132,7 +133,7 @@ Retrieve multi-line user input.
   }
   return (
     <>
-      <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Textarea defaultValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
       <Spacer y={.5} />
       <Button auto type="secondary" size="small"
         onClick={setChange}>set value</Button>
@@ -149,7 +150,7 @@ Retrieve multi-line user input.
 | ---------------- | --------------------- | -------------------------------- | ------------------------------------------------------- | --------- |
 | **variant**      | textarea variant      | `string`                         | `'solid', 'line'`                                       | `line`    |
 | **value**        | textarea value        | `string`                         | -                                                       | -         |
-| **initialValue** | textarea value        | `string`                         | -                                                       | -         |
+| **defaultValue** | textarea value        | `string`                         | -                                                       | -         |
 | **placeholder**  | placeholder           | `string`                         | -                                                       | -         |
 | **color**        | current color         | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **readOnly**     | native attr           | `boolean`                        | -                                                       | `false`   |
@@ -160,20 +161,15 @@ Retrieve multi-line user input.
 | **counter**      | add word counter ui   | `boolean`                        | -                                                       | `false`   |
 | ...              | native props          | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
 
-<Attributes.Title>useInput</Attributes.Title>
+<Attributes.Title>useTextareaHandle</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
+type useTextareaHandle = () => {
+  ref: React.RefObject<HTMLTextareaElement>
+  setValue: (value: string = '') => void
+  getValue: () => string | undefined
+  focus: () => void
+  blur: () => void
 }
 ```
 

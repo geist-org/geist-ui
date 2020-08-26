@@ -13,27 +13,29 @@ const defaultProps = {
   variant: 'line' as InputVariantTypes,
 }
 
-type InputLabelProps = InputLabel & typeof defaultProps
+type NativeAttrs = Omit<React.LabelHTMLAttributes<any>, keyof InputLabel>
+
+type InputLabelProps = InputLabel & typeof defaultProps & NativeAttrs
 
 const InputLabel: React.FC<React.PropsWithChildren<InputLabelProps>> = ({
   children,
   variant,
   isRight,
   fontSize,
+  ...props
 }) => {
   const theme = useTheme()
   const isSolid = variant === 'solid'
 
   return (
-    <span className={isRight ? 'right' : ''}>
+    <label className={isRight ? 'right' : ''} {...props}>
       {children}
       <style jsx>{`
-        span {
+        label {
           display: inline-flex;
           width: initial;
           height: 100%;
           align-items: center;
-          pointer-events: none;
           margin: 0;
           padding: 0 ${theme.layout.gapHalf};
           color: ${theme.palette.cNeutral5};
@@ -47,7 +49,7 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabelProps>> = ({
           font-size: ${fontSize};
         }
 
-        span.right {
+        label.right {
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
           border-top-right-radius: ${theme.expressiveness.R2};
@@ -56,7 +58,7 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabelProps>> = ({
           border-right: ${isSolid ? 'none' : '1px solid ' + theme.palette.border};
         }
       `}</style>
-    </span>
+    </label>
   )
 }
 

@@ -44,11 +44,7 @@ export const meta = {
     { label: 'Sydney' },
     { label: 'Shanghai' },
   ]
-  return (
-  <div style={{display: 'flex'}}>
-    <AutoComplete disableFreeSolo options={options} initialValue="Sydney" />
-  </div>
-  )
+  return <AutoComplete disableFreeSolo options={options} defaultValue="Sydney" />
 }
 `}
 />
@@ -64,7 +60,7 @@ export const meta = {
     { label: 'Sydney' },
     { label: 'Shanghai' },
   ]
-  return <AutoComplete disabled options={options} initialValue="London" />
+  return <AutoComplete disabled options={options} defaultValue="London" />
 }
 `}
 />
@@ -86,13 +82,8 @@ export const meta = {
     const relatedOptions = allOptions.filter(item => item.label.toLowerCase().includes(currentValue.toLowerCase()))
     setOptions(relatedOptions)
   }
-  return (
-    <div style={{display: 'flex'}}>
-      <AutoComplete options={options} placeholder="在这里输入" onSearch={searchHandler} />
-      <Spacer inline />
-      <AutoComplete variant="solid" options={options} placeholder="在这里输入" onSearch={searchHandler} />
-    </div>
-  )}
+  return <AutoComplete options={options} placeholder="在这里输入" onSearch={searchHandler} />
+  }
 `}
 />
 
@@ -336,14 +327,19 @@ export const meta = {
 | **options**           | 输入框的可选项                                       | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
 | **status**            | 输入框类型                                           | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **size**              | 输入框大小                                           | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **initialValue**      | 初始值                                               | `string`                                         | -                                                       | -         |
+| **defaultValue**      | 初始值                                               | `string`                                         | -                                                       | -         |
 | **value**             | 命令式的输入框的值                                   | `string`                                         | -                                                       | -         |
 | **width**             | 组件容器的宽度                                       | `string`                                         | -                                                       | -         |
+| **open**              | 控制补全菜单的显示                                   | `boolean`                                        | -                                                       | -         |
+| **defaultOpen**       | 控制默认是否显示补全菜单                             | `boolean`                                        | -                                                       | false     |
 | **clearable**         | 是否显示清除按钮                                     | `boolean`                                        | -                                                       | `false`   |
 | **searching**         | 是否显示正在搜索中                                   | `boolean`                                        | -                                                       | `false`   |
+| **onFocus**           | 当输入框被聚焦时调用                                 | `(event) => void`                                | -                                                       | -         |
+| **onBlur**            | 当用户点击组件外时调用                               | `(event) => void`                                | -                                                       | -         |
 | **onChange**          | 输入框的值发生变化触发此事件                         | `(value: string) => void`                        | -                                                       | -         |
 | **onSearch**          | 搜索事件，当用户手动输入时触发                       | `(value: string) => void`                        | -                                                       | -         |
 | **onSelect**          | 当备选框被选中后触发的事件                           | `(value: string) => void`                        | -                                                       | -         |
+| **onClearClick**      | 当用户点击清空按钮是调用                             | `(event) => void`                                | -                                                       | -         |
 | **dropdownClassName** | 自定义下拉框的类名                                   | `string`                                         | -                                                       | -         |
 | **dropdownStyle**     | 自定义下拉框的样式                                   | `object`                                         | -                                                       | -         |
 | **disableMatchWidth** | 禁止 Option 跟随父元素的宽度                         | `boolean`                                        | -                                                       | `false`   |
