@@ -10,7 +10,7 @@ import useWarning from '../utils/use-warning'
 interface Props {
   title: string
   subtitle?: React.ReactNode | string
-  initialVisible?: boolean
+  defaultVisible?: boolean
   shadow?: boolean
   className?: string
   index?: number
@@ -19,7 +19,7 @@ interface Props {
 const defaultProps = {
   className: '',
   shadow: false,
-  initialVisible: false,
+  defaultVisible: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -29,14 +29,14 @@ const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   children,
   title,
   subtitle,
-  initialVisible,
+  defaultVisible,
   shadow,
   className,
   index,
   ...props
 }) => {
   const theme = useTheme()
-  const [visible, setVisible, visibleRef] = useCurrentState<boolean>(initialVisible)
+  const [visible, setVisible, visibleRef] = useCurrentState<boolean>(defaultVisible)
   const { values, updateValues } = useCollapseContext()
 
   if (!title) {

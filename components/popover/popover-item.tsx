@@ -26,24 +26,27 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   const theme = useTheme()
   return (
     <>
-      <div className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`} {...props}>
+      <div
+        className={`item ${line && !title ? 'line' : ''} ${title ? 'title' : ''} ${className}`}
+        {...props}>
         {children}
         <style jsx>{`
           .item {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            padding: 0.5rem ${theme.layout.gap};
-            color: ${theme.palette.accents_5};
-            font-size: 0.875rem;
-            line-height: 1.25rem;
+            color: ${theme.palette.cNeutral5};
+            font-size: 1rem;
+            line-height: 1.4286rem;
             text-align: left;
             transition: color 0.1s ease 0s, background-color 0.1s ease 0s;
-            width: max-content;
+            width: 100%;
+            padding: ${theme.layout.gap};
+            box-sizing: border-box;
           }
 
           .item:hover {
-            color: ${theme.palette.foreground};
+            color: ${theme.palette.cNeutral7};
           }
 
           .item > :global(*) {
@@ -54,25 +57,12 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
             line-height: 0;
             height: 0;
             padding: 0;
-            border-top: 1px solid ${theme.palette.border};
-            margin: 0.5rem 0;
+            border-top: 1px solid ${theme.palette.cNeutral1};
             width: 100%;
-          }
-
-          .item.title {
-            padding: 1.15rem;
-            font-weight: 500;
-            font-size: 0.83rem;
-            color: ${theme.palette.foreground};
-          }
-
-          .item.title:first-of-type {
-            padding-top: 0.6rem;
-            padding-bottom: 0.6rem;
           }
         `}</style>
       </div>
-      {title && <PopoverItem line title={false} className="" />}
+      {title && line && <PopoverItem line title={false} className="" />}
     </>
   )
 }

@@ -1,10 +1,12 @@
 export const tuple = <T extends string[]>(...args: T) => args
 
-export const inputVariants = tuple('solid', 'line')
+const inputVariants = tuple('solid', 'line')
 
 const buttonVariants = tuple('solid', 'line', 'text')
 
 const buttonColors = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
+
+const tagColors = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
 const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
 
@@ -12,11 +14,13 @@ const messageColors = tuple('default', 'primary', 'success', 'warning', 'error')
 
 const selectVariants = tuple('line', 'text')
 
-export const normalSizes = tuple('mini', 'small', 'medium', 'large')
+const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
-export const normalTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
+const tagSizes = tuple('small', 'medium', 'large')
 
-export const inputColors = tuple('default', 'primary', 'success', 'warning', 'error')
+const normalTypes = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
+
+const inputColors = tuple('default', 'primary', 'success', 'warning', 'error')
 
 const themeTypes = tuple('dark', 'light')
 
@@ -49,13 +53,19 @@ const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
 export type ButtonColors = typeof buttonColors[number]
 
+export type TagColors = typeof tagColors[number]
+
 export type ButtonVariants = typeof buttonVariants[number]
+
+export type TagVariants = ButtonVariants
 
 export type ButtonStatus = typeof buttonStatus[number]
 
 export type MessageColors = typeof messageColors[number]
 
 export type NormalSizes = typeof normalSizes[number]
+
+export type TagSizes = typeof tagSizes[number]
 
 export type SelectVariants = typeof selectVariants[number]
 
@@ -80,3 +90,5 @@ export type TriggerTypes = typeof triggerTypes[number]
 export type Placement = typeof placement[number]
 
 export type DividerAlign = typeof dividerAlign[number]
+
+export { normalSizes, inputVariants, inputColors, normalTypes, themeTypes }

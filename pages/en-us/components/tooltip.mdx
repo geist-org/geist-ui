@@ -11,11 +11,24 @@ export const meta = {
 Displays additional information on hover.
 
 <Playground
-  desc="Basic usage."
+  title="Uncontrolled"
+  desc="Basic uncontrolled usage."
   scope={{ Tooltip }}
   code={`
 <Tooltip text={'Push to Git and your website is live.'}>Tooltip</Tooltip>
 `}
+/>
+
+<Playground
+  title="Controlled"
+  desc="Basic controlled usage."
+  scope={{ Tooltip }}
+  code={`
+    () => {
+      const [visible, setVisible] = React.useState(false)
+      return ( <Tooltip visible={visible} onMouseEnter={() => setVisible(true)} onMouseLeave={() => setVisible(false)} text={'Push to Git and your website is live.'}>Tooltip</Tooltip>)
+    }
+  `}
 />
 
 <Playground
@@ -180,7 +193,7 @@ Displays additional information on hover.
 | ------------------- | ---------------------------------------------- | ------------------------------- | -------------------------------- | --------- |
 | **text**            | text of pop-up                                 | `string` `React.ReactNode`      | -                                | -         |
 | **visible**         | visible or not                                 | `boolean`                       | -                                | `false`   |
-| **initialVisible**  | visible on initial                             | `boolean`                       | -                                | `false`   |
+| **defaultVisible**  | visible on initial                             | `boolean`                       | -                                | `false`   |
 | **hideArrow**       | hide arrow icon                                | `boolean`                       | -                                | `false`   |
 | **color**           | preset style color                             | [TooltipColors](#tooltipcolors) | -                                | `default` |
 | **placement**       | position of the tooltip relative to the target | [Placement](#placement)         | -                                | `top`     |

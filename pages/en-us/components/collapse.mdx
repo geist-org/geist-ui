@@ -35,7 +35,7 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
   scope={{ Collapse, Text }}
   code={`
 <Collapse.Group>
-  <Collapse title="Question A" initialVisible>
+  <Collapse title="Question A" defaultVisible>
     <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
@@ -89,7 +89,7 @@ Display large amounts of text in collapsible sections. Commonly referred to as a
 | ------------------- | ---------------- | ---------------- | -------------------------------- | ------- |
 | **title**(required) | collapse title   | `string`         | -                                | -       |
 | **subtitle**        | description      | `string`         | -                                | -       |
-| **initialVisible**  | initial expanded | `boolean`        | -                                | `false` |
+| **defaultVisible**  | initial expanded | `boolean`        | -                                | `false` |
 | **shadow**          | show shadow card | `boolean`        | -                                | `false` |
 | ...                 | native props     | `HTMLAttributes` | `'id', 'name', 'className', ...` | -       |
 
