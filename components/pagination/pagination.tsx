@@ -1,6 +1,18 @@
-import React, { useEffect, useMemo, ReactNode } from 'react'
-import { PaginationContext, PaginationConfig, PaginationUpdateType } from './pagination-context'
-import useCurrentState from '../utils/use-current-state'
+import React, {
+  useEffect,
+  useMemo,
+  ReactNode,
+  forwardRef,
+  RefObject,
+  useImperativeHandle,
+} from 'react'
+import {
+  PaginationContext,
+  PaginationConfig,
+  PaginationUpdateType,
+  PaginationHandles,
+} from './pagination-context'
+import useMergedState from '../utils/use-merged-state'
 import { NormalSizes, PaginationVariants } from '../utils/prop-types'
 /**
  * styles
@@ -55,140 +67,164 @@ const defaultProps = {
 }
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type PaginationProps = React.PropsWithChildren<Props & NativeAttrs>
-const Pagination: React.FC<PaginationProps> = ({
-  page: customPage,
-  defaultPage,
-  total,
-  limit,
-  size,
-  children,
-  defaultPageSize,
-  pageSize: customPageSize,
-  variant,
-  pageSizeOptions,
-  labelPageSizeBefore,
-  labelPageSizeAfter,
-  labelJumperBefore,
-  labelJumperAfter,
-  showQuickJumper,
-  showPageSizeChanger,
-  onPageSizeChange,
-  onChange,
-}: PaginationProps & typeof defaultProps) => {
-  const [page, setPage, pageRef] = useCurrentState(defaultPage)
-  const [pageSize, setPageSize] = useCurrentState(defaultPageSize)
-  const [, prevChildren] = pickChild(children, PaginationPrevious)
-  const [, nextChildren] = pickChild(children, PaginationNext)
-  const pageCount = useMemo(() => getPageCount(total, pageSize), [pageSize])
-  const arrowRightIcon = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="feather feather-arrow-right">
-      <line x1="5" y1="12" x2="19" y2="12"></line>
-      <polyline points="12 5 19 12 12 19"></polyline>
-    </svg>
-  )
-  const arrowLeftIcon = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="feather feather-arrow-left">
-      <line x1="19" y1="12" x2="5" y2="12"></line>
-      <polyline points="12 19 5 12 12 5"></polyline>
-    </svg>
-  )
-  const update = (type: PaginationUpdateType) => {
-    if (type === 'prev' && pageRef.current > 1) {
-      setPage(last => last - 1)
-    }
-    if (type === 'next' && pageRef.current < pageCount) {
-      setPage(last => last + 1)
-    }
-  }
-  const [prevItem, nextItem] = useMemo(() => {
-    const hasChildren = (c: any) => React.Children.count(c) > 0
-    const prevDefault = <PaginationPrevious>{arrowLeftIcon}</PaginationPrevious>
-    const nextDefault = <PaginationNext>{arrowRightIcon}</PaginationNext>
-    return [
-      hasChildren(prevChildren) ? prevChildren : prevDefault,
-      hasChildren(nextChildren) ? nextChildren : nextDefault,
-    ]
-  }, [prevChildren, nextChildren])
-  const { font, width } = useMemo(() => getSizes(size), [size])
-  const values = useMemo<PaginationConfig>(
-    () => ({
-      isFirst: page <= 1,
-      isLast: page >= pageCount,
-      update,
+const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<PaginationProps>>(
+  (
+    {
+      page: customPage,
+      defaultPage,
+      total,
+      limit,
+      size,
+      children,
+      defaultPageSize,
+      pageSize: customPageSize,
       variant,
-    }),
-    [page],
-  )
-
-  useEffect(() => {
-    onChange && onChange(page, pageSize)
-  }, [page, pageSize])
-  useEffect(() => {
-    if (customPage !== undefined) {
-      setPage(customPage)
+      pageSizeOptions,
+      labelPageSizeBefore,
+      labelPageSizeAfter,
+      labelJumperBefore,
+      labelJumperAfter,
+      showQuickJumper,
+      showPageSizeChanger,
+      onPageSizeChange,
+      onChange,
+    }: PaginationProps & typeof defaultProps,
+    ref: RefObject<PaginationHandles>,
+  ) => {
+    const [page, setPage] = useMergedState(defaultPage, { value: customPage })
+    console.log('page', page)
+    const [pageSize, setPageSize] = useMergedState(defaultPageSize, { value: customPageSize })
+    console.log('pageSize', pageSize)
+    const [, prevChildren] = pickChild(children, PaginationPrevious)
+    const [, nextChildren] = pickChild(children, PaginationNext)
+    const pageCount = useMemo(() => getPageCount(total, pageSize), [pageSize])
+    const arrowRightIcon = (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="feather feather-arrow-right">
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+        <polyline points="12 5 19 12 12 19"></polyline>
+      </svg>
+    )
+    const arrowLeftIcon = (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="feather feather-arrow-left">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+    )
+    const update = (type: PaginationUpdateType, val: number) => {
+      if (type === 'prev' && page > 1) {
+        setPage(page - 1)
+      }
+      if (type === 'next' && page < pageCount) {
+        setPage(page + 1)
+      }
+      if (type === 'click') {
+        setPage(val)
+      }
     }
-  }, [customPage])
-  useEffect(() => {
-    if (customPageSize !== undefined) {
-      setPageSize(customPageSize)
+    const updatePageSize = (val: number) => {
+      console.log('updatePageSize', val)
+      setPageSize(val)
+      console.log(pageSize)
     }
-  }, [customPageSize])
 
-  return (
-    <PaginationContext.Provider value={values}>
-      <div className="pagination">
-        {showPageSizeChanger && (
-          <div className="left">
-            <PaginationPageSize
-              size={size}
-              pageSizeOptions={pageSizeOptions}
-              setPageSize={setPageSize}
-              onPageSizeChange={onPageSizeChange}
-              total={total}
-              current={page}
-              setPage={setPage}
-              labelPageSizeBefore={labelPageSizeBefore}
-              labelPageSizeAfter={labelPageSizeAfter}></PaginationPageSize>
-          </div>
-        )}
-        <div className="right">
-          <section>
-            {prevItem}
-            <PaginationPages count={pageCount} current={page} limit={limit} setPage={setPage} />
-            {nextItem}
-          </section>
-          {showQuickJumper && (
-            <PaginationQuickJumper
-              onChange={setPage}
-              count={pageCount}
-              size={size}
-              labelJumperBefore={labelJumperBefore}
-              labelJumperAfter={labelJumperAfter}></PaginationQuickJumper>
+    useImperativeHandle(ref, () => ({
+      setPage: (value: number) => {
+        setPage(value)
+      },
+      getPage: () => page,
+      setPageSize: (value: number) => {
+        setPageSize(value)
+      },
+      getPageSize: () => page,
+    }))
+
+    const [prevItem, nextItem] = useMemo(() => {
+      const hasChildren = (c: any) => React.Children.count(c) > 0
+      const prevDefault = <PaginationPrevious>{arrowLeftIcon}</PaginationPrevious>
+      const nextDefault = <PaginationNext>{arrowRightIcon}</PaginationNext>
+      return [
+        hasChildren(prevChildren) ? prevChildren : prevDefault,
+        hasChildren(nextChildren) ? nextChildren : nextDefault,
+      ]
+    }, [prevChildren, nextChildren])
+    const { font, width } = useMemo(() => getSizes(size), [size])
+    const values = useMemo<PaginationConfig>(
+      () => ({
+        isFirst: page <= 1,
+        isLast: page >= pageCount,
+        update,
+        updatePageSize,
+        variant,
+      }),
+      [page],
+    )
+
+    useEffect(() => {
+      onChange && onChange(page, pageSize)
+    }, [page, pageSize])
+    useEffect(() => {
+      if (customPage !== undefined) {
+        setPage(customPage)
+      }
+    }, [customPage])
+    useEffect(() => {
+      if (customPageSize !== undefined) {
+        setPageSize(customPageSize)
+      }
+    }, [customPageSize])
+
+    return (
+      <PaginationContext.Provider value={values}>
+        <div className="pagination">
+          {showPageSizeChanger && (
+            <div className="left">
+              <PaginationPageSize
+                size={size}
+                pageSizeOptions={pageSizeOptions}
+                onPageSizeChange={onPageSizeChange}
+                total={total}
+                current={page}
+                labelPageSizeBefore={labelPageSizeBefore}
+                labelPageSizeAfter={labelPageSizeAfter}></PaginationPageSize>
+            </div>
           )}
+          <div className="right">
+            <section>
+              {prevItem}
+              <PaginationPages count={pageCount} current={page} limit={limit} />
+              {nextItem}
+            </section>
+            {showQuickJumper && (
+              <PaginationQuickJumper
+                count={pageCount}
+                size={size}
+                labelJumperBefore={labelJumperBefore}
+                labelJumperAfter={labelJumperAfter}></PaginationQuickJumper>
+            )}
+          </div>
         </div>
-      </div>
 
-      <style jsx>{`
+        <style jsx>{`
         .pagination {
           font-size: ${font};
           display:flex;
@@ -212,19 +248,14 @@ const Pagination: React.FC<PaginationProps> = ({
           margin-right: 0;
         }
       `}</style>
-    </PaginationContext.Provider>
-  )
-}
-
-type MemoPaginationComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Previous: typeof PaginationPrevious
-  Next: typeof PaginationNext
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
+      </PaginationContext.Provider>
+    )
+  },
+)
 
 Pagination.defaultProps = defaultProps
 
-export default React.memo(Pagination) as MemoPaginationComponent<ComponentProps>
+export default Pagination as typeof Pagination & {
+  Previous: typeof PaginationPrevious
+  Next: typeof PaginationNext
+}

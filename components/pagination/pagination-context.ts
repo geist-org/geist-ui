@@ -7,8 +7,16 @@ export type PaginationUpdateType = typeof paginationUpdateTypes[number]
 export interface PaginationConfig {
   isFirst?: boolean
   isLast?: boolean
-  update?: (type: PaginationUpdateType) => void
+  update?: (type: PaginationUpdateType, val?: number) => void
+  updatePageSize?: Function
   variant?: PaginationVariants
+}
+
+export interface PaginationHandles {
+  setPage: (value?: number) => void
+  getPage: () => number
+  setPageSize: (value?: number) => void
+  getPageSize: () => number
 }
 
 const defaultContext = {

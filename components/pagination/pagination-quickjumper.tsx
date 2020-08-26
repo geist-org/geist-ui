@@ -9,7 +9,6 @@ interface Props {
   size?: NormalSizes
   labelJumperBefore?: ReactNode | string
   labelJumperAfter?: ReactNode | string
-  onChange?: Dispatch<SetStateAction<number>>
 }
 
 const defaultProps = {
@@ -23,11 +22,10 @@ const PaginationNext: React.FC<PaginationQuickJumperProps> = ({
   size,
   labelJumperBefore,
   labelJumperAfter,
-  onChange,
 }: PaginationQuickJumperProps & typeof defaultProps) => {
   const theme = useTheme()
   const inputRef = useRef<HTMLInputElement>(null)
-  const { variant } = usePaginationContext()
+  const { variant, update } = usePaginationContext()
   const keyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const target = e.target as HTMLTextAreaElement
     if (e.keyCode === 13) {
@@ -36,7 +34,7 @@ const PaginationNext: React.FC<PaginationQuickJumperProps> = ({
         if (val > count) {
           val = count
         }
-        onChange && onChange(val)
+        update && update('click', val)
       }
       inputRef.current && (inputRef.current.value = '')
     }
