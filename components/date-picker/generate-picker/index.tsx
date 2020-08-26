@@ -78,6 +78,7 @@ type InjectDefaultProps<Props> = Partial<
     color?: InputColors
     variant?: InputVariantTypes
     forwardedRef?: React.Ref<any>
+    ref?: React.MutableRefObject<any>
   }
 >
 
@@ -109,6 +110,7 @@ export type PickerProps<DateType> =
   | PickerBaseProps<DateType>
   | PickerDateProps<DateType>
   | PickerTimeProps<DateType>
+  | SharedTimeProps<DateType>
 
 // Range Picker Props
 export type RangePickerBaseProps<DateType> = InjectDefaultProps<RCRangePickerBaseProps<DateType>>
