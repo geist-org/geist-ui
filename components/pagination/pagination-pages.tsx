@@ -8,7 +8,7 @@ interface Props {
 }
 
 const PaginationPages: React.FC<Props> = ({ limit, count }) => {
-  const { update, page } = usePaginationContext()
+  const { updatePage, page } = usePaginationContext()
   const showPages = useMemo(() => {
     const oddLimit = limit % 2 === 0 ? limit - 1 : limit
     return oddLimit - 2
@@ -28,7 +28,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count }) => {
       <PaginationItem
         key={`pagination-item-${value}`}
         active={value === active}
-        onClick={() => update && update('click', value)}>
+        onClick={() => updatePage && updatePage('click', value)}>
         {value}
       </PaginationItem>
     ),
@@ -45,7 +45,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count }) => {
       <PaginationItem
         key={`pagination-middle-${index}`}
         active={index + 1 === middleNumber}
-        onClick={() => update && update('click', value)}>
+        onClick={() => updatePage && updatePage('click', value)}>
         {value}
       </PaginationItem>
     )
@@ -64,7 +64,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count }) => {
             <PaginationItem
               key={`pagination-item-${value}`}
               active={value === page}
-              onClick={() => update && update('click', value)}>
+              onClick={() => updatePage && updatePage('click', value)}>
               {value}
             </PaginationItem>
           )
@@ -81,7 +81,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count }) => {
           key="pagination-ellipsis-before"
           isBefore
           onClick={() =>
-            update && update('click', (page as number) - 5 >= 1 ? (page as number) - 5 : 1)
+            updatePage && updatePage('click', (page as number) - 5 >= 1 ? (page as number) - 5 : 1)
           }
         />
       )}
@@ -94,7 +94,8 @@ const PaginationPages: React.FC<Props> = ({ limit, count }) => {
         <PaginationEllipsis
           key="pagination-ellipsis-after"
           onClick={() =>
-            update && update('click', (page as number) + 5 <= count ? (page as number) + 5 : count)
+            updatePage &&
+            updatePage('click', (page as number) + 5 <= count ? (page as number) + 5 : count)
           }
         />
       )}

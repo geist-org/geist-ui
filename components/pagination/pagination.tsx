@@ -1,11 +1,4 @@
-import React, {
-  useEffect,
-  useMemo,
-  ReactNode,
-  forwardRef,
-  RefObject,
-  useImperativeHandle,
-} from 'react'
+import React, { useMemo, ReactNode, forwardRef, RefObject, useImperativeHandle } from 'react'
 import {
   PaginationContext,
   PaginationConfig,
@@ -47,7 +40,7 @@ interface Props {
   labelJumperAfter?: ReactNode | string
   showQuickJumper?: boolean
   showPageSizeChanger?: boolean
-  onChange?: (val: number, pageSize: number) => void
+  onPageChange?: (val: number, pageSize: number) => void
   onPageSizeChange?: (current: number, pageSize: number) => void
 }
 const defaultProps = {
@@ -87,13 +80,19 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       showQuickJumper,
       showPageSizeChanger,
       onPageSizeChange,
-      onChange: onChangeHandle,
+      onPageChange,
     }: PaginationProps & typeof defaultProps,
     ref: RefObject<PaginationHandles>,
   ) => {
-    const [page, setPage] = useMergedState(defaultPage, { value: customPage })
+    const [page, setPage] = useMergedState(defaultPage, {
+      value: customPage,
+      onChange: (page): any => onPageChange && onPageChange(page, pageSize),
+    })
     console.log('page', page)
-    const [pageSize, setPageSize] = useMergedState(defaultPageSize, { value: customPageSize })
+    const [pageSize, setPageSize] = useMergedState(defaultPageSize, {
+      value: customPageSize,
+      onChange: (pageSize): any => onPageSizeChange && onPageSizeChange(page, pageSize),
+    })
     console.log('pageSize', pageSize)
     const [, prevChildren] = pickChild(children, PaginationPrevious)
     const [, nextChildren] = pickChild(children, PaginationNext)
@@ -136,7 +135,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       if (!oldVal.includes(newVal)) return [...oldVal, newVal]
       return oldVal.filter(item => item !== newVal)
     }
-    const update = (type: PaginationUpdateType, val: number) => {
+    const updatePage = (type: PaginationUpdateType, val: number) => {
       console.log('upadte val', val)
       const newPage = getNewValue(val, page) as number
       if (type === 'prev' && newPage > 1) {
@@ -183,7 +182,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       () => ({
         isFirst: page <= 1,
         isLast: page >= pageCount,
-        update,
+        updatePage,
         updatePageSize,
         variant,
         page,
@@ -192,19 +191,19 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       [page, pageSize],
     )
 
-    useEffect(() => {
-      onChangeHandle && onChangeHandle(page, pageSize)
-    }, [page, pageSize])
-    useEffect(() => {
-      if (customPage !== undefined) {
-        setPage(customPage)
-      }
-    }, [customPage])
-    useEffect(() => {
-      if (customPageSize !== undefined) {
-        setPageSize(customPageSize)
-      }
-    }, [customPageSize])
+    // useEffect(() => {
+    //   onChangeHandle && onChangeHandle(page, pageSize)
+    // }, [page, pageSize])
+    // useEffect(() => {
+    //   if (customPage !== undefined) {
+    //     setPage(customPage)
+    //   }
+    // }, [customPage])
+    // useEffect(() => {
+    //   if (customPageSize !== undefined) {
+    //     setPageSize(customPageSize)
+    //   }
+    // }, [customPageSize])
     console.log('final page', page)
     return (
       <PaginationContext.Provider value={values}>

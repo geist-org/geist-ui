@@ -7,7 +7,7 @@ export type PaginationUpdateType = typeof paginationUpdateTypes[number]
 export interface PaginationConfig {
   isFirst?: boolean
   isLast?: boolean
-  update?: (type: PaginationUpdateType, val?: number) => void
+  updatePage?: (type: PaginationUpdateType, val?: number) => void
   updatePageSize?: Function
   variant?: PaginationVariants
   page?: number

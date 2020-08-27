@@ -30,7 +30,7 @@ const PaginationNext: React.FC<PaginationPageSizeProps> = ({
 }: PaginationPageSizeProps & typeof defaultProps) => {
   const theme = useTheme()
   const placeHolderVal = pageSizeOptions[0]
-  const { update, updatePageSize, page } = usePaginationContext()
+  const { updatePage, updatePageSize, page } = usePaginationContext()
   console.log('context page', page)
   const changeHandler = (val: string) => {
     console.log('select change')
@@ -41,7 +41,7 @@ const PaginationNext: React.FC<PaginationPageSizeProps> = ({
     const newCurrent = page && page > newPageCount ? newPageCount : page
     console.log('newCurrent', newCurrent)
     updatePageSize && updatePageSize(pageSize)
-    update && update('click', newCurrent)
+    updatePage && updatePage('click', newCurrent)
     onPageSizeChange && onPageSizeChange(newCurrent as number, pageSize)
   }
   return (
