@@ -60,7 +60,7 @@ export function getTimeProps<DateType>(
   }
 }
 
-type InjectDefaultProps<Props> = Partial<
+type InjectDefaultProps<Props, DateType> = Partial<
   Omit<
     Props,
     | 'generateConfig'
@@ -79,6 +79,7 @@ type InjectDefaultProps<Props> = Partial<
     variant?: InputVariantTypes
     forwardedRef?: React.Ref<any>
     ref?: React.MutableRefObject<any>
+    showTime?: boolean | SharedTimeProps<DateType>
   }
 >
 
@@ -102,20 +103,28 @@ export type AdditionalPickerLocaleLangProps = {
 }
 
 // Picker Props
-export type PickerBaseProps<DateType> = InjectDefaultProps<RCPickerBaseProps<DateType>>
-export type PickerDateProps<DateType> = InjectDefaultProps<RCPickerDateProps<DateType>>
-export type PickerTimeProps<DateType> = InjectDefaultProps<RCPickerTimeProps<DateType>>
+export type PickerBaseProps<DateType> = InjectDefaultProps<RCPickerBaseProps<DateType>, DateType>
+export type PickerDateProps<DateType> = InjectDefaultProps<RCPickerDateProps<DateType>, DateType>
+export type PickerTimeProps<DateType> = InjectDefaultProps<RCPickerTimeProps<DateType>, DateType>
 
 export type PickerProps<DateType> =
   | PickerBaseProps<DateType>
   | PickerDateProps<DateType>
   | PickerTimeProps<DateType>
-  | SharedTimeProps<DateType>
 
 // Range Picker Props
-export type RangePickerBaseProps<DateType> = InjectDefaultProps<RCRangePickerBaseProps<DateType>>
-export type RangePickerDateProps<DateType> = InjectDefaultProps<RCRangePickerDateProps<DateType>>
-export type RangePickerTimeProps<DateType> = InjectDefaultProps<RCRangePickerTimeProps<DateType>>
+export type RangePickerBaseProps<DateType> = InjectDefaultProps<
+  RCRangePickerBaseProps<DateType>,
+  DateType
+>
+export type RangePickerDateProps<DateType> = InjectDefaultProps<
+  RCRangePickerDateProps<DateType>,
+  DateType
+>
+export type RangePickerTimeProps<DateType> = InjectDefaultProps<
+  RCRangePickerTimeProps<DateType>,
+  DateType
+>
 
 export type RangePickerProps<DateType> =
   | RangePickerBaseProps<DateType>
