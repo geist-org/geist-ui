@@ -1,6 +1,7 @@
-import React, { MouseEvent, useMemo } from 'react'
+import React, { MouseEvent } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import Button from '../button'
+import { ButtonColors, ButtonVariants, NormalSizes } from '../utils/prop-types'
 import { useModalContext } from './modal-context'
 
 type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
@@ -8,77 +9,56 @@ type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
 }
 
 interface Props {
-  className?: string
-  passive?: boolean
+  variant?: ButtonVariants
+  color?: ButtonColors
+  size?: NormalSizes
+  ghost?: boolean
+  loading?: boolean
+  shadow?: boolean
+  auto?: boolean
+  effect?: boolean
   disabled?: boolean
+  htmlType?: React.ButtonHTMLAttributes<any>['type']
+  icon?: React.ReactNode
+  iconRight?: React.ReactNode
   onClick?: (event: ModalActionEvent) => void
+  className?: string
 }
 
 const defaultProps = {
-  className: '',
-  passive: false,
+  variant: 'line' as ButtonVariants,
+  color: 'primary' as ButtonColors,
+  size: 'medium' as NormalSizes,
+  htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],
+  ghost: false,
+  loading: false,
+  shadow: false,
+  auto: false,
+  effect: true,
   disabled: false,
+  className: '',
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type ModalActionProps = Props & typeof defaultProps & NativeAttrs
+export type ModalActionProps = Props & NativeAttrs
 
-const ModalAction: React.FC<ModalActionProps> = ({
-  className,
+const ModalAction: React.FC<ModalActionProps & typeof defaultProps> = ({
   children,
   onClick,
-  passive,
-  disabled,
   ...props
 }) => {
-  const theme = useTheme()
   const { close } = useModalContext()
   const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
-    if (disabled) return
     const actionEvent = Object.assign({}, event, {
       close: () => close && close(),
     })
     onClick && onClick(actionEvent)
   }
 
-  const color = useMemo(() => {
-    return passive || disabled ? theme.palette.accents_5 : theme.palette.foreground
-  }, [theme.palette, passive, disabled])
-
-  const bgColor = useMemo(() => {
-    return disabled ? theme.palette.accents_1 : theme.palette.background
-  }, [theme.palette, disabled])
-
   return (
-    <>
-      <button className={className} onClick={clickHandler} {...props}>
-        {children}
-      </button>
-      <style jsx>{`
-        button {
-          font-size: 0.75rem;
-          text-transform: uppercase;
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          justify-content: center;
-          outline: none;
-          text-decoration: none;
-          transition: all 200ms ease-in-out 0s;
-          border: none;
-          color: ${color};
-          background-color: ${bgColor};
-          cursor: ${disabled ? 'not-allowed' : 'pointer'};
-          flex: 1;
-        }
-
-        button:hover {
-          color: ${disabled ? color : theme.palette.foreground};
-          background-color: ${disabled ? bgColor : theme.palette.accents_1};
-        }
-      `}</style>
-    </>
+    <Button onClick={clickHandler} {...props}>
+      {children}
+    </Button>
   )
 }
 

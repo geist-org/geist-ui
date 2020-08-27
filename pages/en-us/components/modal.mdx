@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Modal, Button, Code, useModal, Note, Link } from 'components'
+import { Modal, Button, Code, Note, Link, Text } from 'components'
 import NextLink from 'next/link'
 import { useState } from 'react'
 
@@ -23,7 +23,7 @@ Display popup content that requires attention or provides additional information
 <Playground
   title="Basic"
   desc="Use `open` control whether `Modal` is displayed."
-  scope={{ Modal, Button, useState }}
+  scope={{ Modal, Button, useState, Text }}
   code={`
 () => {
   const [state, setState] = useState(false)
@@ -39,10 +39,70 @@ Display popup content that requires attention or provides additional information
         <Modal.Title>Modal</Modal.Title>
         <Modal.Subtitle>This is a modal</Modal.Subtitle>
         <Modal.Content>
-          <p>Some content contained within the modal.</p>
+          <Text p>Some content contained within the modal.</Text>
         </Modal.Content>
-        <Modal.Action passive onClick={() => setState(false)}>Cancel</Modal.Action>
-        <Modal.Action>Submit</Modal.Action>
+        <Modal.Action onClick={() => setState(false)}>Cancel</Modal.Action>
+        <Modal.Action variant="solid">Submit</Modal.Action>
+      </Modal>
+    </div>
+  )
+}
+`}
+/>
+
+<Playground
+  title="With closable"
+  desc="Use `closable` control whether close button is displayed."
+  scope={{ Modal, Button, useState, Text }}
+  code={`
+() => {
+  const [state, setState] = useState(false)
+  const handler = () => setState(true)
+  const closeHandler = (event) => {
+    setState(false)
+    console.log('closed')
+  }
+  return (
+    <div>
+      <Button auto onClick={handler}>Show Modal</Button>
+      <Modal closable open={state} onClose={closeHandler}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <Text p>Some content contained within the modal.</Text>
+        </Modal.Content>
+        <Modal.Action onClick={() => setState(false)}>Cancel</Modal.Action>
+        <Modal.Action variant="solid">Submit</Modal.Action>
+      </Modal>
+    </div>
+  )
+}
+`}
+/>
+
+<Playground
+  title="With disableBackdropClick"
+  desc="Use `disableBackdropClick` control whether close when clickaway"
+  scope={{ Modal, Button, useState, Text }}
+  code={`
+() => {
+  const [state, setState] = useState(false)
+  const handler = () => setState(true)
+  const closeHandler = (event) => {
+    setState(false)
+    console.log('closed')
+  }
+  return (
+    <div>
+      <Button auto onClick={handler}>Show Modal</Button>
+      <Modal disableBackdropClick open={state} onClose={closeHandler}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Subtitle>This is a modal</Modal.Subtitle>
+        <Modal.Content>
+          <Text p>Some content contained within the modal.</Text>
+        </Modal.Content>
+        <Modal.Action onClick={() => setState(false)}>Cancel</Modal.Action>
+        <Modal.Action variant="solid">Submit</Modal.Action>
       </Modal>
     </div>
   )
@@ -53,25 +113,25 @@ Display popup content that requires attention or provides additional information
 <Playground
   title={
     <>
-      With <Code>useModal</Code>
+      With <Code>useModalHandle</Code>
     </>
   }
   desc="Use `hooks` for easier control `Modal`."
-  scope={{ Modal, Button, useModal }}
+  scope={{ Modal, Button, Text }}
   code={`
 () => {
-  const { visible, setVisible, bindings } = useModal()
+  const { setVisible, ref } = Modal.useModalHandle()
   return (
     <>
       <Button auto onClick={() => setVisible(true)}>Show Modal</Button>
-      <Modal {...bindings}>
+      <Modal ref={ref}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Subtitle>This is a modal</Modal.Subtitle>
         <Modal.Content>
-          <p>Some content contained within the modal.</p>
+          <Text p>Some content contained within the modal.</Text>
         </Modal.Content>
-        <Modal.Action passive onClick={() => setVisible(false)}>Cancel</Modal.Action>
-        <Modal.Action>Submit</Modal.Action>
+        <Modal.Action onClick={() => setVisible(false)}>Cancel</Modal.Action>
+        <Modal.Action variant="solid">Submit</Modal.Action>
       </Modal>
     </>
   )
@@ -82,7 +142,7 @@ Display popup content that requires attention or provides additional information
 <Playground
   title="Without Actions"
   desc="Hide all action buttons."
-  scope={{ Modal, Button, useState }}
+  scope={{ Modal, Button, useState, Text }}
   code={`
 () => {
   const [state, setState] = useState(false)
@@ -94,11 +154,11 @@ Display popup content that requires attention or provides additional information
   return (
     <div>
       <Button auto onClick={handler}>Show Modal</Button>
-      <Modal open={state} onClose={closeHandler}>
+      <Modal closable open={state} onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Subtitle>This is a modal</Modal.Subtitle>
         <Modal.Content>
-          <p>Some content contained within the modal.</p>
+          <Text p>Some content contained within the modal.</Text>
         </Modal.Content>
       </Modal>
     </div>
@@ -110,7 +170,7 @@ Display popup content that requires attention or provides additional information
 <Playground
   title="Disable Action"
   desc="Disable one of the buttons."
-  scope={{ Modal, Button, useState }}
+  scope={{ Modal, Button, useState, Text }}
   code={`
 () => {
   const [state, setState] = useState(false)
@@ -126,9 +186,9 @@ Display popup content that requires attention or provides additional information
         <Modal.Title>Modal</Modal.Title>
         <Modal.Subtitle>This is a modal</Modal.Subtitle>
         <Modal.Content>
-          <p>Some content contained within the modal.</p>
+          <Text p>Some content contained within the modal.</Text>
         </Modal.Content>
-        <Modal.Action passive onClick={() => setState(false)}>Cancel</Modal.Action>
+        <Modal.Action onClick={() => setState(false)}>Cancel</Modal.Action>
         <Modal.Action disabled>Submit</Modal.Action>
       </Modal>
     </>
@@ -140,17 +200,17 @@ Display popup content that requires attention or provides additional information
 <Playground
   title="Customizable"
   desc="Custom `width` or `className`."
-  scope={{ Modal, Button, useModal }}
+  scope={{ Modal, Button, Text }}
   code={`
 () => {
-  const { setVisible, bindings } = useModal()
+  const { setVisible, ref } = Modal.useModalHandle()
   return (
     <div>
       <Button auto onClick={() => setVisible(true)}>Show Modal</Button>
-      <Modal width="35rem" {...bindings}>
+      <Modal closable ref={ref} width="35rem">
         <Modal.Title>My Favorites</Modal.Title>
         <Modal.Content>
-          <p>This is the width I want.</p>
+          <Text p>This is the width I want.</Text>
         </Modal.Content>
       </Modal>
     </div>
@@ -165,9 +225,10 @@ Display popup content that requires attention or provides additional information
 | Attribute                | Description                      | Type             | Accepted values                         | Default |
 | ------------------------ | -------------------------------- | ---------------- | --------------------------------------- | ------- |
 | **open**                 | open or close                    | `boolean`        | -                                       | `false` |
+| **closable**             | whether display close (x) button | `boolean`        | -                                       | `false` |
 | **onOpen**               | open event                       | `() => void`     | -                                       | -       |
 | **onClose**              | open event                       | `() => void`     | -                                       | -       |
-| **width**                | width of the modal dialog        | `string`         | -                                       | `26rem` |
+| **width**                | width of the modal dialog        | `string`         | -                                       | `30rem` |
 | **wrapClassName**        | className of the modal dialog    | `string`         | -                                       | -       |
 | **disableBackdropClick** | click background and don't close | `boolean`        | -                                       | `false` |
 | ...                      | native props                     | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | -       |
@@ -198,26 +259,21 @@ Display popup content that requires attention or provides additional information
 
 <Attributes.Title>Modal.Action.Props</Attributes.Title>
 
-| Attribute    | Description            | Type                                                   | Accepted values          | Default |
-| ------------ | ---------------------- | ------------------------------------------------------ | ------------------------ | ------- |
-| **passive**  | display passive mode   | `boolean`                                              | -                        | `false` |
-| **disabled** | disable current action | `boolean`                                              | -                        | `false` |
-| **onClick**  | click handler          | [(event: ModalActionEvent) => void](#modalactionevent) | -                        | -       |
-| ...          | native props           | `ButtonHTMLAttributes`                                 | `'id', 'className', ...` | -       |
+<Note>
+  Just see{' '}
+  <NextLink href="/en-us/components/button">
+    <Link>Button component</Link>
+  </NextLink>
+  .
+</Note>
 
-<Attributes.Title>useModal</Attributes.Title>
+<Attributes.Title>useModalHandle</Attributes.Title>
 
 ```ts
-type useModal = (
-  defaultVisible: boolean,
-) => {
-  visible: boolean
-  setVisible: Dispatch<SetStateAction<boolean>>
-  currentRef: MutableRefObject<boolean>
-  bindings: {
-    open: boolean
-    onClose: () => void
-  }
+type useModalHandle = () => {
+  ref: RefObject
+  setVisible: (visible?: boolean) => void
+  getVisible: () => boolean
 }
 ```
 

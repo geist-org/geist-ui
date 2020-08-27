@@ -11,9 +11,13 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>
-export type ModalContentProps = Props & typeof defaultProps & NativeAttrs
+export type ModalContentProps = Props & NativeAttrs
 
-const ModalContent: React.FC<ModalContentProps> = ({ className, children, ...props }) => {
+const ModalContent: React.FC<ModalContentProps & typeof defaultProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   const theme = useTheme()
 
   return (
@@ -24,7 +28,7 @@ const ModalContent: React.FC<ModalContentProps> = ({ className, children, ...pro
       <style jsx>{`
         .content {
           margin: 0 -${theme.layout.gap};
-          padding: ${theme.layout.gap} ${theme.layout.gap} ${theme.layout.gapHalf};
+          padding: 0 calc(${theme.layout.gap} * 1.5) ${theme.layout.gapHalf};
           overflow-y: auto;
         }
 
