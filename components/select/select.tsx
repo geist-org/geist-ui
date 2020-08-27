@@ -134,7 +134,7 @@ const Select = forwardRef<SelectHandles, React.PropsWithChildren<SelectProps>>(
         size,
         disableAll: disabled,
       }),
-      [size, disabled, variant, mergedValue],
+      [size, disabled, variant, mergedValue, updateValue],
     )
 
     const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
