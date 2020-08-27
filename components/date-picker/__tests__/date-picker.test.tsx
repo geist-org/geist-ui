@@ -436,9 +436,7 @@ describe('DatePicker Common', () => {
           console.log(getValue())
 
           setTimeout(() => {
-            expect(wrapper.find('input').at(0).getDOMNode<HTMLInputElement>().value).toBe(
-              '2020-08-08',
-            )
+            expect(wrapper.find('input').at(0).getDOMNode().value).toBe('2020-08-08')
             expect(getValue()).toBe(dayjs('2020-08-08'))
           }, 0)
         }
