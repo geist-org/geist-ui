@@ -87,7 +87,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       showQuickJumper,
       showPageSizeChanger,
       onPageSizeChange,
-      onChange,
+      onChange: onChangeHandle,
     }: PaginationProps & typeof defaultProps,
     ref: RefObject<PaginationHandles>,
   ) => {
@@ -130,21 +130,31 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
         <polyline points="12 19 5 12 12 5"></polyline>
       </svg>
     )
+
+    const getNewValue = (newVal: number, oldVal: number) => {
+      if (!Array.isArray(oldVal)) return newVal
+      if (!oldVal.includes(newVal)) return [...oldVal, newVal]
+      return oldVal.filter(item => item !== newVal)
+    }
     const update = (type: PaginationUpdateType, val: number) => {
-      if (type === 'prev' && page > 1) {
-        setPage(page - 1)
+      console.log('upadte val', val)
+      const newPage = getNewValue(val, page) as number
+      if (type === 'prev' && newPage > 1) {
+        setPage(newPage - 1)
       }
-      if (type === 'next' && page < pageCount) {
-        setPage(page + 1)
+      if (type === 'next' && newPage < pageCount) {
+        setPage(newPage + 1)
       }
       if (type === 'click') {
-        setPage(val)
+        setPage(newPage)
       }
+      console.log('new page: ' + page)
     }
     const updatePageSize = (val: number) => {
-      console.log('updatePageSize', val)
-      setPageSize(val)
-      console.log(pageSize)
+      const newPageSize = getNewValue(val, pageSize) as number
+      console.log('updatePageSize', newPageSize)
+      setPageSize(newPageSize)
+      console.log('new pagesize:' + pageSize)
     }
 
     useImperativeHandle(ref, () => ({
@@ -168,6 +178,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       ]
     }, [prevChildren, nextChildren])
     const { font, width } = useMemo(() => getSizes(size), [size])
+    console.log('config page', page)
     const values = useMemo<PaginationConfig>(
       () => ({
         isFirst: page <= 1,
@@ -175,12 +186,14 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
         update,
         updatePageSize,
         variant,
+        page,
+        pageSize,
       }),
-      [page],
+      [page, pageSize],
     )
 
     useEffect(() => {
-      onChange && onChange(page, pageSize)
+      onChangeHandle && onChangeHandle(page, pageSize)
     }, [page, pageSize])
     useEffect(() => {
       if (customPage !== undefined) {
@@ -192,18 +205,18 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
         setPageSize(customPageSize)
       }
     }, [customPageSize])
-
+    console.log('final page', page)
     return (
       <PaginationContext.Provider value={values}>
         <div className="pagination">
           {showPageSizeChanger && (
             <div className="left">
+              {console.log('divPage==', page)}
               <PaginationPageSize
                 size={size}
                 pageSizeOptions={pageSizeOptions}
                 onPageSizeChange={onPageSizeChange}
                 total={total}
-                current={page}
                 labelPageSizeBefore={labelPageSizeBefore}
                 labelPageSizeAfter={labelPageSizeAfter}></PaginationPageSize>
             </div>
@@ -211,7 +224,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
           <div className="right">
             <section>
               {prevItem}
-              <PaginationPages count={pageCount} current={page} limit={limit} />
+              <PaginationPages count={pageCount} limit={limit} />
               {nextItem}
             </section>
             {showQuickJumper && (

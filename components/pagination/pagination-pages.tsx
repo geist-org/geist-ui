@@ -5,11 +5,10 @@ import { usePaginationContext } from './pagination-context'
 interface Props {
   limit: number
   count: number
-  current: number
 }
 
-const PaginationPages: React.FC<Props> = ({ limit, count, current }) => {
-  const { update } = usePaginationContext()
+const PaginationPages: React.FC<Props> = ({ limit, count }) => {
+  const { update, page } = usePaginationContext()
   const showPages = useMemo(() => {
     const oddLimit = limit % 2 === 0 ? limit - 1 : limit
     return oddLimit - 2
@@ -18,10 +17,10 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current }) => {
   const [showBeforeEllipsis, showAfterEllipsis] = useMemo(() => {
     const showEllipsis = count > limit
     return [
-      showEllipsis && current > middleNumber + 1,
-      showEllipsis && current < count - middleNumber,
+      showEllipsis && page && page > middleNumber + 1,
+      showEllipsis && page && page < count - middleNumber,
     ]
-  }, [current, showPages, middleNumber, count, limit])
+  }, [page, showPages, middleNumber, count, limit])
   const pagesArray = useMemo(() => [...new Array(showPages)], [showPages])
 
   const renderItem = useCallback(
@@ -37,11 +36,11 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current }) => {
   )
   const startPages = pagesArray.map((_, index) => {
     const value = index + 2
-    return renderItem(value, current)
+    return renderItem(value, page as number)
   })
   const middlePages = pagesArray.map((_, index) => {
     const middleIndexNumber = middleNumber - (index + 1)
-    const value = current - middleIndexNumber
+    const value = (page as number) - middleIndexNumber
     return (
       <PaginationItem
         key={`pagination-middle-${index}`}
@@ -53,7 +52,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current }) => {
   })
   const endPages = pagesArray.map((_, index) => {
     const value = count - (showPages - index)
-    return renderItem(value, current)
+    return renderItem(value, page as number)
   })
   if (count <= limit) {
     return (
@@ -64,7 +63,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current }) => {
           return (
             <PaginationItem
               key={`pagination-item-${value}`}
-              active={value === current}
+              active={value === page}
               onClick={() => update && update('click', value)}>
               {value}
             </PaginationItem>
@@ -76,13 +75,13 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current }) => {
   }
   return (
     <>
-      {renderItem(1, current)}
+      {renderItem(1, page as number)}
       {showBeforeEllipsis && (
         <PaginationEllipsis
           key="pagination-ellipsis-before"
           isBefore
           onClick={() =>
-            update && update('click', (last: number) => (last - 5 >= 1 ? last - 5 : 1))
+            update && update('click', (page as number) - 5 >= 1 ? (page as number) - 5 : 1)
           }
         />
       )}
@@ -95,11 +94,11 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current }) => {
         <PaginationEllipsis
           key="pagination-ellipsis-after"
           onClick={() =>
-            update && update('click', (last: number) => (last + 5 <= count ? last + 5 : count))
+            update && update('click', (page as number) + 5 <= count ? (page as number) + 5 : count)
           }
         />
       )}
-      {renderItem(count, current)}
+      {renderItem(count, page as number)}
     </>
   )
 }

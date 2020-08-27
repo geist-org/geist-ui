@@ -10,6 +10,8 @@ export interface PaginationConfig {
   update?: (type: PaginationUpdateType, val?: number) => void
   updatePageSize?: Function
   variant?: PaginationVariants
+  page?: number
+  pageSize?: number
 }
 
 export interface PaginationHandles {
