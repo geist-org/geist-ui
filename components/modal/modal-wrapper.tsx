@@ -14,9 +14,9 @@ const defaultProps = {
   visible: false,
 }
 
-export type ModalWrapperProps = Props & typeof defaultProps
+export type ModalWrapperProps = React.PropsWithChildren<Props>
 
-const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
+const ModalWrapper: React.FC<ModalWrapperProps & typeof defaultProps> = ({
   className,
   width,
   children,

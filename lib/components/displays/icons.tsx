@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Input, Modal, useModal, Snippet } from 'components'
+import { Card, Input, Modal, Snippet } from 'components'
 import * as Icon from '@zeit-ui/react-icons'
 import IconsCell, { getImportString } from './icons-cell'
 import { useConfigs } from 'lib/config-context'
@@ -19,7 +19,7 @@ const ImportSnippet: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
 const Icons: React.FC = () => {
   const { isChinese } = useConfigs()
-  const { setVisible, bindings: modalBindings } = useModal()
+  const { setVisible, ref } = Modal.useModalHandle()
   const [inputValue, setInputValue] = useState('')
   const [importStr, setImportStr] = useState({ title: '', single: '', normal: '' })
   const icons = Object.entries(Icon).filter(
@@ -52,7 +52,7 @@ const Icons: React.FC = () => {
             />
           ))}
         </div>
-        <Modal {...modalBindings}>
+        <Modal ref={ref}>
           <Modal.Title>{importStr.title}</Modal.Title>
           <Modal.Content>
             <p>{isChinese ? '引入:' : 'Import:'}</p>
