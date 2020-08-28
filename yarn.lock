@@ -2039,10 +2039,10 @@
   resolved "https://registry.yarnpkg.com/@zeit-ui/prettier-config/-/prettier-config-1.0.0.tgz#ddca25c4d22d4ceda25623ce56f6bd3fbba5b1fa"
   integrity sha512-wdMT4nsbllDdCyGb4EcYbySI9fNSwAc+WChl/Be9po4ZDLuQ0xZlcUF4d0YZXMDuWOnahCFoUFEfO5Wdt+Z5fw==
 
-"@zeit-ui/react-icons@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/@zeit-ui/react-icons/-/react-icons-1.2.2.tgz#92f8474c986b0a0f9f8afc30e354ac3d54631813"
-  integrity sha512-O0BVU6c9yLyW64DNN7+ovn3s+BtysQcxqKIWVofSnjbToTXaAob5BZXoV+QpEWrUod3olTzJzdw9/D3ha1YMiw==
+"@zeit-ui/react-icons@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@zeit-ui/react-icons/-/react-icons-1.3.0.tgz#ba1518e8f2c917ff95efc0b2df41449c72919498"
+  integrity sha512-Uo0yQiwBDyVi1JCCAourzs6KHq5iLa6sKU842bRTU4OES2tf6GthqNse/c50x6kthfGP5RZICcGgyGW30ZmoUA==
 
 JSONStream@^1.0.4, JSONStream@^1.3.4, JSONStream@^1.3.5:
   version "1.3.5"
@@ -5183,6 +5183,14 @@ file-entry-cache@^5.0.1:
   integrity sha512-bCg29ictuBaKUwwArK4ouCaqDgLZcysCFLmM/Yn/FDoqndh/9vNuQfXRDvTuXKLxfD/JtZQGKFT8MGcJBK644g==
   dependencies:
     flat-cache "^2.0.1"
+
+file-loader@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-6.0.0.tgz#97bbfaab7a2460c07bcbd72d3a6922407f67649f"
+  integrity sha512-/aMOAYEFXDdjG0wytpTL5YQLfZnnTmLNjn+AIrJ/6HVnTfDqLsVKUUwkDf4I4kgex36BvjuXEn/TX9B/1ESyqQ==
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^2.6.5"
 
 file-uri-to-path@1.0.0:
   version "1.0.0"

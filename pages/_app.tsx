@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import React, { useEffect, useState } from 'react'
@@ -14,6 +15,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const themeChangeHandle = (theme: DeepPartial<ZeitUIThemes>) => {
     setCustomTheme(theme)
   }
+  const router = useRouter()
 
   useEffect(() => {
     const theme = window.localStorage.getItem('theme')
@@ -57,7 +59,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
       <ZeitProvider theme={customTheme}>
         <CssBaseline />
         <ConfigContext onThemeChange={themeChangeHandle}>
-          <Menu />
+          {!router.pathname.startsWith('/code') && <Menu />}
           <Component {...pageProps} />
         </ConfigContext>
         <style global jsx>{`
