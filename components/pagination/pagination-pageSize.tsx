@@ -1,4 +1,4 @@
-import React, { ReactNode, forwardRef } from 'react'
+import React, { ReactNode } from 'react'
 import Select from '../select'
 import { NormalSizes } from '../utils/prop-types'
 import useTheme from '../styles/use-theme'
