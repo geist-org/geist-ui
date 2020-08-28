@@ -347,6 +347,10 @@ export const generateVariantStyles = (prefix: string, theme: ZeitUIThemes) => {
             color: ${hoverColor};
           }
 
+          .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-input:not(.${prefix}-picker-input-active) > input {
+            color: ${textColor};
+          }
+
           .${prefix}-picker.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color}:hover .${prefix}-picker-clear,
           .${prefix}-picker-focused.${prefix}-picker-variant-${variant}.${prefix}-picker-color-${color} .${prefix}-picker-clear {
             ${variant === 'solid' ? `background-color: ${hoverBackgroundColor}` : ''};
@@ -1009,14 +1013,14 @@ export const generatePickerGlobalStyle = <DateType extends any>(
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .${prefix}-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: ${pattern.color.bgScroll};
         }
@@ -1032,11 +1036,15 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-datetime-panel .${prefix}-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .${prefix}-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid ${palette.cNeutral3};
+        }
+
+        .${prefix}-picker-time-panel-column:last-child {
+          border-right: 1px solid ${palette.cNeutral3};
         }
 
         .${prefix}-picker-time-panel-column-active {
@@ -1336,7 +1344,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-range.${prefix}-picker-focused .${prefix}-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .${prefix}-picker-range-separator {
