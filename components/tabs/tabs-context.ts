@@ -1,22 +1,22 @@
 import React from 'react'
 
-export interface TabsLabelItem {
+export interface TabsItemConfig {
   value: string
-  label: string | React.ReactNode
+  label: string
   disabled: boolean
 }
 
+export interface Handles {
+  setCurrentTab(v: string): void
+  getCurrentTab(): string | undefined
+}
+
 export interface TabsConfig {
-  register?: (item: TabsLabelItem) => void
-  unregister?: (item: TabsLabelItem) => void
+  register: (item: TabsItemConfig | { remove: string }) => void
   currentValue?: string
-  inGroup: boolean
 }
 
-const defaultContext = {
-  inGroup: false,
-}
+export const TabsContext = React.createContext<TabsConfig | null>(null)
 
-export const TabsContext = React.createContext<TabsConfig>(defaultContext)
-
-export const useTabsContext = (): TabsConfig => React.useContext<TabsConfig>(TabsContext)
+export const useTabsContext = (): TabsConfig | null =>
+  React.useContext<TabsConfig | null>(TabsContext)
