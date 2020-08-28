@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UseMessage should render correctly 1`] = `
-"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9\\"></path><path d=\\"M13.73 21a2 2 0 01-3.46 0\\"></path></svg></div><div class=\\"text\\">test-value</div><style>
+"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: currentColor;\\"><path d=\\"M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0\\"></path></svg></div><div class=\\"text\\">test-value</div><style>
           .message {
             max-width: 71.4286rem;
             background-color: #fff;
@@ -80,7 +80,7 @@ exports[`UseMessage should render correctly 1`] = `
 `;
 
 exports[`UseMessage should render no shadow correctly 1`] = `
-"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><path d=\\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z\\" fill=\\"var(--geist-fill)\\" stroke=\\"var(--geist-fill)\\"></path><path d=\\"M8 11.8571L10.5 14.3572L15.8572 9\\" fill=\\"none\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">no-shadow</div><div class=\\"close\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor;\\"><path d=\\"M18 6L6 18\\"></path><path d=\\"M6 6l12 12\\"></path></svg></div><style>
+"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: currentColor;\\"><path fill=\\"currentColor\\" stroke=\\"currentColor\\" d=\\"M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z\\"></path><path fill=\\"none\\" stroke=\\"var(--zeit-icons-background)\\" d=\\"M8 11.857l2.5 2.5L15.857 9\\"></path></svg></div><div class=\\"text\\">no-shadow</div><div class=\\"close\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: currentColor;\\"><path d=\\"M18 6L6 18M6 6l12 12\\"></path></svg></div><style>
           .message {
             max-width: 71.4286rem;
             background-color: #effaef;
@@ -159,7 +159,7 @@ exports[`UseMessage should render no shadow correctly 1`] = `
 `;
 
 exports[`UseMessage should render with custom icon correctly 1`] = `
-"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: red;\\"><path d=\\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22\\"></path></svg></div><div class=\\"text\\">custom icon</div><style>
+"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: red;\\"><path d=\\"M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22\\"></path></svg></div><div class=\\"text\\">custom icon</div><style>
           .message {
             max-width: 71.4286rem;
             background-color: #fff;
@@ -238,7 +238,7 @@ exports[`UseMessage should render with custom icon correctly 1`] = `
 `;
 
 exports[`UseMessage should work with different colors 1`] = `
-"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M12 16v-4\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M12 8h.01\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">primary</div><style>
+"<div class=\\"message-container\\"><div class=\\"message  visible \\"><div class=\\"icon\\"><svg stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: currentColor;\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"currentColor\\"></circle><path stroke=\\"var(--zeit-icons-background)\\" d=\\"M12 16v-4M12 8h.01\\"></path></svg></div><div class=\\"text\\">primary</div><style>
           .message {
             max-width: 71.4286rem;
             background-color: #f0f5ff;
@@ -297,7 +297,7 @@ exports[`UseMessage should work with different colors 1`] = `
             width: 100%;
             height: 100%;
           }
-        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><path d=\\"M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z\\" fill=\\"var(--geist-fill)\\" stroke=\\"var(--geist-fill)\\"></path><path d=\\"M8 11.8571L10.5 14.3572L15.8572 9\\" fill=\\"none\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">success</div><style>
+        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: currentColor;\\"><path fill=\\"currentColor\\" stroke=\\"currentColor\\" d=\\"M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z\\"></path><path fill=\\"none\\" stroke=\\"var(--zeit-icons-background)\\" d=\\"M8 11.857l2.5 2.5L15.857 9\\"></path></svg></div><div class=\\"text\\">success</div><style>
           .message {
             max-width: 71.4286rem;
             background-color: #effaef;
@@ -356,7 +356,7 @@ exports[`UseMessage should work with different colors 1`] = `
             width: 100%;
             height: 100%;
           }
-        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M12 8v4\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M12 16h.01\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">warning</div><style>
+        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: currentColor;\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"currentColor\\"></circle><path stroke=\\"var(--zeit-icons-background)\\" d=\\"M12 8v4M12 16h.01\\"></path></svg></div><div class=\\"text\\">warning</div><style>
           .message {
             max-width: 71.4286rem;
             background-color: #fef1ea;
@@ -415,7 +415,7 @@ exports[`UseMessage should work with different colors 1`] = `
             width: 100%;
             height: 100%;
           }
-        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentColor; --geist-fill: currentcolor; --geist-stroke: var(--zeit-icons-background);\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"var(--geist-fill)\\"></circle><path d=\\"M15 9l-6 6\\" stroke=\\"var(--geist-stroke)\\"></path><path d=\\"M9 9l6 6\\" stroke=\\"var(--geist-stroke)\\"></path></svg></div><div class=\\"text\\">error</div><style>
+        </style></div><div class=\\"message  visible \\"><div class=\\"icon\\"><svg stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: currentColor;\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"10\\" fill=\\"currentColor\\"></circle><path stroke=\\"var(--zeit-icons-background)\\" d=\\"M15 9l-6 6M9 9l6 6\\"></path></svg></div><div class=\\"text\\">error</div><style>
           .message {
             max-width: 71.4286rem;
             background-color: #fbebeb;
