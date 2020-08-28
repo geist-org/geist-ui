@@ -37,7 +37,6 @@ describe('DatePicker[picker=`date`]', () => {
         showTime
         defaultPickerValue={defaultValue}
         disabledTime={() => ({
-          // FIXME: type error here
           disabledHours: () => range(0, 24).splice(4, 20),
           disabledMinutes: () => range(30, 60),
           disabledSeconds: () => [55, 56],
@@ -89,7 +88,7 @@ describe('DatePicker[picker=`date`]', () => {
 
   it('prop `showToday` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="date" open showToday defaultPickerValue={defaultValue} />, // FIXME: type error here
+      <DatePicker picker="date" open showToday defaultPickerValue={defaultValue} />,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -125,7 +124,7 @@ describe('DatePicker[picker=`date`]', () => {
 
   it('prop `showNow` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="date" open showTime showNow defaultPickerValue={defaultValue} />, // FIXME type error here
+      <DatePicker picker="date" open showTime showNow defaultPickerValue={defaultValue} />,
     )
     expect(wrapper.exists('.cfx-picker-now-btn')).toBe(true)
     expect(() => wrapper.unmount()).not.toThrow()
