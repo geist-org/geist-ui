@@ -98,13 +98,13 @@ export const getButtonColors = (
           color: palette.cNeutral8,
         },
         hover: {
-          bg: palette.success,
-          border: palette.success,
+          bg: palette.successDark,
+          border: palette.successDark,
           color: palette.cNeutral8,
         },
         active: {
-          bg: palette.success,
-          border: palette.success,
+          bg: palette.successDark,
+          border: palette.successDark,
           color: palette.cNeutral8,
         },
       },
@@ -115,13 +115,13 @@ export const getButtonColors = (
           color: palette.cNeutral8,
         },
         hover: {
-          bg: palette.warning,
-          border: palette.warning,
+          bg: palette.warningDark,
+          border: palette.warningDark,
           color: palette.cNeutral8,
         },
         active: {
-          bg: palette.warning,
-          border: palette.warning,
+          bg: palette.warningDark,
+          border: palette.warningDark,
           color: palette.cNeutral8,
         },
       },
@@ -132,13 +132,13 @@ export const getButtonColors = (
           color: palette.cNeutral8,
         },
         hover: {
-          bg: palette.error,
-          border: palette.error,
+          bg: palette.errorDark,
+          border: palette.errorDark,
           color: palette.cNeutral8,
         },
         active: {
-          bg: palette.error,
-          border: palette.error,
+          bg: palette.errorDark,
+          border: palette.errorDark,
           color: palette.cNeutral8,
         },
       },
@@ -208,13 +208,13 @@ export const getButtonColors = (
         },
         hover: {
           bg: palette.cNeutral8,
-          border: palette.success,
-          color: palette.success,
+          border: palette.successDark,
+          color: palette.successDark,
         },
         active: {
           bg: palette.cNeutral8,
-          border: palette.success,
-          color: palette.success,
+          border: palette.successDark,
+          color: palette.successDark,
         },
       },
       warning: {
@@ -225,13 +225,13 @@ export const getButtonColors = (
         },
         hover: {
           bg: palette.cNeutral8,
-          border: palette.warning,
-          color: palette.warning,
+          border: palette.warningDark,
+          color: palette.warningDark,
         },
         active: {
           bg: palette.cNeutral8,
-          border: palette.warning,
-          color: palette.warning,
+          border: palette.warningDark,
+          color: palette.warningDark,
         },
       },
       error: {
@@ -242,13 +242,13 @@ export const getButtonColors = (
         },
         hover: {
           bg: palette.cNeutral8,
-          border: palette.error,
-          color: palette.error,
+          border: palette.errorDark,
+          color: palette.errorDark,
         },
         active: {
           bg: palette.cNeutral8,
-          border: palette.error,
-          color: palette.error,
+          border: palette.errorDark,
+          color: palette.errorDark,
         },
       },
       disabled: {
@@ -318,12 +318,12 @@ export const getButtonColors = (
         hover: {
           bg: palette.successLight,
           border: 'transparent',
-          color: palette.success,
+          color: palette.successDark,
         },
         active: {
           bg: palette.successLight,
           border: 'transparent',
-          color: palette.success,
+          color: palette.successDark,
         },
       },
       warning: {
@@ -335,12 +335,12 @@ export const getButtonColors = (
         hover: {
           bg: palette.warningLight,
           border: 'transparent',
-          color: palette.warning,
+          color: palette.warningDark,
         },
         active: {
           bg: palette.warningLight,
           border: 'transparent',
-          color: palette.warning,
+          color: palette.warningDark,
         },
       },
       error: {
@@ -352,12 +352,12 @@ export const getButtonColors = (
         hover: {
           bg: palette.errorLight,
           border: 'transparent',
-          color: palette.error,
+          color: palette.errorDark,
         },
         active: {
           bg: palette.errorLight,
           border: 'transparent',
-          color: palette.error,
+          color: palette.errorDark,
         },
       },
       disabled: {
