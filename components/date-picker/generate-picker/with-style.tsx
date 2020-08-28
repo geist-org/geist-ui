@@ -3,43 +3,53 @@ import { useImperativeHandle, useRef } from 'react'
 import { generatePickerGlobalStyle } from '../style'
 import useTheme from '../../styles/use-theme'
 import { PickerProps, RangePickerProps } from './index'
+import { SharedTimeProps } from '@jnoodle/rc-picker/lib/panels/TimePanel'
+import { DisabledTime } from '@jnoodle/rc-picker/lib/interface'
+
+// fix props ts error
+export type CombineProps<DateType> = Omit<
+  PickerProps<DateType> | RangePickerProps<DateType>,
+  'showTime' | 'showToday' | 'showNow' | 'disabledTime'
+> & {
+  showToday?: boolean
+  showNow?: boolean
+  showTime?:
+    | boolean
+    | SharedTimeProps<DateType>
+    | (Omit<SharedTimeProps<DateType>, 'defaultValue'> & {
+        defaultValue?: DateType[]
+      })
+  disabledTime?: DisabledTime<DateType>
+  disabledHours?: () => number[]
+  disabledMinutes?: (hour: number) => number[]
+  disabledSeconds?: (hour: number, minute: number) => number[]
+} & (
+    | SharedTimeProps<DateType>
+    | (Omit<SharedTimeProps<DateType>, 'defaultValue'> & {
+        defaultValue?: DateType[]
+      })
+  )
 
 // inject style to picker component
-const withStyle = <DateType extends any>(Picker: React.FC<any>) =>
-  React.forwardRef(
-    (props: PickerProps<DateType> | RangePickerProps<DateType>, ref: React.Ref<any>) => {
-      const theme = useTheme()
-      const pickerRef = useRef<any>(ref)
+const withStyle = <DateType extends any>(Picker: React.FC<CombineProps<DateType>>) =>
+  React.forwardRef((props: CombineProps<DateType>, ref: React.Ref<any>) => {
+    const theme = useTheme()
+    const pickerRef = useRef<any>(ref)
 
-      // type valueType = DateType | [EventValue<DateType>, EventValue<DateType>] | null | undefined
-      // const { defaultValue, ...rest } = props
-      // const [key, setKey] = useState<number>(Math.random())
-      // const [defaultVal, setDefaultVal] = useState<valueType>(defaultValue)
+    // pick ref methods
+    useImperativeHandle(ref, () => ({
+      focus: pickerRef?.current?.focus,
+      blur: pickerRef?.current?.blur,
+      setValue: pickerRef?.current?.setValue,
+      getValue: pickerRef?.current?.getValue,
+    }))
 
-      // pick ref methods
-      useImperativeHandle(ref, () => ({
-        // setValue(value: valueType) {
-        //   console.warn(
-        //     "The `setValue` method will cause datePicker re-render, so should use this method with great caution. Don't use `focus` immediately.",
-        //   )
-        //   setDefaultVal(value)
-        //   // defaultValue props change cannot cause re-render
-        //   // changing key for force update
-        //   setKey(Math.random())
-        // },
-        focus: pickerRef?.current?.focus,
-        blur: pickerRef?.current?.blur,
-        setValue: pickerRef?.current?.setValue,
-        getValue: pickerRef?.current?.getValue,
-      }))
-
-      return (
-        <>
-          <Picker forwardedRef={pickerRef} {...props} />
-          {generatePickerGlobalStyle(theme, props)}
-        </>
-      )
-    },
-  )
+    return (
+      <>
+        <Picker forwardedRef={pickerRef} {...props} />
+        {generatePickerGlobalStyle<DateType>(theme, props)}
+      </>
+    )
+  })
 
 export default withStyle

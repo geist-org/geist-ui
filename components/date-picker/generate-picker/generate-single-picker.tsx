@@ -9,7 +9,7 @@ import { Components, getTimeProps, PickerDateProps, PickerProps, PickerTimeProps
 import InputClearIcon from '../../input/input-icon-clear'
 import InputIcon from '../../input/input-icon'
 import { getSizes } from '../../input/styles'
-import withStyle from './with-style'
+import withStyle, { CombineProps } from './with-style'
 
 export default function generatePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
   type DatePickerProps = PickerProps<DateType>
@@ -93,7 +93,7 @@ export default function generatePicker<DateType>(generateConfig: GenerateConfig<
       )
     }
 
-    return withStyle(React.memo(Picker) as React.FC<PickerProps<DateType>>)
+    return withStyle<DateType>(React.memo(Picker) as React.FC<CombineProps<DateType>>)
   }
 
   const DatePicker = getPicker<DatePickerProps>()

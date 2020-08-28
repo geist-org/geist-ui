@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { ZeitUIThemes } from '../styles/themes'
-import { PickerProps, RangePickerProps } from './generate-picker'
 import { addColorAlpha } from '../utils/color'
 import { getSizes, getColors } from '../input/styles'
 import {
@@ -11,6 +10,7 @@ import {
   inputColors,
   InputColors,
 } from '../utils/prop-types'
+import { CombineProps } from './generate-picker/with-style'
 
 const animationDuration = '0.2s'
 
@@ -362,7 +362,7 @@ export const generateVariantStyles = (prefix: string, theme: ZeitUIThemes) => {
 // picker style
 export const generatePickerGlobalStyle = <DateType extends any>(
   theme: ZeitUIThemes,
-  props: PickerProps<DateType> | RangePickerProps<DateType>,
+  props: CombineProps<DateType>,
 ) => {
   const { prefixCls: prefix = 'cfx' } = props
 

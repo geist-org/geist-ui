@@ -8,7 +8,7 @@ import { Components, getTimeProps, RangePickerProps } from '.'
 import InputClearIcon from '../../input/input-icon-clear'
 import InputIcon from '../../input/input-icon'
 import { getSizes } from '../../input/styles'
-import withStyle from './with-style'
+import withStyle, { CombineProps } from './with-style'
 
 export default function generateRangePicker<DateType>(generateConfig: GenerateConfig<DateType>) {
   const Picker: React.FC<RangePickerProps<DateType>> = props => {
@@ -82,5 +82,5 @@ export default function generateRangePicker<DateType>(generateConfig: GenerateCo
       />
     )
   }
-  return withStyle<DateType>(React.memo(Picker) as React.FC<RangePickerProps<DateType>>)
+  return withStyle<DateType>(React.memo(Picker) as React.FC<CombineProps<DateType>>)
 }
