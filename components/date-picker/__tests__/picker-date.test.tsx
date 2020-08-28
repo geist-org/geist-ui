@@ -17,22 +17,14 @@ describe('DatePicker[picker=`date`]', () => {
 
   it('prop `defaultValue` should works', () => {
     const date = dayjs('2020-01-01', 'YYYY-MM-DD')
-    const wrapper = mount(
-      <div>
-        <DatePicker picker="date" open defaultValue={date} />
-      </div>,
-    )
+    const wrapper = mount(<DatePicker picker="date" open defaultValue={date} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('prop `defaultPickerValue` should works', () => {
     const date = dayjs('2020-01-01', 'YYYY-MM-DD')
-    const wrapper = mount(
-      <div>
-        <DatePicker picker="date" open defaultPickerValue={date} />
-      </div>,
-    )
+    const wrapper = mount(<DatePicker picker="date" open defaultPickerValue={date} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
@@ -45,6 +37,7 @@ describe('DatePicker[picker=`date`]', () => {
         showTime
         defaultPickerValue={defaultValue}
         disabledTime={() => ({
+          // FIXME: type error here
           disabledHours: () => range(0, 24).splice(4, 20),
           disabledMinutes: () => range(30, 60),
           disabledSeconds: () => [55, 56],
@@ -96,7 +89,7 @@ describe('DatePicker[picker=`date`]', () => {
 
   it('prop `showToday` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="date" open showToday defaultPickerValue={defaultValue} />,
+      <DatePicker picker="date" open showToday defaultPickerValue={defaultValue} />, // FIXME: type error here
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -132,7 +125,7 @@ describe('DatePicker[picker=`date`]', () => {
 
   it('prop `showNow` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="date" open showTime showNow defaultPickerValue={defaultValue} />,
+      <DatePicker picker="date" open showTime showNow defaultPickerValue={defaultValue} />, // FIXME type error here
     )
     expect(wrapper.exists('.cfx-picker-now-btn')).toBe(true)
     expect(() => wrapper.unmount()).not.toThrow()

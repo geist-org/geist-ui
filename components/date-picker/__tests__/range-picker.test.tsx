@@ -33,9 +33,7 @@ describe('RangePicker Common', () => {
 
   it('should support all variants', () => {
     const wrapper = mount(
-      <div>
-        <RangePicker open variant="solid" defaultPickerValue={[defaultValue, defaultValue]} />
-      </div>,
+      <RangePicker open variant="solid" defaultPickerValue={[defaultValue, defaultValue]} />,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -155,11 +153,7 @@ describe('RangePicker Common', () => {
   it('prop `value` should works', () => {
     const dateStart = dayjs('2020-01-01', 'YYYY-MM-DD')
     const dateEnd = dayjs('2020-02-01', 'YYYY-MM-DD')
-    const wrapper = mount(
-      <div>
-        <RangePicker open value={[dateStart, dateEnd]} />
-      </div>,
-    )
+    const wrapper = mount(<RangePicker open value={[dateStart, dateEnd]} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
@@ -167,13 +161,11 @@ describe('RangePicker Common', () => {
   it('prop `className` should works', () => {
     const customClass = 'blabla'
     const wrapper = mount(
-      <div>
-        <RangePicker
-          open
-          className={customClass}
-          defaultPickerValue={[defaultValue, defaultValue]}
-        />
-      </div>,
+      <RangePicker
+        open
+        className={customClass}
+        defaultPickerValue={[defaultValue, defaultValue]}
+      />,
     )
     expect(wrapper.find('.cfx-picker').hasClass(customClass)).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
@@ -182,24 +174,22 @@ describe('RangePicker Common', () => {
 
   it('prop `dateRender` should works', () => {
     const wrapper = mount(
-      <div>
-        <RangePicker
-          open
-          defaultPickerValue={[defaultValue, defaultValue]}
-          dateRender={(current: any) => {
-            const style: any = {}
-            if (current.date() === 1) {
-              style.border = '1px solid red'
-              style.borderRadius = '50%'
-            }
-            return (
-              <div className="cfx-picker-cell-inner" style={style}>
-                {current.date()}
-              </div>
-            )
-          }}
-        />
-      </div>,
+      <RangePicker
+        open
+        defaultPickerValue={[defaultValue, defaultValue]}
+        dateRender={(current: any) => {
+          const style: any = {}
+          if (current.date() === 1) {
+            style.border = '1px solid red'
+            style.borderRadius = '50%'
+          }
+          return (
+            <div className="cfx-picker-cell-inner" style={style}>
+              {current.date()}
+            </div>
+          )
+        }}
+      />,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()

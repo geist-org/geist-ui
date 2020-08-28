@@ -25,11 +25,7 @@ describe('DatePicker[picker=`time`]', () => {
 
   it('prop `defaultValue` should works', () => {
     const date = dayjs('2020-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss')
-    const wrapper = mount(
-      <div>
-        <DatePicker picker="time" open defaultValue={date} />
-      </div>,
-    )
+    const wrapper = mount(<DatePicker picker="time" open defaultValue={date} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
@@ -39,7 +35,7 @@ describe('DatePicker[picker=`time`]', () => {
       <DatePicker
         picker="time"
         open
-        disabledHours={() => range(0, 24).splice(4, 20)}
+        disabledHours={() => range(0, 24).splice(4, 20)} // FIXME type error
         defaultPickerValue={defaultValue}
       />,
     )
@@ -81,7 +77,7 @@ describe('DatePicker[picker=`time`]', () => {
       <DatePicker
         picker="time"
         open
-        disabledSeconds={() => range(20, 56)}
+        disabledSeconds={() => range(20, 56)} // FIXME type error
         defaultPickerValue={defaultValue}
       />,
     )
@@ -112,7 +108,7 @@ describe('DatePicker[picker=`time`]', () => {
         picker="time"
         open
         defaultPickerValue={defaultValue}
-        disabledHours={() => range(0, 24).splice(4, 20)}
+        disabledHours={() => range(0, 24).splice(4, 20)} // FIXME type error
         disabledMinutes={() => range(30, 60)}
         disabledSeconds={() => [20, 56]}
       />,
@@ -123,7 +119,7 @@ describe('DatePicker[picker=`time`]', () => {
 
   it('prop `hourStep` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="time" open hourStep={3} defaultPickerValue={defaultValue} />,
+      <DatePicker picker="time" open hourStep={3} defaultPickerValue={defaultValue} />, // FIXME type error
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -131,7 +127,7 @@ describe('DatePicker[picker=`time`]', () => {
 
   it('prop `minuteStep` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="time" open minuteStep={3} defaultPickerValue={defaultValue} />,
+      <DatePicker picker="time" open minuteStep={3} defaultPickerValue={defaultValue} />, // FIXME type error
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -139,7 +135,7 @@ describe('DatePicker[picker=`time`]', () => {
 
   it('prop `secondStep` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="time" open secondStep={3} defaultPickerValue={defaultValue} />,
+      <DatePicker picker="time" open secondStep={3} defaultPickerValue={defaultValue} />, // FIXME type error
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -161,7 +157,7 @@ describe('DatePicker[picker=`time`]', () => {
 
   it('prop `use12Hours` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="time" open use12Hours defaultPickerValue={defaultValue} />,
+      <DatePicker picker="time" open use12Hours defaultPickerValue={defaultValue} />, // FIXME type error
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
@@ -207,7 +203,7 @@ describe('DatePicker[picker=`time`]', () => {
 
   it('prop `showNow` should works', () => {
     const wrapper = mount(
-      <DatePicker picker="time" open showNow defaultPickerValue={defaultValue} />,
+      <DatePicker picker="time" open showNow defaultPickerValue={defaultValue} />, // FIXME type error
     )
     expect(wrapper.exists('.cfx-picker-now-btn')).toBe(true)
     expect(() => wrapper.unmount()).not.toThrow()
