@@ -350,18 +350,14 @@ function Table<RecordType>({ variant, children, ...props }: TableProps<RecordTyp
       border-right: ${expressiveness.L1} ${expressiveness.cLineStyle1} ${palette.cNeutral2};
     }
     .table.variant-line :global(tbody tr:hover td) {
-      padding-top: calc(${layout.gap} - ${expressiveness.L1});
-      padding-bottom: calc(${layout.gap} - ${expressiveness.L1});
-      border-top: ${expressiveness.L2} ${expressiveness.cLineStyle1} ${palette.cTheme5};
-      border-bottom: ${expressiveness.L2} ${expressiveness.cLineStyle1} ${palette.cTheme5};
+      border-top: ${expressiveness.L1} ${expressiveness.cLineStyle1} ${palette.cTheme5};
+      border-bottom: ${expressiveness.L1} ${expressiveness.cLineStyle1} ${palette.cTheme5};
     }
     .table.variant-line :global(tbody tr:hover td:first-child) {
-      padding-left: calc((${layout.gapHalf} / 2) * 3 - ${expressiveness.L1});
-      border-left: ${expressiveness.L2} ${expressiveness.cLineStyle1} ${palette.cTheme5};
+      border-left: ${expressiveness.L1} ${expressiveness.cLineStyle1} ${palette.cTheme5};
     }
     .table.variant-line :global(tbody tr:hover td:last-child) {
-      padding-right: calc((${layout.gapHalf} / 2) * 3 - ${expressiveness.L1});
-      border-right: ${expressiveness.L2} ${expressiveness.cLineStyle1} ${palette.cTheme5};
+      border-right: ${expressiveness.L1} ${expressiveness.cLineStyle1} ${palette.cTheme5};
     }
   `
   return (
