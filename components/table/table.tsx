@@ -5,7 +5,7 @@ import useTheme from '../styles/use-theme'
 import { InputVariantTypes } from '../utils/prop-types'
 import ExpandIcon from './ExpandIcon'
 import { TableProps as RcTableProps } from '@cfxjs/rc-table/es/Table'
-export type { ColumnType, ColumnsType, CellType } from '@cfxjs/rc-table/lib/interface'
+export type { ColumnType, ColumnsType, CellType } from '@cfxjs/rc-table/es/interface'
 export type TableVariants = InputVariantTypes
 
 export interface Props<RecordType> extends RcTableProps<RecordType> {
