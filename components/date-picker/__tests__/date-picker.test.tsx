@@ -84,7 +84,6 @@ describe('DatePicker Common', () => {
   it('prop `locale` should works with compatibility', () => {
     const wrapper = mount(
       <div>
-        <DatePicker open locale="zh_CN" defaultPickerValue={defaultValue} />
         <DatePicker open locale="zh" defaultPickerValue={defaultValue} />
         <DatePicker open locale="en_US" defaultPickerValue={defaultValue} />
         <DatePicker open locale="en" defaultPickerValue={defaultValue} />
@@ -97,11 +96,7 @@ describe('DatePicker Common', () => {
 
   it('prop `value` should works', () => {
     const date = dayjs('2020-01-01', 'YYYY-MM-DD')
-    const wrapper = mount(
-      <div>
-        <DatePicker open value={date} />
-      </div>,
-    )
+    const wrapper = mount(<DatePicker open value={date} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
@@ -150,7 +145,6 @@ describe('DatePicker Common', () => {
     expect(
       document.querySelectorAll(`.${customClass} .cfx-picker-dropdown`).length,
     ).toBeGreaterThan(0)
-    expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
@@ -317,7 +311,6 @@ describe('DatePicker Common', () => {
     expect(document.querySelectorAll(`.cfx-picker-dropdown.${customClass}`).length).toBeGreaterThan(
       0,
     )
-    expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 

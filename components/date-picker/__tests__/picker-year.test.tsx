@@ -25,22 +25,14 @@ describe('DatePicker[picker=`year`]', () => {
 
   it('prop `defaultValue` should works', () => {
     const date = dayjs('2020-01-01', 'YYYY-MM-DD')
-    const wrapper = mount(
-      <div>
-        <DatePicker picker="year" open defaultValue={date} />
-      </div>,
-    )
+    const wrapper = mount(<DatePicker picker="year" open defaultValue={date} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('prop `defaultPickerValue` should works', () => {
     const date = dayjs('2020-01-01', 'YYYY-MM-DD')
-    const wrapper = mount(
-      <div>
-        <DatePicker picker="year" open defaultPickerValue={date} />
-      </div>,
-    )
+    const wrapper = mount(<DatePicker picker="year" open defaultPickerValue={date} />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
