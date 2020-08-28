@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 interface DefaultExpandIconProps<RecordType> {
   onExpand: (record: RecordType, e: React.MouseEvent<HTMLElement>) => void
