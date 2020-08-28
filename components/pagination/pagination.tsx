@@ -1,4 +1,11 @@
-import React, { useMemo, ReactNode, forwardRef, RefObject, useImperativeHandle } from 'react'
+import React, {
+  useMemo,
+  ReactNode,
+  forwardRef,
+  RefObject,
+  useImperativeHandle,
+  useEffect,
+} from 'react'
 import {
   PaginationContext,
   PaginationConfig,
@@ -7,6 +14,7 @@ import {
 } from './pagination-context'
 import useMergedState from '../utils/use-merged-state'
 import { NormalSizes, PaginationVariants } from '../utils/prop-types'
+import usePaginationHandle from './use-pagination-handle'
 /**
  * styles
  */
@@ -88,12 +96,10 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       value: customPage,
       onChange: (page): any => onPageChange && onPageChange(page, pageSize),
     })
-    console.log('page', page)
     const [pageSize, setPageSize] = useMergedState(defaultPageSize, {
       value: customPageSize,
       onChange: (pageSize): any => onPageSizeChange && onPageSizeChange(page, pageSize),
     })
-    console.log('pageSize', pageSize)
     const [, prevChildren] = pickChild(children, PaginationPrevious)
     const [, nextChildren] = pickChild(children, PaginationNext)
     const pageCount = useMemo(() => getPageCount(total, pageSize), [pageSize])
@@ -132,28 +138,22 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
 
     const getNewValue = (newVal: number, oldVal: number) => {
       if (!Array.isArray(oldVal)) return newVal
-      if (!oldVal.includes(newVal)) return [...oldVal, newVal]
-      return oldVal.filter(item => item !== newVal)
     }
     const updatePage = (type: PaginationUpdateType, val: number) => {
-      console.log('upadte val', val)
-      const newPage = getNewValue(val, page) as number
-      if (type === 'prev' && newPage > 1) {
-        setPage(newPage - 1)
+      if (type === 'prev' && page > 1) {
+        setPage(page - 1)
       }
-      if (type === 'next' && newPage < pageCount) {
-        setPage(newPage + 1)
+      if (type === 'next' && page < pageCount) {
+        setPage(page + 1)
       }
       if (type === 'click') {
+        const newPage = getNewValue(val, page) as number
         setPage(newPage)
       }
-      console.log('new page: ' + page)
     }
     const updatePageSize = (val: number) => {
       const newPageSize = getNewValue(val, pageSize) as number
-      console.log('updatePageSize', newPageSize)
       setPageSize(newPageSize)
-      console.log('new pagesize:' + pageSize)
     }
 
     useImperativeHandle(ref, () => ({
@@ -164,7 +164,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       setPageSize: (value: number) => {
         setPageSize(value)
       },
-      getPageSize: () => page,
+      getPageSize: () => pageSize,
     }))
 
     const [prevItem, nextItem] = useMemo(() => {
@@ -177,7 +177,6 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       ]
     }, [prevChildren, nextChildren])
     const { font, width } = useMemo(() => getSizes(size), [size])
-    console.log('config page', page)
     const values = useMemo<PaginationConfig>(
       () => ({
         isFirst: page <= 1,
@@ -188,12 +187,12 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
         page,
         pageSize,
       }),
-      [page, pageSize],
+      [page, pageSize, updatePage, updatePageSize],
     )
 
-    // useEffect(() => {
-    //   onChangeHandle && onChangeHandle(page, pageSize)
-    // }, [page, pageSize])
+    useEffect(() => {
+      onPageChange && onPageChange(page, pageSize)
+    }, [page, pageSize])
     // useEffect(() => {
     //   if (customPage !== undefined) {
     //     setPage(customPage)
@@ -204,13 +203,11 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
     //     setPageSize(customPageSize)
     //   }
     // }, [customPageSize])
-    console.log('final page', page)
     return (
       <PaginationContext.Provider value={values}>
         <div className="pagination">
           {showPageSizeChanger && (
             <div className="left">
-              {console.log('divPage==', page)}
               <PaginationPageSize
                 size={size}
                 pageSizeOptions={pageSizeOptions}
@@ -270,4 +267,6 @@ Pagination.defaultProps = defaultProps
 export default Pagination as typeof Pagination & {
   Previous: typeof PaginationPrevious
   Next: typeof PaginationNext
+  usePaginationHandle: typeof usePaginationHandle
 }
+export { usePaginationHandle }

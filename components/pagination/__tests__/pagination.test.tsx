@@ -12,13 +12,10 @@ describe('Pagination', () => {
   })
 
   it('should set pageSize', () => {
-    let pageSize
-    const handler = jest.fn().mockImplementation((pageVal, pageSizeVal) => {
-      pageSize = pageSizeVal
-    })
-    const wrapper = mount(<Pagination total={50} pageSize={12} onChange={handler} />)
+    const wrapper = mount(<Pagination total={50} pageSize={12} />)
     expect(wrapper.html()).toMatchSnapshot()
-    expect(pageSize).toEqual(12)
+    const btns = wrapper.find('button')
+    expect(btns.length).toEqual(7)
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
@@ -35,7 +32,7 @@ describe('Pagination', () => {
   it('should trigger change event', async () => {
     let current = 1
     const handler = jest.fn().mockImplementation(val => (current = val))
-    const wrapper = mount(<Pagination total={100} defaultPage={2} onChange={handler} />)
+    const wrapper = mount(<Pagination total={100} defaultPage={2} onPageChange={handler} />)
 
     await act(async () => {
       wrapper.setProps({ page: 10 })
@@ -48,10 +45,35 @@ describe('Pagination', () => {
     btns.at(0).simulate('click')
     await updateWrapper(wrapper, 200)
     expect(current).toEqual(9)
+    handler.mockRestore()
+  })
 
+  it('should trigger change event', async () => {
+    let current = 1
+    const handler = jest.fn().mockImplementation(val => (current = val))
+    const wrapper = mount(<Pagination total={100} defaultPage={2} onPageChange={handler} />)
+
+    await act(async () => {
+      wrapper.setProps({ page: 9 })
+    })
+    await updateWrapper(wrapper, 200)
+    expect(handler).toHaveBeenCalled()
+    expect(current).toEqual(9)
+    const btns = wrapper.find('button')
     btns.at(btns.length - 1).simulate('click')
-    btns.at(btns.length - 1).simulate('click')
-    btns.at(btns.length - 1).simulate('click')
+    await updateWrapper(wrapper, 200)
+    expect(current).toEqual(10)
+    handler.mockRestore()
+  })
+
+  it('should disabled when the current is last', async () => {
+    let current = 1
+    const handler = jest.fn().mockImplementation(val => (current = val))
+    const wrapper = mount(<Pagination total={100} defaultPage={2} onPageChange={handler} />)
+    await act(async () => {
+      wrapper.setProps({ page: 10 })
+    })
+    const btns = wrapper.find('button')
     btns.at(btns.length - 1).simulate('click')
     await updateWrapper(wrapper, 200)
     expect(current).toEqual(10)
@@ -70,7 +92,7 @@ describe('Pagination', () => {
 
   it('should be render all pages when limit is greater than the total', async () => {
     const handler = jest.fn()
-    const wrapper = mount(<Pagination total={150} limit={40} onChange={handler} />)
+    const wrapper = mount(<Pagination total={150} limit={40} onPageChange={handler} />)
     expect(wrapper.find('button').length).toBeGreaterThanOrEqual(15)
     wrapper.find('button').at(10).simulate('click')
     await updateWrapper(wrapper, 200)
@@ -114,7 +136,7 @@ describe('Pagination', () => {
     const handler = jest.fn().mockImplementation(val => {
       current = val
     })
-    const wrapper = mount(<Pagination total={200} defaultPage={10} onChange={handler} />)
+    const wrapper = mount(<Pagination total={200} defaultPage={10} onPageChange={handler} />)
     const btn = wrapper.find('svg').at(1).parents('button')
     btn.at(0).simulate('click', nativeEvent)
     await updateWrapper(wrapper, 200)
@@ -127,7 +149,7 @@ describe('Pagination', () => {
     const handler = jest.fn().mockImplementation(val => {
       current = val
     })
-    const wrapper = mount(<Pagination total={200} defaultPage={10} onChange={handler} />)
+    const wrapper = mount(<Pagination total={200} defaultPage={10} onPageChange={handler} />)
     const btn = wrapper.find('svg').at(1).parents('button')
     btn.at(0).simulate('click', nativeEvent)
     await updateWrapper(wrapper, 200)
@@ -144,7 +166,7 @@ describe('Pagination', () => {
     const handler = jest.fn().mockImplementation(val => {
       current = val
     })
-    const wrapper = mount(<Pagination total={200} defaultPage={11} onChange={handler} />)
+    const wrapper = mount(<Pagination total={200} defaultPage={11} onPageChange={handler} />)
     const lastBtn = wrapper.find('svg').at(2).parents('button')
     lastBtn.at(0).simulate('click', nativeEvent)
     await updateWrapper(wrapper, 200)
@@ -195,7 +217,7 @@ describe('Pagination', () => {
     let current = ''
     const onChangehandler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination defaultPage={2} total={200} onChange={onChangehandler} showQuickJumper />,
+      <Pagination defaultPage={2} total={200} onPageChange={onChangehandler} showQuickJumper />,
     )
     await updateWrapper(wrapper, 200)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
@@ -209,7 +231,7 @@ describe('Pagination', () => {
     let current = ''
     const onChangehandler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination defaultPage={2} total={200} onChange={onChangehandler} showQuickJumper />,
+      <Pagination defaultPage={2} total={200} onPageChange={onChangehandler} showQuickJumper />,
     )
     await updateWrapper(wrapper, 200)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
@@ -224,7 +246,7 @@ describe('Pagination', () => {
     let current = ''
     const handler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination defaultPage={2} total={200} onChange={handler} showQuickJumper />,
+      <Pagination defaultPage={2} total={200} onPageChange={handler} showQuickJumper />,
     )
     await updateWrapper(wrapper, 200)
     expect(handler).toHaveBeenCalled()
@@ -240,7 +262,7 @@ describe('Pagination', () => {
     let current = ''
     const handler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination defaultPage={20} total={200} onChange={handler} showQuickJumper />,
+      <Pagination defaultPage={20} total={200} onPageChange={handler} showQuickJumper />,
     )
     expect(current).toEqual(20)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
@@ -288,7 +310,7 @@ describe('Pagination', () => {
         total={200}
         defaultPage={20}
         onPageSizeChange={pageSizeChangeHandler}
-        onChange={changeHandler}
+        onPageChange={changeHandler}
         showPageSizeChanger
       />,
     )

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useRef, ReactNode } from 'react'
+import React, { useRef, ReactNode } from 'react'
 import Input from '../input'
 import { NormalSizes } from '../utils/prop-types'
 import useTheme from '../styles/use-theme'
@@ -25,7 +25,7 @@ const PaginationNext: React.FC<PaginationQuickJumperProps> = ({
 }: PaginationQuickJumperProps & typeof defaultProps) => {
   const theme = useTheme()
   const inputRef = useRef<HTMLInputElement>(null)
-  const { variant, update } = usePaginationContext()
+  const { variant, updatePage } = usePaginationContext()
   const keyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const target = e.target as HTMLTextAreaElement
     if (e.keyCode === 13) {
@@ -34,7 +34,7 @@ const PaginationNext: React.FC<PaginationQuickJumperProps> = ({
         if (val > count) {
           val = count
         }
-        update && update('click', val)
+        updatePage && updatePage('click', val)
       }
       inputRef.current && (inputRef.current.value = '')
     }
