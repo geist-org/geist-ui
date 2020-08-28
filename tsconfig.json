@@ -24,6 +24,8 @@
     "isolatedModules": true,
     "typeRoots": ["node_modules/@types", "./typings"]
   },
-  "exclude": ["node_modules", "examples", "es"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/**/*.tsx", "components/**/*.tsx"]
+  "exclude": ["node_modules", "examples", "esm","dist"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/**/*.tsx", "components/**/*.tsx",
+    "pages/code/**/*.jsx"
+  ]
 }

@@ -15,7 +15,7 @@ export const meta = {
   scope={{ Select }}
   code={`
 () => {
-   const [value, setValue] = React.useState("1")
+const [value, setValue] = React.useState("1")
   return (
     <Select placeholder="选择工作方式" value={value} onChange={(val) => setValue(val)}>
       <Select.Option value="1">远程工作</Select.Option>
@@ -209,7 +209,6 @@ export const meta = {
 ```ts
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
-
 
 <Attributes.Title>SelectVariants</Attributes.Title>
 

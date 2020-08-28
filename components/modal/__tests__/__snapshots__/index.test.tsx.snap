@@ -3,18 +3,19 @@
 exports[`Modal customization should be supported 1`] = `
 "<div class=\\"wrapper test-class  wrapper-enter\\"><h2 class=\\"\\">Modal</h2><style>
         h2 {
-          font-size: 1.5rem;
-          line-height: 1.6;
-          font-weight: normal;
+          font-size: 1.2857rem;
+          line-height: 1.7857rem;
+          font-weight: 500;
           text-align: center;
           margin: 0;
+          margin-bottom: 8px;
           display: inline-flex;
           flex-shrink: 0;
           justify-content: center;
           align-items: center;
           word-break: break-word;
           text-transform: capitalize;
-          color: #000;
+          color: #282d30;
         }
       </style><style>
           .wrapper {
@@ -62,37 +63,39 @@ exports[`Modal customization should be supported 1`] = `
 exports[`Modal should render correctly 1`] = `
 "<div class=\\"backdrop  transition-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper   wrapper-enter\\"><h2 class=\\"\\">Modal</h2><style>
         h2 {
-          font-size: 1.5rem;
-          line-height: 1.6;
-          font-weight: normal;
+          font-size: 1.2857rem;
+          line-height: 1.7857rem;
+          font-weight: 500;
           text-align: center;
           margin: 0;
+          margin-bottom: 8px;
           display: inline-flex;
           flex-shrink: 0;
           justify-content: center;
           align-items: center;
           word-break: break-word;
           text-transform: capitalize;
-          color: #000;
+          color: #282d30;
         }
       </style><p class=\\"\\">This is a modal</p><style>
         p {
-          font-size: 0.875rem;
-          line-height: 1.6;
+          font-size: 1rem;
+          line-height: 1.4286rem;
           font-weight: normal;
           text-align: center;
           margin: 0;
+          margin-bottom: calc(8px * 1.5);
           display: inline-flex;
           justify-content: center;
           align-items: center;
           word-break: break-word;
           text-transform: uppercase;
-          color: #666;
+          color: #9b9eac;
         }
       </style><div class=\\"content \\"><p>Some content contained within the modal.</p></div><style>
         .content {
           margin: 0 -16px;
-          padding: 16px 16px 8px;
+          padding: 0 calc(16px * 1.5) 8px;
           overflow-y: auto;
         }
 
@@ -103,80 +106,187 @@ exports[`Modal should render correctly 1`] = `
         .content > :global(*:last-child) {
           margin-bottom: 0;
         }
-      </style><div></div><footer><button class=\\"\\">Cancel</button><style>
-        button {
-          font-size: 0.75rem;
-          text-transform: uppercase;
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          justify-content: center;
+      </style><footer><button type=\\"button\\" class=\\"btn  \\"><div class=\\"text \\">Cancel</div><style>
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.375rem;
+          height: 2.8571rem;
+          line-height: 2.8571rem;
+          min-width: 10rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
           outline: none;
-          text-decoration: none;
-          transition: all 200ms ease-in-out 0s;
-          border: none;
-          color: #666;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #0054fe;
           background-color: #fff;
+          border: 2px solid #0054fe;
           cursor: pointer;
-          flex: 1;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.375rem;
+          --zeit-ui-button-height: 2.8571rem;
+          --zeit-ui-button-color: #0054fe;
+          --zeit-ui-button-bg: #fff;
         }
 
-        button:hover {
-          color: #000;
-          background-color: #fafafa;
-        }
-      </style><button class=\\"\\">Submit</button><style>
-        button {
-          font-size: 0.75rem;
-          text-transform: uppercase;
-          display: flex;
-          -webkit-box-align: center;
-          align-items: center;
-          -webkit-box-pack: center;
-          justify-content: center;
-          outline: none;
-          text-decoration: none;
-          transition: all 200ms ease-in-out 0s;
-          border: none;
-          color: #000;
+        .tag:hover,
+        .btn:hover {
+          color: #0433dc;
+          --zeit-ui-button-color: #0433dc;
           background-color: #fff;
+          border-color: #0433dc;
           cursor: pointer;
-          flex: 1;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
         }
 
-        button:hover {
-          color: #000;
-          background-color: #fafafa;
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #0626ae;
+          --zeit-ui-button-color: #0626ae;
+          background-color: #fff;
+          border-color: #0626ae;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
         }
-      </style></footer><style>
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      </style></button><button type=\\"button\\" class=\\"btn  \\"><div class=\\"text \\">Submit</div><style>
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.375rem;
+          height: 2.8571rem;
+          line-height: 2.8571rem;
+          min-width: 10rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: bold;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid #0054fe;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --zeit-ui-button-padding: 1.375rem;
+          --zeit-ui-button-height: 2.8571rem;
+          --zeit-ui-button-color: #0054fe;
+          --zeit-ui-button-bg: #fff;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #0433dc;
+          --zeit-ui-button-color: #0433dc;
+          background-color: #fff;
+          border-color: #0433dc;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #0626ae;
+          --zeit-ui-button-color: #0626ae;
+          background-color: #fff;
+          border-color: #0626ae;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      </style></button></footer><style>
         footer {
           display: flex;
           overflow: hidden;
+          justify-content: space-around;
           width: 100%;
-          height: 3.625rem;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          border-top: 1px solid #eaeaea;
-          border-bottom-left-radius: 4px;
-          border-bottom-right-radius: 4px;
-        }
-
-        footer > :global(button + button) {
-          border-left: 1px solid #eaeaea;
-        }
-
-        div {
-          height: 3.625rem;
-          flex-shrink: 0;
+          padding: calc(8px * 1.5) 0 calc(16px * 0.5);
         }
       </style><style>
           .wrapper {
             max-width: 85vw;
             max-height: 75vh;
-            width: 26rem;
+            width: 30rem;
             overflow: hidden;
             display: flex;
             flex-direction: column;

@@ -10,10 +10,12 @@ module.exports = {
   },
   parserOptions: {
     project: './tsconfig.json',
+    projectFolderIgnoreList: ['/node_modules/'],
     ecmaFeatures: {
       jsx: true,
     },
   },
+
   rules: {
     indent: 0,
     '@typescript-eslint/indent': 0,

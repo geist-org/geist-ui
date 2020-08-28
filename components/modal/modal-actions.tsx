@@ -5,30 +5,14 @@ const ModalActions: React.FC<React.PropsWithChildren<{}>> = ({ children, ...prop
   const theme = useTheme()
   return (
     <>
-      <div />
       <footer {...props}>{children}</footer>
       <style jsx>{`
         footer {
           display: flex;
           overflow: hidden;
+          justify-content: space-around;
           width: 100%;
-          height: 3.625rem;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          border-top: 1px solid ${theme.palette.border};
-          border-bottom-left-radius: ${theme.expressiveness.R2};
-          border-bottom-right-radius: ${theme.expressiveness.R2};
-        }
-
-        footer > :global(button + button) {
-          border-left: 1px solid ${theme.palette.border};
-        }
-
-        div {
-          height: 3.625rem;
-          flex-shrink: 0;
+          padding: calc(${theme.layout.gapHalf} * 1.5) 0 calc(${theme.layout.gap} * 0.5);
         }
       `}</style>
     </>
