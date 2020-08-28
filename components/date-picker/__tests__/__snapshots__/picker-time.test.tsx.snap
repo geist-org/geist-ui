@@ -998,14 +998,14 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -1021,11 +1021,15 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -1325,7 +1329,7 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -1518,6 +1522,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -1559,6 +1567,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -1604,6 +1616,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -1645,6 +1661,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -1690,6 +1710,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -1731,6 +1755,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -1776,6 +1804,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -1817,6 +1849,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -1862,6 +1898,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -1902,6 +1942,10 @@ exports[`DatePicker[picker=\`time\`] prop \`defaultValue\` should works 1`] = `
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -2867,14 +2911,14 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -2890,11 +2934,15 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -3194,7 +3242,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -3387,6 +3435,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -3428,6 +3480,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -3473,6 +3529,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -3514,6 +3574,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -3559,6 +3623,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -3600,6 +3668,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -3645,6 +3717,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -3686,6 +3762,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -3731,6 +3811,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -3771,6 +3855,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledHours\` should works 1`] = `
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -4736,14 +4824,14 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -4759,11 +4847,15 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -5063,7 +5155,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -5256,6 +5348,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -5297,6 +5393,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -5342,6 +5442,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -5383,6 +5487,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -5428,6 +5536,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -5469,6 +5581,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -5514,6 +5630,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -5555,6 +5675,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -5600,6 +5724,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -5640,6 +5768,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledMinutes\` should works 1`] =
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -6605,14 +6737,14 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -6628,11 +6760,15 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -6932,7 +7068,7 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -7125,6 +7261,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -7166,6 +7306,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -7211,6 +7355,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -7252,6 +7400,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -7297,6 +7449,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -7338,6 +7494,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -7383,6 +7543,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -7424,6 +7588,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -7469,6 +7637,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -7509,6 +7681,10 @@ exports[`DatePicker[picker=\`time\`] prop \`disabledSeconds\` should works 1`] =
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -8474,14 +8650,14 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -8497,11 +8673,15 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -8801,7 +8981,7 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -8994,6 +9174,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -9035,6 +9219,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -9080,6 +9268,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -9121,6 +9313,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -9166,6 +9362,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -9207,6 +9407,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -9252,6 +9456,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -9293,6 +9501,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -9338,6 +9550,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -9378,6 +9594,10 @@ exports[`DatePicker[picker=\`time\`] prop \`format\` should works 1`] = `
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -10343,14 +10563,14 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -10366,11 +10586,15 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -10670,7 +10894,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -10863,6 +11087,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -10904,6 +11132,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -10949,6 +11181,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -10990,6 +11226,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -11035,6 +11275,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -11076,6 +11320,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -11121,6 +11369,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -11162,6 +11414,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -11207,6 +11463,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -11247,6 +11507,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hideDisabledOptions\` should works 1
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -12212,14 +12476,14 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -12235,11 +12499,15 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -12539,7 +12807,7 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -12732,6 +13000,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -12773,6 +13045,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -12818,6 +13094,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -12859,6 +13139,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -12904,6 +13188,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -12945,6 +13233,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -12990,6 +13282,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -13031,6 +13327,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -13076,6 +13376,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -13116,6 +13420,10 @@ exports[`DatePicker[picker=\`time\`] prop \`hourStep\` should works 1`] = `
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -14081,14 +14389,14 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -14104,11 +14412,15 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -14408,7 +14720,7 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -14601,6 +14913,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -14642,6 +14958,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -14687,6 +15007,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -14728,6 +15052,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -14773,6 +15101,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -14814,6 +15146,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -14859,6 +15195,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -14900,6 +15240,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -14945,6 +15289,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -14985,6 +15333,10 @@ exports[`DatePicker[picker=\`time\`] prop \`minuteStep\` should works 1`] = `
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -15950,14 +16302,14 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -15973,11 +16325,15 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -16277,7 +16633,7 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -16470,6 +16826,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -16511,6 +16871,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -16556,6 +16920,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -16597,6 +16965,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -16642,6 +17014,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -16683,6 +17059,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -16728,6 +17108,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -16769,6 +17153,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -16814,6 +17202,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -16854,6 +17246,10 @@ exports[`DatePicker[picker=\`time\`] prop \`renderExtraFooter\` should works 1`]
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -17819,14 +18215,14 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -17842,11 +18238,15 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -18146,7 +18546,7 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -18339,6 +18739,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -18380,6 +18784,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -18425,6 +18833,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -18466,6 +18878,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -18511,6 +18927,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -18552,6 +18972,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -18597,6 +19021,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -18638,6 +19066,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -18683,6 +19115,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -18723,6 +19159,10 @@ exports[`DatePicker[picker=\`time\`] prop \`secondStep\` should works 1`] = `
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -19688,14 +20128,14 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -19711,11 +20151,15 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -20015,7 +20459,7 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -20208,6 +20652,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -20249,6 +20697,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -20294,6 +20746,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -20335,6 +20791,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -20380,6 +20840,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -20421,6 +20885,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -20466,6 +20934,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -20507,6 +20979,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -20552,6 +21028,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -20592,6 +21072,10 @@ exports[`DatePicker[picker=\`time\`] prop \`use12Hours\` should works 1`] = `
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
@@ -21601,14 +22085,14 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           width: 56px;
           margin: 0;
           padding: 0;
-          overflow-y: hidden;
+          overflow-y: auto;
           text-align: left;
           list-style: none;
           transition: background 0.3s;
         }
 
         .cfx-picker-time-panel-column::-webkit-scrollbar {
-          width: 2px;
+          width: 1px;
           height: 8px;
           background-color: #f9fafb;
         }
@@ -21624,11 +22108,15 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-datetime-panel .cfx-picker-time-panel-column::after {
-          height: 198px;
+          height: 20px;
         }
 
         .cfx-picker-time-panel-column:not(:first-child) {
           border-left: 1px solid #dbdde0;
+        }
+
+        .cfx-picker-time-panel-column:last-child {
+          border-right: 1px solid #dbdde0;
         }
 
         .cfx-picker-time-panel-column-active {
@@ -21928,7 +22416,7 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
         }
 
         .cfx-picker-range.cfx-picker-focused .cfx-picker-active-bar {
-          opacity: 1;
+          // opacity: 1;
         }
 
         .cfx-picker-range-separator {
@@ -22121,6 +22609,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-default:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-default .cfx-picker-clear {
             background-color: #f0f5ff;
@@ -22162,6 +22654,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-default .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-default:hover .cfx-picker-clear,
@@ -22207,6 +22703,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-primary:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-primary .cfx-picker-clear {
             background-color: #e0eaff;
@@ -22248,6 +22748,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-suffix {
             color: #0054fe;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-primary .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-primary:hover .cfx-picker-clear,
@@ -22293,6 +22797,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-success:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-success .cfx-picker-clear {
             background-color: #7cd77b;
@@ -22334,6 +22842,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-success .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-success:hover .cfx-picker-clear,
@@ -22379,6 +22891,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
             color: inherit;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-warning:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-warning .cfx-picker-clear {
             background-color: #ffc438;
@@ -22420,6 +22936,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-suffix {
             color: inherit;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-warning .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #282d30;
           }
 
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-warning:hover .cfx-picker-clear,
@@ -22465,6 +22985,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
             color: #e15c56;
           }
 
+          .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
+            color: #e15c56;
+          }
+
           .cfx-picker.cfx-picker-variant-solid.cfx-picker-color-error:hover .cfx-picker-clear,
           .cfx-picker-focused.cfx-picker-variant-solid.cfx-picker-color-error .cfx-picker-clear {
             background-color: #fbebeb;
@@ -22505,6 +23029,10 @@ exports[`DatePicker[picker=\`time\`] prop \`value\` should works 1`] = `
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input > input,
           .cfx-picker.cfx-picker-variant-line.cfx-picker-color-error:hover .cfx-picker-suffix,
           .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-suffix {
+            color: #e15c56;
+          }
+
+          .cfx-picker-focused.cfx-picker-variant-line.cfx-picker-color-error .cfx-picker-input:not(.cfx-picker-input-active) > input {
             color: #e15c56;
           }
 
