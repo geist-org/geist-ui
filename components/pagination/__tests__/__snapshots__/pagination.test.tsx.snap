@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination should render correctly 1`] = `
-"<div class=\\"pagination\\"><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" class=\\"feather feather-arrow-left\\"><line x1=\\"19\\" y1=\\"12\\" x2=\\"5\\" y2=\\"12\\"></line><polyline points=\\"12 19 5 12 12 5\\"></polyline></svg></button><style>
+"<div class=\\"pagination\\"><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M15 18l-6-6 6-6\\"></path></svg></button><style>
         li {
           margin-right: 8px;
           margin-bottom: initial;
@@ -433,7 +433,7 @@ exports[`Pagination should render correctly 1`] = `
           width: 1.3em;
           height: 1.3em;
         }
-      </style></li><li><button class=\\" \\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" class=\\"feather feather-arrow-right\\"><line x1=\\"5\\" y1=\\"12\\" x2=\\"19\\" y2=\\"12\\"></line><polyline points=\\"12 5 19 12 12 19\\"></polyline></svg></button><style>
+      </style></li><li><button class=\\" \\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M9 18l6-6-6-6\\"></path></svg></button><style>
         li {
           margin-right: 8px;
           margin-bottom: initial;
@@ -523,7 +523,7 @@ exports[`Pagination should render correctly 1`] = `
           padding: 0;
           font-variant: tabular-nums;
           font-feature-settings: 'tnum';
-          --pagination-size: 2.2857rem;
+          --pagination-size: 2.8571rem;
         }
         section :global(button:last-of-type) {
           margin-right: 0;
@@ -532,7 +532,7 @@ exports[`Pagination should render correctly 1`] = `
 `;
 
 exports[`Pagination should set pageSize 1`] = `
-"<div class=\\"pagination\\"><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" class=\\"feather feather-arrow-left\\"><line x1=\\"19\\" y1=\\"12\\" x2=\\"5\\" y2=\\"12\\"></line><polyline points=\\"12 19 5 12 12 5\\"></polyline></svg></button><style>
+"<div class=\\"pagination\\"><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M15 18l-6-6 6-6\\"></path></svg></button><style>
         li {
           margin-right: 8px;
           margin-bottom: initial;
@@ -964,7 +964,7 @@ exports[`Pagination should set pageSize 1`] = `
           width: 1.3em;
           height: 1.3em;
         }
-      </style></li><li><button class=\\" \\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" class=\\"feather feather-arrow-right\\"><line x1=\\"5\\" y1=\\"12\\" x2=\\"19\\" y2=\\"12\\"></line><polyline points=\\"12 5 19 12 12 19\\"></polyline></svg></button><style>
+      </style></li><li><button class=\\" \\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M9 18l6-6-6-6\\"></path></svg></button><style>
         li {
           margin-right: 8px;
           margin-bottom: initial;
@@ -1054,7 +1054,7 @@ exports[`Pagination should set pageSize 1`] = `
           padding: 0;
           font-variant: tabular-nums;
           font-feature-settings: 'tnum';
-          --pagination-size: 2.2857rem;
+          --pagination-size: 2.8571rem;
         }
         section :global(button:last-of-type) {
           margin-right: 0;
@@ -1243,7 +1243,7 @@ exports[`Pagination should work with pageSizeChanger 1`] = `
           .pagination-pagesize .after {
             margin-left: 8px;
           }
-        </style></div></div><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" class=\\"feather feather-arrow-left\\"><line x1=\\"19\\" y1=\\"12\\" x2=\\"5\\" y2=\\"12\\"></line><polyline points=\\"12 19 5 12 12 5\\"></polyline></svg></button><style>
+        </style></div></div><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M15 18l-6-6 6-6\\"></path></svg></button><style>
         li {
           margin-right: 8px;
           margin-bottom: initial;
@@ -1902,7 +1902,7 @@ exports[`Pagination should work with pageSizeChanger 1`] = `
           width: 1.3em;
           height: 1.3em;
         }
-      </style></li><li><button class=\\" \\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" class=\\"feather feather-arrow-right\\"><line x1=\\"5\\" y1=\\"12\\" x2=\\"19\\" y2=\\"12\\"></line><polyline points=\\"12 5 19 12 12 19\\"></polyline></svg></button><style>
+      </style></li><li><button class=\\" \\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M9 18l6-6-6-6\\"></path></svg></button><style>
         li {
           margin-right: 8px;
           margin-bottom: initial;
@@ -1992,7 +1992,7 @@ exports[`Pagination should work with pageSizeChanger 1`] = `
           padding: 0;
           font-variant: tabular-nums;
           font-feature-settings: 'tnum';
-          --pagination-size: 2.2857rem;
+          --pagination-size: 2.8571rem;
         }
         section :global(button:last-of-type) {
           margin-right: 0;
@@ -2001,7 +2001,7 @@ exports[`Pagination should work with pageSizeChanger 1`] = `
 `;
 
 exports[`Pagination should work with showQuickJumper 1`] = `
-"<div class=\\"pagination\\"><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" class=\\"feather feather-arrow-left\\"><line x1=\\"19\\" y1=\\"12\\" x2=\\"5\\" y2=\\"12\\"></line><polyline points=\\"12 19 5 12 12 5\\"></polyline></svg></button><style>
+"<div class=\\"pagination\\"><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M15 18l-6-6 6-6\\"></path></svg></button><style>
         li {
           margin-right: 8px;
           margin-bottom: initial;
@@ -2660,7 +2660,7 @@ exports[`Pagination should work with showQuickJumper 1`] = `
           width: 1.3em;
           height: 1.3em;
         }
-      </style></li><li><button class=\\" \\"><svg xmlns=\\"http://www.w3.org/2000/svg\\" width=\\"24\\" height=\\"24\\" viewBox=\\"0 0 24 24\\" fill=\\"none\\" stroke=\\"currentColor\\" stroke-width=\\"2\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" class=\\"feather feather-arrow-right\\"><line x1=\\"5\\" y1=\\"12\\" x2=\\"19\\" y2=\\"12\\"></line><polyline points=\\"12 5 19 12 12 19\\"></polyline></svg></button><style>
+      </style></li><li><button class=\\" \\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M9 18l6-6-6-6\\"></path></svg></button><style>
         li {
           margin-right: 8px;
           margin-bottom: initial;
@@ -2881,7 +2881,7 @@ exports[`Pagination should work with showQuickJumper 1`] = `
           padding: 0;
           font-variant: tabular-nums;
           font-feature-settings: 'tnum';
-          --pagination-size: 2.2857rem;
+          --pagination-size: 2.8571rem;
         }
         section :global(button:last-of-type) {
           margin-right: 0;

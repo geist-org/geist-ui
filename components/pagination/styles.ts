@@ -27,7 +27,7 @@ export const getSizes = (size?: NormalSizes) => {
     },
     medium: {
       font: '1rem',
-      width: '2.2857rem',
+      width: '2.8571rem',
     },
     large: {
       font: '1.1429rem',

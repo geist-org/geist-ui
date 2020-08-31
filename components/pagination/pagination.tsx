@@ -19,6 +19,9 @@ import usePaginationHandle from './use-pagination-handle'
  * styles
  */
 import { getSizes } from './styles'
+import ChevronLeft from '@zeit-ui/react-icons/chevronLeft'
+import ChevronRight from '@zeit-ui/react-icons/chevronRight'
+import useTheme from '../styles/use-theme'
 /**
  * utils
  */
@@ -92,6 +95,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
     }: PaginationProps & typeof defaultProps,
     ref: RefObject<PaginationHandles>,
   ) => {
+    const theme = useTheme()
     const [page, setPage] = useMergedState(defaultPage, {
       value: customPage,
       onChange: (page): any => onPageChange && onPageChange(page, pageSize),
@@ -103,39 +107,6 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
     const [, prevChildren] = pickChild(children, PaginationPrevious)
     const [, nextChildren] = pickChild(children, PaginationNext)
     const pageCount = useMemo(() => getPageCount(total, pageSize), [pageSize])
-    const arrowRightIcon = (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="feather feather-arrow-right">
-        <line x1="5" y1="12" x2="19" y2="12"></line>
-        <polyline points="12 5 19 12 12 19"></polyline>
-      </svg>
-    )
-    const arrowLeftIcon = (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="feather feather-arrow-left">
-        <line x1="19" y1="12" x2="5" y2="12"></line>
-        <polyline points="12 19 5 12 12 5"></polyline>
-      </svg>
-    )
-
     const getNewValue = (newVal: number, oldVal: number) => {
       if (!Array.isArray(oldVal)) return newVal
     }
@@ -169,8 +140,16 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
 
     const [prevItem, nextItem] = useMemo(() => {
       const hasChildren = (c: any) => React.Children.count(c) > 0
-      const prevDefault = <PaginationPrevious>{arrowLeftIcon}</PaginationPrevious>
-      const nextDefault = <PaginationNext>{arrowRightIcon}</PaginationNext>
+      const prevDefault = (
+        <PaginationPrevious>
+          <ChevronLeft color={theme.palette.cNeutral7}></ChevronLeft>
+        </PaginationPrevious>
+      )
+      const nextDefault = (
+        <PaginationNext>
+          <ChevronRight color={theme.palette.cNeutral7}></ChevronRight>
+        </PaginationNext>
+      )
       return [
         hasChildren(prevChildren) ? prevChildren : prevDefault,
         hasChildren(nextChildren) ? nextChildren : nextDefault,
