@@ -50,6 +50,7 @@ interface Props
 }
 
 export const defaultProps = Object.assign({}, inputDefaultProps, {
+  width: 'max-content',
   defaultOpen: false,
   options: [] as AutoCompleteOptions,
   disableMatchWidth: false,
@@ -207,7 +208,7 @@ const AutoComplete = React.forwardRef<HTMLInputElement, AutoCompleteProps>(
       ...props,
       value: computedInputValue,
       defaultValue: undefined,
-      width: width || 'initial',
+      width,
       disabled,
     }
 
@@ -254,7 +255,7 @@ const AutoComplete = React.forwardRef<HTMLInputElement, AutoCompleteProps>(
 
           <style jsx>{`
             .auto-complete {
-              width: ${width || 'max-content'};
+              width: ${width};
             }
 
             .auto-complete :global(.loading) {
