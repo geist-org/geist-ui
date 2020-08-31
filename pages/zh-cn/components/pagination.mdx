@@ -20,12 +20,12 @@ export const meta = {
   width="750px"
   code={`
       ()=>{
-        const [page,setPage]=React.useState(2)
-        const onChange=(page1,pageSize)=>{
-          setPage(page1)
+        const [val,setVal]=React.useState(2)
+        const onPageChange=(page,pageSize)=>{
+          setVal(page)
         }
         return (
-          <Pagination total={100} defaultPage={2} page={page} onPageChange={onChange}></Pagination>
+          <Pagination total={100} page={val} onPageChange={onPageChange}></Pagination>
         )
       }
 `}
@@ -180,7 +180,7 @@ export const meta = {
 | **labelJumperAfter**    | 自定义quickJumper组件之后的文本         | `ReactNode` / `string`                   | -                                         | `PAGE`                    |
 | **showQuickJumper**     | 是否展示快速跳转至某页                  | `boolean`                                | -                                         | false                     |
 | **showPageSizeChanger** | 是否展示 pageSize 切换器               | `boolean`                                | -                                         | false                     |
-| **onChange**            | 分页器的事件                           | `(page: number,pageSize:number) => void` | -                                         | -                         |
+| **onPageChange**        | 分页器的事件                           | `(page: number,pageSize:number) => void` | -                                         | -                         |
 | **onPageSizeChange**    | pageSize 变化的回调                   | `(page: number,pageSize:number) => void`  | -                                         | -                         |
 | ...                     | 原生属性                              | `HTMLAttributes`                          | `'id', 'className', ...`                 | -                         |
 
