@@ -1036,7 +1036,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         }
 
         .${prefix}-picker-datetime-panel .${prefix}-picker-time-panel-column::after {
-          height: 20px;
+          height: 198px;
         }
 
         .${prefix}-picker-time-panel-column:not(:first-child) {
