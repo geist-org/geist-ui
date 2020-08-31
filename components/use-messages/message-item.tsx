@@ -118,7 +118,7 @@ const MessageItem: React.FC<MessageItemProps> = React.memo(
           }
           .text {
             font-style: normal;
-            font-weight: 600;
+            font-weight: 500;
             font-size: 1rem;
             line-height: 1.2857rem;
           }
