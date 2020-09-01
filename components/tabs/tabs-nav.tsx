@@ -34,7 +34,7 @@ const Nav: React.FC<NavCptProps> = ({ label, status, varient }) => {
           }
           .label {
             cursor: ${reducedStatus === 'disabled' ? 'not-allowed' : ''};
-            font-weight: ${reducedStatus === 'active' ? 'bold' : ''};
+            font-weight: ${reducedStatus === 'active' ? '500' : '400'};
             white-space: nowrap;
             line-height: 22px;
             padding: ${layout.gapHalf} ${layout.gap};
