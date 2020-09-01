@@ -1,7 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import AlertCircle from '@zeit-ui/react-icons/alertCircle'
 import { Spacer, Button, Code, Text, Dot } from 'components'
-import  Input, { useInputHandle } from 'components/input'
+import Input, { useInputHandle } from 'components/input'
 import { useState, useEffect } from 'react'
 
 export const meta = {
@@ -31,10 +31,6 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input size="mini" placeholder="Mini Input" />
-  <Spacer inline />
-  <Input variant="solid" size="mini" placeholder="Solid Mini Input" />
-  <Spacer y={.5} />
   <Input size="small" placeholder="Small Input" />
   <Spacer inline />
   <Input variant="solid" size="small" placeholder="Solid Small Input" />
@@ -154,10 +150,6 @@ Retrieve text input from a user.
   scope={{ Input, AlertCircle, Spacer }}
   code={`
 <>
-  <Input size="mini" icon={<AlertCircle />} placeholder="Info" />
-  <Spacer inline />
-  <Input variant="solid" size="mini" icon={<AlertCircle />} placeholder="Info" />
-  <Spacer y={.5} />
   <Input size="small" icon={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
   <Input variant="solid" size="small" icon={<AlertCircle />} placeholder="Info" />
@@ -169,10 +161,6 @@ Retrieve text input from a user.
   <Input size="large" icon={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
   <Input variant="solid" size="large" icon={<AlertCircle />} placeholder="Info" />
-  <Spacer y={.5} />
-  <Input size="mini" iconRight={<AlertCircle />} placeholder="Info" />
-  <Spacer inline />
-  <Input variant="solid" size="mini" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer y={.5} />
   <Input size="small" iconRight={<AlertCircle />} placeholder="Info" />
   <Spacer inline />
