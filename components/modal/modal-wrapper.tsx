@@ -6,7 +6,6 @@ import { isChildElement } from '../utils/collections'
 
 interface Props {
   className?: string
-  width?: string
   visible?: boolean
 }
 
@@ -19,7 +18,6 @@ export type ModalWrapperProps = Props & typeof defaultProps
 
 const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   className,
-  width,
   children,
   visible,
   ...props
@@ -66,9 +64,8 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabEnd} />
         <style jsx>{`
           .wrapper {
-            max-width: 90vw;
-            max-height: 90vh;
-            width: ${width};
+            max-width: 100%;
+            vertical-align: middle;
             overflow: hidden;
             display: flex;
             flex-direction: column;

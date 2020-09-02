@@ -7,6 +7,7 @@ import useCurrentState from '../utils/use-current-state'
 interface Props {
   onClick?: (event: MouseEvent<HTMLElement>) => void
   visible?: boolean
+  width?: string
 }
 
 const defaultProps = {
@@ -18,7 +19,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type BackdropProps = Props & typeof defaultProps & NativeAttrs
 
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
-  ({ children, onClick, visible, ...props }) => {
+  ({ children, onClick, visible, width, ...props }) => {
     const theme = useTheme()
     const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false)
     const clickHandler = (event: MouseEvent<HTMLElement>) => {
@@ -46,37 +47,37 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
             onMouseDown={() => setIsContentMouseDown(true)}>
             {children}
           </div>
-          <div onClick={childrenClickHandler} className="offset" />
           <style jsx>{`
             .backdrop {
               position: fixed;
               top: 0;
               left: 0;
-              display: flex;
-              align-content: center;
-              align-items: center;
-              flex-direction: column;
-              justify-content: center;
-              height: 100vh;
-              width: 100vw;
+              right: 0;
+              bottom: 0;
               overflow: auto;
               z-index: 1000;
+              -webkit-overflow-scrolling: touch;
+              box-sizing: border-box;
+              text-align: center;
             }
 
             .content {
-              display: flex;
-              align-items: center;
-              justify-content: center;
               position: relative;
               z-index: 1001;
               outline: none;
+              max-width: 90%;
+              width: ${width};
+              margin: 20px auto;
+              vertical-align: middle;
+              display: inline-block;
             }
 
-            .offset {
-              height: 0;
-              opacity: 0;
-              display: flex;
-              background-color: transparent;
+            .backdrop:before {
+              display: inline-block;
+              width: 0;
+              height: 100%;
+              vertical-align: middle;
+              content: '';
             }
 
             .layer {
