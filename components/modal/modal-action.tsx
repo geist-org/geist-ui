@@ -70,6 +70,7 @@ const ModalAction = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<
         flex: 1;
         height: 100%;
         border-radius: 0;
+        min-width: 0;
       }
       button.btn:hover,
       button.btn:focus {
