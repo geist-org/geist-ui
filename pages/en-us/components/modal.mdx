@@ -183,6 +183,51 @@ Display popup content that requires attention or provides additional information
 `}
 />
 
+<Playground
+  title="Overlong"
+  desc="Whether it is desktop or mobile, the content beyond the scope has been well handled."
+  scope={{ Modal, Button, useModal }}
+  code={`
+() => {
+  const { visible, setVisible, bindings } = useModal()
+  return (
+    <>
+      <Button auto onClick={() => setVisible(true)}>Show Modal</Button>
+      <Modal {...bindings}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Subtitle>Modal with a lot of content</Modal.Subtitle>
+        <Modal.Content>
+          <p>An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications. </p>
+          <p>An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications. </p>
+          <p>An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications. </p>
+          <p>An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications. </p>
+          <p>An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications. </p>
+          <p>An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications. </p>
+          <p>An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications.
+          An open-source design system for building modern websites and applications. </p>
+        </Modal.Content>
+        <Modal.Action passive onClick={() => setVisible(false)}>Cancel</Modal.Action>
+        <Modal.Action>Submit</Modal.Action>
+      </Modal>
+    </>
+  )
+}
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/modal.mdx">
 <Attributes.Title>Modal.Props</Attributes.Title>
 
