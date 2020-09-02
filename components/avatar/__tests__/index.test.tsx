@@ -24,9 +24,7 @@ describe('Avatar', () => {
   })
 
   it('stacked should be work', () => {
-    const avatar = shallow(
-      <Avatar src="/images/avatar.png" stacked />,
-    )
+    const avatar = shallow(<Avatar src="/images/avatar.png" stacked />)
     expect(() => avatar.unmount()).not.toThrow()
   })
 

@@ -21,38 +21,45 @@ const nextConfig = {
     VERSION: require('./package.json').version,
   },
 
+  trailingSlash: false,
+
   experimental: {
     reactStrictMode: true,
+  },
 
-    redirects() {
-      return [
-        {
-          source: '/docs/getting-started/:path*',
-          permanent: true,
-          destination: '/en-us/guide/:path*',
-        },
-        {
-          source: '/en-us/getting-started/:path*',
-          permanent: true,
-          destination: '/en-us/guide/:path*',
-        },
-        {
-          source: '/zh-cn/getting-started/:path*',
-          permanent: true,
-          destination: '/zh-cn/guide/:path*',
-        },
-        {
-          source: '/zh-cn/',
-          permanent: true,
-          destination: '/zh-cn',
-        },
-        {
-          source: '/en-us/',
-          permanent: true,
-          destination: '/en-us',
-        },
-      ]
-    },
+  async redirects() {
+    return [
+      {
+        source: '/docs/getting-started/:path*',
+        permanent: true,
+        destination: '/en-us/guide/:path*',
+      },
+      {
+        source: '/en-us/getting-started/:path*',
+        permanent: true,
+        destination: '/en-us/guide/:path*',
+      },
+      {
+        source: '/zh-cn/getting-started/:path*',
+        permanent: true,
+        destination: '/zh-cn/guide/:path*',
+      },
+      {
+        source: '/zh-cn',
+        permanent: true,
+        destination: '/zh-cn/guide/introduction',
+      },
+      {
+        source: '/en-us',
+        permanent: true,
+        destination: '/en-us/guide/introduction',
+      },
+      {
+        source: '/',
+        permanent: true,
+        destination: '/en-us',
+      },
+    ]
   },
 }
 
