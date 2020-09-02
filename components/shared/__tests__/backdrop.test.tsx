@@ -56,7 +56,6 @@ describe('Backdrop', () => {
       </Backdrop>,
     )
     wrapper.find('.content').simulate('click', nativeEvent)
-    wrapper.find('.offset').simulate('click', nativeEvent)
     expect(handler).not.toHaveBeenCalled()
     handler.mockRestore()
   })
