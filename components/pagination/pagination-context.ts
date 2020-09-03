@@ -15,9 +15,9 @@ export interface PaginationConfig {
 }
 
 export interface PaginationHandles {
-  setPage: (value?: number) => void
+  setPage: (value: number) => void
   getPage: () => number
-  setPageSize: (value?: number) => void
+  setPageSize: (value: number) => void
   getPageSize: () => number
 }
 
