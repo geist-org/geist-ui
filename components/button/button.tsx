@@ -227,7 +227,7 @@ const TagOrButtonRender = <T, P>(
           min-width: ${minWidth};
           width: ${width};
           border-radius: ${theme.expressiveness.R1};
-          font-weight: bold;
+          font-weight: 500;
           font-size: ${fontSize};
           user-select: none;
           outline: none;
