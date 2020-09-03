@@ -67,7 +67,7 @@ export const getColors = (
       hoverBackgroundColor: solid ? theme.palette.cTheme1 : theme.palette.cNeutral8,
       border: solid
         ? 'transparent'
-        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.cTheme2}`,
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.cNeutral2}`,
       hoverBorderColor: solid ? 'transparent' : theme.palette.cTheme5,
     },
     success: {
