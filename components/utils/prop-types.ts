@@ -98,3 +98,5 @@ export type TriggerTypes = typeof triggerTypes[number]
 export type Placement = typeof placement[number]
 
 export type DividerAlign = typeof dividerAlign[number]
+
+export { normalSizes, inputVariants, inputColors, normalTypes, themeTypes }
