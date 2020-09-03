@@ -21,18 +21,20 @@ interface Props {
   scope: {
     [key: string]: any
   }
+  width?: string
 }
 
 const defaultProps = {
   desc: '',
   code: '',
   bindings: {},
+  width: '100%',
 }
 
 export type PlaygroundProps = Props & typeof defaultProps
 
 const Playground: React.FC<PlaygroundProps> = React.memo(
-  ({ title: inputTitle, code: inputCode, desc, scope }) => {
+  ({ title: inputTitle, code: inputCode, desc, scope, width }) => {
     const theme = useTheme()
     const { isChinese } = useConfigs()
     const code = inputCode.trim()
@@ -45,7 +47,7 @@ const Playground: React.FC<PlaygroundProps> = React.memo(
           <DynamicLive code={code} scope={scope} />
           <style jsx>{`
             .playground {
-              width: 100%;
+              width: ${width};
               border-radius: ${theme.expressiveness.R2};
               border: 1px solid ${theme.palette.accents_2};
             }

@@ -84,7 +84,6 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(({ ch
 
         .main {
           display: flex;
-          max-width: calc(100% - 200px);
           flex-direction: column;
           padding-left: 20px;
           padding-top: 25px;

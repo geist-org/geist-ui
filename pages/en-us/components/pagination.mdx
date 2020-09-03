@@ -13,57 +13,94 @@ export const meta = {
 }
 
 ## Pagination
+A long list can be divided into several pages, and only one page will be loaded at a time.
 
-Navigation and identification between multiple pages.
 
 <Playground
   scope={{ Pagination }}
+  width="750px"
   code={`
-<Pagination count={20} initialPage={3} />
+      ()=>{
+        const [val,setVal]=React.useState(2)
+        const onPageChange=(page,pageSize)=>{
+          setVal(page)
+        }
+        return (
+          <Pagination total={100} page={val} onPageChange={onPageChange}></Pagination>
+        )
+      }
 `}
 />
 
 <Playground
-  title="Limit"
-  desc="The maximum number of pages that can be displayed"
-  scope={{ Pagination }}
+  title="PageSize"
+  desc="Change PageSize"
+  scope={{ Pagination,Spacer }}
+  width="750px"
   code={`
 <>
-  <Pagination count={10} limit={10} />
-  <Pagination count={5} />
-  <Pagination count={10} initialPage={6} limit={5} />
-  <Pagination count={10} initialPage={6} />
-  <Pagination count={30} initialPage={6} limit={10} />
+  <Pagination total={100} pageSize={8}/>
+  <Spacer y={.5} />
+  <Pagination total={100} pageSize={15}/>
+</>
+`}
+/>
+
+
+<Playground
+  title="Limit"
+  desc="The maximum number of pages that can be displayed"
+  scope={{ Pagination,Spacer }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={100} limit={10} />
+  <Spacer y={.5} />
+  <Pagination total={100} />
+  <Spacer y={.5} />
+  <Pagination total={100} defaultPage={6} limit={5} />
+  <Spacer y={.5} />
+  <Pagination total={100} defaultPage={6} />
+  <Spacer y={.5} />
+  <Pagination total={240} defaultPage={6} limit={10} />
+</>
+`}
+/>
+
+<Playground
+  title="Variant"
+  desc="Variant"
+  scope={{ Pagination,Spacer }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={100} />
+  <Spacer y={.5} />
+  <Pagination total={100} variant={'solid'} />
 </>
 `}
 />
 
 <Playground
   title="Icon"
-  desc="Customize buttons as icons."
+  desc="Customize buttons as icons"
   scope={{
     Spacer,
     Pagination,
-    ChevronRight,
-    ChevronLeft,
     ChevronRightCircle,
     ChevronLeftCircle,
     ChevronRightCircleFill,
     ChevronLeftCircleFill,
   }}
+  width="750px"
   code={`
 <>
-  <Pagination count={5}>
-   <Pagination.Next><ChevronRight /></Pagination.Next>
-   <Pagination.Previous><ChevronLeft /></Pagination.Previous>
-  </Pagination>
-  <Spacer y={.5} />
-  <Pagination count={5}>
+  <Pagination total={100}>
    <Pagination.Next><ChevronRightCircle /></Pagination.Next>
    <Pagination.Previous><ChevronLeftCircle /></Pagination.Previous>
   </Pagination>
   <Spacer y={.5} />
-  <Pagination count={5}>
+  <Pagination total={100}>
    <Pagination.Next><ChevronRightCircleFill /></Pagination.Next>
    <Pagination.Previous><ChevronLeftCircleFill /></Pagination.Previous>
   </Pagination>
@@ -73,13 +110,53 @@ Navigation and identification between multiple pages.
 
 <Playground
   title="Sizes"
-  desc="Pagination of different sizes."
-  scope={{ Pagination }}
+  desc="Different size of pagination"
+  scope={{ Pagination,Spacer }}
+  width="750px"
   code={`
 <>
-  <Pagination count={20} size="small" />
-  <Pagination count={20} size="medium" />
-  <Pagination count={20} size="large" />
+  <Pagination total={100} size="small" />
+  <Spacer y={.5} />
+  <Pagination total={100} size="medium" />
+  <Spacer y={.5} />
+  <Pagination total={100} size="large" />
+</>
+`}
+/>
+
+<Playground
+  title="ShowPageSizeChanger"
+  desc="Set and change the default number of items displayed per page"
+  scope={{ Pagination,Spacer }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={100} pageSize={8} showPageSizeChanger/>
+</>
+`}
+/>
+
+<Playground
+  title="ShowQuickJumper"
+  desc="Jump to a page quickly"
+  scope={{ Pagination,Spacer }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={100} showQuickJumper/>
+  <Spacer y={.5} />
+</>
+`}
+/>
+
+<Playground
+  title="All"
+  desc="Show all configured prop"
+  scope={{ Pagination }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={40} showPageSizeChanger showQuickJumper />
 </>
 `}
 />
@@ -87,33 +164,60 @@ Navigation and identification between multiple pages.
 <Attributes edit="/pages/en-us/components/pagination.mdx">
 <Attributes.Title>Pagination.Props</Attributes.Title>
 
-| Attribute       | Description                  | Type                     | Accepted values             | Default  |
-| --------------- | ---------------------------- | ------------------------ | --------------------------- | -------- |
-| **initialPage** | the page selected by default | `number`                 | -                           | 1        |
-| **page**        | current page                 | `number`                 | -                           | 1        |
-| **count**       | the total number of pages    | `number`                 | -                           | 1        |
-| **limit**       | limit of display page        | `number`                 | -                           | 7        |
-| **size**        | pagination size              | `NormalSizes`            | [NormalSizes](#normalsizes) | `medium` |
-| **onChange**    | change event                 | `(page: number) => void` | -                           | -        |
-| ...             | native props                 | `HTMLAttributes`         | `'id', 'className', ...`    | -        |
+| Attribute               | Description                                                                                               | Type                                     | Accepted values                           | Default                   |
+|-------------------------|-----------------------------------------------------------------------------------------------------------|------------------------------------------|-------------------------------------------|---------------------------|
+| **total**               | Total number of data items                                                                                | `number`                                 |                                           | 1                         |
+| **pageSize**            | Number of data items per page                                                                             | `number`                                 | -                                         | -                         |
+| **page**                | Current page number                                                                                       | `number`                                 | -                                         | 1                         |
+| **defaultPage**         | Default initial page number                                                                               | `number`                                 | -                                         | 1                         |
+| **variant**             | Pagination variant                                                                                        | `string`                                 | [PaginationVariants](#paginationvariants) | `line`                    |
+| **limit**               | Limit of display page                                                                                     | `number`                                 | -                                         | 7                         |
+| **size**                | Pagination size                                                                                           | `NormalSizes`                            | [NormalSizes](#normalsizes)               | `medium`                  |
+| **defaultPageSize**     | Default number of data items per page                                                                     | `number`                                 | -                                         | 10                        |
+| **pageSizeOptions**     | Specify the sizeChanger options                                                                           | `string[]`                               | -                                         | ['10', '20', '50', '100'] |
+| **labelPageSizeBefore** | Customize the label before pageSizeChanger                                                                | `ReactNode` / `string`                   | -                                         | `SHOW`                    |
+| **labelPageSizeAfter**  | Customize the label after pageSizeChanger                                                                 | `ReactNode` / `string`                   | -                                         | `RECORDS`                 |
+| **labelJumperBefore**   | Customize the label before quickJumper                                                                    | `ReactNode` / `string`                   | -                                         | `GO TO`                   |
+| **labelJumperAfter**    | Customize the label after quickJumper                                                                     | `ReactNode` / `string`                   | -                                         | `PAGE`                    |
+| **showQuickJumper**     | Determine whether you can jump to pages directly                                                          | `boolean`                                | -                                         | false                     |
+| **showPageSizeChanger** | Determine whether to show pageSize select                                                                 | `boolean`                                | -                                         | false                     |
+| **onPageChange**        | Called when the page number changes, and it takes the resulting page number and pageSize as its arguments | `(page: number,pageSize:number) => void` | -                                         | -                         |
+| **onPageSizeChange**    | Called when pageSize is changed                                                                           | `(page: number,pageSize:number) => void` | -                                         | -                         |
+| ...                     | Native props                                                                                              | `HTMLAttributes`                         | `'id', 'className', ...`                  | -                         |
+
+
+
+
 
 <Attributes.Title>Pagination.Previous.Props</Attributes.Title>
 
 | Attribute | Description  | Type                   | Accepted values          | Default |
-| --------- | ------------ | ---------------------- | ------------------------ | ------- |
-| ...       | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | -       |
+|-----------|--------------|------------------------|--------------------------|---------|
+| ...       | Native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | -       |
+
 
 <Attributes.Title>Pagination.Next.Props</Attributes.Title>
 
 | Attribute | Description  | Type                   | Accepted values          | Default |
-| --------- | ------------ | ---------------------- | ------------------------ | ------- |
-| ...       | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | -       |
+|-----------|--------------|------------------------|--------------------------|---------|
+| ...       | Native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | -       |
+
+
+
+<Attributes.Title>PaginationVariants</Attributes.Title>
+
+```ts
+type PaginationVariants = 'line' | 'solid'
+```
 
 <Attributes.Title>NormalSizes</Attributes.Title>
 
 ```ts
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
+
+
+
 
 </Attributes>
 

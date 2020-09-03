@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 // https://github.com/react-component/util/blob/4045d568885d65a5491ab22347682f5e31da31dc/src/hooks/useMergedState.ts
 export default function useControlledState<T>(
   defaultValue: T,
@@ -17,19 +17,18 @@ export default function useControlledState<T>(
     calcualteValue = postState(calcualteValue)
   }
 
-  // value inside setValue should be updated
-  const mergedValue = useRef(calcualteValue)
-  mergedValue.current = calcualteValue
-
   // do not change the identity of setValue
-  const setValue = useCallback((newValue: T) => {
-    if (!value) {
-      setInnerValue(newValue)
-    }
-    if (mergedValue.current !== newValue && onChange) {
-      onChange(newValue, mergedValue.current)
-    }
-  }, [])
+  const setValue = useCallback(
+    (newValue: T) => {
+      if (!value) {
+        setInnerValue(newValue)
+      }
+      if (calcualteValue !== newValue && onChange) {
+        onChange(newValue, calcualteValue)
+      }
+    },
+    [onChange, calcualteValue],
+  )
 
-  return [mergedValue.current, setValue]
+  return [calcualteValue, setValue]
 }

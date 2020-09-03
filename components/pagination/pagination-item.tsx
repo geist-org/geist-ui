@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
-import { addColorAlpha } from '../utils/color'
+import { getColors } from './styles'
+import { usePaginationContext } from './pagination-context'
 
 interface Props {
   active?: boolean
@@ -9,9 +10,9 @@ interface Props {
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type PaginationItemProps = Props & NativeAttrs
+export type PaginationItemProps = React.PropsWithChildren<Props & NativeAttrs>
 
-const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = ({
+const PaginationItem: React.FC<PaginationItemProps> = ({
   active,
   children,
   disabled,
@@ -19,10 +20,10 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
   ...props
 }) => {
   const theme = useTheme()
-  const [hover, activeHover] = useMemo(
-    () => [addColorAlpha(theme.palette.success, 0.1), addColorAlpha(theme.palette.success, 0.8)],
-    [theme.palette.success],
-  )
+  const { variant } = usePaginationContext()
+  const paginationColors = useMemo(() => {
+    return getColors(theme.palette, variant, active)
+  }, [theme.palette, variant, active])
   const clickHandler = (event: React.MouseEvent) => {
     if (disabled) return
     onClick && onClick(event)
@@ -38,11 +39,11 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
       </button>
       <style jsx>{`
         li {
-          margin-right: 6px;
+          margin-right: ${theme.layout.gapHalf};
+          margin-bottom: initial;
           display: inline-block;
         }
         button {
-          border: none;
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -58,36 +59,50 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
           min-width: var(--pagination-size);
           font-size: inherit;
           cursor: pointer;
-          color: ${theme.palette.success};
-          border-radius: ${theme.expressiveness.R2};
-          background-color: ${theme.palette.background};
+          color: ${paginationColors.color};
+          border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1}
+            ${paginationColors.borderColor};
+          border-radius: ${theme.expressiveness.R1};
+          background-color: ${paginationColors.bgColor};
           transition: all linear 200ms 0ms;
           font-weight: 500;
         }
 
         button:hover {
-          background-color: ${hover};
+          color: ${paginationColors.hoverColor};
+          background-color: ${paginationColors.hoverBgColor};
+          border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1}
+            ${paginationColors.hoverBorderColor};
         }
 
         .active {
           font-weight: bold;
-          background-color: ${theme.palette.success};
-          color: ${theme.palette.background};
-          box-shadow: ${theme.expressiveness.shadowSmall};
+          color: ${paginationColors.color};
+          background-color: ${paginationColors.bgColor};
+          border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1}
+            ${paginationColors.borderColor};
         }
 
         .active:hover {
-          background-color: ${activeHover};
-          box-shadow: ${theme.expressiveness.shadowMedium};
+          color: ${paginationColors.color};
+          background-color: ${paginationColors.bgColor};
+          border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1}
+            ${paginationColors.borderColor};
         }
 
         .disabled {
-          color: ${theme.palette.accents_4};
+          color: ${paginationColors.color};
+          background-color: ${paginationColors.bgColor};
+          border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1}
+            ${paginationColors.borderColor};
           cursor: not-allowed;
         }
 
         .disabled:hover {
-          background-color: ${theme.palette.accents_2};
+          color: ${paginationColors.color};
+          background-color: ${paginationColors.bgColor};
+          border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1}
+            ${paginationColors.borderColor};
         }
 
         button :global(svg) {
