@@ -551,7 +551,7 @@ export const generatePickerGlobalStyle = <DateType extends any>(
         .${prefix}-picker-content td {
           position: relative;
           min-width: ${pattern.size.cell};
-          font-weight: 400;
+          font-weight: 500;
         }
 
         .${prefix}-picker-content th {
