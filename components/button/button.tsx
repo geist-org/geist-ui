@@ -241,7 +241,9 @@ const TagOrButtonRender = <T, P>(
           overflow: hidden;
           color: ${colors.color};
           background-color: ${colors.bg};
-          border: ${theme.expressiveness.L2} ${theme.expressiveness.cLineStyle1} ${colors.border};
+          border: ${theme.expressiveness.L2}
+            ${dashed ? theme.expressiveness.cLineStyle2 : theme.expressiveness.cLineStyle1}
+            ${colors.border};
           cursor: ${cursor};
           pointer-events: ${events};
           box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};

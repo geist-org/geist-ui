@@ -112,6 +112,10 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             background-color: ${theme.palette.accents_2};
             border-radius: ${theme.expressiveness.R2};
           }
+          .content {
+            overflow: hidden;
+            overflow-x: scroll;
+          }
         `}</style>
       </ZeitProvider>
     </>

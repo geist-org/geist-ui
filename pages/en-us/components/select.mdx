@@ -80,20 +80,6 @@ Display a dropdown list of items.
 />
 
 <Playground
-  title="Divider"
-  scope={{ Select }}
-  code={`
-<Select placeholder="Frameworks">
-  <Select.Option value="react">React</Select.Option>
-  <Select.Option value="angular">Angular</Select.Option>
-  <Select.Option divider />
-  <Select.Option value="rails">Rails</Select.Option>
-  <Select.Option value="sinatra">Sinatra</Select.Option>
-</Select>
-`}
-/>
-
-<Playground
   title="Size"
   scope={{ Select, Spacer }}
   code={`
@@ -125,10 +111,8 @@ Display a dropdown list of items.
   <Select.Option value="1">React</Select.Option>
   <Select.Option value="2">Angular</Select.Option>
   <Select.Option value="3">Vue</Select.Option>
-  <Select.Option divider />
   <Select.Option value="4">Rails</Select.Option>
   <Select.Option value="5">Sinatra</Select.Option>
-  <Select.Option divider />
   <Select.Option value="6">Express</Select.Option>
   <Select.Option value="7">Koa</Select.Option>
 </Select>

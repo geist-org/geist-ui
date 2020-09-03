@@ -1,169 +1,111 @@
-import React from 'react'
+import Table from '../'
+import { ColumnsType } from '../table'
 import { mount } from 'enzyme'
-import { Table, Code } from 'components'
-import { cellActions } from 'components/table/table-cell'
-import { nativeEvent, updateWrapper } from 'tests/utils'
-
-const data = [
-  { property: 'type', description: 'Content type', default: '-' },
-  { property: 'Component', description: 'DOM element to use', default: '-' },
-  { property: 'bold', description: 'Bold style', default: 'true' },
-]
+import React, { useState } from 'react'
+import { nativeEvent } from 'tests/utils'
 
 describe('Table', () => {
   it('should render correctly', () => {
-    const wrapper = mount(
-      <Table data={data}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="default" label="default" />
-      </Table>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
-  it('should re-render when data changed', async () => {
-    const wrapper = mount(
-      <Table data={data}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="default" label="default" />
-      </Table>,
-    )
-    expect(wrapper.find('tbody').find('tr').length).toBe(data.length)
-    wrapper.setProps({ data: [] })
-    await updateWrapper(wrapper, 350)
-    expect(wrapper.find('tbody').find('tr').length).toBe(0)
-  })
-
-  it('should set width automatically', () => {
-    window.getComputedStyle = jest.fn().mockImplementation(() => ({
-      width: '100px',
-    }))
-    const wrapper = mount(
-      <Table data={data}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="default" label="default" width={50} />
-      </Table>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
-    ;(window.getComputedStyle as jest.Mock).mockClear()
-  })
-
-  it('should be no erros when width is too large', () => {
-    window.getComputedStyle = jest.fn().mockImplementation(() => ({
-      width: '10px',
-    }))
-    const wrapper = mount(
-      <Table data={data}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="default" label="default" width={50} />
-      </Table>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
-    ;(window.getComputedStyle as jest.Mock).mockClear()
-  })
-
-  it('should work with other components', () => {
-    const dataWithNodes = [
-      ...data,
-      { property: 'bold', description: <Code>boolean</Code>, default: 'true' },
-    ]
-    const wrapper = mount(
-      <Table data={dataWithNodes}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="default" label="default" />
-      </Table>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(wrapper.find('code').length).not.toBe(0)
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
-  it('should work without hover effect', () => {
-    const wrapper = mount(
-      <Table data={data} hover={false}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="default" label="default" />
-      </Table>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
-  it('should be possible to remove the row', () => {
-    const operation = (actions: cellActions) => {
-      return <button onClick={() => actions.remove()}>Remove</button>
+    interface Record {
+      key?: string | number
+      a?: string | number
+      b?: string | number
+      c?: string | number
+      d?: string | number
     }
-    const data = [{ property: 'bold', description: 'boolean', operation }]
+
+    const columns: ColumnsType<Record> = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title2', dataIndex: 'b', key: 'b', width: 100, align: 'right' },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 200 },
+      {
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render(_, record) {
+          return (
+            <a
+              onClick={e => {
+                e.preventDefault()
+                console.log('Operate on:', record)
+              }}
+              href="#">
+              Operations
+            </a>
+          )
+        },
+      },
+    ]
+    const data: Record[] = [
+      { a: '123', key: '1' },
+      { a: 'cdd', b: 'edd', key: '2' },
+      { a: '1333', c: 'eee', d: 2, key: '3' },
+    ]
+
     const wrapper = mount(
-      <Table data={data}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="operation" label="operation" />
-      </Table>,
+      <div>
+        <Table<Record> variant="line" columns={columns} data={data} />
+        <Table<Record> columns={columns} data={data} />
+        <Table<Record> columns={columns} data={data} />
+      </div>,
     )
-    expect(wrapper.find('tbody').find('tr').length).toBe(1)
-    wrapper.find('tbody').find('button').simulate('click')
-    expect(wrapper.find('tbody').find('tr').length).toBe(0)
-    expect(() => wrapper.unmount()).not.toThrow()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('should render emptyText when data missing', () => {
-    const data = [{ property: 'bold', description: 'boolean' }]
-    const wrapper = mount(
-      <Table data={data} emptyText="test-not-found">
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="operation" label="operation" />
-      </Table>,
-    )
-    expect(wrapper.find('tbody').text()).toContain('test-not-found')
-  })
+  it('should render expandAble table correctly', () => {
+    interface Record {
+      key?: string | number
+      a?: string | number
+      b?: string | number
+      c?: string | number
+      d?: string | number
+    }
 
-  it('should trigger events when cell clicked', () => {
-    const rowHandler = jest.fn()
-    const cellHandler = jest.fn()
-    const data = [{ property: 'bold', description: 'boolean' }]
-    const wrapper = mount(
-      <Table data={data} emptyText="test-not-found" onRow={rowHandler} onCell={cellHandler}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-      </Table>,
-    )
-    wrapper.find('tbody').find('tr').find('td').at(0).simulate('click', nativeEvent)
-    expect(rowHandler).toHaveBeenCalled()
-    expect(cellHandler).toHaveBeenCalled()
-  })
+    const MockTable = () => {
+      const tableData = [
+        { key: 0, a: '123' },
+        { key: 1, a: 'cdd', b: 'edd' },
+        { key: 2, a: '1333', c: 'eee', d: 2 },
+      ]
+      const [data] = useState(tableData)
+      const columns = [
+        { title: 'title 1', dataIndex: 'a', key: 'a', width: 100 },
+        { title: 'title 2', dataIndex: 'b', key: 'b', width: 100 },
+        { title: 'title 3', dataIndex: 'c', key: 'c', width: 200 },
+      ]
 
-  it('should wraning when prop missing', () => {
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
-    mount(
-      <Table data={data}>
-        <Table.Column prop="" label="property" />
-        <Table.Column prop="description" label="description" />
-      </Table>,
-    )
-    expect(errorSpy).toHaveBeenCalled()
-    errorSpy.mockRestore()
-  })
+      const rowExpandable = (record: Record) => record.key !== 1
 
-  it('should render children for table head', () => {
-    const wrapper = mount(
-      <Table data={data}>
-        <Table.Column prop="property">
-          <Code>property</Code>
-        </Table.Column>
-      </Table>,
-    )
-    expect(wrapper.find('thead').find('code').length).not.toBe(0)
+      return (
+        <div>
+          <Table
+            columns={columns}
+            expandable={{
+              expandedRowRender: (record, _, __, expanded) =>
+                expanded ? <p id="test-expandable-row">extra: {record.a}</p> : null,
+              rowExpandable,
+            }}
+            data={data}
+          />
+          <Table
+            variant="line"
+            columns={columns}
+            expandable={{
+              expandedRowRender: (record, _, __, expanded) =>
+                expanded ? <p>extra: {record.a}</p> : null,
+              rowExpandable,
+            }}
+            data={data}
+          />
+        </div>
+      )
+    }
+
+    const wrapper = mount(<MockTable />)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.find('#test-expandable-row').length).toEqual(0)
+    wrapper.find('button.table-row-expand-icon').at(0).simulate('click', nativeEvent)
+    expect(wrapper.find('#test-expandable-row').length).toEqual(1)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })
