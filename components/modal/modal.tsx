@@ -41,7 +41,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   wrapClassName,
 }) => {
   const portal = usePortal('modal')
-  const [, setBodyHidden] = useBodyScroll()
+  const [, setBodyHidden] = useBodyScroll(null, { scrollLayer: true })
   const [visible, setVisible, visibleRef] = useCurrentState<boolean>(false)
   const [withoutActionsChildren, ActionsChildren] = pickChild(children, ModalAction)
   const hasActions = ActionsChildren && React.Children.count(ActionsChildren) > 0
@@ -80,8 +80,8 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   if (!portal) return null
   return createPortal(
     <ModalContext.Provider value={modalConfig}>
-      <Backdrop onClick={closeFromBackdrop} visible={visible}>
-        <ModalWrapper visible={visible} className={wrapClassName} width={wrapperWidth}>
+      <Backdrop onClick={closeFromBackdrop} visible={visible} width={wrapperWidth}>
+        <ModalWrapper visible={visible} className={wrapClassName}>
           {withoutActionsChildren}
           {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}
         </ModalWrapper>

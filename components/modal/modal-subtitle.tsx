@@ -24,13 +24,12 @@ const ModalSubtitle: React.FC<ModalSubtitleProps> = ({ className, children, ...p
       <style jsx>{`
         p {
           font-size: 0.875rem;
-          line-height: 1.6;
           font-weight: normal;
+          display: inline-block;
+          line-height: 1.5rem;
+          height: 1.5rem;
           text-align: center;
           margin: 0;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
           word-break: break-word;
           text-transform: uppercase;
           color: ${theme.palette.accents_5};

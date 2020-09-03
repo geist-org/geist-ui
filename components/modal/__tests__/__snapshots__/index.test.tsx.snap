@@ -18,9 +18,8 @@ exports[`Modal customization should be supported 1`] = `
         }
       </style><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
-            max-width: 90vw;
-            max-height: 90vh;
-            width: 100px;
+            max-width: 100%;
+            vertical-align: middle;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -87,13 +86,12 @@ exports[`Modal should render correctly 1`] = `
       </style><p class=\\"\\">This is a modal</p><style>
         p {
           font-size: 0.875rem;
-          line-height: 1.6;
           font-weight: normal;
+          display: inline-block;
+          line-height: 1.5rem;
+          height: 1.5rem;
           text-align: center;
           margin: 0;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
           word-break: break-word;
           text-transform: uppercase;
           color: #666;
@@ -102,8 +100,8 @@ exports[`Modal should render correctly 1`] = `
         .content {
           margin: 0 -16pt;
           padding: 16pt 16pt 8pt;
-          overflow-y: auto;
           position: relative;
+          text-align: left;
         }
 
         .content > :global(*:first-child) {
@@ -262,9 +260,8 @@ exports[`Modal should render correctly 1`] = `
         }
       </style><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
-            max-width: 90vw;
-            max-height: 90vh;
-            width: 26rem;
+            max-width: 100%;
+            vertical-align: middle;
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -309,36 +306,37 @@ exports[`Modal should render correctly 1`] = `
             height: 0;
             opacity: 0;
           }
-        </style></div></div><div class=\\"offset\\"></div><style>
+        </style></div></div><style>
             .backdrop {
               position: fixed;
               top: 0;
               left: 0;
-              display: flex;
-              align-content: center;
-              align-items: center;
-              flex-direction: column;
-              justify-content: center;
-              height: 100vh;
-              width: 100vw;
+              right: 0;
+              bottom: 0;
               overflow: auto;
               z-index: 1000;
+              -webkit-overflow-scrolling: touch;
+              box-sizing: border-box;
+              text-align: center;
             }
 
             .content {
-              display: flex;
-              align-items: center;
-              justify-content: center;
               position: relative;
               z-index: 1001;
               outline: none;
+              max-width: 90%;
+              width: 26rem;
+              margin: 20px auto;
+              vertical-align: middle;
+              display: inline-block;
             }
 
-            .offset {
-              height: 0;
-              opacity: 0;
-              display: flex;
-              background-color: transparent;
+            .backdrop:before {
+              display: inline-block;
+              width: 0;
+              height: 100%;
+              vertical-align: middle;
+              content: '';
             }
 
             .layer {
