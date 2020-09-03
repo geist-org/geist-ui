@@ -36,6 +36,7 @@
     "test": "jest --config .jest.config.js --no-cache",
     "test-update": "jest --config .jest.config.js --no-cache --update-snapshot",
     "coverage": "yarn test --coverage",
+    "test-update:coverage": "yarn test-update --coverage",
     "now-build": "yarn run docs-build",
     "build:esm": "babel --config-file ./scripts/babel.config.js --extensions \".js,.ts,.tsx\" ./components --out-dir ./esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
     "build:webpack": "webpack --config scripts/webpack.config.js",
@@ -109,7 +110,9 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@jnoodle/rc-picker": "^2.0.10",
     "@zeit-ui/react-icons": "^1.3.0",
+    "dayjs": "1.8.30",
     "styled-jsx": "^3.2.5"
   },
   "config": {

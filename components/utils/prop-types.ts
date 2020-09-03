@@ -102,3 +102,4 @@ export type Placement = typeof placement[number]
 export type DividerAlign = typeof dividerAlign[number]
 
 export type PaginationVariants = typeof paginationVariants[number]
+export { normalSizes, inputVariants, inputColors, normalTypes, themeTypes }

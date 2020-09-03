@@ -81,6 +81,11 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
             border-top: 1px solid ${theme.palette.border};
           }
 
+          .attr th:nth-child(2) {
+            min-width: 200px;
+            word-break: break-word;
+          }
+
           .attr th:last-child {
             border-bottom: 1px solid ${theme.palette.border};
             border-radius: 0 4px 4px 0;
