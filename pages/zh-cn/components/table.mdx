@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Table, Spacer, Code, Text, Button } from 'components'
+import { Table, Spacer, Tooltip, Toggle, Link } from 'components'
+import { useState, AllHTMLAttributes } from 'react'
 
 export const meta = {
   title: '表格 Table',
@@ -11,144 +12,382 @@ export const meta = {
 以规则的表格显示数据集。
 
 <Playground
-  desc="显示规则化的行和列。"
-  scope={{ Table }}
+  title="简单的表格"
+  scope={{ Table, Spacer, Link }}
   code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: 'string', default: '-' },
-    { property: 'bold', description: 'Bold style', type: 'boolean', default: 'true' },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="组合"
-  desc="在表格中显示其他组件。"
-  scope={{ Table, Code, Text }}
-  code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="宽度"
-  desc="为任意列指定宽度，剩下列会自动适应。"
-  scope={{ Table, Code, Text }}
-  code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" width={50} />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="操作"
-  desc="显示自定义的按钮并操作数据，任何更改会立刻呈现。"
-  scope={{ Table, Text, Button }}
-  code={`
-() => {
-  const operation = (actions, rowData) => {
-    return <Button type="error" auto size="small" onClick={() => actions.remove()}>移除行</Button>
+  () => {
+    const columns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 100 },
+      {
+        width: 100,
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render(_, record) {
+          return (
+            <Link plain onClick={e => {
+                e.preventDefault();
+                console.log('Operate on:', record);
+              }}
+              href="#"
+            >
+              Operations
+            </Link>
+          );
+        },
+      },
+    ]
+    const otherColumns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title2', dataIndex: 'b', key: 'b', width: 100, align: 'right' },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 100 },
+      {
+        width: 100,
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render(_, record) {
+          return (
+            <Link plain onClick={e => {
+                e.preventDefault();
+                console.log('Operate on:', record);
+              }}
+              href="#"
+            >
+              Operations
+            </Link>
+          );
+        },
+      },
+    ]
+    const data = [
+      { a: '123', key: '1' },
+      { a: 'cdd', b: 'edd', key: '2' },
+      { a: '1333', c: 'eee', d: 2, key: '3' },
+    ]
+    return (
+      <>
+        <Table tableLayout="fixed" columns={columns} data={data} />
+        <Spacer />
+        <Table variant='line' columns={otherColumns} data={data} />
+      </>
+    )
   }
-  const data = [
-    { property: 'type', description: 'Content type', operation },
-    { property: 'Component', description: 'DOM element to use', operation },
-    { property: <Text b>bold</Text>, description: 'Bold style', operation },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="operation" label="operation" width={150} />
-    </Table>
-  )
-}
 `}
 />
 
 <Playground
-  title="定制头"
-  scope={{ Table, Code, Text }}
+  title="JSX"
+  scope={{ Table, Link }}
   code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type">
-        <Code>type</Code>
-      </Table.Column>
-      <Table.Column prop="default">
-        <Text b>default</Text>
-      </Table.Column>
-    </Table>
-  )
-}
+  () => {
+    const { Column } = Table
+    const data = [
+      { a: '123', key: '1' },
+      { a: 'cdd', b: 'edd', key: '2' },
+      { a: '1333', c: 'eee', d: 2, key: '3' },
+    ]
+    return (
+      <Table variant='line' data={data}>
+        <Column title="title1" dataIndex="a" key="a" width={100} />
+        <Column title="title2" dataIndex="b" key="b" width={100} />
+        <Column title="title3" dataIndex="c" key="c" width={200} />
+        <Column title="Operations" dataIndex="" key="d" render={() => <Link plain href="">Operations</Link>} />
+      </Table>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="省略"
+  desc="Table content with ellipsis and tooltip"
+  scope={{ Table, Tooltip, Link }}
+  code={`
+  () => {
+    const createColumns = (length) => {
+      return Array.from({ length }, (_, i) => ({
+        title: 'description',
+        dataIndex: 'description',
+        key: 'description ' +  (i + 1),
+        ellipsis: {
+          showTitle: false,
+        },
+        ...(i === 0 ? { width: 50 } : null),
+        render(description) {
+          return (
+            <Tooltip placement="topStart" text={description}>
+              <span>{description}</span>
+            </Tooltip>
+          )
+        },
+      }))
+    }
+    const columns = [
+      {
+        title: 'name',
+        dataIndex: 'name',
+        width: 100,
+        ellipsis: {
+          showTitle: false,
+        },
+        render: (name) => {
+        console.log('name', name)
+        return (
+          <Tooltip placement="topStart" text={name}>
+            <span>{name}</span>
+          </Tooltip>
+        ) },
+      },
+      ...createColumns(10),
+      {
+        title: 'Operations',
+        key: 'operations',
+        ellipsis: {
+          showTitle: false,
+        },
+        render() {
+          return (
+            <Tooltip placement="topStart" text="Operations">
+              <Link plain href="">Operations</Link>
+            </Tooltip>
+          )
+        },
+      },
+    ]
+    const data = [
+      { name: 'Harry', description: 'description description', key: '1' },
+      { name: 'James Sirius', description: 'description description', key: '2' },
+      { name: 'Albus Severus', description: 'description description', key: '3' },
+      { name: 'Lily Luna', description: 'description description', key: '4' },
+    ]
+    return (
+        <Table columns={columns} data={data} />
+    )
+  }
+`}
+/>
+
+<Playground
+  title="包含展开列, 固定列或表头"
+  scope={{ Table, Spacer, useState, AllHTMLAttributes, Toggle, Link }}
+  code={`
+  () => {
+    function useCheckbox(defaultChecked = false) {
+      const [checked, setChecked] = useState(defaultChecked)
+      return [
+        checked,
+        {
+          checked,
+          onChange:() => {
+            setChecked(!checked)
+          },
+        },
+      ]
+    }
+    const tableData = [
+      { key: 0, a: '123' },
+      { key: 1, a: 'cdd', b: 'edd' },
+      { key: 2, a: '1333', c: 'eee', d: 2 },
+    ]
+    for (let i = 0; i < 10; i += 1) {
+      const str = '' + i
+      const item = {
+        key: i * 10 + 99,
+        a: str.repeat(3),
+        b: str.repeat(5),
+        c: str.repeat(7),
+        d: i,
+      }
+      tableData.push(item)
+    }
+    const [data, setData] = React.useState(tableData)
+    const [expandedRowKeys, setExpandedRowKeys] = React.useState([])
+    const [expandRowByClick, expandRowByClickProps] = useCheckbox()
+    const [fixColumns, fixColumnsProps] = useCheckbox()
+    const [scrollX, scrollXProps] = useCheckbox()
+    const [fixHeader, fixHeaderProps] = useCheckbox()
+    const [expandIconPosition, expandIconPositionProps] = useCheckbox()
+    const remove = (index) => {
+      const newData = data.slice()
+      newData.splice(index, 1)
+      setData(newData)
+    }
+    const renderAction = (o, row, index) => (
+      <Link plain onClick={() => remove(index)}>
+        Delete
+      </Link>
+    )
+    const columns = [
+      { title: 'title 1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title 2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title 3', dataIndex: 'c', key: 'c', width: 200 },
+      { title: 'Operation', dataIndex: '', key: 'x', render: renderAction },
+    ]
+    if (fixColumns) {
+      columns.unshift({ title: 'fix left 2', dataIndex: 'a', width: 100, fixed: 'left' })
+      columns.unshift({ title: 'fix left 1', dataIndex: 'a', width: 100, fixed: true })
+      columns.push({ title: 'fix right', dataIndex: 'a', width: 100, fixed: 'right' })
+    }
+    const onExpand = (expanded, record) => {
+      console.log('onExpand', expanded, record)
+    }
+    const onExpandedRowsChange = (rows) => {
+      setExpandedRowKeys(rows)
+    }
+    const rowExpandable = (record) => record.key !== 1
+    // Toggle Button
+    let toggleButton
+    if (expandedRowKeys.length) {
+      const closeAll = () => setExpandedRowKeys([])
+      toggleButton = (
+        <button type="button" onClick={closeAll}>
+          Close All
+        </button>
+      )
+    } else {
+      const openAll = () => setExpandedRowKeys([0, 1, 2])
+      toggleButton = (<button type="button" onClick={openAll}> Expand All </button>)
+    }
+    const ToggleLabel = ({ label, ...props }) => (
+        <label style={{display: 'flex', alignItems: 'center'}}>
+          <Toggle {...props} /> {label}
+        </label>
+    )
+    // Render
+    return (
+      <div>
+        {toggleButton}
+        <ToggleLabel label='Expand Row by Click' {...expandRowByClickProps} />
+        <ToggleLabel label='Fix Columns' {...fixColumnsProps} />
+        <ToggleLabel label='ScrollX' {...scrollXProps} />
+        <ToggleLabel label='Fix Header' {...fixHeaderProps} />
+        <ToggleLabel label='Change Expand Icon Position' {...expandIconPositionProps} />
+        <Spacer />
+        <Table
+          columns={columns}
+          expandable={{
+            expandRowByClick,
+            expandedRowRender: (record, index, indent, expanded) =>
+              expanded ? <p>extra: {record.a}</p> : null,
+            expandedRowKeys,
+            onExpandedRowsChange,
+            onExpand,
+            rowExpandable,
+            expandIconColumnIndex: expandIconPosition ? 1 : null,
+          }}
+          scroll={{ x: fixColumns || scrollX ? 2000 : null, y: fixHeader ? 300 : null }}
+          data={data}
+        />
+        <Spacer />
+        <Table
+          variant='line'
+          columns={columns}
+          expandable={{
+            expandRowByClick,
+            expandedRowRender: (record, index, indent, expanded) =>
+              expanded ? <p>extra: {record.a}</p> : null,
+            expandedRowKeys,
+            onExpandedRowsChange,
+            onExpand,
+            rowExpandable,
+            expandIconColumnIndex: expandIconPosition ? 1 : null,
+          }}
+          scroll={{ x: fixColumns || scrollX ? 2000 : null, y: fixHeader ? 300 : null }}
+          data={data}
+        />
+      </div>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="空数据"
+  desc="Empty data place holder"
+  scope={{ Table, Spacer, Link }}
+  code={`
+  () => {
+    const columns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { id: '123', title: 'title2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 200 },
+      {
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render() {
+          return <Link plain href="#">Operations</Link>
+        },
+      },
+    ]
+    const data = []
+    return (
+      <>
+        <Table columns={columns} data={data} />
+        <Spacer />
+        <Table columns={columns} data={data} emptyText="customize!!" />
+        <Spacer />
+        <Table columns={columns} data={data} emptyText={() => <h1>No No No!</h1>} />
+      </>
+    )
+  }
 `}
 />
 
 <Attributes edit="/pages/zh-cn/components/table.mdx">
 <Attributes.Title>Table.Props</Attributes.Title>
 
-| 属性          | 描述                   | 类型                                                 | 推荐值                           | 默认   |
-| ------------- | ---------------------- | ---------------------------------------------------- | -------------------------------- | ------ |
-| **data**      | 数据源                 | `Array<any>`                                         | -                                | -      |
-| **emptyText** | 当数据为空时显示的文本 | `string`                                             | -                                | -      |
-| **hover**     | 是否显示 hover 效果    | `boolean`                                            | -                                | `true` |
-| **onRow**     | 行的点击事件           | `(row: any, index: number) => void`                  | -                                | -      |
-| **onCell**    | 单元格的点击事件       | `(cell: any, index: number, colunm: number) => void` | -                                | -      |
-| **onChange**  | 数据变化的事件         | `(data: any) => void`                                | -                                | -      |
-| ...           | 原生属性               | `TableHTMLAttributes`                                | `'id', 'name', 'className', ...` | -      |
+| Name                              | Type                                                | Default                                                                           | Description                                                                                                                                |
+| --------------------------------- | --------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| tableLayout                       | `auto` \| `fixed`                                   | `auto` \| 当某一列或者表头是 `fixed` 或者 `ellipsis` 为 `true` 时, 默认为 `fixed` | https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout                                                                              |
+| useFixedHeader                    | Boolean                                             | `false`                                                                           | 固定 header                                                                                                                                |
+| scroll                            | Object                                              | `{x: false, y: false}`                                                            | 表格是否可以在 x/y 方向上滚动, `x` 或 `y` 为表格的宽高                                                                                     |
+| rowKey                            | string or Function(record):string                   | `'key'`                                                                           | 如果 `rowKey` 为字符串, 则会用 `record[rowKey]` 作为 key. 如果 `rowKey` 为函数, 则使用函数的返回值 `rowKey(record)` 作为 key. |
+| rowClassName                      | string or Function(record, index, indent):string    |                                                                                   | 行的 `className`|
+| rowRef                            | Function(record, index, indent):string              |                                                                                   | 行的 ref|
+| data                              | Object[]                                            |                                                                                   | 要渲染的数据                                                                                                           |
+| onRow                             | Function(record, index)                             |                                                                                   | 用来给每一行设置自定义属性|
+| onHeaderRow                       | Function(record, index)                             |                                                                                   | 用来给表头设置自定义属性                                                                                                      |
+| showHeader                        | Boolean                                             | `true`                                                                            |  是否显示表头|
+| title                             | Function(currentData)                               |                                                                                   | 用来渲染表格标题的函数                                                                                                                |
+| footer                            | Function(currentData)                               |                                                                                   | 用来渲染表格 footer 的函数|
+| emptyText                         | React.Node or Function                              | `No Data`                                                                         | 渲染数据为空时显示的内容|
+| columns                           | Object[]                                            |                                                                                   | 列的配置, 见下面那个表格|
+| components                        | Object                                              |                                                                                   | Override table elements, see [#171](https://github.com/react-component/table/pull/171) for more details                                    |
+| expandable                        | Object                                              |                                                                                   | 可展开表格的配置, 包含子项                                                                                                                 |
+| expandable.defaultExpandAllRows   | Boolean                                             | `false`                                                                           | 初始是否展开                                                                                                                               |
+| expandable.defaultExpandedRowKeys | String[]                                            | `[]`                                                                              | 初始哪几行展开                                                                                                                             |
+| expandable.expandedRowKeys        | String[]                                            |                                                                                   | 目前哪几行展开                                                                                                                             |
+| expandable.expandedRowRender      | Function(recode, index, indent, expanded):ReactNode |                                                                                   | 展开行的渲染函数                                                                                                                           |
+| expandable.expandedRowClassName   | Function(recode, index, indent):string              |                                                                                   | 获得展开行的 className                                                                                                                     |
+| expandable.expandRowByClick       | boolean                                             |                                                                                   | 支持点击该行展开                                                                                                                           |
+| expandable.expandIconColumnIndex  | Number                                              | `0`                                                                               | 当 `expandIconAsCell` 设置为 `false` 时在哪一列插入 自定义的 `expandIcon`                                                                  |
+| expandable.expandIcon             | props => ReactNode                                  |                                                                                   | 自定义展开图标                                                                                                                             |
+| expandable.indentSize             | Number                                              | `15`                                                                              | 每层 `data.i.children` 的 `indentSize`, 建议在定义了 `column.width` 时使用                                                                 |
+| expandable.rowExpandable          | (record) => boolean                                 |                                                                                   | 判断每一行是否可以展开的函数                                                                                                               |
+| expandable.onExpand               | Function(expanded, record)                          |                                                                                   | 点击展开按钮时调用的函数                                                                                                                   |
+| expandable.onExpandedRowsChange   | Function(expandedRows)                              |                                                                                   | 当展开的行变化是调用的函数                                                                                                                 |
+| `'id', 'name', 'className', ...`  | `TableHTMLAttributes`                               |                                                                                   | 原生属性                                                                                                                                   |
 
 <Attributes.Title>Table.Column.Props</Attributes.Title>
 
-| 属性             | 描述             | 类型     | 推荐值 | 默认 |
-| ---------------- | ---------------- | -------- | ------ | ---- |
-| **prop**(必须的) | 列对应的数据属性 | `string` | -      | -    |
-| **label**        | 每一列的标签文本 | `string` | -      | -    |
-| **width**        | 指定宽度         | `number` | -      | -    |
+| Name         | Type                        | Default | Description                                                                                                                                                                                                                                                                                           |
+| ------------ | --------------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| key          | String                      |         | 列的 `key`                                                                                                                                                                                                                                                                                            |
+| className    | String                      |         | 列的 `className`                                                                                                                                                                                                                                                                                      |
+| colSpan      | Number                      |         | 列的 `th` 的 `colspan`                                                                                                                                                                                                                                                                                |
+| title        | React Node                  |         | 列的 `title`                                                                                                                                                                                                                                                                                          |
+| dataIndex    | String                      |         | 数据的 index, 后面函数中会用到                                                                                                                                                                                                                                                                        |
+| width        | String \| Number            |         | 列的宽度或比例                                                                                                                                                                                                                                                                                        |
+| fixed        | String \| Boolean           |         | 可以为 `true` 或 `'left'` 或 `'right'`, 填写后该列在横向滚动时不会移动                                                                                                                                                                                                                                |
+| align        | String                      |         | 定义内容的对齐方式                                                                                                                                                                                                                                                                                    |
+| ellipsis     | Boolean                     |         | 定义是否省略过长的内容                                                                                                                                                                                                                                                                                |
+| onCell       | Function(record, index)     |         | 用来定义每个单元格的属性                                                                                                                                                                                                                                                                              |
+| onHeaderCell | Function(record)            |         | 用来定义每个表头单元格的属性                                                                                                                                                                                                                                                                          |
+| render       | Function(value, row, index) |         | 用来渲染单元格的函数, 函数有三个参数, 单元格的文本内容 `value`, 单元格所在行的信息 `record`, 单元格所在行的 `index`, 该函数应返回一个 object:{ children: value, props: { colSpan: 1, rowSpan:1 } } ==> `children` 为单元格的内容, `props` 是单元格的属性, 比如 `colspan` 可以设置 `<td>` 的 `colspan` |
 
 </Attributes>
 

@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Table, Spacer, Code, Text, Button } from 'components'
+import { Table, Spacer, Tooltip, Toggle, Link } from 'components'
+import { useState, AllHTMLAttributes } from 'react'
 
 export const meta = {
   title: 'Table',
@@ -11,144 +12,382 @@ export const meta = {
 Display tabular data in format.
 
 <Playground
-  desc="Display formatted data in rows and columns."
-  scope={{ Table }}
+  title="Simple Table"
+  scope={{ Table, Spacer, Link }}
   code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: 'string', default: '-' },
-    { property: 'bold', description: 'Bold style', type: 'boolean', default: 'true' },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="compose"
-  desc="Show other components in the table."
-  scope={{ Table, Code, Text }}
-  code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="width"
-  desc="Specifies the `width` of all or part of the columns."
-  scope={{ Table, Code, Text }}
-  code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" width={50} />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type" label="type" />
-      <Table.Column prop="default" label="default" />
-    </Table>
-  )
-}
-`}
-/>
-
-<Playground
-  title="actions"
-  desc="Custom elements can be displayed in the table, and any changes will be immediately rendered."
-  scope={{ Table, Text, Button }}
-  code={`
-() => {
-  const operation = (actions, rowData) => {
-    return <Button type="error" auto size="small" onClick={() => actions.remove()}>Remove</Button>
+  () => {
+    const columns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 100 },
+      {
+        width: 100,
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render(_, record) {
+          return (
+            <Link plain onClick={e => {
+                e.preventDefault();
+                console.log('Operate on:', record);
+              }}
+              href="#"
+            >
+              Operations
+            </Link>
+          );
+        },
+      },
+    ]
+    const otherColumns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title2', dataIndex: 'b', key: 'b', width: 100, align: 'right' },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 100 },
+      {
+        width: 100,
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render(_, record) {
+          return (
+            <Link plain onClick={e => {
+                e.preventDefault();
+                console.log('Operate on:', record);
+              }}
+              href="#"
+            >
+              Operations
+            </Link>
+          );
+        },
+      },
+    ]
+    const data = [
+      { a: '123', key: '1' },
+      { a: 'cdd', b: 'edd', key: '2' },
+      { a: '1333', c: 'eee', d: 2, key: '3' },
+    ]
+    return (
+      <>
+        <Table tableLayout="fixed" columns={columns} data={data} />
+        <Spacer />
+        <Table variant='line' columns={otherColumns} data={data} />
+      </>
+    )
   }
-  const data = [
-    { property: 'type', description: 'Content type', operation },
-    { property: 'Component', description: 'DOM element to use', operation },
-    { property: <Text b>bold</Text>, description: 'Bold style', operation },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="operation" label="operation" width={150} />
-    </Table>
-  )
-}
 `}
 />
 
 <Playground
-  title="custom head"
-  scope={{ Table, Code, Text }}
+  title="JSX"
+  scope={{ Table, Link }}
   code={`
-() => {
-  const data = [
-    { property: 'type', description: 'Content type', type: 'secondary | warning', default: '-' },
-    { property: 'Component', description: 'DOM element to use', type: <Code>string</Code>, default: '-' },
-    { property: <Text b>bold</Text>, description: 'Bold style', type: <Code>boolean</Code>, default: <Code>true</Code> },
-  ]
-  return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="type">
-        <Code>type</Code>
-      </Table.Column>
-      <Table.Column prop="default">
-        <Text b>default</Text>
-      </Table.Column>
-    </Table>
-  )
-}
+  () => {
+    const { Column } = Table
+    const data = [
+      { a: '123', key: '1' },
+      { a: 'cdd', b: 'edd', key: '2' },
+      { a: '1333', c: 'eee', d: 2, key: '3' },
+    ]
+    return (
+      <Table variant='line' data={data}>
+        <Column title="title1" dataIndex="a" key="a" width={100} />
+        <Column title="title2" dataIndex="b" key="b" width={100} />
+        <Column title="title3" dataIndex="c" key="c" width={200} />
+        <Column title="Operations" dataIndex="" key="d" render={() => <Link plain href="">Operations</Link>} />
+      </Table>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="Ellipsis"
+  desc="Table content with ellipsis and tooltip"
+  scope={{ Table, Tooltip, Link }}
+  code={`
+  () => {
+    const createColumns = (length) => {
+      return Array.from({ length }, (_, i) => ({
+        title: 'description',
+        dataIndex: 'description',
+        key: 'description ' +  (i + 1),
+        ellipsis: {
+          showTitle: false,
+        },
+        ...(i === 0 ? { width: 50 } : null),
+        render(description) {
+          return (
+            <Tooltip placement="topStart" text={description}>
+              <span>{description}</span>
+            </Tooltip>
+          )
+        },
+      }))
+    }
+    const columns = [
+      {
+        title: 'name',
+        dataIndex: 'name',
+        width: 100,
+        ellipsis: {
+          showTitle: false,
+        },
+        render: (name) => {
+        console.log('name', name)
+        return (
+          <Tooltip placement="topStart" text={name}>
+            <span>{name}</span>
+          </Tooltip>
+        ) },
+      },
+      ...createColumns(10),
+      {
+        title: 'Operations',
+        key: 'operations',
+        ellipsis: {
+          showTitle: false,
+        },
+        render() {
+          return (
+            <Tooltip placement="topStart" text="Operations">
+              <Link plain href="">Operations</Link>
+            </Tooltip>
+          )
+        },
+      },
+    ]
+    const data = [
+      { name: 'Harry', description: 'description description', key: '1' },
+      { name: 'James Sirius', description: 'description description', key: '2' },
+      { name: 'Albus Severus', description: 'description description', key: '3' },
+      { name: 'Lily Luna', description: 'description description', key: '4' },
+    ]
+    return (
+        <Table columns={columns} data={data} />
+    )
+  }
+`}
+/>
+
+<Playground
+  title="Expand column, fix columns, fix headers"
+  scope={{ Table, Spacer, useState, AllHTMLAttributes, Toggle, Link }}
+  code={`
+  () => {
+    function useCheckbox(defaultChecked = false) {
+      const [checked, setChecked] = useState(defaultChecked)
+      return [
+        checked,
+        {
+          checked,
+          onChange:() => {
+            setChecked(!checked)
+          },
+        },
+      ]
+    }
+    const tableData = [
+      { key: 0, a: '123' },
+      { key: 1, a: 'cdd', b: 'edd' },
+      { key: 2, a: '1333', c: 'eee', d: 2 },
+    ]
+    for (let i = 0; i < 10; i += 1) {
+      const str = '' + i
+      const item = {
+        key: i * 10 + 99,
+        a: str.repeat(3),
+        b: str.repeat(5),
+        c: str.repeat(7),
+        d: i,
+      }
+      tableData.push(item)
+    }
+    const [data, setData] = React.useState(tableData)
+    const [expandedRowKeys, setExpandedRowKeys] = React.useState([])
+    const [expandRowByClick, expandRowByClickProps] = useCheckbox()
+    const [fixColumns, fixColumnsProps] = useCheckbox()
+    const [scrollX, scrollXProps] = useCheckbox()
+    const [fixHeader, fixHeaderProps] = useCheckbox()
+    const [expandIconPosition, expandIconPositionProps] = useCheckbox()
+    const remove = (index) => {
+      const newData = data.slice()
+      newData.splice(index, 1)
+      setData(newData)
+    }
+    const renderAction = (o, row, index) => (
+      <Link plain onClick={() => remove(index)}>
+        Delete
+      </Link>
+    )
+    const columns = [
+      { title: 'title 1', dataIndex: 'a', key: 'a', width: 100 },
+      { title: 'title 2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title 3', dataIndex: 'c', key: 'c', width: 200 },
+      { title: 'Operation', dataIndex: '', key: 'x', render: renderAction },
+    ]
+    if (fixColumns) {
+      columns.unshift({ title: 'fix left 2', dataIndex: 'a', width: 100, fixed: 'left' })
+      columns.unshift({ title: 'fix left 1', dataIndex: 'a', width: 100, fixed: true })
+      columns.push({ title: 'fix right', dataIndex: 'a', width: 100, fixed: 'right' })
+    }
+    const onExpand = (expanded, record) => {
+      console.log('onExpand', expanded, record)
+    }
+    const onExpandedRowsChange = (rows) => {
+      setExpandedRowKeys(rows)
+    }
+    const rowExpandable = (record) => record.key !== 1
+    // Toggle Button
+    let toggleButton
+    if (expandedRowKeys.length) {
+      const closeAll = () => setExpandedRowKeys([])
+      toggleButton = (
+        <button type="button" onClick={closeAll}>
+          Close All
+        </button>
+      )
+    } else {
+      const openAll = () => setExpandedRowKeys([0, 1, 2])
+      toggleButton = (<button type="button" onClick={openAll}> Expand All </button>)
+    }
+    const ToggleLabel = ({ label, ...props }) => (
+        <label style={{display: 'flex', alignItems: 'center'}}>
+          <Toggle {...props} /> {label}
+        </label>
+    )
+    // Render
+    return (
+      <div>
+        {toggleButton}
+        <ToggleLabel label='Expand Row by Click' {...expandRowByClickProps} />
+        <ToggleLabel label='Fix Columns' {...fixColumnsProps} />
+        <ToggleLabel label='ScrollX' {...scrollXProps} />
+        <ToggleLabel label='Fix Header' {...fixHeaderProps} />
+        <ToggleLabel label='Change Expand Icon Position' {...expandIconPositionProps} />
+        <Spacer />
+        <Table
+          columns={columns}
+          expandable={{
+            expandRowByClick,
+            expandedRowRender: (record, index, indent, expanded) =>
+              expanded ? <p>extra: {record.a}</p> : null,
+            expandedRowKeys,
+            onExpandedRowsChange,
+            onExpand,
+            rowExpandable,
+            expandIconColumnIndex: expandIconPosition ? 1 : null,
+          }}
+          scroll={{ x: fixColumns || scrollX ? 2000 : null, y: fixHeader ? 300 : null }}
+          data={data}
+        />
+        <Spacer />
+        <Table
+          variant='line'
+          columns={columns}
+          expandable={{
+            expandRowByClick,
+            expandedRowRender: (record, index, indent, expanded) =>
+              expanded ? <p>extra: {record.a}</p> : null,
+            expandedRowKeys,
+            onExpandedRowsChange,
+            onExpand,
+            rowExpandable,
+            expandIconColumnIndex: expandIconPosition ? 1 : null,
+          }}
+          scroll={{ x: fixColumns || scrollX ? 2000 : null, y: fixHeader ? 300 : null }}
+          data={data}
+        />
+      </div>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="No data"
+  desc="Empty data place holder"
+  scope={{ Table, Spacer, Link }}
+  code={`
+  () => {
+    const columns = [
+      { title: 'title1', dataIndex: 'a', key: 'a', width: 100 },
+      { id: '123', title: 'title2', dataIndex: 'b', key: 'b', width: 100 },
+      { title: 'title3', dataIndex: 'c', key: 'c', width: 200 },
+      {
+        title: 'Operations',
+        dataIndex: '',
+        key: 'd',
+        render() {
+          return <Link plain href="#">Operations</Link>
+        },
+      },
+    ]
+    const data = []
+    return (
+      <>
+        <Table columns={columns} data={data} />
+        <Spacer />
+        <Table columns={columns} data={data} emptyText="customize!!" />
+        <Spacer />
+        <Table columns={columns} data={data} emptyText={() => <h1>No No No!</h1>} />
+      </>
+    )
+  }
 `}
 />
 
 <Attributes edit="/pages/en-us/components/table.mdx">
 <Attributes.Title>Table.Props</Attributes.Title>
 
-| Attribute     | Description                                  | Type                                                 | Accepted values                  | Default |
-| ------------- | -------------------------------------------- | ---------------------------------------------------- | -------------------------------- | ------- |
-| **data**      | data source                                  | `Array<any>`                                         | -                                | -       |
-| **emptyText** | displayed text when table's content is empty | `string`                                             | -                                | -       |
-| **hover**     | table's hover effect                         | `boolean`                                            | -                                | `true`  |
-| **onRow**     | callback row's content by click              | `(row: any, index: number) => void`                  | -                                | -       |
-| **onCell**    | callback cell's content by click             | `(cell: any, index: number, colunm: number) => void` | -                                | -       |
-| **onChange**  | data change event                            | `(data: any) => void`                                | -                                | -       |
-| ...           | native props                                 | `TableHTMLAttributes`                                | `'id', 'name', 'className', ...` | -       |
+| Name                              | Type                                                | Default                                                                   | Description                                                                                                                                |
+| --------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| tableLayout                       | `auto` \| `fixed`                                   | `auto` \| `fixed` for any columns is fixed or ellipsis or header is fixed | https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout                                                                              |
+| useFixedHeader                    | Boolean                                             | `false`                                                                   | whether use separator table for header. better set width for columns                                                                       |
+| scroll                            | Object                                              | `{x: false, y: false}`                                                    | whether table can be scroll in x/y direction, `x` or `y` can be a number that indicated the width and height of table body                 |
+| rowKey                            | string or Function(record):string                   | `'key'`                                                                   | If rowKey is string, `record[rowKey]` will be used as key. If rowKey is function, the return value of `rowKey(record)` will be use as key. |
+| rowClassName                      | string or Function(record, index, indent):string    |                                                                           | get row's className                                                                                                                        |
+| rowRef                            | Function(record, index, indent):string              |                                                                           | get row's ref key                                                                                                                          |
+| data                              | Object[]                                            |                                                                           | data record array to be rendered                                                                                                           |
+| onRow                             | Function(record, index)                             |                                                                           | Set custom props per each row.                                                                                                             |
+| onHeaderRow                       | Function(record, index)                             |                                                                           | Set custom props per each header row.                                                                                                      |
+| showHeader                        | Boolean                                             | `true`                                                                    | whether table head is shown                                                                                                                |
+| title                             | Function(currentData)                               |                                                                           | table title render function                                                                                                                |
+| footer                            | Function(currentData)                               |                                                                           | table footer render function                                                                                                               |
+| emptyText                         | React.Node or Function                              | `No Data`                                                                 | Display text when data is empty                                                                                                            |
+| columns                           | Object[]                                            |                                                                           | The columns config of table, see table below                                                                                               |
+| components                        | Object                                              |                                                                           | Override table elements, see [#171](https://github.com/react-component/table/pull/171) for more details                                    |
+| expandable                        | Object                                              |                                                                           | Config expand props                                                                                                                        |
+| expandable.defaultExpandAllRows   | Boolean                                             | `false`                                                                   | Expand All Rows initially                                                                                                                  |
+| expandable.defaultExpandedRowKeys | String[]                                            | `[]`                                                                      | initial expanded rows keys                                                                                                                 |
+| expandable.expandedRowKeys        | String[]                                            |                                                                           | current expanded rows keys                                                                                                                 |
+| expandable.expandedRowRender      | Function(recode, index, indent, expanded):ReactNode |                                                                           | Content render to expanded row                                                                                                             |
+| expandable.expandedRowClassName   | Function(recode, index, indent):string              |                                                                           | get expanded row's className                                                                                                               |
+| expandable.expandRowByClick       | boolean                                             |                                                                           | Support expand by click row                                                                                                                |
+| expandable.expandIconColumnIndex  | Number                                              | `0`                                                                       | The index of expandIcon which column will be inserted when expandIconAsCell is false                                                       |
+| expandable.expandIcon             | props => ReactNode                                  |                                                                           | Customize expand icon                                                                                                                      |
+| expandable.indentSize             | Number                                              | `15`                                                                      | indentSize for every level of data.i.children, better using with column.width specified                                                    |
+| expandable.rowExpandable          | (record) => boolean                                 |                                                                           | Config row support expandable                                                                                                              |
+| expandable.onExpand               | Function(expanded, record)                          |                                                                           | function to call when click expand icon                                                                                                    |
+| expandable.onExpandedRowsChange   | Function(expandedRows)                              |                                                                           | function to call when the expanded rows change                                                                                             |
+| `'id', 'name', 'className', ...`  | `TableHTMLAttributes`                               |                                                                           | native props                                                                                                                               |
 
 <Attributes.Title>Table.Column.Props</Attributes.Title>
 
-| Attribute          | Description          | Type     | Accepted values | Default |
-| ------------------ | -------------------- | -------- | --------------- | ------- |
-| **prop**(required) | table-column's prop  | `string` | -               | -       |
-| **label**          | table-column's label | `string` | -               | -       |
-| **width**          | width number (px)    | `number` | -               | -       |
+| Name         | Type                        | Default | Description                                                                                                                                                                                                                                                                                                                          |
+| ------------ | --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| key          | String                      |         | key of this column                                                                                                                                                                                                                                                                                                                   |
+| className    | String                      |         | className of this column                                                                                                                                                                                                                                                                                                             |
+| colSpan      | Number                      |         | thead colSpan of this column                                                                                                                                                                                                                                                                                                         |
+| title        | React Node                  |         | title of this column                                                                                                                                                                                                                                                                                                                 |
+| dataIndex    | String                      |         | display field of the data record                                                                                                                                                                                                                                                                                                     |
+| width        | String \| Number            |         | width of the specific proportion calculation according to the width of the columns                                                                                                                                                                                                                                                   |
+| fixed        | String \| Boolean           |         | this column will be fixed when table scroll horizontally: true or 'left' or 'right'                                                                                                                                                                                                                                                  |
+| align        | String                      |         | specify how cell content is aligned                                                                                                                                                                                                                                                                                                  |
+| ellipsis     | Boolean                     |         | specify whether cell content be ellipsized                                                                                                                                                                                                                                                                                           |
+| onCell       | Function(record, index)     |         | Set custom props per each cell.                                                                                                                                                                                                                                                                                                      |
+| onHeaderCell | Function(record)            |         | Set custom props per each header cell.                                                                                                                                                                                                                                                                                               |
+| render       | Function(value, row, index) |         | The render function of cell, has three params: the text of this cell, the record of this row, the index of this row, it's return an object:{ children: value, props: { colSpan: 1, rowSpan:1 } } ==> 'children' is the text of this cell, props is some setting of this cell, eg: 'colspan' set td colspan, 'rowspan' set td rowspan |
 
 </Attributes>
 
