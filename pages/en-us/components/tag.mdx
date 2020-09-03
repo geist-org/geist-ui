@@ -54,13 +54,15 @@ Used to trigger an operation.
 
 <Playground
   title="Icon"
-  desc="Tag with icon"
+  desc="Tag with icon and dashed style."
   scope={{ Tag, Spacer, Plus }}
   code={`
     <>
-      <Tag variant="line" icon={<Plus />}>Tag</Tag>
+      <Tag dashed variant="line" icon={<Plus />}>Tag</Tag>
       <Spacer inline />
-      <Tag variant="line" iconRight={<Plus />}>Tag</Tag>
+      <Tag dashed variant="line" color="primary" iconRight={<Plus />}>Tag</Tag>
+      <Spacer inline />
+      <Tag dashed variant="line" disabled iconRight={<Plus />}>Tag</Tag>
     </>
   `}
 />

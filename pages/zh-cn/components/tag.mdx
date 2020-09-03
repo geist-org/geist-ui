@@ -54,13 +54,15 @@ export const meta = {
 
 <Playground
   title="图标"
-  desc="带图标的 Tag"
+  desc="带图标和虚线框的 Tag"
   scope={{ Tag, Spacer, Plus }}
   code={`
     <>
-      <Tag variant="line" icon={<Plus />}>Tag</Tag>
+      <Tag dashed variant="line" icon={<Plus />}>Tag</Tag>
       <Spacer inline />
-      <Tag variant="line" iconRight={<Plus />}>Tag</Tag>
+      <Tag dashed variant="line" color="primary" iconRight={<Plus />}>Tag</Tag>
+      <Spacer inline />
+      <Tag dashed variant="line" disabled iconRight={<Plus />}>Tag</Tag>
     </>
   `}
 />
