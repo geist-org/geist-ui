@@ -1,4 +1,5 @@
 import { Tabs, Spacer, Button } from 'components'
+import { X } from '@zeit-ui/react-icons'
 
 function App() {
   const idx = React.useRef(3)
@@ -40,15 +41,24 @@ function App() {
             key={value}
             label={
               deletable ? (
-                <div>
-                  {label}{' '}
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                  }}>
                   <span
+                    style={{
+                      marginRight: '5px',
+                    }}>
+                    {label}
+                  </span>
+                  <X
                     onClick={e => {
                       e.stopPropagation()
                       setTabs(tabs => tabs.filter(x => x.value !== value))
-                    }}>
-                    x
-                  </span>
+                    }}
+                    size={16}
+                  />
                 </div>
               ) : (
                 label
