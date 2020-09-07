@@ -1,25 +1,26 @@
-import { SnippetTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { SnippetColors } from '../utils/prop-types'
+import { CfxUIThemesPalette } from '../styles/themes'
 
 export type TooltipColors = {
   bgColor: string
   color: string
 }
 
-export const getColors = (type: SnippetTypes, palette: ZeitUIThemesPalette): TooltipColors => {
-  const colors: { [key in SnippetTypes]: string } = {
-    default: palette.background,
+export const getColors = (color: SnippetColors, palette: CfxUIThemesPalette): TooltipColors => {
+  if (color === 'default') color = 'dark'
+  const colors: { [key in SnippetColors]: string } = {
+    default: palette.cNeutral8,
     success: palette.success,
     warning: palette.warning,
     error: palette.error,
-    secondary: palette.secondary,
-    dark: palette.foreground,
-    lite: palette.background,
+    secondary: palette.cNeutral4,
+    dark: palette.cNeutral7,
+    lite: palette.cNeutral8,
   }
-  const color = type === 'lite' || type === 'default' ? palette.foreground : palette.background
+  const fontColor = color === 'lite' ? palette.foreground : palette.background
 
   return {
-    color,
-    bgColor: colors[type],
+    color: fontColor,
+    bgColor: colors[color],
   }
 }

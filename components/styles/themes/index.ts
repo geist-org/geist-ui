@@ -1,6 +1,6 @@
 import { ThemeTypes } from '../../utils/prop-types'
 
-export interface ZeitUIThemesPalette {
+export interface CfxUIThemesPalette {
   /* eslint-disable @typescript-eslint/camelcase */
   accents_1: string
   accents_2: string
@@ -18,15 +18,12 @@ export interface ZeitUIThemesPalette {
   code: string
   border: string
   success: string
-  successLighter: string
   successLight: string
   successDark: string
   error: string
-  errorLighter: string
   errorLight: string
   errorDark: string
   warning: string
-  warningLighter: string
   warningLight: string
   warningDark: string
   cyan: string
@@ -41,9 +38,28 @@ export interface ZeitUIThemesPalette {
   purple: string
   magenta: string
   alert: string
+
+  // conflux
+  cTheme0: string
+  cTheme1: string
+  cTheme2: string
+  cTheme3: string
+  cTheme4: string
+  cTheme5: string
+  cTheme6: string
+  cTheme7: string
+  cNeutral0: string
+  cNeutral1: string
+  cNeutral2: string
+  cNeutral3: string
+  cNeutral4: string
+  cNeutral5: string
+  cNeutral6: string
+  cNeutral7: string
+  cNeutral8: string
 }
 
-export interface ZeitUIThemesExpressiveness {
+export interface CfxUIThemesExpressiveness {
   linkStyle: string
   linkHoverStyle: string
   dropdownBoxShadow: string
@@ -53,9 +69,35 @@ export interface ZeitUIThemesExpressiveness {
   shadowMedium: string
   shadowLarge: string
   portalOpacity: number
+
+  // radius
+  R0: string
+  R1: string
+  R2: string
+  R3: string
+  R4: string
+  R5: string
+
+  // border-width
+  L1: string
+  L2: string
+  L4: string
+
+  // border-style
+  cLineStyle1: string
+  cLineStyle2: string
+  cLineStyle3: string
+
+  // drop shadows
+  D0: string
+  D1: string
+  D2: string
+  D3: string
+  D4: string
+  D5: string
 }
 
-export interface ZeitUIThemesLayout {
+export interface CfxUIThemesLayout {
   gap: string
   gapNegative: string
   gapHalf: string
@@ -67,10 +109,10 @@ export interface ZeitUIThemesLayout {
   pageWidthWithMargin: string
   breakpointMobile: string
   breakpointTablet: string
-  radius: string
+  // radius: string
 }
 
-export interface ZeitUIThemesFont {
+export interface CfxUIThemesFont {
   sans: string
   mono: string
 }
@@ -80,7 +122,7 @@ export interface BreakpointsItem {
   max: string
 }
 
-export interface ZeitUIThemesBreakpoints {
+export interface CfxUIThemesBreakpoints {
   xs: BreakpointsItem
   sm: BreakpointsItem
   md: BreakpointsItem
@@ -88,11 +130,11 @@ export interface ZeitUIThemesBreakpoints {
   xl: BreakpointsItem
 }
 
-export interface ZeitUIThemes {
+export interface CfxUIThemes {
   type: ThemeTypes
-  font: ZeitUIThemesFont
-  layout: ZeitUIThemesLayout
-  palette: ZeitUIThemesPalette
-  breakpoints: ZeitUIThemesBreakpoints
-  expressiveness: ZeitUIThemesExpressiveness
+  font: CfxUIThemesFont
+  layout: CfxUIThemesLayout
+  palette: CfxUIThemesPalette
+  breakpoints: CfxUIThemesBreakpoints
+  expressiveness: CfxUIThemesExpressiveness
 }

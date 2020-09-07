@@ -12,6 +12,7 @@ describe('Progress', () => {
   it('should work with different types', () => {
     const wrapper = mount(
       <div>
+        <Progress value={80} type="primary" />
         <Progress value={59} type="secondary" />
         <Progress value={21} type="success" />
         <Progress value={2} type="warning" />

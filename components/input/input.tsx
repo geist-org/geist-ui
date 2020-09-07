@@ -1,24 +1,26 @@
-import React, {
-  PropsWithoutRef,
-  RefAttributes,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import useTheme from '../styles/use-theme'
-import InputLabel from './input-label'
+import Textarea from '../textarea/textarea'
 import InputBlockLabel from './input-block-label'
 import InputIcon from './input-icon'
 import InputClearIcon from './input-icon-clear'
-import Textarea from '../textarea/textarea'
+import InputLabel from './input-label'
+import { defaultProps, Props } from './input-props'
 import InputPassword from './password'
-import { getSizes, getColors } from './styles'
-import { Props, defaultProps } from './input-props'
+import { getColors, getSizes } from './styles'
+import { useInputHandle } from './use-input-handle'
+import { useAutoCompleteContext } from '../auto-complete/auto-complete-context'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type InputProps = Props & typeof defaultProps & NativeAttrs
+export type InputProps = React.PropsWithChildren<Props & NativeAttrs>
+export { defaultProps }
+
+export interface InputImperativeHandles {
+  getValue(): string
+  setValue(value?: string): void
+  focus(): void
+  blur(): void
+}
 
 const simulateChangeEvent = (
   el: HTMLInputElement,
@@ -31,43 +33,48 @@ const simulateChangeEvent = (
   }
 }
 
-const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputProps>>(
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
+      variant,
       label,
       labelRight,
       size,
-      status,
+      htmlSize,
+      color: inputColor,
       icon,
       iconRight,
       iconClickable,
       onIconClick,
-      initialValue,
       onChange,
       readOnly,
-      value,
       onClearClick,
       clearable,
       width,
+      htmlWidth,
       className,
       onBlur,
       onFocus,
+      onMouseOver,
+      onMouseOut,
       autoComplete,
       placeholder,
       children,
       disabled,
       ...props
-    },
+    }: InputProps & typeof defaultProps,
     ref: React.Ref<HTMLInputElement | null>,
   ) => {
     const theme = useTheme()
+    const isSolid = variant === 'solid'
     const inputRef = useRef<HTMLInputElement>(null)
-    useImperativeHandle(ref, () => inputRef.current)
+    const isControlled = props.value !== undefined
 
-    const [selfValue, setSelfValue] = useState<string>(initialValue)
+    const [focus, setFocus] = useState<boolean>(false)
     const [hover, setHover] = useState<boolean>(false)
-    const { heightRatio, fontSize } = useMemo(() => getSizes(size), [size])
-    const showClearIcon = useMemo(() => clearable && selfValue !== '', [selfValue, clearable])
+    const { heightRatio, fontSize, margin } = useMemo(() => getSizes(size), [size])
+    const { ref: autoCompleteRef, focus: autoCompleteFocus } = useAutoCompleteContext()
+    const inAutoComplete = Boolean(autoCompleteRef && autoCompleteRef.current)
     const labelClasses = useMemo(() => (labelRight ? 'right-label' : label ? 'left-label' : ''), [
       label,
       labelRight,
@@ -76,37 +83,56 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       icon,
       iconRight,
     ])
-    const { color, borderColor, hoverBorder } = useMemo(() => getColors(theme.palette, status), [
-      theme.palette,
-      status,
-    ])
+
+    useImperativeHandle(ref, () => inputRef.current)
+
+    const {
+      color,
+      hoverColor,
+      border,
+      hoverBorderColor,
+      backgroundColor,
+      hoverBackgroundColor,
+    } = useMemo(() => getColors(theme, inputColor, isSolid), [theme, inputColor, isSolid])
+
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return
-      setSelfValue(event.target.value)
       onChange && onChange(event)
     }
-
     const clearHandler = (event: React.MouseEvent<HTMLDivElement>) => {
-      setSelfValue('')
-      onClearClick && onClearClick(event)
       /* istanbul ignore next */
       if (!inputRef.current) return
+      if (disabled || readOnly) return
 
-      const changeEvent = simulateChangeEvent(inputRef.current, event)
-      changeEvent.target.value = ''
-      onChange && onChange(changeEvent)
+      if (!isControlled) inputRef.current.value = ''
+
+      onClearClick && onClearClick(event)
+
+      if (!isControlled) {
+        const changeEvent = simulateChangeEvent(inputRef.current, event)
+        changeEvent.target.value = ''
+        onChange && onChange(changeEvent)
+      }
+
       inputRef.current.focus()
     }
-
     const focusHandler = (e: React.FocusEvent<HTMLInputElement>) => {
-      setHover(true)
+      setFocus(true)
       onFocus && onFocus(e)
     }
     const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
-      setHover(false)
+      if (inAutoComplete && autoCompleteFocus) return
+      setFocus(false)
       onBlur && onBlur(e)
     }
-
+    const mouseOverHandler = (e: React.MouseEvent<HTMLInputElement>) => {
+      setHover(true)
+      onMouseOver && onMouseOver(e)
+    }
+    const mouseOutHandler = (e: React.MouseEvent<HTMLInputElement>) => {
+      setHover(false)
+      onMouseOut && onMouseOut(e)
+    }
     const iconClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
       if (disabled) return
       onIconClick && onIconClick(e)
@@ -121,37 +147,49 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     )
 
     useEffect(() => {
-      if (value === undefined) return
-      setSelfValue(value)
-    }, [value])
+      if (!autoCompleteFocus) {
+        setFocus(false)
+      }
+    }, [autoCompleteFocus])
+
+    const inputProps = {
+      ...props,
+    }
 
     return (
       <div className="with-label">
-        {children && <InputBlockLabel>{children}</InputBlockLabel>}
+        {children && <InputBlockLabel htmlFor={props.id}>{children}</InputBlockLabel>}
         <div className={`input-container ${className}`}>
-          {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
+          {label && (
+            <InputLabel htmlFor={props.id} variant={variant} fontSize={fontSize}>
+              {label}
+            </InputLabel>
+          )}
           <div
-            className={`input-wrapper ${hover ? 'hover' : ''} ${
-              disabled ? 'disabled' : ''
-            } ${labelClasses}`}>
-            {icon && <InputIcon icon={icon} {...iconProps} />}
+            className={`input-wrapper ${isSolid ? 'solid' : 'line'} ${hover ? 'hover' : ''} ${
+              focus ? 'focus' : ''
+            } ${disabled ? 'disabled' : ''} ${labelClasses}`}>
+            {icon && <InputIcon paddingRight="0.5714rem" icon={icon} {...iconProps} />}
             <input
               type="text"
+              size={htmlSize}
               ref={inputRef}
-              className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
-              value={selfValue}
+              width={htmlWidth}
+              className={`${iconClasses}`}
               placeholder={placeholder}
               disabled={disabled}
               readOnly={readOnly}
               onFocus={focusHandler}
+              onMouseOver={mouseOverHandler}
+              onMouseOut={mouseOutHandler}
               onBlur={blurHandler}
               onChange={changeHandler}
               autoComplete={autoComplete}
-              {...props}
+              {...inputProps}
             />
             {clearable && (
               <InputClearIcon
-                visibale={showClearIcon}
+                visible={Boolean(inputRef.current && inputRef.current.value !== '')}
                 heightRatio={heightRatio}
                 disabled={disabled || readOnly}
                 onClick={clearHandler}
@@ -160,7 +198,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
           </div>
           {labelRight && (
-            <InputLabel fontSize={fontSize} isRight={true}>
+            <InputLabel htmlFor={props.id} variant={variant} fontSize={fontSize} isRight={true}>
               {labelRight}
             </InputLabel>
           )}
@@ -187,9 +225,10 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: ${theme.layout.radius};
-            border: 1px solid ${borderColor};
+            border-radius: ${theme.expressiveness.R2};
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: ${backgroundColor};
+            border: ${border};
           }
 
           .input-wrapper.left-label {
@@ -203,25 +242,25 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           .input-wrapper.disabled {
-            background-color: ${theme.palette.accents_1};
-            border-color: ${theme.palette.accents_2};
             cursor: not-allowed;
+            border: 0;
+            background-color: ${theme.palette.cNeutral2};
           }
 
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: ${hoverBorder};
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: ${hoverBorderColor};
+            background-color: ${hoverBackgroundColor};
           }
 
           input {
-            margin: 4px 10px;
+            margin: ${margin};
             padding: 0;
             box-shadow: none;
             font-size: ${fontSize};
+            line-height: calc(${heightRatio} * ${theme.layout.gap} - 2px);
             background-color: transparent;
+            font-weight: normal;
             border: none;
             color: ${color};
             outline: none;
@@ -229,6 +268,11 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             width: 100%;
             min-width: 0;
             -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: ${theme.palette.cNeutral4};
           }
 
           input.left-icon {
@@ -239,19 +283,39 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             margin-right: 0;
           }
 
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: ${hoverColor};
+          }
+
           ::placeholder,
           ::-moz-placeholder,
           :-ms-input-placeholder,
           ::-webkit-input-placeholder {
-            color: ${theme.palette.accents_3};
+            color: ${theme.palette.cNeutral5};
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(${heightRatio} * ${theme.layout.gap} - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px ${backgroundColor} inset !important;
+            -webkit-text-fill-color: ${color} !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px ${hoverBackgroundColor} inset !important;
+            -webkit-text-fill-color: ${hoverColor} !important;
           }
 
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px ${theme.palette.background} inset !important;
-            -webkit-text-fill-color: ${color} !important;
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
           }
         `}</style>
       </div>
@@ -259,16 +323,17 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
   },
 )
 
-type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
-> & {
-  Textarea: typeof Textarea
-  Password: typeof InputPassword
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
 Input.defaultProps = defaultProps
 
-export default Input as InputComponent<HTMLInputElement, ComponentProps>
+const InputComponent = Input as typeof Input & {
+  Textarea: typeof Textarea
+  Password: typeof InputPassword
+  useInputHandle: typeof useInputHandle
+}
+
+InputComponent.Textarea = Textarea
+InputComponent.Password = InputPassword
+InputComponent.useInputHandle = useInputHandle
+
+export default InputComponent
+export { useInputHandle }

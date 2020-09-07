@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react'
-import { useTheme, ZeitUIThemesPalette, Popover } from 'components'
+import { useTheme, CfxUIThemesPalette, Popover } from 'components'
 import { ColorResult, TwitterPicker } from 'react-color'
 import { useConfigs } from 'lib/config-context'
 import DefaultTheme from 'components/styles/themes/default'
 
 interface Props {
   value?: string
-  keyName: keyof ZeitUIThemesPalette
+  keyName: keyof CfxUIThemesPalette
 }
 
 const getRandomColor = () => {
@@ -15,7 +15,7 @@ const getRandomColor = () => {
 }
 
 const getRandomColors = () => {
-  const kyes = Object.keys(DefaultTheme.palette) as Array<keyof ZeitUIThemesPalette>
+  const kyes = Object.keys(DefaultTheme.palette) as Array<keyof CfxUIThemesPalette>
   const basicColors = new Array(5).fill('').map(() => {
     const index = Math.round(Math.random() * kyes.length) + kyes.length
     return DefaultTheme.palette[kyes[index]]
@@ -63,7 +63,7 @@ const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({ keyName }) 
             display: inline-flex;
             align-items: center;
             border: 1px solid ${theme.palette.border};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             color: ${theme.palette.accents_5};
             margin-right: 0.75rem;
             margin-bottom: 0.5rem;

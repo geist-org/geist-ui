@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import useTheme from '../styles/use-theme'
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemesPalette } from 'components/styles/themes'
 import BadgeAnchor from './badge-anchor'
 
 interface Props {
@@ -31,9 +31,10 @@ const getFontSize = (size: NormalSizes) => {
   return sizes[size]
 }
 
-const getBgColor = (type: NormalTypes, palette: ZeitUIThemesPalette) => {
+const getBgColor = (type: NormalTypes, palette: CfxUIThemesPalette) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.foreground,
+    primary: palette.success,
     success: palette.success,
     warning: palette.warning,
     error: palette.error,

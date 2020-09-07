@@ -1,22 +1,35 @@
 import React from 'react'
 import { mount } from 'enzyme'
+import { ExternalLink } from '@zeit-ui/react-icons'
 import { Link } from 'components'
 
 describe('Link', () => {
   it('should render correctly', () => {
     const wrapper = mount(
       <div>
-        <Link href="https://react.zeit-ui.co">link</Link>
-        <Link href="https://react.zeit-ui.co" color>
+        <Link href="https://conflux-react-ui.vercel.app/">link</Link>
+        <Link href="https://conflux-react-ui.vercel.app/" underline>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" icon>
+        <Link href="https://conflux-react-ui.vercel.app/" block>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" underline>
+        <Link href="https://conflux-react-ui.vercel.app/" disabled>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" block>
+        <Link href="https://conflux-react-ui.vercel.app/" plain>
+          link
+        </Link>
+        <Link href="https://conflux-react-ui.vercel.app/" iconLeft={<ExternalLink />}>
+          link
+        </Link>
+        <Link href="https://conflux-react-ui.vercel.app/" iconRight={<ExternalLink />}>
+          link
+        </Link>
+        <Link
+          href="https://conflux-react-ui.vercel.app/"
+          iconLeft={<ExternalLink />}
+          iconRight={<ExternalLink />}>
           link
         </Link>
       </div>,
@@ -46,8 +59,25 @@ describe('Link', () => {
 
   it('an warning should be thrown when using the pure prop', () => {
     const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
-    mount(<Link pure />)
+    const link = mount(<Link pure />)
     expect(errorSpy).toHaveBeenCalled()
+    expect(() => link.unmount()).not.toThrow()
+    errorSpy.mockRestore()
+  })
+
+  it('an info should be shown when using the color prop', () => {
+    const errorSpy = jest.spyOn(console, 'info').mockImplementation(() => {})
+    const link = mount(<Link color />)
+    expect(errorSpy).toHaveBeenCalled()
+    expect(() => link.unmount()).not.toThrow()
+    errorSpy.mockRestore()
+  })
+
+  it('an info should be shown when using the icon prop', () => {
+    const errorSpy = jest.spyOn(console, 'info').mockImplementation(() => {})
+    const link = mount(<Link icon />)
+    expect(errorSpy).toHaveBeenCalled()
+    expect(() => link.unmount()).not.toThrow()
     errorSpy.mockRestore()
   })
 })

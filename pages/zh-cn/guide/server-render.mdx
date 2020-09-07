@@ -9,9 +9,9 @@ export const meta = {
 
 ## 服务端渲染
 
-### 在服务端的 ZEIT-UI React
+### 在服务端的 CFX-UI React
 
-`@zeit-ui/react` 的所有组件都能完美的适应 **服务端渲染**，实际上，你现在所见的文档站点就是来自服务端渲染。
+`@cfxjs/react-ui` 的所有组件都能完美的适应 **服务端渲染**，实际上，你现在所见的文档站点就是来自服务端渲染。
 
 <Note label="阅读提示">
   如果你只想创建{' '}
@@ -24,7 +24,7 @@ export const meta = {
 <Spacer y={0.5} />
 
 使用服务端渲染会让我们的应用失去 SPA 的所有优势吗？或许你可以考虑 `hybrid render` (混合渲染) 的应用，
-阅读 <Link color href="https://nextjs.org/blog/next-9-3#next-gen-static-site-generation-ssg-support" rel="nofollow">
+阅读 <Link href="https://nextjs.org/blog/next-9-3#next-gen-static-site-generation-ssg-support" rel="nofollow">
 这篇来自 Next.js 团队的文章</Link> 了解更多细节。
 
 <Text>
@@ -51,7 +51,7 @@ export const meta = {
 
 ```js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { CssBaseline } from '@zeit-ui/react'
+import { CssBaseline } from '@cfxjs/react-ui'
 
 class MyDocument extends Document {
   static async getInitialProps (ctx) {
@@ -84,7 +84,7 @@ class MyDocument extends Document {
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom/server'
-import { CssBaseline } from 'zeit-ui/react'
+import { CssBaseline } from '@cfxjs/react-ui'
 import App from './app'
 
 export default (req, res) => {

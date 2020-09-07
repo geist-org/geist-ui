@@ -10,7 +10,7 @@ export const meta = {
 
 Copy string to clipboard.
 
-This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
+This is custom React Hooks, you need to follow the <Link target="_blank" href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
 
 <Playground
   scope={{ useClipboard, Button, useToasts }}
@@ -19,7 +19,7 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
   const [, setToast] = useToasts()
   const { copy } = useClipboard()
   const handler = () => {
-    copy('hello, zeit-ui')
+    copy('hello, cfx-ui')
     setToast({ text: 'Text copied.' })
   }
   return (

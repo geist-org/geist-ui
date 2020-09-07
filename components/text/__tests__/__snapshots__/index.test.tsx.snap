@@ -51,6 +51,14 @@ exports[`Text should render default color when type missing 1`] = `
 exports[`Text should work with different styles 1`] = `
 "<div><p class=\\" \\">test-value</p><style>
         p {
+          color: #7cd77b;
+        }
+
+        .custom-size {
+          font-size: inherit;
+        }
+      </style><p class=\\" \\">test-value</p><style>
+        p {
           color: #666;
         }
 
@@ -59,7 +67,7 @@ exports[`Text should work with different styles 1`] = `
         }
       </style><p class=\\" \\">test-value</p><style>
         p {
-          color: #0070f3;
+          color: #7cd77b;
         }
 
         .custom-size {
@@ -67,7 +75,7 @@ exports[`Text should work with different styles 1`] = `
         }
       </style><p class=\\" \\">test-value</p><style>
         p {
-          color: #f5a623;
+          color: #ffc438;
         }
 
         .custom-size {
@@ -75,7 +83,7 @@ exports[`Text should work with different styles 1`] = `
         }
       </style><p class=\\" \\">test-value</p><style>
         p {
-          color: #e00;
+          color: #e15c56;
         }
 
         .custom-size {

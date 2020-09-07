@@ -1,17 +1,17 @@
 import {
-  ZeitUIThemesBreakpoints,
-  ZeitUIThemesFont,
-  ZeitUIThemesLayout,
+  CfxUIThemesBreakpoints,
+  CfxUIThemesFont,
+  CfxUIThemesLayout,
 } from 'components/styles/themes/index'
 
-export const defaultFont: ZeitUIThemesFont = {
+export const defaultFont: CfxUIThemesFont = {
   sans:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+    '"Circular Std Book", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
   mono:
     'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
 }
 
-export const defaultBreakpoints: ZeitUIThemesBreakpoints = {
+export const defaultBreakpoints: CfxUIThemesBreakpoints = {
   xs: {
     min: '0',
     max: '650px',
@@ -34,17 +34,17 @@ export const defaultBreakpoints: ZeitUIThemesBreakpoints = {
   },
 }
 
-export const defaultLayout: ZeitUIThemesLayout = {
-  gap: '16pt',
-  gapNegative: '-16pt',
-  gapHalf: '8pt',
-  gapHalfNegative: '-8pt',
-  gapQuarter: '4pt',
-  gapQuarterNegative: '-4pt',
-  pageMargin: '16pt',
-  pageWidth: '750pt',
-  pageWidthWithMargin: '782pt',
+export const defaultLayout: CfxUIThemesLayout = {
+  gap: '16px',
+  gapNegative: '-16px',
+  gapHalf: '8px',
+  gapHalfNegative: '-8px',
+  gapQuarter: '4px',
+  gapQuarterNegative: '-4px',
+  pageMargin: '16px',
+  pageWidth: '950px',
+  pageWidthWithMargin: '982px',
   breakpointMobile: defaultBreakpoints.xs.max,
   breakpointTablet: defaultBreakpoints.sm.max,
-  radius: '5px',
+  // radius: '5px',
 }

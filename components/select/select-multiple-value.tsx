@@ -25,9 +25,9 @@ const SelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
           line-height: 1;
           padding: 0 0.5rem;
           font-size: ${size};
-          border-radius: ${theme.layout.radius};
-          background-color: ${theme.palette.accents_2};
-          color: ${disabled ? theme.palette.accents_4 : theme.palette.accents_6};
+          border-radius: ${theme.expressiveness.R2};
+          background-color: ${theme.palette.cNeutral2};
+          color: ${disabled ? theme.palette.cNeutral4 : theme.palette.cNeutral6};
         }
 
         .item > :global(div),

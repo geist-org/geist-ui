@@ -108,7 +108,7 @@ const Image: React.FC<ImageProps> = ({
           height: ${zoomHeight};
           margin: 0 auto;
           position: relative;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           overflow: hidden;
           max-width: 100%;
         }

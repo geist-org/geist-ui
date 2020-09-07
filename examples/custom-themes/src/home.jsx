@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Text, Tag, useTheme } from '@zeit-ui/react'
+import { Card, Text, Tag, useTheme } from '@cfxjs/react-ui'
 
 const Home = () => {
   const theme = useTheme()

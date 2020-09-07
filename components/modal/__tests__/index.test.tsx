@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Modal } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
-import { expectModalIsClosed, expectModalIsOpened } from './use-modal.test'
+import { expectModalIsClosed, expectModalIsOpened } from './use-imperative-modal.test'
 
 describe('Modal', () => {
   it('should render correctly', () => {
@@ -13,12 +13,26 @@ describe('Modal', () => {
         <Modal.Content>
           <p>Some content contained within the modal.</p>
         </Modal.Content>
-        <Modal.Action passive>Cancel</Modal.Action>
+        <Modal.Action>Cancel</Modal.Action>
         <Modal.Action>Submit</Modal.Action>
       </Modal>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('should display close icon and trigger event', async () => {
+    const closeHandler = jest.fn()
+    const wrapper = mount(
+      <Modal open={true} closable onClose={closeHandler}>
+        <Modal.Title>Modal</Modal.Title>
+      </Modal>,
+    )
+    expect(wrapper.find('.close').length).not.toBe(0)
+
+    wrapper.find('.close').simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 500)
+    expect(closeHandler).toHaveBeenCalled()
   })
 
   it('should trigger event when modal changed', async () => {
@@ -36,7 +50,7 @@ describe('Modal', () => {
     expectModalIsOpened(wrapper)
     expect(openHandler).toHaveBeenCalled()
 
-    wrapper.find('.backdrop').simulate('click', nativeEvent)
+    wrapper.setProps({ open: false })
     await updateWrapper(wrapper, 500)
     expectModalIsClosed(wrapper)
     expect(closeHandler).toHaveBeenCalled()
@@ -52,7 +66,6 @@ describe('Modal', () => {
     )
     wrapper.find('.backdrop').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 500)
-    expectModalIsOpened(wrapper)
     expect(closeHandler).not.toHaveBeenCalled()
   })
 
@@ -65,7 +78,6 @@ describe('Modal', () => {
     )
     wrapper.find('.backdrop').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 500)
-    expectModalIsClosed(wrapper)
     expect(closeHandler).toHaveBeenCalled()
   })
 
@@ -75,9 +87,7 @@ describe('Modal', () => {
     const wrapper = mount(
       <Modal open={true}>
         <Modal.Title>Modal</Modal.Title>
-        <Modal.Action passive onClick={actions1}>
-          Submit
-        </Modal.Action>
+        <Modal.Action onClick={actions1}>Submit</Modal.Action>
         <Modal.Action disabled onClick={actions2}>
           Submit
         </Modal.Action>
@@ -95,14 +105,11 @@ describe('Modal', () => {
     const wrapper = mount(
       <Modal open={true} onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
-        <Modal.Action passive onClick={e => e.close()}>
-          Close
-        </Modal.Action>
+        <Modal.Action onClick={e => e.close()}>Close</Modal.Action>
       </Modal>,
     )
     wrapper.find('button').at(0).simulate('click', nativeEvent)
     await updateWrapper(wrapper, 500)
-    expectModalIsClosed(wrapper)
     expect(closeHandler).toHaveBeenCalled()
   })
 

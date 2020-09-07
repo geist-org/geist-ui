@@ -1,7 +1,7 @@
-import { ZeitUIThemes, ZeitUIThemesPalette, ZeitUIThemesExpressiveness } from './index'
+import { CfxUIThemes, CfxUIThemesPalette, CfxUIThemesExpressiveness } from './index'
 import { defaultFont, defaultBreakpoints, defaultLayout } from './shared'
 
-export const palette: ZeitUIThemesPalette = {
+export const palette: CfxUIThemesPalette = {
   /* eslint-disable @typescript-eslint/camelcase */
   accents_1: '#fafafa',
   accents_2: '#eaeaea',
@@ -15,21 +15,6 @@ export const palette: ZeitUIThemesPalette = {
   background: '#fff',
   foreground: '#000',
   selection: '#79ffe1',
-  secondary: '#666',
-  code: '#f81ce5',
-  border: '#eaeaea',
-  error: '#e00',
-  errorLight: '#ff1a1a',
-  errorLighter: '#f7d4d6',
-  errorDark: '#c50000',
-  success: '#0070f3',
-  successLight: '#3291ff',
-  successLighter: '#d3e5ff',
-  successDark: '#0761d1',
-  warning: '#f5a623',
-  warningLight: '#f7b955',
-  warningLighter: '#ffefcf',
-  warningDark: '#ab570a',
   cyan: '#50e3c2',
   cyanLighter: '#aaffec',
   cyanLight: '#79ffe1',
@@ -42,9 +27,40 @@ export const palette: ZeitUIThemesPalette = {
   alert: '#ff0080',
   magenta: '#eb367f',
   link: '#0070f3',
+
+  // conflux ui
+  secondary: '#666',
+  error: '#e15c56',
+  errorLight: '#fbebeb',
+  errorDark: '#b34a50',
+  success: '#7cd77b',
+  successLight: '#effaef',
+  successDark: '#61be75',
+  warning: '#ffc438',
+  warningLight: '#fef1ea',
+  warningDark: '#f48b4f',
+  code: '#f81ce5',
+  border: '#eaeaea',
+  cTheme0: '#f0f5ff',
+  cTheme1: '#e0eaff',
+  cTheme2: '#ccddff',
+  cTheme3: '#85adff',
+  cTheme4: '#4f85f4',
+  cTheme5: '#0054fe',
+  cTheme6: '#0433dc',
+  cTheme7: '#0626ae',
+  cNeutral0: '#f9fafb',
+  cNeutral1: '#f1f3f6',
+  cNeutral2: '#ebeced',
+  cNeutral3: '#dbdde0',
+  cNeutral4: '#aaafbb',
+  cNeutral5: '#9b9eac',
+  cNeutral6: '#444',
+  cNeutral7: '#282d30',
+  cNeutral8: '#fff',
 }
 
-export const expressiveness: ZeitUIThemesExpressiveness = {
+export const expressiveness: CfxUIThemesExpressiveness = {
   linkStyle: 'none',
   linkHoverStyle: 'none',
   dropdownBoxShadow: '0 4px 4px 0 rgba(0, 0, 0, 0.02)',
@@ -54,6 +70,32 @@ export const expressiveness: ZeitUIThemesExpressiveness = {
   shadowMedium: '0 8px 30px rgba(0, 0, 0, 0.12)',
   shadowLarge: '0 30px 60px rgba(0, 0, 0, 0.12)',
   portalOpacity: 0.25,
+
+  // radius
+  R0: '0',
+  R1: '2px',
+  R2: '4px',
+  R3: '8px',
+  R4: '12px',
+  R5: '50%',
+
+  // border-width
+  L1: '1px',
+  L2: '2px',
+  L4: '4px',
+
+  // border-style
+  cLineStyle1: 'solid',
+  cLineStyle2: 'dashed',
+  cLineStyle3: 'dotted',
+
+  // drop shadows
+  D0: 'none',
+  D1: '0px 4px 6px -4px rgba(0, 0, 0, 0.12)',
+  D2: '0px 6px 16px rgba(0, 0, 0, 0.08)',
+  D3: '0px 8px 24px 8px rgba(0, 0, 0, 0.06)',
+  D4: '8px 12px 16px rgba(0, 0, 0, 0.08)',
+  D5: '12px 12px 24px rgba(0, 0, 0, 0.12)',
 }
 
 export const font = defaultFont
@@ -62,7 +104,7 @@ export const breakpoints = defaultBreakpoints
 
 export const layout = defaultLayout
 
-export const themes: ZeitUIThemes = {
+export const themes: CfxUIThemes = {
   type: 'light',
   font,
   layout,

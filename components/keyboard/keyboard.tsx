@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
-import { ZeitUIThemes } from '../styles/themes'
+import { CfxUIThemes } from '../styles/themes'
 
 interface Props {
   command?: boolean
@@ -30,7 +30,7 @@ type CustomLayout = {
   minWidth: string
 }
 
-const getLayout = (small: boolean, theme: ZeitUIThemes): CustomLayout => {
+const getLayout = (small: boolean, theme: CfxUIThemes): CustomLayout => {
   if (small)
     return {
       padding: 0,
@@ -77,7 +77,7 @@ const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
           color: ${theme.palette.accents_5};
           background-color: ${theme.palette.accents_1};
           font-family: ${theme.font.sans};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           border: 1px solid ${theme.palette.accents_2};
           padding: 0 ${padding};
           min-width: ${minWidth};

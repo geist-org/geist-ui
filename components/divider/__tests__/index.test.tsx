@@ -19,12 +19,12 @@ describe('Divider', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('should work with type', () => {
+  it('should work with color', () => {
     const wrapper = render(
       <div>
-        <Divider type="secondary" />
-        <Divider type="warning" />
-        <Divider type="dark" />
+        <Divider color="secondary" />
+        <Divider color="warning" />
+        <Divider color="dark" />
       </div>,
     )
     expect(wrapper).toMatchSnapshot()

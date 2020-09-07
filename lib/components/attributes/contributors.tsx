@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Avatar, Link, Tooltip, useTheme } from 'components'
 import { useConfigs } from 'lib/config-context'
-const GithubURL = 'https://github.com/zeit-ui/react/blob/master'
+const GithubURL = 'https://github.com/Conflux-Chain/react-ui'
 const host = 'https://contributors.zeit-ui.co/api/users'
 
 export interface Contributor {
@@ -46,13 +46,15 @@ const Contributors: React.FC<Props> = ({ path }) => {
     <div className="contributors">
       {users.map((user, index) => (
         <Tooltip text={<b>{user.name}</b>} key={`${user.url}-${index}`}>
-          <Link color target="_blank" rel="nofollow" href={user.url}>
+          <Link target="_blank" rel="nofollow" href={user.url}>
             <Avatar src={user.avatar} />
           </Link>
         </Tooltip>
       ))}
-      <Tooltip text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'} type="dark">
-        <Link color target="_blank" rel="nofollow" href={link}>
+      <Tooltip
+        text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'}
+        color="dark">
+        <Link target="_blank" rel="nofollow" href={link}>
           <Avatar text="Add" />
         </Link>
       </Tooltip>

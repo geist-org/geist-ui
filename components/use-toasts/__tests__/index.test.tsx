@@ -1,6 +1,6 @@
-import React from 'react'
+import { useToasts, CfxProvider } from 'components'
 import { mount, ReactWrapper } from 'enzyme'
-import { useToasts, ZeitProvider } from 'components'
+import React from 'react'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 
 const MockToast: React.FC<{}> = () => {
@@ -41,9 +41,9 @@ const expectToastIsHidden = (wrapper: ReactWrapper) => {
 describe('UseToast', () => {
   it('should render correctly', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockToast />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -54,9 +54,9 @@ describe('UseToast', () => {
 
   it('should work with different types', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockToast />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -68,9 +68,9 @@ describe('UseToast', () => {
 
   it('should close toast', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockToast />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -83,11 +83,11 @@ describe('UseToast', () => {
     expect(toast.length).not.toBe(0)
   })
 
-  it('the removeal should be delayed when hover is triggerd', async () => {
+  it('the removal should be delayed when hover is triggered', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockToast />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -111,9 +111,9 @@ describe('UseToast', () => {
 
   it('should render different actions', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockToast />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
     const actions = [
       {
@@ -135,9 +135,9 @@ describe('UseToast', () => {
 
   it('should close toast when action triggered', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockToast />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
     const actions = [
       {
@@ -160,9 +160,9 @@ describe('UseToast', () => {
 
   it('should work with multiple toasts', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockToast />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectToastIsHidden(wrapper)
@@ -174,8 +174,8 @@ describe('UseToast', () => {
     triggerToast(wrapper, { delay: 200, text: 'hello' })
 
     /**
-     * If there are multiple Toasts at different deplay in the stack,
-     * the destory Dom event will wait for the maximum delay time.
+     * If there are multiple Toasts at different display in the stack,
+     * the destroy Dom event will wait for the maximum delay time.
      */
     await updateWrapper(wrapper, 350)
     expectToastIsShow(wrapper)

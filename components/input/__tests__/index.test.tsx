@@ -1,6 +1,6 @@
-import React from 'react'
-import { mount } from 'enzyme'
 import { Input } from 'components'
+import { mount } from 'enzyme'
+import React from 'react'
 import { nativeEvent } from 'tests/utils'
 
 describe('Input', () => {
@@ -16,17 +16,18 @@ describe('Input', () => {
         <Input size="small" />
         <Input size="large" />
         <Input width="50%" />
+        <Input variant="solid" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('should work with different status', () => {
+  it('should work with different color', () => {
     const wrapper = mount(
       <div>
-        <Input status="secondary" />
-        <Input status="success" />
-        <Input status="warning" />
+        <Input color="primary" />
+        <Input color="success" />
+        <Input color="warning" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -36,7 +37,9 @@ describe('Input', () => {
     const wrapper = mount(
       <div>
         <Input label="label" />
+        <Input variant="solid" label="label" />
         <Input labelRight="label" />
+        <Input variant="solid" labelRight="label" />
         <Input>
           <span>Block Label</span>
         </Input>
@@ -44,6 +47,7 @@ describe('Input', () => {
     )
     expect(wrapper.html()).toMatchSnapshot()
   })
+
   it('should be work with icon', () => {
     const wrapper = mount(
       <div>
@@ -55,7 +59,7 @@ describe('Input', () => {
   })
 
   it('should set input from value', () => {
-    let wrapper = mount(<Input initialValue="test" />)
+    let wrapper = mount(<Input defaultValue="test" />)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     expect(input.value).toEqual('test')
 
@@ -84,12 +88,19 @@ describe('Input', () => {
 
   it('should ignore event when input disabled', () => {
     const callback = jest.fn()
-    const wrapper = mount(<Input onChange={callback} disabled />)
+    const wrapper = mount(
+      <div>
+        <Input onChange={callback} clearable disabled />
+      </div>,
+    )
     wrapper
       .find('input')
       .at(0)
       .simulate('change', { target: { value: 'test' } })
     expect(callback).not.toHaveBeenCalled()
+    wrapper.find('div.clear-icon').at(0).simulate('click', nativeEvent)
+    expect(callback).not.toHaveBeenCalled()
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('should ignore event when input readonly', () => {
@@ -120,6 +131,7 @@ describe('Input', () => {
     wrapper.find('.clear-icon').at(0).simulate('click', nativeEvent)
     expect(clearHandler).toHaveBeenCalled()
     expect(value).toEqual('')
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('should trigger focus correctly', () => {
@@ -132,6 +144,18 @@ describe('Input', () => {
     expect(focus).toHaveBeenCalled()
     input.simulate('blur')
     expect(blur).toHaveBeenCalled()
+  })
+
+  it('should trigger hover correctly', () => {
+    const mouseOver = jest.fn()
+    const mouseOut = jest.fn()
+    const wrapper = mount(<Input onMouseOver={mouseOver} onMouseOut={mouseOut} />)
+
+    const input = wrapper.find('input').at(0)
+    input.simulate('mouseOver')
+    expect(mouseOver).toHaveBeenCalled()
+    input.simulate('mouseOut')
+    expect(mouseOut).toHaveBeenCalled()
   })
 
   it('should trigger icon event', () => {
@@ -152,7 +176,6 @@ describe('Input', () => {
     expect(click).not.toHaveBeenCalled()
   })
 
-  // check ref is available: https://github.com/zeit-ui/react/issues/189
   it('should forward ref by default', () => {
     const ref = React.createRef<HTMLInputElement>()
     const wrapper = mount(<Input ref={ref} />)

@@ -1,7 +1,7 @@
 import React from 'react'
 import ThemeContext from './theme-context'
-import { ZeitUIThemes } from '../themes/index'
+import { CfxUIThemes } from '../themes/index'
 
-const useTheme = (): ZeitUIThemes => React.useContext<ZeitUIThemes>(ThemeContext)
+const useTheme = (): CfxUIThemes => React.useContext<CfxUIThemes>(ThemeContext)
 
 export default useTheme

@@ -41,7 +41,7 @@ const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> =
             padding-left: ${theme.layout.gapQuarter};
             padding-right: ${theme.layout.gapHalf};
             background-color: ${theme.palette.accents_1};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
           }
 
           h4 :global(small) {

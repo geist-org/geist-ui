@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { useProportions } from '../utils/calculations'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { CfxUIThemesPalette } from '../styles/themes'
 
 interface Props {
   value?: number
@@ -21,7 +21,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type CapacityProps = Props & typeof defaultProps & NativeAttrs
 
-const getColor = (val: number, palette: ZeitUIThemesPalette): string => {
+const getColor = (val: number, palette: CfxUIThemesPalette): string => {
   if (val < 33) return palette.cyan
   if (val < 66) return palette.warning
   return palette.errorDark
@@ -48,7 +48,7 @@ const Capacity: React.FC<CapacityProps> = ({
         .capacity {
           width: 50px;
           height: 10px;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           overflow: hidden;
           background-color: ${theme.palette.accents_2};
         }

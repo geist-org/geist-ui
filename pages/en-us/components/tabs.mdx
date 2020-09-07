@@ -1,8 +1,15 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Tabs, Spacer, Link, Text, Button, Code, useTabs } from 'components'
+import { Tabs, Spacer, Link, Text, Button, Code } from 'components'
 import { useState } from 'react'
 import TwitterIcon from '@zeit-ui/react-icons/twitter'
 import TwitchIcon from '@zeit-ui/react-icons/twitch'
+
+import Default from 'pages/code/tabs/default.playground'
+import Solid from 'pages/code/tabs/solid.playground'
+import Devider from 'pages/code/tabs/devider.playground'
+import Dynamic from 'pages/code/tabs/dynamic.playground'
+import Controlled from 'pages/code/tabs/controlled.playground'
+import Imperative from 'pages/code/tabs/imperative.playground'
 
 export const meta = {
   title: 'tabs',
@@ -13,145 +20,56 @@ export const meta = {
 
 Display tab content.
 
-<Playground
-  scope={{ Tabs }}
-  desc="Toggle display of different templates."
-  code={`
-<Tabs initialValue="1">
-  <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
-  <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
-</Tabs>
-`}
-/>
-
-<Playground
-  title="Disabled"
-  scope={{ Tabs }}
-  code={`
-<Tabs initialValue="1">
-  <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
-  <Tabs.Item label="jumped" value="2" disabled />
-</Tabs>
-`}
-/>
-
-<Playground
-  title="Hide Divider"
-  scope={{ Tabs }}
-  code={`
-<Tabs initialValue="html" hideDivider>
-  <Tabs.Item label="HTML" value="html">
-    <p>HTML is the language that we use to structure the different parts of our content and define what their meaning or purpose is.</p>
-  </Tabs.Item>
-  <Tabs.Item label="CSS" value="css">
-    <p>CSS is the language that we can use to style and lay out our web content,
-    as well as adding behavior like animation.</p>
-  </Tabs.Item>
-</Tabs>
-`}
-/>
-
-<Playground
-  title="With Icon"
-  desc="Show icon component on label button."
-  scope={{ Tabs, TwitchIcon, TwitterIcon, Link, Text }}
-  code={`
-<Tabs initialValue="1">
-  <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
-    <Text>Hello, this is our live broadcast on Twitch.</Text>
-    <Link href="https://github.com/zeit-ui/react" color rel="nofollow" target="_blank">Click here to visit GitHub repo.</Link>
-  </Tabs.Item>
-  <Tabs.Item label={<><TwitterIcon/> Twitter </>} value="2">
-    <Text>The Components of React looks very cool.</Text>
-  </Tabs.Item>
-</Tabs>
-`}
-/>
-
-<Playground
-  title="Imperatively"
-  desc="Control components with imperatively style."
-  scope={{ Tabs, Button, Spacer, Code, Text, useState }}
-  code={`
-() => {
-  const [value, setValue] = useState('1')
-  const switchHandler = () => setValue('2')
-  const changeHandler = val => setValue(val)
-  return (
-    <>
-      <Button size="small" onClick={switchHandler}><Text>Select  <Code>Jumped</Code></Text></Button>
-      <Spacer y={.5} />
-      <Tabs value={value} onChange={changeHandler}>
-        <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
-        <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
-      </Tabs>
-    </>
-  )
-}
-`}
-/>
-
-<Playground
-  title={
-    <>
-      with <Code>useTabs</Code>
-    </>
-  }
-  desc="Control components with `hooks`."
-  scope={{ Tabs, Button, Spacer, Code, Text, useTabs }}
-  code={`
-() => {
-  const { setState, bindings } = useTabs('1')
-  return (
-    <>
-      <Button size="small" onClick={() => setState('2')}>
-        <Text>Select  <Code>Jumped</Code></Text>
-      </Button>
-      <Spacer y={.5} />
-      <Tabs {...bindings}>
-        <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
-        <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
-      </Tabs>
-    </>
-  )
-}
-`}
-/>
+<Default />
+<Solid />
+<Devider />
+<Dynamic />
+<Controlled />
+<Imperative />
 
 <Attributes edit="/pages/en-us/components/tabs.mdx">
 <Attributes.Title>Tabs.Props</Attributes.Title>
 
-| Attribute        | Description            | Type                    | Accepted values                 | Default |
-| ---------------- | ---------------------- | ----------------------- | ------------------------------- | ------- |
-| **initialValue** | initial value          | `string`                | -                               | -       |
-| **value**        | current selected value | `string`                | -                               | -       |
-| **hideDivider**  | hide default divider   | `boolean`               | -                               | `false` |
-| **onChange**     | change event           | `(val: string) => void` | -                               | -       |
-| ...              | native props           | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
+| Attribute        | Description                                  | Type                    | Accepted values                 | Default |
+| ---------------- | -------------------------------------------- | ----------------------- | ------------------------------- | ------- |
+| **initialValue** | initial value                                | `string`                | -                               | -       |
+| **value**        | current tabs, controlled when value present | `string`                | -                               | -       |
+| **onChange**     | change event                                 | `(val: string) => void` | -                               | -       |
+| **showDivider**  | if devider present                           | `boolean`               | `true` or `false`               | `false` |
+| **varient**      | Tab varient                                  | `string`                | `solid` or `line`               | `line`  |
+| ...              | native props                                 | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
+
+<br />
+<strong>Note:</strong>
+
+1. `value` is key to tell if the component is controlled or not, do not switch between the two,
+   we will not throw error like react though
+
+<br />
+
+<Attributes.Title>Tabs.useTabsHandle</Attributes.Title>
+
+| Attribute         | Description                             | Accepted values | Default |
+| ----------------- | --------------------------------------- | --------------- | ------- |
+| **getCurrentTab** | act as a getter regarding to active tab | `void`          | -       |
+| **setCurrentTab** | act as a setter regarding to active tab | `string`        | -       |
+
+<br />
+<strong>Note:</strong>
+
+1. `ref` make sense only in **uncontrolled** component, i.e. `value` not present.
+   `props` is the recommended way to sync UI in a typical react data flow.
+   Choose `useTabsHandle` if you can really validate your usecase
+
+<br />
 
 <Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
 
-| Attribute           | Description         | Type      | Accepted values | Default |
-| ------------------- | ------------------- | --------- | --------------- | ------- |
-| **label**(required) | display tab's label | `string`  | -               | -       |
-| **value**           | unique ident value  | `string`  | -               | -       |
-| **disabled**        | disable current tab | `boolean` | -               | `false` |
-
-<Attributes.Title>useTabs</Attributes.Title>
-
-```ts
-type useTabs = (
-  initialValue: string,
-) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  bindings: {
-    value: string
-    onChange: (val: string) => void
-  }
-}
-```
+| Attribute            | Description         | Type                          | Accepted values | Default |
+| -------------------- | ------------------- | ----------------------------- | --------------- | ------- |
+| **label**            | display tab's label | `string` or `React.ReactNode` | -               | -       |
+| **value** (required) | unique ident value  | `string`                      | -               | -       |
+| **disabled**         | disable current tab | `boolean`                     | -               | `false` |
 
 </Attributes>
 

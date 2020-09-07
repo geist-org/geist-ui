@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Text } from '@zeit-ui/react'
+import { Card, Text } from '@cfxjs/react-ui'
 import './style.css'
 
 const Home = () => (

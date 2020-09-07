@@ -75,6 +75,7 @@ const getMetadata = async (files, parentPath) => {
         const content = await fs.readFile(filePath, 'utf-8')
         const meta = await extractMetadata(content)
         const url = filePath.replace(pagePrefix, '').replace('.mdx', '')
+
         return {
           name: meta.title || file,
           url,
@@ -128,6 +129,7 @@ const deepTranslate = (metadata, locales) => {
     await Promise.all(
       sortdMetaData.map(async data => {
         const targetPath = getTargetPath(data.name)
+
         await fs.ensureFile(targetPath)
         await fs.writeJson(targetPath, data.content)
       }),

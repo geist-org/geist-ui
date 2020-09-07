@@ -3,16 +3,33 @@ import {
   Text,
   Button,
   useTheme,
-  ZeitUIThemesPalette,
-  ZeitUIThemesExpressiveness,
-  ZeitUIThemesLayout,
+  CfxUIThemesPalette,
+  CfxUIThemesExpressiveness,
+  CfxUIThemesLayout,
 } from 'components'
 import EditorColorItem from './editor-color-item'
 import EditorInputItem from './editor-input-item'
 import DefaultTheme from 'components/styles/themes/default'
 import { useConfigs } from 'lib/config-context'
 
-const basicColors: Array<keyof ZeitUIThemesPalette> = [
+const basicColors: Array<keyof CfxUIThemesPalette> = [
+  'cTheme0',
+  'cTheme1',
+  'cTheme2',
+  'cTheme3',
+  'cTheme4',
+  'cTheme5',
+  'cTheme6',
+  'cTheme7',
+  'cNeutral0',
+  'cNeutral1',
+  'cNeutral2',
+  'cNeutral3',
+  'cNeutral4',
+  'cNeutral5',
+  'cNeutral6',
+  'cNeutral7',
+  'cNeutral8',
   'accents_1',
   'accents_2',
   'accents_3',
@@ -24,7 +41,7 @@ const basicColors: Array<keyof ZeitUIThemesPalette> = [
   'foreground',
   'background',
 ]
-const statusColors: Array<keyof ZeitUIThemesPalette> = [
+const statusColors: Array<keyof CfxUIThemesPalette> = [
   'success',
   'successLight',
   'successDark',
@@ -35,7 +52,7 @@ const statusColors: Array<keyof ZeitUIThemesPalette> = [
   'warningLight',
   'warningDark',
 ]
-const otherColors: Array<keyof ZeitUIThemesPalette> = [
+const otherColors: Array<keyof CfxUIThemesPalette> = [
   'selection',
   'secondary',
   'link',
@@ -46,7 +63,7 @@ const otherColors: Array<keyof ZeitUIThemesPalette> = [
   'alert',
   'violet',
 ]
-const expressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
+const expressiveness: Array<keyof CfxUIThemesExpressiveness> = [
   'linkStyle',
   'linkHoverStyle',
   'dropdownBoxShadow',
@@ -54,13 +71,23 @@ const expressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
   'shadowMedium',
   'shadowLarge',
 ]
-const pageLayout: Array<keyof ZeitUIThemesLayout> = [
+const radiusExpressiveness: Array<keyof CfxUIThemesExpressiveness> = [
+  'R0',
+  'R1',
+  'R2',
+  'R3',
+  'R4',
+  'R5',
+]
+const shadowExpressiveness: Array<keyof CfxUIThemesExpressiveness> = ['D0', 'D1', 'D2', 'D3', 'D4']
+
+const pageLayout: Array<keyof CfxUIThemesLayout> = [
   'pageWidth',
   'pageWidthWithMargin',
   'pageMargin',
-  'radius',
+  // 'radius',
 ]
-const gapLayout: Array<keyof ZeitUIThemesLayout> = [
+const gapLayout: Array<keyof CfxUIThemesLayout> = [
   'gap',
   'gapNegative',
   'gapHalf',
@@ -83,7 +110,7 @@ const Editor = () => {
     <div className="editor">
       <Text h3>
         {isChinese ? '色彩' : 'Colors'}
-        <Button type="abort" auto size="mini" onClick={restColors}>
+        <Button variant="text" auto size="mini" onClick={restColors}>
           {isChinese ? '重置' : 'Reset'}
         </Button>
       </Text>
@@ -108,7 +135,7 @@ const Editor = () => {
 
       <Text h3>
         {isChinese ? '表现力' : 'Expressiveness'}
-        <Button type="abort" auto size="mini" onClick={resetExpressiveness}>
+        <Button variant="text" auto size="mini" onClick={resetExpressiveness}>
           {isChinese ? '重置' : 'Reset'}
         </Button>
       </Text>
@@ -118,10 +145,22 @@ const Editor = () => {
           <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
         ))}
       </div>
+      <p className="subtitle">{isChinese ? '圆角' : 'radius'}</p>
+      <div className="content">
+        {radiusExpressiveness.map((item, index) => (
+          <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
+        ))}
+      </div>
+      <p className="subtitle">box-shadow</p>
+      <div className="content">
+        {shadowExpressiveness.map((item, index) => (
+          <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
+        ))}
+      </div>
 
       <Text h3>
         {isChinese ? '布局' : 'Layout'}
-        <Button type="abort" auto size="mini" onClick={resetLayout}>
+        <Button variant="text" auto size="mini" onClick={resetLayout}>
           {isChinese ? '重置' : 'Reset'}
         </Button>
       </Text>

@@ -96,12 +96,12 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
             position: relative;
             box-sizing: border-box;
             border: 1px solid ${theme.palette.border};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
           }
 
           .btn-dropdown > :global(button) {
-            border-top-left-radius: ${theme.layout.radius};
-            border-bottom-left-radius: ${theme.layout.radius};
+            border-top-left-radius: ${theme.expressiveness.R2};
+            border-bottom-left-radius: ${theme.expressiveness.R2};
           }
 
           summary {
@@ -113,8 +113,8 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
             background-color: ${bgColor};
             height: ${sizes.height};
             border-left: 1px solid ${colors.borderLeftColor};
-            border-top-right-radius: ${theme.layout.radius};
-            border-bottom-right-radius: ${theme.layout.radius};
+            border-top-right-radius: ${theme.expressiveness.R2};
+            border-bottom-right-radius: ${theme.expressiveness.R2};
             cursor: ${disabled || loading ? 'not-allowed' : 'pointer'};
             display: flex;
             justify-content: center;
@@ -135,20 +135,20 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
             left: 0;
             z-index: 90;
             width: 100%;
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             box-shadow: ${theme.expressiveness.shadowLarge};
             transform: translateY(${theme.layout.gapHalf});
             background-color: ${theme.palette.background};
           }
 
           .content > :global(button:first-of-type) {
-            border-top-left-radius: ${theme.layout.radius};
-            border-top-right-radius: ${theme.layout.radius};
+            border-top-left-radius: ${theme.expressiveness.R2};
+            border-top-right-radius: ${theme.expressiveness.R2};
           }
 
           .content > :global(button:last-of-type) {
-            border-bottom-left-radius: ${theme.layout.radius};
-            border-bottom-right-radius: ${theme.layout.radius};
+            border-bottom-left-radius: ${theme.expressiveness.R2};
+            border-bottom-right-radius: ${theme.expressiveness.R2};
           }
         `}</style>
       </div>

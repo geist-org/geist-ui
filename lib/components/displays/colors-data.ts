@@ -1,7 +1,7 @@
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemesPalette } from 'components/styles/themes'
 
 export type ColorEnum = {
-  [key in keyof ZeitUIThemesPalette]?: string
+  [key in keyof CfxUIThemesPalette]?: string
 }
 
 /* eslint-disable @typescript-eslint/camelcase */
@@ -20,21 +20,18 @@ const normal: ColorEnum = {
 /* eslint-enable camelcase */
 
 const error: ColorEnum = {
-  errorLighter: 'Lighter',
   errorLight: 'Light',
   error: 'Default',
   errorDark: 'Dark',
 }
 
 const success: ColorEnum = {
-  successLighter: 'Lighter',
   successLight: 'Light',
   success: 'Default',
   successDark: 'Dark',
 }
 
 const warning: ColorEnum = {
-  warningLighter: 'Lighter',
   warningLight: 'Light',
   warning: 'Default',
   warningDark: 'Dark',
@@ -76,7 +73,7 @@ export const getColorData = (type: string): ColorEnum => {
 }
 
 export const getCurrentColor = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   type: string,
   index: number,
 ): string => {

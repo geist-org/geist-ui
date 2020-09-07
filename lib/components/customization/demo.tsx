@@ -44,9 +44,7 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
           <a>Hyperlink Text</a>{' '}
         </Text>
         <Text>
-          <Link href="#" color>
-            Link Component
-          </Link>
+          <Link href="#">Link Component</Link>
         </Text>
         <Text>
           Our mission is to make cloud computing accessible to everyone. We build products for
@@ -61,7 +59,7 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
 
         <Spacer y={1.7} />
         <Text h4>{isChinese ? '基础组件' : 'Basic Components'}</Text>
-        <Select placeholder="Choose one" initialValue="1">
+        <Select placeholder="Choose one" defaultValue="1">
           <Select.Option value="1">Option 1</Select.Option>
           <Select.Option value="2">Option 2</Select.Option>
         </Select>
@@ -74,7 +72,7 @@ const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
           Action
         </Button>
         <Spacer inline x={0.5} />
-        <Button auto type="secondary" size="small">
+        <Button auto color="secondary" size="small">
           Action
         </Button>
         <Spacer y={0.5} />

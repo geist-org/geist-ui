@@ -1,3 +1,4 @@
+import { ExternalLink, Link as LinkIcon1, Link2 as LinkIcon2 } from '@zeit-ui/react-icons'
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Link, Text, Code, Spacer } from 'components'
 import NextLink from 'next/link'
@@ -19,37 +20,48 @@ Hyperlinks between pages.
 />
 
 <Playground
-  title="highlight"
-  desc="Distinguish links with different colors."
-  scope={{ Link }}
-  code={`
-<Link href="#" color>The Evil Rabbit Jumped over the Fence.</Link>
-`}
-/>
-
-<Playground
-  title="With Icon"
-  desc="Show an icon in the link."
-  scope={{ Link, Spacer }}
+  title="plain"
+  desc="Display plain style (color inherit) link."
+  scope={{ Link, Text }}
   code={`
 <>
-  <Link href="#" icon>The Evil Rabbit Jumped over the Fence.</Link>
-  <Spacer y={.5} />
-  <Link href="#" icon color>The Evil Rabbit Jumped over the Fence.</Link>
+  <Text><Link href="#" plain>The Evil Rabbit Jumped over the Fence.</Link></Text>
 </>
 `}
 />
 
 <Playground
-  title="variant"
-  desc="Different styles of links."
+  title="underline"
+  desc="Display underline."
   scope={{ Link, Text }}
   code={`
 <>
-  <Text><Link href="#">The Evil Rabbit Jumped over the Fence.</Link></Text>
-  <Text><Link href="#" color>The Evil Rabbit Jumped over the Fence.</Link></Text>
   <Text><Link href="#" underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
-  <Text><Link href="#" underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
+</>
+`}
+/>
+
+<Playground
+  title="icon"
+  desc="Show custom icon on the left / right side."
+  scope={{ Link, Text, ExternalLink, LinkIcon1, LinkIcon2 }}
+  code={`
+<>
+  <Text>
+    <Link href="#" iconRight={<LinkIcon1 />}>
+      The Evil Rabbit Jumped over the Fence.
+    </Link>
+  </Text>
+  <Text>
+    <Link href="#" iconLeft={<LinkIcon2 />}>
+      The Evil Rabbit Jumped over the Fence.
+    </Link>
+  </Text>
+  <Text>
+    <Link href="#" iconLeft={<LinkIcon2 />} iconRight={<ExternalLink />}>
+      The Evil Rabbit Jumped over the Fence.
+    </Link>
+  </Text>
 </>
 `}
 />
@@ -60,6 +72,17 @@ Hyperlinks between pages.
   scope={{ Link }}
   code={`
 <Link href="#" block>The Evil Rabbit Jumped over the Fence.</Link>
+`}
+/>
+
+<Playground
+  title="disabled"
+  desc="Disable link."
+  scope={{ Link, Text }}
+  code={`
+<>
+  <Text><Link href="#" disabled>The Evil Rabbit Jumped over the Fence.</Link></Text>
+</>
 `}
 />
 
@@ -81,15 +104,17 @@ Hyperlinks between pages.
 <Attributes edit="/pages/en-us/components/link.mdx">
 <Attributes.Title>Link.Props</Attributes.Title>
 
-| Attribute     | Description                 | Type                                            | Accepted values        | Default |
-| ------------- | --------------------------- | ----------------------------------------------- | ---------------------- | ------- |
-| **href**      | link url                    | `string`                                        | -                      | -       |
-| **color**     | display color for link      | `boolean`                                       | -                      | `false` |
-| **icon**      | show icon                   | `boolean`                                       | -                      | `false` |
-| **underline** | display underline           | `boolean`                                       | -                      | `false` |
-| **block**     | display as a separate block | `boolean`                                       | -                      | `false` |
-| **ref**       | forwardRef                  | <Code>Ref<HTMLAnchorElement &#124; null></Code> | -                      | -       |
-| ...           | native props                | `AnchorHTMLAttributes`                          | `'rel', 'target', ...` | -       |
+| Attribute     | Description                    | Type                                            | Accepted values | Default |
+| ------------- | ------------------------------ | ----------------------------------------------- | --------------- | ------- |
+| **href**      | link url                       | `string`                                        | -               | -       |
+| **plain**     | display colorless link         | `boolean`                                       | -               | `false` |
+| **iconLeft**  | display icon on the left side  | `React.ReactNode`                               | -               | -       |
+| **iconRight** | display icon on the right side | `React.ReactNode`                               | -               | -       |
+| **underline** | display underline              | `boolean`                                       | -               | `false` |
+| **block**     | display as a separate block    | `boolean`                                       | -               | `false` |
+| **disabled**  | disable link                   | `boolean`                                       | -               | `false` |
+| **ref**       | forwardRef                     | <Code>Ref<HTMLAnchorElement &#124; null></Code> | -               | -       |
+| ...           | native props                   | `AnchorHTMLAttributes`                          | `'target', ...` | -       |
 
 </Attributes>
 

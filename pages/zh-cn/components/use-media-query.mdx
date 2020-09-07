@@ -11,9 +11,9 @@ export const meta = {
 ## Use MediaQuery / 媒体查询
 
 用于 CSS 媒体查询的钩子，钩子通过 `MediaQuery` API 实现。如果你仅仅想要构建响应式的布局，
-请尝试 <NextLink href="/en-us/components/grid"><Link color>栅格组件</Link></NextLink>。
+请尝试 <NextLink href="/en-us/components/grid"><Link>栅格组件</Link></NextLink>。
 
-这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
+这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
 <Playground
   scope={{ useMediaQuery, Code }}
@@ -49,10 +49,10 @@ export const meta = {
 `}
 />
 
-<PlaygroundTitle title="定制断点" desc="您可以覆盖 `@zeit-ui/react` 组件库默认的断点值。" />
+<PlaygroundTitle title="定制断点" desc="您可以覆盖 `@cfxjs/react-ui` 组件库默认的断点值。" />
 
 ```tsx
-const breakpoints: ZeitUIThemesBreakpoints = {
+const breakpoints: CfxUIThemesBreakpoints = {
   xs: { min: '0', max: '650px' },
   sm: { min: '650px', max: '900px' },
   md: { min: '900px', max: '1280px' },
@@ -61,10 +61,10 @@ const breakpoints: ZeitUIThemesBreakpoints = {
 }
 
 const App = () => (
-  <ZeitProvider theme={{ breakpoints: breakpoints }}>
+  <CfxProvider theme={{ breakpoints: breakpoints }}>
     <CssBaseline />
     <AppComponent />
-  </ZeitProvider>
+  </CfxProvider>
 )
 ```
 

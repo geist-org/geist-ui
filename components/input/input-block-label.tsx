@@ -1,19 +1,22 @@
 import React from 'react'
 import useTheme from '../styles/use-theme'
 
-export interface InputBlockLabelLabel {}
+type NativeAttrs = React.LabelHTMLAttributes<any>
 
-const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> = ({ children }) => {
+const InputBlockLabel: React.FC<React.PropsWithChildren<NativeAttrs>> = ({
+  children,
+  ...props
+}) => {
   const theme = useTheme()
 
   return (
-    <label>
+    <label {...props}>
       {children}
       <style jsx>{`
         label {
           display: block;
           font-weight: normal;
-          color: ${theme.palette.accents_6};
+          color: ${theme.palette.cNeutral7};
           padding: 0 0 0 1px;
           margin-bottom: ${theme.layout.gapHalf};
           font-size: 1rem;

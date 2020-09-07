@@ -1,4 +1,4 @@
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { CfxUIThemesPalette } from '../styles/themes'
 import { NormalTypes } from '../utils/prop-types'
 
 type ButtonDropdownColors = {
@@ -10,7 +10,7 @@ type ButtonDropdownColors = {
 }
 
 export const getColor = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   type: NormalTypes | undefined,
   disabled: boolean = false,
 ) => {
@@ -21,6 +21,13 @@ export const getColor = (
       borderLeftColor: palette.accents_2,
       hoverBgColor: palette.accents_1,
       hoverBorder: palette.accents_2,
+    },
+    primary: {
+      color: palette.background,
+      bgColor: palette.success,
+      borderLeftColor: palette.successDark,
+      hoverBgColor: palette.successDark,
+      hoverBorder: palette.successDark,
     },
     secondary: {
       color: palette.background,

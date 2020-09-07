@@ -1,12 +1,12 @@
 import React from 'react'
-import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
+import { NormalSizes, InputColors, InputVariantTypes } from 'components/utils/prop-types'
 
-export interface Props {
-  value?: string
-  initialValue?: string
+export interface Props extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'width'> {
+  variant?: InputVariantTypes
   placeholder?: string
   size?: NormalSizes
-  status?: NormalTypes
+  htmlSize?: React.InputHTMLAttributes<HTMLInputElement>['size']
+  color?: InputColors
   readOnly?: boolean
   disabled?: boolean
   label?: string
@@ -14,27 +14,24 @@ export interface Props {
   icon?: React.ReactNode
   iconRight?: React.ReactNode
   iconClickable?: boolean
+  htmlWidth?: React.InputHTMLAttributes<HTMLInputElement>['width']
   width?: string
   className?: string
   clearable?: boolean
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
-  onClearClick?: (e: React.MouseEvent<HTMLDivElement>) => void
-  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
-  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
+  onClearClick?: React.EventHandler<React.MouseEvent<HTMLDivElement>>
   onIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void
-  autoComplete: string
 }
 
 export const defaultProps = {
+  variant: 'line' as InputVariantTypes,
   disabled: false,
   readOnly: false,
   clearable: false,
   iconClickable: false,
   width: 'initial',
   size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
+  color: 'default' as InputColors,
   autoComplete: 'off',
   className: '',
   placeholder: '',
-  initialValue: '',
 }

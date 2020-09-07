@@ -9,29 +9,22 @@
     "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "dependencies": {
-    "@zeit-ui/react": "latest",
+    "@cfxjs/react-ui": "latest",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
   },
   "devDependencies": {
-    "@types/react": "^16.9.32",
-    "@types/react-dom": "^16.9.6",
     "babel-plugin-import": "^1.13.0",
-    "customize-cra": "^0.9.1",
+    "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.1.6",
-    "react-scripts": "^3.4.1",
     "source-map-explorer": "^2.4.2"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }

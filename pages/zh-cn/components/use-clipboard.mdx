@@ -10,7 +10,7 @@ export const meta = {
 
 拷贝字符串到剪切板。
 
-这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
+这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
 
 <Playground
   scope={{ useClipboard, Button, useToasts }}
@@ -19,7 +19,7 @@ export const meta = {
   const [, setToast] = useToasts()
   const { copy } = useClipboard()
   const handler = () => {
-    copy('hello, zeit-ui')
+    copy('hello, cfx-ui')
     setToast({ text: '文字已拷贝。' })
   }
   return (

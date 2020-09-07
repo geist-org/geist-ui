@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { CssBaseline } from '@zeit-ui/react'
+import { CssBaseline } from '@cfxjs/react-ui'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {

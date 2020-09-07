@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Input, useInput, Modal, useModal, Snippet } from 'components'
+import { Card, Input, Modal, Snippet } from 'components'
 import * as Icon from '@zeit-ui/react-icons'
 import IconsCell, { getImportString } from './icons-cell'
 import { useConfigs } from 'lib/config-context'
@@ -19,11 +19,11 @@ const ImportSnippet: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
 
 const Icons: React.FC = () => {
   const { isChinese } = useConfigs()
-  const { setVisible, bindings: modalBindings } = useModal()
-  const { state: query, bindings } = useInput('')
+  const { setVisible, ref } = Modal.useModalHandle()
+  const [inputValue, setInputValue] = useState('')
   const [importStr, setImportStr] = useState({ title: '', single: '', normal: '' })
   const icons = Object.entries(Icon).filter(
-    ([name]) => !query || name.toLowerCase().includes(query.toLowerCase()),
+    ([name]) => !inputValue || name.toLowerCase().includes(inputValue.toLowerCase()),
   )
   const onCellClick = (name: string) => {
     const { single, normal } = getImportString(name)
@@ -39,7 +39,8 @@ const Icons: React.FC = () => {
           width="100%"
           icon={<Icon.Search />}
           placeholder={isChinese ? '搜索' : 'Search'}
-          {...bindings}
+          value={inputValue}
+          onChange={e => setInputValue(e.target.value)}
         />
         <div className="icons-grid">
           {icons.map(([name, component], index) => (
@@ -51,7 +52,7 @@ const Icons: React.FC = () => {
             />
           ))}
         </div>
-        <Modal {...modalBindings}>
+        <Modal ref={ref}>
           <Modal.Title>{importStr.title}</Modal.Title>
           <Modal.Content>
             <p>{isChinese ? '引入:' : 'Import:'}</p>

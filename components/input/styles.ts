@@ -1,28 +1,34 @@
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { NormalSizes, InputColors } from '../utils/prop-types'
+import { CfxUIThemes } from '../styles/themes'
+import { addColorAlpha } from '../utils/color'
 
 export type InputSize = {
   heightRatio: string
   fontSize: string
+  margin: string
 }
 
 export const getSizes = (size?: NormalSizes) => {
   const sizes: { [key in NormalSizes]: InputSize } = {
     mini: {
-      heightRatio: '1.313',
-      fontSize: '.75rem',
+      heightRatio: '1.5',
+      fontSize: '0.5714rem',
+      margin: '0 1.1429rem',
     },
     small: {
-      heightRatio: '1.5',
-      fontSize: '.75rem',
+      heightRatio: '2',
+      fontSize: '0.8571rem',
+      margin: '0 1.1429rem',
     },
     medium: {
-      heightRatio: '1.687',
-      fontSize: '.875rem',
+      heightRatio: '2.5',
+      fontSize: '1rem',
+      margin: '0 1.1429rem',
     },
     large: {
-      heightRatio: '1.875',
-      fontSize: '1rem',
+      heightRatio: '3',
+      fontSize: '1.1429rem',
+      margin: '0 1.1429rem',
     },
   }
   if (!size) return sizes.medium
@@ -31,39 +37,72 @@ export const getSizes = (size?: NormalSizes) => {
 
 export type InputColor = {
   color: string
-  borderColor: string
-  hoverBorder: string
+  backgroundColor?: string
+  hoverBackgroundColor?: string
+  hoverColor?: string
+  border: string
+  hoverBorderColor: string
 }
 
-export const getColors = (palette: ZeitUIThemesPalette, status?: NormalTypes): InputColor => {
-  const colors: { [key in NormalTypes]: InputColor } = {
+export const getColors = (theme: CfxUIThemes, color?: InputColors, solid?: boolean): InputColor => {
+  const colors: { [key in InputColors]: InputColor } = {
     default: {
-      color: palette.foreground,
-      borderColor: palette.border,
-      hoverBorder: palette.accents_5,
+      color: theme.palette.cNeutral7,
+      hoverColor: solid ? 'inherit' : theme.palette.cTheme5,
+      backgroundColor: solid ? theme.palette.cNeutral0 : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.cTheme0 : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.cNeutral2}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.cTheme5,
     },
-    secondary: {
-      color: palette.foreground,
-      borderColor: palette.secondary,
-      hoverBorder: palette.secondary,
+    primary: {
+      color: theme.palette.cNeutral7,
+      hoverColor: solid ? 'inherit' : theme.palette.cTheme5,
+      backgroundColor: solid ? theme.palette.cTheme0 : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.cTheme1 : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.cNeutral2}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.cTheme5,
     },
     success: {
-      color: palette.foreground,
-      borderColor: palette.successLight,
-      hoverBorder: palette.success,
+      color: theme.palette.cNeutral7,
+      hoverColor: 'inherit',
+      backgroundColor: solid ? theme.palette.successLight : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.success : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.successLight}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.success,
     },
     warning: {
-      color: palette.foreground,
-      borderColor: palette.warningLight,
-      hoverBorder: palette.warning,
+      color: theme.palette.cNeutral7,
+      hoverColor: 'inherit',
+      backgroundColor: solid ? theme.palette.warningLight : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.warning : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${theme.palette.warningLight}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.warning,
     },
     error: {
-      color: palette.error,
-      borderColor: palette.error,
-      hoverBorder: palette.errorDark,
+      color: theme.palette.error,
+      hoverColor: theme.palette.error,
+      backgroundColor: solid
+        ? addColorAlpha(theme.palette.errorLight, 0.4)
+        : theme.palette.cNeutral8,
+      hoverBackgroundColor: solid ? theme.palette.errorLight : theme.palette.cNeutral8,
+      border: solid
+        ? 'transparent'
+        : `${theme.expressiveness.L1} ${theme.expressiveness.cLineStyle1} ${addColorAlpha(
+            theme.palette.error,
+            0.4,
+          )}`,
+      hoverBorderColor: solid ? 'transparent' : theme.palette.error,
     },
   }
 
-  if (!status) return colors.default
-  return colors[status]
+  if (!color) return colors.default
+  return colors[color]
 }

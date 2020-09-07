@@ -2,7 +2,7 @@ import React from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { useProportions } from '../utils/calculations'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemesPalette } from 'components/styles/themes'
 import { NormalTypes } from 'components/utils/prop-types'
 
 export type ProgressColors = {
@@ -33,12 +33,13 @@ export type ProgressProps = Props & typeof defaultProps & NativeAttrs
 
 const getCurrentColor = (
   ratio: number,
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   type: NormalTypes,
   colors: ProgressColors = {},
 ): string => {
   const defaultColors: { [key in NormalTypes]: string } = {
     default: palette.foreground,
+    primary: palette.success,
     success: palette.success,
     secondary: palette.secondary,
     warning: palette.warning,
@@ -85,7 +86,7 @@ const Progress: React.FC<ProgressProps> = ({
           width: 100%;
           height: 0.625rem;
           background-color: ${theme.palette.accents_2};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
         }
 
         .fixed {
@@ -107,7 +108,7 @@ const Progress: React.FC<ProgressProps> = ({
           height: 100%;
           bottom: 0;
           transition: all 100ms ease-in;
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           background-color: ${currentColor};
           width: ${percentValue}%;
         }

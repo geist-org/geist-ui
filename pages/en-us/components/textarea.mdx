@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Textarea, Spacer, useInput, Button, Code } from 'components'
+import { Spacer, Button, Code } from 'components'
+import  { Textarea } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -13,9 +14,13 @@ Retrieve multi-line user input.
 
 <Playground
   desc="Basic usage."
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea placeholder="Please enter a description." />
+<>
+  <Textarea placeholder="Please enter a description." />
+  <Spacer inline />
+  <Textarea variant="solid" placeholder="Please enter a description." />
+</>
 `}
 />
 
@@ -31,25 +36,42 @@ Retrieve multi-line user input.
 <Playground
   title="disabled"
   desc="Disable interactive textarea."
-  scope={{ Textarea }}
+  scope={{ Textarea, Spacer }}
   code={`
-<Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+<>
+  <Textarea width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+  <Spacer inline />
+  <Textarea variant="solid" width="100%" disabled placeholder="ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
+</>
 `}
 />
 
 <Playground
-  title="status"
+  title="with counter"
+  desc="With build in counter"
+  scope={{ Textarea, Spacer }}
+  code={`
+<>
+  <Textarea counter maxLength={10} placeholder="Please enter a description." />
+  <Spacer inline />
+  <Textarea counter placeholder="Please enter a description." />
+</>
+`}
+/>
+
+<Playground
+  title="color"
   desc="Differentiate states by color."
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="success" minHeight="65px" value="Success" />
+  <Textarea color="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
-  <Textarea status="secondary" minHeight="65px" value="Secondary" />
+  <Textarea color="error" minHeight="65px" value="Error" />
   <Spacer y={.5} />
-  <Textarea status="warning" minHeight="65px" value="Warning" />
+  <Textarea variant="solid" color="primary" minHeight="65px" value="Primary" />
   <Spacer x={.5} inline />
-  <Textarea status="error" minHeight="65px" value="Error" />
+  <Textarea variant="solid" color="error" minHeight="65px" value="Error" />
 </>
 `}
 />
@@ -78,21 +100,43 @@ Retrieve multi-line user input.
 <Playground
   title={
     <>
-      With <Code>useInput</Code>
+      With <Code>useTextareaHandle</Code>
     </>
   }
   desc="Use `hooks` to capture changes."
-  scope={{ Textarea, useInput, Button, Spacer }}
+  scope={{ Textarea, Button, Spacer }}
   code={`
 () => {
-  const { setState, reset, bindings } = useInput('ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.')
+  const { ref, setValue } = Textarea.useTextareaHandle()
   return (
     <>
-      <Textarea width="100%" {...bindings}/>
+      <Textarea ref={ref} defaultValue='ZEIT Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN.' width="100%" />
       <Spacer y={.5} />
-      <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>set value</Button>
+      <Button auto type="secondary" size="small" onClick={() => setValue(Math.random().toString(32))}>set value</Button>
       <Spacer y={.5} />
-      <Button auto size="small" onClick={() => reset()}>reset value</Button>
+      <Button auto size="small" onClick={() => setValue()}>reset value</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Imperative API"
+  desc="Update component in an uncontrolled way."
+  scope={{ Textarea, Spacer, Button }}
+  code={`
+() => {
+  const ref = React.useRef(null)
+  const setChange = () => {
+    ref && (ref.current.value = Math.random().toString(32))
+  }
+  return (
+    <>
+      <Textarea defaultValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
+      <Spacer y={.5} />
+      <Button auto type="secondary" size="small"
+        onClick={setChange}>set value</Button>
     </>
   )
 }
@@ -104,31 +148,28 @@ Retrieve multi-line user input.
 
 | Attribute        | Description           | Type                             | Accepted values                                         | Default   |
 | ---------------- | --------------------- | -------------------------------- | ------------------------------------------------------- | --------- |
+| **variant**      | textarea variant      | `string`                         | `'solid', 'line'`                                       | `line`    |
 | **value**        | textarea value        | `string`                         | -                                                       | -         |
-| **initialValue** | textarea value        | `string`                         | -                                                       | -         |
+| **defaultValue** | textarea value        | `string`                         | -                                                       | -         |
 | **placeholder**  | placeholder           | `string`                         | -                                                       | -         |
-| **status**       | current status        | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **color**        | current color         | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **readOnly**     | native attr           | `boolean`                        | -                                                       | `false`   |
 | **disabled**     | disable input         | `boolean`                        | -                                                       | `false`   |
 | **width**        | set width string      | `string`                         | -                                                       | `initial` |
 | **minHeight**    | set min-height string | `string`                         | -                                                       | -         |
 | **onChange**     | change event          | `(e: React.ChangeEvent) => void` | -                                                       | -         |
+| **counter**      | add word counter ui   | `boolean`                        | -                                                       | `false`   |
 | ...              | native props          | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                        | -         |
 
-<Attributes.Title>useInput</Attributes.Title>
+<Attributes.Title>useTextareaHandle</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
+type useTextareaHandle = () => {
+  ref: React.RefObject<HTMLTextareaElement>
+  setValue: (value: string = '') => void
+  getValue: () => string | undefined
+  focus: () => void
+  blur: () => void
 }
 ```
 

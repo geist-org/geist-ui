@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { Input, Spacer, Text } from '@zeit-ui/react'
+import { Input, Spacer, Text } from '@cfxjs/react-ui'
 
 type InputErrorType = {
   error?: string

@@ -1,6 +1,6 @@
 ## Extends Components
 
-This is an example of **how to inherit components in `zeit-ui`**.
+This is an example of **how to inherit components in `cfx-ui`**.
 
 ## Getting Started
 

@@ -10,6 +10,9 @@ interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
   visible: boolean
   disableMatchWidth?: boolean
+  enterTime?: number
+  leaveTime?: number
+  clearTime?: number
 }
 
 interface ReactiveDomReact {
@@ -38,7 +41,7 @@ const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact =>
 }
 
 const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
-  ({ children, parent, visible, disableMatchWidth }) => {
+  ({ children, parent, visible, disableMatchWidth, enterTime, leaveTime, clearTime }) => {
     const el = usePortal('dropdown')
     const [rect, setRect] = useState<ReactiveDomReact>(defaultRect)
     if (!parent) return null
@@ -75,7 +78,11 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
 
     if (!el) return null
     return createPortal(
-      <CSSTransition visible={visible}>
+      <CSSTransition
+        visible={visible}
+        enterTime={enterTime}
+        leaveTime={leaveTime}
+        clearTime={clearTime}>
         <div
           className={`dropdown ${disableMatchWidth ? 'disable-match' : 'width-match'}`}
           onClick={clickHandler}>

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import withDefaults from 'components/utils/with-defaults'
 import useTheme from 'components/styles/use-theme'
-import { ZeitUIThemes } from 'components/styles/themes'
+import { CfxUIThemes } from 'components/styles/themes'
 
 interface Props {
   plain?: number | boolean
@@ -13,7 +13,7 @@ const defaultProps = {
 
 export type ExampleBlockProps = Props & typeof defaultProps
 
-const getBackground = (theme: ZeitUIThemes, plain: number | boolean) => {
+const getBackground = (theme: CfxUIThemes, plain: number | boolean) => {
   if (typeof plain !== 'number') return theme.palette.success
 
   const colors = [
@@ -40,7 +40,7 @@ const ExampleBlock: React.FC<React.PropsWithChildren<ExampleBlockProps>> = React
             width: 100%;
             background: ${bg};
             padding: ${theme.layout.gapHalf};
-            border-radius: ${theme.layout.radius};
+            border-radius: ${theme.expressiveness.R2};
             color: ${theme.palette.background};
             font-size: 0.75rem;
           }

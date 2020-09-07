@@ -87,7 +87,7 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
         .fieldset {
           background-color: ${theme.palette.background};
           border: 1px solid ${theme.palette.border};
-          border-radius: ${theme.layout.radius};
+          border-radius: ${theme.expressiveness.R2};
           overflow: hidden;
           display: ${hidden ? 'none' : 'block'};
         }
