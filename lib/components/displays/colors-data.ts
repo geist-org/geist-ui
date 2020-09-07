@@ -1,7 +1,7 @@
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemesPalette } from 'components/styles/themes'
 
 export type ColorEnum = {
-  [key in keyof ZeitUIThemesPalette]?: string
+  [key in keyof CfxUIThemesPalette]?: string
 }
 
 /* eslint-disable @typescript-eslint/camelcase */
@@ -73,7 +73,7 @@ export const getColorData = (type: string): ColorEnum => {
 }
 
 export const getCurrentColor = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   type: string,
   index: number,
 ): string => {

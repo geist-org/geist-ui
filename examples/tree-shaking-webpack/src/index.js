@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { ZeitProvider, CssBaseline, Page, Button } from '@cfxjs/react-ui'
+import { CfxProvider, CssBaseline, Page, Button } from '@cfxjs/react-ui'
 
 const App = () => {
   return (
@@ -13,10 +13,10 @@ const App = () => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <ZeitProvider>
+    <CfxProvider>
       <CssBaseline />
       <App />
-    </ZeitProvider>
+    </CfxProvider>
   </React.StrictMode>,
   document.getElementById('app'),
 )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { MessageColors } from '../utils/prop-types'
-import { useZEITUIContext } from '../utils/use-zeit-ui-context'
+import { useCfxUIContext } from '../utils/use-cfx-ui-context'
 import { getId } from '../utils/collections'
 import { MessageItemProps } from './message-item'
 
@@ -23,7 +23,7 @@ const defaultMessage = {
 }
 
 const useMessages = (): [Array<Message>, (t: Message) => void] => {
-  const { updateMessages, messages } = useZEITUIContext()
+  const { updateMessages, messages } = useCfxUIContext()
   const setMessage = (message: Message): void => {
     const id = `message-${getId()}`
     const destroy = (id: string) => {

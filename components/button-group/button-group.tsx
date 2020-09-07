@@ -3,7 +3,7 @@ import useTheme from '../styles/use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalSizes, ButtonColors, ButtonVariants } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemesPalette } from 'components/styles/themes'
 
 interface Props {
   ghost?: boolean
@@ -28,7 +28,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ButtonGroupProps = Props & typeof defaultProps & NativeAttrs
 
-const getGroupBorderColors = (palette: ZeitUIThemesPalette, props: ButtonGroupProps): string => {
+const getGroupBorderColors = (palette: CfxUIThemesPalette, props: ButtonGroupProps): string => {
   const { color, variant } = props
   if (variant === 'solid') return palette.cNeutral8
   const colors: { [key in ButtonColors]?: string } = {

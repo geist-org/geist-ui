@@ -7,27 +7,27 @@ describe('Link', () => {
   it('should render correctly', () => {
     const wrapper = mount(
       <div>
-        <Link href="https://react.zeit-ui.co">link</Link>
-        <Link href="https://react.zeit-ui.co" underline>
+        <Link href="https://conflux-react-ui.vercel.app/">link</Link>
+        <Link href="https://conflux-react-ui.vercel.app/" underline>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" block>
+        <Link href="https://conflux-react-ui.vercel.app/" block>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" disabled>
+        <Link href="https://conflux-react-ui.vercel.app/" disabled>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" plain>
+        <Link href="https://conflux-react-ui.vercel.app/" plain>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" iconLeft={<ExternalLink />}>
+        <Link href="https://conflux-react-ui.vercel.app/" iconLeft={<ExternalLink />}>
           link
         </Link>
-        <Link href="https://react.zeit-ui.co" iconRight={<ExternalLink />}>
+        <Link href="https://conflux-react-ui.vercel.app/" iconRight={<ExternalLink />}>
           link
         </Link>
         <Link
-          href="https://react.zeit-ui.co"
+          href="https://conflux-react-ui.vercel.app/"
           iconLeft={<ExternalLink />}
           iconRight={<ExternalLink />}>
           link

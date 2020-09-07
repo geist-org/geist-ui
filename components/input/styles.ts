@@ -1,5 +1,5 @@
 import { NormalSizes, InputColors } from '../utils/prop-types'
-import { ZeitUIThemes } from '../styles/themes'
+import { CfxUIThemes } from '../styles/themes'
 import { addColorAlpha } from '../utils/color'
 
 export type InputSize = {
@@ -44,11 +44,7 @@ export type InputColor = {
   hoverBorderColor: string
 }
 
-export const getColors = (
-  theme: ZeitUIThemes,
-  color?: InputColors,
-  solid?: boolean,
-): InputColor => {
+export const getColors = (theme: CfxUIThemes, color?: InputColors, solid?: boolean): InputColor => {
   const colors: { [key in InputColors]: InputColor } = {
     default: {
       color: theme.palette.cNeutral7,

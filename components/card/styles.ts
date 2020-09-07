@@ -1,5 +1,5 @@
 import { CardColors, CardVariants } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { CfxUIThemesPalette } from '../styles/themes'
 
 export type CardStyles = {
   color: string
@@ -23,7 +23,7 @@ export type LineCardStyles = {
 
 export const getStyles = (
   color: CardColors,
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   variant: CardVariants,
   hoverable: boolean,
 ): CardStyles => {

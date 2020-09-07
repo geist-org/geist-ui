@@ -2,7 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Snippet } from 'components'
 
-const command = 'yarn add @zeit-ui/react'
+const command = 'yarn add @cfxjs/react-ui'
 const multiLine = ['cd project', 'now']
 
 describe('Snippet', () => {

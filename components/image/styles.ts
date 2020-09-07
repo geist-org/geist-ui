@@ -1,4 +1,4 @@
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemesPalette } from 'components/styles/themes'
 
 export type BrowserColors = {
   color: string
@@ -8,7 +8,7 @@ export type BrowserColors = {
   titleColor: string
 }
 
-export const getBrowserColors = (invert: boolean, palette: ZeitUIThemesPalette): BrowserColors => {
+export const getBrowserColors = (invert: boolean, palette: CfxUIThemesPalette): BrowserColors => {
   return invert
     ? {
         color: palette.background,

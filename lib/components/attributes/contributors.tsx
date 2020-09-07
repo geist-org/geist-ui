@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Avatar, Link, Tooltip, useTheme } from 'components'
 import { useConfigs } from 'lib/config-context'
-const GithubURL = 'https://github.com/zeit-ui/react/blob/master'
+const GithubURL = 'https://github.com/Conflux-Chain/react-ui'
 const host = 'https://contributors.zeit-ui.co/api/users'
 
 export interface Contributor {

@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { ZeitProvider, CssBaseline } from '@cfxjs/react-ui'
+import { CfxProvider, CssBaseline } from '@cfxjs/react-ui'
 import Home from './home'
 
 const App = () => {
   return (
-    <ZeitProvider>
+    <CfxProvider>
       <CssBaseline />
       <Home />
-    </ZeitProvider>
+    </CfxProvider>
   )
 }
 

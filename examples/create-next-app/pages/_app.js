@@ -1,11 +1,11 @@
-import { ZeitProvider, CssBaseline } from '@cfxjs/react-ui'
+import { CfxProvider, CssBaseline } from '@cfxjs/react-ui'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ZeitProvider>
+    <CfxProvider>
       <CssBaseline />
       <Component {...pageProps} />
-    </ZeitProvider>
+    </CfxProvider>
   )
 }
 export default MyApp

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ZeitUIThemes } from '../styles/themes'
+import { CfxUIThemes } from '../styles/themes'
 import { addColorAlpha } from '../utils/color'
 import { getSizes, getColors } from '../input/styles'
 import {
@@ -273,7 +273,7 @@ export const animationStyle = (
 )
 
 // sync with input size styles
-export const generateSizeStyles = (prefix: string, theme: ZeitUIThemes) => {
+export const generateSizeStyles = (prefix: string, theme: CfxUIThemes) => {
   let styles: JSX.Element[] = []
   normalSizes.forEach((size: NormalSizes) => {
     const { heightRatio, fontSize, margin } = getSizes(size)
@@ -296,7 +296,7 @@ export const generateSizeStyles = (prefix: string, theme: ZeitUIThemes) => {
 }
 
 // sync with input variant styles
-export const generateVariantStyles = (prefix: string, theme: ZeitUIThemes) => {
+export const generateVariantStyles = (prefix: string, theme: CfxUIThemes) => {
   let styles: JSX.Element[] = []
   inputColors.forEach((color: InputColors) => {
     inputVariants.forEach((variant: InputVariantTypes) => {
@@ -365,7 +365,7 @@ export const generateVariantStyles = (prefix: string, theme: ZeitUIThemes) => {
 
 // picker style
 export const generatePickerGlobalStyle = <DateType extends any>(
-  theme: ZeitUIThemes,
+  theme: CfxUIThemes,
   props: CombineProps<DateType>,
 ) => {
   const { prefixCls: prefix = 'cfx' } = props

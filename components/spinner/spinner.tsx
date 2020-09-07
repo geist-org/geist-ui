@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../styles/use-theme'
 import { NormalSizes } from '../utils/prop-types'
-import { ZeitUIThemes } from '../styles/themes'
+import { CfxUIThemes } from '../styles/themes'
 
 interface Props {
   size?: NormalSizes
@@ -17,7 +17,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type SpinnerProps = Props & typeof defaultProps & NativeAttrs
 
-const getSpans = (theme: ZeitUIThemes) => {
+const getSpans = (theme: CfxUIThemes) => {
   return [...new Array(12)].map((_, index) => (
     <span key={`spinner-${index}`}>
       <style jsx>{`

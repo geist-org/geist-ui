@@ -1,5 +1,5 @@
 import { NormalSizes, PaginationVariants } from 'components/utils/prop-types'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemesPalette } from 'components/styles/themes'
 
 export interface PaginationSize {
   font: string
@@ -38,7 +38,7 @@ export const getSizes = (size?: NormalSizes) => {
 }
 
 export const getColors = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   variant: PaginationVariants = 'line',
   active: boolean = false,
 ) => {

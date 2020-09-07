@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
-import { useZEITUIContext } from '../utils/use-zeit-ui-context'
+import { useCfxUIContext } from '../utils/use-cfx-ui-context'
 import MessageItem from './message-item'
 
 const MessageContainer: React.FC<React.PropsWithChildren<{}>> = () => {
   const portal = usePortal('message')
-  const { messages } = useZEITUIContext()
+  const { messages } = useCfxUIContext()
   const messageElements = useMemo(
     () => messages.map(t => <MessageItem key={`message-${t.id}`} {...t} />),
     [messages],

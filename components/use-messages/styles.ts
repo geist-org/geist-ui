@@ -1,5 +1,5 @@
 import React from 'react'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { CfxUIThemesPalette } from '../styles/themes'
 import { MessageColors } from 'components/utils/prop-types'
 import AlertCircleFill from '@zeit-ui/react-icons/alertCircleFill'
 import CheckInCircleFill from '@zeit-ui/react-icons/checkInCircleFill'
@@ -14,7 +14,7 @@ export interface MessageColorGroup {
 }
 
 export const getStyles = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   color: MessageColors | undefined,
 ): MessageColorGroup => {
   const category: { [key in MessageColors]: MessageColorGroup } = {

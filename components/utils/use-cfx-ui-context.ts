@@ -5,7 +5,7 @@ import { MessageItemProps } from '../use-messages/message-item'
 export type UpdateToastsFunction<T> = (fn: (toasts: Array<T>) => Array<T>) => any
 export type UpdateMessagesFunction<T> = (fn: (messages: Array<T>) => Array<T>) => any
 
-export interface ZeitUiContextParams {
+export interface CfxUIContextParams {
   messages: Array<MessageItemProps>
   updateMessages: UpdateMessagesFunction<MessageItemProps>
   toasts: Array<ToastWithID>
@@ -14,7 +14,7 @@ export interface ZeitUiContextParams {
   updateToastHoverStatus: Function
 }
 
-const defaultParams: ZeitUiContextParams = {
+const defaultParams: CfxUIContextParams = {
   messages: [],
   updateMessages: t => t,
   toasts: [],
@@ -23,9 +23,9 @@ const defaultParams: ZeitUiContextParams = {
   updateToastHoverStatus: () => {},
 }
 
-export const ZEITUIContent: React.Context<ZeitUiContextParams> = React.createContext<
-  ZeitUiContextParams
+export const CfxUIContent: React.Context<CfxUIContextParams> = React.createContext<
+  CfxUIContextParams
 >(defaultParams)
 
-export const useZEITUIContext = (): ZeitUiContextParams =>
-  React.useContext<ZeitUiContextParams>(ZEITUIContent)
+export const useCfxUIContext = (): CfxUIContextParams =>
+  React.useContext<CfxUIContextParams>(CfxUIContent)

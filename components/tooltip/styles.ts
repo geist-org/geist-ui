@@ -1,12 +1,12 @@
 import { SnippetColors } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { CfxUIThemesPalette } from '../styles/themes'
 
 export type TooltipColors = {
   bgColor: string
   color: string
 }
 
-export const getColors = (color: SnippetColors, palette: ZeitUIThemesPalette): TooltipColors => {
+export const getColors = (color: SnippetColors, palette: CfxUIThemesPalette): TooltipColors => {
   if (color === 'default') color = 'dark'
   const colors: { [key in SnippetColors]: string } = {
     default: palette.cNeutral8,

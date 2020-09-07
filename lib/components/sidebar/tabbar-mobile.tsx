@@ -17,7 +17,7 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
       <Button className="toggle" auto variant="text" onClick={handler}>
         <SlidersIcon size={16} />
       </Button>
-      <span>ZEIT-UI React</span>
+      <span>CFX-UI React</span>
       <style jsx>{`
         .tabbar {
           position: fixed;

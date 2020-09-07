@@ -1,6 +1,6 @@
 import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
-import { useMessages, ZeitProvider } from 'components'
+import { useMessages, CfxProvider } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 import Github from '@zeit-ui/react-icons/github'
 
@@ -42,9 +42,9 @@ const expectMessageIsHidden = (wrapper: ReactWrapper) => {
 describe('UseMessage', () => {
   it('should render correctly', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockMessage />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectMessageIsHidden(wrapper)
@@ -56,9 +56,9 @@ describe('UseMessage', () => {
 
   it('should work with different colors', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockMessage />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectMessageIsHidden(wrapper)
@@ -73,9 +73,9 @@ describe('UseMessage', () => {
 
   it('should render no shadow correctly', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockMessage />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectMessageIsHidden(wrapper)
@@ -92,9 +92,9 @@ describe('UseMessage', () => {
 
   it('should render with custom icon correctly', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockMessage />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectMessageIsHidden(wrapper)
@@ -106,9 +106,9 @@ describe('UseMessage', () => {
 
   it('should close message after delay config duration', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockMessage />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectMessageIsHidden(wrapper)
@@ -123,9 +123,9 @@ describe('UseMessage', () => {
 
   it('should close message manually', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockMessage />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectMessageIsHidden(wrapper)
@@ -141,9 +141,9 @@ describe('UseMessage', () => {
 
   it('keep display when hover on', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockMessage />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectMessageIsHidden(wrapper)
@@ -168,9 +168,9 @@ describe('UseMessage', () => {
 
   it('should work with multiple messages', async () => {
     const wrapper = mount(
-      <ZeitProvider>
+      <CfxProvider>
         <MockMessage />
-      </ZeitProvider>,
+      </CfxProvider>,
     )
 
     expectMessageIsHidden(wrapper)

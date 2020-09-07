@@ -3,7 +3,7 @@ import useTheme from '../styles/use-theme'
 import { Toast } from './use-toast'
 import Button from '../button'
 import { NormalTypes } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { CfxUIThemesPalette } from '../styles/themes'
 
 type ToastWithID = Toast & {
   id: string
@@ -35,7 +35,7 @@ const toastActions = (actions: Toast['actions'], cancelHandle: Function) => {
   ))
 }
 
-const getColors = (palette: ZeitUIThemesPalette, type?: NormalTypes) => {
+const getColors = (palette: CfxUIThemesPalette, type?: NormalTypes) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.background,
     primary: palette.success,

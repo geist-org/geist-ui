@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-<img alt="Codecov" src="https://img.shields.io/codecov/c/github/zeit-ui/react?style=for-the-badge&labelColor=000000">
-<img alt="CircleCI" src="https://img.shields.io/circleci/build/github/zeit-ui/react?style=for-the-badge&labelColor=000000">
-<img alt="npm (scoped)" src="https://img.shields.io/npm/v/@zeit-ui/react?style=for-the-badge&labelColor=000000">
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/Conflux-Chain/react-ui?style=for-the-badge&labelColor=000000">
+<img alt="CircleCI" src="https://img.shields.io/circleci/build/github/Conflux-Chain/react-ui?style=for-the-badge&labelColor=000000">
+<img alt="npm (scoped)" src="https://img.shields.io/npm/v/@cfxjs/react-ui?style=for-the-badge&labelColor=000000">
 </p>
 
 > Modern and minimalist React UI library, originating from Vercel's design.
@@ -14,18 +14,18 @@
 
 ## Quick Start
 
-1. run `yarn add @zeit-ui/react` or `npm i @zeit-ui/react` install it.
+1. run `yarn add @cfxjs/react-ui` or `npm i @cfxjs/react-ui` install it.
 
 2. import into project:
 
 ```jsx
-import { ZeitProvider, CssBaseline } from '@zeit-ui/react'
+import { CfxProvider, CssBaseline } from '@cfxjs/react-ui'
 
 const Application = () => (
-  <ZeitProvider>
+  <CfxProvider>
     <CssBaseline /> // ---> normalize styles
     <AppComponent /> // ---> Your App Component
-  </ZeitProvider>
+  </CfxProvider>
 )
 ```
 
@@ -33,25 +33,15 @@ const Application = () => (
 
 ## Documentation
 
-- [Document Site](https://react.zeit-ui.co)
-- [中文文档](https://react.zeit-ui.co/zh-cn)
+- [Document Site](https://conflux-react-ui.vercel.app/)
+- [中文文档](https://conflux-react-ui.vercel.app/zh-cn)
 
 <br/>
 
 ## Development
 
-- [Contributing Guide](https://github.com/zeit-ui/react/blob/master/.github/CONTRIBUTING.md)
-
-<br/>
-
-## Showcases
-
-- [Article view count](https://docs.views.show/)
-- [Tree viewer for CDN](https://cdn.unix.bio/)
-- [Better social image](https://img.unix.bio/)
-- [Implement of ZEIT's Dashboard](https://github.com/ofekashery/zeit-dashboard-template)
-- [Blog of ZEIT's design](https://github.com/unix/unix.bio)
-- [Add here](https://github.com/zeit-ui/react/issues/new)
+- [Contributing Guide](https://github.com/Conflux-Chain/react-ui/blob/master/.github/CONTRIBUTING.md)
+- [Add issue here](https://github.com/Conflux-Chain/react-ui/issues/new)
 
 <br/>
 

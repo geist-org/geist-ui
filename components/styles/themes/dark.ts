@@ -1,7 +1,7 @@
-import { ZeitUIThemes, ZeitUIThemesPalette, ZeitUIThemesExpressiveness } from './index'
+import { CfxUIThemes, CfxUIThemesPalette, CfxUIThemesExpressiveness } from './index'
 import { defaultFont, defaultBreakpoints, defaultLayout } from './shared'
 
-export const palette: ZeitUIThemesPalette = {
+export const palette: CfxUIThemesPalette = {
   /* eslint-disable @typescript-eslint/camelcase */
   accents_1: '#111',
   accents_2: '#333',
@@ -60,7 +60,7 @@ export const palette: ZeitUIThemesPalette = {
   cNeutral8: '#fff',
 }
 
-export const expressiveness: ZeitUIThemesExpressiveness = {
+export const expressiveness: CfxUIThemesExpressiveness = {
   linkStyle: 'none',
   linkHoverStyle: 'none',
   dropdownBoxShadow: '0 0 0 1px #333',
@@ -102,7 +102,7 @@ export const breakpoints = defaultBreakpoints
 
 export const layout = defaultLayout
 
-export const themes: ZeitUIThemes = {
+export const themes: CfxUIThemes = {
   type: 'dark',
   font,
   layout,

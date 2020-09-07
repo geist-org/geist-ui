@@ -20,7 +20,7 @@ export const getButtonChildrenWithIcon = (
   const isRight = Boolean(iconRight)
   const paddingForAutoMode =
     auto || size === 'mini' || isTag
-      ? `calc(var(--zeit-ui-button-height) / 2 + var(--zeit-ui-button-padding) * .5)`
+      ? `calc(var(--cfx-ui-button-height) / 2 + var(--cfx-ui-button-padding) * .5)`
       : 0
   if (!hasIcon) return <div className={`text ${loading ? 'hidden' : ''}`}>{children}</div>
   return (

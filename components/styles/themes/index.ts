@@ -1,6 +1,6 @@
 import { ThemeTypes } from '../../utils/prop-types'
 
-export interface ZeitUIThemesPalette {
+export interface CfxUIThemesPalette {
   /* eslint-disable @typescript-eslint/camelcase */
   accents_1: string
   accents_2: string
@@ -59,7 +59,7 @@ export interface ZeitUIThemesPalette {
   cNeutral8: string
 }
 
-export interface ZeitUIThemesExpressiveness {
+export interface CfxUIThemesExpressiveness {
   linkStyle: string
   linkHoverStyle: string
   dropdownBoxShadow: string
@@ -97,7 +97,7 @@ export interface ZeitUIThemesExpressiveness {
   D5: string
 }
 
-export interface ZeitUIThemesLayout {
+export interface CfxUIThemesLayout {
   gap: string
   gapNegative: string
   gapHalf: string
@@ -112,7 +112,7 @@ export interface ZeitUIThemesLayout {
   // radius: string
 }
 
-export interface ZeitUIThemesFont {
+export interface CfxUIThemesFont {
   sans: string
   mono: string
 }
@@ -122,7 +122,7 @@ export interface BreakpointsItem {
   max: string
 }
 
-export interface ZeitUIThemesBreakpoints {
+export interface CfxUIThemesBreakpoints {
   xs: BreakpointsItem
   sm: BreakpointsItem
   md: BreakpointsItem
@@ -130,11 +130,11 @@ export interface ZeitUIThemesBreakpoints {
   xl: BreakpointsItem
 }
 
-export interface ZeitUIThemes {
+export interface CfxUIThemes {
   type: ThemeTypes
-  font: ZeitUIThemesFont
-  layout: ZeitUIThemesLayout
-  palette: ZeitUIThemesPalette
-  breakpoints: ZeitUIThemesBreakpoints
-  expressiveness: ZeitUIThemesExpressiveness
+  font: CfxUIThemesFont
+  layout: CfxUIThemesLayout
+  palette: CfxUIThemesPalette
+  breakpoints: CfxUIThemesBreakpoints
+  expressiveness: CfxUIThemesExpressiveness
 }

@@ -48,10 +48,10 @@ const CustomizationCodes = () => {
  *
  *  export const App = () => {
  *    return (
- *      <ZeitProvider theme={myTheme}>
+ *      <CfxProvider theme={myTheme}>
  *        <CssBaseline />
  *        <YourComponent />
- *      </ZEITUIProvider>
+ *      </CfxUIProvider>
  *    )
  *  }
  **/`

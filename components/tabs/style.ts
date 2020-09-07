@@ -1,5 +1,5 @@
 import { TabVarient, TabStatus } from '../utils/prop-types'
-import { ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemesPalette } from 'components/styles/themes'
 const stack: TabStatus[] = ['disabled', 'active', 'hover', 'default']
 
 export type StatusMap = {
@@ -7,7 +7,7 @@ export type StatusMap = {
 }
 
 export const defaultGetColor = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   varient: TabVarient,
   status: TabStatus,
 ): { color?: string; background: string } => {

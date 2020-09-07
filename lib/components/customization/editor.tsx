@@ -3,16 +3,16 @@ import {
   Text,
   Button,
   useTheme,
-  ZeitUIThemesPalette,
-  ZeitUIThemesExpressiveness,
-  ZeitUIThemesLayout,
+  CfxUIThemesPalette,
+  CfxUIThemesExpressiveness,
+  CfxUIThemesLayout,
 } from 'components'
 import EditorColorItem from './editor-color-item'
 import EditorInputItem from './editor-input-item'
 import DefaultTheme from 'components/styles/themes/default'
 import { useConfigs } from 'lib/config-context'
 
-const basicColors: Array<keyof ZeitUIThemesPalette> = [
+const basicColors: Array<keyof CfxUIThemesPalette> = [
   'cTheme0',
   'cTheme1',
   'cTheme2',
@@ -41,7 +41,7 @@ const basicColors: Array<keyof ZeitUIThemesPalette> = [
   'foreground',
   'background',
 ]
-const statusColors: Array<keyof ZeitUIThemesPalette> = [
+const statusColors: Array<keyof CfxUIThemesPalette> = [
   'success',
   'successLight',
   'successDark',
@@ -52,7 +52,7 @@ const statusColors: Array<keyof ZeitUIThemesPalette> = [
   'warningLight',
   'warningDark',
 ]
-const otherColors: Array<keyof ZeitUIThemesPalette> = [
+const otherColors: Array<keyof CfxUIThemesPalette> = [
   'selection',
   'secondary',
   'link',
@@ -63,7 +63,7 @@ const otherColors: Array<keyof ZeitUIThemesPalette> = [
   'alert',
   'violet',
 ]
-const expressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
+const expressiveness: Array<keyof CfxUIThemesExpressiveness> = [
   'linkStyle',
   'linkHoverStyle',
   'dropdownBoxShadow',
@@ -71,7 +71,7 @@ const expressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
   'shadowMedium',
   'shadowLarge',
 ]
-const radiusExpressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
+const radiusExpressiveness: Array<keyof CfxUIThemesExpressiveness> = [
   'R0',
   'R1',
   'R2',
@@ -79,15 +79,15 @@ const radiusExpressiveness: Array<keyof ZeitUIThemesExpressiveness> = [
   'R4',
   'R5',
 ]
-const shadowExpressiveness: Array<keyof ZeitUIThemesExpressiveness> = ['D0', 'D1', 'D2', 'D3', 'D4']
+const shadowExpressiveness: Array<keyof CfxUIThemesExpressiveness> = ['D0', 'D1', 'D2', 'D3', 'D4']
 
-const pageLayout: Array<keyof ZeitUIThemesLayout> = [
+const pageLayout: Array<keyof CfxUIThemesLayout> = [
   'pageWidth',
   'pageWidthWithMargin',
   'pageMargin',
   // 'radius',
 ]
-const gapLayout: Array<keyof ZeitUIThemesLayout> = [
+const gapLayout: Array<keyof CfxUIThemesLayout> = [
   'gap',
   'gapNegative',
   'gapHalf',

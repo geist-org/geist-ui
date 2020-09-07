@@ -6,11 +6,11 @@
  */
 
 // import {
-//   ZeitUIThemes,
-//   ZeitUIThemesPalette,
-//   ZeitUIThemesExpressiveness,
-//   ZeitUIThemesLayout,
-//   ZeitUIThemesFont,
+//   CfxUIThemes,
+//   CfxUIThemesPalette,
+//   CfxUIThemesExpressiveness,
+//   CfxUIThemesLayout,
+//   CfxUIThemesFont,
 // } from '@cfxjs/react-ui'
 
 export default {

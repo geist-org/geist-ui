@@ -1,17 +1,17 @@
 import {
-  ZeitUIThemesBreakpoints,
-  ZeitUIThemesFont,
-  ZeitUIThemesLayout,
+  CfxUIThemesBreakpoints,
+  CfxUIThemesFont,
+  CfxUIThemesLayout,
 } from 'components/styles/themes/index'
 
-export const defaultFont: ZeitUIThemesFont = {
+export const defaultFont: CfxUIThemesFont = {
   sans:
     '"Circular Std Book", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
   mono:
     'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
 }
 
-export const defaultBreakpoints: ZeitUIThemesBreakpoints = {
+export const defaultBreakpoints: CfxUIThemesBreakpoints = {
   xs: {
     min: '0',
     max: '650px',
@@ -34,7 +34,7 @@ export const defaultBreakpoints: ZeitUIThemesBreakpoints = {
   },
 }
 
-export const defaultLayout: ZeitUIThemesLayout = {
+export const defaultLayout: CfxUIThemesLayout = {
   gap: '16px',
   gapNegative: '-16px',
   gapHalf: '8px',

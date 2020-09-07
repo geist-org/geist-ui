@@ -1,8 +1,8 @@
-# Next.js demo for ZEIT UI React
+# Next.js demo for CFX UI React
 
 ## About
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app), the [zeit-ui](https://react.zeit-ui.co/en-us/guide/introduction) implementation follows the [documentation](https://react.zeit-ui.co/en-us/guide/installation).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app), the [cfx-ui](https://conflux-react-ui.vercel.app/en-us/guide/introduction) implementation follows the [documentation](https://conflux-react-ui.vercel.app/en-us/guide/installation).
 
 ## Getting Started
 

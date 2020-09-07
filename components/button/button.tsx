@@ -247,16 +247,16 @@ const TagOrButtonRender = <T, P>(
           cursor: ${cursor};
           pointer-events: ${events};
           box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
-          --zeit-ui-button-padding: ${padding};
-          --zeit-ui-button-height: ${height};
-          --zeit-ui-button-color: ${colors.color};
-          --zeit-ui-button-bg: ${colors.bg};
+          --cfx-ui-button-padding: ${padding};
+          --cfx-ui-button-height: ${height};
+          --cfx-ui-button-color: ${colors.color};
+          --cfx-ui-button-bg: ${colors.bg};
         }
 
         .tag:hover,
         .btn:hover {
           color: ${hoverColors.color};
-          --zeit-ui-button-color: ${hoverColors.color};
+          --cfx-ui-button-color: ${hoverColors.color};
           background-color: ${hoverColors.bg};
           border-color: ${hoverColors.border};
           cursor: ${cursor};
@@ -269,7 +269,7 @@ const TagOrButtonRender = <T, P>(
         .tag:active,
         .btn:active {
           color: ${activeColors.color};
-          --zeit-ui-button-color: ${activeColors.color};
+          --cfx-ui-button-color: ${activeColors.color};
           background-color: ${activeColors.bg};
           border-color: ${activeColors.border};
           cursor: ${cursor};

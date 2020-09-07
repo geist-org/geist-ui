@@ -63,4 +63,3 @@ At any time, you think it's ok, you can start the following steps to submit your
 ### Get stuck
 
 - Create new issue to tell us: [create issue](https://github.com/Conflux-Chain/react-ui/issues/new/choose).
-<!-- - Ask in [chat room](https://spectrum.chat/zeit-ui/general?tab=posts). -->

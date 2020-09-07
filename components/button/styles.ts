@@ -1,4 +1,4 @@
-import { ZeitUIThemesPalette } from '../styles/themes'
+import { CfxUIThemesPalette } from '../styles/themes'
 import { addColorAlpha } from '../utils/color'
 import { NormalSizes, TagSizes, ButtonColors } from '../utils/prop-types'
 import { ButtonProps } from './button'
@@ -16,7 +16,7 @@ export interface ButtonOrTagStatusGroup {
 }
 
 export const getButtonColors = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   props: ButtonProps,
   isTag: boolean,
 ): ButtonOrTagStatusGroup => {
@@ -413,7 +413,7 @@ export const getButtonColors = (
 }
 
 export const getButtonGhostColors = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   color: ButtonColors,
 ): ButtonOrTagColorGroup | null => {
   const colors: { [key in ButtonColors]?: ButtonOrTagColorGroup } = {
@@ -443,7 +443,7 @@ export const getButtonGhostColors = (
 }
 
 export const getButtonGhostHoverColors = (
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   color: ButtonColors,
 ): ButtonOrTagColorGroup | null => {
   const colors: { [key in ButtonColors]?: ButtonOrTagColorGroup } = {
@@ -583,7 +583,7 @@ export const getTagSize = (size: TagSizes = 'medium'): TagSizeGroup => {
   return layouts[size] || defaultLayout
 }
 
-export const getButtonDripColor = (palette: ZeitUIThemesPalette, props: ButtonProps) => {
+export const getButtonDripColor = (palette: CfxUIThemesPalette, props: ButtonProps) => {
   const { color } = props
   const isLightHover = color.endsWith('light')
   const hoverColors = getButtonColors(palette, props, false).hover

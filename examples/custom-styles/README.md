@@ -1,6 +1,6 @@
 ## Custom styles
 
-This is an example of **how to override styles in `zeit-ui`**.
+This is an example of **how to override styles in `cfx-ui`**.
 
 ## Getting Started
 

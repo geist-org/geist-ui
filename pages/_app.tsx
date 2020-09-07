@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import React, { useEffect, useState } from 'react'
-import { CssBaseline, ZeitProvider, useTheme, ZeitUIThemes } from 'components'
+import { CssBaseline, CfxProvider, useTheme, CfxUIThemes } from 'components'
 import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
@@ -11,8 +11,8 @@ import { DeepPartial } from 'components/utils/types'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
-  const [customTheme, setCustomTheme] = useState<DeepPartial<ZeitUIThemes>>({})
-  const themeChangeHandle = (theme: DeepPartial<ZeitUIThemes>) => {
+  const [customTheme, setCustomTheme] = useState<DeepPartial<CfxUIThemes>>({})
+  const themeChangeHandle = (theme: DeepPartial<CfxUIThemes>) => {
     setCustomTheme(theme)
   }
   const router = useRouter()
@@ -27,17 +27,17 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>React - ZEIT UI</title>
+        <title>React - CFX UI</title>
         <meta name="google" content="notranslate" />
         <meta name="twitter:creator" content="@echo_witt" />
         <meta name="referrer" content="strict-origin" />
-        <meta property="og:title" content="React - ZEIT UI" />
-        <meta property="og:url" content="https://react.zeit-ui.co" />
-        <link rel="dns-prefetch" href="//react.zeit-ui.co" />
+        <meta property="og:title" content="React - CFX UI" />
+        <meta property="og:url" content="https://conflux-react-ui.vercel.app" />
+        <link rel="dns-prefetch" href="//conflux-react-ui.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="generator" content="ZEIT UI" />
-        <meta name="description" content="React implementation for ZEIT design." />
-        <meta property="og:description" content="React implementation for ZEIT design." />
+        <meta name="generator" content="CFX UI" />
+        <meta name="description" content="React implementation for CFX design." />
+        <meta property="og:description" content="React implementation for CFX design." />
         <meta
           itemProp="image"
           property="og:image"
@@ -56,7 +56,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
         />
       </Head>
-      <ZeitProvider theme={customTheme}>
+      <CfxProvider theme={customTheme}>
         <CssBaseline />
         <ConfigContext onThemeChange={themeChangeHandle}>
           {!router.pathname.startsWith('/code') && <Menu />}
@@ -117,7 +117,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             overflow-x: scroll;
           }
         `}</style>
-      </ZeitProvider>
+      </CfxProvider>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import { NormalSizes, SelectVariants } from 'components/utils/prop-types'
-import { ZeitUIThemes, ZeitUIThemesPalette } from 'components/styles/themes'
+import { CfxUIThemes, CfxUIThemesPalette } from 'components/styles/themes'
 
 export interface SelectSize {
   height: string
@@ -26,7 +26,7 @@ type selectColors = {
   placeholderColor: string
 }
 
-export const getSizes = (theme: ZeitUIThemes, size?: NormalSizes) => {
+export const getSizes = (theme: CfxUIThemes, size?: NormalSizes) => {
   const sizes: { [key in NormalSizes]: SelectSize } = {
     medium: {
       height: `calc(2.625 * ${theme.layout.gap})`,
@@ -56,7 +56,7 @@ export const getSizes = (theme: ZeitUIThemes, size?: NormalSizes) => {
 export const getOptionColors = (
   selected: boolean,
   disabled: boolean = false,
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   isLabel: boolean = false,
   variant: SelectVariants = 'line',
 ) => {
@@ -103,7 +103,7 @@ export const getOptionColors = (
 
 export const getSelectColors = (
   disabled: boolean = false,
-  palette: ZeitUIThemesPalette,
+  palette: CfxUIThemesPalette,
   variant: SelectVariants = 'line',
 ): selectColors => {
   if (disabled) {

@@ -1,10 +1,10 @@
 import React, { PropsWithChildren, useMemo, useState } from 'react'
 import {
-  ZEITUIContent,
-  ZeitUiContextParams,
+  CfxUIContent,
+  CfxUIContextParams,
   UpdateToastsFunction,
   UpdateMessagesFunction,
-} from '../utils/use-zeit-ui-context'
+} from '../utils/use-cfx-ui-context'
 import ThemeProvider from '../styles/theme-provider'
 import { ThemeParam } from '../styles/theme-provider/theme-provider'
 import useCurrentState from '../utils/use-current-state'
@@ -16,7 +16,7 @@ export interface Props {
   theme?: ThemeParam
 }
 
-const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) => {
+const CfxProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) => {
   const [toasts, setToasts, toastsRef] = useCurrentState<Array<ToastWithID>>([])
   const [toastHovering, setToastHovering] = useState<boolean>(false)
   const updateToasts: UpdateToastsFunction<ToastWithID> = (
@@ -38,7 +38,7 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
     setMessages(nextMessages)
   }
 
-  const initialValue = useMemo<ZeitUiContextParams>(
+  const initialValue = useMemo<CfxUIContextParams>(
     () => ({
       messages,
       updateMessages,
@@ -51,14 +51,14 @@ const ZeitProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) =
   )
 
   return (
-    <ZEITUIContent.Provider value={initialValue}>
+    <CfxUIContent.Provider value={initialValue}>
       <ThemeProvider theme={theme}>
         {children}
         <ToastContainer />
         <MessageContainer />
       </ThemeProvider>
-    </ZEITUIContent.Provider>
+    </CfxUIContent.Provider>
   )
 }
 
-export default ZeitProvider
+export default CfxProvider
