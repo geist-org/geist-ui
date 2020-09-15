@@ -322,4 +322,28 @@ describe('Pagination', () => {
     expect(pageSizeVal).toEqual(20)
     expect(pageVal).toEqual(10)
   })
+
+  it('should set pageSize value to default value of pageSizeOptions', async () => {
+    const wrapper = mount(<Pagination total={200} pageSize={8} showPageSizeChanger />)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.find('.value').text()).toContain('8')
+    // wrapper.find('.select').simulate('click', nativeEvent)
+  })
+
+  it('should set string value to dropdownlist', async () => {
+    const wrapper = mount(
+      <Pagination total={200} pageSizeOptions={['test1', 'test2']} showPageSizeChanger />,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.find('.value').text()).toContain('10')
+    wrapper.find('.select').simulate('click', nativeEvent)
+    const options = wrapper.find('.select-dropdown').find('.option')
+    expect(options.at(0).text().includes('test1')).toBeTruthy
+    expect(
+      options
+        .at(options.length - 1)
+        .text()
+        .includes('10'),
+    ).toBeTruthy
+  })
 })
