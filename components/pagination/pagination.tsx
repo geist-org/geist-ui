@@ -107,9 +107,6 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
     const [, prevChildren] = pickChild(children, PaginationPrevious)
     const [, nextChildren] = pickChild(children, PaginationNext)
     const pageCount = useMemo(() => getPageCount(total, pageSize), [pageSize])
-    const getNewValue = (newVal: number, oldVal: number) => {
-      if (!Array.isArray(oldVal)) return newVal
-    }
     const updatePage = (type: PaginationUpdateType, val: number) => {
       if (type === 'prev' && page > 1) {
         setPage(page - 1)
@@ -118,13 +115,11 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
         setPage(page + 1)
       }
       if (type === 'click') {
-        const newPage = getNewValue(val, page) as number
-        setPage(newPage)
+        setPage(val)
       }
     }
     const updatePageSize = (val: number) => {
-      const newPageSize = getNewValue(val, pageSize) as number
-      setPageSize(newPageSize)
+      setPageSize(val)
     }
 
     useImperativeHandle(ref, () => ({
@@ -190,6 +185,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
               <PaginationPageSize
                 size={size}
                 pageSizeOptions={pageSizeOptions}
+                pageSize={pageSize}
                 onPageSizeChange={onPageSizeChange}
                 total={total}
                 labelPageSizeBefore={labelPageSizeBefore}

@@ -1062,6 +1062,1882 @@ exports[`Pagination should set pageSize 1`] = `
       </style>"
 `;
 
+exports[`Pagination should set pageSize value to default value of pageSizeOptions 1`] = `
+"<div class=\\"pagination\\"><div class=\\"left\\"><div class=\\"pagination-pagesize\\"><div class=\\"text before\\">SHOW</div><div class=\\"select  \\"><span class=\\"value\\"><div class=\\"option   \\"><span>8 <style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: calc(2.25 * 16px);
+          min-width: 0;
+        }
+      </style></span><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"18\\" width=\\"18\\" style=\\"color: currentColor;\\"><path d=\\"M20 6L9 17l-5-5\\"></path></svg></div><style>
+        .option {
+          display: flex;
+          max-width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: 500;
+          font-size: 1rem;
+          height: calc(2.5 * 16px);
+          box-sizing: border-box;
+          padding: 0 16px;
+          background-color: #0054fe;
+          color: #fff;
+          user-select: none;
+          border: 1px solid transparent;
+          cursor: pointer;
+          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+        }
+
+        .option:hover {
+          background-color: #0054fe;
+          color: #fff;
+          border: 1px solid transparent;
+        }
+
+        .divider {
+          line-height: 0;
+          height: 0;
+          padding: 0;
+          overflow: hidden;
+          border-top: 1px solid
+            #eaeaea;
+          margin: 8px 0;
+          width: 100%;
+        }
+        .divider:hover {
+          border-top: 1px solid
+            #eaeaea;
+        }
+
+        .label {
+          font-size: 1.1428rem;
+          color: #fff;
+          border-bottom: 1px solid
+            #eaeaea;
+          text-transform: capitalize;
+          cursor: default;
+        }
+        .label:hover {
+          border-bottom: 1px solid
+            #eaeaea;
+        }
+      </style></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
+
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
+
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
+
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
+
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #9b9eac;
+            }
+
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div><div class=\\"text after\\">RECORDS</div><style>
+          .pagination-pagesize {
+            display: flex;
+            align-items: center;
+            font-size: inherit;
+          }
+          .pagination-pagesize .text {
+            color: #444;
+            font-weight: 500;
+          }
+          .pagination-pagesize .before {
+            margin-right: 8px;
+          }
+          .pagination-pagesize .after {
+            margin-left: 8px;
+          }
+        </style></div></div><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M15 18l-6-6 6-6\\"></path></svg></button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\"active \\">1</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #0054fe;
+          border: 2px solid
+            #0054fe;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .disabled {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">2</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">3</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">4</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">5</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">6</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"1\\" fill=\\"currentColor\\"></circle><circle cx=\\"19\\" cy=\\"12\\" r=\\"1\\" fill=\\"currentColor\\"></circle><circle cx=\\"5\\" cy=\\"12\\" r=\\"1\\" fill=\\"currentColor\\"></circle></svg><style>
+        svg {
+          color: currentColor;
+          stroke: currentColor;
+          width: 1rem;
+          height: 1rem;
+        }
+
+        .more {
+          transform: rotate(0deg);
+        }
+      </style></button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">25</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M9 18l6-6-6-6\\"></path></svg></button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li></section></div></div><style>
+        .pagination {
+          font-size: 1rem;
+          display:flex;
+          justify-content: space-between;
+        }
+        .pagination .left{
+          display:true?'block':'none';
+        }
+        .pagination .right{
+          display:flex;
+          align-items:center;
+        }
+        section {
+          margin: 0;
+          padding: 0;
+          font-variant: tabular-nums;
+          font-feature-settings: 'tnum';
+          --pagination-size: 2.8571rem;
+        }
+        section :global(button:last-of-type) {
+          margin-right: 0;
+        }
+      </style>"
+`;
+
+exports[`Pagination should set string value to dropdownlist 1`] = `
+"<div class=\\"pagination\\"><div class=\\"left\\"><div class=\\"pagination-pagesize\\"><div class=\\"text before\\">SHOW</div><div class=\\"select  \\"><span class=\\"value\\"><div class=\\"option   \\"><span>10 <style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: calc(2.25 * 16px);
+          min-width: 0;
+        }
+      </style></span><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"18\\" width=\\"18\\" style=\\"color: currentColor;\\"><path d=\\"M20 6L9 17l-5-5\\"></path></svg></div><style>
+        .option {
+          display: flex;
+          max-width: 100%;
+          justify-content: space-between;
+          align-items: center;
+          font-weight: 500;
+          font-size: 1rem;
+          height: calc(2.5 * 16px);
+          box-sizing: border-box;
+          padding: 0 16px;
+          background-color: #0054fe;
+          color: #fff;
+          user-select: none;
+          border: 1px solid transparent;
+          cursor: pointer;
+          transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+        }
+
+        .option:hover {
+          background-color: #0054fe;
+          color: #fff;
+          border: 1px solid transparent;
+        }
+
+        .divider {
+          line-height: 0;
+          height: 0;
+          padding: 0;
+          overflow: hidden;
+          border-top: 1px solid
+            #eaeaea;
+          margin: 8px 0;
+          width: 100%;
+        }
+        .divider:hover {
+          border-top: 1px solid
+            #eaeaea;
+        }
+
+        .label {
+          font-size: 1.1428rem;
+          color: #fff;
+          border-bottom: 1px solid
+            #eaeaea;
+          text-transform: capitalize;
+          cursor: default;
+        }
+        .label:hover {
+          border-bottom: 1px solid
+            #eaeaea;
+        }
+      </style></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+        }
+      </style></svg></div><style>
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 80vw;
+              width: initial;
+              overflow: hidden;
+              transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+              border: 1px solid
+                #dbdde0;
+              border-radius: 4px;
+              padding: 0 calc(8px * 1.5) 0 16px;
+              height: calc(2.625 * 16px);
+              background-color: #fff;
+            }
+            .select-dropdown {
+              border-radius: 4px;
+              box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.08);
+              background-color: #fff;
+              max-height: 15rem;
+              overflow-y: auto;
+              overflow-anchor: none;
+              padding: 8px 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: calc(2.625 * 16px);
+              padding: 4px calc(1rem * 2)
+                4px 8px;
+            }
+
+            .select:hover {
+              border-color: #0054fe;
+              background-color: #fff;
+            }
+
+            .select:hover .icon,
+            .select:hover .value {
+              color: #0054fe;
+            }
+            .select:hover .placeholder {
+              color: #9b9eac;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              font-weight: 500;
+              padding: 0;
+              margin-right: calc(1rem * 1.5);
+              font-size: 1rem;
+              color: #444;
+              width: calc(100% - 1rem * 1.5);
+            }
+
+            .value :global(svg),
+            .multiple :global(svg) {
+              display: none;
+            }
+            .value :global(.option),
+            .multiple :global(.option) {
+              border: 1px solid transparent;
+            }
+
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #9b9eac;
+            }
+
+            .icon {
+              position: absolute;
+              right: calc(8px * 1.5);
+              font-size: 1rem;
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #444;
+            }
+          </style></div><div class=\\"text after\\">RECORDS</div><style>
+          .pagination-pagesize {
+            display: flex;
+            align-items: center;
+            font-size: inherit;
+          }
+          .pagination-pagesize .text {
+            color: #444;
+            font-weight: 500;
+          }
+          .pagination-pagesize .before {
+            margin-right: 8px;
+          }
+          .pagination-pagesize .after {
+            margin-left: 8px;
+          }
+        </style></div></div><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M15 18l-6-6 6-6\\"></path></svg></button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\"active \\">1</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #0054fe;
+          border: 2px solid
+            #0054fe;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .disabled {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">2</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">3</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">4</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">5</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">6</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><circle cx=\\"12\\" cy=\\"12\\" r=\\"1\\" fill=\\"currentColor\\"></circle><circle cx=\\"19\\" cy=\\"12\\" r=\\"1\\" fill=\\"currentColor\\"></circle><circle cx=\\"5\\" cy=\\"12\\" r=\\"1\\" fill=\\"currentColor\\"></circle></svg><style>
+        svg {
+          color: currentColor;
+          stroke: currentColor;
+          width: 1rem;
+          height: 1rem;
+        }
+
+        .more {
+          transform: rotate(0deg);
+        }
+      </style></button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\">20</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M9 18l6-6-6-6\\"></path></svg></button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li></section></div></div><style>
+        .pagination {
+          font-size: 1rem;
+          display:flex;
+          justify-content: space-between;
+        }
+        .pagination .left{
+          display:true?'block':'none';
+        }
+        .pagination .right{
+          display:flex;
+          align-items:center;
+        }
+        section {
+          margin: 0;
+          padding: 0;
+          font-variant: tabular-nums;
+          font-feature-settings: 'tnum';
+          --pagination-size: 2.8571rem;
+        }
+        section :global(button:last-of-type) {
+          margin-right: 0;
+        }
+      </style>"
+`;
+
 exports[`Pagination should work with pageSizeChanger 1`] = `
 "<div class=\\"pagination\\"><div class=\\"left\\"><div class=\\"pagination-pagesize\\"><div class=\\"text before\\">SHOW</div><div class=\\"select  \\"><span class=\\"value\\"><div class=\\"option   \\"><span>10 <style>
         span {
