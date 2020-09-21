@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from 'react'
 import { useTabsContext, TabsConfig } from './tabs-context'
 
 interface Props {
-  label: string
+  label: string | React.ReactNode
   value: string
   disabled?: boolean
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface TabsItemConfig {
   value: string
-  label: string
+  label: string | React.ReactNode
   disabled: boolean
 }
 

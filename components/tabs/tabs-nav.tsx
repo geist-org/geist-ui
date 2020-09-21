@@ -7,7 +7,7 @@ import useTheme from '../styles/use-theme'
 export interface NavCptProps {
   varient: TabVarient
   status: StatusMap
-  label: string
+  label: string | React.ReactNode
 }
 
 const Nav: React.FC<NavCptProps> = ({ label, status, varient }) => {
