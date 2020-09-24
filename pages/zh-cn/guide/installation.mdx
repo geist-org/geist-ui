@@ -1,5 +1,5 @@
 import Layout from 'lib/components/layout'
-import { Note, Link, Code, Spacer, Grid, Dot, Tabs, Snippet } from 'components'
+import { Note, Link, Code, Spacer, Grid, Dot, Tabs, Snippet, Text } from 'components'
 
 export const meta = {
   title: '安装',
@@ -56,6 +56,39 @@ const Application = () => (
 import { Button } from '@geist-ui/react'
 
 const MyComponent = () => <Button>按钮</Button>
+```
+
+</Grid>
+</Grid.Container>
+
+<Spacer y={1.5} />
+
+<Text h3>
+  在 Windows 上渲染字体{' '}
+  <Text span type="secondary" size=".75em" style={{ textTransform: 'uppercase' }}>
+    [可选的]
+  </Text>
+</Text>
+
+我们知道 Web 应用中一些字体在 _Windows_ 平台上无法得到最好的渲染效果，
+或是你认为一些字符集没有得到最好的渲染 (如中文字符)，
+在这类场景下，你可以额外引入字体库来优化渲染效果：
+
+> 你不需要修改任何 CSS 文件或是声明字体。
+
+1. 安装 `inter-ui`:
+
+<Snippet width="400px">yarn add inter-ui</Snippet>
+
+<Spacer y={1.5} />
+
+2. 添加 `Inter Font` 到你的项目中:
+
+<Grid.Container>
+<Grid xs={24} sm={16}>
+
+```jsx
+import 'inter-ui/inter.css'
 ```
 
 </Grid>
