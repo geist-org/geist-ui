@@ -7,6 +7,7 @@ import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
 import { DeepPartial } from 'components/utils/types'
+import 'inter-ui/inter.css'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
