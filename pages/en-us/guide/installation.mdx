@@ -1,5 +1,5 @@
 import Layout from 'lib/components/layout'
-import { Note, Link, Code, Spacer, Tabs, Dot, Snippet, Grid } from 'components'
+import { Note, Link, Code, Spacer, Tabs, Dot, Snippet, Grid, Text } from 'components'
 
 export const meta = {
   title: 'installation',
@@ -55,6 +55,39 @@ const Application = () => (
 import { Button } from '@geist-ui/react'
 
 const MyComponent = () => <Button>Click Me</Button>
+```
+
+</Grid>
+</Grid.Container>
+
+<Spacer y={1.5} />
+
+<Text h3>
+  Font rendering on Windows{' '}
+  <Text span type="secondary" size=".75em" style={{ textTransform: 'uppercase' }}>
+    [Optional]
+  </Text>
+</Text>
+
+We know that some fonts do not render well on the _Windows_ side,
+or do you think font rendering is not good enough for some character sets (like Chinese rendering),
+In this case, you can introduce additional font packages to optimize the rendering:
+
+> You don't need to modify any CSS files or declare fonts.
+
+1. Install `inter-ui`:
+
+<Snippet width="400px">yarn add inter-ui</Snippet>
+
+<Spacer y={1.5} />
+
+2. Add `Inter Font` to your project:
+
+<Grid.Container>
+<Grid xs={24} sm={16}>
+
+```jsx
+import 'inter-ui/inter.css'
 ```
 
 </Grid>
