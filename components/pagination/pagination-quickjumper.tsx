@@ -3,7 +3,7 @@ import Input from '../input'
 import { NormalSizes } from '../utils/prop-types'
 import useTheme from '../styles/use-theme'
 import { usePaginationContext } from './pagination-context'
-
+import useMediaQuery from '../use-media-query'
 interface Props {
   count: number
   size?: NormalSizes
@@ -26,29 +26,29 @@ const PaginationNext: React.FC<PaginationQuickJumperProps> = ({
   const theme = useTheme()
   const inputRef = useRef<HTMLInputElement>(null)
   const { variant, updatePage } = usePaginationContext()
-  const keyDownHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    const target = e.target as HTMLTextAreaElement
-    if (e.keyCode === 13) {
-      let val = Number(target.value)
+  const isXS = useMediaQuery('xs')
+  const blurHandler = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (e.target.value) {
+      let val = Number(e.target.value)
       if (Number.isInteger(val)) {
         if (val > count) {
           val = count
         }
         updatePage && updatePage('click', val)
       }
-      inputRef.current && (inputRef.current.value = '')
     }
+    inputRef.current && (inputRef.current.value = '')
   }
   return (
     <div className="pagination-quickjumper">
       <div className="text before">{labelJumperBefore}</div>
       <Input
-        onKeyDown={keyDownHandler}
+        onBlur={blurHandler}
         variant={variant}
-        width="4.7143rem"
+        width={isXS ? '4rem' : '4.7143rem'}
         size={size}
         ref={inputRef}></Input>
-      <div className="text after">{labelJumperAfter}</div>
+      {!isXS && <div className="text after">{labelJumperAfter}</div>}
       <style jsx>
         {`
           .pagination-quickjumper {
