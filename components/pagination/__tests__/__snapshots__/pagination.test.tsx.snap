@@ -4816,7 +4816,7 @@ exports[`Pagination should work with showQuickJumper 1`] = `
 exports[`pagination on mobile should render correctly on mobile 1`] = `
 "<div class=\\"pagination\\"><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M15 18l-6-6 6-6\\"></path></svg></button><style>
         li {
-          margin-right: 8px;
+          margin-right: 0.5714rem;
           margin-bottom: initial;
           display: inline-block;
         }
@@ -4888,7 +4888,7 @@ exports[`pagination on mobile should render correctly on mobile 1`] = `
         }
       </style></li><li><button class=\\"active \\">1</button><style>
         li {
-          margin-right: 8px;
+          margin-right: 0.5714rem;
           margin-bottom: initial;
           display: inline-block;
         }
@@ -4960,7 +4960,7 @@ exports[`pagination on mobile should render correctly on mobile 1`] = `
         }
       </style></li><li><button class=\\" \\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M9 18l6-6-6-6\\"></path></svg></button><style>
         li {
-          margin-right: 8px;
+          margin-right: 0.5714rem;
           margin-bottom: initial;
           display: inline-block;
         }
@@ -5042,7 +5042,7 @@ exports[`pagination on mobile should render correctly on mobile 1`] = `
             display: inline-flex;
             align-items: center;
             width: 4rem;
-            height: calc(2 * 16px);
+            height: calc(2 * 1.1429rem);
           }
 
           .input-wrapper {
@@ -5085,7 +5085,7 @@ exports[`pagination on mobile should render correctly on mobile 1`] = `
             padding: 0;
             box-shadow: none;
             font-size: 0.8571rem;
-            line-height: calc(2 * 16px - 2px);
+            line-height: calc(2 * 1.1429rem - 2px);
             background-color: transparent;
             font-weight: normal;
             border: none;
@@ -5123,7 +5123,7 @@ exports[`pagination on mobile should render correctly on mobile 1`] = `
           }
 
           input::-moz-placeholder {
-            line-height: calc(2 * 16px - 1px);
+            line-height: calc(2 * 1.1429rem - 1px);
           }
 
           input:-webkit-autofill,
@@ -5156,10 +5156,10 @@ exports[`pagination on mobile should render correctly on mobile 1`] = `
             font-weight: 500;
           }
           .pagination-quickjumper .before {
-            margin-right: 8px;
+            margin-right: 0.5714rem;
           }
           .pagination-quickjumper .after {
-            margin-left: 8px;
+            margin-left: 0.5714rem;
           }
         </style></div></div></div><style>
         .pagination {
