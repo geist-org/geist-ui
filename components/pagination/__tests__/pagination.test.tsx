@@ -2,8 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Pagination } from 'components'
 import { act } from 'react-dom/test-utils'
-import { updateWrapper, nativeEvent, resizeWindow } from 'tests/utils'
-import { resizeTo } from 'window-resizeto'
+import { updateWrapper, nativeEvent } from 'tests/utils'
 // @ts-ignore
 import mediaQuery from 'css-mediaquery'
 
@@ -43,40 +42,26 @@ describe('Pagination', () => {
     expect(wrapper.find('.active').text()).toEqual('10')
   })
 
-  it('should trigger change event', async () => {
-    let current = 1
+  it('should trigger change event when click the prev button', async () => {
+    let current = 0
     const handler = jest.fn().mockImplementation(val => (current = val))
-    const wrapper = mount(<Pagination total={100} defaultPage={2} onPageChange={handler} />)
-
-    await act(async () => {
-      wrapper.setProps({ page: 10 })
-    })
-    await updateWrapper(wrapper, 200)
-    expect(handler).toHaveBeenCalled()
-    expect(current).toEqual(10)
-
+    const wrapper = mount(<Pagination total={100} defaultPage={10} onPageChange={handler} />)
     const btns = wrapper.find('button')
     btns.at(0).simulate('click')
+    expect(handler).toHaveBeenCalled()
     await updateWrapper(wrapper, 200)
     expect(current).toEqual(9)
     handler.mockRestore()
   })
 
-  it('should trigger change event', async () => {
-    let current = 1
+  it('should trigger change event when click the next button', async () => {
+    let current = 0
     const handler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(<Pagination total={100} defaultPage={2} onPageChange={handler} />)
-
-    await act(async () => {
-      wrapper.setProps({ page: 9 })
-    })
-    await updateWrapper(wrapper, 200)
-    expect(handler).toHaveBeenCalled()
-    expect(current).toEqual(9)
     const btns = wrapper.find('button')
     btns.at(btns.length - 1).simulate('click')
     await updateWrapper(wrapper, 200)
-    expect(current).toEqual(10)
+    expect(current).toEqual(3)
     handler.mockRestore()
   })
 
@@ -90,7 +75,7 @@ describe('Pagination', () => {
     const btns = wrapper.find('button')
     btns.at(btns.length - 1).simulate('click')
     await updateWrapper(wrapper, 200)
-    expect(current).toEqual(10)
+    expect(current).toEqual(1)
     handler.mockRestore()
   })
 
@@ -227,8 +212,8 @@ describe('Pagination', () => {
     expect(wrapper.html()).toMatchSnapshot()
   })
 
-  it('should no chnage when you trigger other events', async () => {
-    let current = ''
+  it('should no change when you trigger other events', async () => {
+    let current = 2
     const onChangehandler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
       <Pagination defaultPage={2} total={200} onPageChange={onChangehandler} showQuickJumper />,
@@ -237,12 +222,11 @@ describe('Pagination', () => {
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     input.value = '5'
     wrapper.find('input').at(0).simulate('keydown', { keyCode: 38 })
-    expect(onChangehandler).toHaveBeenCalled()
     expect(current).toEqual(2)
   })
 
   it('should no change when you type a non-integer value', async () => {
-    let current = ''
+    let current = 3
     const onChangehandler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
       <Pagination defaultPage={2} total={200} onPageChange={onChangehandler} showQuickJumper />,
@@ -252,12 +236,12 @@ describe('Pagination', () => {
     input.value = 'test'
     wrapper.find('input').at(0).simulate('blur', nativeEvent)
     // expect(onChangehandler).toHaveBeenCalled()
-    expect(current).toEqual(2)
+    expect(current).toEqual(3)
     expect(input.value).toEqual('')
   })
 
   it('should no change when you type a null value', async () => {
-    let current = ''
+    let current = 3
     const onChangehandler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
       <Pagination defaultPage={2} total={200} onPageChange={onChangehandler} showQuickJumper />,
@@ -266,20 +250,14 @@ describe('Pagination', () => {
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     input.value = ''
     wrapper.find('input').at(0).simulate('blur', nativeEvent)
-    // expect(onChangehandler).toHaveBeenCalled()
-    expect(current).toEqual(2)
+    expect(current).toEqual(3)
     expect(input.value).toEqual('')
   })
 
   it('should trigger change event when you type a page number', async () => {
     let current = ''
     const handler = jest.fn().mockImplementation(val => (current = val))
-    const wrapper = mount(
-      <Pagination defaultPage={2} total={200} onPageChange={handler} showQuickJumper />,
-    )
-    await updateWrapper(wrapper, 200)
-    expect(handler).toHaveBeenCalled()
-    expect(current).toEqual(2)
+    const wrapper = mount(<Pagination total={200} onPageChange={handler} showQuickJumper />)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     input.value = '5'
     wrapper.find('input').at(0).simulate('blur', nativeEvent)
@@ -291,9 +269,8 @@ describe('Pagination', () => {
     let current = ''
     const handler = jest.fn().mockImplementation(val => (current = val))
     const wrapper = mount(
-      <Pagination defaultPage={20} total={200} onPageChange={handler} showQuickJumper />,
+      <Pagination defaultPage={19} total={200} onPageChange={handler} showQuickJumper />,
     )
-    expect(current).toEqual(20)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     input.value = '21'
     wrapper.find('input').at(0).simulate('blur', nativeEvent)
@@ -343,7 +320,6 @@ describe('Pagination', () => {
         showPageSizeChanger
       />,
     )
-    expect(pageVal).toEqual(20)
     wrapper.find('.select').simulate('click', nativeEvent)
     wrapper.find('.select-dropdown').find('.option').at(1).simulate('click', nativeEvent)
     await updateWrapper(wrapper, 350)

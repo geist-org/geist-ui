@@ -1,11 +1,4 @@
-import React, {
-  useMemo,
-  ReactNode,
-  forwardRef,
-  RefObject,
-  useImperativeHandle,
-  useEffect,
-} from 'react'
+import React, { useMemo, ReactNode, forwardRef, RefObject, useImperativeHandle } from 'react'
 import {
   PaginationContext,
   PaginationConfig,
@@ -113,15 +106,17 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
     const [, nextChildren] = pickChild(children, PaginationNext)
     const pageCount = useMemo(() => getPageCount(total, pageSize), [total, pageSize])
     const updatePage = (type: PaginationUpdateType, val: number) => {
+      let current = 0
       if (type === 'prev' && page > 1) {
-        setPage(page - 1)
+        current = page - 1
       }
       if (type === 'next' && page < pageCount) {
-        setPage(page + 1)
+        current = page + 1
       }
       if (type === 'click') {
-        setPage(val)
+        current = val
       }
+      setPage(current)
     }
     const updatePageSize = (val: number) => {
       setPageSize(val)
@@ -169,20 +164,6 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       }),
       [page, pageSize, updatePage, updatePageSize, variant, simple],
     )
-
-    useEffect(() => {
-      onPageChange && onPageChange(page, pageSize)
-    }, [page, pageSize])
-    // useEffect(() => {
-    //   if (customPage !== undefined) {
-    //     setPage(customPage)
-    //   }
-    // }, [customPage])
-    // useEffect(() => {
-    //   if (customPageSize !== undefined) {
-    //     setPageSize(customPageSize)
-    //   }
-    // }, [customPageSize])
     return (
       <PaginationContext.Provider value={values}>
         <div className="pagination">
@@ -192,7 +173,6 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
                 size={customSize}
                 pageSizeOptions={pageSizeOptions}
                 pageSize={pageSize}
-                onPageSizeChange={onPageSizeChange}
                 total={total}
                 labelPageSizeBefore={labelPageSizeBefore}
                 labelPageSizeAfter={labelPageSizeAfter}></PaginationPageSize>

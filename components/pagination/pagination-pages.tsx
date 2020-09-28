@@ -32,7 +32,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count }) => {
         {value}
       </PaginationItem>
     ),
-    [],
+    [updatePage],
   )
   const startPages = pagesArray.map((_, index) => {
     const value = index + 2

@@ -11,7 +11,6 @@ interface Props {
   total?: number
   labelPageSizeBefore?: ReactNode | string
   labelPageSizeAfter?: ReactNode | string
-  onPageSizeChange?: (current: number, pageSize: number) => void
 }
 
 const defaultProps = {
@@ -28,7 +27,6 @@ const PaginationNext: React.FC<PaginationPageSizeProps> = ({
   total,
   labelPageSizeBefore,
   labelPageSizeAfter,
-  onPageSizeChange,
 }: PaginationPageSizeProps & typeof defaultProps) => {
   const theme = useTheme()
   const { updatePage, updatePageSize, page, simple } = usePaginationContext()
@@ -38,7 +36,6 @@ const PaginationNext: React.FC<PaginationPageSizeProps> = ({
     const newCurrent = page && page > newPageCount ? newPageCount : page
     updatePageSize && updatePageSize(pageSize)
     updatePage && updatePage('click', newCurrent)
-    onPageSizeChange && onPageSizeChange(newCurrent as number, pageSize)
   }
 
   const getPageSizeOptions = () => {
