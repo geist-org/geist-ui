@@ -35,12 +35,12 @@ export const defaultBreakpoints: CfxUIThemesBreakpoints = {
 }
 
 export const defaultLayout: CfxUIThemesLayout = {
-  gap: '16px',
-  gapNegative: '-16px',
-  gapHalf: '8px',
-  gapHalfNegative: '-8px',
-  gapQuarter: '4px',
-  gapQuarterNegative: '-4px',
+  gap: '1.1429rem',
+  gapNegative: '-1.1429rem',
+  gapHalf: '0.5714rem',
+  gapHalfNegative: '-0.5714rem',
+  gapQuarter: '0.2857rem',
+  gapQuarterNegative: '-0.2857rem',
   pageMargin: '16px',
   pageWidth: '950px',
   pageWidthWithMargin: '982px',

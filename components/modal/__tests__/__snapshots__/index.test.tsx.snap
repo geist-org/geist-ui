@@ -8,7 +8,7 @@ exports[`Modal customization should be supported 1`] = `
           font-weight: 500;
           text-align: center;
           margin: 0;
-          margin-bottom: 8px;
+          margin-bottom: 0.5714rem;
           display: inline-flex;
           flex-shrink: 0;
           justify-content: center;
@@ -30,7 +30,7 @@ exports[`Modal customization should be supported 1`] = `
             background-color: #fff;
             color: #000;
             border-radius: 4px;
-            padding: 16px;
+            padding: 1.1429rem;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             transform: translate3d(0px, -40px, 0px);
@@ -68,7 +68,7 @@ exports[`Modal should render correctly 1`] = `
           font-weight: 500;
           text-align: center;
           margin: 0;
-          margin-bottom: 8px;
+          margin-bottom: 0.5714rem;
           display: inline-flex;
           flex-shrink: 0;
           justify-content: center;
@@ -84,7 +84,7 @@ exports[`Modal should render correctly 1`] = `
           font-weight: normal;
           text-align: center;
           margin: 0;
-          margin-bottom: calc(8px * 1.5);
+          margin-bottom: calc(0.5714rem * 1.5);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -94,8 +94,8 @@ exports[`Modal should render correctly 1`] = `
         }
       </style><div class=\\"content \\"><p>Some content contained within the modal.</p></div><style>
         .content {
-          margin: 0 -16px;
-          padding: 0 calc(16px * 1.5) 8px;
+          margin: 0 -1.1429rem;
+          padding: 0 calc(1.1429rem * 1.5) 0.5714rem;
           overflow-y: auto;
         }
 
@@ -284,7 +284,7 @@ exports[`Modal should render correctly 1`] = `
           overflow: hidden;
           justify-content: space-around;
           width: 100%;
-          padding: calc(8px * 1.5) 0 calc(16px * 0.5);
+          padding: calc(0.5714rem * 1.5) 0 calc(1.1429rem * 0.5);
         }
       </style><style>
           .wrapper {
@@ -299,7 +299,7 @@ exports[`Modal should render correctly 1`] = `
             background-color: #fff;
             color: #000;
             border-radius: 4px;
-            padding: 16px;
+            padding: 1.1429rem;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             transform: translate3d(0px, -40px, 0px);
