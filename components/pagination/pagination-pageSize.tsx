@@ -4,7 +4,6 @@ import { NormalSizes } from '../utils/prop-types'
 import useTheme from '../styles/use-theme'
 import { getPageCount } from './utils'
 import { usePaginationContext } from './pagination-context'
-import useMediaQuery from '../use-media-query'
 interface Props {
   pageSizeOptions: string[]
   pageSize: number
@@ -32,8 +31,7 @@ const PaginationNext: React.FC<PaginationPageSizeProps> = ({
   onPageSizeChange,
 }: PaginationPageSizeProps & typeof defaultProps) => {
   const theme = useTheme()
-  const isXS = useMediaQuery('xs')
-  const { updatePage, updatePageSize, page } = usePaginationContext()
+  const { updatePage, updatePageSize, page, simple } = usePaginationContext()
   const changeHandler = (val: string) => {
     const pageSize = Number(val)
     const newPageCount = getPageCount(total, pageSize)
@@ -57,10 +55,11 @@ const PaginationNext: React.FC<PaginationPageSizeProps> = ({
 
   return (
     <div className="pagination-pagesize">
-      {!isXS && <div className="text before">{labelPageSizeBefore}</div>}
+      {!simple && <div className="text before">{labelPageSizeBefore}</div>}
       <Select
         variant="line"
         size={size}
+        disableMatchWidth
         onChange={changeHandler}
         defaultValue={pageSize.toString()}>
         {mergedOptions?.map(pageSize => {
@@ -71,7 +70,7 @@ const PaginationNext: React.FC<PaginationPageSizeProps> = ({
           )
         })}
       </Select>
-      {!isXS && <div className="text after">{labelPageSizeAfter}</div>}
+      {!simple && <div className="text after">{labelPageSizeAfter}</div>}
       <style jsx>
         {`
           .pagination-pagesize {

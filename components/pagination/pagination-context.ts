@@ -12,6 +12,7 @@ export interface PaginationConfig {
   variant?: PaginationVariants
   page?: number
   pageSize?: number
+  simple?: boolean
 }
 
 export interface PaginationHandles {

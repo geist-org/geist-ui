@@ -382,7 +382,7 @@ describe('pagination on mobile', () => {
   })
 
   it('should render correctly on mobile', async () => {
-    const wrapper = mount(<Pagination total={200} showQuickJumper />)
+    const wrapper = mount(<Pagination total={200} showQuickJumper simple />)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

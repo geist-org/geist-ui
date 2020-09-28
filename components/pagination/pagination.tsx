@@ -15,7 +15,6 @@ import {
 import useMergedState from '../utils/use-merged-state'
 import { NormalSizes, PaginationVariants } from '../utils/prop-types'
 import usePaginationHandle from './use-pagination-handle'
-import useMediaQuery from '../use-media-query'
 /**
  * styles
  */
@@ -53,6 +52,7 @@ interface Props {
   labelJumperAfter?: ReactNode | string
   showQuickJumper?: boolean
   showPageSizeChanger?: boolean
+  simple?: boolean
   onPageChange?: (val: number, pageSize: number) => void
   onPageSizeChange?: (current: number, pageSize: number) => void
 }
@@ -70,6 +70,7 @@ const defaultProps = {
   labelJumperAfter: 'PAGE',
   showQuickJumper: false,
   showPageSizeChanger: false,
+  simple: false,
 }
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type PaginationProps = React.PropsWithChildren<Props & NativeAttrs>
@@ -92,14 +93,14 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
       labelJumperAfter,
       showQuickJumper,
       showPageSizeChanger,
+      simple,
       onPageSizeChange,
       onPageChange,
     }: PaginationProps & typeof defaultProps,
     ref: RefObject<PaginationHandles>,
   ) => {
     const theme = useTheme()
-    const isXS = useMediaQuery('xs')
-    const customSize = isXS ? 'small' : size
+    const customSize = simple ? 'small' : size
     const [page, setPage] = useMergedState(defaultPage, {
       value: customPage,
       onChange: (page): any => onPageChange && onPageChange(page, pageSize),
@@ -164,8 +165,9 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
         variant,
         page,
         pageSize,
+        simple,
       }),
-      [page, pageSize, updatePage, updatePageSize, variant],
+      [page, pageSize, updatePage, updatePageSize, variant, simple],
     )
 
     useEffect(() => {
@@ -199,7 +201,7 @@ const Pagination = forwardRef<PaginationHandles, React.PropsWithChildren<Paginat
           <div className="right">
             <section>
               {prevItem}
-              {isXS ? (
+              {simple ? (
                 <PaginationItem key={`pagination-item-${page}`} active={true}>
                   {page}
                 </PaginationItem>
