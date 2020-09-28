@@ -160,6 +160,18 @@ export const meta = {
 `}
 />
 
+<Playground
+  title="简单分页"
+  desc="当添加该属性时，显示为简单分页，适合在移动端使用"
+  scope={{ Pagination }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={40} showPageSizeChanger showQuickJumper simple />
+</>
+`}
+/>
+
 <Attributes edit="/pages/zh-cn/components/pagination.mdx">
 <Attributes.Title>Pagination.Props</Attributes.Title>
 
@@ -180,6 +192,7 @@ export const meta = {
 | **labelJumperAfter**    | 自定义quickJumper组件之后的文本         | `ReactNode` / `string`                   | -                                         | `PAGE`                    |
 | **showQuickJumper**     | 是否展示快速跳转至某页                  | `boolean`                                | -                                         | false                     |
 | **showPageSizeChanger** | 是否展示 pageSize 切换器               | `boolean`                                | -                                         | false                     |
+| **simple**              | 是否展示 简单分页                      | `boolean`                                | -                                         | false                     |
 | **onPageChange**        | 分页器的事件                           | `(page: number,pageSize:number) => void` | -                                         | -                         |
 | **onPageSizeChange**    | pageSize 变化的回调                   | `(page: number,pageSize:number) => void`  | -                                         | -                         |
 | ...                     | 原生属性                              | `HTMLAttributes`                          | `'id', 'className', ...`                 | -                         |
