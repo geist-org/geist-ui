@@ -161,6 +161,18 @@ A long list can be divided into several pages, and only one page will be loaded 
 `}
 />
 
+<Playground
+  title="Simple"
+  desc="Whether to use simple mode,you can use this mode on mobile"
+  scope={{ Pagination }}
+  width="750px"
+  code={`
+<>
+  <Pagination total={40} showPageSizeChanger showQuickJumper simple />
+</>
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/pagination.mdx">
 <Attributes.Title>Pagination.Props</Attributes.Title>
 
@@ -181,6 +193,7 @@ A long list can be divided into several pages, and only one page will be loaded 
 | **labelJumperAfter**    | Customize the label after quickJumper                                                                     | `ReactNode` / `string`                   | -                                         | `PAGE`                    |
 | **showQuickJumper**     | Determine whether you can jump to pages directly                                                          | `boolean`                                | -                                         | false                     |
 | **showPageSizeChanger** | Determine whether to show pageSize select                                                                 | `boolean`                                | -                                         | false                     |
+| **simple**              | Determine whether to show simple mode                                                                     | `boolean`                                | -                                         | false                     |
 | **onPageChange**        | Called when the page number changes, and it takes the resulting page number and pageSize as its arguments | `(page: number,pageSize:number) => void` | -                                         | -                         |
 | **onPageSizeChange**    | Called when pageSize is changed                                                                           | `(page: number,pageSize:number) => void` | -                                         | -                         |
 | ...                     | Native props                                                                                              | `HTMLAttributes`                         | `'id', 'className', ...`                  | -                         |

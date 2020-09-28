@@ -510,13 +510,21 @@ exports[`Pagination should render correctly 1`] = `
           font-size: 1rem;
           display:flex;
           justify-content: space-between;
+          flex-wrap: wrap;
+          flex-shrink:0;
+          margin: -0.3571rem 0 0 0;
         }
+        .pagination > * {
+          margin-top: 0.3571rem;
+      }
         .pagination .left{
           display:false?'block':'none';
         }
         .pagination .right{
           display:flex;
           align-items:center;
+          flex-wrap: wrap;
+          flex-shrink:0;
         }
         section {
           margin: 0;
@@ -1041,13 +1049,21 @@ exports[`Pagination should set pageSize 1`] = `
           font-size: 1rem;
           display:flex;
           justify-content: space-between;
+          flex-wrap: wrap;
+          flex-shrink:0;
+          margin: -0.3571rem 0 0 0;
         }
+        .pagination > * {
+          margin-top: 0.3571rem;
+      }
         .pagination .left{
           display:false?'block':'none';
         }
         .pagination .right{
           display:flex;
           align-items:center;
+          flex-wrap: wrap;
+          flex-shrink:0;
         }
         section {
           margin: 0;
@@ -1979,13 +1995,21 @@ exports[`Pagination should set pageSize value to default value of pageSizeOption
           font-size: 1rem;
           display:flex;
           justify-content: space-between;
+          flex-wrap: wrap;
+          flex-shrink:0;
+          margin: -0.3571rem 0 0 0;
         }
+        .pagination > * {
+          margin-top: 0.3571rem;
+      }
         .pagination .left{
           display:true?'block':'none';
         }
         .pagination .right{
           display:flex;
           align-items:center;
+          flex-wrap: wrap;
+          flex-shrink:0;
         }
         section {
           margin: 0;
@@ -2917,13 +2941,21 @@ exports[`Pagination should set string value to dropdownlist 1`] = `
           font-size: 1rem;
           display:flex;
           justify-content: space-between;
+          flex-wrap: wrap;
+          flex-shrink:0;
+          margin: -0.3571rem 0 0 0;
         }
+        .pagination > * {
+          margin-top: 0.3571rem;
+      }
         .pagination .left{
           display:true?'block':'none';
         }
         .pagination .right{
           display:flex;
           align-items:center;
+          flex-wrap: wrap;
+          flex-shrink:0;
         }
         section {
           margin: 0;
@@ -3855,13 +3887,21 @@ exports[`Pagination should work with pageSizeChanger 1`] = `
           font-size: 1rem;
           display:flex;
           justify-content: space-between;
+          flex-wrap: wrap;
+          flex-shrink:0;
+          margin: -0.3571rem 0 0 0;
         }
+        .pagination > * {
+          margin-top: 0.3571rem;
+      }
         .pagination .left{
           display:true?'block':'none';
         }
         .pagination .right{
           display:flex;
           align-items:center;
+          flex-wrap: wrap;
+          flex-shrink:0;
         }
         section {
           margin: 0;
@@ -4744,13 +4784,21 @@ exports[`Pagination should work with showQuickJumper 1`] = `
           font-size: 1rem;
           display:flex;
           justify-content: space-between;
+          flex-wrap: wrap;
+          flex-shrink:0;
+          margin: -0.3571rem 0 0 0;
         }
+        .pagination > * {
+          margin-top: 0.3571rem;
+      }
         .pagination .left{
           display:false?'block':'none';
         }
         .pagination .right{
           display:flex;
           align-items:center;
+          flex-wrap: wrap;
+          flex-shrink:0;
         }
         section {
           margin: 0;
@@ -4758,6 +4806,388 @@ exports[`Pagination should work with showQuickJumper 1`] = `
           font-variant: tabular-nums;
           font-feature-settings: 'tnum';
           --pagination-size: 2.8571rem;
+        }
+        section :global(button:last-of-type) {
+          margin-right: 0;
+        }
+      </style>"
+`;
+
+exports[`pagination on mobile should render correctly on mobile 1`] = `
+"<div class=\\"pagination\\"><div class=\\"right\\"><section><li><button class=\\" disabled\\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M15 18l-6-6 6-6\\"></path></svg></button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\"active \\">1</button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #0054fe;
+          border: 2px solid
+            #0054fe;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .disabled {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li><li><button class=\\" \\"><svg fill=\\"none\\" stroke=\\"currentColor\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" stroke-width=\\"1.5\\" shape-rendering=\\"geometricPrecision\\" viewBox=\\"0 0 24 24\\" height=\\"24\\" width=\\"24\\" style=\\"color: rgb(40, 45, 48);\\"><path d=\\"M9 18l6-6-6-6\\"></path></svg></button><style>
+        li {
+          margin-right: 8px;
+          margin-bottom: initial;
+          display: inline-block;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          box-sizing: border-box;
+          text-transform: capitalize;
+          user-select: none;
+          white-space: nowrap;
+          text-align: center;
+          vertical-align: middle;
+          box-shadow: none;
+          outline: none;
+          height: var(--pagination-size);
+          min-width: var(--pagination-size);
+          font-size: inherit;
+          cursor: pointer;
+          color: #444;
+          border: 2px solid
+            #ebeced;
+          border-radius: 2px;
+          background-color: #fff;
+          transition: all linear 200ms 0ms;
+          font-weight: 500;
+        }
+
+        button:hover {
+          color: #0054fe;
+          background-color: #fff;
+          border: 2px solid
+            #0054fe;
+        }
+
+        .active {
+          font-weight: bold;
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .active:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        .disabled {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+          cursor: not-allowed;
+        }
+
+        .disabled:hover {
+          color: #444;
+          background-color: #fff;
+          border: 2px solid
+            #ebeced;
+        }
+
+        button :global(svg) {
+          width: 1.3em;
+          height: 1.3em;
+        }
+      </style></li></section><div class=\\"pagination-quickjumper\\"><div class=\\"text before\\">GO TO</div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper line    \\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\"></div></div><style>
+          .with-label {
+            display: inline-block;
+            width: 4rem;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+          }
+
+          .input-container {
+            display: inline-flex;
+            align-items: center;
+            width: 4rem;
+            height: calc(2 * 16px);
+          }
+
+          .input-wrapper {
+            display: inline-flex;
+            vertical-align: middle;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+            user-select: none;
+            border-radius: 4px;
+            transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            background-color: #fff;
+            border: 1px solid #ebeced;
+          }
+
+          .input-wrapper.left-label {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          .input-wrapper.right-label {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          .input-wrapper.disabled {
+            cursor: not-allowed;
+            border: 0;
+            background-color: #ebeced;
+          }
+
+          .focus.input-wrapper:not(.disabled),
+          .hover.input-wrapper:not(.disabled) {
+            border-color: #0054fe;
+            background-color: #fff;
+          }
+
+          input {
+            margin: 0 1.1429rem;
+            padding: 0;
+            box-shadow: none;
+            font-size: 0.8571rem;
+            line-height: calc(2 * 16px - 2px);
+            background-color: transparent;
+            font-weight: normal;
+            border: none;
+            color: #282d30;
+            outline: none;
+            border-radius: 0;
+            width: 100%;
+            min-width: 0;
+            -webkit-appearance: none;
+          }
+
+          input:disabled {
+            cursor: not-allowed;
+            color: #aaafbb;
+          }
+
+          input.left-icon {
+            margin-left: 0;
+          }
+
+          input.right-icon {
+            margin-right: 0;
+          }
+
+          .input-wrapper.focus:not(.disabled) input,
+          .input-wrapper.hover:not(.disabled) input {
+            color: #0054fe;
+          }
+
+          ::placeholder,
+          ::-moz-placeholder,
+          :-ms-input-placeholder,
+          ::-webkit-input-placeholder {
+            color: #9b9eac;
+          }
+
+          input::-moz-placeholder {
+            line-height: calc(2 * 16px - 1px);
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+            -webkit-text-fill-color: #282d30 !important;
+          }
+
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus {
+            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+            -webkit-text-fill-color: #0054fe !important;
+          }
+
+          input:-webkit-autofill,
+          input:-webkit-autofill:hover,
+          input:-webkit-autofill:focus,
+          input:-webkit-autofill:active {
+            -webkit-background-clip: text;
+          }
+        </style></div><style>
+          .pagination-quickjumper {
+            display: flex;
+            align-items: center;
+            font-size: inherit;
+          }
+          .pagination-quickjumper .text {
+            font-size: inherit;
+            color: #282d30;
+            font-weight: 500;
+          }
+          .pagination-quickjumper .before {
+            margin-right: 8px;
+          }
+          .pagination-quickjumper .after {
+            margin-left: 8px;
+          }
+        </style></div></div></div><style>
+        .pagination {
+          font-size: 0.8571rem;
+          display:flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          flex-shrink:0;
+          margin: -0.3571rem 0 0 0;
+        }
+        .pagination > * {
+          margin-top: 0.3571rem;
+      }
+        .pagination .left{
+          display:false?'block':'none';
+        }
+        .pagination .right{
+          display:flex;
+          align-items:center;
+          flex-wrap: wrap;
+          flex-shrink:0;
+        }
+        section {
+          margin: 0;
+          padding: 0;
+          font-variant: tabular-nums;
+          font-feature-settings: 'tnum';
+          --pagination-size: 2.2857rem;
         }
         section :global(button:last-of-type) {
           margin-right: 0;

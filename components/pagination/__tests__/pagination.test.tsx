@@ -2,7 +2,21 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Pagination } from 'components'
 import { act } from 'react-dom/test-utils'
-import { updateWrapper, nativeEvent } from 'tests/utils'
+import { updateWrapper, nativeEvent, resizeWindow } from 'tests/utils'
+import { resizeTo } from 'window-resizeto'
+// @ts-ignore
+import mediaQuery from 'css-mediaquery'
+
+const mediaListMock = (width: number) => {
+  ;(window as any).listeners = [] as Array<Function>
+  return (query: string) => {
+    return {
+      matches: mediaQuery.match(query, { width }),
+      addListener: (fn: Function) => (window as any).listeners.push(fn),
+      removeListener: () => {},
+    }
+  }
+}
 
 describe('Pagination', () => {
   it('should render correctly', () => {
@@ -236,8 +250,23 @@ describe('Pagination', () => {
     await updateWrapper(wrapper, 200)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     input.value = 'test'
-    wrapper.find('input').at(0).simulate('keydown', { keyCode: 13 })
-    expect(onChangehandler).toHaveBeenCalled()
+    wrapper.find('input').at(0).simulate('blur', nativeEvent)
+    // expect(onChangehandler).toHaveBeenCalled()
+    expect(current).toEqual(2)
+    expect(input.value).toEqual('')
+  })
+
+  it('should no change when you type a null value', async () => {
+    let current = ''
+    const onChangehandler = jest.fn().mockImplementation(val => (current = val))
+    const wrapper = mount(
+      <Pagination defaultPage={2} total={200} onPageChange={onChangehandler} showQuickJumper />,
+    )
+    await updateWrapper(wrapper, 200)
+    let input = wrapper.find('input').getDOMNode() as HTMLInputElement
+    input.value = ''
+    wrapper.find('input').at(0).simulate('blur', nativeEvent)
+    // expect(onChangehandler).toHaveBeenCalled()
     expect(current).toEqual(2)
     expect(input.value).toEqual('')
   })
@@ -253,7 +282,7 @@ describe('Pagination', () => {
     expect(current).toEqual(2)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     input.value = '5'
-    wrapper.find('input').at(0).simulate('keydown', { keyCode: 13 })
+    wrapper.find('input').at(0).simulate('blur', nativeEvent)
     expect(handler).toHaveBeenCalled()
     expect(current).toEqual(5)
   })
@@ -267,7 +296,7 @@ describe('Pagination', () => {
     expect(current).toEqual(20)
     let input = wrapper.find('input').getDOMNode() as HTMLInputElement
     input.value = '21'
-    wrapper.find('input').at(0).simulate('keydown', { keyCode: 13 })
+    wrapper.find('input').at(0).simulate('blur', nativeEvent)
     expect(handler).toHaveBeenCalled()
     expect(current).toEqual(20)
   })
@@ -327,7 +356,6 @@ describe('Pagination', () => {
     const wrapper = mount(<Pagination total={200} pageSize={8} showPageSizeChanger />)
     expect(wrapper.html()).toMatchSnapshot()
     expect(wrapper.find('.value').text()).toContain('8')
-    // wrapper.find('.select').simulate('click', nativeEvent)
   })
 
   it('should set string value to dropdownlist', async () => {
@@ -345,5 +373,16 @@ describe('Pagination', () => {
         .text()
         .includes('10'),
     ).toBeTruthy
+  })
+})
+
+describe('pagination on mobile', () => {
+  beforeAll(() => {
+    ;(window as any).matchMedia = mediaListMock(500)
+  })
+
+  it('should render correctly on mobile', async () => {
+    const wrapper = mount(<Pagination total={200} showQuickJumper simple />)
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
