@@ -89,6 +89,7 @@ export const SkeletonRender = <T, P>(
             display: block;
             background-color: #EFF2FA;
             height: 22px;
+            transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
@@ -109,7 +110,7 @@ export const SkeletonRender = <T, P>(
           }
           .skeleton.wave::after {
             animation: wave 1.6s linear 0.5s infinite;
-            background: linear-gradient(90deg, transparent, #E1E5EE, transparent);
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
             content: '';
             position: absolute;
             transform: translateX(-100%);

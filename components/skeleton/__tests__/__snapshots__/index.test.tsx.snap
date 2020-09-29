@@ -28,6 +28,7 @@ exports[`Skeleton should render all variant correctly 1`] = `
             display: block;
             background-color: #EFF2FA;
             height: 22px;
+            transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
@@ -48,7 +49,7 @@ exports[`Skeleton should render all variant correctly 1`] = `
           }
           .skeleton.wave::after {
             animation: wave 1.6s linear 0.5s infinite;
-            background: linear-gradient(90deg, transparent, #E1E5EE, transparent);
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
             content: '';
             position: absolute;
             transform: translateX(-100%);
@@ -99,6 +100,7 @@ exports[`Skeleton should render all variant correctly 2`] = `
             display: block;
             background-color: #EFF2FA;
             height: 22px;
+            transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
@@ -119,7 +121,7 @@ exports[`Skeleton should render all variant correctly 2`] = `
           }
           .skeleton.wave::after {
             animation: wave 1.6s linear 0.5s infinite;
-            background: linear-gradient(90deg, transparent, #E1E5EE, transparent);
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
             content: '';
             position: absolute;
             transform: translateX(-100%);
@@ -170,6 +172,7 @@ exports[`Skeleton should render correctly 1`] = `
             display: block;
             background-color: #EFF2FA;
             height: 22px;
+            transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
@@ -190,7 +193,7 @@ exports[`Skeleton should render correctly 1`] = `
           }
           .skeleton.wave::after {
             animation: wave 1.6s linear 0.5s infinite;
-            background: linear-gradient(90deg, transparent, #E1E5EE, transparent);
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
             content: '';
             position: absolute;
             transform: translateX(-100%);
@@ -241,6 +244,7 @@ exports[`Skeleton should render correctly width custom with and height 1`] = `
             display: block;
             background-color: #EFF2FA;
             height: 22px;
+            transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
@@ -261,7 +265,7 @@ exports[`Skeleton should render correctly width custom with and height 1`] = `
           }
           .skeleton.wave::after {
             animation: wave 1.6s linear 0.5s infinite;
-            background: linear-gradient(90deg, transparent, #E1E5EE, transparent);
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
             content: '';
             position: absolute;
             transform: translateX(-100%);
@@ -312,6 +316,7 @@ exports[`Skeleton should render correctly width custom with and height 2`] = `
             display: block;
             background-color: #EFF2FA;
             height: 22px;
+            transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
@@ -332,7 +337,7 @@ exports[`Skeleton should render correctly width custom with and height 2`] = `
           }
           .skeleton.wave::after {
             animation: wave 1.6s linear 0.5s infinite;
-            background: linear-gradient(90deg, transparent, #E1E5EE, transparent);
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
             content: '';
             position: absolute;
             transform: translateX(-100%);
@@ -383,6 +388,7 @@ exports[`Skeleton should render correctly width custom with and height 3`] = `
             display: block;
             background-color: #EFF2FA;
             height: 22px;
+            transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
@@ -403,7 +409,7 @@ exports[`Skeleton should render correctly width custom with and height 3`] = `
           }
           .skeleton.wave::after {
             animation: wave 1.6s linear 0.5s infinite;
-            background: linear-gradient(90deg, transparent, #E1E5EE, transparent);
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
             content: '';
             position: absolute;
             transform: translateX(-100%);
@@ -540,6 +546,7 @@ exports[`Skeleton should render correctly with children 1`] = `
             display: block;
             background-color: #EFF2FA;
             height: 22px;
+            transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
@@ -560,7 +567,7 @@ exports[`Skeleton should render correctly with children 1`] = `
           }
           .skeleton.wave::after {
             animation: wave 1.6s linear 0.5s infinite;
-            background: linear-gradient(90deg, transparent, #E1E5EE, transparent);
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
             content: '';
             position: absolute;
             transform: translateX(-100%);
