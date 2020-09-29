@@ -1,7 +1,5 @@
-import React, { useRef, useImperativeHandle, PropsWithoutRef, RefAttributes } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import { SkeletonAnimations, SkeletonVariants } from '../utils/prop-types'
-import { HTMLAttributes } from 'enzyme'
 
 interface SkeletonBaseProps {
   animation?: SkeletonAnimations | boolean
@@ -19,23 +17,18 @@ const defaultSkeletonProps = {
   style: {} as React.CSSProperties,
 }
 
-type SkeletonNativeAttrs = Omit<React.HTMLAttributes<any>, keyof SkeletonBaseProps>
-export type SkeletonProps = SkeletonBaseProps & typeof defaultSkeletonProps & SkeletonNativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof SkeletonBaseProps>
+export type SkeletonProps = React.PropsWithChildren<SkeletonBaseProps & NativeAttrs>
+type SkeletonPropsWithDefault = SkeletonProps & typeof defaultSkeletonProps
 
-export const SkeletonRender = <T, P>(
-  {
-    children,
-    animation,
-    variant,
-    width,
-    height,
-    style,
-  }: React.PropsWithChildren<T> & SkeletonProps,
-  ref: React.Ref<P | null>,
-) => {
-  const skeletonRef = useRef<P>(null)
-  useImperativeHandle(ref, () => skeletonRef.current)
-
+export const Skeleton: React.FC<SkeletonProps> = ({
+  children,
+  animation,
+  variant,
+  width,
+  height,
+  style,
+}: SkeletonPropsWithDefault) => {
   const hasChildren = Boolean(children)
   let className = `skeleton ${variant}`
 
@@ -136,29 +129,6 @@ export const SkeletonRender = <T, P>(
   )
 }
 
-const Skeleton = React.forwardRef<HTMLAttributes, React.PropsWithChildren<SkeletonBaseProps>>(
-  SkeletonRender,
-)
-
 Skeleton.defaultProps = defaultSkeletonProps
-Skeleton.propTypes = {
-  animation: PropTypes.oneOf(['pulse', 'wave', false]),
-  width: PropTypes.string,
-  height: PropTypes.string,
-  variant: PropTypes.oneOf(['circle', 'rect', 'text']),
-  style: PropTypes.object,
-}
 
-type SkeletonComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
->
-type SkeletonComponentProps = Partial<typeof defaultSkeletonProps> &
-  Omit<SkeletonBaseProps, keyof typeof defaultSkeletonProps> &
-  SkeletonNativeAttrs
-
-const SkeletonComponent = React.memo(Skeleton) as SkeletonComponent<
-  HTMLAttributes,
-  SkeletonComponentProps
->
-
-export default SkeletonComponent
+export default Skeleton
