@@ -6,7 +6,9 @@ export const statusTuple = <T extends ('default' | 'hover' | 'active' | 'disable
 ) => args
 
 const buttonVariants = variantsTuple('solid', 'line', 'text')
+
 const tabVariants = variantsTuple('solid', 'line')
+
 const inputVariants = tuple('solid', 'line')
 
 const buttonColors = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
@@ -14,6 +16,7 @@ const buttonColors = tuple('default', 'primary', 'secondary', 'success', 'warnin
 const tagColors = tuple('default', 'primary', 'secondary', 'success', 'warning', 'error')
 
 const buttonStatus = tuple('default', 'hover', 'active', 'disabled')
+
 const tabStatus = statusTuple('default', 'hover', 'active', 'disabled')
 
 const messageColors = tuple('default', 'primary', 'success', 'warning', 'error')
@@ -59,16 +62,22 @@ const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
 const paginationVariants = tuple('line', 'solid')
 
+const skeletonVariants = tuple('text', 'circle', 'rect')
+
+const skeletonAnimations = tuple('pulse', 'wave')
+
 export type ButtonColors = typeof buttonColors[number]
 
 export type TagColors = typeof tagColors[number]
 
 export type ButtonVariants = typeof buttonVariants[number]
+
 export type TabVarient = typeof tabVariants[number]
 
 export type TagVariants = ButtonVariants
 
 export type ButtonStatus = typeof buttonStatus[number]
+
 export type TabStatus = typeof tabStatus[number]
 
 export type MessageColors = typeof messageColors[number]
@@ -102,4 +111,9 @@ export type Placement = typeof placement[number]
 export type DividerAlign = typeof dividerAlign[number]
 
 export type PaginationVariants = typeof paginationVariants[number]
+
+export type SkeletonVariants = typeof skeletonVariants[number]
+
+export type SkeletonAnimations = typeof skeletonAnimations[number]
+
 export { normalSizes, inputVariants, inputColors, normalTypes, themeTypes }
