@@ -81,13 +81,13 @@ export const Skeleton: React.FC<SkeletonProps> = ({
           .skeleton {
             display: block;
             background-color: #EFF2FA;
-            height: 22px;
+            height: 1.5714rem;
             transform-style: preserve-3d;
           }
           .skeleton.text {
             margin-top: 0;
             margin-bottom: 0;
-            border-radius: 4px;
+            border-radius: 0.2857rem;
           }
           .skeleton.rect {
           }
