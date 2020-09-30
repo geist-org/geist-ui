@@ -1,0 +1,591 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Skeleton should render all variant correctly 1`] = `
+"<div class=\\"skeleton rect wave\\"><style>
+          @keyframes pulse {
+            0% {
+              opacity 1;
+            }
+            50% {
+              opacity 0.5;
+            }
+            100% {
+              opacity 1;
+            }
+          }
+          @keyframes wave {
+            0% {
+              transform: translateX(-100%);
+            }
+            50% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+          .skeleton {
+            display: block;
+            background-color: #EFF2FA;
+            height: 1.5714rem;
+            transform-style: preserve-3d;
+          }
+          .skeleton.text {
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.2857rem;
+          }
+          .skeleton.rect {
+          }
+          .skeleton.circle {
+            border-radius: 50%;
+          }
+          .skeleton.pulse {
+            animation: pulse 1.5s ease-in-out 0.5s infinite;
+          }
+          .skeleton.wave {
+            position: relative;
+            overflow: hidden;
+          }
+          .skeleton.wave::after {
+            animation: wave 1.6s linear 0.5s infinite;
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
+            content: '';
+            position: absolute;
+            transform: translateX(-100%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+          /* Styles applied when the component is passed children and no width. */
+          .skeleton.fitContent {
+            max-width: fit-content;
+          }
+          /* Styles applied when the component is passed children and no height. */
+          .skeleton.heightAuto {
+            height: auto;
+          }
+          .skeleton.withChildren > :global(*) {
+            visibility: hidden;
+          }
+        </style></div>"
+`;
+
+exports[`Skeleton should render all variant correctly 2`] = `
+"<div class=\\"skeleton circle wave\\"><style>
+          @keyframes pulse {
+            0% {
+              opacity 1;
+            }
+            50% {
+              opacity 0.5;
+            }
+            100% {
+              opacity 1;
+            }
+          }
+          @keyframes wave {
+            0% {
+              transform: translateX(-100%);
+            }
+            50% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+          .skeleton {
+            display: block;
+            background-color: #EFF2FA;
+            height: 1.5714rem;
+            transform-style: preserve-3d;
+          }
+          .skeleton.text {
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.2857rem;
+          }
+          .skeleton.rect {
+          }
+          .skeleton.circle {
+            border-radius: 50%;
+          }
+          .skeleton.pulse {
+            animation: pulse 1.5s ease-in-out 0.5s infinite;
+          }
+          .skeleton.wave {
+            position: relative;
+            overflow: hidden;
+          }
+          .skeleton.wave::after {
+            animation: wave 1.6s linear 0.5s infinite;
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
+            content: '';
+            position: absolute;
+            transform: translateX(-100%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+          /* Styles applied when the component is passed children and no width. */
+          .skeleton.fitContent {
+            max-width: fit-content;
+          }
+          /* Styles applied when the component is passed children and no height. */
+          .skeleton.heightAuto {
+            height: auto;
+          }
+          .skeleton.withChildren > :global(*) {
+            visibility: hidden;
+          }
+        </style></div>"
+`;
+
+exports[`Skeleton should render correctly 1`] = `
+"<div class=\\"skeleton text wave\\"><style>
+          @keyframes pulse {
+            0% {
+              opacity 1;
+            }
+            50% {
+              opacity 0.5;
+            }
+            100% {
+              opacity 1;
+            }
+          }
+          @keyframes wave {
+            0% {
+              transform: translateX(-100%);
+            }
+            50% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+          .skeleton {
+            display: block;
+            background-color: #EFF2FA;
+            height: 1.5714rem;
+            transform-style: preserve-3d;
+          }
+          .skeleton.text {
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.2857rem;
+          }
+          .skeleton.rect {
+          }
+          .skeleton.circle {
+            border-radius: 50%;
+          }
+          .skeleton.pulse {
+            animation: pulse 1.5s ease-in-out 0.5s infinite;
+          }
+          .skeleton.wave {
+            position: relative;
+            overflow: hidden;
+          }
+          .skeleton.wave::after {
+            animation: wave 1.6s linear 0.5s infinite;
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
+            content: '';
+            position: absolute;
+            transform: translateX(-100%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+          /* Styles applied when the component is passed children and no width. */
+          .skeleton.fitContent {
+            max-width: fit-content;
+          }
+          /* Styles applied when the component is passed children and no height. */
+          .skeleton.heightAuto {
+            height: auto;
+          }
+          .skeleton.withChildren > :global(*) {
+            visibility: hidden;
+          }
+        </style></div>"
+`;
+
+exports[`Skeleton should render correctly width custom with and height 1`] = `
+"<div class=\\"skeleton text wave\\" style=\\"width: 100px;\\"><style>
+          @keyframes pulse {
+            0% {
+              opacity 1;
+            }
+            50% {
+              opacity 0.5;
+            }
+            100% {
+              opacity 1;
+            }
+          }
+          @keyframes wave {
+            0% {
+              transform: translateX(-100%);
+            }
+            50% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+          .skeleton {
+            display: block;
+            background-color: #EFF2FA;
+            height: 1.5714rem;
+            transform-style: preserve-3d;
+          }
+          .skeleton.text {
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.2857rem;
+          }
+          .skeleton.rect {
+          }
+          .skeleton.circle {
+            border-radius: 50%;
+          }
+          .skeleton.pulse {
+            animation: pulse 1.5s ease-in-out 0.5s infinite;
+          }
+          .skeleton.wave {
+            position: relative;
+            overflow: hidden;
+          }
+          .skeleton.wave::after {
+            animation: wave 1.6s linear 0.5s infinite;
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
+            content: '';
+            position: absolute;
+            transform: translateX(-100%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+          /* Styles applied when the component is passed children and no width. */
+          .skeleton.fitContent {
+            max-width: fit-content;
+          }
+          /* Styles applied when the component is passed children and no height. */
+          .skeleton.heightAuto {
+            height: auto;
+          }
+          .skeleton.withChildren > :global(*) {
+            visibility: hidden;
+          }
+        </style></div>"
+`;
+
+exports[`Skeleton should render correctly width custom with and height 2`] = `
+"<div class=\\"skeleton text wave\\" style=\\"height: 100px;\\"><style>
+          @keyframes pulse {
+            0% {
+              opacity 1;
+            }
+            50% {
+              opacity 0.5;
+            }
+            100% {
+              opacity 1;
+            }
+          }
+          @keyframes wave {
+            0% {
+              transform: translateX(-100%);
+            }
+            50% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+          .skeleton {
+            display: block;
+            background-color: #EFF2FA;
+            height: 1.5714rem;
+            transform-style: preserve-3d;
+          }
+          .skeleton.text {
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.2857rem;
+          }
+          .skeleton.rect {
+          }
+          .skeleton.circle {
+            border-radius: 50%;
+          }
+          .skeleton.pulse {
+            animation: pulse 1.5s ease-in-out 0.5s infinite;
+          }
+          .skeleton.wave {
+            position: relative;
+            overflow: hidden;
+          }
+          .skeleton.wave::after {
+            animation: wave 1.6s linear 0.5s infinite;
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
+            content: '';
+            position: absolute;
+            transform: translateX(-100%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+          /* Styles applied when the component is passed children and no width. */
+          .skeleton.fitContent {
+            max-width: fit-content;
+          }
+          /* Styles applied when the component is passed children and no height. */
+          .skeleton.heightAuto {
+            height: auto;
+          }
+          .skeleton.withChildren > :global(*) {
+            visibility: hidden;
+          }
+        </style></div>"
+`;
+
+exports[`Skeleton should render correctly width custom with and height 3`] = `
+"<div class=\\"skeleton text wave\\" style=\\"width: 100px; height: 100px;\\"><style>
+          @keyframes pulse {
+            0% {
+              opacity 1;
+            }
+            50% {
+              opacity 0.5;
+            }
+            100% {
+              opacity 1;
+            }
+          }
+          @keyframes wave {
+            0% {
+              transform: translateX(-100%);
+            }
+            50% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+          .skeleton {
+            display: block;
+            background-color: #EFF2FA;
+            height: 1.5714rem;
+            transform-style: preserve-3d;
+          }
+          .skeleton.text {
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.2857rem;
+          }
+          .skeleton.rect {
+          }
+          .skeleton.circle {
+            border-radius: 50%;
+          }
+          .skeleton.pulse {
+            animation: pulse 1.5s ease-in-out 0.5s infinite;
+          }
+          .skeleton.wave {
+            position: relative;
+            overflow: hidden;
+          }
+          .skeleton.wave::after {
+            animation: wave 1.6s linear 0.5s infinite;
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
+            content: '';
+            position: absolute;
+            transform: translateX(-100%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+          /* Styles applied when the component is passed children and no width. */
+          .skeleton.fitContent {
+            max-width: fit-content;
+          }
+          /* Styles applied when the component is passed children and no height. */
+          .skeleton.heightAuto {
+            height: auto;
+          }
+          .skeleton.withChildren > :global(*) {
+            visibility: hidden;
+          }
+        </style></div>"
+`;
+
+exports[`Skeleton should render correctly with children 1`] = `
+"<div class=\\"skeleton text wave withChildren fitContent heightAuto\\"><button type=\\"button\\" class=\\"btn  \\"><div class=\\"text \\">Button</div><style>
+        .tag,
+        .btn {
+          box-sizing: border-box;
+          display: inline-block;
+          padding: 0 1.375rem;
+          height: 2.8571rem;
+          line-height: 2.8571rem;
+          min-width: 10rem;
+          width: auto;
+          border-radius: 2px;
+          font-weight: 500;
+          font-size: 1rem;
+          user-select: none;
+          outline: none;
+          text-transform: capitalize;
+          justify-content: center;
+          text-align: center;
+          white-space: nowrap;
+          transition: background-color 200ms ease 0ms, box-shadow 200ms ease 0ms,
+            border 200ms ease 0ms, color 200ms ease 0ms;
+          position: relative;
+          overflow: hidden;
+          color: #444;
+          background-color: #fff;
+          border: 2px
+            solid
+            #ebeced;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          --cfx-ui-button-padding: 1.375rem;
+          --cfx-ui-button-height: 2.8571rem;
+          --cfx-ui-button-color: #444;
+          --cfx-ui-button-bg: #fff;
+        }
+
+        .tag:hover,
+        .btn:hover {
+          color: #444;
+          --cfx-ui-button-color: #444;
+          background-color: #fff;
+          border-color: #aaafbb;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag.active,
+        .tag:active,
+        .btn:active {
+          color: #444;
+          --cfx-ui-button-color: #444;
+          background-color: #fff;
+          border-color: #9b9eac;
+          cursor: pointer;
+          pointer-events: auto;
+          box-shadow: none;
+          transform: translate3d(0px, 0px, 0px);
+        }
+
+        .tag :global(.text),
+        .btn :global(.text) {
+          position: relative;
+          z-index: 1;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          line-height: inherit;
+          top: -2px;
+        }
+
+        .tag :global(.text p),
+        .tag :global(.text pre),
+        .tag :global(.text div),
+        .btn :global(.text p),
+        .btn :global(.text pre),
+        .btn :global(.text div) {
+          margin: 0;
+        }
+        .tag :global(.hidden),
+        .btn :global(.hidden) {
+          visibility: hidden;
+        }
+      </style></button><style>
+          @keyframes pulse {
+            0% {
+              opacity 1;
+            }
+            50% {
+              opacity 0.5;
+            }
+            100% {
+              opacity 1;
+            }
+          }
+          @keyframes wave {
+            0% {
+              transform: translateX(-100%);
+            }
+            50% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(100%);
+            }
+          }
+          .skeleton {
+            display: block;
+            background-color: #EFF2FA;
+            height: 1.5714rem;
+            transform-style: preserve-3d;
+          }
+          .skeleton.text {
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.2857rem;
+          }
+          .skeleton.rect {
+          }
+          .skeleton.circle {
+            border-radius: 50%;
+          }
+          .skeleton.pulse {
+            animation: pulse 1.5s ease-in-out 0.5s infinite;
+          }
+          .skeleton.wave {
+            position: relative;
+            overflow: hidden;
+          }
+          .skeleton.wave::after {
+            animation: wave 1.6s linear 0.5s infinite;
+            background: linear-gradient(90deg, #EFF2FA, #E1E5EE, #EFF2FA);
+            content: '';
+            position: absolute;
+            transform: translateX(-100%);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+          }
+          /* Styles applied when the component is passed children and no width. */
+          .skeleton.fitContent {
+            max-width: fit-content;
+          }
+          /* Styles applied when the component is passed children and no height. */
+          .skeleton.heightAuto {
+            height: auto;
+          }
+          .skeleton.withChildren > :global(*) {
+            visibility: hidden;
+          }
+        </style></div>"
+`;

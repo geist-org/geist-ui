@@ -1,0 +1,125 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, Spacer, Skeleton, Text, Input, Image } from 'components'
+
+export const meta = {
+  title: 'Skeleton',
+  group: 'layout',
+}
+
+## Skeleton
+
+Provide a placeholder while you wait for content to load, or to visualise content that doesn't exist yet.
+
+<Playground
+  desc="Simplest Skeleton usage."
+  scope={{ Skeleton, Spacer }}
+  code={`
+  <>
+    <Skeleton />
+    <Spacer />
+    <Skeleton />
+    <Spacer y="0.5"/>
+    <Skeleton />
+    <Spacer y="0.5"/>
+    <Skeleton width="70%"/>
+  </>
+`}
+/>
+
+<Playground
+  title="Variants"
+  desc="Different type of skeleton."
+  scope={{ Skeleton, Spacer }}
+  code={`
+  <>
+    <Skeleton variant="text"/>
+    <Spacer />
+    <Skeleton variant="rect" width="60px" height="60px"/>
+    <Spacer />
+    <Skeleton variant="circle" width="60px" height="60px"/>
+  </>
+`}
+/>
+
+<Playground
+  title="Animation"
+  desc="Display active animation."
+  scope={{ Skeleton, Spacer }}
+  code={`
+  <>
+    <Skeleton animation="none" />
+    <Spacer />
+    <Skeleton animation="wave" />
+    <Spacer />
+    <Skeleton animation="pulse"  width="60px" height="60px"/>
+  </>
+`}
+/>
+
+<Playground
+  title="Contains sub component"
+  desc="Contains a sub component, skeleton's width and height is same as sub component."
+  scope={{ Skeleton, Button, Input, Text, Spacer, Image }}
+  code={`
+  () => {
+    const url = 'https://vercel.com/api/www/avatar/?u=evilrabbit&s=160'
+    return (
+      <>
+        <Skeleton>
+          <Button />
+        </Skeleton>
+        <Spacer />
+        <Skeleton>
+          <Image src={url} size="medium" />
+        </Skeleton>
+        <Spacer />
+        <Skeleton>
+          <Text span>string</Text>
+        </Skeleton>
+      </>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="Custom width and height"
+  desc="Custom layout width and height for different senatrio."
+  scope={{ Skeleton, Spacer }}
+  code={`
+  <>
+    <Skeleton width="200px" />
+    <Spacer />
+    <Skeleton height="60px" />
+    <Spacer />
+    <Skeleton width="60px" height="60px" />
+  </>
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/components/skeleton.mdx">
+<Attributes.Title>Skeleton.Props</Attributes.Title>
+
+| Attribute     | Description    | Type                 | Accepted values                           | Default   |
+| ------------- | -------------- | -------------------- | ----------------------------------------- | --------- |
+| **variant**   | skeleton type  | `SkeletonVariants`   | [SkeletonVariants](#skeletonVariants)     | `default` |
+| **animation** | animation type | `SkeletonAnimations` | [SkeletonAnimations](#skeletonAnimations) | `pulse`   |
+| **width**     | custom width   | `string`             | -                                         | -         |
+| **height**    | custom height  | `string`             | -                                         | -         |
+| ...           | native props   | `HTMLAttributes`     | `'id', 'className', ...`                  | -         |
+
+<Attributes.Title>SkeletonVariants</Attributes.Title>
+
+```ts
+type SkeletonVariants = 'text' | 'rect' | 'circle'
+```
+
+<Attributes.Title>SkeletonAnimations</Attributes.Title>
+
+```ts
+type SkeletonAnimations = 'pulse' | 'wave' | 'none'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

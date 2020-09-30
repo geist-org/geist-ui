@@ -1,0 +1,125 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, Spacer, Skeleton, Text, Input, Image } from 'components'
+
+export const meta = {
+  title: '骨架屏 Skeleton',
+  group: '布局',
+}
+
+## Skeleton / 骨架屏
+
+在需要等待加载内容的位置提供一个占位图形组合。
+
+<Playground
+  desc="最简单的占位效果。"
+  scope={{ Skeleton, Spacer }}
+  code={`
+  <>
+    <Skeleton />
+    <Spacer />
+    <Skeleton />
+    <Spacer y="0.5"/>
+    <Skeleton />
+    <Spacer y="0.5"/>
+    <Skeleton width="70%"/>
+  </>
+`}
+/>
+
+<Playground
+  title="类型"
+  desc="不同类型的骨架屏"
+  scope={{ Skeleton, Spacer }}
+  code={`
+  <>
+    <Skeleton variant="text"/>
+    <Spacer />
+    <Skeleton variant="rect" width="60px" height="60px"/>
+    <Spacer />
+    <Skeleton variant="circle" width="60px" height="60px"/>
+  </>
+`}
+/>
+
+<Playground
+  title="动画"
+  desc="动画效果"
+  scope={{ Skeleton, Spacer }}
+  code={`
+  <>
+    <Skeleton animation="none" />
+    <Spacer />
+    <Skeleton animation="wave" />
+    <Spacer />
+    <Skeleton animation="pulse"  width="60px" height="60px"/>
+  </>
+`}
+/>
+
+<Playground
+  title="包含子组件"
+  desc="加载占位图包含子组件，默认容器宽高与子元素宽高相同"
+  scope={{ Skeleton, Button, Input, Text, Spacer, Image }}
+  code={`
+  () => {
+    const url = 'https://vercel.com/api/www/avatar/?u=evilrabbit&s=160'
+    return (
+      <>
+        <Skeleton>
+          <Button />
+        </Skeleton>
+        <Spacer />
+        <Skeleton>
+          <Image src={url} size="medium" />
+        </Skeleton>
+        <Spacer />
+        <Skeleton>
+          <Text span>string</Text>
+        </Skeleton>
+      </>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="自定义宽高"
+  desc="可自定义骨架屏宽度和高度"
+  scope={{ Skeleton, Spacer }}
+  code={`
+  <>
+    <Skeleton width="200px" />
+    <Spacer />
+    <Skeleton height="60px" />
+    <Spacer />
+    <Skeleton width="60px" height="60px" />
+  </>
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/components/skeleton.mdx">
+<Attributes.Title>Skeleton.Props</Attributes.Title>
+
+| 属性          | 描述         | 类型                 | 推荐值                                    | 默认      |
+| ------------- | ------------ | -------------------- | ----------------------------------------- | --------- |
+| **variant**   | 骨架屏的类型 | `SkeletonVariants`   | [SkeletonVariants](#skeletonVariants)     | `default` |
+| **animation** | 动画类型     | `SkeletonAnimations` | [SkeletonAnimations](#skeletonAnimations) | `pulse`   |
+| **width**     | 骨架屏的宽度 | `string`             | -                                         | -         |
+| **height**    | 骨架屏的高度 | `string`             | -                                         | -         |
+| ...           | 原生属性     | `HTMLAttributes`     | `'id', 'className', ...`                  | -         |
+
+<Attributes.Title>SkeletonVariants</Attributes.Title>
+
+```ts
+type SkeletonVariants = 'text' | 'rect' | 'circle'
+```
+
+<Attributes.Title>SkeletonAnimations</Attributes.Title>
+
+```ts
+type SkeletonAnimations = 'pulse' | 'wave' | 'none'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
