@@ -47,7 +47,7 @@ export const meta = {
   scope={{ Skeleton, Spacer }}
   code={`
   <>
-    <Skeleton animation={false} />
+    <Skeleton animation="none" />
     <Spacer />
     <Skeleton animation="wave" />
     <Spacer />
@@ -117,7 +117,7 @@ type SkeletonVariants = 'text' | 'rect' | 'circle'
 <Attributes.Title>SkeletonAnimations</Attributes.Title>
 
 ```ts
-type SkeletonAnimations = 'pulse' | 'wave' | 'false'
+type SkeletonAnimations = 'pulse' | 'wave' | 'none'
 ```
 
 </Attributes>

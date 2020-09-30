@@ -64,7 +64,7 @@ const paginationVariants = tuple('line', 'solid')
 
 const skeletonVariants = tuple('text', 'circle', 'rect')
 
-const skeletonAnimations = tuple('pulse', 'wave')
+const skeletonAnimations = tuple('pulse', 'wave', 'none')
 
 export type ButtonColors = typeof buttonColors[number]
 

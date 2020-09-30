@@ -2,7 +2,7 @@ import React from 'react'
 import { SkeletonAnimations, SkeletonVariants } from '../utils/prop-types'
 
 interface SkeletonBaseProps {
-  animation?: SkeletonAnimations | boolean
+  animation?: SkeletonAnimations
   width?: string
   height?: string
   variant?: SkeletonVariants
@@ -32,7 +32,7 @@ export const Skeleton: React.FC<SkeletonProps> = ({
   const hasChildren = Boolean(children)
   let className = `skeleton ${variant}`
 
-  if (animation) {
+  if (animation !== 'none') {
     className += ' ' + animation
   }
   if (hasChildren) {
