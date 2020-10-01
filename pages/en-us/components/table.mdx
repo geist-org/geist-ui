@@ -109,6 +109,7 @@ Display tabular data in format.
   scope={{ Table, Text, Button }}
   code={`
 () => {
+// operation: TableOperation
   const operation = (actions, rowData) => {
     return <Button type="error" auto size="mini" onClick={() => actions.update({ property: 'updated', description:'updated' })}>Update</Button>
   }
@@ -159,7 +160,7 @@ Display tabular data in format.
 
 | Attribute     | Description                                  | Type                                                 | Accepted values                  | Default |
 | ------------- | -------------------------------------------- | ---------------------------------------------------- | -------------------------------- | ------- |
-| **data**      | data source                                  | `Array<any>`                                         | -                                | -       |
+| **data**      | data source                                  | `Array<TableDataSource<any>>`                        | -                                | -       |
 | **emptyText** | displayed text when table's content is empty | `string`                                             | -                                | -       |
 | **hover**     | table's hover effect                         | `boolean`                                            | -                                | `true`  |
 | **onRow**     | callback row's content by click              | `(row: any, index: number) => void`                  | -                                | -       |
