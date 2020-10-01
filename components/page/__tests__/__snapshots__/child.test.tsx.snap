@@ -18,7 +18,7 @@ exports[`PageChild should work with child component 1`] = `
         }
       </style></main><footer class=\\"\\">Footer<style>
         footer {
-          width: 100%;
+          width: calc(100% - 16pt * 2);
           position: absolute;
           bottom: 0;
         }
