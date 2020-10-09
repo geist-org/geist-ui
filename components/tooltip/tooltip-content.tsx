@@ -64,18 +64,59 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
 }) => {
   const theme = useTheme()
   const el = usePortal('tooltip')
+  const updateRectTimer = useRef<number>()
   const selfRef = useRef<HTMLDivElement>(null)
   const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition)
+  const [computedPlacement, setComputedPlacement] = useState<Placement>(placement)
   const colors = useMemo(() => getColors(color, theme.palette), [color, theme.palette])
   if (!parent) return null
 
   const updateRect = () => {
-    const position = getPosition(placement, getRect(parent), offset)
-    setRect(position)
+    const clear = () => {
+      clearTimeout(updateRectTimer.current)
+      updateRectTimer.current = undefined
+    }
+
+    const update = () => {
+      const rect = getRect(parent)
+      const contentRect = getRect(selfRef)
+
+      let newPlacement
+      /* istanbul ignore next */
+      if (
+        placement.includes('left') &&
+        contentRect.left < 0 &&
+        contentRect.right > contentRect.left
+      ) {
+        newPlacement = placement.replace('left', 'right')
+      } else if (
+        placement.includes('right') &&
+        contentRect.right > document.documentElement.clientWidth
+      ) {
+        newPlacement = placement.replace('right', 'left')
+      } else if (
+        placement.includes('top') &&
+        contentRect.top - document.documentElement.scrollTop < contentRect.height
+      ) {
+        newPlacement = placement.replace('top', 'bottom')
+      } else if (
+        placement.includes('bottom') &&
+        contentRect.bottom - document.documentElement.scrollTop >
+          document.documentElement.clientHeight
+      ) {
+        newPlacement = placement.replace('bottom', 'top')
+      }
+      const position = getPosition((newPlacement as Placement) || placement, rect, offset)
+      setComputedPlacement((newPlacement as Placement) || placement)
+      setRect(position)
+      clear()
+    }
+    clear()
+    updateRectTimer.current = window.setTimeout(update, 1)
   }
 
   useResize(updateRect)
-  useClickAnyWhere(() => updateRect())
+  useClickAnyWhere(updateRect)
 
   useEffect(() => {
     updateRect()
@@ -92,7 +133,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
       <div className={`tooltip-content ${className}`} ref={selfRef} onClick={preventHandler}>
         <div className="inner">
           {!hideArrow && (
-            <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={true} />
+            <TooltipIcon placement={computedPlacement} bgColor={colors.bgColor} shadow={true} />
           )}
           {children}
         </div>
@@ -102,6 +143,8 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
             width: auto;
             top: ${rect.top};
             left: ${rect.left};
+            max-width: ${rect.maxWidth};
+            min-width: 8rem;
             transform: ${rect.transform};
             background-color: ${colors.bgColor};
             color: ${colors.color};
@@ -109,6 +152,13 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
             padding: 0;
             z-index: 1000;
             box-shadow: ${theme.expressiveness.D2};
+            visibility: hidden;
+          }
+          .tooltip-content.transition-enter.transition-enter-active {
+            visibility: visible;
+          }
+          .tooltip-content.transition-leave {
+            visibility: hidden;
           }
 
           .inner {

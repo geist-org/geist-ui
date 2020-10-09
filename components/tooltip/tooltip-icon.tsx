@@ -11,9 +11,10 @@ interface Props {
 
 const TooltipIcon: React.FC<Props> = ({ placement, bgColor, shadow }) => {
   const theme = useTheme()
-  const { transform, top, left, right, bottom } = useMemo(() => getIconPosition(placement, 3), [
-    placement,
-  ])
+  const { transform, top, left, right, bottom } = useMemo(
+    () => getIconPosition(placement, 3, `calc(${theme.layout.gapHalf} * 1.5)`),
+    [placement],
+  )
   const bgColorWithDark = useMemo(() => {
     if (!shadow || theme.type !== 'dark') return bgColor
     return theme.palette.accents_2

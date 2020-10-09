@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 import { Button, Tooltip, CfxProvider } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
@@ -10,6 +10,23 @@ const expectTooltipIsShow = (wrapper: ReactWrapper) => {
 
 const expectTooltipIsHidden = (wrapper: ReactWrapper) => {
   expect(wrapper.find('.inner').length).toBe(0)
+}
+
+const simulateNativeClick = (el: Element) => {
+  el.dispatchEvent(
+    new MouseEvent('click', {
+      view: window,
+      bubbles: true,
+      cancelable: true,
+    }),
+  )
+}
+
+const clickAway = async (wrapper: typeof typeWrapper) => {
+  await act(async () => {
+    simulateNativeClick(document.body)
+  })
+  await updateWrapper(wrapper, 150)
 }
 
 describe('Tooltip', () => {
@@ -29,8 +46,38 @@ describe('Tooltip', () => {
 
     await updateWrapper(wrapper, 150)
     wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent)
-    await updateWrapper(wrapper, 150)
+    await updateWrapper(wrapper, 400)
     expectTooltipIsHidden(wrapper)
+  })
+
+  it('should call custom mouse event handler when is controlled', async () => {
+    const onMouseEnter = jest.fn()
+    const onMouseLeave = jest.fn()
+    const onClickAway = jest.fn()
+    const wrapper = mount(
+      <CfxProvider theme={{ type: 'dark' }}>
+        <div>
+          <div id="click-away">click away</div>
+          <Tooltip
+            visible
+            text={<p id="test">custom-content</p>}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onClickAway={onClickAway}>
+            some tips
+          </Tooltip>
+        </div>
+      </CfxProvider>,
+    )
+
+    wrapper.find('.tooltip').simulate('mouseEnter', nativeEvent)
+    expect(onMouseEnter).toBeCalledTimes(1)
+
+    wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent)
+    expect(onMouseLeave).toBeCalledTimes(1)
+
+    await clickAway(wrapper)
+    expect(onClickAway).toBeCalledTimes(1)
   })
 
   it('should render text when hover it', async () => {
@@ -44,7 +91,7 @@ describe('Tooltip', () => {
     expectTooltipIsShow(wrapper)
 
     wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent)
-    await updateWrapper(wrapper, 150)
+    await updateWrapper(wrapper, 400)
     expectTooltipIsHidden(wrapper)
   })
 
@@ -71,7 +118,7 @@ describe('Tooltip', () => {
       )
     })
 
-    await updateWrapper(wrapper, 150)
+    await updateWrapper(wrapper, 400)
     expectTooltipIsHidden(wrapper)
   })
 

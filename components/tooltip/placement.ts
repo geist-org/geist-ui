@@ -13,12 +13,14 @@ export interface TooltipPosition {
   top: string
   left: string
   transform: string
+  maxWidth: string
 }
 
 export const defaultTooltipPosition = {
   top: '-1000px',
   left: '-1000px',
   transform: 'none',
+  maxWidth: 'auto',
 }
 
 export interface TooltipIconPosition {
@@ -38,68 +40,84 @@ export const getPosition = (
     top: {
       top: `${rect.top - offset}px`,
       left: `${rect.left + rect.width / 2}px`,
+      maxWidth: `${2 * (rect.left + rect.width / 2)}px`,
       transform: 'translate(-50%, -100%)',
     },
     topStart: {
       top: `${rect.top - offset}px`,
       left: `${rect.left}px`,
+      maxWidth: `${2 * rect.left}px`,
       transform: 'translate(0, -100%)',
     },
     topEnd: {
       top: `${rect.top - offset}px`,
       left: `${rect.left + rect.width}px`,
+      maxWidth: `${2 * (rect.left + rect.width)}px`,
       transform: 'translate(-100%, -100%)',
     },
     bottom: {
       top: `${rect.bottom + offset}px`,
       left: `${rect.left + rect.width / 2}px`,
+      maxWidth: `${2 * (rect.left + rect.width / 2)}px`,
       transform: 'translate(-50%, 0)',
     },
     bottomStart: {
       top: `${rect.bottom + offset}px`,
       left: `${rect.left}px`,
+      maxWidth: `${2 * rect.left}px`,
       transform: 'translate(0, 0)',
     },
     bottomEnd: {
       top: `${rect.bottom + offset}px`,
       left: `${rect.left + rect.width}px`,
+      maxWidth: `${2 * (rect.left + rect.width)}px`,
       transform: 'translate(-100%, 0)',
     },
     left: {
       top: `${rect.top + rect.height / 2}px`,
       left: `${rect.left - offset}px`,
+      maxWidth: `${rect.left - offset}px`,
       transform: 'translate(-100%, -50%)',
     },
     leftStart: {
       top: `${rect.top}px`,
       left: `${rect.left - offset}px`,
+      maxWidth: `${rect.left - offset}px`,
       transform: 'translate(-100%, 0)',
     },
     leftEnd: {
       top: `${rect.top + rect.height}px`,
       left: `${rect.left - offset}px`,
+      maxWidth: `${rect.left - offset}px`,
       transform: 'translate(-100%, -100%)',
     },
     right: {
       top: `${rect.top + rect.height / 2}px`,
       left: `${rect.right + offset}px`,
+      maxWidth: `${document.documentElement.clientWidth - (rect.right + offset)}px`,
       transform: 'translate(0, -50%)',
     },
     rightStart: {
       top: `${rect.top}px`,
       left: `${rect.right + offset}px`,
+      maxWidth: `${document.documentElement.clientWidth - (rect.right + offset)}px`,
       transform: 'translate(0, 0)',
     },
     rightEnd: {
       top: `${rect.top + rect.height}px`,
       left: `${rect.right + offset}px`,
+      maxWidth: `${document.documentElement.clientWidth - (rect.right + offset)}px`,
       transform: 'translate(0, -100%)',
     },
   }
-  return positions[placement] || (positions.top as TooltipPosition)
+  return positions[placement]
 }
 
-export const getIconPosition = (placement: Placement, offset: number): TooltipIconPosition => {
+export const getIconPosition = (
+  placement: Placement,
+  offset: number,
+  padding: string,
+): TooltipIconPosition => {
   const positions: { [key in Placement]?: TooltipIconPosition } = {
     top: {
       top: 'auto',
@@ -117,7 +135,7 @@ export const getIconPosition = (placement: Placement, offset: number): TooltipIc
     },
     topEnd: {
       top: 'auto',
-      right: 'auto',
+      right: padding,
       left: 'auto',
       bottom: `${offset}px`,
       transform: 'translate(0, 100%) rotate(-90deg)',
@@ -138,7 +156,7 @@ export const getIconPosition = (placement: Placement, offset: number): TooltipIc
     },
     bottomEnd: {
       top: `${offset}px`,
-      right: 'auto',
+      right: padding,
       left: 'auto',
       bottom: 'auto',
       transform: 'translate(0, -100%) rotate(90deg)',
@@ -151,7 +169,7 @@ export const getIconPosition = (placement: Placement, offset: number): TooltipIc
       transform: 'translate(100%, -50%) rotate(180deg)',
     },
     leftStart: {
-      top: '10%',
+      top: padding,
       right: '1px',
       left: 'auto',
       bottom: 'auto',
@@ -161,7 +179,7 @@ export const getIconPosition = (placement: Placement, offset: number): TooltipIc
       top: 'auto',
       right: '1px',
       left: 'auto',
-      bottom: '10%',
+      bottom: padding,
       transform: 'translate(100%, 0) rotate(180deg)',
     },
     right: {
@@ -172,7 +190,7 @@ export const getIconPosition = (placement: Placement, offset: number): TooltipIc
       transform: 'translate(-100%, -50%) rotate(0deg)',
     },
     rightStart: {
-      top: '10%',
+      top: padding,
       right: 'auto',
       left: '1px',
       bottom: 'auto',
@@ -182,7 +200,7 @@ export const getIconPosition = (placement: Placement, offset: number): TooltipIc
       top: 'auto',
       right: 'auto',
       left: '1px',
-      bottom: '10%',
+      bottom: padding,
       transform: 'translate(-100%, 0) rotate(0deg)',
     },
   }

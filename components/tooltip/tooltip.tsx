@@ -38,7 +38,7 @@ export const defaultProps = {
   trigger: 'hover' as TriggerTypes,
   placement: 'top' as Placement,
   enterDelay: 100,
-  leaveDelay: 0,
+  leaveDelay: 200,
   offset: 12,
   className: '',
   portalClassName: '',
