@@ -104,6 +104,32 @@ Display tabular data in format.
 />
 
 <Playground
+  title="update row"
+  desc="You can use custom elements to update a specific row."
+  scope={{ Table, Text, Button }}
+  code={`
+() => {
+// operation: TableOperation
+  const operation = (actions, rowData) => {
+    return <Button type="error" auto size="mini" onClick={() => actions.update({ property: 'updated', description:'updated' })}>Update</Button>
+  }
+  const data = [
+    { property: 'type', description: 'Content type', operation },
+    { property: 'Component', description: 'DOM element to use', operation },
+    { property: <Text b>bold</Text>, description: 'Bold style', operation },
+  ]
+  return (
+    <Table data={data}>
+      <Table.Column prop="property" label="property" />
+      <Table.Column prop="description" label="description" />
+      <Table.Column prop="operation" label="operation" width={150} />
+    </Table>
+  )
+}
+`}
+/>
+
+<Playground
   title="custom head"
   scope={{ Table, Code, Text }}
   code={`
@@ -134,7 +160,7 @@ Display tabular data in format.
 
 | Attribute     | Description                                  | Type                                                 | Accepted values                  | Default |
 | ------------- | -------------------------------------------- | ---------------------------------------------------- | -------------------------------- | ------- |
-| **data**      | data source                                  | `Array<any>`                                         | -                                | -       |
+| **data**      | data source                                  | `Array<TableDataSource<any>>`                        | -                                | -       |
 | **emptyText** | displayed text when table's content is empty | `string`                                             | -                                | -       |
 | **hover**     | table's hover effect                         | `boolean`                                            | -                                | `true`  |
 | **onRow**     | callback row's content by click              | `(row: any, index: number) => void`                  | -                                | -       |
