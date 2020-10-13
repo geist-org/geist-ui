@@ -12,7 +12,8 @@ const defaultProps = {
   disabled: false,
 }
 
-export type TabsItemProps = Props & typeof defaultProps
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
+export type TabsItemProps = Props & typeof defaultProps & NativeAttrs
 
 const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
   children,
