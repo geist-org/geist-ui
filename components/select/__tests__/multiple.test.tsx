@@ -15,6 +15,26 @@ describe('Select Multiple', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should render correctly with clearable option', () => {
+    const wrapper = mount(
+      <Select multiple initialValue={['1']}>
+        <Select.Option value="1">1</Select.Option>
+        <Select.Option value="2">Option 2</Select.Option>
+      </Select>,
+    )
+    expect(wrapper.find('.clear-icon').length).toBe(1)
+  })
+
+  it('should render correctly without clearable option', () => {
+    const wrapper = mount(
+      <Select multiple clearable={false} initialValue={['1']}>
+        <Select.Option value="1">1</Select.Option>
+        <Select.Option value="2">Option 2</Select.Option>
+      </Select>,
+    )
+    expect(wrapper.find('.clear-icon').length).toBe(0)
+  })
+
   it('should render value with initial-value', () => {
     const wrapper = mount(
       <Select initialValue={['1', '2']} multiple>
