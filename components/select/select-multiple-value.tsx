@@ -5,7 +5,7 @@ import SelectClearIcon from './select-icon-clear'
 
 interface Props {
   disabled: boolean
-  onClear: () => void | null
+  onClear: (() => void) | null
   size: string
 }
 
