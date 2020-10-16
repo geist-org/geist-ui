@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import Link from '../link'
 import { Props as LinkProps } from '../link/link'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'

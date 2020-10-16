@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { Toast } from './use-toast'
 import Button from '../button'
 import { NormalTypes } from '../utils/prop-types'

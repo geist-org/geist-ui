@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import Avatar from '../avatar'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import UserLink from './user-link'
 
 interface Props {

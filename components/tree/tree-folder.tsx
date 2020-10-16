@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { setChildrenProps } from '../utils/collections'
 import TreeFile from './tree-file'

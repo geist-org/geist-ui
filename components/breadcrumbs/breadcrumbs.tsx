@@ -1,5 +1,5 @@
 import React, { ReactNode, useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import BreadcrumbsItem from './breadcrumbs-item'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
 import { addColorAlpha } from '../utils/color'

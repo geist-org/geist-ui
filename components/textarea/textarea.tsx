@@ -1,5 +1,5 @@
 import React, { useRef, useImperativeHandle, useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from '../input/styles'

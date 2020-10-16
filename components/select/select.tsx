@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { NormalSizes } from '../utils/prop-types'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import useClickAway from '../utils/use-click-away'
 import useCurrentState from '../utils/use-current-state'
 import { pickChildByProps } from '../utils/collections'
