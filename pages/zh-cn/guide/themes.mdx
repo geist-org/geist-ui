@@ -153,13 +153,14 @@ const MyPage = () => (
 ```jsx
 import { useTheme } from '@geist-ui/react'
 
-const currentTheme = useTheme()
-
-const MyComponent = () => (
-  <div style={{ color: currentTheme.palette.success }}>
-    <span>hello world!</span>
-  </div>
-)
+const MyComponent = () => {
+  const theme = useTheme()
+  return (
+    <div style={{ color: theme.palette.success }}>
+      <span>hello world!</span>
+    </div>
+  )
+}
 ```
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>
