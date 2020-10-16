@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useGeistUIContext } from '../utils/use-geist-ui-context'
 import { Toast } from './use-toast'
 import ToastItem from './toast-item'

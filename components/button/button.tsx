@@ -7,7 +7,7 @@ import React, {
   PropsWithoutRef,
   RefAttributes,
 } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
 import { ButtonTypes, NormalSizes } from '../utils/prop-types'

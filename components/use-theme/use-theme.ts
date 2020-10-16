@@ -1,6 +1,6 @@
 import React from 'react'
 import ThemeContext from './theme-context'
-import { GeistUIThemes } from '../themes/index'
+import { GeistUIThemes } from '../styles/themes/index'
 
 const useTheme = (): GeistUIThemes => React.useContext<GeistUIThemes>(ThemeContext)
 

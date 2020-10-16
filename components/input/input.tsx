@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import InputLabel from './input-label'
 import InputBlockLabel from './input-block-label'
 import InputIcon from './input-icon'

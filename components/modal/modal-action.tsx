@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from 'react'
 import css from 'styled-jsx/css'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useModalContext } from './modal-context'
 import Button, { ButtonProps } from '../button/button'
 

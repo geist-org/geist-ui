@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import ImageSkeleton from './image.skeleton'
 import ImageBrowser from './image-browser'
 import useRealShape from '../utils/use-real-shape'

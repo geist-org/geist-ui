@@ -1,9 +1,9 @@
 import React, { PropsWithChildren } from 'react'
-import useTheme from '../use-theme'
+import useTheme from '../../use-theme'
 import darkTheme from '../themes/dark'
 import lightTheme from '../themes/default'
 import { GeistUIThemes } from '../themes/index'
-import ThemeContext from '../use-theme/theme-context'
+import ThemeContext from '../../use-theme/theme-context'
 import useWarning from '../../utils/use-warning'
 import { DeepPartial } from '../../utils/types'
 

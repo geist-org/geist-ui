@@ -1,5 +1,5 @@
 import React, { MouseEvent, useCallback, useMemo, useRef, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import useClickAway from '../utils/use-click-away'
 import { getColor } from './styles'
 import ButtonDropdownIcon from './icon'
