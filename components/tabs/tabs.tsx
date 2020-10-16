@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import TabsItem from './tabs-item'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { TabsLabelItem, TabsConfig, TabsContext } from './tabs-context'
 
 interface Props {

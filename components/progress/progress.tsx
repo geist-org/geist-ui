@@ -1,6 +1,6 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useProportions } from '../utils/calculations'
 import { GeistUIThemesPalette } from 'components/styles/themes'
 import { NormalTypes } from 'components/utils/prop-types'

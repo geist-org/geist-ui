@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 
 const ModalActions: React.FC<React.PropsWithChildren<{}>> = ({ children, ...props }) => {
   const theme = useTheme()

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { CardTypes } from '../utils/prop-types'
 import { getStyles } from './styles'
 import CardFooter from './card-footer'

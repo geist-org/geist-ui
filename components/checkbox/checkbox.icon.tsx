@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 
 interface Props {
   disabled?: boolean

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import CollapseIcon from './collapse-icon'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import Expand from '../shared/expand'
 import { useCollapseContext } from './collapse-context'
 import useCurrentState from '../utils/use-current-state'

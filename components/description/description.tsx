@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 
 interface Props {
   title?: ReactNode | string

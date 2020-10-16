@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import FieldsetFooterStatus from './fieldset-footer-status'
 import FieldsetFooterActions from './fieldset-footer-actions'
 

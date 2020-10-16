@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { getIconPosition } from './placement'
 import { Placement } from '../utils/prop-types'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 
 interface Props {
   placement: Placement
