@@ -19,6 +19,7 @@ module.exports = {
     '!components/**/styles.{ts,tsx}',
     '!components/**/*types.{ts,tsx}',
     '!components/styles/*',
+    '!components/use-theme/*',
     '!components/index.ts',
     '!components/utils/*',
   ],
