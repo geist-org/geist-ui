@@ -1,6 +1,6 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import TableCell from './table-cell'
 import { useTableContext } from './table-context'
 

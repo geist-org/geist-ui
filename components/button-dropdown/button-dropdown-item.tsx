@@ -1,5 +1,5 @@
 import React, { MouseEvent, useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { getColor } from './styles'
 import { useButtonDropdown } from './button-dropdown-context'

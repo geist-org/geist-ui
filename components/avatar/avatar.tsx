@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { NormalSizes } from '../utils/prop-types'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import AvatarGroup from './avatar-group'
 
 interface Props {

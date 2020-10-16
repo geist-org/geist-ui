@@ -1,5 +1,5 @@
 import React, { useMemo, useRef } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { SnippetTypes, CopyTypes, NormalTypes } from '../utils/prop-types'
 import { getStyles } from './styles'

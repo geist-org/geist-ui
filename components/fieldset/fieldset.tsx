@@ -1,5 +1,5 @@
 import React, { ReactNode, useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import FieldsetTitle from './fieldset-title'
 import FieldsetSubtitle from './fieldset-subtitle'
 import FieldsetFooter from './fieldset-footer'

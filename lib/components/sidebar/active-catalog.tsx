@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import useTheme from 'components/styles/use-theme'
+import useTheme from 'components/use-theme'
 
 export interface Props {
   name: string

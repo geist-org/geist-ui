@@ -1,5 +1,5 @@
 import React, { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import useDrag, { DraggingEvent } from '../utils/use-drag'
 import useCurrentState from '../utils/use-current-state'
