@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
 import CSSTransition from '../shared/css-transition'

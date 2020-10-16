@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useRadioContext } from './radio-context'
 import RadioGroup, { getRadioSize } from './radio-group'
 import RadioDescription from './radio-description'

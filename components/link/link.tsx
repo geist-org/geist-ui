@@ -1,6 +1,6 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import useWarning from '../utils/use-warning'
 import LinkIcon from './icon'
 import { addColorAlpha } from '../utils/color'

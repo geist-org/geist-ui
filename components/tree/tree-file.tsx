@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import TreeFileIcon from './tree-file-icon'
 import { useTreeContext } from './tree-context'
 import TreeIndents from './tree-indents'

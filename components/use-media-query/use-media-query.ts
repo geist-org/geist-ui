@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { tuple } from '../utils/prop-types'
 import { BreakpointsItem, GeistUIThemesBreakpoints } from '../styles/themes'
 
