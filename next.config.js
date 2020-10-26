@@ -59,6 +59,11 @@ const nextConfig = {
         permanent: true,
         destination: '/en-us',
       },
+      {
+        source: '/icons',
+        permanent: true,
+        destination: '/en-us/components/icons',
+      },
     ]
   },
 }
