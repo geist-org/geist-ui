@@ -1,0 +1,363 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Window should render correctly 1`] = `
+"<div class=\\"window-container\\"><div class=\\"window-header\\"><div style=\\"margin-left: 8pt;\\" class=\\"window-header-traffic\\"><span style=\\"--window-icon-color: #ff5f56; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #ffbd2e; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #27c93f; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><style>
+        .window-header-traffic {
+          display: block;
+        }
+        .window-traffic-icon {
+          border-radius: 50%;
+          display: inline-block;
+          height: 12px;
+          width: 12px;
+          background-color: var(--window-icon-color);
+        }
+      </style></div><style>
+        .window-header {
+          display: flex;
+          flex-basis: 40px;
+          width: 100%;
+          color: #666;
+          align-items: center;
+          position: relative;
+          border-bottom: 1px solid #eaeaea;
+        }
+      </style></div><div class=\\"window-body\\">body</div><style>
+          .window-title {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: undefinedpx;
+            left: 0;
+            width: 100%;
+          }
+          .window-body {
+            flex: 1 1;
+            width: 100%;
+            padding-top: 8pt;
+            overflow: auto;
+          }
+          .window-tabs {
+            display: flex;
+            position: absolute;
+            left: 80px;
+            font-size: 12px;
+            bottom: -1px;
+          }
+        </style><style>
+        .window-container {
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          border-radius: 5px;
+          overflow: hidden;
+          max-width: 100%;
+          height: 240px;
+          width: 100%;
+          position: relative;
+          background-color: #fff;
+          color: #000;
+        }
+      </style></div>"
+`;
+
+exports[`Window should support tabs 1`] = `
+"<div class=\\"window-container\\"><div class=\\"window-header\\"><div style=\\"margin-left: 8pt;\\" class=\\"window-header-traffic\\"><span style=\\"--window-icon-color: #ff5f56; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #ffbd2e; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #27c93f; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><style>
+        .window-header-traffic {
+          display: block;
+        }
+        .window-traffic-icon {
+          border-radius: 50%;
+          display: inline-block;
+          height: 12px;
+          width: 12px;
+          background-color: var(--window-icon-color);
+        }
+      </style></div><div class=\\"window-tabs\\"><div class=\\"window-tab active\\">index.js</div><div class=\\"window-tab\\">about.js</div><style>
+        .window-tab {
+          display: inline-flex;
+          padding: -10px 20px;
+          border: 1px solid transparent;
+        }
+        .window-tab.active {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          border-bottom: 1px solid #eaeaea;
+          border: 1px solid #eaeaea;
+          border-bottom-color: #fff;
+          background: #fff;
+        }
+      </style></div><style>
+        .window-header {
+          display: flex;
+          flex-basis: 40px;
+          width: 100%;
+          color: #666;
+          align-items: center;
+          position: relative;
+          border-bottom: 1px solid #eaeaea;
+        }
+      </style></div><div class=\\"window-body\\">body</div><style>
+          .window-title {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: undefinedpx;
+            left: 0;
+            width: 100%;
+          }
+          .window-body {
+            flex: 1 1;
+            width: 100%;
+            padding-top: 8pt;
+            overflow: auto;
+          }
+          .window-tabs {
+            display: flex;
+            position: absolute;
+            left: 80px;
+            font-size: 12px;
+            bottom: -1px;
+          }
+        </style><style>
+        .window-container {
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          border-radius: 5px;
+          overflow: hidden;
+          max-width: 100%;
+          height: 240px;
+          width: 100%;
+          position: relative;
+          background-color: #fff;
+          color: #000;
+        }
+      </style></div>"
+`;
+
+exports[`Window should support title 1`] = `
+"<div class=\\"window-container\\"><div class=\\"window-header\\"><div style=\\"margin-left: 8pt;\\" class=\\"window-header-traffic\\"><span style=\\"--window-icon-color: #ff5f56; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #ffbd2e; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #27c93f; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><style>
+        .window-header-traffic {
+          display: block;
+        }
+        .window-traffic-icon {
+          border-radius: 50%;
+          display: inline-block;
+          height: 12px;
+          width: 12px;
+          background-color: var(--window-icon-color);
+        }
+      </style></div><div class=\\"window-title\\">Title</div><style>
+        .window-header {
+          display: flex;
+          flex-basis: 40px;
+          width: 100%;
+          color: #666;
+          align-items: center;
+          position: relative;
+          border-bottom: 1px solid #eaeaea;
+        }
+      </style></div><div class=\\"window-body\\">body</div><style>
+          .window-title {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: undefinedpx;
+            left: 0;
+            width: 100%;
+          }
+          .window-body {
+            flex: 1 1;
+            width: 100%;
+            padding-top: 8pt;
+            overflow: auto;
+          }
+          .window-tabs {
+            display: flex;
+            position: absolute;
+            left: 80px;
+            font-size: 12px;
+            bottom: -1px;
+          }
+        </style><style>
+        .window-container {
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          border-radius: 5px;
+          overflow: hidden;
+          max-width: 100%;
+          height: 240px;
+          width: 100%;
+          position: relative;
+          background-color: #fff;
+          color: #000;
+        }
+      </style></div>"
+`;
+
+exports[`Window should support url 1`] = `
+"<div class=\\"window-container\\"><div class=\\"window-header\\"><div style=\\"margin-left: 8pt;\\" class=\\"window-header-traffic\\"><span style=\\"--window-icon-color: #ff5f56; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #ffbd2e; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #27c93f; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><style>
+        .window-header-traffic {
+          display: block;
+        }
+        .window-traffic-icon {
+          border-radius: 50%;
+          display: inline-block;
+          height: 12px;
+          width: 12px;
+          background-color: var(--window-icon-color);
+        }
+      </style></div><div class=\\"window-title\\"><div class=\\"browser-bar\\"><div style=\\"flex-basis: 140px; flex-shrink: 0;\\"></div><div class=\\"browser-input\\"><i style=\\"color: rgb(41, 188, 155);\\" class=\\"browser_lock\\"><svg width=\\"12\\" height=\\"12\\" viewBox=\\"0 0 24 24\\" fill=\\"currentColor\\">
+        <path d=\\"M5 10.2H19V21H5V10.2Z\\"></path>
+        <path fill-rule=\\"evenodd\\" clip-rule=\\"evenodd\\" d=\\"M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z\\"></path>
+    </svg></i><a class=\\"url-text\\" href=\\"react.geist-ui.dev\\" target=\\"_blank\\" rel=\\"noreferrer noopener\\">react.geist-ui.dev</a><i class=\\"browser_refresh\\"><svg viewBox=\\"0 0 24 24\\" width=\\"12\\" height=\\"12\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\" style=\\"color: currentcolor;\\">
+        <path d=\\"M23 4v6h-6\\"></path>
+        <path d=\\"M20.49 15a9 9 0 11-2.12-9.36L23 10\\"></path>
+    </svg></i></div><div style=\\"flex-basis: 140px; flex-shrink: 0;\\"></div><style>
+        .browser-bar {
+          flex: 1 1;
+          color: #000;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .browser-input {
+          flex: 1 1;
+          background: #fafafa;
+          border-radius: 3px;
+          height: 70%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 8pt;
+          position: relative;
+        }
+        .url-text {
+          white-space: nowrap;
+          line-height: 1.25rem;
+          font-size: 0.75rem;
+          flex: 1 1;
+          margin: 0 4pt;
+          max-width: 100%;
+          display: block;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          color: #000;
+        }
+      </style></div></div><style>
+        .window-header {
+          display: flex;
+          flex-basis: 40px;
+          width: 100%;
+          color: #666;
+          align-items: center;
+          position: relative;
+          border-bottom: 1px solid #eaeaea;
+        }
+      </style></div><div class=\\"window-body\\">body</div><style>
+          .window-title {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: undefinedpx;
+            left: 0;
+            width: 100%;
+          }
+          .window-body {
+            flex: 1 1;
+            width: 100%;
+            padding-top: 8pt;
+            overflow: auto;
+          }
+          .window-tabs {
+            display: flex;
+            position: absolute;
+            left: 80px;
+            font-size: 12px;
+            bottom: -1px;
+          }
+        </style><style>
+        .window-container {
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          border-radius: 5px;
+          overflow: hidden;
+          max-width: 100%;
+          height: 240px;
+          width: 100%;
+          position: relative;
+          background-color: #fff;
+          color: #000;
+        }
+      </style></div>"
+`;
+
+exports[`Window support width headerWidth height props 1`] = `
+"<div class=\\"window-container\\"><div class=\\"window-header\\"><div style=\\"margin-left: 8pt;\\" class=\\"window-header-traffic\\"><span style=\\"--window-icon-color: #ff5f56; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #ffbd2e; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><span style=\\"--window-icon-color: #27c93f; margin-left: 8px;\\" class=\\"window-traffic-icon\\"></span><style>
+        .window-header-traffic {
+          display: block;
+        }
+        .window-traffic-icon {
+          border-radius: 50%;
+          display: inline-block;
+          height: 12px;
+          width: 12px;
+          background-color: var(--window-icon-color);
+        }
+      </style></div><style>
+        .window-header {
+          display: flex;
+          flex-basis: 48px;
+          width: 100%;
+          color: #666;
+          align-items: center;
+          position: relative;
+          border-bottom: 1px solid #eaeaea;
+        }
+      </style></div><div class=\\"window-body\\">body</div><style>
+          .window-title {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 48pxpx;
+            left: 0;
+            width: 100%;
+          }
+          .window-body {
+            flex: 1 1;
+            width: 100%;
+            padding-top: 8pt;
+            overflow: auto;
+          }
+          .window-tabs {
+            display: flex;
+            position: absolute;
+            left: 80px;
+            font-size: 12px;
+            bottom: -1px;
+          }
+        </style><style>
+        .window-container {
+          display: flex;
+          flex-direction: column;
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+          border-radius: 5px;
+          overflow: hidden;
+          max-width: 100%;
+          height: 360px;
+          width: 480px;
+          position: relative;
+          background-color: #fff;
+          color: #000;
+        }
+      </style></div>"
+`;

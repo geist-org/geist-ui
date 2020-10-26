@@ -1,0 +1,60 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Window, Spacer, Row } from 'components'
+
+export const meta = {
+  title: 'Window',
+  group: 'Surfaces',
+}
+
+## Window
+
+Display content inside of a generic window frame.
+
+<Playground scope={{ Window }} code={`<Window />`} />
+
+<Playground
+  title="Title"
+  scope={{ Window }}
+  code={`<Window title="Title" height={240} headerHeight={36} />`}
+/>
+
+<Playground title="Url" scope={{ Window }} code={`<Window url="react.geist-ui.dev" />`} />
+
+<Playground
+  title="Tabs"
+  scope={{ Window }}
+  code={`<Window
+    tabs={[
+{
+    title: 'index.js',
+    value: 'index',
+},
+{
+    title: 'about.js',
+    value: 'about',
+},
+    ]}
+    selected="index"
+    height={240}
+    headerHeight={40}
+    />
+    `}
+/>
+
+<Attributes edit="/pages/en-us/components/window.mdx">
+<Attributes.Title>Window.Props</Attributes.Title>
+
+| Attribute        | Description               | Type                              | Accepted values | Default |
+| ---------------- | ------------------------- | --------------------------------- | --------------- | ------- |
+| **width**        | window width              | `number` / `string`               | -               | `100%`  |
+| **height**       | window height             | `number` / `string`               | -               | `240`   |
+| **headerHeight** | window header height      | `number` / `string`               | -               | `40`    |
+| **title**        | window title text         | `string`                          | -               | -       |
+| **url**          | window url text           | `string`                          | -               | -       |
+| **tabs**         | window tabs               | `{title: string, value:string}[]` | -               | -       |
+| **selected**     | window selected tab value | `string`                          | -               | -       |
+| ...              | native props              | `HTMLAttributes`                  | -               | -       |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
