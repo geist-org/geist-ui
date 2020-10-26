@@ -1,5 +1,5 @@
 import React, { HTMLAttributes, PropsWithChildren } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useWindowContext } from './window-context'
 
 export const WindowContainer: React.FC<PropsWithChildren<{ nativeAttrs: HTMLAttributes<any> }>> = ({

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, RefObject } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { WindowTraffic } from './window-traffic'
 import { useWindowContext } from './window-context'
 

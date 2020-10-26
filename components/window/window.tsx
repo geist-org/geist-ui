@@ -1,5 +1,5 @@
 import React, { PropsWithChildren, ReactNode, useMemo, useRef } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { WindowContainer } from './window-container'
 import { WindowHeader } from './window-header'
 import { BrowserBar } from './browser-bar'

@@ -3,17 +3,14 @@ import React, { CSSProperties } from 'react'
 export const WindowTraffic: React.FC<{ style: CSSProperties }> = ({ style }) => {
   return (
     <div style={style} className="window-header-traffic">
-      {/* @ts-ignore */}
       <span
-        style={{ '--window-icon-color': '#ff5f56', marginLeft: 8 }}
+        style={{ '--window-icon-color': '#ff5f56', marginLeft: 8 } as CSSProperties}
         className="window-traffic-icon"></span>
-      {/* @ts-ignore */}
       <span
-        style={{ '--window-icon-color': '#ffbd2e', marginLeft: 8 }}
+        style={{ '--window-icon-color': '#ffbd2e', marginLeft: 8 } as CSSProperties}
         className="window-traffic-icon"></span>
-      {/* @ts-ignore */}
       <span
-        style={{ '--window-icon-color': '#27c93f', marginLeft: 8 }}
+        style={{ '--window-icon-color': '#27c93f', marginLeft: 8 } as CSSProperties}
         className="window-traffic-icon"></span>
       <style jsx>{`
         .window-header-traffic {

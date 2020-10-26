@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { LockIcon } from './https-lock-icon'
 import { RefreshIcon } from './browser-refresh'
 
