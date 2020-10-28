@@ -76,3 +76,18 @@ describe('Select Multiple', () => {
     changeHandler.mockRestore()
   })
 })
+
+it('should trigger event correctly when clicked', async () => {
+  const changeHandler = jest.fn()
+  const wrapper = mount(
+    <Select onChange={changeHandler} multiple initialValue={['1']}>
+      <Select.Option value="1">1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>,
+  )
+  expect(wrapper.find('.clear-icon').length).toBe(1)
+  wrapper.find('.clear-icon').simulate('click', nativeEvent)
+  await updateWrapper(wrapper, 350)
+  expect(changeHandler).toHaveBeenCalled()
+  expect(wrapper.find('.clear-icon').length).toBe(0)
+})
