@@ -23,6 +23,7 @@ interface Props {
   onChange?: (value: string | string[]) => void
   pure?: boolean
   multiple?: boolean
+  clearable?: boolean
   className?: string
   width?: string
   dropdownClassName?: string
@@ -37,6 +38,7 @@ const defaultProps = {
   icon: SelectIcon as React.ComponentType,
   pure: false,
   multiple: false,
+  clearable: true,
   width: 'initial',
   className: '',
   disableMatchWidth: false,
@@ -55,6 +57,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   onChange,
   pure,
   multiple,
+  clearable,
   placeholder,
   width,
   className,
@@ -125,7 +128,10 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
       const el = React.cloneElement(child, { preventAllEvents: true })
       if (!multiple) return el
       return (
-        <SelectMultipleValue size={sizes.fontSize} disabled={disabled}>
+        <SelectMultipleValue
+          size={sizes.fontSize}
+          disabled={disabled}
+          onClear={clearable ? () => updateValue(child.props.value) : null}>
           {el}
         </SelectMultipleValue>
       )
