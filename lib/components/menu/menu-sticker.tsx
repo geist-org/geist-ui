@@ -109,7 +109,6 @@ const MenuSticker = () => {
           display: flex;
           align-items: flex-end;
           height: 100%;
-          overflow: auto;
           z-index: 900;
           margin: 0 auto;
         }
@@ -120,6 +119,7 @@ const MenuSticker = () => {
 
         .inner :global(.tabs),
         .inner :global(header) {
+          width: calc(100% - ${theme.layout.gap});
           height: 100%;
           border: none;
         }
