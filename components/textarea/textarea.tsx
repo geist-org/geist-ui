@@ -4,6 +4,8 @@ import withDefaults from '../utils/with-defaults'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from '../input/styles'
 
+type ResizeTypes = 'none' | 'both' | 'horizontal' | 'vertical' | 'initial' | 'inherit' 
+
 interface Props {
   value?: string
   initialValue?: string
@@ -17,6 +19,7 @@ interface Props {
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
   className?: string
+  resize?:ResizeTypes 
 }
 
 const defaultProps = {
@@ -27,6 +30,7 @@ const defaultProps = {
   disabled: false,
   readOnly: false,
   className: '',
+  resize:'initial' as ResizeTypes
 }
 
 type NativeAttrs = Omit<React.TextareaHTMLAttributes<any>, keyof Props>
@@ -47,6 +51,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
       onChange,
       value,
       placeholder,
+      resize,
       ...props
     },
     ref: React.Ref<HTMLTextAreaElement | null>,
@@ -140,6 +145,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
             border: none;
             outline: none;
             padding: ${theme.layout.gapHalf};
+            resize:${resize};
           }
 
           .disabled > textarea {
