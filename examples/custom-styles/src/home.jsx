@@ -7,7 +7,7 @@ const Home = () => (
     <Card shadow style={{ width: '500px', margin: '100px auto' }}>
       <Text className="my-text">Modern and minimalist React UI library.</Text>
       <Text type={'success'} style={{ color: '#000' }}>
-        Modern and minimalist React UI library abc.
+        Modern and minimalist React UI library abc + push permis.
       </Text>
       <Text type={'warning'} style={{ color: '#000' }}>
         Modern and minimalist React UI library.{' '}
