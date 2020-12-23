@@ -50,6 +50,7 @@ const Application = () => (
 - [Tree viewer for CDN](https://cdn.unix.bio/)
 - [Better social image](https://img.unix.bio/)
 - [SentiNEO: Near-Earth Objects Viewer](https://sentineo.app)
+- [Dashboard Design](https://github.com/ofekashery/react-dashboard-design)
 - [Add here](https://github.com/geist-org/react/issues/new)
 
 <br/>
