@@ -4,11 +4,11 @@ import { renderHook } from '@testing-library/react-hooks'
 import mediaQuery from 'css-mediaquery'
 
 const mediaListMock = (width: number) => {
-  ;(window as any).listeners = [] as Array<Function>
+  ;(window as any).listeners = [] as Array<() => unknown>
   return (query: string) => {
     return {
       matches: mediaQuery.match(query, { width }),
-      addListener: (fn: Function) => (window as any).listeners.push(fn),
+      addListener: (fn: () => unknown) => (window as any).listeners.push(fn),
       removeListener: () => {},
     }
   }

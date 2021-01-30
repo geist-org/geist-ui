@@ -24,7 +24,7 @@ const defaultProps = {
   dotBackdrop: false,
 }
 
-const DotStyles: React.FC<{}> = () => (
+const DotStyles: React.FC<unknown> = () => (
   <span>
     <style jsx>{`
       :global(body) {

@@ -9,10 +9,10 @@ import ToastItem from './toast-item'
 export type ToastWithID = Toast & {
   id: string
   willBeDestroy?: boolean
-  cancel: Function
+  cancel: () => void
 }
 
-const ToastContainer: React.FC<React.PropsWithChildren<{}>> = () => {
+const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
   const portal = usePortal('toast')
   const theme = useTheme()
   const [hover, setHover] = useState<boolean>(false)

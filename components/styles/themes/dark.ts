@@ -2,7 +2,6 @@ import { GeistUIThemes, GeistUIThemesPalette, GeistUIThemesExpressiveness } from
 import { defaultFont, defaultBreakpoints, defaultLayout } from './shared'
 
 export const palette: GeistUIThemesPalette = {
-  /* eslint-disable @typescript-eslint/camelcase */
   accents_1: '#111',
   accents_2: '#333',
   accents_3: '#444',
@@ -11,7 +10,6 @@ export const palette: GeistUIThemesPalette = {
   accents_6: '#999',
   accents_7: '#eaeaea',
   accents_8: '#fafafa',
-  /* eslint-enable camelcase */
   background: '#000',
   foreground: '#fff',
   selection: '#f81ce5',

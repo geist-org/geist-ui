@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface CollapseConfig {
   values: Array<number>
-  updateValues?: Function
+  updateValues?: () => unknown
 }
 
 const defaultContext = {

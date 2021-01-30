@@ -7,7 +7,11 @@ interface Props {
   type: string
 }
 
-const getColorItem = (type: string, palette: GeistUIThemesPalette, copy: Function) => {
+const getColorItem = (
+  type: string,
+  palette: GeistUIThemesPalette,
+  copy: (text: string) => void,
+) => {
   const data = getColorData(type)
   const getColor = (index: number) => getCurrentColor(palette, type, index)
   const keys = Object.keys(data)

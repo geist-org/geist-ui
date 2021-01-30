@@ -3,9 +3,9 @@ import { NormalSizes } from '../utils/prop-types'
 
 export interface SelectConfig {
   value?: string | string[]
-  updateValue?: Function
+  updateValue?: () => unknown
   visible?: boolean
-  updateVisible?: Function
+  updateVisible?: () => unknown
   size?: NormalSizes
   disableAll?: boolean
   ref?: MutableRefObject<HTMLElement | null>
