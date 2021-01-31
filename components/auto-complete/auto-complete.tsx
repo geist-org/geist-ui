@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react'
 import Input from '../input'
 import AutoCompleteItem from './auto-complete-item'
 import AutoCompleteDropdown from './auto-complete-dropdown'
@@ -30,7 +30,7 @@ interface Props {
   searching?: boolean | undefined
   clearable?: boolean
   dropdownClassName?: string
-  dropdownStyle?: object
+  dropdownStyle?: CSSProperties
   disableMatchWidth?: boolean
   disableFreeSolo?: boolean
   className?: string

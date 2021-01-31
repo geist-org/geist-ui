@@ -3,7 +3,7 @@ import Colors from './colors'
 import { useTheme, Button, Text, Code, Spacer, Link, Select } from 'components'
 import { useConfigs } from 'lib/config-context'
 
-const Demo: React.FC<React.PropsWithChildren<{}>> = () => {
+const Demo: React.FC<React.PropsWithChildren<unknown>> = () => {
   const theme = useTheme()
   const { isChinese } = useConfigs()
 

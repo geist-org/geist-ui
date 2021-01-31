@@ -6,7 +6,7 @@ import Router, { useRouter } from 'next/router'
 import MoonIcon from '@geist-ui/react-icons/moon'
 import SunIcon from '@geist-ui/react-icons/sun'
 
-const Controls: React.FC<{}> = React.memo(({}) => {
+const Controls: React.FC<unknown> = React.memo(({}) => {
   const theme = useTheme()
   const { updateCustomTheme, updateChineseState } = useConfigs()
   const { pathname } = useRouter()

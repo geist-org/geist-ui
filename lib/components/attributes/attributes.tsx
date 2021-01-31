@@ -122,7 +122,7 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
   },
 )
 
-type AttributesComponent<P = {}> = React.FC<P> & {
+type AttributesComponent<P> = React.FC<P> & {
   Title: typeof AttributesTitle
 }
 

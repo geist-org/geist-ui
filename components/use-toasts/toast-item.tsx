@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
-import { Toast } from './use-toast'
+import { Toast, ToastAction } from './use-toast'
 import Button from '../button'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../styles/themes'
@@ -8,7 +8,7 @@ import { GeistUIThemesPalette } from '../styles/themes'
 type ToastWithID = Toast & {
   id: string
   willBeDestroy?: boolean
-  cancel: Function
+  cancel: () => void
 }
 
 export interface ToatItemProps {
@@ -18,8 +18,11 @@ export interface ToatItemProps {
   onHover: boolean
 }
 
-const toastActions = (actions: Toast['actions'], cancelHandle: Function) => {
-  const handler = (event: React.MouseEvent<HTMLButtonElement>, userHandler: Function) => {
+const toastActions = (actions: Toast['actions'], cancelHandle: () => void) => {
+  const handler = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    userHandler: ToastAction['handler'],
+  ) => {
     userHandler && userHandler(event, cancelHandle)
   }
   if (!actions || !actions.length) return null

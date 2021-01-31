@@ -31,7 +31,7 @@ describe('UseCurrentState', () => {
   })
 
   it('only ref should track latest value', () => {
-    const Mock: React.FC<{}> = () => {
+    const Mock: React.FC<unknown> = () => {
       const [state, setState, stateRef] = useCurrentState('')
       useEffect(() => {
         return () => {

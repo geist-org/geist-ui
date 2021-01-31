@@ -15,7 +15,7 @@ const types = [
   'lite',
 ]
 
-const Colors: React.FC<React.PropsWithChildren<{}>> = () => {
+const Colors: React.FC<React.PropsWithChildren<unknown>> = () => {
   const theme = useTheme()
 
   return (

@@ -2,10 +2,10 @@
 
 exports[`CSSBaseline should render correctly 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {},
     "children": Array [
-      Object {
+      Node {
         "data": "
         html,
         body {
@@ -303,22 +303,17 @@ initialize {
     "name": "style",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "style",
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
@@ -327,8 +322,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }
@@ -336,10 +329,10 @@ initialize {
 
 exports[`CSSBaseline should render dark mode correctly 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {},
     "children": Array [
-      Object {
+      Node {
         "data": "
         html,
         body {
@@ -637,22 +630,17 @@ initialize {
     "name": "style",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "style",
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
@@ -661,8 +649,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }

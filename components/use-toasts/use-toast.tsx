@@ -7,7 +7,7 @@ import { getId } from '../utils/collections'
 
 export interface ToastAction {
   name: string
-  handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void
+  handler: (event: React.MouseEvent<HTMLButtonElement>, cancel: () => void) => void
   passive?: boolean
 }
 

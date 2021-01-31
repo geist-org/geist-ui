@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react'
 import { NormalSizes } from '../utils/prop-types'
 import useTheme from '../use-theme'
 import useClickAway from '../utils/use-click-away'
@@ -27,7 +27,7 @@ interface Props {
   className?: string
   width?: string
   dropdownClassName?: string
-  dropdownStyle?: object
+  dropdownStyle?: CSSProperties
   disableMatchWidth?: boolean
   getPopupContainer?: () => HTMLElement | null
 }

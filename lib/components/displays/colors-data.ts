@@ -4,7 +4,6 @@ export type ColorEnum = {
   [key in keyof GeistUIThemesPalette]?: string
 }
 
-/* eslint-disable @typescript-eslint/camelcase */
 const normal: ColorEnum = {
   background: 'Background',
   accents_1: 'Accent 1',
@@ -17,7 +16,6 @@ const normal: ColorEnum = {
   accents_8: 'Accent 8',
   foreground: 'Foreground',
 }
-/* eslint-enable camelcase */
 
 const error: ColorEnum = {
   errorLighter: 'Lighter',

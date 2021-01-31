@@ -9,7 +9,7 @@ import useCurrentState from 'components/utils/use-current-state'
 import { useTheme } from 'components'
 
 interface Props {
-  onThemeChange?: Function
+  onThemeChange?: (themes: DeepPartial<GeistUIThemes>) => void
 }
 
 const defaultProps = {}
