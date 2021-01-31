@@ -3,7 +3,7 @@ import { mount, ReactWrapper } from 'enzyme'
 import { useToasts, GeistProvider } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 
-const MockToast: React.FC<{}> = () => {
+const MockToast: React.FC<unknown> = () => {
   const [, setToast] = useToasts()
   const clickHandler = (e: any = {}) => {
     const keys = ['text', 'delay', 'type', 'actions']
@@ -142,7 +142,7 @@ describe('UseToast', () => {
     const actions = [
       {
         name: 'remove',
-        handler: (_event: any, cancel: Function) => cancel(),
+        handler: (_event: any, cancel: () => void) => cancel(),
       },
     ]
 

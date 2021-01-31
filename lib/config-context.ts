@@ -3,14 +3,14 @@ import { GeistUIThemes } from 'components/styles/themes'
 import { DeepPartial } from 'components/utils/types'
 
 export interface Configs {
-  onThemeChange?: Function
+  onThemeChange?: (themes: DeepPartial<GeistUIThemes>) => void
   isChinese?: boolean
-  updateChineseState: Function
+  updateChineseState: (state: boolean) => void
   sidebarScrollHeight: number
-  updateSidebarScrollHeight: Function
+  updateSidebarScrollHeight: (height: number) => void
 
   tabbarFixed: boolean
-  updateTabbarFixed: Function
+  updateTabbarFixed: (state: boolean) => void
 
   customTheme: DeepPartial<GeistUIThemes>
   updateCustomTheme: (theme: DeepPartial<GeistUIThemes>) => void

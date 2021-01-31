@@ -2,6 +2,13 @@
   "compilerOptions": {
     "baseUrl": "../",
     "outDir": "../dist",
+    "paths": {
+      "*": ["*"],
+      "geist-ui": ["components/index.tsx"],
+      "components/*": [
+        "components/*"
+      ]
+    },
     "declaration": true,
     "emitDeclarationOnly": true,
     "strictNullChecks": true,
@@ -24,6 +31,9 @@
     "module": "esnext",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "plugins": [
+      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+    ]
   },
   "files": [
     "../components/index.ts"

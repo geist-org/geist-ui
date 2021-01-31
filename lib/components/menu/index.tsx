@@ -4,7 +4,7 @@ import MenuLinks from './menu-links'
 import MenuSticker from './menu-sticker'
 import { useConfigs } from 'lib/config-context'
 
-const Menu: React.FC<{}> = () => {
+const Menu: React.FC<unknown> = () => {
   const router = useRouter()
   const { isChinese } = useConfigs()
   const [showAfterRender, setShowAfterRender] = useState<boolean>(false)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
@@ -8,7 +8,7 @@ interface Props {
   visible: boolean
   className?: string
   disableMatchWidth?: boolean
-  dropdownStyle?: object
+  dropdownStyle?: CSSProperties
 }
 
 const defaultProps = {

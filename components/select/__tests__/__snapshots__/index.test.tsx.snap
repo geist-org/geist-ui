@@ -450,23 +450,23 @@ exports[`Select should work correctly with labels 1`] = `
 
 exports[`Select should work with different icons 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {
       "class": "select  ",
     },
     "children": Array [
-      Object {
+      Node {
         "attribs": Object {
           "class": "value placeholder",
         },
         "children": Array [
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         span {
           overflow: hidden;
@@ -504,10 +504,10 @@ initialize {
         ],
         "name": "span",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "
           .select {
             display: inline-flex;
@@ -608,10 +608,10 @@ initialize {
           "class": undefined,
         },
       },
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "data": "
           .select {
             display: inline-flex;
@@ -697,18 +697,18 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {
             "class": "value placeholder",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "attribs": Object {},
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "
         span {
           overflow: hidden;
@@ -765,22 +765,17 @@ initialize {
     "name": "div",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "tag",
     "x-attribsNamespace": Object {
       "class": undefined,
@@ -793,8 +788,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }
@@ -802,23 +795,23 @@ initialize {
 
 exports[`Select should work with different icons 2`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {
       "class": "select  ",
     },
     "children": Array [
-      Object {
+      Node {
         "attribs": Object {
           "class": "value placeholder",
         },
         "children": Array [
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         span {
           overflow: hidden;
@@ -856,15 +849,15 @@ initialize {
         ],
         "name": "span",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {
             "class": "icon",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "icon",
                   "next": null,
                   "parent": [Circular],
@@ -884,10 +877,10 @@ initialize {
           ],
           "name": "div",
           "namespace": "http://www.w3.org/1999/xhtml",
-          "next": Object {
+          "next": Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "data": "
           .select {
             display: inline-flex;
@@ -998,15 +991,15 @@ initialize {
           "class": undefined,
         },
       },
-      Object {
+      Node {
         "attribs": Object {
           "class": "icon",
         },
         "children": Array [
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "data": "icon",
                 "next": null,
                 "parent": [Circular],
@@ -1026,10 +1019,10 @@ initialize {
         ],
         "name": "div",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "
           .select {
             display: inline-flex;
@@ -1121,18 +1114,18 @@ initialize {
           "x-attribsPrefix": Object {},
         },
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {
             "class": "value placeholder",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "attribs": Object {},
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "
         span {
           overflow: hidden;
@@ -1189,10 +1182,10 @@ initialize {
           "class": undefined,
         },
       },
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "data": "
           .select {
             display: inline-flex;
@@ -1278,15 +1271,15 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {
             "class": "icon",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "icon",
                   "next": null,
                   "parent": [Circular],
@@ -1308,18 +1301,18 @@ initialize {
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": [Circular],
           "parent": [Circular],
-          "prev": Object {
+          "prev": Node {
             "attribs": Object {
               "class": "value placeholder",
             },
             "children": Array [
-              Object {
+              Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "attribs": Object {},
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "
         span {
           overflow: hidden;
@@ -1384,22 +1377,17 @@ initialize {
     "name": "div",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "tag",
     "x-attribsNamespace": Object {
       "class": undefined,
@@ -1412,8 +1400,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }

@@ -155,15 +155,15 @@ exports[`Keyboard should work with modifiers 1`] = `
 
 exports[`Keyboard should work with small size 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {
       "class": "",
     },
     "children": Array [
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "data": "F",
             "next": null,
             "parent": [Circular],
@@ -173,10 +173,10 @@ initialize {
         ],
         "name": "span",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "
         kbd {
           width: fit-content;
@@ -228,10 +228,10 @@ initialize {
         "x-attribsNamespace": Object {},
         "x-attribsPrefix": Object {},
       },
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "data": "
         kbd {
           width: fit-content;
@@ -272,10 +272,10 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "F",
               "next": null,
               "parent": [Circular],
@@ -300,22 +300,17 @@ initialize {
     "name": "kbd",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "tag",
     "x-attribsNamespace": Object {
       "class": undefined,
@@ -328,8 +323,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }

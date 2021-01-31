@@ -67,7 +67,7 @@ export const pickChildrenFirst = (children: ReactNode | undefined): ReactNode | 
 
 export const setChildrenProps = (
   children: ReactNode | undefined,
-  props: object = {},
+  props: Record<string, unknown>,
   targetComponents: Array<React.ElementType> = [],
 ): ReactNode | undefined => {
   if (React.Children.count(children) === 0) return []

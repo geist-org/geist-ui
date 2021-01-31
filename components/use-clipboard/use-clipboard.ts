@@ -3,7 +3,7 @@ import useWarning from '../utils/use-warning'
 import { useCallback } from 'react'
 
 export type UseClipboardOptions = {
-  onError: Function
+  onError: () => unknown
 }
 
 export type UseClipboardResult = {

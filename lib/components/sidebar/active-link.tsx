@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useTheme } from 'components'
 
 export interface Props {
-  onAcitve?: Function
+  onAcitve?: () => void
   href: string
   text: string
 }

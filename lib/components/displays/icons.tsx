@@ -4,7 +4,7 @@ import * as Icon from '@geist-ui/react-icons'
 import IconsCell, { getImportString } from './icons-cell'
 import { useConfigs } from 'lib/config-context'
 
-const ImportSnippet: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+const ImportSnippet: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   return (
     <Snippet>
       {children}
