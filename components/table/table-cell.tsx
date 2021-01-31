@@ -9,11 +9,7 @@ interface Props {
   onCellClick: (cell: any, rowIndex: number, colunmIndex: number) => void
 }
 
-export type cellActions = {
-  remove: () => void
-}
-
-export type cellData = {
+export type TableCellData = {
   row: number
   column: number
   rowValue: any

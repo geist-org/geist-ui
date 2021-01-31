@@ -7,7 +7,7 @@ export interface GeistUIContextParams {
   toasts: Array<ToastWithID>
   toastHovering: boolean
   updateToasts: UpdateToastsFunction<ToastWithID>
-  updateToastHoverStatus: () => void
+  updateToastHoverStatus: (fn: () => boolean) => void
 }
 
 const defaultParams: GeistUIContextParams = {
