@@ -33,7 +33,21 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: install
         run: yarn install --check-files --frozen-lockfile
+      - name: set dist-tag
+        run: |
+          case "${{github.event.release.name}}" in
+          *"rc"* | *"canary"*)
+           echo "r_tag=canary" >> $GITHUB_ENV;;
+          *"dev"*)
+           echo "r_tag=dev" >> $GITHUB_ENV;;
+          *"beta"*)
+           echo "r_tag=beta" >> $GITHUB_ENV;;
+          *)
+           echo "r_tag=latest" >> $GITHUB_ENV;;
+          esac
       - name: publish
-        run: yarn release
+        run: |
+          echo ">> dist-tag: ${{ env.r_tag }}"
+          yarn release --tag ${{ env.r_tag }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
