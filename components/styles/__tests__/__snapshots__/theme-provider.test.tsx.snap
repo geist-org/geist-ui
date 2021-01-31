@@ -2,12 +2,12 @@
 
 exports[`ThemeProvider should merge themes with custom function 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {
       "class": " ",
     },
     "children": Array [
-      Object {
+      Node {
         "data": "hello",
         "next": null,
         "parent": [Circular],
@@ -17,10 +17,10 @@ initialize {
     ],
     "name": "p",
     "namespace": "http://www.w3.org/1999/xhtml",
-    "next": Object {
+    "next": Node {
       "attribs": Object {},
       "children": Array [
-        Object {
+        Node {
           "data": "
         p {
           color: #ccc;
@@ -39,37 +39,29 @@ initialize {
       "name": "style",
       "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
-      "parent": null,
-      "prev": [Circular],
-      "root": Object {
-        "attribs": Object {},
+      "parent": Node {
         "children": Array [
           [Circular],
           [Circular],
         ],
         "name": "root",
-        "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": null,
         "prev": null,
         "type": "root",
-        "x-attribsNamespace": Object {},
-        "x-attribsPrefix": Object {},
       },
+      "prev": [Circular],
       "type": "style",
       "x-attribsNamespace": Object {},
       "x-attribsPrefix": Object {},
     },
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
-        Object {
+        Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "
         p {
           color: #ccc;
@@ -88,23 +80,20 @@ initialize {
           "name": "style",
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": null,
-          "parent": null,
+          "parent": [Circular],
           "prev": [Circular],
-          "root": [Circular],
           "type": "style",
           "x-attribsNamespace": Object {},
           "x-attribsPrefix": Object {},
         },
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "tag",
     "x-attribsNamespace": Object {
       "class": undefined,
@@ -113,10 +102,10 @@ initialize {
       "class": undefined,
     },
   },
-  "1": Object {
+  "1": Node {
     "attribs": Object {},
     "children": Array [
-      Object {
+      Node {
         "data": "
         p {
           color: #ccc;
@@ -135,57 +124,14 @@ initialize {
     "name": "style",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": Object {
-      "attribs": Object {
-        "class": " ",
-      },
+    "parent": Node {
       "children": Array [
-        Object {
-          "data": "hello",
-          "next": null,
-          "parent": [Circular],
-          "prev": null,
-          "type": "text",
-        },
-      ],
-      "name": "p",
-      "namespace": "http://www.w3.org/1999/xhtml",
-      "next": [Circular],
-      "parent": null,
-      "prev": null,
-      "root": Object {
-        "attribs": Object {},
-        "children": Array [
-          [Circular],
-          [Circular],
-        ],
-        "name": "root",
-        "namespace": "http://www.w3.org/1999/xhtml",
-        "next": null,
-        "parent": null,
-        "prev": null,
-        "type": "root",
-        "x-attribsNamespace": Object {},
-        "x-attribsPrefix": Object {},
-      },
-      "type": "tag",
-      "x-attribsNamespace": Object {
-        "class": undefined,
-      },
-      "x-attribsPrefix": Object {
-        "class": undefined,
-      },
-    },
-    "root": Object {
-      "attribs": Object {},
-      "children": Array [
-        Object {
+        Node {
           "attribs": Object {
             "class": " ",
           },
           "children": Array [
-            Object {
+            Node {
               "data": "hello",
               "next": null,
               "parent": [Circular],
@@ -196,9 +142,8 @@ initialize {
           "name": "p",
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": [Circular],
-          "parent": null,
+          "parent": [Circular],
           "prev": null,
-          "root": [Circular],
           "type": "tag",
           "x-attribsNamespace": Object {
             "class": undefined,
@@ -210,13 +155,46 @@ initialize {
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
+    },
+    "prev": Node {
+      "attribs": Object {
+        "class": " ",
+      },
+      "children": Array [
+        Node {
+          "data": "hello",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "text",
+        },
+      ],
+      "name": "p",
+      "namespace": "http://www.w3.org/1999/xhtml",
+      "next": [Circular],
+      "parent": Node {
+        "children": Array [
+          [Circular],
+          [Circular],
+        ],
+        "name": "root",
+        "next": null,
+        "parent": null,
+        "prev": null,
+        "type": "root",
+      },
+      "prev": null,
+      "type": "tag",
+      "x-attribsNamespace": Object {
+        "class": undefined,
+      },
+      "x-attribsPrefix": Object {
+        "class": undefined,
+      },
     },
     "type": "style",
     "x-attribsNamespace": Object {},
@@ -226,8 +204,6 @@ initialize {
   "length": 2,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }
