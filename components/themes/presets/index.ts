@@ -1,5 +1,3 @@
-import { ThemeTypes } from '../../utils/prop-types'
-
 export interface GeistUIThemesPalette {
   accents_1: string
   accents_2: string
@@ -87,7 +85,7 @@ export interface GeistUIThemesBreakpoints {
 }
 
 export interface GeistUIThemes {
-  type: ThemeTypes
+  type: string
   font: GeistUIThemesFont
   layout: GeistUIThemesLayout
   palette: GeistUIThemesPalette
