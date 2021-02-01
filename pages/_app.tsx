@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import React, { useEffect, useState } from 'react'
-import { CssBaseline, GeistProvider, useTheme, GeistUIThemes, useAllThemes } from 'components'
+import { CssBaseline, GeistProvider, useTheme, GeistUIThemes } from 'components'
 import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
@@ -11,8 +11,6 @@ import 'inter-ui/inter.css'
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
   const [themeType, setThemeType] = useState<string>()
-  const { themes } = useAllThemes()
-  console.log(themes)
   const [customTheme, setCustomTheme] = useState<GeistUIThemes>(theme)
   const themeChangeHandle = (theme: GeistUIThemes) => {
     setCustomTheme(theme)

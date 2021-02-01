@@ -1,6 +1,6 @@
 import React from 'react'
+import Themes from '../themes'
 import { GeistUIThemes } from '../themes/presets/index'
-import Themes from '../themes/themes'
 
 const defaultTheme = Themes.getPresetStaticTheme()
 
