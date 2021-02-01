@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
-import { GeistUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../themes/presets'
 
 export interface Props {
   tag: keyof JSX.IntrinsicElements

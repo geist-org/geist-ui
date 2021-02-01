@@ -1,5 +1,5 @@
 import { CardTypes } from '../utils/prop-types'
-import { GeistUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../themes/presets'
 
 export type CardStyles = {
   color: string

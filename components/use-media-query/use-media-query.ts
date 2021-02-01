@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
 import { tuple } from '../utils/prop-types'
-import { BreakpointsItem, GeistUIThemesBreakpoints } from '../styles/themes'
+import { BreakpointsItem, GeistUIThemesBreakpoints } from '../themes/presets'
 
 const breakpoints = tuple('xs', 'sm', 'md', 'lg', 'xl', 'mobile')
 export type ResponsiveBreakpoint = typeof breakpoints[number]

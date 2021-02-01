@@ -1,4 +1,4 @@
-import { GeistUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/themes/presets'
 
 export type BrowserColors = {
   color: string

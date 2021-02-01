@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
-import { GeistUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/themes/presets'
 
 interface Props {
   size?: NormalSizes
