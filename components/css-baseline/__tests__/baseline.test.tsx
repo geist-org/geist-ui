@@ -14,7 +14,7 @@ describe('CSSBaseline', () => {
 
   it('should render dark mode correctly', () => {
     const wrapper = render(
-      <GeistProvider theme={{ type: 'dark' }}>
+      <GeistProvider themeType="dark">
         <CssBaseline />
       </GeistProvider>,
     )

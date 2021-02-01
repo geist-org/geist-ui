@@ -336,13 +336,13 @@ initialize {
         "data": "
         html,
         body {
-          background-color: #fff;
-          color: #000;
+          background-color: #000;
+          color: #fff;
         }
 
         html {
           font-size: 16px;
-          --geist-icons-background: #fff;
+          --geist-icons-background: #000;
         }
 
         body {
@@ -412,7 +412,7 @@ initialize {
           -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
           -webkit-box-align: center;
           align-items: center;
-          color: #0070f3;
+          color: #3291ff;
           text-decoration: none;
         }
 
@@ -426,7 +426,7 @@ initialize {
           list-style-type: none;
           margin: 8pt 8pt 8pt
             16pt;
-          color: #000;
+          color: #fff;
         }
 
         ol {
@@ -442,7 +442,7 @@ initialize {
         ul li:before {
           content: &#x27;–&#x27;;
           display: inline-block;
-          color: #888;
+          color: #666;
           position: absolute;
           margin-left: -0.9375rem;
         }
@@ -513,7 +513,7 @@ initialize {
         }
 
         code {
-          color: #f81ce5;
+          color: #79ffe1;
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
           font-size: 0.9em;
           white-space: pre-wrap;
@@ -525,7 +525,7 @@ initialize {
         }
 
         pre {
-          border: 1px solid #eaeaea;
+          border: 1px solid #333;
           border-radius: 5px;
           padding: calc(16pt * 0.75) 16pt;
           margin: 16pt 0;
@@ -539,7 +539,7 @@ initialize {
         }
 
         pre code {
-          color: #000;
+          color: #fff;
           font-size: 0.8125rem;
           line-height: 1.25rem;
           white-space: pre;
@@ -562,11 +562,11 @@ initialize {
         }
 
         hr {
-          border-color: #eaeaea;
+          border-color: #333;
         }
 
         details {
-          background-color: #fafafa;
+          background-color: #111;
           border: none;
         }
 
@@ -601,11 +601,11 @@ initialize {
 
         blockquote {
           padding: calc(0.667 * 16pt) 16pt;
-          color: #666;
-          background-color: #fafafa;
+          color: #888;
+          background-color: #111;
           border-radius: 5px;
           margin: 1.5rem 0;
-          border: 1px solid #eaeaea;
+          border: 1px solid #333;
         }
 
         blockquote :global(*:first-child) {
@@ -617,8 +617,8 @@ initialize {
         }
 
         ::selection {
-          background-color: #79ffe1;
-          color: #000;
+          background-color: #f81ce5;
+          color: #fff;
         }
       ",
         "next": null,
