@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Button, useTheme, Select, Spacer } from 'components'
+import { Button, useTheme, Select, Spacer, Themes, useAllThemes } from 'components'
 import { useConfigs } from 'lib/config-context'
 import useLocale from 'lib/use-locale'
 import Router, { useRouter } from 'next/router'
@@ -15,6 +15,7 @@ import {
 
 const Controls: React.FC<unknown> = React.memo(() => {
   const theme = useTheme()
+  const { themes } = useAllThemes()
   const { switchTheme, updateChineseState } = useConfigs()
   const { pathname } = useRouter()
   const { locale } = useLocale()
@@ -23,6 +24,7 @@ const Controls: React.FC<unknown> = React.memo(() => {
     const nextLocale = isChinese ? ENGLISH_LANGUAGE_IDENT : CHINESE_LANGUAGE_IDENT
     return pathname.replace(locale, nextLocale)
   }, [locale, pathname])
+  const hasCustomTheme = useMemo(() => Themes.hasUserCustomTheme(themes), [themes])
 
   const switchThemes = (type: string) => {
     switchTheme(type)
@@ -70,11 +72,13 @@ const Controls: React.FC<unknown> = React.memo(() => {
               <MoonIcon size={14} /> {isChinese ? '暗黑' : 'Dark'}
             </span>
           </Select.Option>
-          <Select.Option value={CUSTOM_THEME_TYPE}>
-            <span className="select-content">
-              <UserIcon size={14} /> {CUSTOM_THEME_TYPE}
-            </span>
-          </Select.Option>
+          {hasCustomTheme && (
+            <Select.Option value={CUSTOM_THEME_TYPE}>
+              <span className="select-content">
+                <UserIcon size={14} /> {CUSTOM_THEME_TYPE}
+              </span>
+            </Select.Option>
+          )}
         </Select>
       </div>
       <style jsx>{`
