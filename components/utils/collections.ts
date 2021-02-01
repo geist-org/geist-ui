@@ -4,6 +4,11 @@ export const getId = () => {
   return Math.random().toString(32).slice(2, 10)
 }
 
+export const capitalize = (str: string | symbol | number | undefined | null) => {
+  const safeStr = String(str).trim()
+  return safeStr.charAt(0).toUpperCase() + safeStr.slice(1)
+}
+
 export const hasChild = (children: ReactNode | undefined, child: React.ElementType): boolean => {
   const types = React.Children.map(children, item => {
     if (!React.isValidElement(item)) return null

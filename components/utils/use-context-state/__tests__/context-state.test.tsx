@@ -1,4 +1,4 @@
-import { useContextState } from 'components'
+import useContextState from '../use-context-state'
 import { renderHook, act } from '@testing-library/react-hooks'
 
 describe('UseContextState', () => {
@@ -29,11 +29,11 @@ describe('UseContextState', () => {
   it('should work correctly with single handler', () => {
     const { result } = renderHook(() => useContextState({ name: 'react' }))
     const state = result.current[0]
-    act(() => state?.nameUpdate('angular'))
+    act(() => state?.setName('angular'))
     expect(result.current[0]?.name).toEqual('angular')
     expect(result.current[2].current?.name).toEqual('angular')
 
-    act(() => state?.nameUpdate('express'))
+    act(() => state?.setName('express'))
     expect(result.current[0]?.name).toEqual('express')
     expect(result.current[2].current?.name).toEqual('express')
   })
@@ -47,11 +47,11 @@ describe('UseContextState', () => {
       book5: null,
     }
     const { result } = renderHook(() => useContextState(initial))
-    expect(result.current[0]?.book1Update).toBeInstanceOf(Function)
-    expect(result.current[0]?.book2Update).toBeInstanceOf(Function)
-    expect(result.current[0]?.book3Update).toBeInstanceOf(Function)
-    expect(result.current[0]?.book4Update).toBeInstanceOf(Function)
-    expect(result.current[0]?.book5Update).toBeInstanceOf(Function)
+    expect(result.current[0]?.setBook1).toBeInstanceOf(Function)
+    expect(result.current[0]?.setBook2).toBeInstanceOf(Function)
+    expect(result.current[0]?.setBook3).toBeInstanceOf(Function)
+    expect(result.current[0]?.setBook4).toBeInstanceOf(Function)
+    expect(result.current[0]?.setBook5).toBeInstanceOf(Function)
   })
 
   it('The listener should be called when the value is updated', () => {
@@ -62,9 +62,14 @@ describe('UseContextState', () => {
       key = k
     })
     const { result } = renderHook(() =>
-      useContextState<{ year: string | undefined }>({ year: undefined }, (key, next) => {
-        handler(key, next)
-      }),
+      useContextState<{ year: string | undefined }>(
+        { year: undefined },
+        {
+          onChange: (key, next) => {
+            handler(key, next)
+          },
+        },
+      ),
     )
     const state = result.current[0]
     act(() => state.update('year', '2021'))
