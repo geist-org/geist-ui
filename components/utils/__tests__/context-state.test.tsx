@@ -1,4 +1,4 @@
-import useContextState from '../use-context-state'
+import useContextState from '../use-context-state/use-context-state'
 import { renderHook, act } from '@testing-library/react-hooks'
 
 describe('UseContextState', () => {
