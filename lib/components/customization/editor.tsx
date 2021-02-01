@@ -3,13 +3,13 @@ import {
   Text,
   Button,
   useTheme,
+  Themes,
   GeistUIThemesPalette,
   GeistUIThemesExpressiveness,
   GeistUIThemesLayout,
 } from 'components'
 import EditorColorItem from './editor-color-item'
 import EditorInputItem from './editor-input-item'
-import DefaultTheme from 'components/styles/themes/default'
 import { useConfigs } from 'lib/config-context'
 
 const basicColors: Array<keyof GeistUIThemesPalette> = [
@@ -71,6 +71,7 @@ const gapLayout: Array<keyof GeistUIThemesLayout> = [
 
 const Editor = () => {
   const theme = useTheme()
+  const DefaultTheme = Themes.getPresetStaticTheme()
   const { updateCustomTheme, isChinese } = useConfigs()
 
   const resetLayout = () => updateCustomTheme({ layout: DefaultTheme.layout })
