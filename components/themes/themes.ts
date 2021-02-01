@@ -41,9 +41,22 @@ const getPresetStaticTheme = (): GeistUIThemes => {
 
 const isAvailableThemeType = (type?: string): boolean => {
   if (!type) return false
-  const currentThemes = getPresets()
-  const hasType = currentThemes.find(theme => theme.type === type)
+  const presetThemes = getPresets()
+  const hasType = presetThemes.find(theme => theme.type === type)
   return !hasType
+}
+
+const isPresetTheme = (themeOrType?: GeistUserTheme | GeistUIThemes | string): boolean => {
+  if (!themeOrType) return false
+  const isType = typeof themeOrType === 'string'
+  const type = isType
+    ? (themeOrType as string)
+    : (themeOrType as Exclude<typeof themeOrType, string>).type
+  return !isAvailableThemeType(type)
+}
+
+const hasUserCustomTheme = (themes: Array<GeistUIThemes> = []): boolean => {
+  return !!themes.find(item => isAvailableThemeType(item.type))
 }
 
 const create = (base: GeistUIThemes, custom: GeistUserTheme): GeistUIThemes => {
@@ -58,7 +71,9 @@ const createFromDark = (custom: GeistUserTheme) => create(darkTheme, custom)
 const createFromLight = (custom: GeistUserTheme) => create(lightTheme, custom)
 
 const Themes = {
+  isPresetTheme,
   isAvailableThemeType,
+  hasUserCustomTheme,
   getPresets,
   getPresetStaticTheme,
   create,

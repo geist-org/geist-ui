@@ -10,8 +10,8 @@ import ToastContainer, { ToastWithID } from '../use-toasts/toast-container'
 import { GeistUIThemes } from '../themes/presets'
 
 export interface Props {
-  themeType?: string
   themes?: Array<GeistUIThemes>
+  themeType?: string | 'dark' | 'light'
 }
 
 const GeistProvider: React.FC<PropsWithChildren<Props>> = ({ themes, themeType, children }) => {
