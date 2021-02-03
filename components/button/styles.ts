@@ -1,4 +1,4 @@
-import { GeistUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../themes/presets'
 import { NormalSizes, ButtonTypes } from '../utils/prop-types'
 import { ButtonProps } from './button'
 import { addColorAlpha } from '../utils/color'

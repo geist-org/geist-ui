@@ -48,7 +48,7 @@ describe('Page', () => {
 
   it('should disable dot style when in dark mode', () => {
     const wrapper = mount(
-      <GeistProvider theme={{ type: 'dark' }}>
+      <GeistProvider themeType="dark">
         <Page dotBackdrop />
       </GeistProvider>,
     )

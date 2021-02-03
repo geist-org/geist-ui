@@ -1,7 +1,10 @@
 import React from 'react'
-import { GeistUIThemes } from '../styles/themes/index'
-import defaultTheme from '../styles/themes/default'
+import Themes from '../themes'
+import { GeistUIThemes } from '../themes/presets/index'
 
-const ThemeContext: React.Context<GeistUIThemes> = React.createContext<GeistUIThemes>(defaultTheme)
+const defaultTheme = Themes.getPresetStaticTheme()
 
-export default ThemeContext
+export const ThemeContext: React.Context<GeistUIThemes> = React.createContext<GeistUIThemes>(
+  defaultTheme,
+)
+export const useTheme = (): GeistUIThemes => React.useContext<GeistUIThemes>(ThemeContext)

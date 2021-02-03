@@ -1,5 +1,5 @@
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
-import { GeistUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../themes/presets'
 
 export type InputSize = {
   heightRatio: string

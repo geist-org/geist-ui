@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import { Toast, ToastAction } from './use-toast'
 import Button from '../button'
 import { NormalTypes } from '../utils/prop-types'
-import { GeistUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../themes/presets'
 
 type ToastWithID = Toast & {
   id: string

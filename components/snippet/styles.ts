@@ -1,5 +1,5 @@
 import { SnippetTypes } from 'components/utils/prop-types'
-import { GeistUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/themes/presets'
 
 export type SnippetStyles = {
   color: string

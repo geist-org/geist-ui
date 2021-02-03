@@ -15,7 +15,7 @@ const expectTooltipIsHidden = (wrapper: ReactWrapper) => {
 describe('Tooltip', () => {
   it('should render correctly', async () => {
     const wrapper = mount(
-      <GeistProvider theme={{ type: 'dark' }}>
+      <GeistProvider themeType="dark">
         <Tooltip text={<p id="test">custom-content</p>}>some tips</Tooltip>
       </GeistProvider>,
     )
