@@ -1,14 +1,13 @@
 import React, { useMemo } from 'react'
-import { Text, Spacer, useTheme, Code, useToasts } from 'components'
-import DefaultTheme from 'components/styles/themes/default'
-import { isObject, MergeObject } from 'components/styles/theme-provider/theme-provider'
+import { isObject } from 'components/themes/themes'
 import { LiveEditor, LiveProvider } from 'react-live'
-import makeCodeTheme from 'lib/components/playground/code-theme'
-import useClipboard from 'components/utils/use-clipboard'
-import CopyIcon from 'components/snippet/snippet-icon'
 import { useConfigs } from 'lib/config-context'
+import { CUSTOM_THEME_TYPE } from 'lib/constants'
+import CopyIcon from 'components/snippet/snippet-icon'
+import makeCodeTheme from 'lib/components/playground/code-theme'
+import { Text, Spacer, useTheme, Code, useToasts, Themes, useClipboard } from 'components'
 
-export const getDeepDifferents = <T extends MergeObject>(source: T, target: T): T => {
+export const getDeepDifferents = <T,>(source: T, target: T): T => {
   if (!isObject(target) || !isObject(source)) return target
 
   const sourceKeys = Object.keys(source) as Array<keyof T>
@@ -29,17 +28,21 @@ export const getDeepDifferents = <T extends MergeObject>(source: T, target: T): 
   return result
 }
 
-const CustomizationCodes = () => {
+const CustomizationCodes: React.FC<unknown> = () => {
+  const DefaultTheme = Themes.getPresetStaticTheme()
   const theme = useTheme()
   const { isChinese } = useConfigs()
   const codeTheme = makeCodeTheme(theme)
   const { copy } = useClipboard()
   const [, setToast] = useToasts()
 
-  const deepDifferents = useMemo(() => getDeepDifferents(DefaultTheme, theme), [
-    DefaultTheme,
-    theme,
-  ])
+  const deepDifferents = useMemo(
+    () => ({
+      ...getDeepDifferents(DefaultTheme, theme),
+      type: CUSTOM_THEME_TYPE,
+    }),
+    [DefaultTheme, theme],
+  )
   const userCodes = useMemo(() => {
     return `const myTheme = ${JSON.stringify(deepDifferents, null, 2)}
 
@@ -48,7 +51,7 @@ const CustomizationCodes = () => {
  *
  *  export const App = () => {
  *    return (
- *      <GeistProvider theme={myTheme}>
+ *      <GeistProvider themes={[myTheme]} themeType="${CUSTOM_THEME_TYPE}">
  *        <CssBaseline />
  *        <YourComponent />
  *      </GeistProvider>

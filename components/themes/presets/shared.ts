@@ -1,8 +1,4 @@
-import {
-  GeistUIThemesBreakpoints,
-  GeistUIThemesFont,
-  GeistUIThemesLayout,
-} from 'components/styles/themes/index'
+import { GeistUIThemesBreakpoints, GeistUIThemesFont, GeistUIThemesLayout } from './index'
 
 export const defaultFont: GeistUIThemesFont = {
   sans:

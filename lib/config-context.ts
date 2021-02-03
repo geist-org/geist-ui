@@ -1,6 +1,6 @@
 import React from 'react'
-import { GeistUIThemes } from 'components/styles/themes'
 import { DeepPartial } from 'components/utils/types'
+import { GeistUIThemes } from 'components'
 
 export interface Configs {
   onThemeChange?: (themes: DeepPartial<GeistUIThemes>) => void
@@ -14,6 +14,7 @@ export interface Configs {
 
   customTheme: DeepPartial<GeistUIThemes>
   updateCustomTheme: (theme: DeepPartial<GeistUIThemes>) => void
+  switchTheme: (type: string) => void
 }
 
 export const defaultConfigs: Configs = {
@@ -27,6 +28,7 @@ export const defaultConfigs: Configs = {
   customTheme: {},
   updateCustomTheme: () => {},
   onThemeChange: () => {},
+  switchTheme: () => {},
 }
 
 export const ConfigContext = React.createContext<Configs>(defaultConfigs)

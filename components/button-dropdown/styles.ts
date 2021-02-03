@@ -1,4 +1,4 @@
-import { GeistUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../themes/presets'
 import { NormalTypes } from '../utils/prop-types'
 
 type ButtonDropdownColors = {

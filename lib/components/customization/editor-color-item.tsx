@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
-import { useTheme, GeistUIThemesPalette, Popover } from 'components'
+import { useTheme, GeistUIThemesPalette, Popover, Themes } from 'components'
 import { ColorResult, TwitterPicker } from 'react-color'
 import { useConfigs } from 'lib/config-context'
-import DefaultTheme from 'components/styles/themes/default'
+const DefaultTheme = Themes.getPresetStaticTheme()
 
 interface Props {
   value?: string

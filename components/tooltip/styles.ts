@@ -1,5 +1,5 @@
 import { SnippetTypes } from '../utils/prop-types'
-import { GeistUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../themes/presets'
 
 export type TooltipColors = {
   bgColor: string

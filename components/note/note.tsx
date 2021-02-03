@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalTypes } from '../utils/prop-types'
-import { GeistUIThemes } from '../styles/themes'
+import { GeistUIThemes } from '../themes/presets'
 
 interface Props {
   type?: NormalTypes

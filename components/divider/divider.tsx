@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { DividerAlign, SnippetTypes } from '../utils/prop-types'
 import { getMargin } from '../spacer/spacer'
-import { GeistUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/themes/presets'
 
 export type DividerTypes = SnippetTypes
 
