@@ -5,17 +5,28 @@ import ImageBrowser from './image-browser'
 import useRealShape from '../utils/use-real-shape'
 import useCurrentState from '../utils/use-current-state'
 import useResize from '../utils/use-resize'
+import { PropsOf } from '../utils/prop-types'
 
-interface Props {
-  src: string
-  disableAutoResize?: boolean
-  disableSkeleton?: boolean
-  width?: number
-  height?: number
-  className?: string
-  scale?: string
-  maxDelay?: number
-}
+export type Assign<T extends object, U extends object> = T & Omit<U, keyof T>
+
+export type Props<T extends React.ReactElement | React.ComponentType<any>> = Assign<
+  {
+    src: string
+    disableAutoResize?: boolean
+    disableSkeleton?: boolean
+    width?: number
+    height?: number
+    className?: string
+    scale?: string
+    maxDelay?: number
+    component?: T
+  },
+  PropsOf<T>
+>
+
+export type PropsWithNative<
+  TAs extends React.ReactElement | React.ComponentType<any> = React.ElementType<HTMLImageElement>
+> = Assign<Props<TAs>, React.ImgHTMLAttributes<any>>
 
 const defaultProps = {
   disableSkeleton: false,
@@ -25,10 +36,7 @@ const defaultProps = {
   maxDelay: 3000,
 }
 
-type NativeAttrs = Omit<React.ImgHTMLAttributes<any>, keyof Props>
-export type ImageProps = Props & typeof defaultProps & NativeAttrs
-
-const Image: React.FC<ImageProps> = ({
+const Image = <T extends React.ReactElement | React.ComponentType<any>>({
   src,
   width,
   height,
@@ -37,8 +45,9 @@ const Image: React.FC<ImageProps> = ({
   scale,
   maxDelay,
   disableAutoResize,
+  component,
   ...props
-}) => {
+}: PropsWithNative<T>) => {
   const showAnimation = !disableSkeleton && width && height
   const w = width ? `${width}px` : 'auto'
   const h = height ? `${height}px` : 'auto'
@@ -49,6 +58,7 @@ const Image: React.FC<ImageProps> = ({
   const [zoomHeight, setZoomHeight, zoomHeightRef] = useCurrentState<string>(h)
   const imageRef = useRef<HTMLImageElement>(null)
   const [shape, updateShape] = useRealShape(imageRef)
+  const Component = (component ? component : 'img') as any
 
   const imageLoaded = () => {
     if (!showAnimation) return
@@ -101,7 +111,14 @@ const Image: React.FC<ImageProps> = ({
   return (
     <div className={`image ${className}`}>
       {showSkeleton && showAnimation && <ImageSkeleton opacity={loading ? 0.5 : 0} />}
-      <img ref={imageRef} width={width} height={height} onLoad={imageLoaded} src={src} {...props} />
+      <Component
+        ref={imageRef}
+        width={width}
+        height={height}
+        onLoad={imageLoaded}
+        src={src}
+        {...props}
+      />
       <style jsx>{`
         .image {
           width: ${w};
@@ -124,13 +141,9 @@ const Image: React.FC<ImageProps> = ({
   )
 }
 
-type MemoImageComponent<P = {}> = React.NamedExoticComponent<P> & {
+type GeistUIImage = typeof Image & {
   Browser: typeof ImageBrowser
 }
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
 Image.defaultProps = defaultProps
 
-export default React.memo(Image) as MemoImageComponent<ComponentProps>
+export default Image as GeistUIImage

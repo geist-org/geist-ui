@@ -1,4 +1,16 @@
+import React from 'react'
+
 export const tuple = <T extends string[]>(...args: T) => args
+
+export type PropsOf<T> = T extends undefined
+  ? {}
+  : T extends React.ComponentType<infer P>
+  ? P
+  : T extends React.ReactElement
+  ? Record<string, any>
+  : T extends keyof JSX.IntrinsicElements
+  ? JSX.IntrinsicElements[T]
+  : never
 
 const buttonTypes = tuple(
   'default',
