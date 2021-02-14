@@ -30,7 +30,11 @@ const getIconSize = (size: NormalSizes) => {
   return sizes[size]
 }
 
-const getIconBgColor = (type: NormalTypes, palette: GeistUIThemesPalette, color?: string) => {
+const getIconBgColor = (
+  type: NormalTypes,
+  palette: GeistUIThemesPalette,
+  color?: string,
+) => {
   const colors: { [key in NormalTypes]: string } = {
     default: palette.accents_6,
     secondary: palette.secondary,

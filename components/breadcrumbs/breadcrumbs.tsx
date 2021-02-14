@@ -46,7 +46,8 @@ const Breadcrumbs: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
   const withSeparatorChildren = childrenArray.map((item, index) => {
     if (!React.isValidElement(item)) return item
     const last = childrenArray[index - 1]
-    const lastIsSeparator = React.isValidElement(last) && last.type === BreadcrumbsSeparator
+    const lastIsSeparator =
+      React.isValidElement(last) && last.type === BreadcrumbsSeparator
     const currentIsSeparator = item.type === BreadcrumbsSeparator
     if (!lastIsSeparator && !currentIsSeparator && index > 0) {
       return (

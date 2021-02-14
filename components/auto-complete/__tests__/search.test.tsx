@@ -18,7 +18,9 @@ describe('AutoComplete Search', () => {
 
   it('should update value when dropdown clicked', () => {
     let value = ''
-    const wrapper = mount(<AutoComplete options={mockOptions} onChange={val => (value = val)} />)
+    const wrapper = mount(
+      <AutoComplete options={mockOptions} onChange={val => (value = val)} />,
+    )
     wrapper.find('input').at(0).simulate('focus')
     wrapper.find('.item').at(0).simulate('click', nativeEvent)
     expect(value).toEqual('london')

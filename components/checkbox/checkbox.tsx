@@ -53,7 +53,10 @@ const Checkbox: React.FC<CheckboxProps> = ({
   const isDisabled = inGroup ? disabledAll || disabled : disabled
 
   if (inGroup && checked) {
-    useWarning('Remove props "checked" when [Checkbox] component is in the group.', 'Checkbox')
+    useWarning(
+      'Remove props "checked" when [Checkbox] component is in the group.',
+      'Checkbox',
+    )
   }
   if (inGroup) {
     useEffect(() => {

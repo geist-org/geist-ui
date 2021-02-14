@@ -89,7 +89,10 @@ describe('Tooltip', () => {
   it('should render correctly by visible', async () => {
     const wrapper = mount(
       <div>
-        <Tooltip text={<p id="visible">custom-content</p>} visible={true} placement="rightEnd">
+        <Tooltip
+          text={<p id="visible">custom-content</p>}
+          visible={true}
+          placement="rightEnd">
           some tips
         </Tooltip>
       </div>,

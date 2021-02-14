@@ -45,7 +45,8 @@ const useMediaQuery = (
   options: ResponsiveOptions = defaultResponsiveOptions,
 ) => {
   const { match: matchType = 'default', ssrMatchMedia = null } = options
-  const supportMedia = typeof window !== 'undefined' && typeof window.matchMedia !== 'undefined'
+  const supportMedia =
+    typeof window !== 'undefined' && typeof window.matchMedia !== 'undefined'
 
   const theme = useTheme()
   const mediaQueries: {

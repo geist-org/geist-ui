@@ -56,11 +56,10 @@ export const Note: React.FC<React.PropsWithChildren<NoteProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
-  const { color, borderColor, bgColor } = useMemo(() => getStatusColor(type, filled, theme), [
-    type,
-    filled,
-    theme,
-  ])
+  const { color, borderColor, bgColor } = useMemo(
+    () => getStatusColor(type, filled, theme),
+    [type, filled, theme],
+  )
   const padding = small
     ? `calc(${theme.layout.gapHalf} / 2) calc(${theme.layout.gap} / 2)`
     : `${theme.layout.gapHalf} ${theme.layout.gap}`

@@ -14,4 +14,5 @@ const defaultContext = {
 
 export const RadioContext = React.createContext<RadioConfig>(defaultContext)
 
-export const useRadioContext = (): RadioConfig => React.useContext<RadioConfig>(RadioContext)
+export const useRadioContext = (): RadioConfig =>
+  React.useContext<RadioConfig>(RadioContext)

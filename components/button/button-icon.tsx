@@ -24,7 +24,9 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
 }) => {
   return (
     <span
-      className={`icon ${isRight ? 'right' : ''} ${isSingle ? 'single' : ''} ${className}`}
+      className={`icon ${isRight ? 'right' : ''} ${
+        isSingle ? 'single' : ''
+      } ${className}`}
       {...props}>
       {children}
       <style jsx>{`

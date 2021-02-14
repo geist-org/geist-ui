@@ -22,11 +22,12 @@ const Demo: React.FC<React.PropsWithChildren<unknown>> = () => {
           <>
             <Text h3>Preview</Text>
             <Text>
-              Here&#39;s a preview of your changes to the Theme. When you set the changes, the
-              entire document site will change with the theme.
+              Here&#39;s a preview of your changes to the Theme. When you set the changes,
+              the entire document site will change with the theme.
             </Text>
             <Text>
-              You can copy automatically generated codes or share your custom theme with anyone.
+              You can copy automatically generated codes or share your custom theme with
+              anyone.
             </Text>
           </>
         )}
@@ -49,8 +50,8 @@ const Demo: React.FC<React.PropsWithChildren<unknown>> = () => {
           </Link>
         </Text>
         <Text>
-          Our mission is to make cloud computing accessible to everyone. We build products for
-          developers and designers. And those who aspire to become one.
+          Our mission is to make cloud computing accessible to everyone. We build products
+          for developers and designers. And those who aspire to become one.
         </Text>
         <Text h6>Heading</Text>
         <Text h5>Heading</Text>

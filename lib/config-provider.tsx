@@ -55,7 +55,9 @@ const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = R
       [onThemeChange, scrollHeight, tabbarFixed, isChinese],
     )
 
-    return <ConfigContext.Provider value={initialValue}>{children}</ConfigContext.Provider>
+    return (
+      <ConfigContext.Provider value={initialValue}>{children}</ConfigContext.Provider>
+    )
   },
 )
 

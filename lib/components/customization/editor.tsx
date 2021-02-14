@@ -116,7 +116,11 @@ const Editor = () => {
       <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
       <div className="content">
         {expressiveness.map((item, index) => (
-          <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
+          <EditorInputItem
+            key={`${item}-${index}`}
+            groupName="expressiveness"
+            keyName={item}
+          />
         ))}
       </div>
 
@@ -130,8 +134,8 @@ const Editor = () => {
         <p>大多数的布局间距都依赖这些变量，不合理的更改可能会导致布局失衡。</p>
       ) : (
         <p>
-          Most layout spacing depends on these variables, unreasonable changes may cause layout
-          imbalance.
+          Most layout spacing depends on these variables, unreasonable changes may cause
+          layout imbalance.
         </p>
       )}
       <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>

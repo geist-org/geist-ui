@@ -87,7 +87,9 @@ describe('Snippet', () => {
 
   it('should work with custom toast', () => {
     document.execCommand = jest.fn()
-    const wrapper = mount(<Snippet text={command} toastText="Code copied!" toastType="secondary" />)
+    const wrapper = mount(
+      <Snippet text={command} toastText="Code copied!" toastType="secondary" />,
+    )
     wrapper.find('.copy').simulate('click')
     expect(document.execCommand).toHaveBeenCalled()
     ;(document.execCommand as jest.Mock).mockRestore()

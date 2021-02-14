@@ -53,7 +53,9 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
     [TreeFolder, TreeFile],
   )
 
-  const sortedChildren = isImperative ? nextChildren : sortChildren(nextChildren, TreeFolder)
+  const sortedChildren = isImperative
+    ? nextChildren
+    : sortChildren(nextChildren, TreeFolder)
 
   return (
     <div className={`folder ${className}`} onClick={clickHandler} {...props}>

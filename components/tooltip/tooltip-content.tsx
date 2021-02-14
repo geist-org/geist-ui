@@ -90,10 +90,17 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   if (!el) return null
   return createPortal(
     <CSSTransition visible={visible}>
-      <div className={`tooltip-content ${className}`} ref={selfRef} onClick={preventHandler}>
+      <div
+        className={`tooltip-content ${className}`}
+        ref={selfRef}
+        onClick={preventHandler}>
         <div className="inner">
           {!hideArrow && (
-            <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={hasShadow} />
+            <TooltipIcon
+              placement={placement}
+              bgColor={colors.bgColor}
+              shadow={hasShadow}
+            />
           )}
           {children}
         </div>

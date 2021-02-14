@@ -7,7 +7,10 @@ export type GeistUserTheme = DeepPartial<GeistUIThemes> & { type: string }
 
 export const isObject = (target: unknown) => target && typeof target === 'object'
 
-export const deepDuplicable = <T extends Record<string, unknown>>(source: T, target: T): T => {
+export const deepDuplicable = <T extends Record<string, unknown>>(
+  source: T,
+  target: T,
+): T => {
   if (!isObject(target) || !isObject(source)) return source as T
 
   const sourceKeys = Object.keys(source) as Array<keyof T>
@@ -46,7 +49,9 @@ const isAvailableThemeType = (type?: string): boolean => {
   return !hasType
 }
 
-const isPresetTheme = (themeOrType?: GeistUserTheme | GeistUIThemes | string): boolean => {
+const isPresetTheme = (
+  themeOrType?: GeistUserTheme | GeistUIThemes | string,
+): boolean => {
   if (!themeOrType) return false
   const isType = typeof themeOrType === 'string'
   const type = isType

@@ -26,7 +26,9 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   const theme = useTheme()
   return (
     <>
-      <div className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`} {...props}>
+      <div
+        className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`}
+        {...props}>
         {children}
         <style jsx>{`
           .item {
