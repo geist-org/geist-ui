@@ -35,7 +35,7 @@ type ItemLayoutValue = {
   display: string
 }
 const getItemLayout = (val: BreakpointsValue): ItemLayoutValue => {
-  const display = val === 0 ? 'display: none;' : ''
+  const display = val === 0 ? 'display: none;' : 'display: unset;'
   if (typeof val === 'number') {
     const width = (100 / 24) * val
     const ratio = width > 100 ? '100%' : width < 0 ? '0' : `${width}%`
