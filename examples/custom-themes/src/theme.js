@@ -12,11 +12,22 @@
 //   GeistUIThemesLayout,
 //   GeistUIThemesFont,
 // } from '@geist-ui/react'
+import { Themes } from '@geist-ui/react'
 
-export default {
+export const greenTheme = Themes.createFromLight({
+  type: 'green',
   palette: {
-    success: '#ccc',
-    warning: '#ccc',
-    error: '#ccc',
+    success: 'green',
+    warning: 'green',
+    error: 'green',
   },
-}
+})
+
+export const redTheme = Themes.createFromLight({
+  type: 'red',
+  palette: {
+    success: 'red',
+    warning: 'red',
+    error: 'red',
+  },
+})

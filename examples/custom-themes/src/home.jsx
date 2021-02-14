@@ -1,23 +1,36 @@
 import React from 'react'
-import { Card, Text, Tag, useTheme } from '@geist-ui/react'
+import { Text, Tag, useTheme, Select } from '@geist-ui/react'
 
-const Home = () => {
+const Home = ({ onThemeChange }) => {
   const theme = useTheme()
+  const changeHandler = val => {
+    onThemeChange && onThemeChange(val)
+  }
 
   return (
-    <Card shadow>
-      <Text>Modern and minimalist React UI library.</Text>
+    <div>
+      <Select size="small" value={theme.type} onChange={changeHandler}>
+        <Select.Option label>System preset</Select.Option>
+        <Select.Option value="light">Light</Select.Option>
+        <Select.Option value="dark">Dark</Select.Option>
+        <Select.Option label>My custom</Select.Option>
+        <Select.Option value="green">Green</Select.Option>
+        <Select.Option value="red">Red</Select.Option>
+      </Select>
+
       <Text type={'success'}>
-        Modern and minimalist React UI library. <Tag>{theme.palette.success}</Tag>
+        Success. <Tag>{theme.palette.success}</Tag>
       </Text>
       <Text type={'warning'}>
-        Modern and minimalist React UI library. <Tag>{theme.palette.warning}</Tag>
+        Warning. <Tag>{theme.palette.warning}</Tag>
       </Text>
       <Text type={'error'}>
-        Modern and minimalist React UI library. <Tag>{theme.palette.error}</Tag>
+        Error. <Tag>{theme.palette.error}</Tag>
       </Text>
-      <Text type={'secondary'}>Modern and minimalist React UI library.</Text>
-    </Card>
+      <Text type={'secondary'}>
+        Secondary (Uncovered). <Tag>{theme.palette.secondary}</Tag>
+      </Text>
+    </div>
   )
 }
 
