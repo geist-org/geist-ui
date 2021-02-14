@@ -8,7 +8,10 @@ type Props = {
   keyName: string
 }
 
-const EditorInputItem: React.FC<React.PropsWithChildren<Props>> = ({ groupName, keyName }) => {
+const EditorInputItem: React.FC<React.PropsWithChildren<Props>> = ({
+  groupName,
+  keyName,
+}) => {
   const theme = useTheme()
   const { updateCustomTheme } = useConfigs()
   const currentVal = useMemo(() => {

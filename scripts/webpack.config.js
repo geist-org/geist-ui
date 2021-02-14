@@ -26,7 +26,9 @@ module.exports = async () => {
       return Object.assign({}, pre, { [current.name]: current.url })
     }, {})
 
-  console.log(`\n${Object.keys(componentsEntries).length} Components in total have been collected.`)
+  console.log(
+    `\n${Object.keys(componentsEntries).length} Components in total have been collected.`,
+  )
   console.log('Bundle now...')
 
   const configs = {
@@ -83,7 +85,7 @@ module.exports = async () => {
           exclude: /(node_modules)/,
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
+            presets: ['@babel/env', '@babel/react', '@babel/typescript'],
             plugins: ['styled-jsx/babel'],
           },
         },

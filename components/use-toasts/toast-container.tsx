@@ -21,7 +21,13 @@ const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
   const toastElements = useMemo(
     () =>
       toasts.map((t, i) => (
-        <ToastItem index={i} total={toasts.length} toast={t} onHover={hover} key={`toast-${i}`} />
+        <ToastItem
+          index={i}
+          total={toasts.length}
+          toast={t}
+          onHover={hover}
+          key={`toast-${i}`}
+        />
       )),
     [toasts, hover],
   )

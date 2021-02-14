@@ -72,7 +72,9 @@ describe('Input', () => {
     let value = ''
     const callback = jest
       .fn()
-      .mockImplementation((e: React.ChangeEvent<HTMLInputElement>) => (value = e.target.value))
+      .mockImplementation(
+        (e: React.ChangeEvent<HTMLInputElement>) => (value = e.target.value),
+      )
     const wrapper = mount(<Input onChange={callback} />)
     wrapper
       .find('input')
@@ -106,9 +108,13 @@ describe('Input', () => {
     let value = ''
     const callback = jest
       .fn()
-      .mockImplementation((e: React.ChangeEvent<HTMLInputElement>) => (value = e.target.value))
+      .mockImplementation(
+        (e: React.ChangeEvent<HTMLInputElement>) => (value = e.target.value),
+      )
     const clearHandler = jest.fn()
-    const wrapper = mount(<Input onChange={callback} clearable onClearClick={clearHandler} />)
+    const wrapper = mount(
+      <Input onChange={callback} clearable onClearClick={clearHandler} />,
+    )
 
     wrapper
       .find('input')
@@ -146,7 +152,12 @@ describe('Input', () => {
   it('should ignore icon event when input disabled', () => {
     const click = jest.fn()
     const wrapper = mount(
-      <Input icon={<span id="test-icon">icon</span>} onIconClick={click} iconClickable disabled />,
+      <Input
+        icon={<span id="test-icon">icon</span>}
+        onIconClick={click}
+        iconClickable
+        disabled
+      />,
     )
     wrapper.find('#test-icon').simulate('click', nativeEvent)
     expect(click).not.toHaveBeenCalled()

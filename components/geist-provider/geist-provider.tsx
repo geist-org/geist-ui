@@ -14,7 +14,11 @@ export interface Props {
   themeType?: string | 'dark' | 'light'
 }
 
-const GeistProvider: React.FC<PropsWithChildren<Props>> = ({ themes, themeType, children }) => {
+const GeistProvider: React.FC<PropsWithChildren<Props>> = ({
+  themes,
+  themeType,
+  children,
+}) => {
   const [toasts, setToasts, toastsRef] = useCurrentState<Array<ToastWithID>>([])
   const [toastHovering, setToastHovering] = useState<boolean>(false)
   const updateToasts: UpdateToastsFunction<ToastWithID> = (

@@ -98,8 +98,16 @@ const Toggle: React.FC<ToggleProps> = ({
 
   return (
     <label className={className} {...props}>
-      <input type="checkbox" disabled={disabled} checked={selfChecked} onChange={changeHandle} />
-      <div className={`toggle ${selfChecked ? 'checked' : ''} ${disabled ? 'disabled' : ''}`}>
+      <input
+        type="checkbox"
+        disabled={disabled}
+        checked={selfChecked}
+        onChange={changeHandle}
+      />
+      <div
+        className={`toggle ${selfChecked ? 'checked' : ''} ${
+          disabled ? 'disabled' : ''
+        }`}>
         <span className="inner" />
       </div>
       <style jsx>{`

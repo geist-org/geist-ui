@@ -2,7 +2,11 @@ import React, { useEffect, useMemo } from 'react'
 import PaginationPrevious from './pagination-previous'
 import PaginationNext from './pagination-next'
 import PaginationPages from './pagination-pages'
-import { PaginationContext, PaginationConfig, PaginationUpdateType } from './pagination-context'
+import {
+  PaginationContext,
+  PaginationConfig,
+  PaginationUpdateType,
+} from './pagination-context'
 import useCurrentState from '../utils/use-current-state'
 import { pickChild } from '../utils/collections'
 import { NormalSizes } from '../utils/prop-types'

@@ -25,8 +25,14 @@ export type TagColors = {
   borderColor: string
 }
 
-const getColors = (type: SnippetTypes, palette: GeistUIThemesPalette, invert: boolean) => {
-  const colors: { [key in SnippetTypes]: Pick<TagColors, 'color'> & Partial<TagColors> } = {
+const getColors = (
+  type: SnippetTypes,
+  palette: GeistUIThemesPalette,
+  invert: boolean,
+) => {
+  const colors: {
+    [key in SnippetTypes]: Pick<TagColors, 'color'> & Partial<TagColors>
+  } = {
     default: {
       color: palette.foreground,
     },
@@ -76,11 +82,10 @@ const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
-  const { color, bgColor, borderColor } = useMemo(() => getColors(type, theme.palette, invert), [
-    type,
-    theme.palette,
-    invert,
-  ])
+  const { color, bgColor, borderColor } = useMemo(
+    () => getColors(type, theme.palette, invert),
+    [type, theme.palette, invert],
+  )
 
   return (
     <span className={className} {...props}>

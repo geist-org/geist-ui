@@ -24,7 +24,9 @@ const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = ({
   const theme = useTheme()
 
   return (
-    <footer className={`${disableAutoMargin ? '' : 'auto-margin'} ${className}`} {...props}>
+    <footer
+      className={`${disableAutoMargin ? '' : 'auto-margin'} ${className}`}
+      {...props}>
       {children}
       <style jsx>{`
         footer {

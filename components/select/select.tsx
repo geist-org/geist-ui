@@ -70,11 +70,13 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   const theme = useTheme()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(false)
-  const [value, setValue, valueRef] = useCurrentState<string | string[] | undefined>(() => {
-    if (!multiple) return init
-    if (Array.isArray(init)) return init
-    return typeof init === 'undefined' ? [] : [init]
-  })
+  const [value, setValue, valueRef] = useCurrentState<string | string[] | undefined>(
+    () => {
+      if (!multiple) return init
+      if (Array.isArray(init)) return init
+      return typeof init === 'undefined' ? [] : [init]
+    },
+  )
   const isEmpty = useMemo(() => {
     if (!Array.isArray(value)) return !value
     return value.length === 0
@@ -176,13 +178,16 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             max-width: 80vw;
             width: ${width};
             overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s, box-shadow 0.2s ease 0s;
+            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
+              box-shadow 0.2s ease 0s;
             border: 1px solid ${theme.palette.border};
             border-radius: ${theme.layout.radius};
             padding: 0 ${theme.layout.gapQuarter} 0 ${theme.layout.gapHalf};
             height: ${sizes.height};
             min-width: ${sizes.minWidth};
-            background-color: ${disabled ? theme.palette.accents_1 : theme.palette.background};
+            background-color: ${disabled
+              ? theme.palette.accents_1
+              : theme.palette.background};
           }
 
           .multiple {

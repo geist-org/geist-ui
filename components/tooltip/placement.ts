@@ -99,7 +99,10 @@ export const getPosition = (
   return positions[placement] || (positions.top as TooltipPosition)
 }
 
-export const getIconPosition = (placement: Placement, offset: number): TooltipIconPosition => {
+export const getIconPosition = (
+  placement: Placement,
+  offset: number,
+): TooltipIconPosition => {
   const positions: { [key in Placement]?: TooltipIconPosition } = {
     top: {
       top: 'auto',

@@ -23,7 +23,13 @@ export type TableCellActions = {
 }
 export type TableOperation = (fn: TableCellActions, rowData: any) => any
 
-const TableCell: React.FC<Props> = ({ columns, row, rowIndex, emptyText, onCellClick }) => {
+const TableCell: React.FC<Props> = ({
+  columns,
+  row,
+  rowIndex,
+  emptyText,
+  onCellClick,
+}) => {
   const { removeRow, updateRow } = useTableContext()
   const actions: TableCellActions = {
     update: data => {

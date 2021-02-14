@@ -14,7 +14,9 @@ const ThemeProvider: React.FC<PropsWithChildren<Props>> = ({
   themeType,
   themes = [],
 }) => {
-  const [allThemes, setAllThemes] = useState<AllThemesConfig>({ themes: Themes.getPresets() })
+  const [allThemes, setAllThemes] = useState<AllThemesConfig>({
+    themes: Themes.getPresets(),
+  })
 
   const currentTheme = useMemo<GeistUIThemes>(() => {
     const theme = allThemes.themes.find(item => item.type === themeType)

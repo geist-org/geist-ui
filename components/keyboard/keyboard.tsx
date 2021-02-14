@@ -55,10 +55,10 @@ const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
-  const { padding, fontSize, minWidth } = useMemo<CustomLayout>(() => getLayout(small, theme), [
-    small,
-    theme,
-  ])
+  const { padding, fontSize, minWidth } = useMemo<CustomLayout>(
+    () => getLayout(small, theme),
+    [small, theme],
+  )
 
   return (
     <kbd className={className} {...props}>

@@ -17,7 +17,15 @@ const normalSizes = tuple('mini', 'small', 'medium', 'large')
 
 const normalTypes = tuple('default', 'secondary', 'success', 'warning', 'error')
 
-const snippetTypes = tuple('default', 'secondary', 'success', 'warning', 'error', 'dark', 'lite')
+const snippetTypes = tuple(
+  'default',
+  'secondary',
+  'success',
+  'warning',
+  'error',
+  'dark',
+  'lite',
+)
 
 const cardTypes = tuple(
   'default',

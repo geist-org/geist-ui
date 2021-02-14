@@ -52,7 +52,9 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
     [state.join(',')],
   )
 
-  const hasIndexChildren = useMemo(() => setChildrenIndex(children, [Collapse]), [children])
+  const hasIndexChildren = useMemo(() => setChildrenIndex(children, [Collapse]), [
+    children,
+  ])
 
   return (
     <CollapseContext.Provider value={initialValue}>

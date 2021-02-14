@@ -189,4 +189,6 @@ export type GridBasicItemComponentProps = Partial<typeof defaultProps> &
 
 GridBasicItem.defaultProps = defaultProps
 
-export default React.memo(GridBasicItem) as MemoBasicItemComponent<GridBasicItemComponentProps>
+export default React.memo(
+  GridBasicItem,
+) as MemoBasicItemComponent<GridBasicItemComponentProps>

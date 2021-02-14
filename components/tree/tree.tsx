@@ -42,11 +42,20 @@ const makeChildren = (value: Array<FileTreeValue> = []) => {
     .map((item, index) => {
       if (item.type === directoryType)
         return (
-          <TreeFolder name={item.name} extra={item.extra} key={`folder-${item.name}-${index}`}>
+          <TreeFolder
+            name={item.name}
+            extra={item.extra}
+            key={`folder-${item.name}-${index}`}>
             {makeChildren(item.files)}
           </TreeFolder>
         )
-      return <TreeFile name={item.name} extra={item.extra} key={`file-${item.name}-${index}`} />
+      return (
+        <TreeFile
+          name={item.name}
+          extra={item.extra}
+          key={`file-${item.name}-${index}`}
+        />
+      )
     })
 }
 
@@ -72,7 +81,9 @@ const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
     [initialExpand],
   )
 
-  const customChildren = isImperative ? makeChildren(value) : sortChildren(children, TreeFolder)
+  const customChildren = isImperative
+    ? makeChildren(value)
+    : sortChildren(children, TreeFolder)
 
   return (
     <TreeContext.Provider value={initialValue}>

@@ -12,7 +12,9 @@ interface Props {
 
 const defaultProps = {}
 
-export type AutoCompleteItemProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+export type AutoCompleteItemProps = Props &
+  typeof defaultProps &
+  React.HTMLAttributes<any>
 
 const getSizes = (size: NormalSizes) => {
   const fontSizes: { [key in NormalSizes]: string } = {

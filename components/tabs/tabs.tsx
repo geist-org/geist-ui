@@ -89,7 +89,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
             width: initial;
             overflow: auto;
           }
-          
+
           header {
             display: flex;
             flex-wrap: nowrap;
@@ -98,7 +98,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
             overflow: scroll;
             scrollbar-width: none;
           }
-          
+
           header::-webkit-scrollbar {
             display: none;
           }
