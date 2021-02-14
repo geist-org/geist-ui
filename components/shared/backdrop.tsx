@@ -1,6 +1,6 @@
 import React, { MouseEvent, useCallback } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import CSSTransition from './css-transition'
 import useCurrentState from '../utils/use-current-state'
 
@@ -39,7 +39,11 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
 
     return (
       <CSSTransition name="backdrop-wrapper" visible={visible} clearTime={300}>
-        <div className="backdrop" onClick={clickHandler} onMouseUp={mouseUpHandler} {...props}>
+        <div
+          className="backdrop"
+          onClick={clickHandler}
+          onMouseUp={mouseUpHandler}
+          {...props}>
           <div className="layer" />
           <div
             onClick={childrenClickHandler}

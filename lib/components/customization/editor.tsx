@@ -3,13 +3,13 @@ import {
   Text,
   Button,
   useTheme,
+  Themes,
   GeistUIThemesPalette,
   GeistUIThemesExpressiveness,
   GeistUIThemesLayout,
 } from 'components'
 import EditorColorItem from './editor-color-item'
 import EditorInputItem from './editor-input-item'
-import DefaultTheme from 'components/styles/themes/default'
 import { useConfigs } from 'lib/config-context'
 
 const basicColors: Array<keyof GeistUIThemesPalette> = [
@@ -71,6 +71,7 @@ const gapLayout: Array<keyof GeistUIThemesLayout> = [
 
 const Editor = () => {
   const theme = useTheme()
+  const DefaultTheme = Themes.getPresetStaticTheme()
   const { updateCustomTheme, isChinese } = useConfigs()
 
   const resetLayout = () => updateCustomTheme({ layout: DefaultTheme.layout })
@@ -115,7 +116,11 @@ const Editor = () => {
       <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
       <div className="content">
         {expressiveness.map((item, index) => (
-          <EditorInputItem key={`${item}-${index}`} groupName="expressiveness" keyName={item} />
+          <EditorInputItem
+            key={`${item}-${index}`}
+            groupName="expressiveness"
+            keyName={item}
+          />
         ))}
       </div>
 
@@ -129,8 +134,8 @@ const Editor = () => {
         <p>大多数的布局间距都依赖这些变量，不合理的更改可能会导致布局失衡。</p>
       ) : (
         <p>
-          Most layout spacing depends on these variables, unreasonable changes may cause layout
-          imbalance.
+          Most layout spacing depends on these variables, unreasonable changes may cause
+          layout imbalance.
         </p>
       )}
       <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>

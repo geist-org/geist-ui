@@ -32,7 +32,10 @@ const Editor: React.FC<Props> = ({ code }) => {
     <div className="editor">
       <details open={visible}>
         <summary onClick={clickHandler}>
-          <Row justify="space-between" align="middle" style={{ height: '100%', width: '100%' }}>
+          <Row
+            justify="space-between"
+            align="middle"
+            style={{ height: '100%', width: '100%' }}>
             <Col className="action">
               <span className="arrow">
                 <RightIcon size={16} />

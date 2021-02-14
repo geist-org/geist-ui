@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { CollapseContext, CollapseConfig } from './collapse-context'
 import useCurrentState from '../utils/use-current-state'
 import { setChildrenIndex } from '../utils/collections'
@@ -52,7 +52,9 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
     [state.join(',')],
   )
 
-  const hasIndexChildren = useMemo(() => setChildrenIndex(children, [Collapse]), [children])
+  const hasIndexChildren = useMemo(() => setChildrenIndex(children, [Collapse]), [
+    children,
+  ])
 
   return (
     <CollapseContext.Provider value={initialValue}>

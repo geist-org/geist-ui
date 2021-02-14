@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { NormalSizes, tuple } from '../utils/prop-types'
 import { getPageSize } from './styles'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import PageHeader from './page-header'
 import PageContent from './page-content'
 import { hasChild } from '../utils/collections'
@@ -24,7 +24,7 @@ const defaultProps = {
   dotBackdrop: false,
 }
 
-const DotStyles: React.FC<{}> = () => (
+const DotStyles: React.FC<unknown> = () => (
   <span>
     <style jsx>{`
       :global(body) {

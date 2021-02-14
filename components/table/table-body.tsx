@@ -1,6 +1,6 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import TableCell from './table-cell'
 import { useTableContext } from './table-context'
 
@@ -20,17 +20,13 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TableBodyProps = Props & typeof defaultProps & NativeAttrs
 
-export type cellActions = {
-  remove: Function
-}
-
-export type cellData = {
-  row: number
-  column: number
-  value: any
-}
-
-const TableBody: React.FC<TableBodyProps> = ({ data, hover, emptyText, onRow, onCell }) => {
+const TableBody: React.FC<TableBodyProps> = ({
+  data,
+  hover,
+  emptyText,
+  onRow,
+  onCell,
+}) => {
   const theme = useTheme()
   const { columns } = useTableContext()
   const rowClickHandler = (row: any, index: number) => {

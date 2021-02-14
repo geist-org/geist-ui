@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { addColorAlpha } from '../utils/color'
 
 interface Props {
@@ -20,7 +20,10 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
 }) => {
   const theme = useTheme()
   const [hover, activeHover] = useMemo(
-    () => [addColorAlpha(theme.palette.success, 0.1), addColorAlpha(theme.palette.success, 0.8)],
+    () => [
+      addColorAlpha(theme.palette.success, 0.1),
+      addColorAlpha(theme.palette.success, 0.8),
+    ],
     [theme.palette.success],
   )
   const clickHandler = (event: React.MouseEvent) => {

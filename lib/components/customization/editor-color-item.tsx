@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
-import { useTheme, GeistUIThemesPalette, Popover } from 'components'
+import { useTheme, GeistUIThemesPalette, Popover, Themes } from 'components'
 import { ColorResult, TwitterPicker } from 'react-color'
 import { useConfigs } from 'lib/config-context'
-import DefaultTheme from 'components/styles/themes/default'
+const DefaultTheme = Themes.getPresetStaticTheme()
 
 interface Props {
   value?: string
@@ -48,7 +48,10 @@ const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({ keyName }) 
     />
   )
   return (
-    <Popover content={() => popoverContent(mainColor)} portalClassName="editor-popover" offset={3}>
+    <Popover
+      content={() => popoverContent(mainColor)}
+      portalClassName="editor-popover"
+      offset={3}>
       <div className="editor-item">
         <div className="dot-box">
           <span className="dot" />

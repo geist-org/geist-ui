@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { setChildrenProps } from '../utils/collections'
 import TreeFile from './tree-file'
@@ -53,7 +53,9 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
     [TreeFolder, TreeFile],
   )
 
-  const sortedChildren = isImperative ? nextChildren : sortChildren(nextChildren, TreeFolder)
+  const sortedChildren = isImperative
+    ? nextChildren
+    : sortChildren(nextChildren, TreeFolder)
 
   return (
     <div className={`folder ${className}`} onClick={clickHandler} {...props}>

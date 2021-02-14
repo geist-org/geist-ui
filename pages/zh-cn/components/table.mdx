@@ -104,6 +104,32 @@ export const meta = {
 />
 
 <Playground
+  title="更新行"
+  desc="你可以更新指定的行数据。"
+  scope={{ Table, Text, Button }}
+  code={`
+() => {
+// operation: TableOperation
+  const operation = (actions, rowData) => {
+    return <Button type="error" auto size="mini" onClick={() => actions.update({ property: 'updated', description:'updated' })}>Update</Button>
+  }
+  const data = [
+    { property: 'type', description: 'Content type', operation },
+    { property: 'Component', description: 'DOM element to use', operation },
+    { property: <Text b>bold</Text>, description: 'Bold style', operation },
+  ]
+  return (
+    <Table data={data}>
+      <Table.Column prop="property" label="property" />
+      <Table.Column prop="description" label="description" />
+      <Table.Column prop="operation" label="operation" width={150} />
+    </Table>
+  )
+}
+`}
+/>
+
+<Playground
   title="定制头"
   scope={{ Table, Code, Text }}
   code={`
@@ -134,7 +160,7 @@ export const meta = {
 
 | 属性          | 描述                   | 类型                                                 | 推荐值                           | 默认   |
 | ------------- | ---------------------- | ---------------------------------------------------- | -------------------------------- | ------ |
-| **data**      | 数据源                 | `Array<any>`                                         | -                                | -      |
+| **data**      | 数据源                 | `Array<TableDataSource<any>>`                        | -                                | -      |
 | **emptyText** | 当数据为空时显示的文本 | `string`                                             | -                                | -      |
 | **hover**     | 是否显示 hover 效果    | `boolean`                                            | -                                | `true` |
 | **onRow**     | 行的点击事件           | `(row: any, index: number) => void`                  | -                                | -      |

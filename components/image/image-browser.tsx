@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import Link from '../link'
 import { Props as LinkProps } from '../link/link'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'
@@ -102,13 +102,19 @@ const getAddressInput = (
   </div>
 )
 
-const ImageBrowser = React.forwardRef<HTMLDivElement, React.PropsWithChildren<ImageBrowserProps>>(
+const ImageBrowser = React.forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<ImageBrowserProps>
+>(
   (
     { url, title, children, showFullLink, invert, anchorProps, className, ...props },
     ref: React.Ref<HTMLDivElement>,
   ) => {
     const theme = useTheme()
-    const colors = useMemo(() => getBrowserColors(invert, theme.palette), [invert, theme.palette])
+    const colors = useMemo(() => getBrowserColors(invert, theme.palette), [
+      invert,
+      theme.palette,
+    ])
     const input = useMemo(() => {
       if (url) return getAddressInput(url, showFullLink, colors, anchorProps)
       if (title) return getTitle(title, colors)

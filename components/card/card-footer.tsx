@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 
 interface Props {
@@ -24,7 +24,9 @@ const CardFooter: React.FC<React.PropsWithChildren<CardFooterProps>> = ({
   const theme = useTheme()
 
   return (
-    <footer className={`${disableAutoMargin ? '' : 'auto-margin'} ${className}`} {...props}>
+    <footer
+      className={`${disableAutoMargin ? '' : 'auto-margin'} ${className}`}
+      {...props}>
       {children}
       <style jsx>{`
         footer {

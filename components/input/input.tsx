@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import InputLabel from './input-label'
 import InputBlockLabel from './input-block-label'
 import InputIcon from './input-icon'
@@ -68,18 +68,18 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     const [hover, setHover] = useState<boolean>(false)
     const { heightRatio, fontSize } = useMemo(() => getSizes(size), [size])
     const isControlledComponent = useMemo(() => value !== undefined, [value])
-    const labelClasses = useMemo(() => (labelRight ? 'right-label' : label ? 'left-label' : ''), [
-      label,
-      labelRight,
-    ])
-    const iconClasses = useMemo(() => (iconRight ? 'right-icon' : icon ? 'left-icon' : ''), [
-      icon,
-      iconRight,
-    ])
-    const { color, borderColor, hoverBorder } = useMemo(() => getColors(theme.palette, status), [
-      theme.palette,
-      status,
-    ])
+    const labelClasses = useMemo(
+      () => (labelRight ? 'right-label' : label ? 'left-label' : ''),
+      [label, labelRight],
+    )
+    const iconClasses = useMemo(
+      () => (iconRight ? 'right-icon' : icon ? 'left-icon' : ''),
+      [icon, iconRight],
+    )
+    const { color, borderColor, hoverBorder } = useMemo(
+      () => getColors(theme.palette, status),
+      [theme.palette, status],
+    )
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
       if (disabled || readOnly) return

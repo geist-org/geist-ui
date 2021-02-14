@@ -1,7 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useGeistUIContext } from '../utils/use-geist-ui-context'
 import { Toast } from './use-toast'
 import ToastItem from './toast-item'
@@ -9,10 +9,10 @@ import ToastItem from './toast-item'
 export type ToastWithID = Toast & {
   id: string
   willBeDestroy?: boolean
-  cancel: Function
+  cancel: () => void
 }
 
-const ToastContainer: React.FC<React.PropsWithChildren<{}>> = () => {
+const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
   const portal = usePortal('toast')
   const theme = useTheme()
   const [hover, setHover] = useState<boolean>(false)
@@ -21,7 +21,13 @@ const ToastContainer: React.FC<React.PropsWithChildren<{}>> = () => {
   const toastElements = useMemo(
     () =>
       toasts.map((t, i) => (
-        <ToastItem index={i} total={toasts.length} toast={t} onHover={hover} key={`toast-${i}`} />
+        <ToastItem
+          index={i}
+          total={toasts.length}
+          toast={t}
+          onHover={hover}
+          key={`toast-${i}`}
+        />
       )),
     [toasts, hover],
   )

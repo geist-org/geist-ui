@@ -1,6 +1,6 @@
 import React, { MutableRefObject, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
 import CSSTransition from '../shared/css-transition'
@@ -90,10 +90,17 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   if (!el) return null
   return createPortal(
     <CSSTransition visible={visible}>
-      <div className={`tooltip-content ${className}`} ref={selfRef} onClick={preventHandler}>
+      <div
+        className={`tooltip-content ${className}`}
+        ref={selfRef}
+        onClick={preventHandler}>
         <div className="inner">
           {!hideArrow && (
-            <TooltipIcon placement={placement} bgColor={colors.bgColor} shadow={hasShadow} />
+            <TooltipIcon
+              placement={placement}
+              bgColor={colors.bgColor}
+              shadow={hasShadow}
+            />
           )}
           {children}
         </div>

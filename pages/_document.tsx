@@ -1,6 +1,22 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
+import { CssBaseline } from 'components'
 
 class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx)
+    const styles = CssBaseline.flush()
+
+    return {
+      ...initialProps,
+      styles: (
+        <>
+          {initialProps.styles}
+          {styles}
+        </>
+      ),
+    }
+  }
+
   render() {
     return (
       <Html>
@@ -21,7 +37,10 @@ class MyDocument extends Document {
           />
           <Main />
           <NextScript />
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110371817-12" />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-110371817-12"
+          />
           <script
             async
             dangerouslySetInnerHTML={{

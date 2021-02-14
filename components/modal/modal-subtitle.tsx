@@ -1,6 +1,6 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 
 interface Props {
   className?: string
@@ -13,7 +13,11 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type ModalSubtitleProps = Props & typeof defaultProps & NativeAttrs
 
-const ModalSubtitle: React.FC<ModalSubtitleProps> = ({ className, children, ...props }) => {
+const ModalSubtitle: React.FC<ModalSubtitleProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   const theme = useTheme()
 
   return (

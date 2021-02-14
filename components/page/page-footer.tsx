@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 
 interface Props {
@@ -13,7 +13,10 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type PageHeaderProps = Props & typeof defaultProps & NativeAttrs
 
-const PageFooter: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({ children, ...props }) => {
+const PageFooter: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
+  children,
+  ...props
+}) => {
   const theme = useTheme()
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const LinkIcon: React.FC<{}> = () => {
+export const LinkIcon: React.FC<unknown> = () => {
   return (
     <svg
       viewBox="0 0 24 24"

@@ -24,7 +24,9 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(
           const showChildren = side.children && children
           return (
             <div key={`${side.localeName || side.name}-${index}`} className="item">
-              {!side.url && <ActiveCatalog name={side.name} localeName={side.localeName} />}
+              {!side.url && (
+                <ActiveCatalog name={side.name} localeName={side.localeName} />
+              )}
               {side.url && <ActiveLink href={side.url} text={side.name} />}
 
               {showChildren && (

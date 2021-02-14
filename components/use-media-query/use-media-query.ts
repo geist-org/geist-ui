@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { tuple } from '../utils/prop-types'
-import { BreakpointsItem, GeistUIThemesBreakpoints } from '../styles/themes'
+import { BreakpointsItem, GeistUIThemesBreakpoints } from '../themes/presets'
 
 const breakpoints = tuple('xs', 'sm', 'md', 'lg', 'xl', 'mobile')
 export type ResponsiveBreakpoint = typeof breakpoints[number]
@@ -45,7 +45,8 @@ const useMediaQuery = (
   options: ResponsiveOptions = defaultResponsiveOptions,
 ) => {
   const { match: matchType = 'default', ssrMatchMedia = null } = options
-  const supportMedia = typeof window !== 'undefined' && typeof window.matchMedia !== 'undefined'
+  const supportMedia =
+    typeof window !== 'undefined' && typeof window.matchMedia !== 'undefined'
 
   const theme = useTheme()
   const mediaQueries: {

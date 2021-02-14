@@ -1,6 +1,6 @@
 import React from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 
 interface Props {
   className?: string
@@ -10,7 +10,9 @@ const defaultProps = {
   className: '',
 }
 
-export type AutoCompleteSearchProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+export type AutoCompleteSearchProps = Props &
+  typeof defaultProps &
+  React.HTMLAttributes<any>
 
 const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchProps>> = ({
   children,

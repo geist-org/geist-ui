@@ -117,6 +117,31 @@ describe('Table', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should be possible to update the row', () => {
+    const operation = (actions: cellActions) => {
+      return (
+        <button
+          onClick={() =>
+            actions.update({ property: 'test', description: 'test', operation })
+          }>
+          Update
+        </button>
+      )
+    }
+    const data = [{ property: 'bold', description: 'boolean', operation }]
+    const wrapper = mount(
+      <Table data={data}>
+        <Table.Column prop="property" label="property" />
+        <Table.Column prop="description" label="description" />
+        <Table.Column prop="operation" label="operation" />
+      </Table>,
+    )
+    expect(wrapper.find('tbody').find('tr').length).toBe(1)
+    wrapper.find('tbody').find('button').simulate('click')
+    expect(wrapper.find('tbody').find('tr').find('td').first().text()).toContain('test')
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
   it('should render emptyText when data missing', () => {
     const data = [{ property: 'bold', description: 'boolean' }]
     const wrapper = mount(
@@ -134,7 +159,11 @@ describe('Table', () => {
     const cellHandler = jest.fn()
     const data = [{ property: 'bold', description: 'boolean' }]
     const wrapper = mount(
-      <Table data={data} emptyText="test-not-found" onRow={rowHandler} onCell={cellHandler}>
+      <Table
+        data={data}
+        emptyText="test-not-found"
+        onRow={rowHandler}
+        onCell={cellHandler}>
         <Table.Column prop="property" label="property" />
         <Table.Column prop="description" label="description" />
       </Table>,

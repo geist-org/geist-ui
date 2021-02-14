@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalSizes, ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
-import { GeistUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/themes/presets'
 
 interface Props {
   disabled?: boolean
@@ -26,7 +26,10 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ButtonGroupProps = Props & typeof defaultProps & NativeAttrs
 
-const getGroupBorderColors = (palette: GeistUIThemesPalette, props: ButtonGroupProps): string => {
+const getGroupBorderColors = (
+  palette: GeistUIThemesPalette,
+  props: ButtonGroupProps,
+): string => {
   const { ghost, type } = props
   if (!ghost && type !== 'default') return palette.background
   const colors: { [key in ButtonTypes]?: string } = {
@@ -42,7 +45,16 @@ const getGroupBorderColors = (palette: GeistUIThemesPalette, props: ButtonGroupP
 
 const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupProps => {
   const theme = useTheme()
-  const { disabled, size, type, ghost, vertical, children, className, ...props } = groupProps
+  const {
+    disabled,
+    size,
+    type,
+    ghost,
+    vertical,
+    children,
+    className,
+    ...props
+  } = groupProps
   const initialValue = useMemo<ButtonGroupConfig>(
     () => ({
       disabled,
@@ -60,7 +72,9 @@ const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupPr
 
   return (
     <ButtonGroupContext.Provider value={initialValue}>
-      <div className={`btn-group ${vertical ? 'vertical' : 'horizontal'} ${className}`} {...props}>
+      <div
+        className={`btn-group ${vertical ? 'vertical' : 'horizontal'} ${className}`}
+        {...props}>
         {children}
         <style jsx>{`
           .btn-group {

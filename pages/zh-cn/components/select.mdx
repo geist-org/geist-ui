@@ -94,10 +94,29 @@ export const meta = {
 
 <Playground
   title="多选"
-  desc="Select 组件支持同时选中多个值。"
+  desc="`Select` 组件支持同时选中多个值。"
   scope={{ Select }}
   code={`
 <Select placeholder="选择框架" multiple width="200px" initialValue={['1', '3', '4', '6']}>
+  <Select.Option value="1">React</Select.Option>
+  <Select.Option value="2">Angular</Select.Option>
+  <Select.Option value="3">Vue</Select.Option>
+  <Select.Option divider />
+  <Select.Option value="4">Rails</Select.Option>
+  <Select.Option value="5">Sinatra</Select.Option>
+  <Select.Option divider />
+  <Select.Option value="6">Express</Select.Option>
+  <Select.Option value="7">Koa</Select.Option>
+</Select>
+`}
+/>
+
+<Playground
+  title="无移除图标的多选"
+  desc="`Select` 支持不携带移除图标的多选控件。"
+  scope={{ Select }}
+  code={`
+<Select placeholder="选择框架" multiple width="200px" clearable={false} initialValue={['1', '3', '4', '6']}>
   <Select.Option value="1">React</Select.Option>
   <Select.Option value="2">Angular</Select.Option>
   <Select.Option value="3">Vue</Select.Option>
@@ -185,6 +204,7 @@ export const meta = {
 | **icon**              | 右侧图标组件                      | `ComponentType`                                     | -                                 | `SVG Component` |
 | **pure**              | 隐藏右侧图标组件                  | `boolean`                                           | -                                 | `false`         |
 | **multiple**          | 是否支持多选                      | `boolean`                                           | -                                 | `false`         |
+| **clearable**         | 多选时是否展示移除图标            | `boolean`                                           | -                                 | `true`          |
 | **disabled**          | 禁用所有的交互                    | `boolean`                                           | -                                 | `false`         |
 | **onChange**          | 选项被选中所触发的事件            | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
 | **dropdownClassName** | 下拉框的自定义类名                | `string`                                            | -                                 | -               |

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import withDefaults from 'components/utils/with-defaults'
-import useTheme from 'components/styles/use-theme'
-import { GeistUIThemes } from 'components/styles/themes'
+import useTheme from 'components/use-theme'
+import { GeistUIThemes } from 'components/themes/presets'
 
 interface Props {
   plain?: number | boolean

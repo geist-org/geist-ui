@@ -6,13 +6,17 @@ import useRealShape from '../utils/use-real-shape'
 import useResize from '../utils/use-resize'
 import { TableContext, TableColumnItem, TableConfig } from './table-context'
 import useCurrentState from '../utils/use-current-state'
+import { TableOperation } from './table-cell'
 
 export type TableOnRow = (row: any, index: number) => void
 export type TableOnCell = (cell: any, index: number, colunm: number) => void
 export type TableOnChange = (data: any) => void
+export type TableDataSource<T extends { [key: string]: any }> = T & {
+  operation?: TableOperation
+}
 
 interface Props {
-  data?: Array<any>
+  data?: Array<TableDataSource<any>>
   emptyText?: string
   hover?: boolean
   onRow: TableOnRow
@@ -47,7 +51,9 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
   const ref = useRef<HTMLTableElement>(null)
   const [{ width }, updateShape] = useRealShape<HTMLTableElement>(ref)
   const [columns, setColumns] = useState<Array<TableColumnItem>>([])
-  const [selfData, setSelfData, dataRef] = useCurrentState<Array<TableColumnItem>>([])
+  const [selfData, setSelfData, dataRef] = useCurrentState<Array<TableDataSource<any>>>(
+    [],
+  )
   const updateColumn = (column: TableColumnItem) => {
     setColumns(last => {
       const hasColumn = last.find(item => item.value === column.value)
@@ -63,12 +69,20 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
     onChange(next)
     setSelfData([...next])
   }
+  const updateRow = (rowIndex: number, newData: any) => {
+    const next = dataRef.current.map((data, index) =>
+      index === rowIndex ? { ...data, ...newData } : data,
+    )
+    onChange(next)
+    setSelfData([...next])
+  }
 
   const initialValue = useMemo<TableConfig>(
     () => ({
       columns,
       updateColumn,
       removeRow,
+      updateRow,
     }),
     [columns],
   )

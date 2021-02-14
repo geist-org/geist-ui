@@ -4,7 +4,10 @@ export type EllipsisProps = {
   height: string
 }
 
-const Ellipsis: React.FC<React.PropsWithChildren<EllipsisProps>> = ({ children, height }) => {
+const Ellipsis: React.FC<React.PropsWithChildren<EllipsisProps>> = ({
+  children,
+  height,
+}) => {
   return (
     <span>
       {children}

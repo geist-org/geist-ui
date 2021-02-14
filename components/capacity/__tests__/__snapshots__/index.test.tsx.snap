@@ -2,21 +2,21 @@
 
 exports[`Capacity should override background color 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {
       "class": "capacity ",
       "title": "50%",
     },
     "children": Array [
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [],
         "name": "span",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "
         .capacity {
           width: 50px;
@@ -56,10 +56,10 @@ initialize {
         "x-attribsNamespace": Object {},
         "x-attribsPrefix": Object {},
       },
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "data": "
         .capacity {
           width: 50px;
@@ -88,7 +88,7 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {},
           "children": Array [],
           "name": "span",
@@ -108,22 +108,17 @@ initialize {
     "name": "div",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "tag",
     "x-attribsNamespace": Object {
       "class": undefined,
@@ -138,8 +133,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }
@@ -147,24 +140,24 @@ initialize {
 
 exports[`Capacity should render different widths based on limit-value 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {},
     "children": Array [
-      Object {
+      Node {
         "attribs": Object {
           "class": "capacity ",
           "title": "20%",
         },
         "children": Array [
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [],
             "name": "span",
             "namespace": "http://www.w3.org/1999/xhtml",
-            "next": Object {
+            "next": Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .capacity {
           width: 50px;
@@ -204,10 +197,10 @@ initialize {
             "x-attribsNamespace": Object {},
             "x-attribsPrefix": Object {},
           },
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "data": "
         .capacity {
           width: 50px;
@@ -236,7 +229,7 @@ initialize {
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": null,
             "parent": [Circular],
-            "prev": Object {
+            "prev": Node {
               "attribs": Object {},
               "children": Array [],
               "name": "span",
@@ -255,21 +248,21 @@ initialize {
         ],
         "name": "div",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {
             "class": "capacity ",
             "title": "40%",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [],
               "name": "span",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Object {
+              "next": Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         .capacity {
           width: 50px;
@@ -309,10 +302,10 @@ initialize {
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .capacity {
           width: 50px;
@@ -341,7 +334,7 @@ initialize {
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": null,
               "parent": [Circular],
-              "prev": Object {
+              "prev": Node {
                 "attribs": Object {},
                 "children": Array [],
                 "name": "span",
@@ -360,21 +353,21 @@ initialize {
           ],
           "name": "div",
           "namespace": "http://www.w3.org/1999/xhtml",
-          "next": Object {
+          "next": Node {
             "attribs": Object {
               "class": "capacity ",
               "title": "66.67%",
             },
             "children": Array [
-              Object {
+              Node {
                 "attribs": Object {},
                 "children": Array [],
                 "name": "span",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Object {
+                "next": Node {
                   "attribs": Object {},
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "
         .capacity {
           width: 50px;
@@ -414,10 +407,10 @@ initialize {
                 "x-attribsNamespace": Object {},
                 "x-attribsPrefix": Object {},
               },
-              Object {
+              Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         .capacity {
           width: 50px;
@@ -446,7 +439,7 @@ initialize {
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": null,
                 "parent": [Circular],
-                "prev": Object {
+                "prev": Node {
                   "attribs": Object {},
                   "children": Array [],
                   "name": "span",
@@ -502,21 +495,21 @@ initialize {
           "title": undefined,
         },
       },
-      Object {
+      Node {
         "attribs": Object {
           "class": "capacity ",
           "title": "40%",
         },
         "children": Array [
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [],
             "name": "span",
             "namespace": "http://www.w3.org/1999/xhtml",
-            "next": Object {
+            "next": Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .capacity {
           width: 50px;
@@ -556,10 +549,10 @@ initialize {
             "x-attribsNamespace": Object {},
             "x-attribsPrefix": Object {},
           },
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "data": "
         .capacity {
           width: 50px;
@@ -588,7 +581,7 @@ initialize {
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": null,
             "parent": [Circular],
-            "prev": Object {
+            "prev": Node {
               "attribs": Object {},
               "children": Array [],
               "name": "span",
@@ -607,21 +600,21 @@ initialize {
         ],
         "name": "div",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {
             "class": "capacity ",
             "title": "66.67%",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [],
               "name": "span",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Object {
+              "next": Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         .capacity {
           width: 50px;
@@ -661,10 +654,10 @@ initialize {
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .capacity {
           width: 50px;
@@ -693,7 +686,7 @@ initialize {
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": null,
               "parent": [Circular],
-              "prev": Object {
+              "prev": Node {
                 "attribs": Object {},
                 "children": Array [],
                 "name": "span",
@@ -726,21 +719,21 @@ initialize {
           },
         },
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {
             "class": "capacity ",
             "title": "20%",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [],
               "name": "span",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Object {
+              "next": Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         .capacity {
           width: 50px;
@@ -780,10 +773,10 @@ initialize {
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .capacity {
           width: 50px;
@@ -812,7 +805,7 @@ initialize {
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": null,
               "parent": [Circular],
-              "prev": Object {
+              "prev": Node {
                 "attribs": Object {},
                 "children": Array [],
                 "name": "span",
@@ -854,21 +847,21 @@ initialize {
           "title": undefined,
         },
       },
-      Object {
+      Node {
         "attribs": Object {
           "class": "capacity ",
           "title": "66.67%",
         },
         "children": Array [
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [],
             "name": "span",
             "namespace": "http://www.w3.org/1999/xhtml",
-            "next": Object {
+            "next": Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .capacity {
           width: 50px;
@@ -908,10 +901,10 @@ initialize {
             "x-attribsNamespace": Object {},
             "x-attribsPrefix": Object {},
           },
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "data": "
         .capacity {
           width: 50px;
@@ -940,7 +933,7 @@ initialize {
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": null,
             "parent": [Circular],
-            "prev": Object {
+            "prev": Node {
               "attribs": Object {},
               "children": Array [],
               "name": "span",
@@ -961,21 +954,21 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {
             "class": "capacity ",
             "title": "40%",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [],
               "name": "span",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Object {
+              "next": Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         .capacity {
           width: 50px;
@@ -1015,10 +1008,10 @@ initialize {
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .capacity {
           width: 50px;
@@ -1047,7 +1040,7 @@ initialize {
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": null,
               "parent": [Circular],
-              "prev": Object {
+              "prev": Node {
                 "attribs": Object {},
                 "children": Array [],
                 "name": "span",
@@ -1068,21 +1061,21 @@ initialize {
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": [Circular],
           "parent": [Circular],
-          "prev": Object {
+          "prev": Node {
             "attribs": Object {
               "class": "capacity ",
               "title": "20%",
             },
             "children": Array [
-              Object {
+              Node {
                 "attribs": Object {},
                 "children": Array [],
                 "name": "span",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Object {
+                "next": Node {
                   "attribs": Object {},
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "
         .capacity {
           width: 50px;
@@ -1122,10 +1115,10 @@ initialize {
                 "x-attribsNamespace": Object {},
                 "x-attribsPrefix": Object {},
               },
-              Object {
+              Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         .capacity {
           width: 50px;
@@ -1154,7 +1147,7 @@ initialize {
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": null,
                 "parent": [Circular],
-                "prev": Object {
+                "prev": Node {
                   "attribs": Object {},
                   "children": Array [],
                   "name": "span",
@@ -1210,22 +1203,17 @@ initialize {
     "name": "div",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "tag",
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
@@ -1234,8 +1222,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }

@@ -3,7 +3,9 @@ import { useTheme, Row } from 'components'
 import CustomizationCodes from './codes'
 import Demo from './demo'
 
-const CustomizationLayout: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
+const CustomizationLayout: React.FC<React.PropsWithChildren<unknown>> = ({
+  children,
+}) => {
   const theme = useTheme()
 
   return (

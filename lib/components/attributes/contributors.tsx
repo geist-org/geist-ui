@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { Avatar, Link, Tooltip, useTheme } from 'components'
 import { useConfigs } from 'lib/config-context'
-const GithubURL = 'https://github.com/geist-org/react/blob/master'
-const host = 'https://contributors.geist-ui.dev/api/users'
+import { CONTRIBUTORS_URL, GITHUB_URL } from 'lib/constants'
+const RepoMasterURL = `${GITHUB_URL}/blob/master`
 
 export interface Contributor {
   name: string
@@ -16,7 +16,7 @@ interface Props {
 
 const getContributors = async (path: string): Promise<Array<Contributor>> => {
   try {
-    const response = await fetch(`${host}?path=${path}`)
+    const response = await fetch(`${CONTRIBUTORS_URL}?path=${path}`)
     if (!response.ok || response.status === 204) return []
     return response.json()
   } catch (e) {
@@ -28,7 +28,7 @@ const Contributors: React.FC<Props> = ({ path }) => {
   const theme = useTheme()
   const { isChinese } = useConfigs()
   const [users, setUsers] = useState<Array<Contributor>>([])
-  const link = useMemo(() => `${GithubURL}/${path || '/pages'}`, [])
+  const link = useMemo(() => `${RepoMasterURL}/${path || '/pages'}`, [])
 
   useEffect(() => {
     let unmount = false
@@ -51,7 +51,9 @@ const Contributors: React.FC<Props> = ({ path }) => {
           </Link>
         </Tooltip>
       ))}
-      <Tooltip text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'} type="dark">
+      <Tooltip
+        text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'}
+        type="dark">
         <Link color target="_blank" rel="nofollow" href={link}>
           <Avatar text="Add" />
         </Link>

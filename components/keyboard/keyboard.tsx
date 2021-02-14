@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
-import { GeistUIThemes } from '../styles/themes'
+import useTheme from '../use-theme'
+import { GeistUIThemes } from '../themes/presets'
 
 interface Props {
   command?: boolean
@@ -55,10 +55,10 @@ const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
-  const { padding, fontSize, minWidth } = useMemo<CustomLayout>(() => getLayout(small, theme), [
-    small,
-    theme,
-  ])
+  const { padding, fontSize, minWidth } = useMemo<CustomLayout>(
+    () => getLayout(small, theme),
+    [small, theme],
+  )
 
   return (
     <kbd className={className} {...props}>

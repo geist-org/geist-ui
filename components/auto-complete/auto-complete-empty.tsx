@@ -12,7 +12,9 @@ const defaultProps = {
   className: '',
 }
 
-export type AutoCompleteEmptyProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+export type AutoCompleteEmptyProps = Props &
+  typeof defaultProps &
+  React.HTMLAttributes<any>
 
 const AutoCompleteEmpty: React.FC<React.PropsWithChildren<AutoCompleteEmptyProps>> = ({
   children,

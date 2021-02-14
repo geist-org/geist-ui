@@ -60,7 +60,7 @@ describe('Dropdown', () => {
 
   it('events should be prevented', () => {
     const handler = jest.fn()
-    const Mock: React.FC<{}> = () => {
+    const Mock: React.FC<unknown> = () => {
       const ref = useRef<HTMLDivElement>(null)
       return (
         <div ref={ref} onClick={handler}>
@@ -93,7 +93,7 @@ describe('Dropdown', () => {
         x: 0,
       } as DOMRect
     }
-    const Mock: React.FC<{}> = () => {
+    const Mock: React.FC<unknown> = () => {
       const ref = useRef<HTMLDivElement>(null)
       return (
         <div ref={ref}>
@@ -142,7 +142,7 @@ describe('Dropdown', () => {
         x: 0,
       } as DOMRect
     }
-    const Mock: React.FC<{}> = () => {
+    const Mock: React.FC<unknown> = () => {
       const ref = useRef<HTMLDivElement>(null)
       return (
         <div ref={ref} id="parent">
@@ -166,14 +166,17 @@ describe('Dropdown', () => {
   })
 
   it('should render to specified container', () => {
-    const Mock: React.FC<{}> = () => {
+    const Mock: React.FC<unknown> = () => {
       const ref = useRef<HTMLDivElement>(null)
       const customContainer = useRef<HTMLDivElement>(null)
       return (
         <div>
           <div ref={customContainer} id="custom" />
           <div ref={ref}>
-            <Dropdown parent={ref} visible getPopupContainer={() => customContainer.current}>
+            <Dropdown
+              parent={ref}
+              visible
+              getPopupContainer={() => customContainer.current}>
               <span>test-value</span>
             </Dropdown>
           </div>

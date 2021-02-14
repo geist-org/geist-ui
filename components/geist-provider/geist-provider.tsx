@@ -4,16 +4,21 @@ import {
   GeistUIContextParams,
   UpdateToastsFunction,
 } from '../utils/use-geist-ui-context'
-import ThemeProvider from '../styles/theme-provider'
-import { ThemeParam } from '../styles/theme-provider/theme-provider'
+import ThemeProvider from './theme-provider'
 import useCurrentState from '../utils/use-current-state'
 import ToastContainer, { ToastWithID } from '../use-toasts/toast-container'
+import { GeistUIThemes } from '../themes/presets'
 
 export interface Props {
-  theme?: ThemeParam
+  themes?: Array<GeistUIThemes>
+  themeType?: string | 'dark' | 'light'
 }
 
-const GeistProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) => {
+const GeistProvider: React.FC<PropsWithChildren<Props>> = ({
+  themes,
+  themeType,
+  children,
+}) => {
   const [toasts, setToasts, toastsRef] = useCurrentState<Array<ToastWithID>>([])
   const [toastHovering, setToastHovering] = useState<boolean>(false)
   const updateToasts: UpdateToastsFunction<ToastWithID> = (
@@ -40,7 +45,7 @@ const GeistProvider: React.FC<PropsWithChildren<Props>> = ({ theme, children }) 
 
   return (
     <GeistUIContent.Provider value={initialValue}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider themes={themes} themeType={themeType}>
         {children}
         <ToastContainer />
       </ThemeProvider>

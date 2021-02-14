@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 
 interface Props {
@@ -17,7 +17,12 @@ const defaultProps = {
 
 export type TreeStatusIconProps = Props & typeof defaultProps
 
-const TreeStatusIcon: React.FC<TreeStatusIconProps> = ({ color, width, height, active }) => {
+const TreeStatusIcon: React.FC<TreeStatusIconProps> = ({
+  color,
+  width,
+  height,
+  active,
+}) => {
   const theme = useTheme()
   return (
     <svg

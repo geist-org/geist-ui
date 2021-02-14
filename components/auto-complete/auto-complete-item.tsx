@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useAutoCompleteContext } from './auto-complete-context'
 import { NormalSizes } from '../utils/prop-types'
 import Ellipsis from '../shared/ellipsis'
@@ -12,7 +12,9 @@ interface Props {
 
 const defaultProps = {}
 
-export type AutoCompleteItemProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+export type AutoCompleteItemProps = Props &
+  typeof defaultProps &
+  React.HTMLAttributes<any>
 
 const getSizes = (size: NormalSizes) => {
   const fontSizes: { [key in NormalSizes]: string } = {

@@ -4,7 +4,15 @@ export const getId = () => {
   return Math.random().toString(32).slice(2, 10)
 }
 
-export const hasChild = (children: ReactNode | undefined, child: React.ElementType): boolean => {
+export const capitalize = (str: string | symbol | number | undefined | null) => {
+  const safeStr = String(str).trim()
+  return safeStr.charAt(0).toUpperCase() + safeStr.slice(1)
+}
+
+export const hasChild = (
+  children: ReactNode | undefined,
+  child: React.ElementType,
+): boolean => {
   const types = React.Children.map(children, item => {
     if (!React.isValidElement(item)) return null
     return item.type
@@ -61,18 +69,21 @@ export const pickChildByProps = (
   return [withoutPropChildren, targetChildren]
 }
 
-export const pickChildrenFirst = (children: ReactNode | undefined): ReactNode | undefined => {
+export const pickChildrenFirst = (
+  children: ReactNode | undefined,
+): ReactNode | undefined => {
   return React.Children.toArray(children)[0]
 }
 
 export const setChildrenProps = (
   children: ReactNode | undefined,
-  props: object = {},
+  props: Record<string, unknown>,
   targetComponents: Array<React.ElementType> = [],
 ): ReactNode | undefined => {
   if (React.Children.count(children) === 0) return []
   const allowAll = targetComponents.length === 0
-  const clone = (child: React.ReactElement, props = {}) => React.cloneElement(child, props)
+  const clone = (child: React.ReactElement, props = {}) =>
+    React.cloneElement(child, props)
 
   return React.Children.map(children, item => {
     if (!React.isValidElement(item)) return item
@@ -90,7 +101,8 @@ export const setChildrenIndex = (
 ): ReactNode | undefined => {
   if (React.Children.count(children) === 0) return []
   const allowAll = targetComponents.length === 0
-  const clone = (child: React.ReactElement, props = {}) => React.cloneElement(child, props)
+  const clone = (child: React.ReactElement, props = {}) =>
+    React.cloneElement(child, props)
   let index = 0
 
   return React.Children.map(children, item => {
@@ -105,7 +117,9 @@ export const setChildrenIndex = (
   })
 }
 
-export const getReactNode = (node?: React.ReactNode | (() => React.ReactNode)): React.ReactNode => {
+export const getReactNode = (
+  node?: React.ReactNode | (() => React.ReactNode),
+): React.ReactNode => {
   if (!node) return null
 
   if (typeof node !== 'function') return node

@@ -1,5 +1,5 @@
-import React from 'react'
-import useTheme from '../styles/use-theme'
+import React, { CSSProperties } from 'react'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
 import Dropdown from '../shared/dropdown'
@@ -8,7 +8,7 @@ interface Props {
   visible: boolean
   className?: string
   disableMatchWidth?: boolean
-  dropdownStyle?: object
+  dropdownStyle?: CSSProperties
 }
 
 const defaultProps = {
@@ -19,13 +19,9 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type AutoCompleteDropdownProps = Props & typeof defaultProps & NativeAttrs
 
-const AutoCompleteDropdown: React.FC<React.PropsWithChildren<AutoCompleteDropdownProps>> = ({
-  children,
-  visible,
-  className,
-  dropdownStyle,
-  disableMatchWidth,
-}) => {
+const AutoCompleteDropdown: React.FC<
+  React.PropsWithChildren<AutoCompleteDropdownProps>
+> = ({ children, visible, className, dropdownStyle, disableMatchWidth }) => {
   const theme = useTheme()
   const { ref } = useAutoCompleteContext()
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {

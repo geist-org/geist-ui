@@ -1,9 +1,11 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 
 export interface InputBlockLabelLabel {}
 
-const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> = ({ children }) => {
+const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> = ({
+  children,
+}) => {
   const theme = useTheme()
 
   return (

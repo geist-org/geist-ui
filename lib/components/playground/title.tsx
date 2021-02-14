@@ -30,7 +30,9 @@ const Title: React.FC<TitleProps> = React.memo(({ title, desc }) => {
       <h3>
         <VirtualAnchor>{title}</VirtualAnchor>
       </h3>
-      {desc && isStringDesc && <p dangerouslySetInnerHTML={{ __html: replaceCode(desc) }} />}
+      {desc && isStringDesc && (
+        <p dangerouslySetInnerHTML={{ __html: replaceCode(desc) }} />
+      )}
       {desc && !isStringDesc && <p>{desc}</p>}
       <style jsx>{`
         h3 {

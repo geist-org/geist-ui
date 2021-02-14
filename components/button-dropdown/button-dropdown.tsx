@@ -1,5 +1,5 @@
 import React, { MouseEvent, useCallback, useMemo, useRef, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import useClickAway from '../utils/use-click-away'
 import { getColor } from './styles'
 import ButtonDropdownIcon from './icon'
@@ -50,7 +50,11 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
   const colors = getColor(theme.palette, type)
   const sizes = getButtonSize(size, auto)
   const itemChildren = pickChild(children, ButtonDropdownItem)[1]
-  const [itemChildrenWithoutMain, mainItemChildren] = pickChildByProps(itemChildren, 'main', true)
+  const [itemChildrenWithoutMain, mainItemChildren] = pickChildByProps(
+    itemChildren,
+    'main',
+    true,
+  )
 
   const [visible, setVisible] = useState<boolean>(false)
   const clickHandler = useCallback(
@@ -82,7 +86,11 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
 
   return (
     <ButtonDropdownContext.Provider value={initialValue}>
-      <div ref={ref} className={`btn-dropdown ${className}`} onClick={stopPropagation} {...props}>
+      <div
+        ref={ref}
+        className={`btn-dropdown ${className}`}
+        onClick={stopPropagation}
+        {...props}>
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>

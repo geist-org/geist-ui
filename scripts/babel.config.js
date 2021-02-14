@@ -1,14 +1,14 @@
 module.exports = {
   presets: [
     [
-      '@babel/preset-env',
+      '@babel/env',
       {
         bugfixes: true,
         modules: false,
       },
     ],
-    '@babel/preset-react',
-    '@babel/preset-typescript',
+    '@babel/react',
+    '@babel/typescript',
   ],
   plugins: [
     'styled-jsx/babel',

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { CardTypes } from '../utils/prop-types'
 import { getStyles } from './styles'
 import CardFooter from './card-footer'
@@ -40,11 +40,10 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
     if (shadow) return theme.expressiveness.shadowMedium
     return hoverable ? theme.expressiveness.shadowSmall : 'none'
   }, [hoverable, shadow, theme.expressiveness])
-  const { color, bgColor, borderColor } = useMemo(() => getStyles(type, theme.palette, shadow), [
-    type,
-    theme.palette,
-    shadow,
-  ])
+  const { color, bgColor, borderColor } = useMemo(
+    () => getStyles(type, theme.palette, shadow),
+    [type, theme.palette, shadow],
+  )
 
   const [withoutFooterChildren, footerChildren] = pickChild(children, CardFooter)
   const [withoutImageChildren, imageChildren] = pickChild(withoutFooterChildren, Image)
@@ -53,7 +52,11 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   return (
     <div className={`card ${className}`} {...props}>
       {imageChildren}
-      {hasContent ? withoutImageChildren : <CardContent>{withoutImageChildren}</CardContent>}
+      {hasContent ? (
+        withoutImageChildren
+      ) : (
+        <CardContent>{withoutImageChildren}</CardContent>
+      )}
       {footerChildren}
       <style jsx>{`
         .card {

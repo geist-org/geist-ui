@@ -1,4 +1,4 @@
-import { GeistUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/themes/presets'
 
 export type BrowserColors = {
   color: string
@@ -8,7 +8,10 @@ export type BrowserColors = {
   titleColor: string
 }
 
-export const getBrowserColors = (invert: boolean, palette: GeistUIThemesPalette): BrowserColors => {
+export const getBrowserColors = (
+  invert: boolean,
+  palette: GeistUIThemesPalette,
+): BrowserColors => {
   return invert
     ? {
         color: palette.background,

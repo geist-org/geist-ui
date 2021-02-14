@@ -4,13 +4,20 @@ exports[`Tabs should render correctly 1`] = `
 "<div class=\\"tabs \\"><header class=\\"\\"><div class=\\"tab  \\" role=\\"button\\">label1</div><div class=\\"tab  \\" role=\\"button\\">label2</div></header><div class=\\"content\\"></div><style>
           .tabs {
             width: initial;
+            overflow: auto;
           }
 
           header {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             align-items: center;
             border-bottom: 1px solid #eaeaea;
+            overflow: scroll;
+            scrollbar-width: none;
+          }
+
+          header::-webkit-scrollbar {
+            display: none;
           }
 
           .hide-divider {
@@ -28,6 +35,7 @@ exports[`Tabs should render correctly 1`] = `
             transition: all 200ms ease;
             text-transform: capitalize;
             font-size: 1rem;
+            white-space: nowrap;
             margin: 0 calc(0.8 * 8pt);
             color: #444;
             user-select: none;
@@ -79,13 +87,20 @@ exports[`Tabs should work correctly with different styles 1`] = `
 "<div class=\\"tabs \\"><header class=\\"hide-divider\\"><div class=\\"tab  \\" role=\\"button\\">label1</div></header><div class=\\"content\\"></div><style>
           .tabs {
             width: initial;
+            overflow: auto;
           }
 
           header {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             align-items: center;
             border-bottom: 1px solid #eaeaea;
+            overflow: scroll;
+            scrollbar-width: none;
+          }
+
+          header::-webkit-scrollbar {
+            display: none;
           }
 
           .hide-divider {
@@ -103,6 +118,7 @@ exports[`Tabs should work correctly with different styles 1`] = `
             transition: all 200ms ease;
             text-transform: capitalize;
             font-size: 1rem;
+            white-space: nowrap;
             margin: 0 calc(0.8 * 8pt);
             color: #444;
             user-select: none;

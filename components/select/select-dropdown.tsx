@@ -1,5 +1,5 @@
-import React from 'react'
-import useTheme from '../styles/use-theme'
+import React, { CSSProperties } from 'react'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { useSelectContext } from './select-context'
 import Dropdown from '../shared/dropdown'
@@ -7,7 +7,7 @@ import Dropdown from '../shared/dropdown'
 interface Props {
   visible: boolean
   className?: string
-  dropdownStyle?: object
+  dropdownStyle?: CSSProperties
   disableMatchWidth?: boolean
   getPopupContainer?: () => HTMLElement | null
 }

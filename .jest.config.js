@@ -18,9 +18,12 @@ module.exports = {
     'components/**/*.{ts,tsx}',
     '!components/**/styles.{ts,tsx}',
     '!components/**/*types.{ts,tsx}',
-    '!components/styles/*',
+    '!components/use-theme/*',
+    '!components/use-all-themes/*',
+    '!components/themes/*',
+    '!components/geist-provider/*',
     '!components/index.ts',
-    '!components/utils/*',
+    '!components/utils/**/*',
   ],
 
   moduleNameMapper: {

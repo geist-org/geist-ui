@@ -9,19 +9,32 @@ interface Props {
   onCellClick: (cell: any, rowIndex: number, colunmIndex: number) => void
 }
 
-export type cellActions = {
-  remove: Function
-}
-
-export type cellData = {
+export type TableCellData = {
   row: number
   column: number
   rowValue: any
 }
 
-const TableCell: React.FC<Props> = ({ columns, row, rowIndex, emptyText, onCellClick }) => {
-  const { removeRow } = useTableContext()
-  const actions: cellActions = {
+export type TableCellActionRemove = () => void
+export type TableCellActionUpdate = (data: any) => void
+export type TableCellActions = {
+  update: TableCellActionUpdate
+  remove: TableCellActionRemove
+}
+export type TableOperation = (fn: TableCellActions, rowData: any) => any
+
+const TableCell: React.FC<Props> = ({
+  columns,
+  row,
+  rowIndex,
+  emptyText,
+  onCellClick,
+}) => {
+  const { removeRow, updateRow } = useTableContext()
+  const actions: TableCellActions = {
+    update: data => {
+      updateRow && updateRow(rowIndex, data)
+    },
     remove: () => {
       removeRow && removeRow(rowIndex)
     },
@@ -30,7 +43,7 @@ const TableCell: React.FC<Props> = ({ columns, row, rowIndex, emptyText, onCellC
   return (
     <>
       {columns.map((column, index) => {
-        const data: cellData = {
+        const data: TableCellData = {
           row: rowIndex,
           column: index,
           rowValue: row,

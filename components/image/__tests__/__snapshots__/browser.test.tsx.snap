@@ -2,34 +2,34 @@
 
 exports[`Image Browser should render correctly 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {
       "class": "bowser ",
     },
     "children": Array [
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "attribs": Object {
               "class": "traffic",
             },
             "children": Array [
-              Object {
+              Node {
                 "attribs": Object {
                   "class": "close",
                 },
                 "children": Array [],
                 "name": "span",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Object {
+                "next": Node {
                   "attribs": Object {
                     "class": "mini",
                   },
                   "children": Array [],
                   "name": "span",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {
                       "class": "full",
                     },
@@ -67,14 +67,14 @@ initialize {
                   "class": undefined,
                 },
               },
-              Object {
+              Node {
                 "attribs": Object {
                   "class": "mini",
                 },
                 "children": Array [],
                 "name": "span",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Object {
+                "next": Node {
                   "attribs": Object {
                     "class": "full",
                   },
@@ -93,7 +93,7 @@ initialize {
                   },
                 },
                 "parent": [Circular],
-                "prev": Object {
+                "prev": Node {
                   "attribs": Object {
                     "class": "close",
                   },
@@ -119,7 +119,7 @@ initialize {
                   "class": undefined,
                 },
               },
-              Object {
+              Node {
                 "attribs": Object {
                   "class": "full",
                 },
@@ -128,7 +128,7 @@ initialize {
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": null,
                 "parent": [Circular],
-                "prev": Object {
+                "prev": Node {
                   "attribs": Object {
                     "class": "mini",
                   },
@@ -137,7 +137,7 @@ initialize {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": [Circular],
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "close",
                     },
@@ -174,17 +174,17 @@ initialize {
             ],
             "name": "div",
             "namespace": "http://www.w3.org/1999/xhtml",
-            "next": Object {
+            "next": Node {
               "attribs": Object {
                 "class": "address-input",
               },
               "children": Array [
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "https",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "attribs": Object {
                         "fill": "currentColor",
                         "height": "12",
@@ -192,14 +192,14 @@ initialize {
                         "width": "12",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "attribs": Object {
                             "d": "M5 10.2H19V21H5V10.2Z",
                           },
                           "children": Array [],
                           "name": "path",
                           "namespace": "http://www.w3.org/2000/svg",
-                          "next": Object {
+                          "next": Node {
                             "attribs": Object {
                               "clip-rule": "evenodd",
                               "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -233,7 +233,7 @@ initialize {
                             "d": undefined,
                           },
                         },
-                        Object {
+                        Node {
                           "attribs": Object {
                             "clip-rule": "evenodd",
                             "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -244,7 +244,7 @@ initialize {
                           "namespace": "http://www.w3.org/2000/svg",
                           "next": null,
                           "parent": [Circular],
-                          "prev": Object {
+                          "prev": Node {
                             "attribs": Object {
                               "d": "M5 10.2H19V21H5V10.2Z",
                             },
@@ -297,7 +297,7 @@ initialize {
                   ],
                   "name": "span",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {
                       "class": "link ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -305,12 +305,12 @@ initialize {
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "react.geist-ui.dev",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -354,10 +354,10 @@ initialize {
                         "prev": null,
                         "type": "text",
                       },
-                      Object {
+                      Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -392,7 +392,7 @@ initialize {
                         "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "data": "react.geist-ui.dev",
                           "next": [Circular],
                           "parent": [Circular],
@@ -406,10 +406,10 @@ initialize {
                     ],
                     "name": "a",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
       .address-input {
         height: 1.75rem;
@@ -490,7 +490,7 @@ initialize {
                     "class": undefined,
                   },
                 },
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "link ",
                     "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -498,12 +498,12 @@ initialize {
                     "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "react.geist-ui.dev",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -547,10 +547,10 @@ initialize {
                       "prev": null,
                       "type": "text",
                     },
-                    Object {
+                    Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
           .link {
             display: inline-flex;
@@ -585,7 +585,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "data": "react.geist-ui.dev",
                         "next": [Circular],
                         "parent": [Circular],
@@ -599,10 +599,10 @@ initialize {
                   ],
                   "name": "a",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {},
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "
       .address-input {
         height: 1.75rem;
@@ -658,12 +658,12 @@ initialize {
                     "x-attribsPrefix": Object {},
                   },
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "https",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "attribs": Object {
                           "fill": "currentColor",
                           "height": "12",
@@ -671,14 +671,14 @@ initialize {
                           "width": "12",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "attribs": Object {
                               "d": "M5 10.2H19V21H5V10.2Z",
                             },
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": Object {
+                            "next": Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -712,7 +712,7 @@ initialize {
                               "d": undefined,
                             },
                           },
-                          Object {
+                          Node {
                             "attribs": Object {
                               "clip-rule": "evenodd",
                               "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -723,7 +723,7 @@ initialize {
                             "namespace": "http://www.w3.org/2000/svg",
                             "next": null,
                             "parent": [Circular],
-                            "prev": Object {
+                            "prev": Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
@@ -801,10 +801,10 @@ initialize {
                     "title": undefined,
                   },
                 },
-                Object {
+                Node {
                   "attribs": Object {},
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "
       .address-input {
         height: 1.75rem;
@@ -854,7 +854,7 @@ initialize {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": null,
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "link ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -862,12 +862,12 @@ initialize {
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "react.geist-ui.dev",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -911,10 +911,10 @@ initialize {
                         "prev": null,
                         "type": "text",
                       },
-                      Object {
+                      Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -949,7 +949,7 @@ initialize {
                         "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "data": "react.geist-ui.dev",
                           "next": [Circular],
                           "parent": [Circular],
@@ -965,12 +965,12 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": [Circular],
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "https",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "attribs": Object {
                             "fill": "currentColor",
                             "height": "12",
@@ -978,14 +978,14 @@ initialize {
                             "width": "12",
                           },
                           "children": Array [
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": Object {
+                              "next": Node {
                                 "attribs": Object {
                                   "clip-rule": "evenodd",
                                   "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -1019,7 +1019,7 @@ initialize {
                                 "d": undefined,
                               },
                             },
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -1030,7 +1030,7 @@ initialize {
                               "namespace": "http://www.w3.org/2000/svg",
                               "next": null,
                               "parent": [Circular],
-                              "prev": Object {
+                              "prev": Node {
                                 "attribs": Object {
                                   "d": "M5 10.2H19V21H5V10.2Z",
                                 },
@@ -1136,17 +1136,17 @@ initialize {
               "class": undefined,
             },
           },
-          Object {
+          Node {
             "attribs": Object {
               "class": "address-input",
             },
             "children": Array [
-              Object {
+              Node {
                 "attribs": Object {
                   "class": "https",
                 },
                 "children": Array [
-                  Object {
+                  Node {
                     "attribs": Object {
                       "fill": "currentColor",
                       "height": "12",
@@ -1154,14 +1154,14 @@ initialize {
                       "width": "12",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "attribs": Object {
                           "d": "M5 10.2H19V21H5V10.2Z",
                         },
                         "children": Array [],
                         "name": "path",
                         "namespace": "http://www.w3.org/2000/svg",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {
                             "clip-rule": "evenodd",
                             "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -1195,7 +1195,7 @@ initialize {
                           "d": undefined,
                         },
                       },
-                      Object {
+                      Node {
                         "attribs": Object {
                           "clip-rule": "evenodd",
                           "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -1206,7 +1206,7 @@ initialize {
                         "namespace": "http://www.w3.org/2000/svg",
                         "next": null,
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "attribs": Object {
                             "d": "M5 10.2H19V21H5V10.2Z",
                           },
@@ -1259,7 +1259,7 @@ initialize {
                 ],
                 "name": "span",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Object {
+                "next": Node {
                   "attribs": Object {
                     "class": "link ",
                     "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -1267,12 +1267,12 @@ initialize {
                     "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "react.geist-ui.dev",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -1316,10 +1316,10 @@ initialize {
                       "prev": null,
                       "type": "text",
                     },
-                    Object {
+                    Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
           .link {
             display: inline-flex;
@@ -1354,7 +1354,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "data": "react.geist-ui.dev",
                         "next": [Circular],
                         "parent": [Circular],
@@ -1368,10 +1368,10 @@ initialize {
                   ],
                   "name": "a",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {},
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "
       .address-input {
         height: 1.75rem;
@@ -1452,7 +1452,7 @@ initialize {
                   "class": undefined,
                 },
               },
-              Object {
+              Node {
                 "attribs": Object {
                   "class": "link ",
                   "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -1460,12 +1460,12 @@ initialize {
                   "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                 },
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "react.geist-ui.dev",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
           .link {
             display: inline-flex;
@@ -1509,10 +1509,10 @@ initialize {
                     "prev": null,
                     "type": "text",
                   },
-                  Object {
+                  Node {
                     "attribs": Object {},
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "
           .link {
             display: inline-flex;
@@ -1547,7 +1547,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "data": "react.geist-ui.dev",
                       "next": [Circular],
                       "parent": [Circular],
@@ -1561,10 +1561,10 @@ initialize {
                 ],
                 "name": "a",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Object {
+                "next": Node {
                   "attribs": Object {},
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "
       .address-input {
         height: 1.75rem;
@@ -1620,12 +1620,12 @@ initialize {
                   "x-attribsPrefix": Object {},
                 },
                 "parent": [Circular],
-                "prev": Object {
+                "prev": Node {
                   "attribs": Object {
                     "class": "https",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "attribs": Object {
                         "fill": "currentColor",
                         "height": "12",
@@ -1633,14 +1633,14 @@ initialize {
                         "width": "12",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "attribs": Object {
                             "d": "M5 10.2H19V21H5V10.2Z",
                           },
                           "children": Array [],
                           "name": "path",
                           "namespace": "http://www.w3.org/2000/svg",
-                          "next": Object {
+                          "next": Node {
                             "attribs": Object {
                               "clip-rule": "evenodd",
                               "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -1674,7 +1674,7 @@ initialize {
                             "d": undefined,
                           },
                         },
-                        Object {
+                        Node {
                           "attribs": Object {
                             "clip-rule": "evenodd",
                             "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -1685,7 +1685,7 @@ initialize {
                           "namespace": "http://www.w3.org/2000/svg",
                           "next": null,
                           "parent": [Circular],
-                          "prev": Object {
+                          "prev": Node {
                             "attribs": Object {
                               "d": "M5 10.2H19V21H5V10.2Z",
                             },
@@ -1763,10 +1763,10 @@ initialize {
                   "title": undefined,
                 },
               },
-              Object {
+              Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
       .address-input {
         height: 1.75rem;
@@ -1816,7 +1816,7 @@ initialize {
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": null,
                 "parent": [Circular],
-                "prev": Object {
+                "prev": Node {
                   "attribs": Object {
                     "class": "link ",
                     "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -1824,12 +1824,12 @@ initialize {
                     "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "react.geist-ui.dev",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -1873,10 +1873,10 @@ initialize {
                       "prev": null,
                       "type": "text",
                     },
-                    Object {
+                    Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
           .link {
             display: inline-flex;
@@ -1911,7 +1911,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "data": "react.geist-ui.dev",
                         "next": [Circular],
                         "parent": [Circular],
@@ -1927,12 +1927,12 @@ initialize {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": [Circular],
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "https",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "attribs": Object {
                           "fill": "currentColor",
                           "height": "12",
@@ -1940,14 +1940,14 @@ initialize {
                           "width": "12",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "attribs": Object {
                               "d": "M5 10.2H19V21H5V10.2Z",
                             },
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": Object {
+                            "next": Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -1981,7 +1981,7 @@ initialize {
                               "d": undefined,
                             },
                           },
-                          Object {
+                          Node {
                             "attribs": Object {
                               "clip-rule": "evenodd",
                               "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -1992,7 +1992,7 @@ initialize {
                             "namespace": "http://www.w3.org/2000/svg",
                             "next": null,
                             "parent": [Circular],
-                            "prev": Object {
+                            "prev": Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
@@ -2079,26 +2079,26 @@ initialize {
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": null,
             "parent": [Circular],
-            "prev": Object {
+            "prev": Node {
               "attribs": Object {
                 "class": "traffic",
               },
               "children": Array [
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "close",
                   },
                   "children": Array [],
                   "name": "span",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {
                       "class": "mini",
                     },
                     "children": Array [],
                     "name": "span",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {
                         "class": "full",
                       },
@@ -2136,14 +2136,14 @@ initialize {
                     "class": undefined,
                   },
                 },
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "mini",
                   },
                   "children": Array [],
                   "name": "span",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {
                       "class": "full",
                     },
@@ -2162,7 +2162,7 @@ initialize {
                     },
                   },
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "close",
                     },
@@ -2188,7 +2188,7 @@ initialize {
                     "class": undefined,
                   },
                 },
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "full",
                   },
@@ -2197,7 +2197,7 @@ initialize {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": null,
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "mini",
                     },
@@ -2206,7 +2206,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": [Circular],
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "close",
                       },
@@ -2265,22 +2265,22 @@ initialize {
         ],
         "name": "header",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {
             "class": "image ",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {
                 "src": "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
               },
               "children": Array [],
               "name": "img",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Object {
+              "next": Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         .image {
           width: auto;
@@ -2324,10 +2324,10 @@ initialize {
                 "src": undefined,
               },
             },
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .image {
           width: auto;
@@ -2356,7 +2356,7 @@ initialize {
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": null,
               "parent": [Circular],
-              "prev": Object {
+              "prev": Node {
                 "attribs": Object {
                   "src": "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
                 },
@@ -2381,10 +2381,10 @@ initialize {
           ],
           "name": "div",
           "namespace": "http://www.w3.org/1999/xhtml",
-          "next": Object {
+          "next": Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "data": "
           .bowser {
             background-color: transparent;
@@ -2477,22 +2477,22 @@ initialize {
         "x-attribsNamespace": Object {},
         "x-attribsPrefix": Object {},
       },
-      Object {
+      Node {
         "attribs": Object {
           "class": "image ",
         },
         "children": Array [
-          Object {
+          Node {
             "attribs": Object {
               "src": "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
             },
             "children": Array [],
             "name": "img",
             "namespace": "http://www.w3.org/1999/xhtml",
-            "next": Object {
+            "next": Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .image {
           width: auto;
@@ -2536,10 +2536,10 @@ initialize {
               "src": undefined,
             },
           },
-          Object {
+          Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "data": "
         .image {
           width: auto;
@@ -2568,7 +2568,7 @@ initialize {
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": null,
             "parent": [Circular],
-            "prev": Object {
+            "prev": Node {
               "attribs": Object {
                 "src": "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
               },
@@ -2593,10 +2593,10 @@ initialize {
         ],
         "name": "div",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "
           .bowser {
             background-color: transparent;
@@ -2674,29 +2674,29 @@ initialize {
           "x-attribsPrefix": Object {},
         },
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {
                 "class": "traffic",
               },
               "children": Array [
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "close",
                   },
                   "children": Array [],
                   "name": "span",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {
                       "class": "mini",
                     },
                     "children": Array [],
                     "name": "span",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {
                         "class": "full",
                       },
@@ -2734,14 +2734,14 @@ initialize {
                     "class": undefined,
                   },
                 },
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "mini",
                   },
                   "children": Array [],
                   "name": "span",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {
                       "class": "full",
                     },
@@ -2760,7 +2760,7 @@ initialize {
                     },
                   },
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "close",
                     },
@@ -2786,7 +2786,7 @@ initialize {
                     "class": undefined,
                   },
                 },
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "full",
                   },
@@ -2795,7 +2795,7 @@ initialize {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": null,
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "mini",
                     },
@@ -2804,7 +2804,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": [Circular],
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "close",
                       },
@@ -2841,17 +2841,17 @@ initialize {
               ],
               "name": "div",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Object {
+              "next": Node {
                 "attribs": Object {
                   "class": "address-input",
                 },
                 "children": Array [
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "https",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "attribs": Object {
                           "fill": "currentColor",
                           "height": "12",
@@ -2859,14 +2859,14 @@ initialize {
                           "width": "12",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "attribs": Object {
                               "d": "M5 10.2H19V21H5V10.2Z",
                             },
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": Object {
+                            "next": Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -2900,7 +2900,7 @@ initialize {
                               "d": undefined,
                             },
                           },
-                          Object {
+                          Node {
                             "attribs": Object {
                               "clip-rule": "evenodd",
                               "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -2911,7 +2911,7 @@ initialize {
                             "namespace": "http://www.w3.org/2000/svg",
                             "next": null,
                             "parent": [Circular],
-                            "prev": Object {
+                            "prev": Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
@@ -2964,7 +2964,7 @@ initialize {
                     ],
                     "name": "span",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {
                         "class": "link ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -2972,12 +2972,12 @@ initialize {
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "react.geist-ui.dev",
-                          "next": Object {
+                          "next": Node {
                             "attribs": Object {},
                             "children": Array [
-                              Object {
+                              Node {
                                 "data": "
           .link {
             display: inline-flex;
@@ -3021,10 +3021,10 @@ initialize {
                           "prev": null,
                           "type": "text",
                         },
-                        Object {
+                        Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -3059,7 +3059,7 @@ initialize {
                           "namespace": "http://www.w3.org/1999/xhtml",
                           "next": null,
                           "parent": [Circular],
-                          "prev": Object {
+                          "prev": Node {
                             "data": "react.geist-ui.dev",
                             "next": [Circular],
                             "parent": [Circular],
@@ -3073,10 +3073,10 @@ initialize {
                       ],
                       "name": "a",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
       .address-input {
         height: 1.75rem;
@@ -3157,7 +3157,7 @@ initialize {
                       "class": undefined,
                     },
                   },
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "link ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -3165,12 +3165,12 @@ initialize {
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "react.geist-ui.dev",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -3214,10 +3214,10 @@ initialize {
                         "prev": null,
                         "type": "text",
                       },
-                      Object {
+                      Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -3252,7 +3252,7 @@ initialize {
                         "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "data": "react.geist-ui.dev",
                           "next": [Circular],
                           "parent": [Circular],
@@ -3266,10 +3266,10 @@ initialize {
                     ],
                     "name": "a",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
       .address-input {
         height: 1.75rem;
@@ -3325,12 +3325,12 @@ initialize {
                       "x-attribsPrefix": Object {},
                     },
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "https",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "attribs": Object {
                             "fill": "currentColor",
                             "height": "12",
@@ -3338,14 +3338,14 @@ initialize {
                             "width": "12",
                           },
                           "children": Array [
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": Object {
+                              "next": Node {
                                 "attribs": Object {
                                   "clip-rule": "evenodd",
                                   "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -3379,7 +3379,7 @@ initialize {
                                 "d": undefined,
                               },
                             },
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -3390,7 +3390,7 @@ initialize {
                               "namespace": "http://www.w3.org/2000/svg",
                               "next": null,
                               "parent": [Circular],
-                              "prev": Object {
+                              "prev": Node {
                                 "attribs": Object {
                                   "d": "M5 10.2H19V21H5V10.2Z",
                                 },
@@ -3468,10 +3468,10 @@ initialize {
                       "title": undefined,
                     },
                   },
-                  Object {
+                  Node {
                     "attribs": Object {},
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "
       .address-input {
         height: 1.75rem;
@@ -3521,7 +3521,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "link ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -3529,12 +3529,12 @@ initialize {
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "react.geist-ui.dev",
-                          "next": Object {
+                          "next": Node {
                             "attribs": Object {},
                             "children": Array [
-                              Object {
+                              Node {
                                 "data": "
           .link {
             display: inline-flex;
@@ -3578,10 +3578,10 @@ initialize {
                           "prev": null,
                           "type": "text",
                         },
-                        Object {
+                        Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -3616,7 +3616,7 @@ initialize {
                           "namespace": "http://www.w3.org/1999/xhtml",
                           "next": null,
                           "parent": [Circular],
-                          "prev": Object {
+                          "prev": Node {
                             "data": "react.geist-ui.dev",
                             "next": [Circular],
                             "parent": [Circular],
@@ -3632,12 +3632,12 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": [Circular],
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "attribs": Object {
                           "class": "https",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "attribs": Object {
                               "fill": "currentColor",
                               "height": "12",
@@ -3645,14 +3645,14 @@ initialize {
                               "width": "12",
                             },
                             "children": Array [
-                              Object {
+                              Node {
                                 "attribs": Object {
                                   "d": "M5 10.2H19V21H5V10.2Z",
                                 },
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": Object {
+                                "next": Node {
                                   "attribs": Object {
                                     "clip-rule": "evenodd",
                                     "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -3686,7 +3686,7 @@ initialize {
                                   "d": undefined,
                                 },
                               },
-                              Object {
+                              Node {
                                 "attribs": Object {
                                   "clip-rule": "evenodd",
                                   "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -3697,7 +3697,7 @@ initialize {
                                 "namespace": "http://www.w3.org/2000/svg",
                                 "next": null,
                                 "parent": [Circular],
-                                "prev": Object {
+                                "prev": Node {
                                   "attribs": Object {
                                     "d": "M5 10.2H19V21H5V10.2Z",
                                   },
@@ -3803,17 +3803,17 @@ initialize {
                 "class": undefined,
               },
             },
-            Object {
+            Node {
               "attribs": Object {
                 "class": "address-input",
               },
               "children": Array [
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "https",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "attribs": Object {
                         "fill": "currentColor",
                         "height": "12",
@@ -3821,14 +3821,14 @@ initialize {
                         "width": "12",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "attribs": Object {
                             "d": "M5 10.2H19V21H5V10.2Z",
                           },
                           "children": Array [],
                           "name": "path",
                           "namespace": "http://www.w3.org/2000/svg",
-                          "next": Object {
+                          "next": Node {
                             "attribs": Object {
                               "clip-rule": "evenodd",
                               "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -3862,7 +3862,7 @@ initialize {
                             "d": undefined,
                           },
                         },
-                        Object {
+                        Node {
                           "attribs": Object {
                             "clip-rule": "evenodd",
                             "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -3873,7 +3873,7 @@ initialize {
                           "namespace": "http://www.w3.org/2000/svg",
                           "next": null,
                           "parent": [Circular],
-                          "prev": Object {
+                          "prev": Node {
                             "attribs": Object {
                               "d": "M5 10.2H19V21H5V10.2Z",
                             },
@@ -3926,7 +3926,7 @@ initialize {
                   ],
                   "name": "span",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {
                       "class": "link ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -3934,12 +3934,12 @@ initialize {
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "react.geist-ui.dev",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -3983,10 +3983,10 @@ initialize {
                         "prev": null,
                         "type": "text",
                       },
-                      Object {
+                      Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -4021,7 +4021,7 @@ initialize {
                         "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "data": "react.geist-ui.dev",
                           "next": [Circular],
                           "parent": [Circular],
@@ -4035,10 +4035,10 @@ initialize {
                     ],
                     "name": "a",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
       .address-input {
         height: 1.75rem;
@@ -4119,7 +4119,7 @@ initialize {
                     "class": undefined,
                   },
                 },
-                Object {
+                Node {
                   "attribs": Object {
                     "class": "link ",
                     "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -4127,12 +4127,12 @@ initialize {
                     "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "react.geist-ui.dev",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -4176,10 +4176,10 @@ initialize {
                       "prev": null,
                       "type": "text",
                     },
-                    Object {
+                    Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
           .link {
             display: inline-flex;
@@ -4214,7 +4214,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "data": "react.geist-ui.dev",
                         "next": [Circular],
                         "parent": [Circular],
@@ -4228,10 +4228,10 @@ initialize {
                   ],
                   "name": "a",
                   "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Object {
+                  "next": Node {
                     "attribs": Object {},
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "
       .address-input {
         height: 1.75rem;
@@ -4287,12 +4287,12 @@ initialize {
                     "x-attribsPrefix": Object {},
                   },
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "https",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "attribs": Object {
                           "fill": "currentColor",
                           "height": "12",
@@ -4300,14 +4300,14 @@ initialize {
                           "width": "12",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "attribs": Object {
                               "d": "M5 10.2H19V21H5V10.2Z",
                             },
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": Object {
+                            "next": Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -4341,7 +4341,7 @@ initialize {
                               "d": undefined,
                             },
                           },
-                          Object {
+                          Node {
                             "attribs": Object {
                               "clip-rule": "evenodd",
                               "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -4352,7 +4352,7 @@ initialize {
                             "namespace": "http://www.w3.org/2000/svg",
                             "next": null,
                             "parent": [Circular],
-                            "prev": Object {
+                            "prev": Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
@@ -4430,10 +4430,10 @@ initialize {
                     "title": undefined,
                   },
                 },
-                Object {
+                Node {
                   "attribs": Object {},
                   "children": Array [
-                    Object {
+                    Node {
                       "data": "
       .address-input {
         height: 1.75rem;
@@ -4483,7 +4483,7 @@ initialize {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": null,
                   "parent": [Circular],
-                  "prev": Object {
+                  "prev": Node {
                     "attribs": Object {
                       "class": "link ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -4491,12 +4491,12 @@ initialize {
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "react.geist-ui.dev",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -4540,10 +4540,10 @@ initialize {
                         "prev": null,
                         "type": "text",
                       },
-                      Object {
+                      Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -4578,7 +4578,7 @@ initialize {
                         "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "data": "react.geist-ui.dev",
                           "next": [Circular],
                           "parent": [Circular],
@@ -4594,12 +4594,12 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": [Circular],
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "https",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "attribs": Object {
                             "fill": "currentColor",
                             "height": "12",
@@ -4607,14 +4607,14 @@ initialize {
                             "width": "12",
                           },
                           "children": Array [
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": Object {
+                              "next": Node {
                                 "attribs": Object {
                                   "clip-rule": "evenodd",
                                   "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -4648,7 +4648,7 @@ initialize {
                                 "d": undefined,
                               },
                             },
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -4659,7 +4659,7 @@ initialize {
                               "namespace": "http://www.w3.org/2000/svg",
                               "next": null,
                               "parent": [Circular],
-                              "prev": Object {
+                              "prev": Node {
                                 "attribs": Object {
                                   "d": "M5 10.2H19V21H5V10.2Z",
                                 },
@@ -4746,26 +4746,26 @@ initialize {
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": null,
               "parent": [Circular],
-              "prev": Object {
+              "prev": Node {
                 "attribs": Object {
                   "class": "traffic",
                 },
                 "children": Array [
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "close",
                     },
                     "children": Array [],
                     "name": "span",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {
                         "class": "mini",
                       },
                       "children": Array [],
                       "name": "span",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {
                           "class": "full",
                         },
@@ -4803,14 +4803,14 @@ initialize {
                       "class": undefined,
                     },
                   },
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "mini",
                     },
                     "children": Array [],
                     "name": "span",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {
                         "class": "full",
                       },
@@ -4829,7 +4829,7 @@ initialize {
                       },
                     },
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "close",
                       },
@@ -4855,7 +4855,7 @@ initialize {
                       "class": undefined,
                     },
                   },
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "full",
                     },
@@ -4864,7 +4864,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "mini",
                       },
@@ -4873,7 +4873,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": [Circular],
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "attribs": Object {
                           "class": "close",
                         },
@@ -4947,10 +4947,10 @@ initialize {
           "class": undefined,
         },
       },
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "data": "
           .bowser {
             background-color: transparent;
@@ -5022,22 +5022,22 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {
             "class": "image ",
           },
           "children": Array [
-            Object {
+            Node {
               "attribs": Object {
                 "src": "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
               },
               "children": Array [],
               "name": "img",
               "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Object {
+              "next": Node {
                 "attribs": Object {},
                 "children": Array [
-                  Object {
+                  Node {
                     "data": "
         .image {
           width: auto;
@@ -5081,10 +5081,10 @@ initialize {
                 "src": undefined,
               },
             },
-            Object {
+            Node {
               "attribs": Object {},
               "children": Array [
-                Object {
+                Node {
                   "data": "
         .image {
           width: auto;
@@ -5113,7 +5113,7 @@ initialize {
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": null,
               "parent": [Circular],
-              "prev": Object {
+              "prev": Node {
                 "attribs": Object {
                   "src": "data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
                 },
@@ -5140,29 +5140,29 @@ initialize {
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": [Circular],
           "parent": [Circular],
-          "prev": Object {
+          "prev": Node {
             "attribs": Object {},
             "children": Array [
-              Object {
+              Node {
                 "attribs": Object {
                   "class": "traffic",
                 },
                 "children": Array [
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "close",
                     },
                     "children": Array [],
                     "name": "span",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {
                         "class": "mini",
                       },
                       "children": Array [],
                       "name": "span",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {
                           "class": "full",
                         },
@@ -5200,14 +5200,14 @@ initialize {
                       "class": undefined,
                     },
                   },
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "mini",
                     },
                     "children": Array [],
                     "name": "span",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {
                         "class": "full",
                       },
@@ -5226,7 +5226,7 @@ initialize {
                       },
                     },
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "close",
                       },
@@ -5252,7 +5252,7 @@ initialize {
                       "class": undefined,
                     },
                   },
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "full",
                     },
@@ -5261,7 +5261,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "mini",
                       },
@@ -5270,7 +5270,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": [Circular],
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "attribs": Object {
                           "class": "close",
                         },
@@ -5307,17 +5307,17 @@ initialize {
                 ],
                 "name": "div",
                 "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Object {
+                "next": Node {
                   "attribs": Object {
                     "class": "address-input",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "attribs": Object {
                         "class": "https",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "attribs": Object {
                             "fill": "currentColor",
                             "height": "12",
@@ -5325,14 +5325,14 @@ initialize {
                             "width": "12",
                           },
                           "children": Array [
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": Object {
+                              "next": Node {
                                 "attribs": Object {
                                   "clip-rule": "evenodd",
                                   "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -5366,7 +5366,7 @@ initialize {
                                 "d": undefined,
                               },
                             },
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -5377,7 +5377,7 @@ initialize {
                               "namespace": "http://www.w3.org/2000/svg",
                               "next": null,
                               "parent": [Circular],
-                              "prev": Object {
+                              "prev": Node {
                                 "attribs": Object {
                                   "d": "M5 10.2H19V21H5V10.2Z",
                                 },
@@ -5430,7 +5430,7 @@ initialize {
                       ],
                       "name": "span",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {
                           "class": "link ",
                           "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -5438,12 +5438,12 @@ initialize {
                           "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "react.geist-ui.dev",
-                            "next": Object {
+                            "next": Node {
                               "attribs": Object {},
                               "children": Array [
-                                Object {
+                                Node {
                                   "data": "
           .link {
             display: inline-flex;
@@ -5487,10 +5487,10 @@ initialize {
                             "prev": null,
                             "type": "text",
                           },
-                          Object {
+                          Node {
                             "attribs": Object {},
                             "children": Array [
-                              Object {
+                              Node {
                                 "data": "
           .link {
             display: inline-flex;
@@ -5525,7 +5525,7 @@ initialize {
                             "namespace": "http://www.w3.org/1999/xhtml",
                             "next": null,
                             "parent": [Circular],
-                            "prev": Object {
+                            "prev": Node {
                               "data": "react.geist-ui.dev",
                               "next": [Circular],
                               "parent": [Circular],
@@ -5539,10 +5539,10 @@ initialize {
                         ],
                         "name": "a",
                         "namespace": "http://www.w3.org/1999/xhtml",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
       .address-input {
         height: 1.75rem;
@@ -5623,7 +5623,7 @@ initialize {
                         "class": undefined,
                       },
                     },
-                    Object {
+                    Node {
                       "attribs": Object {
                         "class": "link ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -5631,12 +5631,12 @@ initialize {
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "react.geist-ui.dev",
-                          "next": Object {
+                          "next": Node {
                             "attribs": Object {},
                             "children": Array [
-                              Object {
+                              Node {
                                 "data": "
           .link {
             display: inline-flex;
@@ -5680,10 +5680,10 @@ initialize {
                           "prev": null,
                           "type": "text",
                         },
-                        Object {
+                        Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -5718,7 +5718,7 @@ initialize {
                           "namespace": "http://www.w3.org/1999/xhtml",
                           "next": null,
                           "parent": [Circular],
-                          "prev": Object {
+                          "prev": Node {
                             "data": "react.geist-ui.dev",
                             "next": [Circular],
                             "parent": [Circular],
@@ -5732,10 +5732,10 @@ initialize {
                       ],
                       "name": "a",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
       .address-input {
         height: 1.75rem;
@@ -5791,12 +5791,12 @@ initialize {
                         "x-attribsPrefix": Object {},
                       },
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "attribs": Object {
                           "class": "https",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "attribs": Object {
                               "fill": "currentColor",
                               "height": "12",
@@ -5804,14 +5804,14 @@ initialize {
                               "width": "12",
                             },
                             "children": Array [
-                              Object {
+                              Node {
                                 "attribs": Object {
                                   "d": "M5 10.2H19V21H5V10.2Z",
                                 },
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": Object {
+                                "next": Node {
                                   "attribs": Object {
                                     "clip-rule": "evenodd",
                                     "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -5845,7 +5845,7 @@ initialize {
                                   "d": undefined,
                                 },
                               },
-                              Object {
+                              Node {
                                 "attribs": Object {
                                   "clip-rule": "evenodd",
                                   "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -5856,7 +5856,7 @@ initialize {
                                 "namespace": "http://www.w3.org/2000/svg",
                                 "next": null,
                                 "parent": [Circular],
-                                "prev": Object {
+                                "prev": Node {
                                   "attribs": Object {
                                     "d": "M5 10.2H19V21H5V10.2Z",
                                   },
@@ -5934,10 +5934,10 @@ initialize {
                         "title": undefined,
                       },
                     },
-                    Object {
+                    Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
       .address-input {
         height: 1.75rem;
@@ -5987,7 +5987,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "attribs": Object {
                           "class": "link ",
                           "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -5995,12 +5995,12 @@ initialize {
                           "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "react.geist-ui.dev",
-                            "next": Object {
+                            "next": Node {
                               "attribs": Object {},
                               "children": Array [
-                                Object {
+                                Node {
                                   "data": "
           .link {
             display: inline-flex;
@@ -6044,10 +6044,10 @@ initialize {
                             "prev": null,
                             "type": "text",
                           },
-                          Object {
+                          Node {
                             "attribs": Object {},
                             "children": Array [
-                              Object {
+                              Node {
                                 "data": "
           .link {
             display: inline-flex;
@@ -6082,7 +6082,7 @@ initialize {
                             "namespace": "http://www.w3.org/1999/xhtml",
                             "next": null,
                             "parent": [Circular],
-                            "prev": Object {
+                            "prev": Node {
                               "data": "react.geist-ui.dev",
                               "next": [Circular],
                               "parent": [Circular],
@@ -6098,12 +6098,12 @@ initialize {
                         "namespace": "http://www.w3.org/1999/xhtml",
                         "next": [Circular],
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "attribs": Object {
                             "class": "https",
                           },
                           "children": Array [
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "fill": "currentColor",
                                 "height": "12",
@@ -6111,14 +6111,14 @@ initialize {
                                 "width": "12",
                               },
                               "children": Array [
-                                Object {
+                                Node {
                                   "attribs": Object {
                                     "d": "M5 10.2H19V21H5V10.2Z",
                                   },
                                   "children": Array [],
                                   "name": "path",
                                   "namespace": "http://www.w3.org/2000/svg",
-                                  "next": Object {
+                                  "next": Node {
                                     "attribs": Object {
                                       "clip-rule": "evenodd",
                                       "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -6152,7 +6152,7 @@ initialize {
                                     "d": undefined,
                                   },
                                 },
-                                Object {
+                                Node {
                                   "attribs": Object {
                                     "clip-rule": "evenodd",
                                     "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -6163,7 +6163,7 @@ initialize {
                                   "namespace": "http://www.w3.org/2000/svg",
                                   "next": null,
                                   "parent": [Circular],
-                                  "prev": Object {
+                                  "prev": Node {
                                     "attribs": Object {
                                       "d": "M5 10.2H19V21H5V10.2Z",
                                     },
@@ -6269,17 +6269,17 @@ initialize {
                   "class": undefined,
                 },
               },
-              Object {
+              Node {
                 "attribs": Object {
                   "class": "address-input",
                 },
                 "children": Array [
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "https",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "attribs": Object {
                           "fill": "currentColor",
                           "height": "12",
@@ -6287,14 +6287,14 @@ initialize {
                           "width": "12",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "attribs": Object {
                               "d": "M5 10.2H19V21H5V10.2Z",
                             },
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": Object {
+                            "next": Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -6328,7 +6328,7 @@ initialize {
                               "d": undefined,
                             },
                           },
-                          Object {
+                          Node {
                             "attribs": Object {
                               "clip-rule": "evenodd",
                               "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -6339,7 +6339,7 @@ initialize {
                             "namespace": "http://www.w3.org/2000/svg",
                             "next": null,
                             "parent": [Circular],
-                            "prev": Object {
+                            "prev": Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
@@ -6392,7 +6392,7 @@ initialize {
                     ],
                     "name": "span",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {
                         "class": "link ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -6400,12 +6400,12 @@ initialize {
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "react.geist-ui.dev",
-                          "next": Object {
+                          "next": Node {
                             "attribs": Object {},
                             "children": Array [
-                              Object {
+                              Node {
                                 "data": "
           .link {
             display: inline-flex;
@@ -6449,10 +6449,10 @@ initialize {
                           "prev": null,
                           "type": "text",
                         },
-                        Object {
+                        Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -6487,7 +6487,7 @@ initialize {
                           "namespace": "http://www.w3.org/1999/xhtml",
                           "next": null,
                           "parent": [Circular],
-                          "prev": Object {
+                          "prev": Node {
                             "data": "react.geist-ui.dev",
                             "next": [Circular],
                             "parent": [Circular],
@@ -6501,10 +6501,10 @@ initialize {
                       ],
                       "name": "a",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
       .address-input {
         height: 1.75rem;
@@ -6585,7 +6585,7 @@ initialize {
                       "class": undefined,
                     },
                   },
-                  Object {
+                  Node {
                     "attribs": Object {
                       "class": "link ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -6593,12 +6593,12 @@ initialize {
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                     },
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "react.geist-ui.dev",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -6642,10 +6642,10 @@ initialize {
                         "prev": null,
                         "type": "text",
                       },
-                      Object {
+                      Node {
                         "attribs": Object {},
                         "children": Array [
-                          Object {
+                          Node {
                             "data": "
           .link {
             display: inline-flex;
@@ -6680,7 +6680,7 @@ initialize {
                         "namespace": "http://www.w3.org/1999/xhtml",
                         "next": null,
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "data": "react.geist-ui.dev",
                           "next": [Circular],
                           "parent": [Circular],
@@ -6694,10 +6694,10 @@ initialize {
                     ],
                     "name": "a",
                     "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Object {
+                    "next": Node {
                       "attribs": Object {},
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "
       .address-input {
         height: 1.75rem;
@@ -6753,12 +6753,12 @@ initialize {
                       "x-attribsPrefix": Object {},
                     },
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "https",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "attribs": Object {
                             "fill": "currentColor",
                             "height": "12",
@@ -6766,14 +6766,14 @@ initialize {
                             "width": "12",
                           },
                           "children": Array [
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "d": "M5 10.2H19V21H5V10.2Z",
                               },
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": Object {
+                              "next": Node {
                                 "attribs": Object {
                                   "clip-rule": "evenodd",
                                   "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -6807,7 +6807,7 @@ initialize {
                                 "d": undefined,
                               },
                             },
-                            Object {
+                            Node {
                               "attribs": Object {
                                 "clip-rule": "evenodd",
                                 "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -6818,7 +6818,7 @@ initialize {
                               "namespace": "http://www.w3.org/2000/svg",
                               "next": null,
                               "parent": [Circular],
-                              "prev": Object {
+                              "prev": Node {
                                 "attribs": Object {
                                   "d": "M5 10.2H19V21H5V10.2Z",
                                 },
@@ -6896,10 +6896,10 @@ initialize {
                       "title": undefined,
                     },
                   },
-                  Object {
+                  Node {
                     "attribs": Object {},
                     "children": Array [
-                      Object {
+                      Node {
                         "data": "
       .address-input {
         height: 1.75rem;
@@ -6949,7 +6949,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
                     "parent": [Circular],
-                    "prev": Object {
+                    "prev": Node {
                       "attribs": Object {
                         "class": "link ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -6957,12 +6957,12 @@ initialize {
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
                       },
                       "children": Array [
-                        Object {
+                        Node {
                           "data": "react.geist-ui.dev",
-                          "next": Object {
+                          "next": Node {
                             "attribs": Object {},
                             "children": Array [
-                              Object {
+                              Node {
                                 "data": "
           .link {
             display: inline-flex;
@@ -7006,10 +7006,10 @@ initialize {
                           "prev": null,
                           "type": "text",
                         },
-                        Object {
+                        Node {
                           "attribs": Object {},
                           "children": Array [
-                            Object {
+                            Node {
                               "data": "
           .link {
             display: inline-flex;
@@ -7044,7 +7044,7 @@ initialize {
                           "namespace": "http://www.w3.org/1999/xhtml",
                           "next": null,
                           "parent": [Circular],
-                          "prev": Object {
+                          "prev": Node {
                             "data": "react.geist-ui.dev",
                             "next": [Circular],
                             "parent": [Circular],
@@ -7060,12 +7060,12 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": [Circular],
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "attribs": Object {
                           "class": "https",
                         },
                         "children": Array [
-                          Object {
+                          Node {
                             "attribs": Object {
                               "fill": "currentColor",
                               "height": "12",
@@ -7073,14 +7073,14 @@ initialize {
                               "width": "12",
                             },
                             "children": Array [
-                              Object {
+                              Node {
                                 "attribs": Object {
                                   "d": "M5 10.2H19V21H5V10.2Z",
                                 },
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": Object {
+                                "next": Node {
                                   "attribs": Object {
                                     "clip-rule": "evenodd",
                                     "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -7114,7 +7114,7 @@ initialize {
                                   "d": undefined,
                                 },
                               },
-                              Object {
+                              Node {
                                 "attribs": Object {
                                   "clip-rule": "evenodd",
                                   "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
@@ -7125,7 +7125,7 @@ initialize {
                                 "namespace": "http://www.w3.org/2000/svg",
                                 "next": null,
                                 "parent": [Circular],
-                                "prev": Object {
+                                "prev": Node {
                                   "attribs": Object {
                                     "d": "M5 10.2H19V21H5V10.2Z",
                                   },
@@ -7212,26 +7212,26 @@ initialize {
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": null,
                 "parent": [Circular],
-                "prev": Object {
+                "prev": Node {
                   "attribs": Object {
                     "class": "traffic",
                   },
                   "children": Array [
-                    Object {
+                    Node {
                       "attribs": Object {
                         "class": "close",
                       },
                       "children": Array [],
                       "name": "span",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {
                           "class": "mini",
                         },
                         "children": Array [],
                         "name": "span",
                         "namespace": "http://www.w3.org/1999/xhtml",
-                        "next": Object {
+                        "next": Node {
                           "attribs": Object {
                             "class": "full",
                           },
@@ -7269,14 +7269,14 @@ initialize {
                         "class": undefined,
                       },
                     },
-                    Object {
+                    Node {
                       "attribs": Object {
                         "class": "mini",
                       },
                       "children": Array [],
                       "name": "span",
                       "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": Object {
+                      "next": Node {
                         "attribs": Object {
                           "class": "full",
                         },
@@ -7295,7 +7295,7 @@ initialize {
                         },
                       },
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "attribs": Object {
                           "class": "close",
                         },
@@ -7321,7 +7321,7 @@ initialize {
                         "class": undefined,
                       },
                     },
-                    Object {
+                    Node {
                       "attribs": Object {
                         "class": "full",
                       },
@@ -7330,7 +7330,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
-                      "prev": Object {
+                      "prev": Node {
                         "attribs": Object {
                           "class": "mini",
                         },
@@ -7339,7 +7339,7 @@ initialize {
                         "namespace": "http://www.w3.org/1999/xhtml",
                         "next": [Circular],
                         "parent": [Circular],
-                        "prev": Object {
+                        "prev": Node {
                           "attribs": Object {
                             "class": "close",
                           },
@@ -7421,22 +7421,17 @@ initialize {
     "name": "div",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "tag",
     "x-attribsNamespace": Object {
       "class": undefined,
@@ -7449,8 +7444,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }

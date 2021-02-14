@@ -15,6 +15,26 @@ describe('Select Multiple', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should render correctly with clearable option', () => {
+    const wrapper = mount(
+      <Select multiple initialValue={['1']}>
+        <Select.Option value="1">1</Select.Option>
+        <Select.Option value="2">Option 2</Select.Option>
+      </Select>,
+    )
+    expect(wrapper.find('.clear-icon').length).toBe(1)
+  })
+
+  it('should render correctly without clearable option', () => {
+    const wrapper = mount(
+      <Select multiple clearable={false} initialValue={['1']}>
+        <Select.Option value="1">1</Select.Option>
+        <Select.Option value="2">Option 2</Select.Option>
+      </Select>,
+    )
+    expect(wrapper.find('.clear-icon').length).toBe(0)
+  })
+
   it('should render value with initial-value', () => {
     const wrapper = mount(
       <Select initialValue={['1', '2']} multiple>
@@ -55,4 +75,19 @@ describe('Select Multiple', () => {
     expect(value.includes('1')).not.toBeTruthy()
     changeHandler.mockRestore()
   })
+})
+
+it('should trigger event correctly when clicked', async () => {
+  const changeHandler = jest.fn()
+  const wrapper = mount(
+    <Select onChange={changeHandler} multiple initialValue={['1']}>
+      <Select.Option value="1">1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>,
+  )
+  expect(wrapper.find('.clear-icon').length).toBe(1)
+  wrapper.find('.clear-icon').simulate('click', nativeEvent)
+  await updateWrapper(wrapper, 350)
+  expect(changeHandler).toHaveBeenCalled()
+  expect(wrapper.find('.clear-icon').length).toBe(0)
 })

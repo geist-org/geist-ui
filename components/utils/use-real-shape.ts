@@ -31,7 +31,9 @@ export const getRealShape = (el: HTMLElement | null): ShapeType => {
 
 export type ShapeResult = [ShapeType, () => void]
 
-const useRealShape = <T extends HTMLElement>(ref: MutableRefObject<T | null>): ShapeResult => {
+const useRealShape = <T extends HTMLElement>(
+  ref: MutableRefObject<T | null>,
+): ShapeResult => {
   const [state, setState] = useState<ShapeType>({
     width: 0,
     height: 0,

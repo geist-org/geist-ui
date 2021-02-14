@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 
 interface Props {
@@ -13,7 +13,11 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type FieldsetSubtitleProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = ({ className, children, ...props }) => {
+const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   const theme = useTheme()
 
   return (

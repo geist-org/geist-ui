@@ -1,4 +1,4 @@
-import { GeistUIThemesPalette } from '../styles/themes'
+import { GeistUIThemesPalette } from '../themes/presets'
 import { NormalSizes, ButtonTypes } from '../utils/prop-types'
 import { ButtonProps } from './button'
 import { addColorAlpha } from '../utils/color'
@@ -207,7 +207,10 @@ export interface ButtonCursorGroup {
   events: string
 }
 
-export const getButtonCursor = (disabled: boolean, loading: boolean): ButtonCursorGroup => {
+export const getButtonCursor = (
+  disabled: boolean,
+  loading: boolean,
+): ButtonCursorGroup => {
   if (disabled)
     return {
       cursor: 'not-allowed',
@@ -233,7 +236,10 @@ export type ButtonSizeGroup = {
   fontSize: string
 }
 
-export const getButtonSize = (size: NormalSizes = 'medium', auto: boolean): ButtonSizeGroup => {
+export const getButtonSize = (
+  size: NormalSizes = 'medium',
+  auto: boolean,
+): ButtonSizeGroup => {
   const defaultLayout: ButtonSizeGroup = {
     height: '2.5rem',
     width: 'auto',
@@ -287,5 +293,7 @@ export const getButtonDripColor = (palette: GeistUIThemesPalette, props: ButtonP
   const { type } = props
   const isLightHover = type.endsWith('light')
   const hoverColors = getButtonHoverColors(palette, props)
-  return isLightHover ? addColorAlpha(hoverColors.bg, 0.65) : addColorAlpha(palette.accents_2, 0.65)
+  return isLightHover
+    ? addColorAlpha(hoverColors.bg, 0.65)
+    : addColorAlpha(palette.accents_2, 0.65)
 }

@@ -9,7 +9,7 @@ exports[`Keyboard should render correctly 1`] = `
           display: inline-block;
           color: #666;
           background-color: #fafafa;
-          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
           padding: 0 4pt;
@@ -42,7 +42,7 @@ exports[`Keyboard should work with modifiers 1`] = `
           display: inline-block;
           color: #666;
           background-color: #fafafa;
-          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
           padding: 0 4pt;
@@ -71,7 +71,7 @@ exports[`Keyboard should work with modifiers 1`] = `
           display: inline-block;
           color: #666;
           background-color: #fafafa;
-          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
           padding: 0 4pt;
@@ -100,7 +100,7 @@ exports[`Keyboard should work with modifiers 1`] = `
           display: inline-block;
           color: #666;
           background-color: #fafafa;
-          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
           padding: 0 4pt;
@@ -129,7 +129,7 @@ exports[`Keyboard should work with modifiers 1`] = `
           display: inline-block;
           color: #666;
           background-color: #fafafa;
-          font-family: -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
+          font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
           padding: 0 4pt;
@@ -155,15 +155,15 @@ exports[`Keyboard should work with modifiers 1`] = `
 
 exports[`Keyboard should work with small size 1`] = `
 initialize {
-  "0": Object {
+  "0": Node {
     "attribs": Object {
       "class": "",
     },
     "children": Array [
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "data": "F",
             "next": null,
             "parent": [Circular],
@@ -173,10 +173,10 @@ initialize {
         ],
         "name": "span",
         "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Object {
+        "next": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "
         kbd {
           width: fit-content;
@@ -185,7 +185,7 @@ initialize {
           display: inline-block;
           color: #666;
           background-color: #fafafa;
-          font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
+          font-family: &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
           padding: 0 0;
@@ -228,10 +228,10 @@ initialize {
         "x-attribsNamespace": Object {},
         "x-attribsPrefix": Object {},
       },
-      Object {
+      Node {
         "attribs": Object {},
         "children": Array [
-          Object {
+          Node {
             "data": "
         kbd {
           width: fit-content;
@@ -240,7 +240,7 @@ initialize {
           display: inline-block;
           color: #666;
           background-color: #fafafa;
-          font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
+          font-family: &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
           padding: 0 0;
@@ -272,10 +272,10 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": null,
         "parent": [Circular],
-        "prev": Object {
+        "prev": Node {
           "attribs": Object {},
           "children": Array [
-            Object {
+            Node {
               "data": "F",
               "next": null,
               "parent": [Circular],
@@ -300,22 +300,17 @@ initialize {
     "name": "kbd",
     "namespace": "http://www.w3.org/1999/xhtml",
     "next": null,
-    "parent": null,
-    "prev": null,
-    "root": Object {
-      "attribs": Object {},
+    "parent": Node {
       "children": Array [
         [Circular],
       ],
       "name": "root",
-      "namespace": "http://www.w3.org/1999/xhtml",
       "next": null,
       "parent": null,
       "prev": null,
       "type": "root",
-      "x-attribsNamespace": Object {},
-      "x-attribsPrefix": Object {},
     },
+    "prev": null,
     "type": "tag",
     "x-attribsNamespace": Object {
       "class": undefined,
@@ -328,8 +323,6 @@ initialize {
   "length": 1,
   "options": Object {
     "decodeEntities": true,
-    "normalizeWhitespace": false,
-    "withDomLvl1": true,
     "xml": false,
   },
 }

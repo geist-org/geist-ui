@@ -1,5 +1,5 @@
 import React from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 
 interface Props {
@@ -26,7 +26,9 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   const theme = useTheme()
   return (
     <>
-      <div className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`} {...props}>
+      <div
+        className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`}
+        {...props}>
         {children}
         <style jsx>{`
           .item {

@@ -7,7 +7,7 @@ import React, {
   useRef,
 } from 'react'
 import css from 'styled-jsx/css'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useModalContext } from './modal-context'
 import Button, { ButtonProps } from '../button/button'
 
@@ -28,9 +28,14 @@ const defaultProps = {
   disabled: false,
 }
 
-export type ModalActionProps = Props & typeof defaultProps & Omit<ButtonProps, keyof Props>
+export type ModalActionProps = Props &
+  typeof defaultProps &
+  Omit<ButtonProps, keyof Props>
 
-const ModalAction = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ModalActionProps>>(
+const ModalAction = React.forwardRef<
+  HTMLButtonElement,
+  React.PropsWithChildren<ModalActionProps>
+>(
   (
     { className, children, onClick, passive, disabled, ...props },
     ref: React.Ref<HTMLButtonElement | null>,

@@ -49,7 +49,10 @@ export const meta = {
 `}
 />
 
-<PlaygroundTitle title="定制断点" desc="您可以覆盖 `@geist-ui/react` 组件库默认的断点值。" />
+<PlaygroundTitle
+  title="定制断点"
+  desc="您可以覆盖 `@geist-ui/react` 组件库默认的断点值。"
+/>
 
 ```tsx
 const breakpoints: GeistUIThemesBreakpoints = {
@@ -79,7 +82,8 @@ type ResponsiveOptions = {
   ssrMatchMedia?: (query: string) => { matches: boolean }
 }
 
-const useMediaQuery = (breakpoint: ResponsiveBreakpoint, options?: ResponsiveOptions) => boolean
+const useMediaQuery = (breakpoint: ResponsiveBreakpoint, options?: ResponsiveOptions) =>
+  boolean
 ```
 
 </Attributes>

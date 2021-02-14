@@ -1,5 +1,5 @@
 import React, { useMemo, useRef } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { SnippetTypes, CopyTypes, NormalTypes } from '../utils/prop-types'
 import { getStyles } from './styles'
@@ -59,7 +59,11 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
 
-  const style = useMemo(() => getStyles(type, theme.palette, filled), [type, theme.palette, filled])
+  const style = useMemo(() => getStyles(type, theme.palette, filled), [
+    type,
+    theme.palette,
+    filled,
+  ])
   const showCopyIcon = useMemo(() => copyType !== 'prevent', [copyType])
   const childText = useMemo<string | undefined | null>(() => {
     if (isMultiLine) return textArrayToString(text as string[])

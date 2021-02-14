@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useRadioContext } from './radio-context'
 import RadioGroup, { getRadioSize } from './radio-group'
 import RadioDescription from './radio-description'
@@ -161,7 +161,9 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           height: var(--radio-size);
           width: var(--radio-size);
           border-radius: 50%;
-          background-color: ${isDisabled ? theme.palette.accents_4 : theme.palette.foreground};
+          background-color: ${isDisabled
+            ? theme.palette.accents_4
+            : theme.palette.foreground};
         }
 
         .point.active:before {

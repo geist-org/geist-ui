@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 
 interface Props {
   title?: ReactNode | string
@@ -17,7 +17,12 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DescriptionProps = Props & typeof defaultProps & NativeAttrs
 
-const Description: React.FC<DescriptionProps> = ({ title, content, className, ...props }) => {
+const Description: React.FC<DescriptionProps> = ({
+  title,
+  content,
+  className,
+  ...props
+}) => {
   const theme = useTheme()
   return (
     <dl className={className} {...props}>

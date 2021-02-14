@@ -6,19 +6,21 @@ import { CssBaseline, GeistProvider, useTheme, GeistUIThemes } from 'components'
 import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
-import { DeepPartial } from 'components/utils/types'
+import 'inter-ui/inter.css'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
-  const [customTheme, setCustomTheme] = useState<DeepPartial<GeistUIThemes>>({})
-  const themeChangeHandle = (theme: DeepPartial<GeistUIThemes>) => {
+  const [themeType, setThemeType] = useState<string>()
+  const [customTheme, setCustomTheme] = useState<GeistUIThemes>(theme)
+  const themeChangeHandle = (theme: GeistUIThemes) => {
     setCustomTheme(theme)
+    setThemeType(theme.type)
   }
 
   useEffect(() => {
     const theme = window.localStorage.getItem('theme')
     if (theme !== 'dark') return
-    themeChangeHandle({ type: 'dark' })
+    setThemeType('dark')
   }, [])
   useDomClean()
 
@@ -61,9 +63,11 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           content="initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
         />
       </Head>
-      <GeistProvider theme={customTheme}>
+      <GeistProvider themeType={themeType} themes={[customTheme]}>
         <CssBaseline />
-        <ConfigContext onThemeChange={themeChangeHandle}>
+        <ConfigContext
+          onThemeChange={themeChangeHandle}
+          onThemeTypeChange={type => setThemeType(type)}>
           <Menu />
           <Component {...pageProps} />
         </ConfigContext>

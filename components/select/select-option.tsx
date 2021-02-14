@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { useSelectContext } from './select-context'
 import useWarning from '../utils/use-warning'
 import Ellipsis from '../shared/ellipsis'
@@ -78,7 +78,9 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
   return (
     <>
       <div
-        className={`option ${divider ? 'divider' : ''} ${label ? 'label' : ''} ${className}`}
+        className={`option ${divider ? 'divider' : ''} ${
+          label ? 'label' : ''
+        } ${className}`}
         onClick={clickHandler}
         {...props}>
         <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>

@@ -1,5 +1,5 @@
 import { NormalSizes } from 'components/utils/prop-types'
-import { GeistUIThemes } from 'components/styles/themes'
+import { GeistUIThemes } from 'components/themes/presets'
 
 export interface SelectSize {
   height: string

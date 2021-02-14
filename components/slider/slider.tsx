@@ -1,5 +1,12 @@
-import React, { RefObject, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import useTheme from '../styles/use-theme'
+import React, {
+  RefObject,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
+import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import useDrag, { DraggingEvent } from '../utils/use-drag'
 import useCurrentState from '../utils/use-current-state'
@@ -76,7 +83,11 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
   const sliderRef = useRef<HTMLDivElement>(null)
   const dotRef = useRef<HTMLDivElement>(null)
 
-  const currentRatio = useMemo(() => ((value - min) / (max - min)) * 100, [value, max, min])
+  const currentRatio = useMemo(() => ((value - min) / (max - min)) * 100, [
+    value,
+    max,
+    min,
+  ])
 
   const setLastOffsetManually = (val: number) => {
     const width = getRefWidth(sliderRef)
@@ -107,7 +118,8 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
     if (disabled) return
     const offset = event.currentX - event.startX
     const currentOffset = offset + lastDargOffsetRef.current
-    const boundOffset = currentOffset < 0 ? 0 : Math.min(currentOffset, sideWidthRef.current)
+    const boundOffset =
+      currentOffset < 0 ? 0 : Math.min(currentOffset, sideWidthRef.current)
     setLastDargOffset(boundOffset)
   }
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -133,7 +145,11 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
   }, [])
 
   return (
-    <div className={`slider ${className}`} onClick={clickHandler} ref={sliderRef} {...props}>
+    <div
+      className={`slider ${className}`}
+      onClick={clickHandler}
+      ref={sliderRef}
+      {...props}>
       <SliderDot disabled={disabled} ref={dotRef} isClick={isClick} left={currentRatio}>
         {value}
       </SliderDot>
@@ -143,7 +159,9 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
           width: 100%;
           height: 0.5rem;
           border-radius: 50px;
-          background-color: ${disabled ? theme.palette.accents_2 : theme.palette.accents_8};
+          background-color: ${disabled
+            ? theme.palette.accents_2
+            : theme.palette.accents_8};
           position: relative;
           cursor: ${disabled ? 'not-allow' : 'pointer'};
         }

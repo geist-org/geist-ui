@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import Tooltip, { TooltipProps } from '../tooltip/tooltip'
 import PopoverItem from '../popover/popover-item'
 import { Placement, TriggerTypes } from '../utils/prop-types'

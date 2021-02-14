@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import TabsItem from './tabs-item'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { TabsLabelItem, TabsConfig, TabsContext } from './tabs-context'
 
 interface Props {
@@ -87,13 +87,20 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
         <style jsx>{`
           .tabs {
             width: initial;
+            overflow: auto;
           }
 
           header {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             align-items: center;
             border-bottom: 1px solid ${theme.palette.border};
+            overflow: scroll;
+            scrollbar-width: none;
+          }
+
+          header::-webkit-scrollbar {
+            display: none;
           }
 
           .hide-divider {
@@ -111,6 +118,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
             transition: all 200ms ease;
             text-transform: capitalize;
             font-size: 1rem;
+            white-space: nowrap;
             margin: 0 calc(0.8 * ${theme.layout.gapHalf});
             color: ${theme.palette.accents_6};
             user-select: none;

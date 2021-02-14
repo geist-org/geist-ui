@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SnippetIcon: React.FC<{}> = () => {
+const SnippetIcon: React.FC<unknown> = () => {
   return (
     <svg
       viewBox="0 0 24 24"

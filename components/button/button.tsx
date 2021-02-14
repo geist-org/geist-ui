@@ -7,7 +7,7 @@ import React, {
   PropsWithoutRef,
   RefAttributes,
 } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
 import { ButtonTypes, NormalSizes } from '../utils/prop-types'
@@ -84,10 +84,10 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
     } = filteredProps
     /* eslint-enable @typescript-eslint/no-unused-vars */
 
-    const { bg, border, color } = useMemo(() => getButtonColors(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
+    const { bg, border, color } = useMemo(
+      () => getButtonColors(theme.palette, filteredProps),
+      [theme.palette, filteredProps],
+    )
     const hover = useMemo(() => getButtonHoverColors(theme.palette, filteredProps), [
       theme.palette,
       filteredProps,
@@ -146,7 +146,12 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
         {loading && <ButtonLoading color={color} />}
         {childrenWithIcon}
         {dripShow && (
-          <ButtonDrip x={dripX} y={dripY} color={dripColor} onCompleted={dripCompletedHandle} />
+          <ButtonDrip
+            x={dripX}
+            y={dripY}
+            color={dripColor}
+            onCompleted={dripCompletedHandle}
+          />
         )}
         <style jsx>{`
           .btn {

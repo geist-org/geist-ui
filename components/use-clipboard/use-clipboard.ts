@@ -3,7 +3,7 @@ import useWarning from '../utils/use-warning'
 import { useCallback } from 'react'
 
 export type UseClipboardOptions = {
-  onError: Function
+  onError: () => unknown
 }
 
 export type UseClipboardResult = {
@@ -14,7 +14,9 @@ const defaultOptions: UseClipboardOptions = {
   onError: () => useWarning('Failed to copy.', 'use-clipboard'),
 }
 
-const useClipboard = (options: UseClipboardOptions = defaultOptions): UseClipboardResult => {
+const useClipboard = (
+  options: UseClipboardOptions = defaultOptions,
+): UseClipboardResult => {
   const el = usePortal('clipboard')
 
   const copyText = (el: HTMLElement | null, text: string) => {

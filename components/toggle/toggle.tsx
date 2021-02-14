@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { NormalSizes } from '../utils/prop-types'
 
 interface ToggleEventTarget {
@@ -98,8 +98,16 @@ const Toggle: React.FC<ToggleProps> = ({
 
   return (
     <label className={className} {...props}>
-      <input type="checkbox" disabled={disabled} checked={selfChecked} onChange={changeHandle} />
-      <div className={`toggle ${selfChecked ? 'checked' : ''} ${disabled ? 'disabled' : ''}`}>
+      <input
+        type="checkbox"
+        disabled={disabled}
+        checked={selfChecked}
+        onChange={changeHandle}
+      />
+      <div
+        className={`toggle ${selfChecked ? 'checked' : ''} ${
+          disabled ? 'disabled' : ''
+        }`}>
         <span className="inner" />
       </div>
       <style jsx>{`

@@ -8,7 +8,9 @@ export const meta = {
 
 ## Themes
 
-`@geist-ui/react` now support **Dark Mode**. You can switch theme at any time through a very simple API, no third-party styles or configs.
+**Geist UI** now supports a variety of themes, and it is very easy to create or inherit modifications, no third-party styles or configs.
+
+As a basic option, there are two themes available, `light` and `dark`.
 
 <Spacer y={2} />
 
@@ -19,7 +21,8 @@ export const meta = {
 </Note>
 <Spacer y={0.5} />
 <Note type="success">
-  <Code>CssBaseline</Code> provides basic CSS support, which is similar to <Code>normalize</Code>.
+  <Code>CssBaseline</Code> provides basic CSS support, which is similar to{' '}
+  <Code>normalize</Code>.
 </Note>
 <Spacer y={1} />
 
@@ -27,20 +30,18 @@ export const meta = {
 
 1. Make sure `GeistProvider` and `CssBaseline` are already on the root component.
 
-2. Get the current theme of the page through hook `useTheme`.
-
-3. Update the value of `theme.type`, and the theme of all components will follow automatically.
+2. Update the value of `themeType`, and the theme of all components will follow automatically.
 
 ```jsx
 import { CssBaseline, GeistProvider } from '@geist-ui/react'
 
 const App = () => {
-  const [themeType, setThemeType] = useState('dark')
+  const [themeType, setThemeType] = useState('light')
   const switchThemes = () => {
-    setThemeType(lastThemeType => (lastThemeType === 'dark' ? 'light' : 'dark'))
+    setThemeType(last => (last === 'dark' ? 'light' : 'dark'))
   }
   return (
-    <GeistProvider theme={{ type: themeType }}>
+    <GeistProvider themeType={themeType}>
       <CssBaseline />
       <YourComponent onClick={switchThemes} />
     </GeistProvider>
@@ -52,7 +53,7 @@ const App = () => {
 
 ### Customizing theme
 
-Customizing a theme is very simple in `@geist-ui/react`, you just need to provide a new theme `Object`,
+Customizing a theme is very simple in Geist UI, you just need to provide a new theme `Object`,
 and all the components will change automatically.
 Here is <Link target="_blank" color href="https://github.com/geist-org/react/tree/master/examples/custom-themes">a complete sample project</Link> for reference.
 
@@ -64,20 +65,35 @@ Of course, if a _component_ doesn't use your customized variables, it doesn't ma
 </Note>
 
 ```jsx
-import { CssBaseline, GeistProvider } from '@geist-ui/react'
+import { CssBaseline, GeistProvider, Themes } from '@geist-ui/react'
 
-const myTheme = {
+const myTheme1 = Themes.createFromLight({
+  type: 'coolTheme',
   palette: {
     success: '#000',
   },
-}
+})
 
 const App = () => (
-  <GeistProvider theme={myTheme}>
+  <GeistProvider themes={[myTheme1]} themeType="coolTheme">
     <CssBaseline />
     <YourAppComponent onClick={switchThemes} />
   </GeistProvider>
 )
+```
+
+Function `Themes.createFromLight` allows you to fork a new theme based on Light Theme,
+Of course, you can also create a new theme based on the dark style: `Themes.createFromDark`,
+Or create a theme based on your own theme:
+
+```jsx
+const myBaseTheme = { ... }
+const myTheme2 = Themes.create(myBaseTheme, {
+  type: 'myTheme2',
+  palette: {
+    success: '#000',
+  },
+})
 ```
 
 <Spacer y={3} />
@@ -104,7 +120,7 @@ const myPalette: Partial<GeistUIThemesPalette> = {
 }
 ```
 
-If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" href="https://github.com/geist-org/react/blob/master/components/styles/themes/index.ts">here</Link>.
+If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" href="https://github.com/geist-org/react/blob/master/components/themes/presets/index.ts">here</Link>.
 
 <Spacer y={3} />
 
@@ -161,5 +177,20 @@ const MyComponent = () => {
   )
 }
 ```
+
+<Spacer y={2} />
+
+#### Themes APIs
+
+`Themes` contains some static methods that are useful when working with custom themes:
+
+- `Themes.create` - create a new theme object.
+- `Themes.createFromDark` - create a new theme object based on Dark Theme.
+- `Themes.createFromLight` - create a new theme object based on Light Theme.
+- `Themes.isPresetTheme` - Check if a theme is the base of Geist UI.
+- `Themes.isAvailableThemeType` - Check if the name of the theme is available.
+- `Themes.hasUserCustomTheme` - Check if a list of themes has a custom.
+- `Themes.getPresets` - Get a default list of themes.
+- `Themes.getPresetStaticTheme` - Get the theme loaded by Geist UI default.
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

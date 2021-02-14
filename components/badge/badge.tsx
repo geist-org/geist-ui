@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
-import useTheme from '../styles/use-theme'
+import useTheme from '../use-theme'
 import { NormalSizes, NormalTypes } from '../utils/prop-types'
-import { GeistUIThemesPalette } from 'components/styles/themes'
+import { GeistUIThemesPalette } from 'components/themes/presets'
 import BadgeAnchor from './badge-anchor'
 
 interface Props {

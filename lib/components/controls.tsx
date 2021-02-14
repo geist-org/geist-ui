@@ -1,25 +1,33 @@
 import React, { useMemo } from 'react'
-import { Button, useTheme, Select, Spacer } from 'components'
+import { Button, useTheme, Select, Spacer, Themes, useAllThemes } from 'components'
 import { useConfigs } from 'lib/config-context'
 import useLocale from 'lib/use-locale'
 import Router, { useRouter } from 'next/router'
 import MoonIcon from '@geist-ui/react-icons/moon'
 import SunIcon from '@geist-ui/react-icons/sun'
+import UserIcon from '@geist-ui/react-icons/user'
+import {
+  CHINESE_LANGUAGE_IDENT,
+  CUSTOM_THEME_TYPE,
+  ENGLISH_LANGUAGE_IDENT,
+  GITHUB_URL,
+} from 'lib/constants'
 
-const Controls: React.FC<{}> = React.memo(({}) => {
+const Controls: React.FC<unknown> = React.memo(() => {
   const theme = useTheme()
-  const { updateCustomTheme, updateChineseState } = useConfigs()
+  const { themes } = useAllThemes()
+  const { switchTheme, updateChineseState } = useConfigs()
   const { pathname } = useRouter()
   const { locale } = useLocale()
-  const isChinese = useMemo(() => locale === 'zh-cn', [locale])
-  const isDark = useMemo(() => theme.type === 'dark', [theme.type])
+  const isChinese = useMemo(() => locale === CHINESE_LANGUAGE_IDENT, [locale])
   const nextLocalePath = useMemo(() => {
-    const nextLocale = isChinese ? 'en-us' : 'zh-cn'
+    const nextLocale = isChinese ? ENGLISH_LANGUAGE_IDENT : CHINESE_LANGUAGE_IDENT
     return pathname.replace(locale, nextLocale)
   }, [locale, pathname])
+  const hasCustomTheme = useMemo(() => Themes.hasUserCustomTheme(themes), [themes])
 
-  const switchThemes = (type: 'dark' | 'light') => {
-    updateCustomTheme({ type })
+  const switchThemes = (type: string) => {
+    switchTheme(type)
     if (typeof window === 'undefined' || !window.localStorage) return
     window.localStorage.setItem('theme', type)
   }
@@ -28,9 +36,8 @@ const Controls: React.FC<{}> = React.memo(({}) => {
     Router.push(nextLocalePath)
   }
   const redirectGithub = () => {
-    if (typeof window !== 'undefined') {
-      window.open('https://github.com/geist-org/react')
-    }
+    if (typeof window === 'undefined') return
+    window.open(GITHUB_URL)
   }
 
   return (
@@ -53,7 +60,7 @@ const Controls: React.FC<{}> = React.memo(({}) => {
           size="small"
           pure
           onChange={switchThemes}
-          value={isDark ? 'dark' : 'light'}
+          value={theme.type}
           title={isChinese ? '切换主题' : 'Switch Themes'}>
           <Select.Option value="light">
             <span className="select-content">
@@ -65,6 +72,13 @@ const Controls: React.FC<{}> = React.memo(({}) => {
               <MoonIcon size={14} /> {isChinese ? '暗黑' : 'Dark'}
             </span>
           </Select.Option>
+          {hasCustomTheme && (
+            <Select.Option value={CUSTOM_THEME_TYPE}>
+              <span className="select-content">
+                <UserIcon size={14} /> {CUSTOM_THEME_TYPE}
+              </span>
+            </Select.Option>
+          )}
         </Select>
       </div>
       <style jsx>{`
