@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDom from 'react-dom'
-import { GeistProvider, CssBaseline, Page } from '@geist-ui/react'
+import { GeistProvider, CssBaseline, Page, Text } from '@geist-ui/react'
+import { greenTheme, redTheme } from './theme'
 import Home from './home'
-import Theme from './theme'
 
 const App = () => {
+  const [theme, setTheme] = useState('light')
   return (
-    <GeistProvider theme={Theme}>
+    <GeistProvider themes={[greenTheme, redTheme]} themeType={theme}>
       <CssBaseline />
-      <Page size="mini">
-        <Home />
+      <Page size="mini" dotBackdrop>
+        <Page.Header>
+          <Text h2>Custom themes for Geist UI</Text>
+        </Page.Header>
+        <Home onThemeChange={next => setTheme(next)} />
       </Page>
     </GeistProvider>
   )
