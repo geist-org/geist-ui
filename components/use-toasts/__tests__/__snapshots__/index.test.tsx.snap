@@ -126,59 +126,60 @@ exports[`UseToast should render different actions 1`] = `
             margin: 0;
           }
         </style></button></div><style>
-        .toast {
-          width: 420px;
-          max-width: 90vw;
-          max-height: 75px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: #000;
-          background-color: #fff;
-          color: #000;
-          border: 0;
-          border-radius: 5px;
-          padding: 16pt;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          opacity: 1;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-          transform: translate3d(0, 100%, 0px) scale(1);
-          transition: transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms;
-        }
+          .toast {
+            width: 420px;
+            max-width: 90vw;
+            max-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #000;
+            background-color: #fff;
+            color: #000;
+            border: 0;
+            border-radius: 5px;
+            padding: 16pt;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            opacity: 1;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+            transform: translate3d(0, 100%, 0px) scale(1);
+            transition: transform 400ms ease 0ms, visibility 200ms ease 0ms,
+              opacity 200ms ease 0ms;
+          }
 
-        .toast.visible {
-          opacity: 1;
-          transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
-        }
+          .toast.visible {
+            opacity: 1;
+            transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
+          }
 
-        .toast.hide {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-        }
+          .toast.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+          }
 
-        .message {
-          align-items: center;
-          height: 100%;
-          transition: opacity 0.4s ease;
-          font-size: 0.875rem;
-          display: -webkit-box;
-          word-break: break-all;
-          padding-right: 8pt;
-          overflow: hidden;
-          max-height: 100%;
-          text-overflow: ellipsis;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          line-height: 1.1rem;
-        }
+          .message {
+            align-items: center;
+            height: 100%;
+            transition: opacity 0.4s ease;
+            font-size: 0.875rem;
+            display: -webkit-box;
+            word-break: break-all;
+            padding-right: 8pt;
+            overflow: hidden;
+            max-height: 100%;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-height: 1.1rem;
+          }
 
-        .toast :global(button + button) {
-          margin-left: 4pt;
-        }
-      </style></div><style>
+          .toast :global(button + button) {
+            margin-left: 4pt;
+          }
+        </style></div><style>
         .toast-container {
           position: fixed;
           width: 420px;
@@ -198,59 +199,60 @@ exports[`UseToast should render different actions 1`] = `
 
 exports[`UseToast should work with different types 1`] = `
 "<div class=\\"toast-container \\"><div class=\\"toast visible \\"><div class=\\"message\\">hello</div><div class=\\"action\\"></div><style>
-        .toast {
-          width: 420px;
-          max-width: 90vw;
-          max-height: 75px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          color: #000;
-          background-color: #0070f3;
-          color: white;
-          border: 0;
-          border-radius: 5px;
-          padding: 16pt;
-          position: absolute;
-          bottom: 0;
-          right: 0;
-          opacity: 1;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-          transform: translate3d(0, 100%, 0px) scale(1);
-          transition: transform 400ms ease 0ms, visibility 200ms ease 0ms, opacity 200ms ease 0ms;
-        }
+          .toast {
+            width: 420px;
+            max-width: 90vw;
+            max-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #000;
+            background-color: #0070f3;
+            color: white;
+            border: 0;
+            border-radius: 5px;
+            padding: 16pt;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            opacity: 1;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+            transform: translate3d(0, 100%, 0px) scale(1);
+            transition: transform 400ms ease 0ms, visibility 200ms ease 0ms,
+              opacity 200ms ease 0ms;
+          }
 
-        .toast.visible {
-          opacity: 1;
-          transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
-        }
+          .toast.visible {
+            opacity: 1;
+            transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
+          }
 
-        .toast.hide {
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-        }
+          .toast.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+          }
 
-        .message {
-          align-items: center;
-          height: 100%;
-          transition: opacity 0.4s ease;
-          font-size: 0.875rem;
-          display: -webkit-box;
-          word-break: break-all;
-          padding-right: 8pt;
-          overflow: hidden;
-          max-height: 100%;
-          text-overflow: ellipsis;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 2;
-          line-height: 1.1rem;
-        }
+          .message {
+            align-items: center;
+            height: 100%;
+            transition: opacity 0.4s ease;
+            font-size: 0.875rem;
+            display: -webkit-box;
+            word-break: break-all;
+            padding-right: 8pt;
+            overflow: hidden;
+            max-height: 100%;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-height: 1.1rem;
+          }
 
-        .toast :global(button + button) {
-          margin-left: 4pt;
-        }
-      </style></div><style>
+          .toast :global(button + button) {
+            margin-left: 4pt;
+          }
+        </style></div><style>
         .toast-container {
           position: fixed;
           width: 420px;

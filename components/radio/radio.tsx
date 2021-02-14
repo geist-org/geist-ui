@@ -161,7 +161,9 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           height: var(--radio-size);
           width: var(--radio-size);
           border-radius: 50%;
-          background-color: ${isDisabled ? theme.palette.accents_4 : theme.palette.foreground};
+          background-color: ${isDisabled
+            ? theme.palette.accents_4
+            : theme.palette.foreground};
         }
 
         .point.active:before {

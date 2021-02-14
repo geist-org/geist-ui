@@ -51,7 +51,9 @@ const Table: React.FC<React.PropsWithChildren<TableProps>> = ({
   const ref = useRef<HTMLTableElement>(null)
   const [{ width }, updateShape] = useRealShape<HTMLTableElement>(ref)
   const [columns, setColumns] = useState<Array<TableColumnItem>>([])
-  const [selfData, setSelfData, dataRef] = useCurrentState<Array<TableDataSource<any>>>([])
+  const [selfData, setSelfData, dataRef] = useCurrentState<Array<TableDataSource<any>>>(
+    [],
+  )
   const updateColumn = (column: TableColumnItem) => {
     setColumns(last => {
       const hasColumn = last.find(item => item.value === column.value)

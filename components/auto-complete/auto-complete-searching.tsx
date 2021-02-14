@@ -10,7 +10,9 @@ const defaultProps = {
   className: '',
 }
 
-export type AutoCompleteSearchProps = Props & typeof defaultProps & React.HTMLAttributes<any>
+export type AutoCompleteSearchProps = Props &
+  typeof defaultProps &
+  React.HTMLAttributes<any>
 
 const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchProps>> = ({
   children,

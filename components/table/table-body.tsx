@@ -20,7 +20,13 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TableBodyProps = Props & typeof defaultProps & NativeAttrs
 
-const TableBody: React.FC<TableBodyProps> = ({ data, hover, emptyText, onRow, onCell }) => {
+const TableBody: React.FC<TableBodyProps> = ({
+  data,
+  hover,
+  emptyText,
+  onRow,
+  onCell,
+}) => {
   const theme = useTheme()
   const { columns } = useTableContext()
   const rowClickHandler = (row: any, index: number) => {

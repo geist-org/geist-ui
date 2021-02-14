@@ -65,9 +65,10 @@ const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
   placement,
 }) => {
   const [withoutBadgeChildren, badgeChldren] = pickChild(children, Badge)
-  const { top, bottom, left, right, value, origin } = useMemo(() => getTransform(placement), [
-    placement,
-  ])
+  const { top, bottom, left, right, value, origin } = useMemo(
+    () => getTransform(placement),
+    [placement],
+  )
 
   return (
     <div className="anchor">

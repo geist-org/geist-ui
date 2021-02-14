@@ -20,7 +20,7 @@ interface Props {
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
   className?: string
-  resize?: ResizeTypes 
+  resize?: ResizeTypes
 }
 
 const defaultProps = {
@@ -31,13 +31,16 @@ const defaultProps = {
   disabled: false,
   readOnly: false,
   className: '',
-  resize: 'none' as ResizeTypes
+  resize: 'none' as ResizeTypes,
 }
 
 type NativeAttrs = Omit<React.TextareaHTMLAttributes<any>, keyof Props>
 export type TextareaProps = Props & typeof defaultProps & NativeAttrs
 
-const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<TextareaProps>>(
+const Textarea = React.forwardRef<
+  HTMLTextAreaElement,
+  React.PropsWithChildren<TextareaProps>
+>(
   (
     {
       width,
@@ -63,10 +66,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     const isControlledComponent = useMemo(() => value !== undefined, [value])
     const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [hover, setHover] = useState<boolean>(false)
-    const { color, borderColor, hoverBorder } = useMemo(() => getColors(theme.palette, status), [
-      theme.palette,
-      status,
-    ])
+    const { color, borderColor, hoverBorder } = useMemo(
+      () => getColors(theme.palette, status),
+      [theme.palette, status],
+    )
 
     const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       if (disabled || readOnly) return
@@ -97,7 +100,10 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, React.PropsWithChildren<T
     }
 
     return (
-      <div className={`wrapper ${hover ? 'hover' : ''} ${disabled ? 'disabled' : ''} ${className}`}>
+      <div
+        className={`wrapper ${hover ? 'hover' : ''} ${
+          disabled ? 'disabled' : ''
+        } ${className}`}>
         <textarea
           ref={textareaRef}
           disabled={disabled}

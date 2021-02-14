@@ -102,13 +102,19 @@ const getAddressInput = (
   </div>
 )
 
-const ImageBrowser = React.forwardRef<HTMLDivElement, React.PropsWithChildren<ImageBrowserProps>>(
+const ImageBrowser = React.forwardRef<
+  HTMLDivElement,
+  React.PropsWithChildren<ImageBrowserProps>
+>(
   (
     { url, title, children, showFullLink, invert, anchorProps, className, ...props },
     ref: React.Ref<HTMLDivElement>,
   ) => {
     const theme = useTheme()
-    const colors = useMemo(() => getBrowserColors(invert, theme.palette), [invert, theme.palette])
+    const colors = useMemo(() => getBrowserColors(invert, theme.palette), [
+      invert,
+      theme.palette,
+    ])
     const input = useMemo(() => {
       if (url) return getAddressInput(url, showFullLink, colors, anchorProps)
       if (title) return getTitle(title, colors)

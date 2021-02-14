@@ -12,7 +12,11 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
 export type FieldsetTitleProps = Props & typeof defaultProps & NativeAttrs
 
-const FieldsetTitle: React.FC<FieldsetTitleProps> = ({ className, children, ...props }) => {
+const FieldsetTitle: React.FC<FieldsetTitleProps> = ({
+  className,
+  children,
+  ...props
+}) => {
   return (
     <>
       <h4 className={className} {...props}>

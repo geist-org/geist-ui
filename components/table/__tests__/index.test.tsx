@@ -121,7 +121,9 @@ describe('Table', () => {
     const operation = (actions: cellActions) => {
       return (
         <button
-          onClick={() => actions.update({ property: 'test', description: 'test', operation })}>
+          onClick={() =>
+            actions.update({ property: 'test', description: 'test', operation })
+          }>
           Update
         </button>
       )
@@ -157,7 +159,11 @@ describe('Table', () => {
     const cellHandler = jest.fn()
     const data = [{ property: 'bold', description: 'boolean' }]
     const wrapper = mount(
-      <Table data={data} emptyText="test-not-found" onRow={rowHandler} onCell={cellHandler}>
+      <Table
+        data={data}
+        emptyText="test-not-found"
+        onRow={rowHandler}
+        onCell={cellHandler}>
         <Table.Column prop="property" label="property" />
         <Table.Column prop="description" label="description" />
       </Table>,

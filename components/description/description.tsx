@@ -17,7 +17,12 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DescriptionProps = Props & typeof defaultProps & NativeAttrs
 
-const Description: React.FC<DescriptionProps> = ({ title, content, className, ...props }) => {
+const Description: React.FC<DescriptionProps> = ({
+  title,
+  content,
+  className,
+  ...props
+}) => {
   const theme = useTheme()
   return (
     <dl className={className} {...props}>

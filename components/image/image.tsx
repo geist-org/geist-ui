@@ -101,7 +101,14 @@ const Image: React.FC<ImageProps> = ({
   return (
     <div className={`image ${className}`}>
       {showSkeleton && showAnimation && <ImageSkeleton opacity={loading ? 0.5 : 0} />}
-      <img ref={imageRef} width={width} height={height} onLoad={imageLoaded} src={src} {...props} />
+      <img
+        ref={imageRef}
+        width={width}
+        height={height}
+        onLoad={imageLoaded}
+        src={src}
+        {...props}
+      />
       <style jsx>{`
         .image {
           width: ${w};

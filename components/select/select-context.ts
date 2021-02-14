@@ -19,4 +19,5 @@ const defaultContext = {
 
 export const SelectContext = React.createContext<SelectConfig>(defaultContext)
 
-export const useSelectContext = (): SelectConfig => React.useContext<SelectConfig>(SelectContext)
+export const useSelectContext = (): SelectConfig =>
+  React.useContext<SelectConfig>(SelectContext)

@@ -110,11 +110,18 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
     }
     if (options.length === 0) {
       if (state === '') return null
-      return hasEmptyChild ? emptyChild : <AutoCompleteEmpty>No Options</AutoCompleteEmpty>
+      return hasEmptyChild ? (
+        emptyChild
+      ) : (
+        <AutoCompleteEmpty>No Options</AutoCompleteEmpty>
+      )
     }
     return childrenToOptionsNode(options as Array<AutoCompleteOption>)
   }, [searching, options])
-  const showClearIcon = useMemo(() => clearable && searching === undefined, [clearable, searching])
+  const showClearIcon = useMemo(() => clearable && searching === undefined, [
+    clearable,
+    searching,
+  ])
 
   const updateValue = (val: string) => {
     if (disabled) return

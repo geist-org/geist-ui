@@ -13,7 +13,11 @@ const defaultProps = {
 
 export type GridProps = Props & typeof defaultProps & GridBasicItemComponentProps
 
-const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({ children, className, ...props }) => {
+const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({
+  children,
+  className,
+  ...props
+}) => {
   const { className: resolveClassName, styles } = css.resolve`
     margin: 0;
     box-sizing: border-box;

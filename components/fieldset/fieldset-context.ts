@@ -18,4 +18,5 @@ const defaultContext = {
 
 export const FieldsetContext = React.createContext<FieldsetConfig>(defaultContext)
 
-export const useFieldset = (): FieldsetConfig => React.useContext<FieldsetConfig>(FieldsetContext)
+export const useFieldset = (): FieldsetConfig =>
+  React.useContext<FieldsetConfig>(FieldsetContext)

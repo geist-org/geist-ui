@@ -117,7 +117,9 @@ describe('Select', () => {
 
   it('should be wraning when ident value missing', () => {
     let errorMessage = ''
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation(msg => (errorMessage = msg))
+    const errorSpy = jest
+      .spyOn(console, 'error')
+      .mockImplementation(msg => (errorMessage = msg))
     const SelectOption = Select.Option as any
     const wrapper = mount(
       <Select>

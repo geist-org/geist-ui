@@ -23,7 +23,7 @@ module.exports = {
     '!components/themes/*',
     '!components/geist-provider/*',
     '!components/index.ts',
-    '!components/utils/*',
+    '!components/utils/**/*',
   ],
 
   moduleNameMapper: {

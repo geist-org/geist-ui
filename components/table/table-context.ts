@@ -19,4 +19,5 @@ const defaultContext = {
 
 export const TableContext = React.createContext<TableConfig>(defaultContext)
 
-export const useTableContext = (): TableConfig => React.useContext<TableConfig>(TableContext)
+export const useTableContext = (): TableConfig =>
+  React.useContext<TableConfig>(TableContext)

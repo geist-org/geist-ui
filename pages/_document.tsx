@@ -37,7 +37,10 @@ class MyDocument extends Document {
           />
           <Main />
           <NextScript />
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110371817-12" />
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=UA-110371817-12"
+          />
           <script
             async
             dangerouslySetInnerHTML={{

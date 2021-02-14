@@ -15,4 +15,5 @@ const defaultContext = {
 
 export const CheckboxContext = React.createContext<CheckboxConfig>(defaultContext)
 
-export const useCheckbox = (): CheckboxConfig => React.useContext<CheckboxConfig>(CheckboxContext)
+export const useCheckbox = (): CheckboxConfig =>
+  React.useContext<CheckboxConfig>(CheckboxContext)

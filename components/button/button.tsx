@@ -84,10 +84,10 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
     } = filteredProps
     /* eslint-enable @typescript-eslint/no-unused-vars */
 
-    const { bg, border, color } = useMemo(() => getButtonColors(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
+    const { bg, border, color } = useMemo(
+      () => getButtonColors(theme.palette, filteredProps),
+      [theme.palette, filteredProps],
+    )
     const hover = useMemo(() => getButtonHoverColors(theme.palette, filteredProps), [
       theme.palette,
       filteredProps,
@@ -146,7 +146,12 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
         {loading && <ButtonLoading color={color} />}
         {childrenWithIcon}
         {dripShow && (
-          <ButtonDrip x={dripX} y={dripY} color={dripColor} onCompleted={dripCompletedHandle} />
+          <ButtonDrip
+            x={dripX}
+            y={dripY}
+            color={dripColor}
+            onCompleted={dripCompletedHandle}
+          />
         )}
         <style jsx>{`
           .btn {
