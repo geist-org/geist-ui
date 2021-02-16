@@ -1,5 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Tree, useToasts } from 'components'
+import Github from '@geist-ui/react-icons/github'
+import Film from '@geist-ui/react-icons/film'
 
 export const meta = {
   title: 'File-Tree',
@@ -27,6 +29,25 @@ Display a list of files and folders in a hierarchical tree structure.
     <Tree.File name="header.js" />
   </Tree.Folder>
   <Tree.File name="readme.md" />
+</Tree>
+`}
+/>
+
+<Playground
+  title="Custom icons"
+  desc="Use custom icons"
+  scope={{ Tree, Github, Film }}
+  code={`
+<Tree>
+  <Tree.Folder name="Chris Columbus" icon={<Github />}>
+    <Tree.File name="The Fast and the Furious I" icon={<Film />} />
+    <Tree.File name="The Fast and the Furious II" icon={<Film />} />
+    <Tree.File name="The Fast and the Furious III" icon={<Film />} />
+  </Tree.Folder>
+  <Tree.Folder name="Rob Cohen" expand icon={<Github />}>
+    <Tree.File name="Harry Potter I" icon={<Film />} />
+    <Tree.File name="Harry Potter II" icon={<Film />} />
+  </Tree.Folder>
 </Tree>
 `}
 />
@@ -150,6 +171,7 @@ Display a list of files and folders in a hierarchical tree structure.
 | Attribute          | Description   | Type             | Accepted values                   | Default |
 | ------------------ | ------------- | ---------------- | --------------------------------- | ------- |
 | **name**(required) | file name     | `string`         | -                                 | -       |
+| **icon**           | custom icon | `ReactNode`        | -                                 | -       |
 | **extra**          | extra message | `string`         | -                                 | -       |
 | ...                | native props  | `HTMLAttributes` | `'id', 'title', 'className', ...` | -       |
 
@@ -158,6 +180,8 @@ Display a list of files and folders in a hierarchical tree structure.
 | Attribute          | Description   | Type             | Accepted values                   | Default |
 | ------------------ | ------------- | ---------------- | --------------------------------- | ------- |
 | **name**(required) | folder name   | `string`         | -                                 | -       |
+| **icon**           | custom icon    | `ReactNode`        | -                                 | -       |
+| **expand**       | expand by default | `boolean`          | -                                 | -       |
 | **extra**          | extra message | `string`         | -                                 | -       |
 | ...                | native props  | `HTMLAttributes` | `'id', 'title', 'className', ...` | -       |
 
@@ -166,6 +190,8 @@ Display a list of files and folders in a hierarchical tree structure.
 ```ts
 type FileTreeValue = {
   type: 'directory' || 'file'
+  icon: ReactNode
+  expand?: boolean;
   name: string
   extra?: string
   files?: Array<FileTreeValue>

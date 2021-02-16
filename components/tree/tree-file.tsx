@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, ReactNode } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import TreeFileIcon from './tree-file-icon'
@@ -8,6 +8,7 @@ import { makeChildPath, stopPropagation } from './tree-help'
 
 interface Props {
   name: string
+  icon?: ReactNode
   extra?: string
   parentPath?: string
   level?: number
@@ -25,6 +26,7 @@ export type TreeFileProps = Props & typeof defaultProps & NativeAttrs
 
 const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
   name,
+  icon,
   parentPath,
   level,
   extra,
@@ -44,7 +46,7 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
       <div className="names">
         <TreeIndents count={level} />
         <span className="icon">
-          <TreeFileIcon />
+          {icon || <TreeFileIcon />}
         </span>
         <span className="name">
           {name}

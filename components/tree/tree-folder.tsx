@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState, ReactNode } from 'react'
 import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { setChildrenProps } from '../utils/collections'
@@ -12,6 +12,8 @@ import { sortChildren, makeChildPath, stopPropagation } from './tree-help'
 
 interface Props {
   name: string
+  icon?: ReactNode
+  expand?: boolean
   extra?: string
   parentPath?: string
   level?: number
@@ -29,6 +31,8 @@ export type TreeFolderProps = Props & typeof defaultProps & NativeAttrs
 
 const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
   name,
+  icon,
+  expand,
   children,
   parentPath,
   level: parentLevel,
@@ -38,8 +42,9 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
 }) => {
   const theme = useTheme()
   const { initialExpand, isImperative } = useTreeContext()
-  const [expanded, setExpanded] = useState<boolean>(initialExpand)
-  useEffect(() => setExpanded(initialExpand), [])
+  const initexpanded = typeof expand === 'boolean' ? expand : initialExpand;
+  const [expanded, setExpanded] = useState<boolean>(initexpanded)
+  useEffect(() => setExpanded(initexpanded), [])
 
   const currentPath = useMemo(() => makeChildPath(name, parentPath), [])
   const clickHandler = () => setExpanded(!expanded)
@@ -65,7 +70,7 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
           <TreeStatusIcon active={expanded} />
         </span>
         <span className="icon">
-          <TreeFolderIcon />
+          {icon || <TreeFolderIcon />}
         </span>
         <span className="name">
           {name}

@@ -1,5 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Tree, useToasts } from 'components'
+import Github from '@geist-ui/react-icons/github'
+import Film from '@geist-ui/react-icons/film'
 
 export const meta = {
   title: '文件树 File Tree',
@@ -27,6 +29,25 @@ export const meta = {
     <Tree.File name="header.js" />
   </Tree.Folder>
   <Tree.File name="readme.md" />
+</Tree>
+`}
+/>
+
+<Playground
+  title="自定义图标"
+  desc="使用自定义图标"
+  scope={{ Tree, Github, Film }}
+  code={`
+<Tree>
+  <Tree.Folder name="Chris Columbus" icon={<Github />}>
+    <Tree.File name="The Fast and the Furious I" icon={<Film />} />
+    <Tree.File name="The Fast and the Furious II" icon={<Film />} />
+    <Tree.File name="The Fast and the Furious III" icon={<Film />} />
+  </Tree.Folder>
+  <Tree.Folder name="Rob Cohen" expand icon={<Github />}>
+    <Tree.File name="Harry Potter I" icon={<Film />} />
+    <Tree.File name="Harry Potter II" icon={<Film />} />
+  </Tree.Folder>
 </Tree>
 `}
 />
@@ -150,6 +171,7 @@ export const meta = {
 | 属性             | 描述         | 类型             | 推荐值                            | 默认 |
 | ---------------- | ------------ | ---------------- | --------------------------------- | ---- |
 | **name**(必须的) | 文件名       | `string`         | -                                 | -    |
+| **icon**        | 自定义图标     | `ReactNode`         | -                                 | -    |
 | **extra**        | 额外文本信息 | `string`         | -                                 | -    |
 | ...              | 原生属性     | `HTMLAttributes` | `'id', 'title', 'className', ...` | -    |
 
@@ -158,6 +180,8 @@ export const meta = {
 | 属性             | 描述           | 类型             | 推荐值                            | 默认 |
 | ---------------- | -------------- | ---------------- | --------------------------------- | ---- |
 | **name**(必须的) | 文件夹名       | `string`         | -                                 | -    |
+| **icon**        | 自定义图标      | `ReactNode`         | -                                 | -    |
+| **expand**    | 默认是否展开 | `boolean`         | -                                 | -    |
 | **extra**        | 额外的文本信息 | `string`         | -                                 | -    |
 | ...              | 原生属性       | `HTMLAttributes` | `'id', 'title', 'className', ...` | -    |
 
@@ -166,6 +190,8 @@ export const meta = {
 ```ts
 type FileTreeValue = {
   type: 'directory' || 'file'
+  icon?: ReactNode
+  expand?: boolean
   name: string
   extra?: string
   files?: Array<FileTreeValue>

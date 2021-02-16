@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, ReactNode } from 'react'
 import TreeFile from './tree-file'
 import TreeFolder from './tree-folder'
 import { TreeContext } from './tree-context'
@@ -9,12 +9,23 @@ const FileTreeValueType = tuple('directory', 'file')
 
 const directoryType = FileTreeValueType[0]
 
-export type FileTreeValue = {
-  type: typeof FileTreeValueType[number]
+export type FolderValue = {
+  type: typeof FileTreeValueType[0]
   name: string
+  icon?: ReactNode
+  expand?: boolean
   extra?: string
   files?: Array<FileTreeValue>
 }
+
+export type FileValue = {
+  type: typeof FileTreeValueType[1]
+  name: string
+  icon?: ReactNode
+  extra?: string
+}
+
+export type FileTreeValue = FolderValue | FileValue;
 
 interface Props {
   value?: Array<FileTreeValue>
@@ -44,7 +55,9 @@ const makeChildren = (value: Array<FileTreeValue> = []) => {
         return (
           <TreeFolder
             name={item.name}
+            icon={item.icon}
             extra={item.extra}
+            expand={item.expand}
             key={`folder-${item.name}-${index}`}>
             {makeChildren(item.files)}
           </TreeFolder>
@@ -52,6 +65,7 @@ const makeChildren = (value: Array<FileTreeValue> = []) => {
       return (
         <TreeFile
           name={item.name}
+          icon={item.icon}
           extra={item.extra}
           key={`file-${item.name}-${index}`}
         />
