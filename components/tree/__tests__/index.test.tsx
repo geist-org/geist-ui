@@ -3,6 +3,7 @@ import { mount } from 'enzyme'
 import { Tree } from 'components'
 import { nativeEvent } from 'tests/utils'
 import { FileTreeValue } from 'components/tree/tree'
+import Github from '@geist-ui/react-icons/github'
 
 const mockFiles: Array<FileTreeValue> = [
   {
@@ -83,5 +84,17 @@ describe('Tree', () => {
   it('should be work when value is empty', () => {
     const wrapper = mount(<Tree value={[]} />)
     expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('should show spetial icon', () => {
+    expect(<Tree>
+    <Tree.File name="Harry Potter I" icon={<Github />} />
+</Tree>).toMatchSnapshot()
+  })
+
+  it('should expand second folder', () => {
+    expect(<Tree>
+    <Tree.File name="Harry Potter I" icon={<Github />} />
+</Tree>).toMatchSnapshot()
   })
 })

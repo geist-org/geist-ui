@@ -19,3 +19,33 @@ exports[`Tree should mount correctly 2`] = `
 `;
 
 exports[`Tree should mount correctly 3`] = `ReactWrapper {}`;
+
+exports[`Tree should show spetial icon 1`] = `
+<Tree
+  className=""
+  initialExpand={false}
+>
+  <TreeFile
+    className=""
+    icon={<Github />}
+    level={0}
+    name="Harry Potter I"
+    parentPath=""
+  />
+</Tree>
+`;
+
+exports[`Tree should expand second folder 1`] = `
+<Tree
+  className=""
+  initialExpand={false}
+>
+  <TreeFile
+    className=""
+    icon={<Github />}
+    level={0}
+    name="Harry Potter I"
+    parentPath=""
+  />
+</Tree>
+`;
