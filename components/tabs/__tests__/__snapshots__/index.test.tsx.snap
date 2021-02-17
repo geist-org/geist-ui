@@ -4,7 +4,6 @@ exports[`Tabs should render correctly 1`] = `
 "<div class=\\"tabs \\"><header class=\\"\\"><div class=\\"tab  \\" role=\\"button\\">label1</div><div class=\\"tab  \\" role=\\"button\\">label2</div></header><div class=\\"content\\"></div><style>
           .tabs {
             width: initial;
-            overflow: auto;
           }
 
           header {
@@ -87,7 +86,6 @@ exports[`Tabs should work correctly with different styles 1`] = `
 "<div class=\\"tabs \\"><header class=\\"hide-divider\\"><div class=\\"tab  \\" role=\\"button\\">label1</div></header><div class=\\"content\\"></div><style>
           .tabs {
             width: initial;
-            overflow: auto;
           }
 
           header {

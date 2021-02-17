@@ -87,7 +87,6 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
         <style jsx>{`
           .tabs {
             width: initial;
-            overflow: auto;
           }
 
           header {
