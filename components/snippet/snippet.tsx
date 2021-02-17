@@ -6,6 +6,7 @@ import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
 import useToasts from '../use-toasts'
+import useWarning from 'components/utils/use-warning'
 
 interface Props {
   text?: string | string[]
@@ -59,6 +60,10 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
 
+  if (copyType === 'slient') {
+    useWarning('"slient" is deprecated, use "silent" instead of it.', 'Snippet')
+  }
+
   const style = useMemo(() => getStyles(type, theme.palette, filled), [
     type,
     theme.palette,
@@ -79,7 +84,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   const clickHandler = () => {
     if (!childText || !showCopyIcon) return
     copy(childText)
-    if (copyType === 'slient') return
+    if (copyType === 'silent' || copyType === 'slient') return
     setToast({ text: toastText, type: toastType })
   }
 
