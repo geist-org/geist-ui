@@ -6,7 +6,7 @@ import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
 import useToasts from '../use-toasts'
-import useWarning from 'components/utils/use-warning'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   text?: string | string[]
