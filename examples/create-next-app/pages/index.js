@@ -7,7 +7,7 @@ export default function Home() {
         <Text h2>React Application with Geist UI</Text>
       </Page.Header>
       <Text>
-        Hello, I am using <Text b>Gesit UI</Text> !
+        Hello, I am using <Text b>Geist UI</Text> !
       </Text>
     </Page>
   )
