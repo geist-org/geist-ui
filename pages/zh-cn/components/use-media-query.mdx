@@ -63,12 +63,18 @@ const breakpoints: GeistUIThemesBreakpoints = {
   xl: { min: '1920px', max: '10000px' },
 }
 
-const App = () => (
-  <GeistProvider theme={{ breakpoints: breakpoints }}>
-    <CssBaseline />
-    <AppComponent />
-  </GeistProvider>
-)
+const App = () => {
+  const myTheme = Themes.createFromLight({
+    type: 'myTheme',
+    breakpoints,
+  })
+  return (
+    <GeistProvider themes={[myTheme]} themeType="myTheme">
+      <CssBaseline />
+      <AppComponent />
+    </GeistProvider>
+  )
+}
 ```
 
 <Attributes edit="/pages/zh-cn/components/use-media-query.mdx">
