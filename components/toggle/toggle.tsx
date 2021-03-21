@@ -114,7 +114,7 @@ const Toggle: React.FC<ToggleProps> = ({
         label {
           -webkit-tap-highlight-color: transparent;
           display: inline-block;
-          vertical-align: center;
+          vertical-align: middle;
           white-space: nowrap;
           user-select: none;
           padding: 3px 0;
