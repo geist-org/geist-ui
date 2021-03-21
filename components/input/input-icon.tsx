@@ -27,7 +27,7 @@ const InputIcon: React.FC<InputIconProps> = ({ icon, ratio, clickable, onClick }
           width: ${width};
           height: 100%;
           align-items: center;
-          vertical-align: center;
+          vertical-align: middle;
           margin: 0;
           padding: 0 ${padding};
           line-height: 1;

@@ -64,7 +64,7 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
-          vertical-align: center;
+          vertical-align: middle;
           min-height: 2.5rem;
           color: ${theme.palette.accents_5};
           background: ${theme.palette.accents_1};
