@@ -13,7 +13,7 @@ about: "If something isn't working as expected 🤔."
   - Version of browser
   - Version of `geist-ui/react`
 
-## Expection
+## Expected Behaviour
 
 The behavior I expect is ...
 
