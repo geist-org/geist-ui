@@ -27,6 +27,7 @@ interface Props {
 }
 
 const defaultProps = {
+  hideValue: false,
   initialValue: 0,
   step: 1,
   min: 0,
