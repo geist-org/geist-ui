@@ -1,6 +1,6 @@
 import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react'
 import Input from '../input'
-import AutoCompleteItem from './auto-complete-item'
+import AutoCompleteItem, { AutoCompleteItemProps } from './auto-complete-item'
 import AutoCompleteDropdown from './auto-complete-dropdown'
 import AutoCompleteSearching from './auto-complete-searching'
 import AutoCompleteEmpty from './auto-complete-empty'
@@ -15,7 +15,9 @@ export type AutoCompleteOption = {
   value: string
 }
 
-export type AutoCompleteOptions = Array<typeof AutoCompleteItem | AutoCompleteOption>
+export type AutoCompleteOptions = Array<
+  typeof AutoCompleteItem | AutoCompleteOption | React.ReactElement<AutoCompleteItemProps>
+>
 
 interface Props {
   options: AutoCompleteOptions
