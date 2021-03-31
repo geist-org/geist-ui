@@ -133,4 +133,8 @@ describe('Slider', () => {
     wrapper = mount(<Slider step={20} showMarkers />)
     expect(wrapper.html()).toMatchSnapshot()
   })
+  it('should work with hideValue', () => {
+    let wrapper = mount(<Slider initialValue={20} hideValue />)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
 })

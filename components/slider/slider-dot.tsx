@@ -35,6 +35,7 @@ const SliderDot = React.forwardRef<
           top: 50%;
           transform: translate(-50%, -50%);
           height: 1.25rem;
+          min-width: 1.25rem;
           line-height: 1.25rem;
           border-radius: 0.625rem;
           user-select: none;
