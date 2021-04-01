@@ -41,6 +41,7 @@ describe('Loading', () => {
         <Loading color="#fff" />
         <Loading width="20%" />
         <Loading height="10px" />
+        <Loading width="20px" height="50px" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
