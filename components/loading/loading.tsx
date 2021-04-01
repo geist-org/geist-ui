@@ -4,30 +4,30 @@ import withDefaults from '../utils/with-defaults'
 import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
 import { GeistUIThemesPalette } from 'components/themes/presets'
 
+type SizeType = NormalSizes | string
+
 interface Props {
-  size?: NormalSizes
+  size?: SizeType
   type?: NormalTypes
   color?: string
-  width?: string
-  height?: string
 }
 
 const defaultProps = {
-  size: 'medium' as NormalSizes,
+  size: 'medium' as SizeType,
   type: 'default' as NormalTypes,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type LoadingProps = Props & typeof defaultProps & NativeAttrs
 
-const getIconSize = (size: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: string } = {
+const getIconSize = (size: SizeType) => {
+  const sizes: { [key in SizeType]: string } = {
     mini: '2px',
     small: '3px',
     medium: '4px',
     large: '5px',
   }
-  return sizes[size]
+  return sizes[size] || size
 }
 
 const getIconBgColor = (
@@ -51,12 +51,9 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   size,
   type,
   color,
-  width,
-  height,
 }) => {
   const theme = useTheme()
-  const iconSize = useMemo(() => getIconSize(size), [size])
-  const iconHeight = height || width
+  const width = useMemo(() => getIconSize(size), [size])
   const bgColor = useMemo(() => getIconBgColor(type, theme.palette, color), [
     type,
     theme.palette,
@@ -105,8 +102,8 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
         }
 
         i {
-          width: ${width || iconSize};
-          height: ${iconHeight || iconSize};
+          width: ${width};
+          height: ${width};
           border-radius: 50%;
           background-color: ${bgColor};
           margin: 0 1px;
