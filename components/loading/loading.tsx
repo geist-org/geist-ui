@@ -51,9 +51,12 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   size,
   type,
   color,
+  width,
+  height,
 }) => {
   const theme = useTheme()
-  const width = useMemo(() => getIconSize(size), [size])
+  const iconSize = useMemo(() => getIconSize(size), [size])
+  const iconHeight = height || width
   const bgColor = useMemo(() => getIconBgColor(type, theme.palette, color), [
     type,
     theme.palette,
@@ -102,8 +105,8 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
         }
 
         i {
-          width: ${width};
-          height: ${width};
+          width: ${width || iconSize};
+          height: ${iconHeight || iconSize};
           border-radius: 50%;
           background-color: ${bgColor};
           margin: 0 1px;
