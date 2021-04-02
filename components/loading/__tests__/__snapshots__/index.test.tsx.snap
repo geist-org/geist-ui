@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Loading should render correctly 1`] = `
-"<div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+"<div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -39,7 +39,7 @@ exports[`Loading should render correctly 1`] = `
           height: 4px;
           border-radius: 50%;
           background-color: #444;
-          margin: 0 1px;
+          margin: 0 calc(4px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -71,7 +71,7 @@ exports[`Loading should render correctly 1`] = `
 exports[`Loading should render correctly 2`] = `[Function]`;
 
 exports[`Loading should work with custom styles 1`] = `
-"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+"<div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -109,7 +109,7 @@ exports[`Loading should work with custom styles 1`] = `
           height: 4px;
           border-radius: 50%;
           background-color: #fff;
-          margin: 0 1px;
+          margin: 0 calc(4px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -135,7 +135,7 @@ exports[`Loading should work with custom styles 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -169,11 +169,11 @@ exports[`Loading should work with custom styles 1`] = `
         }
 
         i {
-          width: 4px;
-          height: 4px;
+          width: 20%;
+          height: 20%;
           border-radius: 50%;
           background-color: #444;
-          margin: 0 1px;
+          margin: 0 calc(20% / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -199,7 +199,7 @@ exports[`Loading should work with custom styles 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -233,11 +233,11 @@ exports[`Loading should work with custom styles 1`] = `
         }
 
         i {
-          width: 4px;
-          height: 4px;
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
           background-color: #444;
-          margin: 0 1px;
+          margin: 0 calc(10px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -269,7 +269,7 @@ exports[`Loading should work with custom styles 1`] = `
 exports[`Loading should work with custom styles 2`] = `[Function]`;
 
 exports[`Loading should work with different sizes 1`] = `
-"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+"<div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -307,7 +307,7 @@ exports[`Loading should work with different sizes 1`] = `
           height: 2px;
           border-radius: 50%;
           background-color: #444;
-          margin: 0 1px;
+          margin: 0 calc(2px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -333,7 +333,7 @@ exports[`Loading should work with different sizes 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -371,7 +371,7 @@ exports[`Loading should work with different sizes 1`] = `
           height: 3px;
           border-radius: 50%;
           background-color: #444;
-          margin: 0 1px;
+          margin: 0 calc(3px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -397,7 +397,7 @@ exports[`Loading should work with different sizes 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -435,7 +435,7 @@ exports[`Loading should work with different sizes 1`] = `
           height: 4px;
           border-radius: 50%;
           background-color: #444;
-          margin: 0 1px;
+          margin: 0 calc(4px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -461,7 +461,7 @@ exports[`Loading should work with different sizes 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -499,7 +499,7 @@ exports[`Loading should work with different sizes 1`] = `
           height: 5px;
           border-radius: 50%;
           background-color: #444;
-          margin: 0 1px;
+          margin: 0 calc(5px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -531,7 +531,7 @@ exports[`Loading should work with different sizes 1`] = `
 exports[`Loading should work with different sizes 2`] = `[Function]`;
 
 exports[`Loading should work with different types 1`] = `
-"<div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+"<div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -569,7 +569,7 @@ exports[`Loading should work with different types 1`] = `
           height: 4px;
           border-radius: 50%;
           background-color: #0070f3;
-          margin: 0 1px;
+          margin: 0 calc(4px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -595,7 +595,7 @@ exports[`Loading should work with different types 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -633,7 +633,7 @@ exports[`Loading should work with different types 1`] = `
           height: 4px;
           border-radius: 50%;
           background-color: #666;
-          margin: 0 1px;
+          margin: 0 calc(4px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -659,7 +659,7 @@ exports[`Loading should work with different types 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -697,7 +697,7 @@ exports[`Loading should work with different types 1`] = `
           height: 4px;
           border-radius: 50%;
           background-color: #f5a623;
-          margin: 0 1px;
+          margin: 0 calc(4px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -723,7 +723,7 @@ exports[`Loading should work with different types 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
@@ -761,7 +761,7 @@ exports[`Loading should work with different types 1`] = `
           height: 4px;
           border-radius: 50%;
           background-color: #e00;
-          margin: 0 1px;
+          margin: 0 calc(4px / 2 * 1);
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
