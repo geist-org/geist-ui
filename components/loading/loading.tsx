@@ -4,30 +4,34 @@ import withDefaults from '../utils/with-defaults'
 import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
 import { GeistUIThemesPalette } from 'components/themes/presets'
 
+type LoadingSizes = NormalSizes | string
+
 interface Props {
-  size?: NormalSizes
+  size?: LoadingSizes
   type?: NormalTypes
   color?: string
-  width?: string
-  height?: string
+  className?: string
+  spaceRatio?: number
 }
 
 const defaultProps = {
-  size: 'medium' as NormalSizes,
+  size: 'medium' as LoadingSizes,
   type: 'default' as NormalTypes,
+  className: '',
+  spaceRatio: 1,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type LoadingProps = Props & typeof defaultProps & NativeAttrs
 
-const getIconSize = (size: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: string } = {
+const getIconSize = (size: LoadingSizes) => {
+  const sizes: { [key in LoadingSizes]: string } = {
     mini: '2px',
     small: '3px',
     medium: '4px',
     large: '5px',
   }
-  return sizes[size]
+  return sizes[size] || size
 }
 
 const getIconBgColor = (
@@ -51,6 +55,9 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   size,
   type,
   color,
+  className,
+  spaceRatio,
+  ...props
 }) => {
   const theme = useTheme()
   const width = useMemo(() => getIconSize(size), [size])
@@ -61,7 +68,7 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   ])
 
   return (
-    <div className="loading-container">
+    <div className={`loading-container ${className}`} {...props}>
       <span className="loading">
         {children && <label>{children}</label>}
         <i />
@@ -106,7 +113,7 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
           height: ${width};
           border-radius: 50%;
           background-color: ${bgColor};
-          margin: 0 1px;
+          margin: 0 calc(${width} / 2 * ${spaceRatio});
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
