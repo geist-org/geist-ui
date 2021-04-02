@@ -63,4 +63,4 @@ At any time, you think it's ok, you can start the following steps to submit your
 ### Get stuck
 
 - Create new issue to tell us: [create issue](https://github.com/geist-org/react/issues/new/choose).
-- Ask in [chat room](https://spectrum.chat/geist-ui/react?tab=posts).
+- Ask on [GitHub Discussions](https://github.com/geist-org/react/discussions).
