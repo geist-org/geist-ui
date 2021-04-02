@@ -39,8 +39,8 @@ describe('Loading', () => {
     const wrapper = mount(
       <div>
         <Loading color="#fff" />
-        <Loading width="20%" />
-        <Loading height="10px" />
+        <Loading size="20%" />
+        <Loading size="10px" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
