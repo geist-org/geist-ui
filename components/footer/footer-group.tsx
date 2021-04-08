@@ -21,41 +21,48 @@ const FooterGroup: React.FC<React.PropsWithChildren<FooterGroupProps>> = ({
   const theme = useTheme()
   const { breakPoint } = useFooterContext()
   const [expand, setExpand] = React.useState(false)
+  let titleProps = undefined
+  if (React.isValidElement(title)) {
+    titleProps = React.cloneElement(title, {
+      className: 'footer-text',
+      onClick: () => setExpand(!expand),
+    })
+  }
   return (
     <div {...props}>
-      <h3 onClick={() => setExpand(!expand)}>{title}</h3>
+      {titleProps || (
+        <p onClick={() => setExpand(!expand)} className="footer-text">
+          {title}
+        </p>
+      )}
       <ul>{children}</ul>
 
       <style jsx>{`
         div{
           margin-bottom:20px;
         }
-        h3 {
+        :global(.footer-text) {
           font-weight: 400;
           font-size: 0.875rem;
-          margin: ${theme.layout.gapHalf} 0;
+          margin: ${theme.layout.gap} 0;
         }
         ul {
-          list-style-type: none !important;
           margin: 0;
-          padding: 0;
         }
         @media screen and (max-width: ${breakPoint}) {
           div{
-            margin-right: 0;
-            margin-bottom:0px;
             border-bottom: 1px solid ${theme.palette.accents_2};
           }
-          h3{
+          .footer-text {
             cursor:pointer;
           }
-          h3:after {
+          .footer-text :after {
             content: '${expand ? '-' : '+'}';
             float: right;
             transition: transform .15s ease;
           }
           ul{
-            display:${expand ? 'block' : 'none'};
+            display: ${expand ? 'block' : 'none'};
           }
         }
         }

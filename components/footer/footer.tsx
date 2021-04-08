@@ -6,7 +6,7 @@ import FooterColumn from './footer-column'
 import { FooterContext } from './footer-context'
 
 interface Props {
-  light?: boolean
+  reverse?: boolean
   subFooter?: string | React.ReactNode
   ariaLabel?: string
   maxWidth?: string
@@ -14,7 +14,7 @@ interface Props {
 }
 
 const defaultProps = {
-  light: false,
+  reverse: false,
   ariaLabel: 'Footer Links',
   breakPoint: '960px',
   maxWidth: '1000px',
@@ -24,7 +24,7 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type FooterProps = Props & typeof defaultProps & NativeAttrs
 
 const Footer: React.FC<React.PropsWithChildren<FooterProps>> = ({
-  light,
+  reverse,
   ariaLabel,
   children,
   subFooter,
@@ -33,7 +33,7 @@ const Footer: React.FC<React.PropsWithChildren<FooterProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
-  const bgColor = light ? `${theme.palette.background}` : `${theme.palette.accents_1}`
+  const bgColor = reverse ? `${theme.palette.background}` : `${theme.palette.accents_1}`
   return (
     <FooterContext.Provider value={{ maxWidth, breakPoint }}>
       <footer {...props}>

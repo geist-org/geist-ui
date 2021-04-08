@@ -9,10 +9,10 @@ export const meta = {
 ## Footer
 
 <Playground
-  scope={{ Footer }}
+  scope={{ Footer, Text }}
   code={`
 <Footer>
-  <Footer.Group title="Company">
+  <Footer.Group title={<p>Home</p>}>
     <Footer.Link href="#">Home</Footer.Link>
     <Footer.Link href="#">About</Footer.Link>
     <Footer.Link href="#">Careers</Footer.Link>
@@ -22,10 +22,10 @@ export const meta = {
   </Footer.Group>
   <Footer.Group title="Product">
     <Footer.Link href="#">Pricing</Footer.Link>
-    <Footer.Link href="#">Vercel for GitHub</Footer.Link>
-    <Footer.Link href="#">Vercel for GitLab</Footer.Link>
-    <Footer.Link href="#">Vercel for Bitbucket</Footer.Link>
-    <Footer.Link href="#">Vercel Edge Network</Footer.Link>
+    <Footer.Link href="#">Company for GitHub</Footer.Link>
+    <Footer.Link href="#">Company for GitLab</Footer.Link>
+    <Footer.Link href="#">Company for Bitbucket</Footer.Link>
+    <Footer.Link href="#">Company Edge Network</Footer.Link>
     <Footer.Link href="#">Integrations Marketplace</Footer.Link>
     <Footer.Link href="#">Command-Line</Footer.Link>
   </Footer.Group>
@@ -43,11 +43,11 @@ export const meta = {
 />
 
 <Playground
-  title="Light"
-  desc="Footer in Light Background"
+  title="Reverse"
+  desc="Footer in Opposite Background"
   scope={{ Footer }}
   code={`
-<Footer light>
+<Footer reverse>
   <Footer.Group title="Company">
     <Footer.Link href="#">Home</Footer.Link>
     <Footer.Link href="#">About</Footer.Link>
@@ -58,10 +58,10 @@ export const meta = {
   </Footer.Group>
   <Footer.Group title="Product">
     <Footer.Link href="#">Pricing</Footer.Link>
-    <Footer.Link href="#">Vercel for GitHub</Footer.Link>
-    <Footer.Link href="#">Vercel for GitLab</Footer.Link>
-    <Footer.Link href="#">Vercel for Bitbucket</Footer.Link>
-    <Footer.Link href="#">Vercel Edge Network</Footer.Link>
+    <Footer.Link href="#">Company for GitHub</Footer.Link>
+    <Footer.Link href="#">Company for GitLab</Footer.Link>
+    <Footer.Link href="#">Company for Bitbucket</Footer.Link>
+    <Footer.Link href="#">Company Edge Network</Footer.Link>
     <Footer.Link href="#">Integrations Marketplace</Footer.Link>
     <Footer.Link href="#">Command-Line</Footer.Link>
   </Footer.Group>
@@ -94,10 +94,10 @@ export const meta = {
   </Footer.Group>
   <Footer.Group title="Product">
     <Footer.Link href="#">Pricing</Footer.Link>
-    <Footer.Link href="#">Vercel for GitHub</Footer.Link>
-    <Footer.Link href="#">Vercel for GitLab</Footer.Link>
-    <Footer.Link href="#">Vercel for Bitbucket</Footer.Link>
-    <Footer.Link href="#">Vercel Edge Network</Footer.Link>
+    <Footer.Link href="#">Company for GitHub</Footer.Link>
+    <Footer.Link href="#">Company for GitLab</Footer.Link>
+    <Footer.Link href="#">Company for Bitbucket</Footer.Link>
+    <Footer.Link href="#">Company Edge Network</Footer.Link>
     <Footer.Link href="#">Integrations Marketplace</Footer.Link>
     <Footer.Link href="#">Command-Line</Footer.Link>
   </Footer.Group>
@@ -130,10 +130,10 @@ export const meta = {
   </Footer.Group>
   <Footer.Group title="Product">
     <Footer.Link href="#">Pricing</Footer.Link>
-    <Footer.Link href="#">Vercel for GitHub</Footer.Link>
-    <Footer.Link href="#">Vercel for GitLab</Footer.Link>
-    <Footer.Link href="#">Vercel for Bitbucket</Footer.Link>
-    <Footer.Link href="#">Vercel Edge Network</Footer.Link>
+    <Footer.Link href="#">Company for GitHub</Footer.Link>
+    <Footer.Link href="#">Company for GitLab</Footer.Link>
+    <Footer.Link href="#">Company for Bitbucket</Footer.Link>
+    <Footer.Link href="#">Company Edge Network</Footer.Link>
     <Footer.Link href="#">Integrations Marketplace</Footer.Link>
     <Footer.Link href="#">Command-Line</Footer.Link>
   </Footer.Group>
@@ -157,7 +157,7 @@ export const meta = {
 
 | Attribute      | Description       | Type                       | Accepted values         | Default   |
 | -------------- | ----------------- | -------------------------- | ----------------------- | --------- |
-| **light**      | light variant     | `boolean`                  | -                       | `false`   |
+| **reverse**    | opposite variant  | `boolean`                  | -                       | `false`   |
 | **subFooter**  | sub footer        | `string / React.ReactNode` | -                       | -         |
 | **ariaLabel**  | ariaLabel for nav | string                     | -                       | `default` |
 | **maxWidth**   | max-width value   | `string`                   | -                       | `1000px`  |

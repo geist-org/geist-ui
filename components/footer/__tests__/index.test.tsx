@@ -33,7 +33,7 @@ describe('should render basic footer', () => {
 
   it('should support footer type', () => {
     const wrapper = mount(
-      <Footer light>
+      <Footer reverse>
         <Footer.Group title="Education">
           <Footer.Link href="#">Support</Footer.Link>
         </Footer.Group>
@@ -47,7 +47,7 @@ describe('should render basic footer', () => {
 
   it('should render subFooter', () => {
     const wrapper = render(
-      <Footer light subFooter="<h1>Sub-Footer</h1>">
+      <Footer reverse subFooter="<h1>Sub-Footer</h1>">
         <Footer.Group title="Education">
           <Footer.Link href="#">Documentation</Footer.Link>
         </Footer.Group>

@@ -16,20 +16,29 @@ const FooterLink: React.FC<React.PropsWithChildren<FooterLinkProps>> = ({
   ...props
 }) => {
   const theme = useTheme()
+  let footerLinkElement = undefined
+  if (React.isValidElement(children)) {
+    footerLinkElement = React.cloneElement(children, {
+      className: 'footer-text',
+    })
+  }
+
   return (
     <li {...props}>
-      <a href={href} target={target || '_self'}>
-        {children}
-      </a>
+      {footerLinkElement || (
+        <a className="footer-link" href={href} target={target || '_self'}>
+          {children}
+        </a>
+      )}
       <style jsx>{`
         li:before {
-          content: '' !important;
+          content: '';
         }
-        li :global(a) {
+        li :global(.footer-link) {
           color: ${theme.palette.accents_5};
           transition: color 0.1s ease;
         }
-        li :global(a):hover {
+        li :global(.footer-link):hover {
           color: ${theme.palette.foreground};
         }
         li {
