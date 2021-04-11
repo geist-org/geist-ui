@@ -10,7 +10,7 @@ const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
+type NativeAttrs = Omit<React.HTMLAttributes<HTMLDivElement>, keyof Props>
 export type FieldsetSubtitleProps = Props & typeof defaultProps & NativeAttrs
 
 const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = ({
@@ -22,13 +22,14 @@ const FieldsetSubtitle: React.FC<FieldsetSubtitleProps> = ({
 
   return (
     <>
-      <p className={className} {...props}>
+      <div className={className} {...props}>
         {children}
-      </p>
+      </div>
       <style jsx>{`
-        p {
+        div {
           font-size: 0.875rem;
           line-height: 1.6;
+          letter-spacing: -0.005625rem;
           margin: ${theme.layout.gapHalf} 0;
         }
       `}</style>
