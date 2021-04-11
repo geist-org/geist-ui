@@ -46,7 +46,8 @@ const Application = () => (
 
 ## Showcases
 
-- [Article view count](https://docs.views.show/)
+- [Secret](https://secret.gl/)
+- [Article view count](https://views-docs.unix.bio/)
 - [Tree viewer for CDN](https://cdn.unix.bio/)
 - [Better social image](https://img.unix.bio/)
 - [SentiNEO: Near-Earth Objects Viewer](https://sentineo.app)
