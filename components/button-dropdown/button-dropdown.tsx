@@ -112,6 +112,12 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
             border-bottom-left-radius: ${theme.layout.radius};
           }
 
+          details {
+            border-top-right-radius: ${theme.layout.radius};
+            border-bottom-right-radius: ${theme.layout.radius};
+            overflow: hidden;
+          }
+
           summary {
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
@@ -121,8 +127,6 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
             background-color: ${bgColor};
             height: ${sizes.height};
             border-left: 1px solid ${colors.borderLeftColor};
-            border-top-right-radius: ${theme.layout.radius};
-            border-bottom-right-radius: ${theme.layout.radius};
             cursor: ${disabled || loading ? 'not-allowed' : 'pointer'};
             display: flex;
             justify-content: center;
