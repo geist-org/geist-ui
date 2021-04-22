@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import GridBasicItem, { GridBasicItemComponentProps } from './basic-item'
 import { Wrap } from './grid-types'
-import css from 'styled-jsx/css'
+import { css } from 'styled-jsx/css'
 
 interface Props {
   gap: number
