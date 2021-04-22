@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useRef,
 } from 'react'
-import css from 'styled-jsx/css'
+import { css } from 'styled-jsx/css'
 import useTheme from '../use-theme'
 import { useModalContext } from './modal-context'
 import Button, { ButtonProps } from '../button/button'
