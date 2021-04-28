@@ -84,4 +84,12 @@ describe('Radio', () => {
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })
+
+  // check ref is available: https://github.com/geist-org/react/issues/189
+  it('should forward ref by default', () => {
+    const ref = React.createRef<HTMLInputElement>()
+    const wrapper = mount(<Radio ref={ref} />)
+    expect(ref.current).not.toBeNull()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
