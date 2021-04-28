@@ -72,4 +72,12 @@ describe('Checkbox', () => {
     input.simulate('change')
     expect(wrapper.find('.text').text()).not.toContain('state2')
   })
+
+  // check ref is available: https://github.com/geist-org/react/issues/189
+  it('should forward ref by default', () => {
+    const ref = React.createRef<HTMLInputElement>()
+    const wrapper = mount(<Checkbox ref={ref} />)
+    expect(ref.current).not.toBeNull()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
