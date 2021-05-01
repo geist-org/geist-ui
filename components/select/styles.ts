@@ -1,5 +1,5 @@
-import { NormalSizes } from 'components/utils/prop-types'
-import { GeistUIThemes } from 'components/themes/presets'
+import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
+import { GeistUIThemes, GeistUIThemesPalette } from 'components/themes/presets'
 
 export interface SelectSize {
   height: string
@@ -32,4 +32,40 @@ export const getSizes = (theme: GeistUIThemes, size?: NormalSizes) => {
   }
 
   return size ? sizes[size] : sizes.medium
+}
+
+export type SelectColor = {
+  border: string
+  placeholderColor: string
+}
+
+export const getColors = (
+  palette: GeistUIThemesPalette,
+  status?: NormalTypes,
+): SelectColor => {
+  const colors: { [key in NormalTypes]: SelectColor } = {
+    default: {
+      border: palette.border,
+      placeholderColor: palette.accents_3,
+    },
+    secondary: {
+      border: palette.border,
+      placeholderColor: palette.accents_3,
+    },
+    success: {
+      border: palette.success,
+      placeholderColor: palette.accents_3,
+    },
+    warning: {
+      border: palette.warning,
+      placeholderColor: palette.accents_3,
+    },
+    error: {
+      border: palette.error,
+      placeholderColor: palette.error,
+    },
+  }
+
+  if (!status) return colors.default
+  return colors[status]
 }

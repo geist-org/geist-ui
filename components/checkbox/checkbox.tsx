@@ -3,7 +3,9 @@ import { useCheckbox } from './checkbox-context'
 import CheckboxGroup, { getCheckboxSize } from './checkbox-group'
 import CheckboxIcon from './checkbox.icon'
 import useWarning from '../utils/use-warning'
-import { NormalSizes } from '../utils/prop-types'
+import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { getColors } from './styles'
+import useTheme from '../use-theme'
 
 interface CheckboxEventTarget {
   checked: boolean
@@ -19,6 +21,7 @@ export interface CheckboxEvent {
 interface Props {
   checked?: boolean
   disabled?: boolean
+  status?: NormalTypes
   initialChecked?: boolean
   onChange?: (e: CheckboxEvent) => void
   size?: NormalSizes
@@ -28,6 +31,7 @@ interface Props {
 
 const defaultProps = {
   disabled: false,
+  status: 'default' as NormalTypes,
   initialChecked: false,
   size: 'small' as NormalSizes,
   className: '',
@@ -45,9 +49,11 @@ const Checkbox: React.FC<CheckboxProps> = ({
   className,
   children,
   size,
+  status,
   value,
   ...props
 }) => {
+  const theme = useTheme()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
   const { updateState, inGroup, disabledAll, values } = useCheckbox()
   const isDisabled = inGroup ? disabledAll || disabled : disabled
@@ -67,6 +73,12 @@ const Checkbox: React.FC<CheckboxProps> = ({
   }
 
   const fontSize = useMemo(() => getCheckboxSize(size), [size])
+
+  const { fill, bg } = useMemo(() => getColors(theme.palette, status), [
+    theme.palette,
+    status,
+  ])
+
   const changeHandle = useCallback(
     (ev: React.ChangeEvent) => {
       if (isDisabled) return
@@ -95,7 +107,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
   return (
     <label className={`${className}`}>
-      <CheckboxIcon disabled={isDisabled} checked={selfChecked} />
+      <CheckboxIcon fill={fill} bg={bg} disabled={isDisabled} checked={selfChecked} />
       <input
         type="checkbox"
         disabled={isDisabled}

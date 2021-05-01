@@ -5,7 +5,8 @@ import RadioGroup, { getRadioSize } from './radio-group'
 import RadioDescription from './radio-description'
 import { pickChild } from '../utils/collections'
 import useWarning from '../utils/use-warning'
-import { NormalSizes } from '../utils/prop-types'
+import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { getColors } from './styles'
 
 interface RadioEventTarget {
   checked: boolean
@@ -22,6 +23,7 @@ interface Props {
   checked?: boolean
   value?: string | number
   size?: NormalSizes
+  status?: NormalTypes
   className?: string
   disabled?: boolean
   onChange?: (e: RadioEvent) => void
@@ -29,6 +31,7 @@ interface Props {
 
 const defaultProps = {
   size: 'medium' as NormalSizes,
+  status: 'default' as NormalTypes,
   disabled: false,
   className: '',
 }
@@ -42,6 +45,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
   onChange,
   disabled,
   size,
+  status,
   value: radioValue,
   children,
   ...props
@@ -64,6 +68,12 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
   }
 
   const fontSize = useMemo(() => getRadioSize(size), [size])
+
+  const { label, border, bg } = useMemo(() => getColors(theme.palette, status), [
+    theme.palette,
+    status,
+  ])
+
   const isDisabled = useMemo(() => disabled || disabledAll, [disabled, disabledAll])
   const changeHandler = (event: React.ChangeEvent) => {
     if (isDisabled) return
@@ -128,7 +138,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
-          color: ${isDisabled ? theme.palette.accents_4 : theme.palette.foreground};
+          color: ${isDisabled ? theme.palette.accents_4 : label};
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
         }
 
@@ -144,7 +154,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           height: var(--radio-size);
           width: var(--radio-size);
           border-radius: 50%;
-          border: 1px solid ${theme.palette.border};
+          border: 1px solid ${border};
           transition: all 0.2s ease 0s;
           position: relative;
           display: inline-block;
@@ -161,9 +171,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           height: var(--radio-size);
           width: var(--radio-size);
           border-radius: 50%;
-          background-color: ${isDisabled
-            ? theme.palette.accents_4
-            : theme.palette.foreground};
+          background-color: ${isDisabled ? theme.palette.accents_4 : bg};
         }
 
         .point.active:before {

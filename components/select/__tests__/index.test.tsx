@@ -17,6 +17,18 @@ describe('Select', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work with different status', () => {
+    const wrapper = mount(
+      <div>
+        <Select status="secondary" />
+        <Select status="success" />
+        <Select status="warning" />
+        <Select status="error" />
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('should work correctly with labels', () => {
     const wrapper = mount(
       <Select>

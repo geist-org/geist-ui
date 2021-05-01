@@ -31,6 +31,18 @@ describe('Toggle', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work with different status', () => {
+    const wrapper = mount(
+      <div>
+        <Toggle status="secondary" />
+        <Toggle status="success" />
+        <Toggle status="warning" />
+        <Toggle status="error" />
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('should set toggle follow checked prop', async () => {
     const wrapper = mount(<Toggle initialChecked={true} />)
     expectToggleIsChecked(wrapper)

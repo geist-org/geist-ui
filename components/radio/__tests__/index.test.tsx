@@ -23,6 +23,18 @@ describe('Radio', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work with different status', () => {
+    const wrapper = mount(
+      <div>
+        <Radio status="secondary" />
+        <Radio status="success" />
+        <Radio status="warning" />
+        <Radio status="error" />
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('should render correctly with checked prop', () => {
     const wrapper = mount(<Radio>Option</Radio>)
     wrapper.setProps({ checked: false })

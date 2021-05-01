@@ -69,6 +69,18 @@ describe('Slider', () => {
     changeHandler.mockRestore()
   })
 
+  it('should work with different status', () => {
+    const wrapper = mount(
+      <div>
+        <Slider status="secondary" />
+        <Slider status="success" />
+        <Slider status="warning" />
+        <Slider status="error" />
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('should ignore events when disabled', async () => {
     let value = 0
     const changeHandler = jest.fn().mockImplementation(val => (value = val))
