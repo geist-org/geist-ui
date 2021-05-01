@@ -37,7 +37,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       label,
       labelRight,
       size,
-      status,
+      type,
+      htmlType,
       icon,
       iconRight,
       iconClickable,
@@ -77,8 +78,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       [icon, iconRight],
     )
     const { color, borderColor, hoverBorder } = useMemo(
-      () => getColors(theme.palette, status),
-      [theme.palette, status],
+      () => getColors(theme.palette, type),
+      [theme.palette, type],
     )
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -145,7 +146,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             } ${labelClasses}`}>
             {icon && <InputIcon icon={icon} {...iconProps} />}
             <input
-              type="text"
+              type={htmlType}
               ref={inputRef}
               className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
               placeholder={placeholder}

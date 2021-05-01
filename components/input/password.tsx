@@ -38,7 +38,7 @@ const InputPassword = React.forwardRef<
       ref: inputRef,
       iconClickable: true,
       onIconClick: iconClickHandler,
-      type: visible ? 'text' : 'password',
+      htmlType: visible ? 'text' : 'password',
     }),
     [props, iconClickHandler, visible, inputRef],
   )

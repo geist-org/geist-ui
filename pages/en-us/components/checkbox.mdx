@@ -36,6 +36,23 @@ Displays a boolean value.
 />
 
 <Playground
+  title="status"
+  desc="Differentiate states by color."
+  scope={{ Checkbox, Spacer }}
+  code={`
+<>
+  <Checkbox checked={true} status="default">default</Checkbox>
+  <Spacer y={.5} />
+  <Checkbox checked={true} status="success">success</Checkbox>
+  <Spacer y={.5} />
+  <Checkbox checked={true} status="warning">warning</Checkbox>
+  <Spacer y={.5} />
+  <Checkbox checked={true} status="error">error</Checkbox>
+</>
+`}
+/>
+
+<Playground
   title="disable"
   scope={{ Checkbox, Spacer }}
   code={`
@@ -71,15 +88,17 @@ Displays a boolean value.
 <Attributes edit="/pages/en-us/components/checkbox.mdx">
 <Attributes.Title>Checkbox.Props</Attributes.Title>
 
-| Attribute          | Description                                 | Type                  | Accepted values             | Default |
-| ------------------ | ------------------------------------------- | --------------------- | --------------------------- | ------- |
-| **checked**        | checked or not                              | `boolean`             | -                           | -       |
-| **initialChecked** | checked or not on initial                   | `boolean`             | -                           | `false` |
-| **onChange**       | change event handler                        | `CheckboxEvent`       | -                           | -       |
-| **value**          | unique identification value (only in group) | `string`              | -                           | -       |
-| **disabled**       | disable checkbox                            | `boolean`             | -                           | `false` |
-| **size**           | checkbox size                               | `NormalSizes`         | [NormalSizes](#normalsizes) | `small` |
-| ...                | native props                                | `LabelHTMLAttributes` | `'form', 'className', ...`  | -       |
+| Attribute          | Description                                 | Type                                           | Accepted values                   | Default   |
+| ------------------ | ------------------------------------------- | ---------------------------------------------- | --------------------------------- | --------- |
+| **checked**        | checked or not                              | `boolean`                                      | -                                 | -         |
+| **initialChecked** | checked or not on initial                   | `boolean`                                      | -                                 | `false`   |
+| **onChange**       | change event handler                        | `CheckboxEvent`                                | -                                 | -         |
+| **value**          | unique identification value (only in group) | `string`                                       | -                                 | -         |
+| **disabled**       | disable checkbox                            | `boolean`                                      | -                                 | `false`   |
+| **size**           | checkbox size                               | `NormalSizes`                                  | [NormalSizes](#normalsizes)       | `small`   |
+| **status**         | current status                              | `NormalTypes`                                  | [CheckboxStatus](#checkboxstatus) | `default` |
+| **ref**            | forwardRef                                  | <Code>Ref<HTMLInputElement &#124; null></Code> | -                                 | -         |
+| ...                | native props                                | `LabelHTMLAttributes`                          | `'form', 'className', ...`        | -         |
 
 <Attributes.Title>Checkbox.Group.Props</Attributes.Title>
 
@@ -95,6 +114,12 @@ Displays a boolean value.
 
 ```ts
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
+
+<Attributes.Title>CheckboxStatus</Attributes.Title>
+
+```ts
+type CheckboxStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>CheckboxEvent</Attributes.Title>

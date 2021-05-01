@@ -16,7 +16,7 @@ import Ellipsis from '../shared/ellipsis'
 interface Props {
   disabled?: boolean
   size?: NormalSizes
-  status?: NormalTypes
+  type?: NormalTypes
   value?: string | string[]
   initialValue?: string | string[]
   placeholder?: React.ReactNode | string
@@ -36,7 +36,7 @@ interface Props {
 const defaultProps = {
   disabled: false,
   size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
+  type: 'default' as NormalTypes,
   icon: SelectIcon as React.ComponentType,
   pure: false,
   multiple: false,
@@ -52,7 +52,7 @@ export type SelectProps = Props & typeof defaultProps & NativeAttrs
 const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   children,
   size,
-  status,
+  type,
   disabled,
   initialValue: init,
   value: customValue,
@@ -86,9 +86,9 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   }, [value])
   const sizes = useMemo(() => getSizes(theme, size), [theme, size])
 
-  const { border, placeholderColor } = useMemo(() => getColors(theme.palette, status), [
+  const { border, placeholderColor } = useMemo(() => getColors(theme.palette, type), [
     theme.palette,
-    status,
+    type,
   ])
 
   const updateVisible = (next: boolean) => setVisible(next)

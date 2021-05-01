@@ -21,13 +21,13 @@ interface Props {
   onChange?: (ev: ToggleEvent) => void
   disabled?: boolean
   size?: NormalSizes
-  status?: NormalTypes
+  type?: NormalTypes
   className?: string
 }
 
 const defaultProps = {
   size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
+  type: 'default' as NormalTypes,
   disabled: false,
   initialChecked: false,
   className: '',
@@ -69,7 +69,7 @@ const Toggle: React.FC<ToggleProps> = ({
   disabled,
   onChange,
   size,
-  status,
+  type,
   className,
   ...props
 }) => {
@@ -95,7 +95,7 @@ const Toggle: React.FC<ToggleProps> = ({
     [disabled, selfChecked, onChange],
   )
 
-  const { bg } = useMemo(() => getColors(theme.palette, status), [theme.palette, status])
+  const { bg } = useMemo(() => getColors(theme.palette, type), [theme.palette, type])
 
   useEffect(() => {
     if (checked === undefined) return

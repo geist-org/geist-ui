@@ -26,10 +26,10 @@ describe('Radio', () => {
   it('should work with different status', () => {
     const wrapper = mount(
       <div>
-        <Radio status="secondary" />
-        <Radio status="success" />
-        <Radio status="warning" />
-        <Radio status="error" />
+        <Radio type="secondary" />
+        <Radio type="success" />
+        <Radio type="warning" />
+        <Radio type="error" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

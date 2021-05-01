@@ -26,10 +26,10 @@ describe('Checkbox', () => {
   it('should work with different status', () => {
     const wrapper = mount(
       <div>
-        <Checkbox status="secondary" />
-        <Checkbox status="success" />
-        <Checkbox status="warning" />
-        <Checkbox status="error" />
+        <Checkbox type="secondary" />
+        <Checkbox type="success" />
+        <Checkbox type="warning" />
+        <Checkbox type="error" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

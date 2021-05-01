@@ -6,7 +6,8 @@ export interface Props {
   initialValue?: string
   placeholder?: string
   size?: NormalSizes
-  status?: NormalTypes
+  type?: NormalTypes
+  hymlType?: string
   readOnly?: boolean
   disabled?: boolean
   label?: string
@@ -32,7 +33,8 @@ export const defaultProps = {
   iconClickable: false,
   width: 'initial',
   size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
+  type: 'default' as NormalTypes,
+  htmlType: 'text',
   autoComplete: 'off',
   className: '',
   placeholder: '',

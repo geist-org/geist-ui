@@ -21,7 +21,7 @@ export interface CheckboxEvent {
 interface Props {
   checked?: boolean
   disabled?: boolean
-  status?: NormalTypes
+  type?: NormalTypes
   initialChecked?: boolean
   onChange?: (e: CheckboxEvent) => void
   size?: NormalSizes
@@ -31,7 +31,7 @@ interface Props {
 
 const defaultProps = {
   disabled: false,
-  status: 'default' as NormalTypes,
+  type: 'default' as NormalTypes,
   initialChecked: false,
   size: 'small' as NormalSizes,
   className: '',
@@ -49,7 +49,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   className,
   children,
   size,
-  status,
+  type,
   value,
   ...props
 }) => {
@@ -74,9 +74,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
   const fontSize = useMemo(() => getCheckboxSize(size), [size])
 
-  const { fill, bg } = useMemo(() => getColors(theme.palette, status), [
+  const { fill, bg } = useMemo(() => getColors(theme.palette, type), [
     theme.palette,
-    status,
+    type,
   ])
 
   const changeHandle = useCallback(

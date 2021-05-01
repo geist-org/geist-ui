@@ -68,6 +68,23 @@ Provides single user input from a selection of options.
 />
 
 <Playground
+  title="status"
+  desc="Differentiate states by color."
+  scope={{ Radio, Spacer }}
+  code={`
+    <>
+      <Radio checked={false} status="default">default</Radio>
+      <Spacer y={.5} />
+      <Radio checked={false} status="success">success</Radio>
+      <Spacer y={.5} />
+      <Radio checked={false} status="warning">warning</Radio>
+      <Spacer y={.5} />
+      <Radio checked={false} status="error">error</Radio>
+    </>
+`}
+/>
+
+<Playground
   title="Description"
   desc="`Description` can be combined with other components."
   scope={{ Radio, Code }}
@@ -118,15 +135,17 @@ Provides single user input from a selection of options.
 <Attributes edit="/pages/en-us/components/radio.mdx">
 <Attributes.Title>Radio.Props</Attributes.Title>
 
-| Attribute    | Description                   | Type                      | Accepted values             | Default  |
-| ------------ | ----------------------------- | ------------------------- | --------------------------- | -------- |
-| **checked**  | selected or not (in single)   | `boolean`                 | -                           | `false`  |
-| **value**    | unique ident value (in group) | `string`                  | -                           | -        |
-| **id**       | native attr                   | `string`                  | -                           | -        |
-| **disabled** | disable current radio         | `boolean`                 | -                           | `false`  |
-| **size**     | radio size                    | `NormalSizes`             | [NormalSizes](#normalsizes) | `medium` |
-| **onChange** | change event                  | `(e: RadioEvent) => void` | -                           | -        |
-| ...          | native props                  | `InputHTMLAttributes`     | `'id', 'className', ...`    | -        |
+| Attribute    | Description                   | Type                                           | Accepted values             | Default   |
+| ------------ | ----------------------------- | ---------------------------------------------- | --------------------------- | --------- |
+| **checked**  | selected or not (in single)   | `boolean`                                      | -                           | `false`   |
+| **value**    | unique ident value (in group) | `string`                                       | -                           | -         |
+| **id**       | native attr                   | `string`                                       | -                           | -         |
+| **disabled** | disable current radio         | `boolean`                                      | -                           | `false`   |
+| **size**     | radio size                    | `NormalSizes`                                  | [NormalSizes](#normalsizes) | `medium`  |
+| **status**   | current status                | `NormalTypes`                                  | [RadioStatus](#radiostatus) | `default` |
+| **onChange** | change event                  | `(e: RadioEvent) => void`                      | -                           | -         |
+| **ref**      | forwardRef                    | <Code>Ref<HTMLInputElement &#124; null></Code> | -                           | -         |
+| ...          | native props                  | `InputHTMLAttributes`                          | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>Radio.Group.Props</Attributes.Title>
 
@@ -150,6 +169,12 @@ Provides single user input from a selection of options.
 
 ```ts
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
+
+<Attributes.Title>RadioStatus</Attributes.Title>
+
+```ts
+type RadioStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

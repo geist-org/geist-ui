@@ -24,9 +24,9 @@ describe('Input', () => {
   it('should work with different status', () => {
     const wrapper = mount(
       <div>
-        <Input status="secondary" />
-        <Input status="success" />
-        <Input status="warning" />
+        <Input type="secondary" />
+        <Input type="success" />
+        <Input type="warning" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

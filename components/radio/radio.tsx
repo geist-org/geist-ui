@@ -23,7 +23,7 @@ interface Props {
   checked?: boolean
   value?: string | number
   size?: NormalSizes
-  status?: NormalTypes
+  type?: NormalTypes
   className?: string
   disabled?: boolean
   onChange?: (e: RadioEvent) => void
@@ -31,7 +31,7 @@ interface Props {
 
 const defaultProps = {
   size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
+  type: 'default' as NormalTypes,
   disabled: false,
   className: '',
 }
@@ -45,7 +45,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
   onChange,
   disabled,
   size,
-  status,
+  type,
   value: radioValue,
   children,
   ...props
@@ -69,9 +69,9 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
 
   const fontSize = useMemo(() => getRadioSize(size), [size])
 
-  const { label, border, bg } = useMemo(() => getColors(theme.palette, status), [
+  const { label, border, bg } = useMemo(() => getColors(theme.palette, type), [
     theme.palette,
-    status,
+    type,
   ])
 
   const isDisabled = useMemo(() => disabled || disabledAll, [disabled, disabledAll])

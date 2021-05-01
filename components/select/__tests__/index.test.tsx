@@ -20,10 +20,10 @@ describe('Select', () => {
   it('should work with different status', () => {
     const wrapper = mount(
       <div>
-        <Select status="secondary" />
-        <Select status="success" />
-        <Select status="warning" />
-        <Select status="error" />
+        <Select type="secondary" />
+        <Select type="success" />
+        <Select type="warning" />
+        <Select type="error" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

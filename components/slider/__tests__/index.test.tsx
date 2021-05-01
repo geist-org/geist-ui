@@ -72,10 +72,10 @@ describe('Slider', () => {
   it('should work with different status', () => {
     const wrapper = mount(
       <div>
-        <Slider status="secondary" />
-        <Slider status="success" />
-        <Slider status="warning" />
-        <Slider status="error" />
+        <Slider type="secondary" />
+        <Slider type="success" />
+        <Slider type="warning" />
+        <Slider type="error" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

@@ -34,10 +34,10 @@ describe('Toggle', () => {
   it('should work with different status', () => {
     const wrapper = mount(
       <div>
-        <Toggle status="secondary" />
-        <Toggle status="success" />
-        <Toggle status="warning" />
-        <Toggle status="error" />
+        <Toggle type="secondary" />
+        <Toggle type="success" />
+        <Toggle type="warning" />
+        <Toggle type="error" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

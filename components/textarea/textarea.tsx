@@ -11,7 +11,7 @@ interface Props {
   value?: string
   initialValue?: string
   placeholder?: string
-  status?: NormalTypes
+  type?: NormalTypes
   width?: string
   minHeight?: string
   disabled?: boolean
@@ -25,7 +25,7 @@ interface Props {
 
 const defaultProps = {
   initialValue: '',
-  status: 'default' as NormalTypes,
+  type: 'default' as NormalTypes,
   width: 'initial',
   minHeight: '6.25rem',
   disabled: false,
@@ -44,7 +44,7 @@ const Textarea = React.forwardRef<
   (
     {
       width,
-      status,
+      type,
       minHeight,
       disabled,
       readOnly,
@@ -67,8 +67,8 @@ const Textarea = React.forwardRef<
     const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [hover, setHover] = useState<boolean>(false)
     const { color, borderColor, hoverBorder } = useMemo(
-      () => getColors(theme.palette, status),
-      [theme.palette, status],
+      () => getColors(theme.palette, type),
+      [theme.palette, type],
     )
 
     const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
