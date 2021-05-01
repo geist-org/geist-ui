@@ -14,6 +14,7 @@ import SliderDot from './slider-dot'
 import SliderMark from './slider-mark'
 
 interface Props {
+  hideValue?: boolean
   value?: number
   initialValue?: number
   step?: number
@@ -26,6 +27,7 @@ interface Props {
 }
 
 const defaultProps = {
+  hideValue: false,
   initialValue: 0,
   step: 1,
   min: 0,
@@ -63,6 +65,7 @@ const getValue = (
 }
 
 const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
+  hideValue,
   disabled,
   step,
   max,
@@ -151,7 +154,7 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
       ref={sliderRef}
       {...props}>
       <SliderDot disabled={disabled} ref={dotRef} isClick={isClick} left={currentRatio}>
-        {value}
+        {hideValue || value}
       </SliderDot>
       {showMarkers && <SliderMark max={max} min={min} step={step} />}
       <style jsx>{`
