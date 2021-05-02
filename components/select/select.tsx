@@ -160,7 +160,8 @@ const Select = React.forwardRef<HTMLDivElement, React.PropsWithChildren<SelectPr
           className={`select ${multiple ? 'multiple' : ''} ${className}`}
           ref={divRef}
           onClick={clickHandler}
-          {...props}>
+          {...props}
+          tabIndex={0}>
           {isEmpty && (
             <span className="value placeholder">
               <Ellipsis height={sizes.height}>{placeholder}</Ellipsis>
@@ -204,6 +205,11 @@ const Select = React.forwardRef<HTMLDivElement, React.PropsWithChildren<SelectPr
               background-color: ${disabled
                 ? theme.palette.accents_1
                 : theme.palette.background};
+            }
+
+            .select:focus {
+              border: 1px solid ${theme.palette.accents_8};
+              border-radius: ${theme.layout.radius};
             }
 
             .multiple {
