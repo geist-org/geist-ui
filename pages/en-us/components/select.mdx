@@ -1,5 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Select, Spacer, Code, Modal, useModal, Button } from 'components'
+import { useRef, useEffect, useState } from 'react'
 
 export const meta = {
   title: 'select',
@@ -191,6 +192,39 @@ Display a dropdown list of items.
 `}
 />
 
+<Playground
+  title="Use ref."
+  desc="Set in focus with the `ref` prop"
+  scope={{ Select, Spacer, Button, useRef, useEffect, useState }}
+  code={`
+() => {
+  const selectRef = useRef(null)
+  const handler = val => console.log(val)
+  const [toFocus, setToFocus] = useState(false)
+  useEffect(() => {
+    if(toFocus) {
+      selectRef.current.focus()
+    }
+  }, [toFocus, selectRef])
+  
+  const buttonHandler = () => {
+    setToFocus(true)
+    setTimeout(() => setToFocus(false), 500)
+  }
+  return (
+    <>
+      <Select placeholder="Choose one" onChange={handler} ref={selectRef}>
+        <Select.Option value="1">Option 1</Select.Option>
+        <Select.Option value="2">Option 2</Select.Option>
+      </Select>
+      <Spacer x={5} inline />
+      <Button type="secondary" onClick={buttonHandler}>focus</Button>
+    </>
+  )
+}
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
 
@@ -211,6 +245,7 @@ Display a dropdown list of items.
 | **dropdownStyle**     | style of dropdown menu                                   | `object`                                            | -                                 | -               |
 | **disableMatchWidth** | disable Option from follow Select width                  | `boolean`                                           | -                                 | `false`         |
 | **getPopupContainer** | dropdown render parent element, the default is `body`    | `() => HTMLElement`                                 | -                                 | -               |
+| **ref**               | forwardRef                                               | <Code>Ref<HTMLDivElement &#124; null></Code>        | -                                 | -               |
 | ...                   | native props                                             | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
