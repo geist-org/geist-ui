@@ -131,4 +131,12 @@ describe('Select', () => {
     expect(errorMessage).toContain('required')
     errorSpy.mockRestore()
   })
+
+  // check ref is available: https://github.com/geist-org/react/issues/189
+  it('should forward ref by default', () => {
+    const ref = React.createRef<HTMLDivElement>()
+    const wrapper = mount(<Select ref={ref} />)
+    expect(ref.current).not.toBeNull()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
