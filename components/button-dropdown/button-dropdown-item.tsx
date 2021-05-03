@@ -3,7 +3,6 @@ import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { getColor } from './styles'
 import { useButtonDropdown } from './button-dropdown-context'
-import { getButtonSize } from '../button/styles'
 import Loading from '../loading'
 import { NormalTypes } from '../utils/prop-types'
 
@@ -33,10 +32,9 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
   ...props
 }) => {
   const theme = useTheme()
-  const { size, type: parentType, auto, disabled, loading } = useButtonDropdown()
+  const { type: parentType, disabled, loading } = useButtonDropdown()
   const type = main ? parentType : selfType
   const colors = getColor(theme.palette, type, disabled)
-  const sizes = getButtonSize(size, auto || false)
   const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     if (disabled || loading) return
     onClick && onClick(event)
@@ -68,10 +66,10 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
           background-color: ${colors.bgColor};
           color: ${colors.color};
           width: 100%;
-          height: ${sizes.height};
-          min-width: ${sizes.minWidth};
-          padding: 0 ${sizes.padding};
-          font-size: ${sizes.fontSize};
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-fontsize);
         }
 
         button:hover {

@@ -32,7 +32,7 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
       <style jsx>{`
         .icon {
           position: absolute;
-          left: var(--geist-ui-button-padding);
+          left: var(--geist-ui-button-icon-padding);
           right: auto;
           top: 50%;
           transform: translateY(-50%);
@@ -44,7 +44,7 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
         }
 
         .right {
-          right: var(--geist-ui-button-padding);
+          right: var(--geist-ui-button-icon-padding);
           left: auto;
         }
 

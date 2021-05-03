@@ -33,7 +33,7 @@ Used to trigger an operation.
   <Spacer y={.5} />
   <Button loading auto>Action</Button>
   <Spacer y={.5} />
-  <Button loading auto type="success" size="small">Action</Button>
+  <Button loading auto type="success" scale={2/3}>Action</Button>
 </>
 `}
 />
@@ -90,16 +90,18 @@ Used to trigger an operation.
 />
 
 <Playground
-  title="Sizes"
+  title="Scale"
   desc="Buttons of different sizes."
   scope={{ Button, Spacer }}
   code={`
 <>
-  <Button size="mini">mini</Button> <Spacer y={.5} />
-  <Button size="small">small</Button> <Spacer y={.5} />
-  <Button>medium</Button> <Spacer y={.5} />
-  <Button size="large">large</Button> <Spacer y={.5} />
-  <Button auto>auto width</Button>
+  <Button scale={0.5}>Scale 0.5</Button> <Spacer y={.5} />
+  <Button scale={2/3}>Scale 2/3</Button> <Spacer y={.5} />
+  <Button scale={1}>Default</Button> <Spacer y={.5} />
+  <Button scale={1.25}>Scale 1.25</Button> <Spacer y={.5} />
+  <Button auto>auto width</Button> <Spacer y={.5} />
+  <Button auto px={1.5}>Scale Padding</Button> <Spacer y={.5} />
+  <Button auto font={0.5}>Scale FontSize</Button>
 </>
 `}
 />
@@ -110,11 +112,13 @@ Used to trigger an operation.
   scope={{ Button, Spacer, Settings, UserX, Power }}
   code={`
 <>
-  <Button iconRight={<Power />} auto size="small" />
+  <Button iconRight={<Power />} auto scale={2/3} />
+  <Spacer x={.5} inline />
+  <Button iconRight={<Power />} auto scale={2/3} px={0.6} />
   <Spacer y={.5} />
   <Button icon={<Settings />} auto>Action</Button>
   <Spacer y={.5} />
-  <Button icon={<Settings />} type="success" size="small">Success</Button>
+  <Button icon={<Settings />} type="success" scale={0.85}>Success</Button>
   <Spacer y={.5} />
   <Button icon={<Settings />} type="secondary">Success</Button>
   <Spacer y={.5} />
@@ -131,7 +135,6 @@ Used to trigger an operation.
 | Attribute     | Description                               | Type                                            | Accepted values             | Default   |
 | ------------- | ----------------------------------------- | ----------------------------------------------- | --------------------------- | --------- |
 | **type**      | button type                               | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
-| **size**      | button size                               | `NormalSizes`                                   | [NormalSizes](#normalsizes) | `medium`  |
 | **ghost**     | the opposite color                        | `boolean`                                       | -                           | `false`   |
 | **loading**   | display loading indicator                 | `boolean`                                       | -                           | `false`   |
 | **shadow**    | display shadow                            | `boolean`                                       | -                           | `false`   |
@@ -159,12 +162,6 @@ type ButtonTypes =
   | 'success-light'
   | 'warning-light'
   | 'error-light'
-```
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
 </Attributes>

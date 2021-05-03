@@ -64,6 +64,7 @@ export interface GeistUIThemesLayout {
   breakpointMobile: string
   breakpointTablet: string
   radius: string
+  unit: string
 }
 
 export interface GeistUIThemesFont {
