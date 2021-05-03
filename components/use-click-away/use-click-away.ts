@@ -11,8 +11,8 @@ const useClickAway = (
       handler(event)
     }
 
-    document.addEventListener('click', callback)
-    return () => document.removeEventListener('click', callback)
+    document.addEventListener('click', callback, { capture: true })
+    return () => document.removeEventListener('click', callback, { capture: true })
   }, [ref, handler])
 }
 
