@@ -66,7 +66,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   }, [open])
 
   const closeFromBackdrop = () => {
-    if (disableBackdropClick && hasActions) return
+    if (disableBackdropClick) return
     closeModal()
   }
 
