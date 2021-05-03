@@ -38,18 +38,18 @@ Retrieve multi-line user input.
 />
 
 <Playground
-  title="status"
+  title="Type"
   desc="Differentiate states by color."
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="success" minHeight="65px" value="Success" />
+  <Textarea type="success" minHeight="65px" value="Success" />
   <Spacer x={.5} inline />
-  <Textarea status="secondary" minHeight="65px" value="Secondary" />
+  <Textarea type="secondary" minHeight="65px" value="Secondary" />
   <Spacer y={.5} />
-  <Textarea status="warning" minHeight="65px" value="Warning" />
+  <Textarea type="warning" minHeight="65px" value="Warning" />
   <Spacer x={.5} inline />
-  <Textarea status="error" minHeight="65px" value="Error" />
+  <Textarea type="error" minHeight="65px" value="Error" />
 </>
 `}
 />
@@ -129,7 +129,7 @@ Retrieve multi-line user input.
 | **value**        | textarea value        | `string`                         | -                                                                | -         |
 | **initialValue** | textarea value        | `string`                         | -                                                                | -         |
 | **placeholder**  | placeholder           | `string`                         | -                                                                | -         |
-| **status**       | current status        | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'`          | `default` |
+| **type**         | current type          | `NormalTypes`                    | [TextareaType](#textareatype)                                    | `default` |
 | **readOnly**     | native attr           | `boolean`                        | -                                                                | `false`   |
 | **disabled**     | disable input         | `boolean`                        | -                                                                | `false`   |
 | **width**        | set width string      | `string`                         | -                                                                | `initial` |
@@ -153,6 +153,12 @@ type useInput = (
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   }
 }
+```
+
+<Attributes.Title>TextareaType</Attributes.Title>
+
+```ts
+type TextareaType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

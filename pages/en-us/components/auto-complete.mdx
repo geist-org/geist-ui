@@ -27,6 +27,28 @@ AutoComplete control of input field.
 />
 
 <Playground
+  title="Type"
+  desc="Express state in different colors."
+  scope={{ AutoComplete, Spacer }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return (<>
+    <AutoComplete type="success" placeholder="Enter here" options={options} />
+    <Spacer y={.5} />
+    <AutoComplete type="warning" placeholder="Enter here" options={options} />
+    <Spacer y={.5} />
+    <AutoComplete type="error" placeholder="Enter here" options={options} />
+  </>)
+}
+`}
+/>
+
+<Playground
   desc="Disable all."
   title="disabled"
   scope={{ AutoComplete }}
@@ -272,7 +294,7 @@ AutoComplete control of input field.
 | Attribute             | Description                               | Type                                             | Accepted values                                         | Default   |
 | --------------------- | ----------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
 | **options**           | options of input                          | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
-| **status**            | input type                                | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **type**              | input type                                | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
 | **size**              | input size                                | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
 | **initialValue**      | initial value                             | `string`                                         | -                                                       | -         |
 | **value**             | current value                             | `string`                                         | -                                                       | -         |

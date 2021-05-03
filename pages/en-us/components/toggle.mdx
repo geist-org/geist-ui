@@ -22,20 +22,20 @@ Displays a boolean value.
 />
 
 <Playground
-  title="Status"
+  title="Type"
   desc="Differentiate states by color."
   scope={{ Toggle, Spacer }}
   code={`
 <>
-  <Toggle status="default" initialChecked />
+  <Toggle type="default" initialChecked />
   <Spacer y={.5} />
-  <Toggle status="secondary" initialChecked />
+  <Toggle type="secondary" initialChecked />
   <Spacer y={.5} />
-  <Toggle status="success" initialChecked />
+  <Toggle type="success" initialChecked />
   <Spacer y={.5} />
-  <Toggle status="warning" initialChecked />
+  <Toggle type="warning" initialChecked />
   <Spacer y={.5} />
-  <Toggle status="error" initialChecked />
+  <Toggle type="error" initialChecked />
 </>
 `}
 />
@@ -89,7 +89,7 @@ Displays a boolean value.
 | **initialChecked** | checked or not on initial | `boolean`             | -                                    | `false`   |
 | **onChange**       | change event handler      | `ToggleEvent`         | -                                    | -         |
 | **size**           | input size                | `NormalSizes`         | `'mini', 'small', 'medium', 'large'` | `medium`  |
-| **status**         | current status            | `NormalTypes`         | [ToggleStatus](#togglestatus)        | `default` |
+| **type**           | current type              | `NormalTypes`         | [ToggleType](#toggletype)            | `default` |
 | **disabled**       | disable toggle            | `boolean`             | -                                    | `false`   |
 | ...                | native props              | `LabelHTMLAttributes` | `'from', 'name', 'className', ...`   | -         |
 
@@ -108,10 +108,10 @@ export interface ToggleEvent {
 }
 ```
 
-<Attributes.Title>ToggleStatus</Attributes.Title>
+<Attributes.Title>ToggleType</Attributes.Title>
 
 ```ts
-type ToggleStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type ToggleType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

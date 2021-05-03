@@ -68,18 +68,18 @@ Provides single user input from a selection of options.
 />
 
 <Playground
-  title="status"
+  title="Type"
   desc="Differentiate states by color."
   scope={{ Radio, Spacer }}
   code={`
     <>
-      <Radio checked={false} status="default">default</Radio>
+      <Radio checked={false} type="default">default</Radio>
       <Spacer y={.5} />
-      <Radio checked={false} status="success">success</Radio>
+      <Radio checked={false} type="success">success</Radio>
       <Spacer y={.5} />
-      <Radio checked={false} status="warning">warning</Radio>
+      <Radio checked={false} type="warning">warning</Radio>
       <Spacer y={.5} />
-      <Radio checked={false} status="error">error</Radio>
+      <Radio checked={false} type="error">error</Radio>
     </>
 `}
 />
@@ -142,7 +142,7 @@ Provides single user input from a selection of options.
 | **id**       | native attr                   | `string`                                       | -                           | -         |
 | **disabled** | disable current radio         | `boolean`                                      | -                           | `false`   |
 | **size**     | radio size                    | `NormalSizes`                                  | [NormalSizes](#normalsizes) | `medium`  |
-| **status**   | current status                | `NormalTypes`                                  | [RadioStatus](#radiostatus) | `default` |
+| **type**     | current type                  | `NormalTypes`                                  | [RadioType](#radiotype)     | `default` |
 | **onChange** | change event                  | `(e: RadioEvent) => void`                      | -                           | -         |
 | **ref**      | forwardRef                    | <Code>Ref<HTMLInputElement &#124; null></Code> | -                           | -         |
 | ...          | native props                  | `InputHTMLAttributes`                          | `'id', 'className', ...`    | -         |
@@ -171,10 +171,10 @@ Provides single user input from a selection of options.
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
-<Attributes.Title>RadioStatus</Attributes.Title>
+<Attributes.Title>RadioType</Attributes.Title>
 
 ```ts
-type RadioStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type RadioType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>
