@@ -63,7 +63,7 @@ describe('Modal', () => {
     expect(closeHandler).not.toHaveBeenCalled()
   })
 
-  it('should ignore backdrop disabled when actions missing', async () => {
+  it('should disable backdrop even if actions missing', async () => {
     const closeHandler = jest.fn()
     const wrapper = mount(
       <Modal open={true} disableBackdropClick onClose={closeHandler}>
@@ -72,8 +72,8 @@ describe('Modal', () => {
     )
     wrapper.find('.backdrop').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 500)
-    expectModalIsClosed(wrapper)
-    expect(closeHandler).toHaveBeenCalled()
+    expectModalIsOpened(wrapper)
+    expect(closeHandler).not.toHaveBeenCalled()
   })
 
   it('should ignore event when action disabled', () => {
