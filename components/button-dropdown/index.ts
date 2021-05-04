@@ -1,6 +1,9 @@
 import ButtonDropdown from './button-dropdown'
 import ButtonDropdownItem from './button-dropdown-item'
 
-ButtonDropdown.Item = ButtonDropdownItem
+type ButtonDropdownType = typeof ButtonDropdown & {
+  Item: typeof ButtonDropdownItem
+}
+;(ButtonDropdown as ButtonDropdownType).Item = ButtonDropdownItem
 
-export default ButtonDropdown
+export default ButtonDropdown as ButtonDropdownType

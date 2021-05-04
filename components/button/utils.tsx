@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react'
-import { NormalSizes } from '../utils/prop-types'
 import ButtonIcon from './button-icon'
 import { ButtonProps } from './button'
 import { ButtonGroupConfig } from '../button-group/button-group-context'
@@ -54,7 +53,6 @@ export const filterPropsWithGroup = <T extends React.PropsWithChildren<ButtonPro
     auto: true,
     shadow: false,
     ghost: config.ghost || props.ghost,
-    size: config.size || props.size,
     type: config.type || props.type,
     disabled: config.disabled || props.disabled,
   }

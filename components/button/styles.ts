@@ -195,7 +195,7 @@ export const getButtonHoverColors = (
   if (shadow) return defaultColor
 
   const hoverColor =
-    (ghost ? getButtonGhostHoverColors(palette, type) : colors[type]) || colors.default
+    (ghost ? getButtonGhostHoverColors(palette, type!) : colors[type!]) || colors.default
   return {
     ...hoverColor,
     color: hoverColor.color || hoverColor.border,
@@ -238,7 +238,7 @@ export type ButtonSizeGroup = {
 
 export const getButtonDripColor = (palette: GeistUIThemesPalette, props: ButtonProps) => {
   const { type } = props
-  const isLightHover = type.endsWith('light')
+  const isLightHover = type!.endsWith('light')
   const hoverColors = getButtonHoverColors(palette, props)
   return isLightHover
     ? addColorAlpha(hoverColors.bg, 0.65)

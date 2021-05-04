@@ -7,7 +7,7 @@ import ButtonDropdownItem from './button-dropdown-item'
 import { ButtonDropdownContext } from './button-dropdown-context'
 import { NormalTypes } from '../utils/prop-types'
 import { pickChild, pickChildByProps } from '../utils/collections'
-import useScaleable, { withScaleable } from 'components/use-scaleable'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   type?: NormalTypes
@@ -170,6 +170,7 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
   )
 }
 
+ButtonDropdown.displayName = 'GeistButtonDropdown'
 ButtonDropdown.defaultProps = defaultProps
 
 export default withScaleable(ButtonDropdown)

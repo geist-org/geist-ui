@@ -5,14 +5,14 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            padding: calc(0 * 16px) calc(1.15 * 16px) calc(0 * 16px) calc(1.15 * 16px);
+            height: calc(2.5 * 16px);
+            line-height: calc(2.5 * 16px);
             min-width: min-content;
             width: auto;
             border-radius: 5px;
             font-weight: 400;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -29,8 +29,8 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 1.25rem;
-            --geist-ui-button-height: 2.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
           }
@@ -67,14 +67,14 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            padding: calc(0 * 16px) calc(1.15 * 16px) calc(0 * 16px) calc(1.15 * 16px);
+            height: calc(2.5 * 16px);
+            line-height: calc(2.5 * 16px);
             min-width: min-content;
             width: auto;
             border-radius: 5px;
             font-weight: 400;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -91,8 +91,8 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 1.25rem;
-            --geist-ui-button-height: 2.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
           }
@@ -177,14 +177,14 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 0.625rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
+            padding: calc(0 * 16px) calc(1.15 * 16px) calc(0 * 16px) calc(1.15 * 16px);
+            height: calc(2.5 * 16px);
+            line-height: calc(2.5 * 16px);
             min-width: min-content;
             width: auto;
             border-radius: 5px;
             font-weight: 400;
-            font-size: .75rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -201,8 +201,8 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 0.625rem;
-            --geist-ui-button-height: 1.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #fff;
             --geist-ui-button-bg: #0070f3;
           }
@@ -287,14 +287,14 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 0.625rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
+            padding: calc(0 * 16px) calc(1.15 * 16px) calc(0 * 16px) calc(1.15 * 16px);
+            height: calc(2.5 * 16px);
+            line-height: calc(2.5 * 16px);
             min-width: min-content;
             width: auto;
             border-radius: 5px;
             font-weight: 400;
-            font-size: .75rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -311,8 +311,8 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 0.625rem;
-            --geist-ui-button-height: 1.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #fff;
             --geist-ui-button-bg: #0070f3;
           }
@@ -397,14 +397,14 @@ exports[`ButtonGroup should render correctly 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.25rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
+            padding: calc(0 * 16px) calc(1.15 * 16px) calc(0 * 16px) calc(1.15 * 16px);
+            height: calc(2.5 * 16px);
+            line-height: calc(2.5 * 16px);
             min-width: min-content;
             width: auto;
             border-radius: 5px;
             font-weight: 400;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -421,8 +421,8 @@ exports[`ButtonGroup should render correctly 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 1.25rem;
-            --geist-ui-button-height: 2.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
           }

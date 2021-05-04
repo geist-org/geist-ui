@@ -29,7 +29,7 @@ const toastActions = (actions: Toast['actions'], cancelHandle: () => void) => {
   return actions.map((action, index) => (
     <Button
       auto
-      size="mini"
+      scale={2 / 3}
       type={action.passive ? 'default' : 'secondary'}
       key={`action-${index}`}
       onClick={(event: React.MouseEvent<HTMLButtonElement>) =>

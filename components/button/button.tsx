@@ -41,10 +41,13 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type ButtonProps = Props & NativeAttrs & typeof defaultProps
+export type ButtonProps = Props & NativeAttrs
 
 const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(
-  (btnProps, ref: React.Ref<HTMLButtonElement | null>) => {
+  (
+    btnProps: ButtonProps & typeof defaultProps,
+    ref: React.Ref<HTMLButtonElement | null>,
+  ) => {
     const theme = useTheme()
     const { SCALES } = useScaleable()
     const buttonRef = useRef<HTMLButtonElement>(null)
@@ -212,5 +215,5 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
 )
 
 Button.defaultProps = defaultProps
-Button.displayName = 'Button'
+Button.displayName = 'GeistButton'
 export default withScaleable(Button)
