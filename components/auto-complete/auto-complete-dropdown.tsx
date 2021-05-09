@@ -9,6 +9,7 @@ interface Props {
   className?: string
   disableMatchWidth?: boolean
   dropdownStyle?: CSSProperties
+  getPopupContainer?: () => HTMLElement | null
 }
 
 const defaultProps = {
@@ -21,7 +22,14 @@ export type AutoCompleteDropdownProps = Props & typeof defaultProps & NativeAttr
 
 const AutoCompleteDropdown: React.FC<
   React.PropsWithChildren<AutoCompleteDropdownProps>
-> = ({ children, visible, className, dropdownStyle, disableMatchWidth }) => {
+> = ({
+  children,
+  visible,
+  className,
+  dropdownStyle,
+  disableMatchWidth,
+  getPopupContainer,
+}) => {
   const theme = useTheme()
   const { ref } = useAutoCompleteContext()
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -31,7 +39,11 @@ const AutoCompleteDropdown: React.FC<
   }
 
   return (
-    <Dropdown parent={ref} visible={visible} disableMatchWidth={disableMatchWidth}>
+    <Dropdown
+      parent={ref}
+      visible={visible}
+      disableMatchWidth={disableMatchWidth}
+      getPopupContainer={getPopupContainer}>
       <div
         className={`auto-complete-dropdown ${className}`}
         style={dropdownStyle}

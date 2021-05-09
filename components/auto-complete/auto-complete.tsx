@@ -36,6 +36,7 @@ interface Props {
   disableMatchWidth?: boolean
   disableFreeSolo?: boolean
   className?: string
+  getPopupContainer?: () => HTMLElement | null
 }
 
 const defaultProps = {
@@ -89,6 +90,7 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
   dropdownStyle,
   disableMatchWidth,
   disableFreeSolo,
+  getPopupContainer,
   ...props
 }) => {
   const ref = useRef<HTMLDivElement>(null)
@@ -204,7 +206,8 @@ const AutoComplete: React.FC<React.PropsWithChildren<AutoCompleteProps>> = ({
           visible={visible}
           disableMatchWidth={disableMatchWidth}
           className={dropdownClassName}
-          dropdownStyle={dropdownStyle}>
+          dropdownStyle={dropdownStyle}
+          getPopupContainer={getPopupContainer}>
           {autoCompleteItems}
         </AutoCompleteDropdown>
 
