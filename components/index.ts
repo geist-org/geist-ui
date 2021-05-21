@@ -118,6 +118,8 @@ export type { ProgressProps } from './progress'
 export { default as Radio } from './radio'
 export type { RadioProps, RadioGroupProps, RadioDescriptionProps } from './radio'
 
+export { default as Rating } from './rating'
+
 export { default as Select } from './select'
 export type { SelectProps, SelectOptionProps } from './select'
 
