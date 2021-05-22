@@ -9,11 +9,12 @@ import withDefaults from '../utils/with-defaults'
 interface Props {
   type?: NormalTypes
   className?: string
+  icon?: JSX.Element
   count?: 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
   value?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
-  valueCallback?: React.Dispatch<React.SetStateAction<number>>
-  lock?: boolean
-  lockCallback?: React.Dispatch<React.SetStateAction<boolean>>
+  onValueChange?: (value: number) => void
+  locked?: boolean
+  onLockedChange?: (locked: boolean) => void
   onClick?: React.MouseEventHandler<SVGElement>
   onMouseEnter?: React.MouseEventHandler<SVGElement>
 }
@@ -21,11 +22,10 @@ interface Props {
 const defaultProps = {
   type: 'default' as NormalTypes,
   className: '',
+  icon: (props: any): JSX.Element => <Star {...props} />,
   count: 5,
   value: 0,
-  valueCallback: () => {},
-  lock: false,
-  lockCallback: () => {},
+  locked: false,
   onClick: () => {},
   onMouseEnter: () => {},
 }
@@ -43,67 +43,74 @@ const getColor = (type: NormalTypes, theme: GeistUIThemes): string => {
   return colors[type] || (colors.default as string)
 }
 
-const Rating: React.FC = ({
+const Rating: React.FC<React.PropsWithChildren<RatingProps>> = ({
   type,
   children,
   className,
+  icon,
   count,
   value,
-  valueCallback,
-  lock,
-  lockCallback,
+  onValueChange,
+  locked,
+  onLockedChange,
   onClick,
   onMouseEnter,
   ...props
-}: RatingProps) => {
+}) => {
   const theme = useTheme()
   const color = useMemo(() => getColor(type, theme), [type, theme])
-  const [hoverState, setHoverState] = useState<number>(value) // state is from 0 to count - 1
-  const [isLocked, setIsLocked] = useState<boolean>(lock)
+  const [hoverState, setHoverState] = useState<number>(value)
+  const [isLocked, setIsLocked] = useState<boolean>(locked)
 
   useEffect(() => {
-    valueCallback(hoverState + 1) // state + 1
+    if (!onValueChange) return
+    onValueChange(hoverState + 1)
   }, [hoverState])
 
   useEffect(() => {
-    lockCallback(isLocked)
+    if (!onLockedChange) return
+    onLockedChange(isLocked)
   }, [isLocked])
 
-  const handleClick = (event: React.MouseEvent<SVGElement>) => {
+  const handleMouseUp = (event: React.MouseEvent<SVGElement>, index: number) => {
     if (isLocked) {
-      setIsLocked(false) // unlock
+      setIsLocked(false)
       onClick && onClick(event)
       return
     }
-    setIsLocked(true) // lock
+    setHoverState(index)
+    setIsLocked(true)
     onClick && onClick(event)
   }
 
   const handleMouseEnter = (event: React.MouseEvent<SVGElement>, index: number) => {
-    if (isLocked) return // leave on lock
+    if (isLocked) return
     setHoverState(index)
     onMouseEnter && onMouseEnter(event)
   }
 
-  const render = () => {
-    return (
-      <>
-        {[...Array(count)].map((_e, i) => (
-          <Star
-            key={i}
-            color={color}
-            className={`${className}`}
-            fill={i <= hoverState ? color : 'transparent'}
-            onMouseEnter={e => handleMouseEnter(e, i)}
-            onClick={handleClick}
-            {...props}>
-            {children}
-          </Star>
-        ))}
-      </>
-    )
-  }
-  return render()
+  const Icon = icon
+
+  return (
+    <>
+      {[...Array(count)].map((_e, i) => (
+        <Icon
+          key={i}
+          color={color}
+          className={`${className}`}
+          fill={i <= hoverState ? color : 'transparent'}
+          stroke={i <= hoverState ? '#fff' : color}
+          transform={i <= hoverState ? 'scale(1.1)' : 'scale(1)'}
+          onMouseEnter={(e: React.MouseEvent<SVGElement, MouseEvent>) =>
+            handleMouseEnter(e, i)
+          }
+          onMouseUp={(e: React.MouseEvent<SVGElement, MouseEvent>) => handleMouseUp(e, i)}
+          {...props}>
+          {children}
+        </Icon>
+      ))}
+    </>
+  )
 }
 
 const MemoRating = React.memo(Rating)

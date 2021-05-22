@@ -1,6 +1,7 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Rating, Container, Col, Spacer } from 'components'
+import { Rating, Grid } from 'components'
 import { useState } from 'react'
+import { Award, Github, Emoji } from '@geist-ui/react-icons'
 
 export const meta = {
   title: 'Rating',
@@ -13,27 +14,21 @@ Display an indicator of rankings with stars.
 
 <Playground
   title="Default Rating"
-  desc="A default Rating component with initializers and callbacks."
-  scope={{ Rating, Container, Col, Spacer, useState }}
+  desc="A default rating component with initializers and callbacks."
+  scope={{ Rating, Grid, useState }}
   code={`
   () => {
     const [count, setCount] = useState(0)
     const [lock, setLock] = useState(false)
     return(
-    <>
-      <Container>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-        <Rating lockCallback={setLock} valueCallback={setCount}/>
-        </Col>
-        <Spacer x={5}/>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-          Selection: {count}
-        </Col>
-        <Spacer x={5}/>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-          Locked: {lock ? "true" : "false"}
-        </Col>
-      </Container>
+    <> 
+      <Grid.Container gap={2} justify="center">
+        <Grid xs={12} md={6}>
+          <Rating onLockedChange={setLock} onValueChange={setCount}/>
+        </Grid>
+        <Grid xs={12} md={6}>selection: {count}</Grid>
+        <Grid xs={12} md={6}>locked: {lock ? "true" : "false"}</Grid>
+      </Grid.Container>
     </>
     )
   }
@@ -43,24 +38,16 @@ Display an indicator of rankings with stars.
 <Playground
   title="Typed Ratings"
   desc="Pass the property 'type' to the rating component."
-  scope={{ Rating, Container, Col, Spacer }}
+  scope={{ Rating, Grid }}
   code={`
   () => {
     return(
     <>
-      <Container>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-          <Rating type="success"/>
-        </Col>
-        <Spacer x={5}/>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-          <Rating type="error"/>
-        </Col>
-        <Spacer x={5}/>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-          <Rating type="warning"/>
-        </Col>
-      </Container>
+      <Grid.Container gap={2} justify="center">
+          <Grid xs={12} md={6}><Rating type="success"/></Grid>
+          <Grid xs={12} md={6}><Rating type="error"/></Grid>
+          <Grid xs={12} md={6}><Rating type="warning"/></Grid>
+      </Grid.Container>
     </>
     )
   }
@@ -68,26 +55,57 @@ Display an indicator of rankings with stars.
 />
 
 <Playground
-  title="Custom Stars Ratings"
+  title="Custom Star Ratings"
   desc="Customize the amount of stars (in a way that makes sense)."
-  scope={{ Rating, Container, Col, Spacer }}
+  scope={{ Rating, Grid }}
   code={`
   () => {
     return(
     <>
-      <Container>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-          <Rating value={7} count={8} type="success"/>
-        </Col>
-        <Spacer x={5}/>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-          <Rating count={2}  type="error"/>
-        </Col>
-        <Spacer x={5}/>
-        <Col style={{display: 'flex', justifyContent: 'center', margin: 'auto' }}>
-          <Rating value={4} count={10}  type="warning"/>
-        </Col>
-      </Container>
+      <Grid.Container gap={2} justify="center">
+          <Grid xs={24} md={24}>
+            <Rating value={7} count={8} type="success"/>
+          </Grid>
+          <Grid xs={24} md={24}>
+            <Rating value={4} count={10}  type="warning"/>
+          </Grid>
+          <Grid xs={24} md={24}>
+            <Rating count={2}  type="error"/>
+          </Grid>
+      </Grid.Container>
+    </>
+    )
+  }
+`}
+/>
+
+<Playground
+  title="Custom Icon Ratings"
+  desc="Customize the icons of a rating."
+  scope={{ Rating, Grid, Emoji, Award, Github }}
+  code={`
+  () => {
+    return(
+    <>
+      <Grid.Container gap={2} justify="center">
+          <Grid xs={24} md={24}>
+            <Rating
+             value={7}
+             count={8}
+             type="success"
+             icon={(props) => <Github {...props}/>}/>
+          </Grid>
+          <Grid xs={24} md={24}>
+            <Rating
+             value={4}
+             count={10}
+             type="warning"
+             icon={(props) => <Emoji {...props}/>}/>
+          </Grid>
+          <Grid xs={24} md={24}>
+            <Rating count={2}  type="error" icon={(props) => <Award {...props}/>}/>
+          </Grid>
+      </Grid.Container>
     </>
     )
   }
@@ -97,29 +115,17 @@ Display an indicator of rankings with stars.
 <Attributes edit="/pages/en-us/components/Rating.mdx">
 <Attributes.Title>Rating.Props</Attributes.Title>
 
-| Attribute         | Description  | Type             | Accepted values                                         | Default   |
-| ---------         | ------------ | ---------------- | ------------------------------------------------------- | --------- |
-| **type**          | Rating type  | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **count**         | Rating star count | `number`    | `2, 3, 4, 5, 6, 7, 8, 9, 10`                            | `5`       |
-| **value**         | Initial star values | `number`  | `0, 1, 2, 3, 4, 5, 6, 7, 8, 9`                          | `0`       |
-| **valueCallback** | Callback values | `vCType`  | [vCType](#vCType)                         | `void`       |
-| **lock**          | Initial lock state | `boolean`  | `'false', 'true'`                          | `0`       |
-| **lockCallback**  | Callback lock | `lCType`  | [lCType](#lCType)                          | `void`       |
-| **onClick**       | Native event handler | `onEventType`  | [onEventType](#onEventType)                          | `void`       |
-| **onMouseEnter**  | Native event handler | `onEventType`  | [onEventType](#onEventType)                          | `void`       |
-| ...               | native props | `HTMLAttributes` | -                                                       | -         |
-
-<Attributes.Title>vCType</Attributes.Title>
-
-```ts
-type vCType = React.Dispatch<React.SetStateAction<number>>
-```
-
-<Attributes.Title>lCType</Attributes.Title>
-
-```ts
-type lCType = React.Dispatch<React.SetStateAction<boolean>>
-```
+| Attribute         | Description           | Type                    | Accepted values                                         | Default   |
+| ---------         | ------------          | ----------------        | ------------------------------------------------------- | --------- |
+| **type**          | Rating type           | `NormalTypes`           | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
+| **count**         | Rating star count     | `number`                | `2, 3, 4, 5, 6, 7, 8, 9, 10`                            | `5`       |
+| **value**         | Initial star values   | `number`                | `0, 1, 2, 3, 4, 5, 6, 7, 8, 9`                          | `0`       |
+| **onValueChange** | Callback values       | `(value?: any) => void` | -                                                       | `void`    |
+| **locked**        | Initial lock state    | `boolean`               | `'false', 'true'`                                       | `0`       |
+| **onLockedChange**| Callback lock         | `(value?: any) => void` | -                                                       | `void`    |
+| **onClick**       | Native event handler  | `onEventType`           | [onEventType](#onEventType)                             | `void`    |
+| **onMouseEnter**  | Native event handler  | `onEventType`           | [onEventType](#onEventType)                             | `void`    |
+| ...               | native props          | `HTMLAttributes`        | -                                                       | -         |
 
 <Attributes.Title>onEventType</Attributes.Title>
 

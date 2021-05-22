@@ -1,5 +1,5 @@
-import { DotProps } from './rating'
+import { RatingProps } from './rating'
 import Rating from './rating'
 
-export type Props = DotProps
+export type Props = RatingProps
 export default Rating
