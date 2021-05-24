@@ -56,4 +56,11 @@ describe('AutoComplete', () => {
 
     expect(wrapper.prop('width')).toEqual('200px')
   })
+
+  it('should forward ref by default', () => {
+    const ref = React.createRef<HTMLInputElement>()
+    const wrapper = mount(<AutoComplete ref={ref} />)
+    expect(ref.current).not.toBeNull()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
