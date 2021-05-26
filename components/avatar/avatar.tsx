@@ -86,6 +86,7 @@ const Avatar: React.FC<AvatarProps> = ({
 
         .avatar-img {
           display: inline-block;
+          object-fit: cover;
           width: 100%;
           height: 100%;
           border-radius: ${radius};
