@@ -77,7 +77,7 @@ const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
 // When the search is seted, at least one element should exist to avoid re-render.
 const getSearchIcon = (searching?: boolean) => {
   if (searching === undefined) return null
-  return searching ? <Loading size="medium" /> : <span />
+  return searching ? <Loading size="small" /> : <span />
 }
 
 const AutoComplete = React.forwardRef<
