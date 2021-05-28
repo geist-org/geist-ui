@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useMemo } from 'react'
 import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
@@ -24,6 +24,9 @@ const AutoCompleteDropdown: React.FC<
 > = ({ children, visible, className, dropdownStyle, disableMatchWidth }) => {
   const theme = useTheme()
   const { ref } = useAutoCompleteContext()
+  const isEmpty = useMemo(() => {
+    return !visible || React.Children.count(children) === 0
+  }, [children, visible])
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     event.stopPropagation()
@@ -40,7 +43,7 @@ const AutoCompleteDropdown: React.FC<
         <style jsx>{`
           .auto-complete-dropdown {
             border-radius: ${theme.layout.radius};
-            box-shadow: ${theme.expressiveness.shadowLarge};
+            box-shadow: ${isEmpty ? 'none' : theme.expressiveness.shadowLarge};
             background-color: ${theme.palette.background};
             overflow-y: auto;
             max-height: 15rem;
