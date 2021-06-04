@@ -12,13 +12,13 @@ const makeVirtualValues = <S,>(values: S): ContextStates<S> => {
   const keys = Object.keys(values) as Array<keyof S>
   const handlers = keys.reduce<ContextHandler<S>>((pre, current) => {
     const updateHandler = {
-      // @ts-ignore
-      [`set${capitalize(current)}`]: (next: S[typeof current]) => {},
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      [`set${capitalize(current)}`]: (_next: S[typeof current]) => {},
     }
     return { ...pre, ...updateHandler }
   }, {} as ContextHandler<S>)
-  // @ts-ignore
-  const update: ContextHandlerWhere<S> = (key, next) => {}
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const update: ContextHandlerWhere<S> = (_key, _next) => {}
   return {
     update,
     ...values,
