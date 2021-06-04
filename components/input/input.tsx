@@ -254,6 +254,10 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             color: ${theme.palette.accents_3};
           }
 
+          ::-ms-reveal {
+            display: none !important;
+          }
+
           input:-webkit-autofill,
           input:-webkit-autofill:hover,
           input:-webkit-autofill:active,
