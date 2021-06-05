@@ -1,8 +1,8 @@
 import React, { useRef, useImperativeHandle, useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { NormalTypes, tuple } from '../utils/prop-types'
 import { getColors } from '../input/styles'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 const resizeTypes = tuple('none', 'both', 'horizontal', 'vertical', 'initial', 'inherit')
 type ResizeTypes = typeof resizeTypes[number]
@@ -12,8 +12,6 @@ interface Props {
   initialValue?: string
   placeholder?: string
   type?: NormalTypes
-  width?: string
-  minHeight?: string
   disabled?: boolean
   readOnly?: boolean
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
@@ -26,8 +24,6 @@ interface Props {
 const defaultProps = {
   initialValue: '',
   type: 'default' as NormalTypes,
-  width: 'initial',
-  minHeight: '6.25rem',
   disabled: false,
   readOnly: false,
   className: '',
@@ -35,17 +31,15 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.TextareaHTMLAttributes<any>, keyof Props>
-export type TextareaProps = Props & typeof defaultProps & NativeAttrs
+export type TextareaProps = Props & NativeAttrs
 
-const Textarea = React.forwardRef<
+const TextareaComponent = React.forwardRef<
   HTMLTextAreaElement,
   React.PropsWithChildren<TextareaProps>
 >(
   (
     {
-      width,
       type,
-      minHeight,
       disabled,
       readOnly,
       onFocus,
@@ -57,10 +51,11 @@ const Textarea = React.forwardRef<
       placeholder,
       resize,
       ...props
-    },
+    }: React.PropsWithChildren<TextareaProps> & typeof defaultProps,
     ref: React.Ref<HTMLTextAreaElement | null>,
   ) => {
     const theme = useTheme()
+    const { SCALES } = useScaleable()
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     useImperativeHandle(ref, () => textareaRef.current)
     const isControlledComponent = useMemo(() => value !== undefined, [value])
@@ -119,14 +114,17 @@ const Textarea = React.forwardRef<
             display: inline-flex;
             box-sizing: border-box;
             user-select: none;
-            width: ${width};
-            min-width: 12.5rem;
-            max-width: 95vw;
-            height: auto;
             border-radius: ${theme.layout.radius};
             border: 1px solid ${borderColor};
             color: ${color};
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
+            min-width: 12.5rem;
+            max-width: 95vw;
+            --textarea-fontsize: ${SCALES.font(0.875)};
+            --textarea-height: ${SCALES.height(1, 'auto')};
+            width: ${SCALES.width(1, 'initial')};
+            height: var(--textarea-height);
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
           .wrapper.hover {
@@ -144,14 +142,14 @@ const Textarea = React.forwardRef<
             box-shadow: none;
             display: block;
             font-family: ${theme.font.sans};
-            font-size: 0.875rem;
+            font-size: var(--textarea-fontsize);
             width: 100%;
-            height: 100%;
-            min-height: ${minHeight};
+            height: var(--textarea-height);
             resize: none;
             border: none;
             outline: none;
-            padding: ${theme.layout.gapHalf};
+            padding: ${SCALES.pt(0.5)} ${SCALES.pr(0.5)} ${SCALES.pb(0.5)}
+              ${SCALES.pl(0.5)};
             resize: ${resize};
           }
 
@@ -171,4 +169,7 @@ const Textarea = React.forwardRef<
   },
 )
 
-export default withDefaults(Textarea, defaultProps)
+TextareaComponent.defaultProps = defaultProps
+TextareaComponent.displayName = 'GeistTextarea'
+const Textarea = withScaleable(TextareaComponent)
+export default Textarea

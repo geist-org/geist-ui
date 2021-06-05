@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { LiveEditor } from 'react-live'
 import { useConfigs } from 'lib/config-context'
-import { useTheme, useToasts, Row, Col, useClipboard } from 'components'
+import { useTheme, useToasts, useClipboard } from 'components'
 import CopyIcon from '@geist-ui/react-icons/copy'
 import RightIcon from '@geist-ui/react-icons/chevronRight'
 
@@ -32,17 +32,14 @@ const Editor: React.FC<Props> = ({ code }) => {
     <div className="editor">
       <details open={visible}>
         <summary onClick={clickHandler}>
-          <Row
-            justify="space-between"
-            align="middle"
-            style={{ height: '100%', width: '100%' }}>
-            <Col className="action">
+          <div className="summary-safari">
+            <div className="action">
               <span className="arrow">
                 <RightIcon size={16} />
               </span>
               <span>{isChinese ? '编辑代码' : 'Code Editor'}</span>
-            </Col>
-            <Col className="action">
+            </div>
+            <div className="action">
               {visible && (
                 <span
                   className="copy"
@@ -51,8 +48,8 @@ const Editor: React.FC<Props> = ({ code }) => {
                   <CopyIcon size={18} />
                 </span>
               )}
-            </Col>
-          </Row>
+            </div>
+          </div>
         </summary>
         <div className="area">
           <LiveEditor />
@@ -73,23 +70,30 @@ const Editor: React.FC<Props> = ({ code }) => {
         }
 
         summary {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 ${theme.layout.gap};
+          box-sizing: border-box;
           border-top: 1px solid ${theme.palette.accents_2};
           color: ${theme.palette.accents_5};
-          height: 2.875rem;
+          width: 100%;
           list-style: none;
           user-select: none;
           outline: none;
+        }
+
+        .summary-safari {
+          box-sizing: border-box;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 2.875rem;
+          padding: 0 ${theme.layout.gap};
         }
 
         summary :global(svg) {
           cursor: pointer;
         }
 
-        summary :global(.action) {
+        .action {
           width: auto;
           display: flex;
           align-items: center;

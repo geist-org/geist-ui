@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface ToggleEventTarget {
   checked: boolean
@@ -20,13 +20,11 @@ interface Props {
   initialChecked?: boolean
   onChange?: (ev: ToggleEvent) => void
   disabled?: boolean
-  size?: NormalSizes
   type?: NormalTypes
   className?: string
 }
 
 const defaultProps = {
-  size: 'medium' as NormalSizes,
   type: 'default' as NormalTypes,
   disabled: false,
   initialChecked: false,
@@ -34,48 +32,25 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.LabelHTMLAttributes<any>, keyof Props>
-export type ToggleProps = Props & typeof defaultProps & NativeAttrs
+export type ToggleProps = Props & NativeAttrs
 
 export type ToggleSize = {
   width: string
   height: string
 }
 
-const getSizes = (size: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: ToggleSize } = {
-    mini: {
-      width: '1.67rem',
-      height: '.835rem',
-    },
-    small: {
-      width: '1.67rem',
-      height: '.835rem',
-    },
-    medium: {
-      width: '1.75rem',
-      height: '.875rem',
-    },
-    large: {
-      width: '2rem',
-      height: '1rem',
-    },
-  }
-  return sizes[size]
-}
-
-const Toggle: React.FC<ToggleProps> = ({
+const ToggleComponent: React.FC<ToggleProps> = ({
   initialChecked,
   checked,
   disabled,
   onChange,
-  size,
   type,
   className,
   ...props
-}) => {
+}: ToggleProps & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
-  const { width, height } = useMemo(() => getSizes(size), [size])
 
   const changeHandle = useCallback(
     (ev: React.ChangeEvent) => {
@@ -123,9 +98,15 @@ const Toggle: React.FC<ToggleProps> = ({
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: ${disabled ? 'not-allowed' : 'pointer'};
+          --toggle-font-size: ${SCALES.font(1)};
+          --toggle-height: ${SCALES.height(0.875)};
+          width: ${SCALES.width(1.75)};
+          height: var(--toggle-height);
+          padding: ${SCALES.pt(0.1875)} ${SCALES.pr(0)} ${SCALES.pb(0.1875)}
+            ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         input {
@@ -140,9 +121,9 @@ const Toggle: React.FC<ToggleProps> = ({
         }
 
         .toggle {
-          height: ${height};
-          width: ${width};
-          border-radius: ${height};
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -154,8 +135,8 @@ const Toggle: React.FC<ToggleProps> = ({
         }
 
         .inner {
-          width: calc(${height} - 2px);
-          height: calc(${height} - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -185,7 +166,7 @@ const Toggle: React.FC<ToggleProps> = ({
         }
 
         .checked > .inner {
-          left: calc(100% - (${height} - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
       `}</style>
@@ -193,6 +174,7 @@ const Toggle: React.FC<ToggleProps> = ({
   )
 }
 
-const MemoToggle = React.memo(Toggle)
-
-export default withDefaults(MemoToggle, defaultProps)
+ToggleComponent.defaultProps = defaultProps
+ToggleComponent.displayName = 'GeistToggle'
+const Toggle = withScaleable(ToggleComponent)
+export default Toggle

@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react'
-import withDefaults from 'components/utils/with-defaults'
 import { ConfigContext, Configs } from 'lib/config-context'
 import { useRouter } from 'next/router'
 import { DeepPartial } from 'components/utils/types'
@@ -7,17 +6,19 @@ import { GeistUIThemes, Themes } from 'components'
 import { useTheme } from 'components'
 import { CHINESE_LANGUAGE_IDENT, CUSTOM_THEME_TYPE } from './constants'
 
-interface Props {
+const defaultProps = {}
+
+export type ConfigProviderProps = {
   onThemeChange?: (themes: DeepPartial<GeistUIThemes>) => void
   onThemeTypeChange?: (type: string) => void
 }
 
-const defaultProps = {}
-
-export type ConfigProviderProps = Props & typeof defaultProps
-
 const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = React.memo(
-  ({ onThemeChange, onThemeTypeChange, children }) => {
+  ({
+    onThemeChange,
+    onThemeTypeChange,
+    children,
+  }: React.PropsWithChildren<ConfigProviderProps> & typeof defaultProps) => {
     const theme = useTheme()
     const { pathname } = useRouter()
     const [isChinese, setIsChinese] = useState<boolean>(() =>
@@ -61,4 +62,6 @@ const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = R
   },
 )
 
-export default withDefaults(ConfigProvider, defaultProps)
+ConfigProvider.defaultProps = defaultProps
+ConfigProvider.displayName = 'GeistConfigProvider'
+export default ConfigProvider

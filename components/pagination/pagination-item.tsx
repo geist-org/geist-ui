@@ -41,7 +41,7 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
       </button>
       <style jsx>{`
         li {
-          margin-right: 6px;
+          margin-right: 0.428em;
           display: inline-block;
         }
         button {
@@ -101,4 +101,5 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
   )
 }
 
+PaginationItem.displayName = 'GeistPaginationItem'
 export default PaginationItem

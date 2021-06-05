@@ -41,7 +41,7 @@ const cardTypes = tuple(
   'cyan',
 )
 
-const copyTypes = tuple('default', 'silent', 'prevent', 'slient')
+const copyTypes = tuple('default', 'silent', 'prevent')
 
 const triggerTypes = tuple('hover', 'click')
 

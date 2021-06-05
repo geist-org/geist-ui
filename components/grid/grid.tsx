@@ -1,23 +1,22 @@
 import React from 'react'
 import { css } from 'styled-jsx/css'
-import GridContainer from './grid-container'
-import GridBasicItem, { GridBasicItemComponentProps } from './basic-item'
+import GridBasicItem, { GridBasicItemProps } from './basic-item'
 
 interface Props {
-  className: string
+  className?: string
 }
 
 const defaultProps = {
   className: '',
 }
 
-export type GridProps = Props & typeof defaultProps & GridBasicItemComponentProps
+export type GridProps = Props & GridBasicItemProps
 
 const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({
   children,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<GridProps> & typeof defaultProps) => {
   const { className: resolveClassName, styles } = css.resolve`
     margin: 0;
     box-sizing: border-box;
@@ -31,13 +30,6 @@ const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({
   )
 }
 
-type MemoGridComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Container: typeof GridContainer
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  GridBasicItemComponentProps
-
 Grid.defaultProps = defaultProps
-
-export default React.memo(Grid) as MemoGridComponent<ComponentProps>
+Grid.displayName = 'GeistGrid'
+export default Grid

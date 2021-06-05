@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 import TooltipContent from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
 import { TriggerTypes, Placement, SnippetTypes } from '../utils/prop-types'
@@ -37,7 +36,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TooltipProps = Props & typeof defaultProps & NativeAttrs
+export type TooltipProps = Props & NativeAttrs
 
 const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   children,
@@ -55,7 +54,7 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   hideArrow,
   visible: customVisible,
   ...props
-}) => {
+}: React.PropsWithChildren<TooltipProps> & typeof defaultProps) => {
   const timer = useRef<number>()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(initialVisible)
@@ -117,4 +116,6 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   )
 }
 
-export default withDefaults(Tooltip, defaultProps)
+Tooltip.defaultProps = defaultProps
+Tooltip.displayName = 'GiestTooltip'
+export default Tooltip

@@ -3,13 +3,17 @@
 exports[`Note should render correctly 1`] = `
 "<div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>note<style>
         .note {
-          padding: 8pt 16pt;
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid #eaeaea;
           color: #000;
           background-color: #fff;
           border-radius: 5px;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.667 * 16px) calc(1.32 * 16px) calc(0.667 * 16px)
+            calc(1.32 * 16px);
+          margin: 0 0 0 0;
         }
 
         .note :global(p) {
@@ -20,7 +24,7 @@ exports[`Note should render correctly 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 0.38em;
         }
       </style></div>"
 `;
@@ -28,13 +32,17 @@ exports[`Note should render correctly 1`] = `
 exports[`Note should work with different styles 1`] = `
 "<div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>secondary<style>
         .note {
-          padding: calc(8pt / 2) calc(16pt / 2);
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid #666;
           color: #666;
           background-color: #fff;
           border-radius: 5px;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.667 * 16px) calc(1.32 * 16px) calc(0.667 * 16px)
+            calc(1.32 * 16px);
+          margin: 0 0 0 0;
         }
 
         .note :global(p) {
@@ -45,17 +53,21 @@ exports[`Note should work with different styles 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 0.38em;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>success<style>
         .note {
-          padding: 8pt 16pt;
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid #0070f3;
           color: white;
           background-color: #0070f3;
           border-radius: 5px;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.667 * 16px) calc(1.32 * 16px) calc(0.667 * 16px)
+            calc(1.32 * 16px);
+          margin: 0 0 0 0;
         }
 
         .note :global(p) {
@@ -66,17 +78,21 @@ exports[`Note should work with different styles 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 0.38em;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>warning<style>
         .note {
-          padding: 8pt 16pt;
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid #000;
           color: #fff;
           background-color: #000;
           border-radius: 5px;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.667 * 16px) calc(1.32 * 16px) calc(0.667 * 16px)
+            calc(1.32 * 16px);
+          margin: 0 0 0 0;
         }
 
         .note :global(p) {
@@ -87,28 +103,7 @@ exports[`Note should work with different styles 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
-        }
-      </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>error<style>
-        .note {
-          padding: calc(8pt / 2) calc(16pt / 2);
-          font-size: 14px;
-          line-height: 1.8;
-          border: 1px solid #000;
-          color: #fff;
-          background-color: #000;
-          border-radius: 5px;
-        }
-
-        .note :global(p) {
-          margin: 0;
-        }
-
-        .label {
-          text-transform: uppercase;
-          user-select: none;
-          line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 0.38em;
         }
       </style></div></div>"
 `;
@@ -116,13 +111,17 @@ exports[`Note should work with different styles 1`] = `
 exports[`Note should work with different types 1`] = `
 "<div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>secondary<style>
         .note {
-          padding: 8pt 16pt;
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid #666;
           color: #666;
           background-color: #fff;
           border-radius: 5px;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.667 * 16px) calc(1.32 * 16px) calc(0.667 * 16px)
+            calc(1.32 * 16px);
+          margin: 0 0 0 0;
         }
 
         .note :global(p) {
@@ -133,17 +132,21 @@ exports[`Note should work with different types 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 0.38em;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>success<style>
         .note {
-          padding: 8pt 16pt;
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid #0070f3;
           color: #0070f3;
           background-color: #fff;
           border-radius: 5px;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.667 * 16px) calc(1.32 * 16px) calc(0.667 * 16px)
+            calc(1.32 * 16px);
+          margin: 0 0 0 0;
         }
 
         .note :global(p) {
@@ -154,17 +157,21 @@ exports[`Note should work with different types 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 0.38em;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>warning<style>
         .note {
-          padding: 8pt 16pt;
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid #f5a623;
           color: #f5a623;
           background-color: #fff;
           border-radius: 5px;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.667 * 16px) calc(1.32 * 16px) calc(0.667 * 16px)
+            calc(1.32 * 16px);
+          margin: 0 0 0 0;
         }
 
         .note :global(p) {
@@ -175,17 +182,21 @@ exports[`Note should work with different types 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 0.38em;
         }
       </style></div><div class=\\"note \\"><span class=\\"label\\"><b>note:</b></span>error<style>
         .note {
-          padding: 8pt 16pt;
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid #e00;
           color: #e00;
           background-color: #fff;
           border-radius: 5px;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.667 * 16px) calc(1.32 * 16px) calc(0.667 * 16px)
+            calc(1.32 * 16px);
+          margin: 0 0 0 0;
         }
 
         .note :global(p) {
@@ -196,7 +207,7 @@ exports[`Note should work with different types 1`] = `
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: 4pt;
+          padding-right: 0.38em;
         }
       </style></div></div>"
 `;

@@ -29,7 +29,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TreeProps = Props & typeof defaultProps & NativeAttrs
+export type TreeProps = Props & NativeAttrs
 
 const makeChildren = (value: Array<FileTreeValue> = []) => {
   if (!value || !value.length) return null
@@ -66,7 +66,7 @@ const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
   value,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<TreeProps> & typeof defaultProps) => {
   const isImperative = Boolean(value && value.length > 0)
   const onFileClick = (path: string) => {
     onClick && onClick(path)
@@ -99,15 +99,6 @@ const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
   )
 }
 
-type TreeComponent<P = {}> = React.FC<P> & {
-  File: typeof TreeFile
-  Folder: typeof TreeFolder
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
 Tree.defaultProps = defaultProps
-
-export default Tree as TreeComponent<ComponentProps>
+Tree.displayName = 'GeistTree'
+export default Tree

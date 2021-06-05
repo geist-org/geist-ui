@@ -3,13 +3,11 @@ import useTheme from '../use-theme'
 
 export interface InputLabel {
   isRight?: boolean
-  fontSize: string
 }
 
 const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
   children,
   isRight,
-  fontSize,
 }) => {
   const theme = useTheme()
 
@@ -32,7 +30,7 @@ const InputLabel: React.FC<React.PropsWithChildren<InputLabel>> = ({
           border-top: 1px solid ${theme.palette.border};
           border-left: 1px solid ${theme.palette.border};
           border-bottom: 1px solid ${theme.palette.border};
-          font-size: ${fontSize};
+          font-size: inherit;
           line-height: 1;
         }
 

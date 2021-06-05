@@ -17,13 +17,13 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
 
     return (
       <>
-        <Spacer y={5} />
+        <Spacer h={5} />
         <h3>
           <VirtualAnchor>APIs</VirtualAnchor>
           {isChinese && ' / 接口文档'}
         </h3>
         <Card className="attr">{children}</Card>
-        <Spacer y={3} />
+        <Spacer h={3} />
         <h4 className="contributor-title">{isChinese ? '文档贡献者' : 'Contributors'}</h4>
         <Contributors path={path} />
         <style global jsx>{`

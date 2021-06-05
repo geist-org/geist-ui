@@ -1,5 +1,4 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 
 interface Props {
   className?: string
@@ -10,33 +9,33 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLDivElement>, keyof Props>
-export type FieldsetTitleProps = Props & typeof defaultProps & NativeAttrs
+export type FieldsetTitleProps = Props & NativeAttrs
 
-const FieldsetTitle: React.FC<FieldsetTitleProps> = ({
+const FieldsetTitle: React.FC<React.PropsWithChildren<FieldsetTitleProps>> = ({
   className,
   children,
   ...props
-}) => {
+}: React.PropsWithChildren<FieldsetTitleProps> & typeof defaultProps) => {
   return (
     <>
-      <div className={className} {...props}>
+      <div className={`title ${className}`} {...props}>
         {children}
       </div>
       <style jsx>{`
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       `}</style>
     </>
   )
 }
 
-const MemoFieldsetTitle = React.memo(FieldsetTitle)
-
-export default withDefaults(MemoFieldsetTitle, defaultProps)
+FieldsetTitle.defaultProps = defaultProps
+FieldsetTitle.displayName = 'GeistFieldsetTitle'
+export default FieldsetTitle

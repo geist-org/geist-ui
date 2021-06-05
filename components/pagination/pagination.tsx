@@ -9,10 +9,9 @@ import {
 } from './pagination-context'
 import useCurrentState from '../utils/use-current-state'
 import { pickChild } from '../utils/collections'
-import { NormalSizes } from '../utils/prop-types'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
-  size?: NormalSizes
   page?: number
   initialPage?: number
   count?: number
@@ -21,51 +20,23 @@ interface Props {
 }
 
 const defaultProps = {
-  size: 'medium' as NormalSizes,
   initialPage: 1,
   count: 1,
   limit: 7,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PaginationProps = Props & typeof defaultProps & NativeAttrs
+export type PaginationProps = Props & NativeAttrs
 
-type PaginationSize = {
-  font: string
-  width: string
-}
-
-const getPaginationSizes = (size: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: PaginationSize } = {
-    mini: {
-      font: '.75rem',
-      width: '1.25rem',
-    },
-    small: {
-      font: '.75rem',
-      width: '1.65rem',
-    },
-    medium: {
-      font: '.875rem',
-      width: '2rem',
-    },
-    large: {
-      font: '1rem',
-      width: '2.4rem',
-    },
-  }
-  return sizes[size]
-}
-
-const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
+const PaginationComponent: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   page: customPage,
   initialPage,
   count,
   limit,
-  size,
   children,
   onChange,
-}) => {
+}: React.PropsWithChildren<PaginationProps> & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
   const [page, setPage, pageRef] = useCurrentState(initialPage)
   const [, prevChildren] = pickChild(children, PaginationPrevious)
   const [, nextChildren] = pickChild(children, PaginationNext)
@@ -79,7 +50,6 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
       hasChildren(nextChildren) ? nextChildren : nextDefault,
     ]
   }, [prevChildren, nextChildren])
-  const { font, width } = useMemo(() => getPaginationSizes(size), [size])
 
   const update = (type: PaginationUpdateType) => {
     if (type === 'prev' && pageRef.current > 1) {
@@ -116,12 +86,14 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
       </nav>
       <style jsx>{`
         nav {
-          margin: 0;
-          padding: 0;
           font-variant: tabular-nums;
           font-feature-settings: 'tnum';
-          font-size: ${font};
-          --pagination-size: ${width};
+          --pagination-size: ${SCALES.font(2)};
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         nav :global(button:last-of-type) {
@@ -132,15 +104,7 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   )
 }
 
-type MemoPaginationComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Previous: typeof PaginationPrevious
-  Next: typeof PaginationNext
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Pagination.defaultProps = defaultProps
-
-export default React.memo(Pagination) as MemoPaginationComponent<ComponentProps>
+PaginationComponent.defaultProps = defaultProps
+PaginationComponent.displayName = 'GeistPagination'
+const Pagination = withScaleable(PaginationComponent)
+export default Pagination

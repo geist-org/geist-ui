@@ -33,7 +33,7 @@ const stopPropagation = (event: MouseEvent<HTMLElement>) => {
   event.nativeEvent.stopImmediatePropagation()
 }
 
-const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = ({
+const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = ({
   children,
   type,
   auto,
@@ -170,7 +170,7 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
   )
 }
 
-ButtonDropdown.displayName = 'GeistButtonDropdown'
-ButtonDropdown.defaultProps = defaultProps
-
-export default withScaleable(ButtonDropdown)
+ButtonDropdownComponent.displayName = 'GeistButtonDropdown'
+ButtonDropdownComponent.defaultProps = defaultProps
+const ButtonDropdown = withScaleable(ButtonDropdownComponent)
+export default ButtonDropdown

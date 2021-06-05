@@ -8,9 +8,15 @@ exports[`Toggle should render correctly 1`] = `
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(1 * 16px);
+          --toggle-height: calc(0.875 * 16px);
+          width: calc(1.75 * 16px);
+          height: var(--toggle-height);
+          padding: calc(0.1875 * 16px) 0 calc(0.1875 * 16px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -25,9 +31,9 @@ exports[`Toggle should render correctly 1`] = `
         }
 
         .toggle {
-          height: .875rem;
-          width: 1.75rem;
-          border-radius: .875rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -39,8 +45,8 @@ exports[`Toggle should render correctly 1`] = `
         }
 
         .inner {
-          width: calc(.875rem - 2px);
-          height: calc(.875rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -70,23 +76,29 @@ exports[`Toggle should render correctly 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (.875rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
       </style></label>"
 `;
 
 exports[`Toggle should work with different sizes 1`] = `
-"<div><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+"<div><label class=\\"\\" scale=\\"1\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
         label {
           -webkit-tap-highlight-color: transparent;
           display: inline-block;
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(1 * 16px);
+          --toggle-height: calc(0.875 * 16px);
+          width: calc(1.75 * 16px);
+          height: var(--toggle-height);
+          padding: calc(0.1875 * 16px) 0 calc(0.1875 * 16px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -101,9 +113,9 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .toggle {
-          height: .835rem;
-          width: 1.67rem;
-          border-radius: .835rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -115,8 +127,8 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .inner {
-          width: calc(.835rem - 2px);
-          height: calc(.835rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -146,19 +158,25 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (.835rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
-      </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+      </style></label><label class=\\"\\" scale=\\"0.2\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
         label {
           -webkit-tap-highlight-color: transparent;
           display: inline-block;
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(0.6 * 16px);
+          --toggle-height: calc(0.525 * 16px);
+          width: calc(1.05 * 16px);
+          height: var(--toggle-height);
+          padding: calc(0.11249999999999999 * 16px) 0 calc(0.11249999999999999 * 16px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -173,9 +191,9 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .toggle {
-          height: .835rem;
-          width: 1.67rem;
-          border-radius: .835rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -187,8 +205,8 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .inner {
-          width: calc(.835rem - 2px);
-          height: calc(.835rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -218,19 +236,25 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (.835rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
-      </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+      </style></label><label class=\\"\\" scale=\\"2\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
         label {
           -webkit-tap-highlight-color: transparent;
           display: inline-block;
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(1.5 * 16px);
+          --toggle-height: calc(1.3125 * 16px);
+          width: calc(2.625 * 16px);
+          height: var(--toggle-height);
+          padding: calc(0.28125 * 16px) 0 calc(0.28125 * 16px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -245,9 +269,9 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .toggle {
-          height: .875rem;
-          width: 1.75rem;
-          border-radius: .875rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -259,8 +283,8 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .inner {
-          width: calc(.875rem - 2px);
-          height: calc(.875rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -290,19 +314,25 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (.875rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
-      </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
+      </style></label><label class=\\"\\" unit=\\"10px\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
         label {
           -webkit-tap-highlight-color: transparent;
           display: inline-block;
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(1 * 10px);
+          --toggle-height: calc(0.875 * 10px);
+          width: calc(1.75 * 10px);
+          height: var(--toggle-height);
+          padding: calc(0.1875 * 10px) 0 calc(0.1875 * 10px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -317,9 +347,9 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .toggle {
-          height: 1rem;
-          width: 2rem;
-          border-radius: 1rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -331,8 +361,8 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .inner {
-          width: calc(1rem - 2px);
-          height: calc(1rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -362,7 +392,7 @@ exports[`Toggle should work with different sizes 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (1rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
       </style></label></div>"
@@ -376,9 +406,15 @@ exports[`Toggle should work with different status 1`] = `
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(1 * 16px);
+          --toggle-height: calc(0.875 * 16px);
+          width: calc(1.75 * 16px);
+          height: var(--toggle-height);
+          padding: calc(0.1875 * 16px) 0 calc(0.1875 * 16px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -393,9 +429,9 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .toggle {
-          height: .875rem;
-          width: 1.75rem;
-          border-radius: .875rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -407,8 +443,8 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .inner {
-          width: calc(.875rem - 2px);
-          height: calc(.875rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -438,7 +474,7 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (.875rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
       </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
@@ -448,9 +484,15 @@ exports[`Toggle should work with different status 1`] = `
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(1 * 16px);
+          --toggle-height: calc(0.875 * 16px);
+          width: calc(1.75 * 16px);
+          height: var(--toggle-height);
+          padding: calc(0.1875 * 16px) 0 calc(0.1875 * 16px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -465,9 +507,9 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .toggle {
-          height: .875rem;
-          width: 1.75rem;
-          border-radius: .875rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -479,8 +521,8 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .inner {
-          width: calc(.875rem - 2px);
-          height: calc(.875rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -510,7 +552,7 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (.875rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
       </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
@@ -520,9 +562,15 @@ exports[`Toggle should work with different status 1`] = `
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(1 * 16px);
+          --toggle-height: calc(0.875 * 16px);
+          width: calc(1.75 * 16px);
+          height: var(--toggle-height);
+          padding: calc(0.1875 * 16px) 0 calc(0.1875 * 16px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -537,9 +585,9 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .toggle {
-          height: .875rem;
-          width: 1.75rem;
-          border-radius: .875rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -551,8 +599,8 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .inner {
-          width: calc(.875rem - 2px);
-          height: calc(.875rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -582,7 +630,7 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (.875rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
       </style></label><label class=\\"\\"><input type=\\"checkbox\\"><div class=\\"toggle  \\"><span class=\\"inner\\"></span></div><style>
@@ -592,9 +640,15 @@ exports[`Toggle should work with different status 1`] = `
           vertical-align: middle;
           white-space: nowrap;
           user-select: none;
-          padding: 3px 0;
           position: relative;
           cursor: pointer;
+          --toggle-font-size: calc(1 * 16px);
+          --toggle-height: calc(0.875 * 16px);
+          width: calc(1.75 * 16px);
+          height: var(--toggle-height);
+          padding: calc(0.1875 * 16px) 0 calc(0.1875 * 16px)
+            0;
+          margin: 0 0 0 0;
         }
 
         input {
@@ -609,9 +663,9 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .toggle {
-          height: .875rem;
-          width: 1.75rem;
-          border-radius: .875rem;
+          height: var(--toggle-height);
+          width: 100%;
+          border-radius: var(--toggle-height);
           transition-delay: 0.12s;
           transition-duration: 0.2s;
           transition-property: background, border;
@@ -623,8 +677,8 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .inner {
-          width: calc(.875rem - 2px);
-          height: calc(.875rem - 2px);
+          width: calc(var(--toggle-height) - 2px);
+          height: calc(var(--toggle-height) - 2px);
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -654,7 +708,7 @@ exports[`Toggle should work with different status 1`] = `
         }
 
         .checked > .inner {
-          left: calc(100% - (.875rem - 2px));
+          left: calc(100% - (var(--toggle-height) - 2px));
           box-shadow: none;
         }
       </style></label></div>"

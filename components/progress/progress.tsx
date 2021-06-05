@@ -1,9 +1,9 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import { useProportions } from '../utils/calculations'
 import { GeistUIThemesPalette } from '../themes/presets'
 import { NormalTypes } from '../utils/prop-types'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 export type ProgressColors = {
   [key: number]: string
@@ -16,7 +16,7 @@ interface Props {
   fixedBottom?: boolean
   colors?: ProgressColors
   type?: NormalTypes
-  className?: ''
+  className?: string
 }
 
 const defaultProps = {
@@ -29,7 +29,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.ProgressHTMLAttributes<any>, keyof Props>
-export type ProgressProps = Props & typeof defaultProps & NativeAttrs
+export type ProgressProps = Props & NativeAttrs
 
 const getCurrentColor = (
   ratio: number,
@@ -52,7 +52,7 @@ const getCurrentColor = (
   return colors[+customColorKey]
 }
 
-const Progress: React.FC<ProgressProps> = ({
+const ProgressComponent: React.FC<ProgressProps> = ({
   value,
   max,
   className,
@@ -61,8 +61,9 @@ const Progress: React.FC<ProgressProps> = ({
   fixedTop,
   fixedBottom,
   ...props
-}) => {
+}: ProgressProps & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const percentValue = useProportions(value, max)
   const currentColor = getCurrentColor(percentValue, theme.palette, type, colors)
   const fixed = fixedTop || fixedBottom
@@ -82,10 +83,12 @@ const Progress: React.FC<ProgressProps> = ({
 
         .progress {
           position: relative;
-          width: 100%;
-          height: 0.625rem;
           background-color: ${theme.palette.accents_2};
           border-radius: ${theme.layout.radius};
+          width: ${SCALES.width(1, '100%')};
+          height: ${SCALES.height(0.625)};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .fixed {
@@ -116,4 +119,7 @@ const Progress: React.FC<ProgressProps> = ({
   )
 }
 
-export default withDefaults(Progress, defaultProps)
+ProgressComponent.defaultProps = defaultProps
+ProgressComponent.displayName = 'GeistProgress'
+const Progress = withScaleable(ProgressComponent)
+export default Progress

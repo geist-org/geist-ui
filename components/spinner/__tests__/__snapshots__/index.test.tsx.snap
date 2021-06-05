@@ -964,8 +964,11 @@ exports[`Spacer should render correctly 1`] = `
       </style></span></div><style>
         .spinner {
           display: block;
-          width: 1.25rem;
-          height: 1.25rem;
+          box-sizing: border-box;
+          width: calc(1.25 * 16px);
+          height: calc(1.25 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .container {
@@ -1942,8 +1945,11 @@ exports[`Spacer should work with different sizes 1`] = `
       </style></span></div><style>
         .spinner {
           display: block;
-          width: .75rem;
-          height: .75rem;
+          box-sizing: border-box;
+          width: calc(1.25 * 16px);
+          height: calc(1.25 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .container {
@@ -2916,8 +2922,11 @@ exports[`Spacer should work with different sizes 1`] = `
       </style></span></div><style>
         .spinner {
           display: block;
-          width: 1rem;
-          height: 1rem;
+          box-sizing: border-box;
+          width: calc(1.25 * 16px);
+          height: calc(1.25 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .container {
@@ -3890,8 +3899,11 @@ exports[`Spacer should work with different sizes 1`] = `
       </style></span></div><style>
         .spinner {
           display: block;
-          width: 1.25rem;
-          height: 1.25rem;
+          box-sizing: border-box;
+          width: calc(1.25 * 16px);
+          height: calc(1.25 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .container {
@@ -4864,8 +4876,11 @@ exports[`Spacer should work with different sizes 1`] = `
       </style></span></div><style>
         .spinner {
           display: block;
-          width: 1.875rem;
-          height: 1.875rem;
+          box-sizing: border-box;
+          width: calc(1.25 * 16px);
+          height: calc(1.25 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .container {

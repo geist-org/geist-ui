@@ -1,13 +1,19 @@
 import React from 'react'
 
-export interface TabsLabelItem {
+export type TabsInternalCellProps = {
+  value: string | undefined
+  onClick: (value: string) => void
+}
+
+export type TabsInternalCell = React.FC<TabsInternalCellProps>
+
+export interface TabsHeaderItem {
   value: string
-  label: string | React.ReactNode
-  disabled: boolean
+  cell: TabsInternalCell
 }
 
 export interface TabsConfig {
-  register?: (item: TabsLabelItem) => void
+  register?: (item: TabsHeaderItem) => void
   currentValue?: string
   inGroup: boolean
 }

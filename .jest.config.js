@@ -12,7 +12,7 @@ module.exports = {
   },
 
   testRegex: '.*\\.test\\.(j|t)sx?$',
-  // testRegex: 'grid\\/.*\\.test\\.(j|t)sx?$',
+  // testRegex: 'scaleable\\/.*\\.test\\.(j|t)sx?$',
 
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',

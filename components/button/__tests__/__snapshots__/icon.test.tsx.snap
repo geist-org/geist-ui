@@ -41,11 +41,7 @@ exports[`ButtonIcon should render correctly 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: calc(0 * 16px) calc(1.375 * 16px) calc(0 * 16px) calc(1.375 * 16px);
-            height: calc(2.5 * 16px);
             line-height: calc(2.5 * 16px);
-            min-width: calc(12.5 * 16px);
-            width: initial;
             border-radius: 5px;
             font-weight: 400;
             font-size: calc(0.875 * 16px);
@@ -69,6 +65,11 @@ exports[`ButtonIcon should render correctly 1`] = `
             --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: calc(12.5 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
+            padding: 0 calc(1.375 * 16px) 0 calc(1.375 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,
@@ -143,11 +144,7 @@ exports[`ButtonIcon should work with right 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: calc(0 * 16px) calc(1.375 * 16px) calc(0 * 16px) calc(1.375 * 16px);
-            height: calc(2.5 * 16px);
             line-height: calc(2.5 * 16px);
-            min-width: calc(12.5 * 16px);
-            width: initial;
             border-radius: 5px;
             font-weight: 400;
             font-size: calc(0.875 * 16px);
@@ -171,6 +168,11 @@ exports[`ButtonIcon should work with right 1`] = `
             --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: calc(12.5 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
+            padding: 0 calc(1.375 * 16px) 0 calc(1.375 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,
@@ -238,11 +240,7 @@ exports[`ButtonIcon should work without text 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: calc(0 * 16px) calc(1.375 * 16px) calc(0 * 16px) calc(1.375 * 16px);
-            height: calc(2.5 * 16px);
             line-height: calc(2.5 * 16px);
-            min-width: calc(12.5 * 16px);
-            width: initial;
             border-radius: 5px;
             font-weight: 400;
             font-size: calc(0.875 * 16px);
@@ -266,6 +264,11 @@ exports[`ButtonIcon should work without text 1`] = `
             --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: calc(12.5 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
+            padding: 0 calc(1.375 * 16px) 0 calc(1.375 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,

@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom'
 import useTheme from '../use-theme'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
-import CSSTransition from '../shared/css-transition'
+import CssTransition from '../shared/css-transition'
 import useClickAnyWhere from '../utils/use-click-anywhere'
 import { getColors } from './styles'
 import { getPosition, TooltipPosition, defaultTooltipPosition } from './placement'
@@ -89,7 +89,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
 
   if (!el) return null
   return createPortal(
-    <CSSTransition visible={visible}>
+    <CssTransition visible={visible}>
       <div
         className={`tooltip-content ${className}`}
         ref={selfRef}
@@ -125,7 +125,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
           }
         `}</style>
       </div>
-    </CSSTransition>,
+    </CssTransition>,
     el,
   )
 }

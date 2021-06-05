@@ -2,9 +2,15 @@ import Card from './card'
 import CardFooter from './card-footer'
 import CardContent from './card-content'
 
-Card.Footer = CardFooter
-Card.Actions = CardFooter
-Card.Content = CardContent
-Card.Body = CardContent
+export type CardComponentType = typeof Card & {
+  Footer: typeof CardFooter
+  Actions: typeof CardFooter
+  Content: typeof CardContent
+  Body: typeof CardContent
+}
+;(Card as CardComponentType).Footer = CardFooter
+;(Card as CardComponentType).Actions = CardFooter
+;(Card as CardComponentType).Content = CardContent
+;(Card as CardComponentType).Body = CardContent
 
-export default Card
+export default Card as CardComponentType

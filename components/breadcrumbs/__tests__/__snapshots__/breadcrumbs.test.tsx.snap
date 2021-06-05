@@ -4,21 +4,26 @@ exports[`Breadcrumbs should redefined all separators 1`] = `
 "<nav class=\\"\\"><span class=\\"breadcrums-item \\">test-1</span><div class=\\"separator \\">*<style>
         .separator {
           display: inline-flex;
-          margin: 0 8px;
           user-select: none;
           pointer-events: none;
           align-items: center;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
         }
       </style></div><span class=\\"breadcrums-item \\">test-2</span><style>
         nav {
-          margin: 0;
-          padding: 0;
           line-height: inherit;
           color: #888;
-          font-size: 1rem;
           box-sizing: border-box;
           display: flex;
           align-items: center;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         nav :global(.link:hover) {
@@ -49,14 +54,16 @@ exports[`Breadcrumbs should redefined all separators 1`] = `
 exports[`Breadcrumbs should render correctly 1`] = `
 "<nav class=\\"\\"><span class=\\"breadcrums-item \\">test-1</span><style>
         nav {
-          margin: 0;
-          padding: 0;
           line-height: inherit;
           color: #888;
-          font-size: 1rem;
           box-sizing: border-box;
           display: flex;
           align-items: center;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         nav :global(.link:hover) {

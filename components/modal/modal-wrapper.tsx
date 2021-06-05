@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
-import CSSTransition from '../shared/css-transition'
+import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
+import useScaleable from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -14,15 +14,16 @@ const defaultProps = {
   visible: false,
 }
 
-export type ModalWrapperProps = Props & typeof defaultProps
+export type ModalWrapperProps = Props
 
 const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   className,
   children,
   visible,
   ...props
-}) => {
+}: React.PropsWithChildren<ModalWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const modalContent = useRef<HTMLDivElement>(null)
   const tabStart = useRef<HTMLDivElement>(null)
   const tabEnd = useRef<HTMLDivElement>(null)
@@ -51,7 +52,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   }
 
   return (
-    <CSSTransition name="wrapper" visible={visible} clearTime={300}>
+    <CssTransition name="wrapper" visible={visible} clearTime={300}>
       <div
         className={`wrapper ${className}`}
         role="dialog"
@@ -74,13 +75,20 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
             background-color: ${theme.palette.background};
             color: ${theme.palette.foreground};
             border-radius: ${theme.layout.radius};
-            padding: ${theme.layout.gap};
             box-shadow: ${theme.expressiveness.shadowLarge};
             opacity: 0;
             outline: none;
             transform: translate3d(0px, -30px, 0px);
             transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+            width: 100%;
+            font-size: ${SCALES.font(1)};
+            height: ${SCALES.height(1, 'auto')};
+            --modal-wrapper-padding-left: ${SCALES.pl(1.3125)};
+            --modal-wrapper-padding-right: ${SCALES.pr(1.3125)};
+            padding: ${SCALES.pt(1.3125)} var(--modal-wrapper-padding-right)
+              ${SCALES.pb(1.3125)} var(--modal-wrapper-padding-left);
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
           .wrapper-enter {
@@ -112,8 +120,10 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
           }
         `}</style>
       </div>
-    </CSSTransition>
+    </CssTransition>
   )
 }
 
-export default withDefaults(ModalWrapper, defaultProps)
+ModalWrapper.defaultProps = defaultProps
+ModalWrapper.displayName = 'GeistModalWrapper'
+export default ModalWrapper

@@ -18,7 +18,7 @@ const DynamicLive: React.FC<Props> = ({ code, scope }) => {
     <LiveProvider code={code} scope={scope} theme={codeTheme}>
       <div className="wrapper">
         <LivePreview />
-        <LiveError />
+        <LiveError className="live-error" />
       </div>
       <Editor code={code} />
       <style jsx>{`
@@ -29,9 +29,16 @@ const DynamicLive: React.FC<Props> = ({ code, scope }) => {
           flex-direction: column;
           box-sizing: border-box;
         }
-
         .wrapper > :global(div) {
           width: 100%;
+        }
+        .wrapper > :global(.live-error) {
+          padding: 10px 12px 0 12px;
+          margin-bottom: 0;
+          border: 2px ${theme.palette.error} dotted;
+          border-radius: 10px;
+          color: ${theme.palette.errorLight};
+          font-size: 13px;
         }
       `}</style>
     </LiveProvider>

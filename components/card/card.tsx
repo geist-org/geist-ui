@@ -6,12 +6,12 @@ import CardFooter from './card-footer'
 import CardContent from './card-content'
 import Image from '../image'
 import { hasChild, pickChild } from '../utils/collections'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   hoverable?: boolean
   shadow?: boolean
   className?: string
-  width?: string
   type?: CardTypes
 }
 
@@ -19,23 +19,22 @@ const defaultProps = {
   type: 'default' as CardTypes,
   hoverable: false,
   shadow: false,
-  width: '100%',
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type CardProps = Props & typeof defaultProps & NativeAttrs
+export type CardProps = Props & NativeAttrs
 
-const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
+const CardComponent: React.FC<React.PropsWithChildren<CardProps>> = ({
   children,
   hoverable,
   className,
   shadow,
   type,
-  width,
   ...props
-}) => {
+}: CardProps & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const hoverShadow = useMemo(() => {
     if (shadow) return theme.expressiveness.shadowMedium
     return hoverable ? theme.expressiveness.shadowSmall : 'none'
@@ -61,9 +60,6 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
       <style jsx>{`
         .card {
           background: ${theme.palette.background};
-          margin: 0;
-          padding: 0;
-          width: ${width};
           transition: all 0.2s ease;
           border-radius: ${theme.layout.radius};
           box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
@@ -71,6 +67,10 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
           color: ${color};
           background-color: ${bgColor};
           border: 1px solid ${borderColor};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .card:hover {
@@ -90,16 +90,7 @@ const Card: React.FC<React.PropsWithChildren<CardProps>> = ({
   )
 }
 
-type MemoCardComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Footer: typeof CardFooter
-  Actions: typeof CardFooter
-  Content: typeof CardContent
-  Body: typeof CardContent
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Card.defaultProps = defaultProps
-
-export default React.memo(Card) as MemoCardComponent<ComponentProps>
+CardComponent.defaultProps = defaultProps
+CardComponent.displayName = 'GeistCard'
+const Card = withScaleable(CardComponent)
+export default Card

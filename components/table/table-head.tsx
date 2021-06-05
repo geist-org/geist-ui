@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import { TableColumnItem } from './table-context'
 
@@ -14,7 +13,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TableHeadProps = Props & typeof defaultProps & NativeAttrs
+export type TableHeadProps = Props & NativeAttrs
 
 const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
   const unsetWidthCount = columns.filter(c => !c.width).length
@@ -32,7 +31,10 @@ const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
   )
 }
 
-const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
+const TableHead: React.FC<TableHeadProps> = ({
+  columns,
+  width,
+}: TableHeadProps & typeof defaultProps) => {
   const theme = useTheme()
   const isScalableWidth = useMemo(() => columns.find(item => !!item.width), [columns])
   const colgroup = useMemo(() => {
@@ -56,16 +58,17 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
         thead {
           border-collapse: separate;
           border-spacing: 0;
+          font-size: inherit;
         }
 
         th {
-          padding: 0 ${theme.layout.gapHalf};
-          font-size: 0.75rem;
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-fontsize));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-fontsize));
           color: ${theme.palette.accents_5};
           background: ${theme.palette.accents_1};
           border-bottom: 1px solid ${theme.palette.border};
@@ -93,7 +96,7 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-fontsize));
           text-transform: uppercase;
         }
       `}</style>
@@ -101,6 +104,6 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
   )
 }
 
-const MemoTableHead = React.memo(TableHead)
-
-export default withDefaults(MemoTableHead, defaultProps)
+TableHead.defaultProps = defaultProps
+TableHead.displayName = 'GeistTableHead'
+export default TableHead

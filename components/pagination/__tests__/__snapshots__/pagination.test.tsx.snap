@@ -3,7 +3,7 @@
 exports[`Pagination should render correctly 1`] = `
 "<nav><li><button class=\\" disabled\\">prev</button><style>
         li {
-          margin-right: 6px;
+          margin-right: 0.428em;
           display: inline-block;
         }
         button {
@@ -60,7 +60,7 @@ exports[`Pagination should render correctly 1`] = `
         }
       </style></li><li><button class=\\"active \\">1</button><style>
         li {
-          margin-right: 6px;
+          margin-right: 0.428em;
           display: inline-block;
         }
         button {
@@ -117,7 +117,7 @@ exports[`Pagination should render correctly 1`] = `
         }
       </style></li><li><button class=\\" disabled\\">next</button><style>
         li {
-          margin-right: 6px;
+          margin-right: 0.428em;
           display: inline-block;
         }
         button {
@@ -174,12 +174,14 @@ exports[`Pagination should render correctly 1`] = `
         }
       </style></li></nav><style>
         nav {
-          margin: 0;
-          padding: 0;
           font-variant: tabular-nums;
           font-feature-settings: 'tnum';
-          font-size: .875rem;
-          --pagination-size: 2rem;
+          --pagination-size: calc(2 * 16px);
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         nav :global(button:last-of-type) {

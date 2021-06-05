@@ -43,7 +43,10 @@ const defaultProps = {
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
 export type ButtonProps = Props & NativeAttrs
 
-const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(
+const ButtonComponent = React.forwardRef<
+  HTMLButtonElement,
+  React.PropsWithChildren<ButtonProps>
+>(
   (
     btnProps: ButtonProps & typeof defaultProps,
     ref: React.Ref<HTMLButtonElement | null>,
@@ -150,11 +153,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)} ${paddingLeft};
-            height: ${SCALES.height(2.5)};
             line-height: ${SCALES.height(2.5)};
-            min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
-            width: ${auto ? 'auto' : 'initial'};
             border-radius: ${theme.layout.radius};
             font-weight: 400;
             font-size: ${SCALES.font(0.875)};
@@ -178,6 +177,11 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             --geist-ui-button-height: ${SCALES.height(2.5)};
             --geist-ui-button-color: ${color};
             --geist-ui-button-bg: ${bg};
+            min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
+            width: ${auto ? 'auto' : 'initial'};
+            height: ${SCALES.height(2.5)};
+            padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)} ${paddingLeft};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
           .btn:hover,
@@ -214,6 +218,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
   },
 )
 
-Button.defaultProps = defaultProps
-Button.displayName = 'GeistButton'
-export default withScaleable(Button)
+ButtonComponent.defaultProps = defaultProps
+ButtonComponent.displayName = 'GeistButton'
+const Button = withScaleable(ButtonComponent)
+export default Button

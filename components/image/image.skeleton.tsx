@@ -1,19 +1,18 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 
 interface Props {
-  opacity: number
+  opacity?: number
 }
 
 const defaultProps = {
   opacity: 0.5,
 }
 
-export type ImageSkeletonProps = Props & typeof defaultProps
+export type ImageSkeletonProps = Props
 
 const ImageSkeleton: React.FC<ImageSkeletonProps> = React.memo(
-  ({ opacity, ...props }) => {
+  ({ opacity, ...props }: ImageSkeletonProps & typeof defaultProps) => {
     const theme = useTheme()
     return (
       <div className="skeleton" {...props}>
@@ -53,4 +52,6 @@ const ImageSkeleton: React.FC<ImageSkeletonProps> = React.memo(
   },
 )
 
-export default withDefaults(ImageSkeleton, defaultProps)
+ImageSkeleton.defaultProps = defaultProps
+ImageSkeleton.displayName = 'GeistImageSkeleton'
+export default ImageSkeleton

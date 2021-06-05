@@ -1,7 +1,5 @@
 import React, {
   CSSProperties,
-  PropsWithoutRef,
-  RefAttributes,
   useEffect,
   useImperativeHandle,
   useMemo,
@@ -14,10 +12,11 @@ import AutoCompleteDropdown from './auto-complete-dropdown'
 import AutoCompleteSearching from './auto-complete-searching'
 import AutoCompleteEmpty from './auto-complete-empty'
 import { AutoCompleteContext, AutoCompleteConfig } from './auto-complete-context'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 import Loading from '../loading'
 import { pickChild } from '../utils/collections'
 import useCurrentState from '../utils/use-current-state'
+import useScaleable, { filterScaleableProps, withScaleable } from '../use-scaleable'
 
 export type AutoCompleteOption = {
   label: string
@@ -29,12 +28,10 @@ export type AutoCompleteOptions = Array<
 >
 
 interface Props {
-  options: AutoCompleteOptions
-  size?: NormalSizes
+  options?: AutoCompleteOptions
   type?: NormalTypes
   initialValue?: string
   value?: string
-  width?: string
   onChange?: (value: string) => void
   onSearch?: (value: string) => void
   onSelect?: (value: string) => void
@@ -53,7 +50,6 @@ const defaultProps = {
   initialValue: '',
   disabled: false,
   clearable: false,
-  size: 'medium' as NormalSizes,
   type: 'default' as NormalTypes,
   disableMatchWidth: false,
   disableFreeSolo: false,
@@ -61,7 +57,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type AutoCompleteProps = Props & typeof defaultProps & NativeAttrs
+export type AutoCompleteProps = Props & NativeAttrs
 
 const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
   options.map((item, index) => {
@@ -77,12 +73,12 @@ const childrenToOptionsNode = (options: Array<AutoCompleteOption>) =>
 
 // When the search is not set, the "clearable" icon can be displayed in the original location.
 // When the search is seted, at least one element should exist to avoid re-render.
-const getSearchIcon = (searching?: boolean) => {
+const getSearchIcon = (searching?: boolean, scale: string | number = 1) => {
   if (searching === undefined) return null
-  return searching ? <Loading size="small" /> : <span />
+  return searching ? <Loading scale={+scale / 2} /> : <span />
 }
 
-const AutoComplete = React.forwardRef<
+const AutoCompleteComponent = React.forwardRef<
   HTMLInputElement,
   React.PropsWithChildren<AutoCompleteProps>
 >(
@@ -95,10 +91,8 @@ const AutoComplete = React.forwardRef<
       onChange,
       searching,
       children,
-      size,
       type,
       value,
-      width,
       clearable,
       disabled,
       dropdownClassName,
@@ -107,12 +101,13 @@ const AutoComplete = React.forwardRef<
       disableFreeSolo,
       getPopupContainer,
       ...props
-    },
+    }: React.PropsWithChildren<AutoCompleteProps> & typeof defaultProps,
     userRef: React.Ref<HTMLInputElement | null>,
   ) => {
+    const resetTimer = useRef<number>()
+    const { SCALES, getScaleableProps } = useScaleable()
     const ref = useRef<HTMLDivElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
-    const resetTimer = useRef<number>()
     const [state, setState, stateRef] = useCurrentState<string>(customInitialValue)
     const [selectVal, setSelectVal] = useState<string>(customInitialValue)
     const [visible, setVisible] = useState<boolean>(false)
@@ -177,13 +172,12 @@ const AutoComplete = React.forwardRef<
     const initialValue = useMemo<AutoCompleteConfig>(
       () => ({
         ref,
-        size,
         value: state,
         updateValue,
         visible,
         updateVisible,
       }),
-      [state, visible, size],
+      [state, visible],
     )
 
     const toggleFocusHandler = (next: boolean) => {
@@ -200,8 +194,7 @@ const AutoComplete = React.forwardRef<
     }
 
     const inputProps = {
-      ...props,
-      width,
+      ...filterScaleableProps(props),
       disabled,
       value: state,
     }
@@ -211,13 +204,14 @@ const AutoComplete = React.forwardRef<
         <div ref={ref} className="auto-complete">
           <Input
             ref={inputRef}
-            size={size}
             type={type}
             onChange={onInputChange}
             onFocus={() => toggleFocusHandler(true)}
             onBlur={() => toggleFocusHandler(false)}
             clearable={showClearIcon}
-            iconRight={getSearchIcon(searching)}
+            width={SCALES.width(1, 'initial')}
+            height={SCALES.height(2.25)}
+            iconRight={getSearchIcon(searching, getScaleableProps('scale'))}
             {...inputProps}
           />
           <AutoCompleteDropdown
@@ -231,12 +225,13 @@ const AutoComplete = React.forwardRef<
 
           <style jsx>{`
             .auto-complete {
-              width: ${width || 'max-content'};
+              width: ${SCALES.width(1, 'max-content')};
+              height: ${SCALES.height(1, 'auto')};
+              padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+              margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
             }
 
             .auto-complete :global(.loading) {
-              left: -3px;
-              right: -3px;
               width: max-content;
             }
           `}</style>
@@ -246,18 +241,8 @@ const AutoComplete = React.forwardRef<
   },
 )
 
-type AutoCompleteComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
-> & {
-  Item: typeof AutoCompleteItem
-  Option: typeof AutoCompleteItem
-  Searching: typeof AutoCompleteSearching
-  Empty: typeof AutoCompleteEmpty
-}
+AutoCompleteComponent.defaultProps = defaultProps
+AutoCompleteComponent.displayName = 'GeistAutoComplete'
+const AutoComplete = withScaleable(AutoCompleteComponent)
 
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-AutoComplete.defaultProps = defaultProps
-
-export default AutoComplete as AutoCompleteComponent<HTMLInputElement, ComponentProps>
+export default AutoComplete

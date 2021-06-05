@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
-import useTheme from '../use-theme'
-import { CollapseContext, CollapseConfig } from './collapse-context'
+import Collapse from './collapse'
 import useCurrentState from '../utils/use-current-state'
 import { setChildrenIndex } from '../utils/collections'
-import Collapse from './collapse'
+import { CollapseContext, CollapseConfig } from './collapse-context'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   accordion?: boolean
@@ -17,15 +16,15 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type CollapseGroupProps = Props & typeof defaultProps & NativeAttrs
+export type CollapseGroupProps = Props & NativeAttrs
 
-const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
+const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
   children,
   accordion,
   className,
   ...props
-}) => {
-  const theme = useTheme()
+}: React.PropsWithChildren<CollapseGroupProps> & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
   const [state, setState, stateRef] = useCurrentState<Array<number>>([])
   const updateValues = (currentIndex: number, nextState: boolean) => {
     const hasChild = stateRef.current.find(val => val === currentIndex)
@@ -62,8 +61,10 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
         {hasIndexChildren}
         <style jsx>{`
           .collapse-group {
-            width: auto;
-            padding: 0 ${theme.layout.gapHalf};
+            width: ${SCALES.width(1, 'auto')};
+            height: ${SCALES.height(1, 'auto')};
+            padding: ${SCALES.pt(0)} ${SCALES.pr(0.6)} ${SCALES.pb(0)} ${SCALES.pl(0.6)};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
           .collapse-group > :global(div + div) {
@@ -75,4 +76,7 @@ const CollapseGroup: React.FC<React.PropsWithChildren<CollapseGroupProps>> = ({
   )
 }
 
-export default withDefaults(CollapseGroup, defaultProps)
+CollapseGroupComponent.defaultProps = defaultProps
+CollapseGroupComponent.displayName = 'GeistCollapseGroup'
+const CollapseGroup = withScaleable(CollapseGroupComponent)
+export default CollapseGroup

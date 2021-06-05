@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   count?: number
@@ -12,14 +12,15 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type AvatarGroupProps = Props & typeof defaultProps & NativeAttrs
+export type AvatarGroupProps = Props & NativeAttrs
 
-const AvatarGroup: React.FC<React.PropsWithChildren<AvatarGroupProps>> = ({
+const AvatarGroupComponent: React.FC<React.PropsWithChildren<AvatarGroupProps>> = ({
   count,
   className,
   children,
-}) => {
+}: AvatarGroupProps & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
 
   return (
     <div className={`avatar-group ${className}`}>
@@ -29,19 +30,21 @@ const AvatarGroup: React.FC<React.PropsWithChildren<AvatarGroupProps>> = ({
         .avatar-group {
           display: flex;
           align-items: center;
-          height: auto;
-          width: max-content;
+          width: ${SCALES.width(1, 'max-content')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .avatar-group :global(.avatar) {
-          margin-left: -0.625rem;
+          margin-left: -${SCALES.ml(0.625)};
         }
 
         .count {
-          font-size: 0.875rem;
+          font-size: ${SCALES.font(0.875)};
           display: inline-flex;
           align-items: center;
-          padding-left: ${theme.layout.gapQuarter};
+          padding-left: 5.5px;
           color: ${theme.palette.accents_7};
         }
       `}</style>
@@ -49,4 +52,7 @@ const AvatarGroup: React.FC<React.PropsWithChildren<AvatarGroupProps>> = ({
   )
 }
 
-export default withDefaults(AvatarGroup, defaultProps)
+AvatarGroupComponent.defaultProps = defaultProps
+AvatarGroupComponent.displayName = 'GeistAvatarGroup'
+const AvatarGroup = withScaleable(AvatarGroupComponent)
+export default AvatarGroup

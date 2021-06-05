@@ -1,8 +1,7 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 
-interface Props {
+export interface TreeFileIconProps {
   color?: string
   width?: number
   height?: number
@@ -13,9 +12,11 @@ const defaultProps = {
   height: 22,
 }
 
-export type TreeFileIconProps = Props & typeof defaultProps
-
-const TreeFileIcon: React.FC<TreeFileIconProps> = ({ color, width, height }) => {
+const TreeFileIcon: React.FC<TreeFileIconProps> = ({
+  color,
+  width,
+  height,
+}: TreeFileIconProps & typeof defaultProps) => {
   const theme = useTheme()
   return (
     <svg
@@ -39,6 +40,6 @@ const TreeFileIcon: React.FC<TreeFileIconProps> = ({ color, width, height }) => 
   )
 }
 
-const MemoTreeFileIcon = React.memo(TreeFileIcon)
-
-export default withDefaults(MemoTreeFileIcon, defaultProps)
+TreeFileIcon.defaultProps = defaultProps
+TreeFileIcon.displayName = 'GeistTreeFileIcon'
+export default TreeFileIcon

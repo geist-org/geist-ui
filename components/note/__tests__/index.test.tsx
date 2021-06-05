@@ -35,16 +35,11 @@ describe('Note', () => {
   it('should work with different styles', () => {
     const wrapper = mount(
       <div>
-        <Note type="secondary" small>
-          secondary
-        </Note>
+        <Note type="secondary">secondary</Note>
         <Note type="success" filled>
           success
         </Note>
         <Note filled>warning</Note>
-        <Note filled small>
-          error
-        </Note>
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

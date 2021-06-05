@@ -11,14 +11,18 @@ exports[`Radio should render correctly 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -79,14 +83,18 @@ exports[`Radio should support react-node in description 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -137,7 +145,11 @@ exports[`Radio should support react-node in description 1`] = `
         span {
           color: #999;
           font-size: calc(var(--radio-size) * 0.85);
-          padding-left: calc(var(--radio-size) + var(--radio-size) * 0.375);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0
+            calc(var(--radio-size) + var(--radio-size) * 0.375);
         }
       </style></span></label><style>
         input {
@@ -149,14 +161,18 @@ exports[`Radio should support react-node in description 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -207,7 +223,11 @@ exports[`Radio should support react-node in description 1`] = `
         span {
           color: #999;
           font-size: calc(var(--radio-size) * 0.85);
-          padding-left: calc(var(--radio-size) + var(--radio-size) * 0.375);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0
+            calc(var(--radio-size) + var(--radio-size) * 0.375);
         }
       </style></span></label><style>
         input {
@@ -219,14 +239,18 @@ exports[`Radio should support react-node in description 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -287,14 +311,18 @@ exports[`Radio should work correctly with different sizes 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 12px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -351,14 +379,18 @@ exports[`Radio should work correctly with different sizes 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 14px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -415,14 +447,18 @@ exports[`Radio should work correctly with different sizes 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -479,14 +515,18 @@ exports[`Radio should work correctly with different sizes 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 18px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -547,14 +587,18 @@ exports[`Radio should work with different status 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -611,14 +655,18 @@ exports[`Radio should work with different status 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -675,14 +723,18 @@ exports[`Radio should work with different status 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -739,14 +791,18 @@ exports[`Radio should work with different status 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {

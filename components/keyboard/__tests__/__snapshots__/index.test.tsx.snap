@@ -3,7 +3,6 @@
 exports[`Keyboard should render correctly 1`] = `
 "<kbd class=\\"\\"><span>F</span><style>
         kbd {
-          width: fit-content;
           line-height: 2em;
           text-align: center;
           display: inline-block;
@@ -12,23 +11,23 @@ exports[`Keyboard should render correctly 1`] = `
           font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
-          padding: 0 4pt;
-          min-width: calc(1.5 * 16pt);
-          font-size: 0.875rem;
-        }
-
-        kbd + kbd {
-          margin-left: 4pt;
+          font-size: calc(0.875 * 16px);
+          width: fit-content;
+          height: auto;
+          min-width: 2em;
+          min-height: 2em;
+          padding: 0 calc(0.34 * 16px) 0 calc(0.34 * 16px);
+          margin: 0 0 0 0;
         }
 
         span {
           line-height: 2em;
-          font-size: 0.875rem;
+          font-size: 1em;
           text-align: center;
         }
 
         span + span {
-          margin-left: 4pt;
+          margin-left: 0.3em;
         }
       </style></kbd>"
 `;
@@ -36,7 +35,6 @@ exports[`Keyboard should render correctly 1`] = `
 exports[`Keyboard should work with modifiers 1`] = `
 "<div><kbd class=\\"\\"><span>⌘</span><span>F</span><style>
         kbd {
-          width: fit-content;
           line-height: 2em;
           text-align: center;
           display: inline-block;
@@ -45,27 +43,26 @@ exports[`Keyboard should work with modifiers 1`] = `
           font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
-          padding: 0 4pt;
-          min-width: calc(1.5 * 16pt);
-          font-size: 0.875rem;
-        }
-
-        kbd + kbd {
-          margin-left: 4pt;
+          font-size: calc(0.875 * 16px);
+          width: fit-content;
+          height: auto;
+          min-width: 2em;
+          min-height: 2em;
+          padding: 0 calc(0.34 * 16px) 0 calc(0.34 * 16px);
+          margin: 0 0 0 0;
         }
 
         span {
           line-height: 2em;
-          font-size: 0.875rem;
+          font-size: 1em;
           text-align: center;
         }
 
         span + span {
-          margin-left: 4pt;
+          margin-left: 0.3em;
         }
       </style></kbd><kbd class=\\"\\"><span>⇧</span><span>F</span><style>
         kbd {
-          width: fit-content;
           line-height: 2em;
           text-align: center;
           display: inline-block;
@@ -74,27 +71,26 @@ exports[`Keyboard should work with modifiers 1`] = `
           font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
-          padding: 0 4pt;
-          min-width: calc(1.5 * 16pt);
-          font-size: 0.875rem;
-        }
-
-        kbd + kbd {
-          margin-left: 4pt;
+          font-size: calc(0.875 * 16px);
+          width: fit-content;
+          height: auto;
+          min-width: 2em;
+          min-height: 2em;
+          padding: 0 calc(0.34 * 16px) 0 calc(0.34 * 16px);
+          margin: 0 0 0 0;
         }
 
         span {
           line-height: 2em;
-          font-size: 0.875rem;
+          font-size: 1em;
           text-align: center;
         }
 
         span + span {
-          margin-left: 4pt;
+          margin-left: 0.3em;
         }
       </style></kbd><kbd class=\\"\\"><span>⌥</span><span>F</span><style>
         kbd {
-          width: fit-content;
           line-height: 2em;
           text-align: center;
           display: inline-block;
@@ -103,27 +99,26 @@ exports[`Keyboard should work with modifiers 1`] = `
           font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
-          padding: 0 4pt;
-          min-width: calc(1.5 * 16pt);
-          font-size: 0.875rem;
-        }
-
-        kbd + kbd {
-          margin-left: 4pt;
+          font-size: calc(0.875 * 16px);
+          width: fit-content;
+          height: auto;
+          min-width: 2em;
+          min-height: 2em;
+          padding: 0 calc(0.34 * 16px) 0 calc(0.34 * 16px);
+          margin: 0 0 0 0;
         }
 
         span {
           line-height: 2em;
-          font-size: 0.875rem;
+          font-size: 1em;
           text-align: center;
         }
 
         span + span {
-          margin-left: 4pt;
+          margin-left: 0.3em;
         }
       </style></kbd><kbd class=\\"\\"><span>⌃</span><span>F</span><style>
         kbd {
-          width: fit-content;
           line-height: 2em;
           text-align: center;
           display: inline-block;
@@ -132,198 +127,23 @@ exports[`Keyboard should work with modifiers 1`] = `
           font-family: \\"Inter\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", \\"Roboto\\", \\"Oxygen\\", \\"Ubuntu\\", \\"Cantarell\\", \\"Fira Sans\\", \\"Droid Sans\\", \\"Helvetica Neue\\", sans-serif;
           border-radius: 5px;
           border: 1px solid #eaeaea;
-          padding: 0 4pt;
-          min-width: calc(1.5 * 16pt);
-          font-size: 0.875rem;
-        }
-
-        kbd + kbd {
-          margin-left: 4pt;
+          font-size: calc(0.875 * 16px);
+          width: fit-content;
+          height: auto;
+          min-width: 2em;
+          min-height: 2em;
+          padding: 0 calc(0.34 * 16px) 0 calc(0.34 * 16px);
+          margin: 0 0 0 0;
         }
 
         span {
           line-height: 2em;
-          font-size: 0.875rem;
+          font-size: 1em;
           text-align: center;
         }
 
         span + span {
-          margin-left: 4pt;
+          margin-left: 0.3em;
         }
       </style></kbd></div>"
-`;
-
-exports[`Keyboard should work with small size 1`] = `
-initialize {
-  "0": Node {
-    "attribs": Object {
-      "class": "",
-    },
-    "children": Array [
-      Node {
-        "attribs": Object {},
-        "children": Array [
-          Node {
-            "data": "F",
-            "next": null,
-            "parent": [Circular],
-            "prev": null,
-            "type": "text",
-          },
-        ],
-        "name": "span",
-        "namespace": "http://www.w3.org/1999/xhtml",
-        "next": Node {
-          "attribs": Object {},
-          "children": Array [
-            Node {
-              "data": "
-        kbd {
-          width: fit-content;
-          line-height: 2em;
-          text-align: center;
-          display: inline-block;
-          color: #666;
-          background-color: #fafafa;
-          font-family: &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
-          border-radius: 5px;
-          border: 1px solid #eaeaea;
-          padding: 0 0;
-          min-width: 16pt;
-          font-size: .75rem;
-        }
-
-        kbd + kbd {
-          margin-left: 4pt;
-        }
-
-        span {
-          line-height: 2em;
-          font-size: 0.875rem;
-          text-align: center;
-        }
-
-        span + span {
-          margin-left: 4pt;
-        }
-      ",
-              "next": null,
-              "parent": [Circular],
-              "prev": null,
-              "type": "text",
-            },
-          ],
-          "name": "style",
-          "namespace": "http://www.w3.org/1999/xhtml",
-          "next": null,
-          "parent": [Circular],
-          "prev": [Circular],
-          "type": "style",
-          "x-attribsNamespace": Object {},
-          "x-attribsPrefix": Object {},
-        },
-        "parent": [Circular],
-        "prev": null,
-        "type": "tag",
-        "x-attribsNamespace": Object {},
-        "x-attribsPrefix": Object {},
-      },
-      Node {
-        "attribs": Object {},
-        "children": Array [
-          Node {
-            "data": "
-        kbd {
-          width: fit-content;
-          line-height: 2em;
-          text-align: center;
-          display: inline-block;
-          color: #666;
-          background-color: #fafafa;
-          font-family: &quot;Inter&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Roboto&quot;, &quot;Oxygen&quot;, &quot;Ubuntu&quot;, &quot;Cantarell&quot;, &quot;Fira Sans&quot;, &quot;Droid Sans&quot;, &quot;Helvetica Neue&quot;, sans-serif;
-          border-radius: 5px;
-          border: 1px solid #eaeaea;
-          padding: 0 0;
-          min-width: 16pt;
-          font-size: .75rem;
-        }
-
-        kbd + kbd {
-          margin-left: 4pt;
-        }
-
-        span {
-          line-height: 2em;
-          font-size: 0.875rem;
-          text-align: center;
-        }
-
-        span + span {
-          margin-left: 4pt;
-        }
-      ",
-            "next": null,
-            "parent": [Circular],
-            "prev": null,
-            "type": "text",
-          },
-        ],
-        "name": "style",
-        "namespace": "http://www.w3.org/1999/xhtml",
-        "next": null,
-        "parent": [Circular],
-        "prev": Node {
-          "attribs": Object {},
-          "children": Array [
-            Node {
-              "data": "F",
-              "next": null,
-              "parent": [Circular],
-              "prev": null,
-              "type": "text",
-            },
-          ],
-          "name": "span",
-          "namespace": "http://www.w3.org/1999/xhtml",
-          "next": [Circular],
-          "parent": [Circular],
-          "prev": null,
-          "type": "tag",
-          "x-attribsNamespace": Object {},
-          "x-attribsPrefix": Object {},
-        },
-        "type": "style",
-        "x-attribsNamespace": Object {},
-        "x-attribsPrefix": Object {},
-      },
-    ],
-    "name": "kbd",
-    "namespace": "http://www.w3.org/1999/xhtml",
-    "next": null,
-    "parent": Node {
-      "children": Array [
-        [Circular],
-      ],
-      "name": "root",
-      "next": null,
-      "parent": null,
-      "prev": null,
-      "type": "root",
-    },
-    "prev": null,
-    "type": "tag",
-    "x-attribsNamespace": Object {
-      "class": undefined,
-    },
-    "x-attribsPrefix": Object {
-      "class": undefined,
-    },
-  },
-  "_root": [Circular],
-  "length": 1,
-  "options": Object {
-    "decodeEntities": true,
-    "xml": false,
-  },
-}
 `;

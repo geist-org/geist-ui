@@ -1,6 +1,5 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
-import useTheme from '../use-theme'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -11,10 +10,14 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>
-export type ModalContentProps = Props & typeof defaultProps & NativeAttrs
+export type ModalContentProps = Props & NativeAttrs
 
-const ModalContent: React.FC<ModalContentProps> = ({ className, children, ...props }) => {
-  const theme = useTheme()
+const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps>> = ({
+  className,
+  children,
+  ...props
+}: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
 
   return (
     <>
@@ -23,10 +26,17 @@ const ModalContent: React.FC<ModalContentProps> = ({ className, children, ...pro
       </div>
       <style jsx>{`
         .content {
-          margin: 0 -${theme.layout.gap};
-          padding: ${theme.layout.gap} ${theme.layout.gap} ${theme.layout.gapHalf};
           position: relative;
           text-align: left;
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(1.3125)} ${SCALES.pr(1.3125)} ${SCALES.pb(0.6625)}
+            ${SCALES.pl(1.3125)};
+          margin: ${SCALES.mt(0)}
+            ${SCALES.mr(0, 'calc(var(--modal-wrapper-padding-right) * -1)')}
+            ${SCALES.mb(0)}
+            ${SCALES.ml(0, 'calc(var(--modal-wrapper-padding-left) * -1)')};
         }
 
         .content > :global(*:first-child) {
@@ -41,6 +51,7 @@ const ModalContent: React.FC<ModalContentProps> = ({ className, children, ...pro
   )
 }
 
-const MemoModalContent = React.memo(ModalContent)
-
-export default withDefaults(MemoModalContent, defaultProps)
+ModalContentComponent.defaultProps = defaultProps
+ModalContentComponent.displayName = 'GeistModalContent'
+const ModalContent = withScaleable(ModalContentComponent)
+export default ModalContent

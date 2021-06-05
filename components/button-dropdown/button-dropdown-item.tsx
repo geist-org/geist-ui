@@ -1,6 +1,5 @@
 import React, { MouseEvent, useMemo } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { getColor } from './styles'
 import { useButtonDropdown } from './button-dropdown-context'
 import Loading from '../loading'
@@ -21,7 +20,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type ButtonDropdownItemProps = Props & typeof defaultProps & NativeAttrs
+export type ButtonDropdownItemProps = Props & NativeAttrs
 
 const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemProps>> = ({
   children,
@@ -30,7 +29,7 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
   main,
   type: selfType,
   ...props
-}) => {
+}: ButtonDropdownItemProps & typeof defaultProps) => {
   const theme = useTheme()
   const { type: parentType, disabled, loading } = useButtonDropdown()
   const type = main ? parentType : selfType
@@ -81,6 +80,6 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
   )
 }
 
-const MemoButtonDropdownItem = React.memo(ButtonDropdownItem)
-
-export default withDefaults(MemoButtonDropdownItem, defaultProps)
+ButtonDropdownItem.defaultProps = defaultProps
+ButtonDropdownItem.displayName = 'GeistButtonDropdownItem'
+export default ButtonDropdownItem

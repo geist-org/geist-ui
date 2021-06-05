@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 
 type Justify = 'start' | 'end' | 'center' | 'space-around' | 'space-between'
@@ -22,7 +21,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type RowProps = Props & typeof defaultProps & NativeAttrs
+export type RowProps = Props & NativeAttrs
 
 const getFlexAlignment = (justify: Justify, align: Align) => {
   const flexJustifyMap: { [key in Justify]?: string } = {
@@ -49,7 +48,7 @@ const Container: React.FC<React.PropsWithChildren<RowProps>> = ({
   align,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<RowProps> & typeof defaultProps) => {
   const Component = component
   const theme = useTheme()
   const { justifyValue, alignValue } = useMemo(() => getFlexAlignment(justify, align), [
@@ -76,6 +75,6 @@ const Container: React.FC<React.PropsWithChildren<RowProps>> = ({
   )
 }
 
-const MemoContainer = React.memo(Container)
-
-export default withDefaults(MemoContainer, defaultProps)
+Container.defaultProps = defaultProps
+Container.displayName = 'GeistContainer'
+export default Container

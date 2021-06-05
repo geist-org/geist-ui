@@ -3,32 +3,43 @@
 exports[`Input should be work with icon 1`] = `
 "<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
-          box-sizing: content-box;
-          display: flex;
-          width: calc(1.687 * 16pt * .42);
+          box-sizing: border-box;
+          display: inline-flex;
+          width: calc(var(--input-height) - 2px);
+          flex-shrink: 0;
           height: 100%;
           align-items: center;
-          vertical-align: middle;
+          justify-content: center;
           margin: 0;
-          padding: 0 calc(1.687 * 16pt * .3);
+          padding: 0;
           line-height: 1;
           position: relative;
           cursor: default;
           pointer-events: none;
         }
+        .input-icon :global(svg) {
+          width: calc(var(--input-height) - 2px);
+          height: calc(var(--input-height) - 2px);
+          transform: scale(0.44);
+        }
       </style></span><input type=\\"text\\" class=\\" left-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -68,10 +79,10 @@ exports[`Input should be work with icon 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -106,32 +117,43 @@ exports[`Input should be work with icon 1`] = `
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
-          box-sizing: content-box;
-          display: flex;
-          width: calc(1.687 * 16pt * .42);
+          box-sizing: border-box;
+          display: inline-flex;
+          width: calc(var(--input-height) - 2px);
+          flex-shrink: 0;
           height: 100%;
           align-items: center;
-          vertical-align: middle;
+          justify-content: center;
           margin: 0;
-          padding: 0 calc(1.687 * 16pt * .3);
+          padding: 0;
           line-height: 1;
           position: relative;
           cursor: default;
           pointer-events: none;
         }
+        .input-icon :global(svg) {
+          width: calc(var(--input-height) - 2px);
+          height: calc(var(--input-height) - 2px);
+          transform: scale(0.44);
+        }
       </style></span></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -171,10 +193,10 @@ exports[`Input should be work with icon 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -227,7 +249,7 @@ exports[`Input should be work with label 1`] = `
           border-top: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
-          font-size: .875rem;
+          font-size: inherit;
           line-height: 1;
         }
 
@@ -242,16 +264,21 @@ exports[`Input should be work with label 1`] = `
       </style></span><div class=\\"input-wrapper   left-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -291,10 +318,10 @@ exports[`Input should be work with label 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -343,7 +370,7 @@ exports[`Input should be work with label 1`] = `
           border-top: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
-          font-size: .875rem;
+          font-size: inherit;
           line-height: 1;
         }
 
@@ -358,16 +385,21 @@ exports[`Input should be work with label 1`] = `
       </style></span></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -407,10 +439,10 @@ exports[`Input should be work with label 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -449,8 +481,8 @@ exports[`Input should be work with label 1`] = `
           font-weight: normal;
           color: #444;
           padding: 0 0 0 1px;
-          margin-bottom: 8pt;
-          font-size: 1rem;
+          margin-bottom: 0.5em;
+          font-size: 1em;
           line-height: 1.5;
         }
 
@@ -464,16 +496,21 @@ exports[`Input should be work with label 1`] = `
       </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -513,10 +550,10 @@ exports[`Input should be work with label 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -556,16 +593,21 @@ exports[`Input should work with different sizes 1`] = `
 "<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.313 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -605,10 +647,10 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .75rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -644,16 +686,21 @@ exports[`Input should work with different sizes 1`] = `
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.5 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -693,10 +740,10 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .75rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -732,16 +779,21 @@ exports[`Input should work with different sizes 1`] = `
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.875 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -781,10 +833,10 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: 1rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -817,19 +869,24 @@ exports[`Input should work with different sizes 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #000 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" width=\\"50%\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
+            box-sizing: border-box;
+            -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
             width: 50%;
-            box-sizing: border-box;
-            -webkit-box-align: center;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: 50%;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -869,10 +926,10 @@ exports[`Input should work with different sizes 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -912,16 +969,21 @@ exports[`Input should work with different status 1`] = `
 "<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -961,10 +1023,10 @@ exports[`Input should work with different status 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -1000,16 +1062,21 @@ exports[`Input should work with different status 1`] = `
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -1049,10 +1116,10 @@ exports[`Input should work with different status 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -1088,16 +1155,21 @@ exports[`Input should work with different status 1`] = `
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -1137,10 +1209,10 @@ exports[`Input should work with different status 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;

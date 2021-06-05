@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Slider, Row, Spacer } from 'components'
+import { Slider, Spacer } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -48,11 +48,9 @@ Display the current value and an inputable range.
 <Playground
   title="Step"
   desc="Different granularity."
-  scope={{ Slider, Row }}
+  scope={{ Slider }}
   code={`
-<Row style={{ width: '75%' }}>
-  <Slider step={10} showMarkers />
-</Row>
+<Slider step={10} showMarkers width="75%" />
 `}
 />
 
@@ -61,18 +59,18 @@ Display the current value and an inputable range.
   desc="Specifies the maximum or minimum value of the Slider."
   scope={{ Slider, Spacer }}
   code={`
-<div style={{ width: '75%' }}>
-  <Slider step={5} max={50} min={10} initialValue={25} showMarkers />
+<>
+  <Slider step={5} max={50} min={10} initialValue={25} showMarkers width="75%" />
   <Spacer />
-  <Slider step={0.2} max={1} min={0.2} initialValue={0.4} showMarkers />
-</div>
+  <Slider step={0.2} max={1} min={0.2} initialValue={0.4} showMarkers width="75%" />
+</>
 `}
 />
 
 <Playground
   title="Event"
   desc="Get event when slide."
-  scope={{ Slider, Row, useState }}
+  scope={{ Slider, useState }}
   code={`
 () => {
   const [value, setValue] = useState()
@@ -80,11 +78,7 @@ Display the current value and an inputable range.
     console.log(val)
     setValue(val)
   }
-  return (
-    <Row style={{ width: '75%' }}>
-      <Slider value={value} onChange={handler} />
-    </Row>
-  )
+  return <Slider value={value} onChange={handler} width="75%" />
 }
 `}
 />

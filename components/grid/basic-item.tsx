@@ -26,7 +26,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type GridBasicItemProps = Props & typeof defaultProps & NativeAttrs
+export type GridBasicItemProps = Props & NativeAttrs
 
 type ItemLayoutValue = {
   grow: number
@@ -67,7 +67,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   children,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<GridBasicItemProps> & typeof defaultProps) => {
   const theme = useTheme()
   const classes = useMemo(() => {
     const aligns: { [key: string]: any } = {
@@ -182,13 +182,6 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   )
 }
 
-type MemoBasicItemComponent<P = {}> = React.NamedExoticComponent<P>
-export type GridBasicItemComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
 GridBasicItem.defaultProps = defaultProps
-
-export default React.memo(
-  GridBasicItem,
-) as MemoBasicItemComponent<GridBasicItemComponentProps>
+GridBasicItem.displayName = 'GeistGridBasicItem'
+export default GridBasicItem

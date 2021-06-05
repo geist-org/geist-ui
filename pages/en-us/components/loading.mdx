@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Loading, Spacer, Row, Grid } from 'components'
+import { Loading, Spacer, Grid } from 'components'
 
 export const meta = {
   title: 'Loading',
@@ -11,22 +11,18 @@ export const meta = {
 Indicate an action running in the background.
 
 <Playground
-  scope={{ Loading, Row, Spacer }}
+  scope={{ Loading, Spacer }}
   code={`
-<Row style={{ padding: '10px 0'}}>
-  <Loading />
-</Row>
+<Loading />
 `}
 />
 
 <Playground
   title="with text"
   desc="Customize text next to icon."
-  scope={{ Loading, Row }}
+  scope={{ Loading }}
   code={`
-<Row style={{ padding: '10px 0'}}>
-  <Loading>Loading</Loading>
-</Row>
+<Loading>Loading</Loading>
 `}
 />
 

@@ -1,40 +1,18 @@
 import React, { forwardRef } from 'react'
-import { DynamicLayoutPipe, ScaleableConfig, ScaleableContext } from './scaleable-context'
+import {
+  DynamicLayoutPipe,
+  GetScaleablePropsFunction,
+  ScaleableConfig,
+  ScaleableContext,
+  ScaleableProps,
+} from './scaleable-context'
 import useTheme from '../use-theme'
 import { isCSSNumberValue } from '../utils/collections'
 
-export type ScaleableProps = {
-  width?: string | number
-  height?: string | number
-  padding?: string | number
-  margin?: string | number
-  w?: string | number
-  h?: string | number
-  p?: string | number
-  m?: string | number
-  paddingLeft?: string | number
-  paddingRight?: string | number
-  paddingTop?: string | number
-  paddingBottom?: string | number
-  pl?: string | number
-  pr?: string | number
-  pt?: string | number
-  pb?: string | number
-  marginLeft?: string | number
-  marginRight?: string | number
-  marginTop?: string | number
-  marginBottom?: string | number
-  ml?: string | number
-  mr?: string | number
-  mt?: string | number
-  mb?: string | number
-  px?: string | number
-  py?: string | number
-  mx?: string | number
-  my?: string | number
-  font?: string | number
-  unit?: string
-  scale?: number
+const reduceScaleCoefficient = (scale: number) => {
+  if (scale === 1) return scale
+  const diff = Math.abs((scale - 1) / 2)
+  return scale > 1 ? 1 + diff : 1 - diff
 }
 
 const withScaleable = <T, P = {}>(
@@ -66,33 +44,62 @@ const withScaleable = <T, P = {}>(
       width,
       height,
       font,
+      w,
+      h,
+      margin,
+      padding,
       unit = layout.unit,
       scale = 1,
     } = props
     const makeScaleHandler = (
       attrValue: string | number | undefined,
-    ): DynamicLayoutPipe => (scale1x = 1, scale2x = scale1x) => {
-      const isEmptyInital = scale1x === 0
-      const factor = isEmptyInital ? 0 : scale * (scale1x / scale2x) * scale1x
-      if (attrValue === undefined) return `calc(${factor} * ${unit})`
+    ): DynamicLayoutPipe => (scale1x, defaultValue) => {
+      // 0 means disable scale and the default value is 0
+      if (scale1x === 0) {
+        scale1x = 1
+        defaultValue = defaultValue || 0
+      }
+      const factor = reduceScaleCoefficient(scale) * scale1x
+      if (typeof attrValue === 'undefined') {
+        if (typeof defaultValue !== 'undefined') return `${defaultValue}`
+        return `calc(${factor} * ${unit})`
+      }
+
       if (!isCSSNumberValue(attrValue)) return `${attrValue}`
       const customFactor = factor * Number(attrValue)
       return `calc(${customFactor} * ${unit})`
     }
+    const getScaleableProps: GetScaleablePropsFunction = keyOrKeys => {
+      if (!Array.isArray(keyOrKeys)) return props[keyOrKeys as keyof ScaleableProps]
+      let value = undefined
+      for (const key of keyOrKeys) {
+        const currentValue = props[key]
+        if (typeof currentValue !== 'undefined') {
+          value = currentValue
+        }
+      }
+      return value
+    }
+
     const value: ScaleableConfig = {
       SCALES: {
-        pt: makeScaleHandler(paddingTop ?? pt ?? py),
-        pr: makeScaleHandler(paddingRight ?? pr ?? px),
-        pb: makeScaleHandler(paddingBottom ?? pb ?? py),
-        pl: makeScaleHandler(paddingLeft ?? pl ?? px),
-        mt: makeScaleHandler(marginTop || mt || my),
-        mr: makeScaleHandler(marginRight || mr || mx),
-        mb: makeScaleHandler(marginBottom || mb || my),
-        ml: makeScaleHandler(marginLeft || ml || mx),
-        width: makeScaleHandler(width),
-        height: makeScaleHandler(height),
+        pt: makeScaleHandler(paddingTop ?? pt ?? py ?? padding),
+        pr: makeScaleHandler(paddingRight ?? pr ?? px ?? padding),
+        pb: makeScaleHandler(paddingBottom ?? pb ?? py ?? padding),
+        pl: makeScaleHandler(paddingLeft ?? pl ?? px ?? padding),
+        px: makeScaleHandler(px ?? paddingLeft ?? paddingRight ?? pl ?? pr ?? padding),
+        py: makeScaleHandler(py ?? paddingTop ?? paddingBottom ?? pt ?? pb ?? padding),
+        mt: makeScaleHandler(marginTop ?? mt ?? my ?? margin),
+        mr: makeScaleHandler(marginRight ?? mr ?? mx ?? margin),
+        mb: makeScaleHandler(marginBottom ?? mb ?? my ?? margin),
+        ml: makeScaleHandler(marginLeft ?? ml ?? mx ?? margin),
+        mx: makeScaleHandler(mx ?? marginLeft ?? marginRight ?? ml ?? mr ?? margin),
+        my: makeScaleHandler(my ?? marginTop ?? marginBottom ?? mt ?? mb ?? margin),
+        width: makeScaleHandler(width ?? w),
+        height: makeScaleHandler(height ?? h),
         font: makeScaleHandler(font),
       },
+      getScaleableProps,
     }
 
     return (

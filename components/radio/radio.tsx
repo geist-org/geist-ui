@@ -1,12 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
 import { useRadioContext } from './radio-context'
-import RadioGroup, { getRadioSize } from './radio-group'
 import RadioDescription from './radio-description'
 import { pickChild } from '../utils/collections'
 import useWarning from '../utils/use-warning'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface RadioEventTarget {
   checked: boolean
@@ -22,7 +22,6 @@ export interface RadioEvent {
 interface Props {
   checked?: boolean
   value?: string | number
-  size?: NormalSizes
   type?: NormalTypes
   className?: string
   disabled?: boolean
@@ -30,27 +29,26 @@ interface Props {
 }
 
 const defaultProps = {
-  size: 'medium' as NormalSizes,
   type: 'default' as NormalTypes,
   disabled: false,
   className: '',
 }
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type RadioProps = Props & typeof defaultProps & NativeAttrs
+export type RadioProps = Props & NativeAttrs
 
-const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
+const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
   className,
   checked,
   onChange,
   disabled,
-  size,
   type,
   value: radioValue,
   children,
   ...props
-}) => {
+}: React.PropsWithChildren<RadioProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const [selfChecked, setSelfChecked] = useState<boolean>(!!checked)
   const { value: groupValue, disabledAll, inGroup, updateState } = useRadioContext()
   const [withoutDescChildren, DescChildren] = pickChild(children, RadioDescription)
@@ -66,8 +64,6 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
       setSelfChecked(groupValue === radioValue)
     }, [groupValue, radioValue])
   }
-
-  const fontSize = useMemo(() => getRadioSize(size), [size])
 
   const { label, border, bg } = useMemo(() => getColors(theme.palette, type), [
     theme.palette,
@@ -124,14 +120,18 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: ${fontSize};
+          --radio-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'initial')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         label {
@@ -183,15 +183,7 @@ const Radio: React.FC<React.PropsWithChildren<RadioProps>> = ({
   )
 }
 
-type RadioComponent<P = {}> = React.FC<P> & {
-  Group: typeof RadioGroup
-  Desc: typeof RadioDescription
-  Description: typeof RadioDescription
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Radio.defaultProps = defaultProps
-
-export default Radio as RadioComponent<ComponentProps>
+RadioComponent.defaultProps = defaultProps
+RadioComponent.displayName = 'GeistRadio'
+const Radio = withScaleable(RadioComponent)
+export default Radio

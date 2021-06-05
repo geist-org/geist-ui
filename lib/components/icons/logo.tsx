@@ -15,8 +15,8 @@ export const LogoIcon: React.FC<React.ImgHTMLAttributes<any>> = ({ ...props }) =
         className={className}
         src="/images/logo.png"
         {...props}
-        width={24}
-        height={24}
+        width="24px"
+        height="24px"
         draggable={false}
         title="GO HOME"
       />

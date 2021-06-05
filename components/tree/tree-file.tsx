@@ -1,5 +1,4 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import TreeFileIcon from './tree-file-icon'
 import { useTreeContext } from './tree-context'
@@ -21,7 +20,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TreeFileProps = Props & typeof defaultProps & NativeAttrs
+export type TreeFileProps = Props & NativeAttrs
 
 const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
   name,
@@ -30,7 +29,7 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
   extra,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<TreeFileProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { onFileClick } = useTreeContext()
   const currentPath = useMemo(() => makeChildPath(name, parentPath), [])
@@ -106,4 +105,6 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
   )
 }
 
-export default withDefaults(TreeFile, defaultProps)
+TreeFile.defaultProps = defaultProps
+TreeFile.displayName = 'GeistTreeFile'
+export default TreeFile

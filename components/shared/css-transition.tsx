@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 
 interface Props {
   visible?: boolean
@@ -19,9 +18,9 @@ const defaultProps = {
   name: 'transition',
 }
 
-export type CSSTransitionProps = Props & typeof defaultProps
+export type CssTransitionProps = Props
 
-const CSSTransition: React.FC<React.PropsWithChildren<CSSTransitionProps>> = ({
+const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps>> = ({
   children,
   className,
   visible,
@@ -30,7 +29,7 @@ const CSSTransition: React.FC<React.PropsWithChildren<CSSTransitionProps>> = ({
   clearTime,
   name,
   ...props
-}) => {
+}: React.PropsWithChildren<CssTransitionProps> & typeof defaultProps) => {
   const [classes, setClasses] = useState<string>('')
   const [renderable, setRenderable] = useState<boolean>(visible)
 
@@ -71,4 +70,6 @@ const CSSTransition: React.FC<React.PropsWithChildren<CSSTransitionProps>> = ({
   })
 }
 
-export default withDefaults(CSSTransition, defaultProps)
+CssTransition.defaultProps = defaultProps
+CssTransition.displayName = 'GeistCssTransition'
+export default CssTransition
