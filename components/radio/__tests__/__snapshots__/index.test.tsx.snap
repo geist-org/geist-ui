@@ -535,3 +535,263 @@ exports[`Radio should work correctly with different sizes 1`] = `
         }
       </style></div></div>"
 `;
+
+exports[`Radio should work with different status 1`] = `
+"<div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span></span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: 16px;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #000;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #eaeaea;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #000;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span></span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: 16px;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #0070f3;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #0070f3;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #0070f3;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span></span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: 16px;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #f5a623;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #f5a623;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #f5a623;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span></span></label><style>
+        input {
+          opacity: 0;
+          visibility: hidden;
+          overflow: hidden;
+          width: 1px;
+          height: 1px;
+          top: -1000px;
+          right: -1000px;
+          position: fixed;
+        }
+
+        .radio {
+          display: flex;
+          width: initial;
+          align-items: flex-start;
+          position: relative;
+          --radio-size: 16px;
+        }
+
+        label {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          color: #e00;
+          cursor: pointer;
+        }
+
+        .name {
+          font-size: var(--radio-size);
+          font-weight: bold;
+          user-select: none;
+          display: inline-flex;
+          align-items: center;
+        }
+
+        .point {
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          border: 1px solid #e00;
+          transition: all 0.2s ease 0s;
+          position: relative;
+          display: inline-block;
+          transform: scale(0.875);
+          margin-right: calc(var(--radio-size) * 0.375);
+        }
+
+        .point:before {
+          content: '';
+          position: absolute;
+          left: -1px;
+          top: -1px;
+          transform: scale(0);
+          height: var(--radio-size);
+          width: var(--radio-size);
+          border-radius: 50%;
+          background-color: #e00;
+        }
+
+        .point.active:before {
+          transform: scale(0.875);
+          transition: all 0.2s ease 0s;
+        }
+      </style></div></div>"
+`;

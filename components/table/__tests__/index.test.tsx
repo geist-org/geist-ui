@@ -1,7 +1,7 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import { Table, Code } from 'components'
-import { cellActions } from 'components/table/table-cell'
+import { TableCellActions } from '../table-cell'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 import { act } from 'react-dom/test-utils'
 
@@ -100,7 +100,7 @@ describe('Table', () => {
   })
 
   it('should be possible to remove the row', () => {
-    const operation = (actions: cellActions) => {
+    const operation = (actions: TableCellActions) => {
       return <button onClick={() => actions.remove()}>Remove</button>
     }
     const data = [{ property: 'bold', description: 'boolean', operation }]
@@ -118,7 +118,7 @@ describe('Table', () => {
   })
 
   it('should be possible to update the row', () => {
-    const operation = (actions: cellActions) => {
+    const operation = (actions: TableCellActions) => {
       return (
         <button
           onClick={() =>

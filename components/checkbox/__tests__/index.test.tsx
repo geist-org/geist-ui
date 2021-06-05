@@ -23,6 +23,18 @@ describe('Checkbox', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work with different status', () => {
+    const wrapper = mount(
+      <div>
+        <Checkbox type="secondary" />
+        <Checkbox type="success" />
+        <Checkbox type="warning" />
+        <Checkbox type="error" />
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('should work correctly with initial value', () => {
     let wrapper = mount(<Checkbox checked={true}>Sydney</Checkbox>)
     let input = wrapper.find('input').getDOMNode()

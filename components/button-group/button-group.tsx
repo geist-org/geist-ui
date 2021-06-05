@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
 import { NormalSizes, ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
-import { GeistUIThemesPalette } from 'components/themes/presets'
+import { GeistUIThemesPalette } from '../themes/presets'
 
 interface Props {
   disabled?: boolean

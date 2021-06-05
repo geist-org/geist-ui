@@ -1,12 +1,13 @@
 import React from 'react'
-import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
+import { NormalSizes, NormalTypes } from '../utils/prop-types'
 
 export interface Props {
   value?: string
   initialValue?: string
   placeholder?: string
   size?: NormalSizes
-  status?: NormalTypes
+  type?: NormalTypes
+  hymlType?: string
   readOnly?: boolean
   disabled?: boolean
   label?: string
@@ -32,7 +33,8 @@ export const defaultProps = {
   iconClickable: false,
   width: 'initial',
   size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
+  type: 'default' as NormalTypes,
+  htmlType: 'text',
   autoComplete: 'off',
   className: '',
   placeholder: '',

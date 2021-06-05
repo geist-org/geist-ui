@@ -13,7 +13,7 @@ describe('Textarea', () => {
   it('should work with different styles', () => {
     const wrapper = mount(
       <div>
-        <Textarea status="secondary" />
+        <Textarea type="secondary" />
         <Textarea width="20%" />
         <Textarea minHeight="100px" />
       </div>,

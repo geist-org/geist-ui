@@ -14,8 +14,8 @@ describe('AutoComplete', () => {
   it('should support sizes and status', () => {
     const wrapper = mount(
       <div>
-        <AutoComplete status="secondary" />
-        <AutoComplete status="success" />
+        <AutoComplete type="secondary" />
+        <AutoComplete type="success" />
         <AutoComplete size="mini" />
         <AutoComplete size="large" />
       </div>,

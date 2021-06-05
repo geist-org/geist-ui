@@ -1,7 +1,8 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
-import { NormalSizes } from '../utils/prop-types'
+import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { getColors } from './styles'
 
 interface ToggleEventTarget {
   checked: boolean
@@ -20,11 +21,13 @@ interface Props {
   onChange?: (ev: ToggleEvent) => void
   disabled?: boolean
   size?: NormalSizes
+  type?: NormalTypes
   className?: string
 }
 
 const defaultProps = {
   size: 'medium' as NormalSizes,
+  type: 'default' as NormalTypes,
   disabled: false,
   initialChecked: false,
   className: '',
@@ -66,6 +69,7 @@ const Toggle: React.FC<ToggleProps> = ({
   disabled,
   onChange,
   size,
+  type,
   className,
   ...props
 }) => {
@@ -90,6 +94,8 @@ const Toggle: React.FC<ToggleProps> = ({
     },
     [disabled, selfChecked, onChange],
   )
+
+  const { bg } = useMemo(() => getColors(theme.palette, type), [theme.palette, type])
 
   useEffect(() => {
     if (checked === undefined) return
@@ -175,7 +181,7 @@ const Toggle: React.FC<ToggleProps> = ({
         }
 
         .checked {
-          background-color: ${theme.palette.success};
+          background-color: ${bg};
         }
 
         .checked > .inner {
