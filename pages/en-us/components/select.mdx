@@ -27,6 +27,37 @@ Display a dropdown list of items.
 />
 
 <Playground
+  title="Type"
+  desc="Differentiate states by color."
+  scope={{ Select, Spacer }}
+  code={`
+() => (
+  <>
+    <Select placeholder="default" type="default">
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+    <Spacer y={.5} />
+    <Select placeholder="success" type="success">
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+    <Spacer y={.5} />
+    <Select placeholder="warning" type="warning">
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+    <Spacer y={.5} />
+    <Select placeholder="error" type="error">
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+  </>
+)
+`}
+/>
+
+<Playground
   title="Disabled"
   desc="Disable all options."
   scope={{ Select }}
@@ -201,6 +232,7 @@ Display a dropdown list of items.
 | **placeholder**       | placeholder string                                       | `string`                                            | -                                 | -               |
 | **width**             | css width value of select                                | `string`                                            | -                                 | `initial`       |
 | **size**              | select component size                                    | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
+| **type**              | current type                                             | `NormalTypes`                                       | [SelectType](#selecttype)         | `default`       |
 | **icon**              | icon component                                           | `ComponentType`                                     | -                                 | `SVG Component` |
 | **pure**              | remove icon component                                    | `boolean`                                           | -                                 | `false`         |
 | **multiple**          | support multiple selection                               | `boolean`                                           | -                                 | `false`         |
@@ -225,6 +257,12 @@ Display a dropdown list of items.
 
 ```ts
 type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+```
+
+<Attributes.Title>SelectType</Attributes.Title>
+
+```ts
+type SelectType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import withDefaults from '../utils/with-defaults'
-import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
-import { GeistUIThemesPalette } from 'components/themes/presets'
+import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { GeistUIThemesPalette } from '../themes/presets'
 
 type LoadingSizes = NormalSizes | string
 

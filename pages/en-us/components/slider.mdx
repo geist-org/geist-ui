@@ -20,6 +20,23 @@ Display the current value and an inputable range.
 />
 
 <Playground
+  title="Type"
+  desc="Differentiate states by color."
+  scope={{ Slider, Spacer }}
+  code={`
+    <>
+      <Slider type="default" initialValue={20} />
+      <Spacer />
+      <Slider type="success" initialValue={20} />
+      <Spacer />
+      <Slider type="warning" initialValue={20} />
+      <Spacer />
+      <Slider type="error" initialValue={20} />
+    </>
+`}
+/>
+
+<Playground
   title="Disabled"
   desc="Do not respond to drag and click."
   scope={{ Slider }}
@@ -75,18 +92,25 @@ Display the current value and an inputable range.
 <Attributes edit="/pages/en-us/components/slider.mdx">
 <Attributes.Title>Slider.Props</Attributes.Title>
 
-| Attribute        | Description                                        | Type                    | Accepted values                  | Default |
-| ---------------- | -------------------------------------------------- | ----------------------- | -------------------------------- | ------- |
-| **initialValue** | initial value                                      | `number`                | -                                | 0       |
-| **value**        | slider value                                       | `number`                | -                                | 0       |
-| **step**         | the granularity the slider can step through values | `number`                | -                                | 1       |
-| **max**          | the maximum value of slider                        | `number`                | -                                | 100     |
-| **min**          | the minimum value of slider                        | `number`                | -                                | 0       |
+| Attribute        | Description                                        | Type                    | Accepted values                  | Default   |
+| ---------------- | -------------------------------------------------- | ----------------------- | -------------------------------- | --------- |
+| **initialValue** | initial value                                      | `number`                | -                                | 0         |
+| **value**        | slider value                                       | `number`                | -                                | 0         |
+| **type**         | current type                                       | `NormalTypes`           | [SliderType](#slidertype)        | `default` |
+| **step**         | the granularity the slider can step through values | `number`                | -                                | 1         |
+| **max**          | the maximum value of slider                        | `number`                | -                                | 100       |
+| **min**          | the minimum value of slider                        | `number`                | -                                | 0         |
 | **disabled**     | disable slider interaction                         | `boolean`               | `false`                          |
-| **showMarkers**  | show each marker                                   | `boolean`               | -                                | `false` |
-| **hideValue**    | hide slider value                                  | `boolean`               | -                                | `false` |
-| **onChange**     | called when the value of silder changes            | `(val: number) => void` | -                                | -       |
-| ...              | native props                                       | `HTMLAttributes`        | `'id', 'name', 'className', ...` | -       |
+| **showMarkers**  | show each marker                                   | `boolean`               | -                                | `false`   |
+| **hideValue**    | hide slider value                                  | `boolean`               | -                                | `false`   |
+| **onChange**     | called when the value of silder changes            | `(val: number) => void` | -                                | -         |
+| ...              | native props                                       | `HTMLAttributes`        | `'id', 'name', 'className', ...` | -         |
+
+<Attributes.Title>SliderType</Attributes.Title>
+
+```ts
+type SliderType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

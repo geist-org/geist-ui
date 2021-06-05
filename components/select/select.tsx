@@ -1,5 +1,5 @@
 import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react'
-import { NormalSizes } from '../utils/prop-types'
+import { NormalSizes, NormalTypes } from '../utils/prop-types'
 import useTheme from '../use-theme'
 import useClickAway from '../utils/use-click-away'
 import useCurrentState from '../utils/use-current-state'
@@ -10,12 +10,13 @@ import SelectDropdown from './select-dropdown'
 import SelectMultipleValue from './select-multiple-value'
 import Grid from '../grid'
 import { SelectContext, SelectConfig } from './select-context'
-import { getSizes } from './styles'
+import { getColors, getSizes } from './styles'
 import Ellipsis from '../shared/ellipsis'
 
 interface Props {
   disabled?: boolean
   size?: NormalSizes
+  type?: NormalTypes
   value?: string | string[]
   initialValue?: string | string[]
   placeholder?: React.ReactNode | string
@@ -35,6 +36,7 @@ interface Props {
 const defaultProps = {
   disabled: false,
   size: 'medium' as NormalSizes,
+  type: 'default' as NormalTypes,
   icon: SelectIcon as React.ComponentType,
   pure: false,
   multiple: false,
@@ -50,6 +52,7 @@ export type SelectProps = Props & typeof defaultProps & NativeAttrs
 const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   children,
   size,
+  type,
   disabled,
   initialValue: init,
   value: customValue,
@@ -82,6 +85,11 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
     return value.length === 0
   }, [value])
   const sizes = useMemo(() => getSizes(theme, size), [theme, size])
+
+  const { border, borderHover, iconBorder, placeholderColor } = useMemo(
+    () => getColors(theme.palette, type),
+    [theme.palette, type],
+  )
 
   const updateVisible = (next: boolean) => setVisible(next)
   const updateValue = (next: string) => {
@@ -178,9 +186,9 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             max-width: 80vw;
             width: ${width};
             overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid ${theme.palette.border};
+            transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+              box-shadow 200ms ease 0s;
+            border: 1px solid ${border};
             border-radius: ${theme.layout.radius};
             padding: 0 ${theme.layout.gapQuarter} 0 ${theme.layout.gapHalf};
             height: ${sizes.height};
@@ -198,11 +206,11 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
           }
 
           .select:hover {
-            border-color: ${disabled ? theme.palette.border : theme.palette.foreground};
+            border-color: ${disabled ? theme.palette.border : borderHover};
           }
 
           .select:hover .icon {
-            color: ${disabled ? theme.palette.accents_5 : theme.palette.foreground};
+            color: ${disabled ? theme.palette.accents_5 : borderHover};
           }
 
           .value {
@@ -228,7 +236,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
           }
 
           .placeholder {
-            color: ${theme.palette.accents_3};
+            color: ${placeholderColor};
           }
 
           .icon {
@@ -242,7 +250,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: ${theme.palette.accents_5};
+            color: ${iconBorder};
           }
         `}</style>
       </div>

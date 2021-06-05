@@ -93,18 +93,18 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="status"
+  title="Type"
   desc="Differentiate states by color."
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input status="secondary" initialValue="The Evil Rabbit" />
+  <Input type="secondary" initialValue="The Evil Rabbit" />
   <Spacer y={.5} />
-  <Input status="success" initialValue="The Evil Rabbit" />
+  <Input type="success" initialValue="The Evil Rabbit" />
   <Spacer y={.5} />
-  <Input status="warning" initialValue="The Evil Rabbit" />
+  <Input type="warning" initialValue="The Evil Rabbit" />
   <Spacer y={.5} />
-  <Input status="error" initialValue="The Evil Rabbit" />
+  <Input type="error" initialValue="The Evil Rabbit" />
 </>
 `}
 />
@@ -216,7 +216,8 @@ Retrieve text input from a user.
 | **initialValue**  | initial value                 | `string`                                       | -                                 | -         |
 | **placeholder**   | placeholder                   | `string`                                       | -                                 | -         |
 | **size**          | input size                    | `NormalSizes`                                  | [InputSizes](#inputsizes)         | `medium`  |
-| **status**        | current status                | `NormalTypes`                                  | [InputStatus](#inputstatus)       | `default` |
+| **type**          | current type                  | `NormalTypes`                                  | [InputType](#inputtype)           | `default` |
+| **htmlType**      | native type attr              | `string`                                       | -                                 | `text`    |
 | **readOnly**      | native attr                   | `boolean`                                      | -                                 | `false`   |
 | **disabled**      | disable input                 | `boolean`                                      | -                                 | `false`   |
 | **clearable**     | show clear icon               | `boolean`                                      | -                                 | `false`   |
@@ -244,10 +245,10 @@ Retrieve text input from a user.
 type InputSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
-<Attributes.Title>InputStatus</Attributes.Title>
+<Attributes.Title>InputType</Attributes.Title>
 
 ```ts
-type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type InputType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>useInput</Attributes.Title>

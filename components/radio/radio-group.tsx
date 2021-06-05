@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import withDefaults from '../utils/with-defaults'
 import { RadioContext } from './radio-context'
-import { NormalSizes } from 'components/utils/prop-types'
+import { NormalSizes } from '../utils/prop-types'
 
 interface Props {
   value?: string | number
