@@ -1,5 +1,5 @@
-import { GeistUIThemesPalette } from 'components/themes/presets'
-import { NormalTypes } from 'components/utils/prop-types'
+import { GeistUIThemesPalette } from '../themes/presets'
+import { NormalTypes } from '../utils/prop-types'
 
 export type RadioColor = {
   label: string

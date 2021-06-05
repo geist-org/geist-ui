@@ -1,5 +1,5 @@
 import React from 'react'
-import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
+import { NormalSizes, NormalTypes } from '../utils/prop-types'
 
 export interface Props {
   value?: string

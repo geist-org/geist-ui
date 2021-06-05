@@ -13,7 +13,7 @@ import useCurrentState from '../utils/use-current-state'
 import SliderDot from './slider-dot'
 import SliderMark from './slider-mark'
 import { getColors } from './styles'
-import { NormalTypes } from 'components/utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 
 interface Props {
   hideValue?: boolean
