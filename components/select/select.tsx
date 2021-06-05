@@ -86,10 +86,10 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   }, [value])
   const sizes = useMemo(() => getSizes(theme, size), [theme, size])
 
-  const { border, placeholderColor } = useMemo(() => getColors(theme.palette, type), [
-    theme.palette,
-    type,
-  ])
+  const { border, borderHover, iconBorder, placeholderColor } = useMemo(
+    () => getColors(theme.palette, type),
+    [theme.palette, type],
+  )
 
   const updateVisible = (next: boolean) => setVisible(next)
   const updateValue = (next: string) => {
@@ -186,8 +186,8 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             max-width: 80vw;
             width: ${width};
             overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
+            transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+              box-shadow 200ms ease 0s;
             border: 1px solid ${border};
             border-radius: ${theme.layout.radius};
             padding: 0 ${theme.layout.gapQuarter} 0 ${theme.layout.gapHalf};
@@ -206,11 +206,11 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
           }
 
           .select:hover {
-            border-color: ${disabled ? theme.palette.border : theme.palette.foreground};
+            border-color: ${disabled ? theme.palette.border : borderHover};
           }
 
           .select:hover .icon {
-            color: ${disabled ? theme.palette.accents_5 : theme.palette.foreground};
+            color: ${disabled ? theme.palette.accents_5 : borderHover};
           }
 
           .value {
@@ -250,7 +250,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             transition: transform 200ms ease;
             display: flex;
             align-items: center;
-            color: ${theme.palette.accents_5};
+            color: ${iconBorder};
           }
         `}</style>
       </div>
