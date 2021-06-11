@@ -5,7 +5,7 @@ import useResize from '../utils/use-resize'
 import CSSTransition from './css-transition'
 import useClickAnyWhere from '../utils/use-click-anywhere'
 import useDOMObserver from '../utils/use-dom-observer'
-import useWarning from 'components/utils/use-warning'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
