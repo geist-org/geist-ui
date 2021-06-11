@@ -45,6 +45,7 @@ interface Props {
   disableMatchWidth?: boolean
   disableFreeSolo?: boolean
   className?: string
+  getPopupContainer?: () => HTMLElement | null
 }
 
 const defaultProps = {
@@ -104,6 +105,7 @@ const AutoComplete = React.forwardRef<
       dropdownStyle,
       disableMatchWidth,
       disableFreeSolo,
+      getPopupContainer,
       ...props
     },
     userRef: React.Ref<HTMLInputElement | null>,
@@ -222,7 +224,8 @@ const AutoComplete = React.forwardRef<
             visible={visible}
             disableMatchWidth={disableMatchWidth}
             className={dropdownClassName}
-            dropdownStyle={dropdownStyle}>
+            dropdownStyle={dropdownStyle}
+            getPopupContainer={getPopupContainer}>
             {autoCompleteItems}
           </AutoCompleteDropdown>
 

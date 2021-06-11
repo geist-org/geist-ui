@@ -287,6 +287,7 @@ export const meta = {
 | **dropdownStyle**     | 自定义下拉框的样式                                   | `object`                                         | -                                                       | -         |
 | **disableMatchWidth** | 禁止 Option 跟随父元素的宽度                         | `boolean`                                        | -                                                       | `false`   |
 | **disableFreeSolo**   | 只允许通过 Select 事件更改值 (禁止 Input 输入随意值) | `boolean`                                        | -                                                       | `false`   |
+| **getPopupContainer** | 下拉框渲染的父元素，默认是 `body`                    | `() => HTMLElement`                              | -                                                       | `body`    |
 | **ref**               | 转发的原生输入框 Ref                                 | <Code>Ref<HTMLInputElement &#124; null></Code>   | -                                                       | -         |
 | ...                   | 原生属性                                             | `InputHTMLAttributes`                            | `'id', 'className', ...`                                | -         |
 
