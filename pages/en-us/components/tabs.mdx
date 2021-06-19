@@ -120,7 +120,7 @@ Display tab content.
   return (
     <>
       <Button size="small" onClick={switchHandler}><Text>Select  <Code>Jumped</Code></Text></Button>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Tabs value={value} onChange={changeHandler}>
         <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
         <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
@@ -147,7 +147,7 @@ Display tab content.
       <Button size="small" onClick={() => setState('2')}>
         <Text>Select  <Code>Jumped</Code></Text>
       </Button>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Tabs {...bindings}>
         <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
         <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>

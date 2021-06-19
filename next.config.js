@@ -8,6 +8,16 @@ const withMDX = require('@next/mdx')({
 const nextConfig = {
   target: 'serverless',
 
+  reactStrictMode: true,
+
+  generateEtags: false,
+
+  poweredByHeader: false,
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   pageExtensions: ['jsx', 'js', 'mdx', 'md', 'ts', 'tsx'],
 
   cssModules: true,
@@ -23,27 +33,8 @@ const nextConfig = {
 
   trailingSlash: false,
 
-  experimental: {
-    reactStrictMode: true,
-  },
-
   async redirects() {
     return [
-      {
-        source: '/docs/getting-started/:path*',
-        permanent: true,
-        destination: '/en-us/guide/:path*',
-      },
-      {
-        source: '/en-us/getting-started/:path*',
-        permanent: true,
-        destination: '/en-us/guide/:path*',
-      },
-      {
-        source: '/zh-cn/getting-started/:path*',
-        permanent: true,
-        destination: '/zh-cn/guide/:path*',
-      },
       {
         source: '/zh-cn',
         permanent: true,

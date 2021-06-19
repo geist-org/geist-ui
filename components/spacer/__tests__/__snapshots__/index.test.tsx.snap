@@ -13,35 +13,35 @@ exports[`Spacer should render correctly 1`] = `
 `;
 
 exports[`Spacer should support x and y 1`] = `
-"<div><span class=\\"\\" x=\\"5\\"><style>
+"<div><span class=\\"\\" w=\\"5\\"><style>
         span {
           display: block;
-          width: calc(1 * 16px);
+          width: calc(5 * 16px);
           height: calc(1 * 16px);
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\" x=\\"15\\"><style>
+      </style></span><span class=\\"\\" w=\\"15\\"><style>
         span {
           display: block;
-          width: calc(1 * 16px);
+          width: calc(15 * 16px);
           height: calc(1 * 16px);
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\" y=\\"15\\"><style>
+      </style></span><span class=\\"\\" h=\\"15\\"><style>
         span {
           display: block;
           width: calc(1 * 16px);
-          height: calc(1 * 16px);
+          height: calc(15 * 16px);
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\" y=\\"2\\"><style>
+      </style></span><span class=\\"\\" h=\\"2\\"><style>
         span {
           display: block;
           width: calc(1 * 16px);
-          height: calc(1 * 16px);
+          height: calc(2 * 16px);
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
@@ -49,35 +49,35 @@ exports[`Spacer should support x and y 1`] = `
 `;
 
 exports[`Spacer should work with float 1`] = `
-"<div><span class=\\"\\" x=\\"2.2\\"><style>
+"<div><span class=\\"\\" w=\\"2.2\\"><style>
         span {
           display: block;
-          width: calc(1 * 16px);
+          width: calc(2.2 * 16px);
           height: calc(1 * 16px);
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\" x=\\"1.5\\"><style>
+      </style></span><span class=\\"\\" w=\\"1.5\\"><style>
         span {
           display: block;
-          width: calc(1 * 16px);
+          width: calc(1.5 * 16px);
           height: calc(1 * 16px);
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\" y=\\"0.1\\"><style>
+      </style></span><span class=\\"\\" h=\\"0.1\\"><style>
         span {
           display: block;
           width: calc(1 * 16px);
-          height: calc(1 * 16px);
+          height: calc(0.1 * 16px);
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\" y=\\"1.8\\"><style>
+      </style></span><span class=\\"\\" h=\\"1.8\\"><style>
         span {
           display: block;
           width: calc(1 * 16px);
-          height: calc(1 * 16px);
+          height: calc(1.8 * 16px);
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }

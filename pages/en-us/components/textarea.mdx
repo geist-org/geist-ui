@@ -44,11 +44,11 @@ Retrieve multi-line user input.
   code={`
 <>
   <Textarea type="success" minHeight="65px" value="Success" />
-  <Spacer x={.5} inline />
+  <Spacer w={.5} inline />
   <Textarea type="secondary" minHeight="65px" value="Secondary" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Textarea type="warning" minHeight="65px" value="Warning" />
-  <Spacer x={.5} inline />
+  <Spacer w={.5} inline />
   <Textarea type="error" minHeight="65px" value="Error" />
 </>
 `}
@@ -89,9 +89,9 @@ Retrieve multi-line user input.
   return (
     <>
       <Textarea width="100%" {...bindings}/>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>set value</Button>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto size="small" onClick={() => reset()}>reset value</Button>
     </>
   )
@@ -112,7 +112,7 @@ Retrieve multi-line user input.
   return (
     <>
       <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto type="secondary" size="small"
         onClick={setChange}>set value</Button>
     </>

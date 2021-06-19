@@ -41,12 +41,12 @@ Display text using well-defined typographic styles.
   <Text p>
    Caching is very important for fast Web sites. This article describes different methods of caching and how to use HTTP Headers to control them.
   </Text>
-
   <Text p b>
    A brief description of the changes between the early versions of HTTP, to the modern HTTP/2, the emergent HTTP/3 and beyond.
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Small"
@@ -67,7 +67,7 @@ Display text using well-defined typographic styles.
   title="Blockquote"
   scope={{ Text }}
   code={`
-<Text blockquote>
+<Text blockquote my={0}>
   Send cookies from the server to the user-agent.
 </Text>
 `}
@@ -77,23 +77,14 @@ Display text using well-defined typographic styles.
   title="Types"
   scope={{ Text }}
   code={`
-<>
-  <Text type="success">
-    Send cookies from the server to the user-agent.
-  </Text>
-  <Text type="warning">
-    Send cookies from the server to the user-agent.
-  </Text>
-  <Text type="secondary">
-    Send cookies from the server to the user-agent.
-  </Text>
-  <Text type="error">
-    Send cookies from the server to the user-agent.
-  </Text>
-  <Text style={{ color: '#ccc' }}>
-    Send cookies from the server to the user-agent.
-  </Text>
-</>
+<Text b i style={{ letterSpacing: '0.6px' }}>
+  <Text span type="success">G</Text>
+  <Text span type="warning">e</Text>
+  <Text span type="secondary">i</Text>
+  <Text span type="error">s</Text>
+  <Text span style={{ color: '#ccc' }}>t</Text>
+  <Text span type="success" ml="5px">UI</Text>
+</Text>
 `}
 />
 
@@ -102,11 +93,10 @@ Display text using well-defined typographic styles.
   scope={{ Text }}
   code={`
 <>
-  <Text size={12}>Font Size: 12px;</Text>
-  <Text size={14}>Font Size: 14px;</Text>
-  <Text size="100%">Font Size: 100%;</Text>
-  <Text size="1.25rem">Font Size: 1.25rem;</Text>
-  <Text size="2em">Font Size: 2em;</Text>
+  <Text font="12px" mt={0}>Font Size: 12px;</Text>
+  <Text font="14px">Font Size: 14px;</Text>
+  <Text font="1rem">Font Size: 1rem;</Text>
+  <Text scale={1.25} mb={0}>Font Size Scale: 1.25;</Text>
 </>
 `}
 />
@@ -131,20 +121,19 @@ Display text using well-defined typographic styles.
 <Attributes edit="/pages/en-us/components/text.mdx">
 <Attributes.Title>Text.Props</Attributes.Title>
 
-| Attribute      | Description    | Type                | Accepted values          | Default         |
-| -------------- | -------------- | ------------------- | ------------------------ | --------------- |
-| **p**          | component name | `boolean`           | -                        | `true`          |
-| **h1 - h6**    | component name | `boolean`           | -                        | `false`         |
-| **small**      | component name | `boolean`           | -                        | `false`         |
-| **span**       | component name | `boolean`           | -                        | `false`         |
-| **del**        | component name | `boolean`           | -                        | `false`         |
-| **i**          | component name | `boolean`           | -                        | `false`         |
-| **em**         | component name | `boolean`           | -                        | `false`         |
-| **b**          | component name | `boolean`           | -                        | `false`         |
-| **blockquote** | component name | `boolean`           | -                        | `false`         |
-| **size**       | size of text   | `string` / `number` | -                        | follow elements |
-| **type**       | text type      | `NormalTypes`       | [TextTypes](#texttypes)  | `default`       |
-| ...            | native props   | `HTMLAttributes`    | `'id', 'className', ...` | -               |
+| Attribute      | Description    | Type             | Accepted values          | Default   |
+| -------------- | -------------- | ---------------- | ------------------------ | --------- |
+| **p**          | component name | `boolean`        | -                        | `true`    |
+| **h1 - h6**    | component name | `boolean`        | -                        | `false`   |
+| **small**      | component name | `boolean`        | -                        | `false`   |
+| **span**       | component name | `boolean`        | -                        | `false`   |
+| **del**        | component name | `boolean`        | -                        | `false`   |
+| **i**          | component name | `boolean`        | -                        | `false`   |
+| **em**         | component name | `boolean`        | -                        | `false`   |
+| **b**          | component name | `boolean`        | -                        | `false`   |
+| **blockquote** | component name | `boolean`        | -                        | `false`   |
+| **type**       | text type      | `NormalTypes`    | [TextTypes](#texttypes)  | `default` |
+| ...            | native props   | `HTMLAttributes` | `'id', 'className', ...` | -         |
 
 <Attributes.Title>TextTypes</Attributes.Title>
 

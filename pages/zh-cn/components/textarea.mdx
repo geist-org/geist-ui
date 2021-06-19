@@ -44,11 +44,11 @@ export const meta = {
   code={`
 <>
   <Textarea status="success" minHeight="65px" value="成功" />
-  <Spacer x={.5} inline />
+  <Spacer w={.5} inline />
   <Textarea status="secondary" minHeight="65px" value="次要的" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Textarea status="warning" minHeight="65px" value="警告" />
-  <Spacer x={.5} inline />
+  <Spacer w={.5} inline />
   <Textarea status="error" minHeight="65px" value="错误" />
 </>
 `}
@@ -89,9 +89,9 @@ export const meta = {
   return (
     <>
       <Textarea width="100%" {...bindings}/>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>设置随机文本</Button>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto size="small" onClick={() => reset()}>重置文本</Button>
     </>
   )
@@ -112,7 +112,7 @@ export const meta = {
   return (
     <>
       <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto type="secondary" size="small"
         onClick={setChange}>设置值</Button>
     </>

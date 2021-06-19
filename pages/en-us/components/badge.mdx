@@ -16,9 +16,9 @@ Display an indicator that requires attention.
   desc="Show number or text."
   code={`
   <>
-    <Badge>1</Badge> <Spacer y={.5} />
-    <Badge>50</Badge> <Spacer y={.5} />
-    <Badge>100</Badge> <Spacer y={.5} />
+    <Badge>1</Badge> <Spacer h={.5} />
+    <Badge>50</Badge> <Spacer h={.5} />
+    <Badge>100</Badge> <Spacer h={.5} />
     <Badge>2020</Badge>
   </>
 `}
@@ -30,9 +30,9 @@ Display an indicator that requires attention.
   scope={{ Badge, Spacer }}
   code={`
   <>
-    <Badge type="success">Success</Badge> <Spacer y={.5} />
-    <Badge type="warning">Warning</Badge> <Spacer y={.5} />
-    <Badge type="error">Error</Badge> <Spacer y={.5} />
+    <Badge type="success">Success</Badge> <Spacer h={.5} />
+    <Badge type="warning">Warning</Badge> <Spacer h={.5} />
+    <Badge type="error">Error</Badge> <Spacer h={.5} />
     <Badge type="secondary">Secondary</Badge>
   </>
 `}
@@ -55,12 +55,12 @@ Display an indicator that requires attention.
   const theme = useTheme()
   return (
     <>
-      <Badge style={{ backgroundColor: theme.palette.successLight }}>Success Light</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.successDark }}>Success Dark</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.alert }}>Alert</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.purple }}>Purple</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.violet }}>Violet</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.cyanLighter, color: theme.palette.foreground }}>Cyan Ligher</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.successLight }}>Success Light</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.successDark }}>Success Dark</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.alert }}>Alert</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.purple }}>Purple</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.violet }}>Violet</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.cyanLighter, color: theme.palette.foreground }}>Cyan Ligher</Badge> <Spacer h={.5} />
     </>
   )
 }
@@ -73,9 +73,9 @@ Display an indicator that requires attention.
   scope={{ Badge, Spacer }}
   code={`
   <>
-    <Badge size="mini">Mini</Badge> <Spacer y={.5} />
-    <Badge size="small">Small</Badge> <Spacer y={.5} />
-    <Badge size="medium">Medium</Badge> <Spacer y={.5} />
+    <Badge size="mini">Mini</Badge> <Spacer h={.5} />
+    <Badge size="small">Small</Badge> <Spacer h={.5} />
+    <Badge size="medium">Medium</Badge> <Spacer h={.5} />
     <Badge size="large">Large</Badge>
   </>
 `}

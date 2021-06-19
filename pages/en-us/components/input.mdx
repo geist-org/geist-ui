@@ -26,9 +26,9 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input size="mini" placeholder="Mini Input" /> <Spacer y={.5} />
-  <Input size="small" placeholder="Small Input" /> <Spacer y={.5} />
-  <Input size="medium" placeholder="Medium Input" /> <Spacer y={.5} />
+  <Input size="mini" placeholder="Mini Input" /> <Spacer h={.5} />
+  <Input size="small" placeholder="Small Input" /> <Spacer h={.5} />
+  <Input size="medium" placeholder="Medium Input" /> <Spacer h={.5} />
   <Input size="large" placeholder="Large Input" />
 </>
 `}
@@ -50,7 +50,7 @@ Retrieve text input from a user.
   code={`
 <>
   <Input disabled placeholder="Disabled" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input readOnly initialValue="readOnly" />
 </>
 `}
@@ -63,7 +63,7 @@ Retrieve text input from a user.
   code={`
 <>
   <Input label="username" placeholder="The Evil Rabbit" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input labelRight=".com" placeholder="https://github" />
 </>
 `}
@@ -99,11 +99,11 @@ Retrieve text input from a user.
   code={`
 <>
   <Input type="secondary" initialValue="The Evil Rabbit" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input type="success" initialValue="The Evil Rabbit" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input type="warning" initialValue="The Evil Rabbit" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input type="error" initialValue="The Evil Rabbit" />
 </>
 `}
@@ -116,7 +116,7 @@ Retrieve text input from a user.
   code={`
 <>
   <Input icon={<GitIcon />} placeholder="GitHub" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input iconRight={<GitIcon />} placeholder="GitHub" />
 </>
 `}
@@ -174,10 +174,10 @@ Retrieve text input from a user.
   return (
     <>
       <Input {...bindings} />
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto type="secondary" size="small"
         onClick={() => setState(Math.random().toString(32))}>set value</Button>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto size="small"onClick={() => reset()}>reset value</Button>
     </>
   )
@@ -198,7 +198,7 @@ Retrieve text input from a user.
   return (
     <>
       <Input initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto type="secondary" size="small"
         onClick={setChange}>set value</Button>
     </>

@@ -40,29 +40,51 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
   const Component = tag
   const theme = useTheme()
   const { SCALES, getScaleableProps } = useScaleable()
-  const customFont = getScaleableProps('font')
+  const font = getScaleableProps('font')
   const mx = getScaleableProps(['margin', 'marginLeft', 'marginRight', 'mx', 'ml', 'mr'])
   const my = getScaleableProps(['margin', 'marginTop', 'marginBottom', 'my', 'mt', 'mb'])
+  const px = getScaleableProps([
+    'padding',
+    'paddingLeft',
+    'paddingRight',
+    'pl',
+    'pr',
+    'px',
+  ])
+  const py = getScaleableProps([
+    'padding',
+    'paddingTop',
+    'paddingBottom',
+    'pt',
+    'pb',
+    'py',
+  ])
   const color = useMemo(() => getTypeColor(type, theme.palette), [type, theme.palette])
-  const hasMX = typeof mx !== 'undefined'
-  const hasMY = typeof my !== 'undefined'
+  const classNames = useMemo<string>(() => {
+    const keys = [
+      { value: mx, className: 'mx' },
+      { value: my, className: 'my' },
+      { value: px, className: 'px' },
+      { value: py, className: 'py' },
+      { value: font, className: 'font' },
+    ]
+    const scaleClassNames = keys.reduce((pre, next) => {
+      if (typeof next.value === 'undefined') return pre
+      return `${pre} ${next.className}`
+    }, '')
+    return `${scaleClassNames} ${className}`.trim()
+  }, [mx, my, px, py, font, className])
 
   return (
-    <Component
-      className={`${customFont ? 'custom-size' : ''} ${hasMX ? 'mx' : ''} ${
-        hasMY ? 'my' : ''
-      } ${className}`}
-      {...props}>
+    <Component className={classNames} {...props}>
       {children}
       <style jsx>{`
         ${tag} {
           color: ${color};
           width: ${SCALES.width(1, 'auto')};
           height: ${SCALES.height(1, 'auto')};
-          padding: ${SCALES.pt(0, 'revert')} ${SCALES.pr(0, 'revert')}
-            ${SCALES.pb(0, 'revert')} ${SCALES.pl(0, 'revert')};
         }
-        .custom-size {
+        .font {
           font-size: ${SCALES.font(1, 'inherit')};
         }
         .mx {
@@ -72,6 +94,14 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
         .my {
           margin-top: ${SCALES.mt(0, 'revert')};
           margin-bottom: ${SCALES.mb(0, 'revert')};
+        }
+        .px {
+          padding-left: ${SCALES.pl(0, 'revert')};
+          padding-right: ${SCALES.pr(0, 'revert')};
+        }
+        .py {
+          padding-top: ${SCALES.pt(0, 'revert')};
+          padding-bottom: ${SCALES.pb(0, 'revert')};
         }
       `}</style>
     </Component>

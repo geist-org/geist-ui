@@ -26,9 +26,9 @@ export const meta = {
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input size="mini" placeholder="最小的" /> <Spacer y={.5} />
-  <Input size="small" placeholder="较小的" /> <Spacer y={.5} />
-  <Input size="medium" placeholder="中等的" /> <Spacer y={.5} />
+  <Input size="mini" placeholder="最小的" /> <Spacer h={.5} />
+  <Input size="small" placeholder="较小的" /> <Spacer h={.5} />
+  <Input size="medium" placeholder="中等的" /> <Spacer h={.5} />
   <Input size="large" placeholder="较大的" />
 </>
 `}
@@ -50,7 +50,7 @@ export const meta = {
   code={`
 <>
   <Input disabled placeholder="禁用" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input readOnly initialValue="只读" />
 </>
 `}
@@ -63,7 +63,7 @@ export const meta = {
   code={`
 <>
   <Input label="用户名" placeholder="一个基础示例" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input labelRight=".com" placeholder="https://github" />
 </>
 `}
@@ -99,11 +99,11 @@ export const meta = {
   code={`
 <>
   <Input status="secondary" initialValue="次要" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input status="success" initialValue="成功" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input status="warning" initialValue="警告" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input status="error" initialValue="包含错误" />
 </>
 `}
@@ -116,7 +116,7 @@ export const meta = {
   code={`
 <>
   <Input icon={<GitIcon />} placeholder="输入 Git 地址" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input iconRight={<GitIcon />} placeholder="输入 Git 地址" />
 </>
 `}
@@ -175,10 +175,10 @@ export const meta = {
   return (
     <>
       <Input {...bindings} />
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto type="secondary" size="small"
         onClick={() => setState(Math.random().toString(32))}>随机设置值</Button>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto size="small"onClick={() => reset()}>重置值</Button>
     </>
   )
@@ -199,7 +199,7 @@ export const meta = {
   return (
     <>
       <Input initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Button auto type="secondary" size="small"
         onClick={setChange}>设置值</Button>
     </>

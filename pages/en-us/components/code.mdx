@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Code, Note, Link } from 'components'
+import { Code, Note, Link, Text } from 'components'
 import NextLink from 'next/link'
 
 export const meta = {
@@ -21,9 +21,9 @@ Show source code in a standardized way.
 
 <Playground
   desc="Basic inline codes."
-  scope={{ Code }}
+  scope={{ Code, Text }}
   code={`
-<p>Run <Code>npm i @geist-ui/react</Code> to install.</p>
+<Text my={0}>Run <Code>npm i @geist-ui/react</Code> to install.</Text>
 `}
 />
 
@@ -35,7 +35,7 @@ Show source code in a standardized way.
 () => {
   const codes = \`npm i @geist-ui/react
 yarn add @geist-ui/react\`
-  return <Code block>{codes}</Code>
+  return <Code block my={0}>{codes}</Code>
 }
 `}
 />
@@ -48,7 +48,7 @@ yarn add @geist-ui/react\`
 () => {
   const codes = \`npm i @geist-ui/react
 yarn add @geist-ui/react\`
-  return <Code block width="50%">{codes}</Code>
+  return <Code block width="50%" my={0}>{codes}</Code>
 }
 `}
 />
@@ -61,7 +61,7 @@ yarn add @geist-ui/react\`
 () => {
   const codes = \`npm i @geist-ui/react npm i @geist-ui/react npm i @geist-ui/react
 yarn add @geist-ui/react\`
-  return <Code block width="50%">{codes}</Code>
+  return <Code block width="50%" my={0}>{codes}</Code>
 }
 `}
 />
@@ -69,11 +69,10 @@ yarn add @geist-ui/react\`
 <Attributes edit="/pages/en-us/components/code.mdx">
 <Attributes.Title>Code.Props</Attributes.Title>
 
-| Attribute | Description        | Type             | Accepted values    | Default   |
-| --------- | ------------------ | ---------------- | ------------------ | --------- |
-| **block** | show code in `pre` | `boolean`        | -                  | `false`   |
-| **width** | set CSS width      | `string`         | -                  | `initial` |
-| ...       | native props       | `HTMLAttributes` | `'className', ...` | -         |
+| Attribute | Description        | Type             | Accepted values    | Default |
+| --------- | ------------------ | ---------------- | ------------------ | ------- |
+| **block** | show code in `pre` | `boolean`        | -                  | `false` |
+| ...       | native props       | `HTMLAttributes` | `'className', ...` | -       |
 
 </Attributes>
 
