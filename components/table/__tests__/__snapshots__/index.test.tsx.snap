@@ -10,12 +10,12 @@ exports[`Table should be no erros when width is too large 1`] = `
 
         th {
           padding: 0 0.5em;
-          font-size: calc(0.75 * var(--table-fontsize));
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -43,7 +43,7 @@ exports[`Table should be no erros when width is too large 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
@@ -60,12 +60,12 @@ exports[`Table should be no erros when width is too large 1`] = `
           padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: calc(0.875 * var(--table-fontsize));
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: calc(3.125 * var(--table-fontsize));
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -75,8 +75,8 @@ exports[`Table should be no erros when width is too large 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
-            --table-fontsize: calc(1 * 16px);
-            font-size: var(--table-fontsize);
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
             height: auto;
             padding: 0 0 0 0;
@@ -95,12 +95,12 @@ exports[`Table should render children for table head 1`] = `
 
         th {
           padding: 0 0.5em;
-          font-size: calc(0.75 * var(--table-fontsize));
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -128,7 +128,7 @@ exports[`Table should render children for table head 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td></tr><style>
@@ -145,12 +145,12 @@ exports[`Table should render children for table head 1`] = `
           padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: calc(0.875 * var(--table-fontsize));
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: calc(3.125 * var(--table-fontsize));
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -160,8 +160,8 @@ exports[`Table should render children for table head 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
-            --table-fontsize: calc(1 * 16px);
-            font-size: var(--table-fontsize);
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
             height: auto;
             padding: 0 0 0 0;
@@ -180,12 +180,12 @@ exports[`Table should render correctly 1`] = `
 
         th {
           padding: 0 0.5em;
-          font-size: calc(0.75 * var(--table-fontsize));
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -213,7 +213,7 @@ exports[`Table should render correctly 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
@@ -230,12 +230,12 @@ exports[`Table should render correctly 1`] = `
           padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: calc(0.875 * var(--table-fontsize));
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: calc(3.125 * var(--table-fontsize));
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -245,8 +245,8 @@ exports[`Table should render correctly 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
-            --table-fontsize: calc(1 * 16px);
-            font-size: var(--table-fontsize);
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
             height: auto;
             padding: 0 0 0 0;
@@ -265,12 +265,12 @@ exports[`Table should set width automatically 1`] = `
 
         th {
           padding: 0 0.5em;
-          font-size: calc(0.75 * var(--table-fontsize));
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -298,7 +298,7 @@ exports[`Table should set width automatically 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
@@ -315,12 +315,12 @@ exports[`Table should set width automatically 1`] = `
           padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: calc(0.875 * var(--table-fontsize));
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: calc(3.125 * var(--table-fontsize));
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -330,8 +330,8 @@ exports[`Table should set width automatically 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
-            --table-fontsize: calc(1 * 16px);
-            font-size: var(--table-fontsize);
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
             height: auto;
             padding: 0 0 0 0;
@@ -350,12 +350,12 @@ exports[`Table should work with other components 1`] = `
 
         th {
           padding: 0 0.5em;
-          font-size: calc(0.75 * var(--table-fontsize));
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -383,7 +383,7 @@ exports[`Table should work with other components 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
       </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\"><code>boolean</code></div></td><td><div class=\\"cell\\">true</div></td></tr><style>
@@ -400,12 +400,12 @@ exports[`Table should work with other components 1`] = `
           padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: calc(0.875 * var(--table-fontsize));
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: calc(3.125 * var(--table-fontsize));
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -415,8 +415,8 @@ exports[`Table should work with other components 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
-            --table-fontsize: calc(1 * 16px);
-            font-size: var(--table-fontsize);
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
             height: auto;
             padding: 0 0 0 0;
@@ -435,12 +435,12 @@ exports[`Table should work without hover effect 1`] = `
 
         th {
           padding: 0 0.5em;
-          font-size: calc(0.75 * var(--table-fontsize));
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -468,7 +468,7 @@ exports[`Table should work without hover effect 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
       </style><tbody><tr class=\\"\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
@@ -485,12 +485,12 @@ exports[`Table should work without hover effect 1`] = `
           padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: calc(0.875 * var(--table-fontsize));
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: calc(3.125 * var(--table-fontsize));
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -500,8 +500,8 @@ exports[`Table should work without hover effect 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
-            --table-fontsize: calc(1 * 16px);
-            font-size: var(--table-fontsize);
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
             height: auto;
             padding: 0 0 0 0;

@@ -1,12 +1,6 @@
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
 
-export interface SelectSize {
-  height: string
-  fontSize: string
-  minWidth: string
-}
-
 export type SelectColor = {
   border: string
   borderHover: string

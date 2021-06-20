@@ -10,19 +10,6 @@ describe('Checkbox', () => {
     expect(rendered).toMatchSnapshot()
   })
 
-  it('should work correctly with different sizes', () => {
-    const wrapper = mount(
-      <div>
-        <Checkbox size="mini">mini</Checkbox>
-        <Checkbox size="small">small</Checkbox>
-        <Checkbox size="medium">medium</Checkbox>
-        <Checkbox size="large">large</Checkbox>
-      </div>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
   it('should work with different status', () => {
     const wrapper = mount(
       <div>

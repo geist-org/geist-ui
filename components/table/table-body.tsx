@@ -64,12 +64,12 @@ const TableBody: React.FC<TableBodyProps> = ({
           padding: 0 0.5em;
           border-bottom: 1px solid ${theme.palette.border};
           color: ${theme.palette.accents_6};
-          font-size: calc(0.875 * var(--table-fontsize));
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: calc(3.125 * var(--table-fontsize));
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;

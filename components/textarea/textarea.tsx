@@ -120,7 +120,7 @@ const TextareaComponent = React.forwardRef<
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
             min-width: 12.5rem;
             max-width: 95vw;
-            --textarea-fontsize: ${SCALES.font(0.875)};
+            --textarea-font-size: ${SCALES.font(0.875)};
             --textarea-height: ${SCALES.height(1, 'auto')};
             width: ${SCALES.width(1, 'initial')};
             height: var(--textarea-height);
@@ -142,7 +142,7 @@ const TextareaComponent = React.forwardRef<
             box-shadow: none;
             display: block;
             font-family: ${theme.font.sans};
-            font-size: var(--textarea-fontsize);
+            font-size: var(--textarea-font-size);
             width: 100%;
             height: var(--textarea-height);
             resize: none;

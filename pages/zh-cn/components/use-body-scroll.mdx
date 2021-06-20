@@ -22,9 +22,9 @@ export const meta = {
     <>
       <Text small b type={hidden ? 'error' : 'default'}>{hidden ? '已禁用滚动。' : '当前可以滚动。'}</Text>
       <Spacer h={.75} />
-      <Button size="small" type="success" auto onClick={() => setHidden(true)}>禁用滚动</Button>
+      <Button scale={0.5} type="success" auto onClick={() => setHidden(true)}>禁用滚动</Button>
       <Spacer h={.5} />
-      <Button size="small" type="secondary" auto onClick={() => setHidden(false)}>重置</Button>
+      <Button ml="20px" scale={0.5} type="secondary" auto onClick={() => setHidden(false)}>重置</Button>
     </>
   )
 }

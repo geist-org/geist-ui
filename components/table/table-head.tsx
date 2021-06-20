@@ -63,12 +63,12 @@ const TableHead: React.FC<TableHeadProps> = ({
 
         th {
           padding: 0 0.5em;
-          font-size: calc(0.75 * var(--table-fontsize));
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           color: ${theme.palette.accents_5};
           background: ${theme.palette.accents_1};
           border-bottom: 1px solid ${theme.palette.border};
@@ -96,7 +96,7 @@ const TableHead: React.FC<TableHeadProps> = ({
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: calc(2.5 * var(--table-fontsize));
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
       `}</style>

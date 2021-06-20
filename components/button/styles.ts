@@ -228,14 +228,6 @@ export const getButtonCursor = (
   }
 }
 
-export type ButtonSizeGroup = {
-  height: string
-  width: string
-  padding: string
-  minWidth: string
-  fontSize: string
-}
-
 export const getButtonDripColor = (palette: GeistUIThemesPalette, props: ButtonProps) => {
   const { type } = props
   const isLightHover = type!.endsWith('light')

@@ -22,10 +22,10 @@ export const meta = {
   scope={{ Keyboard }}
   code={`
 <div>
-  <Keyboard command />
-  <Keyboard shift />
-  <Keyboard option />
-  <Keyboard ctrl />
+  <Keyboard command mr="10px" />
+  <Keyboard shift mr="10px" />
+  <Keyboard option mr="10px" />
+  <Keyboard ctrl mr="10px" />
 </div>
 `}
 />
@@ -35,18 +35,10 @@ export const meta = {
   scope={{ Keyboard }}
   code={`
 <div>
-  <Keyboard command>f</Keyboard>
-  <Keyboard shift>e</Keyboard>
-  <Keyboard option ctrl>b</Keyboard>
+  <Keyboard command mr="10px">f</Keyboard>
+  <Keyboard shift mr="10px">e</Keyboard>
+  <Keyboard option ctrl mr="10px">b</Keyboard>
 </div>
-`}
-/>
-
-<Playground
-  title="较小的"
-  scope={{ Keyboard }}
-  code={`
-<Keyboard small>/</Keyboard>
 `}
 />
 
@@ -59,7 +51,6 @@ export const meta = {
 | **shift**   | 显示 Shift 按钮   | `boolean`              | -                             | `false` |
 | **option**  | 显示 Option 按钮  | `boolean`              | -                             | `false` |
 | **ctrl**    | 显示 Control 按钮 | `boolean`              | -                             | `false` |
-| **small**   | 较小的键盘        | `boolean`              | -                             | `false` |
 | ...         | 原生属性          | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | -       |
 
 </Attributes>

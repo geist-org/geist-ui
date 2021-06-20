@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text should be able to specify the size of text 1`] = `
-"<p class=\\"\\" size=\\"14\\">test-value<style>
+"<p class=\\"font\\" font=\\"14\\">test-value<style>
         p {
           color: inherit;
           width: auto;
           height: auto;
         }
         .font {
-          font-size: inherit;
+          font-size: calc(14 * 16px);
         }
         .mx {
           margin-left: revert;
@@ -30,14 +30,14 @@ exports[`Text should be able to specify the size of text 1`] = `
 `;
 
 exports[`Text should be able to specify the size of text 2`] = `
-"<p class=\\"\\">test-value<style>
+"<p class=\\"font\\" font=\\"12rem\\">test-value<style>
         p {
           color: inherit;
           width: auto;
           height: auto;
         }
         .font {
-          font-size: inherit;
+          font-size: 12rem;
         }
         .mx {
           margin-left: revert;

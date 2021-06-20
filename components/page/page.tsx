@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { NormalSizes, tuple } from '../utils/prop-types'
+import { tuple } from '../utils/prop-types'
 import useTheme from '../use-theme'
 import PageContent from './page-content'
 import { hasChild } from '../utils/collections'
@@ -7,7 +7,6 @@ import useScaleable, { withScaleable } from '../use-scaleable'
 
 const renderMode = tuple('default', 'effect', 'effect-seo')
 
-export type PageSize = NormalSizes | string
 export type PageRenderMode = typeof renderMode[number]
 
 interface Props {

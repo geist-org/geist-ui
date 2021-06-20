@@ -55,57 +55,20 @@ export const meta = {
   scope={{ ButtonDropdown, Spacer }}
   code={`
 <>
-  <ButtonDropdown type="secondary">
+  <ButtonDropdown type="secondary" scale={0.5}>
     <ButtonDropdown.Item main>次要的</ButtonDropdown.Item>
   </ButtonDropdown>
   <Spacer h={.5} />
-  <ButtonDropdown type="success">
+  <ButtonDropdown type="success" scale={0.5}>
     <ButtonDropdown.Item main>成功</ButtonDropdown.Item>
   </ButtonDropdown>
   <Spacer h={.5} />
-  <ButtonDropdown type="warning">
+  <ButtonDropdown type="warning" scale={0.5}>
     <ButtonDropdown.Item main>警告</ButtonDropdown.Item>
   </ButtonDropdown>
   <Spacer h={.5} />
-  <ButtonDropdown type="error">
+  <ButtonDropdown type="error" scale={0.5}>
     <ButtonDropdown.Item main>错误</ButtonDropdown.Item>
-  </ButtonDropdown>
-</>
-`}
-/>
-
-<Playground
-  title="大小"
-  desc="不同大小的组件。"
-  scope={{ ButtonDropdown, Spacer }}
-  code={`
-<>
-  <ButtonDropdown size="mini" auto>
-    <ButtonDropdown.Item main>自动-小</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer h={.5} />
-  <ButtonDropdown size="small" auto>
-      <ButtonDropdown.Item main>自动-较小</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer h={.5} />
-  <ButtonDropdown size="small" auto>
-    <ButtonDropdown.Item main>自动-中等</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer h={.5} />
-  <ButtonDropdown size="mini">
-    <ButtonDropdown.Item main>小</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer h={.5} />
-  <ButtonDropdown size="small">
-    <ButtonDropdown.Item main>较小</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer h={.5} />
-  <ButtonDropdown size="medium">
-    <ButtonDropdown.Item main>中等</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer h={.5} />
-  <ButtonDropdown size="large">
-    <ButtonDropdown.Item main>最大的</ButtonDropdown.Item>
   </ButtonDropdown>
 </>
 `}
@@ -116,7 +79,7 @@ export const meta = {
   desc="为每个按钮设定不同的类型。"
   scope={{ ButtonDropdown }}
   code={`
-<ButtonDropdown>
+<ButtonDropdown auto scale={2/3}>
   <ButtonDropdown.Item main>访问账户</ButtonDropdown.Item>
   <ButtonDropdown.Item>屏蔽账户</ButtonDropdown.Item>
   <ButtonDropdown.Item>锁定账户</ButtonDropdown.Item>
@@ -131,7 +94,6 @@ export const meta = {
 | 属性         | 描述               | 类型             | 推荐值                                                  | 默认      |
 | ------------ | ------------------ | ---------------- | ------------------------------------------------------- | --------- |
 | **type**     | 按钮类型           | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**     | 按钮的大小         | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
 | **loading**  | 显示加载中的指示器 | `boolean`        | -                                                       | `false`   |
 | **auto**     | 自动缩放宽度       | `boolean`        | -                                                       | `false`   |
 | **disabled** | 禁用所有按钮       | `boolean`        | -                                                       | `false`   |

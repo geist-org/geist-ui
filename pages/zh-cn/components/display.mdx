@@ -15,7 +15,7 @@ export const meta = {
   scope={{ Display, Image }}
   code={`
   <Display shadow caption="用于构建现代应用的开源设计系统。">
-    <Image width={435} height={200} src="/images/geist-banner.png" />
+    <Image width="435px" height="200px" src="/images/geist-banner.png" />
   </Display>
 `}
 />
@@ -59,7 +59,7 @@ export const meta = {
   scope={{ Display, Code, Image }}
   code={`
   <Display shadow caption={<p>访问地址 <Code>react.geist-ui.dev</Code> 获取更多的文档信息。</p>}>
-    <Image width={650} height={297} src="/images/geist-banner.png" />
+    <Image width="650px" height="297px" src="/images/geist-banner.png" />
   </Display>
 `}
 />
@@ -67,12 +67,11 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/display.mdx">
 <Attributes.Title>Display.Props</Attributes.Title>
 
-| 属性        | 描述                          | 类型                   | 推荐值 | 默认          |
-| ----------- | ----------------------------- | ---------------------- | ------ | ------------- |
-| **caption** | description for display block | `ReactNode` / `string` | -      | -             |
-| **shadow**  | show shadow                   | `boolean`              | -      | `false`       |
-| **width**   | set width                     | `string`               | -      | `fit-content` |
-| ...         | 原生属性                      | `HTMLAttributes`       | -      | -             |
+| 属性        | 描述                          | 类型                   | 推荐值 | 默认    |
+| ----------- | ----------------------------- | ---------------------- | ------ | ------- |
+| **caption** | description for display block | `ReactNode` / `string` | -      | -       |
+| **shadow**  | show shadow                   | `boolean`              | -      | `false` |
+| ...         | 原生属性                      | `HTMLAttributes`       | -      | -       |
 
 </Attributes>
 

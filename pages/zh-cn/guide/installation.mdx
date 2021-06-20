@@ -13,7 +13,6 @@ export const meta = {
 
 请确认你的 <Link href="https://nodejs.org/en/download/">NodeJS</Link> 处于最新版本，
 同时还需要准备包管理器: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> 或是 <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
-如果你想要一个完整的项目示例，请浏览我们的 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/tree/master/examples">示例集合</Link>。
 
 <Spacer h={1} />
 <Dot type="success" /> 1. 运行命令下载包:
@@ -27,7 +26,7 @@ export const meta = {
   </Tabs.Item>
 </Tabs>
 <Spacer h={1.5} />
-<Dot type="success" /> 2. 引入包到你的 React 项目中：
+<Dot type="success" /> 2. 添加 Geist UI 到你的项目中：
 
 <Grid.Container>
 <Grid xs={24} sm={16}>
@@ -65,12 +64,12 @@ const MyComponent = () => <Button>按钮</Button>
 
 <Text h3>
   在 Windows 上渲染字体{' '}
-  <Text span type="secondary" size=".75em" style={{ textTransform: 'uppercase' }}>
+  <Text span type="secondary" font=".75em" style={{ textTransform: 'uppercase' }}>
     [可选的]
   </Text>
 </Text>
 
-我们知道 Web 应用中一些字体在 _Windows_ 平台上无法得到最好的渲染效果，
+Web 应用中的一些字体在 _Windows_ 平台上无法得到最好的渲染效果，
 或是你认为一些字符集没有得到最好的渲染 (如中文字符)，
 在这类场景下，你可以额外引入字体库来优化渲染效果：
 
@@ -85,22 +84,21 @@ const MyComponent = () => <Button>按钮</Button>
 2. 添加 `Inter Font` 到你的项目中:
 
 <Grid.Container>
-<Grid xs={24} sm={16}>
-
-```jsx
-import 'inter-ui/inter.css'
-```
-
-</Grid>
+  <Grid xs={24} sm={16}>
+    <Code block my={0} width="100%">
+      <span className="token keyword module">import</span>{' '}
+      <span className="token string">inter-ui/inter.css</span>
+    </Code>
+  </Grid>
 </Grid.Container>
 
-<Spacer h={1.5} />
+<Spacer h={3.5} />
 
 ### 单个组件
 
-`@geist-ui/react` 支持仅引入你需要的单个组件，例如：
+Geist UI 支持手动引入你需要的单个组件，例如：
 
-<Grid.Container>
+<Grid.Container style={{ marginTop: '-20px' }}>
 <Grid xs={24} sm={16}>
 
 ```jsx
@@ -112,9 +110,9 @@ const MyComponent = () => <Button>按钮组件</Button>
 </Grid>
 </Grid.Container>
 
-<Spacer h={1.5} />
+<Spacer h={2.5} />
 
-### Create React App 项目
+### CRA 项目
 
 使用 <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> 创建的 React 项目也能轻易的使用 `@geist-ui/react`。
 你不需要做任何改变，只需要引入组件库即可。

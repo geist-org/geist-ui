@@ -22,9 +22,8 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
     <>
       <Text small b type={hidden ? 'error' : 'default'}>{hidden ? 'Body disabled.' : 'Body can be scrolled.'}</Text>
       <Spacer h={.75} />
-      <Button size="small" type="success-light" auto onClick={() => setHidden(true)}>disable scroll</Button>
-      <Spacer h={.5} />
-      <Button size="small" type="secondary-light" auto onClick={() => setHidden(false)}>reset</Button>
+      <Button scale={0.5} type="success-light" auto onClick={() => setHidden(true)}>disable scroll</Button>
+      <Button ml="20px" scale={0.5} type="secondary-light" auto onClick={() => setHidden(false)}>reset</Button>
     </>
   )
 }

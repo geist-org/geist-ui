@@ -37,15 +37,15 @@ Display tab content.
 
 <Playground
   title="Hide Divider"
-  scope={{ Tabs }}
+  scope={{ Tabs, Text }}
   code={`
 <Tabs initialValue="html" hideDivider>
   <Tabs.Item label="HTML" value="html">
-    <p>HTML is the language that we use to structure the different parts of our content and define what their meaning or purpose is.</p>
+    <Text mt={0}>HTML is the language that we use to structure the different parts of our content and define what their meaning or purpose is.</Text>
   </Tabs.Item>
   <Tabs.Item label="CSS" value="css">
-    <p>CSS is the language that we can use to style and lay out our web content,
-    as well as adding behavior like animation.</p>
+    <Text mt={0}>CSS is the language that we can use to style and lay out our web content,
+    as well as adding behavior like animation.</Text>
   </Tabs.Item>
 </Tabs>
 `}
@@ -58,11 +58,11 @@ Display tab content.
   code={`
 <Tabs initialValue="1">
   <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
-    <Text>Hello, this is our live broadcast on Twitch.</Text>
+    <Text mt={0}>Hello, this is our live broadcast on Twitch.</Text>
     <Link href="https://github.com/geist-org/react" color rel="nofollow" target="_blank">Click here to visit GitHub repo.</Link>
   </Tabs.Item>
   <Tabs.Item label={<><TwitterIcon/> Twitter </>} value="2">
-    <Text>The Components of React looks very cool.</Text>
+    <Text mt={0}>The Components of React looks very cool.</Text>
   </Tabs.Item>
 </Tabs>
 `}
@@ -119,7 +119,7 @@ Display tab content.
   const changeHandler = val => setValue(val)
   return (
     <>
-      <Button size="small" onClick={switchHandler}><Text>Select  <Code>Jumped</Code></Text></Button>
+      <Button scale={1/3} onClick={switchHandler}><Text>Select  <Code>Jumped</Code></Text></Button>
       <Spacer h={.5} />
       <Tabs value={value} onChange={changeHandler}>
         <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
@@ -144,7 +144,7 @@ Display tab content.
   const { setState, bindings } = useTabs('1')
   return (
     <>
-      <Button size="small" onClick={() => setState('2')}>
+      <Button scale={1/3} onClick={() => setState('2')}>
         <Text>Select  <Code>Jumped</Code></Text>
       </Button>
       <Spacer h={.5} />

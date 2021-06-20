@@ -40,10 +40,13 @@ const MenuSticker = () => {
       <nav className={fixed ? 'fixed' : ''}>
         <div className="sticker">
           <div className="inner">
-            <Tabs value={tabValue} onChange={val => setTabValue(val)}>
+            <Tabs height="46px" value={tabValue} onChange={val => setTabValue(val)}>
               {tabbarData
                 ? tabbarData.map((tab, index) => (
                     <Tabs.Item
+                      height="46px"
+                      font="14px"
+                      py={0}
                       label={tab.localeName || tab.name}
                       value={tab.name}
                       key={`${tab.localeName || tab.name}-${index}`}
@@ -103,11 +106,8 @@ const MenuSticker = () => {
         }
 
         .inner {
-          max-width: ${theme.layout.pageWidth};
-          padding: 0 ${theme.layout.gap};
-          width: 100%;
-          display: flex;
-          align-items: flex-end;
+          box-sizing: border-box;
+          width: ${theme.layout.pageWidth};
           height: 100%;
           z-index: 900;
           margin: 0 auto;
@@ -117,19 +117,12 @@ const MenuSticker = () => {
           display: none;
         }
 
-        .inner :global(.tabs),
-        .inner :global(header) {
-          width: calc(100% - ${theme.layout.gap});
-          height: 100%;
-          border: none;
+        .inner :global(.scroll-container) {
+          border-color: transparent;
         }
 
         .inner :global(.tab) {
-          height: calc(100% - 2px);
-          padding-top: 0;
-          padding-bottom: 0;
           color: ${theme.palette.accents_5};
-          font-size: 0.875rem;
         }
 
         .inner :global(.tab):hover {

@@ -190,7 +190,7 @@ AutoComplete control of input field.
   const makeOption = (label, value) => (
     <AutoComplete.Option value={value}>
       <Grid.Container style={{ padding: '10pt 0' }}>
-        <Grid xs={24}><Text span b size="1.2rem">Recent search results </Text></Grid>
+        <Grid xs={24}><Text span b font="1.2rem">Recent search results </Text></Grid>
         <Grid.Container xs={24}>
           <Grid xs><Text span>{label}</Text></Grid>
           <Grid xs={4}><Badge type="success">Recommended</Badge></Grid>
@@ -215,32 +215,6 @@ AutoComplete control of input field.
       width="100%"
       options={options}
       onSearch={searchHandler} />
-  )
-}
-`}
-/>
-
-<Playground
-  title="sizes"
-  desc="Components of different sizes."
-  scope={{ AutoComplete, Spacer }}
-  code={`
-() => {
-  const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
-  ]
-  return (
-    <>
-      <AutoComplete placeholder="Mini" size="mini" options={options} />
-      <Spacer h={.5} />
-      <AutoComplete placeholder="Small" size="small" options={options} />
-      <Spacer h={.5} />
-      <AutoComplete placeholder="Medium" size="medium" options={options} />
-      <Spacer h={.5} />
-      <AutoComplete placeholder="Large" size="large" options={options} />
-    </>
   )
 }
 `}
@@ -295,7 +269,6 @@ AutoComplete control of input field.
 | --------------------- | ----------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
 | **options**           | options of input                                      | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
 | **type**              | input type                                            | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**              | input size                                            | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
 | **initialValue**      | initial value                                         | `string`                                         | -                                                       | -         |
 | **value**             | current value                                         | `string`                                         | -                                                       | -         |
 | **width**             | container width                                       | `string`                                         | -                                                       | -         |

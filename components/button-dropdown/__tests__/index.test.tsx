@@ -15,13 +15,13 @@ describe('Button Dropdown', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should support types and sizes', () => {
+  it('should support types', () => {
     const wrapper = render(
       <div>
-        <ButtonDropdown size="mini" auto>
+        <ButtonDropdown auto>
           <ButtonDropdown.Item main>Auto Mini</ButtonDropdown.Item>
         </ButtonDropdown>
-        <ButtonDropdown size="large">
+        <ButtonDropdown>
           <ButtonDropdown.Item main>Auto Mini</ButtonDropdown.Item>
         </ButtonDropdown>
         <ButtonDropdown type="secondary">
@@ -97,7 +97,7 @@ describe('Button Dropdown', () => {
 
   it('should render multiple types', () => {
     const wrapper = render(
-      <ButtonDropdown size="medium" auto>
+      <ButtonDropdown auto>
         <ButtonDropdown.Item main type="success">
           Auto Mini
         </ButtonDropdown.Item>

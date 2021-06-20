@@ -68,7 +68,7 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
           height: var(--geist-ui-dropdown-height);
           min-width: var(--geist-ui-dropdown-min-width);
           padding: var(--geist-ui-dropdown-padding);
-          font-size: var(--geist-ui-dropdown-fontsize);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {

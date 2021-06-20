@@ -111,8 +111,8 @@ const TableComponent: React.FC<React.PropsWithChildren<TableProps>> = ({
           table {
             border-collapse: separate;
             border-spacing: 0;
-            --table-fontsize: ${SCALES.font(1)};
-            font-size: var(--table-fontsize);
+            --table-font-size: ${SCALES.font(1)};
+            font-size: var(--table-font-size);
             width: ${SCALES.width(1, '100%')};
             height: ${SCALES.height(1, 'auto')};
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};

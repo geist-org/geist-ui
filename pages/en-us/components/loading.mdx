@@ -27,31 +27,6 @@ Indicate an action running in the background.
 />
 
 <Playground
-  title="sizes"
-  desc="Components of different sizes."
-  scope={{ Loading, Grid }}
-  code={`
-<Grid.Container gap={2.5}>
-  <Grid xs={24}>
-    <Loading size="mini" />
-  </Grid>
-  <Grid xs={24}>
-    <Loading size="small" />
-  </Grid>
-  <Grid xs={24}>
-    <Loading size="medium" />
-  </Grid>
-   <Grid xs={24}>
-    <Loading size="large" />
-  </Grid>
-  <Grid xs={24}>
-    <Loading size="10px" />
-  </Grid>
-</Grid.Container>
-`}
-/>
-
-<Playground
   title="types"
   desc="Loading indicators in different states."
   scope={{ Loading, Grid }}
@@ -83,7 +58,7 @@ Indicate an action running in the background.
     <Loading spaceRatio={2.5} />
   </Grid>
   <Grid xs={24}>
-    <Loading size="8px" spaceRatio={0.5} />
+    <Loading spaceRatio={0.5} />
   </Grid>
 </Grid.Container>
 `}
@@ -95,7 +70,6 @@ Indicate an action running in the background.
 | Attribute      | Description                        | Type             | Accepted values                   | Default   |
 | -------------- | ---------------------------------- | ---------------- | --------------------------------- | --------- |
 | **type**       | bg-color type                      | `NormalTypes`    | [NormalTypes](#mormaltypes)       | `default` |
-| **size**       | loading size                       | `LoadingSizes`   | [LoadingSizes](#loadingsizes)     | `medium`  |
 | **color**      | custom bg color                    | `string`         | -                                 | -         |
 | **spaceRatio** | percentage of space between points | `number`         | -                                 | 1         |
 | ...            | native props                       | `HTMLAttributes` | `'id', 'title', 'className', ...` | -         |
@@ -104,12 +78,6 @@ Indicate an action running in the background.
 
 ```ts
 type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
-```
-
-<Attributes.Title>LoadingSizes</Attributes.Title>
-
-```ts
-type LoadingSizes = 'mini' | 'small' | 'medium' | 'large' | string
 ```
 
 </Attributes>

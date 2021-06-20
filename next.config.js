@@ -1,14 +1,14 @@
 const withMDX = require('@next/mdx')({
   extension: /\.(md|mdx)?$/,
   options: {
-    rehypePlugins: [require('@mapbox/rehype-prism')],
+    rehypePlugins: [require('@mapbox/rehype-prism'), require('rehype-join-line')],
   },
 })
 
 const nextConfig = {
   target: 'serverless',
 
-  reactStrictMode: true,
+  // reactStrictMode: true,
 
   generateEtags: false,
 

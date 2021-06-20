@@ -20,7 +20,7 @@ A divider line separates different content.
     the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
     These headers describe the preferred choice of the user.
   </Text>
-  <Divider/>
+  <Divider />
   <Text>
     The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
     The algorithm is server-specific and not defined in the standard.
@@ -65,37 +65,12 @@ A divider line separates different content.
     the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
     These headers describe the preferred choice of the user.
   </Text>
-  <Divider y={5}>HTTP</Divider>
+  <Divider h={5}>HTTP</Divider>
   <Text>
     The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
     The algorithm is server-specific and not defined in the standard.
   </Text>
-  <Divider x={5} y={5}>standard headers</Divider>
-  <Text>
-    The HTTP/1.1 standard defines list of the standard headers that start server-driven negotiation
-    (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
-  </Text>
-</>
-`}
-/>
-
-<Playground
-  title="Volume"
-  desc="Specify the volume of the component."
-  scope={{ Divider, Text }}
-  code={`
-<>
-  <Text>
-    In server-driven content negotiation, or proactive content negotiation,
-    the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
-    These headers describe the preferred choice of the user.
-  </Text>
-  <Divider volume={2} y={3} />
-  <Text>
-    The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
-    The algorithm is server-specific and not defined in the standard.
-  </Text>
-  <Divider volume={20} y={3}>standard headers</Divider>
+  <Divider my={5} h={5}>standard headers</Divider>
   <Text>
     The HTTP/1.1 standard defines list of the standard headers that start server-driven negotiation
     (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
@@ -115,12 +90,12 @@ A divider line separates different content.
     the browser (or any other kind of user-agent) sends several HTTP headers along with the URL.
     These headers describe the preferred choice of the user.
   </Text>
-  <Divider volume={2} y={3} type="success">HTTP</Divider>
+  <Divider h={3} type="success">HTTP</Divider>
   <Text>
     The server uses them as hints and an internal algorithm chooses the best content to serve to the client.
     The algorithm is server-specific and not defined in the standard.
   </Text>
-  <Divider volume={20} y={3} type="warning">standard headers</Divider>
+  <Divider h={3} my={3} type="warning">standard headers</Divider>
   <Text>
     The HTTP/1.1 standard defines list of the standard headers that start server-driven negotiation
     (Accept, Accept-Charset, Accept-Encoding, Accept-Language)
@@ -132,14 +107,11 @@ A divider line separates different content.
 <Attributes edit="/pages/en-us/components/divider.mdx">
 <Attributes.Title>Divider.Props</Attributes.Title>
 
-| Attribute  | Description       | Type                          | Accepted values                  | Default   |
-| ---------- | ----------------- | ----------------------------- | -------------------------------- | --------- |
-| **x**      | x-axis spacing    | `number` / `float`            | -                                | 0         |
-| **y**      | y-axis spacing    | `number` / `float`            | -                                | 2         |
-| **type**   | type of divier    | [DividerTypes](#dividertypes) | -                                | `default` |
-| **align**  | alignment of text | [DividerAlign](#divideralign) | -                                | `center`  |
-| **volume** | size of component | `number` / `float`            | -                                | 1         |
-| ...        | native props      | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
+| Attribute | Description       | Type                          | Accepted values                  | Default   |
+| --------- | ----------------- | ----------------------------- | -------------------------------- | --------- |
+| **type**  | type of divier    | [DividerTypes](#dividertypes) | -                                | `default` |
+| **align** | alignment of text | [DividerAlign](#divideralign) | -                                | `center`  |
+| ...       | native props      | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
 
 <Attributes.Title>DividerTypes</Attributes.Title>
 

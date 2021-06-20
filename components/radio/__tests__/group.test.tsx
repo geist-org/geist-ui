@@ -21,24 +21,6 @@ describe('Radio Group', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should work correctly with different sizes', () => {
-    const wrapper = mount(
-      <div>
-        <Radio.Group value="1" size="mini">
-          <Radio value="1">1</Radio>
-        </Radio.Group>
-        <Radio.Group value="1" size="small">
-          <Radio value="1">1</Radio>
-        </Radio.Group>
-        <Radio.Group value="1" size="large">
-          <Radio value="1">1</Radio>
-        </Radio.Group>
-      </div>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
   it('should trigger events in group', () => {
     let value = ''
     const changeHandler = jest.fn().mockImplementation(val => (value = val))

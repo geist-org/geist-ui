@@ -12,10 +12,9 @@ describe('Spacer', () => {
   it('should work with different sizes', () => {
     const wrapper = mount(
       <div>
-        <Spinner size="mini" />
-        <Spinner size="small" />
-        <Spinner size="medium" />
-        <Spinner size="large" />
+        <Spinner w="100px" />
+        <Spinner h="100px" />
+        <Spinner scale={2} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

@@ -101,9 +101,9 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           background-color: ${style.bgColor};
           border: 1px solid ${style.border};
           border-radius: ${theme.layout.radius};
-          --snippet-fontsize: ${SCALES.font(0.8125)};
+          --snippet-font-size: ${SCALES.font(0.8125)};
           --snippet-padding-top: ${SCALES.pt(0.667)};
-          font-size: var(--snippet-fontsize);
+          font-size: var(--snippet-font-size);
           width: ${SCALES.width(1, 'initial')};
           height: ${SCALES.height(1, 'auto')};
           padding: ${SCALES.pt(0.667)} ${SCALES.pr(2.667)} ${SCALES.pb(0.667)}
@@ -142,7 +142,7 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           display: inline-flex;
           justify-content: center;
           align-items: ${isMultiLine ? 'flex-start' : 'center'};
-          width: calc(3.281 * var(--snippet-fontsize));
+          width: calc(3.281 * var(--snippet-font-size));
           color: inherit;
           transition: opacity 0.2s ease 0s;
           border-radius: ${theme.layout.radius};

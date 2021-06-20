@@ -115,7 +115,7 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
 
       <style jsx>{`
         .checkbox {
-          --checkbox-size: ${SCALES.font(1)};
+          --checkbox-size: ${SCALES.font(0.875)};
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -131,7 +131,7 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
         }

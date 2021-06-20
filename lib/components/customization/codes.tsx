@@ -130,7 +130,7 @@ const CustomizationCodes: React.FC<unknown> = () => {
           cursor: pointer;
           user-select: none;
           transition: color 200ms ease;
-          --snippet-fontsize: 16px;
+          --snippet-font-size: 16px;
         }
 
         .copy:hover {

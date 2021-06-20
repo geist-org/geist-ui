@@ -46,6 +46,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
         {label}
         <style jsx>{`
           .tab {
+            box-sizing: border-box;
             cursor: pointer;
             outline: 0;
             transition: all 200ms ease;
@@ -74,6 +75,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
             right: 0;
             width: 100%;
             height: 2px;
+            border-radius: 4px;
             transform: scaleX(0.75);
             background-color: transparent;
             transition: all 200ms ease;

@@ -45,9 +45,9 @@ Display progress relative to a limit or related to a task.
     <>
       <Progress value={value} colors={colors} />
       <Spacer />
-      <Button onClick={() => setValue(value + 20)} auto size="small">Increase</Button>
+      <Button onClick={() => setValue(value + 20)} auto scale={0.5}>Increase</Button>
       <Spacer w={.5} inline />
-      <Button onClick={() => setValue(20)} auto size="small" type="abort">Reset</Button>
+      <Button onClick={() => setValue(20)} auto scale={0.5} type="abort">Reset</Button>
     </>
   )
 }

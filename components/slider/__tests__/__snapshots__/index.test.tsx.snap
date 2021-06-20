@@ -7,18 +7,18 @@ exports[`Slider should render correctly 1`] = `
             left: 20%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: #0070f3;
             color: #fff;
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {
@@ -44,7 +44,7 @@ exports[`Slider should render correctly 1`] = `
           background-color: #111;
           position: relative;
           cursor: pointer;
-          --slider-fontsize: calc(1 * 16px);
+          --slider-font-size: calc(1 * 16px);
           width: 100%;
           height: calc(0.5 * 16px);
           padding: 0 0 0 0;
@@ -60,18 +60,18 @@ exports[`Slider should work with different status 1`] = `
             left: 0%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: #0070f3;
             color: #fff;
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {
@@ -97,7 +97,7 @@ exports[`Slider should work with different status 1`] = `
           background-color: #111;
           position: relative;
           cursor: pointer;
-          --slider-fontsize: calc(1 * 16px);
+          --slider-font-size: calc(1 * 16px);
           width: 100%;
           height: calc(0.5 * 16px);
           padding: 0 0 0 0;
@@ -109,18 +109,18 @@ exports[`Slider should work with different status 1`] = `
             left: 0%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: #0070f3;
             color: #fff;
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {
@@ -146,7 +146,7 @@ exports[`Slider should work with different status 1`] = `
           background-color: #0070f3;
           position: relative;
           cursor: pointer;
-          --slider-fontsize: calc(1 * 16px);
+          --slider-font-size: calc(1 * 16px);
           width: 100%;
           height: calc(0.5 * 16px);
           padding: 0 0 0 0;
@@ -158,18 +158,18 @@ exports[`Slider should work with different status 1`] = `
             left: 0%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: #0070f3;
             color: #fff;
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {
@@ -195,7 +195,7 @@ exports[`Slider should work with different status 1`] = `
           background-color: #f5a623;
           position: relative;
           cursor: pointer;
-          --slider-fontsize: calc(1 * 16px);
+          --slider-font-size: calc(1 * 16px);
           width: 100%;
           height: calc(0.5 * 16px);
           padding: 0 0 0 0;
@@ -207,18 +207,18 @@ exports[`Slider should work with different status 1`] = `
             left: 0%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: #0070f3;
             color: #fff;
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {
@@ -244,7 +244,7 @@ exports[`Slider should work with different status 1`] = `
           background-color: #e00;
           position: relative;
           cursor: pointer;
-          --slider-fontsize: calc(1 * 16px);
+          --slider-font-size: calc(1 * 16px);
           width: 100%;
           height: calc(0.5 * 16px);
           padding: 0 0 0 0;
@@ -260,18 +260,18 @@ exports[`Slider should work with hideValue 1`] = `
             left: 20%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: #0070f3;
             color: #fff;
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {
@@ -297,7 +297,7 @@ exports[`Slider should work with hideValue 1`] = `
           background-color: #111;
           position: relative;
           cursor: pointer;
-          --slider-fontsize: calc(1 * 16px);
+          --slider-font-size: calc(1 * 16px);
           width: 100%;
           height: calc(0.5 * 16px);
           padding: 0 0 0 0;
@@ -313,18 +313,18 @@ exports[`Slider should work with markers 1`] = `
             left: 0%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: #0070f3;
             color: #fff;
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {
@@ -359,7 +359,7 @@ exports[`Slider should work with markers 1`] = `
           background-color: #111;
           position: relative;
           cursor: pointer;
-          --slider-fontsize: calc(1 * 16px);
+          --slider-font-size: calc(1 * 16px);
           width: 100%;
           height: calc(0.5 * 16px);
           padding: 0 0 0 0;
@@ -375,18 +375,18 @@ exports[`Slider should work with markers 2`] = `
             left: 0%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: #0070f3;
             color: #fff;
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {
@@ -421,7 +421,7 @@ exports[`Slider should work with markers 2`] = `
           background-color: #111;
           position: relative;
           cursor: pointer;
-          --slider-fontsize: calc(1 * 16px);
+          --slider-font-size: calc(1 * 16px);
           width: 100%;
           height: calc(0.5 * 16px);
           padding: 0 0 0 0;

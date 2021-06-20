@@ -26,7 +26,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type ButtonDropdownProps = Props & typeof defaultProps & NativeAttrs
+export type ButtonDropdownProps = Props & NativeAttrs
 
 const stopPropagation = (event: MouseEvent<HTMLElement>) => {
   event.stopPropagation()
@@ -106,7 +106,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
             --geist-ui-dropdown-min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
             --geist-ui-dropdown-padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)}
               ${paddingLeft};
-            --geist-ui-dropdown-fontsize: ${SCALES.font(0.875)};
+            --geist-ui-dropdown-font-size: ${SCALES.font(0.875)};
           }
 
           .btn-dropdown > :global(button) {

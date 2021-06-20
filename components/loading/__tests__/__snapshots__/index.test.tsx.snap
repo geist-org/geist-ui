@@ -143,12 +143,12 @@ exports[`Loading should work with custom styles 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\" unit=\\"20%\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
           position: relative;
-          font-size: calc(1 * 16px);
+          font-size: calc(1 * 20%);
           width: 100%;
           height: 100%;
           min-height: 1em;
@@ -211,12 +211,12 @@ exports[`Loading should work with custom styles 1`] = `
             opacity: 0.2;
           }
         }
-      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
+      </style></div><div class=\\"loading-container \\" unit=\\"10px\\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
         .loading-container {
           display: inline-flex;
           align-items: center;
           position: relative;
-          font-size: calc(1 * 16px);
+          font-size: calc(1 * 10px);
           width: 100%;
           height: 100%;
           min-height: 1em;
@@ -283,284 +283,6 @@ exports[`Loading should work with custom styles 1`] = `
 `;
 
 exports[`Loading should work with custom styles 2`] = `[Function]`;
-
-exports[`Loading should work with different sizes 1`] = `
-"<div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
-        .loading-container {
-          display: inline-flex;
-          align-items: center;
-          position: relative;
-          font-size: calc(1 * 16px);
-          width: 100%;
-          height: 100%;
-          min-height: 1em;
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-        }
-
-        label {
-          margin-right: 0.5em;
-          color: #666;
-          line-height: 1;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
-        .loading {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100%;
-          height: 100%;
-          transform: translate(-50%, -50%);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: transparent;
-          user-select: none;
-        }
-
-        i {
-          width: 0.25em;
-          height: 0.25em;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 calc(0.25em / 2 * 1);
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
-        }
-
-        i:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-
-        i:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-
-        @keyframes loading-blink {
-          0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
-          }
-
-          100% {
-            opacity: 0.2;
-          }
-        }
-      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
-        .loading-container {
-          display: inline-flex;
-          align-items: center;
-          position: relative;
-          font-size: calc(1 * 16px);
-          width: 100%;
-          height: 100%;
-          min-height: 1em;
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-        }
-
-        label {
-          margin-right: 0.5em;
-          color: #666;
-          line-height: 1;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
-        .loading {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100%;
-          height: 100%;
-          transform: translate(-50%, -50%);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: transparent;
-          user-select: none;
-        }
-
-        i {
-          width: 0.25em;
-          height: 0.25em;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 calc(0.25em / 2 * 1);
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
-        }
-
-        i:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-
-        i:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-
-        @keyframes loading-blink {
-          0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
-          }
-
-          100% {
-            opacity: 0.2;
-          }
-        }
-      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
-        .loading-container {
-          display: inline-flex;
-          align-items: center;
-          position: relative;
-          font-size: calc(1 * 16px);
-          width: 100%;
-          height: 100%;
-          min-height: 1em;
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-        }
-
-        label {
-          margin-right: 0.5em;
-          color: #666;
-          line-height: 1;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
-        .loading {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100%;
-          height: 100%;
-          transform: translate(-50%, -50%);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: transparent;
-          user-select: none;
-        }
-
-        i {
-          width: 0.25em;
-          height: 0.25em;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 calc(0.25em / 2 * 1);
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
-        }
-
-        i:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-
-        i:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-
-        @keyframes loading-blink {
-          0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
-          }
-
-          100% {
-            opacity: 0.2;
-          }
-        }
-      </style></div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>
-        .loading-container {
-          display: inline-flex;
-          align-items: center;
-          position: relative;
-          font-size: calc(1 * 16px);
-          width: 100%;
-          height: 100%;
-          min-height: 1em;
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-        }
-
-        label {
-          margin-right: 0.5em;
-          color: #666;
-          line-height: 1;
-        }
-
-        label :global(*) {
-          margin: 0;
-        }
-
-        .loading {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 100%;
-          height: 100%;
-          transform: translate(-50%, -50%);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background-color: transparent;
-          user-select: none;
-        }
-
-        i {
-          width: 0.25em;
-          height: 0.25em;
-          border-radius: 50%;
-          background-color: #444;
-          margin: 0 calc(0.25em / 2 * 1);
-          display: inline-block;
-          animation: loading-blink 1.4s infinite both;
-        }
-
-        i:nth-child(2) {
-          animation-delay: 0.2s;
-        }
-
-        i:nth-child(3) {
-          animation-delay: 0.4s;
-        }
-
-        @keyframes loading-blink {
-          0% {
-            opacity: 0.2;
-          }
-
-          20% {
-            opacity: 1;
-          }
-
-          100% {
-            opacity: 0.2;
-          }
-        }
-      </style></div></div>"
-`;
-
-exports[`Loading should work with different sizes 2`] = `[Function]`;
 
 exports[`Loading should work with different types 1`] = `
 "<div><div class=\\"loading-container \\"><span class=\\"loading\\"><i></i><i></i><i></i></span><style>

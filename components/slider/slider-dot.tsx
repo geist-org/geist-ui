@@ -42,18 +42,18 @@ const SliderDot = React.forwardRef<
             left: ${left}%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: calc(var(--slider-fontsize) * 1.25);
-            min-width: calc(var(--slider-fontsize) * 1.25);
-            line-height: calc(var(--slider-fontsize) * 1.25);
-            border-radius: calc(var(--slider-fontsize) * 0.625);
+            height: calc(var(--slider-font-size) * 1.25);
+            min-width: calc(var(--slider-font-size) * 1.25);
+            line-height: calc(var(--slider-font-size) * 1.25);
+            border-radius: calc(var(--slider-font-size) * 0.625);
             user-select: none;
             font-weight: 700;
-            font-size: calc(var(--slider-fontsize) * 0.75);
+            font-size: calc(var(--slider-font-size) * 0.75);
             z-index: 100;
             background-color: ${theme.palette.success};
             color: ${theme.palette.background};
             text-align: center;
-            padding: 0 calc(0.57 * var(--slider-fontsize));
+            padding: 0 calc(0.57 * var(--slider-font-size));
           }
 
           .dot.disabled {

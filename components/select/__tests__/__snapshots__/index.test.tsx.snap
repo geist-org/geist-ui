@@ -97,7 +97,7 @@ exports[`Select should render correctly 1`] = `
             align-items: center;
             color: #666;
           }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
+        </style></div><div class=\\"select  \\" scale=\\"2\\"><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
@@ -129,213 +129,21 @@ exports[`Select should render correctly 1`] = `
             border-radius: 5px;
 
             background-color: #fff;
-            --select-font-size: calc(0.875 * 16px);
-            --select-height: calc(2.25 * 16px);
+            --select-font-size: calc(1.3125 * 16px);
+            --select-height: calc(3.375 * 16px);
             min-width: 11.5em;
             width: initial;
             height: var(--select-height);
-            padding: 0 calc(0.334 * 16px) 0
-              calc(0.667 * 16px);
+            padding: 0 calc(0.501 * 16px) 0
+              calc(1.0005000000000002 * 16px);
             margin: 0 0 0 0;
           }
 
           .multiple {
             height: auto;
             min-height: var(--select-height);
-            padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
-              calc(0.667 * 16px);
-          }
-
-          .select:hover {
-            border-color: #000;
-          }
-
-          .select:hover .icon {
-            color: #000;
-          }
-
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25em;
-            font-size: var(--select-font-size);
-            color: #000;
-            width: calc(100% - 1.25em);
-          }
-
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
-
-          .placeholder {
-            color: #999;
-          }
-
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: var(--select-font-size);
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
-        span {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          line-height: var(--select-height);
-          min-width: 0;
-        }
-      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
-        svg {
-          color: inherit;
-          stroke: currentColor;
-          transition: all 200ms ease;
-          width: 1.214em;
-          height: 1.214em;
-        }
-      </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 90vw;
-            overflow: hidden;
-            transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
-              box-shadow 200ms ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-
-            background-color: #fff;
-            --select-font-size: calc(0.875 * 16px);
-            --select-height: calc(2.25 * 16px);
-            min-width: 11.5em;
-            width: initial;
-            height: var(--select-height);
-            padding: 0 calc(0.334 * 16px) 0
-              calc(0.667 * 16px);
-            margin: 0 0 0 0;
-          }
-
-          .multiple {
-            height: auto;
-            min-height: var(--select-height);
-            padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
-              calc(0.667 * 16px);
-          }
-
-          .select:hover {
-            border-color: #000;
-          }
-
-          .select:hover .icon {
-            color: #000;
-          }
-
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25em;
-            font-size: var(--select-font-size);
-            color: #000;
-            width: calc(100% - 1.25em);
-          }
-
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
-
-          .placeholder {
-            color: #999;
-          }
-
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: var(--select-font-size);
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
-        span {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          line-height: var(--select-height);
-          min-width: 0;
-        }
-      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
-        svg {
-          color: inherit;
-          stroke: currentColor;
-          transition: all 200ms ease;
-          width: 1.214em;
-          height: 1.214em;
-        }
-      </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 90vw;
-            overflow: hidden;
-            transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
-              box-shadow 200ms ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-
-            background-color: #fff;
-            --select-font-size: calc(0.875 * 16px);
-            --select-height: calc(2.25 * 16px);
-            min-width: 11.5em;
-            width: initial;
-            height: var(--select-height);
-            padding: 0 calc(0.334 * 16px) 0
-              calc(0.667 * 16px);
-            margin: 0 0 0 0;
-          }
-
-          .multiple {
-            height: auto;
-            min-height: var(--select-height);
-            padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
-              calc(0.667 * 16px);
+            padding: calc(0.501 * 16px) calc(0.501 * 16px) calc(0.501 * 16px)
+              calc(1.0005000000000002 * 16px);
           }
 
           .select:hover {

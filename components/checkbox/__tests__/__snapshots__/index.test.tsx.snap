@@ -87,7 +87,7 @@ initialize {
                   Node {
                     "data": "
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -103,7 +103,7 @@ initialize {
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }
@@ -224,7 +224,7 @@ initialize {
                 Node {
                   "data": "
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -240,7 +240,7 @@ initialize {
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }
@@ -369,7 +369,7 @@ initialize {
               Node {
                 "data": "
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -385,7 +385,7 @@ initialize {
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }
@@ -529,7 +529,7 @@ initialize {
             Node {
               "data": "
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -545,7 +545,7 @@ initialize {
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }
@@ -681,7 +681,7 @@ initialize {
           Node {
             "data": "
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -697,7 +697,7 @@ initialize {
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }
@@ -874,186 +874,6 @@ initialize {
 }
 `;
 
-exports[`Checkbox should work correctly with different sizes 1`] = `
-"<div><label class=\\"checkbox \\"><svg viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
-        svg {
-          display: inline-flex;
-          width: calc(0.86 * var(--checkbox-size));
-          height: calc(0.86 * var(--checkbox-size));
-          user-select: none;
-          opacity: 1;
-          cursor: pointer;
-        }
-      </style><input type=\\"checkbox\\"><span class=\\"text\\">mini</span><style>
-        .checkbox {
-          --checkbox-size: calc(1 * 16px);
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          opacity: 1;
-          line-height: var(--checkbox-size);
-          width: auto;
-          height: var(--checkbox-size);
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-        }
-
-        .text {
-          font-size: var(--checkbox-size);
-          line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
-          user-select: none;
-          cursor: pointer;
-        }
-
-        input {
-          opacity: 0;
-          outline: none;
-          position: absolute;
-          width: 0;
-          height: 0;
-          margin: 0;
-          padding: 0;
-          z-index: -1;
-          font-size: 0;
-          background-color: transparent;
-        }
-      </style></label><label class=\\"checkbox \\"><svg viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
-        svg {
-          display: inline-flex;
-          width: calc(0.86 * var(--checkbox-size));
-          height: calc(0.86 * var(--checkbox-size));
-          user-select: none;
-          opacity: 1;
-          cursor: pointer;
-        }
-      </style><input type=\\"checkbox\\"><span class=\\"text\\">small</span><style>
-        .checkbox {
-          --checkbox-size: calc(1 * 16px);
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          opacity: 1;
-          line-height: var(--checkbox-size);
-          width: auto;
-          height: var(--checkbox-size);
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-        }
-
-        .text {
-          font-size: var(--checkbox-size);
-          line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
-          user-select: none;
-          cursor: pointer;
-        }
-
-        input {
-          opacity: 0;
-          outline: none;
-          position: absolute;
-          width: 0;
-          height: 0;
-          margin: 0;
-          padding: 0;
-          z-index: -1;
-          font-size: 0;
-          background-color: transparent;
-        }
-      </style></label><label class=\\"checkbox \\"><svg viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
-        svg {
-          display: inline-flex;
-          width: calc(0.86 * var(--checkbox-size));
-          height: calc(0.86 * var(--checkbox-size));
-          user-select: none;
-          opacity: 1;
-          cursor: pointer;
-        }
-      </style><input type=\\"checkbox\\"><span class=\\"text\\">medium</span><style>
-        .checkbox {
-          --checkbox-size: calc(1 * 16px);
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          opacity: 1;
-          line-height: var(--checkbox-size);
-          width: auto;
-          height: var(--checkbox-size);
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-        }
-
-        .text {
-          font-size: var(--checkbox-size);
-          line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
-          user-select: none;
-          cursor: pointer;
-        }
-
-        input {
-          opacity: 0;
-          outline: none;
-          position: absolute;
-          width: 0;
-          height: 0;
-          margin: 0;
-          padding: 0;
-          z-index: -1;
-          font-size: 0;
-          background-color: transparent;
-        }
-      </style></label><label class=\\"checkbox \\"><svg viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
-        svg {
-          display: inline-flex;
-          width: calc(0.86 * var(--checkbox-size));
-          height: calc(0.86 * var(--checkbox-size));
-          user-select: none;
-          opacity: 1;
-          cursor: pointer;
-        }
-      </style><input type=\\"checkbox\\"><span class=\\"text\\">large</span><style>
-        .checkbox {
-          --checkbox-size: calc(1 * 16px);
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
-          opacity: 1;
-          line-height: var(--checkbox-size);
-          width: auto;
-          height: var(--checkbox-size);
-          padding: 0 0 0 0;
-          margin: 0 0 0 0;
-        }
-
-        .text {
-          font-size: var(--checkbox-size);
-          line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
-          user-select: none;
-          cursor: pointer;
-        }
-
-        input {
-          opacity: 0;
-          outline: none;
-          position: absolute;
-          width: 0;
-          height: 0;
-          margin: 0;
-          padding: 0;
-          z-index: -1;
-          font-size: 0;
-          background-color: transparent;
-        }
-      </style></label></div>"
-`;
-
 exports[`Checkbox should work with different status 1`] = `
 "<div><label class=\\"checkbox \\"><svg viewBox=\\"0 0 12 12\\" fill=\\"none\\"><path d=\\"M8.5 0.5H3.5C1.84315 0.5 0.5 1.84315 0.5 3.5V8.5C0.5 10.1569 1.84315 11.5 3.5 11.5H8.5C10.1569 11.5 11.5 10.1569 11.5 8.5V3.5C11.5 1.84315 10.1569 0.5 8.5 0.5Z\\" stroke=\\"#666\\"></path></svg><style>
         svg {
@@ -1066,7 +886,7 @@ exports[`Checkbox should work with different status 1`] = `
         }
       </style><input type=\\"checkbox\\"><span class=\\"text\\"></span><style>
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -1082,7 +902,7 @@ exports[`Checkbox should work with different status 1`] = `
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }
@@ -1110,7 +930,7 @@ exports[`Checkbox should work with different status 1`] = `
         }
       </style><input type=\\"checkbox\\"><span class=\\"text\\"></span><style>
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -1126,7 +946,7 @@ exports[`Checkbox should work with different status 1`] = `
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }
@@ -1154,7 +974,7 @@ exports[`Checkbox should work with different status 1`] = `
         }
       </style><input type=\\"checkbox\\"><span class=\\"text\\"></span><style>
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -1170,7 +990,7 @@ exports[`Checkbox should work with different status 1`] = `
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }
@@ -1198,7 +1018,7 @@ exports[`Checkbox should work with different status 1`] = `
         }
       </style><input type=\\"checkbox\\"><span class=\\"text\\"></span><style>
         .checkbox {
-          --checkbox-size: calc(1 * 16px);
+          --checkbox-size: calc(0.875 * 16px);
           display: inline-flex;
           justify-content: center;
           align-items: center;
@@ -1214,7 +1034,7 @@ exports[`Checkbox should work with different status 1`] = `
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: pointer;
         }

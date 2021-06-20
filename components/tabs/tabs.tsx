@@ -69,10 +69,12 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   return (
     <TabsContext.Provider value={initialValue}>
       <div className={`tabs ${className}`} {...props}>
-        <header className={hideDivider ? 'hide-divider' : ''}>
-          {tabs.map(({ cell: Cell, value }) => (
-            <Cell key={value} value={selfValue} onClick={clickHandler} />
-          ))}
+        <header>
+          <div className={`scroll-container ${hideDivider ? 'hide-divider' : ''}`}>
+            {tabs.map(({ cell: Cell, value }) => (
+              <Cell key={value} value={selfValue} onClick={clickHandler} />
+            ))}
+          </div>
         </header>
         <div className="content">{children}</div>
         <style jsx>{`
@@ -83,24 +85,30 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
             margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
-
           header {
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
-            border-bottom: 1px solid ${theme.palette.border};
-            overflow: scroll;
+            overflow-y: hidden;
+            overflow-x: scroll;
             scrollbar-width: none;
+            position: relative;
           }
-
+          .scroll-container {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-bottom: 1px solid ${theme.palette.border};
+          }
           header::-webkit-scrollbar {
             display: none;
           }
-
           .hide-divider {
-            border-bottom: none;
+            border-color: transparent;
           }
-
           .content {
             padding-top: 0.625rem;
           }

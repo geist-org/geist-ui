@@ -13,7 +13,6 @@ export const meta = {
 
 Ensure your have the latest version of <Link href="https://nodejs.org/en/download/">NodeJS</Link>,
 and a package manager: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> or <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
-If you want to see a complete example, please browse our <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/tree/master/examples">sample collection</Link>.
 
 <Spacer h={1} />
 <Dot type="success" /> 1. Run script to download:
@@ -27,7 +26,7 @@ If you want to see a complete example, please browse our <Link target="_blank" c
   </Tabs.Item>
 </Tabs>
 <Spacer h={1.5} />
-<Dot type="success" /> 2. Import package to your project:
+<Dot type="success" /> 2. Add package to your project:
 
 <Grid.Container>
 <Grid xs={24} sm={16}>
@@ -64,12 +63,12 @@ const MyComponent = () => <Button>Click Me</Button>
 
 <Text h3>
   Font rendering on Windows{' '}
-  <Text span type="secondary" size=".75em" style={{ textTransform: 'uppercase' }}>
+  <Text span type="secondary" font=".75em" style={{ textTransform: 'uppercase' }}>
     [Optional]
   </Text>
 </Text>
 
-We know that some fonts do not render well on the _Windows_ side,
+Some fonts in Web applications do not render best on the _Windows_ platform,
 or do you think font rendering is not good enough for some character sets (like Chinese rendering),
 In this case, you can introduce additional font packages to optimize the rendering:
 
@@ -84,24 +83,21 @@ In this case, you can introduce additional font packages to optimize the renderi
 2. Add `Inter Font` to your project:
 
 <Grid.Container>
-<Grid xs={24} sm={16}>
-
-```jsx
-import 'inter-ui/inter.css'
-```
-
-</Grid>
+  <Grid xs={24} sm={16}>
+    <Code block my={0} width="100%">
+      <span className="token keyword module">import</span>{' '}
+      <span className="token string">inter-ui/inter.css</span>
+    </Code>
+  </Grid>
 </Grid.Container>
 
-<Spacer h={1.5} />
+<Spacer h={3} />
 
 ### Single component
 
-Geist UI supports importing single, specific components when you need them. This is referred to as `tree-shaking`.
+Geist UI allows to manually import components if you need. E.g.
 
-E.g.
-
-<Grid.Container>
+<Grid.Container style={{ marginTop: '-20px' }}>
 <Grid xs={24} sm={16}>
 
 ```jsx
@@ -113,9 +109,9 @@ const MyComponent = () => <Button>Click Me</Button>
 </Grid>
 </Grid.Container>
 
-<Spacer h={1.5} />
+<Spacer h={2.5} />
 
-### Create React App
+### CRA project
 
 A React project created by <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> can
 also easily use `@geist-ui/react`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">a
@@ -125,7 +121,7 @@ If you want to eject certain configs, `tree-shaking`, please refer to <Link targ
 
 <Spacer h={2.5} />
 
-### Next.js
+### NextJS project
 
 In the `next.js` project, you need to customize the <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> entry file to load the provider.
 Start your NextJS project with <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/create-next-app/README.md">this example</Link>.
