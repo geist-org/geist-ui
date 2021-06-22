@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { Justify, Direction, AlignItems, AlignContent } from './grid-types'
+import useScaleable from '../use-scaleable'
 
 type BreakpointsValue = number | boolean
 interface Props {
@@ -69,6 +70,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   ...props
 }: React.PropsWithChildren<GridBasicItemProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const classes = useMemo(() => {
     const aligns: { [key: string]: any } = {
       justify,
@@ -108,6 +110,8 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
       {children}
       <style jsx>{`
         .item {
+          font-size: ${SCALES.font(1, 'inherit')};
+          height: ${SCALES.height(1, 'auto')};
         }
 
         .justify {

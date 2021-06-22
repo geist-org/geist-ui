@@ -65,6 +65,7 @@ export type GetScaleablePropsFunction = (
 export interface ScaleableConfig {
   SCALES: DynamicScales
   getScaleableProps: GetScaleablePropsFunction
+  unit: string
 }
 
 const defaultDynamicLayoutPipe: DynamicLayoutPipe = scale1x => {
@@ -90,6 +91,7 @@ const defaultContext: ScaleableConfig = {
     height: defaultDynamicLayoutPipe,
     font: defaultDynamicLayoutPipe,
   },
+  unit: '16px',
 }
 
 export const ScaleableContext = React.createContext<ScaleableConfig>(defaultContext)

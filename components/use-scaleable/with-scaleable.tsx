@@ -51,24 +51,24 @@ const withScaleable = <T, P = {}>(
       unit = layout.unit,
       scale = 1,
     } = props
-    const makeScaleHandler = (
-      attrValue: string | number | undefined,
-    ): DynamicLayoutPipe => (scale1x, defaultValue) => {
-      // 0 means disable scale and the default value is 0
-      if (scale1x === 0) {
-        scale1x = 1
-        defaultValue = defaultValue || 0
-      }
-      const factor = reduceScaleCoefficient(scale) * scale1x
-      if (typeof attrValue === 'undefined') {
-        if (typeof defaultValue !== 'undefined') return `${defaultValue}`
-        return `calc(${factor} * ${unit})`
-      }
+    const makeScaleHandler =
+      (attrValue: string | number | undefined): DynamicLayoutPipe =>
+      (scale1x, defaultValue) => {
+        // 0 means disable scale and the default value is 0
+        if (scale1x === 0) {
+          scale1x = 1
+          defaultValue = defaultValue || 0
+        }
+        const factor = reduceScaleCoefficient(scale) * scale1x
+        if (typeof attrValue === 'undefined') {
+          if (typeof defaultValue !== 'undefined') return `${defaultValue}`
+          return `calc(${factor} * ${unit})`
+        }
 
-      if (!isCSSNumberValue(attrValue)) return `${attrValue}`
-      const customFactor = factor * Number(attrValue)
-      return `calc(${customFactor} * ${unit})`
-    }
+        if (!isCSSNumberValue(attrValue)) return `${attrValue}`
+        const customFactor = factor * Number(attrValue)
+        return `calc(${customFactor} * ${unit})`
+      }
     const getScaleableProps: GetScaleablePropsFunction = keyOrKeys => {
       if (!Array.isArray(keyOrKeys)) return props[keyOrKeys as keyof ScaleableProps]
       let value = undefined
@@ -82,6 +82,7 @@ const withScaleable = <T, P = {}>(
     }
 
     const value: ScaleableConfig = {
+      unit,
       SCALES: {
         pt: makeScaleHandler(paddingTop ?? pt ?? py ?? padding),
         pr: makeScaleHandler(paddingRight ?? pr ?? px ?? padding),
