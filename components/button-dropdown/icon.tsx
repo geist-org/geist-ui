@@ -29,6 +29,5 @@ const ButtonDropdownIcon: React.FC<Props> = ({ color, height }) => {
   )
 }
 
-const MemoButtonDropdownIcon = React.memo(ButtonDropdownIcon)
-
-export default MemoButtonDropdownIcon
+ButtonDropdownIcon.displayName = 'GeistButtonDropdownIcon'
+export default ButtonDropdownIcon

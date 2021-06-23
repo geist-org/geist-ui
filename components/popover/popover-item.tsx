@@ -1,6 +1,5 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 
 interface Props {
   line?: boolean
@@ -14,7 +13,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PopoverItemProps = Props & typeof defaultProps & NativeAttrs
+export type PopoverItemProps = Props & NativeAttrs
 
 const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   children,
@@ -22,7 +21,7 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   title,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<PopoverItemProps> & typeof defaultProps) => {
   const theme = useTheme()
   return (
     <>
@@ -84,6 +83,6 @@ const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   )
 }
 
-const MemoPopoverItem = React.memo(PopoverItem)
-
-export default withDefaults(MemoPopoverItem, defaultProps)
+PopoverItem.defaultProps = defaultProps
+PopoverItem.displayName = 'GeistPopoverItem'
+export default PopoverItem

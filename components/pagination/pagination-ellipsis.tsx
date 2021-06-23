@@ -45,8 +45,8 @@ const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
         svg {
           color: currentColor;
           stroke: currentColor;
-          width: 1rem;
-          height: 1rem;
+          width: 1em;
+          height: 1em;
         }
 
         .more {
@@ -57,4 +57,5 @@ const PaginationEllipsis: React.FC<Props> = ({ isBefore, onClick }) => {
   )
 }
 
+PaginationEllipsis.displayName = 'GeistPaginationEllipsis'
 export default PaginationEllipsis

@@ -73,10 +73,10 @@ describe('Text', () => {
   })
 
   it('should be able to specify the size of text', () => {
-    let wrapper = mount(<Text size={14}>test-value</Text>)
+    let wrapper = mount(<Text font={14}>test-value</Text>)
     expect(wrapper.html()).toMatchSnapshot()
 
-    wrapper = mount(<Text size="12rem">test-value</Text>)
+    wrapper = mount(<Text font="12rem">test-value</Text>)
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
   })

@@ -16,8 +16,8 @@ describe('AutoComplete', () => {
       <div>
         <AutoComplete type="secondary" />
         <AutoComplete type="success" />
-        <AutoComplete size="mini" />
-        <AutoComplete size="large" />
+        <AutoComplete />
+        <AutoComplete />
       </div>,
     )
     expect(() => wrapper.unmount()).not.toThrow()

@@ -37,14 +37,14 @@ export const meta = {
 
 <Playground
   title="隐藏分割线"
-  scope={{ Tabs }}
+  scope={{ Tabs, Text }}
   code={`
 <Tabs initialValue="html" hideDivider>
   <Tabs.Item label="HTML" value="html">
-    <p>HTML 是我们用来构造网站内容的不同部分并定义它们的意义或目的的语言。</p>
+    <Text mt={0}>HTML 是我们用来构造网站内容的不同部分并定义它们的意义或目的的语言。</Text>
   </Tabs.Item>
   <Tabs.Item label="CSS" value="css">
-    <p>我们可以使用 CSS 这个语言来设计和布局我们的 Web 内容，以及添加像动画一类的行为。</p>
+    <Text mt={0}>我们可以使用 CSS 这个语言来设计和布局我们的 Web 内容，以及添加像动画一类的行为。</Text>
   </Tabs.Item>
 </Tabs>
 `}
@@ -57,11 +57,11 @@ export const meta = {
   code={`
 <Tabs initialValue="1">
   <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
-    <Text>你好，这是我们在 Twitch 的最新直播。</Text>
+    <Text mt={0}>你好，这是我们在 Twitch 的最新直播。</Text>
     <Link href="https://github.com/geist-org/react" color rel="nofollow" target="_blank">点击这里浏览 GitHub 项目</Link>
   </Tabs.Item>
   <Tabs.Item label={<><TwitterIcon /> Twitter </>} value="2">
-    <Text>这个组件看起来还不错。</Text>
+    <Text mt={0}>这个组件看起来还不错。</Text>
   </Tabs.Item>
 </Tabs>
 `}
@@ -78,7 +78,7 @@ export const meta = {
   const changeHandler = val => setValue(val)
   return (
     <>
-      <Button size="small" onClick={switchHandler} auto>选择八进制</Button>
+      <Button scale={1/3} onClick={switchHandler} auto>选择八进制</Button>
       <Spacer />
       <Tabs value={value} onChange={changeHandler}>
         <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
@@ -103,7 +103,7 @@ export const meta = {
   const { setState, bindings } = useTabs('1')
   return (
     <>
-      <Button size="small" onClick={() => setState('2')} auto>选择八进制</Button>
+      <Button scale={1/3} onClick={() => setState('2')} auto>选择八进制</Button>
       <Spacer />
       <Tabs {...bindings}>
         <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>

@@ -12,10 +12,10 @@ describe('Spacer', () => {
   it('should support x and y', () => {
     const wrapper = mount(
       <div>
-        <Spacer x={5} />
-        <Spacer x={15} />
-        <Spacer y={15} />
-        <Spacer y={2} />
+        <Spacer w={5} />
+        <Spacer w={15} />
+        <Spacer h={15} />
+        <Spacer h={2} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -25,10 +25,10 @@ describe('Spacer', () => {
   it('should work with float', () => {
     const wrapper = mount(
       <div>
-        <Spacer x={2.2} />
-        <Spacer x={1.5} />
-        <Spacer y={0.1} />
-        <Spacer y={1.8} />
+        <Spacer w={2.2} />
+        <Spacer w={1.5} />
+        <Spacer h={0.1} />
+        <Spacer h={1.8} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

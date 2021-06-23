@@ -1,6 +1,5 @@
 import React, { CSSProperties, useMemo } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { useAutoCompleteContext } from './auto-complete-context'
 import Dropdown from '../shared/dropdown'
 
@@ -18,7 +17,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type AutoCompleteDropdownProps = Props & typeof defaultProps & NativeAttrs
+export type AutoCompleteDropdownProps = Props & NativeAttrs
 
 const AutoCompleteDropdown: React.FC<
   React.PropsWithChildren<AutoCompleteDropdownProps>
@@ -29,7 +28,7 @@ const AutoCompleteDropdown: React.FC<
   dropdownStyle,
   disableMatchWidth,
   getPopupContainer,
-}) => {
+}: React.PropsWithChildren<AutoCompleteDropdownProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { ref } = useAutoCompleteContext()
   const isEmpty = useMemo(() => {
@@ -67,4 +66,6 @@ const AutoCompleteDropdown: React.FC<
   )
 }
 
-export default withDefaults(AutoCompleteDropdown, defaultProps)
+AutoCompleteDropdown.defaultProps = defaultProps
+AutoCompleteDropdown.displayName = 'GeistAutoCompleteDropdown'
+export default AutoCompleteDropdown

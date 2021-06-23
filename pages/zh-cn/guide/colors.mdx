@@ -6,13 +6,14 @@ import Colors from 'lib/components/displays/colors'
 export const meta = {
   title: '色彩',
   group: '定制化',
+  index: 5,
 }
 
 ## 色彩
 
 默认的色彩展示。
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 ### 主要的
 
@@ -32,9 +33,9 @@ const myComponent = () => {
 ```
 
 </Display>
-<Spacer y={1} />
+<Spacer h={1} />
 <Colors type="normal" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### 状态
 
@@ -43,21 +44,21 @@ const myComponent = () => {
 #### 成功
 
 <Colors type="success" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 #### 错误
 
 <Colors type="error" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 #### 警告
 
 <Colors type="warning" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 #### 高亮
 
 <Colors type="highlight" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

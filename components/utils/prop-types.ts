@@ -13,8 +13,6 @@ const buttonTypes = tuple(
   'error-light',
 )
 
-const normalSizes = tuple('mini', 'small', 'medium', 'large')
-
 const normalTypes = tuple('default', 'secondary', 'success', 'warning', 'error')
 
 const snippetTypes = tuple(
@@ -41,7 +39,7 @@ const cardTypes = tuple(
   'cyan',
 )
 
-const copyTypes = tuple('default', 'silent', 'prevent', 'slient')
+const copyTypes = tuple('default', 'silent', 'prevent')
 
 const triggerTypes = tuple('hover', 'click')
 
@@ -63,8 +61,6 @@ const placement = tuple(
 const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
 export type ButtonTypes = typeof buttonTypes[number]
-
-export type NormalSizes = typeof normalSizes[number]
 
 export type NormalTypes = typeof normalTypes[number]
 

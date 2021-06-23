@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTheme, Row } from 'components'
+import { useTheme, Grid } from 'components'
 import CustomizationCodes from './codes'
 import Demo from './demo'
 
@@ -10,13 +10,15 @@ const CustomizationLayout: React.FC<React.PropsWithChildren<unknown>> = ({
 
   return (
     <div className="layout">
-      <Row>
-        <Demo />
-        <div className="content">{children}</div>
-      </Row>
-      <Row>
-        <CustomizationCodes />
-      </Row>
+      <Grid.Container>
+        <Grid xs={24}>
+          <Demo />
+          <div className="content">{children}</div>
+        </Grid>
+        <Grid xs={24}>
+          <CustomizationCodes />
+        </Grid>
+      </Grid.Container>
 
       <style jsx>{`
         .layout {

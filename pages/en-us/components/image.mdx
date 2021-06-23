@@ -14,7 +14,7 @@ Display image content.
   title="Basic"
   scope={{ Image }}
   code={`
-<Image width={540} height={160} src="/images/custom-domains.png" />
+<Image width="540px" height="160px" src="/images/custom-domains.png" />
 `}
 />
 
@@ -23,7 +23,7 @@ Display image content.
   desc="`Image` will show skeleton animation after `width` and `height` props are set."
   scope={{ Image }}
   code={`
-<Image width={540} height={160}
+<Image width="540px" height="160px"
   src="http://www.deelay.me/2000/https://react.geist-ui.dev/images/custom-domains.png" />
 `}
 />
@@ -34,7 +34,7 @@ Display image content.
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://react.geist-ui.dev/en-us/guide/introduction" anchorProps={{ rel: 'nofollow' }}>
-  <Image width={540} height={246} src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+  <Image width="540px" height="246px" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
 </Image.Browser>
 `}
 />
@@ -44,7 +44,7 @@ Display image content.
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://react.geist-ui.dev/en-us/guide/introduction" invert>
-  <Image width={540} height={246} src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+  <Image width="540px" height="246px" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
 </Image.Browser>
 `}
 />
@@ -55,7 +55,7 @@ Display image content.
   scope={{ Image, Display, Code }}
   code={`
 <Display shadow caption={<p>Set the <Code>height</Code> to reduces the possibility of page rerender.</p>}>
-  <Image width={540} height={246} src="/images/branch-domains.png" />
+  <Image width="540px" height="246px" src="/images/branch-domains.png" />
 </Display>
 `}
 />
@@ -69,9 +69,6 @@ Display image content.
 | **disableSkeleton**   | disable skeleton animation when loading | `boolean`           | -                         | `false` |
 | **disableAutoResize** | disable zooming when width is too small | `boolean`           | -                         | `false` |
 | **maxDelay**(ms)      | max duration of animation               | `number`            | -                         | `3000`  |
-| **width**             | width                                   | `number`            | -                         | -       |
-| **height**            | height                                  | `number`            | -                         | -       |
-| **scale**             | scale value                             | `string`            | -                         | `100%`  |
 | ...                   | native props                            | `ImgHTMLAttributes` | `'alt', 'className', ...` | -       |
 
 <Attributes.Title>Image.Browser.Props</Attributes.Title>

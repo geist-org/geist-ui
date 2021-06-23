@@ -9,10 +9,8 @@ describe('Fieldset', () => {
         <Fieldset.Title>title</Fieldset.Title>
         <Fieldset.Subtitle>subtitle</Fieldset.Subtitle>
         <Fieldset.Footer>
-          <Fieldset.Footer.Status>status</Fieldset.Footer.Status>
-          <Fieldset.Footer.Actions>
-            <button>Actions</button>
-          </Fieldset.Footer.Actions>
+          status
+          <button>Actions</button>
         </Fieldset.Footer>
       </Fieldset>,
     )
@@ -25,10 +23,8 @@ describe('Fieldset', () => {
         <Fieldset.Title>title</Fieldset.Title>
         <Fieldset.Subtitle>subtitle</Fieldset.Subtitle>
         <Fieldset.Footer>
-          <Fieldset.Footer.Status>status</Fieldset.Footer.Status>
-          <Fieldset.Footer.Actions>
-            <button>Actions</button>
-          </Fieldset.Footer.Actions>
+          status
+          <button>Actions</button>
         </Fieldset.Footer>
       </Fieldset>,
     )

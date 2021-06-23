@@ -3,11 +3,11 @@ import useTheme from '../use-theme'
 import FieldsetTitle from './fieldset-title'
 import FieldsetSubtitle from './fieldset-subtitle'
 import FieldsetFooter from './fieldset-footer'
-import FieldsetGroup from './fieldset-group'
 import FieldsetContent from './fieldset-content'
 import { hasChild, pickChild } from '../utils/collections'
 import { useFieldset } from './fieldset-context'
 import useWarning from '../utils/use-warning'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   value?: string
@@ -27,9 +27,9 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.FieldsetHTMLAttributes<any>, keyof Props>
-export type FieldsetProps = Props & typeof defaultProps & NativeAttrs
+export type FieldsetProps = Props & NativeAttrs
 
-const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
+const FieldsetComponent: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
   className,
   title,
   subtitle,
@@ -37,8 +37,9 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
   value,
   label,
   ...props
-}) => {
+}: React.PropsWithChildren<FieldsetProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const { inGroup, currentValue, register } = useFieldset()
   const [hidden, setHidden] = useState<boolean>(inGroup)
 
@@ -90,25 +91,18 @@ const Fieldset: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
           border-radius: ${theme.layout.radius};
           overflow: hidden;
           display: ${hidden ? 'none' : 'block'};
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
       `}</style>
     </div>
   )
 }
 
-Fieldset.defaultProps = defaultProps
-
-type FieldsetComponent<P = {}> = React.FC<P> & {
-  Title: typeof FieldsetTitle
-  Subtitle: typeof FieldsetSubtitle
-  Footer: typeof FieldsetFooter
-  Group: typeof FieldsetGroup
-  Content: typeof FieldsetContent
-  Body: typeof FieldsetContent
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-export default Fieldset as FieldsetComponent<ComponentProps>
+FieldsetComponent.defaultProps = defaultProps
+FieldsetComponent.displayName = 'GeistFieldset'
+const Fieldset = withScaleable(FieldsetComponent)
+export default Fieldset

@@ -16,7 +16,7 @@ const MyInput: React.FC<InputErrorType & React.ComponentProps<typeof Input>> = (
       <Input status={hasError ? 'error' : status} {...inputProps} />
       {hasError && (
         <>
-          <Spacer y={0.4} />
+          <Spacer h={0.4} />
           <Text small type="error" size="var(--size-xs2)">
             {error}
           </Text>

@@ -1,21 +1,18 @@
-import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
+import React from 'react'
 import useTheme from '../use-theme'
-import { NormalSizes } from '../utils/prop-types'
 import { GeistUIThemes } from '../themes/presets'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
-  size?: NormalSizes
   className?: string
 }
 
 const defaultProps = {
-  size: 'medium' as NormalSizes,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type SpinnerProps = Props & typeof defaultProps & NativeAttrs
+export type SpinnerProps = Props & NativeAttrs
 
 const getSpans = (theme: GeistUIThemes) => {
   return [...new Array(12)].map((_, index) => (
@@ -105,20 +102,12 @@ const getSpans = (theme: GeistUIThemes) => {
   ))
 }
 
-const getWidth = (size: NormalSizes) => {
-  const widths: { [key in NormalSizes]: string } = {
-    mini: '.75rem',
-    small: '1rem',
-    medium: '1.25rem',
-    large: '1.875rem',
-  }
-
-  return widths[size]
-}
-
-const Spinner: React.FC<SpinnerProps> = ({ size, className, ...props }) => {
+const SpinnerComponent: React.FC<SpinnerProps> = ({
+  className,
+  ...props
+}: SpinnerProps & typeof defaultProps) => {
   const theme = useTheme()
-  const width = useMemo(() => getWidth(size), [size])
+  const { SCALES } = useScaleable()
 
   return (
     <div className={`spinner ${className}`} {...props}>
@@ -127,8 +116,11 @@ const Spinner: React.FC<SpinnerProps> = ({ size, className, ...props }) => {
       <style jsx>{`
         .spinner {
           display: block;
-          width: ${width};
-          height: ${width};
+          box-sizing: border-box;
+          width: ${SCALES.width(1.25)};
+          height: ${SCALES.height(1.25)};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .container {
@@ -143,6 +135,7 @@ const Spinner: React.FC<SpinnerProps> = ({ size, className, ...props }) => {
   )
 }
 
-const MemoSpinner = React.memo(Spinner)
-
-export default withDefaults(MemoSpinner, defaultProps)
+SpinnerComponent.defaultProps = defaultProps
+SpinnerComponent.displayName = 'GeistSpinner'
+const Spinner = withScaleable(SpinnerComponent)
+export default Spinner

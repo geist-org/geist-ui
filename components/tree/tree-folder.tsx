@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { setChildrenProps } from '../utils/collections'
 import TreeFile from './tree-file'
 import Expand from '../shared/expand'
@@ -25,7 +24,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TreeFolderProps = Props & typeof defaultProps & NativeAttrs
+export type TreeFolderProps = Props & NativeAttrs
 
 const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
   name,
@@ -35,7 +34,7 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
   extra,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<TreeFolderProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { initialExpand, isImperative } = useTreeContext()
   const [expanded, setExpanded] = useState<boolean>(initialExpand)
@@ -155,4 +154,6 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
   )
 }
 
-export default withDefaults(TreeFolder, defaultProps)
+TreeFolder.defaultProps = defaultProps
+TreeFolder.displayName = 'GeistTreeFolder'
+export default TreeFolder

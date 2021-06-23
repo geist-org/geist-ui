@@ -8,8 +8,6 @@ const CollapseIcon: React.FC<Props> = ({ active }) => {
   return (
     <svg
       viewBox="0 0 24 24"
-      width="24"
-      height="24"
       stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
@@ -23,6 +21,8 @@ const CollapseIcon: React.FC<Props> = ({ active }) => {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(${active ? '-180deg' : '0'});
+          width: 1.5em;
+          height: 1.5em;
         }
       `}</style>
     </svg>

@@ -2,7 +2,6 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Image } from 'components'
 import { updateWrapper } from 'tests/utils'
-import { act } from 'react-dom/test-utils'
 
 const url =
   'data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA' +
@@ -66,29 +65,5 @@ describe('Image', () => {
     await updateWrapper(wrapper)
     expect((img.getDOMNode() as HTMLImageElement).complete).toEqual(true)
     expect(wrapper.find('.skeleton').length).toBe(0)
-  })
-
-  it('should zooming image when width so small', async () => {
-    window.getComputedStyle = jest.fn().mockImplementation(() => ({
-      width: '10px',
-    }))
-    const wrapper = mount(
-      <div style={{ width: '10px' }}>
-        <Image src={url} width={100} height={100} />
-      </div>,
-    )
-    expect(wrapper.find('.image').html()).toContain('height: auto;')
-    ;(window.getComputedStyle as jest.Mock).mockRestore()
-
-    window.getComputedStyle = jest.fn().mockImplementation(() => ({
-      width: '110px',
-    }))
-    act(() => {
-      window.dispatchEvent(new Event('resize'))
-    })
-    await updateWrapper(wrapper)
-
-    expect(wrapper.find('.image').html()).not.toContain('height: auto;')
-    ;(window.getComputedStyle as jest.Mock).mockRestore()
   })
 })

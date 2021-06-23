@@ -87,7 +87,7 @@ describe('Tabs', () => {
     expect(active.text()).toContain('label2')
   })
 
-  it('should re-render when items updated', () => {
+  it('should re-render when items updated', async () => {
     const Mock = ({ label = 'label1' }) => {
       return (
         <Tabs value="1">
@@ -105,6 +105,7 @@ describe('Tabs', () => {
     expect(active.text()).toContain('label1')
 
     wrapper.setProps({ label: 'label2' })
+    await updateWrapper(wrapper, 350)
     active = wrapper.find('header').find('.active')
     expect(active.text()).toContain('label2')
     expect(() => wrapper.unmount()).not.toThrow()

@@ -18,27 +18,6 @@ describe('Checkbox Group', () => {
     expect(rendered).toMatchSnapshot()
   })
 
-  it('should work correctly with different sizes', () => {
-    const wrapper = mount(
-      <div>
-        <Checkbox.Group value={[]} size="mini">
-          <Checkbox value="sydney">Sydney</Checkbox>
-        </Checkbox.Group>
-        <Checkbox.Group value={[]} size="small">
-          <Checkbox value="sydney">Sydney</Checkbox>
-        </Checkbox.Group>
-        <Checkbox.Group value={[]} size="medium">
-          <Checkbox value="sydney">Sydney</Checkbox>
-        </Checkbox.Group>
-        <Checkbox.Group value={[]} size="large">
-          <Checkbox value="sydney">Sydney</Checkbox>
-        </Checkbox.Group>
-      </div>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
   it('should work correctly with initial value', () => {
     let wrapper = mount(
       <Checkbox.Group value={['sydney']}>

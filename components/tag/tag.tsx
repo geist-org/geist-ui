@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import { SnippetTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   type?: SnippetTypes
@@ -17,7 +17,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TagProps = Props & typeof defaultProps & NativeAttrs
+export type TagProps = Props & NativeAttrs
 
 export type TagColors = {
   color: string
@@ -74,14 +74,15 @@ const getColors = (
       }
 }
 
-const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({
+const TagComponent: React.FC<React.PropsWithChildren<TagProps>> = ({
   type,
   children,
   className,
   invert,
   ...props
-}) => {
+}: React.PropsWithChildren<TagProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const { color, bgColor, borderColor } = useMemo(
     () => getColors(type, theme.palette, invert),
     [type, theme.palette, invert],
@@ -93,21 +94,25 @@ const Tag: React.FC<React.PropsWithChildren<TagProps>> = ({
       <style jsx>{`
         span {
           display: inline-block;
-          line-height: 0.875rem;
-          font-size: 0.875rem;
-          height: 1.75rem;
-          border-radius: ${theme.layout.radius};
           border: 1px solid ${borderColor};
           background-color: ${bgColor};
           color: ${color};
-          padding: 6px;
           box-sizing: border-box;
+          line-height: 1em;
+          border-radius: ${SCALES.height(0.3125)};
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1.75)};
+          padding: ${SCALES.pt(0.375)} ${SCALES.pr(0.375)} ${SCALES.pb(0.375)}
+            ${SCALES.pl(0.375)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
       `}</style>
     </span>
   )
 }
 
-const MemoTag = React.memo(Tag)
-
-export default withDefaults(MemoTag, defaultProps)
+TagComponent.defaultProps = defaultProps
+TagComponent.displayName = 'GeistTag'
+const Tag = withScaleable(TagComponent)
+export default Tag

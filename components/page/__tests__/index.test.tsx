@@ -28,19 +28,6 @@ describe('Page', () => {
     expect(wrapper.html()).toContain('test-value')
   })
 
-  it('should work with different size', () => {
-    const wrapper = mount(
-      <div>
-        <Page size="mini" />
-        <Page size="small" />
-        <Page size="large" />
-        <Page size="100%" />
-      </div>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
   it('the global styles should be added to body element', () => {
     const wrapper = mount(<Page dotBackdrop />)
     expect(wrapper.html()).toContain('global(body)')

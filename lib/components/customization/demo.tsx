@@ -32,11 +32,11 @@ const Demo: React.FC<React.PropsWithChildren<unknown>> = () => {
           </>
         )}
 
-        <Spacer y={1.7} />
+        <Spacer h={1.7} />
         <Text h4>{isChinese ? '色彩' : 'Colors'}</Text>
         <Colors />
 
-        <Spacer y={1.7} />
+        <Spacer h={1.7} />
         <Text h4>{isChinese ? '排版' : 'Typography'}</Text>
         <Text>
           <Code>inline codes</Code>
@@ -60,25 +60,25 @@ const Demo: React.FC<React.PropsWithChildren<unknown>> = () => {
         <Text h2>Heading</Text>
         <Text h1>Heading</Text>
 
-        <Spacer y={1.7} />
+        <Spacer h={1.7} />
         <Text h4>{isChinese ? '基础组件' : 'Basic Components'}</Text>
         <Select placeholder="Choose one" initialValue="1">
           <Select.Option value="1">Option 1</Select.Option>
           <Select.Option value="2">Option 2</Select.Option>
         </Select>
-        <Spacer y={1} />
-        <Button disabled auto size="small">
+        <Spacer h={1} />
+        <Button disabled auto scale={0.5}>
           Action
         </Button>
-        <Spacer inline x={0.5} />
-        <Button auto size="small">
+        <Spacer inline h={0.5} />
+        <Button auto scale={0.5}>
           Action
         </Button>
-        <Spacer inline x={0.5} />
-        <Button auto type="secondary" size="small">
+        <Spacer inline h={0.5} />
+        <Button auto type="secondary" scale={0.5}>
           Action
         </Button>
-        <Spacer y={0.5} />
+        <Spacer h={0.5} />
         <Button>Action</Button>
       </div>
       <style jsx>{`
@@ -89,7 +89,7 @@ const Demo: React.FC<React.PropsWithChildren<unknown>> = () => {
           padding-right: ${theme.layout.gapQuarter};
           position: relative;
           border-right: 1px solid ${theme.palette.border};
-          height: 100%;
+          height: auto;
           transition: width 200ms ease;
         }
 

@@ -1,6 +1,9 @@
 import User from './user'
 import UserLink from './user-link'
 
-User.Link = UserLink
+export type UserComponentType = typeof User & {
+  Link: typeof UserLink
+}
+;(User as UserComponentType).Link = UserLink
 
-export default User
+export default User as UserComponentType

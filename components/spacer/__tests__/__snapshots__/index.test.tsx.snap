@@ -4,82 +4,82 @@ exports[`Spacer should render correctly 1`] = `
 "<span class=\\"\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(15.25pt + 1px * 0);
-          margin-top: calc(15.25pt + 1px * 0);
+          width: calc(1 * 16px);
+          height: calc(1 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       </style></span>"
 `;
 
 exports[`Spacer should support x and y 1`] = `
-"<div><span class=\\"\\"><style>
+"<div><span class=\\"\\" w=\\"5\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(76.25pt + 1px * 4);
-          margin-top: calc(15.25pt + 1px * 0);
+          width: calc(5 * 16px);
+          height: calc(1 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\"><style>
+      </style></span><span class=\\"\\" w=\\"15\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(228.75pt + 1px * 14);
-          margin-top: calc(15.25pt + 1px * 0);
+          width: calc(15 * 16px);
+          height: calc(1 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\"><style>
+      </style></span><span class=\\"\\" h=\\"15\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(15.25pt + 1px * 0);
-          margin-top: calc(228.75pt + 1px * 14);
+          width: calc(1 * 16px);
+          height: calc(15 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\"><style>
+      </style></span><span class=\\"\\" h=\\"2\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(15.25pt + 1px * 0);
-          margin-top: calc(30.5pt + 1px * 1);
+          width: calc(1 * 16px);
+          height: calc(2 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       </style></span></div>"
 `;
 
 exports[`Spacer should work with float 1`] = `
-"<div><span class=\\"\\"><style>
+"<div><span class=\\"\\" w=\\"2.2\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(33.550000000000004pt + 1px * 1.2000000000000002);
-          margin-top: calc(15.25pt + 1px * 0);
+          width: calc(2.2 * 16px);
+          height: calc(1 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\"><style>
+      </style></span><span class=\\"\\" w=\\"1.5\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(22.875pt + 1px * 0.5);
-          margin-top: calc(15.25pt + 1px * 0);
+          width: calc(1.5 * 16px);
+          height: calc(1 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\"><style>
+      </style></span><span class=\\"\\" h=\\"0.1\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(15.25pt + 1px * 0);
-          margin-top: calc(1.5250000000000001pt + 1px * -0.9);
+          width: calc(1 * 16px);
+          height: calc(0.1 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
-      </style></span><span class=\\"\\"><style>
+      </style></span><span class=\\"\\" h=\\"1.8\\"><style>
         span {
           display: block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(15.25pt + 1px * 0);
-          margin-top: calc(27.45pt + 1px * 0.8);
+          width: calc(1 * 16px);
+          height: calc(1.8 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       </style></span></div>"
 `;
@@ -88,10 +88,10 @@ exports[`Spacer should work with inline mode 1`] = `
 "<span class=\\"\\"><style>
         span {
           display: inline-block;
-          height: 1px;
-          width: 1px;
-          margin-left: calc(15.25pt + 1px * 0);
-          margin-top: calc(15.25pt + 1px * 0);
+          width: calc(1 * 16px);
+          height: calc(1 * 16px);
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       </style></span>"
 `;

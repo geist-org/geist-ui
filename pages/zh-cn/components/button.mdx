@@ -1,6 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Button, Spacer, Grid, Code } from 'components'
-import Router from 'next/router'
 import Settings from '@geist-ui/react-icons/settings'
 import UserX from '@geist-ui/react-icons/userX'
 import Power from '@geist-ui/react-icons/power'
@@ -29,10 +28,10 @@ export const meta = {
   code={`
 <>
   <Button loading>Action</Button>
-  <Spacer y={.5} />
-  <Button loading auto>Action</Button>
-  <Spacer y={.5} />
-  <Button loading auto type="success" size="small">Action</Button>
+  <Spacer h={.5} />
+  <Button loading scale={0.75}>Action</Button>
+  <Spacer h={.5} />
+  <Button loading auto type="success" scale={2/3}>Action</Button>
 </>
 `}
 />
@@ -75,31 +74,39 @@ export const meta = {
 />
 
 <Playground
-  title='"幽灵"按钮'
+  title="反色"
   desc="底色与主色相反的透明按钮。"
-  scope={{ Button, Spacer }}
+  scope={{ Button, Grid }}
   code={`
-<>
-  <Button type="secondary" ghost>次要的</Button> <Spacer y={.5} />
-  <Button type="success" ghost>成功</Button> <Spacer y={.5} />
-  <Button type="warning" ghost>警告</Button> <Spacer y={.5} />
-  <Button type="error" ghost>错误</Button>
-</>
+<Grid.Container gap={1.5}>
+  <Grid><Button type="secondary" ghost auto scale={0.7}>Secondary</Button></Grid>
+  <Grid><Button type="success" ghost auto scale={0.7}>Success</Button></Grid>
+  <Grid><Button type="warning" ghost auto scale={0.7}>Warning</Button></Grid>
+  <Grid><Button type="error" ghost auto scale={0.7}>Error</Button></Grid>
+</Grid.Container>
 `}
 />
 
 <Playground
-  title="大小"
+  title="伸缩性"
   desc="不同大小的按钮组件。"
-  scope={{ Button, Spacer }}
+  scope={{ Button, Grid }}
   code={`
-<>
-  <Button size="mini">小</Button> <Spacer y={.5} />
-  <Button size="small">较小</Button> <Spacer y={.5} />
-  <Button>中等</Button> <Spacer y={.5} />
-  <Button size="large">最大</Button> <Spacer y={.5} />
-  <Button auto>自动宽度</Button>
-</>
+<Grid.Container gap={1.5}>
+  <Grid><Button auto scale={0.25}>0.25</Button></Grid>
+  <Grid><Button auto scale={0.35}>0.35</Button></Grid>
+  <Grid><Button auto scale={1/2}>1 / 2</Button></Grid>
+  <Grid><Button auto scale={0.75}>0.75</Button></Grid>
+  <Grid><Button auto padding={0}>NoPadding</Button></Grid>
+  <Grid><Button auto font={0.25}>Small Font</Button></Grid>
+  <Grid><Button auto pl={0} ml="25px">Offset</Button></Grid>
+  <Grid xs={12}><Button width="100%">Full Width</Button></Grid>
+  <Grid xs={12}>
+    <Button auto width="30%" mx="5px">proportion</Button>
+    <Button auto width="30%" mx="5px">proportion</Button>
+    <Button auto width="30%" mx="5px">proportion</Button>
+  </Grid>
+</Grid.Container>
 `}
 />
 
@@ -109,17 +116,19 @@ export const meta = {
   scope={{ Button, Spacer, Settings, UserX, Power }}
   code={`
 <>
-  <Button iconRight={<Power />} auto size="small" />
-  <Spacer y={.5} />
-  <Button icon={<Settings />} auto>按钮</Button>
-  <Spacer y={.5} />
-  <Button icon={<Settings />} type="success" size="small">成功</Button>
-  <Spacer y={.5} />
-  <Button icon={<Settings />} type="secondary">成功</Button>
-  <Spacer y={.5} />
-  <Button icon={<UserX />} type="error" ghost>移除用户</Button>
-  <Spacer y={.5} />
-  <Button icon={<UserX />} disabled>移除用户</Button>
+  <Button iconRight={<Power />} auto scale={2/3} />
+  <Spacer w={.5} inline />
+  <Button iconRight={<Power />} auto scale={2/3} px={0.6} />
+  <Spacer h={.5} />
+  <Button icon={<Settings />} auto>Action</Button>
+  <Spacer h={.5} />
+  <Button icon={<Settings />} type="success" scale={0.85}>Success</Button>
+  <Spacer h={.5} />
+  <Button icon={<Settings />} type="secondary">Success</Button>
+  <Spacer h={.5} />
+  <Button icon={<UserX />} type="error" ghost>Remove User</Button>
+  <Spacer h={.5} />
+  <Button icon={<UserX />} disabled>Remove User</Button>
 </>
 `}
 />
@@ -130,7 +139,6 @@ export const meta = {
 | 属性          | 描述                   | 类型                                            | 推荐值                      | 默认      |
 | ------------- | ---------------------- | ----------------------------------------------- | --------------------------- | --------- |
 | **type**      | 按钮的类型             | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
-| **size**      | 按钮的大小             | `NormalSizes`                                   | [NormalSizes](#normalsizes) | `medium`  |
 | **ghost**     | 是否为反色按钮         | `boolean`                                       | -                           | `false`   |
 | **loading**   | 是否显示加载中的指示器 | `boolean`                                       | -                           | `false`   |
 | **shadow**    | 是否显示阴影           | `boolean`                                       | -                           | `false`   |
@@ -139,9 +147,9 @@ export const meta = {
 | **disabled**  | 是否禁用按钮           | `boolean`                                       | -                           | `false`   |
 | **onClick**   | 点击事件               | `MouseEventHandler`                             | -                           | -         |
 | **icon**      | 在按钮内显示图标       | `ReactNode`                                     | -                           | -         |
-| **iconRight** | 在按钮的另一侧显示图标 | `ReactNode`                                     | -                           | -         |
+| **iconRight** | 在按钮右侧显示图标     | `ReactNode`                                     | -                           | -         |
 | **htmlType**  | 按钮的原生类型属性     | `ButtonHTMLAttributes.type`                     | -                           | `button`  |
-| **ref**       | 转发的原生按钮 Ref     | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                           | -         |
+| **ref**       | Ref 转发               | <Code>Ref<HTMLButtonElement &#124; null></Code> | -                           | -         |
 | ...           | 原生属性               | `ButtonHTMLAttributes`                          | `'id', 'className', ...`    | -         |
 
 <Attributes.Title>ButtonTypes</Attributes.Title>
@@ -158,12 +166,6 @@ type ButtonTypes =
   | 'success-light'
   | 'warning-light'
   | 'error-light'
-```
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
 </Attributes>

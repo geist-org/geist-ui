@@ -3,9 +3,9 @@ import useTheme from '../use-theme'
 
 export interface InputBlockLabelLabel {}
 
-const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> = ({
-  children,
-}) => {
+const InputBlockLabelComponent: React.FC<
+  React.PropsWithChildren<InputBlockLabelLabel>
+> = ({ children }) => {
   const theme = useTheme()
 
   return (
@@ -17,8 +17,8 @@ const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> =
           font-weight: normal;
           color: ${theme.palette.accents_6};
           padding: 0 0 0 1px;
-          margin-bottom: ${theme.layout.gapHalf};
-          font-size: 1rem;
+          margin-bottom: 0.5em;
+          font-size: 1em;
           line-height: 1.5;
         }
 
@@ -34,6 +34,6 @@ const InputBlockLabel: React.FC<React.PropsWithChildren<InputBlockLabelLabel>> =
   )
 }
 
-const MemoInputBlockLabel = React.memo(InputBlockLabel)
-
-export default MemoInputBlockLabel
+InputBlockLabelComponent.displayName = 'GeistInputBlockLabel'
+const InputBlockLabel = React.memo(InputBlockLabelComponent)
+export default InputBlockLabel

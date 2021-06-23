@@ -1,7 +1,6 @@
 import React, { MouseEvent, useCallback } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
-import CSSTransition from './css-transition'
+import CssTransition from './css-transition'
 import useCurrentState from '../utils/use-current-state'
 
 interface Props {
@@ -16,10 +15,16 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type BackdropProps = Props & typeof defaultProps & NativeAttrs
+export type BackdropProps = Props & NativeAttrs
 
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
-  ({ children, onClick, visible, width, ...props }) => {
+  ({
+    children,
+    onClick,
+    visible,
+    width,
+    ...props
+  }: React.PropsWithChildren<BackdropProps> & typeof defaultProps) => {
     const theme = useTheme()
     const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false)
     const clickHandler = (event: MouseEvent<HTMLElement>) => {
@@ -38,7 +43,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
     }
 
     return (
-      <CSSTransition name="backdrop-wrapper" visible={visible} clearTime={300}>
+      <CssTransition name="backdrop-wrapper" visible={visible} clearTime={300}>
         <div
           className="backdrop"
           onClick={clickHandler}
@@ -116,9 +121,11 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
             }
           `}</style>
         </div>
-      </CSSTransition>
+      </CssTransition>
     )
   },
 )
 
-export default withDefaults(Backdrop, defaultProps)
+Backdrop.defaultProps = defaultProps
+Backdrop.displayName = 'GeistBackdrop'
+export default Backdrop

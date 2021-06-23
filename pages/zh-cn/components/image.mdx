@@ -13,7 +13,7 @@ export const meta = {
 <Playground
   scope={{ Image }}
   code={`
-<Image width="540" height="160" src="/images/custom-domains.png" />
+<Image width="540px" height="160px" src="/images/custom-domains.png" />
 `}
 />
 
@@ -22,7 +22,7 @@ export const meta = {
   desc="组件在设置 `width` 与 `height` 属性后会在加载时显示骨架动画。"
   scope={{ Image }}
   code={`
-<Image width="540" height="160"
+<Image width="540px" height="160px"
   src="http://www.deelay.me/2000/https://react.geist-ui.dev/images/custom-domains.png" />
 `}
 />
@@ -33,7 +33,7 @@ export const meta = {
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://react.geist-ui.dev/en-us/guide/introduction" >
-  <Image width="540" height="246" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+  <Image width="540px" height="246px" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
 </Image.Browser>
 `}
 />
@@ -43,7 +43,7 @@ export const meta = {
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://react.geist-ui.dev/en-us/guide/introduction" invert>
-  <Image width="540" height="246" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+  <Image width="540px" height="246px" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
 </Image.Browser>
 `}
 />
@@ -54,7 +54,7 @@ export const meta = {
   scope={{ Image, Display, Code }}
   code={`
 <Display shadow caption={<p>设置 <Code>height</Code> 属性可以尽可能的减少重绘。</p>}>
-  <Image width="540" height="246" src="/images/branch-domains.png" />
+  <Image width="540px" height="246px" src="/images/branch-domains.png" />
 </Display>
 `}
 />
@@ -68,9 +68,6 @@ export const meta = {
 | **disableSkeleton**   | 禁用加载时的骨架动画                | `boolean`           | -                         | `false` |
 | **disableAutoResize** | 禁用等比缩放图片 (当小于指定宽度时) | `boolean`           | -                         | `false` |
 | **maxDelay**          | 动画持续最大时间 (毫秒)             | `number`            | -                         | `3000`  |
-| **width**             | 宽度                                | `number`            | -                         | -       |
-| **height**            | 高度                                | `number`            | -                         | -       |
-| **scale**             | 缩放比例                            | `string`            | -                         | `100%`  |
 | ...                   | 原生属性                            | `ImgHTMLAttributes` | `'alt', 'className', ...` | -       |
 
 <Attributes.Title>Image.Browser.Props</Attributes.Title>

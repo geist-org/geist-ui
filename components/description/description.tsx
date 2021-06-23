@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   title?: ReactNode | string
@@ -15,30 +15,34 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type DescriptionProps = Props & typeof defaultProps & NativeAttrs
+export type DescriptionProps = Props & NativeAttrs
 
-const Description: React.FC<DescriptionProps> = ({
+const DescriptionComponent: React.FC<DescriptionProps> = ({
   title,
   content,
   className,
   ...props
-}) => {
+}: DescriptionProps & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   return (
-    <dl className={className} {...props}>
+    <dl className={`description ${className}`} {...props}>
       <dt>{title}</dt>
       <dd>{content}</dd>
 
       <style jsx>{`
-        dl {
-          margin: 0;
+        .description {
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         dt {
-          height: 0.875rem;
-          line-height: 0.875rem;
-          font-size: 0.75rem;
-          margin-bottom: 0.5rem;
+          font-size: 0.75em;
+          line-height: 1em;
+          margin-bottom: 0.5em;
           text-transform: uppercase;
           white-space: nowrap;
           color: ${theme.palette.accents_5};
@@ -47,9 +51,9 @@ const Description: React.FC<DescriptionProps> = ({
         }
 
         dd {
+          font-size: 0.875em;
           margin: 0;
-          font-size: 0.875rem;
-          line-height: 1rem;
+          line-height: 1.1em;
           color: ${theme.palette.foreground};
           font-weight: 500;
         }
@@ -63,6 +67,7 @@ const Description: React.FC<DescriptionProps> = ({
   )
 }
 
-const MemoDescription = React.memo(Description)
-
-export default withDefaults(MemoDescription, defaultProps)
+DescriptionComponent.defaultProps = defaultProps
+DescriptionComponent.displayName = 'GeistDescription'
+const Description = withScaleable(DescriptionComponent)
+export default Description
