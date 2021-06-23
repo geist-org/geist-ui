@@ -4,21 +4,22 @@ import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemes } from '../themes/presets'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type DotTypes = NormalTypes
 interface Props {
-  type?: NormalTypes
+  type?: DotTypes
   className?: string
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
+  type: 'default' as DotTypes,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type DotProps = Props & NativeAttrs
 
-const getColor = (type: NormalTypes, theme: GeistUIThemes): string => {
-  const colors: { [key in NormalTypes]?: string } = {
+const getColor = (type: DotTypes, theme: GeistUIThemes): string => {
+  const colors: { [key in DotTypes]?: string } = {
     default: theme.palette.accents_2,
     success: theme.palette.success,
     warning: theme.palette.warning,

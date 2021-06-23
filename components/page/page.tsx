@@ -34,15 +34,15 @@ const DotStyles: React.FC<unknown> = () => (
 )
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type NoteProps = Props & NativeAttrs
+export type PageProps = Props & NativeAttrs
 
-const PageComponent: React.FC<React.PropsWithChildren<NoteProps>> = ({
+const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
   children,
   render,
   dotBackdrop,
   className,
   ...props
-}: React.PropsWithChildren<NoteProps> & typeof defaultProps) => {
+}: React.PropsWithChildren<PageProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScaleable()
   const showDot = useMemo<boolean>(() => {

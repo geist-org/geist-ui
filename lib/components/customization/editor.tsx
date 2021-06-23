@@ -1,16 +1,13 @@
 import React from 'react'
-import {
-  Text,
-  Button,
-  useTheme,
-  Themes,
-  GeistUIThemesPalette,
-  GeistUIThemesExpressiveness,
-  GeistUIThemesLayout,
-} from 'components'
+import { Text, Button, useTheme, Themes } from 'components'
 import EditorColorItem from './editor-color-item'
 import EditorInputItem from './editor-input-item'
 import { useConfigs } from 'lib/config-context'
+import {
+  GeistUIThemesExpressiveness,
+  GeistUIThemesLayout,
+  GeistUIThemesPalette,
+} from 'components/themes'
 
 const basicColors: Array<keyof GeistUIThemesPalette> = [
   'accents_1',

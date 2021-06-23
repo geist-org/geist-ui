@@ -15,10 +15,11 @@ import { getColors } from './styles'
 import { NormalTypes } from '../utils/prop-types'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type SliderTypes = NormalTypes
 interface Props {
   hideValue?: boolean
   value?: number
-  type?: NormalTypes
+  type?: SliderTypes
   initialValue?: number
   step?: number
   max?: number
@@ -31,7 +32,7 @@ interface Props {
 
 const defaultProps = {
   hideValue: false,
-  type: 'default' as NormalTypes,
+  type: 'default' as SliderTypes,
   initialValue: 0,
   step: 1,
   min: 0,
@@ -92,11 +93,10 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
   const sliderRef = useRef<HTMLDivElement>(null)
   const dotRef = useRef<HTMLDivElement>(null)
 
-  const currentRatio = useMemo(() => ((value - min) / (max - min)) * 100, [
-    value,
-    max,
-    min,
-  ])
+  const currentRatio = useMemo(
+    () => ((value - min) / (max - min)) * 100,
+    [value, max, min],
+  )
 
   const setLastOffsetManually = (val: number) => {
     const width = getRefWidth(sliderRef)

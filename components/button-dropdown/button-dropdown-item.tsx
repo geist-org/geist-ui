@@ -5,16 +5,18 @@ import { useButtonDropdown } from './button-dropdown-context'
 import Loading from '../loading'
 import { NormalTypes } from '../utils/prop-types'
 
+export type ButtonDropdownItemTypes = NormalTypes
+
 interface Props {
   main?: boolean
-  type?: NormalTypes
+  type?: ButtonDropdownItemTypes
   onClick?: React.MouseEventHandler<HTMLElement>
   className?: string
 }
 
 const defaultProps = {
   main: false,
-  type: 'default' as NormalTypes,
+  type: 'default' as ButtonDropdownItemTypes,
   onClick: () => {},
   className: '',
 }

@@ -6,4 +6,6 @@ export type BadgeComponentType = typeof Badge & {
 }
 ;(Badge as BadgeComponentType).Anchor = BadgeAnchor
 
+export type { BadgeProps, BadgeTypes } from './badge'
+export type { BadgeAnchorProps, BadgeAnchorPlacement } from './badge-anchor'
 export default Badge as BadgeComponentType

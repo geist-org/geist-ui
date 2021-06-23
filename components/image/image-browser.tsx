@@ -6,21 +6,21 @@ import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
-type AnchorProps = Omit<React.AnchorHTMLAttributes<any>, keyof LinkProps>
+export type ImageAnchorProps = Omit<React.AnchorHTMLAttributes<any>, keyof LinkProps>
 
 interface Props {
   title?: string
   url?: string
   showFullLink?: boolean
   invert?: boolean
-  anchorProps?: AnchorProps
+  anchorProps?: ImageAnchorProps
   className?: string
 }
 
 const defaultProps = {
   className: '',
   showFullLink: false,
-  anchorProps: {} as AnchorProps,
+  anchorProps: {} as ImageAnchorProps,
   invert: false,
 }
 
@@ -51,7 +51,7 @@ const getAddressInput = (
   url: string,
   showFullLink: boolean,
   colors: BrowserColors,
-  anchorProps: AnchorProps,
+  anchorProps: ImageAnchorProps,
 ) => (
   <div className="address-input">
     <span className="https">
@@ -124,10 +124,10 @@ const ImageBrowserComponent = React.forwardRef<
   ) => {
     const theme = useTheme()
     const { SCALES } = useScaleable()
-    const colors = useMemo(() => getBrowserColors(invert, theme.palette), [
-      invert,
-      theme.palette,
-    ])
+    const colors = useMemo(
+      () => getBrowserColors(invert, theme.palette),
+      [invert, theme.palette],
+    )
     const input = useMemo(() => {
       if (url) return getAddressInput(url, showFullLink, colors, anchorProps)
       if (title) return getTitle(title, colors)

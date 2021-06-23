@@ -9,4 +9,7 @@ export type BreadcrumbsComponentType = typeof Breadcrumbs & {
 ;(Breadcrumbs as BreadcrumbsComponentType).Item = BreadcrumbsItem
 ;(Breadcrumbs as BreadcrumbsComponentType).Separator = BreadcrumbsSeparator
 
+export type { BreadcrumbsProps } from './breadcrumbs'
+export type { BreadcrumbsItemProps } from './breadcrumbs-item'
+export type { BreadcrumbsSeparatorProps } from './breadcrumbs-separator'
 export default Breadcrumbs as BreadcrumbsComponentType

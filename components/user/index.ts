@@ -6,4 +6,5 @@ export type UserComponentType = typeof User & {
 }
 ;(User as UserComponentType).Link = UserLink
 
+export type { UserProps } from './user'
 export default User as UserComponentType

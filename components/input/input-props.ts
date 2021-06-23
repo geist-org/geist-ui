@@ -1,11 +1,12 @@
 import React from 'react'
 import { NormalTypes } from '../utils/prop-types'
 
+export type InputTypes = NormalTypes
 export interface Props {
   value?: string
   initialValue?: string
   placeholder?: string
-  type?: NormalTypes
+  type?: InputTypes
   hymlType?: string
   readOnly?: boolean
   disabled?: boolean
@@ -29,7 +30,7 @@ export const defaultProps = {
   readOnly: false,
   clearable: false,
   iconClickable: false,
-  type: 'default' as NormalTypes,
+  type: 'default' as InputTypes,
   htmlType: 'text',
   autoComplete: 'off',
   className: '',

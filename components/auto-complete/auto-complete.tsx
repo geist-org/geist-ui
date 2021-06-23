@@ -18,6 +18,8 @@ import { pickChild } from '../utils/collections'
 import useCurrentState from '../utils/use-current-state'
 import useScaleable, { filterScaleableProps, withScaleable } from '../use-scaleable'
 
+export type AutoCompleteTypes = NormalTypes
+
 export type AutoCompleteOption = {
   label: string
   value: string
@@ -29,7 +31,7 @@ export type AutoCompleteOptions = Array<
 
 interface Props {
   options?: AutoCompleteOptions
-  type?: NormalTypes
+  type?: AutoCompleteTypes
   initialValue?: string
   value?: string
   onChange?: (value: string) => void
@@ -50,7 +52,7 @@ const defaultProps = {
   initialValue: '',
   disabled: false,
   clearable: false,
-  type: 'default' as NormalTypes,
+  type: 'default' as AutoCompleteTypes,
   disableMatchWidth: false,
   disableFreeSolo: false,
   className: '',
@@ -135,10 +137,10 @@ const AutoCompleteComponent = React.forwardRef<
       }
       return childrenToOptionsNode(options as Array<AutoCompleteOption>)
     }, [searching, options])
-    const showClearIcon = useMemo(() => clearable && searching === undefined, [
-      clearable,
-      searching,
-    ])
+    const showClearIcon = useMemo(
+      () => clearable && searching === undefined,
+      [clearable, searching],
+    )
 
     const updateValue = (val: string) => {
       if (disabled) return

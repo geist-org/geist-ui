@@ -1,5 +1,4 @@
 import Display from './display'
-import { DisplayProps } from './display'
 
-export type Props = DisplayProps
+export type { DisplayProps } from './display'
 export default Display

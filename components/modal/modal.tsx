@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { MouseEvent, useEffect, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
 import ModalWrapper from './modal-wrapper'
@@ -15,6 +15,7 @@ interface Props {
   disableBackdropClick?: boolean
   onClose?: () => void
   onOpen?: () => void
+  onContentClick?: (event: MouseEvent<HTMLElement>) => void
   open?: boolean
   wrapClassName?: string
 }
@@ -28,12 +29,13 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ModalProps = Props & NativeAttrs
 
 const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
-  children,
-  disableBackdropClick,
-  onClose,
-  onOpen,
   open,
+  onOpen,
+  onClose,
+  children,
   wrapClassName,
+  onContentClick,
+  disableBackdropClick,
 }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => {
   const portal = usePortal('modal')
   const { SCALES } = useScaleable()
@@ -76,7 +78,11 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
   if (!portal) return null
   return createPortal(
     <ModalContext.Provider value={modalConfig}>
-      <Backdrop onClick={closeFromBackdrop} visible={visible} width={SCALES.width(26)}>
+      <Backdrop
+        onClick={closeFromBackdrop}
+        onContentClick={onContentClick}
+        visible={visible}
+        width={SCALES.width(26)}>
         <ModalWrapper visible={visible} className={wrapClassName}>
           {withoutActionsChildren}
           {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}

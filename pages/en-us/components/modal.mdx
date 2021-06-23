@@ -231,14 +231,15 @@ Display popup content that requires attention or provides additional information
 <Attributes edit="/pages/en-us/components/modal.mdx">
 <Attributes.Title>Modal.Props</Attributes.Title>
 
-| Attribute                | Description                      | Type             | Accepted values                         | Default |
-| ------------------------ | -------------------------------- | ---------------- | --------------------------------------- | ------- |
-| **open**                 | open or close                    | `boolean`        | -                                       | `false` |
-| **onOpen**               | open event                       | `() => void`     | -                                       | -       |
-| **onClose**              | open event                       | `() => void`     | -                                       | -       |
-| **wrapClassName**        | className of the modal dialog    | `string`         | -                                       | -       |
-| **disableBackdropClick** | click background and don't close | `boolean`        | -                                       | `false` |
-| ...                      | native props                     | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...` | -       |
+| Attribute                | Description                      | Type                      | Accepted values                         | Default |
+| ------------------------ | -------------------------------- | ------------------------- | --------------------------------------- | ------- |
+| **open**                 | open or close                    | `boolean`                 | -                                       | `false` |
+| **onOpen**               | open event                       | `() => void`              | -                                       | -       |
+| **onClose**              | open event                       | `() => void`              | -                                       | -       |
+| **onContentClick**       | event from modal content         | `(e: MouseEvent) => void` | -                                       | -       |
+| **wrapClassName**        | className of the modal dialog    | `string`                  | -                                       | -       |
+| **disableBackdropClick** | click background and don't close | `boolean`                 | -                                       | `false` |
+| ...                      | native props                     | `HTMLAttributes`          | `'autoFocus', 'name', 'className', ...` | -       |
 
 <Attributes.Title>Modal.Title.Props</Attributes.Title>
 
@@ -260,20 +261,18 @@ Display popup content that requires attention or provides additional information
 
 <Attributes.Title>Modal.Action.Props</Attributes.Title>
 
-| Attribute    | Description            | Type                                                   | Accepted values          | Default |
-| ------------ | ---------------------- | ------------------------------------------------------ | ------------------------ | ------- |
-| **passive**  | display passive mode   | `boolean`                                              | -                        | `false` |
-| **disabled** | disable current action | `boolean`                                              | -                        | `false` |
-| **onClick**  | click handler          | [(event: ModalActionEvent) => void](#modalactionevent) | -                        | -       |
-| **loading**  | show loading           | `boolean`                                              | -                        | `false` |
-| ...          | native props           | `ButtonHTMLAttributes`                                 | `'id', 'className', ...` | -       |
+| Attribute    | Description            | Type                                               | Accepted values          | Default |
+| ------------ | ---------------------- | -------------------------------------------------- | ------------------------ | ------- |
+| **passive**  | display passive mode   | `boolean`                                          | -                        | `false` |
+| **disabled** | disable current action | `boolean`                                          | -                        | `false` |
+| **onClick**  | click handler          | [(e: ModalActionEvent) => void](#modalactionevent) | -                        | -       |
+| **loading**  | show loading           | `boolean`                                          | -                        | `false` |
+| ...          | native props           | `ButtonHTMLAttributes`                             | `'id', 'className', ...` | -       |
 
 <Attributes.Title>useModal</Attributes.Title>
 
 ```ts
-type useModal = (
-  initialVisible: boolean,
-) => {
+type useModal = (initialVisible: boolean) => {
   visible: boolean
   setVisible: Dispatch<SetStateAction<boolean>>
   currentRef: MutableRefObject<boolean>

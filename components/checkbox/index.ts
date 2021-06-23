@@ -6,4 +6,11 @@ export type CheckboxComponentType = typeof Checkbox & {
 }
 ;(Checkbox as CheckboxComponentType).Group = CheckboxGroup
 
+export type {
+  CheckboxProps,
+  CheckboxEvent,
+  CheckboxEventTarget,
+  CheckboxTypes,
+} from './checkbox'
+export type { CheckboxGroupProps } from './checkbox-group'
 export default Checkbox as CheckboxComponentType

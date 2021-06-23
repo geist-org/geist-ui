@@ -4,15 +4,16 @@ import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type LoadingTypes = NormalTypes
 interface Props {
-  type?: NormalTypes
+  type?: LoadingTypes
   color?: string
   className?: string
   spaceRatio?: number
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
+  type: 'default' as LoadingTypes,
   className: '',
   spaceRatio: 1,
 }
@@ -21,11 +22,11 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type LoadingProps = Props & NativeAttrs
 
 const getIconBgColor = (
-  type: NormalTypes,
+  type: LoadingTypes,
   palette: GeistUIThemesPalette,
   color?: string,
 ) => {
-  const colors: { [key in NormalTypes]: string } = {
+  const colors: { [key in LoadingTypes]: string } = {
     default: palette.accents_6,
     secondary: palette.secondary,
     success: palette.success,
@@ -46,11 +47,10 @@ const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
 }: React.PropsWithChildren<LoadingProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScaleable()
-  const bgColor = useMemo(() => getIconBgColor(type, theme.palette, color), [
-    type,
-    theme.palette,
-    color,
-  ])
+  const bgColor = useMemo(
+    () => getIconBgColor(type, theme.palette, color),
+    [type, theme.palette, color],
+  )
 
   return (
     <div className={`loading-container ${className}`} {...props}>

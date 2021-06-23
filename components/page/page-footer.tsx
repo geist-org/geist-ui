@@ -10,12 +10,12 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PageHeaderProps = Props & NativeAttrs
+export type PageFooterProps = Props & NativeAttrs
 
-const PageFooterComponent: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
+const PageFooterComponent: React.FC<React.PropsWithChildren<PageFooterProps>> = ({
   children,
   ...props
-}: React.PropsWithChildren<PageHeaderProps> & typeof defaultProps) => {
+}: React.PropsWithChildren<PageFooterProps> & typeof defaultProps) => {
   const { SCALES } = useScaleable()
 
   return (

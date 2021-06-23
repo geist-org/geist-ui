@@ -7,11 +7,12 @@ import useClipboard from '../utils/use-clipboard'
 import useToasts from '../use-toasts'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type ToastTypes = NormalTypes
 interface Props {
   text?: string | string[]
   symbol?: string
   toastText?: string
-  toastType?: NormalTypes
+  toastType?: ToastTypes
   filled?: boolean
   copy?: CopyTypes
   type?: SnippetTypes
@@ -22,7 +23,7 @@ const defaultProps = {
   filled: false,
   symbol: '$',
   toastText: 'Copied to clipboard!',
-  toastType: 'success' as NormalTypes,
+  toastType: 'success' as ToastTypes,
   copy: 'default' as CopyTypes,
   type: 'default' as SnippetTypes,
   className: '',
@@ -57,11 +58,10 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
 
-  const style = useMemo(() => getStyles(type, theme.palette, filled), [
-    type,
-    theme.palette,
-    filled,
-  ])
+  const style = useMemo(
+    () => getStyles(type, theme.palette, filled),
+    [type, theme.palette, filled],
+  )
   const showCopyIcon = useMemo(() => copyType !== 'prevent', [copyType])
   const childText = useMemo<string | undefined | null>(() => {
     if (isMultiLine) return textArrayToString(text as string[])

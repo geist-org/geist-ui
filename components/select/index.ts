@@ -6,4 +6,6 @@ export type SelectComponentType = typeof Select & {
 }
 ;(Select as SelectComponentType).Option = SelectOption
 
+export type { SelectProps, SelectTypes } from './select'
+export type { SelectOptionProps } from './select-option'
 export default Select as SelectComponentType

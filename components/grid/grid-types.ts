@@ -9,11 +9,11 @@ const justify = tuple(
   'space-evenly',
 )
 
-export type Justify = typeof justify[number]
+export type GridJustify = typeof justify[number]
 
 const alignItems = tuple('flex-start', 'center', 'flex-end', 'stretch', 'baseline')
 
-export type AlignItems = typeof alignItems[number]
+export type GridAlignItems = typeof alignItems[number]
 
 const alignContent = tuple(
   'stretch',
@@ -24,12 +24,12 @@ const alignContent = tuple(
   'space-around',
 )
 
-export type AlignContent = typeof alignContent[number]
+export type GridAlignContent = typeof alignContent[number]
 
 const direction = tuple('row', 'row-reverse', 'column', 'column-reverse')
 
-export type Direction = typeof direction[number]
+export type GridDirection = typeof direction[number]
 
 const wrap = tuple('nowrap', 'wrap', 'wrap-reverse')
 
-export type Wrap = typeof wrap[number]
+export type GridWrap = typeof wrap[number]

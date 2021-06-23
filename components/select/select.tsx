@@ -13,9 +13,10 @@ import { getColors } from './styles'
 import Ellipsis from '../shared/ellipsis'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type SelectTypes = NormalTypes
 interface Props {
   disabled?: boolean
-  type?: NormalTypes
+  type?: SelectTypes
   value?: string | string[]
   initialValue?: string | string[]
   placeholder?: React.ReactNode | string
@@ -33,7 +34,7 @@ interface Props {
 
 const defaultProps = {
   disabled: false,
-  type: 'default' as NormalTypes,
+  type: 'default' as SelectTypes,
   icon: SelectIcon as React.ComponentType,
   pure: false,
   multiple: false,

@@ -1,18 +1,18 @@
 import React, { useMemo } from 'react'
 import GridBasicItem, { GridBasicItemProps } from './basic-item'
-import { Wrap } from './grid-types'
+import { GridWrap } from './grid-types'
 import { css } from 'styled-jsx/css'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   gap?: number
-  wrap?: Wrap
+  wrap?: GridWrap
   className?: string
 }
 
 const defaultProps = {
   gap: 0,
-  wrap: 'wrap' as Wrap,
+  wrap: 'wrap' as GridWrap,
   className: '',
 }
 
