@@ -32,7 +32,7 @@ const defaultProps = {
   trigger: 'hover' as TooltipTriggers,
   placement: 'top' as TooltipPlacement,
   enterDelay: 100,
-  leaveDelay: 0,
+  leaveDelay: 150,
   offset: 12,
   className: '',
   portalClassName: '',
@@ -96,14 +96,14 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       timer.current = window.setTimeout(() => handler(true), enterDelay)
       return
     }
-    timer.current = window.setTimeout(() => handler(false), leaveDelay)
+    const leaveDelayWithoutClick = trigger === 'click' ? 0 : leaveDelay
+    timer.current = window.setTimeout(() => handler(false), leaveDelayWithoutClick)
   }
 
   const mouseEventHandler = (next: boolean) => trigger === 'hover' && changeVisible(next)
   const clickEventHandler = () => trigger === 'click' && changeVisible(!visible)
 
   useClickAway(ref, () => trigger === 'click' && changeVisible(false))
-
   useEffect(() => {
     if (customVisible === undefined) return
     changeVisible(customVisible)

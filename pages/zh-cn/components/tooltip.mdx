@@ -170,21 +170,21 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/tooltip.mdx">
 <Attributes.Title>Tooltip.Props</Attributes.Title>
 
-| 属性                | 描述                       | 类型                          | 推荐值                           | 默认      |
-| ------------------- | -------------------------- | ----------------------------- | -------------------------------- | --------- |
-| **text**            | 弹出框文字                 | `string` `React.ReactNode`    | -                                | -         |
-| **visible**         | 手动控制提示框的显示与隐藏 | `boolean`                     | -                                | `false`   |
-| **initialVisible**  | 初始是否可见               | `boolean`                     | -                                | `false`   |
-| **hideArrow**       | 隐藏箭头                   | `boolean`                     | -                                | `false`   |
-| **type**            | 不同的文字提示类型         | [TooltipTypes](#tooltiptypes) | -                                | `default` |
-| **placement**       | 提示框与目标的对齐方式     | [Placement](#placement)       | -                                | `top`     |
-| **trigger**         | 触发提示框的方式           | `'click' / 'hover'`           | -                                | `hover`   |
-| **enterDelay**(ms)  | 在提示显示前的延迟         | `number`                      | -                                | `100`     |
-| **leaveDelay**(ms)  | 关闭提示前的延迟           | `number`                      | -                                | `0`       |
-| **offset**(px)      | 提示框与目标之间的偏移     | `number`                      | -                                | `12`      |
-| **portalClassName** | 弹出框的类名               | `string`                      | -                                | -         |
-| **onVisibleChange** | 当提示框状态改变时触发     | `(visible: boolean) => void`  | -                                | -         |
-| ...                 | 原生属性                   | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
+| 属性                | 描述                               | 类型                          | 推荐值     | 默认      |
+| ------------------- | ---------------------------------- | ----------------------------- | ---------- | --------- |
+| **text**            | 弹出框文字                         | `string` `React.ReactNode`    | -          | -         |
+| **visible**         | 手动控制提示框的显示与隐藏         | `boolean`                     | -          | `false`   |
+| **initialVisible**  | 初始是否可见                       | `boolean`                     | -          | `false`   |
+| **hideArrow**       | 隐藏箭头                           | `boolean`                     | -          | `false`   |
+| **type**            | 不同的文字提示类型                 | [TooltipTypes](#tooltiptypes) | -          | `default` |
+| **placement**       | 提示框与目标的对齐方式             | [Placement](#placement)       | -          | `top`     |
+| **trigger**         | 触发提示框的方式                   | `'click' / 'hover'`           | -          | `hover`   |
+| **enterDelay**(ms)  | 在提示显示前的延迟                 | `number`                      | -          | `100`     |
+| **leaveDelay**(ms)  | 关闭提示前的延迟 (仅 'hover' 模式) | `number`                      | -          | `150`     |
+| **offset**(px)      | 提示框与目标之间的偏移             | `number`                      | -          | `12`      |
+| **portalClassName** | 弹出框的类名                       | `string`                      | -          | -         |
+| **onVisibleChange** | 当提示框状态改变时触发             | `(visible: boolean) => void`  | -          | -         |
+| ...                 | 原生属性                           | `HTMLAttributes`              | `'id' ...` | -         |
 
 <Attributes.Title>TooltipTypes</Attributes.Title>
 
