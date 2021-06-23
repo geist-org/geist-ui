@@ -9,12 +9,12 @@ import useCurrentState from '../utils/use-current-state'
 import ToastContainer, { ToastWithID } from '../use-toasts/toast-container'
 import { GeistUIThemes } from '../themes/presets'
 
-export interface Props {
+export type GeistProviderProps = {
   themes?: Array<GeistUIThemes>
   themeType?: string | 'dark' | 'light'
 }
 
-const GeistProvider: React.FC<PropsWithChildren<Props>> = ({
+const GeistProvider: React.FC<PropsWithChildren<GeistProviderProps>> = ({
   themes,
   themeType,
   children,

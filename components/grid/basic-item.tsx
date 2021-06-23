@@ -1,28 +1,33 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import { Justify, Direction, AlignItems, AlignContent } from './grid-types'
+import {
+  GridJustify,
+  GridDirection,
+  GridAlignItems,
+  GridAlignContent,
+} from './grid-types'
 import useScaleable from '../use-scaleable'
 
-type BreakpointsValue = number | boolean
+export type GridBreakpointsValue = number | boolean
 export interface GridBasicComponentProps {
-  xs?: BreakpointsValue
-  sm?: BreakpointsValue
-  md?: BreakpointsValue
-  lg?: BreakpointsValue
-  xl?: BreakpointsValue
-  justify?: Justify
-  direction?: Direction
-  alignItems?: AlignItems
-  alignContent?: AlignContent
+  xs?: GridBreakpointsValue
+  sm?: GridBreakpointsValue
+  md?: GridBreakpointsValue
+  lg?: GridBreakpointsValue
+  xl?: GridBreakpointsValue
+  justify?: GridJustify
+  direction?: GridDirection
+  alignItems?: GridAlignItems
+  alignContent?: GridAlignContent
   className?: string
 }
 
 const defaultProps = {
-  xs: false as BreakpointsValue,
-  sm: false as BreakpointsValue,
-  md: false as BreakpointsValue,
-  lg: false as BreakpointsValue,
-  xl: false as BreakpointsValue,
+  xs: false as GridBreakpointsValue,
+  sm: false as GridBreakpointsValue,
+  md: false as GridBreakpointsValue,
+  lg: false as GridBreakpointsValue,
+  xl: false as GridBreakpointsValue,
   className: '',
 }
 
@@ -35,7 +40,7 @@ type ItemLayoutValue = {
   basis: string
   display: string
 }
-const getItemLayout = (val: BreakpointsValue): ItemLayoutValue => {
+const getItemLayout = (val: GridBreakpointsValue): ItemLayoutValue => {
   const display = val === 0 ? 'display: none;' : 'display: inherit;'
   if (typeof val === 'number') {
     const width = (100 / 24) * val

@@ -4,15 +4,16 @@ import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemes } from '../themes/presets'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type NoteTypes = NormalTypes
 interface Props {
-  type?: NormalTypes
+  type?: NoteTypes
   label?: string | boolean
   filled?: boolean
   className?: string
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
+  type: 'default' as NoteTypes,
   label: 'note' as string | boolean,
   filled: false,
   className: '',
@@ -21,8 +22,8 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type NoteProps = Props & NativeAttrs
 
-const getStatusColor = (type: NormalTypes, filled: boolean, theme: GeistUIThemes) => {
-  const colors: { [key in NormalTypes]?: string } = {
+const getStatusColor = (type: NoteTypes, filled: boolean, theme: GeistUIThemes) => {
+  const colors: { [key in NoteTypes]?: string } = {
     secondary: theme.palette.secondary,
     success: theme.palette.success,
     warning: theme.palette.warning,

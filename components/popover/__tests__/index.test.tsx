@@ -31,6 +31,30 @@ describe('Popover', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work correctly with props', async () => {
+    const handler = jest.fn()
+    const Demos: React.FC<{ visible?: boolean }> = ({ visible }) => {
+      return (
+        <Popover visible={visible} onVisibleChange={handler} content="test">
+          <div />
+        </Popover>
+      )
+    }
+    const wrapper = mount(<Demos />)
+    expectPopoverIsHidden(wrapper)
+
+    wrapper.setProps({ visible: true })
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsShow(wrapper)
+    expect(handler).toBeCalled()
+
+    wrapper.setProps({ visible: false })
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsHidden(wrapper)
+
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
   it('should render react-node', async () => {
     const wrapper = mount(
       <Popover content={<p id="test">custom-content</p>}>
@@ -96,6 +120,77 @@ describe('Popover', () => {
     const line = wrapper.find('.inner').find('.line')
     expect(title.text()).toContain('settings')
     expect(line.length).not.toBe(0)
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('should close popover when item clicked', async () => {
+    const wrapper = mount(
+      <Popover content="test">
+        <Popover.Item id="item" />
+      </Popover>,
+    )
+    expectPopoverIsHidden(wrapper)
+
+    wrapper.find('.tooltip').simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsShow(wrapper)
+
+    const item = wrapper.find('#item').at(0)
+
+    item.simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsHidden(wrapper)
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('should prevent close popover when item clicked', async () => {
+    const wrapper = mount(
+      <Popover content="test">
+        <Popover.Item id="item" disableAutoClose />
+        <Popover.Item id="item2" />
+      </Popover>,
+    )
+    expectPopoverIsHidden(wrapper)
+
+    wrapper.find('.tooltip').simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsShow(wrapper)
+
+    const item = wrapper.find('#item').at(0)
+    const item2 = wrapper.find('#item2').at(0)
+
+    item.simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsShow(wrapper)
+
+    item2.simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsHidden(wrapper)
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('should prevent all items', async () => {
+    const wrapper = mount(
+      <Popover content="test" disableItemsAutoClose>
+        <Popover.Item id="item" />
+        <Popover.Item id="item2" />
+      </Popover>,
+    )
+    expectPopoverIsHidden(wrapper)
+
+    wrapper.find('.tooltip').simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsShow(wrapper)
+
+    const item = wrapper.find('#item').at(0)
+    const item2 = wrapper.find('#item2').at(0)
+
+    item.simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsShow(wrapper)
+    item2.simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsShow(wrapper)
     expect(() => wrapper.unmount()).not.toThrow()
   })
 })

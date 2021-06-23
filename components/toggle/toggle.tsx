@@ -4,10 +4,10 @@ import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
-interface ToggleEventTarget {
+export type ToggleTypes = NormalTypes
+export interface ToggleEventTarget {
   checked: boolean
 }
-
 export interface ToggleEvent {
   target: ToggleEventTarget
   stopPropagation: () => void
@@ -20,12 +20,12 @@ interface Props {
   initialChecked?: boolean
   onChange?: (ev: ToggleEvent) => void
   disabled?: boolean
-  type?: NormalTypes
+  type?: ToggleTypes
   className?: string
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
+  type: 'default' as ToggleTypes,
   disabled: false,
   initialChecked: false,
   className: '',

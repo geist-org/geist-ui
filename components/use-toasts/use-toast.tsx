@@ -10,10 +10,10 @@ export interface ToastAction {
   handler: (event: React.MouseEvent<HTMLButtonElement>, cancel: () => void) => void
   passive?: boolean
 }
-
+export type ToastType = NormalTypes
 export interface Toast {
   text?: string | React.ReactNode
-  type?: NormalTypes
+  type?: ToastType
   delay?: number
   actions?: Array<ToastAction>
 }

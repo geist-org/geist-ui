@@ -15,4 +15,9 @@ export type ModalComponentType = typeof Modal & {
 ;(Modal as ModalComponentType).Content = ModalContent
 ;(Modal as ModalComponentType).Action = ModalAction
 
+export type { ModalProps } from './modal'
+export type { ModalTitleProps } from './modal-title'
+export type { ModalSubtitleProps } from './modal-subtitle'
+export type { ModalActionProps } from './modal-action'
+export type { ModalContentProps } from './modal-content'
 export default Modal as ModalComponentType

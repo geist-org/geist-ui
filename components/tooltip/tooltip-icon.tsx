@@ -5,20 +5,24 @@ import useTheme from '../use-theme'
 
 interface Props {
   placement: Placement
-  bgColor: string
   shadow: boolean
 }
 
-const TooltipIcon: React.FC<Props> = ({ placement, bgColor, shadow }) => {
+const TooltipIcon: React.FC<Props> = ({ placement, shadow }) => {
   const theme = useTheme()
   const { transform, top, left, right, bottom } = useMemo(
-    () => getIconPosition(placement, 3),
+    () =>
+      getIconPosition(
+        placement,
+        'var(--tooltip-icon-offset-x)',
+        'var(--tooltip-icon-offset-y)',
+      ),
     [placement],
   )
   const bgColorWithDark = useMemo(() => {
-    if (!shadow || theme.type !== 'dark') return bgColor
+    if (!shadow || theme.type !== 'dark') return 'var(--tooltip-content-bg)'
     return theme.palette.accents_2
-  }, [theme.type, bgColor, shadow])
+  }, [theme.type, shadow])
 
   return (
     <span>
@@ -41,4 +45,4 @@ const TooltipIcon: React.FC<Props> = ({ placement, bgColor, shadow }) => {
   )
 }
 
-export default React.memo(TooltipIcon)
+export default TooltipIcon

@@ -9,8 +9,10 @@ import { NormalTypes } from '../utils/prop-types'
 import { pickChild, pickChildByProps } from '../utils/collections'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type ButtonDropdownTypes = NormalTypes
+
 interface Props {
-  type?: NormalTypes
+  type?: ButtonDropdownTypes
   auto?: boolean
   loading?: boolean
   disabled?: boolean
@@ -18,7 +20,7 @@ interface Props {
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
+  type: 'default' as ButtonDropdownTypes,
   auto: false,
   loading: false,
   disabled: false,

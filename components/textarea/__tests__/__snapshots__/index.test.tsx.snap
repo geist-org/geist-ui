@@ -37,7 +37,6 @@ exports[`Textarea should render correctly 1`] = `
             font-size: var(--textarea-font-size);
             width: 100%;
             height: var(--textarea-height);
-            resize: none;
             border: none;
             outline: none;
             padding: calc(0.5 * 16px) calc(0.5 * 16px) calc(0.5 * 16px)
@@ -95,7 +94,6 @@ exports[`Textarea should work with different styles 1`] = `
             font-size: var(--textarea-font-size);
             width: 100%;
             height: var(--textarea-height);
-            resize: none;
             border: none;
             outline: none;
             padding: calc(0.5 * 16px) calc(0.5 * 16px) calc(0.5 * 16px)
@@ -149,7 +147,6 @@ exports[`Textarea should work with different styles 1`] = `
             font-size: var(--textarea-font-size);
             width: 100%;
             height: var(--textarea-height);
-            resize: none;
             border: none;
             outline: none;
             padding: calc(0.5 * 16px) calc(0.5 * 16px) calc(0.5 * 16px)
@@ -167,7 +164,7 @@ exports[`Textarea should work with different styles 1`] = `
           textarea:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
           }
-        </style></div><div class=\\"wrapper   \\"><textarea minheight=\\"100px\\"></textarea><style>
+        </style></div><div class=\\"wrapper   \\"><textarea height=\\"100px\\"></textarea><style>
           .wrapper {
             display: inline-flex;
             box-sizing: border-box;
@@ -179,7 +176,7 @@ exports[`Textarea should work with different styles 1`] = `
             min-width: 12.5rem;
             max-width: 95vw;
             --textarea-font-size: calc(0.875 * 16px);
-            --textarea-height: auto;
+            --textarea-height: 100px;
             width: initial;
             height: var(--textarea-height);
             margin: 0 0 0 0;
@@ -203,7 +200,6 @@ exports[`Textarea should work with different styles 1`] = `
             font-size: var(--textarea-font-size);
             width: 100%;
             height: var(--textarea-height);
-            resize: none;
             border: none;
             outline: none;
             padding: calc(0.5 * 16px) calc(0.5 * 16px) calc(0.5 * 16px)

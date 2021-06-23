@@ -5,29 +5,29 @@ import { getColors } from '../input/styles'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
 const resizeTypes = tuple('none', 'both', 'horizontal', 'vertical', 'initial', 'inherit')
-type ResizeTypes = typeof resizeTypes[number]
-
+export type TextareaResizes = typeof resizeTypes[number]
+export type TextareaTypes = NormalTypes
 interface Props {
   value?: string
   initialValue?: string
   placeholder?: string
-  type?: NormalTypes
+  type?: TextareaTypes
   disabled?: boolean
   readOnly?: boolean
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void
   onFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
   onBlur?: (e: React.FocusEvent<HTMLTextAreaElement>) => void
   className?: string
-  resize?: ResizeTypes
+  resize?: TextareaResizes
 }
 
 const defaultProps = {
   initialValue: '',
-  type: 'default' as NormalTypes,
+  type: 'default' as TextareaTypes,
   disabled: false,
   readOnly: false,
   className: '',
-  resize: 'none' as ResizeTypes,
+  resize: 'none' as TextareaResizes,
 }
 
 type NativeAttrs = Omit<React.TextareaHTMLAttributes<any>, keyof Props>
@@ -145,7 +145,6 @@ const TextareaComponent = React.forwardRef<
             font-size: var(--textarea-font-size);
             width: 100%;
             height: var(--textarea-height);
-            resize: none;
             border: none;
             outline: none;
             padding: ${SCALES.pt(0.5)} ${SCALES.pr(0.5)} ${SCALES.pb(0.5)}

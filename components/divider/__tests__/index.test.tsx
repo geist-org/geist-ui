@@ -9,11 +9,11 @@ describe('Divider', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should work with x and y', () => {
+  it('should work with w and h', () => {
     const wrapper = render(
       <div>
-        <Divider x={3} />
-        <Divider y={3} />
+        <Divider w={3} />
+        <Divider h={3} />
       </div>,
     )
     expect(wrapper).toMatchSnapshot()
@@ -36,7 +36,7 @@ describe('Divider', () => {
         <Divider align="start">start</Divider>
         <Divider align="left">left</Divider>
         <Divider align="end">end</Divider>
-        <Divider align="start" volume={2}>
+        <Divider align="start" h={2}>
           start
         </Divider>
       </div>,
@@ -47,8 +47,8 @@ describe('Divider', () => {
   it('should support float', () => {
     const wrapper = mount(
       <div>
-        <Divider x={1.1} y={2.5} />
-        <Divider volume={2.5} />
+        <Divider w={1.1} h={2.5} />
+        <Divider h={2.5} />
       </div>,
     )
     expect(wrapper).toMatchSnapshot()

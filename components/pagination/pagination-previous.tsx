@@ -2,9 +2,9 @@ import React from 'react'
 import PaginationItem from './pagination-item'
 import { usePaginationContext } from './pagination-context'
 
-export type PaginationNextProps = React.ButtonHTMLAttributes<any>
+export type PaginationPreviousProps = React.ButtonHTMLAttributes<any>
 
-const PaginationPrevious: React.FC<React.PropsWithChildren<PaginationNextProps>> = ({
+const PaginationPrevious: React.FC<React.PropsWithChildren<PaginationPreviousProps>> = ({
   children,
   ...props
 }) => {

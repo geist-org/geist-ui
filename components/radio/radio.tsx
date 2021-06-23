@@ -8,10 +8,10 @@ import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
-interface RadioEventTarget {
+export type RadioTypes = NormalTypes
+export interface RadioEventTarget {
   checked: boolean
 }
-
 export interface RadioEvent {
   target: RadioEventTarget
   stopPropagation: () => void
@@ -22,14 +22,14 @@ export interface RadioEvent {
 interface Props {
   checked?: boolean
   value?: string | number
-  type?: NormalTypes
+  type?: RadioTypes
   className?: string
   disabled?: boolean
   onChange?: (e: RadioEvent) => void
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
+  type: 'default' as RadioTypes,
   disabled: false,
   className: '',
 }
@@ -65,10 +65,10 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
     }, [groupValue, radioValue])
   }
 
-  const { label, border, bg } = useMemo(() => getColors(theme.palette, type), [
-    theme.palette,
-    type,
-  ])
+  const { label, border, bg } = useMemo(
+    () => getColors(theme.palette, type),
+    [theme.palette, type],
+  )
 
   const isDisabled = useMemo(() => disabled || disabledAll, [disabled, disabledAll])
   const changeHandler = (event: React.ChangeEvent) => {

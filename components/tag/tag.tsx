@@ -4,14 +4,15 @@ import { SnippetTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type TagTypes = SnippetTypes
 interface Props {
-  type?: SnippetTypes
+  type?: TagTypes
   invert?: boolean
   className?: string
 }
 
 const defaultProps = {
-  type: 'default' as SnippetTypes,
+  type: 'default' as TagTypes,
   invert: false,
   className: '',
 }
@@ -25,13 +26,9 @@ export type TagColors = {
   borderColor: string
 }
 
-const getColors = (
-  type: SnippetTypes,
-  palette: GeistUIThemesPalette,
-  invert: boolean,
-) => {
+const getColors = (type: TagTypes, palette: GeistUIThemesPalette, invert: boolean) => {
   const colors: {
-    [key in SnippetTypes]: Pick<TagColors, 'color'> & Partial<TagColors>
+    [key in TagTypes]: Pick<TagColors, 'color'> & Partial<TagColors>
   } = {
     default: {
       color: palette.foreground,
