@@ -4,7 +4,7 @@ import { Justify, Direction, AlignItems, AlignContent } from './grid-types'
 import useScaleable from '../use-scaleable'
 
 type BreakpointsValue = number | boolean
-interface Props {
+export interface GridBasicComponentProps {
   xs?: BreakpointsValue
   sm?: BreakpointsValue
   md?: BreakpointsValue
@@ -26,8 +26,8 @@ const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type GridBasicItemProps = Props & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof GridBasicComponentProps>
+export type GridBasicItemProps = GridBasicComponentProps & NativeAttrs
 
 type ItemLayoutValue = {
   grow: number
