@@ -1,6 +1,8 @@
 module.exports = {
   verbose: true,
 
+  testEnvironment: 'jsdom',
+
   setupFiles: ['./tests/setup.js'],
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
