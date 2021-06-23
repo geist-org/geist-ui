@@ -3,21 +3,21 @@ import TreeFile from './tree-file'
 import TreeFolder from './tree-folder'
 import { TreeContext } from './tree-context'
 import { tuple } from '../utils/prop-types'
-import { sortChildren } from './/tree-help'
+import { sortChildren } from './tree-help'
 
 const FileTreeValueType = tuple('directory', 'file')
 
 const directoryType = FileTreeValueType[0]
 
-export type FileTreeValue = {
+export type TreeFile = {
   type: typeof FileTreeValueType[number]
   name: string
   extra?: string
-  files?: Array<FileTreeValue>
+  files?: Array<TreeFile>
 }
 
 interface Props {
-  value?: Array<FileTreeValue>
+  value?: Array<TreeFile>
   initialExpand?: boolean
   onClick?: (path: string) => void
   className?: string
@@ -31,7 +31,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TreeProps = Props & NativeAttrs
 
-const makeChildren = (value: Array<FileTreeValue> = []) => {
+const makeChildren = (value: Array<TreeFile> = []) => {
   if (!value || !value.length) return null
   return value
     .sort((a, b) => {

@@ -4,14 +4,16 @@ import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type BadgeTypes = NormalTypes
+
 interface Props {
-  type?: NormalTypes
+  type?: BadgeTypes
   dot?: boolean
   className?: string
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
+  type: 'default' as BadgeTypes,
   dot: false,
   className: '',
 }

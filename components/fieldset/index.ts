@@ -20,4 +20,10 @@ export type FieldsetComponentType = typeof Fieldset & {
 ;(Fieldset as FieldsetComponentType).Content = FieldsetContent
 ;(Fieldset as FieldsetComponentType).Body = FieldsetContent
 
+export type { FieldsetProps } from './fieldset'
+export type { FieldsetTitleProps } from './fieldset-title'
+export type { FieldsetSubtitleProps } from './fieldset-subtitle'
+export type { FieldsetGroupProps } from './fieldset-group'
+export type { FieldsetFooterProps } from './fieldset-footer'
+export type { FieldsetContentProps } from './fieldset-content'
 export default Fieldset as FieldsetComponentType

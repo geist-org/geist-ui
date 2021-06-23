@@ -9,4 +9,7 @@ export type PaginationComponentType = typeof Pagination & {
 ;(Pagination as PaginationComponentType).Previous = PaginationPrevious
 ;(Pagination as PaginationComponentType).Next = PaginationNext
 
+export type { PaginationProps } from './pagination'
+export type { PaginationPreviousProps } from './pagination-previous'
+export type { PaginationNextProps } from './pagination-next'
 export default Pagination as PaginationComponentType

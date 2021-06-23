@@ -8,6 +8,7 @@ import useScaleable, { withScaleable } from '../use-scaleable'
 export type ProgressColors = {
   [key: number]: string
 }
+export type ProgressTypes = NormalTypes
 
 interface Props {
   value?: number
@@ -15,14 +16,14 @@ interface Props {
   fixedTop?: boolean
   fixedBottom?: boolean
   colors?: ProgressColors
-  type?: NormalTypes
+  type?: ProgressTypes
   className?: string
 }
 
 const defaultProps = {
   value: 0,
   max: 100,
-  type: 'default' as NormalTypes,
+  type: 'default' as ProgressTypes,
   fixedTop: false,
   fixedBottom: false,
   className: '',
@@ -34,10 +35,10 @@ export type ProgressProps = Props & NativeAttrs
 const getCurrentColor = (
   ratio: number,
   palette: GeistUIThemesPalette,
-  type: NormalTypes,
+  type: ProgressTypes,
   colors: ProgressColors = {},
 ): string => {
-  const defaultColors: { [key in NormalTypes]: string } = {
+  const defaultColors: { [key in ProgressTypes]: string } = {
     default: palette.foreground,
     success: palette.success,
     secondary: palette.secondary,

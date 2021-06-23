@@ -3,6 +3,7 @@ import { NormalTypes } from '../utils/prop-types'
 import TextChild from './child'
 import { withScaleable } from '../use-scaleable'
 
+export type TextTypes = NormalTypes
 interface Props {
   h1?: boolean
   h2?: boolean
@@ -19,7 +20,7 @@ interface Props {
   em?: boolean
   blockquote?: boolean
   className?: string
-  type?: NormalTypes
+  type?: TextTypes
 }
 
 const defaultProps = {
@@ -38,7 +39,7 @@ const defaultProps = {
   em: false,
   blockquote: false,
   className: '',
-  type: 'default' as NormalTypes,
+  type: 'default' as TextTypes,
 }
 
 type ElementMap = { [key in keyof JSX.IntrinsicElements]?: boolean }

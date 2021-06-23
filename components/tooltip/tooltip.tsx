@@ -1,18 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react'
-import TooltipContent from './tooltip-content'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import TooltipContent, { TooltipIconOffset } from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
 import { TriggerTypes, Placement, SnippetTypes } from '../utils/prop-types'
+import { withScaleable } from '../use-scaleable'
+import { getRect } from './helper'
 
 export type TooltipOnVisibleChange = (visible: boolean) => void
-
+export type TooltipTypes = SnippetTypes
+export type TooltipTriggers = TriggerTypes
+export type TooltipPlacement = Placement
 interface Props {
   text: string | React.ReactNode
-  type?: SnippetTypes
-  placement?: Placement
+  type?: TooltipTypes
+  placement?: TooltipPlacement
   visible?: boolean
   initialVisible?: boolean
   hideArrow?: boolean
-  trigger?: TriggerTypes
+  trigger?: TooltipTriggers
   enterDelay?: number
   leaveDelay?: number
   offset?: number
@@ -24,9 +28,9 @@ interface Props {
 const defaultProps = {
   initialVisible: false,
   hideArrow: false,
-  type: 'default' as SnippetTypes,
-  trigger: 'hover' as TriggerTypes,
-  placement: 'top' as Placement,
+  type: 'default' as TooltipTypes,
+  trigger: 'hover' as TooltipTriggers,
+  placement: 'top' as TooltipPlacement,
   enterDelay: 100,
   leaveDelay: 0,
   offset: 12,
@@ -38,7 +42,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TooltipProps = Props & NativeAttrs
 
-const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
+const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   children,
   initialVisible,
   text,
@@ -58,12 +62,21 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   const timer = useRef<number>()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(initialVisible)
+  const iconOffset = useMemo<TooltipIconOffset>(() => {
+    if (!ref?.current) return { x: '0.75em', y: '0.75em' }
+    const rect = getRect(ref)
+    return {
+      x: `${rect.width ? rect.width / 2 : 0}px`,
+      y: `${rect.height ? rect.height / 2 : 0}px`,
+    }
+  }, [ref?.current])
   const contentProps = {
     type,
     visible,
     offset,
     placement,
     hideArrow,
+    iconOffset,
     parent: ref,
     className: portalClassName,
   }
@@ -116,6 +129,7 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   )
 }
 
-Tooltip.defaultProps = defaultProps
-Tooltip.displayName = 'GiestTooltip'
+TooltipComponent.defaultProps = defaultProps
+TooltipComponent.displayName = 'GiestTooltip'
+const Tooltip = withScaleable(TooltipComponent)
 export default Tooltip

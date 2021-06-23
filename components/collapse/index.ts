@@ -6,4 +6,6 @@ export type CollapseComponentType = typeof Collapse & {
 }
 ;(Collapse as CollapseComponentType).Group = CollapseGroup
 
+export type { CollapseProps } from './collapse'
+export type { CollapseGroupProps } from './collapse-group'
 export default Collapse

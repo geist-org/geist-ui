@@ -7,10 +7,10 @@ import { getColors } from './styles'
 import useTheme from '../use-theme'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
-interface CheckboxEventTarget {
+export type CheckboxTypes = NormalTypes
+export interface CheckboxEventTarget {
   checked: boolean
 }
-
 export interface CheckboxEvent {
   target: CheckboxEventTarget
   stopPropagation: () => void
@@ -21,7 +21,7 @@ export interface CheckboxEvent {
 interface Props {
   checked?: boolean
   disabled?: boolean
-  type?: NormalTypes
+  type?: CheckboxTypes
   initialChecked?: boolean
   onChange?: (e: CheckboxEvent) => void
   className?: string
@@ -30,7 +30,7 @@ interface Props {
 
 const defaultProps = {
   disabled: false,
-  type: 'default' as NormalTypes,
+  type: 'default' as CheckboxTypes,
   initialChecked: false,
   className: '',
   value: '',
@@ -70,10 +70,10 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
     }, [values.join(',')])
   }
 
-  const { fill, bg } = useMemo(() => getColors(theme.palette, type), [
-    theme.palette,
-    type,
-  ])
+  const { fill, bg } = useMemo(
+    () => getColors(theme.palette, type),
+    [theme.palette, type],
+  )
 
   const changeHandle = useCallback(
     (ev: React.ChangeEvent) => {

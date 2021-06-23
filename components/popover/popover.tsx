@@ -1,18 +1,19 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import Tooltip, { TooltipProps } from '../tooltip/tooltip'
-import PopoverItem from '../popover/popover-item'
 import { Placement, TriggerTypes } from '../utils/prop-types'
 import { getReactNode } from '../utils/collections'
 
+export type PopoverTriggerTypes = TriggerTypes
+export type PopoverPlacement = Placement
 interface Props {
   content?: React.ReactNode | (() => React.ReactNode)
-  trigger?: TriggerTypes
+  trigger?: PopoverTriggerTypes
   placement?: Placement
 }
 
 const defaultProps = {
-  trigger: 'click' as TriggerTypes,
+  trigger: 'click' as PopoverTriggerTypes,
   placement: 'bottom' as Placement,
   portalClassName: '',
 }
@@ -55,14 +56,6 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   )
 }
 
-type PopoverComponent<P = {}> = React.FC<P> & {
-  Item: typeof PopoverItem
-  Option: typeof PopoverItem
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  Partial<Omit<TooltipProps, keyof ExcludeTooltipProps>>
-
 Popover.defaultProps = defaultProps
-
-export default Popover as PopoverComponent<ComponentProps>
+Popover.displayName = 'GeistPopover'
+export default Popover

@@ -14,4 +14,8 @@ export type PageComponentType = typeof Page & {
 ;(Page as PageComponentType).Body = PageContent
 ;(Page as PageComponentType).Footer = PageFooter
 
+export type { PageProps, PageRenderMode } from './page'
+export type { PageHeaderProps } from './page-header'
+export type { PageContentProps } from './page-content'
+export type { PageFooterProps } from './page-footer'
 export default Page as PageComponentType

@@ -9,4 +9,5 @@ export type TreeComponentType = typeof Tree & {
 ;(Tree as TreeComponentType).File = TreeFile
 ;(Tree as TreeComponentType).Folder = TreeFolder
 
+export type { TreeProps, TreeFile } from './tree'
 export default Tree as TreeComponentType

@@ -14,4 +14,10 @@ export type AutoCompleteComponentType = typeof AutoComplete & {
 ;(AutoComplete as AutoCompleteComponentType).Searching = AutoCompleteSearching
 ;(AutoComplete as AutoCompleteComponentType).Empty = AutoCompleteEmpty
 
+export type {
+  AutoCompleteOption,
+  AutoCompleteOptions,
+  AutoCompleteProps,
+  AutoCompleteTypes,
+} from './auto-complete'
 export default AutoComplete as AutoCompleteComponentType
