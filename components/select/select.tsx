@@ -1,21 +1,20 @@
 import React, { CSSProperties, useEffect, useMemo, useRef, useState } from 'react'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 import useTheme from '../use-theme'
 import useClickAway from '../utils/use-click-away'
 import useCurrentState from '../utils/use-current-state'
 import { pickChildByProps } from '../utils/collections'
 import SelectIcon from './select-icon'
-import SelectOption from './select-option'
 import SelectDropdown from './select-dropdown'
 import SelectMultipleValue from './select-multiple-value'
 import Grid from '../grid'
 import { SelectContext, SelectConfig } from './select-context'
-import { getColors, getSizes } from './styles'
+import { getColors } from './styles'
 import Ellipsis from '../shared/ellipsis'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   disabled?: boolean
-  size?: NormalSizes
   type?: NormalTypes
   value?: string | string[]
   initialValue?: string | string[]
@@ -26,7 +25,6 @@ interface Props {
   multiple?: boolean
   clearable?: boolean
   className?: string
-  width?: string
   dropdownClassName?: string
   dropdownStyle?: CSSProperties
   disableMatchWidth?: boolean
@@ -35,23 +33,20 @@ interface Props {
 
 const defaultProps = {
   disabled: false,
-  size: 'medium' as NormalSizes,
   type: 'default' as NormalTypes,
   icon: SelectIcon as React.ComponentType,
   pure: false,
   multiple: false,
   clearable: true,
-  width: 'initial',
   className: '',
   disableMatchWidth: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type SelectProps = Props & typeof defaultProps & NativeAttrs
+export type SelectProps = Props & NativeAttrs
 
-const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
+const SelectComponent: React.FC<React.PropsWithChildren<SelectProps>> = ({
   children,
-  size,
   type,
   disabled,
   initialValue: init,
@@ -62,15 +57,15 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   multiple,
   clearable,
   placeholder,
-  width,
   className,
   dropdownClassName,
   dropdownStyle,
   disableMatchWidth,
   getPopupContainer,
   ...props
-}) => {
+}: React.PropsWithChildren<SelectProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(false)
   const [value, setValue, valueRef] = useCurrentState<string | string[] | undefined>(
@@ -84,7 +79,6 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
     if (!Array.isArray(value)) return !value
     return value.length === 0
   }, [value])
-  const sizes = useMemo(() => getSizes(theme, size), [theme, size])
 
   const { border, borderHover, iconBorder, placeholderColor } = useMemo(
     () => getColors(theme.palette, type),
@@ -110,11 +104,10 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
       visible,
       updateValue,
       updateVisible,
-      size,
       ref,
       disableAll: disabled,
     }),
-    [visible, size, disabled, ref, value, multiple],
+    [visible, disabled, ref, value, multiple],
   )
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -139,7 +132,6 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
       if (!multiple) return el
       return (
         <SelectMultipleValue
-          size={sizes.fontSize}
           disabled={disabled}
           onClear={clearable ? () => updateValue(child.props.value) : null}>
           {el}
@@ -157,7 +149,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
         {...props}>
         {isEmpty && (
           <span className="value placeholder">
-            <Ellipsis height={sizes.height}>{placeholder}</Ellipsis>
+            <Ellipsis height="var(--select-height)">{placeholder}</Ellipsis>
           </span>
         )}
         {value && !multiple && <span className="value">{selectedChild}</span>}
@@ -183,26 +175,31 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             white-space: nowrap;
             position: relative;
             cursor: ${disabled ? 'not-allowed' : 'pointer'};
-            max-width: 80vw;
-            width: ${width};
+            max-width: 90vw;
             overflow: hidden;
             transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
               box-shadow 200ms ease 0s;
             border: 1px solid ${border};
             border-radius: ${theme.layout.radius};
-            padding: 0 ${theme.layout.gapQuarter} 0 ${theme.layout.gapHalf};
-            height: ${sizes.height};
-            min-width: ${sizes.minWidth};
+
             background-color: ${disabled
               ? theme.palette.accents_1
               : theme.palette.background};
+            --select-font-size: ${SCALES.font(0.875)};
+            --select-height: ${SCALES.height(2.25)};
+            min-width: 11.5em;
+            width: ${SCALES.width(1, 'initial')};
+            height: var(--select-height);
+            padding: ${SCALES.pt(0)} ${SCALES.pr(0.334)} ${SCALES.pb(0)}
+              ${SCALES.pl(0.667)};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
           .multiple {
             height: auto;
-            min-height: ${sizes.height};
-            padding: ${theme.layout.gapQuarter} calc(${sizes.fontSize} * 2)
-              ${theme.layout.gapQuarter} ${theme.layout.gapHalf};
+            min-height: var(--select-height);
+            padding: ${SCALES.pt(0.334)} ${SCALES.pr(0.334)} ${SCALES.pb(0.334)}
+              ${SCALES.pl(0.667)};
           }
 
           .select:hover {
@@ -220,10 +217,10 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
             align-items: center;
             line-height: 1;
             padding: 0;
-            margin-right: 1.25rem;
-            font-size: ${sizes.fontSize};
+            margin-right: 1.25em;
+            font-size: var(--select-font-size);
             color: ${disabled ? theme.palette.accents_4 : theme.palette.foreground};
-            width: calc(100% - 1.25rem);
+            width: calc(100% - 1.25em);
           }
 
           .value > :global(div),
@@ -242,7 +239,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
           .icon {
             position: absolute;
             right: ${theme.layout.gapQuarter};
-            font-size: ${sizes.fontSize};
+            font-size: var(--select-font-size);
             top: 50%;
             bottom: 0;
             transform: translateY(-50%) rotate(${visible ? '180' : '0'}deg);
@@ -258,13 +255,7 @@ const Select: React.FC<React.PropsWithChildren<SelectProps>> = ({
   )
 }
 
-type SelectComponent<P = {}> = React.FC<P> & {
-  Option: typeof SelectOption
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-;(Select as SelectComponent<ComponentProps>).defaultProps = defaultProps
-
-export default Select as SelectComponent<ComponentProps>
+SelectComponent.defaultProps = defaultProps
+SelectComponent.displayName = 'GeistSelect'
+const Select = withScaleable(SelectComponent)
+export default Select

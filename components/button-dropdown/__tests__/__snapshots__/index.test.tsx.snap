@@ -36,10 +36,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -88,10 +88,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -132,7 +132,7 @@ initialize {
                 Node {
                   "attribs": Object {
                     "fill": "none",
-                    "height": "2.5rem",
+                    "height": "calc(2.5 * 16px)",
                     "shape-rendering": "geometricPrecision",
                     "stroke": "#666",
                     "stroke-linecap": "round",
@@ -140,7 +140,7 @@ initialize {
                     "stroke-width": "1",
                     "style": "color:#666",
                     "viewBox": "0 0 24 24",
-                    "width": "2.5rem",
+                    "width": "calc(2.5 * 16px)",
                   },
                   "children": Array [
                     Node {
@@ -294,10 +294,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -346,10 +346,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -410,10 +410,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -462,10 +462,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -547,10 +547,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -599,10 +599,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -665,10 +665,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -717,10 +717,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -825,10 +825,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -877,10 +877,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -941,10 +941,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -993,10 +993,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1078,10 +1078,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1130,10 +1130,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1196,10 +1196,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1248,10 +1248,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1313,7 +1313,7 @@ initialize {
                   Node {
                     "attribs": Object {
                       "fill": "none",
-                      "height": "2.5rem",
+                      "height": "calc(2.5 * 16px)",
                       "shape-rendering": "geometricPrecision",
                       "stroke": "#666",
                       "stroke-linecap": "round",
@@ -1321,7 +1321,7 @@ initialize {
                       "stroke-width": "1",
                       "style": "color:#666",
                       "viewBox": "0 0 24 24",
-                      "width": "2.5rem",
+                      "width": "calc(2.5 * 16px)",
                     },
                     "children": Array [
                       Node {
@@ -1470,6 +1470,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -1490,7 +1495,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -1568,7 +1573,7 @@ initialize {
               Node {
                 "attribs": Object {
                   "fill": "none",
-                  "height": "2.5rem",
+                  "height": "calc(2.5 * 16px)",
                   "shape-rendering": "geometricPrecision",
                   "stroke": "#666",
                   "stroke-linecap": "round",
@@ -1576,7 +1581,7 @@ initialize {
                   "stroke-width": "1",
                   "style": "color:#666",
                   "viewBox": "0 0 24 24",
-                  "width": "2.5rem",
+                  "width": "calc(2.5 * 16px)",
                 },
                 "children": Array [
                   Node {
@@ -1730,10 +1735,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1782,10 +1787,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1846,10 +1851,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1898,10 +1903,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -1983,10 +1988,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2035,10 +2040,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2101,10 +2106,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2153,10 +2158,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2261,10 +2266,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2313,10 +2318,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2377,10 +2382,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2429,10 +2434,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2514,10 +2519,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2566,10 +2571,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2632,10 +2637,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2684,10 +2689,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -2749,7 +2754,7 @@ initialize {
                 Node {
                   "attribs": Object {
                     "fill": "none",
-                    "height": "2.5rem",
+                    "height": "calc(2.5 * 16px)",
                     "shape-rendering": "geometricPrecision",
                     "stroke": "#666",
                     "stroke-linecap": "round",
@@ -2757,7 +2762,7 @@ initialize {
                     "stroke-width": "1",
                     "style": "color:#666",
                     "viewBox": "0 0 24 24",
-                    "width": "2.5rem",
+                    "width": "calc(2.5 * 16px)",
                   },
                   "children": Array [
                     Node {
@@ -2906,6 +2911,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -2926,7 +2936,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -3009,10 +3019,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3061,10 +3071,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3122,6 +3132,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -3142,7 +3157,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -3199,7 +3214,7 @@ initialize {
                 Node {
                   "attribs": Object {
                     "fill": "none",
-                    "height": "2.5rem",
+                    "height": "calc(2.5 * 16px)",
                     "shape-rendering": "geometricPrecision",
                     "stroke": "#666",
                     "stroke-linecap": "round",
@@ -3207,7 +3222,7 @@ initialize {
                     "stroke-width": "1",
                     "style": "color:#666",
                     "viewBox": "0 0 24 24",
-                    "width": "2.5rem",
+                    "width": "calc(2.5 * 16px)",
                   },
                   "children": Array [
                     Node {
@@ -3361,10 +3376,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3413,10 +3428,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3477,10 +3492,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3529,10 +3544,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3614,10 +3629,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3666,10 +3681,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3732,10 +3747,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3784,10 +3799,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3892,10 +3907,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -3944,10 +3959,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4008,10 +4023,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4060,10 +4075,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4145,10 +4160,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4197,10 +4212,10 @@ initialize {
           background-color: #e00;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4263,10 +4278,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4315,10 +4330,10 @@ initialize {
           background-color: #f5a623;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4380,7 +4395,7 @@ initialize {
                   Node {
                     "attribs": Object {
                       "fill": "none",
-                      "height": "2.5rem",
+                      "height": "calc(2.5 * 16px)",
                       "shape-rendering": "geometricPrecision",
                       "stroke": "#666",
                       "stroke-linecap": "round",
@@ -4388,7 +4403,7 @@ initialize {
                       "stroke-width": "1",
                       "style": "color:#666",
                       "viewBox": "0 0 24 24",
-                      "width": "2.5rem",
+                      "width": "calc(2.5 * 16px)",
                     },
                     "children": Array [
                       Node {
@@ -4557,10 +4572,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4609,10 +4624,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.5rem;
-          min-width: min-content;
-          padding: 0 1.25rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4695,7 +4710,7 @@ initialize {
 }
 `;
 
-exports[`Button Dropdown should support types and sizes 1`] = `
+exports[`Button Dropdown should support types 1`] = `
 initialize {
   "0": Node {
     "attribs": Object {},
@@ -4734,10 +4749,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4786,10 +4801,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -4830,7 +4845,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "1.5rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -4838,7 +4853,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "1.5rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -4997,7 +5012,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "1.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -5005,7 +5020,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "1.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -5154,6 +5169,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -5174,7 +5194,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -5252,7 +5272,7 @@ initialize {
                   Node {
                     "attribs": Object {
                       "fill": "none",
-                      "height": "1.5rem",
+                      "height": "calc(2.5 * 16px)",
                       "shape-rendering": "geometricPrecision",
                       "stroke": "#666",
                       "stroke-linecap": "round",
@@ -5260,7 +5280,7 @@ initialize {
                       "stroke-width": "1",
                       "style": "color:#666",
                       "viewBox": "0 0 24 24",
-                      "width": "1.5rem",
+                      "width": "calc(2.5 * 16px)",
                     },
                     "children": Array [
                       Node {
@@ -5419,7 +5439,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "1.5rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -5427,7 +5447,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "1.5rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -5576,6 +5596,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -5596,7 +5621,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -5679,10 +5704,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -5731,10 +5756,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -5792,6 +5817,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -5812,7 +5842,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -5869,7 +5899,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "1.5rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -5877,7 +5907,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "1.5rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -6036,7 +6066,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "1.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -6044,7 +6074,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "1.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -6213,10 +6243,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -6265,10 +6295,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -6356,10 +6386,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -6408,10 +6438,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -6452,7 +6482,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.75rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -6460,7 +6490,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "2.75rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -6619,7 +6649,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.75rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -6627,7 +6657,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "2.75rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -6776,6 +6806,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -6796,7 +6831,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -6874,7 +6909,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.75rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -6882,7 +6917,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "2.75rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -7041,7 +7076,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.75rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -7049,7 +7084,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "2.75rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -7198,6 +7233,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -7218,7 +7258,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -7301,10 +7341,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -7353,10 +7393,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -7414,6 +7454,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -7434,7 +7479,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -7491,7 +7536,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.75rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -7499,7 +7544,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "2.75rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -7658,7 +7703,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.75rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -7666,7 +7711,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "2.75rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -7835,10 +7880,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -7887,10 +7932,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -7978,10 +8023,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -8030,10 +8075,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -8074,7 +8119,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#fff",
                             "stroke-linecap": "round",
@@ -8082,7 +8127,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#fff",
                             "viewBox": "0 0 24 24",
-                            "width": "2.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -8241,7 +8286,7 @@ initialize {
                           Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "2.5rem",
+                              "height": "calc(2.5 * 16px)",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "#fff",
                               "stroke-linecap": "round",
@@ -8249,7 +8294,7 @@ initialize {
                               "stroke-width": "1",
                               "style": "color:#fff",
                               "viewBox": "0 0 24 24",
-                              "width": "2.5rem",
+                              "width": "calc(2.5 * 16px)",
                             },
                             "children": Array [
                               Node {
@@ -8398,6 +8443,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -8418,7 +8468,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -8496,7 +8546,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#fff",
                           "stroke-linecap": "round",
@@ -8504,7 +8554,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#fff",
                           "viewBox": "0 0 24 24",
-                          "width": "2.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -8663,7 +8713,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#fff",
                             "stroke-linecap": "round",
@@ -8671,7 +8721,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#fff",
                             "viewBox": "0 0 24 24",
-                            "width": "2.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -8820,6 +8870,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -8840,7 +8895,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -8923,10 +8978,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -8975,10 +9030,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -9036,6 +9091,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -9056,7 +9116,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -9113,7 +9173,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#fff",
                             "stroke-linecap": "round",
@@ -9121,7 +9181,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#fff",
                             "viewBox": "0 0 24 24",
-                            "width": "2.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -9280,7 +9340,7 @@ initialize {
                           Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "2.5rem",
+                              "height": "calc(2.5 * 16px)",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "#fff",
                               "stroke-linecap": "round",
@@ -9288,7 +9348,7 @@ initialize {
                               "stroke-width": "1",
                               "style": "color:#fff",
                               "viewBox": "0 0 24 24",
-                              "width": "2.5rem",
+                              "width": "calc(2.5 * 16px)",
                             },
                             "children": Array [
                               Node {
@@ -9457,10 +9517,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -9509,10 +9569,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -9631,10 +9691,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -9683,10 +9743,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -9727,7 +9787,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.75rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -9735,7 +9795,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "2.75rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -9894,7 +9954,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.75rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -9902,7 +9962,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "2.75rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -10051,6 +10111,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -10071,7 +10136,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -10149,7 +10214,7 @@ initialize {
                   Node {
                     "attribs": Object {
                       "fill": "none",
-                      "height": "2.75rem",
+                      "height": "calc(2.5 * 16px)",
                       "shape-rendering": "geometricPrecision",
                       "stroke": "#666",
                       "stroke-linecap": "round",
@@ -10157,7 +10222,7 @@ initialize {
                       "stroke-width": "1",
                       "style": "color:#666",
                       "viewBox": "0 0 24 24",
-                      "width": "2.75rem",
+                      "width": "calc(2.5 * 16px)",
                     },
                     "children": Array [
                       Node {
@@ -10316,7 +10381,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.75rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -10324,7 +10389,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "2.75rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -10473,6 +10538,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -10493,7 +10563,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -10576,10 +10646,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -10628,10 +10698,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -10689,6 +10759,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -10709,7 +10784,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -10766,7 +10841,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.75rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -10774,7 +10849,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "2.75rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -10933,7 +11008,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.75rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -10941,7 +11016,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "2.75rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -11110,10 +11185,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -11162,10 +11237,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -11253,10 +11328,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -11305,10 +11380,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -11349,7 +11424,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#fff",
                           "stroke-linecap": "round",
@@ -11357,7 +11432,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#fff",
                           "viewBox": "0 0 24 24",
-                          "width": "2.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -11516,7 +11591,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#fff",
                             "stroke-linecap": "round",
@@ -11524,7 +11599,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#fff",
                             "viewBox": "0 0 24 24",
-                            "width": "2.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -11673,6 +11748,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -11693,7 +11773,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -11771,7 +11851,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.5rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#fff",
                         "stroke-linecap": "round",
@@ -11779,7 +11859,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#fff",
                         "viewBox": "0 0 24 24",
-                        "width": "2.5rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -11938,7 +12018,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#fff",
                           "stroke-linecap": "round",
@@ -11946,7 +12026,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#fff",
                           "viewBox": "0 0 24 24",
-                          "width": "2.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -12095,6 +12175,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -12115,7 +12200,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -12198,10 +12283,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -12250,10 +12335,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -12311,6 +12396,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -12331,7 +12421,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -12388,7 +12478,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#fff",
                           "stroke-linecap": "round",
@@ -12396,7 +12486,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#fff",
                           "viewBox": "0 0 24 24",
-                          "width": "2.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -12555,7 +12645,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#fff",
                             "stroke-linecap": "round",
@@ -12563,7 +12653,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#fff",
                             "viewBox": "0 0 24 24",
-                            "width": "2.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -12732,10 +12822,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -12784,10 +12874,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -12887,10 +12977,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -12939,10 +13029,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -12983,7 +13073,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "1.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -12991,7 +13081,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "1.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -13150,7 +13240,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "1.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -13158,7 +13248,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "1.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -13307,6 +13397,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -13327,7 +13422,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -13405,7 +13500,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "1.5rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -13413,7 +13508,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "1.5rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -13572,7 +13667,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "1.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -13580,7 +13675,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "1.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -13729,6 +13824,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -13749,7 +13849,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -13832,10 +13932,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -13884,10 +13984,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -13945,6 +14045,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -13965,7 +14070,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -14022,7 +14127,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "1.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -14030,7 +14135,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "1.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -14189,7 +14294,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "1.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -14197,7 +14302,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "1.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -14366,10 +14471,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -14418,10 +14523,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -14528,10 +14633,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -14580,10 +14685,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -14624,7 +14729,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.5rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#fff",
                         "stroke-linecap": "round",
@@ -14632,7 +14737,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#fff",
                         "viewBox": "0 0 24 24",
-                        "width": "2.5rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -14791,7 +14896,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#fff",
                           "stroke-linecap": "round",
@@ -14799,7 +14904,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#fff",
                           "viewBox": "0 0 24 24",
-                          "width": "2.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -14948,6 +15053,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -14968,7 +15078,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -15046,7 +15156,7 @@ initialize {
                   Node {
                     "attribs": Object {
                       "fill": "none",
-                      "height": "2.5rem",
+                      "height": "calc(2.5 * 16px)",
                       "shape-rendering": "geometricPrecision",
                       "stroke": "#fff",
                       "stroke-linecap": "round",
@@ -15054,7 +15164,7 @@ initialize {
                       "stroke-width": "1",
                       "style": "color:#fff",
                       "viewBox": "0 0 24 24",
-                      "width": "2.5rem",
+                      "width": "calc(2.5 * 16px)",
                     },
                     "children": Array [
                       Node {
@@ -15213,7 +15323,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.5rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#fff",
                         "stroke-linecap": "round",
@@ -15221,7 +15331,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#fff",
                         "viewBox": "0 0 24 24",
-                        "width": "2.5rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -15370,6 +15480,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -15390,7 +15505,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -15473,10 +15588,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -15525,10 +15640,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -15586,6 +15701,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -15606,7 +15726,7 @@ initialize {
             outline: none;
             color: #fff;
             background-color: #000;
-            height: 2.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #333;
             cursor: pointer;
             display: flex;
@@ -15663,7 +15783,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.5rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#fff",
                         "stroke-linecap": "round",
@@ -15671,7 +15791,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#fff",
                         "viewBox": "0 0 24 24",
-                        "width": "2.5rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -15830,7 +15950,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#fff",
                           "stroke-linecap": "round",
@@ -15838,7 +15958,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#fff",
                           "viewBox": "0 0 24 24",
-                          "width": "2.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -16007,10 +16127,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -16059,10 +16179,10 @@ initialize {
           background-color: #000;
           color: #fff;
           width: 100%;
-          height: 2.5rem;
-          min-width: 12.5rem;
-          padding: 0 1.375rem;
-          font-size: .875rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -16152,10 +16272,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -16204,10 +16324,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -16248,7 +16368,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.75rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -16256,7 +16376,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "2.75rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -16415,7 +16535,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.75rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -16423,7 +16543,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "2.75rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -16572,6 +16692,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -16592,7 +16717,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -16670,7 +16795,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "2.75rem",
+                        "height": "calc(2.5 * 16px)",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "#666",
                         "stroke-linecap": "round",
@@ -16678,7 +16803,7 @@ initialize {
                         "stroke-width": "1",
                         "style": "color:#666",
                         "viewBox": "0 0 24 24",
-                        "width": "2.75rem",
+                        "width": "calc(2.5 * 16px)",
                       },
                       "children": Array [
                         Node {
@@ -16837,7 +16962,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.75rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -16845,7 +16970,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "2.75rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -16994,6 +17119,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -17014,7 +17144,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -17097,10 +17227,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -17149,10 +17279,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -17210,6 +17340,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: calc(12.5 * 16px);
+            --geist-ui-dropdown-padding: 0 calc(1.375 * 16px) 0
+              calc(1.375 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -17230,7 +17365,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 2.75rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -17287,7 +17422,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "2.75rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -17295,7 +17430,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "2.75rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -17454,7 +17589,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "2.75rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -17462,7 +17597,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "2.75rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -17631,10 +17766,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -17683,10 +17818,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 2.75rem;
-          min-width: 15.625rem;
-          padding: 0 1.875rem;
-          font-size: 1rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -17776,10 +17911,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -17828,10 +17963,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -17872,7 +18007,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "1.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -17880,7 +18015,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "1.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -18039,7 +18174,7 @@ initialize {
                           Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "1.5rem",
+                              "height": "calc(2.5 * 16px)",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "#666",
                               "stroke-linecap": "round",
@@ -18047,7 +18182,7 @@ initialize {
                               "stroke-width": "1",
                               "style": "color:#666",
                               "viewBox": "0 0 24 24",
-                              "width": "1.5rem",
+                              "width": "calc(2.5 * 16px)",
                             },
                             "children": Array [
                               Node {
@@ -18196,6 +18331,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -18216,7 +18356,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -18294,7 +18434,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "1.5rem",
+                          "height": "calc(2.5 * 16px)",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "#666",
                           "stroke-linecap": "round",
@@ -18302,7 +18442,7 @@ initialize {
                           "stroke-width": "1",
                           "style": "color:#666",
                           "viewBox": "0 0 24 24",
-                          "width": "1.5rem",
+                          "width": "calc(2.5 * 16px)",
                         },
                         "children": Array [
                           Node {
@@ -18461,7 +18601,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "1.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -18469,7 +18609,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "1.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -18618,6 +18758,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -18638,7 +18783,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -18721,10 +18866,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -18773,10 +18918,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -18834,6 +18979,11 @@ initialize {
             box-sizing: border-box;
             border: 1px solid #eaeaea;
             border-radius: 5px;
+            --geist-ui-dropdown-height: calc(2.5 * 16px);
+            --geist-ui-dropdown-min-width: min-content;
+            --geist-ui-dropdown-padding: 0 calc(1.15 * 16px) 0
+              calc(1.15 * 16px);
+            --geist-ui-dropdown-font-size: calc(0.875 * 16px);
           }
 
           .btn-dropdown &gt; :global(button) {
@@ -18854,7 +19004,7 @@ initialize {
             outline: none;
             color: #666;
             background-color: #fff;
-            height: 1.5rem;
+            height: calc(2.5 * 16px);
             border-left: 1px solid #eaeaea;
             cursor: pointer;
             display: flex;
@@ -18911,7 +19061,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "1.5rem",
+                            "height": "calc(2.5 * 16px)",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "#666",
                             "stroke-linecap": "round",
@@ -18919,7 +19069,7 @@ initialize {
                             "stroke-width": "1",
                             "style": "color:#666",
                             "viewBox": "0 0 24 24",
-                            "width": "1.5rem",
+                            "width": "calc(2.5 * 16px)",
                           },
                           "children": Array [
                             Node {
@@ -19078,7 +19228,7 @@ initialize {
                           Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "1.5rem",
+                              "height": "calc(2.5 * 16px)",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "#666",
                               "stroke-linecap": "round",
@@ -19086,7 +19236,7 @@ initialize {
                               "stroke-width": "1",
                               "style": "color:#666",
                               "viewBox": "0 0 24 24",
-                              "width": "1.5rem",
+                              "width": "calc(2.5 * 16px)",
                             },
                             "children": Array [
                               Node {
@@ -19255,10 +19405,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -19307,10 +19457,10 @@ initialize {
           background-color: #fff;
           color: #666;
           width: 100%;
-          height: 1.5rem;
-          min-width: min-content;
-          padding: 0 0.625rem;
-          font-size: .75rem;
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {

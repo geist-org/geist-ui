@@ -1,13 +1,10 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-
-type LoadingSizes = NormalSizes | string
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
-  size?: LoadingSizes
   type?: NormalTypes
   color?: string
   className?: string
@@ -15,24 +12,13 @@ interface Props {
 }
 
 const defaultProps = {
-  size: 'medium' as LoadingSizes,
   type: 'default' as NormalTypes,
   className: '',
   spaceRatio: 1,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type LoadingProps = Props & typeof defaultProps & NativeAttrs
-
-const getIconSize = (size: LoadingSizes) => {
-  const sizes: { [key in LoadingSizes]: string } = {
-    mini: '2px',
-    small: '3px',
-    medium: '4px',
-    large: '5px',
-  }
-  return sizes[size] || size
-}
+export type LoadingProps = Props & NativeAttrs
 
 const getIconBgColor = (
   type: NormalTypes,
@@ -50,17 +36,16 @@ const getIconBgColor = (
   return color ? color : colors[type]
 }
 
-const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
+const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   children,
-  size,
   type,
   color,
   className,
   spaceRatio,
   ...props
-}) => {
+}: React.PropsWithChildren<LoadingProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const width = useMemo(() => getIconSize(size), [size])
+  const { SCALES } = useScaleable()
   const bgColor = useMemo(() => getIconBgColor(type, theme.palette, color), [
     type,
     theme.palette,
@@ -80,13 +65,18 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
           display: inline-flex;
           align-items: center;
           position: relative;
-          width: 100%;
-          height: 100%;
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, '100%')};
+          height: ${SCALES.height(1, '100%')};
+          min-height: 1em;
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         label {
-          margin-right: ${theme.layout.gapHalf};
+          margin-right: 0.5em;
           color: ${theme.palette.accents_5};
+          line-height: 1;
         }
 
         label :global(*) {
@@ -95,12 +85,11 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
 
         .loading {
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          top: 50%;
+          left: 50%;
           width: 100%;
           height: 100%;
+          transform: translate(-50%, -50%);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -109,11 +98,11 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
         }
 
         i {
-          width: ${width};
-          height: ${width};
+          width: 0.25em;
+          height: 0.25em;
           border-radius: 50%;
           background-color: ${bgColor};
-          margin: 0 calc(${width} / 2 * ${spaceRatio});
+          margin: 0 calc(0.25em / 2 * ${spaceRatio});
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -144,6 +133,7 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   )
 }
 
-const MemoLoading = React.memo(Loading)
-
-export default withDefaults(MemoLoading, defaultProps)
+LoadingComponent.defaultProps = defaultProps
+LoadingComponent.displayName = 'GeistLoading'
+const Loading = withScaleable(LoadingComponent)
+export default Loading

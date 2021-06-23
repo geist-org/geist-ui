@@ -1,6 +1,6 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -10,15 +10,16 @@ const defaultProps = {
   className: '',
 }
 
-export type AutoCompleteSearchProps = Props &
-  typeof defaultProps &
-  React.HTMLAttributes<any>
+export type AutoCompleteSearchProps = Props & React.HTMLAttributes<any>
 
-const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchProps>> = ({
+const AutoCompleteSearchComponent: React.FC<
+  React.PropsWithChildren<AutoCompleteSearchProps>
+> = ({
   children,
   className,
-}) => {
+}: React.PropsWithChildren<AutoCompleteSearchProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
 
   return (
     <div className={className}>
@@ -31,7 +32,6 @@ const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchPro
           align-items: center;
           font-weight: normal;
           white-space: pre;
-          font-size: 0.875rem;
           padding: ${theme.layout.gapHalf};
           line-height: 1;
           background-color: ${theme.palette.background};
@@ -39,10 +39,20 @@ const AutoCompleteSearch: React.FC<React.PropsWithChildren<AutoCompleteSearchPro
           user-select: none;
           border: 0;
           border-radius: ${theme.layout.radius};
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0.875)} ${SCALES.pr(0.875)} ${SCALES.pb(0.875)}
+            ${SCALES.pl(0.875)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
       `}</style>
     </div>
   )
 }
 
-export default withDefaults(AutoCompleteSearch, defaultProps)
+AutoCompleteSearchComponent.defaultProps = defaultProps
+AutoCompleteSearchComponent.displayName = 'GeistAutoCompleteSearch'
+const AutoCompleteSearch = withScaleable(AutoCompleteSearchComponent)
+
+export default AutoCompleteSearch

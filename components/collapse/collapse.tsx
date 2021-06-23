@@ -4,8 +4,8 @@ import useTheme from '../use-theme'
 import Expand from '../shared/expand'
 import { useCollapseContext } from './collapse-context'
 import useCurrentState from '../utils/use-current-state'
-import CollapseGroup from './collapse-group'
 import useWarning from '../utils/use-warning'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   title: string
@@ -23,9 +23,9 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type CollapseProps = Props & typeof defaultProps & NativeAttrs
+export type CollapseProps = Props & NativeAttrs
 
-const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
+const CollapseComponent: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   children,
   title,
   subtitle,
@@ -34,10 +34,11 @@ const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   className,
   index,
   ...props
-}) => {
+}: React.PropsWithChildren<CollapseProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const [visible, setVisible, visibleRef] = useCurrentState<boolean>(initialVisible)
+  const { SCALES } = useScaleable()
   const { values, updateValues } = useCollapseContext()
+  const [visible, setVisible, visibleRef] = useCurrentState<boolean>(initialVisible)
 
   if (!title) {
     useWarning('"title" is required.', 'Collapse')
@@ -68,9 +69,13 @@ const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
       </Expand>
       <style jsx>{`
         .collapse {
-          padding: ${theme.layout.gap} 0;
           border-top: 1px solid ${theme.palette.border};
           border-bottom: 1px solid ${theme.palette.border};
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(1.2)} ${SCALES.pr(0)} ${SCALES.pb(1.2)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .shadow {
@@ -94,6 +99,7 @@ const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -106,9 +112,9 @@ const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: ${theme.layout.gap} 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: ${SCALES.pt(1.2)} ${SCALES.pr(0)} ${SCALES.pb(1.2)} ${SCALES.pl(0)};
         }
 
         .content > :global(*:first-child) {
@@ -123,14 +129,7 @@ const Collapse: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   )
 }
 
-Collapse.defaultProps = defaultProps
-
-type CollapseComponent<P = {}> = React.FC<P> & {
-  Group: typeof CollapseGroup
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-export default Collapse as CollapseComponent<ComponentProps>
+CollapseComponent.defaultProps = defaultProps
+CollapseComponent.displayName = 'GeistCollapse'
+const Collapse = withScaleable(CollapseComponent)
+export default Collapse

@@ -3,82 +3,24 @@
 exports[`Page should render correctly 1`] = `
 "<section><main class=\\"\\">test-value<style>
         main {
+          font-size: calc(1 * 16px);
           width: 100%;
-          padding: calc(16pt * 2.5) 0;
+          height: 100%;
+          padding: calc(3.125 * 16px) 0 calc(3.125 * 16px) 0;
+          margin: 0 0 0 0;
         }
       </style></main><style>
         section {
-          width: 750pt;
           max-width: 100vw;
           min-height: 100vh;
-          margin: 0 auto;
-          padding: 0 16pt;
           box-sizing: border-box;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: calc(100% - 100pt);
+          height: auto;
+          padding: 0 calc(1.34 * 16px) 0 calc(1.34 * 16px);
+          margin: 0 auto 0
+            auto;
         }
       </style></section>"
-`;
-
-exports[`Page should work with different size 1`] = `
-"<div><section><main class=\\"\\"><style>
-        main {
-          width: 100%;
-          padding: calc(16pt * 2.5) 0;
-        }
-      </style></main><style>
-        section {
-          width: calc(750pt - 180pt);
-          max-width: 100vw;
-          min-height: 100vh;
-          margin: 0 auto;
-          padding: 0 16pt;
-          box-sizing: border-box;
-          position: relative;
-        }
-      </style></section><section><main class=\\"\\"><style>
-        main {
-          width: 100%;
-          padding: calc(16pt * 2.5) 0;
-        }
-      </style></main><style>
-        section {
-          width: calc(750pt - 100pt);
-          max-width: 100vw;
-          min-height: 100vh;
-          margin: 0 auto;
-          padding: 0 16pt;
-          box-sizing: border-box;
-          position: relative;
-        }
-      </style></section><section><main class=\\"\\"><style>
-        main {
-          width: 100%;
-          padding: calc(16pt * 2.5) 0;
-        }
-      </style></main><style>
-        section {
-          width: calc(750pt + 100pt);
-          max-width: 100vw;
-          min-height: 100vh;
-          margin: 0 auto;
-          padding: 0 16pt;
-          box-sizing: border-box;
-          position: relative;
-        }
-      </style></section><section><main class=\\"\\"><style>
-        main {
-          width: 100%;
-          padding: calc(16pt * 2.5) 0;
-        }
-      </style></main><style>
-        section {
-          width: 100%;
-          max-width: 100vw;
-          min-height: 100vh;
-          margin: 0 auto;
-          padding: 0 16pt;
-          box-sizing: border-box;
-          position: relative;
-        }
-      </style></section></div>"
 `;

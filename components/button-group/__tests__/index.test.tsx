@@ -16,7 +16,7 @@ describe('ButtonGroup', () => {
 
   it('props should be passed to each button', () => {
     const wrapper = mount(
-      <ButtonGroup size="mini" type="success">
+      <ButtonGroup type="success">
         <Button>action</Button>
       </ButtonGroup>,
     )

@@ -1,7 +1,6 @@
 import Link from '../link'
 import { Props as LinkBasicProps } from '../link/link'
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import { pickChild } from '../utils/collections'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
 
@@ -19,14 +18,21 @@ const defaultProps = {
 
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>
 type NativeLinkAttrs = Omit<NativeAttrs, keyof LinkBasicProps>
-export type BreadcrumbsProps = Props & typeof defaultProps & NativeLinkAttrs
+export type BreadcrumbsItemProps = Props & NativeLinkAttrs
 
 const BreadcrumbsItem = React.forwardRef<
   HTMLAnchorElement,
-  React.PropsWithChildren<BreadcrumbsProps>
+  React.PropsWithChildren<BreadcrumbsItemProps>
 >(
   (
-    { href, nextLink, onClick, children, className, ...props },
+    {
+      href,
+      nextLink,
+      onClick,
+      children,
+      className,
+      ...props
+    }: BreadcrumbsItemProps & typeof defaultProps,
     ref: React.Ref<HTMLAnchorElement>,
   ) => {
     const isLink = useMemo(() => href !== undefined || nextLink, [href, nextLink])
@@ -56,6 +62,6 @@ const BreadcrumbsItem = React.forwardRef<
   },
 )
 
-const MemoBreadcrumbsItem = React.memo(BreadcrumbsItem)
-
-export default withDefaults(MemoBreadcrumbsItem, defaultProps)
+BreadcrumbsItem.defaultProps = defaultProps
+BreadcrumbsItem.displayName = 'GeistBreadcrumbsItem'
+export default BreadcrumbsItem

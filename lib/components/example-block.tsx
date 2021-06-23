@@ -1,17 +1,14 @@
 import React, { useMemo } from 'react'
-import withDefaults from 'components/utils/with-defaults'
 import useTheme from 'components/use-theme'
 import { GeistUIThemes } from 'components/themes/presets'
-
-interface Props {
-  plain?: number | boolean
-}
 
 const defaultProps = {
   plain: false,
 }
 
-export type ExampleBlockProps = Props & typeof defaultProps
+export type ExampleBlockProps = {
+  plain?: number | boolean
+}
 
 const getBackground = (theme: GeistUIThemes, plain: number | boolean) => {
   if (typeof plain !== 'number') return theme.palette.success
@@ -28,7 +25,11 @@ const getBackground = (theme: GeistUIThemes, plain: number | boolean) => {
 }
 
 const ExampleBlock: React.FC<React.PropsWithChildren<ExampleBlockProps>> = React.memo(
-  ({ plain, children, ...props }) => {
+  ({
+    plain,
+    children,
+    ...props
+  }: React.PropsWithChildren<ExampleBlockProps> & typeof defaultProps) => {
     const theme = useTheme()
     const bg = useMemo(() => getBackground(theme, plain), [theme, plain])
 
@@ -50,4 +51,6 @@ const ExampleBlock: React.FC<React.PropsWithChildren<ExampleBlockProps>> = React
   },
 )
 
-export default withDefaults(ExampleBlock, defaultProps)
+ExampleBlock.defaultProps = defaultProps
+ExampleBlock.displayName = 'GeistExampleBlock'
+export default ExampleBlock

@@ -1,14 +1,12 @@
-import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
+import React from 'react'
 import useTheme from '../use-theme'
-import { GeistUIThemes } from '../themes/presets'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   command?: boolean
   shift?: boolean
   option?: boolean
   ctrl?: boolean
-  small?: boolean
   className?: string
 }
 
@@ -17,48 +15,23 @@ const defaultProps = {
   shift: false,
   option: false,
   ctrl: false,
-  small: false,
   className: '',
 }
 
 type NativeAttrs = Omit<React.KeygenHTMLAttributes<any>, keyof Props>
-export type KeyboardProps = Props & typeof defaultProps & NativeAttrs
+export type KeyboardProps = Props & NativeAttrs
 
-type CustomLayout = {
-  padding: number | string
-  fontSize: string
-  minWidth: string
-}
-
-const getLayout = (small: boolean, theme: GeistUIThemes): CustomLayout => {
-  if (small)
-    return {
-      padding: 0,
-      fontSize: '.75rem',
-      minWidth: theme.layout.gap,
-    }
-  return {
-    padding: theme.layout.gapQuarter,
-    fontSize: '0.875rem',
-    minWidth: `calc(1.5 * ${theme.layout.gap})`,
-  }
-}
-
-const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
+const KeyboardComponent: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
   command,
   shift,
   option,
   ctrl,
-  small,
   children,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<KeyboardProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { padding, fontSize, minWidth } = useMemo<CustomLayout>(
-    () => getLayout(small, theme),
-    [small, theme],
-  )
+  const { SCALES } = useScaleable()
 
   return (
     <kbd className={className} {...props}>
@@ -70,7 +43,6 @@ const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
 
       <style jsx>{`
         kbd {
-          width: fit-content;
           line-height: 2em;
           text-align: center;
           display: inline-block;
@@ -79,29 +51,30 @@ const Keyboard: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
           font-family: ${theme.font.sans};
           border-radius: ${theme.layout.radius};
           border: 1px solid ${theme.palette.accents_2};
-          padding: 0 ${padding};
-          min-width: ${minWidth};
-          font-size: ${fontSize};
-        }
-
-        kbd + kbd {
-          margin-left: ${theme.layout.gapQuarter};
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'fit-content')};
+          height: ${SCALES.height(1, 'auto')};
+          min-width: 2em;
+          min-height: 2em;
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0.34)} ${SCALES.pb(0)} ${SCALES.pl(0.34)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         span {
           line-height: 2em;
-          font-size: 0.875rem;
+          font-size: 1em;
           text-align: center;
         }
 
         span + span {
-          margin-left: ${theme.layout.gapQuarter};
+          margin-left: 0.3em;
         }
       `}</style>
     </kbd>
   )
 }
 
-const MemoKeyboard = React.memo(Keyboard)
-
-export default withDefaults(MemoKeyboard, defaultProps)
+KeyboardComponent.defaultProps = defaultProps
+KeyboardComponent.displayName = 'GeistKeyboard'
+const Keyboard = withScaleable(KeyboardComponent)
+export default Keyboard

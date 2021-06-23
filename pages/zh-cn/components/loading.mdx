@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Loading, Spacer, Row, Grid } from 'components'
+import { Loading, Grid } from 'components'
 
 export const meta = {
   title: '加载中 Loading',
@@ -11,47 +11,18 @@ export const meta = {
 表示动作正在后台运行。
 
 <Playground
-  scope={{ Loading, Row, Spacer }}
+  scope={{ Loading }}
   code={`
-<Row style={{ padding: '10px 0'}}>
-  <Loading />
-</Row>
+<Loading />
 `}
 />
 
 <Playground
   title="文本"
   desc="在图标旁边定制一段文本。"
-  scope={{ Loading, Row }}
+  scope={{ Loading }}
   code={`
-<Row style={{ padding: '10px 0'}}>
-  <Loading>加载中</Loading>
-</Row>
-`}
-/>
-
-<Playground
-  title="大小"
-  desc="不同大小的组件。"
-  scope={{ Loading, Grid }}
-  code={`
-<Grid.Container gap={2.5}>
-  <Grid xs={24}>
-    <Loading size="mini" />
-  </Grid>
-  <Grid xs={24}>
-    <Loading size="small" />
-  </Grid>
-  <Grid xs={24}>
-    <Loading size="medium" />
-  </Grid>
-   <Grid xs={24}>
-    <Loading size="large" />
-  </Grid>
-  <Grid xs={24}>
-    <Loading size="10px" />
-  </Grid>
-</Grid.Container>
+<Loading>加载中</Loading>
 `}
 />
 
@@ -87,7 +58,7 @@ export const meta = {
     <Loading spaceRatio={2.5} />
   </Grid>
   <Grid xs={24}>
-    <Loading size="8px" spaceRatio={0.5} />
+    <Loading spaceRatio={0.5} />
   </Grid>
 </Grid.Container>
 `}
@@ -99,7 +70,6 @@ export const meta = {
 | 属性           | 描述               | 类型             | 推荐值                            | 默认      |
 | -------------- | ------------------ | ---------------- | --------------------------------- | --------- |
 | **type**       | 指示器的类型       | `NormalTypes`    | [NormalTypes](#mormaltypes)       | `default` |
-| **size**       | 指示器的大小       | `LoadingSizes`   | [LoadingSizes](#loadingsizes)     | `medium`  |
 | **color**      | 自定义指示器的色彩 | `string`         | -                                 | -         |
 | **spaceRatio** | 点之间的空间比例   | `number`         | -                                 | 1         |
 | ...            | 原生属性           | `HTMLAttributes` | `'id', 'title', 'className', ...` | -         |
@@ -108,12 +78,6 @@ export const meta = {
 
 ```ts
 type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
-```
-
-<Attributes.Title>LoadingSizes</Attributes.Title>
-
-```ts
-type LoadingSizes = 'mini' | 'small' | 'medium' | 'large' | string
 ```
 
 </Attributes>

@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useRealShape from '../utils/use-real-shape'
 
-interface Props {
+export type ExpandProps = {
   isExpanded?: boolean
   delay?: number
 }
@@ -12,13 +11,11 @@ const defaultProps = {
   delay: 200,
 }
 
-export type ExpandProps = Props & typeof defaultProps
-
 const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
   isExpanded,
   delay,
   children,
-}) => {
+}: React.PropsWithChildren<ExpandProps> & typeof defaultProps) => {
   const [height, setHeight] = useState<string>(isExpanded ? 'auto' : '0')
   const [selfExpanded, setSelfExpanded] = useState<boolean>(isExpanded)
   const [visible, setVisible] = useState<boolean>(isExpanded)
@@ -91,4 +88,6 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
   )
 }
 
-export default withDefaults(Expand, defaultProps)
+Expand.defaultProps = defaultProps
+Expand.displayName = 'GeistExpand'
+export default Expand

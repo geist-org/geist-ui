@@ -1,45 +1,32 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 import { CheckboxContext } from './checkbox-context'
 import useWarning from '../utils/use-warning'
-import { NormalSizes } from '../utils/prop-types'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   value: string[]
   disabled?: boolean
-  size?: NormalSizes
   onChange?: (values: string[]) => void
   className?: string
 }
 
 const defaultProps = {
   disabled: false,
-  size: 'small' as NormalSizes,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type CheckboxGroupProps = Props & typeof defaultProps & NativeAttrs
+export type CheckboxGroupProps = Props & NativeAttrs
 
-export const getCheckboxSize = (size: NormalSizes): string => {
-  const sizes: { [key in NormalSizes]: string } = {
-    mini: '.75rem',
-    small: '.875rem',
-    medium: '1rem',
-    large: '1.125rem',
-  }
-  return sizes[size]
-}
-
-const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
+const CheckboxGroupComponent: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
   disabled,
   onChange,
   value,
-  size,
   children,
   className,
   ...props
-}) => {
+}: CheckboxGroupProps & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
   const [selfVal, setSelfVal] = useState<string[]>([])
   if (!value) {
     value = []
@@ -61,7 +48,6 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
       values: selfVal,
     }
   }, [disabled, selfVal])
-  const fontSize = useMemo(() => getCheckboxSize(size), [size])
 
   useEffect(() => {
     setSelfVal(value)
@@ -72,9 +58,18 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
       <div className={`group ${className}`} {...props}>
         {children}
         <style jsx>{`
+          .group {
+            width: ${SCALES.width(1, 'auto')};
+            height: ${SCALES.height(1, 'auto')};
+            padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
+          }
           .group :global(label) {
-            margin-right: calc(${fontSize} * 2);
-            --checkbox-size: ${fontSize};
+            margin-right: calc(${SCALES.font(1)} * 2);
+            --checkbox-size: ${SCALES.font(1)};
+          }
+          .group :global(label:last-of-type) {
+            margin-right: 0;
           }
         `}</style>
       </div>
@@ -82,4 +77,8 @@ const CheckboxGroup: React.FC<React.PropsWithChildren<CheckboxGroupProps>> = ({
   )
 }
 
-export default withDefaults(CheckboxGroup, defaultProps)
+CheckboxGroupComponent.defaultProps = defaultProps
+CheckboxGroupComponent.displayName = 'GeistCheckboxGroup'
+const CheckboxGroup = withScaleable(CheckboxGroupComponent)
+
+export default CheckboxGroup

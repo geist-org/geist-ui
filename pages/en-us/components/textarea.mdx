@@ -20,15 +20,6 @@ Retrieve multi-line user input.
 />
 
 <Playground
-  title="width"
-  desc="Specify width manually."
-  scope={{ Textarea }}
-  code={`
-<Textarea width="100%" placeholder="Now is the optimal workflow for frontend teams. All-in-one: Static and JAMstack deployment, Serverless Functions, and Global CDN." />
-`}
-/>
-
-<Playground
   title="disabled"
   desc="Disable interactive textarea."
   scope={{ Textarea }}
@@ -43,13 +34,13 @@ Retrieve multi-line user input.
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea type="success" minHeight="65px" value="Success" />
-  <Spacer x={.5} inline />
-  <Textarea type="secondary" minHeight="65px" value="Secondary" />
-  <Spacer y={.5} />
-  <Textarea type="warning" minHeight="65px" value="Warning" />
-  <Spacer x={.5} inline />
-  <Textarea type="error" minHeight="65px" value="Error" />
+  <Textarea type="success" height="65px" value="Success" />
+  <Spacer w={.5} inline />
+  <Textarea type="secondary" height="65px" value="Secondary" />
+  <Spacer h={.5} />
+  <Textarea type="warning" height="65px" value="Warning" />
+  <Spacer w={.5} inline />
+  <Textarea type="error" height="65px" value="Error" />
 </>
 `}
 />
@@ -89,10 +80,10 @@ Retrieve multi-line user input.
   return (
     <>
       <Textarea width="100%" {...bindings}/>
-      <Spacer y={.5} />
-      <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>set value</Button>
-      <Spacer y={.5} />
-      <Button auto size="small" onClick={() => reset()}>reset value</Button>
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/3} onClick={() => setState(Math.random().toString(32))}>set value</Button>
+      <Spacer h={.5} />
+      <Button auto scale={1/3} onClick={() => reset()}>reset value</Button>
     </>
   )
 }
@@ -112,9 +103,8 @@ Retrieve multi-line user input.
   return (
     <>
       <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
-      <Spacer y={.5} />
-      <Button auto type="secondary" size="small"
-        onClick={setChange}>set value</Button>
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/3} onClick={setChange}>set value</Button>
     </>
   )
 }
@@ -124,19 +114,17 @@ Retrieve multi-line user input.
 <Attributes edit="/pages/en-us/components/textarea.mdx">
 <Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
 
-| Attribute        | Description           | Type                             | Accepted values                                                  | Default   |
-| ---------------- | --------------------- | -------------------------------- | ---------------------------------------------------------------- | --------- |
-| **value**        | textarea value        | `string`                         | -                                                                | -         |
-| **initialValue** | textarea value        | `string`                         | -                                                                | -         |
-| **placeholder**  | placeholder           | `string`                         | -                                                                | -         |
-| **type**         | current type          | `NormalTypes`                    | [TextareaType](#textareatype)                                    | `default` |
-| **readOnly**     | native attr           | `boolean`                        | -                                                                | `false`   |
-| **disabled**     | disable input         | `boolean`                        | -                                                                | `false`   |
-| **width**        | set width string      | `string`                         | -                                                                | `initial` |
-| **minHeight**    | set min-height string | `string`                         | -                                                                | -         |
-| **onChange**     | change event          | `(e: React.ChangeEvent) => void` | -                                                                | -         |
-| **resize**       | CSS attribute         | `string`                         | `'none', 'both', 'horizontal', 'vertical', 'initial', 'inherit'` | `none`    |
-| ...              | native props          | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                                 | -         |
+| Attribute        | Description    | Type                             | Accepted values                                                  | Default   |
+| ---------------- | -------------- | -------------------------------- | ---------------------------------------------------------------- | --------- |
+| **value**        | textarea value | `string`                         | -                                                                | -         |
+| **initialValue** | textarea value | `string`                         | -                                                                | -         |
+| **placeholder**  | placeholder    | `string`                         | -                                                                | -         |
+| **type**         | current type   | `NormalTypes`                    | [TextareaType](#textareatype)                                    | `default` |
+| **readOnly**     | native attr    | `boolean`                        | -                                                                | `false`   |
+| **disabled**     | disable input  | `boolean`                        | -                                                                | `false`   |
+| **onChange**     | change event   | `(e: React.ChangeEvent) => void` | -                                                                | -         |
+| **resize**       | CSS attribute  | `string`                         | `'none', 'both', 'horizontal', 'vertical', 'initial', 'inherit'` | `none`    |
+| ...              | native props   | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                                 | -         |
 
 <Attributes.Title>useInput</Attributes.Title>
 

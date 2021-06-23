@@ -43,21 +43,20 @@ const Controls: React.FC<unknown> = React.memo(() => {
   return (
     <div className="controls">
       <div className="tools">
-        <Button auto type="abort" size="small" onClick={switchLanguages}>
+        <Button auto type="abort" scale={0.5} onClick={switchLanguages}>
           {isChinese ? 'English' : '中文文档'}
         </Button>
-        <Spacer x={0.25} />
         <Button
           auto
           type="abort"
-          size="small"
+          scale={0.5}
           onClick={redirectGithub}
           title={isChinese ? '代码仓库' : 'GitHub Repository'}>
           {isChinese ? '代码仓库' : 'GitHub'}
         </Button>
-        <Spacer x={0.75} />
+        <Spacer w={0.75} />
         <Select
-          size="small"
+          scale={0.5}
           pure
           onChange={switchThemes}
           value={theme.type}

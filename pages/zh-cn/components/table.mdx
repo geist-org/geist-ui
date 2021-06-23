@@ -85,7 +85,7 @@ export const meta = {
   code={`
 () => {
   const operation = (actions, rowData) => {
-    return <Button type="error" auto size="mini" onClick={() => actions.remove()}>移除行</Button>
+    return <Button type="error" auto scale={1/3} onClick={() => actions.remove()}>移除行</Button>
   }
   const data = [
     { property: 'type', description: 'Content type', operation },
@@ -111,7 +111,7 @@ export const meta = {
 () => {
 // operation: TableOperation
   const operation = (actions, rowData) => {
-    return <Button type="error" auto size="mini" onClick={() => actions.update({ property: 'updated', description:'updated' })}>Update</Button>
+    return <Button type="error" auto scale={1/3} onClick={() => actions.update({ property: 'updated', description:'updated' })}>Update</Button>
   }
   const data = [
     { property: 'type', description: 'Content type', operation },

@@ -1,9 +1,8 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   block?: boolean
-  width?: string
   className?: string
 }
 
@@ -13,15 +12,16 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type CodeProps = Props & typeof defaultProps & NativeAttrs
+export type CodeProps = Props & NativeAttrs
 
-const Code: React.FC<React.PropsWithChildren<CodeProps>> = ({
+const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
   children,
   block,
   className,
-  width,
   ...props
-}) => {
+}: React.PropsWithChildren<CodeProps> & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
+
   if (!block) return <code {...props}>{children}</code>
 
   return (
@@ -31,8 +31,12 @@ const Code: React.FC<React.PropsWithChildren<CodeProps>> = ({
       </pre>
       <style jsx>{`
         pre {
-          width: ${width ? width : 'initial'};
           max-width: 100%;
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'initial')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(1)} ${SCALES.pr(1.3)} ${SCALES.pb(1)} ${SCALES.pl(1.3)};
+          margin: ${SCALES.mt(1.3)} ${SCALES.mr(0)} ${SCALES.mb(1.3)} ${SCALES.ml(0)};
         }
 
         .dark {
@@ -48,6 +52,7 @@ const Code: React.FC<React.PropsWithChildren<CodeProps>> = ({
   )
 }
 
-const MemoCode = React.memo(Code)
-
-export default withDefaults(MemoCode, defaultProps)
+CodeComponent.defaultProps = defaultProps
+CodeComponent.displayName = 'GeistCode'
+const Code = withScaleable(CodeComponent)
+export default Code

@@ -11,16 +11,16 @@ describe('Badge', () => {
   })
 
   it('should support baisc sizes', () => {
-    const mini = shallow(<Badge size="mini">mini</Badge>)
+    const mini = shallow(<Badge scale={2}>mini</Badge>)
     expect(() => mini.unmount()).not.toThrow()
 
-    const small = shallow(<Badge size="small">small</Badge>)
+    const small = shallow(<Badge scale={5}>small</Badge>)
     expect(() => small.unmount()).not.toThrow()
 
-    const medium = shallow(<Badge size="medium">medium</Badge>)
+    const medium = shallow(<Badge scale={10}>medium</Badge>)
     expect(() => medium.unmount()).not.toThrow()
 
-    const large = shallow(<Badge size="large">large</Badge>)
+    const large = shallow(<Badge margin="20px">large</Badge>)
     expect(() => large.unmount()).not.toThrow()
   })
 

@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Row, Col, Link, Spacer, Text, Image, Divider, Code } from 'components'
+import { Card, Grid, Link, Spacer, Text, Image, Divider, Code } from 'components'
 
 export const meta = {
   title: '卡片 Card',
@@ -43,34 +43,21 @@ export const meta = {
 <Playground
   title="类型"
   desc="以各式色彩表达不同的类型或状态。"
-  scope={{ Card, Row, Col }}
+  scope={{ Card, Grid }}
   code={`
 () => {
-  const typeLeft = ['secondary', 'success', 'warning', 'error', 'dark']
-  const typeRight = ['alert', 'purple', 'violet', 'cyan', 'lite']
-  const locales = {
-    secondary: '次要的', success: '成功', warning: '警告', error: '错误', dark: '暗黑',
-    alert: '提示', purple: '紫色', violet: '紫罗兰', cyan: '青色', lite: '精简',
-  }
+  const types = ['secondary', 'success', 'warning', 'error', 'dark', 'alert', 'purple', 'violet', 'cyan']
   return (
-    <>
-      {typeLeft.map((left, index) => (
-        <Row justify="space-around" key={left} style={{ marginBottom: '18px' }}>
-          <Col span="10">
-            <Card type={left}>
-              <h4 style={{ textTransform: 'capitalize' }}>{locales[left]}</h4>
-              <span>{left}</span>
-            </Card>
-          </Col>
-          <Col span="10">
-            <Card type={typeRight[index]}>
-              <h4 style={{ textTransform: 'capitalize' }}>{locales[typeRight[index]]}</h4>
-              <span>{typeRight[index]}</span>
-            </Card>
-          </Col>
-        </Row>
+    <Grid.Container gap={1.5}>
+      {types.map(type => (
+        <Grid xs={8} key={type}>
+          <Card type={type} width="100%">
+            <h4 style={{ textTransform: 'capitalize' }}>{type}</h4>
+            <span>{type}</span>
+          </Card>
+        </Grid>
       ))}
-    </>
+    </Grid.Container>
   )
 }
 `}
@@ -78,24 +65,28 @@ export const meta = {
 
 <Playground
   title="卡片页脚"
-  scope={{ Card, Link, Spacer, Row }}
+  scope={{ Card, Link, Grid }}
   code={`
-<Row style={{ flexWrap: 'wrap' }} justify="space-around">
-  <Card width="330px">
-    <h4>Geist UI React</h4>
-    <p>现代化、极简风格的 UI 库。</p>
-    <Card.Footer>
-      <Link color target="_blank" href="https://github.com/geist-org/react">在 GitHub 上查看源码</Link>
-    </Card.Footer>
-  </Card>
-  <Card width="330px" type="dark">
-    <h4>Geist UI React</h4>
-    <p>现代化、极简风格的 UI 库。</p>
-    <Card.Footer>
-      <Link target="_blank" href="https://github.com/geist-org/react">在 GitHub 上查看源码</Link>
-    </Card.Footer>
-  </Card>
-</Row>
+<Grid.Container gap={1.5}>
+  <Grid xs={12} justify="ceter">
+    <Card width="330px">
+      <h4>Geist UI React</h4>
+      <p>Modern and minimalist React UI library.</p>
+      <Card.Footer>
+        <Link color target="_blank" href="https://github.com/geist-org/react">Visit source code on GitHub.</Link>
+      </Card.Footer>
+    </Card>
+  </Grid>
+  <Grid xs={12} justify="ceter">
+    <Card width="330px" type="dark">
+      <h4>Geist UI React</h4>
+      <p>Modern and minimalist React UI library.</p>
+      <Card.Footer>
+        <Link target="_blank" href="https://github.com/geist-org/react">Visit source code on GitHub.</Link>
+      </Card.Footer>
+    </Card>
+  </Grid>
+</Grid.Container>
 `}
 />
 
@@ -105,11 +96,11 @@ export const meta = {
   code={`
 <Card width="400px">
   <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
-   height="200" width="400" style={{ objectFit: 'cover' }} />
-  <Text h4 style={{ marginBottom: '0' }}>Geist UI React</Text>
-  <Text type="secondary" small>现代化、极简风格的 UI 库。</Text>
+   height="200px" width="400px" draggable={false} />
+  <Text h4 mb={0}>Geist UI React</Text>
+  <Text type="secondary" small>Modern and minimalist React UI library.</Text>
   <Card.Footer>
-    <Link block target="_blank" href="https://github.com/geist-org/react">在 GitHub 上查看源码</Link>
+    <Link block target="_blank" href="https://github.com/geist-org/react">Visit source code on GitHub.</Link>
   </Card.Footer>
 </Card>
 `}
@@ -122,9 +113,9 @@ export const meta = {
   code={`
 <Card width="400px">
   <Card.Content>
-    <Text b>语法描述</Text>
+    <Text b my={0}>语法描述</Text>
   </Card.Content>
-  <Divider y={0} />
+  <Divider my={0} />
   <Card.Content>
     <Text>Object 构造函数为给定值创建一个对象包装器，返回一个与给定值对应类型的对象。</Text>
     <Text>当以非构造函数形式被调用时，Object 等同于 <Code>new Object()</Code>.</Text>
@@ -141,7 +132,6 @@ export const meta = {
 | **hoverable** | 是否在悬停时增加阴影 | `boolean`             | -                       | `false`   |
 | **shadow**    | 是否总是显示阴影     | `boolean`             | -                       | `false`   |
 | **type**      | 卡片的类型           | [CardType](#cardtype) | -                       | `default` |
-| **width**     | CSS 宽度属性         | `string`              | -                       | `100%`    |
 | ...           | 原生属性             | `HTMLAttributes`      | `'id', className', ...` | -         |
 
 <Attributes.Title alias="Card.Body">Card.Content.Props</Attributes.Title>

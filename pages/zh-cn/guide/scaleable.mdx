@@ -1,0 +1,130 @@
+import NextLink from 'next/link'
+import { Layout, GridDemo, Attributes } from 'lib/components'
+import { Note, Text, Spacer, Display, Code, Grid, Button, Link } from 'components'
+
+export const meta = {
+  title: '可伸缩性',
+  group: '定制化',
+  index: 20,
+}
+
+## 可伸缩性
+
+<Note type="warning">
+  此功能需要 Geist v2.2.0 或以上版本。如果你正在使用旧版本，请在试用前升级到最新。
+</Note>
+
+Geist UI 的可伸缩特性赋予了每个组件极大的灵活性。你可以自由地缩放组件大小，改写组件局部空间的比例，调整内、外的布局结构等。
+
+这意味着开发者在大多场景下无需入侵组件内部或覆盖样式就能做到高度自定义，甚至能使用基值同步地调整多个组件，
+以极低的代码量兼容不同 Web 结构，在任意布局样式下得到最好的用户体验。
+
+<Spacer h={2.5} />
+
+### 按比例缩放
+
+与常见的组件库不同的是，Geist UI 不再使用 `size` 相关属性控制组件大小。每个组件有默认合适的布局体积，
+你可以通过 `scale` 属性动态地缩放组件。
+
+<Display width="500px" caption="按 0.5 缩放倍率渲染 Button 组件">
+  <GridDemo>
+    <Button scale={0.5}>Scale 0.5</Button>
+    <Button>Default</Button>
+  </GridDemo>
+
+```jsx
+<Button scale={0.5}>Scale 0.5</Button>
+<Button>Default</Button>
+```
+
+</Display>
+
+如上所示，`Button` 组件的所有空间占比 (包含字体) 均等比缩小。Geist UI 会通过动态计算组件大小，**真实地渲染指定体积组件**，
+这确保了布局与排版始终与预期相同。
+
+<Spacer h={2.5} />
+
+### 固定值
+
+对于任意组件，可伸缩的属性包含宽度、高度、外边距、内边距、字体等，你可以单独定义每个可伸缩属性，一个倍率值或是 CSS 字符串。
+
+<Display width="500px">
+  <GridDemo>
+    <Button font={1.5} width="300px">Full Button</Button>
+  </GridDemo>
+
+```jsx
+<Button width="300px" font={1.5}>
+  Full Button
+</Button>
+```
+
+</Display>
+
+<Spacer h={2.5} />
+
+### 缩放单位
+
+<Note type="secondary" filled>
+  调整缩放单位是高级定制，你可以跳过此章节。
+</Note>
+
+组件的空间体积同时取决于用户输入的 `scale` 属性与**缩放单位**，默认的缩放单位为 `16px`，但 Geist UI 允许你在不同层级上自定义此值以达到自定义级别的动态效果。
+
+对于同时定义多个组件的*缩放单位 (`unit`)*，你需要创建额外的主题并添加新一层
+`GeistProvider` 作用域，
+在此作用域下的所有组件都会共享同一个*缩放单位*。(请参考 <NextLink href="/zh-cn/guide/themes"><Link color>主题章节</Link></NextLink> 了解自定义主题)
+
+```jsx
+// 对于单个组件
+export const MyBtn = () => <Button unit="2rem" />
+
+// 对于多个组件
+const themeType = 'myTheme'
+const customUnitTheme = Themes.createFromLight({
+  type: themeType,
+  layout: {
+    unit: '20px',
+  },
+})
+export const MyGroup = () => (
+  <GeistProvider themes={[customUnitTheme]} themeType={themeType}>
+    <Button />
+    <Input />
+  </GeistProvider>
+)
+```
+
+<Spacer h={2.5} />
+
+### 别名
+
+以下是所有可用的属性值与别名参考，`number` 表示可传递数字以缩放，`string` 类型表示可传递 CSS 字符串以固定值。
+
+<Attributes.Table>
+
+| 属性                    | 描述         | 类型           | 默认值 |
+| ----------------------- | ------------ | -------------- | ------ |
+| **scale**               | 缩放比例     | number         | -      |
+| **unit**                | 缩放单位     | string         | `16px` |
+| **width / w**           | 宽度         | string, number | 'auto' |
+| **height / h**          | 高度         | string, number | 'auto' |
+| **font**                | 字体大小     | string, number | -      |
+| **margin**              | 所有外边距   | string, number | `0`    |
+| **marginLeft / ml**     | 外边距，左侧 | string, numbe  | -      |
+| **marginRight / mr**    | 外边距，右侧 | string, numbe  | -      |
+| **marginTop / mt**      | 外边距，顶部 | string, numbe  | -      |
+| **marginBottom / mb**   | 外边距，底部 | string, numbe  | -      |
+| **padding**             | 所有内边距   | string, numbe  | `0`    |
+| **paddingLeft / pl**    | 内边距，左侧 | string, numbe  | -      |
+| **paddingRight / pr**   | 内边距，右侧 | string, numbe  | -      |
+| **paddingTop / pt**     | 内边距，顶部 | string, numbe  | -      |
+| **paddingBottom / pb**  | 内边距，底部 | string, numbe  | -      |
+| **mx**&nbsp;(`ml & mr`) | 外边距，横轴 | string, numbe  | -      |
+| **my**&nbsp;(`mt & mb`) | 外边距，纵轴 | string, numbe  | -      |
+| **px**&nbsp;(`pl & pr`) | 内边距，横轴 | string, numbe  | -      |
+| **py**&nbsp;(`pt & pb`) | 内边距，纵轴 | string, numbe  | -      |
+
+</Attributes.Table>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

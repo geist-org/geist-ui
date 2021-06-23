@@ -1,7 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import FieldsetFooterStatus from './fieldset-footer-status'
-import FieldsetFooterActions from './fieldset-footer-actions'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -12,14 +11,15 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type FieldsetFooterProps = Props & typeof defaultProps & NativeAttrs
+export type FieldsetFooterProps = Props & NativeAttrs
 
-const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = ({
+const FieldsetFooterComponent: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = ({
   className,
   children,
   ...props
-}) => {
+}: React.PropsWithChildren<FieldsetFooterProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
 
   return (
     <footer className={className} {...props}>
@@ -36,24 +36,20 @@ const FieldsetFooter: React.FC<React.PropsWithChildren<FieldsetFooterProps>> = (
           overflow: hidden;
           color: ${theme.palette.accents_6};
           padding: ${theme.layout.gapHalf} ${theme.layout.gap};
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(2.875)};
+          padding: ${SCALES.pt(0.625)} ${SCALES.pr(1.31)} ${SCALES.pb(0.625)}
+            ${SCALES.pl(1.31)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
       `}</style>
     </footer>
   )
 }
 
-FieldsetFooter.defaultProps = defaultProps
-
-type FieldsetFooterComponent<P = {}> = React.FC<P> & {
-  Status: typeof FieldsetFooterStatus
-  Actions: typeof FieldsetFooterActions
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-export default FieldsetFooter as FieldsetFooterComponent<ComponentProps>
+FieldsetFooterComponent.defaultProps = defaultProps
+FieldsetFooterComponent.displayName = 'GeistFieldsetFooter'
+const FieldsetFooter = withScaleable(FieldsetFooterComponent)
+export default FieldsetFooter

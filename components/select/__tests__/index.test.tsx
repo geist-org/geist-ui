@@ -8,9 +8,7 @@ describe('Select', () => {
     const wrapper = mount(
       <div>
         <Select />
-        <Select size="mini" />
-        <Select size="small" />
-        <Select size="large" />
+        <Select scale={2} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

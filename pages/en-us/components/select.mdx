@@ -33,22 +33,22 @@ Display a dropdown list of items.
   code={`
 () => (
   <>
-    <Select placeholder="default" type="default">
+    <Select placeholder="Default" type="default">
       <Select.Option value="1">Option 1</Select.Option>
       <Select.Option value="2">Option 2</Select.Option>
     </Select>
-    <Spacer y={.5} />
-    <Select placeholder="success" type="success">
+    <Spacer h={.5} />
+    <Select type="success" initialValue="1">
       <Select.Option value="1">Option 1</Select.Option>
       <Select.Option value="2">Option 2</Select.Option>
     </Select>
-    <Spacer y={.5} />
-    <Select placeholder="warning" type="warning">
+    <Spacer h={.5} />
+    <Select type="warning" initialValue="2">
       <Select.Option value="1">Option 1</Select.Option>
       <Select.Option value="2">Option 2</Select.Option>
     </Select>
-    <Spacer y={.5} />
-    <Select placeholder="error" type="error">
+    <Spacer h={.5} />
+    <Select type="error" initialValue="1">
       <Select.Option value="1">Option 1</Select.Option>
       <Select.Option value="2">Option 2</Select.Option>
     </Select>
@@ -183,7 +183,7 @@ Display a dropdown list of items.
     <Select.Option value="1">Truncate an overly long string</Select.Option>
     <Select.Option value="2">Option 2</Select.Option>
   </Select>
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Select placeholder="Choose one" value="1" width="150px" disableMatchWidth>
     <Select.Option value="1">Autoscale option width when text is too long</Select.Option>
     <Select.Option value="2">Option 2</Select.Option>
@@ -231,7 +231,6 @@ Display a dropdown list of items.
 | **initialValue**      | initial value                                            | `string`, `string[]`                                | -                                 | -               |
 | **placeholder**       | placeholder string                                       | `string`                                            | -                                 | -               |
 | **width**             | css width value of select                                | `string`                                            | -                                 | `initial`       |
-| **size**              | select component size                                    | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
 | **type**              | current type                                             | `NormalTypes`                                       | [SelectType](#selecttype)         | `default`       |
 | **icon**              | icon component                                           | `ComponentType`                                     | -                                 | `SVG Component` |
 | **pure**              | remove icon component                                    | `boolean`                                           | -                                 | `false`         |
@@ -252,12 +251,6 @@ Display a dropdown list of items.
 | **value**(required) | unique ident value     | `string`         | -                                | -       |
 | **disabled**        | disable current option | `boolean`        | -                                | `false` |
 | ...                 | native props           | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
-```
 
 <Attributes.Title>SelectType</Attributes.Title>
 

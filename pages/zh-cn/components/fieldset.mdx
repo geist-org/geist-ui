@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Fieldset, Button, Text, Divider } from 'components'
+import { Fieldset, Button, Text, Divider } from 'components'
 
 export const meta = {
   title: '控件组 Fieldset',
@@ -18,12 +18,8 @@ export const meta = {
   <Fieldset.Title>层叠样式表 (Cascading Style Sheets，缩写为 CSS）</Fieldset.Title>
   <Fieldset.Subtitle>CSS 是开放网络的核心语言之一，由 W3C 规范 实现跨浏览器的标准化。</Fieldset.Subtitle>
   <Fieldset.Footer>
-    <Fieldset.Footer.Status>
-      CSS3 分成多个小模块且正在标准化中。
-    </Fieldset.Footer.Status>
-    <Fieldset.Footer.Actions>
-      <Button auto size="mini">学习 CSS</Button>
-    </Fieldset.Footer.Actions>
+    CSS3 分成多个小模块且正在标准化中。
+    <Button auto scale={1/3}>学习 CSS</Button>
   </Fieldset.Footer>
 </Fieldset>
 `}
@@ -38,12 +34,8 @@ export const meta = {
   <Fieldset.Title>层叠样式表 (Cascading Style Sheets，缩写为 CSS）</Fieldset.Title>
   <Fieldset.Subtitle>CSS 是开放网络的核心语言之一，由 W3C 规范 实现跨浏览器的标准化。</Fieldset.Subtitle>
   <Fieldset.Footer>
-    <Fieldset.Footer.Status>
-      <Text type="error">视频教程部分暂不可用。</Text>
-    </Fieldset.Footer.Status>
-    <Fieldset.Footer.Actions>
-      <Button auto size="mini" type="error">知道了</Button>
-    </Fieldset.Footer.Actions>
+    <Text type="error">视频教程部分暂不可用。</Text>
+    <Button auto scale={1/3} type="error">知道了</Button>
   </Fieldset.Footer>
 </Fieldset>
 `}
@@ -62,30 +54,24 @@ export const meta = {
       <Fieldset.Title>层叠样式表 (Cascading Style Sheets，缩写为 CSS）</Fieldset.Title>
       <Fieldset.Subtitle>CSS 是开放网络的核心语言之一，由 W3C 规范 实现跨浏览器的标准化。</Fieldset.Subtitle>
       <Fieldset.Footer>
-        <Fieldset.Footer.Status>包含 20 个视频学习资料与 10 篇文章</Fieldset.Footer.Status>
-        <Fieldset.Footer.Actions>
-          <Button auto size="mini">了解更多</Button>
-        </Fieldset.Footer.Actions>
+        包含 20 个视频学习资料与 10 篇文章
+        <Button auto scale={1/3}>了解更多</Button>
       </Fieldset.Footer>
     </Fieldset>
     <Fieldset label="HTML">
       <Fieldset.Title>HTML（超文本标记语言——HyperText Markup Language）</Fieldset.Title>
       <Fieldset.Subtitle>HTML 使用“标记”（markup）来注明文本、图片和其他内容，以便于在 Web 浏览器中显示。</Fieldset.Subtitle>
       <Fieldset.Footer>
-        <Fieldset.Footer.Status>包含 2 个视频学习资料与 1 篇文章</Fieldset.Footer.Status>
-        <Fieldset.Footer.Actions>
-          <Button auto size="mini">了解更多</Button>
-        </Fieldset.Footer.Actions>
+        包含 2 个视频学习资料与 1 篇文章
+        <Button auto scale={1/3}>了解更多</Button>
       </Fieldset.Footer>
     </Fieldset>
     <Fieldset label="JavaScript">
       <Fieldset.Title>JavaScript ( JS ) 是一种即时编译型的编程语言。</Fieldset.Title>
       <Fieldset.Subtitle>虽然它是作为开发Web 页面的脚本语言而出名的，但是它也被用到了很多非浏览器环境中。</Fieldset.Subtitle>
       <Fieldset.Footer>
-        <Fieldset.Footer.Status>包含 18 个视频学习资料与 3 篇文章</Fieldset.Footer.Status>
-        <Fieldset.Footer.Actions>
-          <Button auto size="mini">了解更多</Button>
-        </Fieldset.Footer.Actions>
+        包含 18 个视频学习资料与 3 篇文章
+        <Button auto scale={1/3}>了解更多</Button>
       </Fieldset.Footer>
     </Fieldset>
     </Fieldset.Group>
@@ -103,7 +89,7 @@ export const meta = {
   <Fieldset.Content style={{ paddingTop: '10pt', paddingBottom: '10pt' }}>
     <h4>预备知识</h4>
   </Fieldset.Content>
-  <Divider y={0} />
+  <Divider my={0} />
   <Fieldset.Content>
     <Fieldset.Title>若知道 HTML 和 CSS 的基本知识会对理解内容大有裨益。</Fieldset.Title>
     <p>若想深入理解这个单元的内容, 你必须能够以自己的能力较好地学完之前的几个章节。
@@ -134,18 +120,6 @@ export const meta = {
 | ...  | 原生属性 | `HTMLAttributes` | -      | -    |
 
 <Attributes.Title>Fieldset.Footer.Props</Attributes.Title>
-
-| 属性 | 描述     | 类型             | 推荐值 | 默认 |
-| ---- | -------- | ---------------- | ------ | ---- |
-| ...  | 原生属性 | `HTMLAttributes` | -      | -    |
-
-<Attributes.Title>Fieldset.Footer.Actions.Props</Attributes.Title>
-
-| 属性 | 描述     | 类型             | 推荐值 | 默认 |
-| ---- | -------- | ---------------- | ------ | ---- |
-| ...  | 原生属性 | `HTMLAttributes` | -      | -    |
-
-<Attributes.Title>Fieldset.Footer.Status.Props</Attributes.Title>
 
 | 属性 | 描述     | 类型             | 推荐值 | 默认 |
 | ---- | -------- | ---------------- | ------ | ---- |

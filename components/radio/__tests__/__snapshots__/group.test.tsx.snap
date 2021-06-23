@@ -11,14 +11,18 @@ exports[`Radio Group should render correctly 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -75,14 +79,18 @@ exports[`Radio Group should render correctly 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -133,12 +141,17 @@ exports[`Radio Group should render correctly 1`] = `
         .radio-group {
           display: flex;
           flex-direction: column;
+          --radio-group-gap: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .radio-group :global(.radio) {
-          margin-top: calc(16px * 1);
+          margin-top: var(--radio-group-gap);
           margin-left: 0;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -154,14 +167,18 @@ exports[`Radio Group should render correctly 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -218,14 +235,18 @@ exports[`Radio Group should render correctly 1`] = `
           top: -1000px;
           right: -1000px;
           position: fixed;
+          font-size: 0;
         }
 
         .radio {
           display: flex;
-          width: initial;
           align-items: flex-start;
           position: relative;
-          --radio-size: 16px;
+          --radio-size: calc(1 * 16px);
+          width: initial;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         label {
@@ -276,253 +297,17 @@ exports[`Radio Group should render correctly 1`] = `
         .radio-group {
           display: flex;
           flex-direction: col;
+          --radio-group-gap: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .radio-group :global(.radio) {
           margin-top: 0;
-          margin-left: calc(16px * 1);
-          --radio-size: 16px;
-        }
-
-        .radio-group :global(.radio:first-of-type) {
-          margin: 0;
-        }
-      </style></div>"
-`;
-
-exports[`Radio Group should work correctly with different sizes 1`] = `
-"<div><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
-        input {
-          opacity: 0;
-          visibility: hidden;
-          overflow: hidden;
-          width: 1px;
-          height: 1px;
-          top: -1000px;
-          right: -1000px;
-          position: fixed;
-        }
-
-        .radio {
-          display: flex;
-          width: initial;
-          align-items: flex-start;
-          position: relative;
-          --radio-size: 16px;
-        }
-
-        label {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          color: #000;
-          cursor: pointer;
-        }
-
-        .name {
-          font-size: var(--radio-size);
-          font-weight: bold;
-          user-select: none;
-          display: inline-flex;
-          align-items: center;
-        }
-
-        .point {
-          height: var(--radio-size);
-          width: var(--radio-size);
-          border-radius: 50%;
-          border: 1px solid #eaeaea;
-          transition: all 0.2s ease 0s;
-          position: relative;
-          display: inline-block;
-          transform: scale(0.875);
-          margin-right: calc(var(--radio-size) * 0.375);
-        }
-
-        .point:before {
-          content: '';
-          position: absolute;
-          left: -1px;
-          top: -1px;
-          transform: scale(0);
-          height: var(--radio-size);
-          width: var(--radio-size);
-          border-radius: 50%;
-          background-color: #000;
-        }
-
-        .point.active:before {
-          transform: scale(0.875);
-          transition: all 0.2s ease 0s;
-        }
-      </style></div></div><style>
-        .radio-group {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .radio-group :global(.radio) {
-          margin-top: calc(12px * 1);
-          margin-left: 0;
-          --radio-size: 12px;
-        }
-
-        .radio-group :global(.radio:first-of-type) {
-          margin: 0;
-        }
-      </style><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
-        input {
-          opacity: 0;
-          visibility: hidden;
-          overflow: hidden;
-          width: 1px;
-          height: 1px;
-          top: -1000px;
-          right: -1000px;
-          position: fixed;
-        }
-
-        .radio {
-          display: flex;
-          width: initial;
-          align-items: flex-start;
-          position: relative;
-          --radio-size: 16px;
-        }
-
-        label {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          color: #000;
-          cursor: pointer;
-        }
-
-        .name {
-          font-size: var(--radio-size);
-          font-weight: bold;
-          user-select: none;
-          display: inline-flex;
-          align-items: center;
-        }
-
-        .point {
-          height: var(--radio-size);
-          width: var(--radio-size);
-          border-radius: 50%;
-          border: 1px solid #eaeaea;
-          transition: all 0.2s ease 0s;
-          position: relative;
-          display: inline-block;
-          transform: scale(0.875);
-          margin-right: calc(var(--radio-size) * 0.375);
-        }
-
-        .point:before {
-          content: '';
-          position: absolute;
-          left: -1px;
-          top: -1px;
-          transform: scale(0);
-          height: var(--radio-size);
-          width: var(--radio-size);
-          border-radius: 50%;
-          background-color: #000;
-        }
-
-        .point.active:before {
-          transform: scale(0.875);
-          transition: all 0.2s ease 0s;
-        }
-      </style></div></div><style>
-        .radio-group {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .radio-group :global(.radio) {
-          margin-top: calc(14px * 1);
-          margin-left: 0;
-          --radio-size: 14px;
-        }
-
-        .radio-group :global(.radio:first-of-type) {
-          margin: 0;
-        }
-      </style><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
-        input {
-          opacity: 0;
-          visibility: hidden;
-          overflow: hidden;
-          width: 1px;
-          height: 1px;
-          top: -1000px;
-          right: -1000px;
-          position: fixed;
-        }
-
-        .radio {
-          display: flex;
-          width: initial;
-          align-items: flex-start;
-          position: relative;
-          --radio-size: 16px;
-        }
-
-        label {
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-start;
-          color: #000;
-          cursor: pointer;
-        }
-
-        .name {
-          font-size: var(--radio-size);
-          font-weight: bold;
-          user-select: none;
-          display: inline-flex;
-          align-items: center;
-        }
-
-        .point {
-          height: var(--radio-size);
-          width: var(--radio-size);
-          border-radius: 50%;
-          border: 1px solid #eaeaea;
-          transition: all 0.2s ease 0s;
-          position: relative;
-          display: inline-block;
-          transform: scale(0.875);
-          margin-right: calc(var(--radio-size) * 0.375);
-        }
-
-        .point:before {
-          content: '';
-          position: absolute;
-          left: -1px;
-          top: -1px;
-          transform: scale(0);
-          height: var(--radio-size);
-          width: var(--radio-size);
-          border-radius: 50%;
-          background-color: #000;
-        }
-
-        .point.active:before {
-          transform: scale(0.875);
-          transition: all 0.2s ease 0s;
-        }
-      </style></div></div><style>
-        .radio-group {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .radio-group :global(.radio) {
-          margin-top: calc(18px * 1);
-          margin-left: 0;
-          --radio-size: 18px;
+          margin-left: var(--radio-group-gap);
+          --radio-size: calc(1 * 16px);
         }
 
         .radio-group :global(.radio:first-of-type) {

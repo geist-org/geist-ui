@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { useSelectContext } from './select-context'
 import Dropdown from '../shared/dropdown'
 
@@ -18,7 +17,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type SelectDropdownProps = Props & typeof defaultProps & NativeAttrs
+export type SelectDropdownProps = Props & NativeAttrs
 
 const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = ({
   visible,
@@ -27,7 +26,7 @@ const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = (
   dropdownStyle,
   disableMatchWidth,
   getPopupContainer,
-}) => {
+}: React.PropsWithChildren<SelectDropdownProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { ref } = useSelectContext()
 
@@ -44,10 +43,10 @@ const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = (
             border-radius: ${theme.layout.radius};
             box-shadow: ${theme.expressiveness.shadowLarge};
             background-color: ${theme.palette.background};
-            max-height: 15rem;
+            max-height: 17em;
             overflow-y: auto;
             overflow-anchor: none;
-            padding: ${theme.layout.gapQuarter} 0;
+            padding: 0.38em 0;
           }
         `}</style>
       </div>
@@ -55,4 +54,6 @@ const SelectDropdown: React.FC<React.PropsWithChildren<SelectDropdownProps>> = (
   )
 }
 
-export default withDefaults(SelectDropdown, defaultProps)
+SelectDropdown.defaultProps = defaultProps
+SelectDropdown.displayName = 'GeistSelectDropdown'
+export default SelectDropdown

@@ -1,60 +1,39 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import { useAutoCompleteContext } from './auto-complete-context'
-import { NormalSizes } from '../utils/prop-types'
 import Ellipsis from '../shared/ellipsis'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   value: string
+  // The 'isLabelOnly' is only used inside the component,
+  // Automatically adjust width when only label children is included.
   isLabelOnly?: boolean
 }
 
 const defaultProps = {}
 
-export type AutoCompleteItemProps = Props &
-  typeof defaultProps &
-  React.HTMLAttributes<any>
+export type AutoCompleteItemProps = Props & React.HTMLAttributes<any>
 
-const getSizes = (size: NormalSizes) => {
-  const fontSizes: { [key in NormalSizes]: string } = {
-    mini: '.7rem',
-    small: '.75rem',
-    medium: '.875rem',
-    large: '1rem',
-  }
-  return fontSizes[size]
-}
-
-const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>> = ({
+const AutoCompleteItemComponent: React.FC<
+  React.PropsWithChildren<AutoCompleteItemProps>
+> = ({
   value: identValue,
   children,
   isLabelOnly,
-}) => {
+}: React.PropsWithChildren<AutoCompleteItemProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { value, updateValue, size, updateVisible } = useAutoCompleteContext()
+  const { SCALES } = useScaleable()
+  const { value, updateValue, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
     updateValue && updateValue(identValue)
     updateVisible && updateVisible(false)
   }
-
   const isActive = useMemo(() => value === identValue, [identValue, value])
-  const fontSize = useMemo(() => getSizes(size), [size])
-
-  // The 'isLabelOnly' is only used inside the component,
-  // Automatically adjust width when only label children is included.
-  const itemHeight = useMemo(() => {
-    if (isLabelOnly) return `calc(1.688 * ${theme.layout.gap})`
-    return 'auto'
-  }, [isLabelOnly, theme.layout.gap])
 
   return (
     <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
-      {isLabelOnly ? (
-        <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
-      ) : (
-        children
-      )}
+      {isLabelOnly ? <Ellipsis height={SCALES.height(2)}>{children}</Ellipsis> : children}
       <style jsx>{`
         .item {
           display: flex;
@@ -62,15 +41,17 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
           align-items: center;
           font-weight: normal;
           white-space: pre;
-          font-size: ${fontSize};
-          padding: 0 ${theme.layout.gapHalf};
-          height: ${itemHeight};
           background-color: ${theme.palette.background};
           color: ${theme.palette.foreground};
           user-select: none;
           border: 0;
           cursor: pointer;
           transition: background 0.2s ease 0s, border-color 0.2s ease 0s;
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${isLabelOnly ? SCALES.height(2.5) : SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0.75)} ${SCALES.pb(0)} ${SCALES.pl(0.75)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .item:first-of-type {
@@ -96,4 +77,7 @@ const AutoCompleteItem: React.FC<React.PropsWithChildren<AutoCompleteItemProps>>
   )
 }
 
-export default withDefaults(AutoCompleteItem, defaultProps)
+AutoCompleteItemComponent.defaultProps = defaultProps
+AutoCompleteItemComponent.displayName = 'GeistAutoCompleteItem'
+const AutoCompleteItem = withScaleable(AutoCompleteItemComponent)
+export default AutoCompleteItem

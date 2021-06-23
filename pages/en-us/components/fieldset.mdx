@@ -12,21 +12,17 @@ Display a collection of related information in a single unit.
 
 <Playground
   title="Basic"
-  desc="Add custom buttons in `Actions`."
+  desc="Add custom buttons."
   scope={{ Fieldset, Button }}
   code={`
 <Fieldset>
   <Fieldset.Title>The Evil Rabbit Jumped over the Fence</Fieldset.Title>
   <Fieldset.Subtitle>The Evil Rabbit Jumped over the Fence</Fieldset.Subtitle>
   <Fieldset.Footer>
-    <Fieldset.Footer.Status>
       The Evil Rabbit Jumped over the Fence
-    </Fieldset.Footer.Status>
-    <Fieldset.Footer.Actions>
-      <Button auto size="mini">Actions</Button>
-    </Fieldset.Footer.Actions>
-  </Fieldset.Footer>
-</Fieldset>
+      <Button auto scale={1/3}>Actions</Button>
+    </Fieldset.Footer>
+  </Fieldset>
 `}
 />
 
@@ -39,12 +35,8 @@ Display a collection of related information in a single unit.
   <Fieldset.Title>The Evil Rabbit Jumped over the Fence</Fieldset.Title>
   <Fieldset.Subtitle>The Evil Rabbit Jumped over the Fence</Fieldset.Subtitle>
   <Fieldset.Footer>
-    <Fieldset.Footer.Status>
       <Text type="error">An error has occurred.</Text>
-    </Fieldset.Footer.Status>
-    <Fieldset.Footer.Actions>
-      <Button auto size="mini" type="error">Revert</Button>
-    </Fieldset.Footer.Actions>
+      <Button auto scale={1/3} type="error">Revert</Button>
   </Fieldset.Footer>
 </Fieldset>
 `}
@@ -63,30 +55,24 @@ Display a collection of related information in a single unit.
       <Fieldset.Title>The Evil Rabbit Jumped over the Fence</Fieldset.Title>
       <Fieldset.Subtitle>The Evil Rabbit Jumped over the Fence</Fieldset.Subtitle>
       <Fieldset.Footer>
-        <Fieldset.Footer.Status>The Evil Rabbit Jumped over the Fence</Fieldset.Footer.Status>
-        <Fieldset.Footer.Actions>
-          <Button auto size="mini">Actions</Button>
-        </Fieldset.Footer.Actions>
+        The Evil Rabbit Jumped over the Fence
+        <Button auto scale={1/3}>Actions</Button>
       </Fieldset.Footer>
     </Fieldset>
     <Fieldset label="two">
       <Fieldset.Title>The Fence Jumped over The Evil Rabbit</Fieldset.Title>
       <Fieldset.Subtitle>The Fence Jumped over The Evil Rabbit</Fieldset.Subtitle>
       <Fieldset.Footer>
-        <Fieldset.Footer.Status>The Fence Jumped over The Evil Rabbit</Fieldset.Footer.Status>
-        <Fieldset.Footer.Actions>
-          <Button auto size="mini">Actions</Button>
-        </Fieldset.Footer.Actions>
+      The Fence Jumped over The Evil Rabbit
+        <Button auto scale={1/3}>Actions</Button>
       </Fieldset.Footer>
     </Fieldset>
     <Fieldset label="three">
       <Fieldset.Title>The Fence Jumped over The Evil Rabbit</Fieldset.Title>
       <Fieldset.Subtitle>The Fence Jumped over The Evil Rabbit</Fieldset.Subtitle>
       <Fieldset.Footer>
-        <Fieldset.Footer.Status>The Fence Jumped over The Evil Rabbit</Fieldset.Footer.Status>
-        <Fieldset.Footer.Actions>
-          <Button auto size="mini">Actions</Button>
-        </Fieldset.Footer.Actions>
+        The Fence Jumped over The Evil Rabbit
+        <Button auto scale={1/3}>Actions</Button>
       </Fieldset.Footer>
     </Fieldset>
     </Fieldset.Group>
@@ -104,7 +90,7 @@ Display a collection of related information in a single unit.
   <Fieldset.Content style={{ paddingTop: '10pt', paddingBottom: '10pt' }}>
     <h4>Prerequisites</h4>
   </Fieldset.Content>
-  <Divider y={0} />
+  <Divider my={0} />
   <Fieldset.Content>
     <Fieldset.Title>Basic knowledge of HTML and CSS would also be useful.</Fieldset.Title>
     <p>To get the most out of this module, you should have worked your way through the previous JavaScript modules in the series.
@@ -135,18 +121,6 @@ Display a collection of related information in a single unit.
 | ...       | native props | `HTMLAttributes` | -               | -       |
 
 <Attributes.Title>Fieldset.Footer.Props</Attributes.Title>
-
-| Attribute | Description  | Type             | Accepted values | Default |
-| --------- | ------------ | ---------------- | --------------- | ------- |
-| ...       | native props | `HTMLAttributes` | -               | -       |
-
-<Attributes.Title>Fieldset.Footer.Actions.Props</Attributes.Title>
-
-| Attribute | Description  | Type             | Accepted values | Default |
-| --------- | ------------ | ---------------- | --------------- | ------- |
-| ...       | native props | `HTMLAttributes` | -               | -       |
-
-<Attributes.Title>Fieldset.Footer.Status.Props</Attributes.Title>
 
 | Attribute | Description  | Type             | Accepted values | Default |
 | --------- | ------------ | ---------------- | --------------- | ------- |

@@ -1,7 +1,11 @@
 import Tabs from './tabs'
 import TabsItem from './tabs-item'
 
-Tabs.Item = TabsItem
-Tabs.Tab = TabsItem
+export type TabsComponentType = typeof Tabs & {
+  Item: typeof TabsItem
+  Tab: typeof TabsItem
+}
+;(Tabs as TabsComponentType).Item = TabsItem
+;(Tabs as TabsComponentType).Tab = TabsItem
 
-export default Tabs
+export default Tabs as TabsComponentType

@@ -26,10 +26,10 @@ export const meta = {
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input size="mini" placeholder="最小的" /> <Spacer y={.5} />
-  <Input size="small" placeholder="较小的" /> <Spacer y={.5} />
-  <Input size="medium" placeholder="中等的" /> <Spacer y={.5} />
-  <Input size="large" placeholder="较大的" />
+  <Input scale={1/3} placeholder="Scale 1/3" /> <Spacer h={.5} />
+  <Input scale={2/3} placeholder="Scale 2/3" /> <Spacer h={.5} />
+  <Input placeholder="Scale 1" /> <Spacer h={.5} />
+  <Input scale={4/3} placeholder="Scale 4/3" />
 </>
 `}
 />
@@ -50,7 +50,7 @@ export const meta = {
   code={`
 <>
   <Input disabled placeholder="禁用" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input readOnly initialValue="只读" />
 </>
 `}
@@ -63,7 +63,7 @@ export const meta = {
   code={`
 <>
   <Input label="用户名" placeholder="一个基础示例" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input labelRight=".com" placeholder="https://github" />
 </>
 `}
@@ -99,11 +99,11 @@ export const meta = {
   code={`
 <>
   <Input status="secondary" initialValue="次要" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input status="success" initialValue="成功" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input status="warning" initialValue="警告" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input status="error" initialValue="包含错误" />
 </>
 `}
@@ -116,7 +116,7 @@ export const meta = {
   code={`
 <>
   <Input icon={<GitIcon />} placeholder="输入 Git 地址" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input iconRight={<GitIcon />} placeholder="输入 Git 地址" />
 </>
 `}
@@ -175,11 +175,9 @@ export const meta = {
   return (
     <>
       <Input {...bindings} />
-      <Spacer y={.5} />
-      <Button auto type="secondary" size="small"
-        onClick={() => setState(Math.random().toString(32))}>随机设置值</Button>
-      <Spacer y={.5} />
-      <Button auto size="small"onClick={() => reset()}>重置值</Button>
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/3} onClick={() => setState(Math.random().toString(32))}>随机设置值</Button>
+      <Button auto scale={1/3} ml="20px" onClick={() => reset()}>重置值</Button>
     </>
   )
 }
@@ -199,9 +197,8 @@ export const meta = {
   return (
     <>
       <Input initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
-      <Spacer y={.5} />
-      <Button auto type="secondary" size="small"
-        onClick={setChange}>设置值</Button>
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/3} onClick={setChange}>设置值</Button>
     </>
   )
 }
@@ -216,7 +213,6 @@ export const meta = {
 | **value**         | 命令式设定输入框的值 | `string`                                       | -                           | -         |
 | **initialValue**  | 初始值               | `string`                                       | -                           | -         |
 | **placeholder**   | 占位文本             | `string`                                       | -                           | -         |
-| **size**          | 输入框大小           | `NormalSizes`                                  | [InputSizes](#inputsizes)   | `medium`  |
 | **status**        | 输入框状态           | `NormalTypes`                                  | [InputStatus](#inputstatus) | `default` |
 | **readOnly**      | 是否设置输入框为只读 | `boolean`                                      | -                           | `false`   |
 | **disabled**      | 是否禁用输入框       | `boolean`                                      | -                           | `false`   |
@@ -238,12 +234,6 @@ export const meta = {
 | -------------- | ------------------ | ------------- | --------------------------- | ------- |
 | **hideToggle** | 隐藏切换密码的按钮 | `boolean`     | -                           | `false` |
 | ...            | 输入框组件属性     | `Input.Props` | [Input.Props](#input.props) | -       |
-
-<Attributes.Title>InputSizes</Attributes.Title>
-
-```ts
-type InputSizes = 'mini' | 'small' | 'medium' | 'large'
-```
 
 <Attributes.Title>InputStatus</Attributes.Title>
 

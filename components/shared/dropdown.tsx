@@ -2,7 +2,7 @@ import React, { MutableRefObject, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
-import CSSTransition from './css-transition'
+import CssTransition from './css-transition'
 import useClickAnyWhere from '../utils/use-click-anywhere'
 import useDOMObserver from '../utils/use-dom-observer'
 import useWarning from '../utils/use-warning'
@@ -107,7 +107,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
 
     if (!el) return null
     return createPortal(
-      <CSSTransition visible={visible}>
+      <CssTransition visible={visible}>
         <div
           className={`dropdown ${disableMatchWidth ? 'disable-match' : 'width-match'}`}
           onClick={clickHandler}>
@@ -129,7 +129,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
             }
           `}</style>
         </div>
-      </CSSTransition>,
+      </CssTransition>,
       el,
     )
   },

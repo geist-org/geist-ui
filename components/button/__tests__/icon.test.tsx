@@ -35,9 +35,9 @@ describe('ButtonIcon', () => {
     const html = wrapper.find('.text').html()
     expect(html).not.toEqual(autoHtml)
 
-    const mini = mount(<Button size="mini">action</Button>)
+    const mini = mount(<Button>action</Button>)
     const miniIcon = mount(
-      <Button size="mini" icon={<Icon />}>
+      <Button scale={2} icon={<Icon />}>
         action
       </Button>,
     )

@@ -101,4 +101,5 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
   )
 }
 
+PaginationPages.displayName = 'GeistPaginationPages'
 export default PaginationPages

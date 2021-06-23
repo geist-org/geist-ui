@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import TabsItem from './tabs-item'
 import useTheme from '../use-theme'
-import { TabsLabelItem, TabsConfig, TabsContext } from './tabs-context'
+import { TabsHeaderItem, TabsConfig, TabsContext } from './tabs-context'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   initialValue?: string
@@ -17,9 +17,9 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TabsProps = Props & typeof defaultProps & NativeAttrs
+export type TabsProps = Props & NativeAttrs
 
-const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
+const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   initialValue: userCustomInitialValue,
   value,
   hideDivider,
@@ -27,12 +27,13 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   onChange,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<TabsProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const [selfValue, setSelfValue] = useState<string | undefined>(userCustomInitialValue)
-  const [tabs, setTabs] = useState<Array<TabsLabelItem>>([])
+  const [tabs, setTabs] = useState<Array<TabsHeaderItem>>([])
 
-  const register = (next: TabsLabelItem) => {
+  const register = (next: TabsHeaderItem) => {
     setTabs(last => {
       const hasItem = last.find(item => item.value === next.value)
       if (!hasItem) return [...last, next]
@@ -40,8 +41,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
         if (item.value !== next.value) return item
         return {
           ...item,
-          label: next.label,
-          disabled: next.disabled,
+          ...next,
         }
       })
     })
@@ -57,110 +57,60 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   )
 
   useEffect(() => {
-    if (value === undefined) return
+    if (typeof value === 'undefined') return
     setSelfValue(value)
   }, [value])
 
-  const clickHandler = (item: TabsLabelItem) => {
-    if (item.disabled) return
-    setSelfValue(item.value)
-    onChange && onChange(item.value)
+  const clickHandler = (value: string) => {
+    setSelfValue(value)
+    onChange && onChange(value)
   }
 
   return (
     <TabsContext.Provider value={initialValue}>
       <div className={`tabs ${className}`} {...props}>
-        <header className={hideDivider ? 'hide-divider' : ''}>
-          {tabs.map(item => (
-            <div
-              className={`tab ${selfValue === item.value ? 'active' : ''} ${
-                item.disabled ? 'disabled' : ''
-              }`}
-              role="button"
-              key={item.value}
-              onClick={() => clickHandler(item)}>
-              {item.label}
-            </div>
-          ))}
+        <header>
+          <div className={`scroll-container ${hideDivider ? 'hide-divider' : ''}`}>
+            {tabs.map(({ cell: Cell, value }) => (
+              <Cell key={value} value={selfValue} onClick={clickHandler} />
+            ))}
+          </div>
         </header>
         <div className="content">{children}</div>
         <style jsx>{`
           .tabs {
-            width: initial;
+            font-size: ${SCALES.font(1)};
+            width: ${SCALES.width(1, 'initial')};
+            height: ${SCALES.height(1, 'auto')};
+            padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
-
           header {
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
-            border-bottom: 1px solid ${theme.palette.border};
-            overflow: scroll;
+            overflow-y: hidden;
+            overflow-x: scroll;
             scrollbar-width: none;
+            position: relative;
           }
-
+          .scroll-container {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-bottom: 1px solid ${theme.palette.border};
+          }
           header::-webkit-scrollbar {
             display: none;
           }
-
           .hide-divider {
-            border-bottom: none;
+            border-color: transparent;
           }
-
           .content {
             padding-top: 0.625rem;
-          }
-
-          .tab {
-            padding: ${theme.layout.gapQuarter} calc(0.65 * ${theme.layout.gapQuarter});
-            cursor: pointer;
-            outline: 0;
-            transition: all 200ms ease;
-            text-transform: capitalize;
-            font-size: 1rem;
-            white-space: nowrap;
-            margin: 0 calc(0.8 * ${theme.layout.gapHalf});
-            color: ${theme.palette.accents_6};
-            user-select: none;
-            display: flex;
-            align-items: center;
-            line-height: 1.25rem;
-            position: relative;
-          }
-
-          .tab:after {
-            position: absolute;
-            content: '';
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: 2px;
-            transform: scaleX(0.75);
-            background-color: transparent;
-            transition: all 200ms ease;
-          }
-
-          .tab.active:after {
-            background-color: ${theme.palette.foreground};
-            transform: scaleX(1);
-          }
-
-          .tab :global(svg) {
-            max-height: 1em;
-            margin-right: 5px;
-          }
-
-          .tab:first-of-type {
-            margin-left: 0;
-          }
-
-          .tab.active {
-            color: ${theme.palette.foreground};
-          }
-
-          .tab.disabled {
-            color: ${theme.palette.accents_3};
-            cursor: not-allowed;
           }
         `}</style>
       </div>
@@ -168,14 +118,7 @@ const Tabs: React.FC<React.PropsWithChildren<TabsProps>> = ({
   )
 }
 
-type TabsComponent<P = {}> = React.FC<P> & {
-  Item: typeof TabsItem
-  Tab: typeof TabsItem
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Tabs.defaultProps = defaultProps
-
-export default Tabs as TabsComponent<ComponentProps>
+TabsComponent.defaultProps = defaultProps
+TabsComponent.displayName = 'GeistTabs'
+const Tabs = withScaleable(TabsComponent)
+export default Tabs

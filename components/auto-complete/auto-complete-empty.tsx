@@ -1,5 +1,4 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 import AutoCompleteSearch from './auto-complete-searching'
 
 interface Props {
@@ -12,17 +11,18 @@ const defaultProps = {
   className: '',
 }
 
-export type AutoCompleteEmptyProps = Props &
-  typeof defaultProps &
-  React.HTMLAttributes<any>
+export type AutoCompleteEmptyProps = Props & React.HTMLAttributes<any>
 
 const AutoCompleteEmpty: React.FC<React.PropsWithChildren<AutoCompleteEmptyProps>> = ({
   children,
   hidden,
   className,
-}) => {
+}: React.PropsWithChildren<AutoCompleteEmptyProps> & typeof defaultProps) => {
   if (hidden) return null
   return <AutoCompleteSearch className={className}>{children}</AutoCompleteSearch>
 }
 
-export default withDefaults(AutoCompleteEmpty, defaultProps)
+AutoCompleteEmpty.defaultProps = defaultProps
+AutoCompleteEmpty.displayName = 'GeistAutoCompleteEmpty'
+
+export default AutoCompleteEmpty

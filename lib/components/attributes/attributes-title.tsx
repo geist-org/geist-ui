@@ -32,7 +32,7 @@ const AttributesTitle: React.FC<
         </Code>
         {getAlias(!!isChinese, alias)}
       </h4>
-      <Spacer y={0.6} />
+      <Spacer h={0.1} />
 
       <style jsx>{`
         h4 {

@@ -1,221 +1,629 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text should be able to specify the size of text 1`] = `
-"<p class=\\"custom-size \\">test-value</p><style>
+"<p class=\\"font\\" font=\\"14\\">test-value<style>
         p {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
-          font-size: 14px;
+        .font {
+          font-size: calc(14 * 16px);
         }
-      </style>"
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p>"
 `;
 
 exports[`Text should be able to specify the size of text 2`] = `
-"<p class=\\"custom-size \\">test-value</p><style>
+"<p class=\\"font\\" font=\\"12rem\\">test-value<style>
         p {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: 12rem;
         }
-      </style>"
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p>"
 `;
 
 exports[`Text should render P element in the default 1`] = `
-"<p class=\\" \\">test-value</p><style>
+"<p class=\\"\\">test-value<style>
         p {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style>"
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p>"
 `;
 
 exports[`Text should render default color when type missing 1`] = `
-"<p class=\\" \\">test-value</p><style>
+"<p class=\\"\\">test-value<style>
         p {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style>"
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p>"
 `;
 
 exports[`Text should work with different styles 1`] = `
-"<div><p class=\\" \\">test-value</p><style>
+"<div><p class=\\"\\">test-value<style>
         p {
           color: #666;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><p class=\\" \\">test-value</p><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p><p class=\\"\\">test-value<style>
         p {
           color: #0070f3;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><p class=\\" \\">test-value</p><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p><p class=\\"\\">test-value<style>
         p {
           color: #f5a623;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><p class=\\" \\">test-value</p><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p><p class=\\"\\">test-value<style>
         p {
           color: #e00;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style></div>"
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p></div>"
 `;
 
 exports[`Text the combined style should be rendered 1`] = `
-"<p class=\\" \\"><b class=\\" \\"><del class=\\" \\">test-value</del><style>
+"<p class=\\"\\"><b class=\\"\\"><del class=\\"\\">test-value<style>
         del {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style></b><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></del><style>
         b {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style></p><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></b><style>
         p {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style>"
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p>"
 `;
 
 exports[`Text the specified element should be rendered 1`] = `
-"<div><h1 class=\\" \\">test-value</h1><style>
+"<div><h1 class=\\"\\">test-value<style>
         h1 {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><h2 class=\\" \\">test-value</h2><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></h1><h2 class=\\"\\">test-value<style>
         h2 {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><h3 class=\\" \\">test-value</h3><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></h2><h3 class=\\"\\">test-value<style>
         h3 {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><h4 class=\\" \\">test-value</h4><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></h3><h4 class=\\"\\">test-value<style>
         h4 {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><h5 class=\\" \\">test-value</h5><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></h4><h5 class=\\"\\">test-value<style>
         h5 {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><h6 class=\\" \\">test-value</h6><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></h5><h6 class=\\"\\">test-value<style>
         h6 {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><p class=\\" \\">test-value</p><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></h6><p class=\\"\\">test-value<style>
         p {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><small class=\\" \\">test-value</small><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></p><small class=\\"\\">test-value<style>
         small {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><span class=\\" \\">test-value</span><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></small><span class=\\"\\">test-value<style>
         span {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><del class=\\" \\">test-value</del><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></span><del class=\\"\\">test-value<style>
         del {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><i class=\\" \\">test-value</i><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></del><i class=\\"\\">test-value<style>
         i {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><em class=\\" \\">test-value</em><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></i><em class=\\"\\">test-value<style>
         em {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style><b class=\\" \\">test-value</b><style>
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></em><b class=\\"\\">test-value<style>
         b {
           color: inherit;
+          width: auto;
+          height: auto;
         }
-
-        .custom-size {
+        .font {
           font-size: inherit;
         }
-      </style></div>"
+        .mx {
+          margin-left: revert;
+          margin-right: revert;
+        }
+        .my {
+          margin-top: revert;
+          margin-bottom: revert;
+        }
+        .px {
+          padding-left: revert;
+          padding-right: revert;
+        }
+        .py {
+          padding-top: revert;
+          padding-bottom: revert;
+        }
+      </style></b></div>"
 `;

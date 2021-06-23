@@ -1,7 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { useTheme, Loading } from 'components'
-import withDefaults from 'components/utils/with-defaults'
 import { useConfigs } from 'lib/config-context'
 import Title from './title'
 
@@ -14,7 +13,7 @@ const DynamicLive = dynamic(() => import('./dynamic-live'), {
   ),
 })
 
-interface Props {
+export type PlaygroundProps = {
   title?: React.ReactNode | string
   desc?: React.ReactNode | string
   code: string
@@ -29,10 +28,13 @@ const defaultProps = {
   bindings: {},
 }
 
-export type PlaygroundProps = Props & typeof defaultProps
-
 const Playground: React.FC<PlaygroundProps> = React.memo(
-  ({ title: inputTitle, code: inputCode, desc, scope }) => {
+  ({
+    title: inputTitle,
+    code: inputCode,
+    desc,
+    scope,
+  }: PlaygroundProps & typeof defaultProps) => {
     const theme = useTheme()
     const { isChinese } = useConfigs()
     const code = inputCode.trim()
@@ -56,4 +58,6 @@ const Playground: React.FC<PlaygroundProps> = React.memo(
   },
 )
 
-export default withDefaults(Playground, defaultProps)
+Playground.defaultProps = defaultProps
+Playground.displayName = 'GeistPlayground'
+export default Playground
