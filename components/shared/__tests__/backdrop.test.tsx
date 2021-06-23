@@ -48,15 +48,15 @@ describe('Backdrop', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should be prevent event from the container', () => {
+  it('should be pass event from the container', () => {
     const handler = jest.fn()
     const wrapper = mount(
-      <Backdrop onClick={handler} visible>
+      <Backdrop visible onContentClick={handler}>
         <span>test-value</span>
       </Backdrop>,
     )
     wrapper.find('.content').simulate('click', nativeEvent)
-    expect(handler).not.toHaveBeenCalled()
+    expect(handler).toHaveBeenCalled()
     handler.mockRestore()
   })
 

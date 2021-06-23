@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react'
-import { useTheme, useToasts, Code, Grid, GeistUIThemesPalette } from 'components'
+import { useTheme, useToasts, Code, Grid } from 'components'
 import useClipboard from 'components/utils/use-clipboard'
 import { getColorData, getCurrentColor } from './colors-data'
+import { GeistUIThemesPalette } from 'components/themes'
 
 interface Props {
   type: string
@@ -57,10 +58,10 @@ const Colors: React.FC<Props> = ({ type }) => {
       ),
     })
   }
-  const colorItems = useMemo(() => getColorItem(type, theme.palette, copyText), [
-    type,
-    theme.palette,
-  ])
+  const colorItems = useMemo(
+    () => getColorItem(type, theme.palette, copyText),
+    [type, theme.palette],
+  )
 
   return (
     <div className="colors">

@@ -29,7 +29,7 @@ describe('Tooltip', () => {
 
     await updateWrapper(wrapper, 150)
     wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent)
-    await updateWrapper(wrapper, 150)
+    await updateWrapper(wrapper, 350)
     expectTooltipIsHidden(wrapper)
   })
 
@@ -40,11 +40,11 @@ describe('Tooltip', () => {
       </div>,
     )
     wrapper.find('.tooltip').simulate('mouseEnter', nativeEvent)
-    await updateWrapper(wrapper, 150)
+    await updateWrapper(wrapper, 350)
     expectTooltipIsShow(wrapper)
 
     wrapper.find('.tooltip').simulate('mouseLeave', nativeEvent)
-    await updateWrapper(wrapper, 150)
+    await updateWrapper(wrapper, 350)
     expectTooltipIsHidden(wrapper)
   })
 
