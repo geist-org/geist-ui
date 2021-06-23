@@ -52,6 +52,6 @@ describe('Avatar', () => {
     const count = 20
     const group = render(<Avatar.Group count={count} />)
     const text = group.find('.count').text()
-    expect(text).toContain(count)
+    expect(text).toMatch(`${count}`)
   })
 })
