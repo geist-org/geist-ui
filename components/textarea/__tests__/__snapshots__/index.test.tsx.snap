@@ -164,7 +164,7 @@ exports[`Textarea should work with different styles 1`] = `
           textarea:-webkit-autofill:focus {
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
           }
-        </style></div><div class=\\"wrapper   \\"><textarea minheight=\\"100px\\"></textarea><style>
+        </style></div><div class=\\"wrapper   \\"><textarea height=\\"100px\\"></textarea><style>
           .wrapper {
             display: inline-flex;
             box-sizing: border-box;
@@ -176,7 +176,7 @@ exports[`Textarea should work with different styles 1`] = `
             min-width: 12.5rem;
             max-width: 95vw;
             --textarea-font-size: calc(0.875 * 16px);
-            --textarea-height: auto;
+            --textarea-height: 100px;
             width: initial;
             height: var(--textarea-height);
             margin: 0 0 0 0;

@@ -549,8 +549,8 @@ initialize {
             "next": Node {
               "attribs": Object {
                 "class": "divider ",
+                "h": "2",
                 "role": "separator",
-                "volume": "2",
               },
               "children": Array [
                 Node {
@@ -579,7 +579,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.125 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -649,7 +649,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.125 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -732,13 +732,13 @@ initialize {
               "type": "tag",
               "x-attribsNamespace": Object {
                 "class": undefined,
+                "h": undefined,
                 "role": undefined,
-                "volume": undefined,
               },
               "x-attribsPrefix": Object {
                 "class": undefined,
+                "h": undefined,
                 "role": undefined,
-                "volume": undefined,
               },
             },
             "parent": [Circular],
@@ -1138,8 +1138,8 @@ initialize {
           "next": Node {
             "attribs": Object {
               "class": "divider ",
+              "h": "2",
               "role": "separator",
-              "volume": "2",
             },
             "children": Array [
               Node {
@@ -1168,7 +1168,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.125 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -1238,7 +1238,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.125 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -1321,13 +1321,13 @@ initialize {
             "type": "tag",
             "x-attribsNamespace": Object {
               "class": undefined,
+              "h": undefined,
               "role": undefined,
-              "volume": undefined,
             },
             "x-attribsPrefix": Object {
               "class": undefined,
+              "h": undefined,
               "role": undefined,
-              "volume": undefined,
             },
           },
           "parent": [Circular],
@@ -1727,8 +1727,8 @@ initialize {
         "next": Node {
           "attribs": Object {
             "class": "divider ",
+            "h": "2",
             "role": "separator",
-            "volume": "2",
           },
           "children": Array [
             Node {
@@ -1757,7 +1757,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.125 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -1827,7 +1827,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.125 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -1910,13 +1910,13 @@ initialize {
           "type": "tag",
           "x-attribsNamespace": Object {
             "class": undefined,
+            "h": undefined,
             "role": undefined,
-            "volume": undefined,
           },
           "x-attribsPrefix": Object {
             "class": undefined,
+            "h": undefined,
             "role": undefined,
-            "volume": undefined,
           },
         },
         "parent": [Circular],
@@ -2316,8 +2316,8 @@ initialize {
       Node {
         "attribs": Object {
           "class": "divider ",
+          "h": "2",
           "role": "separator",
-          "volume": "2",
         },
         "children": Array [
           Node {
@@ -2346,7 +2346,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.125 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -2416,7 +2416,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.125 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -3072,13 +3072,13 @@ initialize {
         "type": "tag",
         "x-attribsNamespace": Object {
           "class": undefined,
+          "h": undefined,
           "role": undefined,
-          "volume": undefined,
         },
         "x-attribsPrefix": Object {
           "class": undefined,
+          "h": undefined,
           "role": undefined,
-          "volume": undefined,
         },
       },
     ],
@@ -3874,7 +3874,7 @@ initialize {
 }
 `;
 
-exports[`Divider should work with x and y 1`] = `
+exports[`Divider should work with w and h 1`] = `
 initialize {
   "0": Node {
     "attribs": Object {},
@@ -3883,7 +3883,7 @@ initialize {
         "attribs": Object {
           "class": "divider ",
           "role": "separator",
-          "x": "3",
+          "w": "3",
         },
         "children": Array [
           Node {
@@ -3896,7 +3896,7 @@ initialize {
           background-color: #eaeaea;
           position: relative;
           font-size: calc(1 * 16px);
-          width: auto;
+          width: calc(3 * 16px);
           height: calc(0.0625 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
@@ -3952,8 +3952,8 @@ initialize {
         "next": Node {
           "attribs": Object {
             "class": "divider ",
+            "h": "3",
             "role": "separator",
-            "y": "3",
           },
           "children": Array [
             Node {
@@ -3967,7 +3967,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.1875 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -4025,13 +4025,13 @@ initialize {
           "type": "tag",
           "x-attribsNamespace": Object {
             "class": undefined,
+            "h": undefined,
             "role": undefined,
-            "y": undefined,
           },
           "x-attribsPrefix": Object {
             "class": undefined,
+            "h": undefined,
             "role": undefined,
-            "y": undefined,
           },
         },
         "parent": [Circular],
@@ -4040,19 +4040,19 @@ initialize {
         "x-attribsNamespace": Object {
           "class": undefined,
           "role": undefined,
-          "x": undefined,
+          "w": undefined,
         },
         "x-attribsPrefix": Object {
           "class": undefined,
           "role": undefined,
-          "x": undefined,
+          "w": undefined,
         },
       },
       Node {
         "attribs": Object {
           "class": "divider ",
+          "h": "3",
           "role": "separator",
-          "y": "3",
         },
         "children": Array [
           Node {
@@ -4066,7 +4066,7 @@ initialize {
           position: relative;
           font-size: calc(1 * 16px);
           width: auto;
-          height: calc(0.0625 * 16px);
+          height: calc(0.1875 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
@@ -4124,7 +4124,7 @@ initialize {
           "attribs": Object {
             "class": "divider ",
             "role": "separator",
-            "x": "3",
+            "w": "3",
           },
           "children": Array [
             Node {
@@ -4137,7 +4137,7 @@ initialize {
           background-color: #eaeaea;
           position: relative;
           font-size: calc(1 * 16px);
-          width: auto;
+          width: calc(3 * 16px);
           height: calc(0.0625 * 16px);
           padding: 0 0 0 0;
           margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
@@ -4197,24 +4197,24 @@ initialize {
           "x-attribsNamespace": Object {
             "class": undefined,
             "role": undefined,
-            "x": undefined,
+            "w": undefined,
           },
           "x-attribsPrefix": Object {
             "class": undefined,
             "role": undefined,
-            "x": undefined,
+            "w": undefined,
           },
         },
         "type": "tag",
         "x-attribsNamespace": Object {
           "class": undefined,
+          "h": undefined,
           "role": undefined,
-          "y": undefined,
         },
         "x-attribsPrefix": Object {
           "class": undefined,
+          "h": undefined,
           "role": undefined,
-          "y": undefined,
         },
       },
     ],
