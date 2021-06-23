@@ -31,6 +31,30 @@ describe('Popover', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
+  it('should work correctly with props', async () => {
+    const handler = jest.fn()
+    const Demos: React.FC<{ visible?: boolean }> = ({ visible }) => {
+      return (
+        <Popover visible={visible} onVisibleChange={handler} content="test">
+          <div />
+        </Popover>
+      )
+    }
+    const wrapper = mount(<Demos />)
+    expectPopoverIsHidden(wrapper)
+
+    wrapper.setProps({ visible: true })
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsShow(wrapper)
+    expect(handler).toBeCalled()
+
+    wrapper.setProps({ visible: false })
+    await updateWrapper(wrapper, 350)
+    expectPopoverIsHidden(wrapper)
+
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
   it('should render react-node', async () => {
     const wrapper = mount(
       <Popover content={<p id="test">custom-content</p>}>

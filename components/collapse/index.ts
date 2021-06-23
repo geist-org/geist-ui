@@ -8,4 +8,4 @@ export type CollapseComponentType = typeof Collapse & {
 
 export type { CollapseProps } from './collapse'
 export type { CollapseGroupProps } from './collapse-group'
-export default Collapse
+export default Collapse as CollapseComponentType
