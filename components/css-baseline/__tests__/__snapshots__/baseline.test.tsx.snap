@@ -248,6 +248,14 @@ initialize {
         details:active {
           outline: none;
         }
+        
+        details &gt; summary {
+          list-style: none;
+        }
+        
+        details &gt; summary::-webkit-details-marker {
+          display: none;
+        }
 
         summary {
           cursor: pointer;
@@ -271,6 +279,8 @@ initialize {
           outline: none;
           list-style: none;
         }
+        
+        
 
         blockquote {
           padding: calc(0.667 * 16pt) 16pt;
@@ -575,6 +585,14 @@ initialize {
         details:active {
           outline: none;
         }
+        
+        details &gt; summary {
+          list-style: none;
+        }
+        
+        details &gt; summary::-webkit-details-marker {
+          display: none;
+        }
 
         summary {
           cursor: pointer;
@@ -598,6 +616,8 @@ initialize {
           outline: none;
           list-style: none;
         }
+        
+        
 
         blockquote {
           padding: calc(0.667 * 16pt) 16pt;
