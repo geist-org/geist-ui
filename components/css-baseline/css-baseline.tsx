@@ -251,6 +251,14 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
         details:active {
           outline: none;
         }
+        
+        details > summary {
+          list-style: none;
+        }
+        
+        details > summary::-webkit-details-marker {
+          display: none;
+        }
 
         summary {
           cursor: pointer;
@@ -274,6 +282,8 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
           outline: none;
           list-style: none;
         }
+        
+        
 
         blockquote {
           padding: calc(0.667 * ${theme.layout.gap}) ${theme.layout.gap};
