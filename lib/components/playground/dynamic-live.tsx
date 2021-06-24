@@ -28,6 +28,7 @@ const DynamicLive: React.FC<Props> = ({ code, scope }) => {
           display: flex;
           flex-direction: column;
           box-sizing: border-box;
+          overflow-x: scroll;
         }
 
         .wrapper > :global(div) {
