@@ -4,17 +4,16 @@ import { useState } from 'react'
 import { Award, Github } from '@geist-ui/react-icons'
 
 export const meta = {
-  title: 'Rating',
-  group: 'Feedback',
+  title: '评分 Rating',
+  group: '反馈',
 }
 
-## Rating
+## Rating / 评分
 
-Display an indicator of rankings with stars.
+以多个图标展示可互动的评分。
 
 <Playground
-  title="Default"
-  desc="A default rating component with initializers and callbacks."
+  desc="设置初始值与回调事件。"
   scope={{ Rating, Grid, useState }}
   code={`
 () => {
@@ -25,8 +24,8 @@ Display an indicator of rankings with stars.
       <Grid xs={24} md={8} justify="center">
         <Rating onLockedChange={setLocked} value={value} onValueChange={setValue}/>
       </Grid>
-      <Grid xs={12} md={8} justify="center">Selection: {value}</Grid>
-      <Grid xs={12} md={8} justify="center">Locked: {locked ? "true" : "false"}</Grid>
+      <Grid xs={12} md={8} justify="center">已选择: {value}</Grid>
+      <Grid xs={12} md={8} justify="center">锁定: {locked ? "是" : "否"}</Grid>
     </Grid.Container>
   )
 }
@@ -34,8 +33,8 @@ Display an indicator of rankings with stars.
 />
 
 <Playground
-  title="Types"
-  desc="Pass the property `type` to the Rating component."
+  title="类型"
+  desc="通过 `type` 属性展示不同的评分组件。"
   scope={{ Rating, Grid }}
   code={`
 <Grid.Container gap={2} justify="center">
@@ -47,8 +46,8 @@ Display an indicator of rankings with stars.
 />
 
 <Playground
-  title="Custom Amount"
-  desc="Customize the amount of stars."
+  title="最大数量"
+  desc="定制图标的最大数量。"
   scope={{ Rating, Spacer }}
   code={`
 <>
@@ -62,8 +61,8 @@ Display an indicator of rankings with stars.
 />
 
 <Playground
-  title="Icon"
-  desc="Customize the icons of a rating."
+  title="图标"
+  desc="以自定义 SVG 图标代替默认的星星图案。"
   scope={{ Rating, Award, Github, Spacer }}
   code={`
 <>
@@ -78,20 +77,20 @@ Display an indicator of rankings with stars.
 `}
 />
 
-<Attributes edit="/pages/en-us/components/rating.mdx">
+<Attributes edit="/pages/zh-cn/components/rating.mdx">
 <Attributes.Title>Rating.Props</Attributes.Title>
 
-| Attribute          | Description         | Type                    | Accepted values             | Default   |
-| ------------------ | ------------------- | ----------------------- | --------------------------- | --------- |
-| **type**           | rating type         | `RatingTypes`           | [RatingTypes](#ratingtypes) | `default` |
-| **icon**           | custom icon         | `JSX.Element`           | -                           | -         |
-| **count**          | rating star count   | `number`                | [RatingCount](#ratingcount) | `5`       |
-| **value**          | star values         | `number`                | [RatingValue](#ratingvalue) | -         |
-| **initialValue**   | initial star values | `number`                | [RatingValue](#ratingvalue) | `1`       |
-| **onValueChange**  | value change event  | `(value?: any) => void` | -                           | -         |
-| **locked**         | lock state          | `boolean`               | -                           | `false`   |
-| **onLockedChange** | locked change event | `(value?: any) => void` | -                           | -         |
-| ...                | native props        | `HTMLAttributes`        | -                           | -         |
+| 属性               | 描述             | 类型                    | 推荐值                      | 默认      |
+| ------------------ | ---------------- | ----------------------- | --------------------------- | --------- |
+| **type**           | 评分组件类型     | `RatingTypes`           | [RatingTypes](#ratingtypes) | `default` |
+| **icon**           | 自定义图标       | `JSX.Element`           | -                           | -         |
+| **count**          | 展示图标最大数量 | `number`                | [RatingCount](#ratingcount) | `5`       |
+| **value**          | 选中值           | `number`                | [RatingValue](#ratingvalue) | -         |
+| **initialValue**   | 初始值           | `number`                | [RatingValue](#ratingvalue) | `1`       |
+| **onValueChange**  | 值变化的事件     | `(value?: any) => void` | -                           | -         |
+| **locked**         | 是否锁定         | `boolean`               | -                           | `false`   |
+| **onLockedChange** | 锁定变化事件     | `(value?: any) => void` | -                           | -         |
+| ...                | 原生属性         | `HTMLAttributes`        | -                           | -         |
 
 <Attributes.Title>RatingTypes</Attributes.Title>
 
