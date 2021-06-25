@@ -1,0 +1,115 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Rating, Grid, Spacer } from 'components'
+import { useState } from 'react'
+import { Award, Github } from '@geist-ui/react-icons'
+
+export const meta = {
+  title: '评分 Rating',
+  group: '反馈',
+}
+
+## Rating / 评分
+
+以多个图标展示可互动的评分。
+
+<Playground
+  desc="设置初始值与回调事件。"
+  scope={{ Rating, Grid, useState }}
+  code={`
+() => {
+  const [value, setValue] = useState(1)
+  const [locked, setLocked] = useState(false)
+  return(
+    <Grid.Container gap={2}>
+      <Grid xs={24} md={8} justify="center">
+        <Rating onLockedChange={setLocked} value={value} onValueChange={setValue}/>
+      </Grid>
+      <Grid xs={12} md={8} justify="center">已选择: {value}</Grid>
+      <Grid xs={12} md={8} justify="center">锁定: {locked ? "是" : "否"}</Grid>
+    </Grid.Container>
+  )
+}
+`}
+/>
+
+<Playground
+  title="类型"
+  desc="通过 `type` 属性展示不同的评分组件。"
+  scope={{ Rating, Grid }}
+  code={`
+<Grid.Container gap={2} justify="center">
+  <Grid xs={24} sm={24} md={8} justify="center"><Rating type="success"/></Grid>
+  <Grid xs={24} sm={12} md={8} justify="center"><Rating type="error"/></Grid>
+  <Grid xs={24} sm={12} md={8} justify="center"><Rating type="warning"/></Grid>
+</Grid.Container>
+`}
+/>
+
+<Playground
+  title="最大数量"
+  desc="定制图标的最大数量。"
+  scope={{ Rating, Spacer }}
+  code={`
+<>
+  <Rating count={2} />
+  <Spacer h={0.5} />
+  <Rating value={3} count={6} />
+  <Spacer h={0.5} />
+  <Rating value={4} count={8}/>
+</>
+`}
+/>
+
+<Playground
+  title="图标"
+  desc="以自定义 SVG 图标代替默认的星星图案。"
+  scope={{ Rating, Award, Github, Spacer }}
+  code={`
+<>
+  <Rating
+     value={4}
+     count={6}
+     type="success"
+     icon={<Github />} />
+  <Spacer h={0.5} />
+  <Rating count={7}  type="error" icon={<Award />} />
+</>
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/components/rating.mdx">
+<Attributes.Title>Rating.Props</Attributes.Title>
+
+| 属性               | 描述             | 类型                    | 推荐值                      | 默认      |
+| ------------------ | ---------------- | ----------------------- | --------------------------- | --------- |
+| **type**           | 评分组件类型     | `RatingTypes`           | [RatingTypes](#ratingtypes) | `default` |
+| **icon**           | 自定义图标       | `JSX.Element`           | -                           | -         |
+| **count**          | 展示图标最大数量 | `number`                | [RatingCount](#ratingcount) | `5`       |
+| **value**          | 选中值           | `number`                | [RatingValue](#ratingvalue) | -         |
+| **initialValue**   | 初始值           | `number`                | [RatingValue](#ratingvalue) | `1`       |
+| **onValueChange**  | 值变化的事件     | `(value?: any) => void` | -                           | -         |
+| **locked**         | 是否锁定         | `boolean`               | -                           | `false`   |
+| **onLockedChange** | 锁定变化事件     | `(value?: any) => void` | -                           | -         |
+| ...                | 原生属性         | `HTMLAttributes`        | -                           | -         |
+
+<Attributes.Title>RatingTypes</Attributes.Title>
+
+```ts
+type RatingTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>RatingCount</Attributes.Title>
+
+```ts
+type RatingCount = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+```
+
+<Attributes.Title>RatingValue</Attributes.Title>
+
+```ts
+type RatingValue = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

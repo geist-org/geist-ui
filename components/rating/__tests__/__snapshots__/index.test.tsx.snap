@@ -1,0 +1,362 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating should render correctly 1`] = `
+"<div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #000;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #000;
+          transform: scale(0.9);
+        }
+      </style></div>"
+`;
+
+exports[`Rating should show different initialization values 1`] = `
+"<div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #000;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #000;
+          transform: scale(0.9);
+        }
+      </style></div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #000;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #000;
+          transform: scale(0.9);
+        }
+      </style></div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #000;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #000;
+          transform: scale(0.9);
+        }
+      </style></div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #000;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #000;
+          transform: scale(0.9);
+        }
+      </style></div></div>"
+`;
+
+exports[`Rating should update snapshot on mouse enter 1`] = `
+"<div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #0070f3;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #0070f3;
+          transform: scale(0.9);
+        }
+      </style></div><div id=\\"valueDiv\\">5</div><div id=\\"lockDiv\\">false</div></div>"
+`;
+
+exports[`Rating should update snapshot on mouse enter 2`] = `
+"<div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #0070f3;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: default;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #0070f3;
+          transform: scale(0.9);
+        }
+      </style></div><div id=\\"valueDiv\\">5</div><div id=\\"lockDiv\\">true</div></div>"
+`;
+
+exports[`Rating should work with different types 1`] = `
+"<div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #000;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #000;
+          transform: scale(0.9);
+        }
+      </style></div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #0070f3;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #0070f3;
+          transform: scale(0.9);
+        }
+      </style></div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #f5a623;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #f5a623;
+          transform: scale(0.9);
+        }
+      </style></div><div class=\\"rating \\"><div class=\\"icon-box hovered\\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><div class=\\"icon-box \\"><svg viewBox=\\"0 0 24 24\\" width=\\"24\\" height=\\"24\\" stroke=\\"currentColor\\" stroke-width=\\"1.5\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z\\"></path></svg></div><style>
+        .rating {
+          box-sizing: border-box;
+          display: inline-flex;
+          align-items: center;
+          --rating-font-size: calc(1 * 16px);
+          font-size: var(--rating-font-size);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
+        }
+        .icon-box {
+          box-sizing: border-box;
+          color: #e00;
+          width: calc(var(--rating-font-size) * 1.5);
+          height: calc(var(--rating-font-size) * 1.5);
+          margin-right: calc(var(--rating-font-size) * 1 / 5);
+          cursor: pointer;
+        }
+        .icon-box :global(svg) {
+          width: 100%;
+          height: 100%;
+          fill: transparent;
+          transform: scale(1);
+          transition: transform, color, fill 30ms linear;
+        }
+        .hovered :global(svg) {
+          fill: #e00;
+          transform: scale(0.9);
+        }
+      </style></div></div>"
+`;
