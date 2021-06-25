@@ -1,19 +1,22 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { GeistUIThemesPalette } from '../themes'
-import { NormalTypes } from '../utils/prop-types'
-import Star from '@geist-ui/react-icons/star'
+import { NormalTypes, tupleNumber } from '../utils/prop-types'
+import RatingIcon from './rating-icon'
 import useTheme from '../use-theme'
 import useScaleable, { withScaleable } from '../use-scaleable'
 
 export type RatingTypes = NormalTypes
-export type RatingCount = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
-export type RatingValue = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+const ratingCountTuple = tupleNumber(2, 3, 4, 5, 6, 7, 8, 9, 10)
+const ratingValueTuple = tupleNumber(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+export type RatingValue = typeof ratingValueTuple[number]
+export type RatingCount = typeof ratingCountTuple[number]
+
 interface Props {
   type?: RatingTypes
   className?: string
   icon?: JSX.Element
-  count?: RatingCount
-  value?: RatingValue
+  count?: RatingCount | number
+  value?: RatingValue | number
   initialValue?: RatingValue
   onValueChange?: (value: number) => void
   locked?: boolean
@@ -23,7 +26,7 @@ interface Props {
 const defaultProps = {
   type: 'default' as RatingTypes,
   className: '',
-  icon: (<Star />) as JSX.Element,
+  icon: (<RatingIcon />) as JSX.Element,
   count: 5 as RatingCount,
   initialValue: 1 as RatingValue,
   locked: false,
@@ -121,6 +124,7 @@ const RatingComponent: React.FC<RatingProps> = ({
           height: 100%;
           fill: transparent;
           transform: scale(1);
+          transition: transform, color, fill 30ms linear;
         }
         .hovered :global(svg) {
           fill: ${color};
