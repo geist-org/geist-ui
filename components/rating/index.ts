@@ -1,5 +1,4 @@
-import { RatingProps } from './rating'
 import Rating from './rating'
 
-export type Props = RatingProps
+export type { RatingProps, RatingTypes, RatingCount, RatingValue } from './rating'
 export default Rating
