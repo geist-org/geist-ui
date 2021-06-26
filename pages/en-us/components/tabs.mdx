@@ -18,8 +18,8 @@ Display tab content.
   desc="Toggle display of different templates."
   code={`
 <Tabs initialValue="1">
-  <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
-  <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
+  <Tabs.Item label="http" value="1">HTTP is stateless, but not sessionless.</Tabs.Item>
+  <Tabs.Item label="proxies" value="2">Between the Web browser and the server, numerous computers and machines relay the HTTP messages.</Tabs.Item>
 </Tabs>
 `}
 />
@@ -29,7 +29,7 @@ Display tab content.
   scope={{ Tabs }}
   code={`
 <Tabs initialValue="1">
-  <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
+  <Tabs.Item label="http" value="1">HTTP is stateless, but not sessionless.</Tabs.Item>
   <Tabs.Item label="jumped" value="2" disabled />
 </Tabs>
 `}
@@ -122,8 +122,8 @@ Display tab content.
       <Button scale={1/3} onClick={switchHandler}><Text>Select  <Code>Jumped</Code></Text></Button>
       <Spacer h={.5} />
       <Tabs value={value} onChange={changeHandler}>
-        <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
-        <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
+        <Tabs.Item label="stateless" value="1">HTTP is stateless, but not sessionless.</Tabs.Item>
+        <Tabs.Item label="extensible" value="2">Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with.</Tabs.Item>
       </Tabs>
     </>
   )
@@ -149,8 +149,8 @@ Display tab content.
       </Button>
       <Spacer h={.5} />
       <Tabs {...bindings}>
-        <Tabs.Item label="evil rabbit" value="1">The Evil Rabbit Jumped over the Fence.</Tabs.Item>
-        <Tabs.Item label="jumped" value="2">The Fence Jumped over The Evil Rabbit.</Tabs.Item>
+        <Tabs.Item label="stateless" value="1">HTTP is stateless, but not sessionless.</Tabs.Item>
+        <Tabs.Item label="extensible" value="2">Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with.</Tabs.Item>
       </Tabs>
     </>
   )
@@ -180,9 +180,7 @@ Display tab content.
 <Attributes.Title>useTabs</Attributes.Title>
 
 ```ts
-type useTabs = (
-  initialValue: string,
-) => {
+type useTabs = (initialValue: string) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

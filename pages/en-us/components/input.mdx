@@ -16,7 +16,7 @@ Retrieve text input from a user.
   desc="Basic input field."
   scope={{ Input }}
   code={`
-<Input placeholder="The Evil Rabbit" />
+<Input placeholder="Geist UI" />
 `}
 />
 
@@ -39,7 +39,7 @@ Retrieve text input from a user.
   desc="Specify width or other styles."
   scope={{ Input }}
   code={`
-<Input placeholder="The Evil Rabbit" width="100%" />
+<Input placeholder="Geist UI" width="100%" />
 `}
 />
 
@@ -62,7 +62,7 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input label="username" placeholder="The Evil Rabbit" />
+  <Input label="username" placeholder="Geist UI" />
   <Spacer h={.5} />
   <Input labelRight=".com" placeholder="https://github" />
 </>
@@ -75,7 +75,7 @@ Retrieve text input from a user.
   scope={{ Input, Spacer, Text, Code, Dot }}
   code={`
 <>
-  <Input placeholder="Evil Rabbit">
+  <Input placeholder="Geist UI">
     Username
   </Input>
   <Spacer />
@@ -98,13 +98,13 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input type="secondary" initialValue="The Evil Rabbit" />
+  <Input type="secondary" initialValue="Geist UI" />
   <Spacer h={.5} />
-  <Input type="success" initialValue="The Evil Rabbit" />
+  <Input type="success" initialValue="Geist UI" />
   <Spacer h={.5} />
-  <Input type="warning" initialValue="The Evil Rabbit" />
+  <Input type="warning" initialValue="Geist UI" />
   <Spacer h={.5} />
-  <Input type="error" initialValue="The Evil Rabbit" />
+  <Input type="error" initialValue="Geist UI" />
 </>
 `}
 />
@@ -128,7 +128,7 @@ Retrieve text input from a user.
   scope={{ Input }}
   code={`
 <>
-  <Input clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
+  <Input clearable initialValue="Geist UI" placeholder="Geist UI" />
 </>
 `}
 />
@@ -153,7 +153,7 @@ Retrieve text input from a user.
     console.log(e.target.value)
   }
   return (
-    <Input value={value} onChange={handler} placeholder="The Evil Rabbit" />
+    <Input value={value} onChange={handler} placeholder="Geist UI" />
   )
 }
 `}
@@ -169,7 +169,7 @@ Retrieve text input from a user.
   scope={{ Input, useInput, useEffect, Button, Spacer }}
   code={`
 () => {
-  const { state, setState, reset, bindings } = useInput('The Evil Rabbit')
+  const { state, setState, reset, bindings } = useInput('Geist UI')
   useEffect(() => console.log(state), [state])
   return (
     <>
