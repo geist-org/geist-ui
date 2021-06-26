@@ -47,7 +47,6 @@ const getColor = (type: RatingTypes, palette: GeistUIThemesPalette): string => {
 
 const RatingComponent: React.FC<RatingProps> = ({
   type,
-  children,
   className,
   icon,
   count,

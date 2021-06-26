@@ -2,45 +2,54 @@ import React from 'react'
 import useTheme from '../use-theme'
 import TableCell from './table-cell'
 import { useTableContext } from './table-context'
+import {
+  TableDataItemBase,
+  TableOnCellClick,
+  TableOnRowClick,
+  TableRowClassNameHandler,
+} from './table-types'
 
-interface Props {
+interface Props<TableDataItem extends TableDataItemBase> {
   hover: boolean
   emptyText: string
-  onRow: (row: any, index: number) => void
-  onCell: (cell: any, index: number, colunm: number) => void
-  data: Array<any>
+  onRow?: TableOnRowClick<TableDataItem>
+  onCell?: TableOnCellClick<TableDataItem>
+  data: Array<TableDataItem>
   className?: string
+  rowClassName: TableRowClassNameHandler<TableDataItem>
 }
 
 const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TableBodyProps = Props & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props<any>>
+export type TableBodyProps<TableDataItem> = Props<TableDataItem> & NativeAttrs
 
-const TableBody: React.FC<TableBodyProps> = ({
+const TableBody = <TableDataItem extends TableDataItemBase>({
   data,
   hover,
   emptyText,
   onRow,
   onCell,
-}: TableBodyProps & typeof defaultProps) => {
+  rowClassName,
+}: TableBodyProps<TableDataItem> & typeof defaultProps) => {
   const theme = useTheme()
-  const { columns } = useTableContext()
-  const rowClickHandler = (row: any, index: number) => {
-    onRow(row, index)
+  const { columns } = useTableContext<TableDataItem>()
+  const rowClickHandler = (row: TableDataItem, index: number) => {
+    onRow && onRow(row, index)
   }
 
   return (
     <tbody>
       {data.map((row, index) => {
+        const className = rowClassName(row, index)
         return (
           <tr
             key={`tbody-row-${index}`}
-            className={hover ? 'hover' : ''}
+            className={`${hover ? 'hover' : ''} ${className}`}
             onClick={() => rowClickHandler(row, index)}>
-            <TableCell
+            <TableCell<TableDataItem>
               columns={columns}
               row={row}
               rowIndex={index}
