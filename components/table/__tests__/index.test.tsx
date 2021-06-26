@@ -135,7 +135,7 @@ describe('Table', () => {
       <Table<Item> data={data}>
         <Table.Column<Item> prop="property" label="property" />
         <Table.Column<Item> prop="description" label="description" />
-        <Table.Column<Item> prop={'operation'} label="operation" render={renderAction} />
+        <Table.Column<Item> prop="operation" label="operation" render={renderAction} />
       </Table>,
     )
     const buttons = wrapper.find('tbody').find('#test-btn')

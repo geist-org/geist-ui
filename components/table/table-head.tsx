@@ -51,7 +51,7 @@ const TableHead = <TableDataItem extends TableDataItemBase>(
       <thead>
         <tr>
           {columns.map((column, index) => (
-            <th key={`table-th-${column.value}-${index}`} className={column.className}>
+            <th key={`table-th-${column.prop}-${index}`} className={column.className}>
               <div className="thead-box">{column.label}</div>
             </th>
           ))}
