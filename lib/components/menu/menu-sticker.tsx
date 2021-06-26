@@ -8,7 +8,7 @@ import { useConfigs } from 'lib/config-context'
 
 const MenuSticker = () => {
   const theme = useTheme()
-  const { updateTabbarFixed } = useConfigs()
+  const { updateTabbarFixed, isChinese } = useConfigs()
   const { tabbar: currentUrlTabValue, locale } = useLocale()
   const [tabValue, setTabValue, tabValueRef] = useCurrentState<string>('')
   const [fixed, setFixed, fixedRef] = useCurrentState<boolean>(false)
@@ -41,6 +41,13 @@ const MenuSticker = () => {
         <div className="sticker">
           <div className="inner">
             <Tabs height="46px" value={tabValue} onChange={val => setTabValue(val)}>
+              <Tabs.Item
+                height="46px"
+                font="14px"
+                py={0}
+                label={isChinese ? '主页' : 'Home'}
+                value=""
+              />
               {tabbarData
                 ? tabbarData.map((tab, index) => (
                     <Tabs.Item

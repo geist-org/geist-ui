@@ -1,25 +1,27 @@
 import React from 'react'
-import Router from 'next/router'
-import { useTheme } from 'components'
+import NextLink from 'next/link'
+import { useTheme, Avatar } from 'components'
 import Controls from 'lib/components/controls'
-import LogoIcon from 'lib/components/icons/logo'
 import { useConfigs } from 'lib/config-context'
 
 const MenuLinks = () => {
   const theme = useTheme()
   const { isChinese } = useConfigs()
-  const goHome = () => {
-    const home = isChinese ? '/zh-cn' : '/en-us'
-    Router.push(home)
-  }
 
   return (
     <nav>
-      <div className="site-name">
-        <span title={isChinese ? '回到主页' : 'Go Home'} onClick={goHome}>
-          <LogoIcon />
-        </span>
-      </div>
+      <NextLink href={isChinese ? '/zh-cn' : '/en-us'}>
+        <a className="menu__logo" aria-label="Go Home">
+          <Avatar
+            src="/images/logo.png"
+            width="2rem"
+            height="2rem"
+            draggable={false}
+            title="Logo"
+          />
+          Geist
+        </a>
+      </NextLink>
       <div className="links">
         <Controls />
       </div>
@@ -36,9 +38,17 @@ const MenuLinks = () => {
           height: 60px;
         }
 
-        .site-name {
+        .menu__logo {
           display: flex;
+          flex-direction: row;
           align-items: center;
+          font-size: 1.125rem;
+          font-weight: 500;
+          color: inherit;
+        }
+
+        .menu__logo :global(.avatar) {
+          margin-right: ${theme.layout.gapHalf}!important;
         }
       `}</style>
     </nav>
