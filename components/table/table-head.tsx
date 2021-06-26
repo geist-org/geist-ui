@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import { TableColumnItem } from './table-context'
+import { TableAbstractColumn, TableDataItemBase } from './table-types'
 
-interface Props {
+interface Props<TableDataItem extends TableDataItemBase> {
   width: number
-  columns: Array<TableColumnItem>
+  columns: Array<TableAbstractColumn<TableDataItem>>
   className?: string
 }
 
@@ -12,10 +12,13 @@ const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TableHeadProps = Props & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props<any>>
+export type TableHeadProps<TableDataItem> = Props<TableDataItem> & NativeAttrs
 
-const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
+const makeColgroup = <TableDataItem,>(
+  width: number,
+  columns: Array<TableAbstractColumn<TableDataItem>>,
+) => {
   const unsetWidthCount = columns.filter(c => !c.width).length
   const customWidthTotal = columns.reduce((pre, current) => {
     return current.width ? pre + current.width : pre
@@ -31,11 +34,11 @@ const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
   )
 }
 
-const TableHead: React.FC<TableHeadProps> = ({
-  columns,
-  width,
-}: TableHeadProps & typeof defaultProps) => {
+const TableHead = <TableDataItem extends TableDataItemBase>(
+  props: TableHeadProps<TableDataItem>,
+) => {
   const theme = useTheme()
+  const { columns, width } = props as TableHeadProps<TableDataItem> & typeof defaultProps
   const isScalableWidth = useMemo(() => columns.find(item => !!item.width), [columns])
   const colgroup = useMemo(() => {
     if (!isScalableWidth) return <colgroup />
@@ -48,7 +51,7 @@ const TableHead: React.FC<TableHeadProps> = ({
       <thead>
         <tr>
           {columns.map((column, index) => (
-            <th key={`table-th-${column.value}-${index}`}>
+            <th key={`table-th-${column.prop}-${index}`} className={column.className}>
               <div className="thead-box">{column.label}</div>
             </th>
           ))}

@@ -3,107 +3,102 @@ import TableHead from './table-head'
 import TableBody from './table-body'
 import useRealShape from '../utils/use-real-shape'
 import useResize from '../utils/use-resize'
-import { TableContext, TableColumnItem, TableConfig } from './table-context'
-import useCurrentState from '../utils/use-current-state'
-import { TableOperation } from './table-cell'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import { TableContext, TableConfig } from './table-context'
+import {
+  TableAbstractColumn,
+  TableDataItemBase,
+  TableOnCellClick,
+  TableOnChange,
+  TableOnRowClick,
+  TableRowClassNameHandler,
+} from './table-types'
+import useScaleable, { ScaleableProps, withScaleable } from '../use-scaleable'
+import TableColumn from './table-column'
 
-export type TableOnRow = (row: any, index: number) => void
-export type TableOnCell = (cell: any, index: number, colunm: number) => void
-export type TableOnChange = (data: any) => void
-export type TableDataSource<T extends { [key: string]: any }> = T & {
-  operation?: TableOperation
-}
-
-interface Props {
-  data?: Array<TableDataSource<any>>
+interface Props<TableDataItem extends TableDataItemBase> {
+  data?: Array<TableDataItem>
+  initialData?: Array<TableDataItem>
   emptyText?: string
   hover?: boolean
-  onRow?: TableOnRow
-  onCell?: TableOnCell
-  onChange?: TableOnChange
+  onRow?: TableOnRowClick<TableDataItem>
+  onCell?: TableOnCellClick<TableDataItem>
+  onChange?: TableOnChange<TableDataItem>
   className?: string
+  rowClassName?: TableRowClassNameHandler<TableDataItem>
 }
 
 const defaultProps = {
   hover: true,
+  initialData: [],
   emptyText: '',
-  onRow: (() => {}) as TableOnRow,
-  onCell: (() => {}) as TableOnCell,
-  onChange: (() => {}) as TableOnChange,
   className: '',
+  rowClassName: () => '',
 }
 
-type NativeAttrs = Omit<React.TableHTMLAttributes<any>, keyof Props>
-export type TableProps = Props & NativeAttrs
+type NativeAttrs = Omit<React.TableHTMLAttributes<any>, keyof Props<any>>
+export type TableProps<TableDataItem extends TableDataItemBase> = Props<TableDataItem> &
+  NativeAttrs
 
-const TableComponent: React.FC<React.PropsWithChildren<TableProps>> = ({
-  children,
-  data,
-  hover,
-  emptyText,
-  onRow,
-  onCell,
-  onChange,
-  className,
-  ...props
-}: React.PropsWithChildren<TableProps> & typeof defaultProps) => {
+function TableComponent<TableDataItem extends TableDataItemBase>(
+  tableProps: React.PropsWithChildren<TableProps<TableDataItem>>,
+) {
+  /* eslint-disable  @typescript-eslint/no-unused-vars */
+  const {
+    children,
+    data: customData,
+    initialData,
+    hover,
+    emptyText,
+    onRow,
+    onCell,
+    onChange,
+    className,
+    rowClassName,
+    ...props
+  } = tableProps as React.PropsWithChildren<TableProps<TableDataItem>> &
+    typeof defaultProps
+  /* eslint-enable @typescript-eslint/no-unused-vars */
   const { SCALES } = useScaleable()
   const ref = useRef<HTMLTableElement>(null)
   const [{ width }, updateShape] = useRealShape<HTMLTableElement>(ref)
-  const [columns, setColumns] = useState<Array<TableColumnItem>>([])
-  const [selfData, setSelfData, dataRef] = useCurrentState<Array<TableDataSource<any>>>(
-    [],
-  )
-  const updateColumn = (column: TableColumnItem) => {
+  const [columns, setColumns] = useState<Array<TableAbstractColumn<TableDataItem>>>([])
+  const [data, setData] = useState<Array<TableDataItem>>(initialData)
+  const updateColumn = (column: TableAbstractColumn<TableDataItem>) => {
     setColumns(last => {
-      const hasColumn = last.find(item => item.value === column.value)
+      const hasColumn = last.find(item => item.prop === column.prop)
       if (!hasColumn) return [...last, column]
       return last.map(item => {
-        if (item.value !== column.value) return item
+        if (item.prop !== column.prop) return item
         return column
       })
     })
   }
-  const removeRow = (rowIndex: number) => {
-    const next = dataRef.current.filter((_, index) => index !== rowIndex)
-    onChange(next)
-    setSelfData([...next])
-  }
-  const updateRow = (rowIndex: number, newData: any) => {
-    const next = dataRef.current.map((data, index) =>
-      index === rowIndex ? { ...data, ...newData } : data,
-    )
-    onChange(next)
-    setSelfData([...next])
-  }
 
-  const initialValue = useMemo<TableConfig>(
+  const contextValue = useMemo<TableConfig<TableDataItem>>(
     () => ({
       columns,
       updateColumn,
-      removeRow,
-      updateRow,
     }),
     [columns],
   )
 
   useEffect(() => {
-    if (!data) return
-    setSelfData(data)
-  }, [data])
+    if (typeof customData === 'undefined') return
+    setData(customData)
+  }, [customData])
   useResize(() => updateShape())
 
   return (
-    <TableContext.Provider value={initialValue}>
+    <TableContext.Provider value={contextValue}>
       <table ref={ref} className={className} {...props}>
         <TableHead columns={columns} width={width} />
-        <TableBody
-          data={selfData}
+        <TableBody<TableDataItem>
+          data={data}
           hover={hover}
           emptyText={emptyText}
           onRow={onRow}
           onCell={onCell}
+          rowClassName={rowClassName}
         />
         {children}
 
@@ -126,5 +121,7 @@ const TableComponent: React.FC<React.PropsWithChildren<TableProps>> = ({
 
 TableComponent.defaultProps = defaultProps
 TableComponent.displayName = 'GeistTable'
-const Table = withScaleable(TableComponent)
-export default Table
+TableComponent.Column = TableColumn
+let Table = withScaleable(TableComponent) as any
+Table.Column = TableColumn
+export default Table as typeof TableComponent & ScaleableProps
