@@ -20,7 +20,7 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
   const isActive = pathname === href
 
   return (
-    <div className="link">
+    <div className={`link ${isActive ? 'active' : ''}`}>
       <Link href={href}>
         <a className={isActive ? 'active' : ''}>
           {title}
@@ -60,6 +60,30 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
           font-size: 0.75rem;
           color: ${theme.palette.accents_4};
           font-weight: 400;
+        }
+
+        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
+          .link {
+            background-color: ${theme.palette.accents_1};
+            margin-bottom: 22px;
+            padding: 0 25px;
+            border-radius: 30px;
+            height: 64px;
+            user-select: none;
+          }
+          .link.active {
+            border: 8px solid ${theme.palette.accents_5};
+            background-color: ${theme.palette.background};
+          }
+          a {
+            font-weight: bold;
+            font-size: 22px;
+            color: ${theme.palette.accents_6};
+          }
+          a.active {
+            font-size: 22px;
+            color: ${theme.palette.accents_5};
+          }
         }
       `}</style>
     </div>

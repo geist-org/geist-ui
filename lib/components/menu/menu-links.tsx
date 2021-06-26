@@ -33,7 +33,7 @@ const MenuLinks = () => {
           position: relative;
           margin: 0 auto;
           padding: 0 ${theme.layout.gap};
-          height: 60px;
+          height: var(--geist-page-nav-height);
         }
 
         .site-name {
