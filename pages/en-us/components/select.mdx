@@ -231,7 +231,7 @@ Display a dropdown list of items.
 | **initialValue**      | initial value                                            | `string`, `string[]`                                | -                                 | -               |
 | **placeholder**       | placeholder string                                       | `string`                                            | -                                 | -               |
 | **width**             | css width value of select                                | `string`                                            | -                                 | `initial`       |
-| **type**              | current type                                             | `NormalTypes`                                       | [SelectType](#selecttype)         | `default`       |
+| **type**              | current type                                             | `SelectTypes`                                       | [SelectTypes](#selecttypes)       | `default`       |
 | **icon**              | icon component                                           | `ComponentType`                                     | -                                 | `SVG Component` |
 | **pure**              | remove icon component                                    | `boolean`                                           | -                                 | `false`         |
 | **multiple**          | support multiple selection                               | `boolean`                                           | -                                 | `false`         |
@@ -252,10 +252,10 @@ Display a dropdown list of items.
 | **disabled**        | disable current option | `boolean`        | -                                | `false` |
 | ...                 | native props           | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
 
-<Attributes.Title>SelectType</Attributes.Title>
+<Attributes.Title>SelectTypes</Attributes.Title>
 
 ```ts
-type SelectType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type SelectTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

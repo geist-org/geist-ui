@@ -212,7 +212,7 @@ Retrieve text input from a user.
 | **value**         | input value                   | `string`                                       | -                                 | -         |
 | **initialValue**  | initial value                 | `string`                                       | -                                 | -         |
 | **placeholder**   | placeholder                   | `string`                                       | -                                 | -         |
-| **type**          | current type                  | `NormalTypes`                                  | [InputType](#inputtype)           | `default` |
+| **type**          | current type                  | `InputTypes`                                   | [InputTypes](#inputtypes)         | `default` |
 | **htmlType**      | native type attr              | `string`                                       | -                                 | `text`    |
 | **readOnly**      | native attr                   | `boolean`                                      | -                                 | `false`   |
 | **disabled**      | disable input                 | `boolean`                                      | -                                 | `false`   |
@@ -235,18 +235,16 @@ Retrieve text input from a user.
 | **hideToggle** | hide toggle icon | `boolean`     | -                           | `false` |
 | ...            | input props      | `Input.Props` | [Input.Props](#input.props) | -       |
 
-<Attributes.Title>InputType</Attributes.Title>
+<Attributes.Title>InputTypes</Attributes.Title>
 
 ```ts
-type InputType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type InputTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
+type useInput = (initialValue: string) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

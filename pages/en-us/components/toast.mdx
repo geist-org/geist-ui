@@ -109,7 +109,7 @@ const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
 ```ts
 interface Toast {
   text?: string
-  type?: NormalTypes
+  type?: ToastTypes
   delay?: number
   actions?: Array<ToastAction>
 }
@@ -125,10 +125,10 @@ interface ToastAction {
 }
 ```
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>ToastTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type ToastTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

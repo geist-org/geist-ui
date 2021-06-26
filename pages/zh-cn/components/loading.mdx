@@ -69,15 +69,15 @@ export const meta = {
 
 | 属性           | 描述               | 类型             | 推荐值                            | 默认      |
 | -------------- | ------------------ | ---------------- | --------------------------------- | --------- |
-| **type**       | 指示器的类型       | `NormalTypes`    | [NormalTypes](#mormaltypes)       | `default` |
+| **type**       | 指示器的类型       | `LoadingTypes`   | [LoadingTypes](#loadingtypes)     | `default` |
 | **color**      | 自定义指示器的色彩 | `string`         | -                                 | -         |
 | **spaceRatio** | 点之间的空间比例   | `number`         | -                                 | 1         |
 | ...            | 原生属性           | `HTMLAttributes` | `'id', 'title', 'className', ...` | -         |
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>LoadingTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type LoadingTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

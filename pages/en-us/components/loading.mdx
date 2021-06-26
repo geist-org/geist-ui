@@ -69,15 +69,15 @@ Indicate an action running in the background.
 
 | Attribute      | Description                        | Type             | Accepted values                   | Default   |
 | -------------- | ---------------------------------- | ---------------- | --------------------------------- | --------- |
-| **type**       | bg-color type                      | `NormalTypes`    | [NormalTypes](#mormaltypes)       | `default` |
+| **type**       | bg-color type                      | `LoadingTypes`   | [LoadingTypes](#loadingtypes)     | `default` |
 | **color**      | custom bg color                    | `string`         | -                                 | -         |
 | **spaceRatio** | percentage of space between points | `number`         | -                                 | 1         |
 | ...            | native props                       | `HTMLAttributes` | `'id', 'title', 'className', ...` | -         |
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>LoadingTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type LoadingTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>
