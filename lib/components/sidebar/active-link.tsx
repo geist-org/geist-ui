@@ -36,7 +36,6 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
           align-items: center;
           justify-content: flex-start;
           cursor: pointer;
-          text-transform: capitalize;
         }
 
         a {
