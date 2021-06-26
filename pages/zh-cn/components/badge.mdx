@@ -106,7 +106,7 @@ export const meta = {
 
 | 属性     | 描述               | 类型             | 推荐值                          | 默认      |
 | -------- | ------------------ | ---------------- | ------------------------------- | --------- |
-| **type** | 徽章的类型         | `NormalTypes`    | [NormalTypes](#normaltypes)     | `default` |
+| **type** | 徽章的类型         | `BadgeTypes`     | [BadgeTypes](#badgetypes)       | `default` |
 | **dot**  | 忽略内容并显示圆点 | `boolean`        | -                               | `false`   |
 | ...      | 原生属性           | `HTMLAttributes` | `'alt', 'id', 'className', ...` | -         |
 
@@ -117,10 +117,10 @@ export const meta = {
 | **placement** | 固定徽章的位置 | `AnchorPlacement` | [AnchorPlacement](#anchorplacement) | `topRight` |
 | ...           | 原生属性       | `HTMLAttributes`  | `'alt', 'id', 'className', ...`     | -          |
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>BadgeTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type BadgeTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>AnchorPlacement</Attributes.Title>
