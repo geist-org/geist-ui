@@ -106,7 +106,7 @@ Display an indicator that requires attention.
 
 | Attribute | Description                 | Type             | Accepted values                 | Default   |
 | --------- | --------------------------- | ---------------- | ------------------------------- | --------- |
-| **type**  | badge type                  | `NormalTypes`    | [NormalTypes](#normaltypes)     | `default` |
+| **type**  | badge type                  | `BadgeTypes`     | [BadgeTypes](#badgetypes)       | `default` |
 | **dot**   | show dot and ignore content | `boolean`        | -                               | `false`   |
 | ...       | native props                | `HTMLAttributes` | `'alt', 'id', 'className', ...` | -         |
 
@@ -117,10 +117,10 @@ Display an indicator that requires attention.
 | **placement** | fixe position of Badge | `AnchorPlacement` | [AnchorPlacement](#anchorplacement) | `topRight` |
 | ...           | native props           | `HTMLAttributes`  | `'alt', 'id', 'className', ...`     | -          |
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>BadgeTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type BadgeTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>AnchorPlacement</Attributes.Title>

@@ -84,30 +84,30 @@ Displays a boolean value.
 <Attributes edit="/pages/en-us/components/checkbox.mdx">
 <Attributes.Title>Checkbox.Props</Attributes.Title>
 
-| Attribute          | Description                                 | Type                                           | Accepted values               | Default   |
-| ------------------ | ------------------------------------------- | ---------------------------------------------- | ----------------------------- | --------- |
-| **checked**        | checked or not                              | `boolean`                                      | -                             | -         |
-| **initialChecked** | checked or not on initial                   | `boolean`                                      | -                             | `false`   |
-| **onChange**       | change event handler                        | `CheckboxEvent`                                | -                             | -         |
-| **value**          | unique identification value (only in group) | `string`                                       | -                             | -         |
-| **disabled**       | disable checkbox                            | `boolean`                                      | -                             | `false`   |
-| **type**           | current type                                | `NormalTypes`                                  | [CheckboxType](#checkboxtype) | `default` |
-| **ref**            | forwardRef                                  | <Code>Ref<HTMLInputElement &#124; null></Code> | -                             | -         |
-| ...                | native props                                | `LabelHTMLAttributes`                          | `'form', 'className', ...`    | -         |
+| Attribute          | Description                                 | Type                                           | Accepted values                 | Default   |
+| ------------------ | ------------------------------------------- | ---------------------------------------------- | ------------------------------- | --------- |
+| **checked**        | checked or not                              | `boolean`                                      | -                               | -         |
+| **initialChecked** | checked or not on initial                   | `boolean`                                      | -                               | `false`   |
+| **onChange**       | change event handler                        | `CheckboxEvent`                                | -                               | -         |
+| **value**          | unique identification value (only in group) | `string`                                       | -                               | -         |
+| **disabled**       | disable checkbox                            | `boolean`                                      | -                               | `false`   |
+| **type**           | current type                                | `CheckboxTypes`                                | [CheckboxTypes](#checkboxtypes) | `default` |
+| **ref**            | forwardRef                                  | <Code>Ref<HTMLInputElement &#124; null></Code> | -                               | -         |
+| ...                | native props                                | `LabelHTMLAttributes`                          | `'form' ...`                    | -         |
 
 <Attributes.Title>Checkbox.Group.Props</Attributes.Title>
 
-| Attribute    | Description            | Type                         | Accepted values          | Default |
-| ------------ | ---------------------- | ---------------------------- | ------------------------ | ------- |
-| **value**    | checked children       | `Array<string>`              | -                        | `[]`    |
-| **disabled** | disable checkbox group | `boolean`                    | -                        | `false` |
-| **onChange** | change event handler   | `(values: string[]) => void` | -                        | -       |
-| ...          | native props           | `HTMLAttributes`             | `'id', 'className', ...` | -       |
+| Attribute    | Description            | Type                         | Accepted values | Default |
+| ------------ | ---------------------- | ---------------------------- | --------------- | ------- |
+| **value**    | checked children       | `Array<string>`              | -               | `[]`    |
+| **disabled** | disable checkbox group | `boolean`                    | -               | `false` |
+| **onChange** | change event handler   | `(values: string[]) => void` | -               | -       |
+| ...          | native props           | `HTMLAttributes`             | `'id', ...`     | -       |
 
-<Attributes.Title>CheckboxType</Attributes.Title>
+<Attributes.Title>CheckboxTypes</Attributes.Title>
 
 ```ts
-type CheckboxType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type CheckboxTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>CheckboxEvent</Attributes.Title>
