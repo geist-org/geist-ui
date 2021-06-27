@@ -28,6 +28,10 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
         </a>
       </Link>
       <style jsx>{`
+        a {
+          font: inherit;
+        }
+
         .link {
           display: flex;
           align-items: baseline;
@@ -37,8 +41,10 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
           transition: all 200ms ease;
         }
 
-        a {
-          font: inherit;
+        span {
+          font-size: 0.75rem;
+          color: ${theme.palette.accents_4};
+          font-weight: 400;
         }
 
         .link.active {
@@ -46,10 +52,8 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
           font-weight: 600;
         }
 
-        span {
-          font-size: 0.75rem;
-          color: ${theme.palette.accents_4};
-          font-weight: 400;
+        .link.active span {
+          color: ${theme.palette.successLight};
         }
 
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
