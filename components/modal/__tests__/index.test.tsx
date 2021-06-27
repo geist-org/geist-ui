@@ -1,20 +1,13 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { Modal } from 'components'
+import { KeyCode, Modal } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 import { expectModalIsClosed, expectModalIsOpened } from './use-modal.test'
-import { act } from 'react-dom/test-utils'
-
-const TabEvent = {
-  key: 'TAB',
-  keyCode: 9,
-  which: 9,
-}
 
 describe('Modal', () => {
   it('should render correctly', () => {
     const wrapper = mount(
-      <Modal open={true}>
+      <Modal visible={true}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Subtitle>This is a modal</Modal.Subtitle>
         <Modal.Content>
@@ -29,19 +22,17 @@ describe('Modal', () => {
   })
 
   it('should trigger event when modal changed', async () => {
-    const openHandler = jest.fn()
     const closeHandler = jest.fn()
     const wrapper = mount(
-      <Modal onOpen={openHandler} onClose={closeHandler}>
+      <Modal onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
       </Modal>,
     )
     expectModalIsClosed(wrapper)
 
-    wrapper.setProps({ open: true })
+    wrapper.setProps({ visible: true })
     await updateWrapper(wrapper, 350)
     expectModalIsOpened(wrapper)
-    expect(openHandler).toHaveBeenCalled()
 
     wrapper.find('.backdrop').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 500)
@@ -52,7 +43,7 @@ describe('Modal', () => {
   it('should disable backdrop event', async () => {
     const closeHandler = jest.fn()
     const wrapper = mount(
-      <Modal open={true} disableBackdropClick onClose={closeHandler}>
+      <Modal visible={true} disableBackdropClick onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Action>Submit</Modal.Action>
       </Modal>,
@@ -66,7 +57,7 @@ describe('Modal', () => {
   it('should disable backdrop even if actions missing', async () => {
     const closeHandler = jest.fn()
     const wrapper = mount(
-      <Modal open={true} disableBackdropClick onClose={closeHandler}>
+      <Modal visible={true} disableBackdropClick onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
       </Modal>,
     )
@@ -80,7 +71,7 @@ describe('Modal', () => {
     const actions1 = jest.fn()
     const actions2 = jest.fn()
     const wrapper = mount(
-      <Modal open={true}>
+      <Modal visible={true}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Action passive onClick={actions1}>
           Submit
@@ -100,7 +91,7 @@ describe('Modal', () => {
   it('should be close modal through action event', async () => {
     const closeHandler = jest.fn()
     const wrapper = mount(
-      <Modal open={true} onClose={closeHandler}>
+      <Modal visible={true} onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Action passive onClick={e => e.close()}>
           Close
@@ -115,7 +106,7 @@ describe('Modal', () => {
 
   it('customization should be supported', () => {
     const wrapper = mount(
-      <Modal open={true} width="100px" wrapClassName="test-class">
+      <Modal visible={true} width="100px" wrapClassName="test-class">
         <Modal.Title>Modal</Modal.Title>
       </Modal>,
     )
@@ -127,29 +118,46 @@ describe('Modal', () => {
 
   it('focus should only be switched within modal', () => {
     const wrapper = mount(
-      <Modal open={true} width="100px" wrapClassName="test-class">
+      <Modal visible={true} width="100px" wrapClassName="test-class">
         <Modal.Title>Modal</Modal.Title>
       </Modal>,
     )
     const tabStart = wrapper.find('.hide-tab').at(0).getDOMNode()
     const tabEnd = wrapper.find('.hide-tab').at(1).getDOMNode()
-    const eventElement = wrapper.find('.wrapper').at(0)
     expect(document.activeElement).toBe(tabStart)
 
-    act(() => {
-      eventElement.simulate('keydown', {
-        ...TabEvent,
-        shiftKey: true,
-      })
-    })
-    expect(document.activeElement).toBe(tabEnd)
+    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: KeyCode.Tab }))
 
-    act(() => {
-      eventElement.simulate('keydown', {
-        ...TabEvent,
-        shiftKey: false,
-      })
+    expect(tabEnd.outerHTML).toEqual(document.activeElement?.outerHTML)
+    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: KeyCode.Tab }))
+    expect(tabStart.outerHTML).toEqual(document.activeElement?.outerHTML)
+  })
+
+  it('should close modal when keyboard event is triggered', async () => {
+    const wrapper = mount(
+      <Modal visible={true}>
+        <Modal.Title>Modal</Modal.Title>
+      </Modal>,
+    )
+    expectModalIsOpened(wrapper)
+    wrapper.simulate('keydown', {
+      keyCode: KeyCode.Escape,
     })
-    expect(document.activeElement).toBe(tabStart)
+    await updateWrapper(wrapper, 500)
+    expectModalIsClosed(wrapper)
+  })
+
+  it('should prevent close modal when keyboard is false', async () => {
+    const wrapper = mount(
+      <Modal visible={true} keyboard={false}>
+        <Modal.Title>Modal</Modal.Title>
+      </Modal>,
+    )
+    expectModalIsOpened(wrapper)
+    wrapper.simulate('keydown', {
+      keyCode: KeyCode.Escape,
+    })
+    await updateWrapper(wrapper, 500)
+    expectModalIsOpened(wrapper)
   })
 })
