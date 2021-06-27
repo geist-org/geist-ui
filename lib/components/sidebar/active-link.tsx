@@ -20,40 +20,30 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
   const isActive = pathname === href
 
   return (
-    <div className={`link ${isActive ? 'active' : ''}`}>
+    <>
       <Link href={href}>
-        <a className={isActive ? 'active' : ''}>
+        <a className={`link ${isActive ? 'active' : ''}`}>
           {title}
           {subtitle && <span>&nbsp;{subtitle}</span>}
         </a>
       </Link>
       <style jsx>{`
         .link {
-          width: 100%;
-          color: ${theme.palette.accents_5};
           display: flex;
-          height: 2.25rem;
-          align-items: center;
-          justify-content: flex-start;
-          cursor: pointer;
+          align-items: baseline;
+          font-size: 1rem;
+          color: ${theme.palette.accents_6};
+          padding: calc(${theme.layout.unit} * 0.375) 0;
+          transition: all 200ms ease;
         }
 
         a {
-          color: ${theme.palette.accents_7};
-          font-size: 1rem;
-          transition: all 200ms ease;
-          font-weight: 400;
-          display: inline-flex;
-          align-items: baseline;
+          font: inherit;
         }
 
-        a.active {
+        .link.active {
           color: ${theme.palette.success};
           font-weight: 600;
-        }
-
-        a.active span {
-          color: ${theme.palette.successLight};
         }
 
         span {
@@ -64,29 +54,17 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
 
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .link {
-            background-color: ${theme.palette.accents_1};
-            margin-bottom: 22px;
-            padding: 0 25px;
-            border-radius: 30px;
-            height: 64px;
+            color: ${theme.palette.foreground};
+            padding: calc(${theme.layout.unit} * 0.875) 0;
+            border-bottom: 1px solid ${theme.palette.border};
             user-select: none;
           }
           .link.active {
-            border: 8px solid ${theme.palette.accents_5};
-            background-color: ${theme.palette.background};
-          }
-          a {
-            font-weight: bold;
-            font-size: 22px;
-            color: ${theme.palette.accents_6};
-          }
-          a.active {
-            font-size: 22px;
-            color: ${theme.palette.accents_5};
+            font-weight: 700;
           }
         }
       `}</style>
-    </div>
+    </>
   )
 })
 

@@ -30,14 +30,13 @@ const ActiveCatalog: React.FC<Props> = React.memo(({ name, localeName, ...props 
 
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           span {
-            letter-spacing: 0.3px;
+            color: ${theme.palette.foreground};
+            letter-spacing: unset;
             display: inline-block;
             font-weight: 800;
-            font-size: 17px;
-            padding: 15px 10px 10px;
-            width: 100%;
-            text-align: center;
-            color: ${theme.palette.accents_6};
+            font-size: 1.375rem;
+            padding: ${theme.layout.unit} 0 0;
+            text-transform: none;
           }
         }
       `}</style>
