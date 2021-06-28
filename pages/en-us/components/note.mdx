@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Note } from 'components'
 
 export const meta = {
-  title: 'note',
+  title: 'Note',
   group: 'Feedback',
 }
 
@@ -79,12 +79,18 @@ Display text that requires attention or provides additional information.
 <Attributes edit="/pages/en-us/components/note.mdx">
 <Attributes.Title>Note.Props</Attributes.Title>
 
-| Attribute  | Description               | Type                 | Accepted values                                         | Default   |
-| ---------- | ------------------------- | -------------------- | ------------------------------------------------------- | --------- |
-| **type**   | note type                 | `NormalTypes`        | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **label**  | show label or custom text | `boolean` / `string` | -                                                       | -         |
-| **filled** | fill color                | `boolean`            | -                                                       | `false`   |
-| ...        | native props              | `HTMLAttributes`     | `'id', 'className', ...`                                | -         |
+| Attribute  | Description               | Type                 | Accepted values          | Default   |
+| ---------- | ------------------------- | -------------------- | ------------------------ | --------- |
+| **type**   | note type                 | `NoteTypes`          | [NoteTypes](#nodetypes)  | `default` |
+| **label**  | show label or custom text | `boolean` / `string` | -                        | -         |
+| **filled** | fill color                | `boolean`            | -                        | `false`   |
+| ...        | native props              | `HTMLAttributes`     | `'id', 'className', ...` | -         |
+
+<Attributes.Title>NoteTypes</Attributes.Title>
+
+```ts
+type NoteTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

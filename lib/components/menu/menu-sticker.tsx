@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from 'react'
-import { Tabs, useTheme } from 'components'
+import { useMediaQuery, Tabs, useTheme } from 'components'
 import useCurrentState from 'components/utils/use-current-state'
 import Router from 'next/router'
 import Metadatas from 'lib/data'
@@ -12,10 +12,13 @@ const MenuSticker = () => {
   const { tabbar: currentUrlTabValue, locale } = useLocale()
   const [tabValue, setTabValue, tabValueRef] = useCurrentState<string>('')
   const [fixed, setFixed, fixedRef] = useCurrentState<boolean>(false)
+  const isSM = useMediaQuery('sm', { match: 'down' })
+  const isXS = useMediaQuery('xs', { match: 'down' })
+  const isFixedTabs = fixed && !isXS
 
   const tabbarData = useMemo(() => Metadatas[locale], [locale])
 
-  useEffect(() => updateTabbarFixed(fixed), [fixed])
+  useEffect(() => updateTabbarFixed(isFixedTabs), [isFixedTabs])
   useEffect(() => setTabValue(currentUrlTabValue), [currentUrlTabValue])
   useEffect(() => {
     const scrollHandler = () => {
@@ -36,13 +39,16 @@ const MenuSticker = () => {
 
   return (
     <>
-      <div className={`nav-fill ${fixed ? 'active' : ''}`} />
-      <nav className={fixed ? 'fixed' : ''}>
+      <div className={`nav-fill ${isFixedTabs ? 'active' : ''}`} />
+      <nav className={isFixedTabs ? 'fixed' : ''}>
         <div className="sticker">
-          <div className="inner">
-            <Tabs height="46px" value={tabValue} onChange={val => setTabValue(val)}>
+          <div className={`inner ${isSM && 'sm'}`}>
+            <Tabs
+              height="calc(var(--geist-page-tab-height) - 2px)"
+              value={tabValue}
+              onChange={val => setTabValue(val)}>
               <Tabs.Item
-                height="46px"
+                height="calc(var(--geist-page-tab-height) - 2px)"
                 font="14px"
                 py={0}
                 label={isChinese ? '主页' : 'Home'}
@@ -51,7 +57,7 @@ const MenuSticker = () => {
               {tabbarData
                 ? tabbarData.map((tab, index) => (
                     <Tabs.Item
-                      height="46px"
+                      height="calc(var(--geist-page-tab-height) - 2px)"
                       font="14px"
                       py={0}
                       label={tab.localeName || tab.name}
@@ -75,14 +81,14 @@ const MenuSticker = () => {
         }
 
         .nav-fill.active {
-          height: 48px;
+          height: var(--geist-page-tab-height);
           visibility: visible;
         }
 
         nav {
           position: relative;
           width: 100%;
-          height: 48px;
+          height: var(--geist-page-tab-height);
           background-color: ${theme.palette.background};
         }
 
@@ -118,6 +124,20 @@ const MenuSticker = () => {
           height: 100%;
           z-index: 900;
           margin: 0 auto;
+        }
+
+        .inner.sm {
+          width: 100%;
+        }
+        .inner.sm :global(.tab) {
+          width: 33.333%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+        }
+        .inner.sm :global(.tab.active) {
+          background-color: ${theme.palette.accents_2};
         }
 
         .inner :global(.content) {

@@ -3,7 +3,7 @@ import { Textarea, Spacer, useInput, Button, Code } from 'components'
 import { useState } from 'react'
 
 export const meta = {
-  title: 'textarea',
+  title: 'Textarea',
   group: 'Data Entry',
 }
 
@@ -114,24 +114,22 @@ Retrieve multi-line user input.
 <Attributes edit="/pages/en-us/components/textarea.mdx">
 <Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
 
-| Attribute        | Description    | Type                             | Accepted values                                                  | Default   |
-| ---------------- | -------------- | -------------------------------- | ---------------------------------------------------------------- | --------- |
-| **value**        | textarea value | `string`                         | -                                                                | -         |
-| **initialValue** | textarea value | `string`                         | -                                                                | -         |
-| **placeholder**  | placeholder    | `string`                         | -                                                                | -         |
-| **type**         | current type   | `NormalTypes`                    | [TextareaType](#textareatype)                                    | `default` |
-| **readOnly**     | native attr    | `boolean`                        | -                                                                | `false`   |
-| **disabled**     | disable input  | `boolean`                        | -                                                                | `false`   |
-| **onChange**     | change event   | `(e: React.ChangeEvent) => void` | -                                                                | -         |
-| **resize**       | CSS attribute  | `string`                         | `'none', 'both', 'horizontal', 'vertical', 'initial', 'inherit'` | `none`    |
-| ...              | native props   | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                                 | -         |
+| Attribute        | Description    | Type                             | Accepted values                  | Default   |
+| ---------------- | -------------- | -------------------------------- | -------------------------------- | --------- |
+| **value**        | textarea value | `string`                         | -                                | -         |
+| **initialValue** | textarea value | `string`                         | -                                | -         |
+| **placeholder**  | placeholder    | `string`                         | -                                | -         |
+| **type**         | current type   | `TextareaTypes`                  | [TextareaTypes](#textareatypes)  | `default` |
+| **readOnly**     | native attr    | `boolean`                        | -                                | `false`   |
+| **disabled**     | disable input  | `boolean`                        | -                                | `false`   |
+| **onChange**     | change event   | `(e: React.ChangeEvent) => void` | -                                | -         |
+| **resize**       | CSS attribute  | `CSSResize`                      | [CSSResize](#cssresize)          | `none`    |
+| ...              | native props   | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...` | -         |
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
+type useInput = (initialValue: string) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>
@@ -143,10 +141,16 @@ type useInput = (
 }
 ```
 
-<Attributes.Title>TextareaType</Attributes.Title>
+<Attributes.Title>TextareaTypes</Attributes.Title>
 
 ```ts
-type TextareaType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type TextareaTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>CSSResize</Attributes.Title>
+
+```ts
+type CSSResize = 'none' | 'both' | 'horizontal' | 'vertical' | 'initial' | 'inherit'
 ```
 
 </Attributes>

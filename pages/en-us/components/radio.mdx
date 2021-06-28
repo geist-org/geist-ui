@@ -3,7 +3,7 @@ import { Radio, Spacer, Code } from 'components'
 import { useState } from 'react'
 
 export const meta = {
-  title: 'radio',
+  title: 'Radio',
   group: 'Data Entry',
 }
 
@@ -109,16 +109,16 @@ Provides single user input from a selection of options.
 <Attributes edit="/pages/en-us/components/radio.mdx">
 <Attributes.Title>Radio.Props</Attributes.Title>
 
-| Attribute    | Description                   | Type                                           | Accepted values          | Default   |
-| ------------ | ----------------------------- | ---------------------------------------------- | ------------------------ | --------- |
-| **checked**  | selected or not (in single)   | `boolean`                                      | -                        | `false`   |
-| **value**    | unique ident value (in group) | `string`                                       | -                        | -         |
-| **id**       | native attr                   | `string`                                       | -                        | -         |
-| **disabled** | disable current radio         | `boolean`                                      | -                        | `false`   |
-| **type**     | current type                  | `NormalTypes`                                  | [RadioType](#radiotype)  | `default` |
-| **onChange** | change event                  | `(e: RadioEvent) => void`                      | -                        | -         |
-| **ref**      | forwardRef                    | <Code>Ref<HTMLInputElement &#124; null></Code> | -                        | -         |
-| ...          | native props                  | `InputHTMLAttributes`                          | `'id', 'className', ...` | -         |
+| Attribute    | Description                   | Type                                           | Accepted values           | Default   |
+| ------------ | ----------------------------- | ---------------------------------------------- | ------------------------- | --------- |
+| **checked**  | selected or not (in single)   | `boolean`                                      | -                         | `false`   |
+| **value**    | unique ident value (in group) | `string`                                       | -                         | -         |
+| **id**       | native attr                   | `string`                                       | -                         | -         |
+| **disabled** | disable current radio         | `boolean`                                      | -                         | `false`   |
+| **type**     | current type                  | `RadioTypes`                                   | [RadioTypes](#radiotypes) | `default` |
+| **onChange** | change event                  | `(e: RadioEvent) => void`                      | -                         | -         |
+| **ref**      | forwardRef                    | <Code>Ref<HTMLInputElement &#124; null></Code> | -                         | -         |
+| ...          | native props                  | `InputHTMLAttributes`                          | `'id', 'className', ...`  | -         |
 
 <Attributes.Title>Radio.Group.Props</Attributes.Title>
 
@@ -137,10 +137,10 @@ Provides single user input from a selection of options.
 | --------- | ------------ | ---------------- | ------------------------ | ------- |
 | ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
 
-<Attributes.Title>RadioType</Attributes.Title>
+<Attributes.Title>RadioTypes</Attributes.Title>
 
 ```ts
-type RadioType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type RadioTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

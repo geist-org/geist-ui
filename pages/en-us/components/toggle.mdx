@@ -73,7 +73,7 @@ Displays a boolean value.
 | **checked**        | checked or not            | `boolean`             | -                                  | -         |
 | **initialChecked** | checked or not on initial | `boolean`             | -                                  | `false`   |
 | **onChange**       | change event handler      | `ToggleEvent`         | -                                  | -         |
-| **type**           | current type              | `NormalTypes`         | [ToggleType](#toggletype)          | `default` |
+| **type**           | current type              | `ToggleTypes`         | [ToggleTypes](#toggletypes)        | `default` |
 | **disabled**       | disable toggle            | `boolean`             | -                                  | `false`   |
 | ...                | native props              | `LabelHTMLAttributes` | `'from', 'name', 'className', ...` | -         |
 
@@ -92,10 +92,10 @@ export interface ToggleEvent {
 }
 ```
 
-<Attributes.Title>ToggleType</Attributes.Title>
+<Attributes.Title>ToggleTypes</Attributes.Title>
 
 ```ts
-type ToggleType = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type ToggleTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

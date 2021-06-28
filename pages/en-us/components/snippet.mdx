@@ -100,17 +100,17 @@ Display a snippet of copyable code for the command line.
 <Attributes edit="/pages/en-us/components/snippet.mdx">
 <Attributes.Title>Snippet.Props</Attributes.Title>
 
-| Attribute     | Description             | Type                          | Accepted values                  | Default                |
-| ------------- | ----------------------- | ----------------------------- | -------------------------------- | ---------------------- |
-| **text**      | code snippet            | `string` `Array<string>`      | -                                | -                      |
-| **type**      | snippet types           | [SnippetTypes](#snippettypes) | [SnippetTypes](#snippettypes)    | `default`              |
-| **filled**    | filled style            | `boolean`                     | -                                | `false`                |
-| **width**     | set CSS string          | `string`                      | -                                | `initial`              |
-| **copy**      | function of copy button | `CopyTypes`                   | `'default', 'silent', 'prevent'` | `default`              |
-| **symbol**    | symbol snippet          | `string`                      | -                                | `$`                    |
-| **toastText** | toast text              | `string`                      | -                                | `Copied to clipboard!` |
-| **toastType** | toast type              | `NormalTypes`                 | [NormalTypes](#normaltypes)      | `success`              |
-| ...           | native props            | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -                      |
+| Attribute     | Description             | Type                | Accepted values                  | Default                |
+| ------------- | ----------------------- | ------------------- | -------------------------------- | ---------------------- |
+| **text**      | code snippet            | `string` `string[]` | -                                | -                      |
+| **type**      | snippet types           | `SnippetTypes`      | [SnippetTypes](#snippettypes)    | `default`              |
+| **filled**    | filled style            | `boolean`           | -                                | `false`                |
+| **width**     | set CSS string          | `string`            | -                                | `initial`              |
+| **copy**      | function of copy button | `CopyTypes`         | [CopyTypes](#copytypes)          | `default`              |
+| **symbol**    | symbol snippet          | `string`            | -                                | `$`                    |
+| **toastText** | toast text              | `string`            | -                                | `Copied to clipboard!` |
+| **toastType** | toast type              | `ToastTypes`        | [ToastTypes](#toasttypes)        | `success`              |
+| ...           | native props            | `HTMLAttributes`    | `'id', 'name', 'className', ...` | -                      |
 
 <Attributes.Title>SnippetTypes</Attributes.Title>
 
@@ -125,10 +125,22 @@ type SnippetTypes =
   | 'lite'
 ```
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>CopyTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type CopyTypes = 'default' | 'silent' | 'prevent'
+```
+
+<Attributes.Title>SnippetTypes</Attributes.Title>
+
+```ts
+type SnippetTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>ToastTypes</Attributes.Title>
+
+```ts
+type ToastTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

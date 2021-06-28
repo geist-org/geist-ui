@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Card, Fieldset, Button, Text, Divider } from 'components'
 
 export const meta = {
-  title: 'fieldset',
+  title: 'Fieldset',
   group: 'Surfaces',
 }
 
@@ -16,11 +16,11 @@ Display a collection of related information in a single unit.
   scope={{ Fieldset, Button }}
   code={`
 <Fieldset>
-  <Fieldset.Title>The Evil Rabbit Jumped over the Fence</Fieldset.Title>
-  <Fieldset.Subtitle>The Evil Rabbit Jumped over the Fence</Fieldset.Subtitle>
+  <Fieldset.Title>HTTP is simple</Fieldset.Title>
+  <Fieldset.Subtitle>HTTP is generally designed to be simple and human readable, even with the added complexity introduced in HTTP/2 by encapsulating HTTP messages into frames. HTTP messages can be read and understood by humans, providing easier testing for developers, and reduced complexity for newcomers.</Fieldset.Subtitle>
   <Fieldset.Footer>
-      The Evil Rabbit Jumped over the Fence
-      <Button auto scale={1/3}>Actions</Button>
+      HTTP Knowledge Base
+      <Button auto scale={1/3}>OK</Button>
     </Fieldset.Footer>
   </Fieldset>
 `}
@@ -32,8 +32,8 @@ Display a collection of related information in a single unit.
   scope={{ Fieldset, Button, Text }}
   code={`
 <Fieldset>
-  <Fieldset.Title>The Evil Rabbit Jumped over the Fence</Fieldset.Title>
-  <Fieldset.Subtitle>The Evil Rabbit Jumped over the Fence</Fieldset.Subtitle>
+  <Fieldset.Title>HTTP is extensible</Fieldset.Title>
+  <Fieldset.Subtitle>Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with. </Fieldset.Subtitle>
   <Fieldset.Footer>
       <Text type="error">An error has occurred.</Text>
       <Button auto scale={1/3} type="error">Revert</Button>
@@ -50,28 +50,28 @@ Display a collection of related information in a single unit.
 () => {
   const handler = v => console.log(v)
   return (
-    <Fieldset.Group value="two" onChange={handler}>
-    <Fieldset label="one">
-      <Fieldset.Title>The Evil Rabbit Jumped over the Fence</Fieldset.Title>
-      <Fieldset.Subtitle>The Evil Rabbit Jumped over the Fence</Fieldset.Subtitle>
+    <Fieldset.Group value="extensible" onChange={handler}>
+    <Fieldset label="simple">
+      <Fieldset.Title>HTTP is simple</Fieldset.Title>
+      <Fieldset.Subtitle>HTTP is generally designed to be simple and human readable, even with the added complexity introduced in HTTP/2 by encapsulating HTTP messages into frames.</Fieldset.Subtitle>
       <Fieldset.Footer>
-        The Evil Rabbit Jumped over the Fence
+        HTTP Knowledge Base
         <Button auto scale={1/3}>Actions</Button>
       </Fieldset.Footer>
     </Fieldset>
-    <Fieldset label="two">
-      <Fieldset.Title>The Fence Jumped over The Evil Rabbit</Fieldset.Title>
-      <Fieldset.Subtitle>The Fence Jumped over The Evil Rabbit</Fieldset.Subtitle>
+    <Fieldset label="extensible">
+      <Fieldset.Title>HTTP is extensible</Fieldset.Title>
+      <Fieldset.Subtitle>Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with.</Fieldset.Subtitle>
       <Fieldset.Footer>
-      The Fence Jumped over The Evil Rabbit
+      HTTP Knowledge Base
         <Button auto scale={1/3}>Actions</Button>
       </Fieldset.Footer>
     </Fieldset>
-    <Fieldset label="three">
-      <Fieldset.Title>The Fence Jumped over The Evil Rabbit</Fieldset.Title>
-      <Fieldset.Subtitle>The Fence Jumped over The Evil Rabbit</Fieldset.Subtitle>
+    <Fieldset label="stateless">
+      <Fieldset.Title>HTTP is stateless</Fieldset.Title>
+      <Fieldset.Subtitle>HTTP is stateless: there is no link between two requests being successively carried out on the same connection. </Fieldset.Subtitle>
       <Fieldset.Footer>
-        The Fence Jumped over The Evil Rabbit
+        HTTP Knowledge Base
         <Button auto scale={1/3}>Actions</Button>
       </Fieldset.Footer>
     </Fieldset>

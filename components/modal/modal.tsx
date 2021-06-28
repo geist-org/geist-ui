@@ -1,4 +1,4 @@
-import React, { MouseEvent, useEffect, useMemo } from 'react'
+import React, { MouseEvent, useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
 import ModalWrapper from './modal-wrapper'
@@ -8,20 +8,21 @@ import Backdrop from '../shared/backdrop'
 import { ModalConfig, ModalContext } from './modal-context'
 import { pickChild } from '../utils/collections'
 import useBodyScroll from '../utils/use-body-scroll'
-import useCurrentState from '../utils/use-current-state'
 import useScaleable, { withScaleable } from '../use-scaleable'
+import useKeyboard, { KeyCode } from '../use-keyboard'
 
 interface Props {
   disableBackdropClick?: boolean
   onClose?: () => void
-  onOpen?: () => void
   onContentClick?: (event: MouseEvent<HTMLElement>) => void
-  open?: boolean
+  visible?: boolean
+  keyboard?: boolean
   wrapClassName?: string
 }
 
 const defaultProps = {
   wrapClassName: '',
+  keyboard: true,
   disableBackdropClick: false,
 }
 
@@ -29,10 +30,10 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ModalProps = Props & NativeAttrs
 
 const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
-  open,
-  onOpen,
+  visible: customVisible,
   onClose,
   children,
+  keyboard,
   wrapClassName,
   onContentClick,
   disableBackdropClick,
@@ -40,10 +41,9 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
   const portal = usePortal('modal')
   const { SCALES } = useScaleable()
   const [, setBodyHidden] = useBodyScroll(null, { scrollLayer: true })
-  const [visible, setVisible, visibleRef] = useCurrentState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false)
   const [withoutActionsChildren, ActionsChildren] = pickChild(children, ModalAction)
   const hasActions = ActionsChildren && React.Children.count(ActionsChildren) > 0
-
   const closeModal = () => {
     onClose && onClose()
     setVisible(false)
@@ -51,17 +51,20 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
   }
 
   useEffect(() => {
-    if (open === undefined) return
-    if (open) {
-      onOpen && onOpen()
-    }
-    if (!open && visibleRef.current) {
-      onClose && onClose()
-    }
+    if (typeof customVisible === 'undefined') return
+    setVisible(customVisible)
+    setBodyHidden(customVisible)
+  }, [customVisible])
 
-    setVisible(open)
-    setBodyHidden(open)
-  }, [open])
+  const { bindings } = useKeyboard(
+    () => {
+      keyboard && closeModal()
+    },
+    KeyCode.Escape,
+    {
+      disableGlobalEvent: true,
+    },
+  )
 
   const closeFromBackdrop = () => {
     if (disableBackdropClick) return
@@ -82,7 +85,8 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
         onClick={closeFromBackdrop}
         onContentClick={onContentClick}
         visible={visible}
-        width={SCALES.width(26)}>
+        width={SCALES.width(26)}
+        {...bindings}>
         <ModalWrapper visible={visible} className={wrapClassName}>
           {withoutActionsChildren}
           {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}

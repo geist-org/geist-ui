@@ -4,7 +4,7 @@ import Playground from 'lib/components/playground'
 import { ButtonDropdown, Spacer } from 'components'
 
 export const meta = {
-  title: 'button-dropdown',
+  title: 'Button Dropdown',
   group: 'Navigation',
   index: 101,
 }
@@ -92,22 +92,28 @@ Display related but alternate actions for a button.
 <Attributes edit="/pages/en-us/components/button-dropdown.mdx">
 <Attributes.Title>ButtonDropdown.Props</Attributes.Title>
 
-| Attribute    | Description               | Type             | Accepted values                                         | Default   |
-| ------------ | ------------------------- | ---------------- | ------------------------------------------------------- | --------- |
-| **type**     | button type               | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **loading**  | display loading indicator | `boolean`        | -                                                       | `false`   |
-| **auto**     | autoscale width           | `boolean`        | -                                                       | `false`   |
-| **disabled** | disable button            | `boolean`        | -                                                       | `false`   |
-| ...          | native props              | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...`                 | -         |
+| Attribute    | Description               | Type                  | Accepted values                             | Default   |
+| ------------ | ------------------------- | --------------------- | ------------------------------------------- | --------- |
+| **type**     | button type               | `ButtonDropdownTypes` | [ButtonDropdownTypes](#buttondropdowntypes) | `default` |
+| **loading**  | display loading indicator | `boolean`             | -                                           | `false`   |
+| **auto**     | autoscale width           | `boolean`             | -                                           | `false`   |
+| **disabled** | disable button            | `boolean`             | -                                           | `false`   |
+| ...          | native props              | `HTMLAttributes`      | `'autoFocus', 'name', 'className', ...`     | -         |
 
 <Attributes.Title>ButtonDropdown.Item.Props</Attributes.Title>
 
-| Attribute   | Description     | Type                   | Accepted values                                         | Default   |
-| ----------- | --------------- | ---------------------- | ------------------------------------------------------- | --------- |
-| **type**    | button type     | `NormalTypes`          | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **main**    | the main action | `boolean`              | -                                                       | `false`   |
-| **onClick** | event handler   | `MouseEventHandler`    | -                                                       | -         |
-| ...         | native props    | `ButtonHTMLAttributes` | `'id', 'name', 'className', ...`                        | -         |
+| Attribute   | Description     | Type                   | Accepted values                             | Default   |
+| ----------- | --------------- | ---------------------- | ------------------------------------------- | --------- |
+| **type**    | button type     | `ButtonDropdownTypes`  | [ButtonDropdownTypes](#buttondropdowntypes) | `default` |
+| **main**    | the main action | `boolean`              | -                                           | `false`   |
+| **onClick** | event handler   | `MouseEventHandler`    | -                                           | -         |
+| ...         | native props    | `ButtonHTMLAttributes` | `'id', 'name', 'className', ...`            | -         |
+
+<Attributes.Title>ButtonDropdownTypes</Attributes.Title>
+
+```ts
+type ButtonDropdownTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 
