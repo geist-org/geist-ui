@@ -19,12 +19,12 @@ const Application: NextPage<{}> = () => {
           </h3>
           <div className="hero__actions">
             <NextLink href="/zh-cn/guide/installation" passHref>
-              <Button auto type="success" shadow scale={1.2}>
+              <Button auto type="success" shadow scale={1.25} margin={0.25}>
                 Documentation
               </Button>
             </NextLink>
             <NextLink href="https://github.com/geist-org/react" passHref>
-              <Button auto type="abort" scale={1.2}>
+              <Button auto type="abort" scale={1.25} margin={0.25}>
                 GitHub
               </Button>
             </NextLink>
@@ -33,43 +33,53 @@ const Application: NextPage<{}> = () => {
 
         <Grid.Container gap={2} justify="center">
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card" width="100%">
-              <h4 className="feature__title">
-                <div className="feature__icon">
-                  <PackageIcon />
-                </div>
-                Components
-              </h4>
-              <p className="feature__description">
-                Ever-increasing list of concise and aesthetic components.
-              </p>
-            </Card>
+            <NextLink href="/zh-cn/components">
+              <a>
+                <Card shadow className="feature__card" width="100%">
+                  <h4 className="feature__title">
+                    <div className="feature__icon">
+                      <PackageIcon />
+                    </div>
+                    Components
+                  </h4>
+                  <p className="feature__description">
+                    Ever-increasing list of concise and aesthetic components.
+                  </p>
+                </Card>
+              </a>
+            </NextLink>
           </Grid>
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card" width="100%">
-              <h4 className="feature__title">
-                <div className="feature__icon">
-                  <FeatherIcon />
-                </div>
-                Customizable
-              </h4>
-              <p className="feature__description">
-                Configure sizes, colors, appearances, shapes, and more.
-              </p>
-            </Card>
+            <NextLink href="/zh-cn/customization">
+              <a>
+                <Card shadow className="feature__card" width="100%">
+                  <h4 className="feature__title">
+                    <div className="feature__icon">
+                      <FeatherIcon />
+                    </div>
+                    Customizable
+                  </h4>
+                  <p className="feature__description">
+                    Configure sizes, colors, appearances, shapes, and more.
+                  </p>
+                </Card>
+              </a>
+            </NextLink>
           </Grid>
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card" width="100%">
-              <h4 className="feature__title">
-                <div className="feature__icon">
-                  <GitHubIcon />
-                </div>
-                Open Sourced
-              </h4>
-              <p className="feature__description">
-                Geist is open sourced and available free under MIT licence.
-              </p>
-            </Card>
+            <a href="https://github.com/geist-org/react" target="_blank">
+              <Card shadow className="feature__card" width="100%">
+                <h4 className="feature__title">
+                  <div className="feature__icon">
+                    <GitHubIcon />
+                  </div>
+                  Open Sourced
+                </h4>
+                <p className="feature__description">
+                  Geist is open sourced and available free under MIT licence.
+                </p>
+              </Card>
+            </a>
           </Grid>
         </Grid.Container>
       </div>
@@ -102,10 +112,6 @@ const Application: NextPage<{}> = () => {
         }
         .hero__actions :global(.btn) {
           font-weight: 500;
-          margin: ${theme.layout.gapQuarter};
-        }
-        :global(.feature__card) {
-          width: 100% !important;
         }
         :global(.feature__card) :global(.content) {
           padding: ${theme.layout.gap};

@@ -33,43 +33,53 @@ const Application: NextPage<{}> = () => {
 
         <Grid.Container gap={2} justify="center">
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card" width="100%">
-              <h4 className="feature__title">
-                <div className="feature__icon">
-                  <PackageIcon />
-                </div>
-                Components
-              </h4>
-              <p className="feature__description">
-                Ever-increasing list of concise and aesthetic components.
-              </p>
-            </Card>
+            <NextLink href="/en-us/components">
+              <a>
+                <Card shadow className="feature__card" width="100%">
+                  <h4 className="feature__title">
+                    <div className="feature__icon">
+                      <PackageIcon />
+                    </div>
+                    Components
+                  </h4>
+                  <p className="feature__description">
+                    Ever-increasing list of concise and aesthetic components.
+                  </p>
+                </Card>
+              </a>
+            </NextLink>
           </Grid>
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card" width="100%">
-              <h4 className="feature__title">
-                <div className="feature__icon">
-                  <FeatherIcon />
-                </div>
-                Customizable
-              </h4>
-              <p className="feature__description">
-                Configure sizes, colors, appearances, shapes, and more.
-              </p>
-            </Card>
+            <NextLink href="/en-us/customization">
+              <a>
+                <Card shadow className="feature__card" width="100%">
+                  <h4 className="feature__title">
+                    <div className="feature__icon">
+                      <FeatherIcon />
+                    </div>
+                    Customizable
+                  </h4>
+                  <p className="feature__description">
+                    Configure sizes, colors, appearances, shapes, and more.
+                  </p>
+                </Card>
+              </a>
+            </NextLink>
           </Grid>
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card" width="100%">
-              <h4 className="feature__title">
-                <div className="feature__icon">
-                  <GitHubIcon />
-                </div>
-                Open Sourced
-              </h4>
-              <p className="feature__description">
-                Geist is open sourced and available free under MIT licence.
-              </p>
-            </Card>
+            <a href="https://github.com/geist-org/react" target="_blank">
+              <Card shadow className="feature__card" width="100%">
+                <h4 className="feature__title">
+                  <div className="feature__icon">
+                    <GitHubIcon />
+                  </div>
+                  Open Sourced
+                </h4>
+                <p className="feature__description">
+                  Geist is open sourced and available free under MIT licence.
+                </p>
+              </Card>
+            </a>
           </Grid>
         </Grid.Container>
       </div>
