@@ -102,6 +102,10 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
 
     const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
       event.stopPropagation()
+      event.nativeEvent.stopImmediatePropagation()
+      event.preventDefault()
+    }
+    const mouseDownHandler = (event: React.MouseEvent<HTMLDivElement>) => {
       event.preventDefault()
     }
 
@@ -110,7 +114,8 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
       <CssTransition visible={visible}>
         <div
           className={`dropdown ${disableMatchWidth ? 'disable-match' : 'width-match'}`}
-          onClick={clickHandler}>
+          onClick={clickHandler}
+          onMouseDown={mouseDownHandler}>
           {children}
           <style jsx>{`
             .dropdown {

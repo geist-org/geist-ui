@@ -75,6 +75,10 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
     if (isDisabled || isLabel) return
     updateValue && updateValue(identValue)
   }
+  const touchStartHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (preventAllEvents) return
+    event.preventDefault()
+  }
 
   return (
     <>
@@ -82,6 +86,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
         className={`option ${divider ? 'divider' : ''} ${
           label ? 'label' : ''
         } ${className}`}
+        onMouseDown={touchStartHandler}
         onClick={clickHandler}
         {...props}>
         <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
