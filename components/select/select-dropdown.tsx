@@ -62,6 +62,7 @@ const SelectDropdown = React.forwardRef<
               overflow-y: auto;
               overflow-anchor: none;
               padding: 0.38em 0;
+              scroll-behavior: smooth;
             }
           `}</style>
         </div>

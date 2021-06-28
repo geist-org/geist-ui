@@ -146,6 +146,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       event.preventDefault()
     }
     const mouseDownHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+      /* istanbul ignore next */
       if (visible) {
         event.preventDefault()
       }
