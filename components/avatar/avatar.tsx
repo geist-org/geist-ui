@@ -69,10 +69,6 @@ const AvatarComponent: React.FC<AvatarProps> = ({
           margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${marginLeft};
         }
 
-        .avatar:first-child {
-          margin: 0;
-        }
-
         .avatar-img {
           display: inline-block;
           width: 100%;
