@@ -18,13 +18,13 @@ const Application: NextPage<{}> = () => {
             An open source design system for building modern websites and applications.
           </h3>
           <div className="hero__actions">
-            <NextLink href="/en-us/guide/installation">
-              <Button auto type="success" shadow scale={1.2}>
+            <NextLink href="/en-us/guide/installation" passHref>
+              <Button auto type="success" shadow scale={1.25} margin={0.25}>
                 Documentation
               </Button>
             </NextLink>
-            <NextLink href="https://github.com/geist-org/react">
-              <Button auto type="abort" scale={1.2}>
+            <NextLink href="https://github.com/geist-org/react" passHref>
+              <Button auto type="abort" scale={1.25} margin={0.25}>
                 GitHub
               </Button>
             </NextLink>
@@ -33,7 +33,7 @@ const Application: NextPage<{}> = () => {
 
         <Grid.Container gap={2} justify="center">
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card">
+            <Card shadow className="feature__card" width="100%">
               <h4 className="feature__title">
                 <div className="feature__icon">
                   <PackageIcon />
@@ -46,7 +46,7 @@ const Application: NextPage<{}> = () => {
             </Card>
           </Grid>
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card">
+            <Card shadow className="feature__card" width="100%">
               <h4 className="feature__title">
                 <div className="feature__icon">
                   <FeatherIcon />
@@ -59,7 +59,7 @@ const Application: NextPage<{}> = () => {
             </Card>
           </Grid>
           <Grid xs={24} md={8}>
-            <Card shadow className="feature__card">
+            <Card shadow className="feature__card" width="100%">
               <h4 className="feature__title">
                 <div className="feature__icon">
                   <GitHubIcon />
@@ -75,7 +75,9 @@ const Application: NextPage<{}> = () => {
       </div>
       <style jsx>{`
         .layout {
-          min-height: calc(100vh - 108px);
+          min-height: calc(
+            100vh - var(--geist-page-nav-height) - var(--geist-page-tab-height)
+          );
           max-width: ${theme.layout.pageWidthWithMargin};
           margin: 0 auto;
           padding: 0 ${theme.layout.gap} calc(${theme.layout.gap} * 2);
@@ -100,10 +102,6 @@ const Application: NextPage<{}> = () => {
         }
         .hero__actions :global(.btn) {
           font-weight: 500;
-          margin: ${theme.layout.gapQuarter};
-        }
-        :global(.feature__card) {
-          width: 100% !important;
         }
         :global(.feature__card) :global(.content) {
           padding: ${theme.layout.gap};

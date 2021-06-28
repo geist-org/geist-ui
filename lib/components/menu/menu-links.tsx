@@ -1,6 +1,6 @@
 import React from 'react'
 import NextLink from 'next/link'
-import { useTheme, Avatar } from 'components'
+import { useTheme, Image } from 'components'
 import Controls from 'lib/components/controls'
 import { useConfigs } from 'lib/config-context'
 
@@ -11,11 +11,12 @@ const MenuLinks = () => {
   return (
     <nav>
       <NextLink href={isChinese ? '/zh-cn' : '/en-us'}>
-        <a className="menu__logo" aria-label="Go Home">
-          <Avatar
+        <a className="geist-logo" aria-label="Go Home">
+          <Image
             src="/images/logo.png"
             width="2rem"
             height="2rem"
+            marginRight={0.5}
             draggable={false}
             title="Logo"
           />
@@ -38,7 +39,7 @@ const MenuLinks = () => {
           height: var(--geist-page-nav-height);
         }
 
-        .menu__logo {
+        .geist-logo {
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -47,8 +48,9 @@ const MenuLinks = () => {
           color: inherit;
         }
 
-        .menu__logo :global(.avatar) {
-          margin-right: ${theme.layout.gapHalf}!important;
+        .geist-logo :global(.image) {
+          border: 1px solid ${theme.palette.border};
+          border-radius: 2rem;
         }
       `}</style>
     </nav>
