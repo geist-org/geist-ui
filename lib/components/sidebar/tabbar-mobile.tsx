@@ -17,7 +17,7 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
       <Button className="toggle" auto type="abort" onClick={handler}>
         <SlidersIcon size={14} />
       </Button>
-      <span className="geist-ui">Geist UI</span>
+      <span className="geist-wordmark">Geist</span>
       <style jsx>{`
         .tabbar {
           position: fixed;
@@ -46,13 +46,12 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
           color: ${theme.palette.accents_6};
         }
 
-        .geist-ui {
+        .geist-wordmark {
           color: ${theme.palette.foreground};
-          font-size: 17px;
-          font-weight: bold;
+          font-size: 1rem;
+          font-weight: 500;
           padding-right: 5px;
           display: inline-flex;
-          text-transform: capitalize;
           user-select: none;
           letter-spacing: 0.4px;
         }
