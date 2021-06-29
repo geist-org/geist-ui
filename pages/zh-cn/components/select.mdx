@@ -225,31 +225,45 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
 
-| 属性                  | 描述                              | 类型                                                | 推荐值                            | 默认            |
-| --------------------- | --------------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
-| **value**             | 手动设置选择器的值                | `string`, `string[]`                                | -                                 | -               |
-| **initialValue**      | 选择器初始值                      | `string`, `string[]`                                | -                                 | -               |
-| **placeholder**       | 占位文本内容                      | `string`                                            | -                                 | -               |
-| **width**             | 组件的 CSS 宽度值                 | `string`                                            | -                                 | `initial`       |
-| **icon**              | 右侧图标组件                      | `ComponentType`                                     | -                                 | `SVG Component` |
-| **pure**              | 隐藏右侧图标组件                  | `boolean`                                           | -                                 | `false`         |
-| **multiple**          | 是否支持多选                      | `boolean`                                           | -                                 | `false`         |
-| **clearable**         | 多选时是否展示移除图标            | `boolean`                                           | -                                 | `true`          |
-| **disabled**          | 禁用所有的交互                    | `boolean`                                           | -                                 | `false`         |
-| **onChange**          | 选项被选中所触发的事件            | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
-| **dropdownClassName** | 下拉框的自定义类名                | `string`                                            | -                                 | -               |
-| **dropdownStyle**     | 下拉框的自定义样式                | `object`                                            | -                                 | -               |
-| **disableMatchWidth** | 禁止 Option 跟随单选框的宽度      | `boolean`                                           | -                                 | `false`         |
-| **getPopupContainer** | 下拉框渲染的父元素，默认是 `body` | `() => HTMLElement`                                 | -                                 | -               |
-| ...                   | 原生属性                          | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
+| 属性                        | 描述                              | 类型                                                | 推荐值                  | 默认            |
+| --------------------------- | --------------------------------- | --------------------------------------------------- | ----------------------- | --------------- |
+| **value**                   | 手动设置选择器的值                | `string`, `string[]`                                | -                       | -               |
+| **initialValue**            | 选择器初始值                      | `string`, `string[]`                                | -                       | -               |
+| **placeholder**             | 占位文本内容                      | `string`                                            | -                       | -               |
+| **width**                   | 组件的 CSS 宽度值                 | `string`                                            | -                       | `initial`       |
+| **icon**                    | 右侧图标组件                      | `ComponentType`                                     | -                       | `SVG Component` |
+| **pure**                    | 隐藏右侧图标组件                  | `boolean`                                           | -                       | `false`         |
+| **multiple**                | 是否支持多选                      | `boolean`                                           | -                       | `false`         |
+| **clearable**               | 多选时是否展示移除图标            | `boolean`                                           | -                       | `true`          |
+| **disabled**                | 禁用所有的交互                    | `boolean`                                           | -                       | `false`         |
+| **onChange**                | 选项被选中所触发的事件            | <Code>(val: string &#124; string[]) => void </Code> | -                       | -               |
+| **dropdownClassName**       | 下拉框的自定义类名                | `string`                                            | -                       | -               |
+| **dropdownStyle**           | 下拉框的自定义样式                | `object`                                            | -                       | -               |
+| **disableMatchWidth**       | 禁止 Option 跟随单选框的宽度      | `boolean`                                           | -                       | `false`         |
+| **getPopupContainer**       | 下拉框渲染的父元素，默认是 `body` | `() => HTMLElement`                                 | -                       | -               |
+| **onDropdownVisibleChange** | 下拉框可见性变化事件              | `(visible: boolean) => void`                        | -                       | -               |
+| **ref**                     | 转发的 Ref                        | `SelectRef`                                         | [SelectRef](#selectref) | -               |
+| ...                         | 原生属性                          | `HTMLAttributes`                                    | `'name', 'alt', ...`    | -               |
+
+<Attributes.Title>SelectRef</Attributes.Title>
+
+```ts
+type SelectRef = {
+  focus: () => void
+  blur: () => void
+  scrollTo?: (options?: ScrollToOptions) => void
+}
+```
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
 
-| 属性              | 描述         | 类型             | 推荐值                           | 默认    |
-| ----------------- | ------------ | ---------------- | -------------------------------- | ------- |
-| **value**(必须的) | 唯一鉴别值   | `string`         | -                                | -       |
-| **disabled**      | 禁用当前选项 | `boolean`        | -                                | `false` |
-| ...               | 原生属性     | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
+| 属性              | 描述           | 类型             | 推荐值                           | 默认    |
+| ----------------- | -------------- | ---------------- | -------------------------------- | ------- |
+| **value**(必须的) | 唯一鉴别值     | `string`         | -                                | -       |
+| **disabled**      | 禁用当前选项   | `boolean`        | -                                | `false` |
+| **divider**       | 显示线条       | `boolean`        | -                                | `false` |
+| **label**         | 显示分组的标题 | `boolean`        | -                                | `false` |
+| ...               | 原生属性       | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
 
 </Attributes>
 
