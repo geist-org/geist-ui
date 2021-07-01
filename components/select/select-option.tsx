@@ -77,16 +77,13 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
   }
 
   return (
-    <>
-      <div
-        className={`option ${divider ? 'divider' : ''} ${
-          label ? 'label' : ''
-        } ${className}`}
-        onClick={clickHandler}
-        {...props}>
-        <Ellipsis height={`calc(1.688 * ${theme.layout.gap})`}>{children}</Ellipsis>
-      </div>
-
+    <div
+      className={`option ${divider ? 'divider' : ''} ${
+        label ? 'label' : ''
+      } ${className}`}
+      onClick={clickHandler}
+      {...props}>
+      <Ellipsis height={SCALES.height(2.25)}>{children}</Ellipsis>
       <style jsx>{`
         .option {
           display: flex;
@@ -133,7 +130,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
           font-weight: 500;
         }
       `}</style>
-    </>
+    </div>
   )
 }
 
