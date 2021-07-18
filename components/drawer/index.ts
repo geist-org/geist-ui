@@ -8,6 +8,9 @@ export type DrawerComponentType = typeof Drawer & {
   Subtitle: typeof ModalSubtitle
   Content: typeof ModalContent
 }
+;(Drawer as DrawerComponentType).Title = ModalTitle
+;(Drawer as DrawerComponentType).Subtitle = ModalSubtitle
+;(Drawer as DrawerComponentType).Content = ModalContent
 
 export type { DrawerProps } from './drawer'
 export type {

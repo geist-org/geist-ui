@@ -51,6 +51,9 @@ export type { DividerProps } from './divider'
 export { default as Dot } from './dot'
 export type { DotProps } from './dot'
 
+export { default as Drawer } from './drawer'
+export type { DrawerProps } from './drawer'
+
 export { default as Fieldset } from './fieldset'
 export type {
   FieldsetProps,

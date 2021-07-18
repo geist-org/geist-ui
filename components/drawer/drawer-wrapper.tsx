@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
 import useScaleable from '../use-scaleable'
+import { DrawerPlacement, getDrawerTransform } from './helper'
 
 interface Props {
   className?: string
   visible?: boolean
+  placement: DrawerPlacement
 }
 
 const defaultProps = {
@@ -20,6 +22,7 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   className,
   children,
   visible,
+  placement,
   ...props
 }: React.PropsWithChildren<DrawerWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -27,6 +30,7 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   const modalContent = useRef<HTMLDivElement>(null)
   const tabStart = useRef<HTMLDivElement>(null)
   const tabEnd = useRef<HTMLDivElement>(null)
+  const transform = useMemo(() => getDrawerTransform(placement), [placement])
 
   useEffect(() => {
     if (!visible) return
@@ -54,63 +58,90 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   return (
     <CssTransition name="wrapper" visible={visible} clearTime={300}>
       <div
-        className={`wrapper ${className}`}
+        className={`wrapper ${placement} ${className}`}
         role="dialog"
         tabIndex={-1}
         onKeyDown={onKeyDown}
         ref={modalContent}
         {...props}>
-        <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabStart} />
+        <div tabIndex={0} className="hide-tab start" aria-hidden="true" ref={tabStart} />
         {children}
-        <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabEnd} />
+        <div tabIndex={0} className="hide-tab end" aria-hidden="true" ref={tabEnd} />
         <style jsx>{`
           .wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             max-width: 100%;
             vertical-align: middle;
-            overflow: hidden;
+            overflow: auto;
             display: flex;
             flex-direction: column;
-            position: relative;
             box-sizing: border-box;
             background-color: ${theme.palette.background};
             color: ${theme.palette.foreground};
-            border-radius: ${theme.layout.radius};
+            border-radius: calc(3 * ${theme.layout.radius});
             box-shadow: ${theme.expressiveness.shadowLarge};
             opacity: 0;
             outline: none;
-            transform: translate3d(0px, -30px, 0px);
-            transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
-              transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-            width: 100%;
+            transform: ${transform.initial};
+            transition: opacity, transform 400ms cubic-bezier(0.1, 0.6, 0.1, 1);
             font-size: ${SCALES.font(1)};
-            height: ${SCALES.height(1, 'auto')};
             --modal-wrapper-padding-left: ${SCALES.pl(1.3125)};
             --modal-wrapper-padding-right: ${SCALES.pr(1.3125)};
             padding: ${SCALES.pt(1.3125)} var(--modal-wrapper-padding-right)
               ${SCALES.pb(1.3125)} var(--modal-wrapper-padding-left);
             margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
-
+          .top,
+          .bottom {
+            width: ${SCALES.width(1, '100%')};
+            height: ${SCALES.height(1, 'auto')};
+          }
+          .left,
+          .right {
+            width: ${SCALES.width(1, 'auto')};
+            height: ${SCALES.height(1, '100%')};
+          }
+          .top {
+            bottom: auto;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+          }
+          .left {
+            right: auto;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+          .bottom {
+            top: auto;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+          .right {
+            left: auto;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
           .wrapper-enter {
             opacity: 0;
-            transform: translate3d(0px, -30px, 0px);
+            transform: ${transform.hidden};
           }
-
           .wrapper-enter-active {
             opacity: 1;
-            transform: translate3d(0px, 0px, 0px);
+            transform: ${transform.visible};
           }
-
           .wrapper-leave {
             opacity: 1;
-            transform: translate3d(0px, 0px, 0px);
+            transform: ${transform.visible};
+            transition: opacity, transform 400ms cubic-bezier(0.1, 0.2, 0.1, 1);
           }
-
           .wrapper-leave-active {
-            opacity: 0;
-            transform: translate3d(0px, -30px, 0px);
+            opacity: 0.4;
+            transform: ${transform.hidden};
           }
-
           .hide-tab {
             outline: none;
             overflow: hidden;

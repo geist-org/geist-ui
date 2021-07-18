@@ -1,10 +1,11 @@
 import React, { MouseEvent, useEffect, useState } from 'react'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import { withScaleable } from '../use-scaleable'
 import usePortal from '../utils/use-portal'
 import useBodyScroll from '../utils/use-body-scroll'
 import useKeyboard, { KeyCode } from '../use-keyboard'
 import { createPortal } from 'react-dom'
 import Backdrop from '../shared/backdrop'
+import { DrawerPlacement } from './helper'
 import DrawerWrapper from './drawer-wrapper'
 
 interface Props {
@@ -14,12 +15,14 @@ interface Props {
   onClose?: () => void
   onContentClick?: (event: MouseEvent<HTMLElement>) => void
   wrapClassName?: string
+  placement?: DrawerPlacement
 }
 
 const defaultProps = {
   wrapClassName: '',
   keyboard: true,
   disableBackdropClick: false,
+  placement: 'right' as DrawerPlacement,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -36,7 +39,6 @@ const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps>> = ({
   ...props
 }: React.PropsWithChildren<DrawerProps> & typeof defaultProps) => {
   const portal = usePortal('drawer')
-  const { SCALES } = useScaleable()
   const [visible, setVisible] = useState<boolean>(false)
   const [, setBodyHidden] = useBodyScroll(null, { scrollLayer: true })
 
@@ -73,7 +75,7 @@ const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps>> = ({
       onClick={closeFromBackdrop}
       onContentClick={onContentClick}
       visible={visible}
-      width={SCALES.width(26)}
+      width="100%"
       {...bindings}>
       <DrawerWrapper visible={visible} className={wrapClassName} {...props}>
         {children}
