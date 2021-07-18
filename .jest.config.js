@@ -3,7 +3,7 @@ module.exports = {
 
   testEnvironment: 'jsdom',
 
-  setupFiles: ['./tests/setup.js'],
+  setupFilesAfterEnv: ['./tests/setup.ts'],
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
 
@@ -13,8 +13,8 @@ module.exports = {
     '^.+\\.tsx?$': ['babel-jest', { configFile: './tests/.babelrc.js' }],
   },
 
-  testRegex: '.*\\.test\\.(j|t)sx?$',
-  // testRegex: 'scaleable\\/.*\\.test\\.(j|t)sx?$',
+  // testRegex: '.*\\.test\\.(j|t)sx?$',
+  testRegex: 'drawer\\/.*\\.test\\.(j|t)sx?$',
 
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',
