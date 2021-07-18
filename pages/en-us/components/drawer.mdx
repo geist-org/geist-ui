@@ -1,0 +1,74 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Drawer, Button } from 'components'
+
+export const meta = {
+  title: 'Drawer',
+  group: 'Feedback',
+}
+
+## Drawer
+
+An interactive element fixed to the edge of the screen.
+
+<Playground
+  desc="Basic usage."
+  scope={{ Drawer, Button }}
+  code={`
+() => {
+  const [state, setState] = React.useState(false)
+  return (
+    <div>
+      <Button auto onClick={() => setState(true)} scale={1/2}>Show Drawer</Button>
+      <Drawer visible={state} onClose={() => setState(false)} placement="right">
+        <Drawer.Title>Drawer</Drawer.Title>
+        <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
+        <Drawer.Content>
+          <p>Some content contained within the drawer.</p>
+        </Drawer.Content>
+      </Drawer>
+    </div>
+  )
+}
+`}
+/>
+
+<Playground
+  desc="Placement."
+  scope={{ Drawer, Button }}
+  code={`
+() => {
+  const [state, setState] = React.useState(false)
+  const [placement, setPlacement] = React.useState('')
+  const open = (text) => {
+    setPlacement(text)
+    setState(true)
+  }
+  return (
+    <div>
+      <Button auto onClick={() => open('top')} scale={1/2} mr="10px">Top</Button>
+      <Button auto onClick={() => open('right')} scale={1/2} mr="10px">Right</Button>
+      <Button auto onClick={() => open('bottom')} scale={1/2} mr="10px">Bottom</Button>
+      <Button auto onClick={() => open('left')} scale={1/2}>Left</Button>
+      <Drawer visible={state} onClose={() => setState(false)} placement={placement}>
+        <Drawer.Title>Drawer</Drawer.Title>
+        <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
+        <Drawer.Content>
+          <p>Some content contained within the drawer.</p>
+        </Drawer.Content>
+      </Drawer>
+    </div>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/components/drawer.mdx">
+<Attributes.Title>Drawer.Props</Attributes.Title>
+
+| Attribute | Description  | Type             | Accepted values                  | Default |
+| --------- | ------------ | ---------------- | -------------------------------- | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'name', 'className', ...` | -       |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
