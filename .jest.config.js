@@ -13,8 +13,8 @@ module.exports = {
     '^.+\\.tsx?$': ['babel-jest', { configFile: './tests/.babelrc.js' }],
   },
 
-  // testRegex: '.*\\.test\\.(j|t)sx?$',
-  testRegex: 'drawer\\/.*\\.test\\.(j|t)sx?$',
+  testRegex: '.*\\.test\\.(j|t)sx?$',
+  // testRegex: 'modal\\/.*\\.test\\.(j|t)sx?$',
 
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',

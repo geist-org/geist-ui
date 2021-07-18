@@ -94,7 +94,7 @@ describe('Drawer', () => {
     )
     const html = wrapper.find('.wrapper').html()
     expect(html).toMatchSnapshot()
-    expect(html).toContain('test-class')
+    expect(wrapper.find('.wrapper').at(0).getDOMNode()).toHaveClass('test-class')
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
