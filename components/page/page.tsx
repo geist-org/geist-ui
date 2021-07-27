@@ -22,6 +22,7 @@ const defaultProps = {
   size: 'medium' as PageSize,
   render: 'default' as PageRenderMode,
   dotBackdrop: false,
+  noAutoPageContent: false,
 }
 
 const DotStyles: React.FC<unknown> = () => (
@@ -47,6 +48,7 @@ const Page: React.FC<React.PropsWithChildren<NoteProps>> = ({
   render,
   dotBackdrop,
   className,
+  noAutoPageContent,
   ...props
 }) => {
   const theme = useTheme()
@@ -81,7 +83,7 @@ const Page: React.FC<React.PropsWithChildren<NoteProps>> = ({
 
   return (
     <section className={className} {...props}>
-      {hasContent ? children : <PageContent>{children}</PageContent>}
+      {(hasContent || noAutoPageContent) ? children : <PageContent>{children}</PageContent>}
       {showDot && <DotStyles />}
       <style jsx>{`
         section {
