@@ -83,7 +83,7 @@ const Page: React.FC<React.PropsWithChildren<NoteProps>> = ({
 
   return (
     <section className={className} {...props}>
-      {(hasContent || noAutoPageContent) ? children : <PageContent>{children}</PageContent>}
+      {hasContent || noAutoPageContent ? children : <PageContent>{children}</PageContent>}
       {showDot && <DotStyles />}
       <style jsx>{`
         section {
