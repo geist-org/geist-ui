@@ -44,10 +44,10 @@ It should be noted that the specific package size depends on how many components
 
 ## Other
 
-If you don't use `tree shaking` in your porject, bundle `geist-ui/react` as a `chunk`
+If you don't use `tree shaking` in your project, bundle `geist-ui/react` as a `chunk`
 every time, you may notice that the hash name of `chunk` is still changing,
 this may cause you to not make full use of the cache.
 
 - This issue from `next.js`, and they're improving that, you can track progress [here](https://github.com/vercel/next.js/issues/6303).
 - If you want to customize config of webpack, to ensure that the `chunk` from `geist-ui/react` is always the same,
-  you can refer to [this docuemnt](https://webpack.js.org/guides/code-splitting/).
+  you can refer to [this document](https://webpack.js.org/guides/code-splitting/).

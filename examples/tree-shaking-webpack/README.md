@@ -2,7 +2,7 @@
 
 ### About
 
-If you use `webpack` and `babel` to build your Recat project, this example may be useful for you.
+If you use `webpack` and `babel` to build your React project, this example may be useful for you.
 
 ### Previews
 
