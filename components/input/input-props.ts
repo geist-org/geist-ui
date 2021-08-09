@@ -7,7 +7,7 @@ export interface Props {
   initialValue?: string
   placeholder?: string
   type?: InputTypes
-  hymlType?: string
+  htmlType?: string
   readOnly?: boolean
   disabled?: boolean
   label?: string
