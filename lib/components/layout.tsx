@@ -105,13 +105,11 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(
               z-index: 10;
               width: 100vw;
               box-sizing: border-box;
-              height: ${expanded ? '90vh' : '0'};
-              background-color: transparent;
-              backdrop-filter: invert(15%) blur(5px);
+              height: ${expanded ? '100vh' : '0'};
+              background-color: ${theme.palette.background};
               padding: var(--geist-page-nav-height) 0 0 0;
               overflow: hidden;
               transition: height 250ms ease;
-              box-shadow: ${expanded ? theme.expressiveness.shadowSmall : 'none'};
             }
 
             .main {
