@@ -36,16 +36,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/zh-cn',
-        permanent: true,
-        destination: '/zh-cn/guide/introduction',
-      },
-      {
-        source: '/en-us',
-        permanent: true,
-        destination: '/en-us/guide/introduction',
-      },
-      {
         source: '/',
         permanent: true,
         destination: '/en-us',
