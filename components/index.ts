@@ -187,7 +187,7 @@ export type { ResponsiveOptions, ResponsiveBreakpoint } from './use-media-query'
 export { default as useKeyboard, KeyMod, KeyCode } from './use-keyboard'
 export type { KeyboardOptions, UseKeyboardHandler } from './use-keyboard'
 
-export { default as useInput } from './input/use-input'
+export { default as useInput } from './use-input'
 export { default as useModal } from './modal/use-modal'
 export { default as useTabs } from './tabs/use-tabs'
 export { default as useClickAway } from './use-click-away'

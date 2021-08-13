@@ -13,5 +13,4 @@ export type { InputProps } from './input'
 export type { InputTypes } from './input-props'
 export type { InputPasswordProps } from './password'
 export type { TextareaProps } from '../textarea/textarea'
-export type { BindingsChangeTarget } from './use-input'
 export default Input as InputComponentType
