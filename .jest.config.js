@@ -3,7 +3,7 @@ module.exports = {
 
   testEnvironment: 'jsdom',
 
-  setupFiles: ['./tests/setup.js'],
+  setupFilesAfterEnv: ['./tests/setup.ts'],
 
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
 
@@ -14,7 +14,7 @@ module.exports = {
   },
 
   testRegex: '.*\\.test\\.(j|t)sx?$',
-  // testRegex: 'scaleable\\/.*\\.test\\.(j|t)sx?$',
+  // testRegex: 'modal\\/.*\\.test\\.(j|t)sx?$',
 
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',

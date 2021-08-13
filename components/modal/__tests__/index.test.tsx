@@ -1,8 +1,9 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { KeyCode, Modal } from 'components'
+import { Modal } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 import { expectModalIsClosed, expectModalIsOpened } from './use-modal.test'
+import userEvent from '@testing-library/user-event'
 
 describe('Modal', () => {
   it('should render correctly', () => {
@@ -112,25 +113,35 @@ describe('Modal', () => {
     )
     const html = wrapper.find('.wrapper').html()
     expect(html).toMatchSnapshot()
-    expect(html).toContain('test-class')
+    expect(wrapper.find('.wrapper').at(0).getDOMNode()).toHaveClass('test-class')
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('focus should only be switched within modal', () => {
+  it('focus should only be switched within modal', async () => {
     const wrapper = mount(
       <Modal visible={true} width="100px" wrapClassName="test-class">
-        <Modal.Title>Modal</Modal.Title>
+        <button id="button" />
       </Modal>,
     )
     const tabStart = wrapper.find('.hide-tab').at(0).getDOMNode()
     const tabEnd = wrapper.find('.hide-tab').at(1).getDOMNode()
-    expect(document.activeElement).toBe(tabStart)
+    const button = wrapper.find('#button').at(0).getDOMNode()
+    const focusTrap = wrapper.find('.wrapper').at(0).getDOMNode()
 
-    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: KeyCode.Tab }))
+    expect(tabStart).toHaveFocus()
+    userEvent.tab({ focusTrap })
+    expect(button).toHaveFocus()
+    userEvent.tab()
+    expect(tabEnd).toHaveFocus()
+    userEvent.tab()
+    expect(tabStart).toHaveFocus()
 
-    expect(tabEnd.outerHTML).toEqual(document.activeElement?.outerHTML)
-    document.dispatchEvent(new KeyboardEvent('keydown', { keyCode: KeyCode.Tab }))
-    expect(tabStart.outerHTML).toEqual(document.activeElement?.outerHTML)
+    userEvent.tab({ shift: true, focusTrap })
+    expect(tabEnd).toHaveFocus()
+    userEvent.tab({ shift: true, focusTrap })
+    expect(button).toHaveFocus()
+    userEvent.tab({ shift: true, focusTrap })
+    expect(tabStart).toHaveFocus()
   })
 
   it('should close modal when keyboard event is triggered', async () => {
@@ -140,9 +151,7 @@ describe('Modal', () => {
       </Modal>,
     )
     expectModalIsOpened(wrapper)
-    wrapper.simulate('keydown', {
-      keyCode: KeyCode.Escape,
-    })
+    userEvent.keyboard('{esc}')
     await updateWrapper(wrapper, 500)
     expectModalIsClosed(wrapper)
   })
@@ -154,9 +163,7 @@ describe('Modal', () => {
       </Modal>,
     )
     expectModalIsOpened(wrapper)
-    wrapper.simulate('keydown', {
-      keyCode: KeyCode.Escape,
-    })
+    userEvent.keyboard('{esc}')
     await updateWrapper(wrapper, 500)
     expectModalIsOpened(wrapper)
   })
