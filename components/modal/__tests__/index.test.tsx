@@ -2,7 +2,10 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Modal } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
-import { expectModalIsClosed, expectModalIsOpened } from './use-modal.test'
+import {
+  expectModalIsClosed,
+  expectModalIsOpened,
+} from '../../use-modal/__tests__/use-modal.test'
 import userEvent from '@testing-library/user-event'
 
 describe('Modal', () => {
