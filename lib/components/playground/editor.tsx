@@ -69,6 +69,10 @@ const Editor: React.FC<Props> = ({ code }) => {
           border-bottom-right-radius: ${theme.layout.radius};
         }
 
+        details summary::-webkit-details-marker {
+          display:none;
+        }
+        
         summary {
           box-sizing: border-box;
           border-top: 1px solid ${theme.palette.accents_2};
