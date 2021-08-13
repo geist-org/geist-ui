@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from 'styled-jsx/css'
+import css from 'styled-jsx/css'
 import GridBasicItem, { GridBasicItemProps } from './basic-item'
 import useScaleable, { withScaleable } from '../use-scaleable'
 

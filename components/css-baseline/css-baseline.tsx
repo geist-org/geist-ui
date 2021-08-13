@@ -2,25 +2,6 @@ import React from 'react'
 import useTheme from '../use-theme'
 import flush from 'styled-jsx/server'
 import flushToReact from 'styled-jsx/server'
-/**
- * Hack Patch for 695 issue.
- *
- * This is to fix a compilation issue for styled-jsx,
- * perhaps for reasons that may be related to babel:
- *   https://github.com/vercel/styled-jsx/issues/695
- *
- * styled-jsx has not considered fixing this issue in recent versions,
- * and we had to hack it into our code to be compatible with React 17.
- */
-/* istanbul ignore next */
-/* eslint-disable */
-// @ts-ignore
-import _JSXStyle from 'styled-jsx/style'
-/* istanbul ignore if */
-if (typeof global !== 'undefined') {
-  Object.assign(global, { _JSXStyle })
-}
-/* eslint-enable */
 
 const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const theme = useTheme()
