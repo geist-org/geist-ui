@@ -1,0 +1,105 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Drawer, Button } from 'components'
+
+export const meta = {
+  title: '抽屉 Drawer',
+  group: '反馈',
+}
+
+## Drawer / 抽屉
+
+固定在屏幕边缘的可交互元素组。
+
+<Playground
+  desc="基础示例。"
+  scope={{ Drawer, Button }}
+  code={`
+() => {
+  const [state, setState] = React.useState(false)
+  return (
+    <div>
+      <Button auto onClick={() => setState(true)} scale={1/2}>Show Drawer</Button>
+      <Drawer visible={state} onClose={() => setState(false)} placement="right">
+        <Drawer.Title>标题</Drawer.Title>
+        <Drawer.Subtitle>子标题</Drawer.Subtitle>
+        <Drawer.Content>
+          <p>Geist UI 是我最爱的组件库。</p>
+        </Drawer.Content>
+      </Drawer>
+    </div>
+  )
+}
+`}
+/>
+
+<Playground
+  title="定位"
+  scope={{ Drawer, Button }}
+  code={`
+() => {
+  const [state, setState] = React.useState(false)
+  const [placement, setPlacement] = React.useState('')
+  const open = (text) => {
+    setPlacement(text)
+    setState(true)
+  }
+  return (
+    <div>
+      <Button auto onClick={() => open('top')} scale={1/2} mr="10px">Top</Button>
+      <Button auto onClick={() => open('right')} scale={1/2} mr="10px">Right</Button>
+      <Button auto onClick={() => open('bottom')} scale={1/2} mr="10px">Bottom</Button>
+      <Button auto onClick={() => open('left')} scale={1/2}>Left</Button>
+      <Drawer visible={state} onClose={() => setState(false)} placement={placement}>
+        <Drawer.Title>标题</Drawer.Title>
+        <Drawer.Subtitle>子标题</Drawer.Subtitle>
+        <Drawer.Content>
+          <p>Geist UI 是我最爱的组件库。</p>
+        </Drawer.Content>
+      </Drawer>
+    </div>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/components/drawer.mdx">
+<Attributes.Title>Drawer.Props</Attributes.Title>
+
+| 属性                     | 描述                   | 类型                                | 推荐值                     | 默认    |
+| ------------------------ | ---------------------- | ----------------------------------- | -------------------------- | ------- |
+| **visible**              | 打开或关闭             | `boolean`                           | -                          | `false` |
+| **onClose**              | 关闭事件               | `() => void`                        | -                          | -       |
+| **onContentClick**       | 抽屉内部元素点击事件   | `(e: MouseEvent) => void`           | -                          | -       |
+| **wrapClassName**        | 抽屉弹出内容的类名     | `string`                            | -                          | -       |
+| **keyboard**             | 按下 Esc 键关闭元素    | `boolean`                           | -                          | `true`  |
+| **disableBackdropClick** | 点击背景层时不关闭抽屉 | `boolean`                           | -                          | `false` |
+| **placement**            | 抽屉相对于屏幕的位置   | [DrawerPlacement](#drawerplacement) | -                          | `right` |
+| ...                      | 原生属性               | `HTMLAttributes`                    | `'name', 'className', ...` | -       |
+
+<Attributes.Title>Drawer.Title.Props</Attributes.Title>
+
+| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
+| ---- | -------- | ---------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
+
+<Attributes.Title>Drawer.Subtitle.Props</Attributes.Title>
+
+| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
+| ---- | -------- | ---------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
+
+<Attributes.Title>Drawer.Content.Props</Attributes.Title>
+
+| 属性 | 描述     | 类型             | 推荐值                   | 默认 |
+| ---- | -------- | ---------------- | ------------------------ | ---- |
+| ...  | 原生属性 | `HTMLAttributes` | `'id', 'className', ...` | -    |
+
+<Attributes.Title>DrawerPlacement</Attributes.Title>
+
+```ts
+type DrawerPlacement = 'top' | 'bottom' | 'right' | 'left'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
