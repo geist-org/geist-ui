@@ -1,47 +1,55 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import TableCell from './table-cell'
 import { useTableContext } from './table-context'
+import {
+  TableDataItemBase,
+  TableOnCellClick,
+  TableOnRowClick,
+  TableRowClassNameHandler,
+} from './table-types'
 
-interface Props {
+interface Props<TableDataItem extends TableDataItemBase> {
   hover: boolean
   emptyText: string
-  onRow: (row: any, index: number) => void
-  onCell: (cell: any, index: number, colunm: number) => void
-  data: Array<any>
+  onRow?: TableOnRowClick<TableDataItem>
+  onCell?: TableOnCellClick<TableDataItem>
+  data: Array<TableDataItem>
   className?: string
+  rowClassName: TableRowClassNameHandler<TableDataItem>
 }
 
 const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TableBodyProps = Props & typeof defaultProps & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props<any>>
+export type TableBodyProps<TableDataItem> = Props<TableDataItem> & NativeAttrs
 
-const TableBody: React.FC<TableBodyProps> = ({
+const TableBody = <TableDataItem extends TableDataItemBase>({
   data,
   hover,
   emptyText,
   onRow,
   onCell,
-}) => {
+  rowClassName,
+}: TableBodyProps<TableDataItem> & typeof defaultProps) => {
   const theme = useTheme()
-  const { columns } = useTableContext()
-  const rowClickHandler = (row: any, index: number) => {
-    onRow(row, index)
+  const { columns } = useTableContext<TableDataItem>()
+  const rowClickHandler = (row: TableDataItem, index: number) => {
+    onRow && onRow(row, index)
   }
 
   return (
     <tbody>
       {data.map((row, index) => {
+        const className = rowClassName(row, index)
         return (
           <tr
             key={`tbody-row-${index}`}
-            className={hover ? 'hover' : ''}
+            className={`${hover ? 'hover' : ''} ${className}`}
             onClick={() => rowClickHandler(row, index)}>
-            <TableCell
+            <TableCell<TableDataItem>
               columns={columns}
               row={row}
               rowIndex={index}
@@ -54,6 +62,7 @@ const TableBody: React.FC<TableBodyProps> = ({
       <style jsx>{`
         tr {
           transition: background-color 0.25s ease;
+          font-size: inherit;
         }
 
         tr.hover:hover {
@@ -61,15 +70,15 @@ const TableBody: React.FC<TableBodyProps> = ({
         }
 
         tr :global(td) {
-          padding: 0 ${theme.layout.gapHalf};
+          padding: 0 0.5em;
           border-bottom: 1px solid ${theme.palette.border};
           color: ${theme.palette.accents_6};
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: 3.125rem;
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -80,6 +89,6 @@ const TableBody: React.FC<TableBodyProps> = ({
   )
 }
 
-const MemoTableBody = React.memo(TableBody)
-
-export default withDefaults(MemoTableBody, defaultProps)
+TableBody.defaultProps = defaultProps
+TableBody.displayName = 'GeistTableBody'
+export default TableBody

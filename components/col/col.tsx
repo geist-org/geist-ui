@@ -1,5 +1,4 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 
 interface Props {
   span?: number
@@ -16,7 +15,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type ColProps = Props & typeof defaultProps & NativeAttrs
+export type ColProps = Props & NativeAttrs
 
 const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
   component,
@@ -25,7 +24,7 @@ const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
   offset,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<ColProps> & typeof defaultProps) => {
   const Component = component
 
   return (
@@ -45,6 +44,6 @@ const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
   )
 }
 
-const MemoCol = React.memo(Col)
-
-export default withDefaults(MemoCol, defaultProps)
+Col.defaultProps = defaultProps
+Col.displayName = 'GeistCol'
+export default Col

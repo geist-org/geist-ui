@@ -1,43 +1,29 @@
 import React, { ReactNode, useMemo } from 'react'
 import useTheme from '../use-theme'
-import BreadcrumbsItem from './breadcrumbs-item'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
 import { addColorAlpha } from '../utils/color'
-import { NormalSizes } from '../utils/prop-types'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
-  size: NormalSizes
   separator?: string | ReactNode
   className?: string
 }
 
 const defaultProps = {
-  size: 'medium' as NormalSizes,
   separator: '/',
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type BreadcrumbsProps = Props & typeof defaultProps & NativeAttrs
+export type BreadcrumbsProps = Props & NativeAttrs
 
-const getSize = (size: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: string } = {
-    mini: '.75rem',
-    small: '.875rem',
-    medium: '1rem',
-    large: '1.125rem',
-  }
-  return sizes[size]
-}
-
-const Breadcrumbs: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
-  size,
+const BreadcrumbsComponent: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
   separator,
   children,
   className,
-}) => {
+}: BreadcrumbsProps & typeof defaultProps) => {
   const theme = useTheme()
-  const fontSize = useMemo(() => getSize(size), [size])
+  const { SCALES } = useScaleable()
   const hoverColor = useMemo(() => {
     return addColorAlpha(theme.palette.link, 0.85)
   }, [theme.palette.link])
@@ -65,14 +51,16 @@ const Breadcrumbs: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
       {withSeparatorChildren}
       <style jsx>{`
         nav {
-          margin: 0;
-          padding: 0;
           line-height: inherit;
           color: ${theme.palette.accents_4};
-          font-size: ${fontSize};
           box-sizing: border-box;
           display: flex;
           align-items: center;
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         nav :global(.link:hover) {
@@ -102,14 +90,7 @@ const Breadcrumbs: React.FC<React.PropsWithChildren<BreadcrumbsProps>> = ({
   )
 }
 
-type MemoBreadcrumbsComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Item: typeof BreadcrumbsItem
-  Separator: typeof BreadcrumbsSeparator
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Breadcrumbs.defaultProps = defaultProps
-
-export default React.memo(Breadcrumbs) as MemoBreadcrumbsComponent<ComponentProps>
+BreadcrumbsComponent.defaultProps = defaultProps
+BreadcrumbsComponent.displayName = 'GeistBreadcrumbs'
+const Breadcrumbs = withScaleable(BreadcrumbsComponent)
+export default Breadcrumbs

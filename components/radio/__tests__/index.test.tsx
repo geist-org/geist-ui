@@ -10,17 +10,16 @@ describe('Radio', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should work correctly with different sizes', () => {
+  it('should work with different status', () => {
     const wrapper = mount(
       <div>
-        <Radio size="mini">mini</Radio>
-        <Radio size="small">small</Radio>
-        <Radio size="medium">medium</Radio>
-        <Radio size="large">large</Radio>
+        <Radio type="secondary" />
+        <Radio type="success" />
+        <Radio type="warning" />
+        <Radio type="error" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).not.toThrow()
   })
 
   it('should render correctly with checked prop', () => {

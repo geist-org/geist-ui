@@ -9,24 +9,12 @@ describe('Input', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should work with different sizes', () => {
-    const wrapper = mount(
-      <div>
-        <Input size="mini" />
-        <Input size="small" />
-        <Input size="large" />
-        <Input width="50%" />
-      </div>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-  })
-
   it('should work with different status', () => {
     const wrapper = mount(
       <div>
-        <Input status="secondary" />
-        <Input status="success" />
-        <Input status="warning" />
+        <Input type="secondary" />
+        <Input type="success" />
+        <Input type="warning" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

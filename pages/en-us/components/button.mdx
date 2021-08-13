@@ -1,12 +1,11 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import { Button, Spacer, Grid, Code } from 'components'
-import Router from 'next/router'
 import Settings from '@geist-ui/react-icons/settings'
 import UserX from '@geist-ui/react-icons/userX'
 import Power from '@geist-ui/react-icons/power'
 
 export const meta = {
-  title: 'button',
+  title: 'Button',
   group: 'General',
 }
 
@@ -30,10 +29,10 @@ Used to trigger an operation.
   code={`
 <>
   <Button loading>Action</Button>
-  <Spacer y={.5} />
-  <Button loading auto>Action</Button>
-  <Spacer y={.5} />
-  <Button loading auto type="success" size="small">Action</Button>
+  <Spacer h={.5} />
+  <Button loading scale={0.75}>Action</Button>
+  <Spacer h={.5} />
+  <Button loading auto type="success" scale={2/3}>Action</Button>
 </>
 `}
 />
@@ -61,7 +60,7 @@ Used to trigger an operation.
   desc="Different state."
   scope={{ Button, Spacer, Grid }}
   code={`
-<Grid.Container gap={2}>
+<Grid.Container gap={1.5}>
   <Grid><Button auto type="secondary">Secondary</Button></Grid>
   <Grid><Button auto type="success">Success</Button></Grid>
   <Grid><Button auto type="warning">Warning</Button></Grid>
@@ -78,29 +77,37 @@ Used to trigger an operation.
 <Playground
   title="GHOST"
   desc="The opposite color."
-  scope={{ Button, Spacer }}
+  scope={{ Button, Grid }}
   code={`
-<>
-  <Button type="secondary" ghost>Secondary</Button> <Spacer y={.5} />
-  <Button type="success" ghost>Success</Button> <Spacer y={.5} />
-  <Button type="warning" ghost>Warning</Button> <Spacer y={.5} />
-  <Button type="error" ghost>Error</Button>
-</>
+<Grid.Container gap={1.5}>
+  <Grid><Button type="secondary" ghost auto scale={0.7}>Secondary</Button></Grid>
+  <Grid><Button type="success" ghost auto scale={0.7}>Success</Button></Grid>
+  <Grid><Button type="warning" ghost auto scale={0.7}>Warning</Button></Grid>
+  <Grid><Button type="error" ghost auto scale={0.7}>Error</Button></Grid>
+</Grid.Container>
 `}
 />
 
 <Playground
-  title="Sizes"
+  title="Scale"
   desc="Buttons of different sizes."
-  scope={{ Button, Spacer }}
+  scope={{ Button, Grid }}
   code={`
-<>
-  <Button size="mini">mini</Button> <Spacer y={.5} />
-  <Button size="small">small</Button> <Spacer y={.5} />
-  <Button>medium</Button> <Spacer y={.5} />
-  <Button size="large">large</Button> <Spacer y={.5} />
-  <Button auto>auto width</Button>
-</>
+<Grid.Container gap={1.5}>
+  <Grid><Button auto scale={0.25}>0.25</Button></Grid>
+  <Grid><Button auto scale={0.35}>0.35</Button></Grid>
+  <Grid><Button auto scale={1/2}>1 / 2</Button></Grid>
+  <Grid><Button auto scale={0.75}>0.75</Button></Grid>
+  <Grid><Button auto padding={0}>NoPadding</Button></Grid>
+  <Grid><Button auto font={0.25}>Small Font</Button></Grid>
+  <Grid><Button auto pl={0} ml="25px">Offset</Button></Grid>
+  <Grid xs={12}><Button width="100%">Full Width</Button></Grid>
+  <Grid xs={12}>
+    <Button auto width="30%" mx="5px">proportion</Button>
+    <Button auto width="30%" mx="5px">proportion</Button>
+    <Button auto width="30%" mx="5px">proportion</Button>
+  </Grid>
+</Grid.Container>
 `}
 />
 
@@ -110,16 +117,18 @@ Used to trigger an operation.
   scope={{ Button, Spacer, Settings, UserX, Power }}
   code={`
 <>
-  <Button iconRight={<Power />} auto size="small" />
-  <Spacer y={.5} />
+  <Button iconRight={<Power />} auto scale={2/3} />
+  <Spacer w={.5} inline />
+  <Button iconRight={<Power />} auto scale={2/3} px={0.6} />
+  <Spacer h={.5} />
   <Button icon={<Settings />} auto>Action</Button>
-  <Spacer y={.5} />
-  <Button icon={<Settings />} type="success" size="small">Success</Button>
-  <Spacer y={.5} />
+  <Spacer h={.5} />
+  <Button icon={<Settings />} type="success" scale={0.85}>Success</Button>
+  <Spacer h={.5} />
   <Button icon={<Settings />} type="secondary">Success</Button>
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Button icon={<UserX />} type="error" ghost>Remove User</Button>
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Button icon={<UserX />} disabled>Remove User</Button>
 </>
 `}
@@ -131,7 +140,6 @@ Used to trigger an operation.
 | Attribute     | Description                               | Type                                            | Accepted values             | Default   |
 | ------------- | ----------------------------------------- | ----------------------------------------------- | --------------------------- | --------- |
 | **type**      | button type                               | `ButtonTypes`                                   | [ButtonTypes](#buttontypes) | `default` |
-| **size**      | button size                               | `NormalSizes`                                   | [NormalSizes](#normalsizes) | `medium`  |
 | **ghost**     | the opposite color                        | `boolean`                                       | -                           | `false`   |
 | **loading**   | display loading indicator                 | `boolean`                                       | -                           | `false`   |
 | **shadow**    | display shadow                            | `boolean`                                       | -                           | `false`   |
@@ -159,12 +167,6 @@ type ButtonTypes =
   | 'success-light'
   | 'warning-light'
   | 'error-light'
-```
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
 </Attributes>

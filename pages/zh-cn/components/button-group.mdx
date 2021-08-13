@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Button, Spacer, ButtonGroup } from 'components'
 
 export const meta = {
-  title: '按钮组 Button-Group',
+  title: '按钮组 Button Group',
   group: '数据录入',
 }
 
@@ -28,23 +28,23 @@ export const meta = {
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup type="success">
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+  <ButtonGroup type="success" scale={0.5}>
+    <Button scale={0.5}>One</Button>
+    <Button scale={0.5}>Two</Button>
+    <Button scale={0.5}>Three</Button>
   </ButtonGroup>
-  <ButtonGroup type="abort">
-    <Button>Action1</Button>
-    <Button>Action2</Button>
+  <ButtonGroup type="abort" scale={0.5}>
+    <Button scale={0.5}>Action1</Button>
+    <Button scale={0.5}>Action2</Button>
   </ButtonGroup>
-  <ButtonGroup type="warning" ghost>
-    <Button>Action1</Button>
-    <Button>Action2</Button>
+  <ButtonGroup type="warning" ghost scale={0.5}>
+    <Button scale={0.5}>Action1</Button>
+    <Button scale={0.5}>Action2</Button>
   </ButtonGroup>
-  <ButtonGroup type="success-light" size="small">
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+  <ButtonGroup type="success-light" scale={0.5}>
+    <Button scale={0.5}>One</Button>
+    <Button scale={0.5}>Two</Button>
+    <Button scale={0.5}>Three</Button>
   </ButtonGroup>
 </>
 `}
@@ -55,14 +55,14 @@ export const meta = {
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup size="small">
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+  <ButtonGroup scale={2/3}>
+    <Button scale={2/3}>One</Button>
+    <Button scale={2/3}>Two</Button>
+    <Button scale={2/3}>Three</Button>
   </ButtonGroup>
-  <ButtonGroup size="mini">
-    <Button>Action1</Button>
-    <Button>Action2</Button>
+  <ButtonGroup scale={1/3}>
+    <Button scale={1/3}>Action1</Button>
+    <Button scale={1/3}>Action2</Button>
   </ButtonGroup>
 </>
 `}
@@ -73,7 +73,7 @@ export const meta = {
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup size="small" vertical>
+  <ButtonGroup vertical>
     <Button>One</Button>
     <Button>Two</Button>
     <Button>Three</Button>
@@ -89,10 +89,10 @@ export const meta = {
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup size="small" disabled>
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+  <ButtonGroup scale={2/3} disabled>
+    <Button scale={2/3}>One</Button>
+    <Button scale={2/3}>Two</Button>
+    <Button scale={2/3}>Three</Button>
   </ButtonGroup>
 </>
 `} />
@@ -102,7 +102,6 @@ export const meta = {
 | 属性         | 描述                   | 类型                   | 推荐值                      | 默认      |
 | ------------ | ---------------------- | ---------------------- | --------------------------- | --------- |
 | **type**     | 按钮类型               | `ButtonTypes`          | [ButtonTypes](#buttontypes) | `default` |
-| **size**     | 按钮大小               | `NormalSizes`          | [NormalSizes](#normalsizes) | `medium`  |
 | **ghost**    | 相反色彩模式的按钮     | `boolean`              | -                           | `false`   |
 | **vertical** | 以垂直方式显示所有按钮 | `boolean`              | -                           | `false`   |
 | **disabled** | 是否禁用所有按钮       | `boolean`              | -                           | `false`   |
@@ -122,12 +121,6 @@ type ButtonTypes =
   | 'success-light'
   | 'warning-light'
   | 'error-light'
-```
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
 </Attributes>

@@ -28,11 +28,6 @@ describe('Avatar', () => {
     expect(() => avatar.unmount()).not.toThrow()
   })
 
-  it('should render component of a specified size', () => {
-    const avatar = render(<Avatar size={20} />)
-    expect(avatar).toMatchSnapshot()
-  })
-
   it('group component should render all children', () => {
     const group = mount(
       <Avatar.Group>
@@ -55,8 +50,8 @@ describe('Avatar', () => {
 
   it('should show count in group', () => {
     const count = 20
-    const group = shallow(<Avatar.Group count={count} />)
+    const group = render(<Avatar.Group count={count} />)
     const text = group.find('.count').text()
-    expect(text).toContain(count)
+    expect(text).toMatch(`${count}`)
   })
 })

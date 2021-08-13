@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Fieldset should render correctly 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
       "class": "fieldset ",
@@ -14,7 +14,7 @@ initialize {
         "children": Array [
           Node {
             "attribs": Object {
-              "class": "",
+              "class": "title ",
             },
             "children": Array [
               Node {
@@ -32,14 +32,14 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                   "next": null,
@@ -71,10 +71,10 @@ initialize {
                     Node {
                       "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                       "next": null,
@@ -91,14 +91,17 @@ initialize {
                       Node {
                         "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -154,14 +157,14 @@ initialize {
             "children": Array [
               Node {
                 "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                 "next": null,
@@ -193,10 +196,10 @@ initialize {
                   Node {
                     "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                     "next": null,
@@ -213,14 +216,17 @@ initialize {
                     Node {
                       "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -258,7 +264,7 @@ initialize {
             "parent": [Circular],
             "prev": Node {
               "attribs": Object {
-                "class": "",
+                "class": "title ",
               },
               "children": Array [
                 Node {
@@ -307,10 +313,10 @@ initialize {
                 Node {
                   "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                   "next": null,
@@ -327,14 +333,17 @@ initialize {
                   Node {
                     "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -365,14 +374,14 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                   "next": null,
@@ -387,7 +396,7 @@ initialize {
               "parent": [Circular],
               "prev": Node {
                 "attribs": Object {
-                  "class": "",
+                  "class": "title ",
                 },
                 "children": Array [
                   Node {
@@ -429,10 +438,10 @@ initialize {
               Node {
                 "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                 "next": null,
@@ -449,14 +458,17 @@ initialize {
                 Node {
                   "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -498,14 +510,14 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                     "next": null,
@@ -520,7 +532,7 @@ initialize {
                 "parent": [Circular],
                 "prev": Node {
                   "attribs": Object {
-                    "class": "",
+                    "class": "title ",
                   },
                   "children": Array [
                     Node {
@@ -566,14 +578,17 @@ initialize {
               Node {
                 "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -593,10 +608,10 @@ initialize {
                 Node {
                   "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                   "next": null,
@@ -631,14 +646,14 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                       "next": null,
@@ -653,7 +668,7 @@ initialize {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "",
+                      "class": "title ",
                     },
                     "children": Array [
                       Node {
@@ -706,96 +721,25 @@ initialize {
           },
           "children": Array [
             Node {
-              "attribs": Object {
-                "class": "",
-              },
-              "children": Array [
-                Node {
-                  "data": "status",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
+              "data": "status",
               "next": Node {
                 "attribs": Object {},
                 "children": Array [
                   Node {
-                    "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
+                    "data": "Actions",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
                     "type": "text",
                   },
                 ],
-                "name": "style",
+                "name": "button",
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": Node {
-                  "attribs": Object {
-                    "class": "",
-                  },
+                  "attribs": Object {},
                   "children": Array [
                     Node {
-                      "attribs": Object {},
-                      "children": Array [
-                        Node {
-                          "data": "Actions",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "button",
-                      "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "tag",
-                      "x-attribsNamespace": Object {},
-                      "x-attribsPrefix": Object {},
-                    },
-                  ],
-                  "name": "div",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Node {
-                      "attribs": Object {},
-                      "children": Array [
-                        Node {
-                          "data": "
+                      "data": "
         footer {
           background-color: #fafafa;
           border-top: 1px solid #eaeaea;
@@ -807,383 +751,52 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "style",
-                      "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
-                      "prev": [Circular],
-                      "type": "style",
-                      "x-attribsNamespace": Object {},
-                      "x-attribsPrefix": Object {},
+                      "prev": null,
+                      "type": "text",
                     },
-                    "parent": [Circular],
-                    "prev": [Circular],
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
                   "parent": [Circular],
                   "prev": [Circular],
-                  "type": "tag",
-                  "x-attribsNamespace": Object {
-                    "class": undefined,
-                  },
-                  "x-attribsPrefix": Object {
-                    "class": undefined,
-                  },
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
                 },
                 "parent": [Circular],
                 "prev": [Circular],
-                "type": "style",
+                "type": "tag",
                 "x-attribsNamespace": Object {},
                 "x-attribsPrefix": Object {},
               },
               "parent": [Circular],
               "prev": null,
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
+              "type": "text",
             },
             Node {
               "attribs": Object {},
               "children": Array [
                 Node {
-                  "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
+                  "data": "Actions",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
                   "type": "text",
                 },
               ],
-              "name": "style",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Node {
-                "attribs": Object {
-                  "class": "",
-                },
-                "children": Array [
-                  Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "Actions",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "button",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "
-        footer {
-          background-color: #fafafa;
-          border-top: 1px solid #eaeaea;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          color: #444;
-          padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
-          box-sizing: border-box;
-        }
-      ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": [Circular],
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                  "parent": [Circular],
-                  "prev": [Circular],
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-                "parent": [Circular],
-                "prev": [Circular],
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
-              },
-              "parent": [Circular],
-              "prev": Node {
-                "attribs": Object {
-                  "class": "",
-                },
-                "children": Array [
-                  Node {
-                    "data": "status",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": [Circular],
-                "parent": [Circular],
-                "prev": null,
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
-              },
-              "type": "style",
-              "x-attribsNamespace": Object {},
-              "x-attribsPrefix": Object {},
-            },
-            Node {
-              "attribs": Object {
-                "class": "",
-              },
-              "children": Array [
-                Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "Actions",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "button",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "tag",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Node {
-                "attribs": Object {},
-                "children": Array [
-                  Node {
-                    "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "style",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        footer {
-          background-color: #fafafa;
-          border-top: 1px solid #eaeaea;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          color: #444;
-          padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
-          box-sizing: border-box;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": [Circular],
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-                "parent": [Circular],
-                "prev": [Circular],
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-              "parent": [Circular],
-              "prev": Node {
-                "attribs": Object {},
-                "children": Array [
-                  Node {
-                    "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "style",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": [Circular],
-                "parent": [Circular],
-                "prev": Node {
-                  "attribs": Object {
-                    "class": "",
-                  },
-                  "children": Array [
-                    Node {
-                      "data": "status",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "div",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": [Circular],
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "tag",
-                  "x-attribsNamespace": Object {
-                    "class": undefined,
-                  },
-                  "x-attribsPrefix": Object {
-                    "class": undefined,
-                  },
-                },
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
-            },
-            Node {
-              "attribs": Object {},
-              "children": Array [
-                Node {
-                  "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-              ],
-              "name": "style",
+              "name": "button",
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": Node {
                 "attribs": Object {},
@@ -1201,9 +814,13 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
                     "next": null,
@@ -1223,101 +840,13 @@ initialize {
               },
               "parent": [Circular],
               "prev": Node {
-                "attribs": Object {
-                  "class": "",
-                },
-                "children": Array [
-                  Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "Actions",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "button",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
+                "data": "status",
                 "next": [Circular],
                 "parent": [Circular],
-                "prev": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": [Circular],
-                  "parent": [Circular],
-                  "prev": Node {
-                    "attribs": Object {
-                      "class": "",
-                    },
-                    "children": Array [
-                      Node {
-                        "data": "status",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "div",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": [Circular],
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {
-                      "class": undefined,
-                    },
-                    "x-attribsPrefix": Object {
-                      "class": undefined,
-                    },
-                  },
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
+                "prev": null,
+                "type": "text",
               },
-              "type": "style",
+              "type": "tag",
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
@@ -1337,9 +866,13 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
                   "next": null,
@@ -1356,118 +889,25 @@ initialize {
                 "attribs": Object {},
                 "children": Array [
                   Node {
-                    "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
+                    "data": "Actions",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
                     "type": "text",
                   },
                 ],
-                "name": "style",
+                "name": "button",
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": [Circular],
                 "parent": [Circular],
                 "prev": Node {
-                  "attribs": Object {
-                    "class": "",
-                  },
-                  "children": Array [
-                    Node {
-                      "attribs": Object {},
-                      "children": Array [
-                        Node {
-                          "data": "Actions",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "button",
-                      "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "tag",
-                      "x-attribsNamespace": Object {},
-                      "x-attribsPrefix": Object {},
-                    },
-                  ],
-                  "name": "div",
-                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "data": "status",
                   "next": [Circular],
                   "parent": [Circular],
-                  "prev": Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": [Circular],
-                    "parent": [Circular],
-                    "prev": Node {
-                      "attribs": Object {
-                        "class": "",
-                      },
-                      "children": Array [
-                        Node {
-                          "data": "status",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "div",
-                      "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": [Circular],
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "tag",
-                      "x-attribsNamespace": Object {
-                        "class": undefined,
-                      },
-                      "x-attribsPrefix": Object {
-                        "class": undefined,
-                      },
-                    },
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                  "type": "tag",
-                  "x-attribsNamespace": Object {
-                    "class": undefined,
-                  },
-                  "x-attribsPrefix": Object {
-                    "class": undefined,
-                  },
+                  "prev": null,
+                  "type": "text",
                 },
-                "type": "style",
+                "type": "tag",
                 "x-attribsNamespace": Object {},
                 "x-attribsPrefix": Object {},
               },
@@ -1489,6 +929,11 @@ initialize {
           border-radius: 5px;
           overflow: hidden;
           display: block;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       ",
                 "next": null,
@@ -1532,96 +977,25 @@ initialize {
         },
         "children": Array [
           Node {
-            "attribs": Object {
-              "class": "",
-            },
-            "children": Array [
-              Node {
-                "data": "status",
-                "next": null,
-                "parent": [Circular],
-                "prev": null,
-                "type": "text",
-              },
-            ],
-            "name": "div",
-            "namespace": "http://www.w3.org/1999/xhtml",
+            "data": "status",
             "next": Node {
               "attribs": Object {},
               "children": Array [
                 Node {
-                  "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
+                  "data": "Actions",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
                   "type": "text",
                 },
               ],
-              "name": "style",
+              "name": "button",
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": Node {
-                "attribs": Object {
-                  "class": "",
-                },
+                "attribs": Object {},
                 "children": Array [
                   Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "Actions",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "button",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "
+                    "data": "
         footer {
           background-color: #fafafa;
           border-top: 1px solid #eaeaea;
@@ -1633,383 +1007,52 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
                     "next": null,
                     "parent": [Circular],
-                    "prev": [Circular],
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
+                    "prev": null,
+                    "type": "text",
                   },
-                  "parent": [Circular],
-                  "prev": [Circular],
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
                 "parent": [Circular],
                 "prev": [Circular],
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
               },
               "parent": [Circular],
               "prev": [Circular],
-              "type": "style",
+              "type": "tag",
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
             "parent": [Circular],
             "prev": null,
-            "type": "tag",
-            "x-attribsNamespace": Object {
-              "class": undefined,
-            },
-            "x-attribsPrefix": Object {
-              "class": undefined,
-            },
+            "type": "text",
           },
           Node {
             "attribs": Object {},
             "children": Array [
               Node {
-                "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
+                "data": "Actions",
                 "next": null,
                 "parent": [Circular],
                 "prev": null,
                 "type": "text",
               },
             ],
-            "name": "style",
-            "namespace": "http://www.w3.org/1999/xhtml",
-            "next": Node {
-              "attribs": Object {
-                "class": "",
-              },
-              "children": Array [
-                Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "Actions",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "button",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "tag",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Node {
-                "attribs": Object {},
-                "children": Array [
-                  Node {
-                    "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "style",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        footer {
-          background-color: #fafafa;
-          border-top: 1px solid #eaeaea;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          color: #444;
-          padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
-          box-sizing: border-box;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": [Circular],
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-                "parent": [Circular],
-                "prev": [Circular],
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-              "parent": [Circular],
-              "prev": [Circular],
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
-            },
-            "parent": [Circular],
-            "prev": Node {
-              "attribs": Object {
-                "class": "",
-              },
-              "children": Array [
-                Node {
-                  "data": "status",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": [Circular],
-              "parent": [Circular],
-              "prev": null,
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
-            },
-            "type": "style",
-            "x-attribsNamespace": Object {},
-            "x-attribsPrefix": Object {},
-          },
-          Node {
-            "attribs": Object {
-              "class": "",
-            },
-            "children": Array [
-              Node {
-                "attribs": Object {},
-                "children": Array [
-                  Node {
-                    "data": "Actions",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "button",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": null,
-                "parent": [Circular],
-                "prev": null,
-                "type": "tag",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-            ],
-            "name": "div",
-            "namespace": "http://www.w3.org/1999/xhtml",
-            "next": Node {
-              "attribs": Object {},
-              "children": Array [
-                Node {
-                  "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-              ],
-              "name": "style",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Node {
-                "attribs": Object {},
-                "children": Array [
-                  Node {
-                    "data": "
-        footer {
-          background-color: #fafafa;
-          border-top: 1px solid #eaeaea;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          color: #444;
-          padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
-          box-sizing: border-box;
-        }
-      ",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "style",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": null,
-                "parent": [Circular],
-                "prev": [Circular],
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-              "parent": [Circular],
-              "prev": [Circular],
-              "type": "style",
-              "x-attribsNamespace": Object {},
-              "x-attribsPrefix": Object {},
-            },
-            "parent": [Circular],
-            "prev": Node {
-              "attribs": Object {},
-              "children": Array [
-                Node {
-                  "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-              ],
-              "name": "style",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": [Circular],
-              "parent": [Circular],
-              "prev": Node {
-                "attribs": Object {
-                  "class": "",
-                },
-                "children": Array [
-                  Node {
-                    "data": "status",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": [Circular],
-                "parent": [Circular],
-                "prev": null,
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
-              },
-              "type": "style",
-              "x-attribsNamespace": Object {},
-              "x-attribsPrefix": Object {},
-            },
-            "type": "tag",
-            "x-attribsNamespace": Object {
-              "class": undefined,
-            },
-            "x-attribsPrefix": Object {
-              "class": undefined,
-            },
-          },
-          Node {
-            "attribs": Object {},
-            "children": Array [
-              Node {
-                "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                "next": null,
-                "parent": [Circular],
-                "prev": null,
-                "type": "text",
-              },
-            ],
-            "name": "style",
+            "name": "button",
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": Node {
               "attribs": Object {},
@@ -2027,9 +1070,13 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
                   "next": null,
@@ -2049,101 +1096,13 @@ initialize {
             },
             "parent": [Circular],
             "prev": Node {
-              "attribs": Object {
-                "class": "",
-              },
-              "children": Array [
-                Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "Actions",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "button",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "tag",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
+              "data": "status",
               "next": [Circular],
               "parent": [Circular],
-              "prev": Node {
-                "attribs": Object {},
-                "children": Array [
-                  Node {
-                    "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "style",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": [Circular],
-                "parent": [Circular],
-                "prev": Node {
-                  "attribs": Object {
-                    "class": "",
-                  },
-                  "children": Array [
-                    Node {
-                      "data": "status",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "div",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": [Circular],
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "tag",
-                  "x-attribsNamespace": Object {
-                    "class": undefined,
-                  },
-                  "x-attribsPrefix": Object {
-                    "class": undefined,
-                  },
-                },
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
+              "prev": null,
+              "type": "text",
             },
-            "type": "style",
+            "type": "tag",
             "x-attribsNamespace": Object {},
             "x-attribsPrefix": Object {},
           },
@@ -2163,9 +1122,13 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
                 "next": null,
@@ -2182,118 +1145,25 @@ initialize {
               "attribs": Object {},
               "children": Array [
                 Node {
-                  "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
+                  "data": "Actions",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
                   "type": "text",
                 },
               ],
-              "name": "style",
+              "name": "button",
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": [Circular],
               "parent": [Circular],
               "prev": Node {
-                "attribs": Object {
-                  "class": "",
-                },
-                "children": Array [
-                  Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "Actions",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "button",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
+                "data": "status",
                 "next": [Circular],
                 "parent": [Circular],
-                "prev": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": [Circular],
-                  "parent": [Circular],
-                  "prev": Node {
-                    "attribs": Object {
-                      "class": "",
-                    },
-                    "children": Array [
-                      Node {
-                        "data": "status",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "div",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": [Circular],
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {
-                      "class": undefined,
-                    },
-                    "x-attribsPrefix": Object {
-                      "class": undefined,
-                    },
-                  },
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
+                "prev": null,
+                "type": "text",
               },
-              "type": "style",
+              "type": "tag",
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
@@ -2315,6 +1185,11 @@ initialize {
           border-radius: 5px;
           overflow: hidden;
           display: block;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       ",
               "next": null,
@@ -2340,7 +1215,7 @@ initialize {
           "children": Array [
             Node {
               "attribs": Object {
-                "class": "",
+                "class": "title ",
               },
               "children": Array [
                 Node {
@@ -2358,14 +1233,14 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                     "next": null,
@@ -2397,10 +1272,10 @@ initialize {
                       Node {
                         "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                         "next": null,
@@ -2417,14 +1292,17 @@ initialize {
                         Node {
                           "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2480,14 +1358,14 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                   "next": null,
@@ -2519,10 +1397,10 @@ initialize {
                     Node {
                       "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                       "next": null,
@@ -2539,14 +1417,17 @@ initialize {
                       Node {
                         "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2584,7 +1465,7 @@ initialize {
               "parent": [Circular],
               "prev": Node {
                 "attribs": Object {
-                  "class": "",
+                  "class": "title ",
                 },
                 "children": Array [
                   Node {
@@ -2633,10 +1514,10 @@ initialize {
                   Node {
                     "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                     "next": null,
@@ -2653,14 +1534,17 @@ initialize {
                     Node {
                       "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2691,14 +1575,14 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                     "next": null,
@@ -2713,7 +1597,7 @@ initialize {
                 "parent": [Circular],
                 "prev": Node {
                   "attribs": Object {
-                    "class": "",
+                    "class": "title ",
                   },
                   "children": Array [
                     Node {
@@ -2755,10 +1639,10 @@ initialize {
                 Node {
                   "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                   "next": null,
@@ -2775,14 +1659,17 @@ initialize {
                   Node {
                     "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2824,14 +1711,14 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                       "next": null,
@@ -2846,7 +1733,7 @@ initialize {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "",
+                      "class": "title ",
                     },
                     "children": Array [
                       Node {
@@ -2892,14 +1779,17 @@ initialize {
                 Node {
                   "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2919,10 +1809,10 @@ initialize {
                   Node {
                     "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                     "next": null,
@@ -2957,14 +1847,14 @@ initialize {
                     "children": Array [
                       Node {
                         "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                         "next": null,
@@ -2979,7 +1869,7 @@ initialize {
                     "parent": [Circular],
                     "prev": Node {
                       "attribs": Object {
-                        "class": "",
+                        "class": "title ",
                       },
                       "children": Array [
                         Node {
@@ -3056,6 +1946,11 @@ initialize {
           border-radius: 5px;
           overflow: hidden;
           display: block;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       ",
             "next": null,
@@ -3074,96 +1969,25 @@ initialize {
           },
           "children": Array [
             Node {
-              "attribs": Object {
-                "class": "",
-              },
-              "children": Array [
-                Node {
-                  "data": "status",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
+              "data": "status",
               "next": Node {
                 "attribs": Object {},
                 "children": Array [
                   Node {
-                    "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
+                    "data": "Actions",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
                     "type": "text",
                   },
                 ],
-                "name": "style",
+                "name": "button",
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": Node {
-                  "attribs": Object {
-                    "class": "",
-                  },
+                  "attribs": Object {},
                   "children": Array [
                     Node {
-                      "attribs": Object {},
-                      "children": Array [
-                        Node {
-                          "data": "Actions",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "button",
-                      "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "tag",
-                      "x-attribsNamespace": Object {},
-                      "x-attribsPrefix": Object {},
-                    },
-                  ],
-                  "name": "div",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": Node {
-                      "attribs": Object {},
-                      "children": Array [
-                        Node {
-                          "data": "
+                      "data": "
         footer {
           background-color: #fafafa;
           border-top: 1px solid #eaeaea;
@@ -3175,383 +1999,52 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "style",
-                      "namespace": "http://www.w3.org/1999/xhtml",
                       "next": null,
                       "parent": [Circular],
-                      "prev": [Circular],
-                      "type": "style",
-                      "x-attribsNamespace": Object {},
-                      "x-attribsPrefix": Object {},
+                      "prev": null,
+                      "type": "text",
                     },
-                    "parent": [Circular],
-                    "prev": [Circular],
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
                   "parent": [Circular],
                   "prev": [Circular],
-                  "type": "tag",
-                  "x-attribsNamespace": Object {
-                    "class": undefined,
-                  },
-                  "x-attribsPrefix": Object {
-                    "class": undefined,
-                  },
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
                 },
                 "parent": [Circular],
                 "prev": [Circular],
-                "type": "style",
+                "type": "tag",
                 "x-attribsNamespace": Object {},
                 "x-attribsPrefix": Object {},
               },
               "parent": [Circular],
               "prev": null,
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
+              "type": "text",
             },
             Node {
               "attribs": Object {},
               "children": Array [
                 Node {
-                  "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
+                  "data": "Actions",
                   "next": null,
                   "parent": [Circular],
                   "prev": null,
                   "type": "text",
                 },
               ],
-              "name": "style",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Node {
-                "attribs": Object {
-                  "class": "",
-                },
-                "children": Array [
-                  Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "Actions",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "button",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "
-        footer {
-          background-color: #fafafa;
-          border-top: 1px solid #eaeaea;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          color: #444;
-          padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
-          box-sizing: border-box;
-        }
-      ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": [Circular],
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                  "parent": [Circular],
-                  "prev": [Circular],
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-                "parent": [Circular],
-                "prev": [Circular],
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
-              },
-              "parent": [Circular],
-              "prev": Node {
-                "attribs": Object {
-                  "class": "",
-                },
-                "children": Array [
-                  Node {
-                    "data": "status",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": [Circular],
-                "parent": [Circular],
-                "prev": null,
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
-              },
-              "type": "style",
-              "x-attribsNamespace": Object {},
-              "x-attribsPrefix": Object {},
-            },
-            Node {
-              "attribs": Object {
-                "class": "",
-              },
-              "children": Array [
-                Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "Actions",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "button",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "tag",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-              ],
-              "name": "div",
-              "namespace": "http://www.w3.org/1999/xhtml",
-              "next": Node {
-                "attribs": Object {},
-                "children": Array [
-                  Node {
-                    "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "style",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        footer {
-          background-color: #fafafa;
-          border-top: 1px solid #eaeaea;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          overflow: hidden;
-          color: #444;
-          padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
-          box-sizing: border-box;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": [Circular],
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-                "parent": [Circular],
-                "prev": [Circular],
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-              "parent": [Circular],
-              "prev": Node {
-                "attribs": Object {},
-                "children": Array [
-                  Node {
-                    "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "text",
-                  },
-                ],
-                "name": "style",
-                "namespace": "http://www.w3.org/1999/xhtml",
-                "next": [Circular],
-                "parent": [Circular],
-                "prev": Node {
-                  "attribs": Object {
-                    "class": "",
-                  },
-                  "children": Array [
-                    Node {
-                      "data": "status",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "div",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": [Circular],
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "tag",
-                  "x-attribsNamespace": Object {
-                    "class": undefined,
-                  },
-                  "x-attribsPrefix": Object {
-                    "class": undefined,
-                  },
-                },
-                "type": "style",
-                "x-attribsNamespace": Object {},
-                "x-attribsPrefix": Object {},
-              },
-              "type": "tag",
-              "x-attribsNamespace": Object {
-                "class": undefined,
-              },
-              "x-attribsPrefix": Object {
-                "class": undefined,
-              },
-            },
-            Node {
-              "attribs": Object {},
-              "children": Array [
-                Node {
-                  "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
-                  "next": null,
-                  "parent": [Circular],
-                  "prev": null,
-                  "type": "text",
-                },
-              ],
-              "name": "style",
+              "name": "button",
               "namespace": "http://www.w3.org/1999/xhtml",
               "next": Node {
                 "attribs": Object {},
@@ -3569,9 +2062,13 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
                     "next": null,
@@ -3591,101 +2088,13 @@ initialize {
               },
               "parent": [Circular],
               "prev": Node {
-                "attribs": Object {
-                  "class": "",
-                },
-                "children": Array [
-                  Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "Actions",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "button",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": null,
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                ],
-                "name": "div",
-                "namespace": "http://www.w3.org/1999/xhtml",
+                "data": "status",
                 "next": [Circular],
                 "parent": [Circular],
-                "prev": Node {
-                  "attribs": Object {},
-                  "children": Array [
-                    Node {
-                      "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "text",
-                    },
-                  ],
-                  "name": "style",
-                  "namespace": "http://www.w3.org/1999/xhtml",
-                  "next": [Circular],
-                  "parent": [Circular],
-                  "prev": Node {
-                    "attribs": Object {
-                      "class": "",
-                    },
-                    "children": Array [
-                      Node {
-                        "data": "status",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "div",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": [Circular],
-                    "parent": [Circular],
-                    "prev": null,
-                    "type": "tag",
-                    "x-attribsNamespace": Object {
-                      "class": undefined,
-                    },
-                    "x-attribsPrefix": Object {
-                      "class": undefined,
-                    },
-                  },
-                  "type": "style",
-                  "x-attribsNamespace": Object {},
-                  "x-attribsPrefix": Object {},
-                },
-                "type": "tag",
-                "x-attribsNamespace": Object {
-                  "class": undefined,
-                },
-                "x-attribsPrefix": Object {
-                  "class": undefined,
-                },
+                "prev": null,
+                "type": "text",
               },
-              "type": "style",
+              "type": "tag",
               "x-attribsNamespace": Object {},
               "x-attribsPrefix": Object {},
             },
@@ -3705,9 +2114,13 @@ initialize {
           overflow: hidden;
           color: #444;
           padding: 8pt 16pt;
-          font-size: 0.875rem;
-          min-height: 2.875rem;
           box-sizing: border-box;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: calc(2.875 * 16px);
+          padding: calc(0.625 * 16px) calc(1.31 * 16px) calc(0.625 * 16px)
+            calc(1.31 * 16px);
+          margin: 0 0 0 0;
         }
       ",
                   "next": null,
@@ -3724,118 +2137,25 @@ initialize {
                 "attribs": Object {},
                 "children": Array [
                   Node {
-                    "data": "
-        div {
-          display: flex;
-          justify-content: flex-end;
-        }
-      ",
+                    "data": "Actions",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,
                     "type": "text",
                   },
                 ],
-                "name": "style",
+                "name": "button",
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": [Circular],
                 "parent": [Circular],
                 "prev": Node {
-                  "attribs": Object {
-                    "class": "",
-                  },
-                  "children": Array [
-                    Node {
-                      "attribs": Object {},
-                      "children": Array [
-                        Node {
-                          "data": "Actions",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "button",
-                      "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": null,
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "tag",
-                      "x-attribsNamespace": Object {},
-                      "x-attribsPrefix": Object {},
-                    },
-                  ],
-                  "name": "div",
-                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "data": "status",
                   "next": [Circular],
                   "parent": [Circular],
-                  "prev": Node {
-                    "attribs": Object {},
-                    "children": Array [
-                      Node {
-                        "data": "
-        div {
-          font-size: 0.875rem;
-          line-height: 1.2;
-          margin: 0;
-          display: inline-flex;
-          word-break: break-word;
-        }
-
-        div &gt; :global(p) {
-          margin: 0;
-        }
-      ",
-                        "next": null,
-                        "parent": [Circular],
-                        "prev": null,
-                        "type": "text",
-                      },
-                    ],
-                    "name": "style",
-                    "namespace": "http://www.w3.org/1999/xhtml",
-                    "next": [Circular],
-                    "parent": [Circular],
-                    "prev": Node {
-                      "attribs": Object {
-                        "class": "",
-                      },
-                      "children": Array [
-                        Node {
-                          "data": "status",
-                          "next": null,
-                          "parent": [Circular],
-                          "prev": null,
-                          "type": "text",
-                        },
-                      ],
-                      "name": "div",
-                      "namespace": "http://www.w3.org/1999/xhtml",
-                      "next": [Circular],
-                      "parent": [Circular],
-                      "prev": null,
-                      "type": "tag",
-                      "x-attribsNamespace": Object {
-                        "class": undefined,
-                      },
-                      "x-attribsPrefix": Object {
-                        "class": undefined,
-                      },
-                    },
-                    "type": "style",
-                    "x-attribsNamespace": Object {},
-                    "x-attribsPrefix": Object {},
-                  },
-                  "type": "tag",
-                  "x-attribsNamespace": Object {
-                    "class": undefined,
-                  },
-                  "x-attribsPrefix": Object {
-                    "class": undefined,
-                  },
+                  "prev": null,
+                  "type": "text",
                 },
-                "type": "style",
+                "type": "tag",
                 "x-attribsNamespace": Object {},
                 "x-attribsPrefix": Object {},
               },
@@ -3855,7 +2175,7 @@ initialize {
             "children": Array [
               Node {
                 "attribs": Object {
-                  "class": "",
+                  "class": "title ",
                 },
                 "children": Array [
                   Node {
@@ -3873,14 +2193,14 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                       "next": null,
@@ -3912,10 +2232,10 @@ initialize {
                         Node {
                           "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                           "next": null,
@@ -3932,14 +2252,17 @@ initialize {
                           Node {
                             "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3995,14 +2318,14 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                     "next": null,
@@ -4034,10 +2357,10 @@ initialize {
                       Node {
                         "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                         "next": null,
@@ -4054,14 +2377,17 @@ initialize {
                         Node {
                           "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4099,7 +2425,7 @@ initialize {
                 "parent": [Circular],
                 "prev": Node {
                   "attribs": Object {
-                    "class": "",
+                    "class": "title ",
                   },
                   "children": Array [
                     Node {
@@ -4148,10 +2474,10 @@ initialize {
                     Node {
                       "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                       "next": null,
@@ -4168,14 +2494,17 @@ initialize {
                       Node {
                         "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4206,14 +2535,14 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                       "next": null,
@@ -4228,7 +2557,7 @@ initialize {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "",
+                      "class": "title ",
                     },
                     "children": Array [
                       Node {
@@ -4270,10 +2599,10 @@ initialize {
                   Node {
                     "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                     "next": null,
@@ -4290,14 +2619,17 @@ initialize {
                     Node {
                       "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4339,14 +2671,14 @@ initialize {
                     "children": Array [
                       Node {
                         "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                         "next": null,
@@ -4361,7 +2693,7 @@ initialize {
                     "parent": [Circular],
                     "prev": Node {
                       "attribs": Object {
-                        "class": "",
+                        "class": "title ",
                       },
                       "children": Array [
                         Node {
@@ -4407,14 +2739,17 @@ initialize {
                   Node {
                     "data": "
         .content {
-          padding: 16pt;
+          width: 100%;
+          height: auto;
+          padding: calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px) calc(1.3 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content :global(*:first-child) {
+        .content :global(&gt; *:first-child) {
           margin-top: 0;
         }
 
-        .content :global(*:last-child) {
+        .content :global(&gt; *:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4434,10 +2769,10 @@ initialize {
                     Node {
                       "data": "
         div {
-          font-size: 0.875rem;
+          font-size: 0.875em;
           line-height: 1.6;
-          letter-spacing: -0.005625rem;
-          margin: 8pt 0;
+          letter-spacing: -0.005625em;
+          margin: 0.75em 0;
         }
       ",
                       "next": null,
@@ -4472,14 +2807,14 @@ initialize {
                       "children": Array [
                         Node {
                           "data": "
-        div {
-          font-size: 1.25rem;
+        .title {
           line-height: 1.5;
-          margin: 0;
           display: inline-flex;
           word-break: break-word;
           font-weight: 600;
-          letter-spacing: -0.020625rem;
+          letter-spacing: -0.020625em;
+          font-size: 1.25em;
+          width: auto;
         }
       ",
                           "next": null,
@@ -4494,7 +2829,7 @@ initialize {
                       "parent": [Circular],
                       "prev": Node {
                         "attribs": Object {
-                          "class": "",
+                          "class": "title ",
                         },
                         "children": Array [
                           Node {
@@ -4587,7 +2922,83 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

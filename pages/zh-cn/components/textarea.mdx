@@ -20,15 +20,6 @@ export const meta = {
 />
 
 <Playground
-  title="宽度"
-  desc="手动指定文本框的宽度。"
-  scope={{ Textarea }}
-  code={`
-<Textarea width="100%" placeholder="CSS（层叠样式表）用于设置和布置网页 - 例如，更改内容的字体，颜色，大小和间距，将其拆分为多个列，或添加动画和其他装饰功能。" />
-`}
-/>
-
-<Playground
   title="禁用"
   desc="禁用文本框所有交互。"
   scope={{ Textarea }}
@@ -43,13 +34,13 @@ export const meta = {
   scope={{ Textarea, Spacer }}
   code={`
 <>
-  <Textarea status="success" minHeight="65px" value="成功" />
-  <Spacer x={.5} inline />
-  <Textarea status="secondary" minHeight="65px" value="次要的" />
-  <Spacer y={.5} />
-  <Textarea status="warning" minHeight="65px" value="警告" />
-  <Spacer x={.5} inline />
-  <Textarea status="error" minHeight="65px" value="错误" />
+  <Textarea status="success" height="65px" value="成功" />
+  <Spacer w={.5} inline />
+  <Textarea status="secondary" height="65px" value="次要的" />
+  <Spacer h={.5} />
+  <Textarea status="warning" height="65px" value="警告" />
+  <Spacer w={.5} inline />
+  <Textarea status="error" height="65px" value="错误" />
 </>
 `}
 />
@@ -89,10 +80,10 @@ export const meta = {
   return (
     <>
       <Textarea width="100%" {...bindings}/>
-      <Spacer y={.5} />
-      <Button auto type="secondary" size="small" onClick={() => setState(Math.random().toString(32))}>设置随机文本</Button>
-      <Spacer y={.5} />
-      <Button auto size="small" onClick={() => reset()}>重置文本</Button>
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/3} onClick={() => setState(Math.random().toString(32))}>设置随机文本</Button>
+      <Spacer h={.5} />
+      <Button auto scale={1/3} onClick={() => reset()}>重置文本</Button>
     </>
   )
 }
@@ -112,8 +103,8 @@ export const meta = {
   return (
     <>
       <Textarea initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
-      <Spacer y={.5} />
-      <Button auto type="secondary" size="small"
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/3}
         onClick={setChange}>设置值</Button>
     </>
   )
@@ -124,26 +115,22 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/textarea.mdx">
 <Attributes.Title alias="Input.Textarea">Textarea.Props</Attributes.Title>
 
-| 属性             | 描述               | 类型                             | 推荐值                                                           | 默认      |
-| ---------------- | ------------------ | -------------------------------- | ---------------------------------------------------------------- | --------- |
-| **value**        | 设置文本框的值     | `string`                         | -                                                                | -         |
-| **initialValue** | 文本框的初始值     | `string`                         | -                                                                | -         |
-| **placeholder**  | 占位文本           | `string`                         | -                                                                | -         |
-| **status**       | 文本框当前状态     | `NormalTypes`                    | `'default', 'secondary', 'success', 'warning', 'error'`          | `default` |
-| **readOnly**     | 是否以只读方式显示 | `boolean`                        | -                                                                | `false`   |
-| **disabled**     | 是否禁用文本框     | `boolean`                        | -                                                                | `false`   |
-| **width**        | 设置 CSS 宽度      | `string`                         | -                                                                | `initial` |
-| **minHeight**    | 设置 CSS 最小高度  | `string`                         | -                                                                | -         |
-| **onChange**     | 文本变化事件       | `(e: React.ChangeEvent) => void` | -                                                                | -         |
-| **resize**       | CSS 属性           | `string`                         | `'none', 'both', 'horizontal', 'vertical', 'initial', 'inherit'` | `none`    |
-| ...              | 原生属性           | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...`                                 | -         |
+| 属性             | 描述               | 类型                             | 推荐值                           | 默认      |
+| ---------------- | ------------------ | -------------------------------- | -------------------------------- | --------- |
+| **value**        | 设置文本框的值     | `string`                         | -                                | -         |
+| **initialValue** | 文本框的初始值     | `string`                         | -                                | -         |
+| **placeholder**  | 占位文本           | `string`                         | -                                | -         |
+| **status**       | 文本框当前状态     | `TextareaTypes`                  | [TextareaTypes](#textareatypes)  | `default` |
+| **readOnly**     | 是否以只读方式显示 | `boolean`                        | -                                | `false`   |
+| **disabled**     | 是否禁用文本框     | `boolean`                        | -                                | `false`   |
+| **onChange**     | 文本变化事件       | `(e: React.ChangeEvent) => void` | -                                | -         |
+| **resize**       | CSS 属性           | `CSSResize`                      | [CSSResize](#cssresize)          | `none`    |
+| ...              | 原生属性           | `TextareaHTMLAttributes`         | `'form', 'id', 'className', ...` | -         |
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
+type useInput = (initialValue: string) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>
@@ -153,6 +140,18 @@ type useInput = (
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   }
 }
+```
+
+<Attributes.Title>TextareaTypes</Attributes.Title>
+
+```ts
+type TextareaTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>CSSResize</Attributes.Title>
+
+```ts
+type CSSResize = 'none' | 'both' | 'horizontal' | 'vertical' | 'initial' | 'inherit'
 ```
 
 </Attributes>

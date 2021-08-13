@@ -2,11 +2,11 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { useCurrentState, Link, Button, Spacer } from 'components'
 
 export const meta = {
-  title: 'use-current-state',
+  title: 'useCurrentState',
   group: 'Utils',
 }
 
-## Use current state
+## useCurrentState
 
 Get **the latest value** in functional component. By default, `state` in a React FC
 can only get the value at render time, not the latest.
@@ -30,7 +30,7 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
     alert(str)
   }
   return (
-    <Button size="small" auto onClick={handler}>Click to show</Button>
+    <Button scale={0.5} auto onClick={handler}>Click to show</Button>
   )
 }
 `}

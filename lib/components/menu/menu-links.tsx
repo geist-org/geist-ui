@@ -1,25 +1,28 @@
 import React from 'react'
-import Router from 'next/router'
-import { useTheme } from 'components'
+import NextLink from 'next/link'
+import { useTheme, Image } from 'components'
 import Controls from 'lib/components/controls'
-import LogoIcon from 'lib/components/icons/logo'
 import { useConfigs } from 'lib/config-context'
 
 const MenuLinks = () => {
   const theme = useTheme()
   const { isChinese } = useConfigs()
-  const goHome = () => {
-    const home = isChinese ? '/zh-cn' : '/en-us'
-    Router.push(home)
-  }
 
   return (
     <nav>
-      <div className="site-name">
-        <span title={isChinese ? '回到主页' : 'Go Home'} onClick={goHome}>
-          <LogoIcon />
-        </span>
-      </div>
+      <NextLink href={isChinese ? '/zh-cn' : '/en-us'}>
+        <a className="geist-logo" aria-label="Go Home">
+          <Image
+            src="/images/logo.png"
+            width="2rem"
+            height="2rem"
+            marginRight={0.5}
+            draggable={false}
+            title="Logo"
+          />
+          Geist
+        </a>
+      </NextLink>
       <div className="links">
         <Controls />
       </div>
@@ -33,12 +36,21 @@ const MenuLinks = () => {
           position: relative;
           margin: 0 auto;
           padding: 0 ${theme.layout.gap};
-          height: 60px;
+          height: var(--geist-page-nav-height);
         }
 
-        .site-name {
+        .geist-logo {
           display: flex;
+          flex-direction: row;
           align-items: center;
+          font-size: 1.125rem;
+          font-weight: 500;
+          color: inherit;
+        }
+
+        .geist-logo :global(.image) {
+          border: 1px solid ${theme.palette.border};
+          border-radius: 2rem;
         }
       `}</style>
     </nav>

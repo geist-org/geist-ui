@@ -1,35 +1,50 @@
-import { NormalSizes } from 'components/utils/prop-types'
-import { GeistUIThemes } from 'components/themes/presets'
+import { NormalTypes } from '../utils/prop-types'
+import { GeistUIThemesPalette } from '../themes/presets'
 
-export interface SelectSize {
-  height: string
-  fontSize: string
-  minWidth: string
+export type SelectColor = {
+  border: string
+  borderActive: string
+  iconBorder: string
+  placeholderColor: string
 }
 
-export const getSizes = (theme: GeistUIThemes, size?: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: SelectSize } = {
-    medium: {
-      height: `calc(1.688 * ${theme.layout.gap})`,
-      fontSize: '.875rem',
-      minWidth: '10rem',
+export const getColors = (
+  palette: GeistUIThemesPalette,
+  status?: NormalTypes,
+): SelectColor => {
+  const colors: { [key in NormalTypes]: SelectColor } = {
+    default: {
+      border: palette.border,
+      borderActive: palette.foreground,
+      iconBorder: palette.accents_5,
+      placeholderColor: palette.accents_3,
     },
-    small: {
-      height: `calc(1.344 * ${theme.layout.gap})`,
-      fontSize: '.75rem',
-      minWidth: '8rem',
+    secondary: {
+      border: palette.border,
+      borderActive: palette.foreground,
+      iconBorder: palette.accents_5,
+      placeholderColor: palette.accents_3,
     },
-    mini: {
-      height: `calc(1 * ${theme.layout.gap})`,
-      fontSize: '.75rem',
-      minWidth: '6.5rem',
+    success: {
+      border: palette.successLight,
+      borderActive: palette.successDark,
+      iconBorder: palette.success,
+      placeholderColor: palette.accents_3,
     },
-    large: {
-      height: `calc(2 * ${theme.layout.gap})`,
-      fontSize: '1.225rem',
-      minWidth: '12.5rem',
+    warning: {
+      border: palette.warningLight,
+      borderActive: palette.warningDark,
+      iconBorder: palette.warning,
+      placeholderColor: palette.accents_3,
+    },
+    error: {
+      border: palette.errorLight,
+      borderActive: palette.errorDark,
+      iconBorder: palette.error,
+      placeholderColor: palette.error,
     },
   }
 
-  return size ? sizes[size] : sizes.medium
+  if (!status) return colors.default
+  return colors[status]
 }

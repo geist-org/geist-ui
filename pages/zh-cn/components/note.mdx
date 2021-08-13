@@ -57,14 +57,6 @@ export const meta = {
 />
 
 <Playground
-  title="较小的提示"
-  scope={{ Note }}
-  code={`
-<Note small>详见 JavaScript 中的变量引用语法。</Note>
-`}
-/>
-
-<Playground
   title="变体"
   scope={{ Note }}
   code={`
@@ -87,13 +79,18 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/note.mdx">
 <Attributes.Title>Note.Props</Attributes.Title>
 
-| 属性       | 描述                         | 类型                 | 推荐值                                                  | 默认      |
-| ---------- | ---------------------------- | -------------------- | ------------------------------------------------------- | --------- |
-| **type**   | 提示类型                     | `NormalTypes`        | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **label**  | 是否显示标签，或是自定义标签 | `boolean` / `string` | -                                                       | -         |
-| **small**  | 较小的提示框                 | `boolean`            | -                                                       | `false`   |
-| **filled** | 填充色彩的变体提示框         | `boolean`            | -                                                       | `false`   |
-| ...        | 原生属性                     | `HTMLAttributes`     | `'id', 'className', ...`                                | -         |
+| 属性       | 描述                         | 类型               | 推荐值                   | 默认      |
+| ---------- | ---------------------------- | ------------------ | ------------------------ | --------- |
+| **type**   | 提示类型                     | `NoteTypes`        | [NoteTypes](#nodetypes)  | `default` |
+| **label**  | 是否显示标签，或是自定义标签 | `boolean / string` | -                        | -         |
+| **filled** | 填充色彩的变体提示框         | `boolean`          | -                        | `false`   |
+| ...        | 原生属性                     | `HTMLAttributes`   | `'id', 'className', ...` | -         |
+
+<Attributes.Title>NoteTypes</Attributes.Title>
+
+```ts
+type NoteTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

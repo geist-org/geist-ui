@@ -8,13 +8,23 @@ describe('Select', () => {
     const wrapper = mount(
       <div>
         <Select />
-        <Select size="mini" />
-        <Select size="small" />
-        <Select size="large" />
+        <Select scale={2} />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('should work with different status', () => {
+    const wrapper = mount(
+      <div>
+        <Select type="secondary" />
+        <Select type="success" />
+        <Select type="warning" />
+        <Select type="error" />
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('should work correctly with labels', () => {
@@ -22,6 +32,9 @@ describe('Select', () => {
       <Select>
         <Select.Option label>1</Select.Option>
         <Select.Option divider>1</Select.Option>
+        <Select.Option divider label>
+          1
+        </Select.Option>
         <Select.Option value="1">1</Select.Option>
         <Select.Option value="2">Option 2</Select.Option>
       </Select>,
@@ -86,6 +99,25 @@ describe('Select', () => {
       <Select onChange={changeHandler}>
         <Select.Option value="1">1</Select.Option>
         <Select.Option value="2" disabled>
+          Option 2
+        </Select.Option>
+      </Select>,
+    )
+    wrapper.find('.select').simulate('click', nativeEvent)
+    wrapper.find('.select-dropdown').find('.option').at(1).simulate('click', nativeEvent)
+    await updateWrapper(wrapper, 350)
+    expect(changeHandler).not.toHaveBeenCalled()
+    expect(value).not.toEqual('2')
+    changeHandler.mockRestore()
+  })
+
+  it('should ignore option when prevent all', async () => {
+    let value = ''
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
+    const wrapper = mount(
+      <Select onChange={changeHandler}>
+        <Select.Option value="1">1</Select.Option>
+        <Select.Option value="2" preventAllEvents>
           Option 2
         </Select.Option>
       </Select>,

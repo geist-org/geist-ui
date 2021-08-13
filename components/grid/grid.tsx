@@ -1,27 +1,30 @@
 import React from 'react'
 import css from 'styled-jsx/css'
-import GridContainer from './grid-container'
-import GridBasicItem, { GridBasicItemComponentProps } from './basic-item'
+import GridBasicItem, { GridBasicItemProps } from './basic-item'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
-  className: string
+  className?: string
 }
 
 const defaultProps = {
   className: '',
 }
 
-export type GridProps = Props & typeof defaultProps & GridBasicItemComponentProps
+export type GridProps = Props & GridBasicItemProps
 
-const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({
+const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
   children,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<GridProps> & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
   const { className: resolveClassName, styles } = css.resolve`
-    margin: 0;
+    margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
     box-sizing: border-box;
-    padding: var(--gaid-gap-unit);
+    padding: ${SCALES.pt(0, 'var(--gaid-gap-unit)')}
+      ${SCALES.pr(0, 'var(--gaid-gap-unit)')} ${SCALES.pb(0, 'var(--gaid-gap-unit)')}
+      ${SCALES.pl(0, 'var(--gaid-gap-unit)')};
   `
   return (
     <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
@@ -31,13 +34,7 @@ const Grid: React.FC<React.PropsWithChildren<GridProps>> = ({
   )
 }
 
-type MemoGridComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Container: typeof GridContainer
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  GridBasicItemComponentProps
-
-Grid.defaultProps = defaultProps
-
-export default React.memo(Grid) as MemoGridComponent<ComponentProps>
+GridComponent.defaultProps = defaultProps
+GridComponent.displayName = 'GeistGrid'
+const Grid = withScaleable(GridComponent)
+export default Grid

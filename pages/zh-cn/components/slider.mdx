@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Slider, Row, Spacer } from 'components'
+import { Slider, Spacer } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -31,11 +31,9 @@ export const meta = {
 <Playground
   title="步长"
   desc="不同粒度的滑块。"
-  scope={{ Slider, Row }}
+  scope={{ Slider }}
   code={`
-<Row style={{ width: '75%' }}>
-  <Slider step={10} showMarkers />
-</Row>
+<Slider step={10} showMarkers />
 `}
 />
 
@@ -55,7 +53,7 @@ export const meta = {
 <Playground
   title="事件"
   desc="在滑动时获取值的变化。"
-  scope={{ Slider, Row, useState }}
+  scope={{ Slider, useState }}
   code={`
 () => {
   const [value, setValue] = useState()
@@ -64,9 +62,7 @@ export const meta = {
     setValue(val)
   }
   return (
-    <Row style={{ width: '75%' }}>
-      <Slider value={value} onChange={handler} />
-    </Row>
+     <Slider value={value} onChange={handler} width="75%" />
   )
 }
 `}
@@ -84,6 +80,7 @@ export const meta = {
 | **min**          | 滑块可选的最小值       | `number`                | -                                | 0       |
 | **disabled**     | 禁用所有操作           | `boolean`               | `false`                          |
 | **showMarkers**  | 显示每一个标记         | `boolean`               | -                                | `false` |
+| **hideValue**    | 是否隐藏滑块中的数字   | `boolean`               | -                                | `false` |
 | **onChange**     | 当滑块的值改变时被调用 | `(val: number) => void` | -                                | -       |
 | ...              | 原生属性               | `HTMLAttributes`        | `'id', 'name', 'className', ...` | -       |
 

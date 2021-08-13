@@ -6,7 +6,7 @@ export const meta = {
   group: '工具包',
 }
 
-## Use current state / 获取当前值
+## useCurrentState / 获取当前值
 
 在函数式组件内获取 **最新的值**。默认场景下，React 函数式组件只能获取渲染当时 `state` 的值，这并非是最新的。
 
@@ -28,7 +28,7 @@ export const meta = {
     alert(str)
   }
   return (
-    <Button size="small" auto onClick={handler}>点击显示</Button>
+    <Button scale={0.5} auto onClick={handler}>点击显示</Button>
   )
 }
 `}

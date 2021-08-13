@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const LinkIcon: React.FC<unknown> = () => {
+export const LinkIconComponent: React.FC<unknown> = () => {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ export const LinkIcon: React.FC<unknown> = () => {
 
       <style jsx>{`
         .icon {
-          margin: 0 5px;
+          margin: 0 0.3125em;
           display: inline-flex;
           align-self: center;
           color: currentColor;
@@ -29,4 +29,6 @@ export const LinkIcon: React.FC<unknown> = () => {
   )
 }
 
-export default React.memo(LinkIcon)
+LinkIconComponent.displayName = 'GeistLinkIcon'
+const LinkIcon = React.memo(LinkIconComponent)
+export default LinkIcon

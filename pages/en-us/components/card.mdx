@@ -1,8 +1,8 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Card, Spacer, Row, Col, Link, Image, Text, Divider, Code } from 'components'
+import { Card, Spacer, Link, Image, Text, Divider, Code, Grid } from 'components'
 
 export const meta = {
-  title: 'card',
+  title: 'Card',
   group: 'Surfaces',
 }
 
@@ -35,8 +35,8 @@ A common container component.
   scope={{ Card }}
   code={`
 <Card shadow>
-  <h4>The Evil Rabbit</h4>
-  <p>shadow card.</p>
+  <h4>HTTP is extensible</h4>
+  <p>Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with. New functionality can even be introduced by a simple agreement between a client and a server about a new header's semantics.</p>
 </Card>
 `}
 />
@@ -44,30 +44,21 @@ A common container component.
 <Playground
   title="Types"
   desc="Show different states with colors."
-  scope={{ Card, Spacer, Row, Col }}
+  scope={{ Card, Grid }}
   code={`
 () => {
-  const typeLeft = ['secondary', 'success', 'warning', 'error', 'dark']
-  const typeRight = ['alert', 'purple', 'violet', 'cyan', 'lite']
+  const types = ['secondary', 'success', 'warning', 'error', 'dark', 'alert', 'purple', 'violet', 'cyan']
   return (
-    <>
-      {typeLeft.map((left, index) => (
-        <Row justify="space-around" key={left} style={{ marginBottom: '18px' }}>
-          <Col span="10">
-            <Card type={left}>
-              <h4 style={{ textTransform: 'capitalize' }}>{left}</h4>
-              <span>{left}</span>
-            </Card>
-          </Col>
-          <Col span="10">
-            <Card type={typeRight[index]}>
-              <h4 style={{ textTransform: 'capitalize' }}>{typeRight[index]}</h4>
-              <span>{typeRight[index]}</span>
-            </Card>
-          </Col>
-        </Row>
+    <Grid.Container gap={1.5}>
+      {types.map(type => (
+        <Grid xs={8} key={type}>
+          <Card type={type} width="100%">
+            <h4 style={{ textTransform: 'capitalize' }}>{type}</h4>
+            <span>{type}</span>
+          </Card>
+        </Grid>
       ))}
-    </>
+    </Grid.Container>
   )
 }
 `}
@@ -75,24 +66,28 @@ A common container component.
 
 <Playground
   title="With Footer"
-  scope={{ Card, Link, Spacer, Row }}
+  scope={{ Card, Link, Grid }}
   code={`
-<Row style={{ flexWrap: 'wrap' }} justify="space-around">
-  <Card width="330px">
-    <h4>Geist UI React</h4>
-    <p>Modern and minimalist React UI library.</p>
-    <Card.Footer>
-      <Link color target="_blank" href="https://github.com/geist-org/react">Visit source code on GitHub.</Link>
-    </Card.Footer>
-  </Card>
-  <Card width="330px" type="dark">
-    <h4>Geist UI React</h4>
-    <p>Modern and minimalist React UI library.</p>
-    <Card.Footer>
-      <Link target="_blank" href="https://github.com/geist-org/react">Visit source code on GitHub.</Link>
-    </Card.Footer>
-  </Card>
-</Row>
+<Grid.Container gap={1.5}>
+  <Grid xs={12} justify="ceter">
+    <Card width="330px">
+      <h4>Geist UI React</h4>
+      <p>Modern and minimalist React UI library.</p>
+      <Card.Footer>
+        <Link color target="_blank" href="https://github.com/geist-org/react">Visit source code on GitHub.</Link>
+      </Card.Footer>
+    </Card>
+  </Grid>
+  <Grid xs={12} justify="ceter">
+    <Card width="330px" type="dark">
+      <h4>Geist UI React</h4>
+      <p>Modern and minimalist React UI library.</p>
+      <Card.Footer>
+        <Link target="_blank" href="https://github.com/geist-org/react">Visit source code on GitHub.</Link>
+      </Card.Footer>
+    </Card>
+  </Grid>
+</Grid.Container>
 `}
 />
 
@@ -102,8 +97,8 @@ A common container component.
   code={`
 <Card width="400px">
   <Image src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png"
-   height="200" width="400" style={{ objectFit: 'cover' }} />
-  <Text h4 style={{ marginBottom: '0' }}>Geist UI React</Text>
+   height="200px" width="400px" draggable={false} />
+  <Text h4 mb={0}>Geist UI React</Text>
   <Text type="secondary" small>Modern and minimalist React UI library.</Text>
   <Card.Footer>
     <Link block target="_blank" href="https://github.com/geist-org/react">Visit source code on GitHub.</Link>
@@ -138,7 +133,6 @@ A common container component.
 | **hoverable** | add effect on hover | `boolean`             | -                       | `false`   |
 | **shadow**    | show shadow         | `boolean`             | -                       | `false`   |
 | **type**      | card type           | [CardType](#cardtype) | -                       | `default` |
-| **width**     | CSS width value     | `string`              | -                       | `100%`    |
 | ...           | native props        | `HTMLAttributes`      | `'id', className', ...` | -         |
 
 <Attributes.Title alias="Card.Body">Card.Content.Props</Attributes.Title>

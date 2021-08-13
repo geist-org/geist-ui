@@ -1,5 +1,4 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 
 interface Props {
   isRight?: boolean
@@ -13,7 +12,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type ButtonIconProps = Props & typeof defaultProps & NativeAttrs
+export type ButtonIconProps = Props & NativeAttrs
 
 const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
   isRight,
@@ -21,7 +20,7 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
   children,
   className,
   ...props
-}) => {
+}: ButtonIconProps & typeof defaultProps) => {
   return (
     <span
       className={`icon ${isRight ? 'right' : ''} ${
@@ -32,7 +31,7 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
       <style jsx>{`
         .icon {
           position: absolute;
-          left: var(--geist-ui-button-padding);
+          left: var(--geist-ui-button-icon-padding);
           right: auto;
           top: 50%;
           transform: translateY(-50%);
@@ -44,7 +43,7 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
         }
 
         .right {
-          right: var(--geist-ui-button-padding);
+          right: var(--geist-ui-button-icon-padding);
           left: auto;
         }
 
@@ -63,6 +62,6 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
   )
 }
 
-const MemoButtonIcon = React.memo(ButtonIcon)
-
-export default withDefaults(MemoButtonIcon, defaultProps)
+ButtonIcon.defaultProps = defaultProps
+ButtonIcon.displayName = 'GeistButtonIcon'
+export default ButtonIcon

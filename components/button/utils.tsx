@@ -1,12 +1,10 @@
 import React, { ReactNode } from 'react'
-import { NormalSizes } from '../utils/prop-types'
 import ButtonIcon from './button-icon'
-import { ButtonProps } from 'components/button/button'
-import { ButtonGroupConfig } from 'components/button-group/button-group-context'
+import { ButtonProps } from './button'
+import { ButtonGroupConfig } from '../button-group/button-group-context'
 
 export const getButtonChildrenWithIcon = (
   auto: boolean,
-  size: NormalSizes,
   children: ReactNode,
   icons: {
     icon?: React.ReactNode
@@ -16,10 +14,9 @@ export const getButtonChildrenWithIcon = (
   const { icon, iconRight } = icons
   const hasIcon = icon || iconRight
   const isRight = Boolean(iconRight)
-  const paddingForAutoMode =
-    auto || size === 'mini'
-      ? `calc(var(--geist-ui-button-height) / 2 + var(--geist-ui-button-padding) * .5)`
-      : 0
+  const paddingForAutoMode = auto
+    ? `calc(var(--geist-ui-button-height) / 2 + var(--geist-ui-button-icon-padding) * .5)`
+    : 0
   if (!hasIcon) return <div className="text">{children}</div>
   if (React.Children.count(children) === 0) {
     return (
@@ -46,17 +43,16 @@ export const getButtonChildrenWithIcon = (
   )
 }
 
-export const filterPropsWithGroup = (
-  props: React.PropsWithChildren<ButtonProps>,
+export const filterPropsWithGroup = <T extends React.PropsWithChildren<ButtonProps>>(
+  props: T,
   config: ButtonGroupConfig,
-): ButtonProps => {
+): T => {
   if (!config.isButtonGroup) return props
   return {
     ...props,
     auto: true,
     shadow: false,
     ghost: config.ghost || props.ghost,
-    size: config.size || props.size,
     type: config.type || props.type,
     disabled: config.disabled || props.disabled,
   }

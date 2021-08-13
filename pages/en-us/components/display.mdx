@@ -15,9 +15,9 @@ To display important information or images in a central alignment.
   desc="Describe the main part with a paragraph."
   scope={{ Display, Image }}
   code={`
-<Display shadow caption="An open-source design system for building modern websites and applications.">
-  <Image width={435} height={200} src="/images/geist-banner.png" />
-</Display>
+  <Display shadow caption="An open-source design system for building modern websites and applications.">
+    <Image width="435px" height="200px" src="/images/geist-banner.png" />
+  </Display>
 `}
 />
 
@@ -59,21 +59,20 @@ To display important information or images in a central alignment.
   desc="Use component on `caption` prop."
   scope={{ Display, Code, Image }}
   code={`
-<Display shadow caption={<p>Browse <Code>react.geist-ui.dev</Code> for more documentation.</p>}>
-  <Image width={650} height={297} src="/images/geist-banner.png" />
-</Display>
+  <Display shadow caption={<p>Browse <Code>react.geist-ui.dev</Code> for more documentation.</p>}>
+    <Image width="650px" height="297px" src="/images/geist-banner.png" />
+  </Display>
 `}
 />
 
 <Attributes edit="/pages/en-us/components/display.mdx">
 <Attributes.Title>Display.Props</Attributes.Title>
 
-| Attribute   | Description                   | Type                   | Accepted values | Default       |
-| ----------- | ----------------------------- | ---------------------- | --------------- | ------------- |
-| **caption** | description for display block | `ReactNode` / `string` | -               | -             |
-| **shadow**  | show shadow                   | `boolean`              | -               | `false`       |
-| **width**   | set width                     | `string`               | -               | `fit-content` |
-| ...         | native props                  | `HTMLAttributes`       | -               | -             |
+| Attribute   | Description                   | Type                   | Accepted values | Default |
+| ----------- | ----------------------------- | ---------------------- | --------------- | ------- |
+| **caption** | description for display block | `ReactNode` / `string` | -               | -       |
+| **shadow**  | show shadow                   | `boolean`              | -               | `false` |
+| ...         | native props                  | `HTMLAttributes`       | -               | -       |
 
 </Attributes>
 

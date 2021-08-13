@@ -1,6 +1,11 @@
 import Image from './image'
 import ImageBrowser from './image-browser'
 
-Image.Browser = ImageBrowser
+export type ImageComponentType = typeof Image & {
+  Browser: typeof ImageBrowser
+}
+;(Image as ImageComponentType).Browser = ImageBrowser
 
-export default Image
+export type { ImageProps } from './image'
+export type { ImageBrowserProps, ImageAnchorProps } from './image-browser'
+export default Image as ImageComponentType

@@ -138,3 +138,17 @@ export const isChildElement = (
   }
   return false
 }
+
+export const isBrowser = (): boolean => {
+  return Boolean(
+    typeof window !== 'undefined' && window.document && window.document.createElement,
+  )
+}
+
+export const isMac = (): boolean => {
+  if (!isBrowser()) return false
+  return navigator.platform.toUpperCase().indexOf('MAC') >= 0
+}
+
+export const isCSSNumberValue = (value?: string | number) =>
+  value !== undefined && !Number.isNaN(+value)

@@ -1,5 +1,4 @@
 import Keyboard from './keyboard'
-import { KeyboardProps } from './keyboard'
 
-export type Props = KeyboardProps
+export type { KeyboardProps } from './keyboard'
 export default Keyboard

@@ -1,18 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UseToast should render different actions 1`] = `
-"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">remove</div><style>
+"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button type=\\"button\\" class=\\"btn \\" scale=\\"0.6666666666666666\\"><div class=\\"text\\">remove</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 0.625rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
-            min-width: min-content;
-            width: auto;
+            line-height: calc(2.083333333333333 * 16px);
             border-radius: 5px;
             font-weight: 400;
-            font-size: .75rem;
+            font-size: calc(0.7291666666666666 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -29,10 +25,15 @@ exports[`UseToast should render different actions 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 0.625rem;
-            --geist-ui-button-height: 1.5rem;
+            --geist-ui-button-icon-padding: calc(0.6058333333333332 * 16px);
+            --geist-ui-button-height: calc(2.083333333333333 * 16px);
             --geist-ui-button-color: #fff;
             --geist-ui-button-bg: #000;
+            min-width: min-content;
+            width: auto;
+            height: calc(2.083333333333333 * 16px);
+            padding: 0 calc(0.9583333333333331 * 16px) 0 calc(0.9583333333333331 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,
@@ -63,18 +64,14 @@ exports[`UseToast should render different actions 1`] = `
           .btn :global(.text div) {
             margin: 0;
           }
-        </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">remove</div><style>
+        </style></button><button type=\\"button\\" class=\\"btn \\" scale=\\"0.6666666666666666\\"><div class=\\"text\\">remove</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 0.625rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
-            min-width: min-content;
-            width: auto;
+            line-height: calc(2.083333333333333 * 16px);
             border-radius: 5px;
             font-weight: 400;
-            font-size: .75rem;
+            font-size: calc(0.7291666666666666 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -91,10 +88,15 @@ exports[`UseToast should render different actions 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 0.625rem;
-            --geist-ui-button-height: 1.5rem;
+            --geist-ui-button-icon-padding: calc(0.6058333333333332 * 16px);
+            --geist-ui-button-height: calc(2.083333333333333 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: min-content;
+            width: auto;
+            height: calc(2.083333333333333 * 16px);
+            padding: 0 calc(0.9583333333333331 * 16px) 0 calc(0.9583333333333331 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,

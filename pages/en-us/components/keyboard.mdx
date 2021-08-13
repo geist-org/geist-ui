@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Keyboard } from 'components'
 
 export const meta = {
-  title: 'keyboard',
+  title: 'Keyboard',
   group: 'Data Display',
 }
 
@@ -22,10 +22,10 @@ Display keyboard input that triggers an action.
   scope={{ Keyboard }}
   code={`
 <div>
-  <Keyboard command />
-  <Keyboard shift />
-  <Keyboard option />
-  <Keyboard ctrl />
+  <Keyboard command mr="10px" />
+  <Keyboard shift mr="10px" />
+  <Keyboard option mr="10px" />
+  <Keyboard ctrl mr="10px" />
 </div>
 `}
 />
@@ -35,32 +35,23 @@ Display keyboard input that triggers an action.
   scope={{ Keyboard }}
   code={`
 <div>
-  <Keyboard command>f</Keyboard>
-  <Keyboard shift>e</Keyboard>
-  <Keyboard option ctrl>b</Keyboard>
+  <Keyboard command mr="10px">f</Keyboard>
+  <Keyboard shift mr="10px">e</Keyboard>
+  <Keyboard option ctrl mr="10px">b</Keyboard>
 </div>
-`}
-/>
-
-<Playground
-  title="small"
-  scope={{ Keyboard }}
-  code={`
-<Keyboard small>/</Keyboard>
 `}
 />
 
 <Attributes edit="/pages/en-us/components/keyboard.mdx">
 <Attributes.Title>Keyboard.Props</Attributes.Title>
 
-| Attribute   | Description         | Type                   | Accepted values               | Default |
-| ----------- | ------------------- | ---------------------- | ----------------------------- | ------- |
-| **command** | show command key    | `boolean`              | -                             | `false` |
-| **shift**   | show shift key      | `boolean`              | -                             | `false` |
-| **option**  | show option key     | `boolean`              | -                             | `false` |
-| **ctrl**    | show ctrl key       | `boolean`              | -                             | `false` |
-| **small**   | small keyboard size | `boolean`              | -                             | `false` |
-| ...         | native props        | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | -       |
+| Attribute   | Description      | Type                   | Accepted values               | Default |
+| ----------- | ---------------- | ---------------------- | ----------------------------- | ------- |
+| **command** | show command key | `boolean`              | -                             | `false` |
+| **shift**   | show shift key   | `boolean`              | -                             | `false` |
+| **option**  | show option key  | `boolean`              | -                             | `false` |
+| **ctrl**    | show ctrl key    | `boolean`              | -                             | `false` |
+| ...         | native props     | `KeygenHTMLAttributes` | `'keyType', 'className', ...` | -       |
 
 </Attributes>
 

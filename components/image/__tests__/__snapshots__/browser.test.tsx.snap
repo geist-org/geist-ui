@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Image Browser should render correctly 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
       "class": "bowser ",
@@ -187,9 +187,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "currentColor",
-                        "height": "12",
                         "viewBox": "0 0 24 24",
-                        "width": "12",
                       },
                       "children": Array [
                         Node {
@@ -208,7 +206,31 @@ initialize {
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": null,
+                            "next": Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                             "parent": [Circular],
                             "prev": [Circular],
                             "type": "tag",
@@ -242,7 +264,31 @@ initialize {
                           "children": Array [],
                           "name": "path",
                           "namespace": "http://www.w3.org/2000/svg",
-                          "next": null,
+                          "next": Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": [Circular],
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                           "parent": [Circular],
                           "prev": Node {
                             "attribs": Object {
@@ -274,6 +320,71 @@ initialize {
                             "fill-rule": undefined,
                           },
                         },
+                        Node {
+                          "attribs": Object {},
+                          "children": Array [
+                            Node {
+                              "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "style",
+                          "namespace": "http://www.w3.org/2000/svg",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": Node {
+                            "attribs": Object {
+                              "clip-rule": "evenodd",
+                              "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                              "fill-rule": "evenodd",
+                            },
+                            "children": Array [],
+                            "name": "path",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": [Circular],
+                            "parent": [Circular],
+                            "prev": Node {
+                              "attribs": Object {
+                                "d": "M5 10.2H19V21H5V10.2Z",
+                              },
+                              "children": Array [],
+                              "name": "path",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "d": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "d": undefined,
+                              },
+                            },
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "clip-rule": undefined,
+                              "d": undefined,
+                              "fill-rule": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "clip-rule": undefined,
+                              "d": undefined,
+                              "fill-rule": undefined,
+                            },
+                          },
+                          "type": "style",
+                          "x-attribsNamespace": Object {},
+                          "x-attribsPrefix": Object {},
+                        },
                       ],
                       "name": "svg",
                       "namespace": "http://www.w3.org/2000/svg",
@@ -283,15 +394,11 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                   ],
@@ -299,7 +406,7 @@ initialize {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": Node {
                     "attribs": Object {
-                      "class": "link ",
+                      "class": "link  ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                       "target": "_blank",
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -318,10 +425,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -365,10 +479,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -412,7 +533,7 @@ initialize {
                         Node {
                           "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -427,7 +548,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -441,12 +562,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                           "next": null,
@@ -492,7 +616,7 @@ initialize {
                 },
                 Node {
                   "attribs": Object {
-                    "class": "link ",
+                    "class": "link  ",
                     "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                     "target": "_blank",
                     "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -511,10 +635,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -558,10 +689,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -605,7 +743,7 @@ initialize {
                       Node {
                         "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -620,7 +758,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -634,12 +772,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                         "next": null,
@@ -666,9 +807,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "currentColor",
-                          "height": "12",
                           "viewBox": "0 0 24 24",
-                          "width": "12",
                         },
                         "children": Array [
                           Node {
@@ -687,7 +826,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": [Circular],
                               "type": "tag",
@@ -721,7 +884,31 @@ initialize {
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": null,
+                            "next": Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                             "parent": [Circular],
                             "prev": Node {
                               "attribs": Object {
@@ -753,6 +940,71 @@ initialize {
                               "fill-rule": undefined,
                             },
                           },
+                          Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": Node {
+                              "attribs": Object {
+                                "clip-rule": "evenodd",
+                                "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                "fill-rule": "evenodd",
+                              },
+                              "children": Array [],
+                              "name": "path",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "d": "M5 10.2H19V21H5V10.2Z",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "d": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "d": undefined,
+                                },
+                              },
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                            },
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                         ],
                         "name": "svg",
                         "namespace": "http://www.w3.org/2000/svg",
@@ -762,15 +1014,11 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -807,7 +1055,7 @@ initialize {
                     Node {
                       "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -822,7 +1070,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -836,12 +1084,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                       "next": null,
@@ -856,7 +1107,7 @@ initialize {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "link ",
+                      "class": "link  ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                       "target": "_blank",
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -875,10 +1126,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -922,10 +1180,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -973,9 +1238,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "currentColor",
-                            "height": "12",
                             "viewBox": "0 0 24 24",
-                            "width": "12",
                           },
                           "children": Array [
                             Node {
@@ -994,7 +1257,31 @@ initialize {
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": null,
+                                "next": Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": [Circular],
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                                 "parent": [Circular],
                                 "prev": [Circular],
                                 "type": "tag",
@@ -1028,7 +1315,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": Node {
                                 "attribs": Object {
@@ -1060,6 +1371,71 @@ initialize {
                                 "fill-rule": undefined,
                               },
                             },
+                            Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "clip-rule": "evenodd",
+                                  "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                  "fill-rule": "evenodd",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": Node {
+                                  "attribs": Object {
+                                    "d": "M5 10.2H19V21H5V10.2Z",
+                                  },
+                                  "children": Array [],
+                                  "name": "path",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": [Circular],
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "tag",
+                                  "x-attribsNamespace": Object {
+                                    "d": undefined,
+                                  },
+                                  "x-attribsPrefix": Object {
+                                    "d": undefined,
+                                  },
+                                },
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                              },
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                           ],
                           "name": "svg",
                           "namespace": "http://www.w3.org/2000/svg",
@@ -1069,15 +1445,11 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -1149,9 +1521,7 @@ initialize {
                   Node {
                     "attribs": Object {
                       "fill": "currentColor",
-                      "height": "12",
                       "viewBox": "0 0 24 24",
-                      "width": "12",
                     },
                     "children": Array [
                       Node {
@@ -1170,7 +1540,31 @@ initialize {
                           "children": Array [],
                           "name": "path",
                           "namespace": "http://www.w3.org/2000/svg",
-                          "next": null,
+                          "next": Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": [Circular],
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                           "parent": [Circular],
                           "prev": [Circular],
                           "type": "tag",
@@ -1204,7 +1598,31 @@ initialize {
                         "children": Array [],
                         "name": "path",
                         "namespace": "http://www.w3.org/2000/svg",
-                        "next": null,
+                        "next": Node {
+                          "attribs": Object {},
+                          "children": Array [
+                            Node {
+                              "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "style",
+                          "namespace": "http://www.w3.org/2000/svg",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": [Circular],
+                          "type": "style",
+                          "x-attribsNamespace": Object {},
+                          "x-attribsPrefix": Object {},
+                        },
                         "parent": [Circular],
                         "prev": Node {
                           "attribs": Object {
@@ -1236,6 +1654,71 @@ initialize {
                           "fill-rule": undefined,
                         },
                       },
+                      Node {
+                        "attribs": Object {},
+                        "children": Array [
+                          Node {
+                            "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "text",
+                          },
+                        ],
+                        "name": "style",
+                        "namespace": "http://www.w3.org/2000/svg",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": Node {
+                          "attribs": Object {
+                            "clip-rule": "evenodd",
+                            "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                            "fill-rule": "evenodd",
+                          },
+                          "children": Array [],
+                          "name": "path",
+                          "namespace": "http://www.w3.org/2000/svg",
+                          "next": [Circular],
+                          "parent": [Circular],
+                          "prev": Node {
+                            "attribs": Object {
+                              "d": "M5 10.2H19V21H5V10.2Z",
+                            },
+                            "children": Array [],
+                            "name": "path",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": [Circular],
+                            "parent": [Circular],
+                            "prev": null,
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "d": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "d": undefined,
+                            },
+                          },
+                          "type": "tag",
+                          "x-attribsNamespace": Object {
+                            "clip-rule": undefined,
+                            "d": undefined,
+                            "fill-rule": undefined,
+                          },
+                          "x-attribsPrefix": Object {
+                            "clip-rule": undefined,
+                            "d": undefined,
+                            "fill-rule": undefined,
+                          },
+                        },
+                        "type": "style",
+                        "x-attribsNamespace": Object {},
+                        "x-attribsPrefix": Object {},
+                      },
                     ],
                     "name": "svg",
                     "namespace": "http://www.w3.org/2000/svg",
@@ -1245,15 +1728,11 @@ initialize {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "fill": undefined,
-                      "height": undefined,
                       "viewBox": undefined,
-                      "width": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "fill": undefined,
-                      "height": undefined,
                       "viewBox": undefined,
-                      "width": undefined,
                     },
                   },
                 ],
@@ -1261,7 +1740,7 @@ initialize {
                 "namespace": "http://www.w3.org/1999/xhtml",
                 "next": Node {
                   "attribs": Object {
-                    "class": "link ",
+                    "class": "link  ",
                     "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                     "target": "_blank",
                     "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -1280,10 +1759,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -1327,10 +1813,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -1374,7 +1867,7 @@ initialize {
                       Node {
                         "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -1389,7 +1882,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -1403,12 +1896,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                         "next": null,
@@ -1454,7 +1950,7 @@ initialize {
               },
               Node {
                 "attribs": Object {
-                  "class": "link ",
+                  "class": "link  ",
                   "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                   "target": "_blank",
                   "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -1473,10 +1969,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -1520,10 +2023,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -1567,7 +2077,7 @@ initialize {
                     Node {
                       "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -1582,7 +2092,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -1596,12 +2106,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                       "next": null,
@@ -1628,9 +2141,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "currentColor",
-                        "height": "12",
                         "viewBox": "0 0 24 24",
-                        "width": "12",
                       },
                       "children": Array [
                         Node {
@@ -1649,7 +2160,31 @@ initialize {
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": null,
+                            "next": Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                             "parent": [Circular],
                             "prev": [Circular],
                             "type": "tag",
@@ -1683,7 +2218,31 @@ initialize {
                           "children": Array [],
                           "name": "path",
                           "namespace": "http://www.w3.org/2000/svg",
-                          "next": null,
+                          "next": Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": [Circular],
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                           "parent": [Circular],
                           "prev": Node {
                             "attribs": Object {
@@ -1715,6 +2274,71 @@ initialize {
                             "fill-rule": undefined,
                           },
                         },
+                        Node {
+                          "attribs": Object {},
+                          "children": Array [
+                            Node {
+                              "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "style",
+                          "namespace": "http://www.w3.org/2000/svg",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": Node {
+                            "attribs": Object {
+                              "clip-rule": "evenodd",
+                              "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                              "fill-rule": "evenodd",
+                            },
+                            "children": Array [],
+                            "name": "path",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": [Circular],
+                            "parent": [Circular],
+                            "prev": Node {
+                              "attribs": Object {
+                                "d": "M5 10.2H19V21H5V10.2Z",
+                              },
+                              "children": Array [],
+                              "name": "path",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "d": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "d": undefined,
+                              },
+                            },
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "clip-rule": undefined,
+                              "d": undefined,
+                              "fill-rule": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "clip-rule": undefined,
+                              "d": undefined,
+                              "fill-rule": undefined,
+                            },
+                          },
+                          "type": "style",
+                          "x-attribsNamespace": Object {},
+                          "x-attribsPrefix": Object {},
+                        },
                       ],
                       "name": "svg",
                       "namespace": "http://www.w3.org/2000/svg",
@@ -1724,15 +2348,11 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                   ],
@@ -1769,7 +2389,7 @@ initialize {
                   Node {
                     "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -1784,7 +2404,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -1798,12 +2418,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                     "next": null,
@@ -1818,7 +2441,7 @@ initialize {
                 "parent": [Circular],
                 "prev": Node {
                   "attribs": Object {
-                    "class": "link ",
+                    "class": "link  ",
                     "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                     "target": "_blank",
                     "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -1837,10 +2460,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -1884,10 +2514,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -1935,9 +2572,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "currentColor",
-                          "height": "12",
                           "viewBox": "0 0 24 24",
-                          "width": "12",
                         },
                         "children": Array [
                           Node {
@@ -1956,7 +2591,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": [Circular],
                               "type": "tag",
@@ -1990,7 +2649,31 @@ initialize {
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": null,
+                            "next": Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                             "parent": [Circular],
                             "prev": Node {
                               "attribs": Object {
@@ -2022,6 +2705,71 @@ initialize {
                               "fill-rule": undefined,
                             },
                           },
+                          Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": Node {
+                              "attribs": Object {
+                                "clip-rule": "evenodd",
+                                "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                "fill-rule": "evenodd",
+                              },
+                              "children": Array [],
+                              "name": "path",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "d": "M5 10.2H19V21H5V10.2Z",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "d": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "d": undefined,
+                                },
+                              },
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                            },
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                         ],
                         "name": "svg",
                         "namespace": "http://www.w3.org/2000/svg",
@@ -2031,15 +2779,11 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -2283,18 +3027,20 @@ initialize {
                   Node {
                     "data": "
         .image {
-          width: auto;
-          height: auto;
-          margin: 0 auto;
           position: relative;
           border-radius: 5px;
           overflow: hidden;
           max-width: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto 0
+            auto;
+          padding: 0 0 0 0;
         }
 
         img {
-          width: 100%;
-          height: 100%;
+          width: auto;
+          height: auto;
           object-fit: scale-down;
           display: block;
         }
@@ -2330,18 +3076,20 @@ initialize {
                 Node {
                   "data": "
         .image {
-          width: auto;
-          height: auto;
-          margin: 0 auto;
           position: relative;
           border-radius: 5px;
           overflow: hidden;
           max-width: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto 0
+            auto;
+          padding: 0 0 0 0;
         }
 
         img {
-          width: 100%;
-          height: 100%;
+          width: auto;
+          height: auto;
           object-fit: scale-down;
           display: block;
         }
@@ -2389,11 +3137,15 @@ initialize {
           .bowser {
             background-color: transparent;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-            width: max-content;
             max-width: 100%;
-            margin: 0 auto;
             border-radius: 5px;
             overflow: hidden;
+            font-size: calc(1 * 16px);
+            width: max-content;
+            height: auto;
+            margin: 0 auto 0
+              auto;
+            padding: 0 0 0 0;
           }
 
           .bowser :global(.image) {
@@ -2402,7 +3154,7 @@ initialize {
           }
 
           header {
-            height: 2.5rem;
+            height: 2.5em;
             width: 100%;
             display: flex;
             align-items: center;
@@ -2424,14 +3176,17 @@ initialize {
             display: flex;
             align-items: center;
             user-select: none;
+            font-size: inherit;
           }
 
           .traffic span {
             border-radius: 50%;
-            width: 0.75rem;
-            height: 0.75rem;
+            width: 0.75em;
+            height: 0.75em;
+            max-width: 20px;
+            max-height: 20px;
             display: inline-block;
-            margin-right: 0.5rem;
+            margin-right: 0.5em;
           }
 
           .close {
@@ -2495,18 +3250,20 @@ initialize {
                 Node {
                   "data": "
         .image {
-          width: auto;
-          height: auto;
-          margin: 0 auto;
           position: relative;
           border-radius: 5px;
           overflow: hidden;
           max-width: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto 0
+            auto;
+          padding: 0 0 0 0;
         }
 
         img {
-          width: 100%;
-          height: 100%;
+          width: auto;
+          height: auto;
           object-fit: scale-down;
           display: block;
         }
@@ -2542,18 +3299,20 @@ initialize {
               Node {
                 "data": "
         .image {
-          width: auto;
-          height: auto;
-          margin: 0 auto;
           position: relative;
           border-radius: 5px;
           overflow: hidden;
           max-width: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto 0
+            auto;
+          padding: 0 0 0 0;
         }
 
         img {
-          width: 100%;
-          height: 100%;
+          width: auto;
+          height: auto;
           object-fit: scale-down;
           display: block;
         }
@@ -2601,11 +3360,15 @@ initialize {
           .bowser {
             background-color: transparent;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-            width: max-content;
             max-width: 100%;
-            margin: 0 auto;
             border-radius: 5px;
             overflow: hidden;
+            font-size: calc(1 * 16px);
+            width: max-content;
+            height: auto;
+            margin: 0 auto 0
+              auto;
+            padding: 0 0 0 0;
           }
 
           .bowser :global(.image) {
@@ -2614,7 +3377,7 @@ initialize {
           }
 
           header {
-            height: 2.5rem;
+            height: 2.5em;
             width: 100%;
             display: flex;
             align-items: center;
@@ -2636,14 +3399,17 @@ initialize {
             display: flex;
             align-items: center;
             user-select: none;
+            font-size: inherit;
           }
 
           .traffic span {
             border-radius: 50%;
-            width: 0.75rem;
-            height: 0.75rem;
+            width: 0.75em;
+            height: 0.75em;
+            max-width: 20px;
+            max-height: 20px;
             display: inline-block;
-            margin-right: 0.5rem;
+            margin-right: 0.5em;
           }
 
           .close {
@@ -2854,9 +3620,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "currentColor",
-                          "height": "12",
                           "viewBox": "0 0 24 24",
-                          "width": "12",
                         },
                         "children": Array [
                           Node {
@@ -2875,7 +3639,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": [Circular],
                               "type": "tag",
@@ -2909,7 +3697,31 @@ initialize {
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": null,
+                            "next": Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                             "parent": [Circular],
                             "prev": Node {
                               "attribs": Object {
@@ -2941,6 +3753,71 @@ initialize {
                               "fill-rule": undefined,
                             },
                           },
+                          Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": Node {
+                              "attribs": Object {
+                                "clip-rule": "evenodd",
+                                "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                "fill-rule": "evenodd",
+                              },
+                              "children": Array [],
+                              "name": "path",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "d": "M5 10.2H19V21H5V10.2Z",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "d": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "d": undefined,
+                                },
+                              },
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                            },
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                         ],
                         "name": "svg",
                         "namespace": "http://www.w3.org/2000/svg",
@@ -2950,15 +3827,11 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -2966,7 +3839,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": Node {
                       "attribs": Object {
-                        "class": "link ",
+                        "class": "link  ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                         "target": "_blank",
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -2985,10 +3858,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -3032,10 +3912,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -3079,7 +3966,7 @@ initialize {
                           Node {
                             "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -3094,7 +3981,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -3108,12 +3995,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                             "next": null,
@@ -3159,7 +4049,7 @@ initialize {
                   },
                   Node {
                     "attribs": Object {
-                      "class": "link ",
+                      "class": "link  ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                       "target": "_blank",
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -3178,10 +4068,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -3225,10 +4122,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -3272,7 +4176,7 @@ initialize {
                         Node {
                           "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -3287,7 +4191,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -3301,12 +4205,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                           "next": null,
@@ -3333,9 +4240,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "currentColor",
-                            "height": "12",
                             "viewBox": "0 0 24 24",
-                            "width": "12",
                           },
                           "children": Array [
                             Node {
@@ -3354,7 +4259,31 @@ initialize {
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": null,
+                                "next": Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": [Circular],
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                                 "parent": [Circular],
                                 "prev": [Circular],
                                 "type": "tag",
@@ -3388,7 +4317,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": Node {
                                 "attribs": Object {
@@ -3420,6 +4373,71 @@ initialize {
                                 "fill-rule": undefined,
                               },
                             },
+                            Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "clip-rule": "evenodd",
+                                  "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                  "fill-rule": "evenodd",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": Node {
+                                  "attribs": Object {
+                                    "d": "M5 10.2H19V21H5V10.2Z",
+                                  },
+                                  "children": Array [],
+                                  "name": "path",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": [Circular],
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "tag",
+                                  "x-attribsNamespace": Object {
+                                    "d": undefined,
+                                  },
+                                  "x-attribsPrefix": Object {
+                                    "d": undefined,
+                                  },
+                                },
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                              },
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                           ],
                           "name": "svg",
                           "namespace": "http://www.w3.org/2000/svg",
@@ -3429,15 +4447,11 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -3474,7 +4488,7 @@ initialize {
                       Node {
                         "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -3489,7 +4503,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -3503,12 +4517,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                         "next": null,
@@ -3523,7 +4540,7 @@ initialize {
                     "parent": [Circular],
                     "prev": Node {
                       "attribs": Object {
-                        "class": "link ",
+                        "class": "link  ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                         "target": "_blank",
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -3542,10 +4559,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -3589,10 +4613,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -3640,9 +4671,7 @@ initialize {
                           Node {
                             "attribs": Object {
                               "fill": "currentColor",
-                              "height": "12",
                               "viewBox": "0 0 24 24",
-                              "width": "12",
                             },
                             "children": Array [
                               Node {
@@ -3661,7 +4690,31 @@ initialize {
                                   "children": Array [],
                                   "name": "path",
                                   "namespace": "http://www.w3.org/2000/svg",
-                                  "next": null,
+                                  "next": Node {
+                                    "attribs": Object {},
+                                    "children": Array [
+                                      Node {
+                                        "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                        "next": null,
+                                        "parent": [Circular],
+                                        "prev": null,
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "name": "style",
+                                    "namespace": "http://www.w3.org/2000/svg",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": [Circular],
+                                    "type": "style",
+                                    "x-attribsNamespace": Object {},
+                                    "x-attribsPrefix": Object {},
+                                  },
                                   "parent": [Circular],
                                   "prev": [Circular],
                                   "type": "tag",
@@ -3695,7 +4748,31 @@ initialize {
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": null,
+                                "next": Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": [Circular],
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                                 "parent": [Circular],
                                 "prev": Node {
                                   "attribs": Object {
@@ -3727,6 +4804,71 @@ initialize {
                                   "fill-rule": undefined,
                                 },
                               },
+                              Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": Node {
+                                  "attribs": Object {
+                                    "clip-rule": "evenodd",
+                                    "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                    "fill-rule": "evenodd",
+                                  },
+                                  "children": Array [],
+                                  "name": "path",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": [Circular],
+                                  "parent": [Circular],
+                                  "prev": Node {
+                                    "attribs": Object {
+                                      "d": "M5 10.2H19V21H5V10.2Z",
+                                    },
+                                    "children": Array [],
+                                    "name": "path",
+                                    "namespace": "http://www.w3.org/2000/svg",
+                                    "next": [Circular],
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "tag",
+                                    "x-attribsNamespace": Object {
+                                      "d": undefined,
+                                    },
+                                    "x-attribsPrefix": Object {
+                                      "d": undefined,
+                                    },
+                                  },
+                                  "type": "tag",
+                                  "x-attribsNamespace": Object {
+                                    "clip-rule": undefined,
+                                    "d": undefined,
+                                    "fill-rule": undefined,
+                                  },
+                                  "x-attribsPrefix": Object {
+                                    "clip-rule": undefined,
+                                    "d": undefined,
+                                    "fill-rule": undefined,
+                                  },
+                                },
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                             ],
                             "name": "svg",
                             "namespace": "http://www.w3.org/2000/svg",
@@ -3736,15 +4878,11 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                         ],
@@ -3816,9 +4954,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "currentColor",
-                        "height": "12",
                         "viewBox": "0 0 24 24",
-                        "width": "12",
                       },
                       "children": Array [
                         Node {
@@ -3837,7 +4973,31 @@ initialize {
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": null,
+                            "next": Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                             "parent": [Circular],
                             "prev": [Circular],
                             "type": "tag",
@@ -3871,7 +5031,31 @@ initialize {
                           "children": Array [],
                           "name": "path",
                           "namespace": "http://www.w3.org/2000/svg",
-                          "next": null,
+                          "next": Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": [Circular],
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                           "parent": [Circular],
                           "prev": Node {
                             "attribs": Object {
@@ -3903,6 +5087,71 @@ initialize {
                             "fill-rule": undefined,
                           },
                         },
+                        Node {
+                          "attribs": Object {},
+                          "children": Array [
+                            Node {
+                              "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "text",
+                            },
+                          ],
+                          "name": "style",
+                          "namespace": "http://www.w3.org/2000/svg",
+                          "next": null,
+                          "parent": [Circular],
+                          "prev": Node {
+                            "attribs": Object {
+                              "clip-rule": "evenodd",
+                              "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                              "fill-rule": "evenodd",
+                            },
+                            "children": Array [],
+                            "name": "path",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": [Circular],
+                            "parent": [Circular],
+                            "prev": Node {
+                              "attribs": Object {
+                                "d": "M5 10.2H19V21H5V10.2Z",
+                              },
+                              "children": Array [],
+                              "name": "path",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": null,
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "d": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "d": undefined,
+                              },
+                            },
+                            "type": "tag",
+                            "x-attribsNamespace": Object {
+                              "clip-rule": undefined,
+                              "d": undefined,
+                              "fill-rule": undefined,
+                            },
+                            "x-attribsPrefix": Object {
+                              "clip-rule": undefined,
+                              "d": undefined,
+                              "fill-rule": undefined,
+                            },
+                          },
+                          "type": "style",
+                          "x-attribsNamespace": Object {},
+                          "x-attribsPrefix": Object {},
+                        },
                       ],
                       "name": "svg",
                       "namespace": "http://www.w3.org/2000/svg",
@@ -3912,15 +5161,11 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                   ],
@@ -3928,7 +5173,7 @@ initialize {
                   "namespace": "http://www.w3.org/1999/xhtml",
                   "next": Node {
                     "attribs": Object {
-                      "class": "link ",
+                      "class": "link  ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                       "target": "_blank",
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -3947,10 +5192,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -3994,10 +5246,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -4041,7 +5300,7 @@ initialize {
                         Node {
                           "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -4056,7 +5315,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -4070,12 +5329,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                           "next": null,
@@ -4121,7 +5383,7 @@ initialize {
                 },
                 Node {
                   "attribs": Object {
-                    "class": "link ",
+                    "class": "link  ",
                     "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                     "target": "_blank",
                     "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -4140,10 +5402,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -4187,10 +5456,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -4234,7 +5510,7 @@ initialize {
                       Node {
                         "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -4249,7 +5525,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -4263,12 +5539,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                         "next": null,
@@ -4295,9 +5574,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "currentColor",
-                          "height": "12",
                           "viewBox": "0 0 24 24",
-                          "width": "12",
                         },
                         "children": Array [
                           Node {
@@ -4316,7 +5593,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": [Circular],
                               "type": "tag",
@@ -4350,7 +5651,31 @@ initialize {
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": null,
+                            "next": Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                             "parent": [Circular],
                             "prev": Node {
                               "attribs": Object {
@@ -4382,6 +5707,71 @@ initialize {
                               "fill-rule": undefined,
                             },
                           },
+                          Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": Node {
+                              "attribs": Object {
+                                "clip-rule": "evenodd",
+                                "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                "fill-rule": "evenodd",
+                              },
+                              "children": Array [],
+                              "name": "path",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "d": "M5 10.2H19V21H5V10.2Z",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "d": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "d": undefined,
+                                },
+                              },
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                            },
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                         ],
                         "name": "svg",
                         "namespace": "http://www.w3.org/2000/svg",
@@ -4391,15 +5781,11 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -4436,7 +5822,7 @@ initialize {
                     Node {
                       "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -4451,7 +5837,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -4465,12 +5851,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                       "next": null,
@@ -4485,7 +5874,7 @@ initialize {
                   "parent": [Circular],
                   "prev": Node {
                     "attribs": Object {
-                      "class": "link ",
+                      "class": "link  ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                       "target": "_blank",
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -4504,10 +5893,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -4551,10 +5947,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -4602,9 +6005,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "currentColor",
-                            "height": "12",
                             "viewBox": "0 0 24 24",
-                            "width": "12",
                           },
                           "children": Array [
                             Node {
@@ -4623,7 +6024,31 @@ initialize {
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": null,
+                                "next": Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": [Circular],
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                                 "parent": [Circular],
                                 "prev": [Circular],
                                 "type": "tag",
@@ -4657,7 +6082,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": Node {
                                 "attribs": Object {
@@ -4689,6 +6138,71 @@ initialize {
                                 "fill-rule": undefined,
                               },
                             },
+                            Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "clip-rule": "evenodd",
+                                  "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                  "fill-rule": "evenodd",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": Node {
+                                  "attribs": Object {
+                                    "d": "M5 10.2H19V21H5V10.2Z",
+                                  },
+                                  "children": Array [],
+                                  "name": "path",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": [Circular],
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "tag",
+                                  "x-attribsNamespace": Object {
+                                    "d": undefined,
+                                  },
+                                  "x-attribsPrefix": Object {
+                                    "d": undefined,
+                                  },
+                                },
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                              },
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                           ],
                           "name": "svg",
                           "namespace": "http://www.w3.org/2000/svg",
@@ -4698,15 +6212,11 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -4955,11 +6465,15 @@ initialize {
           .bowser {
             background-color: transparent;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-            width: max-content;
             max-width: 100%;
-            margin: 0 auto;
             border-radius: 5px;
             overflow: hidden;
+            font-size: calc(1 * 16px);
+            width: max-content;
+            height: auto;
+            margin: 0 auto 0
+              auto;
+            padding: 0 0 0 0;
           }
 
           .bowser :global(.image) {
@@ -4968,7 +6482,7 @@ initialize {
           }
 
           header {
-            height: 2.5rem;
+            height: 2.5em;
             width: 100%;
             display: flex;
             align-items: center;
@@ -4990,14 +6504,17 @@ initialize {
             display: flex;
             align-items: center;
             user-select: none;
+            font-size: inherit;
           }
 
           .traffic span {
             border-radius: 50%;
-            width: 0.75rem;
-            height: 0.75rem;
+            width: 0.75em;
+            height: 0.75em;
+            max-width: 20px;
+            max-height: 20px;
             display: inline-block;
-            margin-right: 0.5rem;
+            margin-right: 0.5em;
           }
 
           .close {
@@ -5040,18 +6557,20 @@ initialize {
                   Node {
                     "data": "
         .image {
-          width: auto;
-          height: auto;
-          margin: 0 auto;
           position: relative;
           border-radius: 5px;
           overflow: hidden;
           max-width: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto 0
+            auto;
+          padding: 0 0 0 0;
         }
 
         img {
-          width: 100%;
-          height: 100%;
+          width: auto;
+          height: auto;
           object-fit: scale-down;
           display: block;
         }
@@ -5087,18 +6606,20 @@ initialize {
                 Node {
                   "data": "
         .image {
-          width: auto;
-          height: auto;
-          margin: 0 auto;
           position: relative;
           border-radius: 5px;
           overflow: hidden;
           max-width: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto 0
+            auto;
+          padding: 0 0 0 0;
         }
 
         img {
-          width: 100%;
-          height: 100%;
+          width: auto;
+          height: auto;
           object-fit: scale-down;
           display: block;
         }
@@ -5320,9 +6841,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "currentColor",
-                            "height": "12",
                             "viewBox": "0 0 24 24",
-                            "width": "12",
                           },
                           "children": Array [
                             Node {
@@ -5341,7 +6860,31 @@ initialize {
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": null,
+                                "next": Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": [Circular],
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                                 "parent": [Circular],
                                 "prev": [Circular],
                                 "type": "tag",
@@ -5375,7 +6918,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": Node {
                                 "attribs": Object {
@@ -5407,6 +6974,71 @@ initialize {
                                 "fill-rule": undefined,
                               },
                             },
+                            Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "clip-rule": "evenodd",
+                                  "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                  "fill-rule": "evenodd",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": Node {
+                                  "attribs": Object {
+                                    "d": "M5 10.2H19V21H5V10.2Z",
+                                  },
+                                  "children": Array [],
+                                  "name": "path",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": [Circular],
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "tag",
+                                  "x-attribsNamespace": Object {
+                                    "d": undefined,
+                                  },
+                                  "x-attribsPrefix": Object {
+                                    "d": undefined,
+                                  },
+                                },
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                              },
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                           ],
                           "name": "svg",
                           "namespace": "http://www.w3.org/2000/svg",
@@ -5416,15 +7048,11 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -5432,7 +7060,7 @@ initialize {
                       "namespace": "http://www.w3.org/1999/xhtml",
                       "next": Node {
                         "attribs": Object {
-                          "class": "link ",
+                          "class": "link  ",
                           "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                           "target": "_blank",
                           "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -5451,10 +7079,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -5498,10 +7133,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -5545,7 +7187,7 @@ initialize {
                             Node {
                               "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -5560,7 +7202,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -5574,12 +7216,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                               "next": null,
@@ -5625,7 +7270,7 @@ initialize {
                     },
                     Node {
                       "attribs": Object {
-                        "class": "link ",
+                        "class": "link  ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                         "target": "_blank",
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -5644,10 +7289,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -5691,10 +7343,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -5738,7 +7397,7 @@ initialize {
                           Node {
                             "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -5753,7 +7412,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -5767,12 +7426,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                             "next": null,
@@ -5799,9 +7461,7 @@ initialize {
                           Node {
                             "attribs": Object {
                               "fill": "currentColor",
-                              "height": "12",
                               "viewBox": "0 0 24 24",
-                              "width": "12",
                             },
                             "children": Array [
                               Node {
@@ -5820,7 +7480,31 @@ initialize {
                                   "children": Array [],
                                   "name": "path",
                                   "namespace": "http://www.w3.org/2000/svg",
-                                  "next": null,
+                                  "next": Node {
+                                    "attribs": Object {},
+                                    "children": Array [
+                                      Node {
+                                        "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                        "next": null,
+                                        "parent": [Circular],
+                                        "prev": null,
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "name": "style",
+                                    "namespace": "http://www.w3.org/2000/svg",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": [Circular],
+                                    "type": "style",
+                                    "x-attribsNamespace": Object {},
+                                    "x-attribsPrefix": Object {},
+                                  },
                                   "parent": [Circular],
                                   "prev": [Circular],
                                   "type": "tag",
@@ -5854,7 +7538,31 @@ initialize {
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": null,
+                                "next": Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": [Circular],
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                                 "parent": [Circular],
                                 "prev": Node {
                                   "attribs": Object {
@@ -5886,6 +7594,71 @@ initialize {
                                   "fill-rule": undefined,
                                 },
                               },
+                              Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": Node {
+                                  "attribs": Object {
+                                    "clip-rule": "evenodd",
+                                    "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                    "fill-rule": "evenodd",
+                                  },
+                                  "children": Array [],
+                                  "name": "path",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": [Circular],
+                                  "parent": [Circular],
+                                  "prev": Node {
+                                    "attribs": Object {
+                                      "d": "M5 10.2H19V21H5V10.2Z",
+                                    },
+                                    "children": Array [],
+                                    "name": "path",
+                                    "namespace": "http://www.w3.org/2000/svg",
+                                    "next": [Circular],
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "tag",
+                                    "x-attribsNamespace": Object {
+                                      "d": undefined,
+                                    },
+                                    "x-attribsPrefix": Object {
+                                      "d": undefined,
+                                    },
+                                  },
+                                  "type": "tag",
+                                  "x-attribsNamespace": Object {
+                                    "clip-rule": undefined,
+                                    "d": undefined,
+                                    "fill-rule": undefined,
+                                  },
+                                  "x-attribsPrefix": Object {
+                                    "clip-rule": undefined,
+                                    "d": undefined,
+                                    "fill-rule": undefined,
+                                  },
+                                },
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                             ],
                             "name": "svg",
                             "namespace": "http://www.w3.org/2000/svg",
@@ -5895,15 +7668,11 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                         ],
@@ -5940,7 +7709,7 @@ initialize {
                         Node {
                           "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -5955,7 +7724,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -5969,12 +7738,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                           "next": null,
@@ -5989,7 +7761,7 @@ initialize {
                       "parent": [Circular],
                       "prev": Node {
                         "attribs": Object {
-                          "class": "link ",
+                          "class": "link  ",
                           "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                           "target": "_blank",
                           "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -6008,10 +7780,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -6055,10 +7834,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -6106,9 +7892,7 @@ initialize {
                             Node {
                               "attribs": Object {
                                 "fill": "currentColor",
-                                "height": "12",
                                 "viewBox": "0 0 24 24",
-                                "width": "12",
                               },
                               "children": Array [
                                 Node {
@@ -6127,7 +7911,31 @@ initialize {
                                     "children": Array [],
                                     "name": "path",
                                     "namespace": "http://www.w3.org/2000/svg",
-                                    "next": null,
+                                    "next": Node {
+                                      "attribs": Object {},
+                                      "children": Array [
+                                        Node {
+                                          "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                          "next": null,
+                                          "parent": [Circular],
+                                          "prev": null,
+                                          "type": "text",
+                                        },
+                                      ],
+                                      "name": "style",
+                                      "namespace": "http://www.w3.org/2000/svg",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": [Circular],
+                                      "type": "style",
+                                      "x-attribsNamespace": Object {},
+                                      "x-attribsPrefix": Object {},
+                                    },
                                     "parent": [Circular],
                                     "prev": [Circular],
                                     "type": "tag",
@@ -6161,7 +7969,31 @@ initialize {
                                   "children": Array [],
                                   "name": "path",
                                   "namespace": "http://www.w3.org/2000/svg",
-                                  "next": null,
+                                  "next": Node {
+                                    "attribs": Object {},
+                                    "children": Array [
+                                      Node {
+                                        "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                        "next": null,
+                                        "parent": [Circular],
+                                        "prev": null,
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "name": "style",
+                                    "namespace": "http://www.w3.org/2000/svg",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": [Circular],
+                                    "type": "style",
+                                    "x-attribsNamespace": Object {},
+                                    "x-attribsPrefix": Object {},
+                                  },
                                   "parent": [Circular],
                                   "prev": Node {
                                     "attribs": Object {
@@ -6193,6 +8025,71 @@ initialize {
                                     "fill-rule": undefined,
                                   },
                                 },
+                                Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": Node {
+                                    "attribs": Object {
+                                      "clip-rule": "evenodd",
+                                      "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                      "fill-rule": "evenodd",
+                                    },
+                                    "children": Array [],
+                                    "name": "path",
+                                    "namespace": "http://www.w3.org/2000/svg",
+                                    "next": [Circular],
+                                    "parent": [Circular],
+                                    "prev": Node {
+                                      "attribs": Object {
+                                        "d": "M5 10.2H19V21H5V10.2Z",
+                                      },
+                                      "children": Array [],
+                                      "name": "path",
+                                      "namespace": "http://www.w3.org/2000/svg",
+                                      "next": [Circular],
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "tag",
+                                      "x-attribsNamespace": Object {
+                                        "d": undefined,
+                                      },
+                                      "x-attribsPrefix": Object {
+                                        "d": undefined,
+                                      },
+                                    },
+                                    "type": "tag",
+                                    "x-attribsNamespace": Object {
+                                      "clip-rule": undefined,
+                                      "d": undefined,
+                                      "fill-rule": undefined,
+                                    },
+                                    "x-attribsPrefix": Object {
+                                      "clip-rule": undefined,
+                                      "d": undefined,
+                                      "fill-rule": undefined,
+                                    },
+                                  },
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                               ],
                               "name": "svg",
                               "namespace": "http://www.w3.org/2000/svg",
@@ -6202,15 +8099,11 @@ initialize {
                               "type": "tag",
                               "x-attribsNamespace": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                               "x-attribsPrefix": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                             },
                           ],
@@ -6282,9 +8175,7 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "currentColor",
-                          "height": "12",
                           "viewBox": "0 0 24 24",
-                          "width": "12",
                         },
                         "children": Array [
                           Node {
@@ -6303,7 +8194,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": [Circular],
                               "type": "tag",
@@ -6337,7 +8252,31 @@ initialize {
                             "children": Array [],
                             "name": "path",
                             "namespace": "http://www.w3.org/2000/svg",
-                            "next": null,
+                            "next": Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": [Circular],
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                             "parent": [Circular],
                             "prev": Node {
                               "attribs": Object {
@@ -6369,6 +8308,71 @@ initialize {
                               "fill-rule": undefined,
                             },
                           },
+                          Node {
+                            "attribs": Object {},
+                            "children": Array [
+                              Node {
+                                "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "text",
+                              },
+                            ],
+                            "name": "style",
+                            "namespace": "http://www.w3.org/2000/svg",
+                            "next": null,
+                            "parent": [Circular],
+                            "prev": Node {
+                              "attribs": Object {
+                                "clip-rule": "evenodd",
+                                "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                "fill-rule": "evenodd",
+                              },
+                              "children": Array [],
+                              "name": "path",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": [Circular],
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "d": "M5 10.2H19V21H5V10.2Z",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": null,
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "d": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "d": undefined,
+                                },
+                              },
+                              "type": "tag",
+                              "x-attribsNamespace": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                              "x-attribsPrefix": Object {
+                                "clip-rule": undefined,
+                                "d": undefined,
+                                "fill-rule": undefined,
+                              },
+                            },
+                            "type": "style",
+                            "x-attribsNamespace": Object {},
+                            "x-attribsPrefix": Object {},
+                          },
                         ],
                         "name": "svg",
                         "namespace": "http://www.w3.org/2000/svg",
@@ -6378,15 +8382,11 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -6394,7 +8394,7 @@ initialize {
                     "namespace": "http://www.w3.org/1999/xhtml",
                     "next": Node {
                       "attribs": Object {
-                        "class": "link ",
+                        "class": "link  ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                         "target": "_blank",
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -6413,10 +8413,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -6460,10 +8467,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -6507,7 +8521,7 @@ initialize {
                           Node {
                             "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -6522,7 +8536,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -6536,12 +8550,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                             "next": null,
@@ -6587,7 +8604,7 @@ initialize {
                   },
                   Node {
                     "attribs": Object {
-                      "class": "link ",
+                      "class": "link  ",
                       "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                       "target": "_blank",
                       "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -6606,10 +8623,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -6653,10 +8677,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -6700,7 +8731,7 @@ initialize {
                         Node {
                           "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -6715,7 +8746,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -6729,12 +8760,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                           "next": null,
@@ -6761,9 +8795,7 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "currentColor",
-                            "height": "12",
                             "viewBox": "0 0 24 24",
-                            "width": "12",
                           },
                           "children": Array [
                             Node {
@@ -6782,7 +8814,31 @@ initialize {
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": null,
+                                "next": Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": [Circular],
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                                 "parent": [Circular],
                                 "prev": [Circular],
                                 "type": "tag",
@@ -6816,7 +8872,31 @@ initialize {
                               "children": Array [],
                               "name": "path",
                               "namespace": "http://www.w3.org/2000/svg",
-                              "next": null,
+                              "next": Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": [Circular],
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                               "parent": [Circular],
                               "prev": Node {
                                 "attribs": Object {
@@ -6848,6 +8928,71 @@ initialize {
                                 "fill-rule": undefined,
                               },
                             },
+                            Node {
+                              "attribs": Object {},
+                              "children": Array [
+                                Node {
+                                  "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "text",
+                                },
+                              ],
+                              "name": "style",
+                              "namespace": "http://www.w3.org/2000/svg",
+                              "next": null,
+                              "parent": [Circular],
+                              "prev": Node {
+                                "attribs": Object {
+                                  "clip-rule": "evenodd",
+                                  "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                  "fill-rule": "evenodd",
+                                },
+                                "children": Array [],
+                                "name": "path",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": [Circular],
+                                "parent": [Circular],
+                                "prev": Node {
+                                  "attribs": Object {
+                                    "d": "M5 10.2H19V21H5V10.2Z",
+                                  },
+                                  "children": Array [],
+                                  "name": "path",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": [Circular],
+                                  "parent": [Circular],
+                                  "prev": null,
+                                  "type": "tag",
+                                  "x-attribsNamespace": Object {
+                                    "d": undefined,
+                                  },
+                                  "x-attribsPrefix": Object {
+                                    "d": undefined,
+                                  },
+                                },
+                                "type": "tag",
+                                "x-attribsNamespace": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                                "x-attribsPrefix": Object {
+                                  "clip-rule": undefined,
+                                  "d": undefined,
+                                  "fill-rule": undefined,
+                                },
+                              },
+                              "type": "style",
+                              "x-attribsNamespace": Object {},
+                              "x-attribsPrefix": Object {},
+                            },
                           ],
                           "name": "svg",
                           "namespace": "http://www.w3.org/2000/svg",
@@ -6857,15 +9002,11 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -6902,7 +9043,7 @@ initialize {
                       Node {
                         "data": "
       .address-input {
-        height: 1.75rem;
+        height: 1.75em;
         max-width: 60%;
         min-width: 40%;
         background-color: #fafafa;
@@ -6917,7 +9058,7 @@ initialize {
       }
 
       .address-input :global(*) {
-        font-size: 0.75rem;
+        font-size: 0.75em;
         color: inherit;
       }
 
@@ -6931,12 +9072,15 @@ initialize {
       }
 
       .https {
-        width: 12px;
-        height: 12px;
-        margin-right: 5px;
+        width: 0.75em;
+        height: 0.75em;
+        font-size: 1em;
+        margin-right: 0.31em;
         user-select: none;
         margin-top: -1px;
         color: inherit;
+        display: inline-flex;
+        align-items: center;
       }
     ",
                         "next": null,
@@ -6951,7 +9095,7 @@ initialize {
                     "parent": [Circular],
                     "prev": Node {
                       "attribs": Object {
-                        "class": "link ",
+                        "class": "link  ",
                         "href": "https://react.geist-ui.dev/en-us/guide/introduction",
                         "target": "_blank",
                         "title": "https://react.geist-ui.dev/en-us/guide/introduction",
@@ -6970,10 +9114,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -7017,10 +9168,17 @@ initialize {
             line-height: inherit;
             color: inherit;
             text-decoration: none;
-            padding: calc(0 * 0.8) calc(0 * 1.7);
             border-radius: 0;
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: inherit;
+            width: fit-content;
+            height: auto;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+          }
+          .block {
+            padding: calc(0.268 * 16px) calc(0.5625 * 16px) calc(0.268 * 16px)
+              calc(0.5625 * 16px);
           }
 
           .link:hover,
@@ -7068,9 +9226,7 @@ initialize {
                           Node {
                             "attribs": Object {
                               "fill": "currentColor",
-                              "height": "12",
                               "viewBox": "0 0 24 24",
-                              "width": "12",
                             },
                             "children": Array [
                               Node {
@@ -7089,7 +9245,31 @@ initialize {
                                   "children": Array [],
                                   "name": "path",
                                   "namespace": "http://www.w3.org/2000/svg",
-                                  "next": null,
+                                  "next": Node {
+                                    "attribs": Object {},
+                                    "children": Array [
+                                      Node {
+                                        "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                        "next": null,
+                                        "parent": [Circular],
+                                        "prev": null,
+                                        "type": "text",
+                                      },
+                                    ],
+                                    "name": "style",
+                                    "namespace": "http://www.w3.org/2000/svg",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": [Circular],
+                                    "type": "style",
+                                    "x-attribsNamespace": Object {},
+                                    "x-attribsPrefix": Object {},
+                                  },
                                   "parent": [Circular],
                                   "prev": [Circular],
                                   "type": "tag",
@@ -7123,7 +9303,31 @@ initialize {
                                 "children": Array [],
                                 "name": "path",
                                 "namespace": "http://www.w3.org/2000/svg",
-                                "next": null,
+                                "next": Node {
+                                  "attribs": Object {},
+                                  "children": Array [
+                                    Node {
+                                      "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                      "next": null,
+                                      "parent": [Circular],
+                                      "prev": null,
+                                      "type": "text",
+                                    },
+                                  ],
+                                  "name": "style",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": null,
+                                  "parent": [Circular],
+                                  "prev": [Circular],
+                                  "type": "style",
+                                  "x-attribsNamespace": Object {},
+                                  "x-attribsPrefix": Object {},
+                                },
                                 "parent": [Circular],
                                 "prev": Node {
                                   "attribs": Object {
@@ -7155,6 +9359,71 @@ initialize {
                                   "fill-rule": undefined,
                                 },
                               },
+                              Node {
+                                "attribs": Object {},
+                                "children": Array [
+                                  Node {
+                                    "data": "
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      ",
+                                    "next": null,
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "text",
+                                  },
+                                ],
+                                "name": "style",
+                                "namespace": "http://www.w3.org/2000/svg",
+                                "next": null,
+                                "parent": [Circular],
+                                "prev": Node {
+                                  "attribs": Object {
+                                    "clip-rule": "evenodd",
+                                    "d": "M12 12C13.933 12 15.5 10.3882 15.5 8.4C15.5 6.41177 13.933 4.8 12 4.8C10.067 4.8 8.5 6.41177 8.5 8.4C8.5 10.3882 10.067 12 12 12ZM12 13.8C14.8995 13.8 17.25 11.3823 17.25 8.4C17.25 5.41766 14.8995 3 12 3C9.10051 3 6.75 5.41766 6.75 8.4C6.75 11.3823 9.10051 13.8 12 13.8Z",
+                                    "fill-rule": "evenodd",
+                                  },
+                                  "children": Array [],
+                                  "name": "path",
+                                  "namespace": "http://www.w3.org/2000/svg",
+                                  "next": [Circular],
+                                  "parent": [Circular],
+                                  "prev": Node {
+                                    "attribs": Object {
+                                      "d": "M5 10.2H19V21H5V10.2Z",
+                                    },
+                                    "children": Array [],
+                                    "name": "path",
+                                    "namespace": "http://www.w3.org/2000/svg",
+                                    "next": [Circular],
+                                    "parent": [Circular],
+                                    "prev": null,
+                                    "type": "tag",
+                                    "x-attribsNamespace": Object {
+                                      "d": undefined,
+                                    },
+                                    "x-attribsPrefix": Object {
+                                      "d": undefined,
+                                    },
+                                  },
+                                  "type": "tag",
+                                  "x-attribsNamespace": Object {
+                                    "clip-rule": undefined,
+                                    "d": undefined,
+                                    "fill-rule": undefined,
+                                  },
+                                  "x-attribsPrefix": Object {
+                                    "clip-rule": undefined,
+                                    "d": undefined,
+                                    "fill-rule": undefined,
+                                  },
+                                },
+                                "type": "style",
+                                "x-attribsNamespace": Object {},
+                                "x-attribsPrefix": Object {},
+                              },
                             ],
                             "name": "svg",
                             "namespace": "http://www.w3.org/2000/svg",
@@ -7164,15 +9433,11 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                         ],
@@ -7440,7 +9705,83 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

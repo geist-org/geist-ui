@@ -1,6 +1,5 @@
 import React from 'react'
-import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -11,26 +10,32 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PageContentProps = Props & typeof defaultProps & NativeAttrs
+export type PageContentProps = Props & NativeAttrs
 
-const PageContent: React.FC<React.PropsWithChildren<PageContentProps>> = ({
+const PageContentComponent: React.FC<React.PropsWithChildren<PageContentProps>> = ({
   className,
   children,
   ...props
-}) => {
-  const theme = useTheme()
+}: React.PropsWithChildren<PageContentProps> & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
 
   return (
     <main className={className} {...props}>
       {children}
       <style jsx>{`
         main {
-          width: 100%;
-          padding: calc(${theme.layout.gap} * 2.5) 0;
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, '100%')};
+          height: ${SCALES.height(1, '100%')};
+          padding: ${SCALES.pt(3.125)} ${SCALES.pr(0)} ${SCALES.pb(3.125)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
       `}</style>
     </main>
   )
 }
 
-export default withDefaults(PageContent, defaultProps)
+PageContentComponent.defaultProps = defaultProps
+PageContentComponent.displayName = 'GeistPageContent'
+const PageContent = withScaleable(PageContentComponent)
+export default PageContent

@@ -45,9 +45,9 @@ export const meta = {
     <>
       <Progress value={value} colors={colors} />
       <Spacer />
-      <Button onClick={() => setValue(value + 20)} auto size="small">增加</Button>
-      <Spacer x={.5} inline />
-      <Button onClick={() => setValue(20)} auto size="small" type="abort">重置</Button>
+      <Button onClick={() => setValue(value + 20)} auto scale={0.5}>增加</Button>
+      <Spacer w={.5} inline />
+      <Button onClick={() => setValue(20)} auto scale={0.5} type="abort">重置</Button>
     </>
   )
 }
@@ -74,15 +74,21 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/progress.mdx">
 <Attributes.Title>Progress.Props</Attributes.Title>
 
-| 属性            | 描述               | 类型                        | 推荐值                                                  | 默认      |
-| --------------- | ------------------ | --------------------------- | ------------------------------------------------------- | --------- |
-| **value**       | 进度条当前数值     | `number`                    | -                                                       | 0         |
-| **max**         | 最大值             | `number`                    | -                                                       | 100       |
-| **fixedTop**    | 固定进度条在顶部   | `boolean`                   | -                                                       | `false`   |
-| **fixedBottom** | 固定进度条在底部   | `boolean`                   | -                                                       | `false`   |
-| **colors**      | 在范围内自定义颜色 | `{ [key: number]: string }` | -                                                       | -         |
-| **type**        | 预定义的状体类型   | `NormalTypes`               | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| ...             | 原生属性           | `ProgressHTMLAttributes`    | `'aria-busy', 'className', ...`                         | -         |
+| 属性            | 描述               | 类型                        | 推荐值                          | 默认      |
+| --------------- | ------------------ | --------------------------- | ------------------------------- | --------- |
+| **value**       | 进度条当前数值     | `number`                    | -                               | 0         |
+| **max**         | 最大值             | `number`                    | -                               | 100       |
+| **fixedTop**    | 固定进度条在顶部   | `boolean`                   | -                               | `false`   |
+| **fixedBottom** | 固定进度条在底部   | `boolean`                   | -                               | `false`   |
+| **colors**      | 在范围内自定义颜色 | `{ [key: number]: string }` | -                               | -         |
+| **type**        | 预定义的状体类型   | `ProgressTypes`             | [ProgressTypes](#progresstypes) | `default` |
+| ...             | 原生属性           | `ProgressHTMLAttributes`    | `'aria-busy', 'className', ...` | -         |
+
+<Attributes.Title>ProgressTypes</Attributes.Title>
+
+```ts
+type ProgressTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

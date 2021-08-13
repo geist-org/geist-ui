@@ -1,28 +1,28 @@
 import React, { MouseEvent, useMemo } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { getColor } from './styles'
 import { useButtonDropdown } from './button-dropdown-context'
-import { getButtonSize } from '../button/styles'
 import Loading from '../loading'
 import { NormalTypes } from '../utils/prop-types'
 
+export type ButtonDropdownItemTypes = NormalTypes
+
 interface Props {
   main?: boolean
-  type?: NormalTypes
+  type?: ButtonDropdownItemTypes
   onClick?: React.MouseEventHandler<HTMLElement>
   className?: string
 }
 
 const defaultProps = {
   main: false,
-  type: 'default' as NormalTypes,
+  type: 'default' as ButtonDropdownItemTypes,
   onClick: () => {},
   className: '',
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type ButtonDropdownItemProps = Props & typeof defaultProps & NativeAttrs
+export type ButtonDropdownItemProps = Props & NativeAttrs
 
 const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemProps>> = ({
   children,
@@ -31,12 +31,11 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
   main,
   type: selfType,
   ...props
-}) => {
+}: ButtonDropdownItemProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { size, type: parentType, auto, disabled, loading } = useButtonDropdown()
+  const { type: parentType, disabled, loading } = useButtonDropdown()
   const type = main ? parentType : selfType
   const colors = getColor(theme.palette, type, disabled)
-  const sizes = getButtonSize(size, auto || false)
   const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     if (disabled || loading) return
     onClick && onClick(event)
@@ -68,10 +67,10 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
           background-color: ${colors.bgColor};
           color: ${colors.color};
           width: 100%;
-          height: ${sizes.height};
-          min-width: ${sizes.minWidth};
-          padding: 0 ${sizes.padding};
-          font-size: ${sizes.fontSize};
+          height: var(--geist-ui-dropdown-height);
+          min-width: var(--geist-ui-dropdown-min-width);
+          padding: var(--geist-ui-dropdown-padding);
+          font-size: var(--geist-ui-dropdown-font-size);
         }
 
         button:hover {
@@ -83,6 +82,6 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
   )
 }
 
-const MemoButtonDropdownItem = React.memo(ButtonDropdownItem)
-
-export default withDefaults(MemoButtonDropdownItem, defaultProps)
+ButtonDropdownItem.defaultProps = defaultProps
+ButtonDropdownItem.displayName = 'GeistButtonDropdownItem'
+export default ButtonDropdownItem

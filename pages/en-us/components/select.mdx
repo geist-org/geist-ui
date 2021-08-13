@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Select, Spacer, Code, Modal, useModal, Button } from 'components'
 
 export const meta = {
-  title: 'select',
+  title: 'Select',
   group: 'Data Entry',
 }
 
@@ -23,6 +23,37 @@ Display a dropdown list of items.
     </Select>
   )
 }
+`}
+/>
+
+<Playground
+  title="Type"
+  desc="Differentiate states by color."
+  scope={{ Select, Spacer }}
+  code={`
+() => (
+  <>
+    <Select placeholder="Default" type="default">
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+    <Spacer h={.5} />
+    <Select type="success" initialValue="1">
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+    <Spacer h={.5} />
+    <Select type="warning" initialValue="2">
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+    <Spacer h={.5} />
+    <Select type="error" initialValue="1">
+      <Select.Option value="1">Option 1</Select.Option>
+      <Select.Option value="2">Option 2</Select.Option>
+    </Select>
+  </>
+)
 `}
 />
 
@@ -152,7 +183,7 @@ Display a dropdown list of items.
     <Select.Option value="1">Truncate an overly long string</Select.Option>
     <Select.Option value="2">Option 2</Select.Option>
   </Select>
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Select placeholder="Choose one" value="1" width="150px" disableMatchWidth>
     <Select.Option value="1">Autoscale option width when text is too long</Select.Option>
     <Select.Option value="2">Option 2</Select.Option>
@@ -168,63 +199,76 @@ Display a dropdown list of items.
   code={`
 () => {
   const { visible, setVisible, bindings } = useModal()
-    return (
-      <>
-        <Button auto onClick={() => setVisible(true)}>Show Select</Button>
-        <Modal {...bindings}>
-          <Modal.Title>Modal</Modal.Title>
-          <Modal.Content id="customModalSelect">
-            <Select placeholder="Choose one" initialValue="1"
-              getPopupContainer={() => document.getElementById('customModalSelect')}>
-              <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
-              <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
-            </Select>
-            <p>Scroll through the content to see the changes.</p>
-            <div style={{ height: '1200px' }}></div>
-            <p>Scroll through the content to see the changes.</p>
-          </Modal.Content>
-          <Modal.Action passive onClick={() => setVisible(false)}>Cancel</Modal.Action>
-        </Modal>
-      </>
-    )
-}
-`}
+  return (
+    <>
+      <Button auto onClick={() => setVisible(true)}>Show Select</Button>
+      <Modal {...bindings}>
+        <Modal.Title>Modal</Modal.Title>
+        <Modal.Content id="customModalSelect">
+          <Select placeholder="Choose one" initialValue="1"
+            getPopupContainer={() => document.getElementById('customModalSelect')}>
+            <Select.Option value="1"><Code>TypeScript</Code></Select.Option>
+            <Select.Option value="2"><Code>JavaScript</Code></Select.Option>
+          </Select>
+          <p>Scroll through the content to see the changes.</p>
+          <div style={{ height: '1200px' }}></div>
+          <p>Scroll through the content to see the changes.</p>
+        </Modal.Content>
+        <Modal.Action passive onClick={() => setVisible(false)}>Cancel</Modal.Action>
+      </Modal>
+    </>
+  )
+}`}
 />
 
 <Attributes edit="/pages/en-us/components/select.mdx">
 <Attributes.Title>Select.Props</Attributes.Title>
 
-| Attribute             | Description                                              | Type                                                | Accepted values                   | Default         |
-| --------------------- | -------------------------------------------------------- | --------------------------------------------------- | --------------------------------- | --------------- |
-| **value**             | selected value                                           | `string`, `string[]`                                | -                                 | -               |
-| **initialValue**      | initial value                                            | `string`, `string[]`                                | -                                 | -               |
-| **placeholder**       | placeholder string                                       | `string`                                            | -                                 | -               |
-| **width**             | css width value of select                                | `string`                                            | -                                 | `initial`       |
-| **size**              | select component size                                    | `NormalSizes`                                       | [NormalSizes](#normalsizes)       | `medium`        |
-| **icon**              | icon component                                           | `ComponentType`                                     | -                                 | `SVG Component` |
-| **pure**              | remove icon component                                    | `boolean`                                           | -                                 | `false`         |
-| **multiple**          | support multiple selection                               | `boolean`                                           | -                                 | `false`         |
-| **clearable**         | add clear icon on multiple selection (ignored otherwise) | `boolean`                                           | -                                 | `true`          |
-| **disabled**          | disable current radio                                    | `boolean`                                           | -                                 | `false`         |
-| **onChange**          | selected value                                           | <Code>(val: string &#124; string[]) => void </Code> | -                                 | -               |
-| **dropdownClassName** | className of dropdown menu                               | `string`                                            | -                                 | -               |
-| **dropdownStyle**     | style of dropdown menu                                   | `object`                                            | -                                 | -               |
-| **disableMatchWidth** | disable Option from follow Select width                  | `boolean`                                           | -                                 | `false`         |
-| **getPopupContainer** | dropdown render parent element, the default is `body`    | `() => HTMLElement`                                 | -                                 | -               |
-| ...                   | native props                                             | `HTMLAttributes`                                    | `'name', 'alt', 'className', ...` | -               |
+| Attribute                   | Description                                              | Type                                                | Accepted values             | Default         |
+| --------------------------- | -------------------------------------------------------- | --------------------------------------------------- | --------------------------- | --------------- |
+| **value**                   | selected value                                           | `string`, `string[]`                                | -                           | -               |
+| **initialValue**            | initial value                                            | `string`, `string[]`                                | -                           | -               |
+| **placeholder**             | placeholder string                                       | `string`                                            | -                           | -               |
+| **width**                   | css width value of select                                | `string`                                            | -                           | `initial`       |
+| **type**                    | current type                                             | `SelectTypes`                                       | [SelectTypes](#selecttypes) | `default`       |
+| **icon**                    | icon component                                           | `ComponentType`                                     | -                           | `SVG Component` |
+| **pure**                    | remove icon component                                    | `boolean`                                           | -                           | `false`         |
+| **multiple**                | support multiple selection                               | `boolean`                                           | -                           | `false`         |
+| **clearable**               | add clear icon on multiple selection (ignored otherwise) | `boolean`                                           | -                           | `true`          |
+| **disabled**                | disable current radio                                    | `boolean`                                           | -                           | `false`         |
+| **onChange**                | selected value                                           | <Code>(val: string &#124; string[]) => void </Code> | -                           | -               |
+| **dropdownClassName**       | className of dropdown menu                               | `string`                                            | -                           | -               |
+| **dropdownStyle**           | style of dropdown menu                                   | `object`                                            | -                           | -               |
+| **disableMatchWidth**       | disable Option from follow Select width                  | `boolean`                                           | -                           | `false`         |
+| **getPopupContainer**       | dropdown render parent element, the default is `body`    | `() => HTMLElement`                                 | -                           | -               |
+| **onDropdownVisibleChange** | dropdown change events                                   | `(visible: boolean) => void`                        | -                           | -               |
+| **ref**                     | forwardRef                                               | `SelectRef`                                         | [SelectRef](#selectref)     | -               |
+| ...                         | native props                                             | `HTMLAttributes`                                    | `'name', 'alt', ...`        | -               |
 
 <Attributes.Title>Select.Option.Props</Attributes.Title>
 
-| Attribute           | Description            | Type             | Accepted values                  | Default |
-| ------------------- | ---------------------- | ---------------- | -------------------------------- | ------- |
-| **value**(required) | unique ident value     | `string`         | -                                | -       |
-| **disabled**        | disable current option | `boolean`        | -                                | `false` |
-| ...                 | native props           | `HTMLAttributes` | `'name', 'id', 'className', ...` | -       |
+| Attribute           | Description            | Type             | Accepted values     | Default |
+| ------------------- | ---------------------- | ---------------- | ------------------- | ------- |
+| **value**(required) | unique ident value     | `string`         | -                   | -       |
+| **disabled**        | disable current option | `boolean`        | -                   | `false` |
+| **divider**         | display a line         | `boolean`        | -                   | `false` |
+| **label**           | display a group title  | `boolean`        | -                   | `false` |
+| ...                 | native props           | `HTMLAttributes` | `'name', 'id', ...` | -       |
 
-<Attributes.Title>NormalSizes</Attributes.Title>
+<Attributes.Title>SelectRef</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type SelectRef = {
+  focus: () => void
+  blur: () => void
+  scrollTo?: (options?: ScrollToOptions) => void
+}
+```
+
+<Attributes.Title>SelectTypes</Attributes.Title>
+
+```ts
+type SelectTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

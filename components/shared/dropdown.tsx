@@ -2,9 +2,10 @@ import React, { MutableRefObject, useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
-import CSSTransition from './css-transition'
+import CssTransition from './css-transition'
 import useClickAnyWhere from '../utils/use-click-anywhere'
 import useDOMObserver from '../utils/use-dom-observer'
+import useWarning from '../utils/use-warning'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
@@ -61,6 +62,19 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
     const [rect, setRect] = useState<ReactiveDomReact>(defaultRect)
     if (!parent) return null
 
+    /* istanbul ignore next */
+    if (process.env.NODE_ENV !== 'production') {
+      if (getPopupContainer && getPopupContainer()) {
+        const el = getPopupContainer()
+        const style = window.getComputedStyle(el as HTMLDivElement)
+        if (style.position === 'static') {
+          useWarning(
+            'The element specified by "getPopupContainer" must have "position" set.',
+          )
+        }
+      }
+    }
+
     const updateRect = () => {
       const { top, left, right, width: nativeWidth } = getRect(parent, getPopupContainer)
       setRect({ top, left, right, width: nativeWidth })
@@ -88,15 +102,20 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
 
     const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
       event.stopPropagation()
+      event.nativeEvent.stopImmediatePropagation()
+      event.preventDefault()
+    }
+    const mouseDownHandler = (event: React.MouseEvent<HTMLDivElement>) => {
       event.preventDefault()
     }
 
     if (!el) return null
     return createPortal(
-      <CSSTransition visible={visible}>
+      <CssTransition visible={visible}>
         <div
           className={`dropdown ${disableMatchWidth ? 'disable-match' : 'width-match'}`}
-          onClick={clickHandler}>
+          onClick={clickHandler}
+          onMouseDown={mouseDownHandler}>
           {children}
           <style jsx>{`
             .dropdown {
@@ -115,7 +134,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
             }
           `}</style>
         </div>
-      </CSSTransition>,
+      </CssTransition>,
       el,
     )
   },

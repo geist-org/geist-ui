@@ -1,24 +1,15 @@
-import React, {
-  PropsWithoutRef,
-  RefAttributes,
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import React, { useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react'
 import useTheme from '../use-theme'
 import InputLabel from './input-label'
 import InputBlockLabel from './input-block-label'
 import InputIcon from './input-icon'
 import InputClearIcon from './input-icon-clear'
-import Textarea from '../textarea/textarea'
-import InputPassword from './password'
-import { getSizes, getColors } from './styles'
+import { getColors } from './styles'
 import { Props, defaultProps } from './input-props'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type InputProps = Props & typeof defaultProps & NativeAttrs
+export type InputProps = Props & NativeAttrs
 
 const simulateChangeEvent = (
   el: HTMLInputElement,
@@ -31,13 +22,16 @@ const simulateChangeEvent = (
   }
 }
 
-const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputProps>>(
+const InputComponent = React.forwardRef<
+  HTMLInputElement,
+  React.PropsWithChildren<InputProps>
+>(
   (
     {
       label,
       labelRight,
-      size,
-      status,
+      type,
+      htmlType,
       icon,
       iconRight,
       iconClickable,
@@ -48,7 +42,6 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       value,
       onClearClick,
       clearable,
-      width,
       className,
       onBlur,
       onFocus,
@@ -57,16 +50,16 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       children,
       disabled,
       ...props
-    },
+    }: React.PropsWithChildren<InputProps> & typeof defaultProps,
     ref: React.Ref<HTMLInputElement | null>,
   ) => {
     const theme = useTheme()
+    const { SCALES } = useScaleable()
     const inputRef = useRef<HTMLInputElement>(null)
     useImperativeHandle(ref, () => inputRef.current)
 
     const [selfValue, setSelfValue] = useState<string>(initialValue)
     const [hover, setHover] = useState<boolean>(false)
-    const { heightRatio, fontSize } = useMemo(() => getSizes(size), [size])
     const isControlledComponent = useMemo(() => value !== undefined, [value])
     const labelClasses = useMemo(
       () => (labelRight ? 'right-label' : label ? 'left-label' : ''),
@@ -77,8 +70,8 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       [icon, iconRight],
     )
     const { color, borderColor, hoverBorder } = useMemo(
-      () => getColors(theme.palette, status),
-      [theme.palette, status],
+      () => getColors(theme.palette, type),
+      [theme.palette, type],
     )
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -113,11 +106,10 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
     }
     const iconProps = useMemo(
       () => ({
-        ratio: heightRatio,
         clickable: iconClickable,
         onClick: iconClickHandler,
       }),
-      [heightRatio, iconClickable, iconClickHandler],
+      [iconClickable, iconClickHandler],
     )
 
     useEffect(() => {
@@ -138,14 +130,14 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
       <div className="with-label">
         {children && <InputBlockLabel>{children}</InputBlockLabel>}
         <div className={`input-container ${className}`}>
-          {label && <InputLabel fontSize={fontSize}>{label}</InputLabel>}
+          {label && <InputLabel>{label}</InputLabel>}
           <div
             className={`input-wrapper ${hover ? 'hover' : ''} ${
               disabled ? 'disabled' : ''
             } ${labelClasses}`}>
             {icon && <InputIcon icon={icon} {...iconProps} />}
             <input
-              type="text"
+              type={htmlType}
               ref={inputRef}
               className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
               placeholder={placeholder}
@@ -160,32 +152,32 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
             {clearable && (
               <InputClearIcon
                 visible={Boolean(inputRef.current && inputRef.current.value !== '')}
-                heightRatio={heightRatio}
                 disabled={disabled || readOnly}
                 onClick={clearHandler}
               />
             )}
             {iconRight && <InputIcon icon={iconRight} {...iconProps} />}
           </div>
-          {labelRight && (
-            <InputLabel fontSize={fontSize} isRight={true}>
-              {labelRight}
-            </InputLabel>
-          )}
+          {labelRight && <InputLabel isRight={true}>{labelRight}</InputLabel>}
         </div>
         <style jsx>{`
           .with-label {
             display: inline-block;
-            width: ${width};
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: ${SCALES.height(2.25)};
+            font-size: ${SCALES.font(0.875)};
+            width: ${SCALES.width(1, 'initial')};
+            height: var(--input-height);
+            padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
-            width: ${width};
-            height: calc(${heightRatio} * ${theme.layout.gap});
+            width: ${SCALES.width(1, 'initial')};
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -225,10 +217,10 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: ${fontSize};
+            font-size: ${SCALES.font(0.875)};
             background-color: transparent;
             border: none;
             color: ${color};
@@ -271,16 +263,7 @@ const Input = React.forwardRef<HTMLInputElement, React.PropsWithChildren<InputPr
   },
 )
 
-type InputComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
-> & {
-  Textarea: typeof Textarea
-  Password: typeof InputPassword
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Input.defaultProps = defaultProps
-
-export default Input as InputComponent<HTMLInputElement, ComponentProps>
+InputComponent.defaultProps = defaultProps
+InputComponent.displayName = 'GeistInput'
+const Input = withScaleable(InputComponent)
+export default Input

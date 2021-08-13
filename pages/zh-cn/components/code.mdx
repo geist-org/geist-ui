@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Code, Note, Link } from 'components'
+import { Code, Note, Link, Text } from 'components'
 import NextLink from 'next/link'
 
 export const meta = {
@@ -21,9 +21,9 @@ export const meta = {
 
 <Playground
   desc="基础的行内代码。"
-  scope={{ Code }}
+  scope={{ Code, Text }}
   code={`
-<p>Run <Code>npm i @geist-ui/react</Code> to install.</p>
+<Text my={0}>Run <Code>npm i @geist-ui/react</Code> to install.</Text>
 `}
 />
 
@@ -35,7 +35,7 @@ export const meta = {
 () => {
   const codes = \`npm i @geist-ui/react
 yarn add @geist-ui/react\`
-  return <Code block>{codes}</Code>
+  return <Code block my={0}>{codes}</Code>
 }
 `}
 />
@@ -48,7 +48,7 @@ yarn add @geist-ui/react\`
 () => {
   const codes = \`npm i @geist-ui/react
 yarn add @geist-ui/react\`
-  return <Code block width="50%">{codes}</Code>
+  return <Code block width="50%" my={0}>{codes}</Code>
 }
 `}
 />
@@ -61,7 +61,7 @@ yarn add @geist-ui/react\`
 () => {
   const codes = \`npm i @geist-ui/react npm i @geist-ui/react npm i @geist-ui/react
 yarn add @geist-ui/react\`
-  return <Code block width="50%">{codes}</Code>
+  return <Code block width="50%" my={0}>{codes}</Code>
 }
 `}
 />
@@ -69,11 +69,10 @@ yarn add @geist-ui/react\`
 <Attributes edit="/pages/zh-cn/components/code.mdx">
 <Attributes.Title>Code.Props</Attributes.Title>
 
-| 属性      | 描述             | 类型             | 推荐值             | 默认      |
-| --------- | ---------------- | ---------------- | ------------------ | --------- |
-| **block** | 展示多行的代码块 | `boolean`        | -                  | `false`   |
-| **width** | 设置 CSS 宽度    | `string`         | -                  | `initial` |
-| ...       | 原生属性         | `HTMLAttributes` | `'className', ...` | -         |
+| 属性      | 描述             | 类型             | 推荐值             | 默认    |
+| --------- | ---------------- | ---------------- | ------------------ | ------- |
+| **block** | 展示多行的代码块 | `boolean`        | -                  | `false` |
+| ...       | 原生属性         | `HTMLAttributes` | `'className', ...` | -       |
 
 </Attributes>
 

@@ -5,13 +5,13 @@ exports[`Badge should re-render when size changed 1`] = `ReactWrapper {}`;
 exports[`Badge should re-render when size changed 2`] = `ReactWrapper {}`;
 
 exports[`Badge should render different types 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {},
     "children": Array [
       Node {
         "attribs": Object {
-          "class": " ",
+          "class": "badge  ",
         },
         "children": Array [
           Node {
@@ -21,22 +21,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #0070f3;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -63,22 +68,27 @@ initialize {
             "children": Array [
               Node {
                 "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #0070f3;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                 "next": null,
@@ -107,7 +117,7 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": Node {
           "attribs": Object {
-            "class": " ",
+            "class": "badge  ",
           },
           "children": Array [
             Node {
@@ -117,22 +127,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #666;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -159,22 +174,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #666;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -203,7 +223,7 @@ initialize {
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": Node {
             "attribs": Object {
-              "class": " ",
+              "class": "badge  ",
             },
             "children": Array [
               Node {
@@ -213,22 +233,27 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #f5a623;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                       "next": null,
@@ -255,22 +280,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #f5a623;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -299,7 +329,7 @@ initialize {
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": Node {
               "attribs": Object {
-                "class": " ",
+                "class": "badge  ",
               },
               "children": Array [
                 Node {
@@ -309,22 +339,27 @@ initialize {
                     "children": Array [
                       Node {
                         "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #e00;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                         "next": null,
@@ -351,22 +386,27 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #e00;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                       "next": null,
@@ -436,7 +476,7 @@ initialize {
       },
       Node {
         "attribs": Object {
-          "class": " ",
+          "class": "badge  ",
         },
         "children": Array [
           Node {
@@ -446,22 +486,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #666;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -488,22 +533,27 @@ initialize {
             "children": Array [
               Node {
                 "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #666;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                 "next": null,
@@ -532,7 +582,7 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": Node {
           "attribs": Object {
-            "class": " ",
+            "class": "badge  ",
           },
           "children": Array [
             Node {
@@ -542,22 +592,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #f5a623;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -584,22 +639,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #f5a623;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -628,7 +688,7 @@ initialize {
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": Node {
             "attribs": Object {
-              "class": " ",
+              "class": "badge  ",
             },
             "children": Array [
               Node {
@@ -638,22 +698,27 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #e00;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                       "next": null,
@@ -680,22 +745,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #e00;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -746,7 +816,7 @@ initialize {
         "parent": [Circular],
         "prev": Node {
           "attribs": Object {
-            "class": " ",
+            "class": "badge  ",
           },
           "children": Array [
             Node {
@@ -756,22 +826,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #0070f3;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -798,22 +873,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #0070f3;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -861,7 +941,7 @@ initialize {
       },
       Node {
         "attribs": Object {
-          "class": " ",
+          "class": "badge  ",
         },
         "children": Array [
           Node {
@@ -871,22 +951,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #f5a623;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -913,22 +998,27 @@ initialize {
             "children": Array [
               Node {
                 "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #f5a623;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                 "next": null,
@@ -957,7 +1047,7 @@ initialize {
         "namespace": "http://www.w3.org/1999/xhtml",
         "next": Node {
           "attribs": Object {
-            "class": " ",
+            "class": "badge  ",
           },
           "children": Array [
             Node {
@@ -967,22 +1057,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #e00;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -1009,22 +1104,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #e00;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -1065,7 +1165,7 @@ initialize {
         "parent": [Circular],
         "prev": Node {
           "attribs": Object {
-            "class": " ",
+            "class": "badge  ",
           },
           "children": Array [
             Node {
@@ -1075,22 +1175,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #666;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -1117,22 +1222,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #666;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -1163,7 +1273,7 @@ initialize {
           "parent": [Circular],
           "prev": Node {
             "attribs": Object {
-              "class": " ",
+              "class": "badge  ",
             },
             "children": Array [
               Node {
@@ -1173,22 +1283,27 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #0070f3;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                       "next": null,
@@ -1215,22 +1330,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #0070f3;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -1286,7 +1406,7 @@ initialize {
       },
       Node {
         "attribs": Object {
-          "class": " ",
+          "class": "badge  ",
         },
         "children": Array [
           Node {
@@ -1296,22 +1416,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #e00;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -1338,22 +1463,27 @@ initialize {
             "children": Array [
               Node {
                 "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #e00;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                 "next": null,
@@ -1384,7 +1514,7 @@ initialize {
         "parent": [Circular],
         "prev": Node {
           "attribs": Object {
-            "class": " ",
+            "class": "badge  ",
           },
           "children": Array [
             Node {
@@ -1394,22 +1524,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #f5a623;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -1436,22 +1571,27 @@ initialize {
               "children": Array [
                 Node {
                   "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #f5a623;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                   "next": null,
@@ -1482,7 +1622,7 @@ initialize {
           "parent": [Circular],
           "prev": Node {
             "attribs": Object {
-              "class": " ",
+              "class": "badge  ",
             },
             "children": Array [
               Node {
@@ -1492,22 +1632,27 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #666;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                       "next": null,
@@ -1534,22 +1679,27 @@ initialize {
                 "children": Array [
                   Node {
                     "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #666;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                     "next": null,
@@ -1580,7 +1730,7 @@ initialize {
             "parent": [Circular],
             "prev": Node {
               "attribs": Object {
-                "class": " ",
+                "class": "badge  ",
               },
               "children": Array [
                 Node {
@@ -1590,22 +1740,27 @@ initialize {
                     "children": Array [
                       Node {
                         "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #0070f3;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                         "next": null,
@@ -1632,22 +1787,27 @@ initialize {
                   "children": Array [
                     Node {
                       "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #0070f3;
           color: white;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
                       "next": null,
@@ -1728,7 +1888,83 @@ initialize {
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,
@@ -1738,10 +1974,10 @@ initialize {
 `;
 
 exports[`Badge should supoort text 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
-      "class": " ",
+      "class": "badge  ",
     },
     "children": Array [
       Node {
@@ -1751,22 +1987,27 @@ initialize {
           "children": Array [
             Node {
               "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #000;
           color: #fff;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
               "next": null,
@@ -1793,22 +2034,27 @@ initialize {
         "children": Array [
           Node {
             "data": "
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #000;
           color: #fff;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       ",
             "next": null,
@@ -1855,7 +2101,83 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

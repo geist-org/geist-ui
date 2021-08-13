@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Checkbox, Spacer } from 'components'
 
 export const meta = {
-  title: 'checkbox',
+  title: 'Checkbox',
   group: 'Data Entry',
 }
 
@@ -14,23 +14,36 @@ Displays a boolean value.
   desc="Change state with `checked` props."
   scope={{ Checkbox }}
   code={`
-  <Checkbox checked={true}>Sydney</Checkbox>
+<Checkbox checked={true}>Sydney</Checkbox>
 `}
 />
 
 <Playground
   title="sizes"
   desc="Checkbox of different sizes."
+  scope={{ Checkbox }}
+  code={`
+<>
+  <Checkbox mr="15px" checked={true} scale={0.25}>scale-0.25</Checkbox>
+  <Checkbox mr="15px" checked={true} scale={0.5}>scale-0.5</Checkbox>
+  <Checkbox mr="15px" checked={true} scale={0.75}>scale-0.75</Checkbox>
+</>
+`}
+/>
+
+<Playground
+  title="Type"
+  desc="Differentiate states by color."
   scope={{ Checkbox, Spacer }}
   code={`
 <>
-  <Checkbox checked={true} size="mini">mini</Checkbox>
-  <Spacer y={.5} />
-  <Checkbox checked={true} size="small">small</Checkbox>
-  <Spacer y={.5} />
-  <Checkbox checked={true} size="medium">medium</Checkbox>
-  <Spacer y={.5} />
-  <Checkbox checked={true} size="large">large</Checkbox>
+  <Checkbox checked={true} type="default">Default</Checkbox>
+  <Spacer h={.5} />
+  <Checkbox checked={true} type="success">Success</Checkbox>
+  <Spacer h={.5} />
+  <Checkbox checked={true} type="warning">Warning</Checkbox>
+  <Spacer h={.5} />
+  <Checkbox checked={true} type="error">Error</Checkbox>
 </>
 `}
 />
@@ -41,7 +54,7 @@ Displays a boolean value.
   code={`
 <>
   <Checkbox>Sydney</Checkbox>
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Checkbox disabled checked={true}>Bei Jing</Checkbox>
 </>
 `}
@@ -71,30 +84,30 @@ Displays a boolean value.
 <Attributes edit="/pages/en-us/components/checkbox.mdx">
 <Attributes.Title>Checkbox.Props</Attributes.Title>
 
-| Attribute          | Description                                 | Type                  | Accepted values             | Default |
-| ------------------ | ------------------------------------------- | --------------------- | --------------------------- | ------- |
-| **checked**        | checked or not                              | `boolean`             | -                           | -       |
-| **initialChecked** | checked or not on initial                   | `boolean`             | -                           | `false` |
-| **onChange**       | change event handler                        | `CheckboxEvent`       | -                           | -       |
-| **value**          | unique identification value (only in group) | `string`              | -                           | -       |
-| **disabled**       | disable checkbox                            | `boolean`             | -                           | `false` |
-| **size**           | checkbox size                               | `NormalSizes`         | [NormalSizes](#normalsizes) | `small` |
-| ...                | native props                                | `LabelHTMLAttributes` | `'form', 'className', ...`  | -       |
+| Attribute          | Description                                 | Type                                           | Accepted values                 | Default   |
+| ------------------ | ------------------------------------------- | ---------------------------------------------- | ------------------------------- | --------- |
+| **checked**        | checked or not                              | `boolean`                                      | -                               | -         |
+| **initialChecked** | checked or not on initial                   | `boolean`                                      | -                               | `false`   |
+| **onChange**       | change event handler                        | `CheckboxEvent`                                | -                               | -         |
+| **value**          | unique identification value (only in group) | `string`                                       | -                               | -         |
+| **disabled**       | disable checkbox                            | `boolean`                                      | -                               | `false`   |
+| **type**           | current type                                | `CheckboxTypes`                                | [CheckboxTypes](#checkboxtypes) | `default` |
+| **ref**            | forwardRef                                  | <Code>Ref<HTMLInputElement &#124; null></Code> | -                               | -         |
+| ...                | native props                                | `LabelHTMLAttributes`                          | `'form' ...`                    | -         |
 
 <Attributes.Title>Checkbox.Group.Props</Attributes.Title>
 
-| Attribute    | Description                         | Type                         | Accepted values             | Default |
-| ------------ | ----------------------------------- | ---------------------------- | --------------------------- | ------- |
-| **value**    | checked children                    | `Array<string>`              | -                           | `[]`    |
-| **disabled** | disable checkbox group              | `boolean`                    | -                           | `false` |
-| **onChange** | change event handler                | `(values: string[]) => void` | -                           | -       |
-| **size**     | size of all checkboxes in the group | `NormalSizes`                | [NormalSizes](#normalsizes) | `small` |
-| ...          | native props                        | `HTMLAttributes`             | `'id', 'className', ...`    | -       |
+| Attribute    | Description            | Type                         | Accepted values | Default |
+| ------------ | ---------------------- | ---------------------------- | --------------- | ------- |
+| **value**    | checked children       | `Array<string>`              | -               | `[]`    |
+| **disabled** | disable checkbox group | `boolean`                    | -               | `false` |
+| **onChange** | change event handler   | `(values: string[]) => void` | -               | -       |
+| ...          | native props           | `HTMLAttributes`             | `'id', ...`     | -       |
 
-<Attributes.Title>NormalSizes</Attributes.Title>
+<Attributes.Title>CheckboxTypes</Attributes.Title>
 
 ```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
+type CheckboxTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>CheckboxEvent</Attributes.Title>

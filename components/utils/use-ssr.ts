@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react'
-
-const isBrowser = (): boolean => {
-  return Boolean(
-    typeof window !== 'undefined' && window.document && window.document.createElement,
-  )
-}
+import { isBrowser } from './collections'
 
 export type SSRState = {
   isBrowser: boolean

@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/node:12.0
+      - image: circleci/node:14.15.0
 
     working_directory: ~/repo
 
@@ -27,7 +27,7 @@ jobs:
 
   build:
     docker:
-      - image: circleci/node:12.0
+      - image: circleci/node:14.15.0
 
     working_directory: ~/repo
 

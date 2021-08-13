@@ -1,0 +1,105 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Drawer, Button } from 'components'
+
+export const meta = {
+  title: 'Drawer',
+  group: 'Feedback',
+}
+
+## Drawer
+
+An interactive element fixed to the edge of the screen.
+
+<Playground
+  desc="Basic usage."
+  scope={{ Drawer, Button }}
+  code={`
+() => {
+  const [state, setState] = React.useState(false)
+  return (
+    <div>
+      <Button auto onClick={() => setState(true)} scale={1/2}>Show Drawer</Button>
+      <Drawer visible={state} onClose={() => setState(false)} placement="right">
+        <Drawer.Title>Drawer</Drawer.Title>
+        <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
+        <Drawer.Content>
+          <p>Some content contained within the drawer.</p>
+        </Drawer.Content>
+      </Drawer>
+    </div>
+  )
+}
+`}
+/>
+
+<Playground
+  title="Placement"
+  scope={{ Drawer, Button }}
+  code={`
+() => {
+  const [state, setState] = React.useState(false)
+  const [placement, setPlacement] = React.useState('')
+  const open = (text) => {
+    setPlacement(text)
+    setState(true)
+  }
+  return (
+    <div>
+      <Button auto onClick={() => open('top')} scale={1/2} mr="10px">Top</Button>
+      <Button auto onClick={() => open('right')} scale={1/2} mr="10px">Right</Button>
+      <Button auto onClick={() => open('bottom')} scale={1/2} mr="10px">Bottom</Button>
+      <Button auto onClick={() => open('left')} scale={1/2}>Left</Button>
+      <Drawer visible={state} onClose={() => setState(false)} placement={placement}>
+        <Drawer.Title>Drawer</Drawer.Title>
+        <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
+        <Drawer.Content>
+          <p>Some content contained within the drawer.</p>
+        </Drawer.Content>
+      </Drawer>
+    </div>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/components/drawer.mdx">
+<Attributes.Title>Drawer.Props</Attributes.Title>
+
+| Attribute                | Description                      | Type                                | Accepted values            | Default |
+| ------------------------ | -------------------------------- | ----------------------------------- | -------------------------- | ------- |
+| **visible**              | open or close                    | `boolean`                           | -                          | `false` |
+| **onClose**              | close event                      | `() => void`                        | -                          | -       |
+| **onContentClick**       | event from modal content         | `(e: MouseEvent) => void`           | -                          | -       |
+| **wrapClassName**        | className of the drawer dialog   | `string`                            | -                          | -       |
+| **keyboard**             | press Esc to close drawer        | `boolean`                           | -                          | `true`  |
+| **disableBackdropClick** | click background and don't close | `boolean`                           | -                          | `false` |
+| **placement**            | position of the drawer           | [DrawerPlacement](#drawerplacement) | -                          | `right` |
+| ...                      | native props                     | `HTMLAttributes`                    | `'name', 'className', ...` | -       |
+
+<Attributes.Title>Drawer.Title.Props</Attributes.Title>
+
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
+
+<Attributes.Title>Drawer.Subtitle.Props</Attributes.Title>
+
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
+
+<Attributes.Title>Drawer.Content.Props</Attributes.Title>
+
+| Attribute | Description  | Type             | Accepted values          | Default |
+| --------- | ------------ | ---------------- | ------------------------ | ------- |
+| ...       | native props | `HTMLAttributes` | `'id', 'className', ...` | -       |
+
+<Attributes.Title>DrawerPlacement</Attributes.Title>
+
+```ts
+type DrawerPlacement = 'top' | 'bottom' | 'right' | 'left'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

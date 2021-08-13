@@ -1,5 +1,8 @@
 import { Dispatch, MutableRefObject, SetStateAction } from 'react'
 import useCurrentState from '../utils/use-current-state'
+import { ModalProps } from '../modal'
+
+export type ModalHooksBindings = Pick<ModalProps, 'visible' | 'onClose'>
 
 const useModal = (
   initialVisible: boolean = false,
@@ -7,10 +10,7 @@ const useModal = (
   visible: boolean
   setVisible: Dispatch<SetStateAction<boolean>>
   currentRef: MutableRefObject<boolean>
-  bindings: {
-    open: boolean
-    onClose: () => void
-  }
+  bindings: ModalHooksBindings
 } => {
   const [visible, setVisible, currentRef] = useCurrentState<boolean>(initialVisible)
 
@@ -19,7 +19,7 @@ const useModal = (
     setVisible,
     currentRef,
     bindings: {
-      open: visible,
+      visible,
       onClose: () => setVisible(false),
     },
   }

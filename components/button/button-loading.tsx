@@ -24,4 +24,5 @@ const ButtonLoading: React.FC<React.PropsWithChildren<Props>> = ({ color }) => {
   )
 }
 
-export default React.memo(ButtonLoading)
+ButtonLoading.displayName = 'GeistButtonLoading'
+export default ButtonLoading

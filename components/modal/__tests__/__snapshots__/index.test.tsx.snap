@@ -3,18 +3,21 @@
 exports[`Modal customization should be supported 1`] = `
 "<div class=\\"wrapper test-class  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Modal</h2><style>
         h2 {
-          font-size: 1.5rem;
           line-height: 1.6;
           font-weight: normal;
           text-align: center;
-          margin: 0;
           display: inline-flex;
           flex-shrink: 0;
           justify-content: center;
           align-items: center;
           word-break: break-word;
           text-transform: capitalize;
+          font-size: calc(1.5 * 16px);
           color: #000;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       </style><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
@@ -28,13 +31,20 @@ exports[`Modal customization should be supported 1`] = `
             background-color: #fff;
             color: #000;
             border-radius: 5px;
-            padding: 16pt;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;
             transform: translate3d(0px, -30px, 0px);
             transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+            width: 100%;
+            font-size: calc(1 * 16px);
+            height: auto;
+            --modal-wrapper-padding-left: calc(1.3125 * 16px);
+            --modal-wrapper-padding-right: calc(1.3125 * 16px);
+            padding: calc(1.3125 * 16px) var(--modal-wrapper-padding-right)
+              calc(1.3125 * 16px) var(--modal-wrapper-padding-left);
+            margin: 0 0 0 0;
           }
 
           .wrapper-enter {
@@ -70,38 +80,50 @@ exports[`Modal customization should be supported 1`] = `
 exports[`Modal should render correctly 1`] = `
 "<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Modal</h2><style>
         h2 {
-          font-size: 1.5rem;
           line-height: 1.6;
           font-weight: normal;
           text-align: center;
-          margin: 0;
           display: inline-flex;
           flex-shrink: 0;
           justify-content: center;
           align-items: center;
           word-break: break-word;
           text-transform: capitalize;
+          font-size: calc(1.5 * 16px);
           color: #000;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       </style><p class=\\"\\">This is a modal</p><style>
         p {
-          font-size: 0.875rem;
           font-weight: normal;
           display: inline-block;
-          line-height: 1.5rem;
-          height: 1.5rem;
           text-align: center;
-          margin: 0;
           word-break: break-word;
           text-transform: uppercase;
           color: #666;
+          font-size: calc(0.875 * 16px);
+          line-height: 1.5em;
+          width: auto;
+          height: 1.5em;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
       </style><div class=\\"content \\"><p>Some content contained within the modal.</p></div><style>
         .content {
-          margin: 0 -16pt;
-          padding: 16pt 16pt 8pt;
           position: relative;
           text-align: left;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.3125 * 16px) calc(1.3125 * 16px) calc(0.6625 * 16px)
+            calc(1.3125 * 16px);
+          margin: 0
+            calc(var(--modal-wrapper-padding-right) * -1)
+            0
+            calc(var(--modal-wrapper-padding-left) * -1);
         }
 
         .content > :global(*:first-child) {
@@ -115,14 +137,10 @@ exports[`Modal should render correctly 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.375rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
-            min-width: 12.5rem;
-            width: auto;
+            line-height: calc(2.5 * 16px);
             border-radius: 5px;
             font-weight: 400;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -139,10 +157,15 @@ exports[`Modal should render correctly 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 1.375rem;
-            --geist-ui-button-height: 2.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: calc(12.5 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
+            padding: 0 calc(1.375 * 16px) 0 calc(1.375 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,
@@ -177,14 +200,10 @@ exports[`Modal should render correctly 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.375rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
-            min-width: 12.5rem;
-            width: auto;
+            line-height: calc(2.5 * 16px);
             border-radius: 5px;
             font-weight: 400;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -201,10 +220,15 @@ exports[`Modal should render correctly 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 1.375rem;
-            --geist-ui-button-height: 2.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: calc(12.5 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
+            padding: 0 calc(1.375 * 16px) 0 calc(1.375 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,
@@ -240,7 +264,7 @@ exports[`Modal should render correctly 1`] = `
           display: flex;
           overflow: hidden;
           width: 100%;
-          height: 3.625rem;
+          height: auto;
           position: absolute;
           bottom: 0;
           left: 0;
@@ -255,7 +279,7 @@ exports[`Modal should render correctly 1`] = `
         }
 
         div {
-          height: 3.625rem;
+          height: 0px;
           flex-shrink: 0;
         }
       </style><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><style>
@@ -270,13 +294,20 @@ exports[`Modal should render correctly 1`] = `
             background-color: #fff;
             color: #000;
             border-radius: 5px;
-            padding: 16pt;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;
             transform: translate3d(0px, -30px, 0px);
             transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
               transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+            width: 100%;
+            font-size: calc(1 * 16px);
+            height: auto;
+            --modal-wrapper-padding-left: calc(1.3125 * 16px);
+            --modal-wrapper-padding-right: calc(1.3125 * 16px);
+            padding: calc(1.3125 * 16px) var(--modal-wrapper-padding-right)
+              calc(1.3125 * 16px) var(--modal-wrapper-padding-left);
+            margin: 0 0 0 0;
           }
 
           .wrapper-enter {
@@ -325,7 +356,7 @@ exports[`Modal should render correctly 1`] = `
               z-index: 1001;
               outline: none;
               max-width: 90%;
-              width: 26rem;
+              width: calc(26 * 16px);
               margin: 20px auto;
               vertical-align: middle;
               display: inline-block;

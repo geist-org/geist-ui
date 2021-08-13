@@ -1,6 +1,5 @@
 import React from 'react'
-import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -11,26 +10,33 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PageHeaderProps = Props & typeof defaultProps & NativeAttrs
+export type PageFooterProps = Props & NativeAttrs
 
-const PageFooter: React.FC<React.PropsWithChildren<PageHeaderProps>> = ({
+const PageFooterComponent: React.FC<React.PropsWithChildren<PageFooterProps>> = ({
   children,
   ...props
-}) => {
-  const theme = useTheme()
+}: React.PropsWithChildren<PageFooterProps> & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
 
   return (
     <footer {...props}>
       {children}
       <style jsx>{`
         footer {
-          width: calc(100% - ${theme.layout.gap} * 2);
           position: absolute;
           bottom: 0;
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, '100%')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
       `}</style>
     </footer>
   )
 }
 
-export default withDefaults(PageFooter, defaultProps)
+PageFooterComponent.defaultProps = defaultProps
+PageFooterComponent.displayName = 'GeistPageFooter'
+const PageFooter = withScaleable(PageFooterComponent)
+export default PageFooter

@@ -1,5 +1,5 @@
 import React from 'react'
-import { mount, render } from 'enzyme'
+import { mount } from 'enzyme'
 import { Keyboard } from 'components'
 
 describe('Keyboard', () => {
@@ -21,10 +21,5 @@ describe('Keyboard', () => {
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
-  })
-
-  it('should work with small size', () => {
-    const wrapper = render(<Keyboard small>F</Keyboard>)
-    expect(wrapper).toMatchSnapshot()
   })
 })

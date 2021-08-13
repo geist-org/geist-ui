@@ -2,7 +2,14 @@ import Breadcrumbs from './breadcrumbs'
 import BreadcrumbsItem from './breadcrumbs-item'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
 
-Breadcrumbs.Item = BreadcrumbsItem
-Breadcrumbs.Separator = BreadcrumbsSeparator
+export type BreadcrumbsComponentType = typeof Breadcrumbs & {
+  Item: typeof BreadcrumbsItem
+  Separator: typeof BreadcrumbsSeparator
+}
+;(Breadcrumbs as BreadcrumbsComponentType).Item = BreadcrumbsItem
+;(Breadcrumbs as BreadcrumbsComponentType).Separator = BreadcrumbsSeparator
 
-export default Breadcrumbs
+export type { BreadcrumbsProps } from './breadcrumbs'
+export type { BreadcrumbsItemProps } from './breadcrumbs-item'
+export type { BreadcrumbsSeparatorProps } from './breadcrumbs-separator'
+export default Breadcrumbs as BreadcrumbsComponentType

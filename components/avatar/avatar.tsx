@@ -1,13 +1,11 @@
-import React, { useMemo } from 'react'
-import { NormalSizes } from '../utils/prop-types'
+import React from 'react'
 import useTheme from '../use-theme'
-import AvatarGroup from './avatar-group'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   src?: string
   stacked?: boolean
   text?: string
-  size?: NormalSizes | number
   isSquare?: boolean
   className?: string
 }
@@ -15,7 +13,6 @@ interface Props {
 const defaultProps = {
   stacked: false,
   text: '',
-  size: 'small' as NormalSizes | number,
   isSquare: false,
   className: '',
 }
@@ -24,42 +21,32 @@ type NativeAttrs = Omit<
   Partial<React.ImgHTMLAttributes<any> & React.HTMLAttributes<any>>,
   keyof Props
 >
-export type AvatarProps = Props & typeof defaultProps & NativeAttrs
-
-const getSize = (size: NormalSizes | number): string => {
-  const sizes: { [key in NormalSizes]: string } = {
-    mini: '1.25rem',
-    small: '1.875rem',
-    medium: '3.75rem',
-    large: '5.625rem',
-  }
-  if (typeof size === 'number') return `${size}px`
-  return sizes[size]
-}
+export type AvatarProps = Props & NativeAttrs
 
 const safeText = (text: string): string => {
   if (text.length <= 4) return text
   return text.slice(0, 3)
 }
 
-const Avatar: React.FC<AvatarProps> = ({
+const AvatarComponent: React.FC<AvatarProps> = ({
   src,
   stacked,
   text,
-  size,
   isSquare,
   className,
   ...props
-}) => {
+}: AvatarProps & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const showText = !src
   const radius = isSquare ? theme.layout.radius : '50%'
-  const marginLeft = stacked ? '-.625rem' : 0
-  const width = useMemo(() => getSize(size), [size])
+  const marginLeft = stacked ? SCALES.ml(-0.625) : SCALES.ml(0)
 
   return (
     <span className={`avatar ${className}`}>
-      {!showText && <img className="avatar-img" src={src} {...props} />}
+      {!showText && (
+        <img alt="avatar" className="avatar-img" src={src} draggable={false} {...props} />
+      )}
       {showText && (
         <span className="avatar-text" {...props}>
           {safeText(text)}
@@ -68,8 +55,6 @@ const Avatar: React.FC<AvatarProps> = ({
 
       <style jsx>{`
         .avatar {
-          width: ${width};
-          height: ${width};
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -77,11 +62,11 @@ const Avatar: React.FC<AvatarProps> = ({
           border-radius: ${radius};
           vertical-align: top;
           background-color: ${theme.palette.background};
-          margin: 0 0 0 ${marginLeft};
-        }
-
-        .avatar:first-child {
-          margin: 0;
+          box-sizing: border-box;
+          width: ${SCALES.width(1.75) || SCALES.height(1.75)};
+          height: ${SCALES.height(1.75) || SCALES.width(1.75)};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${marginLeft};
         }
 
         .avatar-img {
@@ -90,13 +75,14 @@ const Avatar: React.FC<AvatarProps> = ({
           width: 100%;
           height: 100%;
           border-radius: ${radius};
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: ${SCALES.font(1)};
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -107,14 +93,7 @@ const Avatar: React.FC<AvatarProps> = ({
   )
 }
 
-type MemoAvatarComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Group: typeof AvatarGroup
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Avatar.defaultProps = defaultProps
-
-export default React.memo(Avatar) as MemoAvatarComponent<ComponentProps>
+AvatarComponent.defaultProps = defaultProps
+AvatarComponent.displayName = 'GeistAvatar'
+const Avatar = withScaleable(AvatarComponent)
+export default Avatar

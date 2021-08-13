@@ -7,14 +7,19 @@ import React, {
   useState,
 } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import useDrag, { DraggingEvent } from '../utils/use-drag'
 import useCurrentState from '../utils/use-current-state'
 import SliderDot from './slider-dot'
 import SliderMark from './slider-mark'
+import { getColors } from './styles'
+import { NormalTypes } from '../utils/prop-types'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type SliderTypes = NormalTypes
 interface Props {
+  hideValue?: boolean
   value?: number
+  type?: SliderTypes
   initialValue?: number
   step?: number
   max?: number
@@ -26,6 +31,8 @@ interface Props {
 }
 
 const defaultProps = {
+  hideValue: false,
+  type: 'default' as SliderTypes,
   initialValue: 0,
   step: 1,
   min: 0,
@@ -36,7 +43,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type SliderProps = Props & typeof defaultProps & NativeAttrs
+export type SliderProps = Props & NativeAttrs
 
 const getRefWidth = (elementRef: RefObject<HTMLElement> | null): number => {
   if (!elementRef || !elementRef.current) return 0
@@ -62,8 +69,10 @@ const getValue = (
     : Number.parseFloat(slideDistance.toFixed(1))
 }
 
-const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
+const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
+  hideValue,
   disabled,
+  type,
   step,
   max,
   min,
@@ -73,8 +82,9 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
   className,
   showMarkers,
   ...props
-}) => {
+}: React.PropsWithChildren<SliderProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const [value, setValue] = useState<number>(initialValue)
   const [, setSliderWidth, sideWidthRef] = useCurrentState<number>(0)
   const [, setLastDargOffset, lastDargOffsetRef] = useCurrentState<number>(0)
@@ -83,11 +93,10 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
   const sliderRef = useRef<HTMLDivElement>(null)
   const dotRef = useRef<HTMLDivElement>(null)
 
-  const currentRatio = useMemo(() => ((value - min) / (max - min)) * 100, [
-    value,
-    max,
-    min,
-  ])
+  const currentRatio = useMemo(
+    () => ((value - min) / (max - min)) * 100,
+    [value, max, min],
+  )
 
   const setLastOffsetManually = (val: number) => {
     const width = getRefWidth(sliderRef)
@@ -103,6 +112,8 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
     },
     [max, min, step, sideWidthRef],
   )
+
+  const { bg } = useMemo(() => getColors(theme.palette, type), [theme.palette, type])
 
   const dragHandler = (event: DraggingEvent) => {
     if (disabled) return
@@ -151,23 +162,27 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
       ref={sliderRef}
       {...props}>
       <SliderDot disabled={disabled} ref={dotRef} isClick={isClick} left={currentRatio}>
-        {value}
+        {hideValue || value}
       </SliderDot>
       {showMarkers && <SliderMark max={max} min={min} step={step} />}
       <style jsx>{`
         .slider {
-          width: 100%;
-          height: 0.5rem;
           border-radius: 50px;
-          background-color: ${disabled
-            ? theme.palette.accents_2
-            : theme.palette.accents_8};
+          background-color: ${disabled ? theme.palette.accents_2 : bg};
           position: relative;
           cursor: ${disabled ? 'not-allow' : 'pointer'};
+          --slider-font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, '100%')};
+          height: ${SCALES.height(0.5)};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
       `}</style>
     </div>
   )
 }
 
-export default withDefaults(Slider, defaultProps)
+SliderComponent.defaultProps = defaultProps
+SliderComponent.displayName = 'GeistSlider'
+const Slider = withScaleable(SliderComponent)
+export default Slider

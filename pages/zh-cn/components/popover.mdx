@@ -19,7 +19,7 @@ export const meta = {
   const content = () => (
     <div style={{ padding: '0 10px' }}>
       <Link href="#">一个超链接</Link>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Link color href="#">外部链接</Link>
     </div>
   )
@@ -77,7 +77,7 @@ export const meta = {
   const content = () => (
     <div style={{ padding: '0 10px' }}>
       <span onClick={() => setVisible(false)}>点击关闭</span>
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <span>不关闭</span>
     </div>
   )
@@ -94,27 +94,29 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/popover.mdx">
 <Attributes.Title>Popover.Props</Attributes.Title>
 
-| 属性                | 描述                     | 类型                          | 推荐值                           | 默认     |
-| ------------------- | ------------------------ | ----------------------------- | -------------------------------- | -------- |
-| **content**         | 气泡卡片内容             | `ReactNode` `() => ReactNode` | -                                | -        |
-| **visible**         | 手动控制气泡的显示与隐藏 | `boolean`                     | -                                | `false`  |
-| **initialVisible**  | 初始是否可见             | `boolean`                     | -                                | `false`  |
-| **hideArrow**       | 隐藏箭头                 | `boolean`                     | -                                | `false`  |
-| **placement**       | 气泡卡片与目标的对齐方式 | [Placement](#placement)       | -                                | `bottom` |
-| **trigger**         | 触发气泡卡片的方式       | `'click' / 'hover'`           | -                                | `click`  |
-| **enterDelay**(ms)  | 在提示显示前的延迟       | `number`                      | -                                | `100`    |
-| **leaveDelay**(ms)  | 关闭提示前的延迟         | `number`                      | -                                | `0`      |
-| **offset**(px)      | 提示框与目标之间的偏移   | `number`                      | -                                | `12`     |
-| **portalClassName** | 气泡卡片的类名           | `string`                      | -                                | -        |
-| **onVisibleChange** | 当气泡卡片状态改变时触发 | `(visible: boolean) => void`  | -                                | -        |
-| ...                 | 原生属性                 | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -        |
+| 属性                      | 描述                         | 类型                          | 推荐值      | 默认     |
+| ------------------------- | ---------------------------- | ----------------------------- | ----------- | -------- |
+| **content**               | 气泡卡片内容                 | `ReactNode` `() => ReactNode` | -           | -        |
+| **visible**               | 手动控制气泡的显示与隐藏     | `boolean`                     | -           | `false`  |
+| **initialVisible**        | 初始是否可见                 | `boolean`                     | -           | `false`  |
+| **hideArrow**             | 隐藏箭头                     | `boolean`                     | -           | `false`  |
+| **placement**             | 气泡卡片与目标的对齐方式     | [Placement](#placement)       | -           | `bottom` |
+| **trigger**               | 触发气泡卡片的方式           | `'click' / 'hover'`           | -           | `click`  |
+| **enterDelay**(ms)        | 在提示显示前的延迟           | `number`                      | -           | `100`    |
+| **leaveDelay**(ms)        | 关闭提示前的延迟             | `number`                      | -           | `0`      |
+| **offset**(px)            | 提示框与目标之间的偏移       | `number`                      | -           | `12`     |
+| **portalClassName**       | 气泡卡片的类名               | `string`                      | -           | -        |
+| **onVisibleChange**       | 当气泡卡片状态改变时触发     | `(visible: boolean) => void`  | -           | -        |
+| **disableItemsAutoClose** | 当 Item 被点击时阻止气泡关闭 | `boolean`                     | -           | `false`  |
+| ...                       | 原生属性                     | `HTMLAttributes`              | `'id', ...` | -        |
 
 <Attributes.Title alias="Popover.Option">Popover.Item</Attributes.Title>
 
-| 属性      | 描述                 | 类型      | 推荐值 | 默认    |
-| --------- | -------------------- | --------- | ------ | ------- |
-| **line**  | 显示线条             | `boolean` | -      | `false` |
-| **title** | 用标题的样式展示文字 | `boolean` | -      | `false` |
+| 属性                 | 描述                         | 类型      | 推荐值 | 默认    |
+| -------------------- | ---------------------------- | --------- | ------ | ------- |
+| **line**             | 显示线条                     | `boolean` | -      | `false` |
+| **title**            | 用标题的样式展示文字         | `boolean` | -      | `false` |
+| **disableAutoClose** | 触发点击事件时也不要关闭气泡 | `boolean` | -      | `false` |
 
 <Attributes.Title>Placement</Attributes.Title>
 

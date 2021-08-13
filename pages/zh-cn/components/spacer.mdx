@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Spacer, Container, Col } from 'components'
+import { Spacer, Grid } from 'components'
 
 export const meta = {
   title: '间距 Spacer',
@@ -12,33 +12,33 @@ export const meta = {
 
 <Playground
   title="垂直的"
-  scope={{ Spacer, Container }}
+  scope={{ Spacer, Grid }}
   code={`
-<>
-  <Container style={{ background: '#444' }}>
-    <Spacer y={1}/>
-  </Container>
-  <Spacer y={1}/>
-  <Container style={{ background: '#444' }}>
-    <Spacer y={2}/>
-  </Container>
-  <Spacer y={1}/>
-  <Container style={{ background: '#444' }}>
-    <Spacer y={3}/>
-  </Container>
-</>
+<Grid.Container>
+  <Grid xs={24} style={{ background: '#444', borderRadius: '15px' }}>
+    <Spacer h={2}/>
+  </Grid>
+  <Spacer h={2}/>
+  <Grid xs={24} style={{ background: '#666', borderRadius: '15px' }}>
+    <Spacer h={3}/>
+  </Grid>
+  <Spacer h={3}/>
+  <Grid xs={24} style={{ background: '#999', borderRadius: '15px' }}>
+    <Spacer h={4}/>
+  </Grid>
+</Grid.Container>
 `}
 />
 
 <Playground
   title="水平的"
-  scope={{ Spacer, Container, Col }}
+  scope={{ Spacer, Grid }}
   code={`
-<Container>
-  <Col style={{ background: '#444' }} />
-  <Spacer x={5}/>
-  <Col style={{ background: '#444' }} />
-</Container>
+<Grid.Container>
+  <Grid xs={4} style={{ background: '#444', borderRadius: '15px' }} />
+  <Spacer w={5}/>
+  <Grid xs={4} style={{ background: '#444', borderRadius: '15px' }} />
+</Grid.Container>
 `}
 />
 

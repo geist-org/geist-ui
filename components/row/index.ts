@@ -1,5 +1,4 @@
 import Row from './row'
-import { RowProps } from './row'
 
-export type Props = RowProps
+export type { RowProps } from './row'
 export default Row

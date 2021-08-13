@@ -15,8 +15,27 @@ Displays a boolean value.
   code={`
 <>
   <Toggle />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Toggle initialChecked />
+</>
+`}
+/>
+
+<Playground
+  title="Type"
+  desc="Differentiate states by color."
+  scope={{ Toggle, Spacer }}
+  code={`
+<>
+  <Toggle type="default" initialChecked />
+  <Spacer h={.5} />
+  <Toggle type="secondary" initialChecked />
+  <Spacer h={.5} />
+  <Toggle type="success" initialChecked />
+  <Spacer h={.5} />
+  <Toggle type="warning" initialChecked />
+  <Spacer h={.5} />
+  <Toggle type="error" initialChecked />
 </>
 `}
 />
@@ -27,23 +46,8 @@ Displays a boolean value.
   code={`
 <>
   <Toggle disabled />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Toggle initialChecked disabled />
-</>
-`}
-/>
-
-<Playground
-  title="sizes"
-  desc="Components of different sizes."
-  scope={{ Toggle, Spacer }}
-  code={`
-<>
-  <Toggle size="small" />
-  <Spacer y={.5} />
-  <Toggle initialChecked size="medium" />
-  <Spacer y={.5} />
-  <Toggle initialChecked size="large" />
 </>
 `}
 />
@@ -64,14 +68,14 @@ Displays a boolean value.
 <Attributes edit="/pages/en-us/components/toggle.mdx">
 <Attributes.Title>Toggle.Props</Attributes.Title>
 
-| Attribute          | Description               | Type                  | Accepted values                      | Default  |
-| ------------------ | ------------------------- | --------------------- | ------------------------------------ | -------- |
-| **checked**        | checked or not            | `boolean`             | -                                    | -        |
-| **initialChecked** | checked or not on initial | `boolean`             | -                                    | `false`  |
-| **onChange**       | change event handler      | `ToggleEvent`         | -                                    | -        |
-| **size**           | input size                | `NormalSizes`         | `'mini', 'small', 'medium', 'large'` | `medium` |
-| **disabled**       | disable toggle            | `boolean`             | -                                    | `false`  |
-| ...                | native props              | `LabelHTMLAttributes` | `'from', 'name', 'className', ...`   | -        |
+| Attribute          | Description               | Type                  | Accepted values                    | Default   |
+| ------------------ | ------------------------- | --------------------- | ---------------------------------- | --------- |
+| **checked**        | checked or not            | `boolean`             | -                                  | -         |
+| **initialChecked** | checked or not on initial | `boolean`             | -                                  | `false`   |
+| **onChange**       | change event handler      | `ToggleEvent`         | -                                  | -         |
+| **type**           | current type              | `ToggleTypes`         | [ToggleTypes](#toggletypes)        | `default` |
+| **disabled**       | disable toggle            | `boolean`             | -                                  | `false`   |
+| ...                | native props              | `LabelHTMLAttributes` | `'from', 'name', 'className', ...` | -         |
 
 <Attributes.Title>ToggleEvent</Attributes.Title>
 
@@ -86,6 +90,12 @@ export interface ToggleEvent {
   preventDefault: () => void
   nativeEvent: React.ChangeEvent
 }
+```
+
+<Attributes.Title>ToggleTypes</Attributes.Title>
+
+```ts
+type ToggleTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

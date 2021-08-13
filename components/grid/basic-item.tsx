@@ -1,32 +1,38 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import { Justify, Direction, AlignItems, AlignContent } from './grid-types'
+import {
+  GridJustify,
+  GridDirection,
+  GridAlignItems,
+  GridAlignContent,
+} from './grid-types'
+import useScaleable from '../use-scaleable'
 
-type BreakpointsValue = number | boolean
-interface Props {
-  xs?: BreakpointsValue
-  sm?: BreakpointsValue
-  md?: BreakpointsValue
-  lg?: BreakpointsValue
-  xl?: BreakpointsValue
-  justify?: Justify
-  direction?: Direction
-  alignItems?: AlignItems
-  alignContent?: AlignContent
+export type GridBreakpointsValue = number | boolean
+export interface GridBasicComponentProps {
+  xs?: GridBreakpointsValue
+  sm?: GridBreakpointsValue
+  md?: GridBreakpointsValue
+  lg?: GridBreakpointsValue
+  xl?: GridBreakpointsValue
+  justify?: GridJustify
+  direction?: GridDirection
+  alignItems?: GridAlignItems
+  alignContent?: GridAlignContent
   className?: string
 }
 
 const defaultProps = {
-  xs: false as BreakpointsValue,
-  sm: false as BreakpointsValue,
-  md: false as BreakpointsValue,
-  lg: false as BreakpointsValue,
-  xl: false as BreakpointsValue,
+  xs: false as GridBreakpointsValue,
+  sm: false as GridBreakpointsValue,
+  md: false as GridBreakpointsValue,
+  lg: false as GridBreakpointsValue,
+  xl: false as GridBreakpointsValue,
   className: '',
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type GridBasicItemProps = Props & typeof defaultProps & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof GridBasicComponentProps>
+export type GridBasicItemProps = GridBasicComponentProps & NativeAttrs
 
 type ItemLayoutValue = {
   grow: number
@@ -34,7 +40,7 @@ type ItemLayoutValue = {
   basis: string
   display: string
 }
-const getItemLayout = (val: BreakpointsValue): ItemLayoutValue => {
+const getItemLayout = (val: GridBreakpointsValue): ItemLayoutValue => {
   const display = val === 0 ? 'display: none;' : 'display: inherit;'
   if (typeof val === 'number') {
     const width = (100 / 24) * val
@@ -67,8 +73,9 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   children,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<GridBasicItemProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const classes = useMemo(() => {
     const aligns: { [key: string]: any } = {
       justify,
@@ -108,6 +115,8 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
       {children}
       <style jsx>{`
         .item {
+          font-size: ${SCALES.font(1, 'inherit')};
+          height: ${SCALES.height(1, 'auto')};
         }
 
         .justify {
@@ -182,13 +191,6 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   )
 }
 
-type MemoBasicItemComponent<P = {}> = React.NamedExoticComponent<P>
-export type GridBasicItemComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
 GridBasicItem.defaultProps = defaultProps
-
-export default React.memo(
-  GridBasicItem,
-) as MemoBasicItemComponent<GridBasicItemComponentProps>
+GridBasicItem.displayName = 'GeistGridBasicItem'
+export default GridBasicItem

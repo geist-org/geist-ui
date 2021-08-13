@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AutoComplete Search should hide empty component 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
       "class": "auto-complete",
@@ -26,9 +26,11 @@ initialize {
                     "attribs": Object {
                       "autocomplete": "off",
                       "class": " ",
+                      "height": "calc(2.25 * 16px)",
                       "placeholder": "Enter here",
                       "type": "text",
                       "value": "",
+                      "width": "initial",
                     },
                     "children": Array [],
                     "name": "input",
@@ -40,16 +42,20 @@ initialize {
                     "x-attribsNamespace": Object {
                       "autocomplete": undefined,
                       "class": undefined,
+                      "height": undefined,
                       "placeholder": undefined,
                       "type": undefined,
                       "value": undefined,
+                      "width": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "autocomplete": undefined,
                       "class": undefined,
+                      "height": undefined,
                       "placeholder": undefined,
                       "type": undefined,
                       "value": undefined,
+                      "width": undefined,
                     },
                   },
                 ],
@@ -76,16 +82,21 @@ initialize {
                   "data": "
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -125,10 +136,10 @@ initialize {
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -198,16 +209,21 @@ initialize {
                 "data": "
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -247,10 +263,10 @@ initialize {
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -312,9 +328,11 @@ initialize {
                       "attribs": Object {
                         "autocomplete": "off",
                         "class": " ",
+                        "height": "calc(2.25 * 16px)",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
+                        "width": "initial",
                       },
                       "children": Array [],
                       "name": "input",
@@ -326,16 +344,20 @@ initialize {
                       "x-attribsNamespace": Object {
                         "autocomplete": undefined,
                         "class": undefined,
+                        "height": undefined,
                         "placeholder": undefined,
                         "type": undefined,
                         "value": undefined,
+                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "autocomplete": undefined,
                         "class": undefined,
+                        "height": undefined,
                         "placeholder": undefined,
                         "type": undefined,
                         "value": undefined,
+                        "width": undefined,
                       },
                     },
                   ],
@@ -378,16 +400,17 @@ initialize {
           "children": Array [
             Node {
               "data": "
-          .auto-complete {
-            width: max-content;
-          }
+            .auto-complete {
+              width: max-content;
+              height: auto;
+              padding: 0 0 0 0;
+              margin: 0 0 0 0;
+            }
 
-          .auto-complete :global(.loading) {
-            left: -3px;
-            right: -3px;
-            width: max-content;
-          }
-        ",
+            .auto-complete :global(.loading) {
+              width: max-content;
+            }
+          ",
               "next": null,
               "parent": [Circular],
               "prev": null,
@@ -418,16 +441,17 @@ initialize {
         "children": Array [
           Node {
             "data": "
-          .auto-complete {
-            width: max-content;
-          }
+            .auto-complete {
+              width: max-content;
+              height: auto;
+              padding: 0 0 0 0;
+              margin: 0 0 0 0;
+            }
 
-          .auto-complete :global(.loading) {
-            left: -3px;
-            right: -3px;
-            width: max-content;
-          }
-        ",
+            .auto-complete :global(.loading) {
+              width: max-content;
+            }
+          ",
             "next": null,
             "parent": [Circular],
             "prev": null,
@@ -457,9 +481,11 @@ initialize {
                       "attribs": Object {
                         "autocomplete": "off",
                         "class": " ",
+                        "height": "calc(2.25 * 16px)",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
+                        "width": "initial",
                       },
                       "children": Array [],
                       "name": "input",
@@ -471,16 +497,20 @@ initialize {
                       "x-attribsNamespace": Object {
                         "autocomplete": undefined,
                         "class": undefined,
+                        "height": undefined,
                         "placeholder": undefined,
                         "type": undefined,
                         "value": undefined,
+                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "autocomplete": undefined,
                         "class": undefined,
+                        "height": undefined,
                         "placeholder": undefined,
                         "type": undefined,
                         "value": undefined,
+                        "width": undefined,
                       },
                     },
                   ],
@@ -507,16 +537,21 @@ initialize {
                     "data": "
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -556,10 +591,10 @@ initialize {
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -629,16 +664,21 @@ initialize {
                   "data": "
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -678,10 +718,10 @@ initialize {
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -743,9 +783,11 @@ initialize {
                         "attribs": Object {
                           "autocomplete": "off",
                           "class": " ",
+                          "height": "calc(2.25 * 16px)",
                           "placeholder": "Enter here",
                           "type": "text",
                           "value": "",
+                          "width": "initial",
                         },
                         "children": Array [],
                         "name": "input",
@@ -757,16 +799,20 @@ initialize {
                         "x-attribsNamespace": Object {
                           "autocomplete": undefined,
                           "class": undefined,
+                          "height": undefined,
                           "placeholder": undefined,
                           "type": undefined,
                           "value": undefined,
+                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "autocomplete": undefined,
                           "class": undefined,
+                          "height": undefined,
                           "placeholder": undefined,
                           "type": undefined,
                           "value": undefined,
+                          "width": undefined,
                         },
                       },
                     ],
@@ -842,7 +888,83 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,
@@ -852,7 +974,7 @@ initialize {
 `;
 
 exports[`AutoComplete Search should hide empty component 2`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
       "class": "auto-complete",
@@ -877,9 +999,11 @@ initialize {
                     "attribs": Object {
                       "autocomplete": "off",
                       "class": " ",
+                      "height": "calc(2.25 * 16px)",
                       "placeholder": "Enter here",
                       "type": "text",
                       "value": "",
+                      "width": "initial",
                     },
                     "children": Array [],
                     "name": "input",
@@ -891,16 +1015,20 @@ initialize {
                     "x-attribsNamespace": Object {
                       "autocomplete": undefined,
                       "class": undefined,
+                      "height": undefined,
                       "placeholder": undefined,
                       "type": undefined,
                       "value": undefined,
+                      "width": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "autocomplete": undefined,
                       "class": undefined,
+                      "height": undefined,
                       "placeholder": undefined,
                       "type": undefined,
                       "value": undefined,
+                      "width": undefined,
                     },
                   },
                 ],
@@ -927,16 +1055,21 @@ initialize {
                   "data": "
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -976,10 +1109,10 @@ initialize {
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -1049,16 +1182,21 @@ initialize {
                 "data": "
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -1098,10 +1236,10 @@ initialize {
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -1163,9 +1301,11 @@ initialize {
                       "attribs": Object {
                         "autocomplete": "off",
                         "class": " ",
+                        "height": "calc(2.25 * 16px)",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
+                        "width": "initial",
                       },
                       "children": Array [],
                       "name": "input",
@@ -1177,16 +1317,20 @@ initialize {
                       "x-attribsNamespace": Object {
                         "autocomplete": undefined,
                         "class": undefined,
+                        "height": undefined,
                         "placeholder": undefined,
                         "type": undefined,
                         "value": undefined,
+                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "autocomplete": undefined,
                         "class": undefined,
+                        "height": undefined,
                         "placeholder": undefined,
                         "type": undefined,
                         "value": undefined,
+                        "width": undefined,
                       },
                     },
                   ],
@@ -1229,16 +1373,17 @@ initialize {
           "children": Array [
             Node {
               "data": "
-          .auto-complete {
-            width: max-content;
-          }
+            .auto-complete {
+              width: max-content;
+              height: auto;
+              padding: 0 0 0 0;
+              margin: 0 0 0 0;
+            }
 
-          .auto-complete :global(.loading) {
-            left: -3px;
-            right: -3px;
-            width: max-content;
-          }
-        ",
+            .auto-complete :global(.loading) {
+              width: max-content;
+            }
+          ",
               "next": null,
               "parent": [Circular],
               "prev": null,
@@ -1269,16 +1414,17 @@ initialize {
         "children": Array [
           Node {
             "data": "
-          .auto-complete {
-            width: max-content;
-          }
+            .auto-complete {
+              width: max-content;
+              height: auto;
+              padding: 0 0 0 0;
+              margin: 0 0 0 0;
+            }
 
-          .auto-complete :global(.loading) {
-            left: -3px;
-            right: -3px;
-            width: max-content;
-          }
-        ",
+            .auto-complete :global(.loading) {
+              width: max-content;
+            }
+          ",
             "next": null,
             "parent": [Circular],
             "prev": null,
@@ -1308,9 +1454,11 @@ initialize {
                       "attribs": Object {
                         "autocomplete": "off",
                         "class": " ",
+                        "height": "calc(2.25 * 16px)",
                         "placeholder": "Enter here",
                         "type": "text",
                         "value": "",
+                        "width": "initial",
                       },
                       "children": Array [],
                       "name": "input",
@@ -1322,16 +1470,20 @@ initialize {
                       "x-attribsNamespace": Object {
                         "autocomplete": undefined,
                         "class": undefined,
+                        "height": undefined,
                         "placeholder": undefined,
                         "type": undefined,
                         "value": undefined,
+                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "autocomplete": undefined,
                         "class": undefined,
+                        "height": undefined,
                         "placeholder": undefined,
                         "type": undefined,
                         "value": undefined,
+                        "width": undefined,
                       },
                     },
                   ],
@@ -1358,16 +1510,21 @@ initialize {
                     "data": "
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -1407,10 +1564,10 @@ initialize {
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -1480,16 +1637,21 @@ initialize {
                   "data": "
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -1529,10 +1691,10 @@ initialize {
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -1594,9 +1756,11 @@ initialize {
                         "attribs": Object {
                           "autocomplete": "off",
                           "class": " ",
+                          "height": "calc(2.25 * 16px)",
                           "placeholder": "Enter here",
                           "type": "text",
                           "value": "",
+                          "width": "initial",
                         },
                         "children": Array [],
                         "name": "input",
@@ -1608,16 +1772,20 @@ initialize {
                         "x-attribsNamespace": Object {
                           "autocomplete": undefined,
                           "class": undefined,
+                          "height": undefined,
                           "placeholder": undefined,
                           "type": undefined,
                           "value": undefined,
+                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "autocomplete": undefined,
                           "class": undefined,
+                          "height": undefined,
                           "placeholder": undefined,
                           "type": undefined,
                           "value": undefined,
+                          "width": undefined,
                         },
                       },
                     ],
@@ -1693,7 +1861,83 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

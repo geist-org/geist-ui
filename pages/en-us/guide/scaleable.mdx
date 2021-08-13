@@ -1,0 +1,138 @@
+import NextLink from 'next/link'
+import { Layout, GridDemo, Attributes } from 'lib/components'
+import { Note, Text, Spacer, Display, Code, Grid, Button, Link } from 'components'
+
+export const meta = {
+  title: 'Scaleable',
+  group: 'Customization',
+  index: 30,
+}
+
+## Scaleable
+
+<Note type="warning">
+  This feature was introduced in v2.2.0 and up. If you’re using older versions of Geist,
+  please upgrade before trying it out.
+</Note>
+
+The scalable nature of the Geist gives great flexibility to each component.
+You can freely scale the component size, rewrite the proportion of the component local space,
+adjust the inner and outer layout structure, etc.
+
+This means that developers: can achieve a high level of customization in most scenarios without hack or override styles,
+even multiple components can be synchronized using base unit, compatible with different Web structures with low code,
+and get the best user experience in any layout style.
+
+<Spacer h={2.5} />
+
+### Scaling
+
+Different from common component libraries, Geist no longer uses `size` related props to control component volume.
+Each component of Geist has a suitable layout volume by default, you can dynamically scale components with the `scale` props.
+
+<Display width="500px" caption="Render Button component at 0.5 scaling">
+  <GridDemo>
+    <Button scale={0.5}>Scale 0.5</Button>
+    <Button>Default</Button>
+  </GridDemo>
+
+```jsx
+<Button scale={0.5}>Scale 0.5</Button>
+<Button>Default</Button>
+```
+
+</Display>
+
+As the example, the `Button` component has an equal reduction in all space occupancy (including fonts).
+Geist renders the specified volume components **realistically** by dynamically calculating the component size.
+This ensures that the layout and typography are always the same as expected.
+
+<Spacer h={2.5} />
+
+### Single Value
+
+For any component, the scalable props include width, height, outer margin, inner margin, font, etc.
+You can define each scalable property individually, a scaleable number or CSS string.
+
+<Display width="500px">
+  <GridDemo>
+    <Button font={1.5} width="300px">Full Button</Button>
+  </GridDemo>
+
+```jsx
+<Button width="300px" font={1.5}>
+  Full Button
+</Button>
+```
+
+</Display>
+
+<Spacer h={2.5} />
+
+### Scaling unit
+
+<Note type="secondary" filled>
+  Adjusting the scaling unit is an advanced customization and you can skip this section.
+</Note>
+
+The volume of the component depends on both the `scale` property entered by the user and the **scaling unit**.
+The default scaling unit is `16px`, but Geist allows you to customize this value at different levels to achieve a high level of customization.
+
+For defining _scaling unit_ for multiple components at the same time, you need to create additional _Themes_ and add a new layer of
+`GeistProvider` scope. All components under this scope will share the same _scaling unit_.
+(Please refer to <NextLink href="/en-us/guide/themes"><Link color>Themes section</Link></NextLink> for learn more)
+
+```jsx
+// For single component
+export const MyBtn = () => <Button unit="2rem" />
+
+// For multiple components
+const themeType = 'myTheme'
+const customUnitTheme = Themes.createFromLight({
+  type: themeType,
+  layout: {
+    unit: '20px',
+  },
+})
+export const MyGroup = () => (
+  <GeistProvider themes={[customUnitTheme]} themeType={themeType}>
+    <Button />
+    <Input />
+  </GeistProvider>
+)
+```
+
+<Spacer h={2.5} />
+
+### Alias
+
+Below is a reference to all available props and aliases，
+`number` means that numbers can be passed for scaling, and `string` type means that CSS strings can be passed for fixed values.
+
+<Attributes.Table>
+
+| Attribute               | Description                | Type           | Default |
+| ----------------------- | -------------------------- | -------------- | ------- |
+| **scale**               | scale value                | number         | -       |
+| **unit**                | scale unit                 | string         | `16px`  |
+| **width / w**           | component width            | string, number | 'auto'  |
+| **height / h**          | component height           | string, number | 'auto'  |
+| **font**                | font size                  | string, number | -       |
+| **margin**              | all margin size            | string, number | `0`     |
+| **marginLeft / ml**     |                            | string, numbe  | -       |
+| **marginRight / mr**    |                            | string, numbe  | -       |
+| **marginTop / mt**      |                            | string, numbe  | -       |
+| **marginBottom / mb**   |                            | string, numbe  | -       |
+| **padding**             | all padding size           | string, numbe  | `0`     |
+| **paddingLeft / pl**    |                            | string, numbe  | -       |
+| **paddingRight / pr**   |                            | string, numbe  | -       |
+| **paddingTop / pt**     |                            | string, numbe  | -       |
+| **paddingBottom / pb**  |                            | string, numbe  | -       |
+| **mx**&nbsp;(`ml & mr`) | horizontal axis of margin  | string, numbe  | -       |
+| **my**&nbsp;(`mt & mb`) | vertical axis of margin    | string, numbe  | -       |
+| **px**&nbsp;(`pl & pr`) | horizontal axis of padding | string, numbe  | -       |
+| **py**&nbsp;(`pt & pb`) | vertical axis of padding   | string, numbe  | -       |
+
+</Attributes.Table>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

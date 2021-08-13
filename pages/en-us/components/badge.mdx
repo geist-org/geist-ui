@@ -15,12 +15,12 @@ Display an indicator that requires attention.
   scope={{ Badge, Spacer }}
   desc="Show number or text."
   code={`
-<>
-  <Badge>1</Badge> <Spacer y={.5} />
-  <Badge>50</Badge> <Spacer y={.5} />
-  <Badge>100</Badge> <Spacer y={.5} />
-  <Badge>2020</Badge>
-</>
+  <>
+    <Badge>1</Badge> <Spacer h={.5} />
+    <Badge>50</Badge> <Spacer h={.5} />
+    <Badge>100</Badge> <Spacer h={.5} />
+    <Badge>2020</Badge>
+  </>
 `}
 />
 
@@ -29,12 +29,12 @@ Display an indicator that requires attention.
   desc="Express state in different colors."
   scope={{ Badge, Spacer }}
   code={`
-<>
-  <Badge type="success">Success</Badge> <Spacer y={.5} />
-  <Badge type="warning">Warning</Badge> <Spacer y={.5} />
-  <Badge type="error">Error</Badge> <Spacer y={.5} />
-  <Badge type="secondary">Secondary</Badge>
-</>
+  <>
+    <Badge type="success">Success</Badge> <Spacer h={.5} />
+    <Badge type="warning">Warning</Badge> <Spacer h={.5} />
+    <Badge type="error">Error</Badge> <Spacer h={.5} />
+    <Badge type="secondary">Secondary</Badge>
+  </>
 `}
 />
 
@@ -55,29 +55,15 @@ Display an indicator that requires attention.
   const theme = useTheme()
   return (
     <>
-      <Badge style={{ backgroundColor: theme.palette.successLight }}>Success Light</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.successDark }}>Success Dark</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.alert }}>Alert</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.purple }}>Purple</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.violet }}>Violet</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.cyanLighter, color: theme.palette.foreground }}>Cyan Ligher</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.successLight }}>Success Light</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.successDark }}>Success Dark</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.alert }}>Alert</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.purple }}>Purple</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.violet }}>Violet</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.cyanLighter, color: theme.palette.foreground }}>Cyan Ligher</Badge> <Spacer h={.5} />
     </>
   )
 }
-`}
-/>
-
-<Playground
-  title="Sizes"
-  desc="Components of different sizes."
-  scope={{ Badge, Spacer }}
-  code={`
-<>
-  <Badge size="mini">Mini</Badge> <Spacer y={.5} />
-  <Badge size="small">Small</Badge> <Spacer y={.5} />
-  <Badge size="medium">Medium</Badge> <Spacer y={.5} />
-  <Badge size="large">Large</Badge>
-</>
 `}
 />
 
@@ -88,27 +74,27 @@ Display an indicator that requires attention.
   code={`
 <>
   <Badge.Anchor>
-    <Badge size="mini">10</Badge>
+    <Badge scale={0.5}>10</Badge>
     <Avatar src="/images/avatar.png" />
   </Badge.Anchor>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={2.5} />
   <Badge.Anchor placement="bottomRight">
-    <Badge size="mini" type="success">10</Badge>
-    <Avatar size={40} isSquare src="/images/avatar.png" />
+    <Badge scale={0.5} type="success">10</Badge>
+    <Avatar scale={1.5} isSquare src="/images/avatar.png" />
   </Badge.Anchor>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={2.5} />
   <Badge.Anchor>
-    <Badge size="mini" type="warning">99+</Badge>
-    <Button size="small" auto>Action</Button>
+    <Badge scale={0.5} type="warning">99+</Badge>
+    <Button scale={0.5} auto>Action</Button>
   </Badge.Anchor>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={2.5} />
   <Badge.Anchor>
-    <Badge size="mini" type="error" dot />
+    <Badge scale={0.5} type="error" dot />
     <Link target="_blank" href="https://github.com/geist-org/react/">Geist UI</Link>
   </Badge.Anchor>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={2.5} />
   <Badge.Anchor>
-    <Badge size="mini" type="error" dot style={{ padding: '7px' }} />
+    <Badge type="error" dot padding="5px" />
     <Link target="_blank" href="https://github.com/geist-org/react/">Share Link</Link>
   </Badge.Anchor>
 </>
@@ -120,8 +106,7 @@ Display an indicator that requires attention.
 
 | Attribute | Description                 | Type             | Accepted values                 | Default   |
 | --------- | --------------------------- | ---------------- | ------------------------------- | --------- |
-| **type**  | badge type                  | `NormalTypes`    | [NormalTypes](#normaltypes)     | `default` |
-| **size**  | badge size                  | `NormalSizes`    | [NormalSizes](#normalsizes)     | `medium`  |
+| **type**  | badge type                  | `BadgeTypes`     | [BadgeTypes](#badgetypes)       | `default` |
 | **dot**   | show dot and ignore content | `boolean`        | -                               | `false`   |
 | ...       | native props                | `HTMLAttributes` | `'alt', 'id', 'className', ...` | -         |
 
@@ -132,16 +117,10 @@ Display an indicator that requires attention.
 | **placement** | fixe position of Badge | `AnchorPlacement` | [AnchorPlacement](#anchorplacement) | `topRight` |
 | ...           | native props           | `HTMLAttributes`  | `'alt', 'id', 'className', ...`     | -          |
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>BadgeTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
-```
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'medium' | 'mini' | 'small' | 'large'
+type BadgeTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>AnchorPlacement</Attributes.Title>

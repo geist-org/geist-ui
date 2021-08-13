@@ -1,13 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 import { RadioContext } from './radio-context'
-import { NormalSizes } from 'components/utils/prop-types'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   value?: string | number
   initialValue?: string | number
   disabled?: boolean
-  size?: NormalSizes
   onChange?: (value: string | number) => void
   className?: string
   useRow?: boolean
@@ -15,35 +13,24 @@ interface Props {
 
 const defaultProps = {
   disabled: false,
-  size: 'medium' as NormalSizes,
   className: '',
   useRow: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type RadioGroupProps = Props & typeof defaultProps & NativeAttrs
+export type RadioGroupProps = Props & NativeAttrs
 
-export const getRadioSize = (size: NormalSizes): string => {
-  const sizes: { [key in NormalSizes]: string } = {
-    mini: '12px',
-    small: '14px',
-    medium: '16px',
-    large: '18px',
-  }
-  return sizes[size]
-}
-
-const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
+const RadioGroupComponent: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
   disabled,
   onChange,
   value,
-  size,
   children,
   className,
   initialValue,
   useRow,
   ...props
-}) => {
+}: React.PropsWithChildren<RadioGroupProps> & typeof defaultProps) => {
+  const { SCALES } = useScaleable()
   const [selfVal, setSelfVal] = useState<string | number | undefined>(initialValue)
   const updateState = (nextValue: string | number) => {
     setSelfVal(nextValue)
@@ -59,9 +46,6 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
     }
   }, [disabled, selfVal])
 
-  const fontSize = useMemo(() => getRadioSize(size), [size])
-  const groupGap = `calc(${fontSize} * 1)`
-
   useEffect(() => {
     if (value === undefined) return
     setSelfVal(value)
@@ -76,12 +60,17 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
         .radio-group {
           display: flex;
           flex-direction: ${useRow ? 'col' : 'column'};
+          --radio-group-gap: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .radio-group :global(.radio) {
-          margin-top: ${useRow ? 0 : groupGap};
-          margin-left: ${useRow ? groupGap : 0};
-          --radio-size: ${fontSize};
+          margin-top: ${useRow ? 0 : 'var(--radio-group-gap)'};
+          margin-left: ${useRow ? 'var(--radio-group-gap)' : 0};
+          --radio-size: ${SCALES.font(1)};
         }
 
         .radio-group :global(.radio:first-of-type) {
@@ -92,4 +81,7 @@ const RadioGroup: React.FC<React.PropsWithChildren<RadioGroupProps>> = ({
   )
 }
 
-export default withDefaults(RadioGroup, defaultProps)
+RadioGroupComponent.defaultProps = defaultProps
+RadioGroupComponent.displayName = 'GeistRadioGroup'
+const RadioGroup = withScaleable(RadioGroupComponent)
+export default RadioGroup

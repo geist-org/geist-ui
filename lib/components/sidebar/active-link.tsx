@@ -20,41 +20,25 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
   const isActive = pathname === href
 
   return (
-    <div className="link">
+    <>
       <Link href={href}>
-        <a className={isActive ? 'active' : ''}>
+        <a className={`link ${isActive ? 'active' : ''}`}>
           {title}
           {subtitle && <span>&nbsp;{subtitle}</span>}
         </a>
       </Link>
       <style jsx>{`
-        .link {
-          width: 100%;
-          color: ${theme.palette.accents_5};
-          display: flex;
-          height: 2.25rem;
-          align-items: center;
-          justify-content: flex-start;
-          cursor: pointer;
-          text-transform: capitalize;
-        }
-
         a {
-          color: ${theme.palette.accents_7};
-          font-size: 1rem;
-          transition: all 200ms ease;
-          font-weight: 400;
-          display: inline-flex;
+          font: inherit;
+        }
+
+        .link {
+          display: flex;
           align-items: baseline;
-        }
-
-        a.active {
-          color: ${theme.palette.success};
-          font-weight: 600;
-        }
-
-        a.active span {
-          color: ${theme.palette.successLight};
+          font-size: 1rem;
+          color: ${theme.palette.accents_6};
+          padding: calc(${theme.layout.unit} * 0.375) 0;
+          transition: all 200ms ease;
         }
 
         span {
@@ -62,8 +46,29 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
           color: ${theme.palette.accents_4};
           font-weight: 400;
         }
+
+        .link.active {
+          color: ${theme.palette.success};
+          font-weight: 600;
+        }
+
+        .link.active span {
+          color: ${theme.palette.successLight};
+        }
+
+        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
+          .link {
+            color: ${theme.palette.foreground};
+            padding: calc(${theme.layout.unit} * 0.875) 0;
+            border-bottom: 1px solid ${theme.palette.border};
+            user-select: none;
+          }
+          .link.active {
+            font-weight: 700;
+          }
+        }
       `}</style>
-    </div>
+    </>
   )
 })
 

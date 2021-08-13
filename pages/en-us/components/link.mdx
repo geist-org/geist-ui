@@ -3,7 +3,7 @@ import { Link, Text, Code, Spacer } from 'components'
 import NextLink from 'next/link'
 
 export const meta = {
-  title: 'link',
+  title: 'Link',
   group: 'Navigation',
 }
 
@@ -14,7 +14,7 @@ Hyperlinks between pages.
 <Playground
   scope={{ Link }}
   code={`
-<Link href="#">The Evil Rabbit Jumped over the Fence.</Link>
+<Link href="#">HTTP is stateless, but not sessionless.</Link>
 `}
 />
 
@@ -23,7 +23,7 @@ Hyperlinks between pages.
   desc="Distinguish links with different colors."
   scope={{ Link }}
   code={`
-<Link href="#" color>The Evil Rabbit Jumped over the Fence.</Link>
+<Link href="#" color>HTTP is stateless, but not sessionless.</Link>
 `}
 />
 
@@ -33,9 +33,9 @@ Hyperlinks between pages.
   scope={{ Link, Spacer }}
   code={`
 <>
-  <Link href="#" icon>The Evil Rabbit Jumped over the Fence.</Link>
-  <Spacer y={.5} />
-  <Link href="#" icon color>The Evil Rabbit Jumped over the Fence.</Link>
+  <Link href="#" icon>HTTP is stateless, but not sessionless.</Link>
+  <Spacer h={.5} />
+  <Link href="#" icon color>HTTP is stateless, but not sessionless.</Link>
 </>
 `}
 />
@@ -46,10 +46,10 @@ Hyperlinks between pages.
   scope={{ Link, Text }}
   code={`
 <>
-  <Text><Link href="#">The Evil Rabbit Jumped over the Fence.</Link></Text>
-  <Text><Link href="#" color>The Evil Rabbit Jumped over the Fence.</Link></Text>
-  <Text><Link href="#" underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
-  <Text><Link href="#" color underline>The Evil Rabbit Jumped over the Fence.</Link></Text>
+  <Text><Link href="#">HTTP is stateless, but not sessionless.</Link></Text>
+  <Text><Link href="#" color>HTTP is stateless, but not sessionless.</Link></Text>
+  <Text><Link href="#" underline>HTTP is stateless, but not sessionless.</Link></Text>
+  <Text><Link href="#" color underline>HTTP is stateless, but not sessionless.</Link></Text>
 </>
 `}
 />
@@ -59,7 +59,7 @@ Hyperlinks between pages.
   desc="Display as a separate block."
   scope={{ Link }}
   code={`
-<Link href="#" block>The Evil Rabbit Jumped over the Fence.</Link>
+<Link href="#" block>HTTP is stateless, but not sessionless.</Link>
 `}
 />
 

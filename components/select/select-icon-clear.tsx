@@ -1,16 +1,12 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import useTheme from '../use-theme'
 
 interface Props {
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void
-  heightRatio?: string | undefined
 }
 
-const SelectIconClear: React.FC<Props> = ({ onClick, heightRatio }) => {
+const SelectIconClear: React.FC<Props> = ({ onClick }) => {
   const theme = useTheme()
-  const width = useMemo(() => {
-    return heightRatio ? `calc(10.66px * ${heightRatio})` : '18px'
-  }, [heightRatio])
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     event.stopPropagation()
@@ -33,8 +29,7 @@ const SelectIconClear: React.FC<Props> = ({ onClick, heightRatio }) => {
 
       <style jsx>{`
         .clear-icon {
-          padding: 0;
-          padding-left: ${theme.layout.gapQuarter};
+          padding: 0 0 0 0.5em;
           margin: 0;
           display: inline-flex;
           align-items: center;
@@ -53,8 +48,8 @@ const SelectIconClear: React.FC<Props> = ({ onClick, heightRatio }) => {
 
         svg {
           color: currentColor;
-          width: ${width};
-          height: ${width};
+          width: 1em;
+          height: 1em;
         }
       `}</style>
     </div>

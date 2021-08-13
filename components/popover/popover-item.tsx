@@ -1,89 +1,98 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
+import useScaleable, { withScaleable } from '../use-scaleable'
+import { usePopoverContext } from './popover-context'
 
 interface Props {
   line?: boolean
   title?: boolean
+  disableAutoClose?: boolean
+  onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
 const defaultProps = {
   line: false,
   title: false,
+  disableAutoClose: false,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type PopoverItemProps = Props & typeof defaultProps & NativeAttrs
+export type PopoverItemProps = Props & NativeAttrs
 
-const PopoverItem: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
+const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> = ({
   children,
   line,
   title,
   className,
+  onClick,
+  disableAutoClose,
   ...props
-}) => {
+}: React.PropsWithChildren<PopoverItemProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
+  const { disableItemsAutoClose, onItemClick } = usePopoverContext()
+  const hasHandler = Boolean(onClick)
+  const dontCloseByClick = disableAutoClose || disableItemsAutoClose || title || line
+  const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    onClick && onClick(event)
+    if (dontCloseByClick) {
+      return event.stopPropagation()
+    }
+    onItemClick(event)
+  }
+
   return (
     <>
       <div
         className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`}
+        onClick={clickHandler}
         {...props}>
         {children}
         <style jsx>{`
           .item {
             display: flex;
+            box-sizing: border-box;
             justify-content: flex-start;
             align-items: center;
-            padding: 0.5rem ${theme.layout.gap};
             color: ${theme.palette.accents_5};
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-            text-align: left;
-            transition: color 0.1s ease 0s, background-color 0.1s ease 0s;
+            transition: color, background-color 150ms linear;
+            line-height: 1.25em;
+            font-size: ${SCALES.font(0.875)};
+            width: ${SCALES.width(1, 'auto')};
+            height: ${SCALES.height(1, 'auto')};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
+            padding: ${SCALES.pt(0.5)} ${SCALES.pr(0.75)} ${SCALES.pb(0.5)}
+              ${SCALES.pl(0.75)};
+            cursor: ${hasHandler ? 'pointer' : 'default'};
           }
 
           .item:hover {
             color: ${theme.palette.foreground};
           }
 
-          .item > :global(*) {
-            margin: 0;
-          }
-
-          .item > :global(.link) {
-            width: 100%;
-            padding: 0.5rem ${theme.layout.gap};
-            margin: -0.5rem -${theme.layout.gap};
-          }
-
           .item.line {
             line-height: 0;
-            height: 0;
             padding: 0;
-            border-top: 1px solid ${theme.palette.border};
-            margin: 0.5rem 0;
-            width: 100%;
+            background-color: ${theme.palette.border};
+            height: ${SCALES.height(0.0625)};
+            margin: ${SCALES.mt(0.35)} ${SCALES.mr(0)} ${SCALES.mb(0.35)} ${SCALES.ml(0)};
+            width: ${SCALES.width(1, '100%')};
           }
 
           .item.title {
-            padding: 1.15rem;
             font-weight: 500;
-            font-size: 0.83rem;
+            font-size: ${SCALES.font(0.925)};
             color: ${theme.palette.foreground};
-          }
-
-          .item.title:first-of-type {
-            padding-top: 0.6rem;
-            padding-bottom: 0.6rem;
           }
         `}</style>
       </div>
-      {title && <PopoverItem line title={false} className="" />}
+      {title && <PopoverItem line title={false} />}
     </>
   )
 }
 
-const MemoPopoverItem = React.memo(PopoverItem)
-
-export default withDefaults(MemoPopoverItem, defaultProps)
+PopoverItemComponent.defaultProps = defaultProps
+PopoverItemComponent.displayName = 'GeistPopoverItem'
+const PopoverItem = withScaleable(PopoverItemComponent)
+export default PopoverItem

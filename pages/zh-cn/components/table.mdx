@@ -1,4 +1,4 @@
-import { Layout, Playground, Attributes } from 'lib/components'
+import { Layout, Playground, PlaygroundTitle, Attributes } from 'lib/components'
 import { Table, Spacer, Code, Text, Button } from 'components'
 
 export const meta = {
@@ -84,20 +84,26 @@ export const meta = {
   scope={{ Table, Text, Button }}
   code={`
 () => {
-  const operation = (actions, rowData) => {
-    return <Button type="error" auto size="mini" onClick={() => actions.remove()}>移除行</Button>
-  }
-  const data = [
-    { property: 'type', description: 'Content type', operation },
-    { property: 'Component', description: 'DOM element to use', operation },
-    { property: <Text b>bold</Text>, description: 'Bold style', operation },
+  const dataSource = [
+    { property: 'type', description: 'Content type', operation: '' },
+    { property: 'Component', description: 'DOM element to use', operation: '' },
+    { property: <Text b>bold</Text>, description: 'Bold style', operation: '' },
   ]
+  const [data, setData] = React.useState(dataSource)
+  const renderAction = (value, rowData, index) => {
+    const removeHandler = () => {
+      setData(last => last.filter((_, dataIndex) => dataIndex !== index))
+    }
+    return (
+      <Button type="error" auto scale={1/3} onClick={removeHandler}>Remove</Button>
+    )
+  }
   return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="operation" label="operation" width={150} />
-    </Table>
+  <Table data={data} onChange={value => setData(value)}>
+    <Table.Column prop="property" label="property" />
+    <Table.Column prop="description" label="description" />
+    <Table.Column prop="operation" label="operation" width={150} render={renderAction} />
+  </Table>
   )
 }
 `}
@@ -109,20 +115,33 @@ export const meta = {
   scope={{ Table, Text, Button }}
   code={`
 () => {
-// operation: TableOperation
-  const operation = (actions, rowData) => {
-    return <Button type="error" auto size="mini" onClick={() => actions.update({ property: 'updated', description:'updated' })}>Update</Button>
-  }
-  const data = [
-    { property: 'type', description: 'Content type', operation },
-    { property: 'Component', description: 'DOM element to use', operation },
-    { property: <Text b>bold</Text>, description: 'Bold style', operation },
+  const dataSource = [
+    { property: 'type', description: 'Content type', operation: '' },
+    { property: 'Component', description: 'DOM element to use', operation: '' },
+    { property: <Text b>bold</Text>, description: 'Bold style', operation: '' },
   ]
+  const [data, setData] = React.useState(dataSource)
+  const renderAction = (value, rowData, rowIndex) => {
+    const updateHandler = () => {
+      setData(last => {
+        return last.map((item, dataIndex) => {
+          if (dataIndex !== rowIndex) return item
+          return {
+            ...item,
+            property: Math.random().toString(16).slice(-5)
+          }
+        })
+      })
+    }
+    return (
+      <Button type="secondary" auto scale={1/3} onClick={updateHandler}>Update</Button>
+    )
+  }
   return (
-    <Table data={data}>
+    <Table data={data} onChange={value => setData(value)}>
       <Table.Column prop="property" label="property" />
       <Table.Column prop="description" label="description" />
-      <Table.Column prop="operation" label="operation" width={150} />
+      <Table.Column prop="operation" label="operation" width={150} render={renderAction} />
     </Table>
   )
 }
@@ -155,26 +174,86 @@ export const meta = {
 `}
 />
 
+<PlaygroundTitle title="TypeScript 示例" desc="在 TS 中通过指定泛型获得更好的体验。" />
+
+```tsx
+type User = {
+  name: string
+  role: string
+  records: Array<{ date: string }>
+}
+const renderHandler: TableColumnRender<User> = (value, rowData, index) => {
+  return <div>{rowData.date}</div>
+}
+const data: Array<User> = [
+  { name: 'witt', role: 'admin', records: [{ date: '2021-05-01' }] },
+]
+
+const MyComponent = () => (
+  <Table<User> data={data}>
+    <Table.Column<User> prop="name" label="用户名" />
+    <Table.Column<User> prop="role" label="角色" />
+    <Table.Column<User> prop="reocrds" label="记录" render={renderHandler} />
+  </Table>
+)
+```
+
 <Attributes edit="/pages/zh-cn/components/table.mdx">
 <Attributes.Title>Table.Props</Attributes.Title>
 
-| 属性          | 描述                   | 类型                                                 | 推荐值                           | 默认   |
-| ------------- | ---------------------- | ---------------------------------------------------- | -------------------------------- | ------ |
-| **data**      | 数据源                 | `Array<TableDataSource<any>>`                        | -                                | -      |
-| **emptyText** | 当数据为空时显示的文本 | `string`                                             | -                                | -      |
-| **hover**     | 是否显示 hover 效果    | `boolean`                                            | -                                | `true` |
-| **onRow**     | 行的点击事件           | `(row: any, index: number) => void`                  | -                                | -      |
-| **onCell**    | 单元格的点击事件       | `(cell: any, index: number, colunm: number) => void` | -                                | -      |
-| **onChange**  | 数据变化的事件         | `(data: any) => void`                                | -                                | -      |
-| ...           | 原生属性               | `TableHTMLAttributes`                                | `'id', 'name', 'className', ...` | -      |
+| 属性             | 描述                   | 类型                                                  | 推荐值              | 默认   |
+| ---------------- | ---------------------- | ----------------------------------------------------- | ------------------- | ------ |
+| **data**         | 数据源                 | `Array<T>`                                            | -                   | -      |
+| **initialData**  | 初始数据               | `Array<T>`                                            | -                   | `[]`   |
+| **emptyText**    | 当数据为空时显示的文本 | `string`                                              | -                   | -      |
+| **hover**        | 是否显示 hover 效果    | `boolean`                                             | -                   | `true` |
+| **onRow**        | 行的点击事件           | [TableOnRowClick](#tableonrowclick)                   | -                   | -      |
+| **onCell**       | 单元格的点击事件       | [TableOnCellClick](#tableoncellclick)                 | -                   | -      |
+| **onChange**     | 数据变化的事件         | `(data: T) => void`                                   | -                   | -      |
+| **rowClassName** | 为每一行设置类名       | [TableRowClassNameHandler](#tablerowclassnamehandler) | -                   | -      |
+| ...              | 原生属性               | `TableHTMLAttributes`                                 | `'id', 'name', ...` | -      |
 
 <Attributes.Title>Table.Column.Props</Attributes.Title>
 
-| 属性             | 描述             | 类型     | 推荐值 | 默认 |
-| ---------------- | ---------------- | -------- | ------ | ---- |
-| **prop**(必须的) | 列对应的数据属性 | `string` | -      | -    |
-| **label**        | 每一列的标签文本 | `string` | -      | -    |
-| **width**        | 指定宽度         | `number` | -      | -    |
+| 属性             | 描述                       | 类型                                    | 推荐值 | 默认 |
+| ---------------- | -------------------------- | --------------------------------------- | ------ | ---- |
+| **prop**(必须的) | 列对应的数据属性           | `string`                                | -      | -    |
+| **label**        | 每一列的标签文本           | `string`                                | -      | -    |
+| **width**        | 指定宽度                   | `number`                                | -      | -    |
+| **className**    | 指定当前列的类名           | `string`                                | -      | -    |
+| **render**       | 为所有列渲染函数返回的数据 | [TableColumnRender](#tablecolumnrender) | -      | -    |
+
+<Attributes.Title>TableOnRowClick</Attributes.Title>
+
+```ts
+type TableOnRowClick<T> = (rowData: T, rowIndex: number) => void
+```
+
+<Attributes.Title>TableOnCellClick</Attributes.Title>
+
+```ts
+type TableOnCellClick<T> = (
+  value: T[keyof T],
+  rowIndex: number,
+  colunmIndex: number,
+) => void
+```
+
+<Attributes.Title>TableRowClassNameHandler</Attributes.Title>
+
+```ts
+type TableRowClassNameHandler<T> = (rowData: T, rowIndex: number) => string
+```
+
+<Attributes.Title>TableColumnRender</Attributes.Title>
+
+```ts
+type TableColumnRender<T extends Record> = (
+  value: T[keyof T],
+  rowData: T,
+  rowIndex: number,
+) => JSX.Element | void
+```
 
 </Attributes>
 

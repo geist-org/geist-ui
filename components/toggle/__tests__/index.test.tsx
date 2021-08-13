@@ -21,14 +21,26 @@ describe('Toggle', () => {
   it('should work with different sizes', () => {
     const wrapper = mount(
       <div>
-        <Toggle size="mini" />
-        <Toggle size="small" />
-        <Toggle size="medium" />
-        <Toggle size="large" />
+        <Toggle scale={1} />
+        <Toggle scale={0.2} />
+        <Toggle scale={2} />
+        <Toggle unit="10px" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()
     expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('should work with different status', () => {
+    const wrapper = mount(
+      <div>
+        <Toggle type="secondary" />
+        <Toggle type="success" />
+        <Toggle type="warning" />
+        <Toggle type="error" />
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
   })
 
   it('should set toggle follow checked prop', async () => {

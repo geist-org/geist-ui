@@ -15,32 +15,37 @@ export const meta = {
   title="标题"
   scope={{ Text }}
   code={`
-<>
-  <Text h1>JavaScript 是一门编程语言。</Text>
-  <Text h2>JavaScript 是一门编程语言。</Text>
-  <Text h3>JavaScript 是一门编程语言。</Text>
-  <Text h4>JavaScript 是一门编程语言。</Text>
-  <Text h5>JavaScript 是一门编程语言。</Text>
-  <Text h6>JavaScript 是一门编程语言。</Text>
-</>
+() => {
+  const text = 'Geist UI Components'
+  return (
+    <>
+      <Text h1>{text}</Text>
+      <Text h2>{text}</Text>
+      <Text h3>{text}</Text>
+      <Text h4>{text}</Text>
+      <Text h5>{text}</Text>
+      <Text h6>{text}</Text>
+    </>
+  )
+}
 `}
 />
 
 <Playground
   title="段落"
-  desc="在 `Text` 组件上添加 `p` 与 `b` 属性获得不同的效果。"
+  desc="在 `Text` 组件上添加 `p` 与 `b` 以渲染不同元素。"
   scope={{ Text }}
   code={`
 <>
   <Text p>
   函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
   </Text>
-
   <Text p b>
   函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="较小的"
@@ -50,18 +55,18 @@ export const meta = {
   <Text small>
   函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
   </Text>
-
   <Text small i>
   函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="引用"
   scope={{ Text }}
   code={`
-<Text blockquote>
+<Text blockquote my={0}>
   事件能为网页添加真实的交互能力。
 </Text>
 `}
@@ -72,23 +77,14 @@ export const meta = {
   desc="以不同的色彩区分文字的状态。"
   scope={{ Text }}
   code={`
-<>
-  <Text type="success">
-    中间的代理服务器必须转发未经修改的端到端消息头，并且必须缓存它们。
-  </Text>
-  <Text type="warning">
-    中间的代理服务器必须转发未经修改的端到端消息头，并且必须缓存它们。
-  </Text>
-  <Text type="secondary">
-    中间的代理服务器必须转发未经修改的端到端消息头，并且必须缓存它们。
-  </Text>
-  <Text type="error">
-    中间的代理服务器必须转发未经修改的端到端消息头，并且必须缓存它们。
-  </Text>
-  <Text style={{ color: '#ccc' }}>
-    中间的代理服务器必须转发未经修改的端到端消息头，并且必须缓存它们。
-  </Text>
-</>
+<Text b i style={{ letterSpacing: '0.6px' }}>
+  <Text span type="success">G</Text>
+  <Text span type="warning">e</Text>
+  <Text span type="secondary">i</Text>
+  <Text span type="error">s</Text>
+  <Text span style={{ color: '#ccc' }}>t</Text>
+  <Text span type="success" ml="5px">UI</Text>
+</Text>
 `}
 />
 
@@ -98,11 +94,11 @@ export const meta = {
   scope={{ Text }}
   code={`
 <>
-  <Text p>
+  <Text p mt={0}>
   函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。
   </Text>
 
-  <Text>
+  <Text mb={0}>
     <Text small del>函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。</Text>
     <Text small b>函数用来封装可复用的功能。如果没有函数，一段特定的操作过程用几次就要重复写几次，而使用函数则只需写下函数名和一些简短的信息。</Text>
   </Text>
@@ -110,29 +106,14 @@ export const meta = {
 `} />
 
 <Playground
-  title="类型"
-  desc="以不同的色彩区分状态文字。"
-  scope={{ Text }}
-  code={`
-<>
-  <Text p type="success">事件能为网页添加真实的交互能力。</Text>
-  <Text p type="warning">事件能为网页添加真实的交互能力。</Text>
-  <Text p type="error">事件能为网页添加真实的交互能力。</Text>
-  <Text p type="secondary">事件能为网页添加真实的交互能力。</Text>
-</>
-`}
-/>
-
-<Playground
   title="字体大小"
   scope={{ Text }}
   code={`
 <>
-  <Text size={12}>Font Size: 12px;</Text>
-  <Text size={14}>Font Size: 14px;</Text>
-  <Text size="100%">Font Size: 100%;</Text>
-  <Text size="1.25rem">Font Size: 1.25rem;</Text>
-  <Text size="2em">Font Size: 2em;</Text>
+  <Text font="12px" mt={0}>Font Size: 12px;</Text>
+  <Text font="14px">Font Size: 14px;</Text>
+  <Text font="1rem">Font Size: 1rem;</Text>
+  <Text scale={1.25} mb={0}>Font Size Scale: 1.25;</Text>
 </>
 `}
 />
@@ -140,20 +121,19 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/text.mdx">
 <Attributes.Title>Text.Props</Attributes.Title>
 
-| 属性           | 描述             | 类型                | 推荐值                   | 默认         |
-| -------------- | ---------------- | ------------------- | ------------------------ | ------------ |
-| **p**          | 渲染的组件名     | `boolean`           | -                        | `true`       |
-| **h1 - h6**    | 渲染的组件名     | `boolean`           | -                        | `false`      |
-| **small**      | 渲染的组件名     | `boolean`           | -                        | `false`      |
-| **span**       | 渲染的组件名     | `boolean`           | -                        | `false`      |
-| **del**        | 渲染的组件名     | `boolean`           | -                        | `false`      |
-| **i**          | 渲染的组件名     | `boolean`           | -                        | `false`      |
-| **em**         | 渲染的组件名     | `boolean`           | -                        | `false`      |
-| **b**          | 渲染的组件名     | `boolean`           | -                        | `false`      |
-| **blockquote** | 渲染的组件名     | `boolean`           | -                        | `false`      |
-| **size**       | 手动设置文字大小 | `string` / `number` | -                        | 跟随元素变化 |
-| **type**       | 文字类型         | `NormalTypes`       | [TextTypes](#texttypes)  | `default`    |
-| ...            | 原生属性         | `HTMLAttributes`    | `'id', 'className', ...` | -            |
+| 属性           | 描述         | 类型             | 推荐值                   | 默认      |
+| -------------- | ------------ | ---------------- | ------------------------ | --------- |
+| **p**          | 渲染元素类型 | `boolean`        | -                        | `true`    |
+| **h1 - h6**    | 渲染元素类型 | `boolean`        | -                        | `false`   |
+| **small**      | 渲染元素类型 | `boolean`        | -                        | `false`   |
+| **span**       | 渲染元素类型 | `boolean`        | -                        | `false`   |
+| **del**        | 渲染元素类型 | `boolean`        | -                        | `false`   |
+| **i**          | 渲染元素类型 | `boolean`        | -                        | `false`   |
+| **em**         | 渲染元素类型 | `boolean`        | -                        | `false`   |
+| **b**          | 渲染元素类型 | `boolean`        | -                        | `false`   |
+| **blockquote** | 渲染元素类型 | `boolean`        | -                        | `false`   |
+| **type**       | 文字类型     | `TextTypes`      | [TextTypes](#texttypes)  | `default` |
+| ...            | 原生属性     | `HTMLAttributes` | `'id', 'className', ...` | -         |
 
 <Attributes.Title>TextTypes</Attributes.Title>
 

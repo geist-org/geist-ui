@@ -89,7 +89,7 @@ export const meta = {
   return (
     <>
     <Button onClick={() => click('success')} type="success">显示成功状态</Button>
-    <Spacer y={.5} />
+    <Spacer h={.5} />
     <Button onClick={() => click('warning')} type="warning">显示警告状态</Button>
     </>
   )
@@ -109,7 +109,7 @@ const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
 ```ts
 interface Toast {
   text?: string
-  type?: NormalTypes
+  type?: ToastTypes
   delay?: number
   actions?: Array<ToastAction>
 }
@@ -125,10 +125,10 @@ interface ToastAction {
 }
 ```
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>ToastTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type ToastTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

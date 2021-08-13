@@ -1,11 +1,10 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
-import { TableColumnItem } from './table-context'
+import { TableAbstractColumn, TableDataItemBase } from './table-types'
 
-interface Props {
+interface Props<TableDataItem extends TableDataItemBase> {
   width: number
-  columns: Array<TableColumnItem>
+  columns: Array<TableAbstractColumn<TableDataItem>>
   className?: string
 }
 
@@ -13,10 +12,13 @@ const defaultProps = {
   className: '',
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TableHeadProps = Props & typeof defaultProps & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props<any>>
+export type TableHeadProps<TableDataItem> = Props<TableDataItem> & NativeAttrs
 
-const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
+const makeColgroup = <TableDataItem,>(
+  width: number,
+  columns: Array<TableAbstractColumn<TableDataItem>>,
+) => {
   const unsetWidthCount = columns.filter(c => !c.width).length
   const customWidthTotal = columns.reduce((pre, current) => {
     return current.width ? pre + current.width : pre
@@ -32,8 +34,11 @@ const makeColgroup = (width: number, columns: Array<TableColumnItem>) => {
   )
 }
 
-const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
+const TableHead = <TableDataItem extends TableDataItemBase>(
+  props: TableHeadProps<TableDataItem>,
+) => {
   const theme = useTheme()
+  const { columns, width } = props as TableHeadProps<TableDataItem> & typeof defaultProps
   const isScalableWidth = useMemo(() => columns.find(item => !!item.width), [columns])
   const colgroup = useMemo(() => {
     if (!isScalableWidth) return <colgroup />
@@ -46,7 +51,7 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
       <thead>
         <tr>
           {columns.map((column, index) => (
-            <th key={`table-th-${column.value}-${index}`}>
+            <th key={`table-th-${column.prop}-${index}`} className={column.className}>
               <div className="thead-box">{column.label}</div>
             </th>
           ))}
@@ -56,16 +61,17 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
         thead {
           border-collapse: separate;
           border-spacing: 0;
+          font-size: inherit;
         }
 
         th {
-          padding: 0 ${theme.layout.gapHalf};
-          font-size: 0.75rem;
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           color: ${theme.palette.accents_5};
           background: ${theme.palette.accents_1};
           border-bottom: 1px solid ${theme.palette.border};
@@ -93,7 +99,7 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
       `}</style>
@@ -101,6 +107,6 @@ const TableHead: React.FC<TableHeadProps> = ({ columns, width }) => {
   )
 }
 
-const MemoTableHead = React.memo(TableHead)
-
-export default withDefaults(MemoTableHead, defaultProps)
+TableHead.defaultProps = defaultProps
+TableHead.displayName = 'GeistTableHead'
+export default TableHead

@@ -1,33 +1,5 @@
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-
-export type InputSize = {
-  heightRatio: string
-  fontSize: string
-}
-
-export const getSizes = (size?: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: InputSize } = {
-    mini: {
-      heightRatio: '1.313',
-      fontSize: '.75rem',
-    },
-    small: {
-      heightRatio: '1.5',
-      fontSize: '.75rem',
-    },
-    medium: {
-      heightRatio: '1.687',
-      fontSize: '.875rem',
-    },
-    large: {
-      heightRatio: '1.875',
-      fontSize: '1rem',
-    },
-  }
-  if (!size) return sizes.medium
-  return sizes[size]
-}
 
 export type InputColor = {
   color: string

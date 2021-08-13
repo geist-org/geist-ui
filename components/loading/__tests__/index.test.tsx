@@ -22,25 +22,12 @@ describe('Loading', () => {
     expect(() => wrapper.unmount()).toMatchSnapshot()
   })
 
-  it('should work with different sizes', () => {
-    const wrapper = mount(
-      <div>
-        <Loading size="mini" />
-        <Loading size="small" />
-        <Loading size="medium" />
-        <Loading size="large" />
-      </div>,
-    )
-    expect(wrapper.html()).toMatchSnapshot()
-    expect(() => wrapper.unmount()).toMatchSnapshot()
-  })
-
   it('should work with custom styles', () => {
     const wrapper = mount(
       <div>
         <Loading color="#fff" />
-        <Loading width="20%" />
-        <Loading height="10px" />
+        <Loading unit="20%" />
+        <Loading unit="10px" />
       </div>,
     )
     expect(wrapper.html()).toMatchSnapshot()

@@ -1,5 +1,4 @@
 import Note from './note'
-import { NoteProps } from './note'
 
-export type Props = NoteProps
+export type { NoteProps, NoteTypes } from './note'
 export default Note

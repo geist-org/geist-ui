@@ -1,18 +1,14 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import useTheme from '../use-theme'
 
 interface Props {
   visible: boolean
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void
-  heightRatio?: string | undefined
   disabled?: boolean
 }
 
-const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visible }) => {
+const InputIconClear: React.FC<Props> = ({ onClick, disabled, visible }) => {
   const theme = useTheme()
-  const width = useMemo(() => {
-    return heightRatio ? `calc(10.66px * ${heightRatio})` : '18px'
-  }, [heightRatio])
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     event.stopPropagation()
@@ -35,14 +31,17 @@ const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visib
 
       <style jsx>{`
         .clear-icon {
-          padding: 0 ${theme.layout.gapHalf};
-          margin: 0;
-          display: inline-flex;
-          align-items: center;
-          height: 100%;
-          cursor: ${disabled ? 'not-allowed' : 'pointer'};
           box-sizing: border-box;
+          display: inline-flex;
+          width: calc(var(--input-height) - 2px);
+          flex-shrink: 0;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          cursor: ${disabled ? 'not-allowed' : 'pointer'};
           transition: color 150ms ease 0s;
+          margin: 0;
+          padding: 0;
           color: ${theme.palette.accents_3};
           visibility: hidden;
           opacity: 0;
@@ -59,8 +58,9 @@ const InputIconClear: React.FC<Props> = ({ onClick, heightRatio, disabled, visib
 
         svg {
           color: currentColor;
-          width: ${width};
-          height: ${width};
+          width: calc(var(--input-height) - 2px);
+          height: calc(var(--input-height) - 2px);
+          transform: scale(0.44);
         }
       `}</style>
     </div>

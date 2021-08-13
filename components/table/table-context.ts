@@ -1,23 +1,17 @@
 import React from 'react'
+import { TableAbstractColumn } from './table-types'
 
-export type TableColumnItem = {
-  value: string
-  label: React.ReactNode | string
-  width?: number
-}
-
-export interface TableConfig {
-  columns: Array<TableColumnItem>
-  updateColumn?: (column: TableColumnItem) => void
-  removeRow?: (rowIndex: number) => void
-  updateRow?: (rowIndex: number, newData: any) => void
+export interface TableConfig<T> {
+  columns: Array<TableAbstractColumn<T>>
+  updateColumn: (column: TableAbstractColumn<T>) => void
 }
 
 const defaultContext = {
   columns: [],
+  updateColumn: () => {},
 }
 
-export const TableContext = React.createContext<TableConfig>(defaultContext)
+export const TableContext = React.createContext<TableConfig<any>>(defaultContext)
 
-export const useTableContext = (): TableConfig =>
-  React.useContext<TableConfig>(TableContext)
+export const useTableContext = <T>(): TableConfig<T> =>
+  React.useContext<TableConfig<T>>(TableContext)

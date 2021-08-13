@@ -57,12 +57,12 @@ Navigation and identification between multiple pages.
    <Pagination.Next><ChevronRight /></Pagination.Next>
    <Pagination.Previous><ChevronLeft /></Pagination.Previous>
   </Pagination>
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Pagination count={5}>
    <Pagination.Next><ChevronRightCircle /></Pagination.Next>
    <Pagination.Previous><ChevronLeftCircle /></Pagination.Previous>
   </Pagination>
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Pagination count={5}>
    <Pagination.Next><ChevronRightCircleFill /></Pagination.Next>
    <Pagination.Previous><ChevronLeftCircleFill /></Pagination.Previous>
@@ -71,32 +71,17 @@ Navigation and identification between multiple pages.
 `}
 />
 
-<Playground
-  title="Sizes"
-  desc="Pagination of different sizes."
-  scope={{ Pagination }}
-  code={`
-<>
-  <Pagination count={20} size="mini" />
-  <Pagination count={20} size="small" />
-  <Pagination count={20} size="medium" />
-  <Pagination count={20} size="large" />
-</>
-`}
-/>
-
 <Attributes edit="/pages/en-us/components/pagination.mdx">
 <Attributes.Title>Pagination.Props</Attributes.Title>
 
-| Attribute       | Description                  | Type                     | Accepted values             | Default  |
-| --------------- | ---------------------------- | ------------------------ | --------------------------- | -------- |
-| **initialPage** | the page selected by default | `number`                 | -                           | 1        |
-| **page**        | current page                 | `number`                 | -                           | 1        |
-| **count**       | the total number of pages    | `number`                 | -                           | 1        |
-| **limit**       | limit of display page        | `number`                 | -                           | 7        |
-| **size**        | pagination size              | `NormalSizes`            | [NormalSizes](#normalsizes) | `medium` |
-| **onChange**    | change event                 | `(page: number) => void` | -                           | -        |
-| ...             | native props                 | `HTMLAttributes`         | `'id', 'className', ...`    | -        |
+| Attribute       | Description                  | Type                     | Accepted values          | Default |
+| --------------- | ---------------------------- | ------------------------ | ------------------------ | ------- |
+| **initialPage** | the page selected by default | `number`                 | -                        | 1       |
+| **page**        | current page                 | `number`                 | -                        | 1       |
+| **count**       | the total number of pages    | `number`                 | -                        | 1       |
+| **limit**       | limit of display page        | `number`                 | -                        | 7       |
+| **onChange**    | change event                 | `(page: number) => void` | -                        | -       |
+| ...             | native props                 | `HTMLAttributes`         | `'id', 'className', ...` | -       |
 
 <Attributes.Title>Pagination.Previous.Props</Attributes.Title>
 
@@ -109,12 +94,6 @@ Navigation and identification between multiple pages.
 | Attribute | Description  | Type                   | Accepted values          | Default |
 | --------- | ------------ | ---------------------- | ------------------------ | ------- |
 | ...       | native props | `ButtonHTMLAttributes` | `'id', 'className', ...` | -       |
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
-```
 
 </Attributes>
 

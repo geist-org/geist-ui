@@ -1,465 +1,803 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select should render correctly 1`] = `
-"<div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
+"<div><div class=\\"select   \\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        </style><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: var(--select-height);
           min-width: 0;
         }
-      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
         svg {
           color: inherit;
           stroke: currentColor;
           transition: all 200ms ease;
+          width: 1.214em;
+          height: 1.214em;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
-            min-width: 10rem;
-            background-color: #fff;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
-          }
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
 
-          .select:hover {
-            border-color: #000;
-          }
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
 
-          .select:hover .icon {
-            color: #000;
-          }
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          </style></div><div class=\\"select   \\" scale=\\"2\\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
             padding: 0;
-            margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
+            font-size: 0;
+            border: none;
           }
-
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
-
-          .placeholder {
-            color: #999;
-          }
-
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .875rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
+        </style><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1 * 16pt);
+          line-height: var(--select-height);
           min-width: 0;
         }
-      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
         svg {
           color: inherit;
           stroke: currentColor;
           transition: all 200ms ease;
+          width: 1.214em;
+          height: 1.214em;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1 * 16pt);
-            min-width: 6.5rem;
-            background-color: #fff;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
 
-          .multiple {
-            height: auto;
-            min-height: calc(1 * 16pt);
-            padding: 4pt calc(.75rem * 2)
-              4pt 8pt;
-          }
+              background-color: #fff;
+              --select-font-size: calc(1.3125 * 16px);
+              --select-height: calc(3.375 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.501 * 16px) 0
+                calc(1.0005000000000002 * 16px);
+              margin: 0 0 0 0;
+            }
 
-          .select:hover {
-            border-color: #000;
-          }
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.501 * 16px) calc(0.501 * 16px) calc(0.501 * 16px)
+                calc(1.0005000000000002 * 16px);
+            }
 
-          .select:hover .icon {
-            color: #000;
-          }
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .75rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
 
-          .placeholder {
-            color: #999;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .75rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
-        span {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          line-height: calc(1.344 * 16pt);
-          min-width: 0;
-        }
-      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
-        svg {
-          color: inherit;
-          stroke: currentColor;
-          transition: all 200ms ease;
-        }
-      </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.344 * 16pt);
-            min-width: 8rem;
-            background-color: #fff;
-          }
+            .placeholder {
+              color: #999;
+            }
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.344 * 16pt);
-            padding: 4pt calc(.75rem * 2)
-              4pt 8pt;
-          }
-
-          .select:hover {
-            border-color: #000;
-          }
-
-          .select:hover .icon {
-            color: #000;
-          }
-
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .75rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
-
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
-
-          .placeholder {
-            color: #999;
-          }
-
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .75rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        </style></div><div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
-        span {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          line-height: calc(2 * 16pt);
-          min-width: 0;
-        }
-      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
-        svg {
-          color: inherit;
-          stroke: currentColor;
-          transition: all 200ms ease;
-        }
-      </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(2 * 16pt);
-            min-width: 12.5rem;
-            background-color: #fff;
-          }
-
-          .multiple {
-            height: auto;
-            min-height: calc(2 * 16pt);
-            padding: 4pt calc(1.225rem * 2)
-              4pt 8pt;
-          }
-
-          .select:hover {
-            border-color: #000;
-          }
-
-          .select:hover .icon {
-            color: #000;
-          }
-
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: 1.225rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
-
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
-
-          .placeholder {
-            color: #999;
-          }
-
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: 1.225rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        </style></div></div>"
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          </style></div></div>"
 `;
 
 exports[`Select should work correctly with labels 1`] = `
-"<div class=\\"select  \\"><span class=\\"value placeholder\\"><span><style>
+"<div class=\\"select   \\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        </style><span class=\\"value placeholder\\"><span><style>
         span {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: var(--select-height);
           min-width: 0;
         }
-      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" width=\\"1.25em\\" height=\\"1.25em\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
         svg {
           color: inherit;
           stroke: currentColor;
           transition: all 200ms ease;
+          width: 1.214em;
+          height: 1.214em;
         }
       </style></svg></div><style>
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
-            min-width: 10rem;
-            background-color: #fff;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
-          }
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
 
-          .select:hover {
-            border-color: #000;
-          }
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
 
-          .select:hover .icon {
-            color: #000;
-          }
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
 
-          .value > :global(div),
-          .value > :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
 
-          .placeholder {
-            color: #999;
-          }
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .875rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        </style></div>"
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          </style></div>"
 `;
 
 exports[`Select should work with different icons 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
-      "class": "select  ",
+      "class": "select   ",
     },
     "children": Array [
+      Node {
+        "attribs": Object {
+          "aria-expanded": "false",
+          "aria-haspopup": "listbox",
+          "readonly": "",
+          "role": "combobox",
+          "type": "search",
+          "unselectable": "on",
+        },
+        "children": Array [],
+        "name": "input",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Node {
+            "attribs": Object {
+              "class": "value placeholder",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {},
+                "children": Array [
+                  Node {
+                    "attribs": Object {},
+                    "children": Array [
+                      Node {
+                        "data": "
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: var(--select-height);
+          min-width: 0;
+        }
+      ",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "style",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Node {
+              "attribs": Object {},
+              "children": Array [
+                Node {
+                  "data": "
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
+
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
+
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
+
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "aria-expanded": undefined,
+          "aria-haspopup": undefined,
+          "readonly": undefined,
+          "role": undefined,
+          "type": undefined,
+          "unselectable": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "aria-expanded": undefined,
+          "aria-haspopup": undefined,
+          "readonly": undefined,
+          "role": undefined,
+          "type": undefined,
+          "unselectable": undefined,
+        },
+      },
+      Node {
+        "attribs": Object {},
+        "children": Array [
+          Node {
+            "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {
+            "class": "value placeholder",
+          },
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [
+                Node {
+                  "attribs": Object {},
+                  "children": Array [
+                    Node {
+                      "data": "
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: var(--select-height);
+          min-width: 0;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Node {
+            "attribs": Object {},
+            "children": Array [
+              Node {
+                "data": "
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
+
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
+
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
+
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": Node {
+          "attribs": Object {
+            "aria-expanded": "false",
+            "aria-haspopup": "listbox",
+            "readonly": "",
+            "role": "combobox",
+            "type": "search",
+            "unselectable": "on",
+          },
+          "children": Array [],
+          "name": "input",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "aria-expanded": undefined,
+            "aria-haspopup": undefined,
+            "readonly": undefined,
+            "role": undefined,
+            "type": undefined,
+            "unselectable": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "aria-expanded": undefined,
+            "aria-haspopup": undefined,
+            "readonly": undefined,
+            "role": undefined,
+            "type": undefined,
+            "unselectable": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
       Node {
         "attribs": Object {
           "class": "value placeholder",
@@ -477,7 +815,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: var(--select-height);
           min-width: 0;
         }
       ",
@@ -514,81 +852,88 @@ initialize {
           "children": Array [
             Node {
               "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
-            min-width: 10rem;
-            background-color: #fff;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
-          }
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
 
-          .select:hover {
-            border-color: #000;
-          }
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
 
-          .select:hover .icon {
-            color: #000;
-          }
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
 
-          .placeholder {
-            color: #999;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .875rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        ",
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
               "next": null,
               "parent": [Circular],
               "prev": null,
@@ -605,7 +950,71 @@ initialize {
           "x-attribsPrefix": Object {},
         },
         "parent": [Circular],
-        "prev": null,
+        "prev": Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": Node {
+            "attribs": Object {
+              "aria-expanded": "false",
+              "aria-haspopup": "listbox",
+              "readonly": "",
+              "role": "combobox",
+              "type": "search",
+              "unselectable": "on",
+            },
+            "children": Array [],
+            "name": "input",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "aria-expanded": undefined,
+              "aria-haspopup": undefined,
+              "readonly": undefined,
+              "role": undefined,
+              "type": undefined,
+              "unselectable": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "aria-expanded": undefined,
+              "aria-haspopup": undefined,
+              "readonly": undefined,
+              "role": undefined,
+              "type": undefined,
+              "unselectable": undefined,
+            },
+          },
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
         "type": "tag",
         "x-attribsNamespace": Object {
           "class": undefined,
@@ -619,81 +1028,88 @@ initialize {
         "children": Array [
           Node {
             "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
-            min-width: 10rem;
-            background-color: #fff;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
-          }
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
 
-          .select:hover {
-            border-color: #000;
-          }
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
 
-          .select:hover .icon {
-            color: #000;
-          }
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
 
-          .placeholder {
-            color: #999;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .875rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        ",
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
             "next": null,
             "parent": [Circular],
             "prev": null,
@@ -721,7 +1137,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: var(--select-height);
           min-width: 0;
         }
       ",
@@ -755,7 +1171,71 @@ initialize {
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": [Circular],
           "parent": [Circular],
-          "prev": null,
+          "prev": Node {
+            "attribs": Object {},
+            "children": Array [
+              Node {
+                "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": Node {
+              "attribs": Object {
+                "aria-expanded": "false",
+                "aria-haspopup": "listbox",
+                "readonly": "",
+                "role": "combobox",
+                "type": "search",
+                "unselectable": "on",
+              },
+              "children": Array [],
+              "name": "input",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "aria-expanded": undefined,
+                "aria-haspopup": undefined,
+                "readonly": undefined,
+                "role": undefined,
+                "type": undefined,
+                "unselectable": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "aria-expanded": undefined,
+                "aria-haspopup": undefined,
+                "readonly": undefined,
+                "role": undefined,
+                "type": undefined,
+                "unselectable": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
           "type": "tag",
           "x-attribsNamespace": Object {
             "class": undefined,
@@ -791,7 +1271,83 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,
@@ -801,12 +1357,538 @@ initialize {
 `;
 
 exports[`Select should work with different icons 2`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
-      "class": "select  ",
+      "class": "select   ",
     },
     "children": Array [
+      Node {
+        "attribs": Object {
+          "aria-expanded": "false",
+          "aria-haspopup": "listbox",
+          "readonly": "",
+          "role": "combobox",
+          "type": "search",
+          "unselectable": "on",
+        },
+        "children": Array [],
+        "name": "input",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Node {
+            "attribs": Object {
+              "class": "value placeholder",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {},
+                "children": Array [
+                  Node {
+                    "attribs": Object {},
+                    "children": Array [
+                      Node {
+                        "data": "
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: var(--select-height);
+          min-width: 0;
+        }
+      ",
+                        "next": null,
+                        "parent": [Circular],
+                        "prev": null,
+                        "type": "text",
+                      },
+                    ],
+                    "name": "style",
+                    "namespace": "http://www.w3.org/1999/xhtml",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "style",
+                    "x-attribsNamespace": Object {},
+                    "x-attribsPrefix": Object {},
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Node {
+              "attribs": Object {
+                "class": "icon",
+              },
+              "children": Array [
+                Node {
+                  "attribs": Object {},
+                  "children": Array [
+                    Node {
+                      "data": "icon",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "span",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [
+                  Node {
+                    "data": "
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
+
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
+
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
+
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "style",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "style",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "aria-expanded": undefined,
+          "aria-haspopup": undefined,
+          "readonly": undefined,
+          "role": undefined,
+          "type": undefined,
+          "unselectable": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "aria-expanded": undefined,
+          "aria-haspopup": undefined,
+          "readonly": undefined,
+          "role": undefined,
+          "type": undefined,
+          "unselectable": undefined,
+        },
+      },
+      Node {
+        "attribs": Object {},
+        "children": Array [
+          Node {
+            "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "text",
+          },
+        ],
+        "name": "style",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {
+            "class": "value placeholder",
+          },
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [
+                Node {
+                  "attribs": Object {},
+                  "children": Array [
+                    Node {
+                      "data": "
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: var(--select-height);
+          min-width: 0;
+        }
+      ",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "style",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "style",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "span",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": Node {
+            "attribs": Object {
+              "class": "icon",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {},
+                "children": Array [
+                  Node {
+                    "data": "icon",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "span",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Node {
+              "attribs": Object {},
+              "children": Array [
+                Node {
+                  "data": "
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
+
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
+
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
+
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            "parent": [Circular],
+            "prev": [Circular],
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": Node {
+          "attribs": Object {
+            "aria-expanded": "false",
+            "aria-haspopup": "listbox",
+            "readonly": "",
+            "role": "combobox",
+            "type": "search",
+            "unselectable": "on",
+          },
+          "children": Array [],
+          "name": "input",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "aria-expanded": undefined,
+            "aria-haspopup": undefined,
+            "readonly": undefined,
+            "role": undefined,
+            "type": undefined,
+            "unselectable": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "aria-expanded": undefined,
+            "aria-haspopup": undefined,
+            "readonly": undefined,
+            "role": undefined,
+            "type": undefined,
+            "unselectable": undefined,
+          },
+        },
+        "type": "style",
+        "x-attribsNamespace": Object {},
+        "x-attribsPrefix": Object {},
+      },
       Node {
         "attribs": Object {
           "class": "value placeholder",
@@ -824,7 +1906,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: var(--select-height);
           min-width: 0;
         }
       ",
@@ -889,81 +1971,88 @@ initialize {
             "children": Array [
               Node {
                 "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
-            min-width: 10rem;
-            background-color: #fff;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
-          }
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
 
-          .select:hover {
-            border-color: #000;
-          }
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
 
-          .select:hover .icon {
-            color: #000;
-          }
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
 
-          .placeholder {
-            color: #999;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .875rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        ",
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
                 "next": null,
                 "parent": [Circular],
                 "prev": null,
@@ -990,7 +2079,71 @@ initialize {
           },
         },
         "parent": [Circular],
-        "prev": null,
+        "prev": Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "text",
+            },
+          ],
+          "name": "style",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": Node {
+            "attribs": Object {
+              "aria-expanded": "false",
+              "aria-haspopup": "listbox",
+              "readonly": "",
+              "role": "combobox",
+              "type": "search",
+              "unselectable": "on",
+            },
+            "children": Array [],
+            "name": "input",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "aria-expanded": undefined,
+              "aria-haspopup": undefined,
+              "readonly": undefined,
+              "role": undefined,
+              "type": undefined,
+              "unselectable": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "aria-expanded": undefined,
+              "aria-haspopup": undefined,
+              "readonly": undefined,
+              "role": undefined,
+              "type": undefined,
+              "unselectable": undefined,
+            },
+          },
+          "type": "style",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
         "type": "tag",
         "x-attribsNamespace": Object {
           "class": undefined,
@@ -1032,81 +2185,88 @@ initialize {
           "children": Array [
             Node {
               "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
-            min-width: 10rem;
-            background-color: #fff;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
-          }
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
 
-          .select:hover {
-            border-color: #000;
-          }
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
 
-          .select:hover .icon {
-            color: #000;
-          }
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
 
-          .placeholder {
-            color: #999;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .875rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        ",
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
               "next": null,
               "parent": [Circular],
               "prev": null,
@@ -1140,7 +2300,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: var(--select-height);
           min-width: 0;
         }
       ",
@@ -1174,7 +2334,71 @@ initialize {
           "namespace": "http://www.w3.org/1999/xhtml",
           "next": [Circular],
           "parent": [Circular],
-          "prev": null,
+          "prev": Node {
+            "attribs": Object {},
+            "children": Array [
+              Node {
+                "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "style",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": [Circular],
+            "parent": [Circular],
+            "prev": Node {
+              "attribs": Object {
+                "aria-expanded": "false",
+                "aria-haspopup": "listbox",
+                "readonly": "",
+                "role": "combobox",
+                "type": "search",
+                "unselectable": "on",
+              },
+              "children": Array [],
+              "name": "input",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "aria-expanded": undefined,
+                "aria-haspopup": undefined,
+                "readonly": undefined,
+                "role": undefined,
+                "type": undefined,
+                "unselectable": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "aria-expanded": undefined,
+                "aria-haspopup": undefined,
+                "readonly": undefined,
+                "role": undefined,
+                "type": undefined,
+                "unselectable": undefined,
+              },
+            },
+            "type": "style",
+            "x-attribsNamespace": Object {},
+            "x-attribsPrefix": Object {},
+          },
           "type": "tag",
           "x-attribsNamespace": Object {
             "class": undefined,
@@ -1196,81 +2420,88 @@ initialize {
         "children": Array [
           Node {
             "data": "
-          .select {
-            display: inline-flex;
-            align-items: center;
-            user-select: none;
-            white-space: nowrap;
-            position: relative;
-            cursor: pointer;
-            max-width: 80vw;
-            width: initial;
-            overflow: hidden;
-            transition: border 0.2s ease 0s, color 0.2s ease-out 0s,
-              box-shadow 0.2s ease 0s;
-            border: 1px solid #eaeaea;
-            border-radius: 5px;
-            padding: 0 4pt 0 8pt;
-            height: calc(1.688 * 16pt);
-            min-width: 10rem;
-            background-color: #fff;
-          }
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
 
-          .multiple {
-            height: auto;
-            min-height: calc(1.688 * 16pt);
-            padding: 4pt calc(.875rem * 2)
-              4pt 8pt;
-          }
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
 
-          .select:hover {
-            border-color: #000;
-          }
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
 
-          .select:hover .icon {
-            color: #000;
-          }
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
 
-          .value {
-            display: inline-flex;
-            flex: 1;
-            height: 100%;
-            align-items: center;
-            line-height: 1;
-            padding: 0;
-            margin-right: 1.25rem;
-            font-size: .875rem;
-            color: #000;
-            width: calc(100% - 1.25rem);
-          }
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
 
-          .value &gt; :global(div),
-          .value &gt; :global(div:hover) {
-            border-radius: 0;
-            background-color: transparent;
-            padding: 0;
-            margin: 0;
-            color: inherit;
-          }
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
 
-          .placeholder {
-            color: #999;
-          }
+            .value &gt; :global(div),
+            .value &gt; :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
 
-          .icon {
-            position: absolute;
-            right: 4pt;
-            font-size: .875rem;
-            top: 50%;
-            bottom: 0;
-            transform: translateY(-50%) rotate(0deg);
-            pointer-events: none;
-            transition: transform 200ms ease;
-            display: flex;
-            align-items: center;
-            color: #666;
-          }
-        ",
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          ",
             "next": null,
             "parent": [Circular],
             "prev": null,
@@ -1328,7 +2559,7 @@ initialize {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
-          line-height: calc(1.688 * 16pt);
+          line-height: var(--select-height);
           min-width: 0;
         }
       ",
@@ -1362,7 +2593,71 @@ initialize {
             "namespace": "http://www.w3.org/1999/xhtml",
             "next": [Circular],
             "parent": [Circular],
-            "prev": null,
+            "prev": Node {
+              "attribs": Object {},
+              "children": Array [
+                Node {
+                  "data": "
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        ",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "style",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {
+                  "aria-expanded": "false",
+                  "aria-haspopup": "listbox",
+                  "readonly": "",
+                  "role": "combobox",
+                  "type": "search",
+                  "unselectable": "on",
+                },
+                "children": Array [],
+                "name": "input",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "aria-expanded": undefined,
+                  "aria-haspopup": undefined,
+                  "readonly": undefined,
+                  "role": undefined,
+                  "type": undefined,
+                  "unselectable": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "aria-expanded": undefined,
+                  "aria-haspopup": undefined,
+                  "readonly": undefined,
+                  "role": undefined,
+                  "type": undefined,
+                  "unselectable": undefined,
+                },
+              },
+              "type": "style",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
             "type": "tag",
             "x-attribsNamespace": Object {
               "class": undefined,
@@ -1406,11 +2701,535 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,
     "xml": false,
   },
 }
+`;
+
+exports[`Select should work with different status 1`] = `
+"<div><div class=\\"select   \\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        </style><span class=\\"value placeholder\\"><span><style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: var(--select-height);
+          min-width: 0;
+        }
+      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+          width: 1.214em;
+          height: 1.214em;
+        }
+      </style></svg></div><style>
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #eaeaea;
+              border-radius: 5px;
+
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
+
+            .select.active,
+            .select:hover {
+              border-color: #000;
+            }
+
+            .select.active.icon,
+            .select:hover .icon {
+              color: #000;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #666;
+            }
+          </style></div><div class=\\"select   \\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        </style><span class=\\"value placeholder\\"><span><style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: var(--select-height);
+          min-width: 0;
+        }
+      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+          width: 1.214em;
+          height: 1.214em;
+        }
+      </style></svg></div><style>
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #3291ff;
+              border-radius: 5px;
+
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
+
+            .select.active,
+            .select:hover {
+              border-color: #0761d1;
+            }
+
+            .select.active.icon,
+            .select:hover .icon {
+              color: #0761d1;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #0070f3;
+            }
+          </style></div><div class=\\"select   \\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        </style><span class=\\"value placeholder\\"><span><style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: var(--select-height);
+          min-width: 0;
+        }
+      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+          width: 1.214em;
+          height: 1.214em;
+        }
+      </style></svg></div><style>
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #f7b955;
+              border-radius: 5px;
+
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
+
+            .select.active,
+            .select:hover {
+              border-color: #ab570a;
+            }
+
+            .select.active.icon,
+            .select:hover .icon {
+              color: #ab570a;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #999;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #f5a623;
+            }
+          </style></div><div class=\\"select   \\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
+          input {
+            position: fixed;
+            top: -10000px;
+            left: -10000px;
+            opacity: 0;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            padding: 0;
+            font-size: 0;
+            border: none;
+          }
+        </style><span class=\\"value placeholder\\"><span><style>
+        span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          line-height: var(--select-height);
+          min-width: 0;
+        }
+      </style></span></span><div class=\\"icon\\"><svg viewBox=\\"0 0 24 24\\" stroke-width=\\"1\\" stroke-linecap=\\"round\\" stroke-linejoin=\\"round\\" fill=\\"none\\" shape-rendering=\\"geometricPrecision\\"><path d=\\"M6 9l6 6 6-6\\"></path><style>
+        svg {
+          color: inherit;
+          stroke: currentColor;
+          transition: all 200ms ease;
+          width: 1.214em;
+          height: 1.214em;
+        }
+      </style></svg></div><style>
+            .select {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              white-space: nowrap;
+              position: relative;
+              cursor: pointer;
+              max-width: 90vw;
+              overflow: hidden;
+              transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
+                box-shadow 200ms ease 0s;
+              border: 1px solid #ff1a1a;
+              border-radius: 5px;
+
+              background-color: #fff;
+              --select-font-size: calc(0.875 * 16px);
+              --select-height: calc(2.25 * 16px);
+              min-width: 11.5em;
+              width: initial;
+              height: var(--select-height);
+              padding: 0 calc(0.334 * 16px) 0
+                calc(0.667 * 16px);
+              margin: 0 0 0 0;
+            }
+
+            .multiple {
+              height: auto;
+              min-height: var(--select-height);
+              padding: calc(0.334 * 16px) calc(0.334 * 16px) calc(0.334 * 16px)
+                calc(0.667 * 16px);
+            }
+
+            .select.active,
+            .select:hover {
+              border-color: #c50000;
+            }
+
+            .select.active.icon,
+            .select:hover .icon {
+              color: #c50000;
+            }
+
+            .value {
+              display: inline-flex;
+              flex: 1;
+              height: 100%;
+              align-items: center;
+              line-height: 1;
+              padding: 0;
+              margin-right: 1.25em;
+              font-size: var(--select-font-size);
+              color: #000;
+              width: calc(100% - 1.25em);
+            }
+
+            .value > :global(div),
+            .value > :global(div:hover) {
+              border-radius: 0;
+              background-color: transparent;
+              padding: 0;
+              margin: 0;
+              color: inherit;
+            }
+
+            .placeholder {
+              color: #e00;
+            }
+
+            .icon {
+              position: absolute;
+              right: 4pt;
+              font-size: var(--select-font-size);
+              top: 50%;
+              bottom: 0;
+              transform: translateY(-50%) rotate(0deg);
+              pointer-events: none;
+              transition: transform 200ms ease;
+              display: flex;
+              align-items: center;
+              color: #e00;
+            }
+          </style></div></div>"
 `;

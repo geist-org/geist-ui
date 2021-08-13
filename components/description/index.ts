@@ -1,5 +1,4 @@
 import Description from './description'
-import { DescriptionProps } from './description'
 
-export type Props = DescriptionProps
+export type { DescriptionProps } from './description'
 export default Description

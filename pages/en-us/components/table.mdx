@@ -1,4 +1,4 @@
-import { Layout, Playground, Attributes } from 'lib/components'
+import { Layout, Playground, PlaygroundTitle, Attributes } from 'lib/components'
 import { Table, Spacer, Code, Text, Button } from 'components'
 
 export const meta = {
@@ -84,20 +84,26 @@ Display tabular data in format.
   scope={{ Table, Text, Button }}
   code={`
 () => {
-  const operation = (actions, rowData) => {
-    return <Button type="error" auto size="mini" onClick={() => actions.remove()}>Remove</Button>
-  }
-  const data = [
-    { property: 'type', description: 'Content type', operation },
-    { property: 'Component', description: 'DOM element to use', operation },
-    { property: <Text b>bold</Text>, description: 'Bold style', operation },
+  const dataSource = [
+    { property: 'type', description: 'Content type', operation: '' },
+    { property: 'Component', description: 'DOM element to use', operation: '' },
+    { property: <Text b>bold</Text>, description: 'Bold style', operation: '' },
   ]
+  const [data, setData] = React.useState(dataSource)
+  const renderAction = (value, rowData, index) => {
+    const removeHandler = () => {
+      setData(last => last.filter((_, dataIndex) => dataIndex !== index))
+    }
+    return (
+      <Button type="error" auto scale={1/3} onClick={removeHandler}>Remove</Button>
+    )
+  }
   return (
-    <Table data={data}>
-      <Table.Column prop="property" label="property" />
-      <Table.Column prop="description" label="description" />
-      <Table.Column prop="operation" label="operation" width={150} />
-    </Table>
+  <Table data={data} onChange={value => setData(value)}>
+    <Table.Column prop="property" label="property" />
+    <Table.Column prop="description" label="description" />
+    <Table.Column prop="operation" label="operation" width={150} render={renderAction} />
+  </Table>
   )
 }
 `}
@@ -109,20 +115,33 @@ Display tabular data in format.
   scope={{ Table, Text, Button }}
   code={`
 () => {
-// operation: TableOperation
-  const operation = (actions, rowData) => {
-    return <Button type="error" auto size="mini" onClick={() => actions.update({ property: 'updated', description:'updated' })}>Update</Button>
-  }
-  const data = [
-    { property: 'type', description: 'Content type', operation },
-    { property: 'Component', description: 'DOM element to use', operation },
-    { property: <Text b>bold</Text>, description: 'Bold style', operation },
+  const dataSource = [
+    { property: 'type', description: 'Content type', operation: '' },
+    { property: 'Component', description: 'DOM element to use', operation: '' },
+    { property: <Text b>bold</Text>, description: 'Bold style', operation: '' },
   ]
+  const [data, setData] = React.useState(dataSource)
+  const renderAction = (value, rowData, rowIndex) => {
+    const updateHandler = () => {
+      setData(last => {
+        return last.map((item, dataIndex) => {
+          if (dataIndex !== rowIndex) return item
+          return {
+            ...item,
+            property: Math.random().toString(16).slice(-5)
+          }
+        })
+      })
+    }
+    return (
+      <Button type="secondary" auto scale={1/3} onClick={updateHandler}>Update</Button>
+    )
+  }
   return (
-    <Table data={data}>
+    <Table data={data} onChange={value => setData(value)}>
       <Table.Column prop="property" label="property" />
       <Table.Column prop="description" label="description" />
-      <Table.Column prop="operation" label="operation" width={150} />
+      <Table.Column prop="operation" label="operation" width={150} render={renderAction} />
     </Table>
   )
 }
@@ -155,26 +174,89 @@ Display tabular data in format.
 `}
 />
 
+<PlaygroundTitle
+  title="TypeScript Example"
+  desc="Get a better experience in TS by specifying a generic type."
+/>
+
+```tsx
+type User = {
+  name: string
+  role: string
+  records: Array<{ date: string }>
+}
+const renderHandler: TableColumnRender<User> = (value, rowData, index) => {
+  return <div>{rowData.date}</div>
+}
+const data: Array<User> = [
+  { name: 'witt', role: 'admin', records: [{ date: '2021-05-01' }] },
+]
+
+const MyComponent = () => (
+  <Table<User> data={data}>
+    <Table.Column<User> prop="name" label="username" />
+    <Table.Column<User> prop="role" label="role" />
+    <Table.Column<User> prop="reocrds" label="reocrds" render={renderHandler} />
+  </Table>
+)
+```
+
 <Attributes edit="/pages/en-us/components/table.mdx">
 <Attributes.Title>Table.Props</Attributes.Title>
 
-| Attribute     | Description                                  | Type                                                 | Accepted values                  | Default |
-| ------------- | -------------------------------------------- | ---------------------------------------------------- | -------------------------------- | ------- |
-| **data**      | data source                                  | `Array<TableDataSource<any>>`                        | -                                | -       |
-| **emptyText** | displayed text when table's content is empty | `string`                                             | -                                | -       |
-| **hover**     | table's hover effect                         | `boolean`                                            | -                                | `true`  |
-| **onRow**     | callback row's content by click              | `(row: any, index: number) => void`                  | -                                | -       |
-| **onCell**    | callback cell's content by click             | `(cell: any, index: number, colunm: number) => void` | -                                | -       |
-| **onChange**  | data change event                            | `(data: any) => void`                                | -                                | -       |
-| ...           | native props                                 | `TableHTMLAttributes`                                | `'id', 'name', 'className', ...` | -       |
+| Attribute        | Description                                  | Type                                                  | Accepted values    | Default |
+| ---------------- | -------------------------------------------- | ----------------------------------------------------- | ------------------ | ------- |
+| **data**         | data source                                  | `Array<T>`                                            | -                  | -       |
+| **initialData**  | inital datas                                 | `Array<T>`                                            | -                  | `[]`    |
+| **emptyText**    | displayed text when table's content is empty | `string`                                              | -                  | -       |
+| **hover**        | table's hover effect                         | `boolean`                                             | -                  | `true`  |
+| **onRow**        | callback row's content by click              | [TableOnRowClick](#tableonrowclick)                   | -                  | -       |
+| **onCell**       | callback cell's content by click             | [TableOnCellClick](#tableoncellclick)                 | -                  | -       |
+| **onChange**     | data change event                            | `(data: T) => void`                                   | -                  | -       |
+| **rowClassName** | set className to each row                    | [TableRowClassNameHandler](#tablerowclassnamehandler) | -                  | -       |
+| ...              | native props                                 | `TableHTMLAttributes`                                 | `'id', 'name' ...` | -       |
 
 <Attributes.Title>Table.Column.Props</Attributes.Title>
 
-| Attribute          | Description          | Type     | Accepted values | Default |
-| ------------------ | -------------------- | -------- | --------------- | ------- |
-| **prop**(required) | table-column's prop  | `string` | -               | -       |
-| **label**          | table-column's label | `string` | -               | -       |
-| **width**          | width number (px)    | `number` | -               | -       |
+| Attribute          | Description                            | Type                                    | Accepted values | Default |
+| ------------------ | -------------------------------------- | --------------------------------------- | --------------- | ------- |
+| **prop**(required) | table-column's prop                    | `string`                                | -               | -       |
+| **label**          | table-column's label                   | `string`                                | -               | -       |
+| **width**          | width number (px)                      | `number`                                | -               | -       |
+| **className**      | set className to each column           | `string`                                | -               | -       |
+| **render**         | render returns elements in all columns | [TableColumnRender](#tablecolumnrender) | -               | -       |
+
+<Attributes.Title>TableOnRowClick</Attributes.Title>
+
+```ts
+type TableOnRowClick<T> = (rowData: T, rowIndex: number) => void
+```
+
+<Attributes.Title>TableOnCellClick</Attributes.Title>
+
+```ts
+type TableOnCellClick<T> = (
+  value: T[keyof T],
+  rowIndex: number,
+  colunmIndex: number,
+) => void
+```
+
+<Attributes.Title>TableRowClassNameHandler</Attributes.Title>
+
+```ts
+type TableRowClassNameHandler<T> = (rowData: T, rowIndex: number) => string
+```
+
+<Attributes.Title>TableColumnRender</Attributes.Title>
+
+```ts
+type TableColumnRender<T extends Record> = (
+  value: T[keyof T],
+  rowData: T,
+  rowIndex: number,
+) => JSX.Element | void
+```
 
 </Attributes>
 

@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Button, Spacer, ButtonGroup } from 'components'
 
 export const meta = {
-  title: 'Button-Group',
+  title: 'Button Group',
   group: 'Data Entry',
 }
 
@@ -41,7 +41,7 @@ A set of related buttons.
     <Button>Action1</Button>
     <Button>Action2</Button>
   </ButtonGroup>
-  <ButtonGroup type="success-light" size="small">
+  <ButtonGroup type="success-light">
     <Button>One</Button>
     <Button>Two</Button>
     <Button>Three</Button>
@@ -55,14 +55,14 @@ A set of related buttons.
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup size="small">
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+  <ButtonGroup scale={2/3}>
+    <Button scale={2/3}>One</Button>
+    <Button scale={2/3}>Two</Button>
+    <Button scale={2/3}>Three</Button>
   </ButtonGroup>
-  <ButtonGroup size="mini">
-    <Button>Action1</Button>
-    <Button>Action2</Button>
+  <ButtonGroup scale={1/3}>
+    <Button scale={1/3}>Action1</Button>
+    <Button scale={1/3}>Action2</Button>
   </ButtonGroup>
 </>
 `}
@@ -73,7 +73,7 @@ A set of related buttons.
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup size="small" vertical>
+  <ButtonGroup vertical>
     <Button>One</Button>
     <Button>Two</Button>
     <Button>Three</Button>
@@ -89,10 +89,10 @@ A set of related buttons.
   scope={{ Button, ButtonGroup }}
   code={`
 <>
-  <ButtonGroup size="small" disabled>
-    <Button>One</Button>
-    <Button>Two</Button>
-    <Button>Three</Button>
+  <ButtonGroup scale={0.5} disabled>
+    <Button scale={0.5}>One</Button>
+    <Button scale={0.5}>Two</Button>
+    <Button scale={0.5}>Three</Button>
   </ButtonGroup>
 </>
 `} />
@@ -102,7 +102,6 @@ A set of related buttons.
 | Attribute    | Description                 | Type                   | Accepted values             | Default   |
 | ------------ | --------------------------- | ---------------------- | --------------------------- | --------- |
 | **type**     | button type                 | `ButtonTypes`          | [ButtonTypes](#buttontypes) | `default` |
-| **size**     | button size                 | `NormalSizes`          | [NormalSizes](#normalsizes) | `medium`  |
 | **ghost**    | the opposite color          | `boolean`              | -                           | `false`   |
 | **vertical** | show all buttons vertically | `boolean`              | -                           | `false`   |
 | **disabled** | disable all buttons         | `boolean`              | -                           | `false`   |
@@ -122,12 +121,6 @@ type ButtonTypes =
   | 'success-light'
   | 'warning-light'
   | 'error-light'
-```
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
 ```
 
 </Attributes>

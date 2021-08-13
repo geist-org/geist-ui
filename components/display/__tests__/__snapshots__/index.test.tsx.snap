@@ -5,7 +5,7 @@ exports[`Display should render correctly 1`] = `ReactWrapper {}`;
 exports[`Display should support react-node 1`] = `ReactWrapper {}`;
 
 exports[`Display should work with shadow and width 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {},
     "children": Array [
@@ -64,8 +64,13 @@ initialize {
                     "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -88,10 +93,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 2.5rem auto 0;
+          margin: 2.5em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -166,8 +171,13 @@ initialize {
                   "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -190,10 +200,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 2.5rem auto 0;
+          margin: 2.5em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -255,8 +265,13 @@ initialize {
                 "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -279,10 +294,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 2.5rem auto 0;
+          margin: 2.5em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -371,6 +386,7 @@ initialize {
         "next": Node {
           "attribs": Object {
             "class": "display ",
+            "width": "50px",
           },
           "children": Array [
             Node {
@@ -423,8 +439,13 @@ initialize {
                       "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 50px;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -447,10 +468,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 1.3rem auto 0;
+          margin: 1.3em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -525,8 +546,13 @@ initialize {
                     "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 50px;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -549,10 +575,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 1.3rem auto 0;
+          margin: 1.3em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -614,8 +640,13 @@ initialize {
                   "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 50px;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -638,10 +669,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 1.3rem auto 0;
+          margin: 1.3em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -733,9 +764,11 @@ initialize {
           "type": "tag",
           "x-attribsNamespace": Object {
             "class": undefined,
+            "width": undefined,
           },
           "x-attribsPrefix": Object {
             "class": undefined,
+            "width": undefined,
           },
         },
         "parent": [Circular],
@@ -751,6 +784,7 @@ initialize {
       Node {
         "attribs": Object {
           "class": "display ",
+          "width": "50px",
         },
         "children": Array [
           Node {
@@ -803,8 +837,13 @@ initialize {
                     "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 50px;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -827,10 +866,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 1.3rem auto 0;
+          margin: 1.3em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -905,8 +944,13 @@ initialize {
                   "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 50px;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -929,10 +973,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 1.3rem auto 0;
+          margin: 1.3em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -994,8 +1038,13 @@ initialize {
                 "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 50px;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -1018,10 +1067,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 1.3rem auto 0;
+          margin: 1.3em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -1164,8 +1213,13 @@ initialize {
                       "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -1188,10 +1242,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 2.5rem auto 0;
+          margin: 2.5em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -1266,8 +1320,13 @@ initialize {
                     "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -1290,10 +1349,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 2.5rem auto 0;
+          margin: 2.5em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -1355,8 +1414,13 @@ initialize {
                   "data": "
         .display {
           display: block;
-          margin: 2.5rem auto;
           max-width: 100%;
+          font-size: calc(0.875 * 16px);
+          width: 100%;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: calc(2.5 * 16px) auto calc(2.5 * 16px)
+            auto;
         }
 
         .content {
@@ -1379,10 +1443,10 @@ initialize {
         }
 
         .caption {
-          font-size: 0.875rem;
-          line-height: 1.571em;
+          font-size: inherit;
+          line-height: 1.5em;
           color: #666;
-          margin: 2.5rem auto 0;
+          margin: 2.5em auto 0;
           text-align: center;
           max-width: 85%;
         }
@@ -1482,9 +1546,11 @@ initialize {
         "type": "tag",
         "x-attribsNamespace": Object {
           "class": undefined,
+          "width": undefined,
         },
         "x-attribsPrefix": Object {
           "class": undefined,
+          "width": undefined,
         },
       },
     ],
@@ -1506,7 +1572,83 @@ initialize {
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

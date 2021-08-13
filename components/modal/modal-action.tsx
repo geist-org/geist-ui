@@ -1,15 +1,9 @@
-import React, {
-  MouseEvent,
-  PropsWithoutRef,
-  RefAttributes,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-} from 'react'
+import React, { MouseEvent, useImperativeHandle, useMemo, useRef } from 'react'
 import css from 'styled-jsx/css'
 import useTheme from '../use-theme'
 import { useModalContext } from './modal-context'
 import Button, { ButtonProps } from '../button/button'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
   close: () => void
@@ -28,19 +22,25 @@ const defaultProps = {
   disabled: false,
 }
 
-export type ModalActionProps = Props &
-  typeof defaultProps &
-  Omit<ButtonProps, keyof Props>
+export type ModalActionProps = Props & Omit<ButtonProps, keyof Props>
 
-const ModalAction = React.forwardRef<
+const ModalActionComponent = React.forwardRef<
   HTMLButtonElement,
   React.PropsWithChildren<ModalActionProps>
 >(
   (
-    { className, children, onClick, passive, disabled, ...props },
+    {
+      className,
+      children,
+      onClick,
+      passive,
+      disabled,
+      ...props
+    }: React.PropsWithChildren<ModalActionProps> & typeof defaultProps,
     ref: React.Ref<HTMLButtonElement | null>,
   ) => {
     const theme = useTheme()
+    const { SCALES } = useScaleable()
     const btnRef = useRef<HTMLButtonElement>(null)
     const { close } = useModalContext()
     useImperativeHandle(ref, () => btnRef.current)
@@ -63,7 +63,7 @@ const ModalAction = React.forwardRef<
 
     const { className: resolveClassName, styles } = css.resolve`
       button.btn {
-        font-size: 0.75rem;
+        font-size: ${SCALES.font(0.75)};
         border: none;
         color: ${color};
         background-color: ${theme.palette.background};
@@ -73,7 +73,7 @@ const ModalAction = React.forwardRef<
         -webkit-box-pack: center;
         justify-content: center;
         flex: 1;
-        height: 100%;
+        height: ${SCALES.height(3.5625)};
         border-radius: 0;
         min-width: 0;
       }
@@ -103,14 +103,7 @@ const ModalAction = React.forwardRef<
   },
 )
 
-type ModalActionComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
->
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  Partial<Omit<ButtonProps, keyof Props>>
-
-ModalAction.defaultProps = defaultProps
-
-export default ModalAction as ModalActionComponent<HTMLButtonElement, ComponentProps>
+ModalActionComponent.defaultProps = defaultProps
+ModalActionComponent.displayName = 'GeistModalAction'
+const ModalAction = withScaleable(ModalActionComponent)
+export default ModalAction

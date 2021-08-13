@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Card should render correctly when nested 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
       "class": "card ",
@@ -41,14 +41,16 @@ initialize {
                                   "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -78,14 +80,16 @@ initialize {
                                 "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -120,9 +124,6 @@ initialize {
                               "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -130,6 +131,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -177,9 +182,6 @@ initialize {
                             "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -187,6 +189,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -226,14 +232,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -263,14 +271,16 @@ initialize {
                                   "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -323,14 +333,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -366,14 +378,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -406,14 +420,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -443,14 +459,16 @@ initialize {
                                   "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -485,9 +503,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -495,6 +510,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -542,9 +561,6 @@ initialize {
                               "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -552,6 +568,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -591,14 +611,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -628,14 +650,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -706,9 +730,6 @@ initialize {
                       "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -716,6 +737,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -763,9 +788,6 @@ initialize {
                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -773,6 +795,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -822,14 +848,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -859,14 +887,16 @@ initialize {
                                   "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -901,9 +931,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -911,6 +938,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -958,9 +989,6 @@ initialize {
                               "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -968,6 +996,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -1007,14 +1039,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1044,14 +1078,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1104,14 +1140,16 @@ initialize {
                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1147,14 +1185,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1187,14 +1227,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1224,14 +1266,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1266,9 +1310,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -1276,6 +1317,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -1323,9 +1368,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -1333,6 +1375,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -1372,14 +1418,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1409,14 +1457,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1505,14 +1555,16 @@ initialize {
                   "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1548,14 +1600,16 @@ initialize {
                 "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1598,14 +1652,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1635,14 +1691,16 @@ initialize {
                                   "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1677,9 +1735,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -1687,6 +1742,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -1734,9 +1793,6 @@ initialize {
                               "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -1744,6 +1800,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -1783,14 +1843,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1820,14 +1882,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1880,14 +1944,16 @@ initialize {
                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1923,14 +1989,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -1963,14 +2031,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2000,14 +2070,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2042,9 +2114,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -2052,6 +2121,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -2099,9 +2172,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -2109,6 +2179,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -2148,14 +2222,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2185,14 +2261,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2263,9 +2341,6 @@ initialize {
                         "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -2273,6 +2348,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -2320,9 +2399,6 @@ initialize {
                       "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -2330,6 +2406,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -2379,14 +2459,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2416,14 +2498,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2458,9 +2542,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -2468,6 +2549,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -2515,9 +2600,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -2525,6 +2607,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -2564,14 +2650,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2601,14 +2689,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2661,14 +2751,16 @@ initialize {
                               "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2704,14 +2796,16 @@ initialize {
                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2744,14 +2838,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2781,14 +2877,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2823,9 +2921,6 @@ initialize {
                                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -2833,6 +2928,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -2880,9 +2979,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -2890,6 +2986,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -2929,14 +3029,16 @@ initialize {
                                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -2966,14 +3068,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3080,9 +3184,6 @@ initialize {
               "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -3090,6 +3191,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -3137,9 +3242,6 @@ initialize {
             "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -3147,6 +3249,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -3206,14 +3312,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3243,14 +3351,16 @@ initialize {
                                   "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3285,9 +3395,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -3295,6 +3402,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -3342,9 +3453,6 @@ initialize {
                               "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -3352,6 +3460,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -3391,14 +3503,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3428,14 +3542,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3488,14 +3604,16 @@ initialize {
                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3531,14 +3649,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3571,14 +3691,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3608,14 +3730,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3650,9 +3774,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -3660,6 +3781,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -3707,9 +3832,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -3717,6 +3839,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -3756,14 +3882,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3793,14 +3921,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -3871,9 +4001,6 @@ initialize {
                         "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -3881,6 +4008,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -3928,9 +4059,6 @@ initialize {
                       "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -3938,6 +4066,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -3987,14 +4119,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4024,14 +4158,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4066,9 +4202,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -4076,6 +4209,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -4123,9 +4260,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -4133,6 +4267,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -4172,14 +4310,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4209,14 +4349,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4269,14 +4411,16 @@ initialize {
                               "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4312,14 +4456,16 @@ initialize {
                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4352,14 +4498,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4389,14 +4537,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4431,9 +4581,6 @@ initialize {
                                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -4441,6 +4588,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -4488,9 +4639,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -4498,6 +4646,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -4537,14 +4689,16 @@ initialize {
                                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4574,14 +4728,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4670,14 +4826,16 @@ initialize {
                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4713,14 +4871,16 @@ initialize {
                   "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4763,14 +4923,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4800,14 +4962,16 @@ initialize {
                                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4842,9 +5006,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -4852,6 +5013,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -4899,9 +5064,6 @@ initialize {
                                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -4909,6 +5071,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -4948,14 +5114,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -4985,14 +5153,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5045,14 +5215,16 @@ initialize {
                               "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5088,14 +5260,16 @@ initialize {
                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5128,14 +5302,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5165,14 +5341,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5207,9 +5385,6 @@ initialize {
                                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -5217,6 +5392,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -5264,9 +5443,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -5274,6 +5450,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -5313,14 +5493,16 @@ initialize {
                                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5350,14 +5532,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5428,9 +5612,6 @@ initialize {
                           "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -5438,6 +5619,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -5485,9 +5670,6 @@ initialize {
                         "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -5495,6 +5677,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -5544,14 +5730,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5581,14 +5769,16 @@ initialize {
                                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5623,9 +5813,6 @@ initialize {
                                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -5633,6 +5820,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -5680,9 +5871,6 @@ initialize {
                                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -5690,6 +5878,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -5729,14 +5921,16 @@ initialize {
                                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5766,14 +5960,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5826,14 +6022,16 @@ initialize {
                                 "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5869,14 +6067,16 @@ initialize {
                               "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5909,14 +6109,16 @@ initialize {
                                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5946,14 +6148,16 @@ initialize {
                                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -5988,9 +6192,6 @@ initialize {
                                       "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -5998,6 +6199,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -6045,9 +6250,6 @@ initialize {
                                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -6055,6 +6257,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -6094,14 +6300,16 @@ initialize {
                                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6131,14 +6339,16 @@ initialize {
                                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6276,7 +6486,83 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,
@@ -6286,7 +6572,7 @@ initialize {
 `;
 
 exports[`Card should support shadow and hoverable 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {},
     "children": Array [
@@ -6309,14 +6595,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6346,14 +6634,16 @@ initialize {
                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6388,9 +6678,6 @@ initialize {
                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -6398,6 +6685,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -6445,9 +6736,6 @@ initialize {
                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -6455,6 +6743,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -6494,14 +6786,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6531,14 +6825,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6603,14 +6899,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6640,14 +6938,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6682,9 +6982,6 @@ initialize {
                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -6692,6 +6989,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -6739,9 +7040,6 @@ initialize {
                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -6749,6 +7047,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -6788,14 +7090,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6825,14 +7129,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6897,14 +7203,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6934,14 +7242,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -6976,9 +7286,6 @@ initialize {
                       "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -6986,6 +7293,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -7033,9 +7344,6 @@ initialize {
                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -7043,6 +7351,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -7082,14 +7394,16 @@ initialize {
                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7119,14 +7433,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7222,14 +7538,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7259,14 +7577,16 @@ initialize {
                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7301,9 +7621,6 @@ initialize {
                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -7311,6 +7628,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -7358,9 +7679,6 @@ initialize {
                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -7368,6 +7686,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -7407,14 +7729,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7444,14 +7768,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7516,14 +7842,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7553,14 +7881,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7595,9 +7925,6 @@ initialize {
                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -7605,6 +7932,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -7652,9 +7983,6 @@ initialize {
                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -7662,6 +7990,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -7701,14 +8033,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7738,14 +8072,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7822,14 +8158,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7859,14 +8197,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -7901,9 +8241,6 @@ initialize {
                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -7911,6 +8248,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -7958,9 +8299,6 @@ initialize {
                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -7968,6 +8306,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -8007,14 +8349,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8044,14 +8388,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8135,14 +8481,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8172,14 +8520,16 @@ initialize {
                     "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8214,9 +8564,6 @@ initialize {
                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -8224,6 +8571,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -8271,9 +8622,6 @@ initialize {
                 "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -8281,6 +8629,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -8320,14 +8672,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8357,14 +8711,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8431,14 +8787,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8468,14 +8826,16 @@ initialize {
                       "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8510,9 +8870,6 @@ initialize {
                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -8520,6 +8877,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -8567,9 +8928,6 @@ initialize {
                   "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
@@ -8577,6 +8935,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid transparent;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -8616,14 +8978,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8653,14 +9017,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8727,14 +9093,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8764,14 +9132,16 @@ initialize {
                         "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8806,9 +9176,6 @@ initialize {
                       "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -8816,6 +9183,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -8863,9 +9234,6 @@ initialize {
                     "data": "
         .card {
           background: #fff;
-          margin: 0;
-          padding: 0;
-          width: 100%;
           transition: all 0.2s ease;
           border-radius: 5px;
           box-shadow: none;
@@ -8873,6 +9241,10 @@ initialize {
           color: #000;
           background-color: #fff;
           border: 1px solid #eaeaea;
+          width: auto;
+          height: auto;
+          padding: 0 0 0 0;
+          margin: 0 0 0 0;
         }
 
         .card:hover {
@@ -8912,14 +9284,16 @@ initialize {
                             "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -8949,14 +9323,16 @@ initialize {
                           "data": "
         .content {
           width: 100%;
-          padding: 16pt 16pt;
+          height: auto;
+          padding: calc(1 * 16px) calc(1 * 16px) calc(1 * 16px) calc(1 * 16px);
+          margin: 0 0 0 0;
         }
 
-        .content &gt; :global(*:first-child) {
+        .content &gt; :global(p:first-child) {
           margin-top: 0;
         }
 
-        .content &gt; :global(*:last-child) {
+        .content &gt; :global(p:last-child) {
           margin-bottom: 0;
         }
       ",
@@ -9048,7 +9424,83 @@ initialize {
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

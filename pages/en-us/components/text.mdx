@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Text } from 'components'
 
 export const meta = {
-  title: 'text',
+  title: 'Text',
   group: 'General',
   index: 10,
 }
@@ -17,7 +17,7 @@ Display text using well-defined typographic styles.
   scope={{ Text }}
   code={`
 () => {
-  const text = 'The evil rabbit jumps over the fence.'
+  const text = 'Geist UI Components'
   return (
     <>
       <Text h1>{text}</Text>
@@ -39,14 +39,14 @@ Display text using well-defined typographic styles.
   code={`
 <>
   <Text p>
-   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+   Caching is very important for fast Web sites. This article describes different methods of caching and how to use HTTP Headers to control them.
   </Text>
-
   <Text p b>
-   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+   A brief description of the changes between the early versions of HTTP, to the modern HTTP/2, the emergent HTTP/3 and beyond.
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Small"
@@ -54,21 +54,21 @@ Display text using well-defined typographic styles.
   code={`
 <>
   <Text small>
-   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+   HTTP response codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes: informational responses, successful responses, redirections, client errors, and servers errors.
   </Text>
-
   <Text small i>
-   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+   HTTP response codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes: informational responses, successful responses, redirections, client errors, and servers errors.
   </Text>
 </>
-`} />
+`}
+/>
 
 <Playground
   title="Blockquote"
   scope={{ Text }}
   code={`
-<Text blockquote>
-  Our mission is to make cloud computing accessible to everyone.
+<Text blockquote my={0}>
+  Send cookies from the server to the user-agent.
 </Text>
 `}
 />
@@ -77,23 +77,14 @@ Display text using well-defined typographic styles.
   title="Types"
   scope={{ Text }}
   code={`
-<>
-  <Text type="success">
-    Our mission is to make cloud computing accessible to everyone.
-  </Text>
-  <Text type="warning">
-    Our mission is to make cloud computing accessible to everyone.
-  </Text>
-  <Text type="secondary">
-    Our mission is to make cloud computing accessible to everyone.
-  </Text>
-  <Text type="error">
-    Our mission is to make cloud computing accessible to everyone.
-  </Text>
-  <Text style={{ color: '#ccc' }}>
-    Our mission is to make cloud computing accessible to everyone.
-  </Text>
-</>
+<Text b i style={{ letterSpacing: '0.6px' }}>
+  <Text span type="success">G</Text>
+  <Text span type="warning">e</Text>
+  <Text span type="secondary">i</Text>
+  <Text span type="error">s</Text>
+  <Text span style={{ color: '#ccc' }}>t</Text>
+  <Text span type="success" ml="5px">UI</Text>
+</Text>
 `}
 />
 
@@ -102,11 +93,10 @@ Display text using well-defined typographic styles.
   scope={{ Text }}
   code={`
 <>
-  <Text size={12}>Font Size: 12px;</Text>
-  <Text size={14}>Font Size: 14px;</Text>
-  <Text size="100%">Font Size: 100%;</Text>
-  <Text size="1.25rem">Font Size: 1.25rem;</Text>
-  <Text size="2em">Font Size: 2em;</Text>
+  <Text font="12px" mt={0}>Font Size: 12px;</Text>
+  <Text font="14px">Font Size: 14px;</Text>
+  <Text font="1rem">Font Size: 1rem;</Text>
+  <Text scale={1.25} mb={0}>Font Size Scale: 1.25;</Text>
 </>
 `}
 />
@@ -117,13 +107,13 @@ Display text using well-defined typographic styles.
   scope={{ Text }}
   code={`
 <>
-  <Text p>
-   Our mission is to make cloud computing accessible to everyone. We build products for developers and designers. And those who aspire to become one.
+  <Text p mt={0}>
+   Specifies origins that are allowed to see values of attributes retrieved via features of the Resource Timing API, which would otherwise be reported as zero due to cross-origin restrictions.
   </Text>
 
-  <Text>
-    <Text small del>Our mission is to make cloud computing accessible to everyone.</Text>
-    <Text small b>We build products for developers and designers. And those who aspire to become one.</Text>
+  <Text mb={0}>
+    <Text small del>Indicates if the resource transmitted should be displayed inline (default behavior without the header),</Text>
+    <Text small b>or if it should be handled like a download and the browser should present a “Save As” dialog.</Text>
   </Text>
 </>
 `} />
@@ -131,20 +121,19 @@ Display text using well-defined typographic styles.
 <Attributes edit="/pages/en-us/components/text.mdx">
 <Attributes.Title>Text.Props</Attributes.Title>
 
-| Attribute      | Description    | Type                | Accepted values          | Default         |
-| -------------- | -------------- | ------------------- | ------------------------ | --------------- |
-| **p**          | component name | `boolean`           | -                        | `true`          |
-| **h1 - h6**    | component name | `boolean`           | -                        | `false`         |
-| **small**      | component name | `boolean`           | -                        | `false`         |
-| **span**       | component name | `boolean`           | -                        | `false`         |
-| **del**        | component name | `boolean`           | -                        | `false`         |
-| **i**          | component name | `boolean`           | -                        | `false`         |
-| **em**         | component name | `boolean`           | -                        | `false`         |
-| **b**          | component name | `boolean`           | -                        | `false`         |
-| **blockquote** | component name | `boolean`           | -                        | `false`         |
-| **size**       | size of text   | `string` / `number` | -                        | follow elements |
-| **type**       | text type      | `NormalTypes`       | [TextTypes](#texttypes)  | `default`       |
-| ...            | native props   | `HTMLAttributes`    | `'id', 'className', ...` | -               |
+| Attribute      | Description    | Type             | Accepted values          | Default   |
+| -------------- | -------------- | ---------------- | ------------------------ | --------- |
+| **p**          | component name | `boolean`        | -                        | `true`    |
+| **h1 - h6**    | component name | `boolean`        | -                        | `false`   |
+| **small**      | component name | `boolean`        | -                        | `false`   |
+| **span**       | component name | `boolean`        | -                        | `false`   |
+| **del**        | component name | `boolean`        | -                        | `false`   |
+| **i**          | component name | `boolean`        | -                        | `false`   |
+| **em**         | component name | `boolean`        | -                        | `false`   |
+| **b**          | component name | `boolean`        | -                        | `false`   |
+| **blockquote** | component name | `boolean`        | -                        | `false`   |
+| **type**       | text type      | `TextTypes`      | [TextTypes](#texttypes)  | `default` |
+| ...            | native props   | `HTMLAttributes` | `'id', 'className', ...` | -         |
 
 <Attributes.Title>TextTypes</Attributes.Title>
 

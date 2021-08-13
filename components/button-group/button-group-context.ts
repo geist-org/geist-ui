@@ -1,8 +1,7 @@
 import React from 'react'
-import { NormalSizes, ButtonTypes } from '../utils/prop-types'
+import { ButtonTypes } from '../utils/prop-types'
 
 export interface ButtonGroupConfig {
-  size?: NormalSizes
   type?: ButtonTypes
   ghost?: boolean
   disabled?: boolean

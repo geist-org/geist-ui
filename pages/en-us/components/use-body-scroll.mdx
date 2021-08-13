@@ -2,11 +2,11 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Button, Spacer, Text, Link, useBodyScroll } from 'components'
 
 export const meta = {
-  title: 'use-body-scroll',
+  title: 'useBodyScroll',
   group: 'Utils',
 }
 
-## Use body scroll
+## useBodyScroll
 
 Disable scrolling behavior for body or any element, it is useful for displaying popup element or menus.
 
@@ -21,10 +21,9 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
   return (
     <>
       <Text small b type={hidden ? 'error' : 'default'}>{hidden ? 'Body disabled.' : 'Body can be scrolled.'}</Text>
-      <Spacer y={.75} />
-      <Button size="small" type="success-light" auto onClick={() => setHidden(true)}>disable scroll</Button>
-      <Spacer y={.5} />
-      <Button size="small" type="secondary-light" auto onClick={() => setHidden(false)}>reset</Button>
+      <Spacer h={.75} />
+      <Button scale={0.5} type="success-light" auto onClick={() => setHidden(true)}>disable scroll</Button>
+      <Button ml="20px" scale={0.5} type="secondary-light" auto onClick={() => setHidden(false)}>reset</Button>
     </>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 import { mount } from 'enzyme'
 import { Table, Code } from 'components'
-import { cellActions } from 'components/table/table-cell'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 import { act } from 'react-dom/test-utils'
+import { TableColumnRender } from 'components/table/table-types'
 
 const data = [
   { property: 'type', description: 'Content type', default: '-' },
@@ -18,6 +18,20 @@ describe('Table', () => {
         <Table.Column prop="property" label="property" />
         <Table.Column prop="description" label="description" />
         <Table.Column prop="default" label="default" />
+      </Table>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('should work correctly with multiple identical props', () => {
+    const wrapper = mount(
+      <Table data={data}>
+        <Table.Column prop="property" label="property" />
+        <Table.Column prop="description" label="description" />
+        <Table.Column prop="property" label="property2" />
+        <Table.Column prop="property" label="property3" />
+        <Table.Column prop="description" label="description2" />
       </Table>,
     )
     expect(wrapper.html()).toMatchSnapshot()
@@ -99,47 +113,39 @@ describe('Table', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should be possible to remove the row', () => {
-    const operation = (actions: cellActions) => {
-      return <button onClick={() => actions.remove()}>Remove</button>
+  it('should be render specified elements', async () => {
+    type Item = {
+      property: string
+      description: string
+      operation: string
     }
-    const data = [{ property: 'bold', description: 'boolean', operation }]
-    const wrapper = mount(
-      <Table data={data}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="operation" label="operation" />
-      </Table>,
-    )
-    expect(wrapper.find('tbody').find('tr').length).toBe(1)
-    wrapper.find('tbody').find('button').simulate('click')
-    expect(wrapper.find('tbody').find('tr').length).toBe(0)
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
-  it('should be possible to update the row', () => {
-    const operation = (actions: cellActions) => {
+    const renderAction: TableColumnRender<Item> = (value, rowData, index) => {
       return (
-        <button
-          onClick={() =>
-            actions.update({ property: 'test', description: 'test', operation })
-          }>
-          Update
-        </button>
+        <div>
+          <button id="test-btn">Remove</button>
+          <div id="value">{value}</div>
+          <div id="row-data">{rowData.description}</div>
+          <div id="row-index">{index}</div>
+        </div>
       )
     }
+    const operation = Math.random().toString(16).slice(-10)
     const data = [{ property: 'bold', description: 'boolean', operation }]
     const wrapper = mount(
-      <Table data={data}>
-        <Table.Column prop="property" label="property" />
-        <Table.Column prop="description" label="description" />
-        <Table.Column prop="operation" label="operation" />
+      <Table<Item> data={data}>
+        <Table.Column<Item> prop="property" label="property" />
+        <Table.Column<Item> prop="description" label="description" />
+        <Table.Column<Item> prop="operation" label="operation" render={renderAction} />
       </Table>,
     )
-    expect(wrapper.find('tbody').find('tr').length).toBe(1)
-    wrapper.find('tbody').find('button').simulate('click')
-    expect(wrapper.find('tbody').find('tr').find('td').first().text()).toContain('test')
-    expect(() => wrapper.unmount()).not.toThrow()
+    const buttons = wrapper.find('tbody').find('#test-btn')
+    expect(buttons.length).not.toEqual(0)
+    const value = wrapper.find('tbody').find('#value').html()
+    expect(value).toMatch(operation)
+    const rowData = wrapper.find('tbody').find('#row-data').html()
+    expect(rowData).toMatch(`${data[0].description}`)
+    const rowIndex = wrapper.find('tbody').find('#row-index').html()
+    expect(rowIndex).toMatch(`0`)
   })
 
   it('should render emptyText when data missing', () => {

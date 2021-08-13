@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[` User should support image and text 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {},
     "children": Array [
@@ -36,8 +36,6 @@ initialize {
                     Node {
                       "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -45,11 +43,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -58,13 +56,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -102,8 +101,6 @@ initialize {
                   Node {
                     "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -111,11 +108,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -124,13 +121,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -281,14 +279,19 @@ initialize {
                     "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -296,9 +299,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -307,7 +310,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -455,14 +458,19 @@ initialize {
                   "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -470,9 +478,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -481,7 +489,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -535,8 +543,6 @@ initialize {
                       Node {
                         "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -544,11 +550,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -557,13 +563,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -601,8 +608,6 @@ initialize {
                     Node {
                       "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -610,11 +615,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -623,13 +628,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -705,14 +711,19 @@ initialize {
                 "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -720,9 +731,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -731,7 +742,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -875,8 +886,6 @@ initialize {
                         Node {
                           "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -884,11 +893,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -897,13 +906,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -941,8 +951,6 @@ initialize {
                       Node {
                         "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -950,11 +958,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -963,13 +971,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -1058,6 +1067,7 @@ initialize {
                 Node {
                   "attribs": Object {
                     "class": "avatar-img",
+                    "draggable": "false",
                     "src": "https://unix.bio/assets/avatar.png",
                   },
                   "children": Array [],
@@ -1069,8 +1079,6 @@ initialize {
                       Node {
                         "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -1078,11 +1086,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -1091,13 +1099,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -1124,10 +1133,12 @@ initialize {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
+                    "draggable": undefined,
                     "src": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
+                    "draggable": undefined,
                     "src": undefined,
                   },
                 },
@@ -1137,8 +1148,6 @@ initialize {
                     Node {
                       "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -1146,11 +1155,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -1159,13 +1168,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -1185,6 +1195,7 @@ initialize {
                   "prev": Node {
                     "attribs": Object {
                       "class": "avatar-img",
+                      "draggable": "false",
                       "src": "https://unix.bio/assets/avatar.png",
                     },
                     "children": Array [],
@@ -1196,10 +1207,12 @@ initialize {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
+                      "draggable": undefined,
                       "src": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
+                      "draggable": undefined,
                       "src": undefined,
                     },
                   },
@@ -1311,14 +1324,19 @@ initialize {
                       "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -1326,9 +1344,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -1337,7 +1355,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -1485,14 +1503,19 @@ initialize {
                     "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -1500,9 +1523,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -1511,7 +1534,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -1547,6 +1570,7 @@ initialize {
                   Node {
                     "attribs": Object {
                       "class": "avatar-img",
+                      "draggable": "false",
                       "src": "https://unix.bio/assets/avatar.png",
                     },
                     "children": Array [],
@@ -1558,8 +1582,6 @@ initialize {
                         Node {
                           "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -1567,11 +1589,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -1580,13 +1602,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -1613,10 +1636,12 @@ initialize {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
+                      "draggable": undefined,
                       "src": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
+                      "draggable": undefined,
                       "src": undefined,
                     },
                   },
@@ -1626,8 +1651,6 @@ initialize {
                       Node {
                         "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -1635,11 +1658,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -1648,13 +1671,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -1674,6 +1698,7 @@ initialize {
                     "prev": Node {
                       "attribs": Object {
                         "class": "avatar-img",
+                        "draggable": "false",
                         "src": "https://unix.bio/assets/avatar.png",
                       },
                       "children": Array [],
@@ -1685,10 +1710,12 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "class": undefined,
+                        "draggable": undefined,
                         "src": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "class": undefined,
+                        "draggable": undefined,
                         "src": undefined,
                       },
                     },
@@ -1725,14 +1752,19 @@ initialize {
                   "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -1740,9 +1772,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -1751,7 +1783,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -1877,6 +1909,7 @@ initialize {
                     Node {
                       "attribs": Object {
                         "class": "avatar-img",
+                        "draggable": "false",
                         "src": "https://unix.bio/assets/avatar.png",
                       },
                       "children": Array [],
@@ -1888,8 +1921,6 @@ initialize {
                           Node {
                             "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -1897,11 +1928,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -1910,13 +1941,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -1943,10 +1975,12 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "class": undefined,
+                        "draggable": undefined,
                         "src": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "class": undefined,
+                        "draggable": undefined,
                         "src": undefined,
                       },
                     },
@@ -1956,8 +1990,6 @@ initialize {
                         Node {
                           "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -1965,11 +1997,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -1978,13 +2010,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -2004,6 +2037,7 @@ initialize {
                       "prev": Node {
                         "attribs": Object {
                           "class": "avatar-img",
+                          "draggable": "false",
                           "src": "https://unix.bio/assets/avatar.png",
                         },
                         "children": Array [],
@@ -2015,10 +2049,12 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "class": undefined,
+                          "draggable": undefined,
                           "src": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "class": undefined,
+                          "draggable": undefined,
                           "src": undefined,
                         },
                       },
@@ -2089,6 +2125,7 @@ initialize {
               Node {
                 "attribs": Object {
                   "class": "avatar-img",
+                  "draggable": "false",
                   "src": "https://unix.bio/assets/avatar.png",
                 },
                 "children": Array [],
@@ -2100,8 +2137,6 @@ initialize {
                     Node {
                       "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -2109,11 +2144,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -2122,13 +2157,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -2155,10 +2191,12 @@ initialize {
                 "type": "tag",
                 "x-attribsNamespace": Object {
                   "class": undefined,
+                  "draggable": undefined,
                   "src": undefined,
                 },
                 "x-attribsPrefix": Object {
                   "class": undefined,
+                  "draggable": undefined,
                   "src": undefined,
                 },
               },
@@ -2168,8 +2206,6 @@ initialize {
                   Node {
                     "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -2177,11 +2213,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -2190,13 +2226,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -2216,6 +2253,7 @@ initialize {
                 "prev": Node {
                   "attribs": Object {
                     "class": "avatar-img",
+                    "draggable": "false",
                     "src": "https://unix.bio/assets/avatar.png",
                   },
                   "children": Array [],
@@ -2227,10 +2265,12 @@ initialize {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
+                    "draggable": undefined,
                     "src": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
+                    "draggable": undefined,
                     "src": undefined,
                   },
                 },
@@ -2342,14 +2382,19 @@ initialize {
                     "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -2357,9 +2402,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -2368,7 +2413,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -2516,14 +2561,19 @@ initialize {
                   "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -2531,9 +2581,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -2542,7 +2592,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -2578,6 +2628,7 @@ initialize {
                 Node {
                   "attribs": Object {
                     "class": "avatar-img",
+                    "draggable": "false",
                     "src": "https://unix.bio/assets/avatar.png",
                   },
                   "children": Array [],
@@ -2589,8 +2640,6 @@ initialize {
                       Node {
                         "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -2598,11 +2647,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -2611,13 +2660,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -2644,10 +2694,12 @@ initialize {
                   "type": "tag",
                   "x-attribsNamespace": Object {
                     "class": undefined,
+                    "draggable": undefined,
                     "src": undefined,
                   },
                   "x-attribsPrefix": Object {
                     "class": undefined,
+                    "draggable": undefined,
                     "src": undefined,
                   },
                 },
@@ -2657,8 +2709,6 @@ initialize {
                     Node {
                       "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -2666,11 +2716,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -2679,13 +2729,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -2705,6 +2756,7 @@ initialize {
                   "prev": Node {
                     "attribs": Object {
                       "class": "avatar-img",
+                      "draggable": "false",
                       "src": "https://unix.bio/assets/avatar.png",
                     },
                     "children": Array [],
@@ -2716,10 +2768,12 @@ initialize {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
+                      "draggable": undefined,
                       "src": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
+                      "draggable": undefined,
                       "src": undefined,
                     },
                   },
@@ -2756,14 +2810,19 @@ initialize {
                 "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -2771,9 +2830,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -2782,7 +2841,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -2908,6 +2967,7 @@ initialize {
                   Node {
                     "attribs": Object {
                       "class": "avatar-img",
+                      "draggable": "false",
                       "src": "https://unix.bio/assets/avatar.png",
                     },
                     "children": Array [],
@@ -2919,8 +2979,6 @@ initialize {
                         Node {
                           "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -2928,11 +2986,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -2941,13 +2999,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -2974,10 +3033,12 @@ initialize {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "class": undefined,
+                      "draggable": undefined,
                       "src": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "class": undefined,
+                      "draggable": undefined,
                       "src": undefined,
                     },
                   },
@@ -2987,8 +3048,6 @@ initialize {
                       Node {
                         "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -2996,11 +3055,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -3009,13 +3068,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -3035,6 +3095,7 @@ initialize {
                     "prev": Node {
                       "attribs": Object {
                         "class": "avatar-img",
+                        "draggable": "false",
                         "src": "https://unix.bio/assets/avatar.png",
                       },
                       "children": Array [],
@@ -3046,10 +3107,12 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "class": undefined,
+                        "draggable": undefined,
                         "src": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "class": undefined,
+                        "draggable": undefined,
                         "src": undefined,
                       },
                     },
@@ -3119,8 +3182,6 @@ initialize {
                       Node {
                         "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -3128,11 +3189,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -3141,13 +3202,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -3185,8 +3247,6 @@ initialize {
                     Node {
                       "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -3194,11 +3254,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -3207,13 +3267,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -3364,14 +3425,19 @@ initialize {
                       "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -3379,9 +3445,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -3390,7 +3456,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -3538,14 +3604,19 @@ initialize {
                     "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -3553,9 +3624,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -3564,7 +3635,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -3618,8 +3689,6 @@ initialize {
                         Node {
                           "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -3627,11 +3696,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -3640,13 +3709,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -3684,8 +3754,6 @@ initialize {
                       Node {
                         "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -3693,11 +3761,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -3706,13 +3774,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -3788,14 +3857,19 @@ initialize {
                   "data": "
         .user {
           display: inline-flex;
-          padding: 0 8pt;
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: calc(1 * 16px);
+          font-size: var(--user-font-size);
+          width: max-content;
+          height: auto;
+          padding: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
+          margin: 0 0 0 0;
         }
 
         .names {
+          font-size: inherit;
           margin-left: 8pt;
           display: inline-flex;
           flex-direction: column;
@@ -3803,9 +3877,9 @@ initialize {
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: #111;
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -3814,7 +3888,7 @@ initialize {
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: #444;
         }
 
@@ -3958,8 +4032,6 @@ initialize {
                           Node {
                             "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -3967,11 +4039,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -3980,13 +4052,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -4024,8 +4097,6 @@ initialize {
                         Node {
                           "data": "
         .avatar {
-          width: 32px;
-          height: 32px;
           display: inline-block;
           position: relative;
           overflow: hidden;
@@ -4033,11 +4104,11 @@ initialize {
           border-radius: 50%;
           vertical-align: top;
           background-color: #fff;
+          box-sizing: border-box;
+          width: calc(1.75 * 16px);
+          height: calc(1.75 * 16px);
+          padding: 0 0 0 0;
           margin: 0 0 0 0;
-        }
-
-        .avatar:first-child {
-          margin: 0;
         }
 
         .avatar-img {
@@ -4046,13 +4117,14 @@ initialize {
           width: 100%;
           height: 100%;
           border-radius: 50%;
+          user-select: none;
         }
 
         .avatar-text {
           position: absolute;
           left: 50%;
           top: 50%;
-          font-size: 1em;
+          font-size: calc(1 * 16px);
           text-align: center;
           transform: translate(-50%, -50%) scale(0.65);
           white-space: nowrap;
@@ -4166,7 +4238,83 @@ initialize {
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

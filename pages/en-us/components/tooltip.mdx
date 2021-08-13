@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Tooltip, Spacer, Row, Col, Button, Link, Badge, Code, Text } from 'components'
+import { Tooltip, Spacer, Button, Link, Badge, Code, Text, Grid } from 'components'
 
 export const meta = {
   title: 'Tooltip',
@@ -32,148 +32,136 @@ Displays additional information on hover.
 <Playground
   title="With Components"
   desc="Combined with different components."
-  scope={{ Tooltip, Button, Link, Spacer, Row, Badge }}
+  scope={{ Tooltip, Button, Link, Spacer, Badge }}
   code={`
-<Row align="middle">
+<div>
   <Tooltip text={'Push to Git and your website is live.'} type="dark">
-    <Button auto size="small">Button</Button>
+    <Button auto scale={1/2}>Button</Button>
   </Tooltip>
-  <Spacer inline x={1} />
+  <Spacer inline w={1} />
   <Tooltip text={'Push to Git and your website is live.'} type="dark">
     <Badge>1000+</Badge>
   </Tooltip>
-  <Spacer inline x={1} />
+  <Spacer inline w={1} />
   <Tooltip text={'Push to Git and your website is live.'} type="dark">
     <Link href="#" color>Hyperlink</Link>
   </Tooltip>
-</Row>
+</div>
 `}
 />
 
 <Playground
   title="Custom Content"
   desc="You can customize the pop-up content."
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  scope={{ Tooltip, Spacer, Code, Text }}
   code={`
-<Row align="middle">
+<div>
   <Tooltip text={<>Perfect for working with a <Code>CMS</Code>.</>}>
     <span>Top</span>
   </Tooltip>
-  <Spacer inline x={2.5} />
+  <Spacer inline w={2.5} />
   <Tooltip text={<><Text b>Perfect</Text> for working with a CMS.</>} placement="bottom">
     <span>Bottom</span>
   </Tooltip>
-</Row>
+</div>
 `}
 />
 
 <Playground
   title="Types"
   desc="Different state."
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  scope={{ Tooltip, Spacer, Code, Text }}
   code={`
-<Row align="middle">
+<div>
   <Tooltip text="Perfect for working with a CMS." type="dark">
     <span>Dark</span>
   </Tooltip>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={1.5} />
   <Tooltip text="Perfect for working with a CMS." type="success">
     <span>Success</span>
   </Tooltip>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={1.5} />
   <Tooltip text="Perfect for working with a CMS." type="warning">
     <span>Warning</span>
   </Tooltip>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={1.5} />
   <Tooltip text="Perfect for working with a CMS." type="error">
     <span>Error</span>
   </Tooltip>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={1.5} />
   <Tooltip text="Perfect for working with a CMS." type="secondary">
     <span>Secondary</span>
   </Tooltip>
-</Row>
+</div>
 `}
 />
 
 <Playground
   title="Variant"
   desc="Special styles."
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  scope={{ Tooltip, Spacer, Code, Text }}
   code={`
-<Row align="middle">
+<div>
   <Tooltip text="Push to Git and your website is live." type="lite">
     <span>Lite</span>
   </Tooltip>
-  <Spacer inline x={2.5} />
+  <Spacer inline w={2.5} />
   <Tooltip text="Push to Git and your website is live." hideArrow>
     <span>No Arrow</span>
   </Tooltip>
-</Row>
+</div>
 `}
 />
 
 <Playground
   title="Placements"
   desc="There are 12 `placement` options available."
-  scope={{ Tooltip, Spacer, Row, Col }}
+  scope={{ Tooltip, Spacer, Grid }}
   code={`
 () => {
-  const text = 'The Evil Rabbit Jumped over the Fence'
-  const Center = ({ children, ...props }) => (
-    <Col style={{ display: 'flex', justifyContent: 'center' }} {...props}>{children}</Col>
-  )
+  const text = 'HTTP is stateless, but not sessionless'
   return (
-    <div style={{ width: '80%', margin: '0 auto' }}>
-      <Row justify="center">
-        <Center span={5}>
-          <Tooltip text={text} placement="topStart" type="dark">topStart</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="top" type="dark">top</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="topEnd" type="dark">topEnd</Tooltip>
-        </Center>
-      </Row>
-      <Row justify="space-between">
-        <Center span={5}>
-          <Tooltip text={text} placement="leftStart" type="dark">leftStart</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="rightStart" type="dark">rightStart</Tooltip>
-        </Center>
-      </Row>
-      <Spacer y={.5} />
-      <Row justify="space-between">
-        <Center span={5}>
-          <Tooltip text={text} placement="left" type="dark">left</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="right" type="dark">right</Tooltip>
-        </Center>
-      </Row>
-      <Spacer y={.5} />
-      <Row justify="space-between">
-        <Center span={5}>
-          <Tooltip text={text} placement="leftEnd" type="dark">leftEnd</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="rightEnd" type="dark">rightEnd</Tooltip>
-        </Center>
-      </Row>
-      <Row justify="center">
-        <Center span={5}>
-          <Tooltip text={text} placement="bottomStart" type="dark">bottomStart</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="bottom" type="dark">bottom</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="bottomEnd" type="dark">bottomEnd</Tooltip>
-        </Center>
-      </Row>
-    </div>
+    <Grid.Container gap={1.5} justify="center" alignItems="center">
+      <Grid xs={8} justify="flex-end">
+        <Tooltip text={text} placement="topStart" type="dark">topStart</Tooltip>
+      </Grid>
+      <Grid xs={8} justify="center">
+        <Tooltip text={text} placement="top" type="dark">top</Tooltip>
+      </Grid>
+      <Grid xs={8}>
+        <Tooltip text={text} placement="topEnd" type="dark">topEnd</Tooltip>
+      </Grid>
+      <Grid xs={6} justify="flex-end">
+        <Tooltip text={text} placement="leftStart" type="dark">leftStart</Tooltip>
+      </Grid>
+      <Grid xs={12} />
+      <Grid xs={6}>
+        <Tooltip text={text} placement="rightStart" type="dark">rightStart</Tooltip>
+      </Grid>
+      <Grid xs={6} justify="flex-end">
+        <Tooltip text={text} placement="left" type="dark">left</Tooltip>
+      </Grid>
+      <Grid xs={12} />
+      <Grid xs={6}>
+        <Tooltip text={text} placement="right" type="dark">right</Tooltip>
+      </Grid>
+      <Grid xs={6} justify="flex-end">
+        <Tooltip text={text} placement="leftEnd" type="dark">leftEnd</Tooltip>
+      </Grid>
+      <Grid xs={12} />
+      <Grid xs={6}>
+        <Tooltip text={text} placement="rightEnd" type="dark">rightEnd</Tooltip>
+      </Grid>
+      <Grid xs={8} justify="flex-end">
+        <Tooltip text={text} placement="bottomStart" type="dark">bottomStart</Tooltip>
+      </Grid>
+      <Grid xs={8} justify="center">
+        <Tooltip text={text} placement="bottom" type="dark">bottom</Tooltip>
+      </Grid>
+      <Grid xs={8}>
+        <Tooltip text={text} placement="bottomEnd" type="dark">bottomEnd</Tooltip>
+      </Grid>
+    </Grid.Container>
   )
 }
 `}
@@ -182,21 +170,21 @@ Displays additional information on hover.
 <Attributes edit="/pages/en-us/components/tooltip.mdx">
 <Attributes.Title>Tooltip.Props</Attributes.Title>
 
-| Attribute           | Description                                    | Type                          | Accepted values                  | Default   |
-| ------------------- | ---------------------------------------------- | ----------------------------- | -------------------------------- | --------- |
-| **text**            | text of pop-up                                 | `string` `React.ReactNode`    | -                                | -         |
-| **visible**         | visible or not                                 | `boolean`                     | -                                | `false`   |
-| **initialVisible**  | visible on initial                             | `boolean`                     | -                                | `false`   |
-| **hideArrow**       | hide arrow icon                                | `boolean`                     | -                                | `false`   |
-| **type**            | preset style type                              | [TooltipTypes](#tooltiptypes) | -                                | `default` |
-| **placement**       | position of the tooltip relative to the target | [Placement](#placement)       | -                                | `top`     |
-| **trigger**         | tooltip trigger mode                           | `'click' / 'hover'`           | -                                | `hover`   |
-| **enterDelay**(ms)  | delay before tooltip is shown                  | `number`                      | -                                | `100`     |
-| **leaveDelay**(ms)  | delay before tooltip is hidden                 | `number`                      | -                                | `0`       |
-| **offset**(px)      | distance between pop-up and target             | `number`                      | -                                | `12`      |
-| **portalClassName** | className of pop-up box                        | `string`                      | -                                | -         |
-| **onVisibleChange** | call when visibility of the tooltip is changed | `(visible: boolean) => void`  | -                                | -         |
-| ...                 | native props                                   | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
+| Attribute           | Description                                                | Type                          | Accepted values | Default   |
+| ------------------- | ---------------------------------------------------------- | ----------------------------- | --------------- | --------- |
+| **text**            | text of pop-up                                             | `string` `React.ReactNode`    | -               | -         |
+| **visible**         | visible or not                                             | `boolean`                     | -               | `false`   |
+| **initialVisible**  | visible on initial                                         | `boolean`                     | -               | `false`   |
+| **hideArrow**       | hide arrow icon                                            | `boolean`                     | -               | `false`   |
+| **type**            | preset style type                                          | [TooltipTypes](#tooltiptypes) | -               | `default` |
+| **placement**       | position of the tooltip relative to the target             | [Placement](#placement)       | -               | `top`     |
+| **trigger**         | tooltip trigger mode                                       | `'click' / 'hover'`           | -               | `hover`   |
+| **enterDelay**(ms)  | delay before tooltip is shown                              | `number`                      | -               | `100`     |
+| **leaveDelay**(ms)  | delay before tooltip is hidden (only work in 'hover' mode) | `number`                      | -               | `150`     |
+| **offset**(px)      | distance between pop-up and target                         | `number`                      | -               | `12`      |
+| **portalClassName** | className of pop-up box                                    | `string`                      | -               | -         |
+| **onVisibleChange** | call when visibility of the tooltip is changed             | `(visible: boolean) => void`  | -               | -         |
+| ...                 | native props                                               | `HTMLAttributes`              | `'id' ...`      | -         |
 
 <Attributes.Title>TooltipTypes</Attributes.Title>
 

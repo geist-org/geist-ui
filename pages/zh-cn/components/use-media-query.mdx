@@ -1,14 +1,13 @@
-import { Layout, Playground, Attributes } from 'lib/components'
+import { Layout, Playground, PlaygroundTitle, Attributes } from 'lib/components'
 import { useMediaQuery, Link, Code, Spacer } from 'components'
 import NextLink from 'next/link'
-import PlaygroundTitle from 'lib/components/playground/title'
 
 export const meta = {
   title: '媒体查询 useMediaQuery',
   group: '工具包',
 }
 
-## Use MediaQuery / 媒体查询
+## useMediaQuery / 媒体查询
 
 用于 CSS 媒体查询的钩子，钩子通过 `MediaQuery` API 实现。如果你仅仅想要构建响应式的布局，
 请尝试 <NextLink href="/en-us/components/grid"><Link color>栅格组件</Link></NextLink>。

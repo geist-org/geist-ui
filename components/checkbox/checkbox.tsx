@@ -1,14 +1,16 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { useCheckbox } from './checkbox-context'
-import CheckboxGroup, { getCheckboxSize } from './checkbox-group'
 import CheckboxIcon from './checkbox.icon'
 import useWarning from '../utils/use-warning'
-import { NormalSizes } from '../utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
+import { getColors } from './styles'
+import useTheme from '../use-theme'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
-interface CheckboxEventTarget {
+export type CheckboxTypes = NormalTypes
+export interface CheckboxEventTarget {
   checked: boolean
 }
-
 export interface CheckboxEvent {
   target: CheckboxEventTarget
   stopPropagation: () => void
@@ -19,35 +21,37 @@ export interface CheckboxEvent {
 interface Props {
   checked?: boolean
   disabled?: boolean
+  type?: CheckboxTypes
   initialChecked?: boolean
   onChange?: (e: CheckboxEvent) => void
-  size?: NormalSizes
   className?: string
   value?: string
 }
 
 const defaultProps = {
   disabled: false,
+  type: 'default' as CheckboxTypes,
   initialChecked: false,
-  size: 'small' as NormalSizes,
   className: '',
   value: '',
 }
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
-export type CheckboxProps = Props & typeof defaultProps & NativeAttrs
+export type CheckboxProps = Props & NativeAttrs
 
-const Checkbox: React.FC<CheckboxProps> = ({
+const CheckboxComponent: React.FC<CheckboxProps> = ({
   checked,
   initialChecked,
   disabled,
   onChange,
   className,
   children,
-  size,
+  type,
   value,
   ...props
-}) => {
+}: CheckboxProps & typeof defaultProps) => {
+  const theme = useTheme()
+  const { SCALES } = useScaleable()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
   const { updateState, inGroup, disabledAll, values } = useCheckbox()
   const isDisabled = inGroup ? disabledAll || disabled : disabled
@@ -66,7 +70,11 @@ const Checkbox: React.FC<CheckboxProps> = ({
     }, [values.join(',')])
   }
 
-  const fontSize = useMemo(() => getCheckboxSize(size), [size])
+  const { fill, bg } = useMemo(
+    () => getColors(theme.palette, type),
+    [theme.palette, type],
+  )
+
   const changeHandle = useCallback(
     (ev: React.ChangeEvent) => {
       if (isDisabled) return
@@ -94,8 +102,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
   }, [checked])
 
   return (
-    <label className={`${className}`}>
-      <CheckboxIcon disabled={isDisabled} checked={selfChecked} />
+    <label className={`checkbox ${className}`}>
+      <CheckboxIcon fill={fill} bg={bg} disabled={isDisabled} checked={selfChecked} />
       <input
         type="checkbox"
         disabled={isDisabled}
@@ -106,22 +114,24 @@ const Checkbox: React.FC<CheckboxProps> = ({
       <span className="text">{children}</span>
 
       <style jsx>{`
-        label {
-          --checkbox-size: ${fontSize};
+        .checkbox {
+          --checkbox-size: ${SCALES.font(0.875)};
           display: inline-flex;
           justify-content: center;
           align-items: center;
-          width: auto;
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
           opacity: ${isDisabled ? 0.75 : 1};
-          height: var(--checkbox-size);
           line-height: var(--checkbox-size);
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'var(--checkbox-size)')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .text {
           font-size: var(--checkbox-size);
           line-height: var(--checkbox-size);
-          padding-left: calc(var(--checkbox-size) * 0.57);
+          padding-left: calc(var(--checkbox-size) * 0.5);
           user-select: none;
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
         }
@@ -135,6 +145,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
           margin: 0;
           padding: 0;
           z-index: -1;
+          font-size: 0;
           background-color: transparent;
         }
       `}</style>
@@ -142,14 +153,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
   )
 }
 
-Checkbox.defaultProps = defaultProps
-
-type CheckboxComponent<P = {}> = React.FC<P> & {
-  Group: typeof CheckboxGroup
-}
-
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-export default Checkbox as CheckboxComponent<ComponentProps>
+CheckboxComponent.defaultProps = defaultProps
+CheckboxComponent.displayName = 'GeistCheckbox'
+const Checkbox = withScaleable(CheckboxComponent)
+export default Checkbox

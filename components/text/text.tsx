@@ -1,8 +1,9 @@
 import React, { ReactNode, useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import { NormalTypes } from '../utils/prop-types'
 import TextChild from './child'
+import { withScaleable } from '../use-scaleable'
 
+export type TextTypes = NormalTypes
 interface Props {
   h1?: boolean
   h2?: boolean
@@ -19,8 +20,7 @@ interface Props {
   em?: boolean
   blockquote?: boolean
   className?: string
-  size?: string | number
-  type?: NormalTypes
+  type?: TextTypes
 }
 
 const defaultProps = {
@@ -39,31 +39,23 @@ const defaultProps = {
   em: false,
   blockquote: false,
   className: '',
-  type: 'default' as NormalTypes,
+  type: 'default' as TextTypes,
 }
 
 type ElementMap = { [key in keyof JSX.IntrinsicElements]?: boolean }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TextProps = Props & typeof defaultProps & NativeAttrs
+export type TextProps = Props & NativeAttrs
 
 type TextRenderableElements = Array<keyof JSX.IntrinsicElements>
 
-const getModifierChild = (
-  tags: TextRenderableElements,
-  children: ReactNode,
-  size?: string | number,
-) => {
+const getModifierChild = (tags: TextRenderableElements, children: ReactNode) => {
   if (!tags.length) return children
   const nextTag = tags.slice(1, tags.length)
-  return (
-    <TextChild tag={tags[0]} size={size}>
-      {getModifierChild(nextTag, children, size)}
-    </TextChild>
-  )
+  return <TextChild tag={tags[0]}>{getModifierChild(nextTag, children)}</TextChild>
 }
 
-const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
+const TextComponent: React.FC<React.PropsWithChildren<TextProps>> = ({
   h1,
   h2,
   h3,
@@ -78,11 +70,10 @@ const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
   del,
   em,
   blockquote,
-  size,
   children,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<TextProps> & typeof defaultProps) => {
   const elements: ElementMap = { h1, h2, h3, h4, h5, h6, p, blockquote }
   const inlineElements: ElementMap = { span, small, b, em, i, del }
   const names = Object.keys(elements).filter(
@@ -114,16 +105,17 @@ const Text: React.FC<React.PropsWithChildren<TextProps>> = ({
 
   const modifers = useMemo(() => {
     if (!renderableChildElements.length) return children
-    return getModifierChild(renderableChildElements, children, size)
-  }, [renderableChildElements, children, size])
+    return getModifierChild(renderableChildElements, children)
+  }, [renderableChildElements, children])
 
   return (
-    <TextChild className={className} tag={tag} size={size} {...props}>
+    <TextChild className={className} tag={tag} {...props}>
       {modifers}
     </TextChild>
   )
 }
 
-const MemoText = React.memo(Text)
-
-export default withDefaults(MemoText, defaultProps)
+TextComponent.defaultProps = defaultProps
+TextComponent.displayName = 'GeistText'
+const Text = withScaleable(TextComponent)
+export default Text

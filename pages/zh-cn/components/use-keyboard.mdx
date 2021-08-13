@@ -1,0 +1,81 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useKeyboard, KeyCode, KeyMod, Keyboard, Input, Link } from 'components'
+
+export const meta = {
+  title: '键盘事件 useKeyboard',
+  group: '工具包',
+}
+
+## useKeyboard / 键盘事件
+
+用户监听多个键盘事件的钩子。
+
+这是一个自定义的 React Hooks，你需要在使用时遵循 <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">钩子的基础规则</Link>。
+
+<Playground
+  desc="全局的键盘事件。"
+  scope={{ useKeyboard, KeyCode, KeyMod, Keyboard }}
+  code={`
+() => {
+  useKeyboard(
+    () => alert('保存成功！'),
+    [KeyCode.KEY_S, KeyMod.CtrlCmd]
+  )
+  return <div>按下 <Keyboard command scale={0.5}>S</Keyboard> 以保存。</div>
+}
+`}
+/>
+
+<Playground
+  title="元素事件"
+  desc="只在指定元素上监听元素事件。"
+  scope={{ useKeyboard, KeyCode, KeyMod, Keyboard, Input }}
+  code={`
+() => {
+  const { bindings } = useKeyboard(
+    () => alert('A 是不被允许的'),
+    [KeyCode.KEY_A],
+    { disableGlobalEvent: true },
+  )
+  return (
+  <div>
+    <p>键盘事件只在输入框被触发后才会响应。</p>
+    <Input {...bindings} placeholder="输入 A" />
+  </div>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/components/use-keyboard.mdx">
+<Attributes.Title>useKeyboard</Attributes.Title>
+
+```ts
+type KeyboardOptions = {
+  disableGlobalEvent: boolean,
+  stopPropagation: boolean
+  preventDefault: boolean
+  capture: boolean
+  event: 'keydown' | 'keypress' | 'keyup'
+}
+
+const useKeyboard = (
+  handler: (event: React.KeyboardEvent) => void,
+  keyBindings: Array<number> | number,
+  options?: KeyboardOptions,
+) => void
+```
+
+<Attributes.Title>KeyboardOptions</Attributes.Title>
+
+| 参数                   | 描述                             | 类型      | 推荐值                           | 默认      |
+| ---------------------- | -------------------------------- | --------- | -------------------------------- | --------- |
+| **disableGlobalEvent** | 禁止监听来自 Document 的全局事件 | `boolean` | -                                | `false`   |
+| **stopPropagation**    | 停止事件传播                     | `boolean` | -                                | `false`   |
+| **preventDefault**     | 阻止事件的默认行为               | `boolean` | -                                | `true`    |
+| **capture**            | 设置事件类型为捕获               | `boolean` | -                                | `false`   |
+| **event**              | 键盘事件的类型                   | `string`  | `'keydown', 'keypress', 'keyup'` | `keydown` |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

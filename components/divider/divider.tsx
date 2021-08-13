@@ -1,32 +1,25 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { DividerAlign, SnippetTypes } from '../utils/prop-types'
-import { getMargin } from '../spacer/spacer'
-import { GeistUIThemesPalette } from 'components/themes/presets'
+import { GeistUIThemesPalette } from '../themes/presets'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 export type DividerTypes = SnippetTypes
 
 interface Props {
-  x?: number
-  y?: number
-  volume?: number
   type?: DividerTypes
   align?: DividerAlign
   className?: string
 }
 
 const defaultProps = {
-  x: 0,
-  y: 2,
-  volume: 1,
   align: 'center' as DividerAlign,
   type: 'default' as DividerTypes,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type DividerProps = Props & typeof defaultProps & NativeAttrs
+export type DividerProps = Props & NativeAttrs
 
 const getColor = (type: DividerTypes, palette: GeistUIThemesPalette) => {
   const colors: { [key in DividerTypes]: string } = {
@@ -41,17 +34,15 @@ const getColor = (type: DividerTypes, palette: GeistUIThemesPalette) => {
   return colors[type]
 }
 
-const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
-  volume,
+const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
   type,
-  x,
-  y,
   align,
   children,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<DividerProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const color = useMemo(() => getColor(type, theme.palette), [type, theme.palette])
   const alignClassName = useMemo(() => {
     if (!align || align === 'center') return ''
@@ -59,20 +50,20 @@ const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
     return 'end'
   }, [align])
   const textColor = type === 'default' ? theme.palette.foreground : color
-  const top = y ? getMargin(y / 2) : 0
-  const left = x ? getMargin(x / 2) : 0
 
   return (
     <div role="separator" className={`divider ${className}`} {...props}>
       {children && <span className={`text ${alignClassName}`}>{children}</span>}
       <style jsx>{`
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(${volume} * 1px);
           background-color: ${color};
-          margin: ${top} ${left};
           position: relative;
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(0.0625)};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0.5)} ${SCALES.mr(0)} ${SCALES.mb(0.5)} ${SCALES.ml(0)};
         }
 
         .text {
@@ -84,8 +75,8 @@ const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 ${theme.layout.gap};
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: ${theme.palette.background};
@@ -108,6 +99,7 @@ const Divider: React.FC<React.PropsWithChildren<DividerProps>> = ({
   )
 }
 
-const MemoDivider = React.memo(Divider)
-
-export default withDefaults(MemoDivider, defaultProps)
+DividerComponent.defaultProps = defaultProps
+DividerComponent.displayName = 'GeistDivider'
+const Divider = withScaleable(DividerComponent)
+export default Divider

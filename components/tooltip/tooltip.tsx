@@ -1,19 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
-import TooltipContent from './tooltip-content'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import TooltipContent, { TooltipIconOffset } from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
 import { TriggerTypes, Placement, SnippetTypes } from '../utils/prop-types'
+import { withScaleable } from '../use-scaleable'
+import { getRect } from './helper'
 
 export type TooltipOnVisibleChange = (visible: boolean) => void
-
+export type TooltipTypes = SnippetTypes
+export type TooltipTriggers = TriggerTypes
+export type TooltipPlacement = Placement
 interface Props {
   text: string | React.ReactNode
-  type?: SnippetTypes
-  placement?: Placement
+  type?: TooltipTypes
+  placement?: TooltipPlacement
   visible?: boolean
   initialVisible?: boolean
   hideArrow?: boolean
-  trigger?: TriggerTypes
+  trigger?: TooltipTriggers
   enterDelay?: number
   leaveDelay?: number
   offset?: number
@@ -25,11 +28,11 @@ interface Props {
 const defaultProps = {
   initialVisible: false,
   hideArrow: false,
-  type: 'default' as SnippetTypes,
-  trigger: 'hover' as TriggerTypes,
-  placement: 'top' as Placement,
+  type: 'default' as TooltipTypes,
+  trigger: 'hover' as TooltipTriggers,
+  placement: 'top' as TooltipPlacement,
   enterDelay: 100,
-  leaveDelay: 0,
+  leaveDelay: 150,
   offset: 12,
   className: '',
   portalClassName: '',
@@ -37,9 +40,9 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type TooltipProps = Props & typeof defaultProps & NativeAttrs
+export type TooltipProps = Props & NativeAttrs
 
-const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
+const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   children,
   initialVisible,
   text,
@@ -55,16 +58,25 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   hideArrow,
   visible: customVisible,
   ...props
-}) => {
+}: React.PropsWithChildren<TooltipProps> & typeof defaultProps) => {
   const timer = useRef<number>()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState<boolean>(initialVisible)
+  const iconOffset = useMemo<TooltipIconOffset>(() => {
+    if (!ref?.current) return { x: '0.75em', y: '0.75em' }
+    const rect = getRect(ref)
+    return {
+      x: `${rect.width ? rect.width / 2 : 0}px`,
+      y: `${rect.height ? rect.height / 2 : 0}px`,
+    }
+  }, [ref?.current])
   const contentProps = {
     type,
     visible,
     offset,
     placement,
     hideArrow,
+    iconOffset,
     parent: ref,
     className: portalClassName,
   }
@@ -84,14 +96,14 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       timer.current = window.setTimeout(() => handler(true), enterDelay)
       return
     }
-    timer.current = window.setTimeout(() => handler(false), leaveDelay)
+    const leaveDelayWithoutClick = trigger === 'click' ? 0 : leaveDelay
+    timer.current = window.setTimeout(() => handler(false), leaveDelayWithoutClick)
   }
 
   const mouseEventHandler = (next: boolean) => trigger === 'hover' && changeVisible(next)
   const clickEventHandler = () => trigger === 'click' && changeVisible(!visible)
 
   useClickAway(ref, () => trigger === 'click' && changeVisible(false))
-
   useEffect(() => {
     if (customVisible === undefined) return
     changeVisible(customVisible)
@@ -117,4 +129,7 @@ const Tooltip: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   )
 }
 
-export default withDefaults(Tooltip, defaultProps)
+TooltipComponent.defaultProps = defaultProps
+TooltipComponent.displayName = 'GiestTooltip'
+const Tooltip = withScaleable(TooltipComponent)
+export default Tooltip

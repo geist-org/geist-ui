@@ -1,20 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Table should be no erros when width is too large 1`] = `
-"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th class=\\"\\"><div class=\\"thead-box\\">property</div></th><th class=\\"\\"><div class=\\"thead-box\\">description</div></th><th class=\\"\\"><div class=\\"thead-box\\">default</div></th></tr></thead><style>
         thead {
           border-collapse: separate;
           border-spacing: 0;
+          font-size: inherit;
         }
 
         th {
-          padding: 0 8pt;
-          font-size: 0.75rem;
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -42,12 +43,13 @@ exports[`Table should be no erros when width is too large 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
-      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+      </style><tbody><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">type</div></td><td class=\\"\\"><div class=\\"cell\\">Content type</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">Component</div></td><td class=\\"\\"><div class=\\"cell\\">DOM element to use</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">bold</div></td><td class=\\"\\"><div class=\\"cell\\">Bold style</div></td><td class=\\"\\"><div class=\\"cell\\">true</div></td></tr><style>
         tr {
           transition: background-color 0.25s ease;
+          font-size: inherit;
         }
 
         tr.hover:hover {
@@ -55,15 +57,15 @@ exports[`Table should be no erros when width is too large 1`] = `
         }
 
         tr :global(td) {
-          padding: 0 8pt;
+          padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: 3.125rem;
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -73,26 +75,32 @@ exports[`Table should be no erros when width is too large 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
         </style></table>"
 `;
 
 exports[`Table should render children for table head 1`] = `
-"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\"><code>property</code></div></th></tr></thead><style>
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th class=\\"\\"><div class=\\"thead-box\\"><code>property</code></div></th></tr></thead><style>
         thead {
           border-collapse: separate;
           border-spacing: 0;
+          font-size: inherit;
         }
 
         th {
-          padding: 0 8pt;
-          font-size: 0.75rem;
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -120,12 +128,13 @@ exports[`Table should render children for table head 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
-      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td></tr><style>
+      </style><tbody><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">type</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">Component</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">bold</div></td></tr><style>
         tr {
           transition: background-color 0.25s ease;
+          font-size: inherit;
         }
 
         tr.hover:hover {
@@ -133,15 +142,15 @@ exports[`Table should render children for table head 1`] = `
         }
 
         tr :global(td) {
-          padding: 0 8pt;
+          padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: 3.125rem;
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -151,26 +160,32 @@ exports[`Table should render children for table head 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
         </style></table>"
 `;
 
 exports[`Table should render correctly 1`] = `
-"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th class=\\"\\"><div class=\\"thead-box\\">property</div></th><th class=\\"\\"><div class=\\"thead-box\\">description</div></th><th class=\\"\\"><div class=\\"thead-box\\">default</div></th></tr></thead><style>
         thead {
           border-collapse: separate;
           border-spacing: 0;
+          font-size: inherit;
         }
 
         th {
-          padding: 0 8pt;
-          font-size: 0.75rem;
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -198,12 +213,13 @@ exports[`Table should render correctly 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
-      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+      </style><tbody><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">type</div></td><td class=\\"\\"><div class=\\"cell\\">Content type</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">Component</div></td><td class=\\"\\"><div class=\\"cell\\">DOM element to use</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">bold</div></td><td class=\\"\\"><div class=\\"cell\\">Bold style</div></td><td class=\\"\\"><div class=\\"cell\\">true</div></td></tr><style>
         tr {
           transition: background-color 0.25s ease;
+          font-size: inherit;
         }
 
         tr.hover:hover {
@@ -211,15 +227,15 @@ exports[`Table should render correctly 1`] = `
         }
 
         tr :global(td) {
-          padding: 0 8pt;
+          padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: 3.125rem;
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -229,26 +245,32 @@ exports[`Table should render correctly 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
         </style></table>"
 `;
 
 exports[`Table should set width automatically 1`] = `
-"<table class=\\"\\"><colgroup><col width=\\"25\\"><col width=\\"25\\"><col width=\\"50\\"></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+"<table class=\\"\\"><colgroup><col width=\\"25\\"><col width=\\"25\\"><col width=\\"50\\"></colgroup><thead><tr><th class=\\"\\"><div class=\\"thead-box\\">property</div></th><th class=\\"\\"><div class=\\"thead-box\\">description</div></th><th class=\\"\\"><div class=\\"thead-box\\">default</div></th></tr></thead><style>
         thead {
           border-collapse: separate;
           border-spacing: 0;
+          font-size: inherit;
         }
 
         th {
-          padding: 0 8pt;
-          font-size: 0.75rem;
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -276,12 +298,13 @@ exports[`Table should set width automatically 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
-      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+      </style><tbody><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">type</div></td><td class=\\"\\"><div class=\\"cell\\">Content type</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">Component</div></td><td class=\\"\\"><div class=\\"cell\\">DOM element to use</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">bold</div></td><td class=\\"\\"><div class=\\"cell\\">Bold style</div></td><td class=\\"\\"><div class=\\"cell\\">true</div></td></tr><style>
         tr {
           transition: background-color 0.25s ease;
+          font-size: inherit;
         }
 
         tr.hover:hover {
@@ -289,15 +312,15 @@ exports[`Table should set width automatically 1`] = `
         }
 
         tr :global(td) {
-          padding: 0 8pt;
+          padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: 3.125rem;
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -307,26 +330,117 @@ exports[`Table should set width automatically 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
+          }
+        </style></table>"
+`;
+
+exports[`Table should work correctly with multiple identical props 1`] = `
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th class=\\"\\"><div class=\\"thead-box\\">property3</div></th><th class=\\"\\"><div class=\\"thead-box\\">description2</div></th></tr></thead><style>
+        thead {
+          border-collapse: separate;
+          border-spacing: 0;
+          font-size: inherit;
+        }
+
+        th {
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-font-size));
+          font-weight: normal;
+          text-align: left;
+          letter-spacing: 0;
+          vertical-align: middle;
+          min-height: calc(2.5 * var(--table-font-size));
+          color: #666;
+          background: #fafafa;
+          border-bottom: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-radius: 0;
+        }
+
+        th:nth-child(1) {
+          border-bottom: 1px solid #eaeaea;
+          border-left: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+        th:last-child {
+          border-bottom: 1px solid #eaeaea;
+          border-right: 1px solid #eaeaea;
+          border-top: 1px solid #eaeaea;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+
+        .thead-box {
+          display: flex;
+          align-items: center;
+          -webkit-box-align: center;
+          min-height: calc(2.5 * var(--table-font-size));
+          text-transform: uppercase;
+        }
+      </style><tbody><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">type</div></td><td class=\\"\\"><div class=\\"cell\\">Content type</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">Component</div></td><td class=\\"\\"><div class=\\"cell\\">DOM element to use</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">bold</div></td><td class=\\"\\"><div class=\\"cell\\">Bold style</div></td></tr><style>
+        tr {
+          transition: background-color 0.25s ease;
+          font-size: inherit;
+        }
+
+        tr.hover:hover {
+          background-color: #fafafa;
+        }
+
+        tr :global(td) {
+          padding: 0 0.5em;
+          border-bottom: 1px solid #eaeaea;
+          color: #444;
+          font-size: calc(0.875 * var(--table-font-size));
+          text-align: left;
+        }
+
+        tr :global(.cell) {
+          min-height: calc(3.125 * var(--table-font-size));
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          flex-flow: row wrap;
+        }
+      </style></tbody><style>
+          table {
+            border-collapse: separate;
+            border-spacing: 0;
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
+            width: 100%;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
         </style></table>"
 `;
 
 exports[`Table should work with other components 1`] = `
-"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th class=\\"\\"><div class=\\"thead-box\\">property</div></th><th class=\\"\\"><div class=\\"thead-box\\">description</div></th><th class=\\"\\"><div class=\\"thead-box\\">default</div></th></tr></thead><style>
         thead {
           border-collapse: separate;
           border-spacing: 0;
+          font-size: inherit;
         }
 
         th {
-          padding: 0 8pt;
-          font-size: 0.75rem;
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -354,12 +468,13 @@ exports[`Table should work with other components 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
-      </style><tbody><tr class=\\"hover\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><tr class=\\"hover\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\"><code>boolean</code></div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+      </style><tbody><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">type</div></td><td class=\\"\\"><div class=\\"cell\\">Content type</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">Component</div></td><td class=\\"\\"><div class=\\"cell\\">DOM element to use</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">bold</div></td><td class=\\"\\"><div class=\\"cell\\">Bold style</div></td><td class=\\"\\"><div class=\\"cell\\">true</div></td></tr><tr class=\\"hover \\"><td class=\\"\\"><div class=\\"cell\\">bold</div></td><td class=\\"\\"><div class=\\"cell\\"><code>boolean</code></div></td><td class=\\"\\"><div class=\\"cell\\">true</div></td></tr><style>
         tr {
           transition: background-color 0.25s ease;
+          font-size: inherit;
         }
 
         tr.hover:hover {
@@ -367,15 +482,15 @@ exports[`Table should work with other components 1`] = `
         }
 
         tr :global(td) {
-          padding: 0 8pt;
+          padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: 3.125rem;
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -385,26 +500,32 @@ exports[`Table should work with other components 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
         </style></table>"
 `;
 
 exports[`Table should work without hover effect 1`] = `
-"<table class=\\"\\"><colgroup></colgroup><thead><tr><th><div class=\\"thead-box\\">property</div></th><th><div class=\\"thead-box\\">description</div></th><th><div class=\\"thead-box\\">default</div></th></tr></thead><style>
+"<table class=\\"\\"><colgroup></colgroup><thead><tr><th class=\\"\\"><div class=\\"thead-box\\">property</div></th><th class=\\"\\"><div class=\\"thead-box\\">description</div></th><th class=\\"\\"><div class=\\"thead-box\\">default</div></th></tr></thead><style>
         thead {
           border-collapse: separate;
           border-spacing: 0;
+          font-size: inherit;
         }
 
         th {
-          padding: 0 8pt;
-          font-size: 0.75rem;
+          padding: 0 0.5em;
+          font-size: calc(0.75 * var(--table-font-size));
           font-weight: normal;
           text-align: left;
           letter-spacing: 0;
           vertical-align: middle;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           color: #666;
           background: #fafafa;
           border-bottom: 1px solid #eaeaea;
@@ -432,12 +553,13 @@ exports[`Table should work without hover effect 1`] = `
           display: flex;
           align-items: center;
           -webkit-box-align: center;
-          min-height: 2.5rem;
+          min-height: calc(2.5 * var(--table-font-size));
           text-transform: uppercase;
         }
-      </style><tbody><tr class=\\"\\"><td><div class=\\"cell\\">type</div></td><td><div class=\\"cell\\">Content type</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"\\"><td><div class=\\"cell\\">Component</div></td><td><div class=\\"cell\\">DOM element to use</div></td><td><div class=\\"cell\\">-</div></td></tr><tr class=\\"\\"><td><div class=\\"cell\\">bold</div></td><td><div class=\\"cell\\">Bold style</div></td><td><div class=\\"cell\\">true</div></td></tr><style>
+      </style><tbody><tr class=\\" \\"><td class=\\"\\"><div class=\\"cell\\">type</div></td><td class=\\"\\"><div class=\\"cell\\">Content type</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\" \\"><td class=\\"\\"><div class=\\"cell\\">Component</div></td><td class=\\"\\"><div class=\\"cell\\">DOM element to use</div></td><td class=\\"\\"><div class=\\"cell\\">-</div></td></tr><tr class=\\" \\"><td class=\\"\\"><div class=\\"cell\\">bold</div></td><td class=\\"\\"><div class=\\"cell\\">Bold style</div></td><td class=\\"\\"><div class=\\"cell\\">true</div></td></tr><style>
         tr {
           transition: background-color 0.25s ease;
+          font-size: inherit;
         }
 
         tr.hover:hover {
@@ -445,15 +567,15 @@ exports[`Table should work without hover effect 1`] = `
         }
 
         tr :global(td) {
-          padding: 0 8pt;
+          padding: 0 0.5em;
           border-bottom: 1px solid #eaeaea;
           color: #444;
-          font-size: 0.875rem;
+          font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
 
         tr :global(.cell) {
-          min-height: 3.125rem;
+          min-height: calc(3.125 * var(--table-font-size));
           display: flex;
           -webkit-box-align: center;
           align-items: center;
@@ -463,7 +585,12 @@ exports[`Table should work without hover effect 1`] = `
           table {
             border-collapse: separate;
             border-spacing: 0;
+            --table-font-size: calc(1 * 16px);
+            font-size: var(--table-font-size);
             width: 100%;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
         </style></table>"
 `;

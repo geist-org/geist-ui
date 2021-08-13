@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { Avatar, Spacer } from 'components'
 
 export const meta = {
-  title: 'avatar',
+  title: 'Avatar',
   group: 'Data Display',
 }
 
@@ -22,30 +22,11 @@ Avatars represent a user or a team. Stacked avatars represent a group of people.
       <Avatar src={url} />
       <Avatar src={url} />
       <Avatar src={url} />
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Avatar src={url} isSquare />
       <Avatar src={url} isSquare />
       <Avatar src={url} isSquare />
       <Avatar src={url} isSquare />
-    </>
-  )
-}
-`}
-/>
-
-<Playground
-  title="Sizes"
-  desc="You can specify different sizes of `Avatar`."
-  scope={{ Avatar }}
-  code={`
-() => {
-  const url = '/images/avatar.png'
-  return (
-    <>
-      <Avatar src={url} size="mini" />
-      <Avatar src={url} size="small" />
-      <Avatar src={url} size="medium" />
-      <Avatar src={url} size="large" />
     </>
   )
 }
@@ -96,14 +77,13 @@ Avatars represent a user or a team. Stacked avatars represent a group of people.
 <Attributes edit="/pages/en-us/components/avatar.mdx">
 <Attributes.Title>Avatar.Props</Attributes.Title>
 
-| Attribute    | Description                        | Type                | Accepted values                              | Default  |
-| ------------ | ---------------------------------- | ------------------- | -------------------------------------------- | -------- |
-| **src**      | image src                          | `string`            | -                                            | -        |
-| **stacked**  | stacked display group              | `boolean`           | -                                            | `false`  |
-| **text**     | display text when image is missing | `string`            | -                                            | -        |
-| **size**     | avatar size                        | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
-| **isSquare** | avatar shape                       | `boolean`           | -                                            | `false`  |
-| ...          | native props                       | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...`     | -        |
+| Attribute    | Description                        | Type                | Accepted values                          | Default |
+| ------------ | ---------------------------------- | ------------------- | ---------------------------------------- | ------- |
+| **src**      | image src                          | `string`            | -                                        | -       |
+| **stacked**  | stacked display group              | `boolean`           | -                                        | `false` |
+| **text**     | display text when image is missing | `string`            | -                                        | -       |
+| **isSquare** | avatar shape                       | `boolean`           | -                                        | `false` |
+| ...          | native props                       | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | -       |
 
 <Attributes.Title>Avatar.Group.Props</Attributes.Title>
 

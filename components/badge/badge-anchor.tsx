@@ -1,12 +1,11 @@
 import React, { useMemo } from 'react'
-import withDefaults from '../utils/with-defaults'
 import { pickChild } from '../utils/collections'
 import { tuple } from '../utils/prop-types'
 import Badge from './badge'
 
 const placement = tuple('topLeft', 'topRight', 'bottomLeft', 'bottomRight')
 
-type BadgeAnchorPlacement = typeof placement[number]
+export type BadgeAnchorPlacement = typeof placement[number]
 
 interface Props {
   placement?: BadgeAnchorPlacement
@@ -19,7 +18,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type BadgeAnchorProps = Props & typeof defaultProps & NativeAttrs
+export type BadgeAnchorProps = Props & NativeAttrs
 
 type TransformStyles = {
   top?: string
@@ -63,7 +62,7 @@ const getTransform = (placement: BadgeAnchorPlacement): TransformStyles => {
 const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
   children,
   placement,
-}) => {
+}: BadgeAnchorProps & typeof defaultProps) => {
   const [withoutBadgeChildren, badgeChldren] = pickChild(children, Badge)
   const { top, bottom, left, right, value, origin } = useMemo(
     () => getTransform(placement),
@@ -99,6 +98,6 @@ const BadgeAnchor: React.FC<React.PropsWithChildren<BadgeAnchorProps>> = ({
   )
 }
 
-const MemoBadgeAnchor = React.memo(BadgeAnchor)
-
-export default withDefaults(MemoBadgeAnchor, defaultProps)
+BadgeAnchor.defaultProps = defaultProps
+BadgeAnchor.displayName = 'GeistBadgeAnchor'
+export default BadgeAnchor

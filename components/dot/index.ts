@@ -1,5 +1,4 @@
 import Dot from './dot'
-import { DotProps } from './dot'
 
-export type Props = DotProps
+export type { DotProps, DotTypes } from './dot'
 export default Dot

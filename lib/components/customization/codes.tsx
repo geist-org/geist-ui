@@ -68,7 +68,7 @@ const CustomizationCodes: React.FC<unknown> = () => {
   return (
     <div className="custom-codes">
       <h3 className="title">{isChinese ? '主题代码' : 'Theme Codes'}</h3>
-      <Spacer y={1} />
+      <Spacer h={1} />
       {isChinese ? (
         <Text>
           这里是你所有的变更，点击 <Code>copy</Code> 按钮即可使用在你自己的项目中。
@@ -78,7 +78,7 @@ const CustomizationCodes: React.FC<unknown> = () => {
           This is all your changes, click <Code>copy</Code> to use it in your own project.
         </Text>
       )}
-      <Spacer y={2} />
+      <Spacer h={2} />
       <div className="codes">
         <div className="copy" onClick={copyCode}>
           <CopyIcon />
@@ -87,7 +87,7 @@ const CustomizationCodes: React.FC<unknown> = () => {
           <LiveEditor />
         </LiveProvider>
       </div>
-      <Spacer y={5} />
+      <Spacer h={5} />
       <style jsx>{`
         .custom-codes {
           display: flex;
@@ -130,6 +130,7 @@ const CustomizationCodes: React.FC<unknown> = () => {
           cursor: pointer;
           user-select: none;
           transition: color 200ms ease;
+          --snippet-font-size: 16px;
         }
 
         .copy:hover {

@@ -1,41 +1,32 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
-import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
-import { GeistUIThemesPalette } from 'components/themes/presets'
+import { NormalTypes } from '../utils/prop-types'
+import { GeistUIThemesPalette } from '../themes/presets'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type LoadingTypes = NormalTypes
 interface Props {
-  size?: NormalSizes
-  type?: NormalTypes
+  type?: LoadingTypes
   color?: string
-  width?: string
-  height?: string
+  className?: string
+  spaceRatio?: number
 }
 
 const defaultProps = {
-  size: 'medium' as NormalSizes,
-  type: 'default' as NormalTypes,
+  type: 'default' as LoadingTypes,
+  className: '',
+  spaceRatio: 1,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type LoadingProps = Props & typeof defaultProps & NativeAttrs
-
-const getIconSize = (size: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: string } = {
-    mini: '2px',
-    small: '3px',
-    medium: '4px',
-    large: '5px',
-  }
-  return sizes[size]
-}
+export type LoadingProps = Props & NativeAttrs
 
 const getIconBgColor = (
-  type: NormalTypes,
+  type: LoadingTypes,
   palette: GeistUIThemesPalette,
   color?: string,
 ) => {
-  const colors: { [key in NormalTypes]: string } = {
+  const colors: { [key in LoadingTypes]: string } = {
     default: palette.accents_6,
     secondary: palette.secondary,
     success: palette.success,
@@ -46,22 +37,23 @@ const getIconBgColor = (
   return color ? color : colors[type]
 }
 
-const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
+const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   children,
-  size,
   type,
   color,
-}) => {
+  className,
+  spaceRatio,
+  ...props
+}: React.PropsWithChildren<LoadingProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const width = useMemo(() => getIconSize(size), [size])
-  const bgColor = useMemo(() => getIconBgColor(type, theme.palette, color), [
-    type,
-    theme.palette,
-    color,
-  ])
+  const { SCALES } = useScaleable()
+  const bgColor = useMemo(
+    () => getIconBgColor(type, theme.palette, color),
+    [type, theme.palette, color],
+  )
 
   return (
-    <div className="loading-container">
+    <div className={`loading-container ${className}`} {...props}>
       <span className="loading">
         {children && <label>{children}</label>}
         <i />
@@ -73,13 +65,18 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
           display: inline-flex;
           align-items: center;
           position: relative;
-          width: 100%;
-          height: 100%;
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, '100%')};
+          height: ${SCALES.height(1, '100%')};
+          min-height: 1em;
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         label {
-          margin-right: ${theme.layout.gapHalf};
+          margin-right: 0.5em;
           color: ${theme.palette.accents_5};
+          line-height: 1;
         }
 
         label :global(*) {
@@ -88,12 +85,11 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
 
         .loading {
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          top: 50%;
+          left: 50%;
           width: 100%;
           height: 100%;
+          transform: translate(-50%, -50%);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -102,11 +98,11 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
         }
 
         i {
-          width: ${width};
-          height: ${width};
+          width: 0.25em;
+          height: 0.25em;
           border-radius: 50%;
           background-color: ${bgColor};
-          margin: 0 1px;
+          margin: 0 calc(0.25em / 2 * ${spaceRatio});
           display: inline-block;
           animation: loading-blink 1.4s infinite both;
         }
@@ -137,6 +133,7 @@ const Loading: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   )
 }
 
-const MemoLoading = React.memo(Loading)
-
-export default withDefaults(MemoLoading, defaultProps)
+LoadingComponent.defaultProps = defaultProps
+LoadingComponent.displayName = 'GeistLoading'
+const Loading = withScaleable(LoadingComponent)
+export default Loading

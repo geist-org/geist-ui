@@ -1,6 +1,11 @@
 import Badge from './badge'
 import BadgeAnchor from './badge-anchor'
 
-Badge.Anchor = BadgeAnchor
+export type BadgeComponentType = typeof Badge & {
+  Anchor: typeof BadgeAnchor
+}
+;(Badge as BadgeComponentType).Anchor = BadgeAnchor
 
-export default Badge
+export type { BadgeProps, BadgeTypes } from './badge'
+export type { BadgeAnchorProps, BadgeAnchorPlacement } from './badge-anchor'
+export default Badge as BadgeComponentType

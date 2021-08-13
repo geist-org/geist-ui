@@ -1,20 +1,19 @@
 import React, { useMemo, useRef } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { SnippetTypes, CopyTypes, NormalTypes } from '../utils/prop-types'
 import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
 import useToasts from '../use-toasts'
-import useWarning from '../utils/use-warning'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type ToastTypes = NormalTypes
 interface Props {
   text?: string | string[]
   symbol?: string
   toastText?: string
-  toastType?: NormalTypes
+  toastType?: ToastTypes
   filled?: boolean
-  width?: string
   copy?: CopyTypes
   type?: SnippetTypes
   className?: string
@@ -24,15 +23,14 @@ const defaultProps = {
   filled: false,
   symbol: '$',
   toastText: 'Copied to clipboard!',
-  toastType: 'success' as NormalTypes,
-  width: 'initial',
+  toastType: 'success' as ToastTypes,
   copy: 'default' as CopyTypes,
   type: 'default' as SnippetTypes,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type SnippetProps = Props & typeof defaultProps & NativeAttrs
+export type SnippetProps = Props & NativeAttrs
 
 const textArrayToString = (text: string[]): string => {
   return text.reduce((pre, current) => {
@@ -41,7 +39,7 @@ const textArrayToString = (text: string[]): string => {
   }, '')
 }
 
-const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
+const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   type,
   filled,
   children,
@@ -49,26 +47,21 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   toastText,
   toastType,
   text,
-  width,
   copy: copyType,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<SnippetProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const { copy } = useClipboard()
   const [, setToast] = useToasts()
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
 
-  if (copyType === 'slient') {
-    useWarning('"slient" is deprecated, use "silent" instead of it.', 'Snippet')
-  }
-
-  const style = useMemo(() => getStyles(type, theme.palette, filled), [
-    type,
-    theme.palette,
-    filled,
-  ])
+  const style = useMemo(
+    () => getStyles(type, theme.palette, filled),
+    [type, theme.palette, filled],
+  )
   const showCopyIcon = useMemo(() => copyType !== 'prevent', [copyType])
   const childText = useMemo<string | undefined | null>(() => {
     if (isMultiLine) return textArrayToString(text as string[])
@@ -84,7 +77,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   const clickHandler = () => {
     if (!childText || !showCopyIcon) return
     copy(childText)
-    if (copyType === 'silent' || copyType === 'slient') return
+    if (copyType === 'silent') return
     setToast({ text: toastText, type: toastType })
   }
 
@@ -103,14 +96,19 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
       <style jsx>{`
         .snippet {
           position: relative;
-          width: ${width};
           max-width: 100%;
-          padding: ${theme.layout.gapHalf};
-          padding-right: calc(2 * ${theme.layout.gap});
           color: ${style.color};
           background-color: ${style.bgColor};
           border: 1px solid ${style.border};
           border-radius: ${theme.layout.radius};
+          --snippet-font-size: ${SCALES.font(0.8125)};
+          --snippet-padding-top: ${SCALES.pt(0.667)};
+          font-size: var(--snippet-font-size);
+          width: ${SCALES.width(1, 'initial')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0.667)} ${SCALES.pr(2.667)} ${SCALES.pb(0.667)}
+            ${SCALES.pl(0.667)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         pre {
@@ -119,7 +117,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           border: none;
           background-color: transparent;
           color: ${style.color};
-          font-size: 0.8125rem;
+          font-size: inherit;
         }
 
         pre::before {
@@ -137,18 +135,20 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
         .copy {
           position: absolute;
           right: 0;
-          top: -2px;
-          transform: translateY(50%);
+          top: 0;
+          bottom: 0;
+          height: calc(100% - 2px);
           background-color: ${style.bgColor};
           display: inline-flex;
           justify-content: center;
-          align-items: center;
-          width: calc(2 * ${theme.layout.gap});
+          align-items: ${isMultiLine ? 'flex-start' : 'center'};
+          width: calc(3.281 * var(--snippet-font-size));
           color: inherit;
           transition: opacity 0.2s ease 0s;
           border-radius: ${theme.layout.radius};
           cursor: pointer;
           user-select: none;
+          padding-top: ${isMultiLine ? 'var(--snippet-padding-top)' : 0};
         }
 
         .copy:hover {
@@ -159,6 +159,7 @@ const Snippet: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   )
 }
 
-const MemoSnippet = React.memo(Snippet)
-
-export default withDefaults(MemoSnippet, defaultProps)
+SnippetComponent.defaultProps = defaultProps
+SnippetComponent.displayName = 'GeistSnippet'
+const Snippet = withScaleable(SnippetComponent)
+export default Snippet

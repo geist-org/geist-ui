@@ -22,30 +22,11 @@ export const meta = {
       <Avatar src={url} />
       <Avatar src={url} />
       <Avatar src={url} />
-      <Spacer y={.5} />
+      <Spacer h={.5} />
       <Avatar src={url} isSquare />
       <Avatar src={url} isSquare />
       <Avatar src={url} isSquare />
       <Avatar src={url} isSquare />
-    </>
-  )
-}
-`}
-/>
-
-<Playground
-  title="大小"
-  desc="你可以指定每个 `Avatar` 组件的大小。"
-  scope={{ Avatar }}
-  code={`
-() => {
-  const url = '/images/avatar.png'
-  return (
-    <>
-      <Avatar src={url} size="mini" />
-      <Avatar src={url} size="small" />
-      <Avatar src={url} size="medium" />
-      <Avatar src={url} size="large" />
     </>
   )
 }
@@ -96,14 +77,13 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/avatar.mdx">
 <Attributes.Title>Avatar.Props</Attributes.Title>
 
-| 属性         | 描述                         | 类型                | 推荐值                                       | 默认     |
-| ------------ | ---------------------------- | ------------------- | -------------------------------------------- | -------- |
-| **src**      | 图像链接                     | `string`            | -                                            | -        |
-| **stacked**  | 是否堆叠显示                 | `boolean`           | -                                            | `false`  |
-| **text**     | 文本，当无图像链接时才会显示 | `string`            | -                                            | -        |
-| **size**     | 头像大小                     | `string` / `number` | `'mini', 'small', 'medium', 'large', number` | `medium` |
-| **isSquare** | 是否为方形头像               | `boolean`           | -                                            | `false`  |
-| ...          | 原生属性                     | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...`     | -        |
+| 属性         | 描述                         | 类型                | 推荐值                                   | 默认    |
+| ------------ | ---------------------------- | ------------------- | ---------------------------------------- | ------- |
+| **src**      | 图像链接                     | `string`            | -                                        | -       |
+| **stacked**  | 是否堆叠显示                 | `boolean`           | -                                        | `false` |
+| **text**     | 文本，当无图像链接时才会显示 | `string`            | -                                        | -       |
+| **isSquare** | 是否为方形头像               | `boolean`           | -                                        | `false` |
+| ...          | 原生属性                     | `ImgHTMLAttributes` | `'alt', 'crossOrigin', 'className', ...` | -       |
 
 <Attributes.Title>Avatar.Group.Props</Attributes.Title>
 

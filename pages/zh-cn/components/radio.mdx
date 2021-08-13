@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Radio, Spacer, Code, Text } from 'components'
+import { Radio, Code, Text, Spacer } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -42,27 +42,18 @@ export const meta = {
 />
 
 <Playground
-  title="大小"
-  desc="不同大小的单选框"
-  scope={{ Radio, Spacer, Text }}
+  title="类型"
+  desc="以色彩展示不同状态。"
+  scope={{ Radio, Spacer }}
   code={`
 <>
-  <Text span size="12px" type="secondary">单个</Text>
-  <div style={{ paddingLeft: '.25rem', marginTop: '.25rem' }}>
-    <Radio checked={false} size="mini">极小</Radio>
-    <Radio checked={false} size="small">较小</Radio>
-    <Radio checked={false} size="medium">中等</Radio>
-    <Radio checked={false} size="large">最大</Radio>
-  </div>
-  <Spacer y={.5} />
-  <Text span size="12px" type="secondary">单选框组</Text>
-  <div style={{ paddingLeft: '.25rem', marginTop: '.25rem' }}>
-    <Radio.Group size="mini">
-      <Radio value="1">选项 1</Radio>
-      <Radio value="2">选项 2</Radio>
-      <Radio value="3">选项 3</Radio>
-    </Radio.Group>
-  </div>
+  <Radio checked={false} type="default">Default</Radio>
+  <Spacer h={.5} />
+  <Radio checked={false} type="success">Success</Radio>
+  <Spacer h={.5} />
+  <Radio checked={false} type="warning">Warning</Radio>
+  <Spacer h={.5} />
+  <Radio checked={false} type="error">Error</Radio>
 </>
 `}
 />
@@ -118,38 +109,30 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/radio.mdx">
 <Attributes.Title>Radio.Props</Attributes.Title>
 
-| 属性         | 描述                              | 类型                      | 推荐值                          | 默认     |
-| ------------ | --------------------------------- | ------------------------- | ------------------------------- | -------- |
-| **checked**  | 是否选择 (仅在单独使用时有效)     | `boolean`                 | -                               | `false`  |
-| **value**    | 唯一的鉴别值 (仅在组内使用时有效) | `string`                  | -                               | -        |
-| **disabled** | 禁用当前选项                      | `boolean`                 | -                               | `false`  |
-| **size**     | 单选框的大小                      | `NormalSizes`             | [NormalSizes](#normalsizes)     | `medium` |
-| **onChange** | 选项变化事件                      | `(e: RadioEvent) => void` | -                               | -        |
-| ...          | 原生属性                          | `InputHTMLAttributes`     | `'id', 'alt', 'className', ...` | -        |
+| 属性         | 描述                              | 类型                      | 推荐值                          | 默认    |
+| ------------ | --------------------------------- | ------------------------- | ------------------------------- | ------- |
+| **checked**  | 是否选择 (仅在单独使用时有效)     | `boolean`                 | -                               | `false` |
+| **value**    | 唯一的鉴别值 (仅在组内使用时有效) | `string`                  | -                               | -       |
+| **disabled** | 禁用当前选项                      | `boolean`                 | -                               | `false` |
+| **onChange** | 选项变化事件                      | `(e: RadioEvent) => void` | -                               | -       |
+| ...          | 原生属性                          | `InputHTMLAttributes`     | `'id', 'alt', 'className', ...` | -       |
 
 <Attributes.Title>Radio.Group.Props</Attributes.Title>
 
-| 属性             | 描述                 | 类型                      | 推荐值                           | 默认     |
-| ---------------- | -------------------- | ------------------------- | -------------------------------- | -------- |
-| **initialValue** | 初始值               | `string`                  | -                                | -        |
-| **value**        | 设置选中的子选项值   | `string`                  | -                                | -        |
-| **useRow**       | 水平对齐所有子单选框 | `boolean`                 | -                                | `false`  |
-| **disabled**     | 禁用组内所有单选框   | `boolean`                 | -                                | `false`  |
-| **size**         | 组内所有单选框的大小 | `NormalSizes`             | [NormalSizes](#normalsizes)      | `medium` |
-| **onChange**     | 组的值变化事件       | `(value: string) => void` | -                                | -        |
-| ...              | 原生属性             | `HTMLAttributes`          | `'name', 'id', 'className', ...` | -        |
+| 属性             | 描述                 | 类型                      | 推荐值                           | 默认    |
+| ---------------- | -------------------- | ------------------------- | -------------------------------- | ------- |
+| **initialValue** | 初始值               | `string`                  | -                                | -       |
+| **value**        | 设置选中的子选项值   | `string`                  | -                                | -       |
+| **useRow**       | 水平对齐所有子单选框 | `boolean`                 | -                                | `false` |
+| **disabled**     | 禁用组内所有单选框   | `boolean`                 | -                                | `false` |
+| **onChange**     | 组的值变化事件       | `(value: string) => void` | -                                | -       |
+| ...              | 原生属性             | `HTMLAttributes`          | `'name', 'id', 'className', ...` | -       |
 
 <Attributes.Title alias="Radio.Desc">Radio.Description.Props</Attributes.Title>
 
 | 属性 | 描述     | 类型             | 推荐值                           | 默认 |
 | ---- | -------- | ---------------- | -------------------------------- | ---- |
 | ...  | 原生属性 | `HTMLAttributes` | `'name', 'id', 'className', ...` | -    |
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'mini' | 'small' | 'medium' | 'large'
-```
 
 </Attributes>
 

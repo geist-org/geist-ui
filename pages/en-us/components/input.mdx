@@ -16,7 +16,7 @@ Retrieve text input from a user.
   desc="Basic input field."
   scope={{ Input }}
   code={`
-<Input placeholder="The Evil Rabbit" />
+<Input placeholder="Geist UI" />
 `}
 />
 
@@ -26,10 +26,10 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input size="mini" placeholder="Mini Input" /> <Spacer y={.5} />
-  <Input size="small" placeholder="Small Input" /> <Spacer y={.5} />
-  <Input size="medium" placeholder="Medium Input" /> <Spacer y={.5} />
-  <Input size="large" placeholder="Large Input" />
+  <Input scale={1/3} placeholder="Scale 1/3" /> <Spacer h={.5} />
+  <Input scale={2/3} placeholder="Scale 2/3" /> <Spacer h={.5} />
+  <Input placeholder="Scale 1" /> <Spacer h={.5} />
+  <Input scale={4/3} placeholder="Scale 4/3" />
 </>
 `}
 />
@@ -39,7 +39,7 @@ Retrieve text input from a user.
   desc="Specify width or other styles."
   scope={{ Input }}
   code={`
-<Input placeholder="The Evil Rabbit" width="100%" />
+<Input placeholder="Geist UI" width="100%" />
 `}
 />
 
@@ -50,7 +50,7 @@ Retrieve text input from a user.
   code={`
 <>
   <Input disabled placeholder="Disabled" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input readOnly initialValue="readOnly" />
 </>
 `}
@@ -62,8 +62,8 @@ Retrieve text input from a user.
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input label="username" placeholder="The Evil Rabbit" />
-  <Spacer y={.5} />
+  <Input label="username" placeholder="Geist UI" />
+  <Spacer h={.5} />
   <Input labelRight=".com" placeholder="https://github" />
 </>
 `}
@@ -75,7 +75,7 @@ Retrieve text input from a user.
   scope={{ Input, Spacer, Text, Code, Dot }}
   code={`
 <>
-  <Input placeholder="Evil Rabbit">
+  <Input placeholder="Geist UI">
     Username
   </Input>
   <Spacer />
@@ -93,18 +93,18 @@ Retrieve text input from a user.
 />
 
 <Playground
-  title="status"
+  title="Type"
   desc="Differentiate states by color."
   scope={{ Input, Spacer }}
   code={`
 <>
-  <Input status="secondary" initialValue="The Evil Rabbit" />
-  <Spacer y={.5} />
-  <Input status="success" initialValue="The Evil Rabbit" />
-  <Spacer y={.5} />
-  <Input status="warning" initialValue="The Evil Rabbit" />
-  <Spacer y={.5} />
-  <Input status="error" initialValue="The Evil Rabbit" />
+  <Input type="secondary" initialValue="Geist UI" />
+  <Spacer h={.5} />
+  <Input type="success" initialValue="Geist UI" />
+  <Spacer h={.5} />
+  <Input type="warning" initialValue="Geist UI" />
+  <Spacer h={.5} />
+  <Input type="error" initialValue="Geist UI" />
 </>
 `}
 />
@@ -116,7 +116,7 @@ Retrieve text input from a user.
   code={`
 <>
   <Input icon={<GitIcon />} placeholder="GitHub" />
-  <Spacer y={.5} />
+  <Spacer h={.5} />
   <Input iconRight={<GitIcon />} placeholder="GitHub" />
 </>
 `}
@@ -128,7 +128,7 @@ Retrieve text input from a user.
   scope={{ Input }}
   code={`
 <>
-  <Input clearable initialValue="The Evil Rabbit" placeholder="The Evil Rabbit" />
+  <Input clearable initialValue="Geist UI" placeholder="Geist UI" />
 </>
 `}
 />
@@ -153,7 +153,7 @@ Retrieve text input from a user.
     console.log(e.target.value)
   }
   return (
-    <Input value={value} onChange={handler} placeholder="The Evil Rabbit" />
+    <Input value={value} onChange={handler} placeholder="Geist UI" />
   )
 }
 `}
@@ -169,16 +169,14 @@ Retrieve text input from a user.
   scope={{ Input, useInput, useEffect, Button, Spacer }}
   code={`
 () => {
-  const { state, setState, reset, bindings } = useInput('The Evil Rabbit')
+  const { state, setState, reset, bindings } = useInput('Geist UI')
   useEffect(() => console.log(state), [state])
   return (
     <>
       <Input {...bindings} />
-      <Spacer y={.5} />
-      <Button auto type="secondary" size="small"
-        onClick={() => setState(Math.random().toString(32))}>set value</Button>
-      <Spacer y={.5} />
-      <Button auto size="small"onClick={() => reset()}>reset value</Button>
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/3} onClick={() => setState(Math.random().toString(32))}>set value</Button>
+      <Button auto scale={1/3} ml="20px" onClick={() => reset()}>reset value</Button>
     </>
   )
 }
@@ -198,9 +196,8 @@ Retrieve text input from a user.
   return (
     <>
       <Input initialValue="Hello" onChange={e => console.log(e.target.value)} ref={ref} />
-      <Spacer y={.5} />
-      <Button auto type="secondary" size="small"
-        onClick={setChange}>set value</Button>
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/3} onClick={setChange}>set value</Button>
     </>
   )
 }
@@ -215,8 +212,8 @@ Retrieve text input from a user.
 | **value**         | input value                   | `string`                                       | -                                 | -         |
 | **initialValue**  | initial value                 | `string`                                       | -                                 | -         |
 | **placeholder**   | placeholder                   | `string`                                       | -                                 | -         |
-| **size**          | input size                    | `NormalSizes`                                  | [InputSizes](#inputsizes)         | `medium`  |
-| **status**        | current status                | `NormalTypes`                                  | [InputStatus](#inputstatus)       | `default` |
+| **type**          | current type                  | `InputTypes`                                   | [InputTypes](#inputtypes)         | `default` |
+| **htmlType**      | native type attr              | `string`                                       | -                                 | `text`    |
 | **readOnly**      | native attr                   | `boolean`                                      | -                                 | `false`   |
 | **disabled**      | disable input                 | `boolean`                                      | -                                 | `false`   |
 | **clearable**     | show clear icon               | `boolean`                                      | -                                 | `false`   |
@@ -238,24 +235,16 @@ Retrieve text input from a user.
 | **hideToggle** | hide toggle icon | `boolean`     | -                           | `false` |
 | ...            | input props      | `Input.Props` | [Input.Props](#input.props) | -       |
 
-<Attributes.Title>InputSizes</Attributes.Title>
+<Attributes.Title>InputTypes</Attributes.Title>
 
 ```ts
-type InputSizes = 'mini' | 'small' | 'medium' | 'large'
-```
-
-<Attributes.Title>InputStatus</Attributes.Title>
-
-```ts
-type InputStatus = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type InputTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
-type useInput = (
-  initialValue: string,
-) => {
+type useInput = (initialValue: string) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

@@ -3,7 +3,8 @@ import { Note, Code, Spacer, Link } from 'components'
 
 export const meta = {
   title: 'Themes',
-  group: 'customization',
+  group: 'Customization',
+  index: 25,
 }
 
 ## Themes
@@ -12,19 +13,19 @@ export const meta = {
 
 As a basic option, there are two themes available, `light` and `dark`.
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 ### Switch themes
 
 <Note>
   Before using any Components, you must add <Code>GeistProvider</Code> to the root node.
 </Note>
-<Spacer y={0.5} />
+<Spacer h={0.5} />
 <Note type="success">
   <Code>CssBaseline</Code> provides basic CSS support, which is similar to{' '}
   <Code>normalize</Code>.
 </Note>
-<Spacer y={1} />
+<Spacer h={1} />
 
 **Now you can change the theme as follows:**
 
@@ -49,7 +50,7 @@ const App = () => {
 }
 ```
 
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### Customizing theme
 
@@ -59,7 +60,7 @@ Here is <Link target="_blank" color href="https://github.com/geist-org/react/tre
 
 Of course, if a _component_ doesn't use your customized variables, it doesn't make any additional **changes** or **rendering**.
 
-<Spacer y={1} />
+<Spacer h={1} />
 <Note type="warning">
   The more changes you customize, the more Components will <b>Re-Render</b>.
 </Note>
@@ -96,7 +97,7 @@ const myTheme2 = Themes.create(myBaseTheme, {
 })
 ```
 
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### View all types of Theme definitions
 
@@ -122,7 +123,7 @@ const myPalette: Partial<GeistUIThemesPalette> = {
 
 If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" href="https://github.com/geist-org/react/blob/master/components/themes/presets/index.ts">here</Link>.
 
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### Customizing components
 
@@ -145,7 +146,7 @@ const MyPage = () => (
 }
 ```
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 #### Overriding styles with `inline-style`
 
@@ -159,7 +160,7 @@ const MyPage = () => (
 )
 ```
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 #### Build your own Components with `theme`
 
@@ -178,7 +179,7 @@ const MyComponent = () => {
 }
 ```
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 #### Themes APIs
 

@@ -1,6 +1,11 @@
 import Collapse from './collapse'
 import CollapseGroup from './collapse-group'
 
-Collapse.Group = CollapseGroup
+export type CollapseComponentType = typeof Collapse & {
+  Group: typeof CollapseGroup
+}
+;(Collapse as CollapseComponentType).Group = CollapseGroup
 
-export default Collapse
+export type { CollapseProps } from './collapse'
+export type { CollapseGroupProps } from './collapse-group'
+export default Collapse as CollapseComponentType

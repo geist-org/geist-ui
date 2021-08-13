@@ -6,7 +6,7 @@ export const meta = {
   group: '工具包',
 }
 
-## Use body scroll / 工具包
+## useBodyScroll / 工具包
 
 禁用 `Body` 或其他任何元素的滚动，这在显示弹窗或菜单时非常有帮助。
 
@@ -21,10 +21,10 @@ export const meta = {
   return (
     <>
       <Text small b type={hidden ? 'error' : 'default'}>{hidden ? '已禁用滚动。' : '当前可以滚动。'}</Text>
-      <Spacer y={.75} />
-      <Button size="small" type="success" auto onClick={() => setHidden(true)}>禁用滚动</Button>
-      <Spacer y={.5} />
-      <Button size="small" type="secondary" auto onClick={() => setHidden(false)}>重置</Button>
+      <Spacer h={.75} />
+      <Button scale={0.5} type="success" auto onClick={() => setHidden(true)}>禁用滚动</Button>
+      <Spacer h={.5} />
+      <Button ml="20px" scale={0.5} type="secondary" auto onClick={() => setHidden(false)}>重置</Button>
     </>
   )
 }

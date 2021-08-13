@@ -1,22 +1,9 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 
-interface Props {
-  width?: string
-}
-
-const defaultProps = {
-  width: '1.25em',
-}
-
-export type SelectIconProps = Props & typeof defaultProps
-
-const SelectIcon: React.FC<SelectIconProps> = ({ width }) => {
+const SelectIconComponent: React.FC<unknown> = () => {
   return (
     <svg
       viewBox="0 0 24 24"
-      width={width}
-      height={width}
       strokeWidth="1"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -28,12 +15,14 @@ const SelectIcon: React.FC<SelectIconProps> = ({ width }) => {
           color: inherit;
           stroke: currentColor;
           transition: all 200ms ease;
+          width: 1.214em;
+          height: 1.214em;
         }
       `}</style>
     </svg>
   )
 }
 
-const MemoSelectIcon = React.memo(SelectIcon)
-
-export default withDefaults(MemoSelectIcon, defaultProps)
+SelectIconComponent.displayName = 'GeistSelectIcon'
+const SelectIcon = React.memo(SelectIconComponent)
+export default SelectIcon

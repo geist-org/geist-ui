@@ -5,7 +5,7 @@ exports[`Collapse Group should be no errors when children are missing 1`] = `Rea
 exports[`Collapse Group should render correctly 1`] = `ReactWrapper {}`;
 
 exports[`Collapse Group should work without accordion 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {
       "class": "collapse-group ",
@@ -45,7 +45,6 @@ initialize {
                       "next": Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -53,7 +52,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -71,6 +69,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -106,6 +106,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -149,7 +151,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -157,11 +158,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -169,7 +168,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                       "parent": [Circular],
@@ -187,7 +185,6 @@ initialize {
                     "next": Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "24",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "currentColor",
                         "stroke-linecap": "round",
@@ -195,7 +192,6 @@ initialize {
                         "stroke-width": "1.5",
                         "style": "color:currentColor",
                         "viewBox": "0 0 24 24",
-                        "width": "24",
                       },
                       "children": Array [
                         Node {
@@ -213,6 +209,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -248,6 +246,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -291,7 +291,6 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -299,11 +298,9 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -311,7 +308,6 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                     "parent": [Circular],
@@ -340,7 +336,6 @@ initialize {
                   Node {
                     "attribs": Object {
                       "fill": "none",
-                      "height": "24",
                       "shape-rendering": "geometricPrecision",
                       "stroke": "currentColor",
                       "stroke-linecap": "round",
@@ -348,7 +343,6 @@ initialize {
                       "stroke-width": "1.5",
                       "style": "color:currentColor",
                       "viewBox": "0 0 24 24",
-                      "width": "24",
                     },
                     "children": Array [
                       Node {
@@ -366,6 +360,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -401,6 +397,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                             "next": null,
@@ -469,7 +467,6 @@ initialize {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "fill": undefined,
-                      "height": undefined,
                       "shape-rendering": undefined,
                       "stroke": undefined,
                       "stroke-linecap": undefined,
@@ -477,11 +474,9 @@ initialize {
                       "stroke-width": undefined,
                       "style": undefined,
                       "viewBox": undefined,
-                      "width": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "fill": undefined,
-                      "height": undefined,
                       "shape-rendering": undefined,
                       "stroke": undefined,
                       "stroke-linecap": undefined,
@@ -489,7 +484,6 @@ initialize {
                       "stroke-width": undefined,
                       "style": undefined,
                       "viewBox": undefined,
-                      "width": undefined,
                     },
                   },
                 ],
@@ -679,9 +673,13 @@ initialize {
                   Node {
                     "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -705,6 +703,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -717,9 +716,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -937,9 +936,13 @@ initialize {
                 Node {
                   "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -963,6 +966,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -975,9 +979,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -1033,7 +1037,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -1041,7 +1044,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -1059,6 +1061,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -1094,6 +1098,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -1137,7 +1143,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -1145,11 +1150,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -1157,7 +1160,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -1175,7 +1177,6 @@ initialize {
                       "next": Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -1183,7 +1184,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -1201,6 +1201,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -1236,6 +1238,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -1279,7 +1283,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -1287,11 +1290,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -1299,7 +1300,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                       "parent": [Circular],
@@ -1328,7 +1328,6 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "24",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "currentColor",
                         "stroke-linecap": "round",
@@ -1336,7 +1335,6 @@ initialize {
                         "stroke-width": "1.5",
                         "style": "color:currentColor",
                         "viewBox": "0 0 24 24",
-                        "width": "24",
                       },
                       "children": Array [
                         Node {
@@ -1354,6 +1352,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -1389,6 +1389,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -1457,7 +1459,6 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -1465,11 +1466,9 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -1477,7 +1476,6 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                   ],
@@ -1524,9 +1522,13 @@ initialize {
               Node {
                 "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -1550,6 +1552,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -1562,9 +1565,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -1780,7 +1783,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -1788,7 +1790,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -1806,6 +1807,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -1841,6 +1844,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -1884,7 +1889,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -1892,11 +1896,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -1904,7 +1906,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -1922,7 +1923,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -1930,7 +1930,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -1948,6 +1947,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -1983,6 +1984,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -2026,7 +2029,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -2034,11 +2036,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -2046,7 +2046,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -2075,7 +2074,6 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -2083,7 +2081,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -2101,6 +2098,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -2136,6 +2135,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -2204,7 +2205,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -2212,11 +2212,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -2224,7 +2222,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -2306,7 +2303,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -2314,7 +2310,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -2332,6 +2327,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -2367,6 +2364,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -2410,7 +2409,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -2418,11 +2416,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -2430,7 +2426,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -2448,7 +2443,6 @@ initialize {
                       "next": Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -2456,7 +2450,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -2474,6 +2467,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -2509,6 +2504,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -2552,7 +2549,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -2560,11 +2556,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -2572,7 +2566,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                       "parent": [Circular],
@@ -2601,7 +2594,6 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "24",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "currentColor",
                         "stroke-linecap": "round",
@@ -2609,7 +2601,6 @@ initialize {
                         "stroke-width": "1.5",
                         "style": "color:currentColor",
                         "viewBox": "0 0 24 24",
-                        "width": "24",
                       },
                       "children": Array [
                         Node {
@@ -2627,6 +2618,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -2662,6 +2655,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -2730,7 +2725,6 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -2738,11 +2732,9 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -2750,7 +2742,6 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                   ],
@@ -2940,9 +2931,13 @@ initialize {
                     Node {
                       "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -2966,6 +2961,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -2978,9 +2974,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -3198,9 +3194,13 @@ initialize {
                   Node {
                     "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -3224,6 +3224,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -3236,9 +3237,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -3294,7 +3295,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -3302,7 +3302,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -3320,6 +3319,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -3355,6 +3356,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -3398,7 +3401,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -3406,11 +3408,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -3418,7 +3418,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -3436,7 +3435,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -3444,7 +3442,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -3462,6 +3459,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -3497,6 +3496,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -3540,7 +3541,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -3548,11 +3548,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -3560,7 +3558,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -3589,7 +3586,6 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -3597,7 +3593,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -3615,6 +3610,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -3650,6 +3647,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -3718,7 +3717,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -3726,11 +3724,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -3738,7 +3734,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -3785,9 +3780,13 @@ initialize {
                 Node {
                   "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -3811,6 +3810,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -3823,9 +3823,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -4041,7 +4041,6 @@ initialize {
                             "next": Node {
                               "attribs": Object {
                                 "fill": "none",
-                                "height": "24",
                                 "shape-rendering": "geometricPrecision",
                                 "stroke": "currentColor",
                                 "stroke-linecap": "round",
@@ -4049,7 +4048,6 @@ initialize {
                                 "stroke-width": "1.5",
                                 "style": "color:currentColor",
                                 "viewBox": "0 0 24 24",
-                                "width": "24",
                               },
                               "children": Array [
                                 Node {
@@ -4067,6 +4065,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                         "next": null,
@@ -4102,6 +4102,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -4145,7 +4147,6 @@ initialize {
                               "type": "tag",
                               "x-attribsNamespace": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -4153,11 +4154,9 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                               "x-attribsPrefix": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -4165,7 +4164,6 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                             },
                             "parent": [Circular],
@@ -4183,7 +4181,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -4191,7 +4188,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -4209,6 +4205,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -4244,6 +4242,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -4287,7 +4287,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -4295,11 +4294,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -4307,7 +4304,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -4336,7 +4332,6 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -4344,7 +4339,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -4362,6 +4356,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -4397,6 +4393,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -4465,7 +4463,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -4473,11 +4470,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -4485,7 +4480,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -4540,7 +4534,9 @@ initialize {
                 "data": "
           .collapse-group {
             width: auto;
-            padding: 0 8pt;
+            height: auto;
+            padding: 0 calc(0.6 * 16px) 0 calc(0.6 * 16px);
+            margin: 0 0 0 0;
           }
 
           .collapse-group &gt; :global(div + div) {
@@ -4616,7 +4612,6 @@ initialize {
                       "next": Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -4624,7 +4619,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -4642,6 +4636,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -4677,6 +4673,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -4720,7 +4718,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -4728,11 +4725,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -4740,7 +4735,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                       "parent": [Circular],
@@ -4758,7 +4752,6 @@ initialize {
                     "next": Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "24",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "currentColor",
                         "stroke-linecap": "round",
@@ -4766,7 +4759,6 @@ initialize {
                         "stroke-width": "1.5",
                         "style": "color:currentColor",
                         "viewBox": "0 0 24 24",
-                        "width": "24",
                       },
                       "children": Array [
                         Node {
@@ -4784,6 +4776,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -4819,6 +4813,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -4862,7 +4858,6 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -4870,11 +4865,9 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -4882,7 +4875,6 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                     "parent": [Circular],
@@ -4911,7 +4903,6 @@ initialize {
                   Node {
                     "attribs": Object {
                       "fill": "none",
-                      "height": "24",
                       "shape-rendering": "geometricPrecision",
                       "stroke": "currentColor",
                       "stroke-linecap": "round",
@@ -4919,7 +4910,6 @@ initialize {
                       "stroke-width": "1.5",
                       "style": "color:currentColor",
                       "viewBox": "0 0 24 24",
-                      "width": "24",
                     },
                     "children": Array [
                       Node {
@@ -4937,6 +4927,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -4972,6 +4964,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                             "next": null,
@@ -5040,7 +5034,6 @@ initialize {
                     "type": "tag",
                     "x-attribsNamespace": Object {
                       "fill": undefined,
-                      "height": undefined,
                       "shape-rendering": undefined,
                       "stroke": undefined,
                       "stroke-linecap": undefined,
@@ -5048,11 +5041,9 @@ initialize {
                       "stroke-width": undefined,
                       "style": undefined,
                       "viewBox": undefined,
-                      "width": undefined,
                     },
                     "x-attribsPrefix": Object {
                       "fill": undefined,
-                      "height": undefined,
                       "shape-rendering": undefined,
                       "stroke": undefined,
                       "stroke-linecap": undefined,
@@ -5060,7 +5051,6 @@ initialize {
                       "stroke-width": undefined,
                       "style": undefined,
                       "viewBox": undefined,
-                      "width": undefined,
                     },
                   },
                 ],
@@ -5250,9 +5240,13 @@ initialize {
                   Node {
                     "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -5276,6 +5270,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -5288,9 +5283,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -5508,9 +5503,13 @@ initialize {
                 Node {
                   "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -5534,6 +5533,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -5546,9 +5546,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -5604,7 +5604,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -5612,7 +5611,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -5630,6 +5628,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -5665,6 +5665,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -5708,7 +5710,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -5716,11 +5717,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -5728,7 +5727,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -5746,7 +5744,6 @@ initialize {
                       "next": Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -5754,7 +5751,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -5772,6 +5768,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -5807,6 +5805,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -5850,7 +5850,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -5858,11 +5857,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -5870,7 +5867,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                       "parent": [Circular],
@@ -5899,7 +5895,6 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "24",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "currentColor",
                         "stroke-linecap": "round",
@@ -5907,7 +5902,6 @@ initialize {
                         "stroke-width": "1.5",
                         "style": "color:currentColor",
                         "viewBox": "0 0 24 24",
-                        "width": "24",
                       },
                       "children": Array [
                         Node {
@@ -5925,6 +5919,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -5960,6 +5956,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -6028,7 +6026,6 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -6036,11 +6033,9 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -6048,7 +6043,6 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                   ],
@@ -6095,9 +6089,13 @@ initialize {
               Node {
                 "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -6121,6 +6119,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -6133,9 +6132,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -6351,7 +6350,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -6359,7 +6357,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -6377,6 +6374,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -6412,6 +6411,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -6455,7 +6456,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -6463,11 +6463,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -6475,7 +6473,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -6493,7 +6490,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -6501,7 +6497,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -6519,6 +6514,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -6554,6 +6551,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -6597,7 +6596,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -6605,11 +6603,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -6617,7 +6613,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -6646,7 +6641,6 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -6654,7 +6648,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -6672,6 +6665,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -6707,6 +6702,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -6775,7 +6772,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -6783,11 +6779,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -6795,7 +6789,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -6850,7 +6843,9 @@ initialize {
               "data": "
           .collapse-group {
             width: auto;
-            padding: 0 8pt;
+            height: auto;
+            padding: 0 calc(0.6 * 16px) 0 calc(0.6 * 16px);
+            margin: 0 0 0 0;
           }
 
           .collapse-group &gt; :global(div + div) {
@@ -6907,7 +6902,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -6915,7 +6909,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -6933,6 +6926,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -6968,6 +6963,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -7011,7 +7008,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -7019,11 +7015,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -7031,7 +7025,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -7049,7 +7042,6 @@ initialize {
                       "next": Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -7057,7 +7049,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -7075,6 +7066,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -7110,6 +7103,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -7153,7 +7148,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -7161,11 +7155,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -7173,7 +7165,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                       "parent": [Circular],
@@ -7202,7 +7193,6 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "24",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "currentColor",
                         "stroke-linecap": "round",
@@ -7210,7 +7200,6 @@ initialize {
                         "stroke-width": "1.5",
                         "style": "color:currentColor",
                         "viewBox": "0 0 24 24",
-                        "width": "24",
                       },
                       "children": Array [
                         Node {
@@ -7228,6 +7217,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -7263,6 +7254,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -7331,7 +7324,6 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -7339,11 +7331,9 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -7351,7 +7341,6 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                   ],
@@ -7541,9 +7530,13 @@ initialize {
                     Node {
                       "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -7567,6 +7560,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -7579,9 +7573,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -7799,9 +7793,13 @@ initialize {
                   Node {
                     "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -7825,6 +7823,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -7837,9 +7836,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -7895,7 +7894,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -7903,7 +7901,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -7921,6 +7918,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -7956,6 +7955,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -7999,7 +8000,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -8007,11 +8007,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -8019,7 +8017,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -8037,7 +8034,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -8045,7 +8041,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -8063,6 +8058,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -8098,6 +8095,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -8141,7 +8140,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -8149,11 +8147,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -8161,7 +8157,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -8190,7 +8185,6 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -8198,7 +8192,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -8216,6 +8209,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -8251,6 +8246,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -8319,7 +8316,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -8327,11 +8323,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -8339,7 +8333,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -8386,9 +8379,13 @@ initialize {
                 Node {
                   "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -8412,6 +8409,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -8424,9 +8422,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -8642,7 +8640,6 @@ initialize {
                             "next": Node {
                               "attribs": Object {
                                 "fill": "none",
-                                "height": "24",
                                 "shape-rendering": "geometricPrecision",
                                 "stroke": "currentColor",
                                 "stroke-linecap": "round",
@@ -8650,7 +8647,6 @@ initialize {
                                 "stroke-width": "1.5",
                                 "style": "color:currentColor",
                                 "viewBox": "0 0 24 24",
-                                "width": "24",
                               },
                               "children": Array [
                                 Node {
@@ -8668,6 +8664,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                         "next": null,
@@ -8703,6 +8701,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -8746,7 +8746,6 @@ initialize {
                               "type": "tag",
                               "x-attribsNamespace": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -8754,11 +8753,9 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                               "x-attribsPrefix": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -8766,7 +8763,6 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                             },
                             "parent": [Circular],
@@ -8784,7 +8780,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -8792,7 +8787,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -8810,6 +8804,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -8845,6 +8841,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -8888,7 +8886,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -8896,11 +8893,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -8908,7 +8903,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -8937,7 +8931,6 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -8945,7 +8938,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -8963,6 +8955,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -8998,6 +8992,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -9066,7 +9062,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -9074,11 +9069,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -9086,7 +9079,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -9160,7 +9152,9 @@ initialize {
             "data": "
           .collapse-group {
             width: auto;
-            padding: 0 8pt;
+            height: auto;
+            padding: 0 calc(0.6 * 16px) 0 calc(0.6 * 16px);
+            margin: 0 0 0 0;
           }
 
           .collapse-group &gt; :global(div + div) {
@@ -9211,7 +9205,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -9219,7 +9212,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -9237,6 +9229,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -9272,6 +9266,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -9315,7 +9311,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -9323,11 +9318,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -9335,7 +9328,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -9353,7 +9345,6 @@ initialize {
                       "next": Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -9361,7 +9352,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -9379,6 +9369,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -9414,6 +9406,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -9457,7 +9451,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -9465,11 +9458,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -9477,7 +9468,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                       "parent": [Circular],
@@ -9506,7 +9496,6 @@ initialize {
                     Node {
                       "attribs": Object {
                         "fill": "none",
-                        "height": "24",
                         "shape-rendering": "geometricPrecision",
                         "stroke": "currentColor",
                         "stroke-linecap": "round",
@@ -9514,7 +9503,6 @@ initialize {
                         "stroke-width": "1.5",
                         "style": "color:currentColor",
                         "viewBox": "0 0 24 24",
-                        "width": "24",
                       },
                       "children": Array [
                         Node {
@@ -9532,6 +9520,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -9567,6 +9557,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                               "next": null,
@@ -9635,7 +9627,6 @@ initialize {
                       "type": "tag",
                       "x-attribsNamespace": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -9643,11 +9634,9 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                       "x-attribsPrefix": Object {
                         "fill": undefined,
-                        "height": undefined,
                         "shape-rendering": undefined,
                         "stroke": undefined,
                         "stroke-linecap": undefined,
@@ -9655,7 +9644,6 @@ initialize {
                         "stroke-width": undefined,
                         "style": undefined,
                         "viewBox": undefined,
-                        "width": undefined,
                       },
                     },
                   ],
@@ -9845,9 +9833,13 @@ initialize {
                     Node {
                       "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -9871,6 +9863,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -9883,9 +9876,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -10103,9 +10096,13 @@ initialize {
                   Node {
                     "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -10129,6 +10126,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -10141,9 +10139,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -10199,7 +10197,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -10207,7 +10204,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -10225,6 +10221,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -10260,6 +10258,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -10303,7 +10303,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -10311,11 +10310,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -10323,7 +10320,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -10341,7 +10337,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -10349,7 +10344,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -10367,6 +10361,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -10402,6 +10398,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -10445,7 +10443,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -10453,11 +10450,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -10465,7 +10460,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -10494,7 +10488,6 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -10502,7 +10495,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -10520,6 +10512,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -10555,6 +10549,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -10623,7 +10619,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -10631,11 +10626,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -10643,7 +10636,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -10690,9 +10682,13 @@ initialize {
                 Node {
                   "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -10716,6 +10712,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -10728,9 +10725,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -10946,7 +10943,6 @@ initialize {
                             "next": Node {
                               "attribs": Object {
                                 "fill": "none",
-                                "height": "24",
                                 "shape-rendering": "geometricPrecision",
                                 "stroke": "currentColor",
                                 "stroke-linecap": "round",
@@ -10954,7 +10950,6 @@ initialize {
                                 "stroke-width": "1.5",
                                 "style": "color:currentColor",
                                 "viewBox": "0 0 24 24",
-                                "width": "24",
                               },
                               "children": Array [
                                 Node {
@@ -10972,6 +10967,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                         "next": null,
@@ -11007,6 +11004,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -11050,7 +11049,6 @@ initialize {
                               "type": "tag",
                               "x-attribsNamespace": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -11058,11 +11056,9 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                               "x-attribsPrefix": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -11070,7 +11066,6 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                             },
                             "parent": [Circular],
@@ -11088,7 +11083,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -11096,7 +11090,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -11114,6 +11107,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -11149,6 +11144,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -11192,7 +11189,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -11200,11 +11196,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -11212,7 +11206,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -11241,7 +11234,6 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -11249,7 +11241,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -11267,6 +11258,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -11302,6 +11295,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -11370,7 +11365,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -11378,11 +11372,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -11390,7 +11382,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -11474,7 +11465,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -11482,7 +11472,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -11500,6 +11489,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -11535,6 +11526,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -11578,7 +11571,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -11586,11 +11578,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -11598,7 +11588,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -11616,7 +11605,6 @@ initialize {
                         "next": Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -11624,7 +11612,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -11642,6 +11629,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -11677,6 +11666,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -11720,7 +11711,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -11728,11 +11718,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -11740,7 +11728,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                         "parent": [Circular],
@@ -11769,7 +11756,6 @@ initialize {
                       Node {
                         "attribs": Object {
                           "fill": "none",
-                          "height": "24",
                           "shape-rendering": "geometricPrecision",
                           "stroke": "currentColor",
                           "stroke-linecap": "round",
@@ -11777,7 +11763,6 @@ initialize {
                           "stroke-width": "1.5",
                           "style": "color:currentColor",
                           "viewBox": "0 0 24 24",
-                          "width": "24",
                         },
                         "children": Array [
                           Node {
@@ -11795,6 +11780,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -11830,6 +11817,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                 "next": null,
@@ -11898,7 +11887,6 @@ initialize {
                         "type": "tag",
                         "x-attribsNamespace": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -11906,11 +11894,9 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                         "x-attribsPrefix": Object {
                           "fill": undefined,
-                          "height": undefined,
                           "shape-rendering": undefined,
                           "stroke": undefined,
                           "stroke-linecap": undefined,
@@ -11918,7 +11904,6 @@ initialize {
                           "stroke-width": undefined,
                           "style": undefined,
                           "viewBox": undefined,
-                          "width": undefined,
                         },
                       },
                     ],
@@ -12108,9 +12093,13 @@ initialize {
                       Node {
                         "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -12134,6 +12123,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -12146,9 +12136,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -12366,9 +12356,13 @@ initialize {
                     Node {
                       "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -12392,6 +12386,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -12404,9 +12399,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -12462,7 +12457,6 @@ initialize {
                             "next": Node {
                               "attribs": Object {
                                 "fill": "none",
-                                "height": "24",
                                 "shape-rendering": "geometricPrecision",
                                 "stroke": "currentColor",
                                 "stroke-linecap": "round",
@@ -12470,7 +12464,6 @@ initialize {
                                 "stroke-width": "1.5",
                                 "style": "color:currentColor",
                                 "viewBox": "0 0 24 24",
-                                "width": "24",
                               },
                               "children": Array [
                                 Node {
@@ -12488,6 +12481,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                         "next": null,
@@ -12523,6 +12518,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -12566,7 +12563,6 @@ initialize {
                               "type": "tag",
                               "x-attribsNamespace": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -12574,11 +12570,9 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                               "x-attribsPrefix": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -12586,7 +12580,6 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                             },
                             "parent": [Circular],
@@ -12604,7 +12597,6 @@ initialize {
                           "next": Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -12612,7 +12604,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -12630,6 +12621,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -12665,6 +12658,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -12708,7 +12703,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -12716,11 +12710,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -12728,7 +12720,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                           "parent": [Circular],
@@ -12757,7 +12748,6 @@ initialize {
                         Node {
                           "attribs": Object {
                             "fill": "none",
-                            "height": "24",
                             "shape-rendering": "geometricPrecision",
                             "stroke": "currentColor",
                             "stroke-linecap": "round",
@@ -12765,7 +12755,6 @@ initialize {
                             "stroke-width": "1.5",
                             "style": "color:currentColor",
                             "viewBox": "0 0 24 24",
-                            "width": "24",
                           },
                           "children": Array [
                             Node {
@@ -12783,6 +12772,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -12818,6 +12809,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                   "next": null,
@@ -12886,7 +12879,6 @@ initialize {
                           "type": "tag",
                           "x-attribsNamespace": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -12894,11 +12886,9 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                           "x-attribsPrefix": Object {
                             "fill": undefined,
-                            "height": undefined,
                             "shape-rendering": undefined,
                             "stroke": undefined,
                             "stroke-linecap": undefined,
@@ -12906,7 +12896,6 @@ initialize {
                             "stroke-width": undefined,
                             "style": undefined,
                             "viewBox": undefined,
-                            "width": undefined,
                           },
                         },
                       ],
@@ -12953,9 +12942,13 @@ initialize {
                   Node {
                     "data": "
         .collapse {
-          padding: 16pt 0;
           border-top: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
+          margin: 0 0 0 0;
         }
 
         .shadow {
@@ -12979,6 +12972,7 @@ initialize {
 
         .title h3 {
           margin: 0;
+          font-size: 1.5em;
         }
 
         .subtitle {
@@ -12991,9 +12985,9 @@ initialize {
         }
 
         .content {
-          font-size: 1rem;
-          line-height: 1.625rem;
-          padding: 16pt 0;
+          font-size: inherit;
+          line-height: 1.6em;
+          padding: calc(1.2 * 16px) 0 calc(1.2 * 16px) 0;
         }
 
         .content &gt; :global(*:first-child) {
@@ -13209,7 +13203,6 @@ initialize {
                               "next": Node {
                                 "attribs": Object {
                                   "fill": "none",
-                                  "height": "24",
                                   "shape-rendering": "geometricPrecision",
                                   "stroke": "currentColor",
                                   "stroke-linecap": "round",
@@ -13217,7 +13210,6 @@ initialize {
                                   "stroke-width": "1.5",
                                   "style": "color:currentColor",
                                   "viewBox": "0 0 24 24",
-                                  "width": "24",
                                 },
                                 "children": Array [
                                   Node {
@@ -13235,6 +13227,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                           "next": null,
@@ -13270,6 +13264,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                         "next": null,
@@ -13313,7 +13309,6 @@ initialize {
                                 "type": "tag",
                                 "x-attribsNamespace": Object {
                                   "fill": undefined,
-                                  "height": undefined,
                                   "shape-rendering": undefined,
                                   "stroke": undefined,
                                   "stroke-linecap": undefined,
@@ -13321,11 +13316,9 @@ initialize {
                                   "stroke-width": undefined,
                                   "style": undefined,
                                   "viewBox": undefined,
-                                  "width": undefined,
                                 },
                                 "x-attribsPrefix": Object {
                                   "fill": undefined,
-                                  "height": undefined,
                                   "shape-rendering": undefined,
                                   "stroke": undefined,
                                   "stroke-linecap": undefined,
@@ -13333,7 +13326,6 @@ initialize {
                                   "stroke-width": undefined,
                                   "style": undefined,
                                   "viewBox": undefined,
-                                  "width": undefined,
                                 },
                               },
                               "parent": [Circular],
@@ -13351,7 +13343,6 @@ initialize {
                             "next": Node {
                               "attribs": Object {
                                 "fill": "none",
-                                "height": "24",
                                 "shape-rendering": "geometricPrecision",
                                 "stroke": "currentColor",
                                 "stroke-linecap": "round",
@@ -13359,7 +13350,6 @@ initialize {
                                 "stroke-width": "1.5",
                                 "style": "color:currentColor",
                                 "viewBox": "0 0 24 24",
-                                "width": "24",
                               },
                               "children": Array [
                                 Node {
@@ -13377,6 +13367,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                         "next": null,
@@ -13412,6 +13404,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -13455,7 +13449,6 @@ initialize {
                               "type": "tag",
                               "x-attribsNamespace": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -13463,11 +13456,9 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                               "x-attribsPrefix": Object {
                                 "fill": undefined,
-                                "height": undefined,
                                 "shape-rendering": undefined,
                                 "stroke": undefined,
                                 "stroke-linecap": undefined,
@@ -13475,7 +13466,6 @@ initialize {
                                 "stroke-width": undefined,
                                 "style": undefined,
                                 "viewBox": undefined,
-                                "width": undefined,
                               },
                             },
                             "parent": [Circular],
@@ -13504,7 +13494,6 @@ initialize {
                           Node {
                             "attribs": Object {
                               "fill": "none",
-                              "height": "24",
                               "shape-rendering": "geometricPrecision",
                               "stroke": "currentColor",
                               "stroke-linecap": "round",
@@ -13512,7 +13501,6 @@ initialize {
                               "stroke-width": "1.5",
                               "style": "color:currentColor",
                               "viewBox": "0 0 24 24",
-                              "width": "24",
                             },
                             "children": Array [
                               Node {
@@ -13530,6 +13518,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                       "next": null,
@@ -13565,6 +13555,8 @@ initialize {
         svg {
           transition: transform 200ms ease;
           transform: rotateZ(0);
+          width: 1.5em;
+          height: 1.5em;
         }
       ",
                                     "next": null,
@@ -13633,7 +13625,6 @@ initialize {
                             "type": "tag",
                             "x-attribsNamespace": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -13641,11 +13632,9 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                             "x-attribsPrefix": Object {
                               "fill": undefined,
-                              "height": undefined,
                               "shape-rendering": undefined,
                               "stroke": undefined,
                               "stroke-linecap": undefined,
@@ -13653,7 +13642,6 @@ initialize {
                               "stroke-width": undefined,
                               "style": undefined,
                               "viewBox": undefined,
-                              "width": undefined,
                             },
                           },
                         ],
@@ -13747,7 +13735,83 @@ initialize {
       "class": undefined,
     },
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

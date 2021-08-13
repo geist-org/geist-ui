@@ -1,5 +1,4 @@
 import React, { useImperativeHandle, useMemo, useRef, useState } from 'react'
-import withDefaults from '../utils/with-defaults'
 import { Props, defaultProps } from './input-props'
 import PasswordIcon from './password-icon'
 import Input from './input'
@@ -14,44 +13,55 @@ const passwordDefaultProps = {
 }
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof PasswordProps>
-export type InputPasswordProps = PasswordProps & typeof passwordDefaultProps & NativeAttrs
+export type InputPasswordProps = PasswordProps & NativeAttrs
 
 const InputPassword = React.forwardRef<
   HTMLInputElement,
   React.PropsWithChildren<InputPasswordProps>
->(({ hideToggle, children, ...props }, ref: React.Ref<HTMLInputElement | null>) => {
-  const inputRef = useRef<HTMLInputElement>(null)
-  const [visible, setVisible] = useState<boolean>(false)
-  useImperativeHandle(ref, () => inputRef.current)
+>(
+  (
+    {
+      hideToggle,
+      children,
+      ...props
+    }: React.PropsWithChildren<InputPasswordProps> & typeof defaultProps,
+    ref: React.Ref<HTMLInputElement | null>,
+  ) => {
+    const inputRef = useRef<HTMLInputElement>(null)
+    const [visible, setVisible] = useState<boolean>(false)
+    useImperativeHandle(ref, () => inputRef.current)
 
-  const iconClickHandler = () => {
-    setVisible(v => !v)
-    /* istanbul ignore next */
-    if (inputRef && inputRef.current) {
-      inputRef.current.focus()
+    const iconClickHandler = () => {
+      setVisible(v => !v)
+      /* istanbul ignore next */
+      if (inputRef && inputRef.current) {
+        inputRef.current.focus()
+      }
     }
-  }
 
-  const inputProps = useMemo(
-    () => ({
-      ...props,
-      ref: inputRef,
-      iconClickable: true,
-      onIconClick: iconClickHandler,
-      type: visible ? 'text' : 'password',
-    }),
-    [props, iconClickHandler, visible, inputRef],
-  )
-  const icon = useMemo(() => {
-    if (hideToggle) return null
-    return <PasswordIcon visible={visible} />
-  }, [hideToggle, visible])
+    const inputProps = useMemo(
+      () => ({
+        ...props,
+        ref: inputRef,
+        iconClickable: true,
+        onIconClick: iconClickHandler,
+        htmlType: visible ? 'text' : 'password',
+      }),
+      [props, iconClickHandler, visible, inputRef],
+    )
+    const icon = useMemo(() => {
+      if (hideToggle) return null
+      return <PasswordIcon visible={visible} />
+    }, [hideToggle, visible])
 
-  return (
-    <Input iconRight={icon} {...inputProps}>
-      {children}
-    </Input>
-  )
-})
+    return (
+      <Input iconRight={icon} {...inputProps}>
+        {children}
+      </Input>
+    )
+  },
+)
 
-export default withDefaults(InputPassword, passwordDefaultProps)
+InputPassword.defaultProps = passwordDefaultProps
+InputPassword.displayName = 'GeistInputPassword'
+export default InputPassword

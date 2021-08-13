@@ -1,6 +1,12 @@
 import Avatar from './avatar'
 import AvatarGroup from './avatar-group'
 
-Avatar.Group = AvatarGroup
+export type AvatarComponentType = typeof Avatar & {
+  Group: typeof AvatarGroup
+}
+;(Avatar as AvatarComponentType).Group = AvatarGroup
 
-export default Avatar
+export type { AvatarProps } from './avatar'
+export type { AvatarGroupProps } from './avatar-group'
+
+export default Avatar as AvatarComponentType

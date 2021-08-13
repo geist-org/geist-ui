@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Loading, Spacer, Row } from 'components'
+import { Loading, Spacer, Grid } from 'components'
 
 export const meta = {
   title: 'Loading',
@@ -11,86 +11,74 @@ export const meta = {
 Indicate an action running in the background.
 
 <Playground
-  scope={{ Loading, Row, Spacer }}
+  scope={{ Loading, Spacer }}
   code={`
-<Row style={{ padding: '10px 0'}}>
-  <Loading />
-</Row>
+<Loading />
 `}
 />
 
 <Playground
   title="with text"
   desc="Customize text next to icon."
-  scope={{ Loading, Row }}
+  scope={{ Loading }}
   code={`
-<Row style={{ padding: '10px 0'}}>
-  <Loading>Loading</Loading>
-</Row>
+<Loading>Loading</Loading>
 `}
 />
 
 <Playground
-  title="sizes"
-  desc="Components of different sizes."
-  scope={{ Loading, Row, Spacer }}
-  code={`
-<>
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading size="mini" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading size="small" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading size="medium" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading size="large" />
-  </Row>
-</>
-`}
-/>
-
-<Playground
-  title="type"
+  title="types"
   desc="Loading indicators in different states."
-  scope={{ Loading, Row, Spacer }}
+  scope={{ Loading, Grid }}
   code={`
-<>
-  <Row style={{ padding: '10px 0', width: '50px' }}>
+<Grid.Container gap={2.5}>
+  <Grid xs={24}>
     <Loading type="success" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
+  </Grid>
+  <Grid xs={24}>
     <Loading type="secondary" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
+  </Grid>
+  <Grid xs={24}>
     <Loading type="warning" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
+  </Grid>
+   <Grid xs={24}>
     <Loading type="error" />
-  </Row>
-</>
+  </Grid>
+</Grid.Container>
+`}
+/>
+
+<Playground
+  title="spaces"
+  desc="Customize the space between points. (the ratio is relative to the current `size`)"
+  scope={{ Loading, Grid }}
+  code={`
+<Grid.Container gap={2.5}>
+  <Grid xs={24}>
+    <Loading spaceRatio={2.5} />
+  </Grid>
+  <Grid xs={24}>
+    <Loading spaceRatio={0.5} />
+  </Grid>
+</Grid.Container>
 `}
 />
 
 <Attributes edit="/pages/en-us/components/loading.mdx">
 <Attributes.Title>Loading.Props</Attributes.Title>
 
-| Attribute  | Description     | Type             | Accepted values                                         | Default   |
-| ---------- | --------------- | ---------------- | ------------------------------------------------------- | --------- |
-| **type**   | bg-color type   | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**   | loading size    | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **color**  | custom bg color | `string`         | -                                                       | -         |
-| **width**  | custom width    | `string`         | -                                                       | `100%`    |
-| **height** | custom height   | `string`         | -                                                       | `100%`    |
-| ...        | native props    | `HTMLAttributes` | `'id', 'title', 'className', ...`                       | -         |
+| Attribute      | Description                        | Type             | Accepted values                   | Default   |
+| -------------- | ---------------------------------- | ---------------- | --------------------------------- | --------- |
+| **type**       | bg-color type                      | `LoadingTypes`   | [LoadingTypes](#loadingtypes)     | `default` |
+| **color**      | custom bg color                    | `string`         | -                                 | -         |
+| **spaceRatio** | percentage of space between points | `number`         | -                                 | 1         |
+| ...            | native props                       | `HTMLAttributes` | `'id', 'title', 'className', ...` | -         |
+
+<Attributes.Title>LoadingTypes</Attributes.Title>
+
+```ts
+type LoadingTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

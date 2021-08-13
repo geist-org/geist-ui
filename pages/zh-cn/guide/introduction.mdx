@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import Layout from 'lib/components/layout'
 import { Code, Link, Text, Spacer, Note } from 'components'
 
@@ -11,35 +12,41 @@ export const meta = {
 
 ### 关于
 
-**Geist UI** 是以 <Link rel="nofollow" target="_blank" href="https://github.com/geist-org/style">Geist 样式库</Link> 为基础实现的 React 版本，
-灵感来自于 <Link rel="nofollow" target="_blank" href="https://vercel.co/design">Vercel 的设计稿</Link>。
+**Geist UI** 是一个优雅美观，拥有浓厚 Geek 风格的 React 组件库，
+灵感来自于 <Link rel="nofollow" target="_blank" href="https://vercel.com">Vercel</Link> 的设计风格。
 
-Vercel 的设计非常简洁美观，且有浓厚的 Geek 风格，这是 Vercel 如此受欢迎的重要原因。现在你可以在
-React 中随意使用所有设计元素。
+借助 Geist 在文字排版、明暗表达、伸缩组件等诸多别具一格的优势，你可以轻易创建简洁有力的个人站点，
+或是基于高度可定制化设计系统快速构建现代化 Web 应用。
 
-Geist UI 一个用于构建现代网站和应用程序的开源设计系统，且所有项目都是开源的。
+从 <NextLink href="/zh-cn/guide/installation"><Link color>入门指导</Link></NextLink> 开始快速上手 Geist 组件，
+或是浏览一个 <Link rel="nofollow" target="_blank" color href="https://github.com/geist-org/react/tree/master/examples">完整的项目示例</Link>。
 
-<Spacer y={3} />
+<Spacer h={2.5} />
 
 ### 联系我们
 
-- <Link
-    color
-    target="_blank"
-    rel="nofollow"
-    href="https://github.com/geist-org/react/issues/new">
-    报告问题
-  </Link>
-- <Link
-    color
-    target="_blank"
-    rel="nofollow"
-    href="https://github.com/geist-org/react/discussions">
-    在 GitHub Discussions 上提问
-  </Link>
-- 我们非常欢迎来自任何人有趣的想法与反馈，也欢迎你贡献代码。
-
-<Spacer y={3} />
+<ul>
+  <li>
+    <Link
+      color
+      target="_blank"
+      rel="nofollow"
+      href="https://github.com/geist-org/react/issues/new">
+      报告问题
+    </Link>
+  </li>
+  <li>
+    <Link
+      color
+      target="_blank"
+      rel="nofollow"
+      href="https://github.com/geist-org/react/discussions">
+      在 GitHub Discussions 上提问
+    </Link>
+  </li>
+  <li>我们非常欢迎来自任何人有趣的想法与反馈，也欢迎你贡献代码。</li>
+</ul>
+<Spacer h={2.5} />
 
 ### 开源许可
 

@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Tooltip, Spacer, Row, Col, Button, Link, Badge, Code, Text } from 'components'
+import { Tooltip, Spacer, Grid, Button, Link, Badge, Code, Text } from 'components'
 
 export const meta = {
   title: '文字提示 Tooltip',
@@ -32,11 +32,11 @@ export const meta = {
 <Playground
   title="组件组合"
   desc="与不同的组件组合使用。"
-  scope={{ Tooltip, Button, Link, Spacer, Row, Badge }}
+  scope={{ Tooltip, Button, Link, Spacer, Badge }}
   code={`
-<Row align="middle">
+<div>
   <Tooltip text={'缓存是达到高性能的重要组成部分'} type="dark">
-    <Button auto size="small">按钮</Button>
+    <Button auto scale={1/2}>按钮</Button>
   </Tooltip>
   <Spacer inline x={1} />
   <Tooltip text={'缓存是达到高性能的重要组成部分'} type="dark">
@@ -46,16 +46,16 @@ export const meta = {
   <Tooltip text={'缓存是达到高性能的重要组成部分'} type="dark">
     <Link href="#" color>超链接</Link>
   </Tooltip>
-</Row>
+</div>
 `}
 />
 
 <Playground
   title="定制内容"
   desc="你可以自定义弹出框的内容。"
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  scope={{ Tooltip, Spacer, Code, Text }}
   code={`
-<Row align="middle">
+<div>
   <Tooltip text={<>请求中带上 <Code>If-Modified-Since</Code> 来验证缓存。</>}>
     <span>上方</span>
   </Tooltip>
@@ -63,16 +63,16 @@ export const meta = {
   <Tooltip text={<>请求中带上 If-Modified-Since 来<Text b>验证缓存</Text>。</>} placement="bottom">
     <span>下方</span>
   </Tooltip>
-</Row>
+</div>
 `}
 />
 
 <Playground
   title="类型"
   desc="我们为不同的类型预置了样式。"
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  scope={{ Tooltip, Spacer, Code, Text }}
   code={`
-<Row align="middle">
+<div>
   <Tooltip text="缓存是达到高性能的重要组成部分" type="dark">
     <span>黑暗的</span>
   </Tooltip>
@@ -92,16 +92,16 @@ export const meta = {
   <Tooltip text="缓存是达到高性能的重要组成部分" type="secondary">
     <span>次要的</span>
   </Tooltip>
-</Row>
+</div>
 `}
 />
 
 <Playground
   title="变体"
   desc="特殊样式。"
-  scope={{ Tooltip, Spacer, Row, Code, Text }}
+  scope={{ Tooltip, Spacer, Code, Text }}
   code={`
-<Row align="middle">
+<div>
   <Tooltip text="缓存是达到高性能的重要组成部分" type="lite">
     <span>精简的</span>
   </Tooltip>
@@ -109,71 +109,59 @@ export const meta = {
   <Tooltip text="缓存是达到高性能的重要组成部分" hideArrow>
     <span>无箭头</span>
   </Tooltip>
-</Row>
+</div>
 `}
 />
 
 <Playground
   title="对齐方式"
   desc="有 12 种对齐方式可用。"
-  scope={{ Tooltip, Spacer, Row, Col }}
+  scope={{ Tooltip, Spacer, Grid }}
   code={`
 () => {
-  const text = 'The Evil Rabbit Jumped over the Fence'
-  const Center = ({ children, ...props }) => (
-    <Col style={{ display: 'flex', justifyContent: 'center' }} {...props}>{children}</Col>
-  )
+  const text = 'HTTP is stateless, but not sessionless'
   return (
-    <div style={{ width: '80%', margin: '0 auto' }}>
-      <Row justify="center">
-        <Center span={5}>
-          <Tooltip text={text} placement="topStart" type="dark">topStart</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="top" type="dark">top</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="topEnd" type="dark">topEnd</Tooltip>
-        </Center>
-      </Row>
-      <Row justify="space-between">
-        <Center span={5}>
-          <Tooltip text={text} placement="leftStart" type="dark">leftStart</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="rightStart" type="dark">rightStart</Tooltip>
-        </Center>
-      </Row>
-      <Spacer y={.5} />
-      <Row justify="space-between">
-        <Center span={5}>
-          <Tooltip text={text} placement="left" type="dark">left</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="right" type="dark">right</Tooltip>
-        </Center>
-      </Row>
-      <Spacer y={.5} />
-      <Row justify="space-between">
-        <Center span={5}>
-          <Tooltip text={text} placement="leftEnd" type="dark">leftEnd</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="rightEnd" type="dark">rightEnd</Tooltip>
-        </Center>
-      </Row>
-      <Row justify="center">
-        <Center span={5}>
-          <Tooltip text={text} placement="bottomStart" type="dark">bottomStart</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="bottom" type="dark">bottom</Tooltip>
-        </Center>
-        <Center span={5}>
-          <Tooltip text={text} placement="bottomEnd" type="dark">bottomEnd</Tooltip>
-        </Center>
-      </Row>
-    </div>
+    <Grid.Container gap={1.5} justify="center" alignItems="center">
+      <Grid xs={8} justify="flex-end">
+        <Tooltip text={text} placement="topStart" type="dark">topStart</Tooltip>
+      </Grid>
+      <Grid xs={8} justify="center">
+        <Tooltip text={text} placement="top" type="dark">top</Tooltip>
+      </Grid>
+      <Grid xs={8}>
+        <Tooltip text={text} placement="topEnd" type="dark">topEnd</Tooltip>
+      </Grid>
+      <Grid xs={6} justify="flex-end">
+        <Tooltip text={text} placement="leftStart" type="dark">leftStart</Tooltip>
+      </Grid>
+      <Grid xs={12} />
+      <Grid xs={6}>
+        <Tooltip text={text} placement="rightStart" type="dark">rightStart</Tooltip>
+      </Grid>
+      <Grid xs={6} justify="flex-end">
+        <Tooltip text={text} placement="left" type="dark">left</Tooltip>
+      </Grid>
+      <Grid xs={12} />
+      <Grid xs={6}>
+        <Tooltip text={text} placement="right" type="dark">right</Tooltip>
+      </Grid>
+      <Grid xs={6} justify="flex-end">
+        <Tooltip text={text} placement="leftEnd" type="dark">leftEnd</Tooltip>
+      </Grid>
+      <Grid xs={12} />
+      <Grid xs={6}>
+        <Tooltip text={text} placement="rightEnd" type="dark">rightEnd</Tooltip>
+      </Grid>
+      <Grid xs={8} justify="flex-end">
+        <Tooltip text={text} placement="bottomStart" type="dark">bottomStart</Tooltip>
+      </Grid>
+      <Grid xs={8} justify="center">
+        <Tooltip text={text} placement="bottom" type="dark">bottom</Tooltip>
+      </Grid>
+      <Grid xs={8}>
+        <Tooltip text={text} placement="bottomEnd" type="dark">bottomEnd</Tooltip>
+      </Grid>
+    </Grid.Container>
   )
 }
 `}
@@ -182,21 +170,21 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/tooltip.mdx">
 <Attributes.Title>Tooltip.Props</Attributes.Title>
 
-| 属性                | 描述                       | 类型                          | 推荐值                           | 默认      |
-| ------------------- | -------------------------- | ----------------------------- | -------------------------------- | --------- |
-| **text**            | 弹出框文字                 | `string` `React.ReactNode`    | -                                | -         |
-| **visible**         | 手动控制提示框的显示与隐藏 | `boolean`                     | -                                | `false`   |
-| **initialVisible**  | 初始是否可见               | `boolean`                     | -                                | `false`   |
-| **hideArrow**       | 隐藏箭头                   | `boolean`                     | -                                | `false`   |
-| **type**            | 不同的文字提示类型         | [TooltipTypes](#tooltiptypes) | -                                | `default` |
-| **placement**       | 提示框与目标的对齐方式     | [Placement](#placement)       | -                                | `top`     |
-| **trigger**         | 触发提示框的方式           | `'click' / 'hover'`           | -                                | `hover`   |
-| **enterDelay**(ms)  | 在提示显示前的延迟         | `number`                      | -                                | `100`     |
-| **leaveDelay**(ms)  | 关闭提示前的延迟           | `number`                      | -                                | `0`       |
-| **offset**(px)      | 提示框与目标之间的偏移     | `number`                      | -                                | `12`      |
-| **portalClassName** | 弹出框的类名               | `string`                      | -                                | -         |
-| **onVisibleChange** | 当提示框状态改变时触发     | `(visible: boolean) => void`  | -                                | -         |
-| ...                 | 原生属性                   | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -         |
+| 属性                | 描述                               | 类型                          | 推荐值     | 默认      |
+| ------------------- | ---------------------------------- | ----------------------------- | ---------- | --------- |
+| **text**            | 弹出框文字                         | `string` `React.ReactNode`    | -          | -         |
+| **visible**         | 手动控制提示框的显示与隐藏         | `boolean`                     | -          | `false`   |
+| **initialVisible**  | 初始是否可见                       | `boolean`                     | -          | `false`   |
+| **hideArrow**       | 隐藏箭头                           | `boolean`                     | -          | `false`   |
+| **type**            | 不同的文字提示类型                 | [TooltipTypes](#tooltiptypes) | -          | `default` |
+| **placement**       | 提示框与目标的对齐方式             | [Placement](#placement)       | -          | `top`     |
+| **trigger**         | 触发提示框的方式                   | `'click' / 'hover'`           | -          | `hover`   |
+| **enterDelay**(ms)  | 在提示显示前的延迟                 | `number`                      | -          | `100`     |
+| **leaveDelay**(ms)  | 关闭提示前的延迟 (仅 'hover' 模式) | `number`                      | -          | `150`     |
+| **offset**(px)      | 提示框与目标之间的偏移             | `number`                      | -          | `12`      |
+| **portalClassName** | 弹出框的类名                       | `string`                      | -          | -         |
+| **onVisibleChange** | 当提示框状态改变时触发             | `(visible: boolean) => void`  | -          | -         |
+| ...                 | 原生属性                           | `HTMLAttributes`              | `'id' ...` | -         |
 
 <Attributes.Title>TooltipTypes</Attributes.Title>
 

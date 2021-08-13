@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import Avatar from '../avatar'
 import useTheme from '../use-theme'
-import UserLink from './user-link'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   name: ReactNode | string
@@ -16,9 +16,9 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type UserProps = Props & typeof defaultProps & NativeAttrs
+export type UserProps = Props & NativeAttrs
 
-const User: React.FC<React.PropsWithChildren<UserProps>> = ({
+const UserComponent: React.FC<React.PropsWithChildren<UserProps>> = ({
   src,
   text,
   name,
@@ -26,12 +26,13 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
   className,
   altText,
   ...props
-}) => {
+}: React.PropsWithChildren<UserProps> & typeof defaultProps) => {
   const theme = useTheme()
-
+  const { SCALES, getScaleableProps } = useScaleable()
+  const scale = getScaleableProps('scale') as number | undefined
   return (
     <div className={`user ${className}`} {...props}>
-      <Avatar src={src} text={text} size={32} alt={altText} />
+      <Avatar src={src} scale={scale} text={text} alt={altText} />
       <div className="names">
         <span className="name">{name}</span>
         <span className="social">{children}</span>
@@ -40,14 +41,19 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
       <style jsx>{`
         .user {
           display: inline-flex;
-          padding: 0 ${theme.layout.gapHalf};
           justify-content: center;
           align-items: center;
-          width: max-content;
           max-width: 100%;
+          --user-font-size: ${SCALES.font(1)};
+          font-size: var(--user-font-size);
+          width: ${SCALES.width(1, 'max-content')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(0.5)} ${SCALES.pb(0)} ${SCALES.pl(0.5)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .names {
+          font-size: inherit;
           margin-left: ${theme.layout.gapHalf};
           display: inline-flex;
           flex-direction: column;
@@ -55,9 +61,9 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
         }
 
         .name {
-          font-size: 0.89rem;
+          font-size: calc(0.89 * var(--user-font-size));
           color: ${theme.palette.accents_8};
-          line-height: 1.1rem;
+          line-height: 1.1em;
           text-transform: capitalize;
           font-weight: 500;
           max-width: 15rem;
@@ -66,7 +72,7 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
         }
 
         .social {
-          font-size: 0.75rem;
+          font-size: calc(0.75 * var(--user-font-size));
           color: ${theme.palette.accents_6};
         }
 
@@ -82,13 +88,7 @@ const User: React.FC<React.PropsWithChildren<UserProps>> = ({
   )
 }
 
-type MemoUserComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Link: typeof UserLink
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-User.defaultProps = defaultProps
-
-export default React.memo(User) as MemoUserComponent<ComponentProps>
+UserComponent.defaultProps = defaultProps
+UserComponent.displayName = 'GeistUser'
+const User = withScaleable(UserComponent)
+export default User

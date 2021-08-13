@@ -1,10 +1,10 @@
-import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
+import { Layout, Playground, Attributes } from 'lib/components'
 import { Grid, Card } from 'components'
 import PlaygroundTitle from 'lib/components/playground/title'
 
 export const meta = {
   title: 'Grid',
-  group: 'layout',
+  group: 'Layout',
 }
 
 ## Grid
@@ -18,18 +18,11 @@ and very small size. Of course, it still supports dynamic props and custom break
   desc="Dynamically scale container width while maintaining spacing."
   scope={{ Grid, Card }}
   code={`
-() => {
-  const MockItem = () => {
-    return <Card shadow style={{ width: '100%', height: '100px' }} />
-  }
-  return (
-    <Grid.Container gap={2} justify="center">
-      <Grid xs={6}><MockItem /></Grid>
-      <Grid xs={6}><MockItem /></Grid>
-      <Grid xs={6}><MockItem /></Grid>
-    </Grid.Container>
-  )
-}
+<Grid.Container gap={2} justify="center" height="100px">
+  <Grid xs={6}><Card shadow width="100%" /></Grid>
+  <Grid xs={6}><Card shadow width="100%" /></Grid>
+  <Grid xs={6}><Card shadow width="100%" /></Grid>
+</Grid.Container>
 `}
 />
 
@@ -38,25 +31,18 @@ and very small size. Of course, it still supports dynamic props and custom break
   desc="Containers for wrapping and scaling."
   scope={{ Grid, Card }}
   code={`
-() => {
-  const MockItem = () => {
-    return <Card shadow style={{ width: '100%', height: '50px' }} />
-  }
-  return (
-    <Grid.Container gap={2} justify="center">
-      <Grid xs={24}><MockItem /></Grid>
-      <Grid xs={12}><MockItem /></Grid>
-      <Grid xs={12}><MockItem /></Grid>
-      <Grid xs={6}><MockItem /></Grid>
-      <Grid xs={6}><MockItem /></Grid>
-      <Grid xs={6}><MockItem /></Grid>
-      <Grid xs={6}><MockItem /></Grid>
-      <Grid xs={6}><MockItem /></Grid>
-      <Grid xs={12}><MockItem /></Grid>
-      <Grid xs={6}><MockItem /></Grid>
-    </Grid.Container>
-  )
-}
+<Grid.Container gap={2} justify="center">
+  <Grid xs={24}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={12}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={12}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={6}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={6}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={6}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={6}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={6}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={12}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={6}><Card shadow width="100%" height="50px" /></Grid>
+</Grid.Container>
 `}
 />
 
@@ -65,20 +51,13 @@ and very small size. Of course, it still supports dynamic props and custom break
   desc="Use different layouts for different screen widths."
   scope={{ Grid, Card }}
   code={`
-() => {
-  const MockItem = () => {
-    return <Card shadow style={{ width: '100%', height: '50px' }} />
-  }
-  return (
-    <Grid.Container gap={2} justify="center">
-      <Grid xs={24} md={12}><MockItem /></Grid>
-      <Grid xs={12} md={12}><MockItem /></Grid>
-      <Grid xs={12} md={6}><MockItem /></Grid>
-      <Grid xs={12} md={6}><MockItem /></Grid>
-      <Grid xs={12} md={6}><MockItem /></Grid>
-    </Grid.Container>
-  )
-}
+<Grid.Container gap={2} justify="center">
+  <Grid xs={24} md={12}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={12} md={12}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={12} md={6}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={12} md={6}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={12} md={6}><Card shadow width="100%" height="50px" /></Grid>
+</Grid.Container>
 `}
 />
 
@@ -87,19 +66,12 @@ and very small size. Of course, it still supports dynamic props and custom break
   desc="Hide elements when unit size is 0."
   scope={{ Grid, Card }}
   code={`
-() => {
-  const MockItem = () => {
-    return <Card shadow style={{ width: '100%', height: '50px' }} />
-  }
-  return (
-    <Grid.Container gap={2} justify="center">
-      <Grid xs={12} sm={0}><MockItem /></Grid>
-      <Grid xs={12} sm={0}><MockItem /></Grid>
-      <Grid xs={24}><MockItem /></Grid>
-      <Grid xs={24}><MockItem /></Grid>
-    </Grid.Container>
-  )
-}
+<Grid.Container gap={2} justify="center">
+  <Grid xs={12} sm={0}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={12} sm={0}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={24}><Card shadow width="100%" height="50px" /></Grid>
+  <Grid xs={24}><Card shadow width="100%" height="50px" /></Grid>
+</Grid.Container>
 `}
 />
 
@@ -108,25 +80,18 @@ and very small size. Of course, it still supports dynamic props and custom break
   desc="Auto fill remaining width."
   scope={{ Grid, Card }}
   code={`
-() => {
-  const MockItem = () => {
-    return <Card shadow style={{ width: '100%', height: '50px' }} />
-  }
-  return (
-    <>
-      <Grid.Container gap={2} justify="center">
-        <Grid xs><MockItem /></Grid>
-        <Grid xs><MockItem /></Grid>
-        <Grid xs><MockItem /></Grid>
-      </Grid.Container>
-      <Grid.Container gap={2} justify="center">
-        <Grid xs><MockItem /></Grid>
-        <Grid xs={12}><MockItem /></Grid>
-        <Grid xs><MockItem /></Grid>
-      </Grid.Container>
-    </>
-  )
-}
+<>
+  <Grid.Container gap={2} justify="center">
+    <Grid xs><Card shadow width="100%" height="50px" /></Grid>
+    <Grid xs><Card shadow width="100%" height="50px" /></Grid>
+    <Grid xs><Card shadow width="100%" height="50px" /></Grid>
+  </Grid.Container>
+  <Grid.Container gap={2} justify="center">
+    <Grid xs><Card shadow width="100%" height="50px" /></Grid>
+    <Grid xs={12}><Card shadow width="100%" height="50px" /></Grid>
+    <Grid xs><Card shadow width="100%" height="50px" /></Grid>
+  </Grid.Container>
+</>
 `}
 />
 

@@ -2,7 +2,7 @@ import { Layout, Playground, Attributes } from 'lib/components'
 import { useToasts, Button, Spacer } from 'components'
 
 export const meta = {
-  title: 'toast',
+  title: 'Toast',
   group: 'Feedback',
 }
 
@@ -16,7 +16,7 @@ Display an important message globally.
   code={`
 () => {
   const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: 'The Evil Rabbit jumped over the fence.' })
+  const click = () => setToast({ text: 'HTTP is stateless, but not sessionless.' })
   return <Button onClick={click}>Show Toast</Button>
 }
 `}
@@ -29,7 +29,7 @@ Display an important message globally.
   code={`
 () => {
   const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: 'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.' })
+  const click = () => setToast({ text: 'HTTP is a protocol which allows the fetching of resources, such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance text, layout description, images, videos, scripts, and more.' })
   return <Button onClick={click}>Show Toast</Button>
 }
 `}
@@ -47,7 +47,7 @@ Display an important message globally.
     handler: () => alert('alert from toast')
   }
   const click = () => setToast({
-    text: 'The Evil Rabbit jumped over the fence.',
+    text: 'HTTP is stateless, but not sessionless.',
     actions: [action],
   })
   return <Button onClick={click} type="secondary">Show Action</Button>
@@ -68,7 +68,7 @@ Display an important message globally.
     handler: (event, cancel) => cancel()
   }
   const click = () => setToast({
-    text: 'The Evil Rabbit jumped over the fence.',
+    text: 'HTTP is stateless, but not sessionless.',
     actions: [action],
   })
   return <Button onClick={click}>Show Toast</Button>
@@ -83,13 +83,13 @@ Display an important message globally.
 () => {
   const [, setToast] = useToasts()
   const click = type => setToast({
-    text: 'The Evil Rabbit jumped over the fence.',
+    text: 'HTTP is stateless, but not sessionless.',
     type,
   })
   return (
     <>
     <Button onClick={() => click('success')} type="success">Show Success</Button>
-    <Spacer y={.5} />
+    <Spacer h={.5} />
     <Button onClick={() => click('warning')} type="warning">Show Warning</Button>
     </>
   )
@@ -109,7 +109,7 @@ const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
 ```ts
 interface Toast {
   text?: string
-  type?: NormalTypes
+  type?: ToastTypes
   delay?: number
   actions?: Array<ToastAction>
 }
@@ -125,10 +125,10 @@ interface ToastAction {
 }
 ```
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>ToastTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type ToastTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react'
-import withDefaults from '../utils/with-defaults'
 
 interface Props {
   x: number
@@ -13,9 +12,14 @@ const defaultProps = {
   y: 0,
 }
 
-export type ButtonDrip = Props & typeof defaultProps
+export type ButtonDrip = Props
 
-const ButtonDrip: React.FC<ButtonDrip> = ({ x, y, color, onCompleted }) => {
+const ButtonDrip: React.FC<ButtonDrip> = ({
+  x,
+  y,
+  color,
+  onCompleted,
+}: ButtonDrip & typeof defaultProps) => {
   const dripRef = useRef<HTMLDivElement>(null)
   /* istanbul ignore next */
   const top = Number.isNaN(+y) ? 0 : y - 10
@@ -81,6 +85,6 @@ const ButtonDrip: React.FC<ButtonDrip> = ({ x, y, color, onCompleted }) => {
   )
 }
 
-const MemoButtonDrip = React.memo<ButtonDrip>(ButtonDrip)
-
-export default withDefaults(MemoButtonDrip, defaultProps)
+ButtonDrip.defaultProps = defaultProps
+ButtonDrip.displayName = 'GeistButtonDrip'
+export default ButtonDrip

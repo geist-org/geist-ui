@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from '../link'
-import withDefaults from '../utils/with-defaults'
 
 interface Props {
   href?: string
@@ -12,26 +11,36 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>
-export type UserLinkProps = Props & typeof defaultProps & NativeAttrs
+export type UserLinkProps = Props & NativeAttrs
 
 const UserLink = React.forwardRef<
   HTMLAnchorElement,
   React.PropsWithChildren<UserLinkProps>
->(({ href, className, children, ...props }, ref: React.Ref<HTMLAnchorElement>) => {
-  return (
-    <div className={className} {...props}>
-      <Link ref={ref} href={href} color target="_blank" rel="noopener">
-        {children}
-      </Link>
-      <style jsx>{`
-        div :global(a:hover) {
-          opacity: 0.7;
-        }
-      `}</style>
-    </div>
-  )
-})
+>(
+  (
+    {
+      href,
+      className,
+      children,
+      ...props
+    }: React.PropsWithChildren<UserLinkProps> & typeof defaultProps,
+    ref: React.Ref<HTMLAnchorElement>,
+  ) => {
+    return (
+      <div className={className} {...props}>
+        <Link ref={ref} href={href} color target="_blank" rel="noopener">
+          {children}
+        </Link>
+        <style jsx>{`
+          div :global(a:hover) {
+            opacity: 0.7;
+          }
+        `}</style>
+      </div>
+    )
+  },
+)
 
-const MemoUserLink = React.memo(UserLink)
-
-export default withDefaults(MemoUserLink, defaultProps)
+UserLink.defaultProps = defaultProps
+UserLink.displayName = 'GeistUserLink'
+export default UserLink

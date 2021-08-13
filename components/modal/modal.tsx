@@ -1,51 +1,49 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { MouseEvent, useEffect, useMemo, useState } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
-import ModalTitle from './modal-title'
-import ModalSubtitle from './modal-subtitle'
 import ModalWrapper from './modal-wrapper'
-import ModalContent from './modal-content'
 import ModalAction from './modal-action'
 import ModalActions from './modal-actions'
 import Backdrop from '../shared/backdrop'
 import { ModalConfig, ModalContext } from './modal-context'
 import { pickChild } from '../utils/collections'
 import useBodyScroll from '../utils/use-body-scroll'
-import useCurrentState from '../utils/use-current-state'
+import useScaleable, { withScaleable } from '../use-scaleable'
+import useKeyboard, { KeyCode } from '../use-keyboard'
 
 interface Props {
   disableBackdropClick?: boolean
   onClose?: () => void
-  onOpen?: () => void
-  open?: boolean
-  width?: string
+  onContentClick?: (event: MouseEvent<HTMLElement>) => void
+  visible?: boolean
+  keyboard?: boolean
   wrapClassName?: string
 }
 
 const defaultProps = {
-  width: '26rem',
   wrapClassName: '',
+  keyboard: true,
   disableBackdropClick: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type ModalProps = Props & typeof defaultProps & NativeAttrs
+export type ModalProps = Props & NativeAttrs
 
-const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
-  children,
-  disableBackdropClick,
+const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
+  visible: customVisible,
   onClose,
-  onOpen,
-  open,
-  width: wrapperWidth,
+  children,
+  keyboard,
   wrapClassName,
-}) => {
+  onContentClick,
+  disableBackdropClick,
+}: React.PropsWithChildren<ModalProps> & typeof defaultProps) => {
   const portal = usePortal('modal')
+  const { SCALES } = useScaleable()
   const [, setBodyHidden] = useBodyScroll(null, { scrollLayer: true })
-  const [visible, setVisible, visibleRef] = useCurrentState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false)
   const [withoutActionsChildren, ActionsChildren] = pickChild(children, ModalAction)
   const hasActions = ActionsChildren && React.Children.count(ActionsChildren) > 0
-
   const closeModal = () => {
     onClose && onClose()
     setVisible(false)
@@ -53,20 +51,23 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   }
 
   useEffect(() => {
-    if (open === undefined) return
-    if (open) {
-      onOpen && onOpen()
-    }
-    if (!open && visibleRef.current) {
-      onClose && onClose()
-    }
+    if (typeof customVisible === 'undefined') return
+    setVisible(customVisible)
+    setBodyHidden(customVisible)
+  }, [customVisible])
 
-    setVisible(open)
-    setBodyHidden(open)
-  }, [open])
+  const { bindings } = useKeyboard(
+    () => {
+      keyboard && closeModal()
+    },
+    KeyCode.Escape,
+    {
+      disableGlobalEvent: true,
+    },
+  )
 
   const closeFromBackdrop = () => {
-    if (disableBackdropClick && hasActions) return
+    if (disableBackdropClick) return
     closeModal()
   }
 
@@ -80,7 +81,12 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   if (!portal) return null
   return createPortal(
     <ModalContext.Provider value={modalConfig}>
-      <Backdrop onClick={closeFromBackdrop} visible={visible} width={wrapperWidth}>
+      <Backdrop
+        onClick={closeFromBackdrop}
+        onContentClick={onContentClick}
+        visible={visible}
+        width={SCALES.width(26)}
+        {...bindings}>
         <ModalWrapper visible={visible} className={wrapClassName}>
           {withoutActionsChildren}
           {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}
@@ -91,16 +97,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
   )
 }
 
-type ModalComponent<P = {}> = React.FC<P> & {
-  Title: typeof ModalTitle
-  Subtitle: typeof ModalSubtitle
-  Content: typeof ModalContent
-  Action: typeof ModalAction
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Modal.defaultProps = defaultProps
-
-export default Modal as ModalComponent<ComponentProps>
+ModalComponent.defaultProps = defaultProps
+ModalComponent.displayName = 'GeistModal'
+const Modal = withScaleable(ModalComponent)
+export default Modal

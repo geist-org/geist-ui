@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Loading, Spacer, Row } from 'components'
+import { Loading, Grid } from 'components'
 
 export const meta = {
   title: '加载中 Loading',
@@ -11,86 +11,74 @@ export const meta = {
 表示动作正在后台运行。
 
 <Playground
-  scope={{ Loading, Row, Spacer }}
+  scope={{ Loading }}
   code={`
-<Row style={{ padding: '10px 0'}}>
-  <Loading />
-</Row>
+<Loading />
 `}
 />
 
 <Playground
   title="文本"
   desc="在图标旁边定制一段文本。"
-  scope={{ Loading, Row }}
+  scope={{ Loading }}
   code={`
-<Row style={{ padding: '10px 0'}}>
-  <Loading>加载中</Loading>
-</Row>
-`}
-/>
-
-<Playground
-  title="大小"
-  desc="不同大小的组件。"
-  scope={{ Loading, Row, Spacer }}
-  code={`
-<>
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading size="mini" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading size="small" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading size="medium" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
-    <Loading size="large" />
-  </Row>
-</>
+<Loading>加载中</Loading>
 `}
 />
 
 <Playground
   title="类型"
   desc="加载指示器在不同状态下的表现。"
-  scope={{ Loading, Row, Spacer }}
+  scope={{ Loading, Grid }}
   code={`
-<>
-  <Row style={{ padding: '10px 0', width: '50px' }}>
+<Grid.Container gap={2.5}>
+  <Grid xs={24}>
     <Loading type="success" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
+  </Grid>
+  <Grid xs={24}>
     <Loading type="secondary" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
+  </Grid>
+  <Grid xs={24}>
     <Loading type="warning" />
-  </Row>
-  <Spacer y={.5} />
-  <Row style={{ padding: '10px 0', width: '50px' }}>
+  </Grid>
+   <Grid xs={24}>
     <Loading type="error" />
-  </Row>
-</>
+  </Grid>
+</Grid.Container>
+`}
+/>
+
+<Playground
+  title="空间"
+  desc="自定义点与点之间的间隔比例。(比例是相对于当前大小 `size`)"
+  scope={{ Loading, Grid }}
+  code={`
+<Grid.Container gap={2.5}>
+  <Grid xs={24}>
+    <Loading spaceRatio={2.5} />
+  </Grid>
+  <Grid xs={24}>
+    <Loading spaceRatio={0.5} />
+  </Grid>
+</Grid.Container>
 `}
 />
 
 <Attributes edit="/pages/zh-cn/components/loading.mdx">
 <Attributes.Title>Loading.Props</Attributes.Title>
 
-| 属性       | 描述               | 类型             | 推荐值                                                  | 默认      |
-| ---------- | ------------------ | ---------------- | ------------------------------------------------------- | --------- |
-| **type**   | 指示器的类型       | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**   | 指示器的大小       | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **color**  | 自定义指示器的色彩 | `string`         | -                                                       | -         |
-| **width**  | 定制 CSS 宽度      | `string`         | -                                                       | `100%`    |
-| **height** | 定制 CSS 高度      | `string`         | -                                                       | `100%`    |
-| ...        | 原生属性           | `HTMLAttributes` | `'id', 'title', 'className', ...`                       | -         |
+| 属性           | 描述               | 类型             | 推荐值                            | 默认      |
+| -------------- | ------------------ | ---------------- | --------------------------------- | --------- |
+| **type**       | 指示器的类型       | `LoadingTypes`   | [LoadingTypes](#loadingtypes)     | `default` |
+| **color**      | 自定义指示器的色彩 | `string`         | -                                 | -         |
+| **spaceRatio** | 点之间的空间比例   | `number`         | -                                 | 1         |
+| ...            | 原生属性           | `HTMLAttributes` | `'id', 'title', 'className', ...` | -         |
+
+<Attributes.Title>LoadingTypes</Attributes.Title>
+
+```ts
+type LoadingTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

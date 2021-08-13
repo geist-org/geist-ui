@@ -43,4 +43,5 @@ export const defaultLayout: GeistUIThemesLayout = {
   breakpointMobile: defaultBreakpoints.xs.max,
   breakpointTablet: defaultBreakpoints.sm.max,
   radius: '5px',
+  unit: '16px',
 }

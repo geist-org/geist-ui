@@ -84,17 +84,17 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/snippet.mdx">
 <Attributes.Title>Snippet.Props</Attributes.Title>
 
-| 属性          | 描述               | 类型                          | 推荐值                           | 默认                   |
-| ------------- | ------------------ | ----------------------------- | -------------------------------- | ---------------------- |
-| **text**      | 命令文本           | `string` `Array<string>`      | -                                | -                      |
-| **type**      | 组件类型           | [SnippetTypes](#snippettypes) | [SnippetTypes](#snippettypes)    | `default`              |
-| **filled**    | 填充风格的样式     | `boolean`                     | -                                | `false`                |
-| **width**     | 设置 CSS 宽度      | `string`                      | -                                | `initial`              |
-| **copy**      | 拷贝按钮的工作方式 | `CopyTypes`                   | `'default', 'silent', 'prevent'` | `default`              |
-| **symbol**    | 组件左侧显示的字符 | `string`                      | -                                | `$`                    |
-| **toastText** | 拷贝提示的字符     | `string`                      | -                                | `Copied to clipboard!` |
-| **toastType** | 拷贝提示的类型     | `NormalTypes`                 | [NormalTypes](#normaltypes)      | `success`              |
-| ...           | 原生属性           | `HTMLAttributes`              | `'id', 'name', 'className', ...` | -                      |
+| 属性          | 描述               | 类型                     | 推荐值                        | 默认                   |
+| ------------- | ------------------ | ------------------------ | ----------------------------- | ---------------------- |
+| **text**      | 命令文本           | `string` `Array<string>` | -                             | -                      |
+| **type**      | 组件类型           | `SnippetTypes`           | [SnippetTypes](#snippettypes) | `default`              |
+| **filled**    | 填充风格的样式     | `boolean`                | -                             | `false`                |
+| **width**     | 设置 CSS 宽度      | `string`                 | -                             | `initial`              |
+| **copy**      | 拷贝按钮的工作方式 | `CopyTypes`              | [CopyTypes](#copytypes)       | `default`              |
+| **symbol**    | 组件左侧显示的字符 | `string`                 | -                             | `$`                    |
+| **toastText** | 拷贝提示的字符     | `string`                 | -                             | `Copied to clipboard!` |
+| **toastType** | 拷贝提示的类型     | `ToastTypes`             | [ToastTypes](#toasttypes)     | `success`              |
+| ...           | 原生属性           | `HTMLAttributes`         | `'id', 'name', ...`           | -                      |
 
 <Attributes.Title>SnippetTypes</Attributes.Title>
 
@@ -109,10 +109,22 @@ type SnippetTypes =
   | 'lite'
 ```
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>CopyTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+type CopyTypes = 'default' | 'silent' | 'prevent'
+```
+
+<Attributes.Title>SnippetTypes</Attributes.Title>
+
+```ts
+type SnippetTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+<Attributes.Title>ToastTypes</Attributes.Title>
+
+```ts
+type ToastTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

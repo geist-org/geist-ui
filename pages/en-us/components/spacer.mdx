@@ -1,9 +1,9 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Spacer, Container, Col } from 'components'
+import { Spacer, Grid } from 'components'
 
 export const meta = {
   title: 'Spacer',
-  group: 'layout',
+  group: 'Layout',
 }
 
 ## Spacer
@@ -12,33 +12,33 @@ Provide empty space.
 
 <Playground
   title="Vertical"
-  scope={{ Spacer, Container }}
+  scope={{ Spacer, Grid }}
   code={`
-<>
-  <Container style={{ background: '#444' }}>
-    <Spacer y={1}/>
-  </Container>
-  <Spacer y={1}/>
-  <Container style={{ background: '#444' }}>
-    <Spacer y={2}/>
-  </Container>
-  <Spacer y={1}/>
-  <Container style={{ background: '#444' }}>
-    <Spacer y={3}/>
-  </Container>
-</>
+<Grid.Container>
+  <Grid xs={24} style={{ background: '#444', borderRadius: '15px' }}>
+    <Spacer h={2}/>
+  </Grid>
+  <Spacer h={2}/>
+  <Grid xs={24} style={{ background: '#666', borderRadius: '15px' }}>
+    <Spacer h={3}/>
+  </Grid>
+  <Spacer h={3}/>
+  <Grid xs={24} style={{ background: '#999', borderRadius: '15px' }}>
+    <Spacer h={4}/>
+  </Grid>
+</Grid.Container>
 `}
 />
 
 <Playground
   title="Horizontal"
-  scope={{ Spacer, Container, Col }}
+  scope={{ Spacer, Grid }}
   code={`
-<Container>
-  <Col style={{ background: '#444' }} />
-  <Spacer x={5}/>
-  <Col style={{ background: '#444' }} />
-</Container>
+<Grid.Container>
+  <Grid xs={4} style={{ background: '#444', borderRadius: '15px' }} />
+  <Spacer w={5}/>
+  <Grid xs={4} style={{ background: '#444', borderRadius: '15px' }} />
+</Grid.Container>
 `}
 />
 
@@ -47,8 +47,8 @@ Provide empty space.
 
 | Attribute  | Description    | Type               | Accepted values          | Default |
 | ---------- | -------------- | ------------------ | ------------------------ | ------- |
-| **x**      | x-axis spacing | `number` / `float` | -                        | 1       |
-| **y**      | y-axis spacing | `number` / `float` | -                        | 1       |
+| **w**      | x-axis spacing | `number` / `float` | -                        | 1       |
+| **h**      | y-axis spacing | `number` / `float` | -                        | 1       |
 | **inline** | inline space   | `boolean`          | -                        | `false` |
 | ...        | native props   | `HTMLAttributes`   | `'id', 'className', ...` | -       |
 

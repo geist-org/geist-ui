@@ -45,9 +45,9 @@ Display progress relative to a limit or related to a task.
     <>
       <Progress value={value} colors={colors} />
       <Spacer />
-      <Button onClick={() => setValue(value + 20)} auto size="small">Increase</Button>
-      <Spacer x={.5} inline />
-      <Button onClick={() => setValue(20)} auto size="small" type="abort">Reset</Button>
+      <Button onClick={() => setValue(value + 20)} auto scale={0.5}>Increase</Button>
+      <Spacer w={.5} inline />
+      <Button onClick={() => setValue(20)} auto scale={0.5} type="abort">Reset</Button>
     </>
   )
 }
@@ -74,15 +74,21 @@ Display progress relative to a limit or related to a task.
 <Attributes edit="/pages/en-us/components/progress.mdx">
 <Attributes.Title>Progress.Props</Attributes.Title>
 
-| Attribute       | Description            | Type                        | Accepted values                                         | Default   |
-| --------------- | ---------------------- | --------------------------- | ------------------------------------------------------- | --------- |
-| **value**       | current value          | `number`                    | -                                                       | 0         |
-| **max**         | max value              | `number`                    | -                                                       | 100       |
-| **fixedTop**    | fix progress to top    | `boolean`                   | -                                                       | `false`   |
-| **fixedBottom** | fix progress to bottom | `boolean`                   | -                                                       | `false`   |
-| **colors**      | custom colors          | `{ [key: number]: string }` | -                                                       | -         |
-| **type**        | predefined state types | `NormalTypes`               | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| ...             | native props           | `ProgressHTMLAttributes`    | `'aria-busy', 'className', ...`                         | -         |
+| Attribute       | Description            | Type                        | Accepted values                 | Default   |
+| --------------- | ---------------------- | --------------------------- | ------------------------------- | --------- |
+| **value**       | current value          | `number`                    | -                               | 0         |
+| **max**         | max value              | `number`                    | -                               | 100       |
+| **fixedTop**    | fix progress to top    | `boolean`                   | -                               | `false`   |
+| **fixedBottom** | fix progress to bottom | `boolean`                   | -                               | `false`   |
+| **colors**      | custom colors          | `{ [key: number]: string }` | -                               | -         |
+| **type**        | predefined state types | `ProgressTypes`             | [ProgressTypes](#progresstypes) | `default` |
+| ...             | native props           | `ProgressHTMLAttributes`    | `'aria-busy', ...`              | -         |
+
+<Attributes.Title>ProgressTypes</Attributes.Title>
+
+```ts
+type ProgressTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

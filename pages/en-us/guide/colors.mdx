@@ -5,14 +5,15 @@ import Colors from 'lib/components/displays/colors'
 
 export const meta = {
   title: 'Colors',
-  group: 'customization',
+  group: 'Customization',
+  index: 20,
 }
 
 ## Colors
 
 Default colors for themes.
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 ### PRIMARY
 
@@ -32,9 +33,9 @@ const myComponent = () => {
 ```
 
 </Display>
-<Spacer y={1} />
+<Spacer h={1} />
 <Colors type="normal" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### STATUS
 
@@ -42,38 +43,38 @@ Use different colors to express more emotional changes.
 
 ### Success
 
-<Spacer y={0.75} />
+<Spacer h={0.75} />
 <Colors type="success" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### Error
 
-<Spacer y={0.75} />
+<Spacer h={0.75} />
 <Colors type="error" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### Warning
 
-<Spacer y={0.75} />
+<Spacer h={0.75} />
 <Colors type="warning" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### Cyan
 
-<Spacer y={0.75} />
+<Spacer h={0.75} />
 <Colors type="cyan" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### Violet
 
-<Spacer y={0.75} />
+<Spacer h={0.75} />
 <Colors type="violet" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### Highlight
 
-<Spacer y={0.75} />
+<Spacer h={0.75} />
 <Colors type="highlight" />
-<Spacer y={3} />
+<Spacer h={3} />
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

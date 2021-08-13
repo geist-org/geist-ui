@@ -26,18 +26,6 @@ describe('Button', () => {
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('should support all sizes', () => {
-    const wrapper = mount(
-      <div>
-        <Button size="mini" />
-        <Button size="small" />
-        <Button size="medium" />
-        <Button size="large" />
-      </div>,
-    )
-    expect(() => wrapper.unmount()).not.toThrow()
-  })
-
   it('should render different text', () => {
     const wrapper = mount(<Button>button</Button>)
     expect(wrapper.text()).toContain('button')

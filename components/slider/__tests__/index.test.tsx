@@ -69,6 +69,18 @@ describe('Slider', () => {
     changeHandler.mockRestore()
   })
 
+  it('should work with different status', () => {
+    const wrapper = mount(
+      <div>
+        <Slider type="secondary" />
+        <Slider type="success" />
+        <Slider type="warning" />
+        <Slider type="error" />
+      </div>,
+    )
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+
   it('should ignore events when disabled', async () => {
     let value = 0
     const changeHandler = jest.fn().mockImplementation(val => (value = val))
@@ -131,6 +143,10 @@ describe('Slider', () => {
     expect(wrapper.html()).toMatchSnapshot()
 
     wrapper = mount(<Slider step={20} showMarkers />)
+    expect(wrapper.html()).toMatchSnapshot()
+  })
+  it('should work with hideValue', () => {
+    let wrapper = mount(<Slider initialValue={20} hideValue />)
     expect(wrapper.html()).toMatchSnapshot()
   })
 })

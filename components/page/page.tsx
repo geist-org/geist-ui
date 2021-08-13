@@ -1,25 +1,20 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { NormalSizes, tuple } from '../utils/prop-types'
-import { getPageSize } from './styles'
+import { tuple } from '../utils/prop-types'
 import useTheme from '../use-theme'
-import PageHeader from './page-header'
 import PageContent from './page-content'
 import { hasChild } from '../utils/collections'
-import PageFooter from './page-footer'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 const renderMode = tuple('default', 'effect', 'effect-seo')
 
-export type PageSize = NormalSizes | string
 export type PageRenderMode = typeof renderMode[number]
 
 interface Props {
-  size?: PageSize
   render?: PageRenderMode
-  dotBackdrop: boolean
+  dotBackdrop?: boolean
 }
 
 const defaultProps = {
-  size: 'medium' as PageSize,
   render: 'default' as PageRenderMode,
   dotBackdrop: false,
 }
@@ -39,18 +34,17 @@ const DotStyles: React.FC<unknown> = () => (
 )
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type NoteProps = Props & typeof defaultProps & NativeAttrs
+export type PageProps = Props & NativeAttrs
 
-const Page: React.FC<React.PropsWithChildren<NoteProps>> = ({
+const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
   children,
-  size,
   render,
   dotBackdrop,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<PageProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const width = useMemo(() => getPageSize(size, theme.layout), [size, theme.layout])
+  const { SCALES } = useScaleable()
   const showDot = useMemo<boolean>(() => {
     if (theme.type === 'dark') return false
     return dotBackdrop
@@ -85,29 +79,23 @@ const Page: React.FC<React.PropsWithChildren<NoteProps>> = ({
       {showDot && <DotStyles />}
       <style jsx>{`
         section {
-          width: ${width};
           max-width: 100vw;
           min-height: 100vh;
-          margin: 0 auto;
-          padding: 0 ${theme.layout.gap};
           box-sizing: border-box;
           position: relative;
+          font-size: ${SCALES.font(1)};
+          width: ${SCALES.width(1, 'calc(100% - 100pt)')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0)} ${SCALES.pr(1.34)} ${SCALES.pb(0)} ${SCALES.pl(1.34)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0, 'auto')} ${SCALES.mb(0)}
+            ${SCALES.ml(0, 'auto')};
         }
       `}</style>
     </section>
   )
 }
 
-type MemoPageComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Header: typeof PageHeader
-  Content: typeof PageContent
-  Body: typeof PageContent
-  Footer: typeof PageFooter
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Page.defaultProps = defaultProps
-
-export default React.memo(Page) as MemoPageComponent<ComponentProps>
+PageComponent.defaultProps = defaultProps
+PageComponent.displayName = 'GeistPage'
+const Page = withScaleable(PageComponent)
+export default Page

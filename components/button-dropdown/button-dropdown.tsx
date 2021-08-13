@@ -5,13 +5,14 @@ import { getColor } from './styles'
 import ButtonDropdownIcon from './icon'
 import ButtonDropdownItem from './button-dropdown-item'
 import { ButtonDropdownContext } from './button-dropdown-context'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 import { pickChild, pickChildByProps } from '../utils/collections'
-import { getButtonSize } from '../button/styles'
+import useScaleable, { withScaleable } from '../use-scaleable'
+
+export type ButtonDropdownTypes = NormalTypes
 
 interface Props {
-  type?: NormalTypes
-  size?: NormalSizes
+  type?: ButtonDropdownTypes
   auto?: boolean
   loading?: boolean
   disabled?: boolean
@@ -19,8 +20,7 @@ interface Props {
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
-  size: 'medium' as NormalSizes,
+  type: 'default' as ButtonDropdownTypes,
   auto: false,
   loading: false,
   disabled: false,
@@ -28,27 +28,26 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type ButtonDropdownProps = Props & typeof defaultProps & NativeAttrs
+export type ButtonDropdownProps = Props & NativeAttrs
 
 const stopPropagation = (event: MouseEvent<HTMLElement>) => {
   event.stopPropagation()
   event.nativeEvent.stopImmediatePropagation()
 }
 
-const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = ({
+const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = ({
   children,
   type,
-  size,
   auto,
   className,
   disabled,
   loading,
   ...props
 }) => {
+  const { SCALES } = useScaleable()
   const ref = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const colors = getColor(theme.palette, type)
-  const sizes = getButtonSize(size, auto)
   const itemChildren = pickChild(children, ButtonDropdownItem)[1]
   const [itemChildrenWithoutMain, mainItemChildren] = pickChildByProps(
     itemChildren,
@@ -67,20 +66,20 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
     [visible],
   )
 
-  const initialValue = useMemo(
-    () => ({
-      type,
-      size,
-      auto,
-      disabled,
-      loading,
-    }),
-    [type, size],
-  )
+  const initialValue = {
+    type,
+    auto,
+    disabled,
+    loading,
+  }
   const bgColor = useMemo(() => {
     if (disabled || loading) return theme.palette.accents_1
     return visible ? colors.hoverBgColor : colors.bgColor
   }, [visible, colors, theme.palette])
+  const [paddingLeft, paddingRight] = [
+    auto ? SCALES.pl(1.15) : SCALES.pl(1.375),
+    auto ? SCALES.pr(1.15) : SCALES.pr(1.375),
+  ]
 
   useClickAway(ref, () => setVisible(false))
 
@@ -94,7 +93,7 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>
-            <ButtonDropdownIcon color={colors.color} height={sizes.height} />
+            <ButtonDropdownIcon color={colors.color} height={SCALES.height(2.5)} />
           </summary>
           <div className="content">{itemChildrenWithoutMain}</div>
         </details>
@@ -105,6 +104,11 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
             box-sizing: border-box;
             border: 1px solid ${theme.palette.border};
             border-radius: ${theme.layout.radius};
+            --geist-ui-dropdown-height: ${SCALES.height(2.5)};
+            --geist-ui-dropdown-min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
+            --geist-ui-dropdown-padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)}
+              ${paddingLeft};
+            --geist-ui-dropdown-font-size: ${SCALES.font(0.875)};
           }
 
           .btn-dropdown > :global(button) {
@@ -125,7 +129,7 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
             outline: none;
             color: ${colors.color};
             background-color: ${bgColor};
-            height: ${sizes.height};
+            height: ${SCALES.height(2.5)};
             border-left: 1px solid ${colors.borderLeftColor};
             cursor: ${disabled || loading ? 'not-allowed' : 'pointer'};
             display: flex;
@@ -168,13 +172,7 @@ const ButtonDropdown: React.FC<React.PropsWithChildren<ButtonDropdownProps>> = (
   )
 }
 
-type MemoButtonDropdownComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Item: typeof ButtonDropdownItem
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-ButtonDropdown.defaultProps = defaultProps
-
-export default React.memo(ButtonDropdown) as MemoButtonDropdownComponent<ComponentProps>
+ButtonDropdownComponent.displayName = 'GeistButtonDropdown'
+ButtonDropdownComponent.defaultProps = defaultProps
+const ButtonDropdown = withScaleable(ButtonDropdownComponent)
+export default ButtonDropdown

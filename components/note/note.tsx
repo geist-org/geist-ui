@@ -1,30 +1,29 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemes } from '../themes/presets'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
+export type NoteTypes = NormalTypes
 interface Props {
-  type?: NormalTypes
+  type?: NoteTypes
   label?: string | boolean
-  small?: boolean
   filled?: boolean
   className?: string
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
+  type: 'default' as NoteTypes,
   label: 'note' as string | boolean,
-  small: false,
   filled: false,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type NoteProps = Props & typeof defaultProps & NativeAttrs
+export type NoteProps = Props & NativeAttrs
 
-const getStatusColor = (type: NormalTypes, filled: boolean, theme: GeistUIThemes) => {
-  const colors: { [key in NormalTypes]?: string } = {
+const getStatusColor = (type: NoteTypes, filled: boolean, theme: GeistUIThemes) => {
+  const colors: { [key in NoteTypes]?: string } = {
     secondary: theme.palette.secondary,
     success: theme.palette.success,
     warning: theme.palette.warning,
@@ -46,23 +45,20 @@ const getStatusColor = (type: NormalTypes, filled: boolean, theme: GeistUIThemes
   }
 }
 
-export const Note: React.FC<React.PropsWithChildren<NoteProps>> = ({
+export const NoteComponent: React.FC<React.PropsWithChildren<NoteProps>> = ({
   children,
   type,
   label,
   filled,
-  small,
   className,
   ...props
-}) => {
+}: React.PropsWithChildren<NoteProps> & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const { color, borderColor, bgColor } = useMemo(
     () => getStatusColor(type, filled, theme),
     [type, filled, theme],
   )
-  const padding = small
-    ? `calc(${theme.layout.gapHalf} / 2) calc(${theme.layout.gap} / 2)`
-    : `${theme.layout.gapHalf} ${theme.layout.gap}`
 
   return (
     <div className={`note ${className}`} {...props}>
@@ -75,13 +71,17 @@ export const Note: React.FC<React.PropsWithChildren<NoteProps>> = ({
 
       <style jsx>{`
         .note {
-          padding: ${padding};
-          font-size: 14px;
           line-height: 1.8;
           border: 1px solid ${borderColor};
           color: ${color};
           background-color: ${bgColor};
           border-radius: ${theme.layout.radius};
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0.667)} ${SCALES.pr(1.32)} ${SCALES.pb(0.667)}
+            ${SCALES.pl(1.32)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .note :global(p) {
@@ -92,13 +92,14 @@ export const Note: React.FC<React.PropsWithChildren<NoteProps>> = ({
           text-transform: uppercase;
           user-select: none;
           line-height: 1.5;
-          padding-right: ${theme.layout.gapQuarter};
+          padding-right: 0.38em;
         }
       `}</style>
     </div>
   )
 }
 
-const MemoNote = React.memo(Note)
-
-export default withDefaults(MemoNote, defaultProps)
+NoteComponent.defaultProps = defaultProps
+NoteComponent.displayName = 'GeistNote'
+const Note = withScaleable(NoteComponent)
+export default Note

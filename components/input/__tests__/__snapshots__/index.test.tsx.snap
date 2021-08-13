@@ -3,32 +3,43 @@
 exports[`Input should be work with icon 1`] = `
 "<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
-          box-sizing: content-box;
-          display: flex;
-          width: calc(1.687 * 16pt * .42);
+          box-sizing: border-box;
+          display: inline-flex;
+          width: calc(var(--input-height) - 2px);
+          flex-shrink: 0;
           height: 100%;
           align-items: center;
-          vertical-align: middle;
+          justify-content: center;
           margin: 0;
-          padding: 0 calc(1.687 * 16pt * .3);
+          padding: 0;
           line-height: 1;
           position: relative;
           cursor: default;
           pointer-events: none;
         }
+        .input-icon :global(svg) {
+          width: calc(var(--input-height) - 2px);
+          height: calc(var(--input-height) - 2px);
+          transform: scale(0.44);
+        }
       </style></span><input type=\\"text\\" class=\\" left-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -68,10 +79,10 @@ exports[`Input should be work with icon 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -110,32 +121,43 @@ exports[`Input should be work with icon 1`] = `
           }
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
-          box-sizing: content-box;
-          display: flex;
-          width: calc(1.687 * 16pt * .42);
+          box-sizing: border-box;
+          display: inline-flex;
+          width: calc(var(--input-height) - 2px);
+          flex-shrink: 0;
           height: 100%;
           align-items: center;
-          vertical-align: middle;
+          justify-content: center;
           margin: 0;
-          padding: 0 calc(1.687 * 16pt * .3);
+          padding: 0;
           line-height: 1;
           position: relative;
           cursor: default;
           pointer-events: none;
         }
+        .input-icon :global(svg) {
+          width: calc(var(--input-height) - 2px);
+          height: calc(var(--input-height) - 2px);
+          transform: scale(0.44);
+        }
       </style></span></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -175,10 +197,10 @@ exports[`Input should be work with icon 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -235,7 +257,7 @@ exports[`Input should be work with label 1`] = `
           border-top: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
-          font-size: .875rem;
+          font-size: inherit;
           line-height: 1;
         }
 
@@ -250,16 +272,21 @@ exports[`Input should be work with label 1`] = `
       </style></span><div class=\\"input-wrapper   left-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -299,10 +326,10 @@ exports[`Input should be work with label 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -355,7 +382,7 @@ exports[`Input should be work with label 1`] = `
           border-top: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
-          font-size: .875rem;
+          font-size: inherit;
           line-height: 1;
         }
 
@@ -370,16 +397,21 @@ exports[`Input should be work with label 1`] = `
       </style></span></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -419,10 +451,10 @@ exports[`Input should be work with label 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -465,8 +497,8 @@ exports[`Input should be work with label 1`] = `
           font-weight: normal;
           color: #444;
           padding: 0 0 0 1px;
-          margin-bottom: 8pt;
-          font-size: 1rem;
+          margin-bottom: 0.5em;
+          font-size: 1em;
           line-height: 1.5;
         }
 
@@ -480,16 +512,21 @@ exports[`Input should be work with label 1`] = `
       </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -529,382 +566,10 @@ exports[`Input should be work with label 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          ::-ms-reveal {
-            display: none !important;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div></div>"
-`;
-
-exports[`Input should work with different sizes 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.313 * 16pt);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 5px;
-            border: 1px solid #eaeaea;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #666;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: .75rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          ::-ms-reveal {
-            display: none !important;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.5 * 16pt);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 5px;
-            border: 1px solid #eaeaea;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #666;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: .75rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          ::-ms-reveal {
-            display: none !important;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: initial;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: initial;
-            height: calc(1.875 * 16pt);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 5px;
-            border: 1px solid #eaeaea;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #666;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: 1rem;
-            background-color: transparent;
-            border: none;
-            color: #000;
-            outline: none;
-            border-radius: 0;
-            width: 100%;
-            min-width: 0;
-            -webkit-appearance: none;
-          }
-
-          input.left-icon {
-            margin-left: 0;
-          }
-
-          input.right-icon {
-            margin-right: 0;
-          }
-
-          ::placeholder,
-          ::-moz-placeholder,
-          :-ms-input-placeholder,
-          ::-webkit-input-placeholder {
-            color: #999;
-          }
-
-          ::-ms-reveal {
-            display: none !important;
-          }
-
-          input:-webkit-autofill,
-          input:-webkit-autofill:hover,
-          input:-webkit-autofill:active,
-          input:-webkit-autofill:focus {
-            -webkit-box-shadow: 0 0 0 30px #fff inset !important;
-            -webkit-text-fill-color: #000 !important;
-          }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
-          .with-label {
-            display: inline-block;
-            width: 50%;
-            box-sizing: border-box;
-            -webkit-box-align: center;
-          }
-
-          .input-container {
-            display: inline-flex;
-            align-items: center;
-            width: 50%;
-            height: calc(1.687 * 16pt);
-          }
-
-          .input-wrapper {
-            display: inline-flex;
-            vertical-align: middle;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-            user-select: none;
-            border-radius: 5px;
-            border: 1px solid #eaeaea;
-            transition: border 0.2s ease 0s, color 0.2s ease 0s;
-          }
-
-          .input-wrapper.left-label {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-          }
-
-          .input-wrapper.right-label {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-          }
-
-          .input-wrapper.disabled {
-            background-color: #fafafa;
-            border-color: #eaeaea;
-            cursor: not-allowed;
-          }
-
-          input.disabled {
-            cursor: not-allowed;
-          }
-
-          .input-wrapper.hover {
-            border-color: #666;
-          }
-
-          input {
-            margin: 4px 10px;
-            padding: 0;
-            box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -948,16 +613,21 @@ exports[`Input should work with different status 1`] = `
 "<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -997,10 +667,10 @@ exports[`Input should work with different status 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -1040,16 +710,21 @@ exports[`Input should work with different status 1`] = `
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -1089,10 +764,10 @@ exports[`Input should work with different status 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;
@@ -1132,16 +807,21 @@ exports[`Input should work with different status 1`] = `
         </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
-            width: initial;
             box-sizing: border-box;
             -webkit-box-align: center;
+            --input-height: calc(2.25 * 16px);
+            font-size: calc(0.875 * 16px);
+            width: initial;
+            height: var(--input-height);
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
           }
 
           .input-container {
             display: inline-flex;
             align-items: center;
             width: initial;
-            height: calc(1.687 * 16pt);
+            height: var(--input-height);
           }
 
           .input-wrapper {
@@ -1181,10 +861,10 @@ exports[`Input should work with different status 1`] = `
           }
 
           input {
-            margin: 4px 10px;
+            margin: 0.25em 0.625em;
             padding: 0;
             box-shadow: none;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             background-color: transparent;
             border: none;
             color: #000;

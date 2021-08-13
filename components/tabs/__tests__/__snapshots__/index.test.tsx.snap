@@ -1,47 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should render correctly 1`] = `
-"<div class=\\"tabs \\"><header class=\\"\\"><div class=\\"tab  \\" role=\\"button\\">label1</div><div class=\\"tab  \\" role=\\"button\\">label2</div></header><div class=\\"content\\"></div><style>
-          .tabs {
-            width: initial;
-          }
-
-          header {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
-            border-bottom: 1px solid #eaeaea;
-            overflow: scroll;
-            scrollbar-width: none;
-          }
-
-          header::-webkit-scrollbar {
-            display: none;
-          }
-
-          .hide-divider {
-            border-bottom: none;
-          }
-
-          .content {
-            padding-top: 0.625rem;
-          }
-
+"<div class=\\"tabs \\"><header><div class=\\"scroll-container \\"><div class=\\"tab  \\" role=\\"button\\">label1<style>
           .tab {
-            padding: 4pt calc(0.65 * 4pt);
+            box-sizing: border-box;
             cursor: pointer;
             outline: 0;
             transition: all 200ms ease;
             text-transform: capitalize;
-            font-size: 1rem;
             white-space: nowrap;
-            margin: 0 calc(0.8 * 8pt);
             color: #444;
             user-select: none;
             display: flex;
             align-items: center;
-            line-height: 1.25rem;
             position: relative;
+            font-size: calc(1 * 16px);
+            line-height: 1.25em;
+            width: auto;
+            height: auto;
+            padding: calc(0.334 * 16px) calc(0.218 * 16px) calc(0.334 * 16px)
+              calc(0.218 * 16px);
+            margin: 0 calc(0.5334 * 16px) 0
+              calc(0.5334 * 16px);
           }
 
           .tab:after {
@@ -52,6 +32,7 @@ exports[`Tabs should render correctly 1`] = `
             right: 0;
             width: 100%;
             height: 2px;
+            border-radius: 4px;
             transform: scaleX(0.75);
             background-color: transparent;
             transition: all 200ms ease;
@@ -78,52 +59,126 @@ exports[`Tabs should render correctly 1`] = `
           .tab.disabled {
             color: #999;
             cursor: not-allowed;
+          }
+        </style></div><div class=\\"tab  \\" role=\\"button\\">label2<style>
+          .tab {
+            box-sizing: border-box;
+            cursor: pointer;
+            outline: 0;
+            transition: all 200ms ease;
+            text-transform: capitalize;
+            white-space: nowrap;
+            color: #444;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            position: relative;
+            font-size: calc(1 * 16px);
+            line-height: 1.25em;
+            width: auto;
+            height: auto;
+            padding: calc(0.334 * 16px) calc(0.218 * 16px) calc(0.334 * 16px)
+              calc(0.218 * 16px);
+            margin: 0 calc(0.5334 * 16px) 0
+              calc(0.5334 * 16px);
+          }
+
+          .tab:after {
+            position: absolute;
+            content: '';
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 2px;
+            border-radius: 4px;
+            transform: scaleX(0.75);
+            background-color: transparent;
+            transition: all 200ms ease;
+          }
+
+          .tab.active:after {
+            background-color: #000;
+            transform: scaleX(1);
+          }
+
+          .tab :global(svg) {
+            max-height: 1em;
+            margin-right: 5px;
+          }
+
+          .tab:first-of-type {
+            margin-left: 0;
+          }
+
+          .tab.active {
+            color: #000;
+          }
+
+          .tab.disabled {
+            color: #999;
+            cursor: not-allowed;
+          }
+        </style></div></div></header><div class=\\"content\\"></div><style>
+          .tabs {
+            font-size: calc(1 * 16px);
+            width: initial;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
+          }
+          header {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            scrollbar-width: none;
+            position: relative;
+          }
+          .scroll-container {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+          }
+          header::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-divider {
+            border-color: transparent;
+          }
+          .content {
+            padding-top: 0.625rem;
           }
         </style></div>"
 `;
 
 exports[`Tabs should work correctly with different styles 1`] = `
-"<div class=\\"tabs \\"><header class=\\"hide-divider\\"><div class=\\"tab  \\" role=\\"button\\">label1</div></header><div class=\\"content\\"></div><style>
-          .tabs {
-            width: initial;
-          }
-
-          header {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
-            border-bottom: 1px solid #eaeaea;
-            overflow: scroll;
-            scrollbar-width: none;
-          }
-
-          header::-webkit-scrollbar {
-            display: none;
-          }
-
-          .hide-divider {
-            border-bottom: none;
-          }
-
-          .content {
-            padding-top: 0.625rem;
-          }
-
+"<div class=\\"tabs \\"><header><div class=\\"scroll-container hide-divider\\"><div class=\\"tab  \\" role=\\"button\\">label1<style>
           .tab {
-            padding: 4pt calc(0.65 * 4pt);
+            box-sizing: border-box;
             cursor: pointer;
             outline: 0;
             transition: all 200ms ease;
             text-transform: capitalize;
-            font-size: 1rem;
             white-space: nowrap;
-            margin: 0 calc(0.8 * 8pt);
             color: #444;
             user-select: none;
             display: flex;
             align-items: center;
-            line-height: 1.25rem;
             position: relative;
+            font-size: calc(1 * 16px);
+            line-height: 1.25em;
+            width: auto;
+            height: auto;
+            padding: calc(0.334 * 16px) calc(0.218 * 16px) calc(0.334 * 16px)
+              calc(0.218 * 16px);
+            margin: 0 calc(0.5334 * 16px) 0
+              calc(0.5334 * 16px);
           }
 
           .tab:after {
@@ -134,6 +189,7 @@ exports[`Tabs should work correctly with different styles 1`] = `
             right: 0;
             width: 100%;
             height: 2px;
+            border-radius: 4px;
             transform: scaleX(0.75);
             background-color: transparent;
             transition: all 200ms ease;
@@ -160,6 +216,41 @@ exports[`Tabs should work correctly with different styles 1`] = `
           .tab.disabled {
             color: #999;
             cursor: not-allowed;
+          }
+        </style></div></div></header><div class=\\"content\\"></div><style>
+          .tabs {
+            font-size: calc(1 * 16px);
+            width: initial;
+            height: auto;
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
+          }
+          header {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            scrollbar-width: none;
+            position: relative;
+          }
+          .scroll-container {
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            border-bottom: 1px solid #eaeaea;
+          }
+          header::-webkit-scrollbar {
+            display: none;
+          }
+          .hide-divider {
+            border-color: transparent;
+          }
+          .content {
+            padding-top: 0.625rem;
           }
         </style></div>"
 `;

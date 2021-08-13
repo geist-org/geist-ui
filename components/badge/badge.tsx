@@ -1,35 +1,25 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import { NormalSizes, NormalTypes } from '../utils/prop-types'
-import { GeistUIThemesPalette } from 'components/themes/presets'
-import BadgeAnchor from './badge-anchor'
+import { NormalTypes } from '../utils/prop-types'
+import { GeistUIThemesPalette } from '../themes/presets'
+import useScaleable, { withScaleable } from '../use-scaleable'
+
+export type BadgeTypes = NormalTypes
 
 interface Props {
-  type?: NormalTypes
-  size?: NormalSizes
+  type?: BadgeTypes
   dot?: boolean
   className?: string
 }
 
 const defaultProps = {
-  type: 'default' as NormalTypes,
-  size: 'medium' as NormalSizes,
+  type: 'default' as BadgeTypes,
   dot: false,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type BadgeProps = Props & typeof defaultProps & NativeAttrs
-
-const getFontSize = (size: NormalSizes) => {
-  const sizes: { [key in NormalSizes]: string } = {
-    mini: '.7rem',
-    small: '.75rem',
-    medium: '.875rem',
-    large: '1rem',
-  }
-  return sizes[size]
-}
+export type BadgeProps = Props & NativeAttrs
 
 const getBgColor = (type: NormalTypes, palette: GeistUIThemesPalette) => {
   const colors: { [key in NormalTypes]: string } = {
@@ -42,55 +32,53 @@ const getBgColor = (type: NormalTypes, palette: GeistUIThemesPalette) => {
   return colors[type]
 }
 
-const Badge: React.FC<React.PropsWithChildren<BadgeProps>> = ({
+const BadgeComponent: React.FC<React.PropsWithChildren<BadgeProps>> = ({
   type,
-  size,
   className,
   children,
   dot,
   ...props
-}) => {
+}: BadgeProps & typeof defaultProps) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const bg = useMemo(() => getBgColor(type, theme.palette), [type, theme.palette])
-  const font = useMemo(() => getFontSize(size), [size])
   const color = useMemo(() => {
     if (!type || type === 'default') return theme.palette.background
     return 'white'
   }, [type, theme.palette.background])
 
   return (
-    <span className={`${dot ? 'dot' : ''} ${className}`} {...props}>
+    <span className={`badge ${dot ? 'dot' : ''} ${className}`} {...props}>
       {!dot && children}
       <style jsx>{`
-        span {
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: ${bg};
           color: ${color};
-          font-size: ${font};
           border: 0;
+          font-size: ${SCALES.font(0.875)};
+          width: ${SCALES.width(1, 'auto')};
+          height: ${SCALES.height(1, 'auto')};
+          padding: ${SCALES.pt(0.25)} ${SCALES.pr(0.4375)} ${SCALES.pb(0.25)}
+            ${SCALES.pl(0.4375)};
+          margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
         .dot {
-          padding: 4px;
+          padding: ${SCALES.py(0.25)} ${SCALES.px(0.25)};
           border-radius: 50%;
+          user-select: none;
         }
       `}</style>
     </span>
   )
 }
 
-type MemoBadgeComponent<P = {}> = React.NamedExoticComponent<P> & {
-  Anchor: typeof BadgeAnchor
-}
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Badge.defaultProps = defaultProps
-
-export default React.memo(Badge) as MemoBadgeComponent<ComponentProps>
+BadgeComponent.defaultProps = defaultProps
+BadgeComponent.displayName = 'GeistBadge'
+const Badge = withScaleable(BadgeComponent)
+export default Badge

@@ -62,7 +62,6 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(
             display: flex;
             box-sizing: border-box;
           }
-
           .sidebar {
             width: 200px;
             margin-right: 20px;
@@ -76,13 +75,11 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(
             transition: transform 200ms ease-out;
             z-index: 100;
           }
-
           .side-shadow {
             width: 220px;
             flex-shrink: 0;
             height: 100vh;
           }
-
           .main {
             display: flex;
             max-width: calc(100% - 220px);
@@ -97,7 +94,7 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(
             .layout {
               max-width: 100%;
               width: 100%;
-              padding: 5rem 1rem;
+              padding: 20px 1rem;
             }
 
             .sidebar {
@@ -107,9 +104,10 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(
               right: 0;
               z-index: 10;
               width: 100vw;
+              box-sizing: border-box;
               height: ${expanded ? '100vh' : '0'};
               background-color: ${theme.palette.background};
-              padding: 0;
+              padding: var(--geist-page-nav-height) 0 0 0;
               overflow: hidden;
               transition: height 250ms ease;
             }

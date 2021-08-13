@@ -16,4 +16,5 @@ const PaginationNext: React.FC<React.PropsWithChildren<PaginationNextProps>> = (
   )
 }
 
+PaginationNext.displayName = 'GeistPaginationNext'
 export default PaginationNext

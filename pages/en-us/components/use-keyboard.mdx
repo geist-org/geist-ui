@@ -1,0 +1,81 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useKeyboard, KeyCode, KeyMod, Keyboard, Input, Link } from 'components'
+
+export const meta = {
+  title: 'useKeyboard',
+  group: 'Utils',
+}
+
+## useKeyboard
+
+React Hooks for listen to multiple keyboard events.
+
+This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
+
+<Playground
+  desc="Global keyboard events."
+  scope={{ useKeyboard, KeyCode, KeyMod, Keyboard }}
+  code={`
+() => {
+  useKeyboard(
+    () => alert('save success!'),
+    [KeyCode.KEY_S, KeyMod.CtrlCmd]
+  )
+  return <div>Press <Keyboard command scale={0.5}>S</Keyboard> to save.</div>
+}
+`}
+/>
+
+<Playground
+  title="Element Event"
+  desc="keyboard events listening on elements."
+  scope={{ useKeyboard, KeyCode, KeyMod, Keyboard, Input }}
+  code={`
+() => {
+  const { bindings } = useKeyboard(
+    () => alert('A is not allowed'),
+    [KeyCode.KEY_A],
+    { disableGlobalEvent: true },
+  )
+  return (
+  <div>
+    <p>Keyboard events are triggered only when the element is activated.</p>
+    <Input {...bindings} placeholder="Press A" />
+  </div>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/components/use-keyboard.mdx">
+<Attributes.Title>useKeyboard</Attributes.Title>
+
+```ts
+type KeyboardOptions = {
+  disableGlobalEvent: boolean,
+  stopPropagation: boolean
+  preventDefault: boolean
+  capture: boolean
+  event: 'keydown' | 'keypress' | 'keyup'
+}
+
+const useKeyboard = (
+  handler: (event: React.KeyboardEvent) => void,
+  keyBindings: Array<number> | number,
+  options?: KeyboardOptions,
+) => void
+```
+
+<Attributes.Title>KeyboardOptions</Attributes.Title>
+
+| Option                 | Description                         | Type      | Accepted values                  | Default   |
+| ---------------------- | ----------------------------------- | --------- | -------------------------------- | --------- |
+| **disableGlobalEvent** | disable global events from document | `boolean` | -                                | `false`   |
+| **stopPropagation**    | stop event Propagation              | `boolean` | -                                | `false`   |
+| **preventDefault**     | block the default behavior of event | `boolean` | -                                | `true`    |
+| **capture**            | set event type to "capture"         | `boolean` | -                                | `false`   |
+| **event**              | keyboard event type                 | `string`  | `'keydown', 'keypress', 'keyup'` | `keydown` |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

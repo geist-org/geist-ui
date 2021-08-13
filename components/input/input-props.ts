@@ -1,12 +1,13 @@
 import React from 'react'
-import { NormalSizes, NormalTypes } from 'components/utils/prop-types'
+import { NormalTypes } from '../utils/prop-types'
 
+export type InputTypes = NormalTypes
 export interface Props {
   value?: string
   initialValue?: string
   placeholder?: string
-  size?: NormalSizes
-  status?: NormalTypes
+  type?: InputTypes
+  htmlType?: string
   readOnly?: boolean
   disabled?: boolean
   label?: string
@@ -14,7 +15,6 @@ export interface Props {
   icon?: React.ReactNode
   iconRight?: React.ReactNode
   iconClickable?: boolean
-  width?: string
   className?: string
   clearable?: boolean
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -22,7 +22,7 @@ export interface Props {
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
   onIconClick?: (e: React.MouseEvent<HTMLDivElement>) => void
-  autoComplete: string
+  autoComplete?: string
 }
 
 export const defaultProps = {
@@ -30,9 +30,8 @@ export const defaultProps = {
   readOnly: false,
   clearable: false,
   iconClickable: false,
-  width: 'initial',
-  size: 'medium' as NormalSizes,
-  status: 'default' as NormalTypes,
+  type: 'default' as InputTypes,
+  htmlType: 'text',
   autoComplete: 'off',
   className: '',
   placeholder: '',

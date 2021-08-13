@@ -4,6 +4,7 @@ import { Note, Code, Spacer, Link } from 'components'
 export const meta = {
   title: '主题',
   group: '定制化',
+  index: 10,
 }
 
 ## 主题
@@ -12,19 +13,19 @@ export const meta = {
 
 作为基础的选项，Geist UI 内置了两种可用的基础主题，`light` 和 `dark` (亮色和暗色)。
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 ### 切换主题
 
 <Note>
   在使用任何组件前，请确保已添加 <Code>GeistProvider</Code> 至应用的根节点。
 </Note>
-<Spacer y={0.5} />
+<Spacer h={0.5} />
 <Note type="success">
   <Code>CssBaseline</Code> 提供了基础的 CSS 样式，这和你熟悉的 <Code>normalize</Code>{' '}
   有些类似。
 </Note>
-<Spacer y={1} />
+<Spacer h={1} />
 
 **你可以参考如下步骤切换主题：**
 
@@ -49,7 +50,7 @@ const App = () => {
 }
 ```
 
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### 自定义主题
 
@@ -58,7 +59,7 @@ const App = () => {
 
 当然，如果一个组件未使用到你自定义的变量，它不会有任何变化也不会重新渲染。
 
-<Spacer y={1} />
+<Spacer h={1} />
 <Note type="warning">
   自定义越多的主题，就会有越多的 <b>重新渲染</b> 发生。
 </Note>
@@ -94,7 +95,7 @@ const myTheme2 = Themes.create(myBaseTheme, {
 })
 ```
 
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### 查看主题定义的所有类型
 
@@ -120,7 +121,7 @@ const myPalette: Partial<GeistUIThemesPalette> = {
 
 如果你没有使用 TypeScript，想要了解更多的预置类型，请看<Link color target="_blank" href="https://github.com/geist-org/react/blob/master/components/themes/presets/index.ts">这里的类型声明文件</Link>。
 
-<Spacer y={3} />
+<Spacer h={3} />
 
 ### 定制化组件
 
@@ -143,7 +144,7 @@ const MyPage = () => (
 }
 ```
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 #### 通过行内样式覆盖样式
 
@@ -157,7 +158,7 @@ const MyPage = () => (
 )
 ```
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 #### 使用预置主题构建自己的组件
 
@@ -177,7 +178,7 @@ const MyComponent = () => {
 }
 ```
 
-<Spacer y={2} />
+<Spacer h={2} />
 
 #### Themes APIs
 

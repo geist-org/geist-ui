@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Slider, Row, Spacer } from 'components'
+import { Slider, Spacer } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -20,6 +20,23 @@ Display the current value and an inputable range.
 />
 
 <Playground
+  title="Type"
+  desc="Differentiate states by color."
+  scope={{ Slider, Spacer }}
+  code={`
+    <>
+      <Slider type="default" initialValue={20} />
+      <Spacer />
+      <Slider type="success" initialValue={20} />
+      <Spacer />
+      <Slider type="warning" initialValue={20} />
+      <Spacer />
+      <Slider type="error" initialValue={20} />
+    </>
+`}
+/>
+
+<Playground
   title="Disabled"
   desc="Do not respond to drag and click."
   scope={{ Slider }}
@@ -31,11 +48,9 @@ Display the current value and an inputable range.
 <Playground
   title="Step"
   desc="Different granularity."
-  scope={{ Slider, Row }}
+  scope={{ Slider }}
   code={`
-<Row style={{ width: '75%' }}>
-  <Slider step={10} showMarkers />
-</Row>
+<Slider step={10} showMarkers width="75%" />
 `}
 />
 
@@ -44,18 +59,18 @@ Display the current value and an inputable range.
   desc="Specifies the maximum or minimum value of the Slider."
   scope={{ Slider, Spacer }}
   code={`
-<div style={{ width: '75%' }}>
-  <Slider step={5} max={50} min={10} initialValue={25} showMarkers />
+<>
+  <Slider step={5} max={50} min={10} initialValue={25} showMarkers width="75%" />
   <Spacer />
-  <Slider step={0.2} max={1} min={0.2} initialValue={0.4} showMarkers />
-</div>
+  <Slider step={0.2} max={1} min={0.2} initialValue={0.4} showMarkers width="75%" />
+</>
 `}
 />
 
 <Playground
   title="Event"
   desc="Get event when slide."
-  scope={{ Slider, Row, useState }}
+  scope={{ Slider, useState }}
   code={`
 () => {
   const [value, setValue] = useState()
@@ -63,11 +78,7 @@ Display the current value and an inputable range.
     console.log(val)
     setValue(val)
   }
-  return (
-    <Row style={{ width: '75%' }}>
-      <Slider value={value} onChange={handler} />
-    </Row>
-  )
+  return <Slider value={value} onChange={handler} width="75%" />
 }
 `}
 />
@@ -75,17 +86,25 @@ Display the current value and an inputable range.
 <Attributes edit="/pages/en-us/components/slider.mdx">
 <Attributes.Title>Slider.Props</Attributes.Title>
 
-| Attribute        | Description                                        | Type                    | Accepted values                  | Default |
-| ---------------- | -------------------------------------------------- | ----------------------- | -------------------------------- | ------- |
-| **initialValue** | initial value                                      | `number`                | -                                | 0       |
-| **value**        | slider value                                       | `number`                | -                                | 0       |
-| **step**         | the granularity the slider can step through values | `number`                | -                                | 1       |
-| **max**          | the maximum value of slider                        | `number`                | -                                | 100     |
-| **min**          | the minimum value of slider                        | `number`                | -                                | 0       |
+| Attribute        | Description                                        | Type                    | Accepted values                  | Default   |
+| ---------------- | -------------------------------------------------- | ----------------------- | -------------------------------- | --------- |
+| **initialValue** | initial value                                      | `number`                | -                                | 0         |
+| **value**        | slider value                                       | `number`                | -                                | 0         |
+| **type**         | current type                                       | `SliderTypes`           | [SliderTypes](#slidertypes)      | `default` |
+| **step**         | the granularity the slider can step through values | `number`                | -                                | 1         |
+| **max**          | the maximum value of slider                        | `number`                | -                                | 100       |
+| **min**          | the minimum value of slider                        | `number`                | -                                | 0         |
 | **disabled**     | disable slider interaction                         | `boolean`               | `false`                          |
-| **showMarkers**  | show each marker                                   | `boolean`               | -                                | `false` |
-| **onChange**     | called when the value of silder changes            | `(val: number) => void` | -                                | -       |
-| ...              | native props                                       | `HTMLAttributes`        | `'id', 'name', 'className', ...` | -       |
+| **showMarkers**  | show each marker                                   | `boolean`               | -                                | `false`   |
+| **hideValue**    | hide slider value                                  | `boolean`               | -                                | `false`   |
+| **onChange**     | called when the value of silder changes            | `(val: number) => void` | -                                | -         |
+| ...              | native props                                       | `HTMLAttributes`        | `'id', 'name', 'className', ...` | -         |
+
+<Attributes.Title>SliderTypes</Attributes.Title>
+
+```ts
+type SliderTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

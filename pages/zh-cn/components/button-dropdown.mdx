@@ -55,57 +55,20 @@ export const meta = {
   scope={{ ButtonDropdown, Spacer }}
   code={`
 <>
-  <ButtonDropdown type="secondary">
+  <ButtonDropdown type="secondary" scale={0.5}>
     <ButtonDropdown.Item main>次要的</ButtonDropdown.Item>
   </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown type="success">
+  <Spacer h={.5} />
+  <ButtonDropdown type="success" scale={0.5}>
     <ButtonDropdown.Item main>成功</ButtonDropdown.Item>
   </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown type="warning">
+  <Spacer h={.5} />
+  <ButtonDropdown type="warning" scale={0.5}>
     <ButtonDropdown.Item main>警告</ButtonDropdown.Item>
   </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown type="error">
+  <Spacer h={.5} />
+  <ButtonDropdown type="error" scale={0.5}>
     <ButtonDropdown.Item main>错误</ButtonDropdown.Item>
-  </ButtonDropdown>
-</>
-`}
-/>
-
-<Playground
-  title="大小"
-  desc="不同大小的组件。"
-  scope={{ ButtonDropdown, Spacer }}
-  code={`
-<>
-  <ButtonDropdown size="mini" auto>
-    <ButtonDropdown.Item main>自动-小</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown size="small" auto>
-      <ButtonDropdown.Item main>自动-较小</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown size="small" auto>
-    <ButtonDropdown.Item main>自动-中等</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown size="mini">
-    <ButtonDropdown.Item main>小</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown size="small">
-    <ButtonDropdown.Item main>较小</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown size="medium">
-    <ButtonDropdown.Item main>中等</ButtonDropdown.Item>
-  </ButtonDropdown>
-  <Spacer y={.5} />
-  <ButtonDropdown size="large">
-    <ButtonDropdown.Item main>最大的</ButtonDropdown.Item>
   </ButtonDropdown>
 </>
 `}
@@ -116,7 +79,7 @@ export const meta = {
   desc="为每个按钮设定不同的类型。"
   scope={{ ButtonDropdown }}
   code={`
-<ButtonDropdown>
+<ButtonDropdown auto scale={2/3}>
   <ButtonDropdown.Item main>访问账户</ButtonDropdown.Item>
   <ButtonDropdown.Item>屏蔽账户</ButtonDropdown.Item>
   <ButtonDropdown.Item>锁定账户</ButtonDropdown.Item>
@@ -128,23 +91,28 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/button-dropdown.mdx">
 <Attributes.Title>ButtonDropdown.Props</Attributes.Title>
 
-| 属性         | 描述               | 类型             | 推荐值                                                  | 默认      |
-| ------------ | ------------------ | ---------------- | ------------------------------------------------------- | --------- |
-| **type**     | 按钮类型           | `NormalTypes`    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**     | 按钮的大小         | `NormalSizes`    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **loading**  | 显示加载中的指示器 | `boolean`        | -                                                       | `false`   |
-| **auto**     | 自动缩放宽度       | `boolean`        | -                                                       | `false`   |
-| **disabled** | 禁用所有按钮       | `boolean`        | -                                                       | `false`   |
-| ...          | 原生属性           | `HTMLAttributes` | `'autoFocus', 'name', 'className', ...`                 | -         |
+| 属性         | 描述               | 类型                  | 推荐值                                      | 默认      |
+| ------------ | ------------------ | --------------------- | ------------------------------------------- | --------- |
+| **type**     | 按钮类型           | `ButtonDropdownTypes` | [ButtonDropdownTypes](#buttondropdowntypes) | `default` |
+| **loading**  | 显示加载中的指示器 | `boolean`             | -                                           | `false`   |
+| **auto**     | 自动缩放宽度       | `boolean`             | -                                           | `false`   |
+| **disabled** | 禁用所有按钮       | `boolean`             | -                                           | `false`   |
+| ...          | 原生属性           | `HTMLAttributes`      | `'autoFocus', 'name', ...`                  | -         |
 
 <Attributes.Title>ButtonDropdown.Item.Props</Attributes.Title>
 
-| 属性        | 描述             | 类型                   | 推荐值                                                  | 默认      |
-| ----------- | ---------------- | ---------------------- | ------------------------------------------------------- | --------- |
-| **type**    | 当前单个按钮类型 | `NormalTypes`          | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **main**    | 是否为主要按钮   | `boolean`              | -                                                       | `false`   |
-| **onClick** | 按钮的点击事件   | `MouseEventHandler`    | -                                                       | -         |
-| ...         | 原生属性         | `ButtonHTMLAttributes` | `'id', 'name', 'className', ...`                        | -         |
+| 属性        | 描述             | 类型                   | 推荐值                                      | 默认      |
+| ----------- | ---------------- | ---------------------- | ------------------------------------------- | --------- |
+| **type**    | 当前单个按钮类型 | `ButtonDropdownTypes`  | [ButtonDropdownTypes](#buttondropdowntypes) | `default` |
+| **main**    | 是否为主要按钮   | `boolean`              | -                                           | `false`   |
+| **onClick** | 按钮的点击事件   | `MouseEventHandler`    | -                                           | -         |
+| ...         | 原生属性         | `ButtonHTMLAttributes` | `'id', 'name', ...`                         | -         |
+
+<Attributes.Title>ButtonDropdownTypes</Attributes.Title>
+
+```ts
+type ButtonDropdownTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
 
 </Attributes>
 

@@ -1,65 +1,47 @@
 import React from 'react'
-import { TableColumnItem, useTableContext } from './table-context'
+import { TableDataItemBase, TableAbstractColumn, TableOnCellClick } from './table-types'
 
-interface Props {
-  columns: Array<TableColumnItem>
-  row: any
+interface Props<TableDataItem extends TableDataItemBase> {
+  columns: Array<TableAbstractColumn<TableDataItem>>
+  row: TableDataItem
   rowIndex: number
   emptyText: string
-  onCellClick: (cell: any, rowIndex: number, colunmIndex: number) => void
+  onCellClick?: TableOnCellClick<TableDataItem>
 }
 
-export type TableCellData = {
+export type TableCellData<TableDataItem> = {
   row: number
   column: number
-  rowValue: any
+  rowValue: TableDataItem
 }
 
-export type TableCellActionRemove = () => void
-export type TableCellActionUpdate = (data: any) => void
-export type TableCellActions = {
-  update: TableCellActionUpdate
-  remove: TableCellActionRemove
-}
-export type TableOperation = (fn: TableCellActions, rowData: any) => any
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props<any>>
+export type TableCellProps<TableDataItem extends TableDataItemBase> =
+  Props<TableDataItem> & NativeAttrs
 
-const TableCell: React.FC<Props> = ({
+const TableCell = <TableDataItem extends TableDataItemBase>({
   columns,
   row,
   rowIndex,
   emptyText,
   onCellClick,
-}) => {
-  const { removeRow, updateRow } = useTableContext()
-  const actions: TableCellActions = {
-    update: data => {
-      updateRow && updateRow(rowIndex, data)
-    },
-    remove: () => {
-      removeRow && removeRow(rowIndex)
-    },
-  }
+}: TableCellProps<TableDataItem>) => {
   /* eslint-disable react/jsx-no-useless-fragment */
   return (
     <>
       {columns.map((column, index) => {
-        const data: TableCellData = {
-          row: rowIndex,
-          column: index,
-          rowValue: row,
-        }
-        const rowLabel = row[column.value]
-        const cellValue = !rowLabel
-          ? emptyText
-          : typeof rowLabel === 'function'
-          ? rowLabel(actions, data)
-          : rowLabel
+        const currentRowValue = row[column.prop]
+        const cellValue = currentRowValue || emptyText
+        const shouldBeRenderElement = column.renderHandler(currentRowValue, row, rowIndex)
 
         return (
           <td
-            key={`row-td-${index}-${column.value}`}
-            onClick={() => onCellClick(cellValue, rowIndex, index)}>
-            <div className="cell">{cellValue}</div>
+            key={`row-td-${index}-${column.prop}`}
+            onClick={() => onCellClick && onCellClick(currentRowValue, rowIndex, index)}
+            className={column.className}>
+            <div className="cell">
+              {shouldBeRenderElement ? shouldBeRenderElement : cellValue}
+            </div>
           </td>
         )
       })}
@@ -68,4 +50,4 @@ const TableCell: React.FC<Props> = ({
   /* eslint-enable */
 }
 
-export default React.memo(TableCell)
+export default TableCell

@@ -3,18 +3,12 @@ import { mount } from 'enzyme'
 import { Modal } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
 import { expectModalIsClosed, expectModalIsOpened } from './use-modal.test'
-import { act } from 'react-dom/test-utils'
-
-const TabEvent = {
-  key: 'TAB',
-  keyCode: 9,
-  which: 9,
-}
+import userEvent from '@testing-library/user-event'
 
 describe('Modal', () => {
   it('should render correctly', () => {
     const wrapper = mount(
-      <Modal open={true}>
+      <Modal visible={true}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Subtitle>This is a modal</Modal.Subtitle>
         <Modal.Content>
@@ -29,19 +23,17 @@ describe('Modal', () => {
   })
 
   it('should trigger event when modal changed', async () => {
-    const openHandler = jest.fn()
     const closeHandler = jest.fn()
     const wrapper = mount(
-      <Modal onOpen={openHandler} onClose={closeHandler}>
+      <Modal onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
       </Modal>,
     )
     expectModalIsClosed(wrapper)
 
-    wrapper.setProps({ open: true })
+    wrapper.setProps({ visible: true })
     await updateWrapper(wrapper, 350)
     expectModalIsOpened(wrapper)
-    expect(openHandler).toHaveBeenCalled()
 
     wrapper.find('.backdrop').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 500)
@@ -52,7 +44,7 @@ describe('Modal', () => {
   it('should disable backdrop event', async () => {
     const closeHandler = jest.fn()
     const wrapper = mount(
-      <Modal open={true} disableBackdropClick onClose={closeHandler}>
+      <Modal visible={true} disableBackdropClick onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Action>Submit</Modal.Action>
       </Modal>,
@@ -63,24 +55,24 @@ describe('Modal', () => {
     expect(closeHandler).not.toHaveBeenCalled()
   })
 
-  it('should ignore backdrop disabled when actions missing', async () => {
+  it('should disable backdrop even if actions missing', async () => {
     const closeHandler = jest.fn()
     const wrapper = mount(
-      <Modal open={true} disableBackdropClick onClose={closeHandler}>
+      <Modal visible={true} disableBackdropClick onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
       </Modal>,
     )
     wrapper.find('.backdrop').simulate('click', nativeEvent)
     await updateWrapper(wrapper, 500)
-    expectModalIsClosed(wrapper)
-    expect(closeHandler).toHaveBeenCalled()
+    expectModalIsOpened(wrapper)
+    expect(closeHandler).not.toHaveBeenCalled()
   })
 
   it('should ignore event when action disabled', () => {
     const actions1 = jest.fn()
     const actions2 = jest.fn()
     const wrapper = mount(
-      <Modal open={true}>
+      <Modal visible={true}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Action passive onClick={actions1}>
           Submit
@@ -100,7 +92,7 @@ describe('Modal', () => {
   it('should be close modal through action event', async () => {
     const closeHandler = jest.fn()
     const wrapper = mount(
-      <Modal open={true} onClose={closeHandler}>
+      <Modal visible={true} onClose={closeHandler}>
         <Modal.Title>Modal</Modal.Title>
         <Modal.Action passive onClick={e => e.close()}>
           Close
@@ -115,41 +107,64 @@ describe('Modal', () => {
 
   it('customization should be supported', () => {
     const wrapper = mount(
-      <Modal open={true} width="100px" wrapClassName="test-class">
+      <Modal visible={true} width="100px" wrapClassName="test-class">
         <Modal.Title>Modal</Modal.Title>
       </Modal>,
     )
     const html = wrapper.find('.wrapper').html()
     expect(html).toMatchSnapshot()
-    expect(html).toContain('test-class')
+    expect(wrapper.find('.wrapper').at(0).getDOMNode()).toHaveClass('test-class')
     expect(() => wrapper.unmount()).not.toThrow()
   })
 
-  it('focus should only be switched within modal', () => {
+  it('focus should only be switched within modal', async () => {
     const wrapper = mount(
-      <Modal open={true} width="100px" wrapClassName="test-class">
-        <Modal.Title>Modal</Modal.Title>
+      <Modal visible={true} width="100px" wrapClassName="test-class">
+        <button id="button" />
       </Modal>,
     )
     const tabStart = wrapper.find('.hide-tab').at(0).getDOMNode()
     const tabEnd = wrapper.find('.hide-tab').at(1).getDOMNode()
-    const eventElement = wrapper.find('.wrapper').at(0)
-    expect(document.activeElement).toBe(tabStart)
+    const button = wrapper.find('#button').at(0).getDOMNode()
+    const focusTrap = wrapper.find('.wrapper').at(0).getDOMNode()
 
-    act(() => {
-      eventElement.simulate('keydown', {
-        ...TabEvent,
-        shiftKey: true,
-      })
-    })
-    expect(document.activeElement).toBe(tabEnd)
+    expect(tabStart).toHaveFocus()
+    userEvent.tab({ focusTrap })
+    expect(button).toHaveFocus()
+    userEvent.tab()
+    expect(tabEnd).toHaveFocus()
+    userEvent.tab()
+    expect(tabStart).toHaveFocus()
 
-    act(() => {
-      eventElement.simulate('keydown', {
-        ...TabEvent,
-        shiftKey: false,
-      })
-    })
-    expect(document.activeElement).toBe(tabStart)
+    userEvent.tab({ shift: true, focusTrap })
+    expect(tabEnd).toHaveFocus()
+    userEvent.tab({ shift: true, focusTrap })
+    expect(button).toHaveFocus()
+    userEvent.tab({ shift: true, focusTrap })
+    expect(tabStart).toHaveFocus()
+  })
+
+  it('should close modal when keyboard event is triggered', async () => {
+    const wrapper = mount(
+      <Modal visible={true}>
+        <Modal.Title>Modal</Modal.Title>
+      </Modal>,
+    )
+    expectModalIsOpened(wrapper)
+    userEvent.keyboard('{esc}')
+    await updateWrapper(wrapper, 500)
+    expectModalIsClosed(wrapper)
+  })
+
+  it('should prevent close modal when keyboard is false', async () => {
+    const wrapper = mount(
+      <Modal visible={true} keyboard={false}>
+        <Modal.Title>Modal</Modal.Title>
+      </Modal>,
+    )
+    expectModalIsOpened(wrapper)
+    userEvent.keyboard('{esc}')
+    await updateWrapper(wrapper, 500)
+    expectModalIsOpened(wrapper)
   })
 })

@@ -15,9 +15,9 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
   return (
     <div className="tabbar">
       <Button className="toggle" auto type="abort" onClick={handler}>
-        <SlidersIcon size={16} />
+        <SlidersIcon size={14} />
       </Button>
-      <span>Geist UI</span>
+      <span className="geist-wordmark">Geist</span>
       <style jsx>{`
         .tabbar {
           position: fixed;
@@ -25,14 +25,15 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
           left: 0;
           right: 0;
           z-index: 950;
-          height: 3.7rem;
-          background-color: ${theme.palette.background};
+          height: var(--geist-page-nav-height);
+          background-color: ${theme.palette.accents_1};
           display: flex;
           align-items: center;
-          padding: 0 calc(${theme.layout.gap} * 2);
+          padding: 0 20px;
           box-sizing: border-box;
           justify-content: space-between;
           border-bottom: 1px solid ${theme.palette.border};
+          box-shadow: ${theme.expressiveness.shadowSmall};
         }
 
         .tabbar :global(.toggle) {
@@ -45,11 +46,14 @@ const TabbarMobile: React.FC<Props> = ({ onClick }) => {
           color: ${theme.palette.accents_6};
         }
 
-        span {
-          color: ${theme.palette.accents_7};
-          font-size: 0.75rem;
+        .geist-wordmark {
+          color: ${theme.palette.foreground};
+          font-size: 1rem;
+          font-weight: 500;
+          padding-right: 5px;
           display: inline-flex;
-          text-transform: capitalize;
+          user-select: none;
+          letter-spacing: 0.4px;
         }
 
         @media only screen and (min-width: ${theme.layout.breakpointMobile}) {

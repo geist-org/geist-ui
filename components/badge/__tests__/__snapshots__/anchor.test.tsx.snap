@@ -1,23 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BadgeAnchor should be support multiple position 1`] = `
-"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\" \\">test<style>
-        span {
+"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\"badge  \\">test<style>
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #000;
           color: #fff;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       </style></span></sup><style>
         .anchor {
@@ -42,23 +47,28 @@ exports[`BadgeAnchor should be support multiple position 1`] = `
 `;
 
 exports[`BadgeAnchor should be support multiple position 2`] = `
-"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\" \\">test<style>
-        span {
+"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\"badge  \\">test<style>
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #000;
           color: #fff;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       </style></span></sup><style>
         .anchor {
@@ -83,23 +93,28 @@ exports[`BadgeAnchor should be support multiple position 2`] = `
 `;
 
 exports[`BadgeAnchor should be support multiple position 3`] = `
-"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\" \\">test<style>
-        span {
+"<div class=\\"anchor\\"><button>btn</button><sup><span class=\\"badge  \\">test<style>
+        .badge {
           display: inline-block;
-          padding: 4px 7px;
           border-radius: 16px;
           font-variant: tabular-nums;
           line-height: 1;
           vertical-align: middle;
           background-color: #000;
           color: #fff;
-          font-size: .875rem;
           border: 0;
+          font-size: calc(0.875 * 16px);
+          width: auto;
+          height: auto;
+          padding: calc(0.25 * 16px) calc(0.4375 * 16px) calc(0.25 * 16px)
+            calc(0.4375 * 16px);
+          margin: 0 0 0 0;
         }
 
         .dot {
-          padding: 4px;
+          padding: calc(0.25 * 16px) calc(0.25 * 16px);
           border-radius: 50%;
+          user-select: none;
         }
       </style></span></sup><style>
         .anchor {

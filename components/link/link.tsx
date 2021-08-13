@@ -1,9 +1,9 @@
 import React from 'react'
-import withDefaults from '../utils/with-defaults'
 import useTheme from '../use-theme'
 import useWarning from '../utils/use-warning'
 import LinkIcon from './icon'
 import { addColorAlpha } from '../utils/color'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 export interface Props {
   href?: string
@@ -26,24 +26,41 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.AnchorHTMLAttributes<any>, keyof Props>
-export type LinkProps = Props & typeof defaultProps & NativeAttrs
+export type LinkProps = Props & NativeAttrs
 
-const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(
+const LinkComponent = React.forwardRef<
+  HTMLAnchorElement,
+  React.PropsWithChildren<LinkProps>
+>(
   (
-    { href, color, underline, pure, children, className, block, icon, ...props },
+    {
+      href,
+      color,
+      underline,
+      pure,
+      children,
+      className,
+      block,
+      icon,
+      ...props
+    }: React.PropsWithChildren<LinkProps> & typeof defaultProps,
     ref: React.Ref<HTMLAnchorElement>,
   ) => {
     const theme = useTheme()
+    const { SCALES } = useScaleable()
     const linkColor = color || block ? theme.palette.link : 'inherit'
     const hoverColor = color || block ? theme.palette.successLight : 'inherit'
-    const padding = block ? theme.layout.gapQuarter : '0'
     const decoration = underline ? 'underline' : 'none'
     if (pure) {
       useWarning('Props "pure" is deprecated, now the default Link is pure.')
     }
 
     return (
-      <a className={`link ${className}`} href={href} {...props} ref={ref}>
+      <a
+        className={`link ${block ? 'block' : ''} ${className}`}
+        href={href}
+        {...props}
+        ref={ref}>
         {children}
         {icon && <LinkIcon />}
         <style jsx>{`
@@ -53,10 +70,17 @@ const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkPro
             line-height: inherit;
             color: ${linkColor};
             text-decoration: none;
-            padding: calc(${padding} * 0.8) calc(${padding} * 1.7);
             border-radius: ${block ? theme.layout.radius : 0};
-            width: fit-content;
             transition: color 200ms ease 0ms;
+            font-size: ${SCALES.font(1, 'inherit')};
+            width: ${SCALES.width(1, 'fit-content')};
+            height: ${SCALES.height(1, 'auto')};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
+            padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
+          }
+          .block {
+            padding: ${SCALES.pt(0.268)} ${SCALES.pr(0.5625)} ${SCALES.pb(0.268)}
+              ${SCALES.pl(0.5625)};
           }
 
           .link:hover,
@@ -75,6 +99,7 @@ const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkPro
   },
 )
 
-const MemoLink = React.memo(Link)
-
-export default withDefaults(MemoLink, defaultProps)
+LinkComponent.defaultProps = defaultProps
+LinkComponent.displayName = 'GeistLink'
+const Link = withScaleable(LinkComponent)
+export default Link

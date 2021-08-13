@@ -1,9 +1,9 @@
 import React from 'react'
 import { Image } from 'components/index'
-import { resolve } from 'styled-jsx/css'
+import css from 'styled-jsx/css'
 
 export const LogoIcon: React.FC<React.ImgHTMLAttributes<any>> = ({ ...props }) => {
-  const { className, styles } = resolve`
+  const { className, styles } = css.resolve`
     .image {
       border-radius: 50%;
       cursor: pointer;
@@ -15,8 +15,8 @@ export const LogoIcon: React.FC<React.ImgHTMLAttributes<any>> = ({ ...props }) =
         className={className}
         src="/images/logo.png"
         {...props}
-        width={24}
-        height={24}
+        width="24px"
+        height="24px"
         draggable={false}
         title="GO HOME"
       />

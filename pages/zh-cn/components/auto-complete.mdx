@@ -1,14 +1,14 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { AutoComplete, Spacer, Badge, Text, Grid } from 'components'
+import { AutoComplete, Spacer, Badge, Text, Grid, Code } from 'components'
 import { useState, useRef, useEffect } from 'react'
 
 export const meta = {
-  title: '自动完成 Auto-Complete',
+  title: '自动完成 Autocomplete',
   group: '数据录入',
   index: 104,
 }
 
-## Auto Complete / 自动完成
+## Autocomplete / 自动完成
 
 输入框的自动完成控制。
 
@@ -169,7 +169,7 @@ export const meta = {
   const makeOption = (label, value) => (
     <AutoComplete.Option value={value}>
       <Grid.Container style={{ padding: '10pt 0' }}>
-        <Grid xs={24}><Text span b size="1.2rem">最近的搜索结果</Text></Grid>
+        <Grid xs={24}><Text span b font="1.2rem">最近的搜索结果</Text></Grid>
         <Grid.Container xs={24}>
           <Grid xs><Text span>{label}</Text></Grid>
           <Grid xs={4}><Badge type="success">推荐的</Badge></Grid>
@@ -194,32 +194,6 @@ export const meta = {
       width="100%"
       options={options}
       onSearch={searchHandler} />
-  )
-}
-`}
-/>
-
-<Playground
-  title="大小"
-  desc="不同大小的组件。"
-  scope={{ AutoComplete, Spacer }}
-  code={`
-() => {
-  const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
-  ]
-  return (
-    <>
-      <AutoComplete placeholder="Mini" size="mini" options={options} />
-      <Spacer y={.5} />
-      <AutoComplete placeholder="Small" size="small" options={options} />
-      <Spacer y={.5} />
-      <AutoComplete placeholder="Medium" size="medium" options={options} />
-      <Spacer y={.5} />
-      <AutoComplete placeholder="Large" size="large" options={options} />
-    </>
   )
 }
 `}
@@ -270,24 +244,25 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/auto-complete.mdx">
 <Attributes.Title>AutoComplete.Props</Attributes.Title>
 
-| 属性                  | 描述                                                 | 类型                                             | 推荐值                                                  | 默认      |
-| --------------------- | ---------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
-| **options**           | 输入框的可选项                                       | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
-| **status**            | 输入框类型                                           | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**              | 输入框大小                                           | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **initialValue**      | 初始值                                               | `string`                                         | -                                                       | -         |
-| **value**             | 命令式的输入框的值                                   | `string`                                         | -                                                       | -         |
-| **width**             | 组件容器的宽度                                       | `string`                                         | -                                                       | -         |
-| **clearable**         | 是否显示清除按钮                                     | `boolean`                                        | -                                                       | `false`   |
-| **searching**         | 是否显示正在搜索中                                   | `boolean`                                        | -                                                       | `false`   |
-| **onChange**          | 输入框的值发生变化触发此事件                         | `(value: string) => void`                        | -                                                       | -         |
-| **onSearch**          | 搜索事件，当用户手动输入时触发                       | `(value: string) => void`                        | -                                                       | -         |
-| **onSelect**          | 当备选框被选中后触发的事件                           | `(value: string) => void`                        | -                                                       | -         |
-| **dropdownClassName** | 自定义下拉框的类名                                   | `string`                                         | -                                                       | -         |
-| **dropdownStyle**     | 自定义下拉框的样式                                   | `object`                                         | -                                                       | -         |
-| **disableMatchWidth** | 禁止 Option 跟随父元素的宽度                         | `boolean`                                        | -                                                       | `false`   |
-| **disableFreeSolo**   | 只允许通过 Select 事件更改值 (禁止 Input 输入随意值) | `boolean`                                        | -                                                       | `false`   |
-| ...                   | 原生属性                                             | `InputHTMLAttributes`                            | `'id', 'className', ...`                                | -         |
+| 属性                  | 描述                                             | 类型                                             | 推荐值                                  | 默认      |
+| --------------------- | ------------------------------------------------ | ------------------------------------------------ | --------------------------------------- | --------- |
+| **options**           | 输入框的可选项                                   | [AutoCompleteOptions](#type-autocompleteoptions) | -                                       | -         |
+| **status**            | 输入框类型                                       | `AutoCompleteTypes`                              | [AutoCompleteTypes](#autocompletetypes) | `default` |
+| **initialValue**      | 初始值                                           | `string`                                         | -                                       | -         |
+| **value**             | 命令式的输入框的值                               | `string`                                         | -                                       | -         |
+| **width**             | 组件容器的宽度                                   | `string`                                         | -                                       | -         |
+| **clearable**         | 是否显示清除按钮                                 | `boolean`                                        | -                                       | `false`   |
+| **searching**         | 是否显示正在搜索中                               | `boolean`                                        | -                                       | `false`   |
+| **onChange**          | 输入框的值发生变化触发此事件                     | `(value: string) => void`                        | -                                       | -         |
+| **onSearch**          | 搜索事件，当用户手动输入时触发                   | `(value: string) => void`                        | -                                       | -         |
+| **onSelect**          | 当备选框被选中后触发的事件                       | `(value: string) => void`                        | -                                       | -         |
+| **dropdownClassName** | 自定义下拉框的类名                               | `string`                                         | -                                       | -         |
+| **dropdownStyle**     | 自定义下拉框的样式                               | `object`                                         | -                                       | -         |
+| **disableMatchWidth** | 禁止 Option 跟随父元素的宽度                     | `boolean`                                        | -                                       | `false`   |
+| **disableFreeSolo**   | 只允许 Select 事件更改值 (禁止 Input 输入随意值) | `boolean`                                        | -                                       | `false`   |
+| **getPopupContainer** | 下拉框渲染的父元素，默认是 `body`                | `() => HTMLElement`                              | -                                       | `body`    |
+| **ref**               | 转发的原生输入框 Ref                             | <Code>Ref<HTMLInputElement &#124; null></Code>   | -                                       | -         |
+| ...                   | 原生属性                                         | `InputHTMLAttributes`                            | `'id', 'className', ...`                | -         |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
 
@@ -316,6 +291,12 @@ Array<{
   label: string
   value: string
 } | AutoComplete.Item>
+```
+
+<Attributes.Title>AutoCompleteTypes</Attributes.Title>
+
+```ts
+type AutoCompleteTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

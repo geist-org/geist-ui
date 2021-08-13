@@ -1,21 +1,31 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import useTheme from '../use-theme'
 
-const ModalActions: React.FC<React.PropsWithChildren<unknown>> = ({
+const ModalActionsComponent: React.FC<React.PropsWithChildren<unknown>> = ({
   children,
   ...props
 }) => {
   const theme = useTheme()
+  const ref = useRef<HTMLDivElement>(null)
+  const [height, setHeight] = useState<number | string>('auto')
+
+  useEffect(() => {
+    if (!ref.current) return
+    setHeight(`${ref.current.clientHeight}px`)
+  }, [ref])
+
   return (
     <>
       <div />
-      <footer {...props}>{children}</footer>
+      <footer ref={ref} {...props}>
+        {children}
+      </footer>
       <style jsx>{`
         footer {
           display: flex;
           overflow: hidden;
           width: 100%;
-          height: 3.625rem;
+          height: auto;
           position: absolute;
           bottom: 0;
           left: 0;
@@ -30,7 +40,7 @@ const ModalActions: React.FC<React.PropsWithChildren<unknown>> = ({
         }
 
         div {
-          height: 3.625rem;
+          height: ${height};
           flex-shrink: 0;
         }
       `}</style>
@@ -38,6 +48,6 @@ const ModalActions: React.FC<React.PropsWithChildren<unknown>> = ({
   )
 }
 
-const MemoModalActions = React.memo(ModalActions)
-
-export default MemoModalActions
+ModalActionsComponent.displayName = 'GeistModalActions'
+const ModalActions = React.memo(ModalActionsComponent)
+export default ModalActions

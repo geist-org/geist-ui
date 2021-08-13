@@ -5,7 +5,7 @@ exports[`Divider should render correctly 1`] = `ReactWrapper {}`;
 exports[`Divider should support float 1`] = `ReactWrapper {}`;
 
 exports[`Divider should work with align and volume 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {},
     "children": Array [
@@ -36,12 +36,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -53,8 +55,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -104,12 +106,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -121,8 +125,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -211,12 +215,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -228,8 +234,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -279,12 +285,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -296,8 +304,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -386,12 +394,14 @@ initialize {
                     Node {
                       "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -403,8 +413,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -454,12 +464,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -471,8 +483,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -537,6 +549,7 @@ initialize {
             "next": Node {
               "attribs": Object {
                 "class": "divider ",
+                "h": "2",
                 "role": "separator",
               },
               "children": Array [
@@ -561,12 +574,14 @@ initialize {
                       Node {
                         "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(2 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.125 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -578,8 +593,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -629,12 +644,14 @@ initialize {
                     Node {
                       "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(2 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.125 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -646,8 +663,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -715,10 +732,12 @@ initialize {
               "type": "tag",
               "x-attribsNamespace": Object {
                 "class": undefined,
+                "h": undefined,
                 "role": undefined,
               },
               "x-attribsPrefix": Object {
                 "class": undefined,
+                "h": undefined,
                 "role": undefined,
               },
             },
@@ -785,12 +804,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -802,8 +823,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -853,12 +874,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -870,8 +893,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -960,12 +983,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -977,8 +1002,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1028,12 +1053,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1045,8 +1072,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1111,6 +1138,7 @@ initialize {
           "next": Node {
             "attribs": Object {
               "class": "divider ",
+              "h": "2",
               "role": "separator",
             },
             "children": Array [
@@ -1135,12 +1163,14 @@ initialize {
                     Node {
                       "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(2 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.125 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1152,8 +1182,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1203,12 +1233,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(2 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.125 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1220,8 +1252,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1289,10 +1321,12 @@ initialize {
             "type": "tag",
             "x-attribsNamespace": Object {
               "class": undefined,
+              "h": undefined,
               "role": undefined,
             },
             "x-attribsPrefix": Object {
               "class": undefined,
+              "h": undefined,
               "role": undefined,
             },
           },
@@ -1336,12 +1370,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1353,8 +1389,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1404,12 +1440,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1421,8 +1459,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1534,12 +1572,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1551,8 +1591,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1602,12 +1642,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1619,8 +1661,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1685,6 +1727,7 @@ initialize {
         "next": Node {
           "attribs": Object {
             "class": "divider ",
+            "h": "2",
             "role": "separator",
           },
           "children": Array [
@@ -1709,12 +1752,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(2 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.125 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1726,8 +1771,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1777,12 +1822,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(2 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.125 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1794,8 +1841,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1863,10 +1910,12 @@ initialize {
           "type": "tag",
           "x-attribsNamespace": Object {
             "class": undefined,
+            "h": undefined,
             "role": undefined,
           },
           "x-attribsPrefix": Object {
             "class": undefined,
+            "h": undefined,
             "role": undefined,
           },
         },
@@ -1898,12 +1947,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1915,8 +1966,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -1966,12 +2017,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -1983,8 +2036,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2075,12 +2128,14 @@ initialize {
                     Node {
                       "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2092,8 +2147,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2143,12 +2198,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2160,8 +2217,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2259,6 +2316,7 @@ initialize {
       Node {
         "attribs": Object {
           "class": "divider ",
+          "h": "2",
           "role": "separator",
         },
         "children": Array [
@@ -2283,12 +2341,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(2 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.125 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2300,8 +2360,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2351,12 +2411,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(2 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.125 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2368,8 +2430,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2460,12 +2522,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2477,8 +2541,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2528,12 +2592,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2545,8 +2611,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2637,12 +2703,14 @@ initialize {
                     Node {
                       "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2654,8 +2722,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2705,12 +2773,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2722,8 +2792,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2814,12 +2884,14 @@ initialize {
                       Node {
                         "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2831,8 +2903,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2882,12 +2954,14 @@ initialize {
                     Node {
                       "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -2899,8 +2973,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -2998,10 +3072,12 @@ initialize {
         "type": "tag",
         "x-attribsNamespace": Object {
           "class": undefined,
+          "h": undefined,
           "role": undefined,
         },
         "x-attribsPrefix": Object {
           "class": undefined,
+          "h": undefined,
           "role": undefined,
         },
       },
@@ -3024,7 +3100,83 @@ initialize {
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,
@@ -3034,7 +3186,7 @@ initialize {
 `;
 
 exports[`Divider should work with type 1`] = `
-initialize {
+LoadedCheerio {
   "0": Node {
     "attribs": Object {},
     "children": Array [
@@ -3050,12 +3202,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #666;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3067,8 +3221,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3117,12 +3271,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #f7b955;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3134,8 +3290,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3184,12 +3340,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #000;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3201,8 +3359,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3288,12 +3446,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #f7b955;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3305,8 +3465,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3355,12 +3515,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #000;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3372,8 +3534,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3436,12 +3598,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #666;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3453,8 +3617,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3526,12 +3690,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #000;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3543,8 +3709,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3595,12 +3761,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #f7b955;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3612,8 +3780,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3664,12 +3832,14 @@ initialize {
                   Node {
                     "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #666;
-          margin: calc(15.25pt + 1px * 0) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3681,8 +3851,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3771,7 +3941,83 @@ initialize {
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,
@@ -3780,8 +4026,8 @@ initialize {
 }
 `;
 
-exports[`Divider should work with x and y 1`] = `
-initialize {
+exports[`Divider should work with w and h 1`] = `
+LoadedCheerio {
   "0": Node {
     "attribs": Object {},
     "children": Array [
@@ -3789,6 +4035,7 @@ initialize {
         "attribs": Object {
           "class": "divider ",
           "role": "separator",
+          "w": "3",
         },
         "children": Array [
           Node {
@@ -3797,12 +4044,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) calc(22.875pt + 1px * 0.5);
           position: relative;
+          font-size: calc(1 * 16px);
+          width: calc(3 * 16px);
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3814,8 +4063,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3855,6 +4104,7 @@ initialize {
         "next": Node {
           "attribs": Object {
             "class": "divider ",
+            "h": "3",
             "role": "separator",
           },
           "children": Array [
@@ -3864,12 +4114,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(22.875pt + 1px * 0.5) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.1875 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3881,8 +4133,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -3925,10 +4177,12 @@ initialize {
           "type": "tag",
           "x-attribsNamespace": Object {
             "class": undefined,
+            "h": undefined,
             "role": undefined,
           },
           "x-attribsPrefix": Object {
             "class": undefined,
+            "h": undefined,
             "role": undefined,
           },
         },
@@ -3938,15 +4192,18 @@ initialize {
         "x-attribsNamespace": Object {
           "class": undefined,
           "role": undefined,
+          "w": undefined,
         },
         "x-attribsPrefix": Object {
           "class": undefined,
           "role": undefined,
+          "w": undefined,
         },
       },
       Node {
         "attribs": Object {
           "class": "divider ",
+          "h": "3",
           "role": "separator",
         },
         "children": Array [
@@ -3956,12 +4213,14 @@ initialize {
               Node {
                 "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(22.875pt + 1px * 0.5) 0;
           position: relative;
+          font-size: calc(1 * 16px);
+          width: auto;
+          height: calc(0.1875 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -3973,8 +4232,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -4017,6 +4276,7 @@ initialize {
           "attribs": Object {
             "class": "divider ",
             "role": "separator",
+            "w": "3",
           },
           "children": Array [
             Node {
@@ -4025,12 +4285,14 @@ initialize {
                 Node {
                   "data": "
         .divider {
-          width: auto;
           max-width: 100%;
-          height: calc(1 * 1px);
           background-color: #eaeaea;
-          margin: calc(15.25pt + 1px * 0) calc(22.875pt + 1px * 0.5);
           position: relative;
+          font-size: calc(1 * 16px);
+          width: calc(3 * 16px);
+          height: calc(0.0625 * 16px);
+          padding: 0 0 0 0;
+          margin: calc(0.5 * 16px) 0 calc(0.5 * 16px) 0;
         }
 
         .text {
@@ -4042,8 +4304,8 @@ initialize {
           justify-content: center;
           align-items: center;
           transform: translate(-50%, -50%);
-          padding: 0 16pt;
-          font-size: 1rem;
+          padding: 0 0.75em;
+          font-size: inherit;
           font-weight: bold;
           text-transform: capitalize;
           background-color: #fff;
@@ -4087,19 +4349,23 @@ initialize {
           "x-attribsNamespace": Object {
             "class": undefined,
             "role": undefined,
+            "w": undefined,
           },
           "x-attribsPrefix": Object {
             "class": undefined,
             "role": undefined,
+            "w": undefined,
           },
         },
         "type": "tag",
         "x-attribsNamespace": Object {
           "class": undefined,
+          "h": undefined,
           "role": undefined,
         },
         "x-attribsPrefix": Object {
           "class": undefined,
+          "h": undefined,
           "role": undefined,
         },
       },
@@ -4122,7 +4388,83 @@ initialize {
     "x-attribsNamespace": Object {},
     "x-attribsPrefix": Object {},
   },
-  "_root": [Circular],
+  "_root": LoadedCheerio {
+    "0": Node {
+      "children": Array [
+        Node {
+          "attribs": Object {},
+          "children": Array [
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "head",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "body",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": [Circular],
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+            Node {
+              "attribs": Object {},
+              "children": Array [],
+              "name": "body",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": Node {
+                "attribs": Object {},
+                "children": Array [],
+                "name": "head",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": [Circular],
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+              "type": "tag",
+              "x-attribsNamespace": Object {},
+              "x-attribsPrefix": Object {},
+            },
+          ],
+          "name": "html",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {},
+          "x-attribsPrefix": Object {},
+        },
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+      "x-mode": "quirks",
+    },
+    "_root": [Circular],
+    "length": 1,
+    "options": Object {
+      "decodeEntities": true,
+      "xml": false,
+    },
+  },
   "length": 1,
   "options": Object {
     "decodeEntities": true,

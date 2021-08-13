@@ -2,9 +2,9 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { Tree } from 'components'
 import { nativeEvent } from 'tests/utils'
-import { FileTreeValue } from 'components/tree/tree'
+import { TreeFile } from '../tree'
 
-const mockFiles: Array<FileTreeValue> = [
+const mockFiles: Array<TreeFile> = [
   {
     type: 'file',
     name: 'cs.js',

@@ -1,5 +1,5 @@
 {
-  "name": "create-next-app",
+  "name": "geist-ui-nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@geist-ui/react": "latest",
-    "next": "9.4.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "@geist-ui/react": "dev",
+    "next": "11.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.11",
+    "typescript": "4.3.4"
   }
 }

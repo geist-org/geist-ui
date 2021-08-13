@@ -1,9 +1,9 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { AutoComplete, Spacer, Badge, Grid, Text } from 'components'
+import { AutoComplete, Spacer, Badge, Grid, Text, Code } from 'components'
 import { useState, useRef, useEffect } from 'react'
 
 export const meta = {
-  title: 'Auto-Complete',
+  title: 'AutoComplete',
   group: 'Data Entry',
 }
 
@@ -12,7 +12,7 @@ export const meta = {
 AutoComplete control of input field.
 
 <Playground
-  desc="Basic usage, add auto-complete list for all inputs."
+  desc="Basic usage, add autocomplete list for all inputs."
   scope={{ AutoComplete }}
   code={`
 () => {
@@ -22,6 +22,28 @@ AutoComplete control of input field.
     { label: 'Shanghai', value: 'shanghai' },
   ]
   return <AutoComplete placeholder="Enter here" options={options} />
+}
+`}
+/>
+
+<Playground
+  title="Type"
+  desc="Express state in different colors."
+  scope={{ AutoComplete, Spacer }}
+  code={`
+() => {
+  const options = [
+    { label: 'London', value: 'london' },
+    { label: 'Sydney', value: 'sydney' },
+    { label: 'Shanghai', value: 'shanghai' },
+  ]
+  return (<>
+    <AutoComplete type="success" placeholder="Enter here" options={options} />
+    <Spacer h={.5} />
+    <AutoComplete type="warning" placeholder="Enter here" options={options} />
+    <Spacer h={.5} />
+    <AutoComplete type="error" placeholder="Enter here" options={options} />
+  </>)
 }
 `}
 />
@@ -168,7 +190,7 @@ AutoComplete control of input field.
   const makeOption = (label, value) => (
     <AutoComplete.Option value={value}>
       <Grid.Container style={{ padding: '10pt 0' }}>
-        <Grid xs={24}><Text span b size="1.2rem">Recent search results </Text></Grid>
+        <Grid xs={24}><Text span b font="1.2rem">Recent search results </Text></Grid>
         <Grid.Container xs={24}>
           <Grid xs><Text span>{label}</Text></Grid>
           <Grid xs={4}><Badge type="success">Recommended</Badge></Grid>
@@ -193,32 +215,6 @@ AutoComplete control of input field.
       width="100%"
       options={options}
       onSearch={searchHandler} />
-  )
-}
-`}
-/>
-
-<Playground
-  title="sizes"
-  desc="Components of different sizes."
-  scope={{ AutoComplete, Spacer }}
-  code={`
-() => {
-  const options = [
-    { label: 'London', value: 'london' },
-    { label: 'Sydney', value: 'sydney' },
-    { label: 'Shanghai', value: 'shanghai' },
-  ]
-  return (
-    <>
-      <AutoComplete placeholder="Mini" size="mini" options={options} />
-      <Spacer y={.5} />
-      <AutoComplete placeholder="Small" size="small" options={options} />
-      <Spacer y={.5} />
-      <AutoComplete placeholder="Medium" size="medium" options={options} />
-      <Spacer y={.5} />
-      <AutoComplete placeholder="Large" size="large" options={options} />
-    </>
   )
 }
 `}
@@ -269,24 +265,25 @@ AutoComplete control of input field.
 <Attributes edit="/pages/en-us/components/auto-complete.mdx">
 <Attributes.Title>AutoComplete.Props</Attributes.Title>
 
-| Attribute             | Description                               | Type                                             | Accepted values                                         | Default   |
-| --------------------- | ----------------------------------------- | ------------------------------------------------ | ------------------------------------------------------- | --------- |
-| **options**           | options of input                          | [AutoCompleteOptions](#type-autocompleteoptions) | -                                                       | -         |
-| **status**            | input type                                | `NormalTypes`                                    | `'default', 'secondary', 'success', 'warning', 'error'` | `default` |
-| **size**              | input size                                | `NormalSizes`                                    | `'mini', 'small', 'medium', 'large'`                    | `medium`  |
-| **initialValue**      | initial value                             | `string`                                         | -                                                       | -         |
-| **value**             | current value                             | `string`                                         | -                                                       | -         |
-| **width**             | container width                           | `string`                                         | -                                                       | -         |
-| **clearable**         | show clear icon                           | `boolean`                                        | -                                                       | `false`   |
-| **searching**         | show loading icon for search              | `boolean`                                        | -                                                       | `false`   |
-| **onChange**          | value of input is changed                 | `(value: string) => void`                        | -                                                       | -         |
-| **onSearch**          | called when searching items               | `(value: string) => void`                        | -                                                       | -         |
-| **onSelect**          | called when a option is selected          | `(value: string) => void`                        | -                                                       | -         |
-| **dropdownClassName** | className of dropdown box                 | `string`                                         | -                                                       | -         |
-| **dropdownStyle**     | style of dropdown box                     | `object`                                         | -                                                       | -         |
-| **disableMatchWidth** | disable Option from follow parent width   | `boolean`                                        | -                                                       | `false`   |
-| **disableFreeSolo**   | only values can be changed through Select | `boolean`                                        | -                                                       | `false`   |
-| ...                   | native props                              | `InputHTMLAttributes`                            | `'id', 'className', ...`                                | -         |
+| Attribute             | Description                                           | Type                                           | Accepted values                                  | Default   |
+| --------------------- | ----------------------------------------------------- | ---------------------------------------------- | ------------------------------------------------ | --------- |
+| **options**           | options of input                                      | `AutoCompleteOptions`                          | [AutoCompleteOptions](#type-autocompleteoptions) | -         |
+| **type**              | input type                                            | `AutoCompleteTypes`                            | [AutoCompleteTypes](#autocompletetypes)          | `default` |
+| **initialValue**      | initial value                                         | `string`                                       | -                                                | -         |
+| **value**             | current value                                         | `string`                                       | -                                                | -         |
+| **width**             | container width                                       | `string`                                       | -                                                | -         |
+| **clearable**         | show clear icon                                       | `boolean`                                      | -                                                | `false`   |
+| **searching**         | show loading icon for search                          | `boolean`                                      | -                                                | `false`   |
+| **onChange**          | value of input is changed                             | `(value: string) => void`                      | -                                                | -         |
+| **onSearch**          | called when searching items                           | `(value: string) => void`                      | -                                                | -         |
+| **onSelect**          | called when a option is selected                      | `(value: string) => void`                      | -                                                | -         |
+| **dropdownClassName** | className of dropdown box                             | `string`                                       | -                                                | -         |
+| **dropdownStyle**     | style of dropdown box                                 | `object`                                       | -                                                | -         |
+| **disableMatchWidth** | disable Option from follow parent width               | `boolean`                                      | -                                                | `false`   |
+| **disableFreeSolo**   | only values can be changed through Select             | `boolean`                                      | -                                                | `false`   |
+| **getPopupContainer** | dropdown render parent element, the default is `body` | `() => HTMLElement`                            | -                                                | `body`    |
+| **ref**               | forwardRef                                            | <Code>Ref<HTMLInputElement &#124; null></Code> | -                                                | -         |
+| ...                   | native props                                          | `InputHTMLAttributes`                          | `'id', ...`                                      | -         |
 
 <Attributes.Title alias="AutoComplete.Option">AutoComplete.Item</Attributes.Title>
 
@@ -315,6 +312,12 @@ Array<{
   label: string
   value: string
 } | AutoComplete.Item>
+```
+
+<Attributes.Title>AutoCompleteTypes</Attributes.Title>
+
+```ts
+type AutoCompleteTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>

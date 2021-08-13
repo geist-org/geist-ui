@@ -4,7 +4,7 @@ exports[`ButtonIcon should render correctly 1`] = `
 "<button type=\\"button\\" class=\\"btn \\"><span class=\\"icon   \\"><svg></svg><style>
         .icon {
           position: absolute;
-          left: var(--geist-ui-button-padding);
+          left: var(--geist-ui-button-icon-padding);
           right: auto;
           top: 50%;
           transform: translateY(-50%);
@@ -16,7 +16,7 @@ exports[`ButtonIcon should render correctly 1`] = `
         }
 
         .right {
-          right: var(--geist-ui-button-padding);
+          right: var(--geist-ui-button-icon-padding);
           left: auto;
         }
 
@@ -41,14 +41,10 @@ exports[`ButtonIcon should render correctly 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.375rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
-            min-width: 12.5rem;
-            width: auto;
+            line-height: calc(2.5 * 16px);
             border-radius: 5px;
             font-weight: 400;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -65,10 +61,15 @@ exports[`ButtonIcon should render correctly 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 1.375rem;
-            --geist-ui-button-height: 2.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: calc(12.5 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
+            padding: 0 calc(1.375 * 16px) 0 calc(1.375 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,
@@ -106,7 +107,7 @@ exports[`ButtonIcon should work with right 1`] = `
 "<button type=\\"button\\" class=\\"btn \\"><span class=\\"icon right  \\"><svg></svg><style>
         .icon {
           position: absolute;
-          left: var(--geist-ui-button-padding);
+          left: var(--geist-ui-button-icon-padding);
           right: auto;
           top: 50%;
           transform: translateY(-50%);
@@ -118,7 +119,7 @@ exports[`ButtonIcon should work with right 1`] = `
         }
 
         .right {
-          right: var(--geist-ui-button-padding);
+          right: var(--geist-ui-button-icon-padding);
           left: auto;
         }
 
@@ -143,14 +144,10 @@ exports[`ButtonIcon should work with right 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.375rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
-            min-width: 12.5rem;
-            width: auto;
+            line-height: calc(2.5 * 16px);
             border-radius: 5px;
             font-weight: 400;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -167,10 +164,15 @@ exports[`ButtonIcon should work with right 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 1.375rem;
-            --geist-ui-button-height: 2.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: calc(12.5 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
+            padding: 0 calc(1.375 * 16px) 0 calc(1.375 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,
@@ -208,7 +210,7 @@ exports[`ButtonIcon should work without text 1`] = `
 "<button type=\\"button\\" class=\\"btn \\"><span class=\\"icon right single \\"><svg></svg><style>
         .icon {
           position: absolute;
-          left: var(--geist-ui-button-padding);
+          left: var(--geist-ui-button-icon-padding);
           right: auto;
           top: 50%;
           transform: translateY(-50%);
@@ -220,7 +222,7 @@ exports[`ButtonIcon should work without text 1`] = `
         }
 
         .right {
-          right: var(--geist-ui-button-padding);
+          right: var(--geist-ui-button-icon-padding);
           left: auto;
         }
 
@@ -238,14 +240,10 @@ exports[`ButtonIcon should work without text 1`] = `
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 1.375rem;
-            height: 2.5rem;
-            line-height: 2.5rem;
-            min-width: 12.5rem;
-            width: auto;
+            line-height: calc(2.5 * 16px);
             border-radius: 5px;
             font-weight: 400;
-            font-size: .875rem;
+            font-size: calc(0.875 * 16px);
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -262,10 +260,15 @@ exports[`ButtonIcon should work without text 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-padding: 1.375rem;
-            --geist-ui-button-height: 2.5rem;
+            --geist-ui-button-icon-padding: calc(0.727 * 16px);
+            --geist-ui-button-height: calc(2.5 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
+            min-width: calc(12.5 * 16px);
+            width: initial;
+            height: calc(2.5 * 16px);
+            padding: 0 calc(1.375 * 16px) 0 calc(1.375 * 16px);
+            margin: 0 0 0 0;
           }
 
           .btn:hover,

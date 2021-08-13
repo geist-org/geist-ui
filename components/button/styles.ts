@@ -1,5 +1,5 @@
 import { GeistUIThemesPalette } from '../themes/presets'
-import { NormalSizes, ButtonTypes } from '../utils/prop-types'
+import { ButtonTypes } from '../utils/prop-types'
 import { ButtonProps } from './button'
 import { addColorAlpha } from '../utils/color'
 
@@ -90,7 +90,7 @@ export const getButtonColors = (
    *   Color['success'] === Color['success-light']
    *   Color['warning'] === Color['warning-light']
    */
-  const withoutLightType = type.replace('-light', '') as ButtonTypes
+  const withoutLightType = type?.replace('-light', '') as ButtonTypes
   const defaultColor = colors.default as ButtonColorGroup
 
   if (ghost) return getButtonGhostColors(palette, withoutLightType) || defaultColor
@@ -195,7 +195,7 @@ export const getButtonHoverColors = (
   if (shadow) return defaultColor
 
   const hoverColor =
-    (ghost ? getButtonGhostHoverColors(palette, type) : colors[type]) || colors.default
+    (ghost ? getButtonGhostHoverColors(palette, type!) : colors[type!]) || colors.default
   return {
     ...hoverColor,
     color: hoverColor.color || hoverColor.border,
@@ -228,70 +228,9 @@ export const getButtonCursor = (
   }
 }
 
-export type ButtonSizeGroup = {
-  height: string
-  width: string
-  padding: string
-  minWidth: string
-  fontSize: string
-}
-
-export const getButtonSize = (
-  size: NormalSizes = 'medium',
-  auto: boolean,
-): ButtonSizeGroup => {
-  const defaultLayout: ButtonSizeGroup = {
-    height: '2.5rem',
-    width: 'auto',
-    padding: '1.375rem',
-    fontSize: '.875rem',
-    minWidth: '12.5rem',
-  }
-  const autoPaddings: { [key in NormalSizes]: string } = {
-    medium: '1.25rem',
-    mini: '0.625rem',
-    small: '0.9375rem',
-    large: '1.5625rem',
-  }
-  const layouts: { [key in NormalSizes]: ButtonSizeGroup } = {
-    mini: {
-      height: '1.5rem',
-      width: 'initial',
-      padding: '1.375rem',
-      fontSize: '.75rem',
-      minWidth: '5.25rem',
-    },
-    small: {
-      height: '2rem',
-      width: 'initial',
-      padding: '1.25rem',
-      fontSize: '.875rem',
-      minWidth: '9.375rem',
-    },
-    medium: defaultLayout,
-    large: {
-      height: '2.75rem',
-      width: 'initial',
-      padding: '1.875rem',
-      fontSize: '1rem',
-      minWidth: '15.625rem',
-    },
-  }
-
-  if (auto)
-    return {
-      ...(layouts[size] || defaultLayout),
-      padding: autoPaddings[size] || autoPaddings.medium,
-      minWidth: 'min-content',
-      width: 'auto',
-    }
-
-  return layouts[size] || defaultLayout
-}
-
 export const getButtonDripColor = (palette: GeistUIThemesPalette, props: ButtonProps) => {
   const { type } = props
-  const isLightHover = type.endsWith('light')
+  const isLightHover = type!.endsWith('light')
   const hoverColors = getButtonHoverColors(palette, props)
   return isLightHover
     ? addColorAlpha(hoverColors.bg, 0.65)

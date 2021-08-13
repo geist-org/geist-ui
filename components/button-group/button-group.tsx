@@ -1,15 +1,14 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import withDefaults from '../utils/with-defaults'
-import { NormalSizes, ButtonTypes } from '../utils/prop-types'
+import { ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
-import { GeistUIThemesPalette } from 'components/themes/presets'
+import { GeistUIThemesPalette } from '../themes/presets'
+import useScaleable, { withScaleable } from '../use-scaleable'
 
 interface Props {
   disabled?: boolean
   vertical?: boolean
   ghost?: boolean
-  size?: NormalSizes
   type?: ButtonTypes
   className?: string
 }
@@ -18,17 +17,16 @@ const defaultProps = {
   disabled: false,
   vertical: false,
   ghost: false,
-  size: 'medium' as NormalSizes,
   type: 'default' as ButtonTypes,
   className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type ButtonGroupProps = Props & typeof defaultProps & NativeAttrs
+export type ButtonGroupProps = Props & NativeAttrs
 
 const getGroupBorderColors = (
   palette: GeistUIThemesPalette,
-  props: ButtonGroupProps,
+  props: ButtonGroupProps & typeof defaultProps,
 ): string => {
   const { ghost, type } = props
   if (!ghost && type !== 'default') return palette.background
@@ -43,27 +41,20 @@ const getGroupBorderColors = (
   return colors[withoutLightType] || (colors.default as string)
 }
 
-const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupProps => {
+const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> = (
+  groupProps: ButtonGroupProps & typeof defaultProps,
+) => {
   const theme = useTheme()
-  const {
-    disabled,
-    size,
-    type,
-    ghost,
-    vertical,
-    children,
-    className,
-    ...props
-  } = groupProps
+  const { SCALES } = useScaleable()
+  const { disabled, type, ghost, vertical, children, className, ...props } = groupProps
   const initialValue = useMemo<ButtonGroupConfig>(
     () => ({
       disabled,
-      size,
       type,
       ghost,
       isButtonGroup: true,
     }),
-    [disabled, size, type],
+    [disabled, type],
   )
 
   const border = useMemo(() => {
@@ -80,11 +71,14 @@ const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupPr
           .btn-group {
             display: inline-flex;
             border-radius: ${theme.layout.radius};
-            margin: ${theme.layout.gapQuarter};
             border: 1px solid ${border};
             background-color: transparent;
             overflow: hidden;
-            height: min-content;
+            width: ${SCALES.width(1, 'auto')};
+            height: ${SCALES.height(1, 'min-content')};
+            margin: ${SCALES.mt(0.313)} ${SCALES.mr(0.313)} ${SCALES.mb(0.313)}
+              ${SCALES.ml(0.313)};
+            padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           }
 
           .vertical {
@@ -126,6 +120,7 @@ const ButtonGroup: React.FC<React.PropsWithChildren<ButtonGroupProps>> = groupPr
   )
 }
 
-const MemoButtonGroup = React.memo(ButtonGroup)
-
-export default withDefaults(MemoButtonGroup, defaultProps)
+ButtonGroupComponent.defaultProps = defaultProps
+ButtonGroupComponent.displayName = 'GeistButtonGroup'
+const ButtonGroup = withScaleable(ButtonGroupComponent)
+export default ButtonGroup

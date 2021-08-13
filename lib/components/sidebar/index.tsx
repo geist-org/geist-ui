@@ -28,8 +28,8 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
 
   const tabbarData = useMemo(() => {
     const allSides = Metadatas[locale]
-    const currentSide = allSides.filter(side => side.name === tabbar)[0]
-    return (currentSide.children || []) as Array<Sides>
+    const currentSide = allSides.find(side => side.name === tabbar)
+    return (currentSide?.children || []) as Array<Sides>
   }, [locale, tabbar])
 
   useEffect(() => {
@@ -76,7 +76,7 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
 
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .box {
-            padding: calc(3.5 * ${theme.layout.gap}) 15vw;
+            padding: 20px 35px 10px;
             width: 100vw;
             height: 100%;
           }

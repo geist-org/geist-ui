@@ -15,12 +15,12 @@ export const meta = {
   scope={{ Badge, Spacer }}
   desc="展示一个数字或一段文字。"
   code={`
-<>
-  <Badge>1</Badge> <Spacer y={.5} />
-  <Badge>50</Badge> <Spacer y={.5} />
-  <Badge>100</Badge> <Spacer y={.5} />
-  <Badge>2020</Badge>
-</>
+  <>
+    <Badge>1</Badge> <Spacer h={.5} />
+    <Badge>50</Badge> <Spacer h={.5} />
+    <Badge>100</Badge> <Spacer h={.5} />
+    <Badge>2020</Badge>
+  </>
 `}
 />
 
@@ -29,12 +29,12 @@ export const meta = {
   desc="以不同的色彩表达不同的状态。"
   scope={{ Badge, Spacer }}
   code={`
-<>
-  <Badge type="success">成功</Badge> <Spacer y={.5} />
-  <Badge type="warning">警告</Badge> <Spacer y={.5} />
-  <Badge type="error">错误</Badge> <Spacer y={.5} />
-  <Badge type="secondary">次要的</Badge>
-</>
+  <>
+    <Badge type="success">成功</Badge> <Spacer h={.5} />
+    <Badge type="warning">警告</Badge> <Spacer h={.5} />
+    <Badge type="error">错误</Badge> <Spacer h={.5} />
+    <Badge type="secondary">次要的</Badge>
+  </>
 `}
 />
 
@@ -55,29 +55,15 @@ export const meta = {
   const theme = useTheme()
   return (
     <>
-      <Badge style={{ backgroundColor: theme.palette.successLight }}>淡色成功状态</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.successDark }}>深色成功状态</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.alert }}>警告</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.purple }}>紫色</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.violet }}>紫罗兰</Badge> <Spacer y={.5} />
-      <Badge style={{ backgroundColor: theme.palette.cyanLighter, color: theme.palette.foreground }}>淡青色</Badge> <Spacer y={.5} />
+      <Badge style={{ backgroundColor: theme.palette.successLight }}>淡色成功状态</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.successDark }}>深色成功状态</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.alert }}>警告</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.purple }}>紫色</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.violet }}>紫罗兰</Badge> <Spacer h={.5} />
+      <Badge style={{ backgroundColor: theme.palette.cyanLighter, color: theme.palette.foreground }}>淡青色</Badge> <Spacer h={.5} />
     </>
   )
 }
-`}
-/>
-
-<Playground
-  title="大小"
-  desc="不同大小的徽章组件。"
-  scope={{ Badge, Spacer }}
-  code={`
-<>
-  <Badge size="mini">极小</Badge> <Spacer y={.5} />
-  <Badge size="small">较小</Badge> <Spacer y={.5} />
-  <Badge size="medium">中等</Badge> <Spacer y={.5} />
-  <Badge size="large">最大</Badge>
-</>
 `}
 />
 
@@ -88,27 +74,27 @@ export const meta = {
   code={`
 <>
   <Badge.Anchor>
-    <Badge size="mini">10</Badge>
+    <Badge scale={0.5}>10</Badge>
     <Avatar src="/images/avatar.png" />
   </Badge.Anchor>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={2.5} />
   <Badge.Anchor placement="bottomRight">
-    <Badge size="mini" type="success">10</Badge>
-    <Avatar size={40} isSquare src="/images/avatar.png" />
+    <Badge scale={0.5} type="success">10</Badge>
+    <Avatar scale={2} isSquare src="/images/avatar.png" />
   </Badge.Anchor>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={2.5} />
   <Badge.Anchor>
-    <Badge size="mini" type="warning">99+</Badge>
-    <Button size="small" auto>按钮</Button>
+    <Badge scale={0.5} type="warning">99+</Badge>
+    <Button scale={0.5} auto>按钮</Button>
   </Badge.Anchor>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={2.5} />
   <Badge.Anchor>
-    <Badge size="mini" type="error" dot />
+    <Badge scale={0.5} type="error" dot />
     <Link target="_blank" href="https://github.com/geist-org/react/">组件库</Link>
   </Badge.Anchor>
-  <Spacer inline x={1.5} />
+  <Spacer inline w={2.5} />
   <Badge.Anchor>
-    <Badge size="mini" type="error" dot style={{ padding: '7px' }} />
+    <Badge type="error" dot padding="5px" />
     <Link target="_blank" href="https://github.com/geist-org/react/">分享链接</Link>
   </Badge.Anchor>
 </>
@@ -120,8 +106,7 @@ export const meta = {
 
 | 属性     | 描述               | 类型             | 推荐值                          | 默认      |
 | -------- | ------------------ | ---------------- | ------------------------------- | --------- |
-| **type** | 徽章的类型         | `NormalTypes`    | [NormalTypes](#normaltypes)     | `default` |
-| **size** | 徽章的大小         | `NormalSizes`    | [NormalSizes](#normalsizes)     | `medium`  |
+| **type** | 徽章的类型         | `BadgeTypes`     | [BadgeTypes](#badgetypes)       | `default` |
 | **dot**  | 忽略内容并显示圆点 | `boolean`        | -                               | `false`   |
 | ...      | 原生属性           | `HTMLAttributes` | `'alt', 'id', 'className', ...` | -         |
 
@@ -132,16 +117,10 @@ export const meta = {
 | **placement** | 固定徽章的位置 | `AnchorPlacement` | [AnchorPlacement](#anchorplacement) | `topRight` |
 | ...           | 原生属性       | `HTMLAttributes`  | `'alt', 'id', 'className', ...`     | -          |
 
-<Attributes.Title>NormalTypes</Attributes.Title>
+<Attributes.Title>BadgeTypes</Attributes.Title>
 
 ```ts
-type NormalTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
-```
-
-<Attributes.Title>NormalSizes</Attributes.Title>
-
-```ts
-type NormalSizes = 'medium' | 'mini' | 'small' | 'large'
+type BadgeTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 <Attributes.Title>AnchorPlacement</Attributes.Title>

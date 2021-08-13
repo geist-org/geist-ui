@@ -3,12 +3,14 @@ import { createPortal } from 'react-dom'
 import useTheme from '../use-theme'
 import usePortal from '../utils/use-portal'
 import useResize from '../utils/use-resize'
-import CSSTransition from '../shared/css-transition'
+import CssTransition from '../shared/css-transition'
 import useClickAnyWhere from '../utils/use-click-anywhere'
 import { getColors } from './styles'
 import { getPosition, TooltipPosition, defaultTooltipPosition } from './placement'
 import TooltipIcon from './tooltip-icon'
 import { Placement, SnippetTypes } from '../utils/prop-types'
+import useScaleable from '../use-scaleable'
+import { getRect } from './helper'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
@@ -18,38 +20,11 @@ interface Props {
   hideArrow: boolean
   offset: number
   className?: string
+  iconOffset: TooltipIconOffset
 }
-
-interface ReactiveDomReact {
-  top: number
-  bottom: number
-  left: number
-  right: number
-  width: number
-  height: number
-}
-
-const defaultRect: ReactiveDomReact = {
-  top: -1000,
-  left: -1000,
-  right: -1000,
-  bottom: -1000,
-  width: 0,
-  height: 0,
-}
-
-const getRect = (ref: MutableRefObject<HTMLElement | null>): ReactiveDomReact => {
-  if (!ref || !ref.current) return defaultRect
-  const rect = ref.current.getBoundingClientRect()
-  return {
-    ...rect,
-    width: rect.width || rect.right - rect.left,
-    height: rect.height || rect.bottom - rect.top,
-    top: rect.top + document.documentElement.scrollTop,
-    bottom: rect.bottom + document.documentElement.scrollTop,
-    left: rect.left + document.documentElement.scrollLeft,
-    right: rect.right + document.documentElement.scrollLeft,
-  }
+export type TooltipIconOffset = {
+  x: string
+  y: string
 }
 
 const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
@@ -57,12 +32,14 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   parent,
   visible,
   offset,
+  iconOffset,
   placement,
   type,
   className,
   hideArrow,
 }) => {
   const theme = useTheme()
+  const { SCALES } = useScaleable()
   const el = usePortal('tooltip')
   const selfRef = useRef<HTMLDivElement>(null)
   const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition)
@@ -89,43 +66,46 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
 
   if (!el) return null
   return createPortal(
-    <CSSTransition visible={visible}>
+    <CssTransition visible={visible}>
       <div
         className={`tooltip-content ${className}`}
         ref={selfRef}
         onClick={preventHandler}>
         <div className="inner">
-          {!hideArrow && (
-            <TooltipIcon
-              placement={placement}
-              bgColor={colors.bgColor}
-              shadow={hasShadow}
-            />
-          )}
+          {!hideArrow && <TooltipIcon placement={placement} shadow={hasShadow} />}
           {children}
         </div>
         <style jsx>{`
           .tooltip-content {
+            --tooltip-icon-offset-x: ${iconOffset.x};
+            --tooltip-icon-offset-y: ${iconOffset.y};
+            --tooltip-content-bg: ${colors.bgColor};
+            box-sizing: border-box;
             position: absolute;
-            width: auto;
             top: ${rect.top};
             left: ${rect.left};
             transform: ${rect.transform};
-            background-color: ${colors.bgColor};
+            background-color: var(--tooltip-content-bg);
             color: ${colors.color};
             border-radius: ${theme.layout.radius};
             padding: 0;
             z-index: 1000;
             box-shadow: ${hasShadow ? theme.expressiveness.shadowMedium : 'none'};
+            width: ${SCALES.width(1, 'auto')};
+            height: ${SCALES.height(1, 'auto')};
           }
 
           .inner {
-            padding: ${theme.layout.gapHalf} ${theme.layout.gap};
+            box-sizing: border-box;
             position: relative;
+            font-size: ${SCALES.font(1)};
+            padding: ${SCALES.pt(0.65)} ${SCALES.pr(0.9)} ${SCALES.pb(0.65)}
+              ${SCALES.pl(0.9)};
+            height: 100%;
           }
         `}</style>
       </div>
-    </CSSTransition>,
+    </CssTransition>,
     el,
   )
 }

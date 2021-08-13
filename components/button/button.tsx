@@ -1,16 +1,9 @@
-import React, {
-  useRef,
-  useState,
-  MouseEvent,
-  useMemo,
-  useImperativeHandle,
-  PropsWithoutRef,
-  RefAttributes,
-} from 'react'
+import React, { useRef, useState, MouseEvent, useMemo, useImperativeHandle } from 'react'
+import useScaleable, { withScaleable } from '../use-scaleable'
 import useTheme from '../use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
-import { ButtonTypes, NormalSizes } from '../utils/prop-types'
+import { ButtonTypes } from '../utils/prop-types'
 import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 import { useButtonGroupContext } from '../button-group/button-group-context'
 import {
@@ -18,12 +11,10 @@ import {
   getButtonCursor,
   getButtonDripColor,
   getButtonHoverColors,
-  getButtonSize,
 } from './styles'
 
 interface Props {
   type?: ButtonTypes
-  size?: NormalSizes
   ghost?: boolean
   loading?: boolean
   shadow?: boolean
@@ -39,7 +30,6 @@ interface Props {
 
 const defaultProps = {
   type: 'default' as ButtonTypes,
-  size: 'medium' as NormalSizes,
   htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],
   ghost: false,
   loading: false,
@@ -51,11 +41,18 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>
-export type ButtonProps = Props & typeof defaultProps & NativeAttrs
+export type ButtonProps = Props & NativeAttrs
 
-const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ButtonProps>>(
-  ({ ...btnProps }, ref: React.Ref<HTMLButtonElement | null>) => {
+const ButtonComponent = React.forwardRef<
+  HTMLButtonElement,
+  React.PropsWithChildren<ButtonProps>
+>(
+  (
+    btnProps: ButtonProps & typeof defaultProps,
+    ref: React.Ref<HTMLButtonElement | null>,
+  ) => {
     const theme = useTheme()
+    const { SCALES } = useScaleable()
     const buttonRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle(ref, () => buttonRef.current)
 
@@ -75,7 +72,6 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
       effect,
       onClick,
       auto,
-      size,
       icon,
       htmlType,
       iconRight,
@@ -96,10 +92,6 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
       disabled,
       loading,
     ])
-    const { height, minWidth, padding, width, fontSize } = useMemo(
-      () => getButtonSize(size, auto),
-      [size, auto],
-    )
     const dripColor = useMemo(() => getButtonDripColor(theme.palette, filteredProps), [
       theme.palette,
       filteredProps,
@@ -128,12 +120,16 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
 
     const childrenWithIcon = useMemo(
       () =>
-        getButtonChildrenWithIcon(auto, size, children, {
+        getButtonChildrenWithIcon(auto, children, {
           icon,
           iconRight,
         }),
-      [auto, size, children, icon, iconRight],
+      [auto, children, icon, iconRight],
     )
+    const [paddingLeft, paddingRight] = [
+      auto ? SCALES.pl(1.15) : SCALES.pl(1.375),
+      auto ? SCALES.pr(1.15) : SCALES.pr(1.375),
+    ]
 
     return (
       <button
@@ -157,14 +153,10 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            padding: 0 ${padding};
-            height: ${height};
-            line-height: ${height};
-            min-width: ${minWidth};
-            width: ${width};
+            line-height: ${SCALES.height(2.5)};
             border-radius: ${theme.layout.radius};
             font-weight: 400;
-            font-size: ${fontSize};
+            font-size: ${SCALES.font(0.875)};
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -181,10 +173,15 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
             cursor: ${cursor};
             pointer-events: ${events};
             box-shadow: ${shadow ? theme.expressiveness.shadowSmall : 'none'};
-            --geist-ui-button-padding: ${padding};
-            --geist-ui-button-height: ${height};
+            --geist-ui-button-icon-padding: ${SCALES.pl(0.727)};
+            --geist-ui-button-height: ${SCALES.height(2.5)};
             --geist-ui-button-color: ${color};
             --geist-ui-button-bg: ${bg};
+            min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
+            width: ${auto ? 'auto' : 'initial'};
+            height: ${SCALES.height(2.5)};
+            padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)} ${paddingLeft};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
 
           .btn:hover,
@@ -221,13 +218,7 @@ const Button = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<Butto
   },
 )
 
-type ButtonComponent<T, P = {}> = React.ForwardRefExoticComponent<
-  PropsWithoutRef<P> & RefAttributes<T>
->
-type ComponentProps = Partial<typeof defaultProps> &
-  Omit<Props, keyof typeof defaultProps> &
-  NativeAttrs
-
-Button.defaultProps = defaultProps
-
-export default React.memo(Button) as ButtonComponent<HTMLButtonElement, ComponentProps>
+ButtonComponent.defaultProps = defaultProps
+ButtonComponent.displayName = 'GeistButton'
+const Button = withScaleable(ButtonComponent)
+export default Button
