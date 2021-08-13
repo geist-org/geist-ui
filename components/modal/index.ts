@@ -20,5 +20,4 @@ export type { ModalTitleProps } from './modal-title'
 export type { ModalSubtitleProps } from './modal-subtitle'
 export type { ModalActionProps } from './modal-action'
 export type { ModalContentProps } from './modal-content'
-export type { ModalHooksBindings } from './use-modal'
 export default Modal as ModalComponentType
