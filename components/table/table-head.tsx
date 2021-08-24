@@ -15,7 +15,7 @@ const defaultProps = {
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props<any>>
 export type TableHeadProps<TableDataItem> = Props<TableDataItem> & NativeAttrs
 
-const makeColgroup = <TableDataItem,>(
+const makeColgroup = <TableDataItem>(
   width: number,
   columns: Array<TableAbstractColumn<TableDataItem>>,
 ) => {
