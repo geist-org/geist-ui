@@ -48,5 +48,5 @@ const TableColumn = <TableDataItem extends TableDataItemBase>(
 }
 
 TableColumn.defaultProps = defaultProps
-TableColumn.displayName = 'GiestTableColumn'
+TableColumn.displayName = 'GeistTableColumn'
 export default TableColumn
