@@ -40,5 +40,5 @@ const TreeFolderIcon: React.FC<TreeFolderIconProps> = ({
 }
 
 TreeFolderIcon.defaultProps = defaultProps
-TreeFolderIcon.displayName = 'GiestTreeFolderIcon'
+TreeFolderIcon.displayName = 'GeistTreeFolderIcon'
 export default TreeFolderIcon

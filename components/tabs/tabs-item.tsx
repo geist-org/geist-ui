@@ -107,7 +107,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
       </div>
     )
   }
-  TabsInternalCell.displayName = 'GiestTabsInternalCell'
+  TabsInternalCell.displayName = 'GeistTabsInternalCell'
 
   useEffect(() => {
     register && register({ value, cell: TabsInternalCell })

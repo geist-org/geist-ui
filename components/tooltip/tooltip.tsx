@@ -130,6 +130,6 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
 }
 
 TooltipComponent.defaultProps = defaultProps
-TooltipComponent.displayName = 'GiestTooltip'
+TooltipComponent.displayName = 'GeistTooltip'
 const Tooltip = withScaleable(TooltipComponent)
 export default Tooltip
