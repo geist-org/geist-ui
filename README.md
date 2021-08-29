@@ -8,7 +8,7 @@
 <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@geist-ui/react?style=for-the-badge&labelColor=000000">
 </p>
 
-> Modern and minimalist React UI library, originating from Vercel's design.
+> Modern and minimalist React UI library, originating from [Vercel's design](https://vercel.com/design).
 
 <br/>
 
