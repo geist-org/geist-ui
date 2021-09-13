@@ -2,11 +2,23 @@ import React from 'react'
 import { mount, render } from 'enzyme'
 import { ButtonDropdown } from 'components'
 import { mockNativeEvent, nativeEvent } from 'tests/utils'
+const Icon: React.FC<any> = () => <svg />
 
 describe('Button Dropdown', () => {
   it('should render correctly', () => {
     const wrapper = mount(
       <ButtonDropdown>
+        <ButtonDropdown.Item main>Default Action</ButtonDropdown.Item>
+        <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
+        <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>
+      </ButtonDropdown>,
+    )
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
+
+  it('right icon should render correctly', () => {
+    const wrapper = mount(
+      <ButtonDropdown icon={<Icon />}>
         <ButtonDropdown.Item main>Default Action</ButtonDropdown.Item>
         <ButtonDropdown.Item>Secondary Action</ButtonDropdown.Item>
         <ButtonDropdown.Item>Tertiary Action</ButtonDropdown.Item>

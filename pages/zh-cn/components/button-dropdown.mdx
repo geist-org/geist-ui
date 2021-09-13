@@ -2,6 +2,7 @@ import Layout from 'lib/components/layout'
 import Attributes from 'lib/components/attributes'
 import Playground from 'lib/components/playground'
 import { ButtonDropdown, Spacer } from 'components'
+import Plus from '@geist-ui/react-icons/plus'
 
 export const meta = {
   title: '下拉按钮 Btn Dropdown',
@@ -88,16 +89,31 @@ export const meta = {
 `}
 />
 
+<Playground
+  title="自定义右侧图标"
+  desc="右侧图标的色彩和大小将会被自动设置。"
+  scope={{ ButtonDropdown, Plus }}
+  code={`
+<ButtonDropdown scale={2/3} auto icon={<Plus />}>
+  <ButtonDropdown.Item main>访问账户</ButtonDropdown.Item>
+  <ButtonDropdown.Item>屏蔽账户</ButtonDropdown.Item>
+  <ButtonDropdown.Item>锁定账户</ButtonDropdown.Item>
+  <ButtonDropdown.Item type="error">移除账户</ButtonDropdown.Item>
+</ButtonDropdown>
+`}
+/>
+
 <Attributes edit="/pages/zh-cn/components/button-dropdown.mdx">
 <Attributes.Title>ButtonDropdown.Props</Attributes.Title>
 
-| 属性         | 描述               | 类型                  | 推荐值                                      | 默认      |
-| ------------ | ------------------ | --------------------- | ------------------------------------------- | --------- |
-| **type**     | 按钮类型           | `ButtonDropdownTypes` | [ButtonDropdownTypes](#buttondropdowntypes) | `default` |
-| **loading**  | 显示加载中的指示器 | `boolean`             | -                                           | `false`   |
-| **auto**     | 自动缩放宽度       | `boolean`             | -                                           | `false`   |
-| **disabled** | 禁用所有按钮       | `boolean`             | -                                           | `false`   |
-| ...          | 原生属性           | `HTMLAttributes`      | `'autoFocus', 'name', ...`                  | -         |
+| 属性         | 描述               | 类型                  | 推荐值                                      | 默认                   |
+| ------------ | ------------------ | --------------------- | ------------------------------------------- | ------------------ |
+| **type**     | 按钮类型           | `ButtonDropdownTypes` | [ButtonDropdownTypes](#buttondropdowntypes) | `default`            |
+| **loading**  | 显示加载中的指示器  | `boolean`             | -                                           | `false`               |
+| **auto**     | 自动缩放宽度       | `boolean`             | -                                           | `false`               |
+| **disabled** | 禁用所有按钮       | `boolean`             | -                                           | `false`               |
+| **icon**     | 右侧图标           | `ReactNode`           | -                                           | `ButtonDropdownIcon` |
+| ...          | 原生属性           | `HTMLAttributes`      | `'autoFocus', 'name', ...`                  | -                    |
 
 <Attributes.Title>ButtonDropdown.Item.Props</Attributes.Title>
 
