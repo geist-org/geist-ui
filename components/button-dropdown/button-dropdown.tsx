@@ -17,6 +17,7 @@ interface Props {
   loading?: boolean
   disabled?: boolean
   className?: string
+  icon?: React.ReactNode
 }
 
 const defaultProps = {
@@ -42,6 +43,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
   className,
   disabled,
   loading,
+  icon,
   ...props
 }) => {
   const { SCALES } = useScaleable()
@@ -93,7 +95,19 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>
-            <ButtonDropdownIcon color={colors.color} height={SCALES.height(2.5)} />
+            {icon ? (
+              <span
+                className="dropdown-icon"
+                style={{
+                  color: colors.color,
+                  height: SCALES.height(2.5),
+                  width: SCALES.height(2.5),
+                }}>
+                {icon}
+              </span>
+            ) : (
+              <ButtonDropdownIcon color={colors.color} height={SCALES.height(2.5)} />
+            )}
           </summary>
           <div className="content">{itemChildrenWithoutMain}</div>
         </details>
@@ -165,6 +179,13 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
           .content > :global(button:last-of-type) {
             border-bottom-left-radius: ${theme.layout.radius};
             border-bottom-right-radius: ${theme.layout.radius};
+          }
+
+          .dropdown-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.6);
           }
         `}</style>
       </div>

@@ -2,6 +2,7 @@ import Layout from 'lib/components/layout'
 import Attributes from 'lib/components/attributes'
 import Playground from 'lib/components/playground'
 import { ButtonDropdown, Spacer } from 'components'
+import Plus from '@geist-ui/react-icons/plus'
 
 export const meta = {
   title: 'Button Dropdown',
@@ -89,16 +90,31 @@ Display related but alternate actions for a button.
 `}
 />
 
+<Playground
+  title="Custom Right Icon"
+  desc="The `color` and `size` of the right icon will be set automatically."
+  scope={{ ButtonDropdown, Plus }}
+  code={`
+<ButtonDropdown scale={2/3} auto icon={<Plus />}>
+  <ButtonDropdown.Item main>Check Account</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Block Account</ButtonDropdown.Item>
+  <ButtonDropdown.Item>Lock Account</ButtonDropdown.Item>
+  <ButtonDropdown.Item type="error">Destroy Account</ButtonDropdown.Item>
+</ButtonDropdown>
+`}
+/>
+
 <Attributes edit="/pages/en-us/components/button-dropdown.mdx">
 <Attributes.Title>ButtonDropdown.Props</Attributes.Title>
 
-| Attribute    | Description               | Type                  | Accepted values                             | Default   |
-| ------------ | ------------------------- | --------------------- | ------------------------------------------- | --------- |
-| **type**     | button type               | `ButtonDropdownTypes` | [ButtonDropdownTypes](#buttondropdowntypes) | `default` |
-| **loading**  | display loading indicator | `boolean`             | -                                           | `false`   |
-| **auto**     | autoscale width           | `boolean`             | -                                           | `false`   |
-| **disabled** | disable button            | `boolean`             | -                                           | `false`   |
-| ...          | native props              | `HTMLAttributes`      | `'autoFocus', 'name', 'className', ...`     | -         |
+| Attribute    | Description               | Type                  | Accepted values                             | Default              |
+| ------------ | ------------------------- | --------------------- | ------------------------------------------- | -------------------- |
+| **type**     | button type               | `ButtonDropdownTypes` | [ButtonDropdownTypes](#buttondropdowntypes) | `default`            |
+| **loading**  | display loading indicator | `boolean`             | -                                           | `false`              |
+| **auto**     | autoscale width           | `boolean`             | -                                           | `false`              |
+| **disabled** | disable button            | `boolean`             | -                                           | `false`              |
+| **icon**     | custom right icon         | `ReactNode`           | -                                           | `ButtonDropdownIcon` |
+| ...          | native props              | `HTMLAttributes`      | `'autoFocus', 'name', 'className', ...`     | -                    |
 
 <Attributes.Title>ButtonDropdown.Item.Props</Attributes.Title>
 
