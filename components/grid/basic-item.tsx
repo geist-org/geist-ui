@@ -142,15 +142,6 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
           ${layout.xs.display}
         }
 
-        @media only screen and (max-width: ${theme.breakpoints.xs.max}) {
-          .xs {
-            flex-grow: ${layout.xs.grow};
-            max-width: ${layout.xs.width};
-            flex-basis: ${layout.xs.basis};
-            ${layout.xs.display}
-          }
-        }
-
         @media only screen and (min-width: ${theme.breakpoints.sm.min}) {
           .sm {
             flex-grow: ${layout.sm.grow};

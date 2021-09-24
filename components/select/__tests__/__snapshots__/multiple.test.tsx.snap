@@ -51,15 +51,6 @@ exports[`Select Multiple should render correctly 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
