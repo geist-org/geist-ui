@@ -10,6 +10,8 @@
 
 > Modern and minimalist React UI library, originating from Vercel's design.
 
+> **NOTE: This is a COMMUNITY PROJECT, [not associated with Vercel](https://github.com/geist-org/react/issues/635).**
+
 <br/>
 
 ## Quick Start
