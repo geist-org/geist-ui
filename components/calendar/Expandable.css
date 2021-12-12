@@ -1,0 +1,64 @@
+.expandable{
+    display: flex;
+}
+
+.open-close{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
+.open-close:hover{
+    background-color: transparent;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.dateRange-close{
+    display: flex;
+}
+
+.calendar-wrapper{
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 10%;
+  }
+  
+  .dateRange-wrapper{
+    margin-left: 30px;
+  }
+  
+  .dateRange-heading{
+    margin-bottom: 0px;
+    color: #615F61;
+  }
+  
+  #dateRange{
+    margin-top: 5px;
+    margin-bottom: 0px;
+  }
+  
+  .rdrDayToday .rdrDayNumber span:after {
+    background-color: red;
+  }
+  
+  .rdrDayToday .rdrStartEdge {
+    background-color: #ff0000;
+  }
+  
+  .rdrSelected,
+  .rdrInRange,
+  .rdrStartEdge,
+  .rdrEndEdge {
+    background-color: #0063f2;
+  }
+  
+  .rdrSelected,
+  .rdrInRange {
+    background-color: #0063f2;
+  }
+  
+  .rdrInRange {
+    background-color: #0063f2;
+  }
