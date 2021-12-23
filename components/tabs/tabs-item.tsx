@@ -67,6 +67,10 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
               ${SCALES.ml(0.5334)};
           }
 
+          .tab:hover{
+            background-color: #f0f0f5;
+          }
+
           .tab:after {
             position: absolute;
             content: '';
