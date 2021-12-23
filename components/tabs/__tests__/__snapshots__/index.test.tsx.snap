@@ -24,6 +24,11 @@ exports[`Tabs should render correctly 1`] = `
               calc(0.5334 * 16px);
           }
 
+          .tab:hover{
+            background-color: #f0f0f5;
+          }
+
+
           .tab:after {
             position: absolute;
             content: '';
@@ -82,6 +87,11 @@ exports[`Tabs should render correctly 1`] = `
             margin: 0 calc(0.5334 * 16px) 0
               calc(0.5334 * 16px);
           }
+
+          .tab:hover{
+            background-color: #f0f0f5;
+          }
+
 
           .tab:after {
             position: absolute;
@@ -180,6 +190,11 @@ exports[`Tabs should work correctly with different styles 1`] = `
             margin: 0 calc(0.5334 * 16px) 0
               calc(0.5334 * 16px);
           }
+
+          .tab:hover{
+            background-color: #f0f0f5;
+          }
+
 
           .tab:after {
             position: absolute;
