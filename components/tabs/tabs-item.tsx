@@ -69,6 +69,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
 
           .tab:hover{
             background-color: #f0f0f5;
+            border-radius:5px;
           }
 
 
