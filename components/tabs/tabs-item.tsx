@@ -24,13 +24,11 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
 }: React.PropsWithChildren<TabsItemProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScaleable()
-  const { register, currentValue } = useTabsContext()
+  const { register, currentValue, leftSpace } = useTabsContext()
   const isActive = useMemo(() => currentValue === value, [currentValue, value])
 
-  const TabsInternalCell: React.FC<TabsInternalCellProps> = ({
-    value: currentValue,
-    onClick,
-  }) => {
+  const TabsInternalCell: React.FC<TabsInternalCellProps> = ({ onClick }) => {
+    const { currentValue } = useTabsContext()
     const clickHandler = () => {
       if (disabled) return
       onClick && onClick(value)
@@ -46,27 +44,47 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
         {label}
         <style jsx>{`
           .tab {
+            position: relative;
             box-sizing: border-box;
             cursor: pointer;
             outline: 0;
             transition: all 200ms ease;
             text-transform: capitalize;
             white-space: nowrap;
-            color: ${theme.palette.accents_6};
+            background-color: transparent;
+            color: ${theme.palette.accents_5};
             user-select: none;
             display: flex;
             align-items: center;
-            position: relative;
-            font-size: ${SCALES.font(1)};
-            line-height: 1.25em;
+            font-size: ${SCALES.font(0.875)};
+            line-height: normal;
             width: ${SCALES.width(1, 'auto')};
             height: ${SCALES.height(1, 'auto')};
-            padding: ${SCALES.pt(0.334)} ${SCALES.pr(0.218)} ${SCALES.pb(0.334)}
-              ${SCALES.pl(0.218)};
-            margin: ${SCALES.mt(0)} ${SCALES.mr(0.5334)} ${SCALES.mb(0)}
-              ${SCALES.ml(0.5334)};
+            padding: ${SCALES.pt(0.875)} ${SCALES.pr(0.55)} ${SCALES.pb(0.875)}
+              ${SCALES.pl(0.55)};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(0.2)} ${SCALES.mb(0)} ${SCALES.ml(0.2)};
+            z-index: 1;
+            --tabs-item-hover-left: calc(-1 * ${SCALES.pl(0.28)});
+            --tabs-item-hover-right: calc(-1 * ${SCALES.pr(0.28)});
           }
-
+          .tab:before {
+            position: absolute;
+            top: ${SCALES.pt(0.48)};
+            left: ${leftSpace ? 'var(--tabs-item-hover-left)' : 0};
+            right: ${leftSpace ? 'var(--tabs-item-hover-right)' : 0};
+            bottom: ${SCALES.pb(0.48)};
+            content: '';
+            z-index: -1;
+            transition: opacity 150ms ease;
+            background-color: transparent;
+            border-radius: 4px;
+          }
+          .tab:hover::before {
+            background-color: ${theme.palette.accents_2};
+          }
+          .tab:hover {
+            color: ${theme.palette.foreground};
+          }
           .tab:after {
             position: absolute;
             content: '';
@@ -77,28 +95,24 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
             height: 2px;
             border-radius: 4px;
             transform: scaleX(0.75);
-            background-color: transparent;
-            transition: all 200ms ease;
-          }
-
-          .tab.active:after {
             background-color: ${theme.palette.foreground};
+            transition: opacity, transform 200ms ease-in;
+            opacity: 0;
+          }
+          .tab.active:after {
+            opacity: 1;
             transform: scaleX(1);
           }
-
           .tab :global(svg) {
             max-height: 1em;
             margin-right: 5px;
           }
-
           .tab:first-of-type {
             margin-left: 0;
           }
-
           .tab.active {
             color: ${theme.palette.foreground};
           }
-
           .tab.disabled {
             color: ${theme.palette.accents_3};
             cursor: not-allowed;
@@ -111,7 +125,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
 
   useEffect(() => {
     register && register({ value, cell: TabsInternalCell })
-  }, [value, label, disabled, TabsInternalCell])
+  }, [value, label, disabled])
 
   /* eslint-disable react/jsx-no-useless-fragment */
   return isActive ? <>{children}</> : null

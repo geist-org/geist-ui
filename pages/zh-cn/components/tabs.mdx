@@ -103,7 +103,7 @@ export const meta = {
   const { setState, bindings } = useTabs('1')
   return (
     <>
-      <Button scale={1/3} onClick={() => setState('2')} auto>选择八进制</Button>
+      <Button scale={1/3} font="14px" onClick={() => setState('2')} auto>选择八进制</Button>
       <Spacer />
       <Tabs {...bindings}>
         <Tabs.Item label="二进制" value="1">二进制表示为开头是0后接大写或小写的B（0b或者0B）。</Tabs.Item>
@@ -118,13 +118,14 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/tabs.mdx">
 <Attributes.Title>Tabs.Props</Attributes.Title>
 
-| 属性             | 描述           | 类型                    | 推荐值                          | 默认    |
-| ---------------- | -------------- | ----------------------- | ------------------------------- | ------- |
-| **initialValue** | 初始值         | `string`                | -                               | -       |
-| **value**        | 设定当前选项   | `string`                | -                               | -       |
-| **hideDivider**  | 隐藏默认分割线 | `boolean`               | -                               | `false` |
-| **onChange**     | 选项卡切换事件 | `(val: string) => void` | -                               | -       |
-| ...              | 原生属性       | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
+| 属性             | 描述             | 类型                    | 推荐值                          | 默认    |
+| ---------------- | ---------------- | ----------------------- | ------------------------------- | ------- |
+| **initialValue** | 初始值           | `string`                | -                               | -       |
+| **value**        | 设定当前选项     | `string`                | -                               | -       |
+| **hideDivider**  | 隐藏默认分割线   | `boolean`               | -                               | `false` |
+| **leftSpace**    | 左侧空白区域宽度 | `CSSProperties`         | -                               | `20px`  |
+| **onChange**     | 选项卡切换事件   | `(val: string) => void` | -                               | -       |
+| ...              | 原生属性         | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
 
 <Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
 
@@ -137,9 +138,7 @@ export const meta = {
 <Attributes.Title>useTabs</Attributes.Title>
 
 ```ts
-type useTabs = (
-  initialValue: string,
-) => {
+type useTabs = (initialValue: string) => {
   state: string
   setState: Dispatch<SetStateAction<string>>
   currentRef: MutableRefObject<string>

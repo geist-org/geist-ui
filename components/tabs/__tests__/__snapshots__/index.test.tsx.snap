@@ -3,27 +3,47 @@
 exports[`Tabs should render correctly 1`] = `
 "<div class=\\"tabs \\"><header><div class=\\"scroll-container \\"><div class=\\"tab  \\" role=\\"button\\">label1<style>
           .tab {
+            position: relative;
             box-sizing: border-box;
             cursor: pointer;
             outline: 0;
             transition: all 200ms ease;
             text-transform: capitalize;
             white-space: nowrap;
-            color: #444;
+            background-color: transparent;
+            color: #666;
             user-select: none;
             display: flex;
             align-items: center;
-            position: relative;
-            font-size: calc(1 * 16px);
-            line-height: 1.25em;
+            font-size: calc(0.875 * 16px);
+            line-height: normal;
             width: auto;
             height: auto;
-            padding: calc(0.334 * 16px) calc(0.218 * 16px) calc(0.334 * 16px)
-              calc(0.218 * 16px);
-            margin: 0 calc(0.5334 * 16px) 0
-              calc(0.5334 * 16px);
+            padding: calc(0.875 * 16px) calc(0.55 * 16px) calc(0.875 * 16px)
+              calc(0.55 * 16px);
+            margin: 0 calc(0.2 * 16px) 0 calc(0.2 * 16px);
+            z-index: 1;
+            --tabs-item-hover-left: calc(-1 * calc(0.28 * 16px));
+            --tabs-item-hover-right: calc(-1 * calc(0.28 * 16px));
           }
-
+          .tab:before {
+            position: absolute;
+            top: calc(0.48 * 16px);
+            left: var(--tabs-item-hover-left);
+            right: var(--tabs-item-hover-right);
+            bottom: calc(0.48 * 16px);
+            content: '';
+            z-index: -1;
+            transition: opacity 150ms ease;
+            background-color: transparent;
+            border-radius: 4px;
+          }
+          .tab:hover::before {
+            background-color: #eaeaea;
+          }
+          .tab:hover {
+            color: #000;
+          }
           .tab:after {
             position: absolute;
             content: '';
@@ -34,55 +54,71 @@ exports[`Tabs should render correctly 1`] = `
             height: 2px;
             border-radius: 4px;
             transform: scaleX(0.75);
-            background-color: transparent;
-            transition: all 200ms ease;
-          }
-
-          .tab.active:after {
             background-color: #000;
+            transition: opacity, transform 200ms ease-in;
+            opacity: 0;
+          }
+          .tab.active:after {
+            opacity: 1;
             transform: scaleX(1);
           }
-
           .tab :global(svg) {
             max-height: 1em;
             margin-right: 5px;
           }
-
           .tab:first-of-type {
             margin-left: 0;
           }
-
           .tab.active {
             color: #000;
           }
-
           .tab.disabled {
             color: #999;
             cursor: not-allowed;
           }
         </style></div><div class=\\"tab  \\" role=\\"button\\">label2<style>
           .tab {
+            position: relative;
             box-sizing: border-box;
             cursor: pointer;
             outline: 0;
             transition: all 200ms ease;
             text-transform: capitalize;
             white-space: nowrap;
-            color: #444;
+            background-color: transparent;
+            color: #666;
             user-select: none;
             display: flex;
             align-items: center;
-            position: relative;
-            font-size: calc(1 * 16px);
-            line-height: 1.25em;
+            font-size: calc(0.875 * 16px);
+            line-height: normal;
             width: auto;
             height: auto;
-            padding: calc(0.334 * 16px) calc(0.218 * 16px) calc(0.334 * 16px)
-              calc(0.218 * 16px);
-            margin: 0 calc(0.5334 * 16px) 0
-              calc(0.5334 * 16px);
+            padding: calc(0.875 * 16px) calc(0.55 * 16px) calc(0.875 * 16px)
+              calc(0.55 * 16px);
+            margin: 0 calc(0.2 * 16px) 0 calc(0.2 * 16px);
+            z-index: 1;
+            --tabs-item-hover-left: calc(-1 * calc(0.28 * 16px));
+            --tabs-item-hover-right: calc(-1 * calc(0.28 * 16px));
           }
-
+          .tab:before {
+            position: absolute;
+            top: calc(0.48 * 16px);
+            left: var(--tabs-item-hover-left);
+            right: var(--tabs-item-hover-right);
+            bottom: calc(0.48 * 16px);
+            content: '';
+            z-index: -1;
+            transition: opacity 150ms ease;
+            background-color: transparent;
+            border-radius: 4px;
+          }
+          .tab:hover::before {
+            background-color: #eaeaea;
+          }
+          .tab:hover {
+            color: #000;
+          }
           .tab:after {
             position: absolute;
             content: '';
@@ -93,28 +129,24 @@ exports[`Tabs should render correctly 1`] = `
             height: 2px;
             border-radius: 4px;
             transform: scaleX(0.75);
-            background-color: transparent;
-            transition: all 200ms ease;
-          }
-
-          .tab.active:after {
             background-color: #000;
+            transition: opacity, transform 200ms ease-in;
+            opacity: 0;
+          }
+          .tab.active:after {
+            opacity: 1;
             transform: scaleX(1);
           }
-
           .tab :global(svg) {
             max-height: 1em;
             margin-right: 5px;
           }
-
           .tab:first-of-type {
             margin-left: 0;
           }
-
           .tab.active {
             color: #000;
           }
-
           .tab.disabled {
             color: #999;
             cursor: not-allowed;
@@ -144,6 +176,7 @@ exports[`Tabs should render correctly 1`] = `
             flex-wrap: nowrap;
             align-items: center;
             border-bottom: 1px solid #eaeaea;
+            padding-left: 20px;
           }
           header::-webkit-scrollbar {
             display: none;
@@ -160,27 +193,47 @@ exports[`Tabs should render correctly 1`] = `
 exports[`Tabs should work correctly with different styles 1`] = `
 "<div class=\\"tabs \\"><header><div class=\\"scroll-container hide-divider\\"><div class=\\"tab  \\" role=\\"button\\">label1<style>
           .tab {
+            position: relative;
             box-sizing: border-box;
             cursor: pointer;
             outline: 0;
             transition: all 200ms ease;
             text-transform: capitalize;
             white-space: nowrap;
-            color: #444;
+            background-color: transparent;
+            color: #666;
             user-select: none;
             display: flex;
             align-items: center;
-            position: relative;
-            font-size: calc(1 * 16px);
-            line-height: 1.25em;
+            font-size: calc(0.875 * 16px);
+            line-height: normal;
             width: auto;
             height: auto;
-            padding: calc(0.334 * 16px) calc(0.218 * 16px) calc(0.334 * 16px)
-              calc(0.218 * 16px);
-            margin: 0 calc(0.5334 * 16px) 0
-              calc(0.5334 * 16px);
+            padding: calc(0.875 * 16px) calc(0.55 * 16px) calc(0.875 * 16px)
+              calc(0.55 * 16px);
+            margin: 0 calc(0.2 * 16px) 0 calc(0.2 * 16px);
+            z-index: 1;
+            --tabs-item-hover-left: calc(-1 * calc(0.28 * 16px));
+            --tabs-item-hover-right: calc(-1 * calc(0.28 * 16px));
           }
-
+          .tab:before {
+            position: absolute;
+            top: calc(0.48 * 16px);
+            left: var(--tabs-item-hover-left);
+            right: var(--tabs-item-hover-right);
+            bottom: calc(0.48 * 16px);
+            content: '';
+            z-index: -1;
+            transition: opacity 150ms ease;
+            background-color: transparent;
+            border-radius: 4px;
+          }
+          .tab:hover::before {
+            background-color: #eaeaea;
+          }
+          .tab:hover {
+            color: #000;
+          }
           .tab:after {
             position: absolute;
             content: '';
@@ -191,28 +244,24 @@ exports[`Tabs should work correctly with different styles 1`] = `
             height: 2px;
             border-radius: 4px;
             transform: scaleX(0.75);
-            background-color: transparent;
-            transition: all 200ms ease;
-          }
-
-          .tab.active:after {
             background-color: #000;
+            transition: opacity, transform 200ms ease-in;
+            opacity: 0;
+          }
+          .tab.active:after {
+            opacity: 1;
             transform: scaleX(1);
           }
-
           .tab :global(svg) {
             max-height: 1em;
             margin-right: 5px;
           }
-
           .tab:first-of-type {
             margin-left: 0;
           }
-
           .tab.active {
             color: #000;
           }
-
           .tab.disabled {
             color: #999;
             cursor: not-allowed;
@@ -242,6 +291,7 @@ exports[`Tabs should work correctly with different styles 1`] = `
             flex-wrap: nowrap;
             align-items: center;
             border-bottom: 1px solid #eaeaea;
+            padding-left: 20px;
           }
           header::-webkit-scrollbar {
             display: none;

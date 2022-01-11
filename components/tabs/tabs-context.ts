@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
 export type TabsInternalCellProps = {
-  value: string | undefined
   onClick: (value: string) => void
 }
 
@@ -16,6 +15,7 @@ export interface TabsConfig {
   register?: (item: TabsHeaderItem) => void
   currentValue?: string
   inGroup: boolean
+  leftSpace?: CSSProperties
 }
 
 const defaultContext = {
