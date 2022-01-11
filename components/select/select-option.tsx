@@ -88,6 +88,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
         .option {
           display: flex;
           max-width: 100%;
+          box-sizing: border-box;
           justify-content: flex-start;
           align-items: center;
           font-weight: normal;
