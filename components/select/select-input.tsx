@@ -52,5 +52,5 @@ const SelectInput = React.forwardRef<HTMLInputElement | null, SelectInputProps>(
   },
 )
 
-SelectInput.displayName = 'GiestSelectInput'
+SelectInput.displayName = 'GeistSelectInput'
 export default SelectInput
