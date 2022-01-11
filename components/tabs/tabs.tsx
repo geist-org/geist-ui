@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { CSSProperties, useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
 import { TabsHeaderItem, TabsConfig, TabsContext } from './tabs-context'
 import useScaleable, { withScaleable } from '../use-scaleable'
@@ -9,11 +9,13 @@ interface Props {
   hideDivider?: boolean
   onChange?: (val: string) => void
   className?: string
+  leftSpace?: CSSProperties
 }
 
 const defaultProps = {
   className: '',
   hideDivider: false,
+  leftSpace: '20px' as CSSProperties,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -26,6 +28,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   children,
   onChange,
   className,
+  leftSpace,
   ...props
 }: React.PropsWithChildren<TabsProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -52,8 +55,9 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
       register,
       currentValue: selfValue,
       inGroup: true,
+      leftSpace,
     }),
-    [selfValue],
+    [selfValue, leftSpace],
   )
 
   useEffect(() => {
@@ -72,7 +76,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
         <header>
           <div className={`scroll-container ${hideDivider ? 'hide-divider' : ''}`}>
             {tabs.map(({ cell: Cell, value }) => (
-              <Cell key={value} value={selfValue} onClick={clickHandler} />
+              <Cell key={value} onClick={clickHandler} />
             ))}
           </div>
         </header>
@@ -102,6 +106,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
             flex-wrap: nowrap;
             align-items: center;
             border-bottom: 1px solid ${theme.palette.border};
+            padding-left: ${leftSpace};
           }
           header::-webkit-scrollbar {
             display: none;
