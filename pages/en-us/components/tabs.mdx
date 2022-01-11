@@ -144,8 +144,8 @@ Display tab content.
   const { setState, bindings } = useTabs('1')
   return (
     <>
-      <Button scale={1/3} onClick={() => setState('2')}>
-        <Text>Select  <Code>Jumped</Code></Text>
+      <Button scale={1/3} font="14px" onClick={() => setState('2')}>
+        <Text>Select  <Code>extensible</Code></Text>
       </Button>
       <Spacer h={.5} />
       <Tabs {...bindings}>
@@ -161,13 +161,14 @@ Display tab content.
 <Attributes edit="/pages/en-us/components/tabs.mdx">
 <Attributes.Title>Tabs.Props</Attributes.Title>
 
-| Attribute        | Description            | Type                    | Accepted values                 | Default |
-| ---------------- | ---------------------- | ----------------------- | ------------------------------- | ------- |
-| **initialValue** | initial value          | `string`                | -                               | -       |
-| **value**        | current selected value | `string`                | -                               | -       |
-| **hideDivider**  | hide default divider   | `boolean`               | -                               | `false` |
-| **onChange**     | change event           | `(val: string) => void` | -                               | -       |
-| ...              | native props           | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
+| Attribute        | Description                 | Type                    | Accepted values                 | Default |
+| ---------------- | --------------------------- | ----------------------- | ------------------------------- | ------- |
+| **initialValue** | initial value               | `string`                | -                               | -       |
+| **value**        | current selected value      | `string`                | -                               | -       |
+| **hideDivider**  | hide default divider        | `boolean`               | -                               | `false` |
+| **leftSpace**    | space area on the left side | `CSSProperties`         | -                               | `20px`  |
+| **onChange**     | change event                | `(val: string) => void` | -                               | -       |
+| ...              | native props                | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
 
 <Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
 
