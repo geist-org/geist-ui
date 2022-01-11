@@ -30,15 +30,6 @@ exports[`Grid all breakpoint values should be supported 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 0;
-            max-width: 4.166666666666667%;
-            flex-basis: 4.166666666666667%;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 0;
@@ -101,15 +92,6 @@ exports[`Grid all breakpoint values should be supported 1`] = `
           max-width: 4.166666666666667%;
           flex-basis: 4.166666666666667%;
           display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 0;
-            max-width: 4.166666666666667%;
-            flex-basis: 4.166666666666667%;
-            display: inherit;
-          }
         }
 
         @media only screen and (min-width: 650px) {
@@ -180,15 +162,6 @@ exports[`Grid css value should be passed through 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -251,15 +224,6 @@ exports[`Grid css value should be passed through 1`] = `
           max-width: 100%;
           flex-basis: 0;
           display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
         }
 
         @media only screen and (min-width: 650px) {
@@ -330,15 +294,6 @@ exports[`Grid decimal spacing should be supported 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -401,15 +356,6 @@ exports[`Grid decimal spacing should be supported 1`] = `
           max-width: 100%;
           flex-basis: 0;
           display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
         }
 
         @media only screen and (min-width: 650px) {
@@ -480,13 +426,68 @@ exports[`Grid nested components should be supported 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
+        @media only screen and (min-width: 650px) {
+          .sm {
             flex-grow: 1;
             max-width: 100%;
             flex-basis: 0;
             display: inherit;
           }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            display: inherit;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            display: inherit;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            display: inherit;
+          }
+        }
+      </style></div><div class=\\"item  mock \\"><div class=\\"item  mock \\">test<style>
+        .item {
+          font-size: inherit;
+          height: auto;
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+          display: inherit;
         }
 
         @media only screen and (min-width: 650px) {
@@ -553,15 +554,6 @@ exports[`Grid nested components should be supported 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -624,88 +616,6 @@ exports[`Grid nested components should be supported 1`] = `
           max-width: 100%;
           flex-basis: 0;
           display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
-        @media only screen and (min-width: 650px) {
-          .sm {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
-        @media only screen and (min-width: 900px) {
-          .md {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
-        @media only screen and (min-width: 1280px) {
-          .lg {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
-        @media only screen and (min-width: 1920px) {
-          .xl {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-      </style></div><div class=\\"item  mock \\"><div class=\\"item  mock \\">test<style>
-        .item {
-          font-size: inherit;
-          height: auto;
-        }
-
-        .justify {
-          justify-content: undefined;
-        }
-
-        .direction {
-          flex-direction: undefined;
-        }
-
-        .alignContent {
-          align-content: undefined;
-        }
-
-        .alignItems {
-          align-items: undefined;
-        }
-
-        .xs {
-          flex-grow: 1;
-          max-width: 100%;
-          flex-basis: 0;
-          display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
         }
 
         @media only screen and (min-width: 650px) {
@@ -772,13 +682,68 @@ exports[`Grid nested components should be supported 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
+        @media only screen and (min-width: 650px) {
+          .sm {
             flex-grow: 1;
             max-width: 100%;
             flex-basis: 0;
             display: inherit;
           }
+        }
+
+        @media only screen and (min-width: 900px) {
+          .md {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            display: inherit;
+          }
+        }
+
+        @media only screen and (min-width: 1280px) {
+          .lg {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            display: inherit;
+          }
+        }
+
+        @media only screen and (min-width: 1920px) {
+          .xl {
+            flex-grow: 1;
+            max-width: 100%;
+            flex-basis: 0;
+            display: inherit;
+          }
+        }
+      </style></div>,<style>
+        .item {
+          font-size: inherit;
+          height: auto;
+        }
+
+        .justify {
+          justify-content: undefined;
+        }
+
+        .direction {
+          flex-direction: undefined;
+        }
+
+        .alignContent {
+          align-content: undefined;
+        }
+
+        .alignItems {
+          align-items: undefined;
+        }
+
+        .xs {
+          flex-grow: 1;
+          max-width: 100%;
+          flex-basis: 0;
+          display: inherit;
         }
 
         @media only screen and (min-width: 650px) {
@@ -845,15 +810,6 @@ exports[`Grid nested components should be supported 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -916,88 +872,6 @@ exports[`Grid nested components should be supported 1`] = `
           max-width: 100%;
           flex-basis: 0;
           display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
-        @media only screen and (min-width: 650px) {
-          .sm {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
-        @media only screen and (min-width: 900px) {
-          .md {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
-        @media only screen and (min-width: 1280px) {
-          .lg {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
-        @media only screen and (min-width: 1920px) {
-          .xl {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-      </style></div>,<style>
-        .item {
-          font-size: inherit;
-          height: auto;
-        }
-
-        .justify {
-          justify-content: undefined;
-        }
-
-        .direction {
-          flex-direction: undefined;
-        }
-
-        .alignContent {
-          align-content: undefined;
-        }
-
-        .alignItems {
-          align-items: undefined;
-        }
-
-        .xs {
-          flex-grow: 1;
-          max-width: 100%;
-          flex-basis: 0;
-          display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
         }
 
         @media only screen and (min-width: 650px) {
@@ -1068,15 +942,6 @@ exports[`Grid should render correctly 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -1141,15 +1006,6 @@ exports[`Grid should render correctly 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -1212,15 +1068,6 @@ exports[`Grid should render correctly 1`] = `
           max-width: 100%;
           flex-basis: 0;
           display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
         }
 
         @media only screen and (min-width: 650px) {
@@ -1291,15 +1138,6 @@ exports[`Grid should work correctly when size exceeds 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 0;
-            max-width: 100%;
-            flex-basis: 100%;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -1364,15 +1202,6 @@ exports[`Grid should work correctly when size exceeds 1`] = `
           display: inherit;
         }
 
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 0;
-            max-width: 0;
-            flex-basis: 0;
-            display: inherit;
-          }
-        }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -1435,15 +1264,6 @@ exports[`Grid should work correctly when size exceeds 1`] = `
           max-width: 100%;
           flex-basis: 0;
           display: inherit;
-        }
-
-        @media only screen and (max-width: 650px) {
-          .xs {
-            flex-grow: 1;
-            max-width: 100%;
-            flex-basis: 0;
-            display: inherit;
-          }
         }
 
         @media only screen and (min-width: 650px) {
