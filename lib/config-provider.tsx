@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { ConfigContext, Configs } from 'lib/config-context'
 import { useRouter } from 'next/router'
-import { DeepPartial } from 'components/utils/types'
+import type { DeepPartial } from 'components/utils/types'
 import { GeistUIThemes, Themes } from 'components'
 import { useTheme } from 'components'
 import { CHINESE_LANGUAGE_IDENT, CUSTOM_THEME_TYPE } from './constants'

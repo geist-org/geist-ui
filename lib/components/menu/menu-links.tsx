@@ -16,7 +16,7 @@ const MenuLinks = () => {
             src="/images/logo.png"
             width="2rem"
             height="2rem"
-            marginRight={0.5}
+            mr={0.5}
             draggable={false}
             title="Logo"
           />
