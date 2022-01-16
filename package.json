@@ -1,6 +1,6 @@
 {
   "name": "@geist-ui/react",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "types": "dist/index.d.ts",
@@ -53,7 +53,6 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.14.5",
-    "@babel/runtime": "^7.14.6",
     "@geist-ui/prettier-config": "^1.0.1",
     "@geist-ui/react-icons": "^1.0.1",
     "@mapbox/rehype-prism": "^0.6.0",
@@ -99,7 +98,8 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "styled-jsx": "^4.0.1"
+    "styled-jsx": "^4.0.1",
+    "@babel/runtime": "^7.16.7"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
