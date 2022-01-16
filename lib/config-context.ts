@@ -1,5 +1,5 @@
 import React from 'react'
-import { DeepPartial } from 'components/utils/types'
+import type { DeepPartial } from 'components/utils/types'
 import { GeistUIThemes } from 'components'
 
 export interface Configs {

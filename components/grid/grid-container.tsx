@@ -28,17 +28,19 @@ const GridContainerComponent: React.FC<React.PropsWithChildren<GridContainerProp
   const { unit, SCALES } = useScaleable()
   const gapUnit = useMemo(() => `calc(${gap} * ${unit} * 1/3)`, [gap, unit])
   const { className: resolveClassName, styles } = css.resolve`
-    --gaid-gap-unit: ${gapUnit};
-    --gaid-container-margin: calc(-1 * var(--gaid-gap-unit));
-    --gaid-container-width: calc(100% + var(--gaid-gap-unit) * 2);
-    display: flex;
-    flex-wrap: ${wrap};
-    box-sizing: border-box;
-    width: ${SCALES.width(1, 'var(--gaid-container-width)')};
-    margin: ${SCALES.mt(0, 'var(--gaid-container-margin)')}
-      ${SCALES.mr(0, 'var(--gaid-container-margin)')}
-      ${SCALES.mb(0, 'var(--gaid-container-margin)')}
-      ${SCALES.ml(0, 'var(--gaid-container-margin)')};
+    div {
+      --grid-gap-unit: ${gapUnit};
+      --grid-container-margin: calc(-1 * var(--grid-gap-unit));
+      --grid-container-width: calc(100% + var(--grid-gap-unit) * 2);
+      display: flex;
+      flex-wrap: ${wrap};
+      box-sizing: border-box;
+      width: ${SCALES.width(1, 'var(--grid-container-width)')};
+      margin: ${SCALES.mt(0, 'var(--grid-container-margin)')}
+        ${SCALES.mr(0, 'var(--grid-container-margin)')}
+        ${SCALES.mb(0, 'var(--grid-container-margin)')}
+        ${SCALES.ml(0, 'var(--grid-container-margin)')};
+    }
   `
 
   return (

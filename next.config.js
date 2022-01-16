@@ -6,10 +6,6 @@ const withMDX = require('@next/mdx')({
 })
 
 const nextConfig = {
-  target: 'serverless',
-
-  // reactStrictMode: true,
-
   generateEtags: false,
 
   poweredByHeader: false,
