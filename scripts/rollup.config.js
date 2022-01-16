@@ -53,6 +53,9 @@ const esmOutput = {
   entryFileNames: '[name]/index.js',
   dir: esmPath,
   manualChunks: id => {
+    if (id.includes('node_modules/styled-jsx/server')) {
+      return 'styled-jsx-server'
+    }
     if (id.includes('node_modules/styled-jsx')) {
       return 'styled-jsx'
     }
@@ -98,10 +101,12 @@ export default (async () => {
     {
       input: { index: path.join(componentsPath, 'index.ts') },
       output: [
-        {
-          ...esmOutput,
-          entryFileNames: 'index.js',
-        },
+        // use yarn build:esm-entry instead of it
+        // {
+        //   ...esmOutput,
+        //
+        //   entryFileNames: 'index.js',
+        // },
         {
           ...cjsOutput,
           entryFileNames: 'index.js',

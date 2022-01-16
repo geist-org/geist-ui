@@ -1,6 +1,6 @@
 {
   "name": "@geist-ui/react",
-  "version": "2.2.1",
+  "version": "2.2.2-dev.2",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
@@ -40,7 +40,8 @@
     "build:webpack": "webpack --config scripts/webpack.config.js",
     "build:after": "node scripts/fix-styled-jsx.js",
     "build:types": "ttsc -p ./scripts & ttsc -p ./scripts --outDir ./esm",
-    "build": "yarn clear && yarn build:rollup && yarn build:types && yarn build:after",
+    "build:esm-entry": "babel --config-file ./scripts/babel.config.js ./components/index.ts -o ./esm/index.js",
+    "build": "yarn clear && yarn build:rollup && yarn build:esm-entry && yarn build:types && yarn build:after",
     "release": "yarn build && yarn publish --access public --non-interactive"
   },
   "files": [
