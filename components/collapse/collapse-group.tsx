@@ -3,7 +3,7 @@ import Collapse from './collapse'
 import useCurrentState from '../utils/use-current-state'
 import { setChildrenIndex } from '../utils/collections'
 import { CollapseContext, CollapseConfig } from './collapse-context'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   accordion?: boolean
@@ -51,13 +51,14 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
     [state.join(',')],
   )
 
-  const hasIndexChildren = useMemo(() => setChildrenIndex(children, [Collapse]), [
-    children,
-  ])
+  const hasIndexChildren = useMemo(
+    () => setChildrenIndex(children, [Collapse]),
+    [children],
+  )
 
   return (
     <CollapseContext.Provider value={initialValue}>
-      <div className={`collapse-group ${className}`} {...props}>
+      <div className={`collapse-group ${className}`} {...withPureProps(props)}>
         {hasIndexChildren}
         <style jsx>{`
           .collapse-group {

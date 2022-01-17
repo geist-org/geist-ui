@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   inline?: boolean
@@ -22,7 +22,7 @@ const SpacerComponent: React.FC<SpacerProps> = ({
   const { SCALES } = useScaleable()
 
   return (
-    <span className={className} {...props}>
+    <span className={className} {...withPureProps(props)}>
       <style jsx>{`
         span {
           display: ${inline ? 'inline-block' : 'block'};

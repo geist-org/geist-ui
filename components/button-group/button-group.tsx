@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import { ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   disabled?: boolean
@@ -65,7 +65,7 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
     <ButtonGroupContext.Provider value={initialValue}>
       <div
         className={`btn-group ${vertical ? 'vertical' : 'horizontal'} ${className}`}
-        {...props}>
+        {...withPureProps(props)}>
         {children}
         <style jsx>{`
           .btn-group {

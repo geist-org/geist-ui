@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
-import useScaleable from '../use-scaleable'
+import useScaleable, { withPureProps } from '../use-scaleable'
 import { DrawerPlacement, getDrawerTransform } from './helper'
 
 interface Props {
@@ -63,7 +63,7 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
         tabIndex={-1}
         onKeyDown={onKeyDown}
         ref={modalContent}
-        {...props}>
+        {...withPureProps(props)}>
         <div tabIndex={0} className="hide-tab start" aria-hidden="true" ref={tabStart} />
         {children}
         <div tabIndex={0} className="hide-tab end" aria-hidden="true" ref={tabEnd} />

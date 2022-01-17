@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { RadioContext } from './radio-context'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   value?: string | number
@@ -53,7 +53,7 @@ const RadioGroupComponent: React.FC<React.PropsWithChildren<RadioGroupProps>> = 
 
   return (
     <RadioContext.Provider value={providerValue}>
-      <div className={`radio-group ${className}`} {...props}>
+      <div className={`radio-group ${className}`} {...withPureProps(props)}>
         {children}
       </div>
       <style jsx>{`

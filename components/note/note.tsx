@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemes } from '../themes/presets'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type NoteTypes = NormalTypes
 interface Props {
@@ -61,7 +61,7 @@ export const NoteComponent: React.FC<React.PropsWithChildren<NoteProps>> = ({
   )
 
   return (
-    <div className={`note ${className}`} {...props}>
+    <div className={`note ${className}`} {...withPureProps(props)}>
       {label && (
         <span className="label">
           <b>{label}:</b>

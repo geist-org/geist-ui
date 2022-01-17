@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import { useProportions } from '../utils/calculations'
 import { GeistUIThemesPalette } from '../themes/presets'
 import { NormalTypes } from '../utils/prop-types'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type ProgressColors = {
   [key: number]: string
@@ -72,7 +72,7 @@ const ProgressComponent: React.FC<ProgressProps> = ({
   return (
     <div className={`progress ${className} ${fixed ? 'fixed' : ''}`}>
       <div className="inner" title={`${percentValue}%`} />
-      <progress className={className} value={value} max={max} {...props} />
+      <progress className={className} value={value} max={max} {...withPureProps(props)} />
       <style jsx>{`
         progress {
           position: fixed;

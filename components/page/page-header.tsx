@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   center?: boolean
@@ -23,7 +23,9 @@ const PageHeaderComponent: React.FC<React.PropsWithChildren<PageHeaderProps>> = 
   const { SCALES } = useScaleable()
 
   return (
-    <header className={`${center ? 'center' : ''} ${className}`} {...props}>
+    <header
+      className={`${center ? 'center' : ''} ${className}`}
+      {...withPureProps(props)}>
       {children}
       <style jsx>{`
         header {

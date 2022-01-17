@@ -3,7 +3,7 @@ import { tuple } from '../utils/prop-types'
 import useTheme from '../use-theme'
 import PageContent from './page-content'
 import { hasChild } from '../utils/collections'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 const renderMode = tuple('default', 'effect', 'effect-seo')
 
@@ -74,7 +74,7 @@ const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
   const hasContent = hasChild(children, PageContent)
 
   return (
-    <section className={className} {...props}>
+    <section className={className} {...withPureProps(props)}>
       {hasContent ? children : <PageContent>{children}</PageContent>}
       {showDot && <DotStyles />}
       <style jsx>{`

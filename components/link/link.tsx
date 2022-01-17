@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import useWarning from '../utils/use-warning'
 import LinkIcon from './icon'
 import { addColorAlpha } from '../utils/color'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export interface Props {
   href?: string
@@ -59,7 +59,7 @@ const LinkComponent = React.forwardRef<
       <a
         className={`link ${block ? 'block' : ''} ${className}`}
         href={href}
-        {...props}
+        {...withPureProps(props)}
         ref={ref}>
         {children}
         {icon && <LinkIcon />}

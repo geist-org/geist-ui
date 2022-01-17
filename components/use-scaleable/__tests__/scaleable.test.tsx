@@ -3,7 +3,7 @@ import useScaleable, {
   ScaleableProps,
   ScaleableConfig,
   withScaleable,
-  filterScaleableProps,
+  withPureProps,
 } from '../index'
 import { renderHook } from '@testing-library/react-hooks'
 import { mount } from 'enzyme'
@@ -175,7 +175,7 @@ describe('UseScaleable', () => {
     const FilteredComponent: React.FC<
       React.PropsWithChildren<React.HTMLAttributes<any>>
     > = ({ children, ...props }) => (
-      <div id="inner" {...filterScaleableProps(props)}>
+      <div id="inner" {...withPureProps(props)}>
         {children}
       </div>
     )

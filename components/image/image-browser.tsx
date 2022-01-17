@@ -4,7 +4,7 @@ import { Props as LinkProps } from '../link/link'
 import useTheme from '../use-theme'
 import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type ImageAnchorProps = Omit<React.AnchorHTMLAttributes<any>, keyof LinkProps>
 
@@ -135,7 +135,7 @@ const ImageBrowserComponent = React.forwardRef<
     }, [url, showFullLink, title, colors, anchorProps])
 
     return (
-      <div className={`bowser ${className}`} ref={ref} {...props}>
+      <div className={`browser ${className}`} ref={ref} {...withPureProps(props)}>
         <header>
           <div className="traffic">
             <span className="close" />
@@ -146,7 +146,7 @@ const ImageBrowserComponent = React.forwardRef<
         </header>
         {children}
         <style jsx>{`
-          .bowser {
+          .browser {
             background-color: transparent;
             box-shadow: ${theme.expressiveness.shadowLarge};
             max-width: 100%;
@@ -160,7 +160,7 @@ const ImageBrowserComponent = React.forwardRef<
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           }
 
-          .bowser :global(.image) {
+          .browser :global(.image) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
           }

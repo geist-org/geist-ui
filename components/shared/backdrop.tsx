@@ -2,6 +2,7 @@ import React, { MouseEvent } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from './css-transition'
 import useCurrentState from '../utils/use-current-state'
+import { withPureProps } from '../use-scaleable'
 
 interface Props {
   onClick?: (event: MouseEvent<HTMLElement>) => void
@@ -48,7 +49,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
           className="backdrop"
           onClick={clickHandler}
           onMouseUp={mouseUpHandler}
-          {...props}>
+          {...withPureProps(props)}>
           <div className="layer" />
           <div
             onClick={onContentClick}

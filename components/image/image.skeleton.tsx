@@ -1,5 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
+import { withPureProps } from '../use-scaleable'
 
 interface Props {
   opacity?: number
@@ -15,7 +16,7 @@ const ImageSkeleton: React.FC<ImageSkeletonProps> = React.memo(
   ({ opacity, ...props }: ImageSkeletonProps & typeof defaultProps) => {
     const theme = useTheme()
     return (
-      <div className="skeleton" {...props}>
+      <div className="skeleton" {...withPureProps(props)}>
         <style jsx>{`
           .skeleton {
             position: absolute;

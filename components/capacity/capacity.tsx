@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { useProportions } from '../utils/calculations'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   value?: number
@@ -43,7 +43,10 @@ const CapacityComponent: React.FC<CapacityProps> = ({
   }, [userColor, percentValue, theme.palette])
 
   return (
-    <div className={`capacity ${className}`} title={`${percentValue}%`} {...props}>
+    <div
+      className={`capacity ${className}`}
+      title={`${percentValue}%`}
+      {...withPureProps(props)}>
       <span />
       <style jsx>{`
         .capacity {

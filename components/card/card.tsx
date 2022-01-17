@@ -6,7 +6,7 @@ import CardFooter from './card-footer'
 import CardContent from './card-content'
 import Image from '../image'
 import { hasChild, pickChild } from '../utils/collections'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   hoverable?: boolean
@@ -49,7 +49,7 @@ const CardComponent: React.FC<React.PropsWithChildren<CardProps>> = ({
   const hasContent = hasChild(withoutImageChildren, CardContent)
 
   return (
-    <div className={`card ${className}`} {...props}>
+    <div className={`card ${className}`} {...withPureProps(props)}>
       {imageChildren}
       {hasContent ? (
         withoutImageChildren

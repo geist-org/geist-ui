@@ -6,7 +6,7 @@ import {
   GridAlignItems,
   GridAlignContent,
 } from './grid-types'
-import useScaleable from '../use-scaleable'
+import useScaleable, { withPureProps } from '../use-scaleable'
 
 export type GridBreakpointsValue = number | boolean
 export interface GridBasicComponentProps {
@@ -95,11 +95,9 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
     return classString.trim()
   }, [justify, direction, alignItems, alignContent, xs, sm, md, lg, xl])
 
-  const layout = useMemo<
-    {
-      [key in ['xs', 'sm', 'md', 'lg', 'xl'][number]]: ItemLayoutValue
-    }
-  >(
+  const layout = useMemo<{
+    [key in ['xs', 'sm', 'md', 'lg', 'xl'][number]]: ItemLayoutValue
+  }>(
     () => ({
       xs: getItemLayout(xs),
       sm: getItemLayout(sm),
@@ -111,7 +109,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   )
 
   return (
-    <div className={`item ${classes} ${className}`} {...props}>
+    <div className={`item ${classes} ${className}`} {...withPureProps(props)}>
       {children}
       <style jsx>{`
         .item {

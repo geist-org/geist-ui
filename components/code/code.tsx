@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   block?: boolean
@@ -21,12 +21,13 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
   ...props
 }: React.PropsWithChildren<CodeProps> & typeof defaultProps) => {
   const { SCALES } = useScaleable()
+  const otherProps = withPureProps(props)
 
-  if (!block) return <code {...props}>{children}</code>
+  if (!block) return <code {...otherProps}>{children}</code>
 
   return (
     <>
-      <pre className={className} {...props}>
+      <pre className={className} {...otherProps}>
         <code>{children}</code>
       </pre>
       <style jsx>{`

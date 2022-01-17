@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useTheme from '../use-theme'
+import { withPureProps } from '../use-scaleable'
 
 const ModalActionsComponent: React.FC<React.PropsWithChildren<unknown>> = ({
   children,
@@ -17,7 +18,7 @@ const ModalActionsComponent: React.FC<React.PropsWithChildren<unknown>> = ({
   return (
     <>
       <div />
-      <footer ref={ref} {...props}>
+      <footer ref={ref} {...withPureProps(props)}>
         {children}
       </footer>
       <style jsx>{`

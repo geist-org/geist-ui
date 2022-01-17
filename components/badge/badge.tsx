@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type BadgeTypes = NormalTypes
 
@@ -48,7 +48,7 @@ const BadgeComponent: React.FC<React.PropsWithChildren<BadgeProps>> = ({
   }, [type, theme.palette.background])
 
   return (
-    <span className={`badge ${dot ? 'dot' : ''} ${className}`} {...props}>
+    <span className={`badge ${dot ? 'dot' : ''} ${className}`} {...withPureProps(props)}>
       {!dot && children}
       <style jsx>{`
         .badge {

@@ -31,7 +31,10 @@ export const ScaleablePropKeys: Array<ScaleablePropsAndInvalid> = [
   'size',
 ]
 
-export const filterScaleableProps = <T extends Record<any, any>>(props: T) => {
+export const withPureProps = <T extends Record<any, any>>(
+  props: T,
+): Omit<T, ScaleablePropsAndInvalid> => {
+  if (!props) return {} as Omit<T, ScaleablePropsAndInvalid>
   const keys = Object.keys(props).filter(key => key !== '')
   const nextProps: any = {}
   for (const key of keys) {
@@ -39,5 +42,5 @@ export const filterScaleableProps = <T extends Record<any, any>>(props: T) => {
       nextProps[key] = props[key]
     }
   }
-  return nextProps as Omit<T, ScaleablePropsAndInvalid>
+  return nextProps
 }

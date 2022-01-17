@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -23,7 +23,7 @@ const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProp
 
   return (
     <>
-      <p className={className} {...props}>
+      <p className={className} {...withPureProps(props)}>
         {children}
       </p>
       <style jsx>{`
