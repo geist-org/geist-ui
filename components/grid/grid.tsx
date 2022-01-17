@@ -1,7 +1,7 @@
 import React from 'react'
 import css from 'styled-jsx/css'
 import GridBasicItem, { GridBasicItemProps } from './basic-item'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -29,7 +29,9 @@ const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
     }
   `
   return (
-    <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
+    <GridBasicItem
+      className={`${resolveClassName} ${className}`}
+      {...withPureProps(props)}>
       {children}
       {styles}
     </GridBasicItem>

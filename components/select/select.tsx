@@ -18,7 +18,7 @@ import { SelectContext, SelectConfig } from './select-context'
 import { getColors } from './styles'
 import Ellipsis from '../shared/ellipsis'
 import SelectInput from './select-input'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type SelectRef = {
   focus: () => void
@@ -196,7 +196,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
           ref={ref}
           onClick={clickHandler}
           onMouseDown={mouseDownHandler}
-          {...props}>
+          {...withPureProps(props)}>
           <SelectInput
             ref={inputRef}
             visible={visible}

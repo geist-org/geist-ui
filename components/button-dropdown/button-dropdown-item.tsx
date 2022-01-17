@@ -4,6 +4,7 @@ import { getColor } from './styles'
 import { useButtonDropdown } from './button-dropdown-context'
 import Loading from '../loading'
 import { NormalTypes } from '../utils/prop-types'
+import { withPureProps } from '../use-scaleable'
 
 export type ButtonDropdownItemTypes = NormalTypes
 
@@ -47,7 +48,7 @@ const ButtonDropdownItem: React.FC<React.PropsWithChildren<ButtonDropdownItemPro
   }, [loading, disabled])
 
   return (
-    <button className={className} onClick={clickHandler} {...props}>
+    <button className={className} onClick={clickHandler} {...withPureProps(props)}>
       {loading ? <Loading /> : children}
       <style jsx>{`
         button {

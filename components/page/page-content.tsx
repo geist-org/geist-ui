@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -20,7 +20,7 @@ const PageContentComponent: React.FC<React.PropsWithChildren<PageContentProps>> 
   const { SCALES } = useScaleable()
 
   return (
-    <main className={className} {...props}>
+    <main className={className} {...withPureProps(props)}>
       {children}
       <style jsx>{`
         main {

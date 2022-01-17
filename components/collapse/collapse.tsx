@@ -5,7 +5,7 @@ import Expand from '../shared/expand'
 import { useCollapseContext } from './collapse-context'
 import useCurrentState from '../utils/use-current-state'
 import useWarning from '../utils/use-warning'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   title: string
@@ -57,7 +57,9 @@ const CollapseComponent: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   }
 
   return (
-    <div className={`collapse ${shadow ? 'shadow' : ''} ${className}`} {...props}>
+    <div
+      className={`collapse ${shadow ? 'shadow' : ''} ${className}`}
+      {...withPureProps(props)}>
       <div className="view" role="button" onClick={clickHandler}>
         <div className="title">
           <h3>{title}</h3> <CollapseIcon active={visible} />

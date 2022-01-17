@@ -6,7 +6,7 @@ import { pickChild } from '../utils/collections'
 import useWarning from '../utils/use-warning'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type RadioTypes = NormalTypes
 export interface RadioEventTarget {
@@ -101,7 +101,7 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
           value={radioValue}
           checked={selfChecked}
           onChange={changeHandler}
-          {...props}
+          {...withPureProps(props)}
         />
         <span className="name">
           <span className={`point ${selfChecked ? 'active' : ''}`} />

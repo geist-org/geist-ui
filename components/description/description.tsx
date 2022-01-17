@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   title?: ReactNode | string
@@ -26,7 +26,7 @@ const DescriptionComponent: React.FC<DescriptionProps> = ({
   const theme = useTheme()
   const { SCALES } = useScaleable()
   return (
-    <dl className={`description ${className}`} {...props}>
+    <dl className={`description ${className}`} {...withPureProps(props)}>
       <dt>{title}</dt>
       <dd>{content}</dd>
 

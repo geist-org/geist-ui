@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   src?: string
@@ -41,14 +41,21 @@ const AvatarComponent: React.FC<AvatarProps> = ({
   const showText = !src
   const radius = isSquare ? theme.layout.radius : '50%'
   const marginLeft = stacked ? SCALES.ml(-0.625) : SCALES.ml(0)
+  const otherProps = withPureProps(props)
 
   return (
     <span className={`avatar ${className}`}>
       {!showText && (
-        <img alt="avatar" className="avatar-img" src={src} draggable={false} {...props} />
+        <img
+          alt="avatar"
+          className="avatar-img"
+          src={src}
+          draggable={false}
+          {...otherProps}
+        />
       )}
       {showText && (
-        <span className="avatar-text" {...props}>
+        <span className="avatar-text" {...otherProps}>
           {safeText(text)}
         </span>
       )}

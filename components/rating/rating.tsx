@@ -3,7 +3,7 @@ import { GeistUIThemesPalette } from '../themes'
 import { NormalTypes, tupleNumber } from '../utils/prop-types'
 import RatingIcon from './rating-icon'
 import useTheme from '../use-theme'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type RatingTypes = NormalTypes
 const ratingCountTuple = tupleNumber(2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -88,7 +88,7 @@ const RatingComponent: React.FC<RatingProps> = ({
   }, [customValue])
 
   return (
-    <div className={`rating ${className}`} {...props}>
+    <div className={`rating ${className}`} {...withPureProps(props)}>
       {[...Array(count)].map((_, index) => (
         <div
           className={`icon-box ${index + 1 <= value ? 'hovered' : ''}`}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { withPureProps } from '../use-scaleable'
 
 interface Props {
   isRight?: boolean
@@ -26,7 +27,7 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
       className={`icon ${isRight ? 'right' : ''} ${
         isSingle ? 'single' : ''
       } ${className}`}
-      {...props}>
+      {...withPureProps(props)}>
       {children}
       <style jsx>{`
         .icon {

@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
+import { withPureProps } from '../use-scaleable'
 
 type Justify = 'start' | 'end' | 'center' | 'space-around' | 'space-between'
 type Align = 'top' | 'middle' | 'bottom'
@@ -51,13 +52,13 @@ const Container: React.FC<React.PropsWithChildren<RowProps>> = ({
 }: React.PropsWithChildren<RowProps> & typeof defaultProps) => {
   const Component = component
   const theme = useTheme()
-  const { justifyValue, alignValue } = useMemo(() => getFlexAlignment(justify, align), [
-    justify,
-    align,
-  ])
+  const { justifyValue, alignValue } = useMemo(
+    () => getFlexAlignment(justify, align),
+    [justify, align],
+  )
 
   return (
-    <Component className={`row ${className}`} {...props}>
+    <Component className={`row ${className}`} {...withPureProps(props)}>
       {children}
       <style jsx>{`
         .row {

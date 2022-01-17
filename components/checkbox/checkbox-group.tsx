@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { CheckboxContext } from './checkbox-context'
 import useWarning from '../utils/use-warning'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   value: string[]
@@ -55,7 +55,7 @@ const CheckboxGroupComponent: React.FC<React.PropsWithChildren<CheckboxGroupProp
 
   return (
     <CheckboxContext.Provider value={providerValue}>
-      <div className={`group ${className}`} {...props}>
+      <div className={`group ${className}`} {...withPureProps(props)}>
         {children}
         <style jsx>{`
           .group {

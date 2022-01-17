@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
 import { TabsHeaderItem, TabsConfig, TabsContext } from './tabs-context'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   initialValue?: string
@@ -68,7 +68,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
 
   return (
     <TabsContext.Provider value={initialValue}>
-      <div className={`tabs ${className}`} {...props}>
+      <div className={`tabs ${className}`} {...withPureProps(props)}>
         <header>
           <div className={`scroll-container ${hideDivider ? 'hide-divider' : ''}`}>
             {tabs.map(({ cell: Cell, value }) => (

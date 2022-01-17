@@ -7,7 +7,7 @@ import ButtonDropdownItem from './button-dropdown-item'
 import { ButtonDropdownContext } from './button-dropdown-context'
 import { NormalTypes } from '../utils/prop-types'
 import { pickChild, pickChildByProps } from '../utils/collections'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type ButtonDropdownTypes = NormalTypes
 
@@ -89,7 +89,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
         ref={ref}
         className={`btn-dropdown ${className}`}
         onClick={stopPropagation}
-        {...props}>
+        {...withPureProps(props)}>
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>

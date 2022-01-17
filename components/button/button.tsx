@@ -1,5 +1,5 @@
 import React, { useRef, useState, MouseEvent, useMemo, useImperativeHandle } from 'react'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 import useTheme from '../use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
@@ -84,18 +84,18 @@ const ButtonComponent = React.forwardRef<
       () => getButtonColors(theme.palette, filteredProps),
       [theme.palette, filteredProps],
     )
-    const hover = useMemo(() => getButtonHoverColors(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
-    const { cursor, events } = useMemo(() => getButtonCursor(disabled, loading), [
-      disabled,
-      loading,
-    ])
-    const dripColor = useMemo(() => getButtonDripColor(theme.palette, filteredProps), [
-      theme.palette,
-      filteredProps,
-    ])
+    const hover = useMemo(
+      () => getButtonHoverColors(theme.palette, filteredProps),
+      [theme.palette, filteredProps],
+    )
+    const { cursor, events } = useMemo(
+      () => getButtonCursor(disabled, loading),
+      [disabled, loading],
+    )
+    const dripColor = useMemo(
+      () => getButtonDripColor(theme.palette, filteredProps),
+      [theme.palette, filteredProps],
+    )
 
     /* istanbul ignore next */
     const dripCompletedHandle = () => {
@@ -138,7 +138,7 @@ const ButtonComponent = React.forwardRef<
         className={`btn ${className}`}
         disabled={disabled}
         onClick={clickHandler}
-        {...props}>
+        {...withPureProps(props)}>
         {loading && <ButtonLoading color={color} />}
         {childrenWithIcon}
         {dripShow && (

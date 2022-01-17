@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -22,7 +22,7 @@ const FieldsetContentComponent: React.FC<
   const { SCALES } = useScaleable()
 
   return (
-    <div className={`content ${className}`} {...props}>
+    <div className={`content ${className}`} {...withPureProps(props)}>
       {children}
       <style jsx>{`
         .content {
