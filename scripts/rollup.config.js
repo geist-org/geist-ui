@@ -4,8 +4,11 @@ import localResolve from 'rollup-plugin-local-resolve'
 import babel from 'rollup-plugin-babel'
 import fs from 'fs-extra'
 import path from 'path'
-const componentsPath = path.join(__dirname, 'components')
-const distPath = path.join(__dirname, 'dist')
+
+const root = path.join(__dirname, '../')
+const componentsPath = path.join(root, 'components')
+const distPath = path.join(root, 'dist')
+const esmPath = path.join(root, 'esm')
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx']
 
@@ -29,26 +32,49 @@ const globals = {
   'react-dom': 'ReactDOM',
 }
 
-const external = id => /^react|react-dom|styled-jsx|next\/link/.test(id)
+const external = id => /^react|react-dom|next\/link/.test(id)
 
 const cjsOutput = {
   format: 'cjs',
   exports: 'named',
   entryFileNames: '[name]/index.js',
-  dir: 'dist',
+  dir: distPath,
+  manualChunks: id => {
+    if (id.includes('node_modules/styled-jsx')) {
+      return 'styled-jsx'
+    }
+  },
+  chunkFileNames: '[name].js',
+  globals,
+}
+
+const esmOutput = {
+  format: 'es',
+  entryFileNames: '[name]/index.js',
+  dir: esmPath,
+  manualChunks: id => {
+    if (id.includes('node_modules/styled-jsx/server')) {
+      return 'styled-jsx-server'
+    }
+    if (id.includes('node_modules/styled-jsx')) {
+      return 'styled-jsx'
+    }
+  },
+  chunkFileNames: '[name].js',
   globals,
 }
 
 export default (async () => {
   await fs.remove(distPath)
+  await fs.remove(esmPath)
   const files = await fs.readdir(componentsPath)
 
   const components = await Promise.all(
     files.map(async name => {
-      const comPath = path.join(componentsPath, name)
-      const entry = path.join(comPath, 'index.ts')
+      const unitPath = path.join(componentsPath, name)
+      const entry = path.join(unitPath, 'index.ts')
 
-      const stat = await fs.stat(comPath)
+      const stat = await fs.stat(unitPath)
       if (!stat.isDirectory()) return null
 
       const hasFile = await fs.pathExists(entry)
@@ -57,49 +83,30 @@ export default (async () => {
       return { name, url: entry }
     }),
   )
-
-  const makeConfig = (name, url) => ({
-    input: { [name]: url },
-    output: [
-      {
-        // file: 'dist/index.js',
-        format: 'cjs',
-        exports: 'named',
-        entryFileNames: '[name]/index.js',
-        dir: 'dist',
-        globals,
-      },
-      // {
-      //   // file: 'dist/index.es.js',
-      //   format: 'es',
-      //   exports: 'named',
-      //   dir: 'dist',
-      //   globals,
-      // },
-      // {
-      //   file: pkg.browser,
-      //   format: 'umd',
-      //   exports: 'named',
-      //   globals,
-      //   name: 'GeistUI',
-      // },
-    ],
-    external,
-    plugins,
-  })
+  console.log(
+    `\n${Object.keys(components).length} Components in total have been collected.`,
+  )
 
   return [
+    // Bundle each component separately
     ...components
-      .filter(r => r)
+      .filter(r => !!r)
       .map(({ name, url }) => ({
         input: { [name]: url },
-        output: [cjsOutput],
+        output: [esmOutput, cjsOutput],
         external,
         plugins,
       })),
+    // Bundle for packages containing all components.
     {
       input: { index: path.join(componentsPath, 'index.ts') },
       output: [
+        // use yarn build:esm-entry instead of it
+        // {
+        //   ...esmOutput,
+        //
+        //   entryFileNames: 'index.js',
+        // },
         {
           ...cjsOutput,
           entryFileNames: 'index.js',
