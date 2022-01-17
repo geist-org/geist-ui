@@ -8,13 +8,15 @@
     "start": "next start"
   },
   "dependencies": {
-    "@geist-ui/react": "dev",
-    "next": "12.0.4",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "@geist-ui/react": "latest",
+    "next": "^12.0.8",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/react": "17.0.11",
-    "typescript": "4.3.4"
+    "@types/react": "^17.0.38",
+    "typescript": "^4.5.4",
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8"
   }
 }
