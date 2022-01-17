@@ -25,7 +25,7 @@ export default function Home() {
               and start learning more !
             </>
           }>
-          <Image src="/geist-banner.png" draggable={false} />
+          <Image src="/geist-banner.png" alt="geist ui banner" draggable={false} />
         </Display>
         <Grid.Container justify="center" gap={3} mt="100px">
           <Grid xs={20} sm={7} justify="center">
