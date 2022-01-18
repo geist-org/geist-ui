@@ -3,14 +3,14 @@
 </p>
 
 <p align="center">
-<img alt="Codecov" src="https://img.shields.io/codecov/c/github/geist-org/react?style=for-the-badge&labelColor=000000">
-<img alt="CircleCI" src="https://img.shields.io/circleci/build/github/geist-org/react?style=for-the-badge&labelColor=000000">
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/geist-org/geist-ui?style=for-the-badge&labelColor=000000">
+<img alt="CircleCI" src="https://img.shields.io/circleci/build/github/geist-org/geist-ui?style=for-the-badge&labelColor=000000">
 <img alt="npm (scoped)" src="https://img.shields.io/npm/v/@geist-ui/core?style=for-the-badge&labelColor=000000">
 </p>
 
 > Modern and minimalist React UI library, originating from Vercel's design.
 
-> **NOTE: This is a COMMUNITY PROJECT, [not associated with Vercel](https://github.com/geist-org/react/issues/635).**
+> **NOTE: This is a COMMUNITY PROJECT, [not associated with Vercel](https://github.com/geist-org/geist-ui/issues/635).**
 
 <br/>
 
@@ -42,7 +42,7 @@ const Application = () => (
 
 ## Development
 
-- [Contributing Guide](https://github.com/geist-org/react/blob/master/.github/CONTRIBUTING.md)
+- [Contributing Guide](https://github.com/geist-org/geist-ui/blob/master/.github/CONTRIBUTING.md)
 
 <br/>
 
@@ -55,7 +55,7 @@ const Application = () => (
 - [SentiNEO: Near-Earth Objects Viewer](https://sentineo.app)
 - [Dashboard Design](https://github.com/ofekashery/react-dashboard-design)
 - [Regex-Vis: Regex visualizer & editor](https://github.com/Bowen7/regex-vis)
-- [Add here](https://github.com/geist-org/react/issues/new)
+- [Add here](https://github.com/geist-org/geist-ui/issues/new)
 
 <br/>
 

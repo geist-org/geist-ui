@@ -29,7 +29,7 @@ At any time, you think it's ok, you can start the following steps to submit your
 
 #### **About document page**
 
-1. Document page must have `meta` field. refer to [here](https://github.com/geist-org/react/blame/master/pages/en-us/components/avatar.mdx#L4).
+1. Document page must have `meta` field. refer to [here](https://github.com/geist-org/geist-ui/blame/master/pages/en-us/components/avatar.mdx#L4).
 2. If you are creating a new component, please provide at least one document.
 3. Do Document using [mdx-js](https://github.com/mdx-js/mdx), here is [vs-code plug-in](https://github.com/silvenon/vscode-mdx),
 [web-storm support](https://youtrack.jetbrains.com/issue/WEB-32599)
@@ -62,5 +62,5 @@ At any time, you think it's ok, you can start the following steps to submit your
 
 ### Get stuck
 
-- Create new issue to tell us: [create issue](https://github.com/geist-org/react/issues/new/choose).
-- Ask on [GitHub Discussions](https://github.com/geist-org/react/discussions).
+- Create new issue to tell us: [create issue](https://github.com/geist-org/geist-ui/issues/new/choose).
+- Ask on [GitHub Discussions](https://github.com/geist-org/geist-ui/discussions).

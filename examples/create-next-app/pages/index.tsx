@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Page, Text, Image, Display, Button, Grid } from '@geist-ui/core'
 
-const gh = 'https://github.com/geist-org/react'
+const gh = 'https://github.com/geist-org/geist-ui'
 const docs = 'https://geist-ui.dev'
 
 export default function Home() {
