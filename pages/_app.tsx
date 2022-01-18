@@ -27,12 +27,12 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>React - Geist UI</title>
+        <title>Geist UI - Modern and minimalist React UI library</title>
         <meta name="google" content="notranslate" />
         <meta name="twitter:creator" content="@echo_witt" />
         <meta name="referrer" content="strict-origin" />
-        <meta property="og:title" content="React - Geist UI" />
-        <meta property="og:site_name" content="React - Geist UI" />
+        <meta property="og:title" content="Geist UI" />
+        <meta property="og:site_name" content="Geist UI" />
         <meta property="og:url" content="https://geist-ui.dev" />
         <link rel="dns-prefetch" href="//geist-ui.dev" />
         <meta name="twitter:card" content="summary_large_image" />
