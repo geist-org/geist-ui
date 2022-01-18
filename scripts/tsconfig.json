@@ -32,7 +32,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "plugins": [
-      { "transform": "typescript-transform-paths", "afterDeclarations": true }
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true,
+        "exclude": [ "**/node_modules/**" ]
+      }
     ]
   },
   "files": [
