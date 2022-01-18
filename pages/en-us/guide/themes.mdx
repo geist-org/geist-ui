@@ -34,7 +34,7 @@ As a basic option, there are two themes available, `light` and `dark`.
 2. Update the value of `themeType`, and the theme of all components will follow automatically.
 
 ```jsx
-import { CssBaseline, GeistProvider } from '@geist-ui/react'
+import { CssBaseline, GeistProvider } from '@geist-ui/core'
 
 const App = () => {
   const [themeType, setThemeType] = useState('light')
@@ -66,7 +66,7 @@ Of course, if a _component_ doesn't use your customized variables, it doesn't ma
 </Note>
 
 ```jsx
-import { CssBaseline, GeistProvider, Themes } from '@geist-ui/react'
+import { CssBaseline, GeistProvider, Themes } from '@geist-ui/core'
 
 const myTheme1 = Themes.createFromLight({
   type: 'coolTheme',
@@ -110,7 +110,7 @@ import {
   GeistUIThemesPalette,
   GeistUIThemesExpressiveness,
   GeistUIThemesLayout,
-} from '@geist-ui/react'
+} from '@geist-ui/core'
 
 // usage:
 const myStyles: GeistUIThemes = {
@@ -132,7 +132,7 @@ If you don't use TypeScript, to learn more about preset types, see <Link color t
 You can override the style by defining a `className` on the component.
 
 ```jsx
-import { Button, Row } from '@geist-ui/react'
+import { Button, Row } from '@geist-ui/core'
 
 const MyPage = () => (
   <Row>
@@ -167,7 +167,7 @@ const MyPage = () => (
 Sometimes you want to create new components, but you want to be consistent with the current theme. Now you can try using **theme variables** in your components
 
 ```jsx
-import { useTheme } from '@geist-ui/react'
+import { useTheme } from '@geist-ui/core'
 
 const MyComponent = () => {
   const theme = useTheme()

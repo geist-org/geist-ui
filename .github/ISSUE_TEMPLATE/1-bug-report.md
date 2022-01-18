@@ -11,7 +11,7 @@ about: "If something isn't working as expected 🤔."
 ## Version & Environment
 
   - Version of browser
-  - Version of `geist-ui/react`
+  - Version of `geist-ui/core`
 
 ## Expected Behaviour
 

@@ -11,8 +11,8 @@
 //   GeistUIThemesExpressiveness,
 //   GeistUIThemesLayout,
 //   GeistUIThemesFont,
-// } from '@geist-ui/react'
-import { Themes } from '@geist-ui/react'
+// } from '@geist-ui/core'
+import { Themes } from '@geist-ui/core'
 
 export const greenTheme = Themes.createFromLight({
   type: 'green',

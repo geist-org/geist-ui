@@ -34,7 +34,7 @@ export const meta = {
 
 ```js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { CssBaseline } from '@geist-ui/react'
+import { CssBaseline } from '@geist-ui/core'
 
 class MyDocument extends Document {
   static async getInitialProps (ctx) {
@@ -67,7 +67,7 @@ class MyDocument extends Document {
 ```js
 import React from 'react'
 import ReactDOM from 'react-dom/server'
-import { CssBaseline } from 'geist-ui/react'
+import { CssBaseline } from 'geist-ui/core'
 import App from './app'
 
 export default (req, res) => {

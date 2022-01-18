@@ -19,10 +19,10 @@ and a package manager: <Link target="_blank" rel="nofollow" href="https://www.np
 <Spacer h={0.8} />
 <Tabs initialValue="yarn" hideDivider>
   <Tabs.Item label="Yarn" value="yarn">
-    <Snippet width="400px">yarn add @geist-ui/react</Snippet>
+    <Snippet width="400px">yarn add @geist-ui/core</Snippet>
   </Tabs.Item>
   <Tabs.Item label="Npm" value="npm">
-    <Snippet width="400px">npm i @geist-ui/react</Snippet>
+    <Snippet width="400px">npm i @geist-ui/core</Snippet>
   </Tabs.Item>
 </Tabs>
 <Spacer h={1.5} />
@@ -32,7 +32,7 @@ and a package manager: <Link target="_blank" rel="nofollow" href="https://www.np
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { GeistProvider, CssBaseline } from '@geist-ui/react'
+import { GeistProvider, CssBaseline } from '@geist-ui/core'
 
 const Application = () => (
   <GeistProvider>
@@ -51,7 +51,7 @@ const Application = () => (
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { Button } from '@geist-ui/react'
+import { Button } from '@geist-ui/core'
 
 const MyComponent = () => <Button>Click Me</Button>
 ```
@@ -99,7 +99,7 @@ Geist UI allows to manually import components if you need. E.g.
 <Grid xs={24} sm={16}>
 
 ```jsx
-import Button from '@geist-ui/react/esm/button'
+import Button from '@geist-ui/core/esm/button'
 
 const MyComponent = () => <Button>Click Me</Button>
 ```
@@ -112,7 +112,7 @@ const MyComponent = () => <Button>Click Me</Button>
 ### CRA project
 
 A React project created by <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> can
-also easily use `@geist-ui/react`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">a
+also easily use `@geist-ui/core`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">a
 sample project related to create react app here</Link>.
 
 If you want to eject certain configs, `tree-shaking`, please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.

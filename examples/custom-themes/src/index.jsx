@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ReactDom from 'react-dom'
-import { GeistProvider, CssBaseline, Page, Text } from '@geist-ui/react'
+import { GeistProvider, CssBaseline, Page, Text } from '@geist-ui/core'
 import { greenTheme, redTheme } from './theme'
 import Home from './home'
 

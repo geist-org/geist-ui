@@ -34,7 +34,7 @@ export const meta = {
 2. 更新 `themeType` 的值，所有的组件都会随之自动变化。
 
 ```jsx
-import { CssBaseline, GeistProvider } from '@geist-ui/react'
+import { CssBaseline, GeistProvider } from '@geist-ui/core'
 
 const App = () => {
   const [themeType, setThemeType] = useState('light')
@@ -65,7 +65,7 @@ const App = () => {
 </Note>
 
 ```jsx
-import { CssBaseline, GeistProvider, Themes } from '@geist-ui/react'
+import { CssBaseline, GeistProvider, Themes } from '@geist-ui/core'
 
 const myTheme1 = Themes.createFromLight({
   type: 'coolTheme',
@@ -108,7 +108,7 @@ import {
   GeistUIThemesPalette,
   GeistUIThemesExpressiveness,
   GeistUIThemesLayout,
-} from '@geist-ui/react'
+} from '@geist-ui/core'
 
 // 使用示例
 const myStyles: GeistUIThemes = {
@@ -130,7 +130,7 @@ const myPalette: Partial<GeistUIThemesPalette> = {
 你可以通过组件上的 `className` 属性重写当前组件的样式。
 
 ```jsx
-import { Button, Row } from '@geist-ui/react'
+import { Button, Row } from '@geist-ui/core'
 
 const MyPage = () => (
   <Row>
@@ -166,7 +166,7 @@ const MyPage = () => (
 现在你可以使用 **主题变量** 来完成这件事。
 
 ```jsx
-import { useTheme } from '@geist-ui/react'
+import { useTheme } from '@geist-ui/core'
 
 const MyComponent = () => {
   const theme = useTheme()
