@@ -23,7 +23,7 @@ const Application: NextPage<{}> = () => {
                 Documentation
               </Button>
             </NextLink>
-            <NextLink href="https://github.com/geist-org/react" passHref>
+            <NextLink href="https://github.com/geist-org/geist-ui" passHref>
               <Button auto type="abort" scale={1.25} margin={0.25}>
                 GitHub
               </Button>
@@ -67,7 +67,7 @@ const Application: NextPage<{}> = () => {
             </NextLink>
           </Grid>
           <Grid xs={24} md={8}>
-            <a href="https://github.com/geist-org/react" target="_blank">
+            <a href="https://github.com/geist-org/geist-ui" target="_blank">
               <Card shadow className="feature__card" width="100%">
                 <h4 className="feature__title">
                   <div className="feature__icon">
