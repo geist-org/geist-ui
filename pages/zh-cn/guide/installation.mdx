@@ -19,10 +19,10 @@ export const meta = {
 <Spacer h={0.8} />
 <Tabs initialValue="yarn" hideDivider>
   <Tabs.Item label="Yarn" value="yarn">
-    <Snippet width="400px">yarn add @geist-ui/react</Snippet>
+    <Snippet width="400px">yarn add @geist-ui/core</Snippet>
   </Tabs.Item>
   <Tabs.Item label="Npm" value="npm">
-    <Snippet width="400px">npm i @geist-ui/react</Snippet>
+    <Snippet width="400px">npm i @geist-ui/core</Snippet>
   </Tabs.Item>
 </Tabs>
 <Spacer h={1.5} />
@@ -32,7 +32,7 @@ export const meta = {
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { GeistProvider, CssBaseline } from '@geist-ui/react'
+import { GeistProvider, CssBaseline } from '@geist-ui/core'
 
 const Application = () => (
   <GeistProvider>
@@ -52,7 +52,7 @@ const Application = () => (
 <Grid xs={24} sm={16}>
 
 ```jsx
-import { Button } from '@geist-ui/react'
+import { Button } from '@geist-ui/core'
 
 const MyComponent = () => <Button>按钮</Button>
 ```
@@ -102,7 +102,7 @@ Geist UI 支持手动引入你需要的单个组件，例如：
 <Grid xs={24} sm={16}>
 
 ```jsx
-import Button from '@geist-ui/react/esm/button'
+import Button from '@geist-ui/core/esm/button'
 
 const MyComponent = () => <Button>按钮组件</Button>
 ```
@@ -114,7 +114,7 @@ const MyComponent = () => <Button>按钮组件</Button>
 
 ### CRA 项目
 
-使用 <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> 创建的 React 项目也能轻易的使用 `@geist-ui/react`。
+使用 <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> 创建的 React 项目也能轻易的使用 `@geist-ui/core`。
 你不需要做任何改变，只需要引入组件库即可。
 
 我们准备了 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">一个用 create react app 创建的示例项目</Link> 供作参考。

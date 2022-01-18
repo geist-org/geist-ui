@@ -33,8 +33,8 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <meta name="referrer" content="strict-origin" />
         <meta property="og:title" content="React - Geist UI" />
         <meta property="og:site_name" content="React - Geist UI" />
-        <meta property="og:url" content="https://react.geist-ui.dev" />
-        <link rel="dns-prefetch" href="//react.geist-ui.dev" />
+        <meta property="og:url" content="https://geist-ui.dev" />
+        <link rel="dns-prefetch" href="//geist-ui.dev" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="generator" content="Geist UI" />
         <meta

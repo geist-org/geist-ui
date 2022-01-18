@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { LiveEditor } from 'react-live'
 import { useConfigs } from 'lib/config-context'
 import { useTheme, useToasts, useClipboard } from 'components'
-import CopyIcon from '@geist-ui/react-icons/copy'
-import RightIcon from '@geist-ui/react-icons/chevronRight'
+import CopyIcon from '@geist-ui/icons/copy'
+import RightIcon from '@geist-ui/icons/chevronRight'
 
 interface Props {
   code: string
@@ -70,9 +70,9 @@ const Editor: React.FC<Props> = ({ code }) => {
         }
 
         details summary::-webkit-details-marker {
-          display:none;
+          display: none;
         }
-        
+
         summary {
           box-sizing: border-box;
           border-top: 1px solid ${theme.palette.accents_2};

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import MyInput from './my-input'
-import { GeistProvider, CssBaseline, Page } from '@geist-ui/react'
+import { GeistProvider, CssBaseline, Page } from '@geist-ui/core'
 
 export default function App() {
   return (

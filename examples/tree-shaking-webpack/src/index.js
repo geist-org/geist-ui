@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { GeistProvider, CssBaseline, Page, Button } from '@geist-ui/react'
+import { GeistProvider, CssBaseline, Page, Button } from '@geist-ui/core'
 
 const App = () => {
   return (

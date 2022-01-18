@@ -3,9 +3,9 @@ import { Button, useTheme, Select, Spacer, Themes, useAllThemes } from 'componen
 import { useConfigs } from 'lib/config-context'
 import useLocale from 'lib/use-locale'
 import Router, { useRouter } from 'next/router'
-import MoonIcon from '@geist-ui/react-icons/moon'
-import SunIcon from '@geist-ui/react-icons/sun'
-import UserIcon from '@geist-ui/react-icons/user'
+import MoonIcon from '@geist-ui/icons/moon'
+import SunIcon from '@geist-ui/icons/sun'
+import UserIcon from '@geist-ui/icons/user'
 import {
   CHINESE_LANGUAGE_IDENT,
   CUSTOM_THEME_TYPE,

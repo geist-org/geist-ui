@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, useTheme } from 'components'
-import SlidersIcon from '@geist-ui/react-icons/sliders'
+import SlidersIcon from '@geist-ui/icons/sliders'
 
 interface Props {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void

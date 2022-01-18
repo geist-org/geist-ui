@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { Page, Text, Image, Display, Button, Grid } from '@geist-ui/react'
+import { Page, Text, Image, Display, Button, Grid } from '@geist-ui/core'
 
 const gh = 'https://github.com/geist-org/react'
-const docs = 'https://react.geist-ui.dev'
+const docs = 'https://geist-ui.dev'
 
 export default function Home() {
   const redirect = (url: string) => window.open(url)

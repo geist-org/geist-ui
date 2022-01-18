@@ -2,9 +2,9 @@ import React from 'react'
 import { NextPage } from 'next'
 import NextLink from 'next/link'
 import { useTheme, Button, Card, Grid } from 'components'
-import PackageIcon from '@geist-ui/react-icons/package'
-import FeatherIcon from '@geist-ui/react-icons/feather'
-import GitHubIcon from '@geist-ui/react-icons/github'
+import PackageIcon from '@geist-ui/icons/package'
+import FeatherIcon from '@geist-ui/icons/feather'
+import GitHubIcon from '@geist-ui/icons/github'
 
 const Application: NextPage<{}> = () => {
   const theme = useTheme()
