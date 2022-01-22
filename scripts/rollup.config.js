@@ -41,7 +41,7 @@ const cjsOutput = {
   dir: distPath,
   manualChunks: id => {
     if (id.includes('node_modules/styled-jsx')) {
-      return 'styled-jsx'
+      return 'styled-jsx.cjs'
     }
   },
   chunkFileNames: '[name].js',
@@ -54,10 +54,10 @@ const esmOutput = {
   dir: esmPath,
   manualChunks: id => {
     if (id.includes('node_modules/styled-jsx/server')) {
-      return 'styled-jsx-server'
+      return 'styled-jsx-server.es'
     }
     if (id.includes('node_modules/styled-jsx')) {
-      return 'styled-jsx'
+      return 'styled-jsx.es'
     }
   },
   chunkFileNames: '[name].js',
@@ -93,7 +93,8 @@ export default (async () => {
       .filter(r => !!r)
       .map(({ name, url }) => ({
         input: { [name]: url },
-        output: [esmOutput, cjsOutput],
+        // output: [esmOutput, cjsOutput],
+        output: [cjsOutput],
         external,
         plugins,
       })),
@@ -101,7 +102,6 @@ export default (async () => {
     {
       input: { index: path.join(componentsPath, 'index.ts') },
       output: [
-        // use yarn build:esm-entry instead of it
         // {
         //   ...esmOutput,
         //
