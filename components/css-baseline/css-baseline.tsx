@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import useTheme from '../use-theme'
 import flush from 'styled-jsx/server'
-import flushToReact from 'styled-jsx/server'
+
+export type FlushToReact = <T>(opts?: { nonce?: string }) => Array<ReactElement<T>>
 
 const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const theme = useTheme()
@@ -302,7 +303,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
 }
 
 type MemoCssBaselineComponent<P = {}> = React.NamedExoticComponent<P> & {
-  flush: typeof flushToReact
+  flush: FlushToReact
 }
 
 const MemoCssBaseline = React.memo(CssBaseline) as MemoCssBaselineComponent<
