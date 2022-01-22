@@ -15,6 +15,8 @@
 <br/>
 
 ## Quick Start
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fgeist-org%2Fgeist-ui.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fgeist-org%2Fgeist-ui?ref=badge_shield)
+
 
 1. run `yarn add @geist-ui/core` or `npm i @geist-ui/core` install it.
 
@@ -62,3 +64,6 @@ const Application = () => (
 ## LICENSE
 
 [MIT](./LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fgeist-org%2Fgeist-ui.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fgeist-org%2Fgeist-ui?ref=badge_large)
