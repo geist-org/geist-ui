@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { CSSProperties, useEffect, useMemo, useState } from 'react'
 import { tuple } from '../utils/prop-types'
 import useTheme from '../use-theme'
 import PageContent from './page-content'
@@ -12,26 +12,44 @@ export type PageRenderMode = typeof renderMode[number]
 interface Props {
   render?: PageRenderMode
   dotBackdrop?: boolean
+  dotSize?: CSSProperties['fontSize']
+  dotSpace?: number
 }
 
 const defaultProps = {
   render: 'default' as PageRenderMode,
   dotBackdrop: false,
+  dotSize: '1px' as CSSProperties['fontSize'],
+  dotSpace: 1,
 }
 
-const DotStyles: React.FC<unknown> = () => (
-  <span>
-    <style jsx>{`
-      :global(body) {
-        background-image: radial-gradient(#e3e3e3 1px, transparent 0),
-          radial-gradient(#e3e3e3 1px, transparent 0);
-        background-position: 0 0, 25px 25px;
-        background-attachment: fixed;
-        background-size: 50px 50px;
-      }
-    `}</style>
-  </span>
-)
+export type DotStylesProps = {
+  dotSize: CSSProperties['fontSize']
+  dotSpace: number
+}
+
+const DotStyles: React.FC<DotStylesProps> = ({ dotSpace, dotSize }) => {
+  const background = useMemo(
+    () => ({
+      position: `calc(${dotSpace} * 25px)`,
+      size: `calc(${dotSpace} * 50px)`,
+    }),
+    [dotSpace],
+  )
+  return (
+    <span>
+      <style jsx>{`
+        :global(body) {
+          background-image: radial-gradient(#e3e3e3 ${dotSize}, transparent 0),
+            radial-gradient(#e3e3e3 ${dotSize}, transparent 0);
+          background-position: 0 0, ${background.position} ${background.position};
+          background-attachment: fixed;
+          background-size: ${background.size} ${background.size};
+        }
+      `}</style>
+    </span>
+  )
+}
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type PageProps = Props & NativeAttrs
@@ -41,6 +59,8 @@ const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
   render,
   dotBackdrop,
   className,
+  dotSize,
+  dotSpace,
   ...props
 }: React.PropsWithChildren<PageProps> & typeof defaultProps) => {
   const theme = useTheme()
@@ -76,7 +96,7 @@ const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
   return (
     <section className={className} {...withPureProps(props)}>
       {hasContent ? children : <PageContent>{children}</PageContent>}
-      {showDot && <DotStyles />}
+      {showDot && <DotStyles dotSize={dotSize} dotSpace={dotSpace} />}
       <style jsx>{`
         section {
           max-width: 100vw;
