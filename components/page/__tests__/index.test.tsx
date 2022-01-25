@@ -41,4 +41,10 @@ describe('Page', () => {
     )
     expect(wrapper.html()).not.toContain('global(body)')
   })
+
+  it('should work correctly with dot configs', () => {
+    const wrapper = mount(<Page dotBackdrop dotSize="20px" dotSpace={0.5} />)
+    expect(wrapper.html()).toMatchSnapshot()
+    expect(() => wrapper.unmount()).not.toThrow()
+  })
 })
