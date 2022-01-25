@@ -2,12 +2,9 @@ import React from 'react'
 import { Text, Button, useTheme, Themes } from 'components'
 import EditorColorItem from './editor-color-item'
 import EditorInputItem from './editor-input-item'
+import RotateCcwIcon from '@geist-ui/icons/rotateCcw'
 import { useConfigs } from 'lib/config-context'
-import {
-  GeistUIThemesExpressiveness,
-  GeistUIThemesLayout,
-  GeistUIThemesPalette,
-} from 'components/themes'
+import { GeistUIThemesExpressiveness, GeistUIThemesPalette } from 'components/themes'
 
 const basicColors: Array<keyof GeistUIThemesPalette> = [
   'accents_1',
@@ -51,27 +48,27 @@ const expressiveness: Array<keyof GeistUIThemesExpressiveness> = [
   'shadowMedium',
   'shadowLarge',
 ]
-const pageLayout: Array<keyof GeistUIThemesLayout> = [
-  'pageWidth',
-  'pageWidthWithMargin',
-  'pageMargin',
-  'radius',
-]
-const gapLayout: Array<keyof GeistUIThemesLayout> = [
-  'gap',
-  'gapNegative',
-  'gapHalf',
-  'gapHalfNegative',
-  'gapQuarter',
-  'gapQuarterNegative',
-]
+// const pageLayout: Array<keyof GeistUIThemesLayout> = [
+//   'pageWidth',
+//   'pageWidthWithMargin',
+//   'pageMargin',
+//   'radius',
+// ]
+// const gapLayout: Array<keyof GeistUIThemesLayout> = [
+//   'gap',
+//   'gapNegative',
+//   'gapHalf',
+//   'gapHalfNegative',
+//   'gapQuarter',
+//   'gapQuarterNegative',
+// ]
 
 const Editor = () => {
   const theme = useTheme()
   const DefaultTheme = Themes.getPresetStaticTheme()
   const { updateCustomTheme, isChinese } = useConfigs()
 
-  const resetLayout = () => updateCustomTheme({ layout: DefaultTheme.layout })
+  // const resetLayout = () => updateCustomTheme({ layout: DefaultTheme.layout })
   const restColors = () => updateCustomTheme({ palette: DefaultTheme.palette })
   const resetExpressiveness = () => {
     updateCustomTheme({ expressiveness: DefaultTheme.expressiveness })
@@ -79,11 +76,17 @@ const Editor = () => {
 
   return (
     <div className="editor">
-      <Text h3>
+      <Text h3 mt="40px" font="22px">
         {isChinese ? '色彩' : 'Colors'}
-        <Button type="abort" auto scale={0.4} onClick={restColors}>
-          {isChinese ? '重置' : 'Reset'}
-        </Button>
+        <Button
+          type="abort"
+          icon={<RotateCcwIcon />}
+          auto
+          px={0.65}
+          scale={0.4}
+          ml="10px"
+          onClick={restColors}
+        />
       </Text>
       <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
       <div className="content">
@@ -104,11 +107,17 @@ const Editor = () => {
         ))}
       </div>
 
-      <Text h3>
+      <Text h3 mt="40px">
         {isChinese ? '表现力' : 'Expressiveness'}
-        <Button type="abort" auto scale={0.4} onClick={resetExpressiveness}>
-          {isChinese ? '重置' : 'Reset'}
-        </Button>
+        <Button
+          type="abort"
+          icon={<RotateCcwIcon />}
+          auto
+          px={0.65}
+          scale={0.4}
+          ml="10px"
+          onClick={resetExpressiveness}
+        />
       </Text>
       <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
       <div className="content">
@@ -120,33 +129,6 @@ const Editor = () => {
           />
         ))}
       </div>
-
-      <Text h3>
-        {isChinese ? '布局' : 'Layout'}
-        <Button type="abort" auto scale={0.4} onClick={resetLayout}>
-          {isChinese ? '重置' : 'Reset'}
-        </Button>
-      </Text>
-      {isChinese ? (
-        <p>大多数的布局间距都依赖这些变量，不合理的更改可能会导致布局失衡。</p>
-      ) : (
-        <p>
-          Most layout spacing depends on these variables, unreasonable changes may cause
-          layout imbalance.
-        </p>
-      )}
-      <p className="subtitle">{isChinese ? '基础' : 'basic'}</p>
-      <div className="content">
-        {pageLayout.map((item, index) => (
-          <EditorInputItem key={`${item}-${index}`} groupName="layout" keyName={item} />
-        ))}
-      </div>
-      <p className="subtitle">{isChinese ? '间距' : 'gaps'}</p>
-      <div className="content">
-        {gapLayout.map((item, index) => (
-          <EditorInputItem key={`${item}-${index}`} groupName="layout" keyName={item} />
-        ))}
-      </div>
       <style jsx>{`
         .content {
           display: flex;
@@ -156,10 +138,6 @@ const Editor = () => {
           width: auto;
           margin: 0 auto;
           padding-left: ${theme.layout.gapQuarter};
-        }
-
-        .editor :global(h3) {
-          margin: 2rem 0 1rem 0;
         }
 
         .subtitle {
