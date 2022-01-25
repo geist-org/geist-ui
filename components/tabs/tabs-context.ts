@@ -15,7 +15,7 @@ export interface TabsConfig {
   register?: (item: TabsHeaderItem) => void
   currentValue?: string
   inGroup: boolean
-  leftSpace?: CSSProperties
+  leftSpace?: CSSProperties['marginLeft']
 }
 
 const defaultContext = {

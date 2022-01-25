@@ -9,13 +9,13 @@ interface Props {
   hideDivider?: boolean
   onChange?: (val: string) => void
   className?: string
-  leftSpace?: CSSProperties
+  leftSpace?: CSSProperties['marginLeft']
 }
 
 const defaultProps = {
   className: '',
   hideDivider: false,
-  leftSpace: '20px' as CSSProperties,
+  leftSpace: '20px' as CSSProperties['marginLeft'],
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
