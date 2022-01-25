@@ -6,6 +6,7 @@ import Router, { useRouter } from 'next/router'
 import MoonIcon from '@geist-ui/icons/moon'
 import SunIcon from '@geist-ui/icons/sun'
 import UserIcon from '@geist-ui/icons/user'
+import GitHubIcon from '@geist-ui/icons/github'
 import {
   CHINESE_LANGUAGE_IDENT,
   CUSTOM_THEME_TYPE,
@@ -43,17 +44,18 @@ const Controls: React.FC<unknown> = React.memo(() => {
   return (
     <div className="controls">
       <div className="tools">
-        <Button auto type="abort" scale={0.5} onClick={switchLanguages}>
-          {isChinese ? 'English' : '中文文档'}
+        <Button auto type="abort" scale={0.7} px={0.7} onClick={switchLanguages}>
+          {isChinese ? 'En' : '中'}
         </Button>
         <Button
           auto
           type="abort"
-          scale={0.5}
+          scale={0.7}
+          px={0.7}
+          icon={<GitHubIcon />}
           onClick={redirectGithub}
-          title={isChinese ? '代码仓库' : 'GitHub Repository'}>
-          {isChinese ? '代码仓库' : 'GitHub'}
-        </Button>
+          title={isChinese ? '代码仓库' : 'GitHub Repository'}
+        />
         <Spacer w={0.75} />
         <Select
           scale={0.5}

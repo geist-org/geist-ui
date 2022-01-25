@@ -1,6 +1,6 @@
 import React from 'react'
 import Colors from './colors'
-import { useTheme, Button, Text, Code, Spacer, Link, Select } from 'components'
+import { useTheme, Button, Text, Code, Spacer, Link, Select, Grid } from 'components'
 import { useConfigs } from 'lib/config-context'
 
 const Demo: React.FC<React.PropsWithChildren<unknown>> = () => {
@@ -12,74 +12,74 @@ const Demo: React.FC<React.PropsWithChildren<unknown>> = () => {
       <div className="content">
         {isChinese ? (
           <>
-            <Text h3>预览</Text>
+            <Text h2 mb={0} font="13px" type="secondary">
+              预览
+            </Text>
             <Text>
               这里是你变更主题后的即时预览。此外，当你每次更新主题变量时，整个文档站点也会随之变化。
             </Text>
-            <Text>你可以拷贝自动生成的代码，或是与任何人分享你自定义的主题样式。</Text>
           </>
         ) : (
           <>
-            <Text h3>Preview</Text>
+            <Text h2 mb={0} font="13px">
+              PREVIEWS
+            </Text>
             <Text>
               Here&#39;s a preview of your changes to the Theme. When you set the changes,
               the entire document site will change with the theme.
-            </Text>
-            <Text>
-              You can copy automatically generated codes or share your custom theme with
-              anyone.
             </Text>
           </>
         )}
 
         <Spacer h={1.7} />
-        <Text h4>{isChinese ? '色彩' : 'Colors'}</Text>
+        <Text h3 font="13px" type="secondary">
+          {isChinese ? '色彩' : 'COLORS'}
+        </Text>
         <Colors />
 
         <Spacer h={1.7} />
-        <Text h4>{isChinese ? '排版' : 'Typography'}</Text>
-        <Text>
-          <Code>inline codes</Code>
+        <Text h3 font="13px" type="secondary">
+          {isChinese ? '排版' : 'Typography'}
         </Text>
         <Text>
-          <a>Hyperlink Text</a>{' '}
-        </Text>
-        <Text>
-          <Link href="#" color>
-            Link Component
-          </Link>
-        </Text>
-        <Text>
-          Our mission is to make cloud computing accessible to everyone. We build products
-          for developers and designers. And those who aspire to become one.
+          <Link rel="nofollow" href="https://en.wikipedia.org/wiki/HTTP/2" color>
+            HTTP/2
+          </Link>{' '}
+          allows the server to <Code>push</Code> content, that is, to respond with data
+          for more queries than the client requested. This allows the server to supply
+          data it knows a web browser will need to render a web page, without waiting for
+          the browser to examine the first response, and without the overhead of an
+          additional request cycle.
         </Text>
         <Text h6>Heading</Text>
         <Text h5>Heading</Text>
         <Text h4>Heading</Text>
         <Text h3>Heading</Text>
-        <Text h2>Heading</Text>
-        <Text h1>Heading</Text>
 
         <Spacer h={1.7} />
-        <Text h4>{isChinese ? '基础组件' : 'Basic Components'}</Text>
-        <Select placeholder="Choose one" initialValue="1">
+        <Text h3 font="13px" type="secondary">
+          {isChinese ? '基础组件' : 'Basic Components'}
+        </Text>
+        <Select width="90%" placeholder="Choose one" initialValue="1">
           <Select.Option value="1">Option 1</Select.Option>
           <Select.Option value="2">Option 2</Select.Option>
         </Select>
         <Spacer h={1} />
-        <Button disabled auto scale={0.5}>
-          Action
-        </Button>
-        <Spacer inline h={0.5} />
-        <Button auto scale={0.5}>
-          Action
-        </Button>
-        <Spacer inline h={0.5} />
-        <Button auto type="secondary" scale={0.5}>
-          Action
-        </Button>
-        <Spacer h={0.5} />
-        <Button>Action</Button>
+        <Grid.Container width="100%">
+          <Grid xs={8}>
+            <Button disabled auto>
+              Action
+            </Button>
+          </Grid>
+          <Grid xs={8}>
+            <Button auto>Action</Button>
+          </Grid>
+          <Grid xs={8}>
+            <Button auto type="secondary">
+              Action
+            </Button>
+          </Grid>
+        </Grid.Container>
       </div>
       <style jsx>{`
         .demo {
