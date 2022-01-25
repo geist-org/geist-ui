@@ -46,20 +46,13 @@ const MenuSticker = () => {
             <Tabs
               height="calc(var(--geist-page-tab-height) - 2px)"
               value={tabValue}
+              leftSpace={0}
               onChange={val => setTabValue(val)}>
-              <Tabs.Item
-                height="calc(var(--geist-page-tab-height) - 2px)"
-                font="14px"
-                py={0}
-                label={isChinese ? '主页' : 'Home'}
-                value=""
-              />
+              <Tabs.Item font="14px" label={isChinese ? '主页' : 'Home'} value="" />
               {tabbarData
                 ? tabbarData.map((tab, index) => (
                     <Tabs.Item
-                      height="calc(var(--geist-page-tab-height) - 2px)"
                       font="14px"
-                      py={0}
                       label={tab.localeName || tab.name}
                       value={tab.name}
                       key={`${tab.localeName || tab.name}-${index}`}
@@ -79,19 +72,12 @@ const MenuSticker = () => {
           pointer-events: none;
           background-color: ${theme.palette.background};
         }
-
-        .nav-fill.active {
-          height: var(--geist-page-tab-height);
-          visibility: visible;
-        }
-
         nav {
           position: relative;
           width: 100%;
           height: var(--geist-page-tab-height);
           background-color: ${theme.palette.background};
         }
-
         nav.fixed {
           position: fixed;
           top: 0;
@@ -101,23 +87,11 @@ const MenuSticker = () => {
           background-color: ${theme.palette.background};
           box-shadow: rgba(0, 0, 0, 0.1) 0 0 15px 0;
         }
-
         .sticker {
           position: relative;
           height: 100%;
           width: 100%;
         }
-
-        .sticker:before {
-          position: absolute;
-          content: '';
-          height: 1px;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: ${theme.palette.border};
-        }
-
         .inner {
           box-sizing: border-box;
           width: ${theme.layout.pageWidth};
@@ -125,39 +99,15 @@ const MenuSticker = () => {
           z-index: 900;
           margin: 0 auto;
         }
-
         .inner.sm {
           width: 100%;
         }
-        .inner.sm :global(.tab) {
-          width: 33.333%;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          margin: 0;
-        }
-        .inner.sm :global(.tab.active) {
-          background-color: ${theme.palette.accents_2};
-        }
-
         .inner :global(.content) {
           display: none;
         }
-
         .inner :global(.scroll-container) {
           border-color: transparent;
-        }
-
-        .inner :global(.tab) {
-          color: ${theme.palette.accents_5};
-        }
-
-        .inner :global(.tab):hover {
-          color: ${theme.palette.foreground};
-        }
-
-        .inner :global(.active) {
-          color: ${theme.palette.foreground};
+          justify-content: center;
         }
       `}</style>
     </>
