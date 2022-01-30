@@ -14,7 +14,7 @@ Display image content.
   title="Basic"
   scope={{ Image }}
   code={`
-<Image width="540px" height="160px" src="/images/custom-domains.png" />
+<Image width="280px" height="160px" src="/images/geist-banner.png" />
 `}
 />
 
@@ -23,8 +23,8 @@ Display image content.
   desc="`Image` will show skeleton animation after `width` and `height` props are set."
   scope={{ Image }}
   code={`
-<Image width="540px" height="160px"
-  src="http://www.deelay.me/2000/https://geist-ui.dev/images/custom-domains.png" />
+<Image width="280px" height="160px"
+  src="http://www.deelay.me/2000/https://geist-ui.dev/images/geist-banner.png" />
 `}
 />
 
@@ -34,7 +34,7 @@ Display image content.
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://geist-ui.dev/en-us/guide/introduction" anchorProps={{ rel: 'nofollow' }}>
-  <Image width="540px" height="246px" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+  <Image width="525px" height="300px" src="/images/geist-banner.png" />
 </Image.Browser>
 `}
 />
@@ -44,7 +44,7 @@ Display image content.
   scope={{ Image, Display, Code }}
   code={`
 <Image.Browser url="https://geist-ui.dev/en-us/guide/introduction" invert>
-  <Image width="540px" height="246px" src="https://user-images.githubusercontent.com/11304944/76085431-fd036480-5fec-11ea-8412-9e581425344a.png" />
+  <Image width="525px" height="300px" src="/images/geist-banner-dark.png" />
 </Image.Browser>
 `}
 />
@@ -55,8 +55,21 @@ Display image content.
   scope={{ Image, Display, Code }}
   code={`
 <Display shadow caption={<p>Set the <Code>height</Code> to reduces the possibility of page rerender.</p>}>
-  <Image width="540px" height="246px" src="/images/branch-domains.png" />
+  <Image height="246px" src="/images/geist-banner-text.png" />
 </Display>
+`}
+/>
+
+<Playground
+  title="SVG"
+  desc="Render svg strings directly"
+  scope={{ Image }}
+  code={`
+() => {
+  const svg = \`<svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 15 15" fill="none">
+      <path d="M12.5 8V7.83333C12.5 7.09695 11.903 6.5 11.1667 6.5H10C9.17157 6.5 8.5 7.17157 8.5 8C8.5 8.82843 9.17157 9.5 10 9.5H11C11.8284 9.5 12.5 10.1716 12.5 11C12.5 11.8284 11.8284 12.5 11 12.5H10C9.17157 12.5 8.5 11.8284 8.5 11M8 6.5H3M5.5 6.5V13M0.5 0.5H14.5V14.5H0.5V0.5Z" stroke="black"/></svg>\`
+  return <Image width="100px" height="50px" src={svg} />
+}
 `}
 />
 
