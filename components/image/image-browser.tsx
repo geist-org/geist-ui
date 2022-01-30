@@ -4,6 +4,7 @@ import { Props as LinkProps } from '../link/link'
 import useTheme from '../use-theme'
 import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'
+import { getHostFromUrl } from './helpers'
 import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
 
 export type ImageAnchorProps = Omit<React.AnchorHTMLAttributes<any>, keyof LinkProps>
@@ -26,14 +27,6 @@ const defaultProps = {
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ImageBrowserProps = Props & NativeAttrs
-
-const getHostFromUrl = (url: string) => {
-  try {
-    return new URL(url).host
-  } catch (e) {
-    return url
-  }
-}
 
 const getTitle = (title: string, colors: BrowserColors) => (
   <div className="title">
