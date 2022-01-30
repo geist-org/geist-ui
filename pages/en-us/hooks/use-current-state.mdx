@@ -3,12 +3,13 @@ import { useCurrentState, Link, Button, Spacer } from 'components'
 
 export const meta = {
   title: 'useCurrentState',
-  group: 'Utils',
+  group: 'Development',
+  index: 100,
 }
 
 ## useCurrentState
 
-Get **the latest value** in functional component. By default, `state` in a React FC
+Get **the latest value** in functional component. By default, `state` in a React function component
 can only get the value at render time, not the latest.
 
 This is a small tool to get the latest value, It is very useful in async actions such as `setTimeout`.
@@ -36,7 +37,7 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
 `}
 />
 
-<Attributes edit="/pages/en-us/components/use-current-state.mdx">
+<Attributes edit="/pages/en-us/hooks/use-current-state.mdx">
 <Attributes.Title>useCurrentState</Attributes.Title>
 
 ```ts

@@ -3,16 +3,14 @@ import { useMediaQuery, Link, Code, Spacer } from 'components'
 import NextLink from 'next/link'
 
 export const meta = {
-  title: 'useMediaQuery',
-  group: 'Utils',
+  title: '媒体查询 useMediaQuery',
+  group: '实用工具',
 }
 
-## useMediaQuery
+## useMediaQuery / 媒体查询
 
-CSS media query hooks, it is implemented through the `MediaQuery` API.
-If you just want to build the layout, try <NextLink href="/en-us/components/grid"><Link color>Grid Component</Link></NextLink>.
-
-This is custom React Hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
+用于 CSS 媒体查询的钩子，钩子通过 `MediaQuery` API 实现。如果你仅仅想要构建响应式的布局，
+请尝试 <NextLink href="/zh-cn/components/grid"><Link color>栅格组件</Link></NextLink>。
 
 <Playground
   scope={{ useMediaQuery, Code }}
@@ -25,7 +23,7 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
   const isXL = useMediaQuery('xl')
   return (
     <>
-      MediaQuery match: <Code>{isXS && 'xs'}{isSM && 'sm'}{isMD && 'md'}{isLG && 'lg'}{isXL && 'xl'}</Code>.
+      媒体查询当前匹配: <Code>{isXS && 'xs'}{isSM && 'sm'}{isMD && 'md'}{isLG && 'lg'}{isXL && 'xl'}</Code>.
     </>
   )
 }
@@ -33,15 +31,15 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
 />
 
 <Playground
-  title="Match Type"
-  desc="You can choose to match up or down."
+  title="匹配类型"
+  desc="你可以选择向上或是向下匹配媒体查询。"
   scope={{ useMediaQuery, Code }}
   code={`
 () => {
   const upMD = useMediaQuery('md', { match: 'up' })
   return (
     <>
-      Current screen width <b>{upMD ? '>=' : '<='}</b> <Code>md</Code>.
+      当前屏幕宽度 <b>{upMD ? '大于' : '小于'}</b> <Code>md</Code>.
     </>
   )
 }
@@ -49,8 +47,8 @@ This is custom React Hooks, you need to follow the <Link target="_blank" color h
 />
 
 <PlaygroundTitle
-  title="custom breakpoints"
-  desc="Override the default breakpoints of the `@geist-ui/core`."
+  title="定制断点"
+  desc="您可以覆盖 `@geist-ui/core` 组件库默认的断点值。"
 />
 
 ```tsx
@@ -76,7 +74,7 @@ const App = () => {
 }
 ```
 
-<Attributes edit="/pages/en-us/components/use-media-query.mdx">
+<Attributes edit="/pages/zh-cn/components/use-media-query.mdx">
 <Attributes.Title>useMediaQuery</Attributes.Title>
 
 ```ts
