@@ -1,6 +1,6 @@
 import React from 'react'
 
-export type ScaleableProps = {
+export type ScaleProps = {
   width?: string | number
   height?: string | number
   padding?: string | number
@@ -37,7 +37,7 @@ export type DynamicLayoutPipe = (
   defaultValue?: string | number,
 ) => string
 
-export type ScaleableInputKeys =
+export type ScaleInputKeys =
   | 'pl'
   | 'pr'
   | 'pt'
@@ -55,16 +55,16 @@ export type ScaleableInputKeys =
   | 'font'
 
 export type DynamicScales = {
-  [key in ScaleableInputKeys]: DynamicLayoutPipe
+  [key in ScaleInputKeys]: DynamicLayoutPipe
 }
 
-export type GetScaleablePropsFunction = (
-  key: keyof ScaleableProps | Array<keyof ScaleableProps>,
-) => ScaleableProps[keyof ScaleableProps]
+export type GetScalePropsFunction = (
+  key: keyof ScaleProps | Array<keyof ScaleProps>,
+) => ScaleProps[keyof ScaleProps]
 
-export interface ScaleableConfig {
+export interface ScaleConfig {
   SCALES: DynamicScales
-  getScaleableProps: GetScaleablePropsFunction
+  getScaleProps: GetScalePropsFunction
   unit: string
 }
 
@@ -72,8 +72,8 @@ const defaultDynamicLayoutPipe: DynamicLayoutPipe = scale1x => {
   return `${scale1x}`
 }
 
-const defaultContext: ScaleableConfig = {
-  getScaleableProps: () => undefined,
+const defaultContext: ScaleConfig = {
+  getScaleProps: () => undefined,
   SCALES: {
     pl: defaultDynamicLayoutPipe,
     pr: defaultDynamicLayoutPipe,
@@ -94,7 +94,6 @@ const defaultContext: ScaleableConfig = {
   unit: '16px',
 }
 
-export const ScaleableContext = React.createContext<ScaleableConfig>(defaultContext)
+export const ScaleContext = React.createContext<ScaleConfig>(defaultContext)
 
-export const useScaleable = (): ScaleableConfig =>
-  React.useContext<ScaleableConfig>(ScaleableContext)
+export const useScale = (): ScaleConfig => React.useContext<ScaleConfig>(ScaleContext)

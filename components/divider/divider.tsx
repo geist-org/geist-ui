@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { DividerAlign, SnippetTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type DividerTypes = SnippetTypes
 
@@ -42,7 +42,7 @@ const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
   ...props
 }: React.PropsWithChildren<DividerProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const color = useMemo(() => getColor(type, theme.palette), [type, theme.palette])
   const alignClassName = useMemo(() => {
     if (!align || align === 'center') return ''
@@ -101,5 +101,5 @@ const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
 
 DividerComponent.defaultProps = defaultProps
 DividerComponent.displayName = 'GeistDivider'
-const Divider = withScaleable(DividerComponent)
+const Divider = withScale(DividerComponent)
 export default Divider

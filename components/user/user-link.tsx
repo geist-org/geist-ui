@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from '../link'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 interface Props {
   href?: string

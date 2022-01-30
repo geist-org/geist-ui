@@ -13,7 +13,7 @@ import SliderDot from './slider-dot'
 import SliderMark from './slider-mark'
 import { getColors } from './styles'
 import { NormalTypes } from '../utils/prop-types'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type SliderTypes = NormalTypes
 interface Props {
@@ -84,7 +84,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
   ...props
 }: React.PropsWithChildren<SliderProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [value, setValue] = useState<number>(initialValue)
   const [, setSliderWidth, sideWidthRef] = useCurrentState<number>(0)
   const [, setLastDargOffset, lastDargOffsetRef] = useCurrentState<number>(0)
@@ -184,5 +184,5 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
 
 SliderComponent.defaultProps = defaultProps
 SliderComponent.displayName = 'GeistSlider'
-const Slider = withScaleable(SliderComponent)
+const Slider = withScale(SliderComponent)
 export default Slider

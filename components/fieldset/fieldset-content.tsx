@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -19,7 +19,7 @@ const FieldsetContentComponent: React.FC<
   children,
   ...props
 }: React.PropsWithChildren<FieldsetContentProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <div className={`content ${className}`} {...withPureProps(props)}>
@@ -46,5 +46,5 @@ const FieldsetContentComponent: React.FC<
 
 FieldsetContentComponent.defaultProps = defaultProps
 FieldsetContentComponent.displayName = 'GeistFieldsetContent'
-const FieldsetContent = withScaleable(FieldsetContentComponent)
+const FieldsetContent = withScale(FieldsetContentComponent)
 export default FieldsetContent

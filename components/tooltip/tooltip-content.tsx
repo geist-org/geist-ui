@@ -9,7 +9,7 @@ import { getColors } from './styles'
 import { getPosition, TooltipPosition, defaultTooltipPosition } from './placement'
 import TooltipIcon from './tooltip-icon'
 import { Placement, SnippetTypes } from '../utils/prop-types'
-import useScaleable from '../use-scaleable'
+import useScale from '../use-scale'
 import { getRect } from './helper'
 
 interface Props {
@@ -39,7 +39,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   hideArrow,
 }) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const el = usePortal('tooltip')
   const selfRef = useRef<HTMLDivElement>(null)
   const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition)

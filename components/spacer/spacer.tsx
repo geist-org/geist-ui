@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   inline?: boolean
@@ -19,7 +19,7 @@ const SpacerComponent: React.FC<SpacerProps> = ({
   className,
   ...props
 }: SpacerProps & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <span className={className} {...withPureProps(props)}>
@@ -38,5 +38,5 @@ const SpacerComponent: React.FC<SpacerProps> = ({
 
 SpacerComponent.defaultProps = defaultProps
 SpacerComponent.displayName = 'GeistSpacer'
-const Spacer = withScaleable(SpacerComponent)
+const Spacer = withScale(SpacerComponent)
 export default Spacer

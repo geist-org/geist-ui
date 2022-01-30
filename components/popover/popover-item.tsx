@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 import { usePopoverContext } from './popover-context'
 
 interface Props {
@@ -30,7 +30,7 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
   ...props
 }: React.PropsWithChildren<PopoverItemProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { disableItemsAutoClose, onItemClick } = usePopoverContext()
   const hasHandler = Boolean(onClick)
   const dontCloseByClick = disableAutoClose || disableItemsAutoClose || title || line
@@ -94,5 +94,5 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
 
 PopoverItemComponent.defaultProps = defaultProps
 PopoverItemComponent.displayName = 'GeistPopoverItem'
-const PopoverItem = withScaleable(PopoverItemComponent)
+const PopoverItem = withScale(PopoverItemComponent)
 export default PopoverItem

@@ -1,25 +1,20 @@
 import React from 'react'
-import useScaleable, {
-  ScaleableProps,
-  ScaleableConfig,
-  withScaleable,
-  withPureProps,
-} from '../index'
+import useScale, { ScaleProps, ScaleConfig, withScale, withPureProps } from '../index'
 import { renderHook } from '@testing-library/react-hooks'
 import { mount } from 'enzyme'
 
 const BaseComponent: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <div>{children}</div>
 )
-const ScaleComponent = withScaleable(BaseComponent)
+const ScaleComponent = withScale(BaseComponent)
 
-describe('UseScaleable', () => {
+describe('UseScale', () => {
   it('should work correctly', () => {
-    const { result } = renderHook<void, ScaleableConfig>(() => useScaleable())
-    const { SCALES, getScaleableProps } = result.current
+    const { result } = renderHook<void, ScaleConfig>(() => useScale())
+    const { SCALES, getScaleProps } = result.current
     expect(typeof SCALES).toEqual('object')
-    expect(typeof getScaleableProps).toEqual('function')
-    expect(getScaleableProps('font')).toBeUndefined()
+    expect(typeof getScaleProps).toEqual('function')
+    expect(getScaleProps('font')).toBeUndefined()
     expect(SCALES.font(1)).not.toBeUndefined()
   })
 
@@ -27,34 +22,31 @@ describe('UseScaleable', () => {
     const wrapper: React.FC<{ width: string }> = ({ width, children }) => (
       <ScaleComponent width={width}>{children}</ScaleComponent>
     )
-    const { result, rerender } = renderHook<{ width: string }, ScaleableConfig>(
-      () => useScaleable(),
+    const { result, rerender } = renderHook<{ width: string }, ScaleConfig>(
+      () => useScale(),
       {
         wrapper,
         initialProps: { width: '20px' },
       },
     )
-    let { SCALES, getScaleableProps } = result.current
+    let { SCALES, getScaleProps } = result.current
     expect(typeof SCALES).toEqual('object')
-    expect(typeof getScaleableProps).toEqual('function')
-    expect(getScaleableProps('font')).toBeUndefined()
-    expect(getScaleableProps('width')).toEqual('20px')
+    expect(typeof getScaleProps).toEqual('function')
+    expect(getScaleProps('font')).toBeUndefined()
+    expect(getScaleProps('width')).toEqual('20px')
     rerender({ width: '1rem' })
-    getScaleableProps = result.current.getScaleableProps
-    expect(getScaleableProps('width')).toEqual('1rem')
+    getScaleProps = result.current.getScaleProps
+    expect(getScaleProps('width')).toEqual('1rem')
   })
 
   it('should work correctly with SCALES', () => {
-    const wrapper: React.FC<ScaleableProps> = ({ children, ...props }) => (
+    const wrapper: React.FC<ScaleProps> = ({ children, ...props }) => (
       <ScaleComponent {...props}>{children}</ScaleComponent>
     )
-    const { result, rerender } = renderHook<ScaleableProps, ScaleableConfig>(
-      () => useScaleable(),
-      {
-        wrapper,
-        initialProps: {},
-      },
-    )
+    const { result, rerender } = renderHook<ScaleProps, ScaleConfig>(() => useScale(), {
+      wrapper,
+      initialProps: {},
+    })
     let SCALES = result.current.SCALES
     expect(SCALES.font(1)).toEqual('calc(1 * 16px)')
     expect(SCALES.font(1, 'auto')).toEqual('auto')
@@ -81,16 +73,13 @@ describe('UseScaleable', () => {
   })
 
   it('aliases should be allowed', () => {
-    const wrapper: React.FC<ScaleableProps> = ({ children, ...props }) => (
+    const wrapper: React.FC<ScaleProps> = ({ children, ...props }) => (
       <ScaleComponent {...props}>{children}</ScaleComponent>
     )
-    const { result, rerender } = renderHook<ScaleableProps, ScaleableConfig>(
-      () => useScaleable(),
-      {
-        wrapper,
-        initialProps: { w: '200px' },
-      },
-    )
+    const { result, rerender } = renderHook<ScaleProps, ScaleConfig>(() => useScale(), {
+      wrapper,
+      initialProps: { w: '200px' },
+    })
     let SCALES = result.current.SCALES
     expect(SCALES.width(2)).toEqual('200px')
     expect(SCALES.width(0, 'auto')).toEqual('200px')
@@ -114,16 +103,13 @@ describe('UseScaleable', () => {
   })
 
   it('should work correctly with different unit', () => {
-    const wrapper: React.FC<ScaleableProps> = ({ children, ...props }) => (
+    const wrapper: React.FC<ScaleProps> = ({ children, ...props }) => (
       <ScaleComponent {...props}>{children}</ScaleComponent>
     )
-    const { result, rerender } = renderHook<ScaleableProps, ScaleableConfig>(
-      () => useScaleable(),
-      {
-        wrapper,
-        initialProps: { unit: '19px' },
-      },
-    )
+    const { result, rerender } = renderHook<ScaleProps, ScaleConfig>(() => useScale(), {
+      wrapper,
+      initialProps: { unit: '19px' },
+    })
     let SCALES = result.current.SCALES
     let width = SCALES.width(2)
     expect(width).toContain('19px')
@@ -136,26 +122,23 @@ describe('UseScaleable', () => {
   })
 
   it('should work correctly with multiple values', () => {
-    const wrapper: React.FC<ScaleableProps> = ({ children, ...props }) => (
+    const wrapper: React.FC<ScaleProps> = ({ children, ...props }) => (
       <ScaleComponent {...props}>{children}</ScaleComponent>
     )
-    const { result, rerender } = renderHook<ScaleableProps, ScaleableConfig>(
-      () => useScaleable(),
-      {
-        wrapper,
-        initialProps: { height: '2', width: 2 },
-      },
-    )
-    let { SCALES, getScaleableProps } = result.current
-    let hasWidthOrHeight = getScaleableProps(['width', 'height'])
+    const { result, rerender } = renderHook<ScaleProps, ScaleConfig>(() => useScale(), {
+      wrapper,
+      initialProps: { height: '2', width: 2 },
+    })
+    let { SCALES, getScaleProps } = result.current
+    let hasWidthOrHeight = getScaleProps(['width', 'height'])
     expect(hasWidthOrHeight).not.toBeUndefined()
-    const hasMargin = getScaleableProps(['margin', 'mx', 'my'])
+    const hasMargin = getScaleProps(['margin', 'mx', 'my'])
     expect(hasMargin).toBeUndefined()
     expect(SCALES.width(1)).toContain('calc')
     expect(SCALES.height(1)).toContain('calc')
 
     rerender({ height: undefined, width: undefined })
-    hasWidthOrHeight = result.current.getScaleableProps(['width', 'height'])
+    hasWidthOrHeight = result.current.getScaleProps(['width', 'height'])
     expect(hasWidthOrHeight).toBeUndefined()
   })
 
@@ -167,7 +150,7 @@ describe('UseScaleable', () => {
         {children}
       </div>
     )
-    let Component = withScaleable(PassedComponent)
+    let Component = withScale(PassedComponent)
     let wrapper = mount(<Component scale={2} />)
     let inner = wrapper.find('#inner').getDOMNode()
     expect(inner.hasAttribute('scale')).toBe(true)
@@ -179,7 +162,7 @@ describe('UseScaleable', () => {
         {children}
       </div>
     )
-    Component = withScaleable(FilteredComponent)
+    Component = withScale(FilteredComponent)
     wrapper = mount(<Component scale={2} />)
     inner = wrapper.find('#inner').getDOMNode()
     expect(inner.hasAttribute('scale')).not.toBe(true)

@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   command?: boolean
@@ -31,7 +31,7 @@ const KeyboardComponent: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
   ...props
 }: React.PropsWithChildren<KeyboardProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <kbd className={className} {...withPureProps(props)}>
@@ -76,5 +76,5 @@ const KeyboardComponent: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
 
 KeyboardComponent.defaultProps = defaultProps
 KeyboardComponent.displayName = 'GeistKeyboard'
-const Keyboard = withScaleable(KeyboardComponent)
+const Keyboard = withScale(KeyboardComponent)
 export default Keyboard

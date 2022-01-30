@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import { ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   disabled?: boolean
@@ -45,7 +45,7 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
   groupProps: ButtonGroupProps & typeof defaultProps,
 ) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { disabled, type, ghost, vertical, children, className, ...props } = groupProps
   const initialValue = useMemo<ButtonGroupConfig>(
     () => ({
@@ -122,5 +122,5 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
 
 ButtonGroupComponent.defaultProps = defaultProps
 ButtonGroupComponent.displayName = 'GeistButtonGroup'
-const ButtonGroup = withScaleable(ButtonGroupComponent)
+const ButtonGroup = withScale(ButtonGroupComponent)
 export default ButtonGroup

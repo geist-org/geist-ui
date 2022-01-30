@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { SnippetTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type TagTypes = SnippetTypes
 interface Props {
@@ -79,7 +79,7 @@ const TagComponent: React.FC<React.PropsWithChildren<TagProps>> = ({
   ...props
 }: React.PropsWithChildren<TagProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { color, bgColor, borderColor } = useMemo(
     () => getColors(type, theme.palette, invert),
     [type, theme.palette, invert],
@@ -111,5 +111,5 @@ const TagComponent: React.FC<React.PropsWithChildren<TagProps>> = ({
 
 TagComponent.defaultProps = defaultProps
 TagComponent.displayName = 'GeistTag'
-const Tag = withScaleable(TagComponent)
+const Tag = withScale(TagComponent)
 export default Tag

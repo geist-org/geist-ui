@@ -12,11 +12,7 @@ import {
   TableOnRowClick,
   TableRowClassNameHandler,
 } from './table-types'
-import useScaleable, {
-  ScaleableProps,
-  withPureProps,
-  withScaleable,
-} from '../use-scaleable'
+import useScale, { ScaleProps, withPureProps, withScale } from '../use-scale'
 import TableColumn from './table-column'
 
 interface Props<TableDataItem extends TableDataItemBase> {
@@ -62,7 +58,7 @@ function TableComponent<TableDataItem extends TableDataItemBase>(
   } = tableProps as React.PropsWithChildren<TableProps<TableDataItem>> &
     typeof defaultProps
   /* eslint-enable @typescript-eslint/no-unused-vars */
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const ref = useRef<HTMLTableElement>(null)
   const [{ width }, updateShape] = useRealShape<HTMLTableElement>(ref)
   const [columns, setColumns] = useState<Array<TableAbstractColumn<TableDataItem>>>([])
@@ -126,6 +122,6 @@ function TableComponent<TableDataItem extends TableDataItemBase>(
 TableComponent.defaultProps = defaultProps
 TableComponent.displayName = 'GeistTable'
 TableComponent.Column = TableColumn
-let Table = withScaleable(TableComponent) as any
+let Table = withScale(TableComponent) as any
 Table.Column = TableColumn
-export default Table as typeof TableComponent & ScaleableProps
+export default Table as typeof TableComponent & ScaleProps

@@ -1,7 +1,7 @@
 import React, { CSSProperties, useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
 import { TabsHeaderItem, TabsConfig, TabsContext } from './tabs-context'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   initialValue?: string
@@ -32,7 +32,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   ...props
 }: React.PropsWithChildren<TabsProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfValue, setSelfValue] = useState<string | undefined>(userCustomInitialValue)
   const [tabs, setTabs] = useState<Array<TabsHeaderItem>>([])
 
@@ -125,5 +125,5 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
 
 TabsComponent.defaultProps = defaultProps
 TabsComponent.displayName = 'GeistTabs'
-const Tabs = withScaleable(TabsComponent)
+const Tabs = withScale(TabsComponent)
 export default Tabs

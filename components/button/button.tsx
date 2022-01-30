@@ -1,5 +1,5 @@
 import React, { useRef, useState, MouseEvent, useMemo, useImperativeHandle } from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 import useTheme from '../use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
@@ -52,7 +52,7 @@ const ButtonComponent = React.forwardRef<
     ref: React.Ref<HTMLButtonElement | null>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const buttonRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle(ref, () => buttonRef.current)
 
@@ -220,5 +220,5 @@ const ButtonComponent = React.forwardRef<
 
 ButtonComponent.defaultProps = defaultProps
 ButtonComponent.displayName = 'GeistButton'
-const Button = withScaleable(ButtonComponent)
+const Button = withScale(ButtonComponent)
 export default Button

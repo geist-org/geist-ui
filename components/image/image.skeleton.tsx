@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 interface Props {
   opacity?: number

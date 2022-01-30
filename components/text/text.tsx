@@ -1,7 +1,7 @@
 import React, { ReactNode, useMemo } from 'react'
 import { NormalTypes } from '../utils/prop-types'
 import TextChild from './child'
-import { withScaleable } from '../use-scaleable'
+import { withScale } from '../use-scale'
 
 export type TextTypes = NormalTypes
 interface Props {
@@ -117,5 +117,5 @@ const TextComponent: React.FC<React.PropsWithChildren<TextProps>> = ({
 
 TextComponent.defaultProps = defaultProps
 TextComponent.displayName = 'GeistText'
-const Text = withScaleable(TextComponent)
+const Text = withScale(TextComponent)
 export default Text

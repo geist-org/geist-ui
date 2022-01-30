@@ -1,8 +1,8 @@
-import { ScaleableProps } from './scaleable-context'
+import { ScaleProps } from './scale-context'
 
-export type ScaleablePropsAndInvalid = keyof ScaleableProps | 'size'
+export type ScalePropsAndInvalid = keyof ScaleProps | 'size'
 
-export const ScaleablePropKeys: Array<ScaleablePropsAndInvalid> = [
+export const ScalePropKeys: Array<ScalePropsAndInvalid> = [
   'paddingLeft',
   'pl',
   'paddingRight',
@@ -33,12 +33,12 @@ export const ScaleablePropKeys: Array<ScaleablePropsAndInvalid> = [
 
 export const withPureProps = <T extends Record<any, any>>(
   props: T,
-): Omit<T, ScaleablePropsAndInvalid> => {
-  if (!props) return {} as Omit<T, ScaleablePropsAndInvalid>
+): Omit<T, ScalePropsAndInvalid> => {
+  if (!props) return {} as Omit<T, ScalePropsAndInvalid>
   const keys = Object.keys(props).filter(key => key !== '')
   const nextProps: any = {}
   for (const key of keys) {
-    if (!(ScaleablePropKeys as string[]).includes(key)) {
+    if (!(ScalePropKeys as string[]).includes(key)) {
       nextProps[key] = props[key]
     }
   }

@@ -5,7 +5,7 @@ import useWarning from '../utils/use-warning'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type CheckboxTypes = NormalTypes
 export interface CheckboxEventTarget {
@@ -51,7 +51,7 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
   ...props
 }: CheckboxProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
   const { updateState, inGroup, disabledAll, values } = useCheckbox()
   const isDisabled = inGroup ? disabledAll || disabled : disabled
@@ -155,5 +155,5 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
 
 CheckboxComponent.defaultProps = defaultProps
 CheckboxComponent.displayName = 'GeistCheckbox'
-const Checkbox = withScaleable(CheckboxComponent)
+const Checkbox = withScale(CheckboxComponent)
 export default Checkbox

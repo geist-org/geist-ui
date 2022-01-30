@@ -7,7 +7,7 @@ import ButtonDropdownItem from './button-dropdown-item'
 import { ButtonDropdownContext } from './button-dropdown-context'
 import { NormalTypes } from '../utils/prop-types'
 import { pickChild, pickChildByProps } from '../utils/collections'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type ButtonDropdownTypes = NormalTypes
 
@@ -46,7 +46,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
   icon,
   ...props
 }) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const ref = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const colors = getColor(theme.palette, type)
@@ -195,5 +195,5 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
 
 ButtonDropdownComponent.displayName = 'GeistButtonDropdown'
 ButtonDropdownComponent.defaultProps = defaultProps
-const ButtonDropdown = withScaleable(ButtonDropdownComponent)
+const ButtonDropdown = withScale(ButtonDropdownComponent)
 export default ButtonDropdown

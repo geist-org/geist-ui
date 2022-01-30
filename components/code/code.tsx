@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   block?: boolean
@@ -20,7 +20,7 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
   className,
   ...props
 }: React.PropsWithChildren<CodeProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const otherProps = withPureProps(props)
 
   if (!block) return <code {...otherProps}>{children}</code>
@@ -55,5 +55,5 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
 
 CodeComponent.defaultProps = defaultProps
 CodeComponent.displayName = 'GeistCode'
-const Code = withScaleable(CodeComponent)
+const Code = withScale(CodeComponent)
 export default Code

@@ -6,7 +6,7 @@ import CardFooter from './card-footer'
 import CardContent from './card-content'
 import Image from '../image'
 import { hasChild, pickChild } from '../utils/collections'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   hoverable?: boolean
@@ -34,7 +34,7 @@ const CardComponent: React.FC<React.PropsWithChildren<CardProps>> = ({
   ...props
 }: CardProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const hoverShadow = useMemo(() => {
     if (shadow) return theme.expressiveness.shadowMedium
     return hoverable ? theme.expressiveness.shadowSmall : 'none'
@@ -92,5 +92,5 @@ const CardComponent: React.FC<React.PropsWithChildren<CardProps>> = ({
 
 CardComponent.defaultProps = defaultProps
 CardComponent.displayName = 'GeistCard'
-const Card = withScaleable(CardComponent)
+const Card = withScale(CardComponent)
 export default Card

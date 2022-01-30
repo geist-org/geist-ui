@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import useWarning from '../utils/use-warning'
 import LinkIcon from './icon'
 import { addColorAlpha } from '../utils/color'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export interface Props {
   href?: string
@@ -47,7 +47,7 @@ const LinkComponent = React.forwardRef<
     ref: React.Ref<HTMLAnchorElement>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const linkColor = color || block ? theme.palette.link : 'inherit'
     const hoverColor = color || block ? theme.palette.successLight : 'inherit'
     const decoration = underline ? 'underline' : 'none'
@@ -101,5 +101,5 @@ const LinkComponent = React.forwardRef<
 
 LinkComponent.defaultProps = defaultProps
 LinkComponent.displayName = 'GeistLink'
-const Link = withScaleable(LinkComponent)
+const Link = withScale(LinkComponent)
 export default Link

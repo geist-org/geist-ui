@@ -2,7 +2,7 @@ import React, { MouseEvent } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from './css-transition'
 import useCurrentState from '../utils/use-current-state'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 interface Props {
   onClick?: (event: MouseEvent<HTMLElement>) => void

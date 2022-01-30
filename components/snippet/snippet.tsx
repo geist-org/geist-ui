@@ -5,7 +5,7 @@ import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
 import useToasts from '../use-toasts'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type ToastTypes = NormalTypes
 interface Props {
@@ -52,7 +52,7 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   ...props
 }: React.PropsWithChildren<SnippetProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { copy } = useClipboard()
   const [, setToast] = useToasts()
   const ref = useRef<HTMLPreElement>(null)
@@ -161,5 +161,5 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
 
 SnippetComponent.defaultProps = defaultProps
 SnippetComponent.displayName = 'GeistSnippet'
-const Snippet = withScaleable(SnippetComponent)
+const Snippet = withScale(SnippetComponent)
 export default Snippet

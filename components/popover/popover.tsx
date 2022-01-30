@@ -6,7 +6,7 @@ import Tooltip, {
 } from '../tooltip/tooltip'
 import { Placement, TriggerTypes } from '../utils/prop-types'
 import { getReactNode } from '../utils/collections'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 import { PopoverContext, PopoverConfig } from './popover-context'
 
 export type PopoverTriggerTypes = TriggerTypes
@@ -54,7 +54,7 @@ const PopoverComponent: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   visible: customVisible,
   ...props
 }: React.PropsWithChildren<PopoverProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [visible, setVisible] = useState<boolean>(initialVisible)
   const textNode = useMemo(() => getReactNode(content), [content])
   const onChildClick = () => {
@@ -99,5 +99,5 @@ const PopoverComponent: React.FC<React.PropsWithChildren<PopoverProps>> = ({
 
 PopoverComponent.defaultProps = defaultProps
 PopoverComponent.displayName = 'GeistPopover'
-const Popover = withScaleable(PopoverComponent)
+const Popover = withScale(PopoverComponent)
 export default Popover

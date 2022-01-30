@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react'
 import {
   DynamicLayoutPipe,
-  GetScaleablePropsFunction,
-  ScaleableConfig,
-  ScaleableContext,
-  ScaleableProps,
-} from './scaleable-context'
+  GetScalePropsFunction,
+  ScaleConfig,
+  ScaleContext,
+  ScaleProps,
+} from './scale-context'
 import useTheme from '../use-theme'
 import { isCSSNumberValue } from '../utils/collections'
 
@@ -15,10 +15,10 @@ const reduceScaleCoefficient = (scale: number) => {
   return scale > 1 ? 1 + diff : 1 - diff
 }
 
-const withScaleable = <T, P = {}>(
+const withScale = <T, P = {}>(
   Render: React.ComponentType<P & { ref?: React.Ref<T> }>,
 ) => {
-  const ScaleableFC = forwardRef<T, P & ScaleableProps>(({ children, ...props }, ref) => {
+  const ScaleFC = forwardRef<T, P & ScaleProps>(({ children, ...props }, ref) => {
     const { layout } = useTheme()
     const {
       paddingLeft,
@@ -69,8 +69,8 @@ const withScaleable = <T, P = {}>(
         const customFactor = factor * Number(attrValue)
         return `calc(${customFactor} * ${unit})`
       }
-    const getScaleableProps: GetScaleablePropsFunction = keyOrKeys => {
-      if (!Array.isArray(keyOrKeys)) return props[keyOrKeys as keyof ScaleableProps]
+    const getScaleProps: GetScalePropsFunction = keyOrKeys => {
+      if (!Array.isArray(keyOrKeys)) return props[keyOrKeys as keyof ScaleProps]
       let value = undefined
       for (const key of keyOrKeys) {
         const currentValue = props[key]
@@ -81,7 +81,7 @@ const withScaleable = <T, P = {}>(
       return value
     }
 
-    const value: ScaleableConfig = {
+    const value: ScaleConfig = {
       unit,
       SCALES: {
         pt: makeScaleHandler(paddingTop ?? pt ?? py ?? padding),
@@ -100,19 +100,19 @@ const withScaleable = <T, P = {}>(
         height: makeScaleHandler(height ?? h),
         font: makeScaleHandler(font),
       },
-      getScaleableProps,
+      getScaleProps,
     }
 
     return (
-      <ScaleableContext.Provider value={value}>
+      <ScaleContext.Provider value={value}>
         <Render {...(props as P)} ref={ref}>
           {children}
         </Render>
-      </ScaleableContext.Provider>
+      </ScaleContext.Provider>
     )
   })
-  ScaleableFC.displayName = `Scaleable${Render.displayName || 'Wrapper'}`
-  return ScaleableFC
+  ScaleFC.displayName = `Scale${Render.displayName || 'Wrapper'}`
+  return ScaleFC
 }
 
-export default withScaleable
+export default withScale

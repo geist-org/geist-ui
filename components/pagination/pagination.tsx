@@ -9,7 +9,7 @@ import {
 } from './pagination-context'
 import useCurrentState from '../utils/use-current-state'
 import { pickChild } from '../utils/collections'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   page?: number
@@ -36,7 +36,7 @@ const PaginationComponent: React.FC<React.PropsWithChildren<PaginationProps>> = 
   children,
   onChange,
 }: React.PropsWithChildren<PaginationProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [page, setPage, pageRef] = useCurrentState(initialPage)
   const [, prevChildren] = pickChild(children, PaginationPrevious)
   const [, nextChildren] = pickChild(children, PaginationNext)
@@ -106,5 +106,5 @@ const PaginationComponent: React.FC<React.PropsWithChildren<PaginationProps>> = 
 
 PaginationComponent.defaultProps = defaultProps
 PaginationComponent.displayName = 'GeistPagination'
-const Pagination = withScaleable(PaginationComponent)
+const Pagination = withScale(PaginationComponent)
 export default Pagination

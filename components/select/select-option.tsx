@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import { useSelectContext } from './select-context'
 import useWarning from '../utils/use-warning'
 import Ellipsis from '../shared/ellipsis'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   value?: string
@@ -36,7 +36,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
   ...props
 }: React.PropsWithChildren<SelectOptionProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { updateValue, value, disableAll } = useSelectContext()
   const isDisabled = useMemo(() => disabled || disableAll, [disabled, disableAll])
   const isLabel = useMemo(() => label || divider, [label, divider])
@@ -137,5 +137,5 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
 
 SelectOptionComponent.defaultProps = defaultProps
 SelectOptionComponent.displayName = 'GeistSelectOption'
-const SelectOption = withScaleable(SelectOptionComponent)
+const SelectOption = withScale(SelectOptionComponent)
 export default SelectOption
