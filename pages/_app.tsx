@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { CssBaseline, GeistProvider, useTheme, GeistUIThemes, Image } from 'components'
 import ConfigContext from 'lib/config-provider'
@@ -17,18 +17,6 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
     setCustomTheme(theme)
     setThemeType(theme.type)
   }
-  const InnerApp = useMemo(() => {
-    if (!(Component as any).isMDXComponent) return <Component {...pageProps} />
-    return (
-      <MDXProvider
-        components={{
-          a: HybridLink,
-          img: Image,
-        }}>
-        <Component {...pageProps} />
-      </MDXProvider>
-    )
-  }, [Component, pageProps])
 
   useEffect(() => {
     const theme = window.localStorage.getItem('theme')
@@ -82,7 +70,13 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           onThemeChange={themeChangeHandle}
           onThemeTypeChange={type => setThemeType(type)}>
           <Layout.Menu />
-          {InnerApp}
+          <MDXProvider
+            components={{
+              a: HybridLink,
+              img: Image,
+            }}>
+            <Component {...pageProps} />
+          </MDXProvider>
         </ConfigContext>
         <style global jsx>{`
           html {
