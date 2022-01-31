@@ -22,12 +22,12 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
   label,
   disabled,
 }: React.PropsWithChildren<TabsItemProps> & typeof defaultProps) => {
-  const theme = useTheme()
   const { SCALES } = useScale()
   const { register, currentValue, leftSpace } = useTabsContext()
   const isActive = useMemo(() => currentValue === value, [currentValue, value])
 
   const TabsInternalCell: React.FC<TabsInternalCellProps> = ({ onClick }) => {
+    const theme = useTheme()
     const { currentValue } = useTabsContext()
     const clickHandler = () => {
       if (disabled) return
@@ -99,7 +99,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
             transition: opacity, transform 200ms ease-in;
             opacity: 0;
           }
-          .tab.active:after {
+          .active:after {
             opacity: 1;
             transform: scaleX(1);
           }
@@ -110,10 +110,10 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
           .tab:first-of-type {
             margin-left: 0;
           }
-          .tab.active {
+          .active {
             color: ${theme.palette.foreground};
           }
-          .tab.disabled {
+          .disabled {
             color: ${theme.palette.accents_3};
             cursor: not-allowed;
           }
