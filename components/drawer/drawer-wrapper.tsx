@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
-import useScaleable, { withPureProps } from '../use-scaleable'
+import useScale, { withPureProps } from '../use-scale'
 import { DrawerPlacement, getDrawerTransform } from './helper'
 
 interface Props {
@@ -26,7 +26,7 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   ...props
 }: React.PropsWithChildren<DrawerWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const modalContent = useRef<HTMLDivElement>(null)
   const tabStart = useRef<HTMLDivElement>(null)
   const tabEnd = useRef<HTMLDivElement>(null)

@@ -5,7 +5,7 @@ import useTheme from '../use-theme'
 import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'
 import { getHostFromUrl } from './helpers'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type ImageAnchorProps = Omit<React.AnchorHTMLAttributes<any>, keyof LinkProps>
 
@@ -116,7 +116,7 @@ const ImageBrowserComponent = React.forwardRef<
     ref: React.Ref<HTMLDivElement>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const colors = useMemo(
       () => getBrowserColors(invert, theme.palette),
       [invert, theme.palette],
@@ -213,5 +213,5 @@ const ImageBrowserComponent = React.forwardRef<
 
 ImageBrowserComponent.defaultProps = defaultProps
 ImageBrowserComponent.displayName = 'GeistImageBrowser'
-const ImageBrowser = withScaleable(ImageBrowserComponent)
+const ImageBrowser = withScale(ImageBrowserComponent)
 export default ImageBrowser

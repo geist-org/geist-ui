@@ -8,7 +8,7 @@ import { useTreeContext } from './tree-context'
 import TreeFolderIcon from './tree-folder-icon'
 import TreeStatusIcon from './tree-status-icon'
 import { sortChildren, makeChildPath, stopPropagation } from './tree-help'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 interface Props {
   name: string

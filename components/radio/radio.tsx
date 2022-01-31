@@ -6,7 +6,7 @@ import { pickChild } from '../utils/collections'
 import useWarning from '../utils/use-warning'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type RadioTypes = NormalTypes
 export interface RadioEventTarget {
@@ -48,7 +48,7 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
   ...props
 }: React.PropsWithChildren<RadioProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfChecked, setSelfChecked] = useState<boolean>(!!checked)
   const { value: groupValue, disabledAll, inGroup, updateState } = useRadioContext()
   const [withoutDescChildren, DescChildren] = pickChild(children, RadioDescription)
@@ -185,5 +185,5 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
 
 RadioComponent.defaultProps = defaultProps
 RadioComponent.displayName = 'GeistRadio'
-const Radio = withScaleable(RadioComponent)
+const Radio = withScale(RadioComponent)
 export default Radio

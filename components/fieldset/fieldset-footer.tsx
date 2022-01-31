@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -19,7 +19,7 @@ const FieldsetFooterComponent: React.FC<React.PropsWithChildren<FieldsetFooterPr
   ...props
 }: React.PropsWithChildren<FieldsetFooterProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <footer className={className} {...withPureProps(props)}>
@@ -51,5 +51,5 @@ const FieldsetFooterComponent: React.FC<React.PropsWithChildren<FieldsetFooterPr
 
 FieldsetFooterComponent.defaultProps = defaultProps
 FieldsetFooterComponent.displayName = 'GeistFieldsetFooter'
-const FieldsetFooter = withScaleable(FieldsetFooterComponent)
+const FieldsetFooter = withScale(FieldsetFooterComponent)
 export default FieldsetFooter

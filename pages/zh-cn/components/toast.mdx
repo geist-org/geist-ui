@@ -1,5 +1,4 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { useToasts, Button, Spacer } from 'components'
+import { Layout, Attributes } from 'lib/components'
 
 export const meta = {
   title: '通知 Toast',
@@ -8,129 +7,8 @@ export const meta = {
 
 ## Toast / 通知
 
-显示重要的全局通知信息。
+通知组件仅支持 Hooks 方式调用，请在 [useToast](/zh-cn/hooks/use-toast 'Toast Hooks') 文档中查看详情。
 
-<Playground
-  desc="基础示例。"
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: '你正在浏览文档站点。' })
-  return <Button onClick={click}>显示通知</Button>
-}
-`}
-/>
-
-<Playground
-  title="多行"
-  desc="显示多行或过长的文本。"
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: 'CSS是一门基于规则的语言 —— 你能定义用于你的网页中特定元素样式的一组规则. 比如“我希望页面中的主标题是红色的大字”' })
-  return <Button onClick={click}>显示通知</Button>
-}
-`}
-/>
-
-<Playground
-  title="动作"
-  desc="在通知中附加一个按钮。"
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const action = {
-    name: '点击我',
-    handler: () => alert('由 Toast / 通知组件触发。')
-  }
-  const click = () => setToast({
-    text: '我正在浏览文档站点。',
-    actions: [action],
-  })
-  return <Button onClick={click} type="secondary">显示通知</Button>
-}
-`}
-/>
-
-<Playground
-  title="取消"
-  desc="使用 `passive` (消极地) 改变按钮的状态与样式。"
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const action = {
-    name: '取消',
-    passive: true,
-    handler: (event, cancel) => cancel()
-  }
-  const click = () => setToast({
-    text: '我正在浏览文档站点。',
-    actions: [action],
-  })
-  return <Button onClick={click}>显示通知</Button>
-}
-`}
-/>
-
-<Playground
-  title="类型"
-  scope={{ Button, useToasts, Spacer }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const click = type => setToast({
-    text: '我正在浏览文档站点。',
-    type,
-  })
-  return (
-    <>
-    <Button onClick={() => click('success')} type="success">显示成功状态</Button>
-    <Spacer h={.5} />
-    <Button onClick={() => click('warning')} type="warning">显示警告状态</Button>
-    </>
-  )
-}
-`}
-/>
-
-<Attributes edit="/pages/zh-cn/components/toast.mdx">
-<Attributes.Title>useToasts</Attributes.Title>
-
-```ts
-const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
-```
-
-<Attributes.Title>Toast</Attributes.Title>
-
-```ts
-interface Toast {
-  text?: string
-  type?: ToastTypes
-  delay?: number
-  actions?: Array<ToastAction>
-}
-```
-
-<Attributes.Title>ToastAction</Attributes.Title>
-
-```ts
-interface ToastAction {
-  name: string
-  handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void
-  passive?: boolean
-}
-```
-
-<Attributes.Title>ToastTypes</Attributes.Title>
-
-```ts
-type ToastTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
-```
-
-</Attributes>
+<Attributes edit="/pages/zh-cn/components/toast.mdx" />
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -56,6 +56,16 @@ const nextConfig = {
         destination: '/zh-cn',
         permanent: true,
       },
+      {
+        source: '/en-us/guide/scaleable',
+        destination: '/en-us/guide/scale',
+        permanent: true,
+      },
+      {
+        source: '/zh-cn/guide/scaleable',
+        destination: '/zh-cn/guide/scale',
+        permanent: true,
+      },
     ]
   },
 }

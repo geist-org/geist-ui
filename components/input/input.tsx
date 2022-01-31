@@ -6,7 +6,7 @@ import InputIcon from './input-icon'
 import InputClearIcon from './input-icon-clear'
 import { getColors } from './styles'
 import { Props, defaultProps } from './input-props'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & NativeAttrs
@@ -54,7 +54,7 @@ const InputComponent = React.forwardRef<
     ref: React.Ref<HTMLInputElement | null>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const inputRef = useRef<HTMLInputElement>(null)
     useImperativeHandle(ref, () => inputRef.current)
 
@@ -265,5 +265,5 @@ const InputComponent = React.forwardRef<
 
 InputComponent.defaultProps = defaultProps
 InputComponent.displayName = 'GeistInput'
-const Input = withScaleable(InputComponent)
+const Input = withScale(InputComponent)
 export default Input

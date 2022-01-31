@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from 'react'
 import { TabsInternalCellProps, useTabsContext } from './tabs-context'
 import useTheme from '../use-theme'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   label: string | React.ReactNode
@@ -23,7 +23,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
   disabled,
 }: React.PropsWithChildren<TabsItemProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { register, currentValue, leftSpace } = useTabsContext()
   const isActive = useMemo(() => currentValue === value, [currentValue, value])
 
@@ -133,6 +133,6 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
 
 TabsItemComponent.defaultProps = defaultProps
 TabsItemComponent.displayName = 'GeistTabsItem'
-const TabsItem = withScaleable(TabsItemComponent)
+const TabsItem = withScale(TabsItemComponent)
 export default TabsItem
 /* eslint-enable */

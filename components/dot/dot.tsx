@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemes } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type DotTypes = NormalTypes
 interface Props {
@@ -35,7 +35,7 @@ const DotComponent: React.FC<React.PropsWithChildren<DotProps>> = ({
   ...props
 }: React.PropsWithChildren<DotProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const color = useMemo(() => getColor(type, theme), [type, theme])
   return (
     <span className={`dot ${className}`} {...withPureProps(props)}>
@@ -77,5 +77,5 @@ const DotComponent: React.FC<React.PropsWithChildren<DotProps>> = ({
 
 DotComponent.defaultProps = defaultProps
 DotComponent.displayName = 'GeistDot'
-const Dot = withScaleable(DotComponent)
+const Dot = withScale(DotComponent)
 export default Dot

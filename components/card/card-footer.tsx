@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   disableAutoMargin?: boolean
@@ -22,7 +22,7 @@ const CardFooterComponent: React.FC<React.PropsWithChildren<CardFooterProps>> = 
   ...props
 }: CardFooterProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <footer
@@ -59,5 +59,5 @@ const CardFooterComponent: React.FC<React.PropsWithChildren<CardFooterProps>> = 
 
 CardFooterComponent.defaultProps = defaultProps
 CardFooterComponent.displayName = 'GeistCardFooter'
-const CardFooter = withScaleable(CardFooterComponent)
+const CardFooter = withScale(CardFooterComponent)
 export default CardFooter

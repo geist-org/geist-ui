@@ -5,7 +5,7 @@ import Expand from '../shared/expand'
 import { useCollapseContext } from './collapse-context'
 import useCurrentState from '../utils/use-current-state'
 import useWarning from '../utils/use-warning'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   title: string
@@ -36,7 +36,7 @@ const CollapseComponent: React.FC<React.PropsWithChildren<CollapseProps>> = ({
   ...props
 }: React.PropsWithChildren<CollapseProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { values, updateValues } = useCollapseContext()
   const [visible, setVisible, visibleRef] = useCurrentState<boolean>(initialVisible)
 
@@ -133,5 +133,5 @@ const CollapseComponent: React.FC<React.PropsWithChildren<CollapseProps>> = ({
 
 CollapseComponent.defaultProps = defaultProps
 CollapseComponent.displayName = 'GeistCollapse'
-const Collapse = withScaleable(CollapseComponent)
+const Collapse = withScale(CollapseComponent)
 export default Collapse

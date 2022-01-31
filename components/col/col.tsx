@@ -1,5 +1,5 @@
 import React from 'react'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 interface Props {
   span?: number

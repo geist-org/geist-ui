@@ -1,7 +1,5 @@
-import Layout from 'lib/components/layout'
-import { Note, Code, Spacer, Link, Display } from 'components'
-import NextLink from 'next/link'
-import Colors from 'lib/components/displays/colors'
+import { Code, Display } from 'components'
+import { Layout, Colors } from 'lib/components'
 
 export const meta = {
   title: '色彩',
@@ -13,12 +11,10 @@ export const meta = {
 
 默认的色彩展示。
 
-<Spacer h={2} />
-
 ### 主要的
 
 你可以在自己的应用中使用这些色彩，所有的色彩值都会跟随主题而变化。
-想要自定义一些颜色？请阅读 <NextLink href="/zh-cn/guide/themes"><Link color>主题</Link></NextLink> 了解更多的细节。
+想要自定义一些颜色？请阅读 [use-theme](/zh-cn/hooks/use-theme) 文档了解更多的细节。
 
 <Display width="90%" caption={<span>从 <Code>useTheme</Code> 函数中获取调色板。</span>}>
 
@@ -33,32 +29,26 @@ const myComponent = () => {
 ```
 
 </Display>
-<Spacer h={1} />
 <Colors type="normal" />
-<Spacer h={3} />
 
 ### 状态
 
 使用不同的颜色表达情感的变化。
 
-#### 成功
+### 成功
 
 <Colors type="success" />
-<Spacer h={3} />
 
-#### 错误
+### 错误
 
 <Colors type="error" />
-<Spacer h={3} />
 
-#### 警告
+### 警告
 
 <Colors type="warning" />
-<Spacer h={3} />
 
-#### 高亮
+### 高亮
 
 <Colors type="highlight" />
-<Spacer h={3} />
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

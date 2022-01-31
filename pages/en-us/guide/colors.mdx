@@ -1,7 +1,5 @@
-import Layout from 'lib/components/layout'
-import { Note, Code, Spacer, Link, Display } from 'components'
-import NextLink from 'next/link'
-import Colors from 'lib/components/displays/colors'
+import { Code, Display } from 'components'
+import { Layout, Colors } from 'lib/components'
 
 export const meta = {
   title: 'Colors',
@@ -13,12 +11,10 @@ export const meta = {
 
 Default colors for themes.
 
-<Spacer h={2} />
-
 ### PRIMARY
 
 You can use any color anywhere, all colors change with the theme.
-If you want to customize your colors, please read <NextLink href="/en-us/guide/themes"><Link color>Themes</Link></NextLink> to learn more.
+If you want to customize your colors, please read [use-theme](/en-us/hooks/use-theme) to learn more.
 
 <Display width="90%" caption={<span>Get palette from <Code>useTheme</Code>.</span>}>
 
@@ -33,9 +29,7 @@ const myComponent = () => {
 ```
 
 </Display>
-<Spacer h={1} />
 <Colors type="normal" />
-<Spacer h={3} />
 
 ### STATUS
 
@@ -43,38 +37,26 @@ Use different colors to express more emotional changes.
 
 ### Success
 
-<Spacer h={0.75} />
 <Colors type="success" />
-<Spacer h={3} />
 
 ### Error
 
-<Spacer h={0.75} />
 <Colors type="error" />
-<Spacer h={3} />
 
 ### Warning
 
-<Spacer h={0.75} />
 <Colors type="warning" />
-<Spacer h={3} />
 
 ### Cyan
 
-<Spacer h={0.75} />
 <Colors type="cyan" />
-<Spacer h={3} />
 
 ### Violet
 
-<Spacer h={0.75} />
 <Colors type="violet" />
-<Spacer h={3} />
 
 ### Highlight
 
-<Spacer h={0.75} />
 <Colors type="highlight" />
-<Spacer h={3} />
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

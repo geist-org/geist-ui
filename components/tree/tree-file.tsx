@@ -4,7 +4,7 @@ import TreeFileIcon from './tree-file-icon'
 import { useTreeContext } from './tree-context'
 import TreeIndents from './tree-indents'
 import { makeChildPath, stopPropagation } from './tree-help'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 interface Props {
   name: string

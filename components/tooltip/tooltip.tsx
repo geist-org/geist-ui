@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import TooltipContent, { TooltipIconOffset } from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
 import { TriggerTypes, Placement, SnippetTypes } from '../utils/prop-types'
-import { withPureProps, withScaleable } from '../use-scaleable'
+import { withPureProps, withScale } from '../use-scale'
 import { getRect } from './helper'
 
 export type TooltipOnVisibleChange = (visible: boolean) => void
@@ -131,5 +131,5 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
 
 TooltipComponent.defaultProps = defaultProps
 TooltipComponent.displayName = 'GeistTooltip'
-const Tooltip = withScaleable(TooltipComponent)
+const Tooltip = withScale(TooltipComponent)
 export default Tooltip

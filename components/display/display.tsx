@@ -1,6 +1,6 @@
 import React, { ReactNode, useMemo } from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   caption?: ReactNode | string
@@ -25,7 +25,7 @@ const DisplayComponent: React.FC<React.PropsWithChildren<DisplayProps>> = ({
   ...props
 }: React.PropsWithChildren<DisplayProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const showShadow = useMemo(() => shadow && theme.type !== 'dark', [theme.type, shadow])
 
   return (
@@ -79,5 +79,5 @@ const DisplayComponent: React.FC<React.PropsWithChildren<DisplayProps>> = ({
 
 DisplayComponent.defaultProps = defaultProps
 DisplayComponent.displayName = 'GeistDisplay'
-const Display = withScaleable(DisplayComponent)
+const Display = withScale(DisplayComponent)
 export default Display

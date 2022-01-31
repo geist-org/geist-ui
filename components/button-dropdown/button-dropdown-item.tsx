@@ -4,7 +4,7 @@ import { getColor } from './styles'
 import { useButtonDropdown } from './button-dropdown-context'
 import Loading from '../loading'
 import { NormalTypes } from '../utils/prop-types'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 export type ButtonDropdownItemTypes = NormalTypes
 

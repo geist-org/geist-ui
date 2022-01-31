@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
-import useScaleable, { withPureProps } from '../use-scaleable'
+import useScale, { withPureProps } from '../use-scale'
 
 interface Props {
   className?: string
@@ -23,7 +23,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   ...props
 }: React.PropsWithChildren<ModalWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const modalContent = useRef<HTMLDivElement>(null)
   const tabStart = useRef<HTMLDivElement>(null)
   const tabEnd = useRef<HTMLDivElement>(null)

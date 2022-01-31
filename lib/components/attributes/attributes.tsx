@@ -1,6 +1,6 @@
-import React from 'react'
-import { Spacer } from 'components'
-import VirtualAnchor from 'lib/components/anchor'
+import React, { useMemo } from 'react'
+import { Spacer, Divider, Text } from 'components'
+import { VirtualAnchor } from '../pures'
 import { useConfigs } from '../../config-context'
 import Contributors from './contributors'
 import AttributesTitle from './attributes-title'
@@ -14,17 +14,28 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
   ({ edit, children }) => {
     const { isChinese } = useConfigs()
     const path = edit.replace('/pages', 'pages')
+    const apiTitles = useMemo(() => {
+      if (React.Children.count(children) === 0) return null
+      return (
+        <>
+          <Spacer h={1} />
+          <h3>
+            <VirtualAnchor>APIs</VirtualAnchor>
+            {isChinese && ' / 接口文档'}
+          </h3>
+          <AttributesTable>{children}</AttributesTable>
+        </>
+      )
+    }, [children, isChinese])
 
     return (
       <>
-        <Spacer h={5} />
-        <h3>
-          <VirtualAnchor>APIs</VirtualAnchor>
-          {isChinese && ' / 接口文档'}
-        </h3>
-        <AttributesTable>{children}</AttributesTable>
-        <Spacer h={3} />
-        <h4 className="contributor-title">{isChinese ? '文档贡献者' : 'Contributors'}</h4>
+        {apiTitles}
+        <Divider font="12px" mt="80px">
+          <Text p b type="secondary" style={{ userSelect: 'none' }}>
+            {isChinese ? '文档贡献者' : 'Contributors'}
+          </Text>
+        </Divider>
         <Contributors path={path} />
       </>
     )

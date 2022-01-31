@@ -1,7 +1,7 @@
 import React from 'react'
 import PaginationItem from './pagination-item'
 import { usePaginationContext } from './pagination-context'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 export type PaginationPreviousProps = React.ButtonHTMLAttributes<any>
 

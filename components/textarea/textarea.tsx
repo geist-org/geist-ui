@@ -2,7 +2,7 @@ import React, { useRef, useImperativeHandle, useEffect, useMemo, useState } from
 import useTheme from '../use-theme'
 import { NormalTypes, tuple } from '../utils/prop-types'
 import { getColors } from '../input/styles'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 const resizeTypes = tuple('none', 'both', 'horizontal', 'vertical', 'initial', 'inherit')
 export type TextareaResizes = typeof resizeTypes[number]
@@ -55,7 +55,7 @@ const TextareaComponent = React.forwardRef<
     ref: React.Ref<HTMLTextAreaElement | null>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     useImperativeHandle(ref, () => textareaRef.current)
     const isControlledComponent = useMemo(() => value !== undefined, [value])
@@ -170,5 +170,5 @@ const TextareaComponent = React.forwardRef<
 
 TextareaComponent.defaultProps = defaultProps
 TextareaComponent.displayName = 'GeistTextarea'
-const Textarea = withScaleable(TextareaComponent)
+const Textarea = withScale(TextareaComponent)
 export default Textarea

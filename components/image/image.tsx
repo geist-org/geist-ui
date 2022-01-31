@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import useTheme from '../use-theme'
 import ImageSkeleton from './image.skeleton'
 import { transformDataSource } from './helpers'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   src: string
@@ -27,9 +27,9 @@ const ImageComponent: React.FC<ImageProps> = ({
   maxDelay,
   ...props
 }: ImageProps & typeof defaultProps) => {
-  const { SCALES, getScaleableProps } = useScaleable()
-  const width = getScaleableProps(['width', 'w'])
-  const height = getScaleableProps(['height', 'h'])
+  const { SCALES, getScaleProps } = useScale()
+  const width = getScaleProps(['width', 'w'])
+  const height = getScaleProps(['height', 'h'])
   const showAnimation = !disableSkeleton && width && height
 
   const theme = useTheme()
@@ -92,5 +92,5 @@ const ImageComponent: React.FC<ImageProps> = ({
 
 ImageComponent.defaultProps = defaultProps
 ImageComponent.displayName = 'GeistImage'
-const Image = withScaleable(ImageComponent)
+const Image = withScale(ImageComponent)
 export default Image

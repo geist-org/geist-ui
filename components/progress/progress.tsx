@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import { useProportions } from '../utils/calculations'
 import { GeistUIThemesPalette } from '../themes/presets'
 import { NormalTypes } from '../utils/prop-types'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type ProgressColors = {
   [key: number]: string
@@ -64,7 +64,7 @@ const ProgressComponent: React.FC<ProgressProps> = ({
   ...props
 }: ProgressProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const percentValue = useProportions(value, max)
   const currentColor = getCurrentColor(percentValue, theme.palette, type, colors)
   const fixed = fixedTop || fixedBottom
@@ -122,5 +122,5 @@ const ProgressComponent: React.FC<ProgressProps> = ({
 
 ProgressComponent.defaultProps = defaultProps
 ProgressComponent.displayName = 'GeistProgress'
-const Progress = withScaleable(ProgressComponent)
+const Progress = withScale(ProgressComponent)
 export default Progress

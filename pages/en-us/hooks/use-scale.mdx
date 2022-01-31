@@ -1,0 +1,155 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, useTheme } from 'components'
+
+export const meta = {
+  title: 'useScale',
+  group: 'Development',
+  index: 103,
+}
+
+## useScale
+
+Remember the elastic scaling feature mentioned in the [scale](/en-us/guide/scale 'Scale') subsection,
+which gave the Geist components amazing imagination and extensibility,
+and now you can add elastic scaling features to your own components with the help of the `useScale` hooks.
+
+### Scale the width
+
+As a first example, let's prepare a simple component with a fixed width:
+
+```tsx
+const MyComponent = ({ width: string = '20px' }) => {
+  return <div style={{ width }}>Scale Component</div>
+}
+```
+
+Although the component accepts a `string` parameter to define the `width`, we can't control the multiplier of the width,
+say `1.35` times the width, unless it's manually calculated and then filled in, which seems fine,
+but when our component can set more than 10 styles, the calculation of these values is very tedious.
+
+Now we try to bind the component to the scale of Geist:
+
+```tsx
+import { withScale, useScale } from '@geist-ui/core'
+
+const MyComponent = () => {
+  const { SCALES } = useScale()
+  return <div style={{ width: SCALES.width(1.25) }}>Scale Component</div>
+}
+
+export default withScale(MyComponent)
+```
+
+`withScale` can transform any component into a dynamically scaled component and automatically **add props and types** to the component.
+You just need to set `useScale` within the component to get the `SCALES`, and then add the bindings for the `SCALES` for each style.
+
+The default unit of Scale is `16px`, when we need to set the default width to `20px`, Obviously `20px` is 1.25 times more than `16px`,
+so we get `SCALES.width(1.25)`.
+
+The components of the above example should be used as follows:
+
+```tsx
+<MyComponent width={0.5} />
+<MyComponent width="10px" />
+<MyComponent width="auto" />
+<MyComponent unit="10rem" />
+```
+
+### Unconventional defaults
+
+In a few components where we want the default width to be `auto` (or others), and allow user-defined `width` to override this value,
+then within the Scale component we want to follow the following rules:
+
+- When the initial value is a special character (`initial` etc.), the component cannot be scaled by a factor of.
+- The user can still override the initial value with the specified value.
+
+For a simple component, the following example can be used to illustrate:
+
+```tsx
+const MyComponent = () => {
+  const { SCALES } = useScale()
+  return <div style={{ width: SCALES.width(1, 'auto') }}>Fixed Component</div>
+}
+
+export default withScale(MyComponent)
+```
+
+When we use this component, the width cannot be scaled by a multiple anymore:
+
+```tsx
+<MyComponent width={0.1} />
+
+// -> The width is still "auto"
+// -> "auto" cannot be calculated mathematically
+```
+
+When we enter specific values to override, it still works well:
+
+```tsx
+<MyComponent width="100px" />
+
+// -> The width is "100px"
+```
+
+### Get native props
+
+When a component is combined with `withScale`, multiple props and corresponding types are automatically added,
+we can use the `useScale` function to get the corresponding value.
+Note, however, that the value obtained from the `useScale` function is computed, not the native value.
+
+```tsx
+const MyComponent = () => {
+  const { SCALES } = useScale()
+
+  console.log(SCALES.width(1))
+
+  return null
+}
+
+<MyComponent width={2} />  // output -> 'calc(2 * 16px)'
+<MyComponent />            // output -> '16px'
+```
+
+The value obtained from `SCALES.width` is not exactly equal to the user input (`width=`),
+because we want to make sure that the component works even if the user does nothing.
+So, if you need to get the **native value** of the user input, use a separate function to get:
+
+```ts
+const MyComponent = () => {
+  const { getScaleProps } = useScale()
+
+  console.log(getScaleProps('width'))
+
+  return null
+}
+
+<MyComponent width={2} />     // output -> 2
+<MyComponent width="20px" />  // output -> '20px'
+<MyComponent />               // output -> undefined
+```
+
+
+<Attributes edit="/pages/en-us/hooks/use-scale.mdx">
+<Attributes.Title>withScale</Attributes.Title>
+
+```ts
+type withScale = (Render: React.ComponentType) => React.ComponentType
+```
+
+<Attributes.Title>useScale</Attributes.Title>
+
+```ts
+type useScale = () => ScaleConfig
+
+type ScaleConfig = {
+  SCALES: DynamicScales
+  // Get the native value of scale prop
+  getScaleProps: GetScalePropsFunction
+  // Base value of the current component
+  unit: string
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

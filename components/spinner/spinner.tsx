@@ -1,7 +1,7 @@
 import React from 'react'
 import useTheme from '../use-theme'
 import { GeistUIThemes } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -107,7 +107,7 @@ const SpinnerComponent: React.FC<SpinnerProps> = ({
   ...props
 }: SpinnerProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <div className={`spinner ${className}`} {...withPureProps(props)}>
@@ -137,5 +137,5 @@ const SpinnerComponent: React.FC<SpinnerProps> = ({
 
 SpinnerComponent.defaultProps = defaultProps
 SpinnerComponent.displayName = 'GeistSpinner'
-const Spinner = withScaleable(SpinnerComponent)
+const Spinner = withScale(SpinnerComponent)
 export default Spinner

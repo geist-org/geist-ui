@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type ToggleTypes = NormalTypes
 export interface ToggleEventTarget {
@@ -49,7 +49,7 @@ const ToggleComponent: React.FC<ToggleProps> = ({
   ...props
 }: ToggleProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
 
   const changeHandle = useCallback(
@@ -176,5 +176,5 @@ const ToggleComponent: React.FC<ToggleProps> = ({
 
 ToggleComponent.defaultProps = defaultProps
 ToggleComponent.displayName = 'GeistToggle'
-const Toggle = withScaleable(ToggleComponent)
+const Toggle = withScale(ToggleComponent)
 export default Toggle

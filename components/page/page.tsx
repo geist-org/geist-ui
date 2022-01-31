@@ -3,7 +3,7 @@ import { tuple } from '../utils/prop-types'
 import useTheme from '../use-theme'
 import PageContent from './page-content'
 import { hasChild } from '../utils/collections'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 const renderMode = tuple('default', 'effect', 'effect-seo')
 
@@ -64,7 +64,7 @@ const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
   ...props
 }: React.PropsWithChildren<PageProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const showDot = useMemo<boolean>(() => {
     if (theme.type === 'dark') return false
     return dotBackdrop
@@ -117,5 +117,5 @@ const PageComponent: React.FC<React.PropsWithChildren<PageProps>> = ({
 
 PageComponent.defaultProps = defaultProps
 PageComponent.displayName = 'GeistPage'
-const Page = withScaleable(PageComponent)
+const Page = withScale(PageComponent)
 export default Page

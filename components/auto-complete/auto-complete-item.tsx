@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { useAutoCompleteContext } from './auto-complete-context'
 import Ellipsis from '../shared/ellipsis'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   value: string
@@ -23,7 +23,7 @@ const AutoCompleteItemComponent: React.FC<
   isLabelOnly,
 }: React.PropsWithChildren<AutoCompleteItemProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { value, updateValue, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
     updateValue && updateValue(identValue)
@@ -79,5 +79,5 @@ const AutoCompleteItemComponent: React.FC<
 
 AutoCompleteItemComponent.defaultProps = defaultProps
 AutoCompleteItemComponent.displayName = 'GeistAutoCompleteItem'
-const AutoCompleteItem = withScaleable(AutoCompleteItemComponent)
+const AutoCompleteItem = withScale(AutoCompleteItemComponent)
 export default AutoCompleteItem

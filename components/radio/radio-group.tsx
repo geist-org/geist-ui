@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { RadioContext } from './radio-context'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   value?: string | number
@@ -30,7 +30,7 @@ const RadioGroupComponent: React.FC<React.PropsWithChildren<RadioGroupProps>> = 
   useRow,
   ...props
 }: React.PropsWithChildren<RadioGroupProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfVal, setSelfVal] = useState<string | number | undefined>(initialValue)
   const updateState = (nextValue: string | number) => {
     setSelfVal(nextValue)
@@ -83,5 +83,5 @@ const RadioGroupComponent: React.FC<React.PropsWithChildren<RadioGroupProps>> = 
 
 RadioGroupComponent.defaultProps = defaultProps
 RadioGroupComponent.displayName = 'GeistRadioGroup'
-const RadioGroup = withScaleable(RadioGroupComponent)
+const RadioGroup = withScale(RadioGroupComponent)
 export default RadioGroup

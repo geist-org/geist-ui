@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -16,7 +16,7 @@ const PageFooterComponent: React.FC<React.PropsWithChildren<PageFooterProps>> = 
   children,
   ...props
 }: React.PropsWithChildren<PageFooterProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <footer {...withPureProps(props)}>
@@ -38,5 +38,5 @@ const PageFooterComponent: React.FC<React.PropsWithChildren<PageFooterProps>> = 
 
 PageFooterComponent.defaultProps = defaultProps
 PageFooterComponent.displayName = 'GeistPageFooter'
-const PageFooter = withScaleable(PageFooterComponent)
+const PageFooter = withScale(PageFooterComponent)
 export default PageFooter

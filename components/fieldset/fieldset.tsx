@@ -7,7 +7,7 @@ import FieldsetContent from './fieldset-content'
 import { hasChild, pickChild } from '../utils/collections'
 import { useFieldset } from './fieldset-context'
 import useWarning from '../utils/use-warning'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   value?: string
@@ -39,7 +39,7 @@ const FieldsetComponent: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
   ...props
 }: React.PropsWithChildren<FieldsetProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { inGroup, currentValue, register } = useFieldset()
   const [hidden, setHidden] = useState<boolean>(inGroup)
 
@@ -104,5 +104,5 @@ const FieldsetComponent: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
 
 FieldsetComponent.defaultProps = defaultProps
 FieldsetComponent.displayName = 'GeistFieldset'
-const Fieldset = withScaleable(FieldsetComponent)
+const Fieldset = withScale(FieldsetComponent)
 export default Fieldset

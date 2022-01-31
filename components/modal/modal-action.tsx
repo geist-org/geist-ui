@@ -3,7 +3,7 @@ import css from 'styled-jsx/css'
 import useTheme from '../use-theme'
 import { useModalContext } from './modal-context'
 import Button, { ButtonProps } from '../button/button'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
   close: () => void
@@ -40,7 +40,7 @@ const ModalActionComponent = React.forwardRef<
     ref: React.Ref<HTMLButtonElement | null>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const btnRef = useRef<HTMLButtonElement>(null)
     const { close } = useModalContext()
     useImperativeHandle(ref, () => btnRef.current)
@@ -105,5 +105,5 @@ const ModalActionComponent = React.forwardRef<
 
 ModalActionComponent.defaultProps = defaultProps
 ModalActionComponent.displayName = 'GeistModalAction'
-const ModalAction = withScaleable(ModalActionComponent)
+const ModalAction = withScale(ModalActionComponent)
 export default ModalAction

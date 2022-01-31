@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
-import { withPureProps } from '../use-scaleable'
+import { withPureProps } from '../use-scale'
 
 type Justify = 'start' | 'end' | 'center' | 'space-around' | 'space-between'
 type Align = 'top' | 'middle' | 'bottom'

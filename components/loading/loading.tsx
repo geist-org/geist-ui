@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 export type LoadingTypes = NormalTypes
 interface Props {
@@ -46,7 +46,7 @@ const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   ...props
 }: React.PropsWithChildren<LoadingProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const bgColor = useMemo(
     () => getIconBgColor(type, theme.palette, color),
     [type, theme.palette, color],
@@ -135,5 +135,5 @@ const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
 
 LoadingComponent.defaultProps = defaultProps
 LoadingComponent.displayName = 'GeistLoading'
-const Loading = withScaleable(LoadingComponent)
+const Loading = withScale(LoadingComponent)
 export default Loading

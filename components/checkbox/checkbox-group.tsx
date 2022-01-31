@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { CheckboxContext } from './checkbox-context'
 import useWarning from '../utils/use-warning'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   value: string[]
@@ -26,7 +26,7 @@ const CheckboxGroupComponent: React.FC<React.PropsWithChildren<CheckboxGroupProp
   className,
   ...props
 }: CheckboxGroupProps & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfVal, setSelfVal] = useState<string[]>([])
   if (!value) {
     value = []
@@ -79,6 +79,6 @@ const CheckboxGroupComponent: React.FC<React.PropsWithChildren<CheckboxGroupProp
 
 CheckboxGroupComponent.defaultProps = defaultProps
 CheckboxGroupComponent.displayName = 'GeistCheckboxGroup'
-const CheckboxGroup = withScaleable(CheckboxGroupComponent)
+const CheckboxGroup = withScale(CheckboxGroupComponent)
 
 export default CheckboxGroup

@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withPureProps, withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -17,7 +17,7 @@ const CardContentComponent: React.FC<React.PropsWithChildren<CardContentProps>> 
   children,
   ...props
 }: CardContentProps & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <div className={`content ${className}`} {...withPureProps(props)}>
@@ -44,5 +44,5 @@ const CardContentComponent: React.FC<React.PropsWithChildren<CardContentProps>> 
 
 CardContentComponent.defaultProps = defaultProps
 CardContentComponent.displayName = 'GeistCardContent'
-const CardContent = withScaleable(CardContentComponent)
+const CardContent = withScale(CardContentComponent)
 export default CardContent
