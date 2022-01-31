@@ -58,7 +58,7 @@ exports[`Tabs should render correctly 1`] = `
             transition: opacity, transform 200ms ease-in;
             opacity: 0;
           }
-          .tab.active:after {
+          .active:after {
             opacity: 1;
             transform: scaleX(1);
           }
@@ -69,10 +69,10 @@ exports[`Tabs should render correctly 1`] = `
           .tab:first-of-type {
             margin-left: 0;
           }
-          .tab.active {
+          .active {
             color: #000;
           }
-          .tab.disabled {
+          .disabled {
             color: #999;
             cursor: not-allowed;
           }
@@ -133,7 +133,7 @@ exports[`Tabs should render correctly 1`] = `
             transition: opacity, transform 200ms ease-in;
             opacity: 0;
           }
-          .tab.active:after {
+          .active:after {
             opacity: 1;
             transform: scaleX(1);
           }
@@ -144,10 +144,10 @@ exports[`Tabs should render correctly 1`] = `
           .tab:first-of-type {
             margin-left: 0;
           }
-          .tab.active {
+          .active {
             color: #000;
           }
-          .tab.disabled {
+          .disabled {
             color: #999;
             cursor: not-allowed;
           }
@@ -248,7 +248,7 @@ exports[`Tabs should work correctly with different styles 1`] = `
             transition: opacity, transform 200ms ease-in;
             opacity: 0;
           }
-          .tab.active:after {
+          .active:after {
             opacity: 1;
             transform: scaleX(1);
           }
@@ -259,10 +259,10 @@ exports[`Tabs should work correctly with different styles 1`] = `
           .tab:first-of-type {
             margin-left: 0;
           }
-          .tab.active {
+          .active {
             color: #000;
           }
-          .tab.disabled {
+          .disabled {
             color: #999;
             cursor: not-allowed;
           }
