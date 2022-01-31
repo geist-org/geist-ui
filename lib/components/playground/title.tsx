@@ -1,5 +1,5 @@
 import React from 'react'
-import VirtualAnchor from 'lib/components/anchor'
+import { VirtualAnchor } from '../pures'
 
 export type TitleProps = {
   title: React.ReactNode | string

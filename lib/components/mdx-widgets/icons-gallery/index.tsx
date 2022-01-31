@@ -17,7 +17,7 @@ const ImportSnippet: React.FC<React.PropsWithChildren<unknown>> = ({ children })
   )
 }
 
-const Icons: React.FC = () => {
+const IconsGallery: React.FC<unknown> = () => {
   const { isChinese } = useConfigs()
   const { setVisible, bindings: modalBindings } = useModal()
   const { state: query, bindings } = useInput('')
@@ -83,4 +83,4 @@ const Icons: React.FC = () => {
   )
 }
 
-export default Icons
+export default IconsGallery

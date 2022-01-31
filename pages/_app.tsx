@@ -4,11 +4,10 @@ import { AppProps } from 'next/app'
 import React, { useEffect, useMemo, useState } from 'react'
 import { MDXProvider } from '@mdx-js/react'
 import { CssBaseline, GeistProvider, useTheme, GeistUIThemes, Image } from 'components'
-import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
+import { HybridLink, Layout } from 'lib/components'
 import 'inter-ui/inter.css'
-import HybridLink from 'lib/components/displays/hybrid-link'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
@@ -82,7 +81,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <ConfigContext
           onThemeChange={themeChangeHandle}
           onThemeTypeChange={type => setThemeType(type)}>
-          <Menu />
+          <Layout.Menu />
           {InnerApp}
         </ConfigContext>
         <style global jsx>{`

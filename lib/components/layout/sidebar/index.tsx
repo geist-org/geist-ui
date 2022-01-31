@@ -1,10 +1,11 @@
+export { default as TabbarMobile } from './tabbar-mobile'
 import React, { useEffect, useMemo, useRef } from 'react'
 import Router from 'next/router'
 import { useTheme, Spacer } from 'components'
 import SideItem, { Sides } from './side-item'
 import useLocale from 'lib/use-locale'
 import { useConfigs } from 'lib/config-context'
-import Metadatas from 'lib/data'
+import Metadata from 'lib/data'
 
 export interface Props {}
 
@@ -27,7 +28,7 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
   const { locale, tabbar } = useLocale()
 
   const tabbarData = useMemo(() => {
-    const allSides = Metadatas[locale]
+    const allSides = Metadata[locale]
     const currentSide = allSides.find(side => side.name === tabbar)
     return (currentSide?.children || []) as Array<Sides>
   }, [locale, tabbar])

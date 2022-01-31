@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import { Spacer, Divider, Text } from 'components'
-import VirtualAnchor from 'lib/components/anchor'
+import { VirtualAnchor } from '../pures'
 import { useConfigs } from '../../config-context'
 import Contributors from './contributors'
 import AttributesTitle from './attributes-title'
@@ -18,7 +18,7 @@ const Attributes: React.FC<React.PropsWithChildren<AttributesProps>> = React.mem
       if (React.Children.count(children) === 0) return null
       return (
         <>
-          <Spacer h={5} />
+          <Spacer h={1} />
           <h3>
             <VirtualAnchor>APIs</VirtualAnchor>
             {isChinese && ' / 接口文档'}

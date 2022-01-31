@@ -4,7 +4,7 @@ import { useTheme, Grid } from 'components'
 import PackageIcon from '@geist-ui/icons/package'
 import FeatherIcon from '@geist-ui/icons/feather'
 import GitHubIcon from '@geist-ui/icons/github'
-import HomeCell from 'lib/components/displays/home-cell'
+import { HomeCell } from 'lib/components'
 
 const Home: NextPage<unknown> = () => {
   const theme = useTheme()

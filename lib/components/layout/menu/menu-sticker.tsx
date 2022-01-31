@@ -1,8 +1,7 @@
 import React, { useEffect, useMemo } from 'react'
-import { useMediaQuery, Tabs, useTheme } from 'components'
-import useCurrentState from 'components/utils/use-current-state'
+import { useMediaQuery, Tabs, useTheme, useCurrentState } from 'components'
 import Router from 'next/router'
-import Metadatas from 'lib/data'
+import Metadata from 'lib/data'
 import useLocale from 'lib/use-locale'
 import { useConfigs } from 'lib/config-context'
 
@@ -16,7 +15,7 @@ const MenuSticker = () => {
   const isXS = useMediaQuery('xs', { match: 'down' })
   const isFixedTabs = fixed && !isXS
 
-  const tabbarData = useMemo(() => Metadatas[locale], [locale])
+  const tabbarData = useMemo(() => Metadata[locale], [locale])
 
   useEffect(() => updateTabbarFixed(isFixedTabs), [isFixedTabs])
   useEffect(() => setTabValue(currentUrlTabValue), [currentUrlTabValue])
@@ -71,6 +70,10 @@ const MenuSticker = () => {
           visibility: hidden;
           pointer-events: none;
           background-color: ${theme.palette.background};
+        }
+        .nav-fill.active {
+          height: var(--geist-page-tab-height);
+          visibility: visible;
         }
         nav {
           position: relative;

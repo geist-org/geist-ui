@@ -1,7 +1,7 @@
 import React from 'react'
 import NextLink from 'next/link'
+import { Controls } from 'lib/components/pures'
 import { useTheme, Image } from 'components'
-import Controls from 'lib/components/controls'
 import { useConfigs } from 'lib/config-context'
 
 const MenuLinks = () => {

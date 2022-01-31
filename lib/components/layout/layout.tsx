@@ -1,21 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import Sidebar from './sidebar'
 import PageHeader from './header'
-import { useTheme } from 'components'
-import TabbarMobile from './sidebar/tabbar-mobile'
-import useBodyScroll from 'components/utils/use-body-scroll'
-import { useConfigs } from '../config-context'
+import { useTheme, useBodyScroll } from 'components'
+import Sidebar, { TabbarMobile } from './sidebar'
+import { useConfigs } from '../../config-context'
 
 export interface Meta {
   title: string
 }
 
-export interface Props {
+export interface LayoutProps {
   meta: Meta
   getStaticProps?: any
 }
 
-export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(
+export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo(
   ({ children, meta }) => {
     const theme = useTheme()
     const [showAfterRender, setShowAfterRender] = useState<boolean>(false)
