@@ -52,13 +52,13 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
           <div>{children}</div>
         </main>
         <style jsx global>{`
-          h3 {
+          .layout h3 {
             margin-top: 40px;
           }
-          h4 {
+          .layout h4 {
             margin-top: 25px;
           }
-          ol {
+          .layout ol {
             padding-left: 40px;
             margin: 25px auto;
             transform: scale(0.95);
@@ -100,7 +100,6 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
             flex: 0 0 100%;
             padding-bottom: 150px;
           }
-
           @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
             .layout {
               max-width: 100%;

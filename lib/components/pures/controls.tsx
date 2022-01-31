@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Button, useTheme, Select, Spacer, Themes, useAllThemes } from 'components'
+import { Button, useTheme, Select, Spacer, Themes, useAllThemes, Text } from 'components'
 import { useConfigs } from 'lib/config-context'
 import useLocale from 'lib/use-locale'
 import Router, { useRouter } from 'next/router'
@@ -44,14 +44,23 @@ const Controls: React.FC<unknown> = React.memo(() => {
   return (
     <div className="controls">
       <div className="tools">
-        <Button auto type="abort" scale={0.7} px={0.7} onClick={switchLanguages}>
-          {isChinese ? 'En' : '中'}
-        </Button>
         <Button
-          auto
-          type="abort"
-          scale={0.7}
-          px={0.7}
+          w="28px"
+          h="28px"
+          py={0}
+          px={0}
+          onClick={switchLanguages}
+          title={isChinese ? '切换语言' : 'switch language'}>
+          <Text font="13px" style={{ fontWeight: 500 }}>
+            {isChinese ? 'En' : '中'}
+          </Text>
+        </Button>
+        <Spacer w={0.75} />
+        <Button
+          w="28px"
+          h="28px"
+          py={0}
+          px={0}
           icon={<GitHubIcon />}
           onClick={redirectGithub}
           title={isChinese ? '代码仓库' : 'GitHub Repository'}
@@ -59,6 +68,7 @@ const Controls: React.FC<unknown> = React.memo(() => {
         <Spacer w={0.75} />
         <Select
           scale={0.5}
+          h="28px"
           pure
           onChange={switchThemes}
           value={theme.type}
@@ -91,25 +101,26 @@ const Controls: React.FC<unknown> = React.memo(() => {
         }
 
         .controls :global(.select) {
-          width: min-content;
-          min-width: unset;
+          width: 85px;
+          min-width: 85px;
         }
 
         .select-content {
           width: auto;
           height: 18px;
           display: flex;
-          justify-content: center;
+          justify-content: space-between;
           align-items: center;
         }
 
         .select-content :global(svg) {
-          margin-right: 0.5rem;
+          margin-right: 10px;
+          margin-left: 2px;
         }
 
         .tools {
           display: flex;
-          height: 2.5rem;
+          height: 40px;
           box-sizing: border-box;
           align-items: center;
         }
