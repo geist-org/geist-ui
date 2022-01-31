@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { Avatar, Link, Tooltip, useTheme } from 'components'
+import { Avatar, Link, Tooltip } from 'components'
 import { useConfigs } from 'lib/config-context'
 import { CONTRIBUTORS_URL, GITHUB_URL } from 'lib/constants'
 const RepoMasterURL = `${GITHUB_URL}/blob/master`
@@ -25,7 +25,6 @@ const getContributors = async (path: string): Promise<Array<Contributor>> => {
 }
 
 const Contributors: React.FC<Props> = ({ path }) => {
-  const theme = useTheme()
   const { isChinese } = useConfigs()
   const [users, setUsers] = useState<Array<Contributor>>([])
   const link = useMemo(() => `${RepoMasterURL}/${path || '/pages'}`, [])
@@ -45,13 +44,14 @@ const Contributors: React.FC<Props> = ({ path }) => {
   return (
     <div className="contributors">
       {users.map((user, index) => (
-        <Tooltip text={<b>{user.name}</b>} key={`${user.url}-${index}`}>
+        <Tooltip leaveDelay={0} text={<b>{user.name}</b>} key={`${user.url}-${index}`}>
           <Link color target="_blank" rel="nofollow" href={user.url}>
             <Avatar src={user.avatar} />
           </Link>
         </Tooltip>
       ))}
       <Tooltip
+        leaveDelay={0}
         text={isChinese ? '在 GitHub 上编辑此页面' : 'Edit this page on GitHub'}
         type="dark">
         <Link color target="_blank" rel="nofollow" href={link}>
@@ -60,8 +60,8 @@ const Contributors: React.FC<Props> = ({ path }) => {
       </Tooltip>
       <style jsx>{`
         .contributors {
-          padding-left: ${theme.layout.gap};
-          padding-top: ${theme.layout.gap};
+          padding-left: 5px;
+          padding-top: 5px;
           max-width: 100%;
           height: auto;
           display: flex;
@@ -69,7 +69,7 @@ const Contributors: React.FC<Props> = ({ path }) => {
         }
 
         .contributors :global(.tooltip) {
-          margin-right: 3px;
+          margin-right: 5px;
         }
       `}</style>
     </div>

@@ -1,12 +1,14 @@
 import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
-import React, { useEffect, useState } from 'react'
-import { CssBaseline, GeistProvider, useTheme, GeistUIThemes } from 'components'
+import React, { useEffect, useMemo, useState } from 'react'
+import { MDXProvider } from '@mdx-js/react'
+import { CssBaseline, GeistProvider, useTheme, GeistUIThemes, Image } from 'components'
 import Menu from 'lib/components/menu'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
 import 'inter-ui/inter.css'
+import HybridLink from 'lib/components/displays/hybrid-link'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
@@ -16,6 +18,18 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
     setCustomTheme(theme)
     setThemeType(theme.type)
   }
+  const InnerApp = useMemo(() => {
+    if (!(Component as any).isMDXComponent) return <Component {...pageProps} />
+    return (
+      <MDXProvider
+        components={{
+          a: HybridLink,
+          img: Image,
+        }}>
+        <Component {...pageProps} />
+      </MDXProvider>
+    )
+  }, [Component, pageProps])
 
   useEffect(() => {
     const theme = window.localStorage.getItem('theme')
@@ -69,7 +83,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           onThemeChange={themeChangeHandle}
           onThemeTypeChange={type => setThemeType(type)}>
           <Menu />
-          <Component {...pageProps} />
+          {InnerApp}
         </ConfigContext>
         <style global jsx>{`
           html {
@@ -99,6 +113,9 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           }
           span.token.string {
             color: ${theme.palette.accents_5};
+          }
+          span.token.comment {
+            color: ${theme.palette.accents_3};
           }
           span.keyword {
             color: ${theme.palette.success};

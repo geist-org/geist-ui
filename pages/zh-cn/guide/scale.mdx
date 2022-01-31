@@ -1,6 +1,5 @@
-import NextLink from 'next/link'
 import { Layout, GridDemo, Attributes } from 'lib/components'
-import { Note, Text, Spacer, Display, Code, Grid, Button, Link } from 'components'
+import { Note, Display, Button } from 'components'
 
 export const meta = {
   title: '可伸缩性',
@@ -19,12 +18,13 @@ Geist UI 的可伸缩特性赋予了每个组件极大的灵活性。你可以�
 这意味着开发者在大多场景下无需入侵组件内部或覆盖样式就能做到高度自定义，甚至能使用基值同步地调整多个组件，
 以极低的代码量兼容不同 Web 结构，在任意布局样式下得到最好的用户体验。
 
-<Spacer h={2.5} />
-
 ### 按比例缩放
 
 与常见的组件库不同的是，Geist UI 不再使用 `size` 相关属性控制组件大小。每个组件有默认合适的布局体积，
 你可以通过 `scale` 属性动态地缩放组件。
+
+如下所示，`Button` 组件的所有空间占比 (包含字体) 均等比缩小。Geist UI 会通过动态计算组件大小，**真实地渲染指定体积组件**，
+这确保了布局与排版始终与预期相同。
 
 <Display width="500px" caption="按 0.5 缩放倍率渲染 Button 组件">
   <GridDemo>
@@ -38,11 +38,6 @@ Geist UI 的可伸缩特性赋予了每个组件极大的灵活性。你可以�
 ```
 
 </Display>
-
-如上所示，`Button` 组件的所有空间占比 (包含字体) 均等比缩小。Geist UI 会通过动态计算组件大小，**真实地渲染指定体积组件**，
-这确保了布局与排版始终与预期相同。
-
-<Spacer h={2.5} />
 
 ### 固定值
 
@@ -61,19 +56,13 @@ Geist UI 的可伸缩特性赋予了每个组件极大的灵活性。你可以�
 
 </Display>
 
-<Spacer h={2.5} />
-
 ### 缩放单位
-
-<Note type="secondary" filled>
-  调整缩放单位是高级定制，你可以跳过此章节。
-</Note>
 
 组件的空间体积同时取决于用户输入的 `scale` 属性与**缩放单位**，默认的缩放单位为 `16px`，但 Geist UI 允许你在不同层级上自定义此值以达到自定义级别的动态效果。
 
 对于同时定义多个组件的*缩放单位 (`unit`)*，你需要创建额外的主题并添加新一层
 `GeistProvider` 作用域，
-在此作用域下的所有组件都会共享同一个*缩放单位*。(请参考 <NextLink href="/zh-cn/guide/themes"><Link color>主题章节</Link></NextLink> 了解自定义主题)
+在此作用域下的所有组件都会共享同一个*缩放单位*。(请参考 [主题小节](/zh-cn/guide/themes '主题') 了解自定义主题)
 
 ```jsx
 // 对于单个组件
@@ -95,7 +84,10 @@ export const MyGroup = () => (
 )
 ```
 
-<Spacer h={2.5} />
+### 使用 Scale 开发
+
+Geist 组件库中的 Scale 功能也对外导出，你可以使用此工具创建具备可伸缩功能的组件。
+请阅读 [use-scale](/zh-cn/hooks/use-scale 'use-scale') 文档了解更多。
 
 ### 别名
 

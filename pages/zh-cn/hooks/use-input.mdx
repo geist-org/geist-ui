@@ -10,11 +10,10 @@ export const meta = {
 ## useInput / 输入框绑定
 
 `useInput` 提供对 `Input` 组件的自动绑定功能，这可以有效减少模板代码量并提高开发者体验。
-
-这与你手动添加 `React.useState` 以绑定组件的行为完全一致。
+使用此 Hooks 与你手动添加 `React.useState` 以绑定组件的行为完全一致。
 
 <Playground
-  desc="使用 `hooks` 捕获数据变化"
+  desc="使用 Hooks 捕获数据变化"
   scope={{ Input, useInput, Button, Spacer }}
   code={`
 () => {
@@ -32,7 +31,7 @@ export const meta = {
 `}
 />
 
-<Attributes edit="/pages/en-us/hooks/use-input.mdx">
+<Attributes edit="/pages/zh-cn/hooks/use-input.mdx">
 <Attributes.Title>useInput</Attributes.Title>
 
 ```ts
@@ -52,11 +51,11 @@ type useInput = (initialValue: string) => {
 
 | 参数                 | 介绍                         | 类型      |
 | ---------------------- | ----------------------------------- | --------- |
-| **state** | the value of the Input | `string` |
-| **setState**    | same as React.setState              | - |
-| **currentRef**     | the current value of Input | `string` |
-| **reset**            | reset the value of Input         | `() => void` |
-| **bindings**              | auto-binding objects conforming to the Input props                 | -  |
+| **state** | Input 组件的值 | `string` |
+| **setState**    | 与 React.setState 相同             | - |
+| **currentRef**     | Input 组件的当前值 | `string` |
+| **reset**            | 重置为初始值         | `() => void` |
+| **bindings**              | 自动绑定对象                 | -  |
 
 </Attributes>
 

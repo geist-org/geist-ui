@@ -53,6 +53,19 @@ export const Layout: React.FC<React.PropsWithChildren<Props>> = React.memo(
         <main className="main">
           <div>{children}</div>
         </main>
+        <style jsx global>{`
+          h3 {
+            margin-top: 40px;
+          }
+          h4 {
+            margin-top: 25px;
+          }
+          ol {
+            padding-left: 40px;
+            margin: 25px auto;
+            transform: scale(0.95);
+          }
+        `}</style>
         <style jsx>{`
           .layout {
             min-height: calc(100vh - 108px);

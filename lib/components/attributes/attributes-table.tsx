@@ -68,11 +68,6 @@ const AttributesTable: React.FC<React.PropsWithChildren<unknown>> = ({ children 
         .attr td:nth-child(1) {
           border-left: 1px solid transparent;
         }
-        .contributor-title {
-          text-transform: uppercase;
-          font-size: 1rem;
-          letter-spacing: 1.5px;
-        }
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .attr {
             overflow-x: scroll;
