@@ -144,15 +144,16 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           align-items: ${isMultiLine ? 'flex-start' : 'center'};
           width: calc(3.281 * var(--snippet-font-size));
           color: inherit;
-          transition: opacity 0.2s ease 0s;
+          transition: opacity 150ms ease 0s;
           border-radius: ${theme.layout.radius};
           cursor: pointer;
           user-select: none;
           padding-top: ${isMultiLine ? 'var(--snippet-padding-top)' : 0};
+          opacity: 0.65;
         }
 
         .copy:hover {
-          opacity: 0.7;
+          opacity: 1;
         }
       `}</style>
     </div>
