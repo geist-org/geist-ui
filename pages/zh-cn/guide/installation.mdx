@@ -34,17 +34,18 @@ export const meta = {
 </h4>
 
 ```jsx
+// NAME: /src/app.js
 import { GeistProvider, CssBaseline } from '@geist-ui/core'
 
 export default () => (
   <GeistProvider>
-    <CssBaseline />     // --> 基础样式
-    <AppComponent />    // --> 你的根组件
+    <CssBaseline /> // --> 基础样式
+    <AppComponent /> // --> 你的根组件
   </GeistProvider>
 )
 ```
 
-<Spacer h={0} mb="8px"  />
+<Spacer h={0} mb="8px" />
 <h4>
   <Dot type="success">使用组件</Dot>
 </h4>
@@ -73,7 +74,7 @@ const Home = () => (
 项目初始化完成后，可在 `/pages` 文件夹下添加 `/pages/_app.jsx` 文件并补充下述内容。
 
 ```jsx
-// /pages/_app.jsx
+// NAME:pages/_app.jsx
 import { GeistProvider, CssBaseline } from '@geist-ui/react'
 
 const App = ({ Component, pageProps }) => {
@@ -152,6 +153,7 @@ import { Text } from '@geist-ui/core'
 一个经典的使用案例是在 `.babelrc` 文件中加入以下配置：
 
 ```json
+// NAME:.babelrc
 {
   "plugins": [
     [

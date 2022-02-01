@@ -1,6 +1,6 @@
 import React from 'react'
 import { VirtualAnchor } from '../pures'
-import { Spacer, Code, useTheme } from 'components'
+import { Code, useTheme } from 'components'
 import { useConfigs } from 'lib/config-context'
 
 export interface AttributesTitleProps {
@@ -31,7 +31,6 @@ const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> =
           </Code>
           {getAlias(!!isChinese, alias)}
         </h4>
-        <Spacer h={0.1} />
 
         <style jsx>{`
           h4 {
@@ -42,6 +41,7 @@ const AttributesTitle: React.FC<React.PropsWithChildren<AttributesTitleProps>> =
             padding-right: ${theme.layout.gapHalf};
             background-color: ${theme.palette.accents_1};
             border-radius: ${theme.layout.radius};
+            margin-bottom: 0;
           }
 
           h4 :global(small) {

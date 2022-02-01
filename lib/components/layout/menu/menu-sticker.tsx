@@ -46,6 +46,7 @@ const MenuSticker = () => {
               height="calc(var(--geist-page-tab-height) - 2px)"
               value={tabValue}
               leftSpace={0}
+              activeClassName="current"
               onChange={val => setTabValue(val)}>
               <Tabs.Item font="14px" label={isChinese ? '主页' : 'Home'} value="" />
               {tabbarData
@@ -74,6 +75,9 @@ const MenuSticker = () => {
         .nav-fill.active {
           height: var(--geist-page-tab-height);
           visibility: visible;
+        }
+        .nav-fill :global(.current:after) {
+          display: none;
         }
         nav {
           position: relative;
