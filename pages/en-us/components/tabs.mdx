@@ -161,14 +161,19 @@ Display tab content.
 <Attributes edit="/pages/en-us/components/tabs.mdx">
 <Attributes.Title>Tabs.Props</Attributes.Title>
 
-| Attribute        | Description                 | Type                    | Accepted values                 | Default |
-| ---------------- | --------------------------- | ----------------------- | ------------------------------- | ------- |
-| **initialValue** | initial value               | `string`                | -                               | -       |
-| **value**        | current selected value      | `string`                | -                               | -       |
-| **hideDivider**  | hide default divider        | `boolean`               | -                               | `false` |
-| **leftSpace**    | space area on the left side | `CSSProperties`         | -                               | `20px`  |
-| **onChange**     | change event                | `(val: string) => void` | -                               | -       |
-| ...              | native props                | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
+| Attribute            | Description                             | Type                    | Accepted values                 | Default |
+| -------------------- | --------------------------------------- | ----------------------- | ------------------------------- | ------- |
+| **initialValue**     | initial value                           | `string`                | -                               | -       |
+| **value**            | current selected value                  | `string`                | -                               | -       |
+| **hideDivider**      | hide default divider                    | `boolean`               | -                               | `false` |
+| **leftSpace**        | space area on the left side             | `CSSProperties`         | -                               | `12px`  |
+| **onChange**         | change event                            | `(val: string) => void` | -                               | -       |
+| **align**            | horizontal alignment of each child item | `justifyContent`        | -                               | `left`  |
+| **activeClassName**  | className of active child item          | `string`                | -                               | -       |
+| **activeStyles**     | style of active child item              | `object`                | -                               | -       |
+| **hoverHeightRatio** | height percentage of highlight block    | `number`                | -                               | 0.7     |
+| **hoverWidthRatio**  | width percentage of highlight block     | `number`                | -                               | 1.15    |
+| ...                  | native props                            | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
 
 <Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
 

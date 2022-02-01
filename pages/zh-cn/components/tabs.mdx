@@ -118,14 +118,19 @@ export const meta = {
 <Attributes edit="/pages/zh-cn/components/tabs.mdx">
 <Attributes.Title>Tabs.Props</Attributes.Title>
 
-| 属性             | 描述             | 类型                    | 推荐值                          | 默认    |
-| ---------------- | ---------------- | ----------------------- | ------------------------------- | ------- |
-| **initialValue** | 初始值           | `string`                | -                               | -       |
-| **value**        | 设定当前选项     | `string`                | -                               | -       |
-| **hideDivider**  | 隐藏默认分割线   | `boolean`               | -                               | `false` |
-| **leftSpace**    | 左侧空白区域宽度 | `CSSProperties`         | -                               | `20px`  |
-| **onChange**     | 选项卡切换事件   | `(val: string) => void` | -                               | -       |
-| ...              | 原生属性         | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
+| 属性                 | 描述                   | 类型                    | 推荐值                          | 默认    |
+| -------------------- | ---------------------- | ----------------------- | ------------------------------- | ------- |
+| **initialValue**     | 初始值                 | `string`                | -                               | -       |
+| **value**            | 设定当前选项           | `string`                | -                               | -       |
+| **hideDivider**      | 隐藏默认分割线         | `boolean`               | -                               | `false` |
+| **leftSpace**        | 左侧空白区域宽度       | `CSSProperties`         | -                               | `12px`  |
+| **onChange**         | 选项卡切换事件         | `(val: string) => void` | -                               | -       |
+| **align**            | 每个子项的横向对齐方式 | `justifyContent`        | -                               | `left`  |
+| **activeClassName**  | 激活子项的类名         | `string`                | -                               | -       |
+| **activeStyles**     | 激活子项的样式内容     | `object`                | -                               | -       |
+| **hoverHeightRatio** | 高亮块与组件的高度比   | `number`                | -                               | 0.7     |
+| **hoverWidthRatio**  | 高亮块与组件的宽度比   | `number`                | -                               | 1.15    |
+| ...                  | 原生属性               | `HTMLAttributes`        | `'alt', 'id', 'className', ...` | -       |
 
 <Attributes.Title alias="Tabs.Tab">Tabs.Item.Props</Attributes.Title>
 

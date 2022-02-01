@@ -1,7 +1,10 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, MouseEvent } from 'react'
 
 export type TabsInternalCellProps = {
   onClick: (value: string) => void
+  onMouseOver: (e: MouseEvent<HTMLDivElement>) => void
+  activeClassName?: string
+  activeStyle?: CSSProperties
 }
 
 export type TabsInternalCell = React.FC<TabsInternalCellProps>

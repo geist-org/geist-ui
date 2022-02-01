@@ -139,6 +139,13 @@ export const isChildElement = (
   return false
 }
 
+export const isGeistElement = (el?: HTMLElement): boolean => {
+  if (!el) return false
+  if (el?.dataset && el?.dataset['geist']) return true
+  el.attributes.getNamedItem('data-geist')
+  return !!el.attributes.getNamedItem('data-geist')
+}
+
 export const isBrowser = (): boolean => {
   return Boolean(
     typeof window !== 'undefined' && window.document && window.document.createElement,
