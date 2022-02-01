@@ -37,14 +37,11 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
     const ref = useRef<HTMLDivElement | null>(null)
     const { currentValue } = useTabsContext()
     const active = currentValue === value
-    const classes = useClasses(
-      'tab',
-      {
-        active,
-        disabled,
-      },
-      activeClassName,
-    )
+    const classes = useClasses('tab', {
+      active,
+      disabled,
+      [activeClassName!]: active,
+    })
     const clickHandler = () => {
       if (disabled) return
       onClick && onClick(value)
@@ -67,7 +64,6 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
             box-sizing: border-box;
             cursor: pointer;
             outline: 0;
-            transition: all 200ms ease;
             text-transform: capitalize;
             white-space: nowrap;
             background-color: transparent;
