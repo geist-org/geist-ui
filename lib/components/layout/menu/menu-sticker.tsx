@@ -76,7 +76,17 @@ const MenuSticker = () => {
           height: var(--geist-page-tab-height);
           visibility: visible;
         }
-        .nav-fill :global(.current:after) {
+        .sticker :global(.tab) {
+          color: ${theme.palette.accents_3};
+        }
+        .sticker :global(.tab:hover) {
+          color: ${theme.palette.accents_6};
+        }
+        .sticker :global(.current) {
+          color: ${theme.palette.foreground};
+          font-weight: 500;
+        }
+        .sticker :global(.current::after) {
           display: none;
         }
         nav {
