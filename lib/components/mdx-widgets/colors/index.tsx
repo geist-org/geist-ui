@@ -1,36 +1,106 @@
-import React from 'react'
-import NextLink from 'next/link'
-import { Link, LinkProps } from 'components'
-import { useRouter } from 'next/router'
+import React, { useMemo } from 'react'
+import { useTheme, useToasts, Code, Grid, useClipboard } from 'components'
+import { getColorData, getCurrentColor } from './colors-data'
+import { GeistUIThemesPalette } from 'components/themes'
 
-export type HybridLinkProps = LinkProps
+interface Props {
+  type: string
+}
 
-const HybridLink: React.FC<HybridLinkProps> = ({ href = '#', children, ...props }) => {
-  const isRelativeUrl = href?.startsWith('/')
-  const { pathname } = useRouter()
-  const isHomePage = pathname.includes('guide/introduction')
+const getColorItem = (
+  type: string,
+  palette: GeistUIThemesPalette,
+  copy: (text: string) => void,
+) => {
+  const data = getColorData(type)
+  const getColor = (index: number) => getCurrentColor(palette, type, index)
+  const keys = Object.keys(data)
 
-  if (isRelativeUrl) {
-    return (
-      <NextLink href={href} passHref>
-        <Link color block ml="-2px" px="4px" py="2px" {...props}>
-          {children}
-        </Link>
-      </NextLink>
-    )
+  return (keys as Array<keyof GeistUIThemesPalette>).map((key, index) => (
+    <div className="color" key={`color-item-${index}`}>
+      <Grid.Container justify="space-between" style={{ height: '4.5rem' }}>
+        <Grid.Container alignItems="center" sm={8} xs={16}>
+          <h4>{data[key]}</h4>
+        </Grid.Container>
+        <Grid.Container alignItems="center" justify="center" sm={8} xs={0}>
+          <span className="usage" onClick={() => copy(`theme.palette.${key}`)}>
+            theme.palette.{key}
+          </span>
+        </Grid.Container>
+        <Grid.Container alignItems="center" justify="flex-end" sm={8} xs>
+          <span className="value" onClick={() => copy(palette[key])}>
+            {palette[key]}
+          </span>
+        </Grid.Container>
+      </Grid.Container>
+      <style jsx>{`
+        .color {
+          background-color: ${palette[key]};
+          color: ${getColor(index)};
+        }
+      `}</style>
+    </div>
+  ))
+}
+
+const Colors: React.FC<Props> = ({ type }) => {
+  const theme = useTheme()
+  const { copy } = useClipboard()
+  const [, setToast] = useToasts()
+  const copyText = (text: string) => {
+    copy(text)
+    setToast({
+      text: (
+        <span>
+          Copied <Code>{text}</Code>
+        </span>
+      ),
+    })
   }
+  const colorItems = useMemo(
+    () => getColorItem(type, theme.palette, copyText),
+    [type, theme.palette],
+  )
 
   return (
-    <Link
-      href={href}
-      target="_blank"
-      color
-      icon={!isHomePage}
-      rel="noreferrer nofollow"
-      {...props}>
-      {children}
-    </Link>
+    <div className="colors">
+      {colorItems}
+      <style jsx>{`
+        .colors {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+        .colors :global(.color) {
+          padding: ${theme.layout.gap};
+          position: relative;
+          user-select: none;
+        }
+        .colors :global(.color:first-child) {
+          border-top-left-radius: ${theme.layout.radius};
+          border-top-right-radius: ${theme.layout.radius};
+        }
+        .colors :global(.color:last-child) {
+          border-bottom-left-radius: ${theme.layout.radius};
+          border-bottom-right-radius: ${theme.layout.radius};
+        }
+        .colors :global(.color h4) {
+          margin: 0;
+        }
+        .colors :global(.usage) {
+          font-size: 1rem;
+          padding: 1rem;
+          cursor: pointer;
+        }
+        .colors :global(.value) {
+          font-size: 0.875rem;
+          text-transform: uppercase;
+          padding: 1rem;
+          cursor: pointer;
+        }
+      `}</style>
+    </div>
   )
 }
 
-export default HybridLink
+export default Colors

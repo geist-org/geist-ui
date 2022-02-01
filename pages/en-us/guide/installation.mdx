@@ -20,7 +20,11 @@ Also, Geist is based on the component library of framework React, which means yo
   <Dot type="success">Install</Dot>
 </h4>
 
-<Tabs initialValue="yarn" hideDivider leftSpace={0}>
+<Tabs
+  initialValue="yarn"
+  hideDivider
+  leftSpace={0}
+  activeClassName="installation-example">
   <Tabs.Item label="Yarn" value="yarn">
     <Snippet>yarn add @geist-ui/core</Snippet>
   </Tabs.Item>
@@ -34,17 +38,18 @@ Also, Geist is based on the component library of framework React, which means yo
 </h4>
 
 ```jsx
+// NAME: /src/app.js
 import { GeistProvider, CssBaseline } from '@geist-ui/core'
 
 export default () => (
   <GeistProvider>
-    <CssBaseline />     // --> base styles
-    <AppComponent />    // --> your application
+    <CssBaseline /> // --> base styles
+    <AppComponent /> // --> your application
   </GeistProvider>
 )
 ```
 
-<Spacer h={0} mb="8px"  />
+<Spacer h={0} mb="8px" />
 <h4>
   <Dot type="success">Usage</Dot>
 </h4>
@@ -74,7 +79,7 @@ In addition, here is a complete [project example](https://github.com/geist-org/r
 Once the project has been initialized, add the `/pages/_app.jsx` file to the `/pages` folder and add the following content:
 
 ```jsx
-// /pages/_app.jsx
+// NAME:pages/_app.jsx
 import { GeistProvider, CssBaseline } from '@geist-ui/react'
 
 const App = ({ Component, pageProps }) => {
@@ -109,14 +114,12 @@ Some fonts in Web applications do not render best on the _Windows_ platform, or 
 
 <Snippet>yarn add inter-ui</Snippet>
 
-
 #### Add `Inter Font` to your project:
 
 <Code block my={0} width="100%">
   <span className="token keyword module">import</span>{' '}
   <span className="token string">inter-ui/inter.css</span>
 </Code>
-
 
 ### Bundle size
 
@@ -125,7 +128,6 @@ This is a good score when comparing the size of modern client applications and w
 As a matter of engineering practice, it is recommended that you always split Geist as a separate chunk within your application to get fixed caching.
 
 For higher first screen load speed, try using [Server Side Rendering](/zh-cn/guide/server-render) or perform volume optimization as described below.
-
 
 #### Import single component manually
 
@@ -141,7 +143,6 @@ import Button from '@geist-ui/core/esm/button'
 
 const MyComponent = () => <Button>Submit</Button>
 ```
-
 
 #### Auto Tree Shaking
 
@@ -159,6 +160,7 @@ You can also get the same effect as described above for 'import single component
 A classic use case is to add the following config to the `.babelrc`:
 
 ```json
+// NAME:.babelrc
 {
   "plugins": [
     [

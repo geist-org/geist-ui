@@ -8,11 +8,11 @@ const AttributesTable: React.FC<React.PropsWithChildren<unknown>> = ({ children 
     <Card className="attr">
       {children}
       <style jsx global>{`
-        .attr pre {
-          padding: 14px 15px;
-          margin: 0;
+        .attr .pre {
+          margin-top: 12px !important;
         }
         .attr table {
+          margin-top: 12px;
           margin-right: ${theme.layout.gap};
         }
         .attr h4.title {
