@@ -1,5 +1,5 @@
 import { GeistUIThemes } from './presets/index'
-import type { DeepPartial } from 'components/utils/types'
+import type { DeepPartial } from '../utils/types'
 import lightTheme from './presets/default'
 import darkTheme from './presets/dark'
 

@@ -1,21 +1,43 @@
-import React, { CSSProperties, useEffect, useMemo, useState } from 'react'
+import React, {
+  CSSProperties,
+  MouseEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import useTheme from '../use-theme'
 import { TabsHeaderItem, TabsConfig, TabsContext } from './tabs-context'
 import useScale, { withPureProps, withScale } from '../use-scale'
+import Highlight from '../shared/highlight'
+import { useRect } from '../utils/layouts'
+import { isGeistElement } from '../utils/collections'
 
 interface Props {
   initialValue?: string
   value?: string
   hideDivider?: boolean
+  highlight?: boolean
   onChange?: (val: string) => void
   className?: string
   leftSpace?: CSSProperties['marginLeft']
+  hoverHeightRatio?: number
+  hoverWidthRatio?: number
+  align?: CSSProperties['justifyContent']
+  activeClassName?: string
+  activeStyles?: CSSProperties
 }
 
 const defaultProps = {
   className: '',
   hideDivider: false,
-  leftSpace: '20px' as CSSProperties['marginLeft'],
+  highlight: true,
+  leftSpace: '12px' as CSSProperties['marginLeft'],
+  hoverHeightRatio: 0.7,
+  hoverWidthRatio: 1.15,
+  activeClassName: '',
+  activeStyle: {},
+  align: 'left',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -29,12 +51,21 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   onChange,
   className,
   leftSpace,
+  highlight,
+  hoverHeightRatio,
+  hoverWidthRatio,
+  activeClassName,
+  activeStyle,
+  align,
   ...props
 }: React.PropsWithChildren<TabsProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScale()
-  const [selfValue, setSelfValue] = useState<string | undefined>(userCustomInitialValue)
   const [tabs, setTabs] = useState<Array<TabsHeaderItem>>([])
+  const [selfValue, setSelfValue] = useState<string | undefined>(userCustomInitialValue)
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [displayHighlight, setDisplayHighlight] = useState<boolean>(false)
+  const { rect, setRect } = useRect()
 
   const register = (next: TabsHeaderItem) => {
     setTabs(last => {
@@ -69,14 +100,33 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
     setSelfValue(value)
     onChange && onChange(value)
   }
+  const tabItemMouseOverHandler = (event: MouseEvent<HTMLDivElement>) => {
+    if (!isGeistElement(event.target as HTMLDivElement)) return
+    setRect(event, () => ref.current)
+    if (highlight) {
+      setDisplayHighlight(true)
+    }
+  }
 
   return (
     <TabsContext.Provider value={initialValue}>
       <div className={`tabs ${className}`} {...withPureProps(props)}>
-        <header>
+        <header ref={ref} onMouseLeave={() => setDisplayHighlight(false)}>
+          <Highlight
+            rect={rect}
+            visible={displayHighlight}
+            hoverHeightRatio={hoverHeightRatio}
+            hoverWidthRatio={hoverWidthRatio}
+          />
           <div className={`scroll-container ${hideDivider ? 'hide-divider' : ''}`}>
             {tabs.map(({ cell: Cell, value }) => (
-              <Cell key={value} onClick={clickHandler} />
+              <Cell
+                key={value}
+                onClick={clickHandler}
+                onMouseOver={tabItemMouseOverHandler}
+                activeClassName={activeClassName}
+                activeStyle={activeStyle}
+              />
             ))}
           </div>
         </header>
@@ -105,6 +155,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
+            justify-content: ${align};
             border-bottom: 1px solid ${theme.palette.border};
             padding-left: ${leftSpace};
           }

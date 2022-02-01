@@ -1,7 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tabs should render correctly 1`] = `
-"<div class=\\"tabs \\"><header><div class=\\"scroll-container \\"><div class=\\"tab  \\" role=\\"button\\">label1<style>
+"<div class=\\"tabs \\"><header><div class=\\"highlight\\"><style>
+        .highlight {
+          background: #eaeaea;
+          position: absolute;
+          border-radius: 5px;
+          width: 0px;
+          left: -1000px;
+          height: 0px;
+          top: -1000px;
+          opacity: 0;
+          transition: 0.15s ease;
+          transition-property: opacity, width, left;
+        }
+      </style></div><div class=\\"scroll-container \\"><div class=\\"tab\\" role=\\"button\\" data-geist=\\"tab-item\\">label1<style>
           .tab {
             position: relative;
             box-sizing: border-box;
@@ -25,21 +38,6 @@ exports[`Tabs should render correctly 1`] = `
             z-index: 1;
             --tabs-item-hover-left: calc(-1 * calc(0.28 * 16px));
             --tabs-item-hover-right: calc(-1 * calc(0.28 * 16px));
-          }
-          .tab:before {
-            position: absolute;
-            top: calc(0.48 * 16px);
-            left: var(--tabs-item-hover-left);
-            right: var(--tabs-item-hover-right);
-            bottom: calc(0.48 * 16px);
-            content: '';
-            z-index: -1;
-            transition: opacity 150ms ease;
-            background-color: transparent;
-            border-radius: 4px;
-          }
-          .tab:hover::before {
-            background-color: #eaeaea;
           }
           .tab:hover {
             color: #000;
@@ -76,7 +74,7 @@ exports[`Tabs should render correctly 1`] = `
             color: #999;
             cursor: not-allowed;
           }
-        </style></div><div class=\\"tab  \\" role=\\"button\\">label2<style>
+        </style></div><div class=\\"tab\\" role=\\"button\\" data-geist=\\"tab-item\\">label2<style>
           .tab {
             position: relative;
             box-sizing: border-box;
@@ -100,21 +98,6 @@ exports[`Tabs should render correctly 1`] = `
             z-index: 1;
             --tabs-item-hover-left: calc(-1 * calc(0.28 * 16px));
             --tabs-item-hover-right: calc(-1 * calc(0.28 * 16px));
-          }
-          .tab:before {
-            position: absolute;
-            top: calc(0.48 * 16px);
-            left: var(--tabs-item-hover-left);
-            right: var(--tabs-item-hover-right);
-            bottom: calc(0.48 * 16px);
-            content: '';
-            z-index: -1;
-            transition: opacity 150ms ease;
-            background-color: transparent;
-            border-radius: 4px;
-          }
-          .tab:hover::before {
-            background-color: #eaeaea;
           }
           .tab:hover {
             color: #000;
@@ -175,8 +158,9 @@ exports[`Tabs should render correctly 1`] = `
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
+            justify-content: left;
             border-bottom: 1px solid #eaeaea;
-            padding-left: 20px;
+            padding-left: 12px;
           }
           header::-webkit-scrollbar {
             display: none;
@@ -191,7 +175,20 @@ exports[`Tabs should render correctly 1`] = `
 `;
 
 exports[`Tabs should work correctly with different styles 1`] = `
-"<div class=\\"tabs \\"><header><div class=\\"scroll-container hide-divider\\"><div class=\\"tab  \\" role=\\"button\\">label1<style>
+"<div class=\\"tabs \\"><header><div class=\\"highlight\\"><style>
+        .highlight {
+          background: #eaeaea;
+          position: absolute;
+          border-radius: 5px;
+          width: 0px;
+          left: -1000px;
+          height: 0px;
+          top: -1000px;
+          opacity: 0;
+          transition: 0.15s ease;
+          transition-property: opacity, width, left;
+        }
+      </style></div><div class=\\"scroll-container hide-divider\\"><div class=\\"tab\\" role=\\"button\\" data-geist=\\"tab-item\\">label1<style>
           .tab {
             position: relative;
             box-sizing: border-box;
@@ -215,21 +212,6 @@ exports[`Tabs should work correctly with different styles 1`] = `
             z-index: 1;
             --tabs-item-hover-left: calc(-1 * calc(0.28 * 16px));
             --tabs-item-hover-right: calc(-1 * calc(0.28 * 16px));
-          }
-          .tab:before {
-            position: absolute;
-            top: calc(0.48 * 16px);
-            left: var(--tabs-item-hover-left);
-            right: var(--tabs-item-hover-right);
-            bottom: calc(0.48 * 16px);
-            content: '';
-            z-index: -1;
-            transition: opacity 150ms ease;
-            background-color: transparent;
-            border-radius: 4px;
-          }
-          .tab:hover::before {
-            background-color: #eaeaea;
           }
           .tab:hover {
             color: #000;
@@ -290,8 +272,9 @@ exports[`Tabs should work correctly with different styles 1`] = `
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
+            justify-content: left;
             border-bottom: 1px solid #eaeaea;
-            padding-left: 20px;
+            padding-left: 12px;
           }
           header::-webkit-scrollbar {
             display: none;
