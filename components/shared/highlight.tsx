@@ -1,7 +1,7 @@
 import React, { useMemo, useRef } from 'react'
-import { isUnplacedRect, ReactiveDomReact } from 'components/utils/layouts'
-import usePrevious from 'components/utils/use-previous'
-import useTheme from 'components/use-theme'
+import { isUnplacedRect, ReactiveDomReact } from '../utils/layouts'
+import usePrevious from '../utils/use-previous'
+import useTheme from '../use-theme'
 
 export type HighlightProps = {
   rect: ReactiveDomReact
