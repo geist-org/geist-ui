@@ -30,7 +30,7 @@ exports[`Modal customization should be supported 1`] = `
             box-sizing: border-box;
             background-color: #fff;
             color: #000;
-            border-radius: 5px;
+            border-radius: 6px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;
@@ -138,7 +138,7 @@ exports[`Modal should render correctly 1`] = `
             box-sizing: border-box;
             display: inline-block;
             line-height: calc(2.5 * 16px);
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: 400;
             font-size: calc(0.875 * 16px);
             user-select: none;
@@ -201,7 +201,7 @@ exports[`Modal should render correctly 1`] = `
             box-sizing: border-box;
             display: inline-block;
             line-height: calc(2.5 * 16px);
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: 400;
             font-size: calc(0.875 * 16px);
             user-select: none;
@@ -270,8 +270,8 @@ exports[`Modal should render correctly 1`] = `
           left: 0;
           right: 0;
           border-top: 1px solid #eaeaea;
-          border-bottom-left-radius: 5px;
-          border-bottom-right-radius: 5px;
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
         }
 
         footer > :global(button.btn + button.btn) {
@@ -293,7 +293,7 @@ exports[`Modal should render correctly 1`] = `
             box-sizing: border-box;
             background-color: #fff;
             color: #000;
-            border-radius: 5px;
+            border-radius: 6px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;

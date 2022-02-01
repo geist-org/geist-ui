@@ -1,10 +1,10 @@
 import { GeistUIThemesBreakpoints, GeistUIThemesFont, GeistUIThemesLayout } from './index'
 
 export const defaultFont: GeistUIThemesFont = {
-  sans:
-    '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
-  mono:
-    'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+  sans: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif',
+  mono: 'Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace',
+  prism:
+    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,"Liberation Mono", "Courier New", monospace',
 }
 
 export const defaultBreakpoints: GeistUIThemesBreakpoints = {
@@ -42,6 +42,6 @@ export const defaultLayout: GeistUIThemesLayout = {
   pageWidthWithMargin: '782pt',
   breakpointMobile: defaultBreakpoints.xs.max,
   breakpointTablet: defaultBreakpoints.sm.max,
-  radius: '5px',
+  radius: '6px',
   unit: '16px',
 }

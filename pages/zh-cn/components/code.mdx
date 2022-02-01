@@ -1,6 +1,6 @@
-import { Layout, Playground, Attributes } from 'lib/components'
 import { Code, Note, Link, Text } from 'components'
 import NextLink from 'next/link'
+import { Layout, Playground, Attributes, ParsedCodes } from 'lib/components'
 
 export const meta = {
   title: '代码 Code',
@@ -9,15 +9,7 @@ export const meta = {
 
 ## Code / 代码
 
-以标准化的方式展示源代码。
-
-<Note label="提示">
-  想要展示 <Code>Shell</Code> 代码片段或一个命令？ 可以试试{' '}
-  <NextLink href="/zh-cn/components/snippet">
-    <Link color>Snippet / 片段</Link>
-  </NextLink>{' '}
-  组件。
-</Note>
+以标准化的方式展示源代码。想要展示 Shell 代码片段或是一个命令？可以试试 [Snippet](/zh-cn/components/snippet) (片段) 组件。
 
 <Playground
   desc="基础的行内代码。"
@@ -30,49 +22,48 @@ export const meta = {
 <Playground
   title="代码块"
   desc="多行的代码块展示。"
-  scope={{ Code }}
+  scope={{ Code, ExampleCodes: ParsedCodes.Types }}
   code={`
-() => {
-  const codes = \`npm i @geist-ui/core
-yarn add @geist-ui/core\`
-  return <Code block my={0}>{codes}</Code>
-}
+<Code block my={0}><ExampleCodes /></Code>
 `}
 />
 
 <Playground
   title="宽度"
   desc="手动地指定宽度，或其他样式。"
-  scope={{ Code }}
+  scope={{ Code, ExampleCodes: ParsedCodes.Greeting }}
   code={`
-() => {
-  const codes = \`npm i @geist-ui/core
-yarn add @geist-ui/core\`
-  return <Code block width="50%" my={0}>{codes}</Code>
-}
+<Code block width="50%" my={0}><ExampleCodes /></Code>
 `}
 />
 
 <Playground
-  title="过长的"
-  desc="超出范围的代码的展示效果。"
-  scope={{ Code }}
+  title="标题"
+  desc="为代码块添加标题描述信息。"
+  scope={{ Code, ExampleCodes: ParsedCodes.Clock }}
   code={`
-() => {
-  const codes = \`npm i @geist-ui/core npm i @geist-ui/core npm i @geist-ui/core
-yarn add @geist-ui/core\`
-  return <Code block width="50%" my={0}>{codes}</Code>
-}
+<Code block name="/Components/Clock.jsx" my={0}><ExampleCodes /></Code>
+`}
+/>
+
+<Playground
+  title="经典样式"
+  desc="以边框代替背景块的经典设计样式。"
+  scope={{ Code, ExampleCodes: ParsedCodes.Clock }}
+  code={`
+<Code block classic name="/Components/Clock.jsx" my={0}><ExampleCodes /></Code>
 `}
 />
 
 <Attributes edit="/pages/zh-cn/components/code.mdx">
 <Attributes.Title>Code.Props</Attributes.Title>
 
-| 属性      | 描述             | 类型             | 推荐值             | 默认    |
-| --------- | ---------------- | ---------------- | ------------------ | ------- |
-| **block** | 展示多行的代码块 | `boolean`        | -                  | `false` |
-| ...       | 原生属性         | `HTMLAttributes` | `'className', ...` | -       |
+| 属性        | 描述                   | 类型             | 推荐值             | 默认    |
+| ----------- | ---------------------- | ---------------- | ------------------ | ------- |
+| **block**   | 展示多行的代码块       | `boolean`        | -                  | `false` |
+| **name**    | 显示在代码块顶部的文字 | `string`         | -                  | -       |
+| **classic** | 以经典样式展示代码块   | `boolean`        | -                  | `false` |
+| ...         | 原生属性               | `HTMLAttributes` | `'className', ...` | -       |
 
 </Attributes>
 
