@@ -1,7 +1,8 @@
-import React, { useEffect, useMemo } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import { TabsInternalCellProps, useTabsContext } from './tabs-context'
 import useTheme from '../use-theme'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   label: string | React.ReactNode
@@ -23,24 +24,42 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
   disabled,
 }: React.PropsWithChildren<TabsItemProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
-  const { register, currentValue, leftSpace } = useTabsContext()
+  const { register, currentValue } = useTabsContext()
   const isActive = useMemo(() => currentValue === value, [currentValue, value])
 
-  const TabsInternalCell: React.FC<TabsInternalCellProps> = ({ onClick }) => {
+  const TabsInternalCell: React.FC<TabsInternalCellProps> = ({
+    onClick,
+    onMouseOver,
+    activeClassName,
+    activeStyle,
+  }) => {
     const theme = useTheme()
+    const ref = useRef<HTMLDivElement | null>(null)
     const { currentValue } = useTabsContext()
+    const active = currentValue === value
+    const classes = useClasses(
+      'tab',
+      {
+        active,
+        disabled,
+      },
+      activeClassName,
+    )
     const clickHandler = () => {
       if (disabled) return
       onClick && onClick(value)
     }
+
     return (
       <div
-        className={`tab ${value === currentValue ? 'active' : ''} ${
-          disabled ? 'disabled' : ''
-        }`}
+        ref={ref}
+        className={classes}
         role="button"
         key={value}
-        onClick={clickHandler}>
+        onMouseOver={onMouseOver}
+        onClick={clickHandler}
+        style={active ? activeStyle : {}}
+        data-geist="tab-item">
         {label}
         <style jsx>{`
           .tab {
@@ -66,21 +85,6 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
             z-index: 1;
             --tabs-item-hover-left: calc(-1 * ${SCALES.pl(0.28)});
             --tabs-item-hover-right: calc(-1 * ${SCALES.pr(0.28)});
-          }
-          .tab:before {
-            position: absolute;
-            top: ${SCALES.pt(0.48)};
-            left: ${leftSpace ? 'var(--tabs-item-hover-left)' : 0};
-            right: ${leftSpace ? 'var(--tabs-item-hover-right)' : 0};
-            bottom: ${SCALES.pb(0.48)};
-            content: '';
-            z-index: -1;
-            transition: opacity 150ms ease;
-            background-color: transparent;
-            border-radius: 4px;
-          }
-          .tab:hover::before {
-            background-color: ${theme.palette.accents_2};
           }
           .tab:hover {
             color: ${theme.palette.foreground};
