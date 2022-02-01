@@ -20,7 +20,12 @@ export const meta = {
   <Dot type="success">安装依赖</Dot>
 </h4>
 
-<Tabs initialValue="yarn" hideDivider leftSpace={0}>
+<Tabs
+  initialValue="yarn"
+  hideDivider
+  align="right"
+  mt="-46px"
+  className="installation-tabs">
   <Tabs.Item label="Yarn" value="yarn">
     <Snippet>yarn add @geist-ui/core</Snippet>
   </Tabs.Item>
