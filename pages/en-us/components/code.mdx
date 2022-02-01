@@ -1,6 +1,5 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { Code, Note, Link, Text } from 'components'
-import NextLink from 'next/link'
+import { Code, Text } from 'components'
+import { Layout, Playground, Attributes, ParsedCodes } from 'lib/components'
 
 export const meta = {
   title: 'Code',
@@ -9,15 +8,7 @@ export const meta = {
 
 ## Code
 
-Show source code in a standardized way.
-
-<Note>
-  Want to display <Code>shell</Code> code snippets? Try{' '}
-  <NextLink href="/en-us/components/snippet">
-    <Link color>Snippet</Link>
-  </NextLink>
-  .
-</Note>
+Show source code in a standardized way. Want to display shell code snippets? try [Snippet](/en-us/components/snippet).
 
 <Playground
   desc="Basic inline codes."
@@ -30,49 +21,48 @@ Show source code in a standardized way.
 <Playground
   title="Code Block"
   desc="Multi line code display."
-  scope={{ Code }}
+  scope={{ Code, ExampleCodes: ParsedCodes.Types }}
   code={`
-() => {
-  const codes = \`npm i @geist-ui/core
-yarn add @geist-ui/core\`
-  return <Code block my={0}>{codes}</Code>
-}
+<Code block my={0}><ExampleCodes /></Code>
 `}
 />
 
 <Playground
   title="width"
   desc="Specify width manually, or other styles."
-  scope={{ Code }}
+  scope={{ Code, ExampleCodes: ParsedCodes.Greeting }}
   code={`
-() => {
-  const codes = \`npm i @geist-ui/core
-yarn add @geist-ui/core\`
-  return <Code block width="50%" my={0}>{codes}</Code>
-}
+<Code block width="50%" my={0}><ExampleCodes /></Code>
 `}
 />
 
 <Playground
-  title="overlong"
-  desc="Out of range presentation."
-  scope={{ Code }}
+  title="name"
+  desc="Specify the file name for the code block."
+  scope={{ Code, ExampleCodes: ParsedCodes.Clock }}
   code={`
-() => {
-  const codes = \`npm i @geist-ui/core npm i @geist-ui/core npm i @geist-ui/core
-yarn add @geist-ui/core\`
-  return <Code block width="50%" my={0}>{codes}</Code>
-}
+<Code block name="/Components/Clock.jsx" my={0}><ExampleCodes /></Code>
+`}
+/>
+
+<Playground
+  title="classic style"
+  desc="The classic design style with a line border instead of a background."
+  scope={{ Code, ExampleCodes: ParsedCodes.Clock }}
+  code={`
+<Code block classic name="/Components/Clock.jsx" my={0}><ExampleCodes /></Code>
 `}
 />
 
 <Attributes edit="/pages/en-us/components/code.mdx">
 <Attributes.Title>Code.Props</Attributes.Title>
 
-| Attribute | Description        | Type             | Accepted values    | Default |
-| --------- | ------------------ | ---------------- | ------------------ | ------- |
-| **block** | show code in `pre` | `boolean`        | -                  | `false` |
-| ...       | native props       | `HTMLAttributes` | `'className', ...` | -       |
+| Attribute   | Description                                 | Type             | Accepted values    | Default |
+| ----------- | ------------------------------------------- | ---------------- | ------------------ | ------- |
+| **block**   | show code in `pre`                          | `boolean`        | -                  | `false` |
+| **name**    | text displayed at the top of the code block | `string`         | -                  | -       |
+| **classic** | display with classic style                  | `boolean`        | -                  | `false` |
+| ...         | native props                                | `HTMLAttributes` | `'className', ...` | -       |
 
 </Attributes>
 
