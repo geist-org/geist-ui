@@ -202,7 +202,7 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
         }
 
         pre {
-          padding: calc(${theme.layout.gap} * 0.75) ${theme.layout.gap};
+          padding: calc(${theme.layout.gap} * 0.9) ${theme.layout.gap};
           margin: ${theme.layout.gap} 0;
           border: 1px solid ${theme.palette.accents_2};
           border-radius: ${theme.layout.radius};
@@ -211,13 +211,13 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
           overflow: auto;
           line-height: 1.5;
           text-align: left;
-          font-size: 13px;
+          font-size: 14px;
           -webkit-overflow-scrolling: touch;
         }
 
         pre code {
           color: ${theme.palette.foreground};
-          font-size: 0.8125rem;
+          font-size: 1em;
           line-height: 1.25em;
           white-space: pre;
         }
