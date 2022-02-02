@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 import { usePopoverContext } from './popover-context'
 
 interface Props {
@@ -47,7 +47,7 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
       <div
         className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`}
         onClick={clickHandler}
-        {...withPureProps(props)}>
+        {...props}>
         {children}
         <style jsx>{`
           .item {

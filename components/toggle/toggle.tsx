@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type ToggleTypes = NormalTypes
 export interface ToggleEventTarget {
@@ -78,7 +78,7 @@ const ToggleComponent: React.FC<ToggleProps> = ({
   }, [checked])
 
   return (
-    <label className={className} {...withPureProps(props)}>
+    <label className={className} {...props}>
       <input
         type="checkbox"
         disabled={disabled}

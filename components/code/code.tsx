@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 import useTheme from '../use-theme'
 import { addColorAlpha } from '../utils/color'
 
@@ -30,7 +30,6 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
 }: React.PropsWithChildren<CodeProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
   const theme = useTheme()
-  const otherProps = withPureProps(props)
   const { background, border } = useMemo(() => {
     if (!classic)
       return {
@@ -43,7 +42,7 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
     }
   }, [classic, theme.palette])
 
-  if (!block) return <code {...otherProps}>{children}</code>
+  if (!block) return <code {...props}>{children}</code>
 
   return (
     <div className="pre">
@@ -52,7 +51,7 @@ const CodeComponent: React.FC<React.PropsWithChildren<CodeProps>> = ({
           <div className="name">{name}</div>
         </header>
       )}
-      <pre className={className} {...otherProps}>
+      <pre className={className} {...props}>
         {children}
       </pre>
       <style jsx>{`

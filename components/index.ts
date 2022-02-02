@@ -198,7 +198,7 @@ export { default as CssBaseline } from './css-baseline'
 export { default as useTheme } from './use-theme'
 export { default as useClasses } from './use-classes'
 export { default as useScale } from './use-scale'
-export { withScale, withPureProps, ScalePropKeys, ScaleContext } from './use-scale'
+export { withScale, ScalePropKeys, ScaleContext } from './use-scale'
 export type {
   ScalePropsAndInvalid,
   ScaleProps,

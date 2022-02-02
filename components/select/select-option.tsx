@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import { useSelectContext } from './select-context'
 import useWarning from '../utils/use-warning'
 import Ellipsis from '../shared/ellipsis'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   value?: string
@@ -82,7 +82,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
         label ? 'label' : ''
       } ${className}`}
       onClick={clickHandler}
-      {...withPureProps(props)}>
+      {...props}>
       <Ellipsis height={SCALES.height(2.25)}>{children}</Ellipsis>
       <style jsx>{`
         .option {

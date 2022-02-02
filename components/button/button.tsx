@@ -1,5 +1,5 @@
 import React, { useRef, useState, MouseEvent, useMemo, useImperativeHandle } from 'react'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 import useTheme from '../use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
@@ -138,7 +138,7 @@ const ButtonComponent = React.forwardRef<
         className={`btn ${className}`}
         disabled={disabled}
         onClick={clickHandler}
-        {...withPureProps(props)}>
+        {...props}>
         {loading && <ButtonLoading color={color} />}
         {childrenWithIcon}
         {dripShow && (

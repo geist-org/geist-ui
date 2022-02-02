@@ -1,6 +1,6 @@
 import React, { ReactNode, useMemo } from 'react'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   caption?: ReactNode | string
@@ -29,7 +29,7 @@ const DisplayComponent: React.FC<React.PropsWithChildren<DisplayProps>> = ({
   const showShadow = useMemo(() => shadow && theme.type !== 'dark', [theme.type, shadow])
 
   return (
-    <div className={`display ${className}`} {...withPureProps(props)}>
+    <div className={`display ${className}`} {...props}>
       <div className="content">{children}</div>
       <div className="caption">{caption}</div>
 

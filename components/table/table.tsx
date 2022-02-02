@@ -12,7 +12,7 @@ import {
   TableOnRowClick,
   TableRowClassNameHandler,
 } from './table-types'
-import useScale, { ScaleProps, withPureProps, withScale } from '../use-scale'
+import useScale, { ScaleProps, withScale } from '../use-scale'
 import TableColumn from './table-column'
 
 interface Props<TableDataItem extends TableDataItemBase> {
@@ -90,7 +90,7 @@ function TableComponent<TableDataItem extends TableDataItemBase>(
 
   return (
     <TableContext.Provider value={contextValue}>
-      <table ref={ref} className={className} {...withPureProps(props)}>
+      <table ref={ref} className={className} {...props}>
         <TableHead columns={columns} width={width} />
         <TableBody<TableDataItem>
           data={data}

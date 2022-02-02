@@ -50,6 +50,7 @@ const withScale = <T, P = {}>(
       padding,
       unit = layout.unit,
       scale = 1,
+      ...innerProps
     } = props
     const makeScaleHandler =
       (attrValue: string | number | undefined): DynamicLayoutPipe =>
@@ -105,7 +106,7 @@ const withScale = <T, P = {}>(
 
     return (
       <ScaleContext.Provider value={value}>
-        <Render {...(props as P)} ref={ref}>
+        <Render {...(innerProps as P)} ref={ref}>
           {children}
         </Render>
       </ScaleContext.Provider>

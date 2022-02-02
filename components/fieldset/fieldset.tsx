@@ -7,7 +7,7 @@ import FieldsetContent from './fieldset-content'
 import { hasChild, pickChild } from '../utils/collections'
 import { useFieldset } from './fieldset-context'
 import useWarning from '../utils/use-warning'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   value?: string
@@ -81,7 +81,7 @@ const FieldsetComponent: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
   )
 
   return (
-    <div className={`fieldset ${className}`} {...withPureProps(props)}>
+    <div className={`fieldset ${className}`} {...props}>
       {hasContent ? content : <FieldsetContent>{content}</FieldsetContent>}
       {FooterChildren && FooterChildren}
       <style jsx>{`

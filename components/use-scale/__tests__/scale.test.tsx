@@ -1,5 +1,5 @@
 import React from 'react'
-import useScale, { ScaleProps, ScaleConfig, withScale, withPureProps } from '../index'
+import useScale, { ScaleProps, ScaleConfig, withScale } from '../index'
 import { renderHook } from '@testing-library/react-hooks'
 import { mount } from 'enzyme'
 
@@ -153,12 +153,12 @@ describe('UseScale', () => {
     let Component = withScale(PassedComponent)
     let wrapper = mount(<Component scale={2} />)
     let inner = wrapper.find('#inner').getDOMNode()
-    expect(inner.hasAttribute('scale')).toBe(true)
+    expect(inner.hasAttribute('scale')).toBe(false)
 
     const FilteredComponent: React.FC<
       React.PropsWithChildren<React.HTMLAttributes<any>>
     > = ({ children, ...props }) => (
-      <div id="inner" {...withPureProps(props)}>
+      <div id="inner" {...props}>
         {children}
       </div>
     )

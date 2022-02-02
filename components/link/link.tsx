@@ -2,7 +2,7 @@ import React from 'react'
 import useTheme from '../use-theme'
 import LinkIcon from './icon'
 import { addColorAlpha } from '../utils/color'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export interface Props {
   href?: string
@@ -52,7 +52,7 @@ const LinkComponent = React.forwardRef<
       <a
         className={`link ${block ? 'block' : ''} ${className}`}
         href={href}
-        {...withPureProps(props)}
+        {...props}
         ref={ref}>
         {children}
         {icon && <LinkIcon />}

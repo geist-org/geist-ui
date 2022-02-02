@@ -5,7 +5,7 @@ import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
 import useToasts from '../use-toasts'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type ToastTypes = NormalTypes
 interface Props {
@@ -82,7 +82,7 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   }
 
   return (
-    <div className={`snippet ${className}`} {...withPureProps(props)}>
+    <div className={`snippet ${className}`} {...props}>
       {isMultiLine ? (
         (text as string[]).map((t, index) => <pre key={`snippet-${index}-${t}`}>{t}</pre>)
       ) : (

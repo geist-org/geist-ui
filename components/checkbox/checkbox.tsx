@@ -5,7 +5,7 @@ import useWarning from '../utils/use-warning'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type CheckboxTypes = NormalTypes
 export interface CheckboxEventTarget {
@@ -109,7 +109,7 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
         disabled={isDisabled}
         checked={selfChecked}
         onChange={changeHandle}
-        {...withPureProps(props)}
+        {...props}
       />
       <span className="text">{children}</span>
 

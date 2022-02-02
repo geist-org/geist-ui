@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import Avatar from '../avatar'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   name: ReactNode | string
@@ -31,7 +31,7 @@ const UserComponent: React.FC<React.PropsWithChildren<UserProps>> = ({
   const { SCALES, getScaleProps } = useScale()
   const scale = getScaleProps('scale') as number | undefined
   return (
-    <div className={`user ${className}`} {...withPureProps(props)}>
+    <div className={`user ${className}`} {...props}>
       <Avatar src={src} scale={scale} text={text} alt={altText} />
       <div className="names">
         <span className="name">{name}</span>

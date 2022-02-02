@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScale, { withPureProps } from '../use-scale'
+import useScale from '../use-scale'
 
 export interface Props {
   tag: keyof JSX.IntrinsicElements
@@ -62,7 +62,7 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
   }, [mx, my, px, py, font, className])
 
   return (
-    <Component className={classNames} {...withPureProps(props)}>
+    <Component className={classNames} {...props}>
       {children}
       <style jsx>{`
         ${tag} {
