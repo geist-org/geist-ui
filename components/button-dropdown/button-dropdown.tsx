@@ -7,7 +7,7 @@ import ButtonDropdownItem from './button-dropdown-item'
 import { ButtonDropdownContext } from './button-dropdown-context'
 import { NormalTypes } from '../utils/prop-types'
 import { pickChild, pickChildByProps } from '../utils/collections'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type ButtonDropdownTypes = NormalTypes
 
@@ -91,7 +91,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
         ref={ref}
         className={`btn-dropdown ${className}`}
         onClick={stopPropagation}
-        {...withPureProps(props)}>
+        {...props}>
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>

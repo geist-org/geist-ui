@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import GridBasicItem, { GridBasicItemProps } from './basic-item'
 import { GridWrap } from './grid-types'
 import css from 'styled-jsx/css'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   gap?: number
@@ -44,9 +44,7 @@ const GridContainerComponent: React.FC<React.PropsWithChildren<GridContainerProp
   `
 
   return (
-    <GridBasicItem
-      className={`${resolveClassName} ${className}`}
-      {...withPureProps(props)}>
+    <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
       {children}
       {styles}
     </GridBasicItem>

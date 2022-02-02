@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type LoadingTypes = NormalTypes
 interface Props {
@@ -53,7 +53,7 @@ const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
   )
 
   return (
-    <div className={`loading-container ${className}`} {...withPureProps(props)}>
+    <div className={`loading-container ${className}`} {...props}>
       <span className="loading">
         {children && <label>{children}</label>}
         <i />

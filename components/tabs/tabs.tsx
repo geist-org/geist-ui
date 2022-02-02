@@ -8,7 +8,7 @@ import React, {
 } from 'react'
 import useTheme from '../use-theme'
 import { TabsHeaderItem, TabsConfig, TabsContext } from './tabs-context'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 import Highlight from '../shared/highlight'
 import { useRect } from '../utils/layouts'
 import { isGeistElement } from '../utils/collections'
@@ -110,7 +110,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
 
   return (
     <TabsContext.Provider value={initialValue}>
-      <div className={`tabs ${className}`} {...withPureProps(props)}>
+      <div className={`tabs ${className}`} {...props}>
         <header ref={ref} onMouseLeave={() => setDisplayHighlight(false)}>
           <Highlight
             rect={rect}

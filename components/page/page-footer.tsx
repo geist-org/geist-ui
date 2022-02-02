@@ -1,5 +1,5 @@
 import React from 'react'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -19,7 +19,7 @@ const PageFooterComponent: React.FC<React.PropsWithChildren<PageFooterProps>> = 
   const { SCALES } = useScale()
 
   return (
-    <footer {...withPureProps(props)}>
+    <footer {...props}>
       {children}
       <style jsx>{`
         footer {

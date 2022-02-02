@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
-import useScale, { withPureProps } from '../use-scale'
+import useScale from '../use-scale'
 
 interface Props {
   className?: string
@@ -59,7 +59,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
         tabIndex={-1}
         onKeyDown={onKeyDown}
         ref={modalContent}
-        {...withPureProps(props)}>
+        {...props}>
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabStart} />
         {children}
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabEnd} />

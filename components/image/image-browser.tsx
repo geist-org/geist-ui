@@ -5,7 +5,7 @@ import useTheme from '../use-theme'
 import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'
 import { getHostFromUrl } from './helpers'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type ImageAnchorProps = Omit<React.AnchorHTMLAttributes<any>, keyof LinkProps>
 
@@ -128,7 +128,7 @@ const ImageBrowserComponent = React.forwardRef<
     }, [url, showFullLink, title, colors, anchorProps])
 
     return (
-      <div className={`browser ${className}`} ref={ref} {...withPureProps(props)}>
+      <div className={`browser ${className}`} ref={ref} {...props}>
         <header>
           <div className="traffic">
             <span className="close" />

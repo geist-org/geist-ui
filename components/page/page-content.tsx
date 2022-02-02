@@ -1,5 +1,5 @@
 import React from 'react'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -20,7 +20,7 @@ const PageContentComponent: React.FC<React.PropsWithChildren<PageContentProps>> 
   const { SCALES } = useScale()
 
   return (
-    <main className={className} {...withPureProps(props)}>
+    <main className={className} {...props}>
       {children}
       <style jsx>{`
         main {

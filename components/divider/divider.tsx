@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { DividerAlign, SnippetTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type DividerTypes = SnippetTypes
 
@@ -52,7 +52,7 @@ const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
   const textColor = type === 'default' ? theme.palette.foreground : color
 
   return (
-    <div role="separator" className={`divider ${className}`} {...withPureProps(props)}>
+    <div role="separator" className={`divider ${className}`} {...props}>
       {children && <span className={`text ${alignClassName}`}>{children}</span>}
       <style jsx>{`
         .divider {

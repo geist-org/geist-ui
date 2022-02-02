@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   command?: boolean
@@ -34,7 +34,7 @@ const KeyboardComponent: React.FC<React.PropsWithChildren<KeyboardProps>> = ({
   const { SCALES } = useScale()
 
   return (
-    <kbd className={className} {...withPureProps(props)}>
+    <kbd className={className} {...props}>
       {command && <span>⌘</span>}
       {shift && <span>⇧</span>}
       {option && <span>⌥</span>}

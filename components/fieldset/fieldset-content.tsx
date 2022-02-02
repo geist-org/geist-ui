@@ -1,5 +1,5 @@
 import React from 'react'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -22,7 +22,7 @@ const FieldsetContentComponent: React.FC<
   const { SCALES } = useScale()
 
   return (
-    <div className={`content ${className}`} {...withPureProps(props)}>
+    <div className={`content ${className}`} {...props}>
       {children}
       <style jsx>{`
         .content {

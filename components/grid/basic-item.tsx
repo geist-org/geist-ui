@@ -6,7 +6,7 @@ import {
   GridAlignItems,
   GridAlignContent,
 } from './grid-types'
-import useScale, { withPureProps } from '../use-scale'
+import useScale from '../use-scale'
 
 export type GridBreakpointsValue = number | boolean
 export interface GridBasicComponentProps {
@@ -109,7 +109,7 @@ const GridBasicItem: React.FC<React.PropsWithChildren<GridBasicItemProps>> = ({
   )
 
   return (
-    <div className={`item ${classes} ${className}`} {...withPureProps(props)}>
+    <div className={`item ${classes} ${className}`} {...props}>
       {children}
       <style jsx>{`
         .item {

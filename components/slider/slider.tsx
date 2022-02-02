@@ -13,7 +13,7 @@ import SliderDot from './slider-dot'
 import SliderMark from './slider-mark'
 import { getColors } from './styles'
 import { NormalTypes } from '../utils/prop-types'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type SliderTypes = NormalTypes
 interface Props {
@@ -160,7 +160,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
       className={`slider ${className}`}
       onClick={clickHandler}
       ref={sliderRef}
-      {...withPureProps(props)}>
+      {...props}>
       <SliderDot disabled={disabled} ref={dotRef} isClick={isClick} left={currentRatio}>
         {hideValue || value}
       </SliderDot>

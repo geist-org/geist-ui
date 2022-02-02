@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import TooltipContent, { TooltipIconOffset } from './tooltip-content'
 import useClickAway from '../utils/use-click-away'
 import { TriggerTypes, Placement, SnippetTypes } from '../utils/prop-types'
-import { withPureProps, withScale } from '../use-scale'
+import { withScale } from '../use-scale'
 import { getRect } from './helper'
 
 export type TooltipOnVisibleChange = (visible: boolean) => void
@@ -116,7 +116,7 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       onClick={clickEventHandler}
       onMouseEnter={() => mouseEventHandler(true)}
       onMouseLeave={() => mouseEventHandler(false)}
-      {...withPureProps(props)}>
+      {...props}>
       {children}
       <TooltipContent {...contentProps}>{text}</TooltipContent>
       <style jsx>{`

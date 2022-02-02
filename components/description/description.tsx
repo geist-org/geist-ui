@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   title?: ReactNode | string
@@ -26,7 +26,7 @@ const DescriptionComponent: React.FC<DescriptionProps> = ({
   const theme = useTheme()
   const { SCALES } = useScale()
   return (
-    <dl className={`description ${className}`} {...withPureProps(props)}>
+    <dl className={`description ${className}`} {...props}>
       <dt>{title}</dt>
       <dd>{content}</dd>
 

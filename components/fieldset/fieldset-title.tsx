@@ -1,5 +1,4 @@
 import React from 'react'
-import { withPureProps } from '../use-scale'
 
 interface Props {
   className?: string
@@ -19,7 +18,7 @@ const FieldsetTitle: React.FC<React.PropsWithChildren<FieldsetTitleProps>> = ({
 }: React.PropsWithChildren<FieldsetTitleProps> & typeof defaultProps) => {
   return (
     <>
-      <div className={`title ${className}`} {...withPureProps(props)}>
+      <div className={`title ${className}`} {...props}>
         {children}
       </div>
       <style jsx>{`

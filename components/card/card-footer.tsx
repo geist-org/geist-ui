@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   disableAutoMargin?: boolean
@@ -27,7 +27,7 @@ const CardFooterComponent: React.FC<React.PropsWithChildren<CardFooterProps>> = 
   return (
     <footer
       className={`${disableAutoMargin ? '' : 'auto-margin'} ${className}`}
-      {...withPureProps(props)}>
+      {...props}>
       {children}
       <style jsx>{`
         footer {

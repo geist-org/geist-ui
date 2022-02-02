@@ -16,7 +16,7 @@ import { NormalTypes } from '../utils/prop-types'
 import Loading from '../loading'
 import { pickChild } from '../utils/collections'
 import useCurrentState from '../utils/use-current-state'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type AutoCompleteTypes = NormalTypes
 
@@ -196,7 +196,7 @@ const AutoCompleteComponent = React.forwardRef<
     }
 
     const inputProps = {
-      ...withPureProps(props),
+      ...props,
       disabled,
       value: state,
     }

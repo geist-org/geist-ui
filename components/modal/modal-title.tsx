@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -23,7 +23,7 @@ const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps>> = 
 
   return (
     <>
-      <h2 className={className} {...withPureProps(props)}>
+      <h2 className={className} {...props}>
         {children}
       </h2>
       <style jsx>{`

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { SnippetTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 export type TagTypes = SnippetTypes
 interface Props {
@@ -86,7 +86,7 @@ const TagComponent: React.FC<React.PropsWithChildren<TagProps>> = ({
   )
 
   return (
-    <span className={className} {...withPureProps(props)}>
+    <span className={className} {...props}>
       {children}
       <style jsx>{`
         span {

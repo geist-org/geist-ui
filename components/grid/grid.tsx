@@ -1,7 +1,7 @@
 import React from 'react'
 import css from 'styled-jsx/css'
 import GridBasicItem, { GridBasicItemProps } from './basic-item'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -29,9 +29,7 @@ const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
     }
   `
   return (
-    <GridBasicItem
-      className={`${resolveClassName} ${className}`}
-      {...withPureProps(props)}>
+    <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
       {children}
       {styles}
     </GridBasicItem>

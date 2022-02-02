@@ -3,7 +3,7 @@ import useTheme from '../use-theme'
 import useCurrentState from '../utils/use-current-state'
 import { FieldsetContext, FieldItem } from './fieldset-context'
 import useWarning from '../utils/use-warning'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   value: string
@@ -57,7 +57,7 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
 
   return (
     <FieldsetContext.Provider value={providerValue}>
-      <div className={`group ${className}`} {...withPureProps(props)}>
+      <div className={`group ${className}`} {...props}>
         <div className="group-tabs">
           {items.map(item => (
             <button

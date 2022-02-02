@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScale, { withPureProps, withScale } from '../use-scale'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -22,7 +22,7 @@ const FieldsetFooterComponent: React.FC<React.PropsWithChildren<FieldsetFooterPr
   const { SCALES } = useScale()
 
   return (
-    <footer className={className} {...withPureProps(props)}>
+    <footer className={className} {...props}>
       {children}
       <style jsx>{`
         footer {

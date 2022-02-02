@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { addColorAlpha } from '../utils/color'
-import { withPureProps } from '../use-scale'
 
 interface Props {
   active?: boolean
@@ -37,7 +36,7 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
       <button
         className={`${active ? 'active' : ''} ${disabled ? 'disabled' : ''}`}
         onClick={clickHandler}
-        {...withPureProps(props)}>
+        {...props}>
         {children}
       </button>
       <style jsx>{`
