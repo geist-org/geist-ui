@@ -1,6 +1,5 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useWarning from '../utils/use-warning'
 import LinkIcon from './icon'
 import { addColorAlpha } from '../utils/color'
 import useScale, { withPureProps, withScale } from '../use-scale'
@@ -8,7 +7,6 @@ import useScale, { withPureProps, withScale } from '../use-scale'
 export interface Props {
   href?: string
   color?: boolean
-  pure?: boolean
   icon?: boolean
   underline?: boolean
   block?: boolean
@@ -18,7 +16,6 @@ export interface Props {
 const defaultProps = {
   href: '',
   color: false,
-  pure: false,
   icon: false,
   underline: false,
   block: false,
@@ -37,7 +34,6 @@ const LinkComponent = React.forwardRef<
       href,
       color,
       underline,
-      pure,
       children,
       className,
       block,
@@ -51,9 +47,6 @@ const LinkComponent = React.forwardRef<
     const linkColor = color || block ? theme.palette.link : 'inherit'
     const hoverColor = color || block ? theme.palette.successLight : 'inherit'
     const decoration = underline ? 'underline' : 'none'
-    if (pure) {
-      useWarning('Props "pure" is deprecated, now the default Link is pure.')
-    }
 
     return (
       <a
@@ -79,8 +72,10 @@ const LinkComponent = React.forwardRef<
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           }
           .block {
-            padding: ${SCALES.pt(0.268)} ${SCALES.pr(0.5625)} ${SCALES.pb(0.268)}
-              ${SCALES.pl(0.5625)};
+            padding: ${SCALES.pt(0.125)} ${SCALES.pr(0.25)} ${SCALES.pb(0.125)}
+              ${SCALES.pl(0.25)};
+            margin: ${SCALES.mt(0)} ${SCALES.mr(-0.125)} ${SCALES.mb(0)}
+              ${SCALES.ml(-0.125)};
           }
 
           .link:hover,
