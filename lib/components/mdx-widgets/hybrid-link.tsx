@@ -6,7 +6,7 @@ import { useRouter } from 'next/router'
 export type HybridLinkProps = LinkProps
 
 const HybridLink: React.FC<HybridLinkProps> = ({ href = '#', children, ...props }) => {
-  const isRelativeUrl = href?.startsWith('/')
+  const isRelativeUrl = !/^([a-z0-9]*:|.{0})\/\/.*$/gim.test(href)
   const { pathname } = useRouter()
   const isHomePage = pathname.includes('guide/introduction')
 
