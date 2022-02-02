@@ -177,7 +177,7 @@ const ButtonComponent = React.forwardRef<
             --geist-ui-button-height: ${SCALES.height(2.5)};
             --geist-ui-button-color: ${color};
             --geist-ui-button-bg: ${bg};
-            min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
+            min-width: ${auto ? 'min-content' : SCALES.width(10.5)};
             width: ${auto ? 'auto' : 'initial'};
             height: ${SCALES.height(2.5)};
             padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)} ${paddingLeft};
