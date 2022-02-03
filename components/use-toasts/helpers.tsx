@@ -15,7 +15,8 @@ export const makeToastActions = (actions: Toast['actions'], cancelHandle: () => 
   return actions.map((action, index) => (
     <Button
       auto
-      scale={2 / 3}
+      scale={1 / 3}
+      font="13px"
       type={action.passive ? 'default' : 'secondary'}
       key={`action-${index}`}
       onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
