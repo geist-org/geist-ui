@@ -46,7 +46,7 @@ const getColorItem = (
 const Colors: React.FC<Props> = ({ type }) => {
   const theme = useTheme()
   const { copy } = useClipboard()
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const copyText = (text: string) => {
     copy(text)
     setToast({

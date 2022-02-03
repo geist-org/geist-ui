@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { useToasts, Button, Spacer } from 'components'
+import { useToasts, Button, Spacer, Link } from 'components'
 
 export const meta = {
   title: '通知 useToast',
@@ -16,9 +16,9 @@ export const meta = {
   scope={{ Button, useToasts }}
   code={`
 () => {
-  const [toasts, setToast] = useToasts()
+  const { setToast } = useToasts()
   const click = () => setToast({ text: '你正在浏览文档站点。' })
-  return <Button onClick={click}>显示通知</Button>
+  return <Button scale={2/3} auto onClick={click}>显示通知</Button>
 }
 `}
 />
@@ -29,9 +29,9 @@ export const meta = {
   scope={{ Button, useToasts }}
   code={`
 () => {
-  const [toasts, setToast] = useToasts()
+  const { setToast } = useToasts()
   const click = () => setToast({ text: 'CSS是一门基于规则的语言 —— 你能定义用于你的网页中特定元素样式的一组规则. 比如“我希望页面中的主标题是红色的大字”' })
-  return <Button onClick={click}>显示通知</Button>
+  return <Button scale={2/3} auto onClick={click}>显示通知</Button>
 }
 `}
 />
@@ -42,7 +42,7 @@ export const meta = {
   scope={{ Button, useToasts }}
   code={`
 () => {
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const action = {
     name: '点击我',
     handler: () => alert('由 Toast / 通知组件触发。')
@@ -51,7 +51,7 @@ export const meta = {
     text: '我正在浏览文档站点。',
     actions: [action],
   })
-  return <Button onClick={click} type="secondary">显示通知</Button>
+  return <Button scale={2/3} auto onClick={click} type="secondary">显示通知</Button>
 }
 `}
 />
@@ -62,7 +62,7 @@ export const meta = {
   scope={{ Button, useToasts }}
   code={`
 () => {
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const action = {
     name: '取消',
     passive: true,
@@ -72,7 +72,23 @@ export const meta = {
     text: '我正在浏览文档站点。',
     actions: [action],
   })
-  return <Button onClick={click}>显示通知</Button>
+  return <Button scale={2/3} auto onClick={click}>显示通知</Button>
+}
+`}
+/>
+
+<Playground
+  title="自定义模板"
+  desc="以 `ReactNode` 代替字符串展示更丰富的信息。"
+  scope={{ Button, useToasts, Link }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const click = () => setToast({
+    text: <p>点击此<Link target="_blank" color block href="https://github.com/geist-org/geist-ui">链接</Link>了解更多信息</p>,
+    delay: 4000,
+  })
+  return <Button scale={2/3} auto onClick={click}>显示通知</Button>
 }
 `}
 />
@@ -82,16 +98,16 @@ export const meta = {
   scope={{ Button, useToasts, Spacer }}
   code={`
 () => {
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const click = type => setToast({
     text: '我正在浏览文档站点。',
     type,
   })
   return (
     <>
-    <Button onClick={() => click('success')} type="success">显示成功状态</Button>
-    <Spacer h={.5} />
-    <Button onClick={() => click('warning')} type="warning">显示警告状态</Button>
+    <Button scale={2/3} auto onClick={() => click('success')} type="success">显示成功状态</Button>
+    <Spacer inline x={.5} />
+    <Button scale={2/3} auto onClick={() => click('warning')} type="warning">显示警告状态</Button>
     </>
   )
 }
@@ -102,18 +118,49 @@ export const meta = {
 <Attributes.Title>useToasts</Attributes.Title>
 
 ```ts
-const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
+const {
+  // 当前 DOM 中所有可用实例
+  toasts: Array<Toast>
+
+  // 创建一个立即显示的通知
+  setToast: (toast: ToastInput) => void
+
+  // 立刻隐藏所有的通知
+  removeAll: () => void
+
+  // 按 ID 查询指定的实例
+  findToastOneByID: (ident: string) => Toast | undefined
+
+  // 按 ID 移除一个指定通知
+  removeToastOneByID: (ident: string) => void
+} = useToasts(layout: ToastLayout)
 ```
 
-<Attributes.Title>Toast</Attributes.Title>
+<Attributes.Title>ToastLayout</Attributes.Title>
+
+| 参数          | 描述           | 类型                              | 默认值        |
+| ------------- | -------------- | --------------------------------- | ------------- |
+| **padding**   | 通用 CSS 属性  | `string`                          | -             |
+| **margin**    | 通用 CSS 属性  | `string`                          | -             |
+| **width**     | 通用 CSS 属性  | `string`                          | -             |
+| **maxWidth**  | 通用 CSS 属性  | `string`                          | `90vw`        |
+| **maxHeight** | 通用 CSS 属性  | `string`                          | `75px`        |
+| **placement** | 组件弹出的位置 | [ToastPlacement](#toastplacement) | `bottomRight` |
+
+<Attributes.Title>ToastInput</Attributes.Title>
+
+| 参数        | 描述                    | 类型                        | 默认值    |
+| ----------- | ----------------------- | --------------------------- | --------- |
+| **id**      | 唯一识别 ID，可自动生成 | `string`                    | -         |
+| **text**    | 组件内显示的信息        | `string`, `ReactNode`       | -         |
+| **type**    | 组件的样式类型          | [ToastTypes](#toasttypes)   | `default` |
+| **delay**   | 自动关闭前等待的时间    | `number`                    | `2000`    |
+| **actions** | 指定一个默认的动作      | [ToastAction](#toastaction) | -         |
+
+<Attributes.Title>ToastPlacement</Attributes.Title>
 
 ```ts
-interface Toast {
-  text?: string
-  type?: ToastTypes
-  delay?: number
-  actions?: Array<ToastAction>
-}
+type ToastPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight'
 ```
 
 <Attributes.Title>ToastAction</Attributes.Title>
@@ -133,6 +180,5 @@ type ToastTypes = 'default' \| 'secondary' | 'success' | 'warning' | 'error'
 ```
 
 </Attributes>
-
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

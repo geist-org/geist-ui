@@ -114,7 +114,7 @@ Display a list of files and folders in a hierarchical tree structure.
   scope={{ Tree, useToasts }}
   code={`
 () => {
-  const [_, setToast] = useToasts()
+  const { setToast } = useToasts()
   const handler = path => setToast({ text: path })
   return (
     <Tree onClick={handler}>

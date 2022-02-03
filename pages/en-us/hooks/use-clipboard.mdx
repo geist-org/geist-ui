@@ -16,7 +16,7 @@ This is custom React hooks, you need to follow the <Link target="_blank" color h
   scope={{ useClipboard, Button, useToasts }}
   code={`
 () => {
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const { copy } = useClipboard()
   const handler = () => {
     copy('hello, geist-ui')

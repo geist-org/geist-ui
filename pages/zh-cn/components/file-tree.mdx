@@ -114,7 +114,7 @@ export const meta = {
   scope={{ Tree, useToasts }}
   code={`
 () => {
-  const [_, setToast] = useToasts()
+  const { setToast } = useToasts()
   const handler = path => setToast({ text: path })
   return (
     <Tree onClick={handler}>
