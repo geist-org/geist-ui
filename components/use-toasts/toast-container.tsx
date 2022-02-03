@@ -6,11 +6,13 @@ import { useGeistUIContext } from '../utils/use-geist-ui-context'
 import ToastItem from './toast-item'
 import useClasses from '../use-classes'
 import { isLeftPlacement, isTopPlacement } from './helpers'
+import useCurrentState from '../utils/use-current-state'
 
 const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
   const theme = useTheme()
   const portal = usePortal('toast')
-  const { toasts, updateToasts, toastLayout } = useGeistUIContext()
+  const [, setHovering, hoveringRef] = useCurrentState<boolean>(false)
+  const { toasts, updateToasts, toastLayout, lastUpdateToastId } = useGeistUIContext()
   const memoizedLayout = useMemo(() => toastLayout, [toastLayout])
   const toastElements = useMemo(
     () =>
@@ -28,7 +30,8 @@ const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
     [memoizedLayout],
   )
   const hoverHandler = (isHovering: boolean) => {
-    if (isHovering)
+    setHovering(isHovering)
+    if (isHovering) {
       return updateToasts(last =>
         last.map(toast => {
           if (!toast.visible) return toast
@@ -39,6 +42,7 @@ const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
           }
         }),
       )
+    }
 
     updateToasts(last =>
       last.map((toast, index) => {
@@ -57,6 +61,15 @@ const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
       }),
     )
   }
+
+  useEffect(() => {
+    const index = toasts.findIndex(r => r._internalIdent === lastUpdateToastId)
+    const toast = toasts[index]
+    if (!toast || toast.visible || !hoveringRef.current) return
+    const hasVisible = toasts.find((r, i) => i < index && r.visible)
+    if (hasVisible || !hoveringRef.current) return
+    hoverHandler(false)
+  }, [toasts, lastUpdateToastId])
 
   useEffect(() => {
     let timeout: null | number = null
@@ -80,8 +93,8 @@ const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
   return createPortal(
     <div
       className={classNames}
-      onMouseOver={() => hoverHandler(true)}
-      onMouseOut={() => hoverHandler(false)}>
+      onMouseEnter={() => hoverHandler(true)}
+      onMouseLeave={() => hoverHandler(false)}>
       {toastElements}
       <style jsx>{`
         .toasts {

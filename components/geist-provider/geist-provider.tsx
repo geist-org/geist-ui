@@ -1,8 +1,9 @@
-import React, { PropsWithChildren, useMemo } from 'react'
+import React, { PropsWithChildren, useMemo, useState } from 'react'
 import {
   GeistUIContent,
   GeistUIContextParams,
   UpdateToastsFunction,
+  UpdateToastsIDFunction,
   UpdateToastsLayoutFunction,
 } from '../utils/use-geist-ui-context'
 import ThemeProvider from './theme-provider'
@@ -21,6 +22,8 @@ const GeistProvider: React.FC<PropsWithChildren<GeistProviderProps>> = ({
   themeType,
   children,
 }) => {
+  const [lastUpdateToastId, setLastUpdateToastId] =
+    useState<GeistUIContextParams['lastUpdateToastId']>(null)
   const [toasts, setToasts, toastsRef] = useCurrentState<GeistUIContextParams['toasts']>(
     [],
   )
@@ -34,15 +37,20 @@ const GeistProvider: React.FC<PropsWithChildren<GeistProviderProps>> = ({
     const nextLayout = fn(toastLayoutRef.current)
     setToastLayout(nextLayout)
   }
+  const updateLastToastId: UpdateToastsIDFunction = fn => {
+    setLastUpdateToastId(fn())
+  }
 
   const initialValue = useMemo<GeistUIContextParams>(
     () => ({
       toasts,
       toastLayout,
       updateToasts,
+      lastUpdateToastId,
       updateToastLayout,
+      updateLastToastId,
     }),
-    [toasts, toastLayout],
+    [toasts, toastLayout, lastUpdateToastId],
   )
 
   return (

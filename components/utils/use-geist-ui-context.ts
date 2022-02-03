@@ -5,12 +5,15 @@ export type UpdateToastsFunction = (fn: (toasts: Array<Toast>) => Array<Toast>) 
 export type UpdateToastsLayoutFunction = (
   fn: (layout: Required<ToastLayout>) => Required<ToastLayout>,
 ) => any
+export type UpdateToastsIDFunction = (fn: () => string | null) => any
 
 export interface GeistUIContextParams {
   toasts: Array<Toast>
   updateToasts: UpdateToastsFunction
   toastLayout: Required<ToastLayout>
   updateToastLayout: UpdateToastsLayoutFunction
+  lastUpdateToastId: string | null
+  updateLastToastId: UpdateToastsIDFunction
 }
 
 const defaultParams: GeistUIContextParams = {
@@ -18,6 +21,8 @@ const defaultParams: GeistUIContextParams = {
   toastLayout: defaultToastLayout,
   updateToastLayout: t => t,
   updateToasts: t => t,
+  lastUpdateToastId: null,
+  updateLastToastId: () => null,
 }
 
 export const GeistUIContent: React.Context<GeistUIContextParams> =

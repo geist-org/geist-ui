@@ -56,7 +56,8 @@ export type ToastHooksResult = {
 }
 
 const useToasts = (layout?: ToastLayout): ToastHooksResult => {
-  const { updateToasts, toasts, updateToastLayout } = useGeistUIContext()
+  const { updateToasts, toasts, updateToastLayout, updateLastToastId } =
+    useGeistUIContext()
 
   useEffect(() => {
     if (!layout) return
@@ -77,6 +78,7 @@ const useToasts = (layout?: ToastLayout): ToastHooksResult => {
         return { ...item, visible: false }
       }),
     )
+    updateLastToastId(() => internalId)
   }
   const removeAll = () => {
     updateToasts(last => last.map(toast => ({ ...toast, visible: false })))
