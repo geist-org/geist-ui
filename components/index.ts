@@ -172,7 +172,7 @@ export { default as useAllThemes } from './use-all-themes'
 export type { AllThemesConfig } from './use-all-themes'
 
 export { default as useToasts } from './use-toasts'
-export type { Toast } from './use-toasts'
+export type { Toast, ToastInput, ToastAction, ToastLayout } from './use-toasts'
 
 export { default as User } from './user'
 export type { UserProps } from './user'

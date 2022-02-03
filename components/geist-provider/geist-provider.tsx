@@ -1,13 +1,15 @@
-import React, { PropsWithChildren, useMemo, useState } from 'react'
+import React, { PropsWithChildren, useMemo } from 'react'
 import {
   GeistUIContent,
   GeistUIContextParams,
   UpdateToastsFunction,
+  UpdateToastsLayoutFunction,
 } from '../utils/use-geist-ui-context'
 import ThemeProvider from './theme-provider'
 import useCurrentState from '../utils/use-current-state'
-import ToastContainer, { ToastWithID } from '../use-toasts/toast-container'
+import ToastContainer from '../use-toasts/toast-container'
 import { GeistUIThemes } from '../themes/presets'
+import { defaultToastLayout } from '../use-toasts/use-toast'
 
 export type GeistProviderProps = {
   themes?: Array<GeistUIThemes>
@@ -19,28 +21,28 @@ const GeistProvider: React.FC<PropsWithChildren<GeistProviderProps>> = ({
   themeType,
   children,
 }) => {
-  const [toasts, setToasts, toastsRef] = useCurrentState<Array<ToastWithID>>([])
-  const [toastHovering, setToastHovering] = useState<boolean>(false)
-  const updateToasts: UpdateToastsFunction<ToastWithID> = (
-    fn: (toasts: ToastWithID[]) => ToastWithID[],
-  ) => {
+  const [toasts, setToasts, toastsRef] = useCurrentState<GeistUIContextParams['toasts']>(
+    [],
+  )
+  const [toastLayout, setToastLayout, toastLayoutRef] =
+    useCurrentState<GeistUIContextParams['toastLayout']>(defaultToastLayout)
+  const updateToasts: UpdateToastsFunction = fn => {
     const nextToasts = fn(toastsRef.current)
     setToasts(nextToasts)
   }
-
-  const updateToastHoverStatus = (fn: () => boolean) => {
-    const nextHoverStatus = fn()
-    setToastHovering(nextHoverStatus)
+  const updateToastLayout: UpdateToastsLayoutFunction = fn => {
+    const nextLayout = fn(toastLayoutRef.current)
+    setToastLayout(nextLayout)
   }
 
   const initialValue = useMemo<GeistUIContextParams>(
     () => ({
       toasts,
-      toastHovering,
+      toastLayout,
       updateToasts,
-      updateToastHoverStatus,
+      updateToastLayout,
     }),
-    [toasts, toastHovering],
+    [toasts, toastLayout],
   )
 
   return (

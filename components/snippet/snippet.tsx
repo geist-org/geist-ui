@@ -54,7 +54,7 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   const theme = useTheme()
   const { SCALES } = useScale()
   const { copy } = useClipboard()
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
 

@@ -1,25 +1,27 @@
 import React from 'react'
-import { ToastWithID } from '../use-toasts/toast-container'
+import { defaultToastLayout, ToastLayout, Toast } from '../use-toasts/use-toast'
 
-export type UpdateToastsFunction<T> = (fn: (toasts: Array<T>) => Array<T>) => any
+export type UpdateToastsFunction = (fn: (toasts: Array<Toast>) => Array<Toast>) => any
+export type UpdateToastsLayoutFunction = (
+  fn: (layout: Required<ToastLayout>) => Required<ToastLayout>,
+) => any
 
 export interface GeistUIContextParams {
-  toasts: Array<ToastWithID>
-  toastHovering: boolean
-  updateToasts: UpdateToastsFunction<ToastWithID>
-  updateToastHoverStatus: (fn: () => boolean) => void
+  toasts: Array<Toast>
+  updateToasts: UpdateToastsFunction
+  toastLayout: Required<ToastLayout>
+  updateToastLayout: UpdateToastsLayoutFunction
 }
 
 const defaultParams: GeistUIContextParams = {
   toasts: [],
-  toastHovering: false,
+  toastLayout: defaultToastLayout,
+  updateToastLayout: t => t,
   updateToasts: t => t,
-  updateToastHoverStatus: () => {},
 }
 
-export const GeistUIContent: React.Context<GeistUIContextParams> = React.createContext<GeistUIContextParams>(
-  defaultParams,
-)
+export const GeistUIContent: React.Context<GeistUIContextParams> =
+  React.createContext<GeistUIContextParams>(defaultParams)
 
 export const useGeistUIContext = (): GeistUIContextParams =>
   React.useContext<GeistUIContextParams>(GeistUIContent)
