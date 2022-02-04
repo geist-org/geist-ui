@@ -5,6 +5,7 @@ export type TabsInternalCellProps = {
   onMouseOver: (e: MouseEvent<HTMLDivElement>) => void
   activeClassName?: string
   activeStyle?: CSSProperties
+  hideBorder?: boolean
 }
 
 export type TabsInternalCell = React.FC<TabsInternalCellProps>

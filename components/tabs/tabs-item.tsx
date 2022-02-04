@@ -32,6 +32,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
     onMouseOver,
     activeClassName,
     activeStyle,
+    hideBorder,
   }) => {
     const theme = useTheme()
     const ref = useRef<HTMLDivElement | null>(null)
@@ -41,6 +42,7 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
       active,
       disabled,
       [activeClassName!]: active,
+      'hide-border': hideBorder,
     })
     const clickHandler = () => {
       if (disabled) return
@@ -116,6 +118,20 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
           .disabled {
             color: ${theme.palette.accents_3};
             cursor: not-allowed;
+          }
+          .hide-border:before {
+            display: block;
+            content: ${label};
+            font-weight: 500;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+          }
+          .hide-border:after {
+            display: none;
+          }
+          .hide-border.active {
+            font-weight: 500;
           }
         `}</style>
       </div>
