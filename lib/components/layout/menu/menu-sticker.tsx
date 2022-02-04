@@ -47,6 +47,9 @@ const MenuSticker = () => {
               value={tabValue}
               leftSpace={0}
               activeClassName="current"
+              align="center"
+              hideDivider
+              hideBorder
               onChange={val => setTabValue(val)}>
               <Tabs.Item font="14px" label={isChinese ? '主页' : 'Home'} value="" />
               {tabbarData
@@ -76,19 +79,19 @@ const MenuSticker = () => {
           height: var(--geist-page-tab-height);
           visibility: visible;
         }
-        .sticker :global(.tab) {
-          color: ${theme.palette.accents_3};
-        }
-        .sticker :global(.tab:hover) {
-          color: ${theme.palette.accents_6};
-        }
-        .sticker :global(.current) {
-          color: ${theme.palette.foreground};
-          font-weight: 500;
-        }
-        .sticker :global(.current::after) {
-          display: none;
-        }
+        // .sticker :global(.tab) {
+        //   color: ${theme.palette.accents_3};
+        // }
+        // .sticker :global(.tab:hover) {
+        //   color: ${theme.palette.accents_6};
+        // }
+        // .sticker :global(.current) {
+        //   color: ${theme.palette.foreground};
+        //   font-weight: 500;
+        // }
+        //.sticker :global(.current::after) {
+        //  display: none;
+        //}
         nav {
           position: relative;
           width: 100%;
@@ -122,10 +125,10 @@ const MenuSticker = () => {
         .inner :global(.content) {
           display: none;
         }
-        .inner :global(.scroll-container) {
-          border-color: transparent;
-          justify-content: center;
-        }
+        //.inner :global(.scroll-container) {
+        //  border-color: transparent;
+        //  justify-content: center;
+        //}
       `}</style>
     </>
   )

@@ -9,7 +9,7 @@ export const meta = {
 
 ## useInput
 
-`useInput` provides automatic binding for component `Input`, which can reduce the amount of repetitive code and improve the development experience.
+`useInput` provides automatic binding for component [Input](/en-us/components/input), which can reduce the amount of repetitive code and improve the development experience.
 Using this hooks behaves the same as if you had added `React.useState` manually.
 
 <Playground
@@ -49,13 +49,13 @@ type useInput = (initialValue: string) => {
 
 <Attributes.Title>KeyboardOptions</Attributes.Title>
 
-| Option                 | Description                         | Type      |
-| ---------------------- | ----------------------------------- | --------- |
-| **state** | the value of the Input | `string` |
-| **setState**    | same as React.setState              | - |
-| **currentRef**     | the current value of Input | `string` |
-| **reset**            | reset the value of Input         | `() => void` |
-| **bindings**              | auto-binding objects conforming to the Input props                 | -  |
+| Option         | Description                                        | Type         |
+| -------------- | -------------------------------------------------- | ------------ |
+| **state**      | the value of the Input                             | `string`     |
+| **setState**   | same as React.setState                             | -            |
+| **currentRef** | the current value of Input                         | `string`     |
+| **reset**      | reset the value of Input                           | `() => void` |
+| **bindings**   | auto-binding objects conforming to the Input props | -            |
 
 </Attributes>
 

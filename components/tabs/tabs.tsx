@@ -18,6 +18,7 @@ interface Props {
   initialValue?: string
   value?: string
   hideDivider?: boolean
+  hideBorder?: boolean
   highlight?: boolean
   onChange?: (val: string) => void
   className?: string
@@ -48,6 +49,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   initialValue: userCustomInitialValue,
   value,
   hideDivider,
+  hideBorder,
   children,
   onChange,
   className,
@@ -128,6 +130,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
                 onMouseOver={tabItemMouseOverHandler}
                 activeClassName={activeClassName}
                 activeStyle={activeStyle}
+                hideBorder={hideBorder}
               />
             ))}
           </div>

@@ -1,0 +1,88 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, useTheme } from 'components'
+
+export const meta = {
+  title: '类名合并 useClasses',
+  group: '开发者',
+  index: 105,
+}
+
+## useClasses
+
+从技术实现上来说，这不是一个 Hooks，只是借用其命名规范的普通函数。(可以直接用于模板内)
+`useClasses` 可以将字符串、对象、表达式等混合转化为 class-names (字符串)，并且移除其中多余的空格。
+事实上此函数的功能与 [classnames](https://www.npmjs.com/package/classnames) 非常类似，只不过更加简洁和轻量。
+
+之所以要在 _Geist_ 内单独创建一个 Hooks 解决类名合并的问题而不是直接引用社区第三方库，很大一部分考量是来自于体积。
+_Geist_ 组件库内不需要复杂的类名合并、处理多样性的表达式，更多仅用于移除空白字符。如果你正在 Css in JS 的样式解决方案，这会是一个对你非常有帮助的轻量级类名合并工具。
+
+### 基础
+
+移除合并类名时的多个空格字符：
+
+```tsx
+import { useClasses } from '@geist-ui/core'
+
+export default ({ className }) => {
+  const myClass = 'button'
+
+  // output -> "button "
+  return <div className={`${myClass} ${className}`} />
+
+  // output -> "button"
+  return <div className={useClasses(myClass, className)} />
+}
+```
+
+在类名合并的基础上添加表达式：
+
+```tsx
+export default ({ className }) => {
+  const classes = useClasses('button', isHover ? 'hover' : 'base', className)
+
+  // output -> "button hover"
+  // output -> "button base"
+  return <div className={classes} />
+}
+```
+
+### 解析对象
+
+对于更加复杂的场景，我们可以用 Hooks 解析一个对象，并将对象的键作为类名：
+
+```tsx
+export default ({ active, disabled }) => {
+  const classes = useClasses('button', {
+    active,
+    'button-disabled': disabled,
+  })
+
+  // output -> "button active"
+  // output -> "button active button-disabled"
+  return <div className={classes} />
+}
+```
+
+### 边界
+
+但凡是可以被隐式类型转化为 `false` 的值都会被忽略：
+
+```tsx
+useClasses('') // output -> ""
+useClasses(null) // output -> ""
+useClasses('btn', undefined) // output -> "btn"
+useClasses({ actived: null }) // output -> ""
+useClasses(0) // output -> ""
+useClasses(false, 'btn', '') // output -> "btn"
+```
+
+<Attributes edit="/pages/zh-cn/hooks/use-classes.mdx">
+<Attributes.Title>useClasses</Attributes.Title>
+
+```ts
+type useClasses = (input: string | Object | null | undefined | boolean | number) => string
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
