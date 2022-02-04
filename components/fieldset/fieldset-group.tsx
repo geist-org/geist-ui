@@ -4,6 +4,7 @@ import useCurrentState from '../utils/use-current-state'
 import { FieldsetContext, FieldItem } from './fieldset-context'
 import useWarning from '../utils/use-warning'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value: string
@@ -29,6 +30,7 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
   const { SCALES } = useScale()
   const [selfVal, setSelfVal] = useState<string>(value)
   const [items, setItems, ref] = useCurrentState<FieldItem[]>([])
+  const classes = useClasses('group', className)
 
   const register = (newItem: FieldItem) => {
     const hasItem = ref.current.find(item => item.value === newItem.value)
@@ -57,7 +59,7 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
 
   return (
     <FieldsetContext.Provider value={providerValue}>
-      <div className={`group ${className}`} {...props}>
+      <div className={classes} {...props}>
         <div className="group-tabs">
           {items.map(item => (
             <button

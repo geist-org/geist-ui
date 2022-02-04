@@ -4,6 +4,7 @@ import useClickAway from '../utils/use-click-away'
 import { TriggerTypes, Placement, SnippetTypes } from '../utils/prop-types'
 import { withScale } from '../use-scale'
 import { getRect } from './helper'
+import useClasses from '../use-classes'
 
 export type TooltipOnVisibleChange = (visible: boolean) => void
 export type TooltipTypes = SnippetTypes
@@ -112,7 +113,7 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   return (
     <div
       ref={ref}
-      className={`tooltip ${className}`}
+      className={useClasses('tooltip', className)}
       onClick={clickEventHandler}
       onMouseEnter={() => mouseEventHandler(true)}
       onMouseLeave={() => mouseEventHandler(false)}

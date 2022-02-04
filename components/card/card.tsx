@@ -7,6 +7,7 @@ import CardContent from './card-content'
 import Image from '../image'
 import { hasChild, pickChild } from '../utils/collections'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   hoverable?: boolean
@@ -49,7 +50,7 @@ const CardComponent: React.FC<React.PropsWithChildren<CardProps>> = ({
   const hasContent = hasChild(withoutImageChildren, CardContent)
 
   return (
-    <div className={`card ${className}`} {...props}>
+    <div className={useClasses('card', className)} {...props}>
       {imageChildren}
       {hasContent ? (
         withoutImageChildren

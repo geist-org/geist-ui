@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type BadgeTypes = NormalTypes
 
@@ -46,9 +47,10 @@ const BadgeComponent: React.FC<React.PropsWithChildren<BadgeProps>> = ({
     if (!type || type === 'default') return theme.palette.background
     return 'white'
   }, [type, theme.palette.background])
+  const classes = useClasses('badge', { dot }, className)
 
   return (
-    <span className={`badge ${dot ? 'dot' : ''} ${className}`} {...props}>
+    <span className={classes} {...props}>
       {!dot && children}
       <style jsx>{`
         .badge {

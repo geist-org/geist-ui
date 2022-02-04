@@ -7,6 +7,7 @@ import useClickAnyWhere from '../utils/use-click-anywhere'
 import useDOMObserver from '../utils/use-dom-observer'
 import useWarning from '../utils/use-warning'
 import { getRefRect } from '../utils/layouts'
+import useClasses from '../use-classes'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
@@ -33,6 +34,11 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
   ({ children, parent, visible, disableMatchWidth, getPopupContainer }) => {
     const el = usePortal('dropdown', getPopupContainer)
     const [rect, setRect] = useState<ReactiveDomReact>(defaultRect)
+    const classes = useClasses(
+      'dropdown',
+      disableMatchWidth ? 'disable-match' : 'width-match',
+    )
+
     if (!parent) return null
 
     /* istanbul ignore next */
@@ -90,10 +96,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
     if (!el) return null
     return createPortal(
       <CssTransition visible={visible}>
-        <div
-          className={`dropdown ${disableMatchWidth ? 'disable-match' : 'width-match'}`}
-          onClick={clickHandler}
-          onMouseDown={mouseDownHandler}>
+        <div className={classes} onClick={clickHandler} onMouseDown={mouseDownHandler}>
           {children}
           <style jsx>{`
             .dropdown {
@@ -102,11 +105,9 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
               left: ${rect.left}px;
               z-index: 1100;
             }
-
             .width-match {
               width: ${rect.width}px;
             }
-
             .disable-match {
               min-width: ${rect.width}px;
             }

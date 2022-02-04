@@ -1,4 +1,5 @@
 import React from 'react'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -16,9 +17,11 @@ const FieldsetTitle: React.FC<React.PropsWithChildren<FieldsetTitleProps>> = ({
   children,
   ...props
 }: React.PropsWithChildren<FieldsetTitleProps> & typeof defaultProps) => {
+  const classes = useClasses('title', className)
+
   return (
     <>
-      <div className={`title ${className}`} {...props}>
+      <div className={classes} {...props}>
         {children}
       </div>
       <style jsx>{`

@@ -8,6 +8,7 @@ import { useTreeContext } from './tree-context'
 import TreeFolderIcon from './tree-folder-icon'
 import TreeStatusIcon from './tree-status-icon'
 import { sortChildren, makeChildPath, stopPropagation } from './tree-help'
+import useClasses from '../use-classes'
 
 interface Props {
   name: string
@@ -57,7 +58,7 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
     : sortChildren(nextChildren, TreeFolder)
 
   return (
-    <div className={`folder ${className}`} onClick={clickHandler} {...props}>
+    <div className={useClasses('folder', className)} onClick={clickHandler} {...props}>
       <div className="names">
         <TreeIndents count={parentLevel} />
         <span className="status">

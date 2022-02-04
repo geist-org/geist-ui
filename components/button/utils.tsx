@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import ButtonIcon from './button-icon'
 import { ButtonProps } from './button'
 import { ButtonGroupConfig } from '../button-group/button-group-context'
+import useClasses from '../use-classes'
 
 export const getButtonChildrenWithIcon = (
   auto: boolean,
@@ -17,6 +18,8 @@ export const getButtonChildrenWithIcon = (
   const paddingForAutoMode = auto
     ? `calc(var(--geist-ui-button-height) / 2 + var(--geist-ui-button-icon-padding) * .5)`
     : 0
+  const classes = useClasses('text', isRight ? 'right' : 'left')
+
   if (!hasIcon) return <div className="text">{children}</div>
   if (React.Children.count(children) === 0) {
     return (
@@ -28,7 +31,7 @@ export const getButtonChildrenWithIcon = (
   return (
     <>
       <ButtonIcon isRight={isRight}>{hasIcon}</ButtonIcon>
-      <div className={`text ${isRight ? 'right' : 'left'}`}>
+      <div className={classes}>
         {children}
         <style jsx>{`
           .left {

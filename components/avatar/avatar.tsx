@@ -1,6 +1,7 @@
 import React from 'react'
 import useTheme from '../use-theme'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   src?: string
@@ -41,9 +42,10 @@ const AvatarComponent: React.FC<AvatarProps> = ({
   const showText = !src
   const radius = isSquare ? theme.layout.radius : '50%'
   const marginLeft = stacked ? SCALES.ml(-0.625) : SCALES.ml(0)
+  const classes = useClasses('avatar', className)
 
   return (
-    <span className={`avatar ${className}`}>
+    <span className={classes}>
       {!showText && (
         <img alt="avatar" className="avatar-img" src={src} draggable={false} {...props} />
       )}

@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { addColorAlpha } from '../utils/color'
+import useClasses from '../use-classes'
 
 interface Props {
   active?: boolean
@@ -26,6 +27,11 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
     ],
     [theme.palette.success],
   )
+  const classes = useClasses({
+    active,
+    disabled,
+  })
+
   const clickHandler = (event: React.MouseEvent) => {
     if (disabled) return
     onClick && onClick(event)
@@ -33,10 +39,7 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
 
   return (
     <li>
-      <button
-        className={`${active ? 'active' : ''} ${disabled ? 'disabled' : ''}`}
-        onClick={clickHandler}
-        {...props}>
+      <button className={classes} onClick={clickHandler} {...props}>
         {children}
       </button>
       <style jsx>{`

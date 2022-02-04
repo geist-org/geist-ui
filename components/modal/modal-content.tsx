@@ -1,5 +1,6 @@
 import React from 'react'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -21,7 +22,7 @@ const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps>
 
   return (
     <>
-      <div className={`content ${className}`} {...props}>
+      <div className={useClasses('content', className)} {...props}>
         {children}
       </div>
       <style jsx>{`

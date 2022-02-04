@@ -4,6 +4,7 @@ import { NormalTypes, tupleNumber } from '../utils/prop-types'
 import RatingIcon from './rating-icon'
 import useTheme from '../use-theme'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type RatingTypes = NormalTypes
 const ratingCountTuple = tupleNumber(2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -88,10 +89,12 @@ const RatingComponent: React.FC<RatingProps> = ({
   }, [customValue])
 
   return (
-    <div className={`rating ${className}`} {...props}>
+    <div className={useClasses('rating', className)} {...props}>
       {[...Array(count)].map((_, index) => (
         <div
-          className={`icon-box ${index + 1 <= value ? 'hovered' : ''}`}
+          className={useClasses('icon-box', {
+            hovered: index + 1 <= value,
+          })}
           key={index}
           onMouseEnter={() => mouseEnterHandler(index + 1)}
           onClick={() => clickHandler(index + 1)}>

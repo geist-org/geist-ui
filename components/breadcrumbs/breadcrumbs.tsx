@@ -81,7 +81,7 @@ const BreadcrumbsComponent: React.FC<React.PropsWithChildren<BreadcrumbsProps>> 
           margin: 0 4px;
         }
 
-        nav :global(.breadcrums-item) {
+        nav :global(.breadcrumbs-item) {
           display: inline-flex;
           align-items: center;
         }

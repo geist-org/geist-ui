@@ -4,6 +4,7 @@ import { useSelectContext } from './select-context'
 import useWarning from '../utils/use-warning'
 import Ellipsis from '../shared/ellipsis'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value?: string
@@ -40,6 +41,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
   const { updateValue, value, disableAll } = useSelectContext()
   const isDisabled = useMemo(() => disabled || disableAll, [disabled, disableAll])
   const isLabel = useMemo(() => label || divider, [label, divider])
+  const classes = useClasses('option', { divider, label }, className)
   if (!isLabel && identValue === undefined) {
     useWarning('The props "value" is required.', 'Select Option')
   }
@@ -77,12 +79,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
   }
 
   return (
-    <div
-      className={`option ${divider ? 'divider' : ''} ${
-        label ? 'label' : ''
-      } ${className}`}
-      onClick={clickHandler}
-      {...props}>
+    <div className={classes} onClick={clickHandler} {...props}>
       <Ellipsis height={SCALES.height(2.25)}>{children}</Ellipsis>
       <style jsx>{`
         .option {

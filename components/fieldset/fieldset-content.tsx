@@ -1,5 +1,6 @@
 import React from 'react'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -20,9 +21,10 @@ const FieldsetContentComponent: React.FC<
   ...props
 }: React.PropsWithChildren<FieldsetContentProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
+  const classes = useClasses('content', className)
 
   return (
-    <div className={`content ${className}`} {...props}>
+    <div className={classes} {...props}>
       {children}
       <style jsx>{`
         .content {
@@ -31,11 +33,9 @@ const FieldsetContentComponent: React.FC<
           padding: ${SCALES.pt(1.3)} ${SCALES.pr(1.3)} ${SCALES.pb(1.3)} ${SCALES.pl(1.3)};
           margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
-
         .content :global(> *:first-child) {
           margin-top: 0;
         }
-
         .content :global(> *:last-child) {
           margin-bottom: 0;
         }

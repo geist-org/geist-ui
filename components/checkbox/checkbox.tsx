@@ -6,6 +6,7 @@ import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
 import useTheme from '../use-theme'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type CheckboxTypes = NormalTypes
 export interface CheckboxEventTarget {
@@ -55,6 +56,7 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
   const { updateState, inGroup, disabledAll, values } = useCheckbox()
   const isDisabled = inGroup ? disabledAll || disabled : disabled
+  const classes = useClasses('checkbox', className)
 
   if (inGroup && checked) {
     useWarning(
@@ -102,7 +104,7 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
   }, [checked])
 
   return (
-    <label className={`checkbox ${className}`}>
+    <label className={classes}>
       <CheckboxIcon fill={fill} bg={bg} disabled={isDisabled} checked={selfChecked} />
       <input
         type="checkbox"
@@ -112,7 +114,6 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
         {...props}
       />
       <span className="text">{children}</span>
-
       <style jsx>{`
         .checkbox {
           --checkbox-size: ${SCALES.font(0.875)};

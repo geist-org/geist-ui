@@ -1,4 +1,5 @@
 import React from 'react'
+import useClasses from '../use-classes'
 
 interface Props {
   isRight?: boolean
@@ -21,12 +22,10 @@ const ButtonIcon: React.FC<React.PropsWithChildren<ButtonIconProps>> = ({
   className,
   ...props
 }: ButtonIconProps & typeof defaultProps) => {
+  const classes = useClasses('icon', { right: isRight, single: isSingle }, className)
+
   return (
-    <span
-      className={`icon ${isRight ? 'right' : ''} ${
-        isSingle ? 'single' : ''
-      } ${className}`}
-      {...props}>
+    <span className={classes} {...props}>
       {children}
       <style jsx>{`
         .icon {

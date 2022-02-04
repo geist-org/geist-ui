@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemes } from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type DotTypes = NormalTypes
 interface Props {
@@ -38,10 +39,9 @@ const DotComponent: React.FC<React.PropsWithChildren<DotProps>> = ({
   const { SCALES } = useScale()
   const color = useMemo(() => getColor(type, theme), [type, theme])
   return (
-    <span className={`dot ${className}`} {...props}>
+    <span className={useClasses('dot', className)} {...props}>
       <span className="icon" />
       <span className="label">{children}</span>
-
       <style jsx>{`
         .dot {
           display: inline-flex;
@@ -52,7 +52,6 @@ const DotComponent: React.FC<React.PropsWithChildren<DotProps>> = ({
           padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
-
         .icon {
           width: 0.625em;
           height: 0.625em;
@@ -63,7 +62,6 @@ const DotComponent: React.FC<React.PropsWithChildren<DotProps>> = ({
           background-color: ${color};
           user-select: none;
         }
-
         .label {
           margin-left: 0.5em;
           font-size: 1em;

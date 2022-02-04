@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio Group should render correctly 1`] = `
-"<div><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
+"<div><div class=\\"radio-group\\"><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -13,7 +13,6 @@ exports[`Radio Group should render correctly 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -24,7 +23,6 @@ exports[`Radio Group should render correctly 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -32,7 +30,6 @@ exports[`Radio Group should render correctly 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -40,7 +37,6 @@ exports[`Radio Group should render correctly 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -52,7 +48,6 @@ exports[`Radio Group should render correctly 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -64,12 +59,11 @@ exports[`Radio Group should render correctly 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"2\\"><span class=\\"name\\"><span class=\\"point \\"></span>2</span></label><style>
+      </style></div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"2\\"><span class=\\"name\\"><span class=\\"point\\"></span>2</span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -81,7 +75,6 @@ exports[`Radio Group should render correctly 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -92,7 +85,6 @@ exports[`Radio Group should render correctly 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -100,7 +92,6 @@ exports[`Radio Group should render correctly 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -108,7 +99,6 @@ exports[`Radio Group should render correctly 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -120,7 +110,6 @@ exports[`Radio Group should render correctly 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -132,8 +121,7 @@ exports[`Radio Group should render correctly 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
@@ -157,7 +145,7 @@ exports[`Radio Group should render correctly 1`] = `
         .radio-group :global(.radio:first-of-type) {
           margin: 0;
         }
-      </style><div class=\\"radio-group \\"><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
+      </style><div class=\\"radio-group\\"><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"1\\"><span class=\\"name\\"><span class=\\"point active\\"></span>1</span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -169,7 +157,6 @@ exports[`Radio Group should render correctly 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -180,7 +167,6 @@ exports[`Radio Group should render correctly 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -188,7 +174,6 @@ exports[`Radio Group should render correctly 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -196,7 +181,6 @@ exports[`Radio Group should render correctly 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -208,7 +192,6 @@ exports[`Radio Group should render correctly 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -220,12 +203,11 @@ exports[`Radio Group should render correctly 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"2\\"><span class=\\"name\\"><span class=\\"point \\"></span>2</span></label><style>
+      </style></div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"2\\"><span class=\\"name\\"><span class=\\"point\\"></span>2</span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -237,7 +219,6 @@ exports[`Radio Group should render correctly 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -248,7 +229,6 @@ exports[`Radio Group should render correctly 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -256,7 +236,6 @@ exports[`Radio Group should render correctly 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -264,7 +243,6 @@ exports[`Radio Group should render correctly 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -276,7 +254,6 @@ exports[`Radio Group should render correctly 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -288,8 +265,7 @@ exports[`Radio Group should render correctly 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }

@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
 import useScale from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -54,7 +55,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   return (
     <CssTransition name="wrapper" visible={visible} clearTime={300}>
       <div
-        className={`wrapper ${className}`}
+        className={useClasses('wrapper', className)}
         role="dialog"
         tabIndex={-1}
         onKeyDown={onKeyDown}

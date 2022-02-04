@@ -3,6 +3,7 @@ import { Props as LinkBasicProps } from '../link/link'
 import React, { useMemo } from 'react'
 import { pickChild } from '../utils/collections'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
+import useClasses from '../use-classes'
 
 interface Props {
   href?: string
@@ -37,25 +38,22 @@ const BreadcrumbsItem = React.forwardRef<
   ) => {
     const isLink = useMemo(() => href !== undefined || nextLink, [href, nextLink])
     const [withoutSepChildren] = pickChild(children, BreadcrumbsSeparator)
+    const classes = useClasses('breadcrumbs-item', className)
+
     const clickHandler = (event: React.MouseEvent) => {
       onClick && onClick(event)
     }
 
     if (!isLink) {
       return (
-        <span className={`breadcrums-item ${className}`} onClick={clickHandler}>
+        <span className={classes} onClick={clickHandler}>
           {withoutSepChildren}
         </span>
       )
     }
 
     return (
-      <Link
-        className={`breadcrums-item ${className}`}
-        href={href}
-        onClick={clickHandler}
-        ref={ref}
-        {...props}>
+      <Link className={classes} href={href} onClick={clickHandler} ref={ref} {...props}>
         {withoutSepChildren}
       </Link>
     )

@@ -14,6 +14,7 @@ import SliderMark from './slider-mark'
 import { getColors } from './styles'
 import { NormalTypes } from '../utils/prop-types'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type SliderTypes = NormalTypes
 interface Props {
@@ -157,7 +158,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
 
   return (
     <div
-      className={`slider ${className}`}
+      className={useClasses('slider', className)}
       onClick={clickHandler}
       ref={sliderRef}
       {...props}>

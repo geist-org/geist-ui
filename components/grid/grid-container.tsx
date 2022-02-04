@@ -3,6 +3,7 @@ import GridBasicItem, { GridBasicItemProps } from './basic-item'
 import { GridWrap } from './grid-types'
 import css from 'styled-jsx/css'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   gap?: number
@@ -42,9 +43,10 @@ const GridContainerComponent: React.FC<React.PropsWithChildren<GridContainerProp
         ${SCALES.ml(0, 'var(--grid-container-margin)')};
     }
   `
+  const classes = useClasses(resolveClassName, className)
 
   return (
-    <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
+    <GridBasicItem className={classes} {...props}>
       {children}
       {styles}
     </GridBasicItem>

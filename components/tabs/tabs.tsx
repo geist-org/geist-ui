@@ -12,6 +12,7 @@ import useScale, { withScale } from '../use-scale'
 import Highlight from '../shared/highlight'
 import { useRect } from '../utils/layouts'
 import { isGeistElement } from '../utils/collections'
+import useClasses from '../use-classes'
 
 interface Props {
   initialValue?: string
@@ -110,7 +111,7 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
 
   return (
     <TabsContext.Provider value={initialValue}>
-      <div className={`tabs ${className}`} {...props}>
+      <div className={useClasses('tabs', className)} {...props}>
         <header ref={ref} onMouseLeave={() => setDisplayHighlight(false)}>
           <Highlight
             rect={rect}
@@ -118,7 +119,8 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
             hoverHeightRatio={hoverHeightRatio}
             hoverWidthRatio={hoverWidthRatio}
           />
-          <div className={`scroll-container ${hideDivider ? 'hide-divider' : ''}`}>
+          <div
+            className={useClasses('scroll-container', { 'hide-divider': hideDivider })}>
             {tabs.map(({ cell: Cell, value }) => (
               <Cell
                 key={value}

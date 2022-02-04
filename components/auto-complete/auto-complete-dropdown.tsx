@@ -2,6 +2,7 @@ import React, { CSSProperties, useMemo } from 'react'
 import useTheme from '../use-theme'
 import { useAutoCompleteContext } from './auto-complete-context'
 import Dropdown from '../shared/dropdown'
+import useClasses from '../use-classes'
 
 interface Props {
   visible: boolean
@@ -34,6 +35,8 @@ const AutoCompleteDropdown: React.FC<
   const isEmpty = useMemo(() => {
     return !visible || React.Children.count(children) === 0
   }, [children, visible])
+  const classes = useClasses('auto-complete-dropdown', className)
+
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     event.stopPropagation()
@@ -46,10 +49,7 @@ const AutoCompleteDropdown: React.FC<
       visible={visible}
       disableMatchWidth={disableMatchWidth}
       getPopupContainer={getPopupContainer}>
-      <div
-        className={`auto-complete-dropdown ${className}`}
-        style={dropdownStyle}
-        onClick={clickHandler}>
+      <div className={classes} style={dropdownStyle} onClick={clickHandler}>
         {children}
         <style jsx>{`
           .auto-complete-dropdown {

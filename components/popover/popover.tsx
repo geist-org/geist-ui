@@ -8,6 +8,7 @@ import { Placement, TriggerTypes } from '../utils/prop-types'
 import { getReactNode } from '../utils/collections'
 import useScale, { withScale } from '../use-scale'
 import { PopoverContext, PopoverConfig } from './popover-context'
+import useClasses from '../use-classes'
 
 export type PopoverTriggerTypes = TriggerTypes
 export type PopoverPlacement = Placement
@@ -67,6 +68,8 @@ const PopoverComponent: React.FC<React.PropsWithChildren<PopoverProps>> = ({
     }),
     [disableItemsAutoClose],
   )
+  const classes = useClasses('popover', portalClassName)
+
   const onPopoverVisibleChange = (next: boolean) => {
     setVisible(next)
     onVisibleChange(next)
@@ -82,7 +85,7 @@ const PopoverComponent: React.FC<React.PropsWithChildren<PopoverProps>> = ({
         text={textNode}
         trigger={trigger}
         placement={placement}
-        portalClassName={`popover ${portalClassName}`}
+        portalClassName={classes}
         visible={visible}
         onVisibleChange={onPopoverVisibleChange}
         {...props}>

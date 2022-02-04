@@ -4,6 +4,7 @@ import { ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
 import { GeistUIThemesPalette } from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   disabled?: boolean
@@ -56,16 +57,21 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
     }),
     [disabled, type],
   )
-
   const border = useMemo(() => {
     return getGroupBorderColors(theme.palette, groupProps)
   }, [theme, type, disabled, ghost])
+  const classes = useClasses(
+    'btn-group',
+    {
+      vertical: vertical,
+      horizontal: !vertical,
+    },
+    className,
+  )
 
   return (
     <ButtonGroupContext.Provider value={initialValue}>
-      <div
-        className={`btn-group ${vertical ? 'vertical' : 'horizontal'} ${className}`}
-        {...props}>
+      <div className={classes} {...props}>
         {children}
         <style jsx>{`
           .btn-group {

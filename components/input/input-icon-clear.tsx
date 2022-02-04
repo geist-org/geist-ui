@@ -1,5 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
+import useClasses from '../use-classes'
 
 interface Props {
   visible: boolean
@@ -9,6 +10,8 @@ interface Props {
 
 const InputIconClear: React.FC<Props> = ({ onClick, disabled, visible }) => {
   const theme = useTheme()
+  const classes = useClasses('clear-icon', { visible })
+
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault()
     event.stopPropagation()
@@ -16,7 +19,7 @@ const InputIconClear: React.FC<Props> = ({ onClick, disabled, visible }) => {
     onClick && onClick(event)
   }
   return (
-    <div onClick={clickHandler} className={`clear-icon ${visible ? 'visible' : ''}`}>
+    <div onClick={clickHandler} className={classes}>
       <svg
         viewBox="0 0 24 24"
         stroke="currentColor"

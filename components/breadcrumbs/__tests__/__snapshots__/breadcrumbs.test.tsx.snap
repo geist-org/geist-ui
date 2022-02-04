@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Breadcrumbs should redefined all separators 1`] = `
-"<nav class=\\"\\"><span class=\\"breadcrums-item \\">test-1</span><div class=\\"separator \\">*<style>
+"<nav class=\\"\\"><span class=\\"breadcrumbs-item\\">test-1</span><div class=\\"separator\\">*<style>
         .separator {
           display: inline-flex;
           user-select: none;
@@ -12,7 +12,7 @@ exports[`Breadcrumbs should redefined all separators 1`] = `
           padding: 0 0 0 0;
           margin: 0 calc(0.5 * 16px) 0 calc(0.5 * 16px);
         }
-      </style></div><span class=\\"breadcrums-item \\">test-2</span><style>
+      </style></div><span class=\\"breadcrumbs-item\\">test-2</span><style>
         nav {
           line-height: inherit;
           color: #888;
@@ -44,7 +44,7 @@ exports[`Breadcrumbs should redefined all separators 1`] = `
           margin: 0 4px;
         }
 
-        nav :global(.breadcrums-item) {
+        nav :global(.breadcrumbs-item) {
           display: inline-flex;
           align-items: center;
         }
@@ -52,7 +52,7 @@ exports[`Breadcrumbs should redefined all separators 1`] = `
 `;
 
 exports[`Breadcrumbs should render correctly 1`] = `
-"<nav class=\\"\\"><span class=\\"breadcrums-item \\">test-1</span><style>
+"<nav class=\\"\\"><span class=\\"breadcrumbs-item\\">test-1</span><style>
         nav {
           line-height: inherit;
           color: #888;
@@ -84,7 +84,7 @@ exports[`Breadcrumbs should render correctly 1`] = `
           margin: 0 4px;
         }
 
-        nav :global(.breadcrums-item) {
+        nav :global(.breadcrumbs-item) {
           display: inline-flex;
           align-items: center;
         }

@@ -8,6 +8,7 @@ import { ButtonDropdownContext } from './button-dropdown-context'
 import { NormalTypes } from '../utils/prop-types'
 import { pickChild, pickChildByProps } from '../utils/collections'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type ButtonDropdownTypes = NormalTypes
 
@@ -56,6 +57,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
     'main',
     true,
   )
+  const classes = useClasses('btn-dropdown', className)
 
   const [visible, setVisible] = useState<boolean>(false)
   const clickHandler = useCallback(
@@ -87,11 +89,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
 
   return (
     <ButtonDropdownContext.Provider value={initialValue}>
-      <div
-        ref={ref}
-        className={`btn-dropdown ${className}`}
-        onClick={stopPropagation}
-        {...props}>
+      <div ref={ref} className={classes} onClick={stopPropagation} {...props}>
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>
