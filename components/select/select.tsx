@@ -19,6 +19,7 @@ import { getColors } from './styles'
 import Ellipsis from '../shared/ellipsis'
 import SelectInput from './select-input'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type SelectRef = {
   focus: () => void
@@ -186,13 +187,19 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       updateVisible(false)
       setSelectFocus(false)
     }
+    const classes = useClasses(
+      'select',
+      {
+        active: selectFocus || visible,
+        multiple,
+      },
+      className,
+    )
 
     return (
       <SelectContext.Provider value={initialValue}>
         <div
-          className={`select ${selectFocus || visible ? 'active' : ''} ${
-            multiple ? 'multiple' : ''
-          } ${className}`}
+          className={classes}
           ref={ref}
           onClick={clickHandler}
           onMouseDown={mouseDownHandler}

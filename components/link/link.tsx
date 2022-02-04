@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import LinkIcon from './icon'
 import { addColorAlpha } from '../utils/color'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export interface Props {
   href?: string
@@ -47,13 +48,10 @@ const LinkComponent = React.forwardRef<
     const linkColor = color || block ? theme.palette.link : 'inherit'
     const hoverColor = color || block ? theme.palette.successLight : 'inherit'
     const decoration = underline ? 'underline' : 'none'
+    const classes = useClasses('link', { block }, className)
 
     return (
-      <a
-        className={`link ${block ? 'block' : ''} ${className}`}
-        href={href}
-        {...props}
-        ref={ref}>
+      <a className={classes} href={href} {...props} ref={ref}>
         {children}
         {icon && <LinkIcon />}
         <style jsx>{`

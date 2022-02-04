@@ -42,7 +42,7 @@ describe('Breadcrumbs', () => {
         <Breadcrumbs.Item>test-1</Breadcrumbs.Item>
       </Breadcrumbs>,
     )
-    let dom = wrapper.find('.breadcrums-item').at(0).getDOMNode()
+    let dom = wrapper.find('.breadcrumbs-item').at(0).getDOMNode()
     expect(dom.tagName).toEqual('SPAN')
 
     wrapper = mount(
@@ -50,7 +50,7 @@ describe('Breadcrumbs', () => {
         <Breadcrumbs.Item href="">test-1</Breadcrumbs.Item>
       </Breadcrumbs>,
     )
-    dom = wrapper.find('.breadcrums-item').at(0).getDOMNode()
+    dom = wrapper.find('.breadcrumbs-item').at(0).getDOMNode()
     expect(dom.tagName).toEqual('A')
 
     wrapper = mount(
@@ -58,7 +58,7 @@ describe('Breadcrumbs', () => {
         <Breadcrumbs.Item nextLink>test-1</Breadcrumbs.Item>
       </Breadcrumbs>,
     )
-    dom = wrapper.find('.breadcrums-item').at(0).getDOMNode()
+    dom = wrapper.find('.breadcrumbs-item').at(0).getDOMNode()
     expect(dom.tagName).toEqual('A')
   })
 
@@ -69,7 +69,7 @@ describe('Breadcrumbs', () => {
         <Breadcrumbs.Item onClick={handler}>test-1</Breadcrumbs.Item>
       </Breadcrumbs>,
     )
-    wrapper.find('.breadcrums-item').at(0).simulate('click')
+    wrapper.find('.breadcrumbs-item').at(0).simulate('click')
     expect(handler).toHaveBeenCalled()
   })
 })

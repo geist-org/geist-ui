@@ -11,6 +11,7 @@ import TooltipIcon from './tooltip-icon'
 import { Placement, SnippetTypes } from '../utils/prop-types'
 import useScale from '../use-scale'
 import { getRect } from './helper'
+import useClasses from '../use-classes'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
@@ -45,6 +46,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition)
   const colors = useMemo(() => getColors(type, theme.palette), [type, theme.palette])
   const hasShadow = type === 'default'
+  const classes = useClasses('tooltip-content', className)
   if (!parent) return null
 
   const updateRect = () => {
@@ -67,10 +69,7 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
   if (!el) return null
   return createPortal(
     <CssTransition visible={visible}>
-      <div
-        className={`tooltip-content ${className}`}
-        ref={selfRef}
-        onClick={preventHandler}>
+      <div className={classes} ref={selfRef} onClick={preventHandler}>
         <div className="inner">
           {!hideArrow && <TooltipIcon placement={placement} shadow={hasShadow} />}
           {children}

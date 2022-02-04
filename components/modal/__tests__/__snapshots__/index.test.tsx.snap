@@ -78,7 +78,7 @@ exports[`Modal customization should be supported 1`] = `
 `;
 
 exports[`Modal should render correctly 1`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Modal</h2><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Modal</h2><style>
         h2 {
           line-height: 1.6;
           font-weight: normal;
@@ -111,7 +111,7 @@ exports[`Modal should render correctly 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-      </style><div class=\\"content \\"><p>Some content contained within the modal.</p></div><style>
+      </style><div class=\\"content\\"><p>Some content contained within the modal.</p></div><style>
         .content {
           position: relative;
           text-align: left;
@@ -133,7 +133,7 @@ exports[`Modal should render correctly 1`] = `
         .content > :global(*:last-child) {
           margin-bottom: 0;
         }
-      </style><div></div><footer><button type=\\"button\\" class=\\"btn mock \\"><div class=\\"text\\">Cancel</div><style>
+      </style><div></div><footer><button type=\\"button\\" class=\\"btn mock\\"><div class=\\"text\\">Cancel</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -196,7 +196,7 @@ exports[`Modal should render correctly 1`] = `
           .btn :global(.text div) {
             margin: 0;
           }
-        </style></button><button type=\\"button\\" class=\\"btn mock \\"><div class=\\"text\\">Submit</div><style>
+        </style></button><button type=\\"button\\" class=\\"btn mock\\"><div class=\\"text\\">Submit</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;

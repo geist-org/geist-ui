@@ -1,5 +1,6 @@
 import React from 'react'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -17,9 +18,10 @@ const Separator: React.FC<React.PropsWithChildren<BreadcrumbsSeparatorProps>> = 
   className,
 }: BreadcrumbsSeparatorProps & typeof defaultProps) => {
   const { SCALES } = useScale()
+  const classes = useClasses('separator', className)
 
   return (
-    <div className={`separator ${className}`}>
+    <div className={classes}>
       {children}
       <style jsx>{`
         .separator {

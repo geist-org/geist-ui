@@ -4,6 +4,7 @@ import useCurrentState from '../utils/use-current-state'
 import { setChildrenIndex } from '../utils/collections'
 import { CollapseContext, CollapseConfig } from './collapse-context'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   accordion?: boolean
@@ -26,6 +27,8 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
 }: React.PropsWithChildren<CollapseGroupProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
   const [state, setState, stateRef] = useCurrentState<Array<number>>([])
+  const classes = useClasses('collapse-group', className)
+
   const updateValues = (currentIndex: number, nextState: boolean) => {
     const hasChild = stateRef.current.find(val => val === currentIndex)
     if (accordion) {
@@ -50,7 +53,6 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
     }),
     [state.join(',')],
   )
-
   const hasIndexChildren = useMemo(
     () => setChildrenIndex(children, [Collapse]),
     [children],
@@ -58,7 +60,7 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
 
   return (
     <CollapseContext.Provider value={initialValue}>
-      <div className={`collapse-group ${className}`} {...props}>
+      <div className={classes} {...props}>
         {hasIndexChildren}
         <style jsx>{`
           .collapse-group {

@@ -2,6 +2,7 @@ import React from 'react'
 import useTheme from '../use-theme'
 import useScale, { withScale } from '../use-scale'
 import { usePopoverContext } from './popover-context'
+import useClasses from '../use-classes'
 
 interface Props {
   line?: boolean
@@ -34,6 +35,8 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
   const { disableItemsAutoClose, onItemClick } = usePopoverContext()
   const hasHandler = Boolean(onClick)
   const dontCloseByClick = disableAutoClose || disableItemsAutoClose || title || line
+  const classes = useClasses('item', { line, title }, className)
+
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     onClick && onClick(event)
     if (dontCloseByClick) {
@@ -44,10 +47,7 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
 
   return (
     <>
-      <div
-        className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`}
-        onClick={clickHandler}
-        {...props}>
+      <div className={classes} onClick={clickHandler} {...props}>
         {children}
         <style jsx>{`
           .item {

@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import { useProportions } from '../utils/calculations'
 import { GeistUIThemesPalette } from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value?: number
@@ -37,13 +38,14 @@ const CapacityComponent: React.FC<CapacityProps> = ({
   const theme = useTheme()
   const { SCALES } = useScale()
   const percentValue = useProportions(value, limit)
+  const classes = useClasses('capacity', className)
   const color = useMemo(() => {
     if (userColor && userColor !== '') return userColor
     return getColor(percentValue, theme.palette)
   }, [userColor, percentValue, theme.palette])
 
   return (
-    <div className={`capacity ${className}`} title={`${percentValue}%`} {...props}>
+    <div className={classes} title={`${percentValue}%`} {...props}>
       <span />
       <style jsx>{`
         .capacity {

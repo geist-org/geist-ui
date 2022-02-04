@@ -4,6 +4,7 @@ import useTheme from '../use-theme'
 import { useModalContext } from './modal-context'
 import Button, { ButtonProps } from '../button/button'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
   close: () => void
@@ -83,6 +84,7 @@ const ModalActionComponent = React.forwardRef<
         background-color: ${disabled ? bgColor : theme.palette.accents_1};
       }
     `
+    const classes = useClasses(resolveClassName, className)
 
     const overrideProps = {
       ...props,
@@ -92,7 +94,7 @@ const ModalActionComponent = React.forwardRef<
 
     return (
       <Button
-        className={`${resolveClassName} ${className}`}
+        className={classes}
         onClick={clickHandler}
         disabled={disabled}
         {...overrideProps}>

@@ -2,6 +2,7 @@ import React from 'react'
 import useTheme from '../use-theme'
 import { GeistUIThemes } from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -108,9 +109,10 @@ const SpinnerComponent: React.FC<SpinnerProps> = ({
 }: SpinnerProps & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScale()
+  const classes = useClasses('spinner', className)
 
   return (
-    <div className={`spinner ${className}`} {...props}>
+    <div className={classes} {...props}>
       <div className="container">{getSpans(theme)}</div>
 
       <style jsx>{`

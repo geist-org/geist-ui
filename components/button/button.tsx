@@ -12,6 +12,7 @@ import {
   getButtonDripColor,
   getButtonHoverColors,
 } from './styles'
+import useClasses from '../use-classes'
 
 interface Props {
   type?: ButtonTypes
@@ -135,7 +136,7 @@ const ButtonComponent = React.forwardRef<
       <button
         ref={buttonRef}
         type={htmlType}
-        className={`btn ${className}`}
+        className={useClasses('btn', className)}
         disabled={disabled}
         onClick={clickHandler}
         {...props}>

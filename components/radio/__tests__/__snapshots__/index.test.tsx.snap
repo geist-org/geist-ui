@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Radio should render correctly 1`] = `
-"<div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span>Option</span></label><style>
+"<div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point\\"></span>Option</span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -13,7 +13,6 @@ exports[`Radio should render correctly 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -24,7 +23,6 @@ exports[`Radio should render correctly 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -32,7 +30,6 @@ exports[`Radio should render correctly 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -40,7 +37,6 @@ exports[`Radio should render correctly 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -52,7 +48,6 @@ exports[`Radio should render correctly 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -64,8 +59,7 @@ exports[`Radio should render correctly 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
@@ -73,7 +67,7 @@ exports[`Radio should render correctly 1`] = `
 `;
 
 exports[`Radio should support react-node in description 1`] = `
-"<div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span>Option</span></label><style>
+"<div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point\\"></span>Option</span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -85,7 +79,6 @@ exports[`Radio should support react-node in description 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -96,7 +89,6 @@ exports[`Radio should support react-node in description 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -104,7 +96,6 @@ exports[`Radio should support react-node in description 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -112,7 +103,6 @@ exports[`Radio should support react-node in description 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -124,7 +114,6 @@ exports[`Radio should support react-node in description 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -136,12 +125,11 @@ exports[`Radio should support react-node in description 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span>Option 1</span><span class=\\"\\">Description for Option1<style>
+      </style></div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point\\"></span>Option 1</span><span class=\\"\\">Description for Option1<style>
         span {
           color: #999;
           font-size: calc(var(--radio-size) * 0.85);
@@ -163,7 +151,6 @@ exports[`Radio should support react-node in description 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -174,7 +161,6 @@ exports[`Radio should support react-node in description 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -182,7 +168,6 @@ exports[`Radio should support react-node in description 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -190,7 +175,6 @@ exports[`Radio should support react-node in description 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -202,7 +186,6 @@ exports[`Radio should support react-node in description 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -214,12 +197,11 @@ exports[`Radio should support react-node in description 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span>Option 1</span><span class=\\"\\"><b>Description</b> for Option1<style>
+      </style></div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point\\"></span>Option 1</span><span class=\\"\\"><b>Description</b> for Option1<style>
         span {
           color: #999;
           font-size: calc(var(--radio-size) * 0.85);
@@ -241,7 +223,6 @@ exports[`Radio should support react-node in description 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -252,7 +233,6 @@ exports[`Radio should support react-node in description 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -260,7 +240,6 @@ exports[`Radio should support react-node in description 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -268,7 +247,6 @@ exports[`Radio should support react-node in description 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -280,7 +258,6 @@ exports[`Radio should support react-node in description 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -292,8 +269,7 @@ exports[`Radio should support react-node in description 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
@@ -301,7 +277,7 @@ exports[`Radio should support react-node in description 1`] = `
 `;
 
 exports[`Radio should work with different status 1`] = `
-"<div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span></span></label><style>
+"<div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point\\"></span></span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -313,7 +289,6 @@ exports[`Radio should work with different status 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -324,7 +299,6 @@ exports[`Radio should work with different status 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -332,7 +306,6 @@ exports[`Radio should work with different status 1`] = `
           color: #000;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -340,7 +313,6 @@ exports[`Radio should work with different status 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -352,7 +324,6 @@ exports[`Radio should work with different status 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -364,12 +335,11 @@ exports[`Radio should work with different status 1`] = `
           border-radius: 50%;
           background-color: #000;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span></span></label><style>
+      </style></div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point\\"></span></span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -381,7 +351,6 @@ exports[`Radio should work with different status 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -392,7 +361,6 @@ exports[`Radio should work with different status 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -400,7 +368,6 @@ exports[`Radio should work with different status 1`] = `
           color: #0070f3;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -408,7 +375,6 @@ exports[`Radio should work with different status 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -420,7 +386,6 @@ exports[`Radio should work with different status 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -432,12 +397,11 @@ exports[`Radio should work with different status 1`] = `
           border-radius: 50%;
           background-color: #0070f3;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span></span></label><style>
+      </style></div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point\\"></span></span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -449,7 +413,6 @@ exports[`Radio should work with different status 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -460,7 +423,6 @@ exports[`Radio should work with different status 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -468,7 +430,6 @@ exports[`Radio should work with different status 1`] = `
           color: #f5a623;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -476,7 +437,6 @@ exports[`Radio should work with different status 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -488,7 +448,6 @@ exports[`Radio should work with different status 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -500,12 +459,11 @@ exports[`Radio should work with different status 1`] = `
           border-radius: 50%;
           background-color: #f5a623;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
-      </style></div><div class=\\"radio \\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point \\"></span></span></label><style>
+      </style></div><div class=\\"radio\\"><label><input type=\\"radio\\" value=\\"\\"><span class=\\"name\\"><span class=\\"point\\"></span></span></label><style>
         input {
           opacity: 0;
           visibility: hidden;
@@ -517,7 +475,6 @@ exports[`Radio should work with different status 1`] = `
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -528,7 +485,6 @@ exports[`Radio should work with different status 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -536,7 +492,6 @@ exports[`Radio should work with different status 1`] = `
           color: #e00;
           cursor: pointer;
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -544,7 +499,6 @@ exports[`Radio should work with different status 1`] = `
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -556,7 +510,6 @@ exports[`Radio should work with different status 1`] = `
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -568,8 +521,7 @@ exports[`Radio should work with different status 1`] = `
           border-radius: 50%;
           background-color: #e00;
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }

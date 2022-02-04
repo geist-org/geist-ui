@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { RadioContext } from './radio-context'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value?: string | number
@@ -53,7 +54,7 @@ const RadioGroupComponent: React.FC<React.PropsWithChildren<RadioGroupProps>> = 
 
   return (
     <RadioContext.Provider value={providerValue}>
-      <div className={`radio-group ${className}`} {...props}>
+      <div className={useClasses('radio-group', className)} {...props}>
         {children}
       </div>
       <style jsx>{`

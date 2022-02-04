@@ -1,5 +1,6 @@
 import React from 'react'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -20,7 +21,7 @@ const CardContentComponent: React.FC<React.PropsWithChildren<CardContentProps>> 
   const { SCALES } = useScale()
 
   return (
-    <div className={`content ${className}`} {...props}>
+    <div className={useClasses('content', className)} {...props}>
       {children}
       <style jsx>{`
         .content {

@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { CheckboxContext } from './checkbox-context'
 import useWarning from '../utils/use-warning'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value: string[]
@@ -28,6 +29,7 @@ const CheckboxGroupComponent: React.FC<React.PropsWithChildren<CheckboxGroupProp
 }: CheckboxGroupProps & typeof defaultProps) => {
   const { SCALES } = useScale()
   const [selfVal, setSelfVal] = useState<string[]>([])
+  const classes = useClasses('group', className)
   if (!value) {
     value = []
     useWarning('Props "value" is required.', 'Checkbox Group')
@@ -55,7 +57,7 @@ const CheckboxGroupComponent: React.FC<React.PropsWithChildren<CheckboxGroupProp
 
   return (
     <CheckboxContext.Provider value={providerValue}>
-      <div className={`group ${className}`} {...props}>
+      <div className={classes} {...props}>
         {children}
         <style jsx>{`
           .group {

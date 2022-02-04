@@ -8,6 +8,7 @@ import { hasChild, pickChild } from '../utils/collections'
 import { useFieldset } from './fieldset-context'
 import useWarning from '../utils/use-warning'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value?: string
@@ -42,6 +43,7 @@ const FieldsetComponent: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
   const { SCALES } = useScale()
   const { inGroup, currentValue, register } = useFieldset()
   const [hidden, setHidden] = useState<boolean>(inGroup)
+  const classes = useClasses('fieldset', className)
 
   const [withoutFooterChildren, FooterChildren] = pickChild(children, FieldsetFooter)
   const hasTitle = hasChild(withoutFooterChildren, FieldsetTitle)
@@ -81,7 +83,7 @@ const FieldsetComponent: React.FC<React.PropsWithChildren<FieldsetProps>> = ({
   )
 
   return (
-    <div className={`fieldset ${className}`} {...props}>
+    <div className={classes} {...props}>
       {hasContent ? content : <FieldsetContent>{content}</FieldsetContent>}
       {FooterChildren && FooterChildren}
       <style jsx>{`

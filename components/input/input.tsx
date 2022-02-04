@@ -7,6 +7,7 @@ import InputClearIcon from './input-icon-clear'
 import { getColors } from './styles'
 import { Props, defaultProps } from './input-props'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof Props>
 export type InputProps = Props & NativeAttrs
@@ -129,17 +130,14 @@ const InputComponent = React.forwardRef<
     return (
       <div className="with-label">
         {children && <InputBlockLabel>{children}</InputBlockLabel>}
-        <div className={`input-container ${className}`}>
+        <div className={useClasses('input-container', className)}>
           {label && <InputLabel>{label}</InputLabel>}
-          <div
-            className={`input-wrapper ${hover ? 'hover' : ''} ${
-              disabled ? 'disabled' : ''
-            } ${labelClasses}`}>
+          <div className={useClasses('input-wrapper', { hover, disabled }, labelClasses)}>
             {icon && <InputIcon icon={icon} {...iconProps} />}
             <input
               type={htmlType}
               ref={inputRef}
-              className={`${disabled ? 'disabled' : ''} ${iconClasses}`}
+              className={useClasses({ disabled }, iconClasses)}
               placeholder={placeholder}
               disabled={disabled}
               readOnly={readOnly}

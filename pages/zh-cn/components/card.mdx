@@ -31,11 +31,11 @@ export const meta = {
 
 <Playground
   title="阴影"
-  scope={{ Card }}
+  scope={{ Card, Text }}
   code={`
 <Card shadow>
-  <h4>这是一个 React 组件。</h4>
-  <p>阴影卡片组件。</p>
+  <Text h4 my={0}>这是一个 React 组件。</Text>
+  <Text>阴影卡片组件。</Text>
 </Card>
 `}
 />
@@ -43,7 +43,7 @@ export const meta = {
 <Playground
   title="类型"
   desc="以各式色彩表达不同的类型或状态。"
-  scope={{ Card, Grid }}
+  scope={{ Card, Grid, Text }}
   code={`
 () => {
   const types = ['secondary', 'success', 'warning', 'error', 'dark', 'alert', 'purple', 'violet', 'cyan']
@@ -52,8 +52,8 @@ export const meta = {
       {types.map(type => (
         <Grid xs={8} key={type}>
           <Card type={type} width="100%">
-            <h4 style={{ textTransform: 'capitalize' }}>{type}</h4>
-            <span>{type}</span>
+            <Text h4 my={0} style={{ textTransform: 'capitalize' }}>{type}</Text>
+            <Text>{type}</Text>
           </Card>
         </Grid>
       ))}
@@ -65,22 +65,22 @@ export const meta = {
 
 <Playground
   title="卡片页脚"
-  scope={{ Card, Link, Grid }}
+  scope={{ Card, Link, Grid, Text }}
   code={`
 <Grid.Container gap={1.5}>
   <Grid xs={12} justify="center">
-    <Card width="330px">
-      <h4>Geist UI React</h4>
-      <p>Modern and minimalist React UI library.</p>
+    <Card width="100%">
+      <Text h4 my={0}>Geist UI React</Text>
+      <Text>Modern and minimalist React UI library.</Text>
       <Card.Footer>
         <Link color target="_blank" href="https://github.com/geist-org/geist-ui">Visit source code on GitHub.</Link>
       </Card.Footer>
     </Card>
   </Grid>
   <Grid xs={12} justify="center">
-    <Card width="330px" type="dark">
-      <h4>Geist UI React</h4>
-      <p>Modern and minimalist React UI library.</p>
+    <Card width="100%" type="dark">
+      <Text h4 my={0}>Geist UI React</Text>
+      <Text>Modern and minimalist React UI library.</Text>
       <Card.Footer>
         <Link target="_blank" href="https://github.com/geist-org/geist-ui">Visit source code on GitHub.</Link>
       </Card.Footer>

@@ -2,6 +2,7 @@ import React from 'react'
 import css from 'styled-jsx/css'
 import GridBasicItem, { GridBasicItemProps } from './basic-item'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -28,8 +29,10 @@ const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
         ${SCALES.pl(0, 'var(--grid-gap-unit)')};
     }
   `
+  const classes = useClasses(resolveClassName, className)
+
   return (
-    <GridBasicItem className={`${resolveClassName} ${className}`} {...props}>
+    <GridBasicItem className={classes} {...props}>
       {children}
       {styles}
     </GridBasicItem>

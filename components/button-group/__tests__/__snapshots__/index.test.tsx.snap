@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonGroup buttons should be displayed vertically 1`] = `
-"<div class=\\"btn-group vertical \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action1</div><style>
+"<div class=\\"btn-group vertical\\"><button type=\\"button\\" class=\\"btn\\"><div class=\\"text\\">action1</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -64,7 +64,7 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
           .btn :global(.text div) {
             margin: 0;
           }
-        </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action2</div><style>
+        </style></button><button type=\\"button\\" class=\\"btn\\"><div class=\\"text\\">action2</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -140,36 +140,29 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
               calc(0.313 * 16px);
             padding: 0 0 0 0;
           }
-
           .vertical {
             flex-direction: column;
           }
-
           .btn-group :global(.btn) {
             border: none;
           }
-
           .btn-group :global(.btn .text) {
             top: 0;
           }
-
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-left: 1px solid #eaeaea;
           }
-
           .horizontal :global(.btn:not(:last-child)) {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
           }
-
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-top: 1px solid #eaeaea;
           }
-
           .vertical :global(.btn:not(:last-child)) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
@@ -178,7 +171,7 @@ exports[`ButtonGroup buttons should be displayed vertically 1`] = `
 `;
 
 exports[`ButtonGroup props should be passed to each button 1`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
+"<div class=\\"btn-group horizontal\\"><button type=\\"button\\" class=\\"btn\\"><div class=\\"text\\">action</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -254,36 +247,29 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
               calc(0.313 * 16px);
             padding: 0 0 0 0;
           }
-
           .vertical {
             flex-direction: column;
           }
-
           .btn-group :global(.btn) {
             border: none;
           }
-
           .btn-group :global(.btn .text) {
             top: 0;
           }
-
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-left: 1px solid #fff;
           }
-
           .horizontal :global(.btn:not(:last-child)) {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
           }
-
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-top: 1px solid #fff;
           }
-
           .vertical :global(.btn:not(:last-child)) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
@@ -292,7 +278,7 @@ exports[`ButtonGroup props should be passed to each button 1`] = `
 `;
 
 exports[`ButtonGroup props should be passed to each button 2`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
+"<div class=\\"btn-group horizontal\\"><button type=\\"button\\" class=\\"btn\\"><div class=\\"text\\">action</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -368,36 +354,29 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
               calc(0.313 * 16px);
             padding: 0 0 0 0;
           }
-
           .vertical {
             flex-direction: column;
           }
-
           .btn-group :global(.btn) {
             border: none;
           }
-
           .btn-group :global(.btn .text) {
             top: 0;
           }
-
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-left: 1px solid #0070f3;
           }
-
           .horizontal :global(.btn:not(:last-child)) {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
           }
-
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-top: 1px solid #0070f3;
           }
-
           .vertical :global(.btn:not(:last-child)) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
@@ -406,7 +385,7 @@ exports[`ButtonGroup props should be passed to each button 2`] = `
 `;
 
 exports[`ButtonGroup should render correctly 1`] = `
-"<div class=\\"btn-group horizontal \\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">action</div><style>
+"<div class=\\"btn-group horizontal\\"><button type=\\"button\\" class=\\"btn\\"><div class=\\"text\\">action</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
@@ -482,36 +461,29 @@ exports[`ButtonGroup should render correctly 1`] = `
               calc(0.313 * 16px);
             padding: 0 0 0 0;
           }
-
           .vertical {
             flex-direction: column;
           }
-
           .btn-group :global(.btn) {
             border: none;
           }
-
           .btn-group :global(.btn .text) {
             top: 0;
           }
-
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-left: 1px solid #eaeaea;
           }
-
           .horizontal :global(.btn:not(:last-child)) {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
           }
-
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-top: 1px solid #eaeaea;
           }
-
           .vertical :global(.btn:not(:last-child)) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;

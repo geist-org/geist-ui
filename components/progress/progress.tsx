@@ -4,6 +4,7 @@ import { useProportions } from '../utils/calculations'
 import { GeistUIThemesPalette } from '../themes/presets'
 import { NormalTypes } from '../utils/prop-types'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type ProgressColors = {
   [key: number]: string
@@ -68,9 +69,10 @@ const ProgressComponent: React.FC<ProgressProps> = ({
   const percentValue = useProportions(value, max)
   const currentColor = getCurrentColor(percentValue, theme.palette, type, colors)
   const fixed = fixedTop || fixedBottom
+  const classes = useClasses('progress', { fixed }, className)
 
   return (
-    <div className={`progress ${className} ${fixed ? 'fixed' : ''}`}>
+    <div className={classes}>
       <div className="inner" title={`${percentValue}%`} />
       <progress className={className} value={value} max={max} {...props} />
       <style jsx>{`

@@ -2,6 +2,7 @@ import React, { CSSProperties, useImperativeHandle, useRef } from 'react'
 import useTheme from '../use-theme'
 import { useSelectContext } from './select-context'
 import Dropdown from '../shared/dropdown'
+import useClasses from '../use-classes'
 
 interface Props {
   visible: boolean
@@ -37,6 +38,8 @@ const SelectDropdown = React.forwardRef<
     const theme = useTheme()
     const internalDropdownRef = useRef<HTMLDivElement | null>(null)
     const { ref } = useSelectContext()
+    const classes = useClasses('select-dropdown', className)
+
     useImperativeHandle<HTMLDivElement | null, HTMLDivElement | null>(
       dropdownRef,
       () => internalDropdownRef.current,
@@ -48,10 +51,7 @@ const SelectDropdown = React.forwardRef<
         visible={visible}
         disableMatchWidth={disableMatchWidth}
         getPopupContainer={getPopupContainer}>
-        <div
-          ref={internalDropdownRef}
-          className={`select-dropdown ${className}`}
-          style={dropdownStyle}>
+        <div ref={internalDropdownRef} className={classes} style={dropdownStyle}>
           {children}
           <style jsx>{`
             .select-dropdown {

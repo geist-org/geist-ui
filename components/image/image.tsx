@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import ImageSkeleton from './image.skeleton'
 import { transformDataSource } from './helpers'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   src: string
@@ -63,7 +64,7 @@ const ImageComponent: React.FC<ImageProps> = ({
   }, [loading])
 
   return (
-    <div className={`image ${className}`}>
+    <div className={useClasses('image', className)}>
       {showSkeleton && showAnimation && <ImageSkeleton opacity={loading ? 0.5 : 0} />}
       <img ref={imageRef} onLoad={imageLoaded} src={url} {...props} />
       <style jsx>{`

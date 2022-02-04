@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type LoadingTypes = NormalTypes
 interface Props {
@@ -47,13 +48,14 @@ const LoadingComponent: React.FC<React.PropsWithChildren<LoadingProps>> = ({
 }: React.PropsWithChildren<LoadingProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScale()
+  const classes = useClasses('loading-container', className)
   const bgColor = useMemo(
     () => getIconBgColor(type, theme.palette, color),
     [type, theme.palette, color],
   )
 
   return (
-    <div className={`loading-container ${className}`} {...props}>
+    <div className={classes} {...props}>
       <span className="loading">
         {children && <label>{children}</label>}
         <i />

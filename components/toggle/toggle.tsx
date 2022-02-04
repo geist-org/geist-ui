@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type ToggleTypes = NormalTypes
 export interface ToggleEventTarget {
@@ -51,6 +52,7 @@ const ToggleComponent: React.FC<ToggleProps> = ({
   const theme = useTheme()
   const { SCALES } = useScale()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
+  const classes = useClasses('toggle', { checked: selfChecked, disabled })
 
   const changeHandle = useCallback(
     (ev: React.ChangeEvent) => {
@@ -85,10 +87,7 @@ const ToggleComponent: React.FC<ToggleProps> = ({
         checked={selfChecked}
         onChange={changeHandle}
       />
-      <div
-        className={`toggle ${selfChecked ? 'checked' : ''} ${
-          disabled ? 'disabled' : ''
-        }`}>
+      <div className={classes}>
         <span className="inner" />
       </div>
       <style jsx>{`

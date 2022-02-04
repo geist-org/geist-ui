@@ -1,6 +1,7 @@
 import React from 'react'
 import useTheme from '../use-theme'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   count?: number
@@ -23,7 +24,7 @@ const AvatarGroupComponent: React.FC<React.PropsWithChildren<AvatarGroupProps>> 
   const { SCALES } = useScale()
 
   return (
-    <div className={`avatar-group ${className}`}>
+    <div className={useClasses('avatar-group', className)}>
       {children}
       {count && <span className="count">+{count}</span>}
       <style jsx>{`

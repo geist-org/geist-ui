@@ -1,6 +1,7 @@
 import React from 'react'
 import useTheme from '../use-theme'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   disableAutoMargin?: boolean
@@ -23,11 +24,10 @@ const CardFooterComponent: React.FC<React.PropsWithChildren<CardFooterProps>> = 
 }: CardFooterProps & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScale()
+  const classes = useClasses({ 'auto-margin': !disableAutoMargin }, className)
 
   return (
-    <footer
-      className={`${disableAutoMargin ? '' : 'auto-margin'} ${className}`}
-      {...props}>
+    <footer className={classes} {...props}>
       {children}
       <style jsx>{`
         footer {

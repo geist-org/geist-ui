@@ -3,6 +3,7 @@ import useTheme from '../use-theme'
 import { DividerAlign, SnippetTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type DividerTypes = SnippetTypes
 
@@ -43,17 +44,19 @@ const DividerComponent: React.FC<React.PropsWithChildren<DividerProps>> = ({
 }: React.PropsWithChildren<DividerProps> & typeof defaultProps) => {
   const theme = useTheme()
   const { SCALES } = useScale()
+  const classes = useClasses('divider', className)
   const color = useMemo(() => getColor(type, theme.palette), [type, theme.palette])
   const alignClassName = useMemo(() => {
     if (!align || align === 'center') return ''
     if (align === 'left' || align === 'start') return 'start'
     return 'end'
   }, [align])
+  const alignClasses = useClasses('text', alignClassName)
   const textColor = type === 'default' ? theme.palette.foreground : color
 
   return (
-    <div role="separator" className={`divider ${className}`} {...props}>
-      {children && <span className={`text ${alignClassName}`}>{children}</span>}
+    <div role="separator" className={classes} {...props}>
+      {children && <span className={alignClasses}>{children}</span>}
       <style jsx>{`
         .divider {
           max-width: 100%;

@@ -1,5 +1,6 @@
 import React from 'react'
 import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   center?: boolean
@@ -21,9 +22,10 @@ const PageHeaderComponent: React.FC<React.PropsWithChildren<PageHeaderProps>> = 
   ...props
 }: React.PropsWithChildren<PageHeaderProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
+  const classes = useClasses({ center }, className)
 
   return (
-    <header className={`${center ? 'center' : ''} ${className}`} {...props}>
+    <header className={classes} {...props}>
       {children}
       <style jsx>{`
         header {
