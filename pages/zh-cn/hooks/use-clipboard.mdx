@@ -14,7 +14,7 @@ export const meta = {
   scope={{ useClipboard, Button, useToasts }}
   code={`
 () => {
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const { copy } = useClipboard()
   const handler = () => {
     copy('hello, geist-ui')

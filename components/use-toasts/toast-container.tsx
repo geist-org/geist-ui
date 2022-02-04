@@ -1,71 +1,122 @@
-import React, { useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { createPortal } from 'react-dom'
 import usePortal from '../utils/use-portal'
 import useTheme from '../use-theme'
 import { useGeistUIContext } from '../utils/use-geist-ui-context'
-import { Toast } from './use-toast'
 import ToastItem from './toast-item'
-
-export type ToastWithID = Toast & {
-  id: string
-  willBeDestroy?: boolean
-  cancel: () => void
-}
+import useClasses from '../use-classes'
+import { isLeftPlacement, isTopPlacement } from './helpers'
+import useCurrentState from '../utils/use-current-state'
 
 const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
-  const portal = usePortal('toast')
   const theme = useTheme()
-  const [hover, setHover] = useState<boolean>(false)
-  const timer = useRef<number | undefined>()
-  const { toasts, updateToastHoverStatus } = useGeistUIContext()
+  const portal = usePortal('toast')
+  const [, setHovering, hoveringRef] = useCurrentState<boolean>(false)
+  const { toasts, updateToasts, toastLayout, lastUpdateToastId } = useGeistUIContext()
+  const memoizedLayout = useMemo(() => toastLayout, [toastLayout])
   const toastElements = useMemo(
     () =>
-      toasts.map((t, i) => (
-        <ToastItem
-          index={i}
-          total={toasts.length}
-          toast={t}
-          onHover={hover}
-          key={`toast-${i}`}
-        />
+      toasts.map(toast => (
+        <ToastItem toast={toast} layout={memoizedLayout} key={toast._internalIdent} />
       )),
-    [toasts, hover],
+    [toasts, memoizedLayout],
   )
-  const hoverHandler = (onHover: boolean) => {
-    if (onHover) {
-      timer.current && clearTimeout(timer.current)
-      updateToastHoverStatus(() => true)
-      return setHover(true)
+  const classNames = useMemo(
+    () =>
+      useClasses('toasts', {
+        top: isTopPlacement(toastLayout.placement),
+        left: isLeftPlacement(toastLayout.placement),
+      }),
+    [memoizedLayout],
+  )
+  const hoverHandler = (isHovering: boolean) => {
+    setHovering(isHovering)
+    if (isHovering) {
+      return updateToasts(last =>
+        last.map(toast => {
+          if (!toast.visible) return toast
+          toast._timeout && window.clearTimeout(toast._timeout)
+          return {
+            ...toast,
+            timeout: null,
+          }
+        }),
+      )
     }
-    timer.current = window.setTimeout(() => {
-      setHover(false)
-      updateToastHoverStatus(() => false)
-      timer.current && clearTimeout(timer.current)
-    }, 200)
+
+    updateToasts(last =>
+      last.map((toast, index) => {
+        if (!toast.visible) return toast
+        toast._timeout && window.clearTimeout(toast._timeout)
+        return {
+          ...toast,
+          _timeout: (() => {
+            const timer = window.setTimeout(() => {
+              toast.cancel()
+              window.clearTimeout(timer)
+            }, toast.delay + index * 100)
+            return timer
+          })(),
+        }
+      }),
+    )
   }
+
+  useEffect(() => {
+    const index = toasts.findIndex(r => r._internalIdent === lastUpdateToastId)
+    const toast = toasts[index]
+    if (!toast || toast.visible || !hoveringRef.current) return
+    const hasVisible = toasts.find((r, i) => i < index && r.visible)
+    if (hasVisible || !hoveringRef.current) return
+    hoverHandler(false)
+  }, [toasts, lastUpdateToastId])
+
+  useEffect(() => {
+    let timeout: null | number = null
+    const timer = window.setInterval(() => {
+      if (toasts.length === 0) return
+      timeout = window.setTimeout(() => {
+        const allInvisible = !toasts.find(r => r.visible)
+        allInvisible && updateToasts(() => [])
+        timeout && clearTimeout(timeout)
+      }, 350)
+    }, 5000)
+
+    return () => {
+      timer && clearInterval(timer)
+      timeout && clearTimeout(timeout)
+    }
+  }, [toasts])
 
   if (!portal) return null
   if (!toasts || toasts.length === 0) return null
   return createPortal(
     <div
-      className={`toast-container ${hover ? 'hover' : ''}`}
+      className={classNames}
       onMouseEnter={() => hoverHandler(true)}
       onMouseLeave={() => hoverHandler(false)}>
       {toastElements}
       <style jsx>{`
-        .toast-container {
+        .toasts {
           position: fixed;
-          width: 420px;
-          max-width: 90vw;
-          bottom: ${theme.layout.gap};
+          width: auto;
+          max-width: 100%;
           right: ${theme.layout.gap};
+          bottom: ${theme.layout.gap};
           z-index: 2000;
           transition: all 400ms ease;
           box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
         }
-
-        .toast-container.hover {
-          transform: translate3d(0, -10px, 0);
+        .top {
+          bottom: unset;
+          flex-direction: column-reverse;
+          top: ${theme.layout.gap};
+        }
+        .left {
+          right: unset;
+          left: ${theme.layout.gap};
         }
       `}</style>
     </div>,
