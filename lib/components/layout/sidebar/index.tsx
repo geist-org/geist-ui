@@ -56,7 +56,6 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
           width: 100%;
           padding-bottom: ${theme.layout.gap};
         }
-
         .box {
           overflow-y: auto;
           overflow-x: hidden;
@@ -65,16 +64,13 @@ export const Sidebar: React.FC<Props> = React.memo(() => {
           flex-direction: column;
           align-items: center;
         }
-
         .box::-webkit-scrollbar {
           width: 0;
           background-color: transparent;
         }
-
         .box > :global(.item) {
           margin-bottom: ${theme.layout.gap};
         }
-
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .box {
             padding: 20px 35px 10px;

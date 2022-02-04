@@ -6,7 +6,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { CssBaseline, GeistProvider, useTheme, GeistUIThemes, Image } from 'components'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
-import { HybridCode, HybridLink, Layout } from 'lib/components'
+import { HybridCode, HybridLink, Layout, Search } from 'lib/components'
 import 'inter-ui/inter.css'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
@@ -70,6 +70,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           onThemeChange={themeChangeHandle}
           onThemeTypeChange={type => setThemeType(type)}>
           <Layout.Menu />
+          <Search />
           <MDXProvider
             components={{
               a: HybridLink,
