@@ -1,7 +1,6 @@
 import { Layout, Playground, Attributes } from 'lib/components'
 import GitIcon from '@geist-ui/icons/github'
-import { Input, Spacer, useInput, Button, Code, Text, Dot } from 'components'
-import { useState, useEffect } from 'react'
+import { Input, Spacer, Button, Code, Text, Dot } from 'components'
 
 export const meta = {
   title: '输入框 Input',
@@ -11,6 +10,8 @@ export const meta = {
 ## Input / 输入框
 
 处理用户的输入数据。
+
+输入框组件包含额外的 Hooks，详情请参阅 [useInput](/zh-cn/hooks/use-input) 小节。
 
 <Playground
   desc="基础的输入字段。"
@@ -145,40 +146,16 @@ export const meta = {
 <Playground
   title="变化事件"
   desc="捕获输入框的文本变化。"
-  scope={{ Input, useState }}
+  scope={{ Input }}
   code={`
 () => {
-  const [value, setValue] = useState()
+  const [value, setValue] = React.useState()
   const handler = (e) => {
     setValue(e.target.value)
     console.log(e.target.value)
   }
   return (
     <Input value={value} onChange={handler} placeholder="一个基础示例" />
-  )
-}
-`}
-/>
-
-<Playground
-  title={
-    <>
-      <Code>useInput</Code>
-    </>
-  }
-  desc="使用 `hooks` 捕获输入框的文本变化。"
-  scope={{ Input, useInput, useEffect, Button, Spacer }}
-  code={`
-() => {
-  const { state, setState, reset, bindings } = useInput('Geist UI')
-  useEffect(() => console.log(state), [state])
-  return (
-    <>
-      <Input {...bindings} />
-      <Spacer h={.5} />
-      <Button auto type="secondary" scale={1/3} onClick={() => setState(Math.random().toString(32))}>随机设置值</Button>
-      <Button auto scale={1/3} ml="20px" onClick={() => reset()}>重置值</Button>
-    </>
   )
 }
 `}
@@ -240,21 +217,6 @@ export const meta = {
 
 ```ts
 type InputTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
-```
-
-<Attributes.Title>useInput</Attributes.Title>
-
-```ts
-type useInput = (initialValue: string) => {
-  state: string
-  setState: Dispatch<SetStateAction<string>>
-  currentRef: MutableRefObject<string>
-  reset: () => void
-  bindings: {
-    value: string
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
-  }
-}
 ```
 
 </Attributes>

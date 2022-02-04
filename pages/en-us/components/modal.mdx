@@ -1,6 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Modal, Button, Code, useModal, Note, Link } from 'components'
-import NextLink from 'next/link'
+import { Modal, Button, Code, useModal } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -11,14 +10,9 @@ export const meta = {
 ## Modal
 
 Display popup content that requires attention or provides additional information.
+If you just need to prompt for a text message, try component [Toast](/en-us/components/toast).
 
-<Note>
-  Just want a text notification? Try{' '}
-  <NextLink href="/en-us/components/toast">
-    <Link color>Toast component</Link>
-  </NextLink>
-  .
-</Note>
+The Modal contain an additional Hooks, see subsection [useModal](/en-us/hooks/use-modal) for details.
 
 <Playground
   title="Basic"
