@@ -63,22 +63,6 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
             margin: 25px auto;
             transform: scale(0.95);
           }
-          .installation-tabs .tab.active:after {
-            display: none;
-          }
-          .installation-tabs .tab {
-            color: ${theme.palette.accents_3};
-          }
-          .installation-tabs .tab:hover {
-            color: ${theme.palette.accents_6};
-          }
-          .installation-tabs .tab.active {
-            font-weight: 500;
-            color: ${theme.palette.foreground};
-          }
-          .installation-tabs .content {
-            margin-top: 0;
-          }
         `}</style>
         <style jsx>{`
           .layout {

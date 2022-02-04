@@ -51,11 +51,26 @@ export const meta = {
 />
 
 <Playground
+  title="隐藏边框"
+  scope={{ Tabs, Text }}
+  code={`
+<Tabs initialValue="html" hideDivider hideBorder>
+  <Tabs.Item label="HTML" value="html">
+    <Text mt={0}>HTML 是我们用来构造网站内容的不同部分并定义它们的意义或目的的语言。</Text>
+  </Tabs.Item>
+  <Tabs.Item label="CSS" value="css">
+    <Text mt={0}>我们可以使用 CSS 这个语言来设计和布局我们的 Web 内容，以及添加像动画一类的行为。</Text>
+  </Tabs.Item>
+</Tabs>
+`}
+/>
+
+<Playground
   title="图标"
   desc="在选项卡的标签上显示图标组件。"
   scope={{ Tabs, TwitterIcon, TwitchIcon, Link, Text }}
   code={`
-<Tabs initialValue="1">
+<Tabs align="center" initialValue="1">
   <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
     <Text mt={0}>你好，这是我们在 Twitch 的最新直播。</Text>
   </Tabs.Item>
@@ -122,6 +137,7 @@ export const meta = {
 | **initialValue**     | 初始值                 | `string`                | -                               | -       |
 | **value**            | 设定当前选项           | `string`                | -                               | -       |
 | **hideDivider**      | 隐藏默认分割线         | `boolean`               | -                               | `false` |
+| **hideBorder**       | 隐藏激活时的边框       | `boolean`               | -                               | `false` |
 | **leftSpace**        | 左侧空白区域宽度       | `CSSProperties`         | -                               | `12px`  |
 | **onChange**         | 选项卡切换事件         | `(val: string) => void` | -                               | -       |
 | **align**            | 每个子项的横向对齐方式 | `justifyContent`        | -                               | `left`  |

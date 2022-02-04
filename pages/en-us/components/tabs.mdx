@@ -52,12 +52,28 @@ Display tab content.
 />
 
 <Playground
+  title="Hide Border"
+  scope={{ Tabs, Text }}
+  code={`
+<Tabs initialValue="html" hideDivider hideBorder leftSpace={0}>
+  <Tabs.Item label="HTML" value="html">
+    <Text mt={0}>HTML is the language that we use to structure the different parts of our content and define what their meaning or purpose is.</Text>
+  </Tabs.Item>
+  <Tabs.Item label="CSS" value="css">
+    <Text mt={0}>CSS is the language that we can use to style and lay out our web content,
+    as well as adding behavior like animation.</Text>
+  </Tabs.Item>
+</Tabs>
+`}
+/>
+
+<Playground
   title="With Icon"
   desc="Show icon component on label button."
   scope={{ Tabs, TwitchIcon, TwitterIcon, Text }}
   code={`
-<Tabs initialValue="1">
-  <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
+<Tabs initialValue="1" align="center" leftSpace={0}>
+ <Tabs.Item label={<><TwitchIcon /> Twitch TV</>} value="1">
     <Text mt={0}>Hello, this is our live broadcast on Twitch.</Text>
   </Tabs.Item>
   <Tabs.Item label={<><TwitterIcon/> Twitter </>} value="2">
@@ -165,6 +181,7 @@ Display tab content.
 | **initialValue**     | initial value                           | `string`                | -                               | -       |
 | **value**            | current selected value                  | `string`                | -                               | -       |
 | **hideDivider**      | hide default divider                    | `boolean`               | -                               | `false` |
+| **hideBorder**       | hide border on active                   | `boolean`               | -                               | `false` |
 | **leftSpace**        | space area on the left side             | `CSSProperties`         | -                               | `12px`  |
 | **onChange**         | change event                            | `(val: string) => void` | -                               | -       |
 | **align**            | horizontal alignment of each child item | `justifyContent`        | -                               | `left`  |
