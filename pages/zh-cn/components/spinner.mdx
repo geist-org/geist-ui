@@ -1,6 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Spinner, Spacer, Note, Code, Link } from 'components'
-import NextLink from 'next/link'
+import { Spinner } from 'components'
 
 export const meta = {
   title: '指示器 Spinner',
@@ -11,13 +10,7 @@ export const meta = {
 
 表示一个动作正在进行中。
 
-<Note>
-  想要表示加载中状态或后台运行任务? 试试{' '}
-  <NextLink href="/zh-cn/components/loading">
-    <a>Loading / 加载中</a>
-  </NextLink>{' '}
-  组件。
-</Note>
+作为加载指示器，可以参阅类似组件 [Loading](/zh-cn/components/loading).
 
 <Playground
   scope={{ Spinner }}

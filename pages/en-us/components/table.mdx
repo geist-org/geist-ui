@@ -95,7 +95,7 @@ Display tabular data in format.
       setData(last => last.filter((_, dataIndex) => dataIndex !== index))
     }
     return (
-      <Button type="error" auto scale={1/3} onClick={removeHandler}>Remove</Button>
+      <Button type="error" auto scale={1/3} font="12px" onClick={removeHandler}>Remove</Button>
     )
   }
   return (
@@ -134,7 +134,7 @@ Display tabular data in format.
       })
     }
     return (
-      <Button type="secondary" auto scale={1/3} onClick={updateHandler}>Update</Button>
+      <Button type="secondary" auto scale={1/3} font="12px" onClick={updateHandler}>Update</Button>
     )
   }
   return (
