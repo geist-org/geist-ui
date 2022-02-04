@@ -117,7 +117,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
             border: 1px solid ${theme.palette.border};
             border-radius: ${theme.layout.radius};
             --geist-ui-dropdown-height: ${SCALES.height(2.5)};
-            --geist-ui-dropdown-min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
+            --geist-ui-dropdown-min-width: ${auto ? 'min-content' : SCALES.width(10.5)};
             --geist-ui-dropdown-padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)}
               ${paddingLeft};
             --geist-ui-dropdown-font-size: ${SCALES.font(0.875)};

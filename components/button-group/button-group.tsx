@@ -86,36 +86,29 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
               ${SCALES.ml(0.313)};
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           }
-
           .vertical {
             flex-direction: column;
           }
-
           .btn-group :global(.btn) {
             border: none;
           }
-
           .btn-group :global(.btn .text) {
             top: 0;
           }
-
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-left: 1px solid ${border};
           }
-
           .horizontal :global(.btn:not(:last-child)) {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
           }
-
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-top: 1px solid ${border};
           }
-
           .vertical :global(.btn:not(:last-child)) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
