@@ -12,7 +12,7 @@ exports[`Tabs should hide border on active 1`] = `
           top: -1000px;
           opacity: 0;
           transition: 0.15s ease;
-          transition-property: opacity, width, left;
+          transition-property: opacity, width, left, top;
         }
       </style></div><div class=\\"scroll-container\\"><div class=\\"tab hide-border\\" role=\\"button\\" data-geist=\\"tab-item\\">label1<style>
           .tab {
@@ -139,7 +139,7 @@ exports[`Tabs should render correctly 1`] = `
           top: -1000px;
           opacity: 0;
           transition: 0.15s ease;
-          transition-property: opacity, width, left;
+          transition-property: opacity, width, left, top;
         }
       </style></div><div class=\\"scroll-container\\"><div class=\\"tab\\" role=\\"button\\" data-geist=\\"tab-item\\">label1<style>
           .tab {
@@ -339,7 +339,7 @@ exports[`Tabs should work correctly with different styles 1`] = `
           top: -1000px;
           opacity: 0;
           transition: 0.15s ease;
-          transition-property: opacity, width, left;
+          transition-property: opacity, width, left, top;
         }
       </style></div><div class=\\"scroll-container hide-divider\\"><div class=\\"tab\\" role=\\"button\\" data-geist=\\"tab-item\\">label1<style>
           .tab {

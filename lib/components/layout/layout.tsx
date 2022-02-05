@@ -106,7 +106,6 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
               width: 100%;
               padding: 20px 1rem;
             }
-
             .sidebar {
               position: fixed;
               top: 0;
@@ -121,13 +120,11 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
               overflow: hidden;
               transition: height 250ms ease;
             }
-
             .main {
               width: 90vw;
               max-width: 90vw;
               padding: 0;
             }
-
             .side-shadow {
               display: none;
               visibility: hidden;

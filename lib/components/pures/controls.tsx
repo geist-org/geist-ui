@@ -1,5 +1,14 @@
 import React, { useMemo } from 'react'
-import { Button, useTheme, Select, Spacer, Themes, useAllThemes, Text } from 'components'
+import {
+  Button,
+  useTheme,
+  Select,
+  Spacer,
+  Themes,
+  useAllThemes,
+  Text,
+  Keyboard,
+} from 'components'
 import { useConfigs } from 'lib/config-context'
 import useLocale from 'lib/use-locale'
 import Router, { useRouter } from 'next/router'
@@ -44,6 +53,15 @@ const Controls: React.FC<unknown> = React.memo(() => {
   return (
     <div className="controls">
       <div className="tools">
+        <Keyboard
+          h="28px"
+          command
+          font="12px"
+          className="shortcuts"
+          title="Command + K to search.">
+          K
+        </Keyboard>
+        <Spacer w={0.75} />
         <Button
           w="28px"
           h="28px"
@@ -99,12 +117,16 @@ const Controls: React.FC<unknown> = React.memo(() => {
           margin: 0;
           position: relative;
         }
-
+        .controls:global(kbd.shortcuts) {
+          line-height: 28px !important;
+          cursor: help;
+          opacity: 0.75;
+          border: none;
+        }
         .controls :global(.select) {
           width: 85px;
           min-width: 85px;
         }
-
         .select-content {
           width: auto;
           height: 18px;
@@ -112,19 +134,16 @@ const Controls: React.FC<unknown> = React.memo(() => {
           justify-content: space-between;
           align-items: center;
         }
-
         .select-content :global(svg) {
           margin-right: 10px;
           margin-left: 2px;
         }
-
         .tools {
           display: flex;
           height: 40px;
           box-sizing: border-box;
           align-items: center;
         }
-
         @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
           .controls {
             display: none;

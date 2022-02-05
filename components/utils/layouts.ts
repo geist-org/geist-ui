@@ -1,4 +1,4 @@
-import { MouseEvent, MutableRefObject, useState } from 'react'
+import { MouseEvent, FocusEvent, MutableRefObject, useState } from 'react'
 
 export const getElementOffset = (el?: HTMLElement | null | undefined) => {
   if (!el)
@@ -61,7 +61,7 @@ export const getRefRect = (
 }
 
 export const getEventRect = (
-  event?: MouseEvent<HTMLElement>,
+  event?: MouseEvent<HTMLElement> | FocusEvent<HTMLElement>,
   getContainer?: () => HTMLElement | null,
 ) => {
   const rect = (event?.target as HTMLElement)?.getBoundingClientRect()
@@ -70,7 +70,10 @@ export const getEventRect = (
 }
 
 const isRefTarget = (
-  eventOrRef: MouseEvent<HTMLElement> | MutableRefObject<HTMLElement | null>,
+  eventOrRef:
+    | MouseEvent<HTMLElement>
+    | FocusEvent<HTMLElement>
+    | MutableRefObject<HTMLElement | null>,
 ): eventOrRef is MutableRefObject<HTMLElement | null> => {
   return typeof (eventOrRef as any)?.target === 'undefined'
 }
@@ -78,7 +81,10 @@ export const useRect = (initialState?: ReactiveDomReact | (() => ReactiveDomReac
   const [rect, setRect] = useState<ReactiveDomReact>(initialState || defaultRect)
 
   const updateRect = (
-    eventOrRef: MouseEvent<HTMLElement> | MutableRefObject<HTMLElement | null>,
+    eventOrRef:
+      | MouseEvent<HTMLElement>
+      | FocusEvent<HTMLElement>
+      | MutableRefObject<HTMLElement | null>,
     getContainer?: () => HTMLElement | null,
   ) => {
     if (isRefTarget(eventOrRef)) return setRect(getRefRect(eventOrRef, getContainer))
