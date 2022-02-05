@@ -15,7 +15,7 @@ For basic operation of Git, you can refer to [GitHub's help documentation](https
 At any time, you think it's ok, you can start the following steps to submit your amazing works:
 
 1. Run `yarn lint` check the code style.
-2. Run `yarn test-update` to update & run your testcase.
+2. Run `yarn test:update` to update & run your testcase.
 3. Run `git commit -ma '{YOUR_MESSAGE}'` to commit changes. Commit info should be formatted by the [rules](https://github.com/conventional-changelog/commitlint/blob/master/%40commitlint/config-conventional/README.md).
 4. Push code to your own repo and [create PullRequest](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) at GitHub.
 
@@ -31,8 +31,7 @@ At any time, you think it's ok, you can start the following steps to submit your
 
 1. Document page must have `meta` field. refer to [here](https://github.com/geist-org/geist-ui/blame/master/pages/en-us/components/avatar.mdx#L4).
 2. If you are creating a new component, please provide at least one document.
-3. Do Document using [mdx-js](https://github.com/mdx-js/mdx), here is [vs-code plug-in](https://github.com/silvenon/vscode-mdx),
-[web-storm support](https://youtrack.jetbrains.com/issue/WEB-32599)
+3. Do Document using [mdx-js](https://github.com/mdx-js/mdx), here is [vs-code plug-in](https://github.com/silvenon/vscode-mdx).
 
 #### **Create testcase**
 
@@ -53,7 +52,7 @@ At any time, you think it's ok, you can start the following steps to submit your
 
 > I added a new document page, but it was not displayed locally ?
 
-- Run `yarn dev` agian.
+- Run `yarn dev` again.
 
 > How can I update remote origin ?
 
