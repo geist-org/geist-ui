@@ -1,10 +1,11 @@
 import React, { MouseEvent, FocusEvent } from 'react'
-import { AlgoliaAPIHit, FOCUS_ELEMENT_DATA_NAME } from './helper'
+import { FOCUS_ELEMENT_DATA_NAME, SearchResults } from './helper'
 import { Text, useTheme } from 'components'
 import SearchIcon from './search-icon'
+import SearchRightLabel from './search-right-label'
 
 export type SearchItemProps = {
-  hit: AlgoliaAPIHit
+  data: SearchResults[number]
   index: number
   onMouseOver: (e: MouseEvent<HTMLButtonElement>) => void
   onSelect: (url: string) => void
@@ -13,7 +14,7 @@ export type SearchItemProps = {
 }
 
 const SearchItem: React.FC<SearchItemProps> = ({
-  hit,
+  data,
   index,
   onMouseOver,
   onSelect,
@@ -22,7 +23,7 @@ const SearchItem: React.FC<SearchItemProps> = ({
 }) => {
   const theme = useTheme()
   const selectHandler = () => {
-    onSelect(hit.url)
+    onSelect(data.url)
   }
 
   const dataAttr = {
@@ -37,13 +38,16 @@ const SearchItem: React.FC<SearchItemProps> = ({
       onFocus={onFocus}
       onBlur={onBlur}
       {...dataAttr}>
-      <SearchIcon hit={hit} />
-      <Text pl="5px">{hit.name}</Text>
+      <SearchIcon data={data} />
+      <Text pl="12px" font="14px" className="value">
+        {data.name}
+      </Text>
+      <SearchRightLabel data={data} />
       <style jsx>{`
         .container {
           width: 100%;
           height: 55px;
-          padding: 0 20px;
+          padding: 0 10px;
           display: flex;
           align-items: center;
           cursor: pointer;
@@ -56,9 +60,10 @@ const SearchItem: React.FC<SearchItemProps> = ({
         .container:focus {
           color: ${theme.palette.violet};
         }
-        // .container:hover {
-        //   color: ${theme.palette.violet};
-        // }
+        .container:global(.value) {
+          font-family: ${theme.font.prism};
+          font-weight: 500;
+        }
         .container:global(svg) {
           width: 16px;
           height: 16px;

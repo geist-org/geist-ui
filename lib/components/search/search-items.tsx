@@ -5,13 +5,13 @@ import React, {
   FocusEvent,
   useImperativeHandle,
 } from 'react'
-import { AlgoliaAPIHit, isSearchItem } from './helper'
+import { isSearchItem, SearchResults } from './helper'
 import SearchItem from './search-item'
 import Highlight from 'components/shared/highlight'
 import { useRect } from 'components/utils/layouts'
 
 export type SearchItemsProps = {
-  hits: Array<AlgoliaAPIHit>
+  data: SearchResults
   onSelect: (url: string) => void
   preventHoverHighlightSync?: boolean
   displayHoverHighlight?: boolean
@@ -26,7 +26,7 @@ const SearchItems = React.forwardRef<
   React.PropsWithChildren<SearchItemsProps>
 >(
   (
-    { hits, onSelect, preventHoverHighlightSync },
+    { data, onSelect, preventHoverHighlightSync },
     outRef: React.Ref<SearchItemsRef | null>,
   ) => {
     const { rect, setRect } = useRect()
@@ -60,14 +60,14 @@ const SearchItems = React.forwardRef<
           visible={displayHighlight}
           activeOpacity={0.5}
         />
-        {hits.map((hit, index) => (
+        {data.map((item, index) => (
           <SearchItem
             onSelect={onSelect}
             onMouseOver={hoverHandler}
             onFocus={focusHandler}
             onBlur={blurHandler}
-            hit={hit}
-            key={hit.url}
+            data={item}
+            key={item.url}
             index={index}
           />
         ))}

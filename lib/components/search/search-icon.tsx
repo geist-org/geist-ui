@@ -1,29 +1,34 @@
 import React, { useMemo } from 'react'
-import { AlgoliaAPIHit } from './helper'
+import { SearchResults } from './helper'
 import Type from '@geist-ui/icons/type'
-import Settings from '@geist-ui/icons/settings'
 import FileFunctionFill from '@geist-ui/icons/fileFunctionFill'
 import Lambda from '@geist-ui/icons/lambda'
 import Image from '@geist-ui/icons/image'
 import Package from '@geist-ui/icons/package'
+import Codesandbox from '@geist-ui/icons/codesandbox'
+import Layout from '@geist-ui/icons/layout'
+import Link from '@geist-ui/icons/link'
 
-const getIcon = (hit: AlgoliaAPIHit): React.ReactElement | null => {
-  const name = hit.name.toLowerCase()
+const getIcon = (data: SearchResults[number]): React.ReactElement | null => {
+  const name = data.name.toLowerCase()
+  const group = data.group?.toLowerCase()
   if (name === 'text') return <Type />
-  if (hit.url.endsWith('icons')) return <Package />
-  if (hit.url.endsWith('server-render')) return <Lambda />
-  if (hit.url.endsWith('image')) return <Image />
-  if (hit.url.includes('guide')) return <Settings />
-  if (hit.name.startsWith('use')) return <FileFunctionFill />
+  if (group === 'codesandbox') return <Codesandbox />
+  if (group === 'external') return <Link />
+  if (data.url.endsWith('icons')) return <Package />
+  if (data.url.endsWith('server-render')) return <Lambda />
+  if (data.url.endsWith('image')) return <Image />
+  if (data.url.includes('guide')) return <Layout />
+  if (data.name.startsWith('use')) return <FileFunctionFill />
   return null
 }
 
 export type SearchIconProps = {
-  hit: AlgoliaAPIHit
+  data: SearchResults[number]
 }
 
-const SearchIcon: React.FC<SearchIconProps> = ({ hit }) => {
-  const icon = useMemo(() => getIcon(hit), [hit])
+const SearchIcon: React.FC<SearchIconProps> = ({ data }) => {
+  const icon = useMemo(() => getIcon(data), [data])
 
   if (icon) return icon
 

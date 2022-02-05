@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 
-const Aligolia = dynamic(() => import('./algolia'), {
+const SearchDynamic = dynamic(() => import('./search'), {
   ssr: false,
   loading: () => null,
 })
@@ -8,7 +8,7 @@ const Aligolia = dynamic(() => import('./algolia'), {
 const Search = () => {
   return (
     <div className="search">
-      <Aligolia />
+      <SearchDynamic />
       <style jsx>{`
         .search {
           visibility: hidden;

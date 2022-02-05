@@ -1,13 +1,8 @@
-const algolia = require('algoliasearch')
 const path = require('path')
 const fs = require('fs-extra')
 const extractMetadata = require('extract-mdx-metadata')
-const pagePrefix = path.join(__dirname, '../pages')
-
-if (!process.env.ALGOLIA_WRITE_KEY) {
-  console.log('> Not found "ALGOLIA_WRITE_KEY", exit.')
-  return process.exit(0)
-}
+const pagePrefix = path.join(__dirname, '../../pages')
+const presets = require('./presets')
 
 const flattenArray = contents => {
   if (!Array.isArray(contents)) return contents
@@ -30,14 +25,12 @@ const getMetadata = async (files, parentPath) => {
           return {
             name: meta.title || file,
             url,
-            objectID: url,
             group: meta.group || null,
           }
         }
 
         const children = await fs.readdir(filePath)
-        const childrenMetadata = await getMetadata(children, filePath)
-        return childrenMetadata
+        return await getMetadata(children, filePath)
       }),
   )
   return flattenArray(contents)
@@ -46,28 +39,24 @@ const getMetadata = async (files, parentPath) => {
 const getLocaleData = async locale => {
   const dir = path.join(pagePrefix, locale)
   const childDirs = await fs.readdir(dir)
-  return await getMetadata(childDirs, dir)
+  const data = await getMetadata(childDirs, dir)
+  return data.concat(presets)
 }
 
-const uploadData = async (indexName, data) => {
-  const client = algolia('N9SHCFMBD3', process.env.ALGOLIA_WRITE_KEY)
-  const index = client.initIndex(indexName)
-  try {
-    await index.saveObjects(data)
-    await index.setSettings({
-      searchableAttributes: ['name', 'url', 'group'],
-      enableReRanking: true,
-    })
-    console.log(`> Algolia updated, count: ${data.length}, name: ${indexName}`)
-  } catch (err) {
-    console.log(err)
+const saveData = async (filename, data) => {
+  const seedsPath = path.join(__dirname, '../../lib/data', filename)
+  const hasSeeds = await fs.pathExists(seedsPath)
+  if (hasSeeds) {
+    await fs.remove(seedsPath)
   }
+  await fs.writeJson(seedsPath, data)
+  console.log(`> Seeds updated in ${filename}, count: ${data.length}`)
 }
 
 ;(async () => {
   const enData = await getLocaleData('en-us')
-  await uploadData('geist-ui-en-us', enData)
+  await saveData('seeds-en-us.json', enData)
 
   const zhData = await getLocaleData('zh-cn')
-  await uploadData('geist-ui-zh-cn', zhData)
+  await saveData('seeds-zh-cn.json', zhData)
 })()

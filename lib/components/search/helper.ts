@@ -1,8 +1,24 @@
-export type AlgoliaAPIHit = {
-  group: string
-  name: string
-  objectID: string
-  url: string
+import seeds, { Seeds } from '../../data/seeds'
+
+export type SearchResults = Seeds
+
+export const search = (keyword: string, local: string): SearchResults => {
+  const localSeeds = local.includes('zh') ? seeds['zh-cn'] : seeds['en-us']
+  const lowerCaseKeyword = keyword.toLowerCase()
+  const data = localSeeds
+    .filter(seed => {
+      if (seed.name.toLowerCase().includes(lowerCaseKeyword)) return true
+      return seed.group?.toLocaleLowerCase().includes(keyword)
+    })
+    .slice(0, 10)
+    .sort(seed => {
+      const startsWithName = seed.name.toLowerCase().startsWith(lowerCaseKeyword)
+      const startsWithGroup = seed.group?.toLowerCase().startsWith(lowerCaseKeyword)
+      if (startsWithName) return -1
+      if (startsWithGroup) return 0
+      return 1
+    })
+  return data
 }
 
 export const flattenArray = <T>(contents: T[][] | unknown): T[] => {

@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import algolia from 'algoliasearch'
 import {
   Modal,
   useKeyboard,
@@ -12,22 +11,32 @@ import {
   useInput,
   useCurrentState,
 } from 'components'
-import { flattenArray, AlgoliaAPIHit, focusNextElement } from './helper'
+import { focusNextElement, search, SearchResults } from './helper'
 import SearchItems, { SearchItemsRef } from './search-items'
 import { useRouter } from 'next/router'
+import useLocale from 'lib/use-locale'
 
-const ONLY_READ_KEY = '57ba52e34e92f5a8ef171de0522950d8'
-
-const Algolia = () => {
+const Search: React.FC<unknown> = () => {
   const theme = useTheme()
   const router = useRouter()
+  const { locale } = useLocale()
   const [preventHover, setPreventHover, preventHoverRef] = useCurrentState<boolean>(false)
   const ref = useRef<HTMLInputElement | null>(null)
   const itemsRef = useRef<SearchItemsRef | null>(null)
-  const [state, setState] = useState<Array<AlgoliaAPIHit>>([])
-  const { bindings, setVisible } = useModal(false)
+  const [state, setState] = useState<SearchResults>([])
+  const { bindings, setVisible, visible } = useModal(false)
   const { bindings: inputBindings, setState: setInput, state: input } = useInput('')
-  const index = useRef(algolia('N9SHCFMBD3', ONLY_READ_KEY))
+
+  const cleanAfterModalClose = () => {
+    setVisible(false)
+    const timer = window.setTimeout(() => {
+      setState([])
+      setInput('')
+      itemsRef.current?.scrollTo(0, 0)
+      setPreventHover(true)
+      window.clearTimeout(timer)
+    }, 400)
+  }
 
   useKeyboard(() => {
     setVisible(true)
@@ -38,30 +47,17 @@ const Algolia = () => {
   }, [KeyMod.CtrlCmd, KeyCode.KEY_K])
 
   useEffect(() => {
-    if (!index.current) return
-    if (!input) {
-      return setState([])
-    }
+    if (!input) return setState([])
     setPreventHover(true)
-    index.current
-      .multipleQueries([
-        {
-          indexName: 'geist-ui-en-us',
-          query: input,
-          params: {
-            hitsPerPage: 8,
-          },
-        },
-      ])
-      .then(res => {
-        const allHits = res.results.map(r => r.hits)
-        const hits = flattenArray<AlgoliaAPIHit>(allHits)
-        setState(hits)
-      })
-      .catch(() => {
-        setState([])
-      })
+    setState(search(input, locale))
+    itemsRef.current?.scrollTo(0, 0)
   }, [input])
+
+  useEffect(() => {
+    if (visible) return
+    cleanAfterModalClose()
+  }, [visible])
+
   useEffect(() => {
     const eventHandler = () => {
       if (!preventHoverRef.current) return
@@ -74,13 +70,9 @@ const Algolia = () => {
   }, [])
 
   const selectHandler = (url: string) => {
+    if (url.startsWith('http')) return window.open(url)
     router.push(url)
     setVisible(false)
-    const timer = setTimeout(() => {
-      setState([])
-      setInput('')
-      window.clearTimeout(timer)
-    }, 400)
   }
 
   const { bindings: KeyBindings } = useKeyboard(
@@ -121,7 +113,7 @@ const Algolia = () => {
         <SearchItems
           preventHoverHighlightSync={preventHover}
           ref={itemsRef}
-          hits={state}
+          data={state}
           onSelect={selectHandler}
         />
       </Modal>
@@ -171,4 +163,4 @@ const Algolia = () => {
   )
 }
 
-export default Algolia
+export default Search
