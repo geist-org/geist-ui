@@ -1,6 +1,7 @@
 import React, { PropsWithChildren, useMemo, useState } from 'react'
 import {
   GeistUIContent,
+  defaultToastLayout,
   GeistUIContextParams,
   UpdateToastsFunction,
   UpdateToastsIDFunction,
@@ -10,7 +11,6 @@ import ThemeProvider from './theme-provider'
 import useCurrentState from '../utils/use-current-state'
 import ToastContainer from '../use-toasts/toast-container'
 import { GeistUIThemes } from '../themes/presets'
-import { defaultToastLayout } from '../use-toasts/use-toast'
 
 export type GeistProviderProps = {
   themes?: Array<GeistUIThemes>

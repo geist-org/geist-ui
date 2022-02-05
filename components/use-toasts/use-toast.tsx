@@ -1,6 +1,6 @@
 import React, { CSSProperties, useEffect } from 'react'
 import type { NormalTypes } from '../utils/prop-types'
-import { useGeistUIContext } from '../utils/use-geist-ui-context'
+import { defaultToastLayout, useGeistUIContext } from '../utils/use-geist-ui-context'
 import { getId } from '../utils/collections'
 import { ToastPlacement } from '../use-toasts/helpers'
 
@@ -37,14 +37,6 @@ export type Toast = Required<ToastInput> & ToastInstance
 const defaultToast = {
   delay: 2000,
   type: 'default' as ToastTypes,
-}
-export const defaultToastLayout: Required<ToastLayout> = {
-  padding: '12px 16px',
-  margin: '8px 0',
-  width: '420px',
-  maxWidth: '90vw',
-  maxHeight: '75px',
-  placement: 'bottomRight',
 }
 
 export type ToastHooksResult = {
