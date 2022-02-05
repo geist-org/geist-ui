@@ -1,0 +1,184 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useToasts, Button, Spacer, Link } from 'components'
+
+export const meta = {
+  title: 'useToast',
+  group: 'Enhancement',
+  index: 12,
+}
+
+## useToast
+
+Display an important message globally.
+
+<Playground
+  desc="Basic usage."
+  scope={{ Button, useToasts }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const click = () => setToast({ text: 'HTTP is stateless, but not sessionless.', delay: 2000 })
+  return <Button scale={2/3} auto onClick={click}>Show Toast</Button>
+}
+`}
+/>
+
+<Playground
+  title="Multiline"
+  desc="Display multiline or overlong text."
+  scope={{ Button, useToasts }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const click = () => setToast({ text: 'HTTP is a protocol which allows the fetching of resources, such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance text, layout description, images, videos, scripts, and more.' })
+  return <Button scale={2/3} auto onClick={click}>Show Toast</Button>
+}
+`}
+/>
+
+<Playground
+  title="Action"
+  desc="Add a custom button to the Toast."
+  scope={{ Button, useToasts }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const action = {
+    name: 'alert',
+    handler: () => alert('alert from toast')
+  }
+  const click = () => setToast({
+    text: 'HTTP is stateless, but not sessionless.',
+    actions: [action],
+  })
+  return <Button scale={2/3} auto onClick={click} type="secondary">Show Action</Button>
+}
+`}
+/>
+
+<Playground
+  title="Cancel"
+  desc="Use `passive` to change the style of the button."
+  scope={{ Button, useToasts }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const action = {
+    name: 'cancel',
+    passive: true,
+    handler: (event, cancel) => cancel()
+  }
+  const click = () => setToast({
+    text: 'HTTP is stateless, but not sessionless.',
+    actions: [action],
+  })
+  return <Button scale={2/3} auto onClick={click}>Show Toast</Button>
+}
+`}
+/>
+
+<Playground
+  title="ReactNode"
+  desc="Show more information by replacing the string with a `ReactNode`."
+  scope={{ Button, useToasts, Link }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const click = () => setToast({
+    text: <p>Click the <Link target="_blank" color block href="https://github.com/geist-org/geist-ui">URL</Link> to learn more</p>,
+    delay: 4000,
+  })
+  return <Button scale={2/3} auto onClick={click}>Show Toast</Button>
+}
+`}
+/>
+
+<Playground
+  title="Type"
+  scope={{ Button, useToasts, Spacer }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const click = type => setToast({
+    text: 'HTTP is stateless, but not sessionless.',
+    type,
+  })
+  return (
+    <>
+    <Button scale={2/3} auto onClick={() => click('success')} type="success">Show Success</Button>
+    <Spacer inline w={.5} />
+    <Button scale={2/3} auto onClick={() => click('warning')} type="warning">Show Warning</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/hooks/use-toast.mdx">
+<Attributes.Title>useToasts</Attributes.Title>
+
+```ts
+const {
+  // All Toasts currently in DOM
+  toasts: Array<Toast>
+
+  // Set a displayable Toast
+  setToast: (toast: ToastInput) => void
+
+  // Hide all Toast immediately
+  removeAll: () => void
+
+  // Query by id to get an instance of Toast
+  findToastOneByID: (ident: string) => Toast | undefined
+
+  // Remove the specified Toast by id
+  removeToastOneByID: (ident: string) => void
+} = useToasts(layout: ToastLayout)
+```
+
+<Attributes.Title>ToastLayout</Attributes.Title>
+
+| Option        | Description                  | Type                              | Default       |
+| ------------- | ---------------------------- | --------------------------------- | ------------- |
+| **padding**   | CSS properties               | `string`                          | -             |
+| **margin**    | CSS properties               | `string`                          | -             |
+| **width**     | CSS properties               | `string`                          | -             |
+| **maxWidth**  | CSS properties               | `string`                          | `90vw`        |
+| **maxHeight** | CSS properties               | `string`                          | `75px`        |
+| **placement** | the pop-up position of toast | [ToastPlacement](#toastplacement) | `bottomRight` |
+
+<Attributes.Title>ToastInput</Attributes.Title>
+
+| Option      | Description                                  | Type                        | Default   |
+| ----------- | -------------------------------------------- | --------------------------- | --------- |
+| **id**      | unique identifier that can be auto generated | `string`                    | -         |
+| **text**    | content displayed in toast                   | `string`, `ReactNode`       | -         |
+| **type**    | the type of toast                            | [ToastTypes](#toasttypes)   | `default` |
+| **delay**   | close after a specified time                 | `number`                    | `2000`    |
+| **actions** | specify a default action                     | [ToastAction](#toastaction) | -         |
+
+<Attributes.Title>ToastPlacement</Attributes.Title>
+
+```ts
+type ToastPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight'
+```
+
+<Attributes.Title>ToastAction</Attributes.Title>
+
+```ts
+interface ToastAction {
+  name: string
+  handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void
+  passive?: boolean
+}
+```
+
+<Attributes.Title>ToastTypes</Attributes.Title>
+
+```ts
+type ToastTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

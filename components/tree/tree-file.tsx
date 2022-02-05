@@ -4,7 +4,7 @@ import TreeFileIcon from './tree-file-icon'
 import { useTreeContext } from './tree-context'
 import TreeIndents from './tree-indents'
 import { makeChildPath, stopPropagation } from './tree-help'
-import { withPureProps } from '../use-scaleable'
+import useClasses from '../use-classes'
 
 interface Props {
   name: string
@@ -40,7 +40,7 @@ const TreeFile: React.FC<React.PropsWithChildren<TreeFileProps>> = ({
   }
 
   return (
-    <div className={`file ${className}`} onClick={clickHandler} {...withPureProps(props)}>
+    <div className={useClasses('file', className)} onClick={clickHandler} {...props}>
       <div className="names">
         <TreeIndents count={level} />
         <span className="icon">

@@ -1,0 +1,51 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useClipboard, Link, Button, useToasts, Spacer } from 'components'
+
+export const meta = {
+  title: 'useClipboard',
+  group: 'Utilities',
+}
+
+## useClipboard
+
+Copy string to clipboard.
+
+This is custom React hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
+
+<Playground
+  scope={{ useClipboard, Button, useToasts }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const { copy } = useClipboard()
+  const handler = () => {
+    copy('hello, geist-ui')
+    setToast({ text: 'Text copied.' })
+  }
+  return (
+    <>
+      <Button scale={0.5} auto onClick={handler}>Copy</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/hooks/use-clipboard.mdx">
+<Attributes.Title>useClipboard</Attributes.Title>
+
+```ts
+type UseClipboardOptions = {
+  onError: Function
+}
+
+type CopyResult = {
+  copy: (text: string) => void
+}
+
+const useClipboard = (options?: UseClipboardOptions) => CopyResult
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

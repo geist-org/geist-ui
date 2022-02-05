@@ -1,5 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
+import useClasses from '../use-classes'
 
 interface Props {
   left: number
@@ -30,11 +31,10 @@ const SliderDot = React.forwardRef<
     ref: React.Ref<HTMLDivElement>,
   ) => {
     const theme = useTheme()
+    const classes = useClasses('dot', { disabled, click: isClick })
 
     return (
-      <div
-        className={`dot ${disabled ? 'disabled' : ''} ${isClick ? 'click' : ''}`}
-        ref={ref}>
+      <div className={classes} ref={ref}>
         {children}
         <style jsx>{`
           .dot {

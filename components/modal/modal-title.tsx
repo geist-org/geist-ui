@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -19,11 +19,11 @@ const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps>> = 
   ...props
 }: React.PropsWithChildren<ModalTitleProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <>
-      <h2 className={className} {...withPureProps(props)}>
+      <h2 className={className} {...props}>
         {children}
       </h2>
       <style jsx>{`
@@ -51,5 +51,5 @@ const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps>> = 
 
 ModalTitleComponent.defaultProps = defaultProps
 ModalTitleComponent.displayName = 'GeistModalTitle'
-const ModalTitle = withScaleable(ModalTitleComponent)
+const ModalTitle = withScale(ModalTitleComponent)
 export default ModalTitle

@@ -8,7 +8,7 @@ import Backdrop from '../shared/backdrop'
 import { ModalConfig, ModalContext } from './modal-context'
 import { pickChild } from '../utils/collections'
 import useBodyScroll from '../utils/use-body-scroll'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 import useKeyboard, { KeyCode } from '../use-keyboard'
 
 interface Props {
@@ -39,7 +39,7 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
   disableBackdropClick,
 }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => {
   const portal = usePortal('modal')
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [, setBodyHidden] = useBodyScroll(null, { scrollLayer: true })
   const [visible, setVisible] = useState<boolean>(false)
   const [withoutActionsChildren, ActionsChildren] = pickChild(children, ModalAction)
@@ -99,5 +99,5 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
 
 ModalComponent.defaultProps = defaultProps
 ModalComponent.displayName = 'GeistModal'
-const Modal = withScaleable(ModalComponent)
+const Modal = withScale(ModalComponent)
 export default Modal

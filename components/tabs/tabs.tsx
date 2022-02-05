@@ -1,19 +1,45 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, {
+  CSSProperties,
+  MouseEvent,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import useTheme from '../use-theme'
 import { TabsHeaderItem, TabsConfig, TabsContext } from './tabs-context'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import Highlight from '../shared/highlight'
+import { useRect } from '../utils/layouts'
+import { isGeistElement } from '../utils/collections'
+import useClasses from '../use-classes'
 
 interface Props {
   initialValue?: string
   value?: string
   hideDivider?: boolean
+  hideBorder?: boolean
+  highlight?: boolean
   onChange?: (val: string) => void
   className?: string
+  leftSpace?: CSSProperties['marginLeft']
+  hoverHeightRatio?: number
+  hoverWidthRatio?: number
+  align?: CSSProperties['justifyContent']
+  activeClassName?: string
+  activeStyles?: CSSProperties
 }
 
 const defaultProps = {
   className: '',
   hideDivider: false,
+  highlight: true,
+  leftSpace: '12px' as CSSProperties['marginLeft'],
+  hoverHeightRatio: 0.7,
+  hoverWidthRatio: 1.15,
+  activeClassName: '',
+  activeStyle: {},
+  align: 'left',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -23,15 +49,26 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
   initialValue: userCustomInitialValue,
   value,
   hideDivider,
+  hideBorder,
   children,
   onChange,
   className,
+  leftSpace,
+  highlight,
+  hoverHeightRatio,
+  hoverWidthRatio,
+  activeClassName,
+  activeStyle,
+  align,
   ...props
 }: React.PropsWithChildren<TabsProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
-  const [selfValue, setSelfValue] = useState<string | undefined>(userCustomInitialValue)
+  const { SCALES } = useScale()
   const [tabs, setTabs] = useState<Array<TabsHeaderItem>>([])
+  const [selfValue, setSelfValue] = useState<string | undefined>(userCustomInitialValue)
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [displayHighlight, setDisplayHighlight] = useState<boolean>(false)
+  const { rect, setRect } = useRect()
 
   const register = (next: TabsHeaderItem) => {
     setTabs(last => {
@@ -52,8 +89,9 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
       register,
       currentValue: selfValue,
       inGroup: true,
+      leftSpace,
     }),
-    [selfValue],
+    [selfValue, leftSpace],
   )
 
   useEffect(() => {
@@ -65,14 +103,35 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
     setSelfValue(value)
     onChange && onChange(value)
   }
+  const tabItemMouseOverHandler = (event: MouseEvent<HTMLDivElement>) => {
+    if (!isGeistElement(event.target as HTMLDivElement)) return
+    setRect(event, () => ref.current)
+    if (highlight) {
+      setDisplayHighlight(true)
+    }
+  }
 
   return (
     <TabsContext.Provider value={initialValue}>
-      <div className={`tabs ${className}`} {...withPureProps(props)}>
-        <header>
-          <div className={`scroll-container ${hideDivider ? 'hide-divider' : ''}`}>
+      <div className={useClasses('tabs', className)} {...props}>
+        <header ref={ref} onMouseLeave={() => setDisplayHighlight(false)}>
+          <Highlight
+            rect={rect}
+            visible={displayHighlight}
+            hoverHeightRatio={hoverHeightRatio}
+            hoverWidthRatio={hoverWidthRatio}
+          />
+          <div
+            className={useClasses('scroll-container', { 'hide-divider': hideDivider })}>
             {tabs.map(({ cell: Cell, value }) => (
-              <Cell key={value} value={selfValue} onClick={clickHandler} />
+              <Cell
+                key={value}
+                onClick={clickHandler}
+                onMouseOver={tabItemMouseOverHandler}
+                activeClassName={activeClassName}
+                activeStyle={activeStyle}
+                hideBorder={hideBorder}
+              />
             ))}
           </div>
         </header>
@@ -101,7 +160,9 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
             display: flex;
             flex-wrap: nowrap;
             align-items: center;
+            justify-content: ${align};
             border-bottom: 1px solid ${theme.palette.border};
+            padding-left: ${leftSpace};
           }
           header::-webkit-scrollbar {
             display: none;
@@ -120,5 +181,5 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
 
 TabsComponent.defaultProps = defaultProps
 TabsComponent.displayName = 'GeistTabs'
-const Tabs = withScaleable(TabsComponent)
+const Tabs = withScale(TabsComponent)
 export default Tabs

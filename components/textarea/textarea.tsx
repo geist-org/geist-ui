@@ -2,7 +2,8 @@ import React, { useRef, useImperativeHandle, useEffect, useMemo, useState } from
 import useTheme from '../use-theme'
 import { NormalTypes, tuple } from '../utils/prop-types'
 import { getColors } from '../input/styles'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 const resizeTypes = tuple('none', 'both', 'horizontal', 'vertical', 'initial', 'inherit')
 export type TextareaResizes = typeof resizeTypes[number]
@@ -55,7 +56,7 @@ const TextareaComponent = React.forwardRef<
     ref: React.Ref<HTMLTextAreaElement | null>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const textareaRef = useRef<HTMLTextAreaElement>(null)
     useImperativeHandle(ref, () => textareaRef.current)
     const isControlledComponent = useMemo(() => value !== undefined, [value])
@@ -65,6 +66,7 @@ const TextareaComponent = React.forwardRef<
       () => getColors(theme.palette, type),
       [theme.palette, type],
     )
+    const classes = useClasses('wrapper', { hover, disabled }, className)
 
     const changeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       if (disabled || readOnly) return
@@ -95,10 +97,7 @@ const TextareaComponent = React.forwardRef<
     }
 
     return (
-      <div
-        className={`wrapper ${hover ? 'hover' : ''} ${
-          disabled ? 'disabled' : ''
-        } ${className}`}>
+      <div className={classes}>
         <textarea
           ref={textareaRef}
           disabled={disabled}
@@ -126,17 +125,14 @@ const TextareaComponent = React.forwardRef<
             height: var(--textarea-height);
             margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
-
           .wrapper.hover {
             border-color: ${hoverBorder};
           }
-
           .wrapper.disabled {
             background-color: ${theme.palette.accents_1};
             border-color: ${theme.palette.accents_2};
             cursor: not-allowed;
           }
-
           textarea {
             background-color: transparent;
             box-shadow: none;
@@ -151,11 +147,9 @@ const TextareaComponent = React.forwardRef<
               ${SCALES.pl(0.5)};
             resize: ${resize};
           }
-
           .disabled > textarea {
             cursor: not-allowed;
           }
-
           textarea:-webkit-autofill,
           textarea:-webkit-autofill:hover,
           textarea:-webkit-autofill:active,
@@ -170,5 +164,5 @@ const TextareaComponent = React.forwardRef<
 
 TextareaComponent.defaultProps = defaultProps
 TextareaComponent.displayName = 'GeistTextarea'
-const Textarea = withScaleable(TextareaComponent)
+const Textarea = withScale(TextareaComponent)
 export default Textarea

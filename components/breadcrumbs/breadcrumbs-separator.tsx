@@ -1,5 +1,6 @@
 import React from 'react'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -16,10 +17,11 @@ const Separator: React.FC<React.PropsWithChildren<BreadcrumbsSeparatorProps>> = 
   children,
   className,
 }: BreadcrumbsSeparatorProps & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
+  const classes = useClasses('separator', className)
 
   return (
-    <div className={`separator ${className}`}>
+    <div className={classes}>
       {children}
       <style jsx>{`
         .separator {
@@ -39,5 +41,5 @@ const Separator: React.FC<React.PropsWithChildren<BreadcrumbsSeparatorProps>> = 
 
 Separator.defaultProps = defaultProps
 Separator.displayName = 'GeistBreadcrumbsSeparator'
-const BreadcrumbsSeparator = withScaleable(Separator)
+const BreadcrumbsSeparator = withScale(Separator)
 export default BreadcrumbsSeparator

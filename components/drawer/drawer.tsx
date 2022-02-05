@@ -1,5 +1,5 @@
 import React, { MouseEvent, useEffect, useState } from 'react'
-import { withPureProps, withScaleable } from '../use-scaleable'
+import { withScale } from '../use-scale'
 import usePortal from '../utils/use-portal'
 import useBodyScroll from '../utils/use-body-scroll'
 import useKeyboard, { KeyCode } from '../use-keyboard'
@@ -77,10 +77,7 @@ const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps>> = ({
       visible={visible}
       width="100%"
       {...bindings}>
-      <DrawerWrapper
-        visible={visible}
-        className={wrapClassName}
-        {...withPureProps(props)}>
+      <DrawerWrapper visible={visible} className={wrapClassName} {...props}>
         {children}
       </DrawerWrapper>
     </Backdrop>,
@@ -90,5 +87,5 @@ const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps>> = ({
 
 DrawerComponent.defaultProps = defaultProps
 DrawerComponent.displayName = 'GeistDrawer'
-const Drawer = withScaleable(DrawerComponent)
+const Drawer = withScale(DrawerComponent)
 export default Drawer

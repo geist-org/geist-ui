@@ -2,10 +2,11 @@ import Head from 'next/head'
 import { NextPage } from 'next'
 import { AppProps } from 'next/app'
 import React, { useEffect, useState } from 'react'
-import { CssBaseline, GeistProvider, useTheme, GeistUIThemes } from 'components'
-import Menu from 'lib/components/menu'
+import { MDXProvider } from '@mdx-js/react'
+import { CssBaseline, GeistProvider, useTheme, GeistUIThemes, Image } from 'components'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
+import { HybridCode, HybridLink, Layout, Search } from 'lib/components'
 import 'inter-ui/inter.css'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
@@ -68,8 +69,16 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <ConfigContext
           onThemeChange={themeChangeHandle}
           onThemeTypeChange={type => setThemeType(type)}>
-          <Menu />
-          <Component {...pageProps} />
+          <Layout.Menu />
+          <Search />
+          <MDXProvider
+            components={{
+              a: HybridLink,
+              img: Image,
+              pre: HybridCode,
+            }}>
+            <Component {...pageProps} />
+          </MDXProvider>
         </ConfigContext>
         <style global jsx>{`
           html {
@@ -99,6 +108,9 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           }
           span.token.string {
             color: ${theme.palette.accents_5};
+          }
+          span.token.comment {
+            color: ${theme.palette.accents_3};
           }
           span.keyword {
             color: ${theme.palette.success};

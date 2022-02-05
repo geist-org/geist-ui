@@ -1,6 +1,5 @@
-import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
 import { Page, Button } from 'components'
-import MockPage from 'lib/components/displays/mock-page'
+import { Layout, Playground, Attributes, MockPage } from 'lib/components'
 
 export const meta = {
   title: 'Page',
@@ -72,6 +71,8 @@ Container of general for display page content.
 | --------------- | ---------------------------------- | --------------------------------- | ------------------------ | --------- |
 | **render**      | render mode                        | [PageRenderMode](#pagerendermode) | -                        | `default` |
 | **dotBackdrop** | show decorations in the background | `boolean`                         | -                        | `false`   |
+| **dotSize** | dot size in the background | `CSSProperties`                         | -                        | `1px`   |
+| **dotSpace** | space multiple between each dot | `number`                         | -                        | `1`   |
 | ...             | native props                       | `HTMLAttributes`                  | `'id', 'className', ...` | -         |
 
 <Attributes.Title>Page.Header.Props</Attributes.Title>

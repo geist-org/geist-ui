@@ -1,7 +1,8 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 import { usePopoverContext } from './popover-context'
+import useClasses from '../use-classes'
 
 interface Props {
   line?: boolean
@@ -30,10 +31,12 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
   ...props
 }: React.PropsWithChildren<PopoverItemProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { disableItemsAutoClose, onItemClick } = usePopoverContext()
   const hasHandler = Boolean(onClick)
   const dontCloseByClick = disableAutoClose || disableItemsAutoClose || title || line
+  const classes = useClasses('item', { line, title }, className)
+
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     onClick && onClick(event)
     if (dontCloseByClick) {
@@ -44,10 +47,7 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
 
   return (
     <>
-      <div
-        className={`item ${line ? 'line' : ''} ${title ? 'title' : ''} ${className}`}
-        onClick={clickHandler}
-        {...withPureProps(props)}>
+      <div className={classes} onClick={clickHandler} {...props}>
         {children}
         <style jsx>{`
           .item {
@@ -94,5 +94,5 @@ const PopoverItemComponent: React.FC<React.PropsWithChildren<PopoverItemProps>> 
 
 PopoverItemComponent.defaultProps = defaultProps
 PopoverItemComponent.displayName = 'GeistPopoverItem'
-const PopoverItem = withScaleable(PopoverItemComponent)
+const PopoverItem = withScale(PopoverItemComponent)
 export default PopoverItem

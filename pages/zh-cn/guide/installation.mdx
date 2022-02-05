@@ -1,5 +1,5 @@
 import Layout from 'lib/components/layout'
-import { Note, Link, Code, Spacer, Grid, Dot, Tabs, Snippet, Text } from 'components'
+import { Code, Spacer, Dot, Tabs, Snippet, Text } from 'components'
 
 export const meta = {
   title: '安装',
@@ -11,56 +11,87 @@ export const meta = {
 
 ### 配置
 
-请确认你的 <Link href="https://nodejs.org/en/download/">NodeJS</Link> 处于最新版本，
-同时还需要准备包管理器: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> 或是 <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
+请确认你的 [NodeJS](https://nodejs.org/zh-cn/download/) 处于最新版本，
+并已有包管理器: [NPM](https://www.npmjs.com/) 或是 [Yarn](https://yarnpkg.com/)。
 
-<Spacer h={1} />
-<Dot type="success" /> 1. 运行命令下载包:
-<Spacer h={0.8} />
-<Tabs initialValue="yarn" hideDivider>
+此外，Geist 是基于 React 框架的组件库，这意味着您也必须了解如何 [创建项目](https://zh-hans.reactjs.org/docs/hello-world.html) 与框架基础知识。
+
+<h4>
+  <Dot type="success">安装依赖</Dot>
+</h4>
+
+<Tabs initialValue="yarn" hideDivider hideBorder align="flex-end" mt="-46px">
   <Tabs.Item label="Yarn" value="yarn">
-    <Snippet width="400px">yarn add @geist-ui/core</Snippet>
+    <Snippet>yarn add @geist-ui/core</Snippet>
   </Tabs.Item>
   <Tabs.Item label="Npm" value="npm">
-    <Snippet width="400px">npm i @geist-ui/core</Snippet>
+    <Snippet>npm i @geist-ui/core</Snippet>
   </Tabs.Item>
 </Tabs>
-<Spacer h={1.5} />
-<Dot type="success" /> 2. 添加 Geist UI 到你的项目中：
-
-<Grid.Container>
-<Grid xs={24} sm={16}>
+<Spacer h={0.5} />
+<h4>
+  <Dot type="success">添加引用</Dot>
+</h4>
 
 ```jsx
+// NAME: /src/app.js
 import { GeistProvider, CssBaseline } from '@geist-ui/core'
 
-const Application = () => (
+export default () => (
   <GeistProvider>
-    <CssBaseline /> // ---> 基础样式
-    <AppComponent /> // ---> 你的根组件
+    <CssBaseline /> // --> 基础样式
+    <AppComponent /> // --> 你的根组件
   </GeistProvider>
 )
 ```
 
-</Grid>
-</Grid.Container>
-
-<Spacer h={0.5} />
-<Dot type="success" /> 3. 在任意处使用组件：
-
-<Grid.Container>
-<Grid xs={24} sm={16}>
+<Spacer h={0} mb="8px" />
+<h4>
+  <Dot type="success">使用组件</Dot>
+</h4>
 
 ```jsx
-import { Button } from '@geist-ui/core'
+import { Button, Page, Text } from '@geist-ui/core'
 
-const MyComponent = () => <Button>按钮</Button>
+const Home = () => (
+  <Page>
+    <Text h1>Home Page</Text>
+    <Button>Submit</Button>
+  </Page>
+)
 ```
 
-</Grid>
-</Grid.Container>
+### CRA 项目
 
-<Spacer h={1.5} />
+[create-react-app](https://github.com/facebook/create-react-app) 是创建 React 项目最常见的脚手架，它可以大幅度减少用户配置工具链的时间。
+对于所有 CRA 类项目，用户都不用做任何配置变更，只需引入组件库即可。
+
+此外，这里有一个在 CRA 上使用 Geist 的完整 [项目示例](https://github.com/geist-org/react-getting-started) 供作参考。
+
+### Next.js 项目
+
+[Next.js](https://nextjs.org/) 是一个 React 服务端渲染框架。在 Next.js 上使用 Geist 需要定制 `_app.jsx` 文件，
+项目初始化完成后，可在 `/pages` 文件夹下添加 `/pages/_app.jsx` 文件并补充下述内容。
+
+```jsx
+// NAME:pages/_app.jsx
+import { GeistProvider, CssBaseline } from '@geist-ui/react'
+
+const App = ({ Component, pageProps }) => {
+  return (
+    <GeistProvider>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </GeistProvider>
+  )
+}
+
+export default App
+```
+
+如果你需要在 Next.js 项目中应用服务端渲染，请参考 [服务端渲染](/zh-cn/guide/server-render) 小节完成配置。
+
+此外，我们也提供了一个完整的 [Next.js 应用](https://github.com/geist-org/geist-ui/blob/master/examples/create-next-app/README.md) 示例以供参考。
 
 <Text h3>
   在 Windows 上渲染字体{' '}
@@ -73,33 +104,33 @@ Web 应用中的一些字体在 _Windows_ 平台上无法得到最好的渲染�
 或是你认为一些字符集没有得到最好的渲染 (如中文字符)，
 在这类场景下，你可以额外引入字体库来优化渲染效果：
 
-> 你不需要修改任何 CSS 文件或是声明字体。
+> 不需要修改任何 CSS 文件或是声明字体。
 
-1. 安装 `inter-ui`:
+#### 安装 `inter-ui`
 
-<Snippet width="400px">yarn add inter-ui</Snippet>
+<Snippet>yarn add inter-ui</Snippet>
 
-<Spacer h={1.5} />
+#### 添加 `Inter Font` 到你的项目中:
 
-2. 添加 `Inter Font` 到你的项目中:
+<Code block my={0} width="100%">
+  <span className="token keyword module">import</span>{' '}
+  <span className="token string">inter-ui/inter.css</span>
+</Code>
 
-<Grid.Container>
-  <Grid xs={24} sm={16}>
-    <Code block my={0} width="100%">
-      <span className="token keyword module">import</span>{' '}
-      <span className="token string">inter-ui/inter.css</span>
-    </Code>
-  </Grid>
-</Grid.Container>
+### 打包体积
 
-<Spacer h={3.5} />
+Geist UI 在全量打包后体积约为 [111kb](https://bundle.js.org/?q=@geist-ui/react) (gzipped)，
+在现代化客户端应用体积上比较这是一个不错的成绩，不会对您的应用构成性能影响。在实践上，
+建议您始终在应用内将 Geist 作为单独的 chunk 进行分割，以便享受固定缓存。
 
-### 单个组件
+对于更高地首屏加载速度需求，可以尝试使用 [服务端渲染](/zh-cn/guide/server-render)，或是按下文进行体积优化。
 
-Geist UI 支持手动引入你需要的单个组件，例如：
+#### 手动引入单个组件
 
-<Grid.Container style={{ marginTop: '-20px' }}>
-<Grid xs={24} sm={16}>
+在对于包体积有要求的项目上，你可以选择手动地引入单个组件。
+
+手动的引入单个组件并不能 100% 保证只打包单个组件，因为部分组件会互相依赖。如在项目仅使用单个 `Snippet` 组件，
+也会包含 `Toast` 组件。但在你仅使用少量组件的前提下，这类优化方案还是可以大幅度缩减应用的体积。
 
 ```jsx
 import Button from '@geist-ui/core/esm/button'
@@ -107,25 +138,39 @@ import Button from '@geist-ui/core/esm/button'
 const MyComponent = () => <Button>按钮组件</Button>
 ```
 
-</Grid>
-</Grid.Container>
+#### 自动 Tree Shaking
 
-<Spacer h={2.5} />
+Geist 遵循自动 Tree Shaking 的命名方案 (社区约定)，这允许你全量引入组件库，但在打包时自动剔除没有真正使用的部分。
+此功能通常需要与 [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import) 工具搭配使用。
+这意味着即便我们在项目中直接使用：
 
-### CRA 项目
+```jsx
+import { Text } from '@geist-ui/core'
+```
 
-使用 <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> 创建的 React 项目也能轻易的使用 `@geist-ui/core`。
-你不需要做任何改变，只需要引入组件库即可。
+也可以得到与上文引入单个组件所述一样的效果。
 
-我们准备了 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">一个用 create react app 创建的示例项目</Link> 供作参考。
-如果你想在 Create React App 中使用 `tree-shaking`,
-请参考 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-create-react-app/README.md">这个示例</Link>。
+一个经典的使用案例是在 `.babelrc` 文件中加入以下配置：
 
-<Spacer h={2.5} />
+```json
+// NAME:.babelrc
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "@geist-ui/core",
+        "libraryDirectory": "esm"
+      }
+    ]
+  ]
+}
+```
 
-### Next.js 项目
+在不同脚手架上添加 Tree Shaking 的方式有一些不同，你可以参考以下示例：
 
-在 `next.js` 项目中，你需要定制入口文件 <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> 以加载基础配置。
-请参考 <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/geist-ui/blob/master/examples/create-next-app/README.md">这个示例</Link> 开始你的 NextJS 项目。
+- [CRA 项目示例](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-create-react-app/README.md) (create-react-app)
+- [Next.js 项目示例](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-nextjs/README.md)
+- [Webpack 项目示例](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-webpack/README.md)
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

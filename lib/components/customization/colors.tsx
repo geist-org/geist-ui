@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, useTheme } from 'components'
+import { Card, Grid, useTheme } from 'components'
 import { CardTypes } from 'components/utils/prop-types'
 
 const types = [
@@ -20,13 +20,17 @@ const Colors: React.FC<React.PropsWithChildren<unknown>> = () => {
 
   return (
     <div className="colors">
-      {types.map((type, index) => {
-        return (
-          <div key={`${type}-${index}`} className="color-card">
-            <Card type={type as CardTypes}>{type}</Card>
-          </div>
-        )
-      })}
+      <Grid.Container gap={1} pl={0} mr="10px">
+        {types.map((type, index) => {
+          return (
+            <Grid xs={12} key={`${type}-${index}`}>
+              <Card w="100%" type={type as CardTypes}>
+                {type}
+              </Card>
+            </Grid>
+          )
+        })}
+      </Grid.Container>
       <style jsx>{`
         .colors {
           display: flex;

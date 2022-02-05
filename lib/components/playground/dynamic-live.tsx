@@ -31,6 +31,7 @@ const DynamicLive: React.FC<Props> = ({ code, scope }) => {
         }
         .wrapper > :global(div) {
           width: 100%;
+          background-color: transparent;
         }
         .wrapper > :global(.live-error) {
           padding: 10px 12px 0 12px;

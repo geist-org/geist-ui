@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -19,11 +19,11 @@ const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProp
   ...props
 }: React.PropsWithChildren<ModalSubtitleProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <>
-      <p className={className} {...withPureProps(props)}>
+      <p className={className} {...props}>
         {children}
       </p>
       <style jsx>{`
@@ -48,5 +48,5 @@ const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProp
 
 ModalSubtitleComponent.defaultProps = defaultProps
 ModalSubtitleComponent.displayName = 'GeistModalSubtitle'
-const ModalSubtitle = withScaleable(ModalSubtitleComponent)
+const ModalSubtitle = withScale(ModalSubtitleComponent)
 export default ModalSubtitle

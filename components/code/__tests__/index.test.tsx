@@ -28,4 +28,13 @@ describe('Code', () => {
     wrapper.setProps({ block: true })
     expect(wrapper.find('pre').length).not.toBe(0)
   })
+
+  it('should work correctly with title', () => {
+    const wrapper = render(
+      <Code block name="name" classic>
+        code
+      </Code>,
+    )
+    expect(wrapper).toMatchSnapshot()
+  })
 })

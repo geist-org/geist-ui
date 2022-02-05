@@ -16,7 +16,7 @@ import { NormalTypes } from '../utils/prop-types'
 import Loading from '../loading'
 import { pickChild } from '../utils/collections'
 import useCurrentState from '../utils/use-current-state'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 export type AutoCompleteTypes = NormalTypes
 
@@ -107,7 +107,7 @@ const AutoCompleteComponent = React.forwardRef<
     userRef: React.Ref<HTMLInputElement | null>,
   ) => {
     const resetTimer = useRef<number>()
-    const { SCALES, getScaleableProps } = useScaleable()
+    const { SCALES, getScaleProps } = useScale()
     const ref = useRef<HTMLDivElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
     const [state, setState, stateRef] = useCurrentState<string>(customInitialValue)
@@ -196,7 +196,7 @@ const AutoCompleteComponent = React.forwardRef<
     }
 
     const inputProps = {
-      ...withPureProps(props),
+      ...props,
       disabled,
       value: state,
     }
@@ -213,7 +213,7 @@ const AutoCompleteComponent = React.forwardRef<
             clearable={showClearIcon}
             width={SCALES.width(1, 'initial')}
             height={SCALES.height(2.25)}
-            iconRight={getSearchIcon(searching, getScaleableProps('scale'))}
+            iconRight={getSearchIcon(searching, getScaleProps('scale'))}
             {...inputProps}
           />
           <AutoCompleteDropdown
@@ -245,6 +245,6 @@ const AutoCompleteComponent = React.forwardRef<
 
 AutoCompleteComponent.defaultProps = defaultProps
 AutoCompleteComponent.displayName = 'GeistAutoComplete'
-const AutoComplete = withScaleable(AutoCompleteComponent)
+const AutoComplete = withScale(AutoCompleteComponent)
 
 export default AutoComplete

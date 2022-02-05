@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type ToggleTypes = NormalTypes
 export interface ToggleEventTarget {
@@ -49,8 +50,9 @@ const ToggleComponent: React.FC<ToggleProps> = ({
   ...props
 }: ToggleProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
+  const classes = useClasses('toggle', { checked: selfChecked, disabled })
 
   const changeHandle = useCallback(
     (ev: React.ChangeEvent) => {
@@ -78,17 +80,14 @@ const ToggleComponent: React.FC<ToggleProps> = ({
   }, [checked])
 
   return (
-    <label className={className} {...withPureProps(props)}>
+    <label className={className} {...props}>
       <input
         type="checkbox"
         disabled={disabled}
         checked={selfChecked}
         onChange={changeHandle}
       />
-      <div
-        className={`toggle ${selfChecked ? 'checked' : ''} ${
-          disabled ? 'disabled' : ''
-        }`}>
+      <div className={classes}>
         <span className="inner" />
       </div>
       <style jsx>{`
@@ -176,5 +175,5 @@ const ToggleComponent: React.FC<ToggleProps> = ({
 
 ToggleComponent.defaultProps = defaultProps
 ToggleComponent.displayName = 'GeistToggle'
-const Toggle = withScaleable(ToggleComponent)
+const Toggle = withScale(ToggleComponent)
 export default Toggle

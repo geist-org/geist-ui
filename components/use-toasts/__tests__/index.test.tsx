@@ -2,9 +2,10 @@ import React from 'react'
 import { mount, ReactWrapper } from 'enzyme'
 import { useToasts, GeistProvider } from 'components'
 import { nativeEvent, updateWrapper } from 'tests/utils'
+import { ToastInput } from '../use-toast'
 
 const MockToast: React.FC<unknown> = () => {
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const clickHandler = (e: any = {}) => {
     const keys = ['text', 'delay', 'type', 'actions']
     const params = keys.reduce((pre, key) => {
@@ -12,7 +13,7 @@ const MockToast: React.FC<unknown> = () => {
       if (!value) return pre
       return { ...pre, [key]: value }
     }, {})
-    setToast(params)
+    setToast(params as ToastInput)
   }
   return (
     <div id="btn" onClick={clickHandler}>
@@ -29,12 +30,12 @@ const triggerToast = (wrapper: ReactWrapper, params = {}) => {
 }
 
 const expectToastIsShow = (wrapper: ReactWrapper) => {
-  const toast = wrapper.find('.toast-container').find('.toast')
+  const toast = wrapper.find('.toasts').find('.toast')
   expect(toast.length).not.toBe(0)
 }
 
 const expectToastIsHidden = (wrapper: ReactWrapper) => {
-  const toast = wrapper.find('.toast-container').find('.toast')
+  const toast = wrapper.find('.toasts').find('.toast')
   expect(toast.length).toBe(0)
 }
 
@@ -63,7 +64,7 @@ describe('UseToast', () => {
     triggerToast(wrapper, { type: 'success', text: 'hello' })
     await updateWrapper(wrapper, 100)
     expectToastIsShow(wrapper)
-    expect(wrapper.find('.toast-container').html()).toMatchSnapshot()
+    expect(wrapper.find('.toasts').html()).toMatchSnapshot()
   })
 
   it('should close toast', async () => {
@@ -79,7 +80,7 @@ describe('UseToast', () => {
     expectToastIsShow(wrapper)
     // Element already hidden, but Dom was removed after delay
     await updateWrapper(wrapper, 350)
-    const toast = wrapper.find('.toast-container').find('.hide')
+    const toast = wrapper.find('.toasts').find('.toast')
     expect(toast.length).not.toBe(0)
   })
 
@@ -95,18 +96,18 @@ describe('UseToast', () => {
     await updateWrapper(wrapper, 0)
     expectToastIsShow(wrapper)
 
-    wrapper.find('.toast-container').simulate('mouseEnter', nativeEvent)
+    wrapper.find('.toasts').simulate('mouseEnter', nativeEvent)
     await updateWrapper(wrapper, 350)
 
     // Hover event will postpone hidden event
-    let toast = wrapper.find('.toast-container').find('.hide')
-    expect(toast.length).toBe(0)
+    let toast = wrapper.find('.toasts').find('.toast')
+    expect(toast.length).not.toBe(0)
 
     // Restart hidden event after mouse leave
-    wrapper.find('.toast-container').simulate('mouseLeave', nativeEvent)
+    wrapper.find('.toasts').simulate('mouseLeave', nativeEvent)
     await updateWrapper(wrapper, 350 + 200)
-    toast = wrapper.find('.toast-container').find('.hide')
-    expect(toast.length).not.toBe(0)
+    toast = wrapper.find('.toasts').find('.toast')
+    expect(toast.length).toBe(0)
   })
 
   it('should render different actions', async () => {
@@ -130,7 +131,7 @@ describe('UseToast', () => {
     triggerToast(wrapper, { actions, text: 'hello' })
     await updateWrapper(wrapper)
     expectToastIsShow(wrapper)
-    expect(wrapper.find('.toast-container').html()).toMatchSnapshot()
+    expect(wrapper.find('.toasts').html()).toMatchSnapshot()
   })
 
   it('should close toast when action triggered', async () => {
@@ -154,7 +155,7 @@ describe('UseToast', () => {
 
     // Element already hidden, but Dom was removed after delay
     await updateWrapper(wrapper, 250)
-    const toast = wrapper.find('.toast-container').find('.hide')
+    const toast = wrapper.find('.toasts').find('.toast')
     expect(toast.length).not.toBe(0)
   })
 
@@ -181,7 +182,7 @@ describe('UseToast', () => {
     expectToastIsShow(wrapper)
 
     await updateWrapper(wrapper, 200)
-    const toast = wrapper.find('.toast-container').find('.hide')
+    const toast = wrapper.find('.toasts').find('.toast')
     expect(toast.length).not.toBe(0)
   })
 })

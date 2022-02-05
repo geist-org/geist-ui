@@ -4,7 +4,7 @@ import TreeFolder from './tree-folder'
 import { TreeContext } from './tree-context'
 import { tuple } from '../utils/prop-types'
 import { sortChildren } from './tree-help'
-import { withPureProps } from '../use-scaleable'
+import useClasses from '../use-classes'
 
 const FileTreeValueType = tuple('directory', 'file')
 
@@ -88,7 +88,7 @@ const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
 
   return (
     <TreeContext.Provider value={initialValue}>
-      <div className={`tree ${className}`} {...withPureProps(props)}>
+      <div className={useClasses('tree', className)} {...props}>
         {customChildren}
         <style jsx>{`
           .tree {

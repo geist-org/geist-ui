@@ -1,5 +1,5 @@
 import React from 'react'
-import { withPureProps } from '../use-scaleable'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -17,9 +17,11 @@ const FieldsetTitle: React.FC<React.PropsWithChildren<FieldsetTitleProps>> = ({
   children,
   ...props
 }: React.PropsWithChildren<FieldsetTitleProps> & typeof defaultProps) => {
+  const classes = useClasses('title', className)
+
   return (
     <>
-      <div className={`title ${className}`} {...withPureProps(props)}>
+      <div className={classes} {...props}>
         {children}
       </div>
       <style jsx>{`

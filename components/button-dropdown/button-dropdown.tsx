@@ -7,7 +7,8 @@ import ButtonDropdownItem from './button-dropdown-item'
 import { ButtonDropdownContext } from './button-dropdown-context'
 import { NormalTypes } from '../utils/prop-types'
 import { pickChild, pickChildByProps } from '../utils/collections'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type ButtonDropdownTypes = NormalTypes
 
@@ -17,6 +18,7 @@ interface Props {
   loading?: boolean
   disabled?: boolean
   className?: string
+  icon?: React.ReactNode
 }
 
 const defaultProps = {
@@ -42,9 +44,10 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
   className,
   disabled,
   loading,
+  icon,
   ...props
 }) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const ref = useRef<HTMLDivElement>(null)
   const theme = useTheme()
   const colors = getColor(theme.palette, type)
@@ -54,6 +57,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
     'main',
     true,
   )
+  const classes = useClasses('btn-dropdown', className)
 
   const [visible, setVisible] = useState<boolean>(false)
   const clickHandler = useCallback(
@@ -85,15 +89,23 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
 
   return (
     <ButtonDropdownContext.Provider value={initialValue}>
-      <div
-        ref={ref}
-        className={`btn-dropdown ${className}`}
-        onClick={stopPropagation}
-        {...withPureProps(props)}>
+      <div ref={ref} className={classes} onClick={stopPropagation} {...props}>
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>
-            <ButtonDropdownIcon color={colors.color} height={SCALES.height(2.5)} />
+            {icon ? (
+              <span
+                className="dropdown-icon"
+                style={{
+                  color: colors.color,
+                  height: SCALES.height(2.5),
+                  width: SCALES.height(2.5),
+                }}>
+                {icon}
+              </span>
+            ) : (
+              <ButtonDropdownIcon color={colors.color} height={SCALES.height(2.5)} />
+            )}
           </summary>
           <div className="content">{itemChildrenWithoutMain}</div>
         </details>
@@ -105,7 +117,7 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
             border: 1px solid ${theme.palette.border};
             border-radius: ${theme.layout.radius};
             --geist-ui-dropdown-height: ${SCALES.height(2.5)};
-            --geist-ui-dropdown-min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
+            --geist-ui-dropdown-min-width: ${auto ? 'min-content' : SCALES.width(10.5)};
             --geist-ui-dropdown-padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)}
               ${paddingLeft};
             --geist-ui-dropdown-font-size: ${SCALES.font(0.875)};
@@ -166,6 +178,13 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
             border-bottom-left-radius: ${theme.layout.radius};
             border-bottom-right-radius: ${theme.layout.radius};
           }
+
+          .dropdown-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.6);
+          }
         `}</style>
       </div>
     </ButtonDropdownContext.Provider>
@@ -174,5 +193,5 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
 
 ButtonDropdownComponent.displayName = 'GeistButtonDropdown'
 ButtonDropdownComponent.defaultProps = defaultProps
-const ButtonDropdown = withScaleable(ButtonDropdownComponent)
+const ButtonDropdown = withScale(ButtonDropdownComponent)
 export default ButtonDropdown

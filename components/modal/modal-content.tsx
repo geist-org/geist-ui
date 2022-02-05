@@ -1,5 +1,6 @@
 import React from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -17,11 +18,11 @@ const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps>
   children,
   ...props
 }: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <>
-      <div className={`content ${className}`} {...withPureProps(props)}>
+      <div className={useClasses('content', className)} {...props}>
         {children}
       </div>
       <style jsx>{`
@@ -53,5 +54,5 @@ const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps>
 
 ModalContentComponent.defaultProps = defaultProps
 ModalContentComponent.displayName = 'GeistModalContent'
-const ModalContent = withScaleable(ModalContentComponent)
+const ModalContent = withScale(ModalContentComponent)
 export default ModalContent

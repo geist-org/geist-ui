@@ -1,5 +1,5 @@
 import Layout from 'lib/components/layout'
-import { Note, Link, Code, Spacer, Tabs, Dot, Snippet, Grid, Text } from 'components'
+import { Code, Spacer, Tabs, Dot, Snippet, Text } from 'components'
 
 export const meta = {
   title: 'Installation',
@@ -11,55 +11,89 @@ export const meta = {
 
 ### Setup
 
-Ensure your have the latest version of <Link href="https://nodejs.org/en/download/">NodeJS</Link>,
-and a package manager: <Link target="_blank" rel="nofollow" href="https://www.npmjs.com/">NPM</Link> or <Link target="_blank" rel="nofollow" href="https://yarnpkg.com/">Yarn</Link>.
+Ensure your have the latest [NodeJS](https://nodejs.org/en/download/),
+and a package manager: [NPM](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/).
 
-<Spacer h={1} />
-<Dot type="success" /> 1. Run script to download:
-<Spacer h={0.8} />
-<Tabs initialValue="yarn" hideDivider>
+Also, Geist is based on the component library of framework React, which means you must also understand the basics of how to [create projects](https://reactjs.org/docs/hello-world.html) with the framework
+
+<h4>
+  <Dot type="success">Install</Dot>
+</h4>
+
+<Tabs initialValue="yarn" hideDivider hideBorder align="flex-end" mt="-46px">
   <Tabs.Item label="Yarn" value="yarn">
-    <Snippet width="400px">yarn add @geist-ui/core</Snippet>
+    <Snippet>yarn add @geist-ui/core</Snippet>
   </Tabs.Item>
   <Tabs.Item label="Npm" value="npm">
-    <Snippet width="400px">npm i @geist-ui/core</Snippet>
+    <Snippet>npm i @geist-ui/core</Snippet>
   </Tabs.Item>
 </Tabs>
-<Spacer h={1.5} />
-<Dot type="success" /> 2. Add package to your project:
-
-<Grid.Container>
-<Grid xs={24} sm={16}>
+<Spacer h={0.5} />
+<h4>
+  <Dot type="success">Import</Dot>
+</h4>
 
 ```jsx
+// NAME: /src/app.js
 import { GeistProvider, CssBaseline } from '@geist-ui/core'
 
-const Application = () => (
+export default () => (
   <GeistProvider>
-    <CssBaseline /> // ---> Normalize styles
-    <AppComponent /> // ---> Your App Component
+    <CssBaseline /> // --> base styles
+    <AppComponent /> // --> your application
   </GeistProvider>
 )
 ```
 
-</Grid>
-</Grid.Container>
-<Spacer h={.5} />
-<Dot type="success" /> 3. Use the Geist UI components anywhere:
-
-<Grid.Container>
-<Grid xs={24} sm={16}>
+<Spacer h={0} mb="8px" />
+<h4>
+  <Dot type="success">Usage</Dot>
+</h4>
 
 ```jsx
-import { Button } from '@geist-ui/core'
+import { Button, Page, Text } from '@geist-ui/core'
 
-const MyComponent = () => <Button>Click Me</Button>
+const Home = () => (
+  <Page>
+    <Text h1>Home Page</Text>
+    <Button>Submit</Button>
+  </Page>
+)
 ```
 
-</Grid>
-</Grid.Container>
+### CRA project
 
-<Spacer h={1.5} />
+[create-react-app](https://github.com/facebook/create-react-app) is the most common scaffold for creating React projects,
+and it can drastically reduce the amount of time users spend configuring the toolchain.
+For all CRA projects, users do not have to make any configuration changes and simply import the package.
+
+In addition, here is a complete [project example](https://github.com/geist-org/react-getting-started) using Geist on CRA for reference.
+
+### Next.js project
+
+[Next.js](https://nextjs.org/) is a React server-side rendering framework. Using Geist on framework Next.js requires custom `_app.jsx` files,
+Once the project has been initialized, add the `/pages/_app.jsx` file to the `/pages` folder and add the following content:
+
+```jsx
+// NAME:pages/_app.jsx
+import { GeistProvider, CssBaseline } from '@geist-ui/react'
+
+const App = ({ Component, pageProps }) => {
+  return (
+    <GeistProvider>
+      <CssBaseline />
+      <Component {...pageProps} />
+    </GeistProvider>
+  )
+}
+
+export default App
+```
+
+If you need server-side rendering in Next.js project,
+please refer to the [Server-side rendering](/zh-cn/guide/server-render) subsection to complete the configuration.
+
+In addition, we have provided a complete [Next.js application](https://github.com/geist-org/geist-ui/blob/master/examples/create-next-app/README.md) example for reference.
 
 <Text h3>
   Font rendering on Windows{' '}
@@ -68,60 +102,78 @@ const MyComponent = () => <Button>Click Me</Button>
   </Text>
 </Text>
 
-Some fonts in Web applications do not render best on the _Windows_ platform, or you may think font rendering is not good enough for some character sets (like Chinese rendering). In this case, you can introduce additional font packages to optimize the rendering:
+Some fonts in Web applications do not render best on the _Windows_ platform, or you may think font rendering is not good enough for some character sets (Chinese, Japanese etc.). In this case, you can introduce additional font packages to optimize the rendering:
 
 > You don't need to modify any CSS files or declare fonts.
 
-1. Install `inter-ui`:
+#### Install `inter-ui`:
 
-<Snippet width="400px">yarn add inter-ui</Snippet>
+<Snippet>yarn add inter-ui</Snippet>
 
-<Spacer h={1.5} />
+#### Add `Inter Font` to your project:
 
-2. Add `Inter Font` to your project:
+<Code block my={0} width="100%">
+  <span className="token keyword module">import</span>{' '}
+  <span className="token string">inter-ui/inter.css</span>
+</Code>
 
-<Grid.Container>
-  <Grid xs={24} sm={16}>
-    <Code block my={0} width="100%">
-      <span className="token keyword module">import</span>{' '}
-      <span className="token string">inter-ui/inter.css</span>
-    </Code>
-  </Grid>
-</Grid.Container>
+### Bundle size
 
-<Spacer h={3} />
+The size of Geist UI at the completion of full packing is about [111kb](https://bundle.js.org/?q=@geist-ui/react) (gzipped),
+This is a good score when comparing the size of modern client applications and will not impact the performance of your application.
+As a matter of engineering practice, it is recommended that you always split Geist as a separate chunk within your application to get fixed caching.
 
-### Single component
+For higher first screen load speed, try using [Server Side Rendering](/zh-cn/guide/server-render) or perform volume optimization as described below.
 
-Geist UI allows to manually import components if you need. E.g.
+#### Import single component manually
 
-<Grid.Container style={{ marginTop: '-20px' }}>
-<Grid xs={24} sm={16}>
+For projects with package size requirements, you can choose to import single component manually.
+
+Manually import single components does not guarantee 100% that only a single component will be packaged,
+as some components will depend on each other, for example, if only a single `Snippet` component is used in a project, the bundle package
+will also contain the `Toast` component. However, this type of optimization can still reduce the size of your application significantly,
+provided you only use a small amount components.
 
 ```jsx
 import Button from '@geist-ui/core/esm/button'
 
-const MyComponent = () => <Button>Click Me</Button>
+const MyComponent = () => <Button>Submit</Button>
 ```
 
-</Grid>
-</Grid.Container>
+#### Auto Tree Shaking
 
-<Spacer h={2.5} />
+Geist follows the Auto Tree Shaking naming scheme (from community convention),
+This allows you to import in the full amount of components, but automatically exclude the parts that are not really used when packaging.
+This feature is usually used in conjunction with the [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import) tool.
+This means that even if we use:
 
-### CRA project
+```jsx
+import { Text } from '@geist-ui/core'
+```
 
-A React project created by <Link color target="_blank" rel="nofollow" href="https://github.com/facebook/create-react-app">create-react-app</Link> can
-also easily use `@geist-ui/core`. You don't need to make any changes, just install and use. We have <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/react-getting-started">a
-sample project related to create react app here</Link>.
+You can also get the same effect as described above for 'import single component'.
 
-If you want to eject certain configs, `tree-shaking`, please refer to <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-create-react-app/README.md">this example</Link>.
+A classic use case is to add the following config to the `.babelrc`:
 
-<Spacer h={2.5} />
+```json
+// NAME:.babelrc
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "@geist-ui/core",
+        "libraryDirectory": "esm"
+      }
+    ]
+  ]
+}
+```
 
-### NextJS project
+There are some differences in the way Tree Shaking is added to different scaffolds, you can refer to the following examples.
 
-In the `next.js` project, you need to customize the <Link target="_blank" color rel="nofollow" href="https://nextjs.org/docs/advanced-features/custom-app">app.jsx</Link> entry file to load the provider.
-Start your NextJS project with <Link target="_blank" color rel="nofollow" href="https://github.com/geist-org/geist-ui/blob/master/examples/create-next-app/README.md">this example</Link>.
+- [CRA with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-create-react-app/README.md)
+- [Next.js with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-nextjs/README.md)
+- [Webpack with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-webpack/README.md)
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

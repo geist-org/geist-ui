@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -21,10 +21,10 @@ const RadioDescriptionComponent: React.FC<
   ...props
 }: React.PropsWithChildren<RadioDescriptionProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
-    <span className={className} {...withPureProps(props)}>
+    <span className={className} {...props}>
       {children}
       <style jsx>{`
         span {
@@ -43,5 +43,5 @@ const RadioDescriptionComponent: React.FC<
 
 RadioDescriptionComponent.defaultProps = defaultProps
 RadioDescriptionComponent.displayName = 'GeistRadioDescription'
-const RadioDescription = withScaleable(RadioDescriptionComponent)
+const RadioDescription = withScale(RadioDescriptionComponent)
 export default RadioDescription

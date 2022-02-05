@@ -14,7 +14,7 @@ module.exports = {
   },
 
   testRegex: '.*\\.test\\.(j|t)sx?$',
-  // testRegex: 'modal\\/.*\\.test\\.(j|t)sx?$',
+  // testRegex: 'use-classes\\/.*\\.test\\.(j|t)sx?$',
 
   collectCoverageFrom: [
     'components/**/*.{ts,tsx}',

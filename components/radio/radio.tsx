@@ -6,7 +6,8 @@ import { pickChild } from '../utils/collections'
 import useWarning from '../utils/use-warning'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type RadioTypes = NormalTypes
 export interface RadioEventTarget {
@@ -48,7 +49,7 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
   ...props
 }: React.PropsWithChildren<RadioProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfChecked, setSelfChecked] = useState<boolean>(!!checked)
   const { value: groupValue, disabledAll, inGroup, updateState } = useRadioContext()
   const [withoutDescChildren, DescChildren] = pickChild(children, RadioDescription)
@@ -94,22 +95,21 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
   }, [checked])
 
   return (
-    <div className={`radio ${className}`}>
+    <div className={useClasses('radio', className)}>
       <label>
         <input
           type="radio"
           value={radioValue}
           checked={selfChecked}
           onChange={changeHandler}
-          {...withPureProps(props)}
+          {...props}
         />
         <span className="name">
-          <span className={`point ${selfChecked ? 'active' : ''}`} />
+          <span className={useClasses('point', { active: selfChecked })} />
           {withoutDescChildren}
         </span>
         {DescChildren && DescChildren}
       </label>
-
       <style jsx>{`
         input {
           opacity: 0;
@@ -122,7 +122,6 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
           position: fixed;
           font-size: 0;
         }
-
         .radio {
           display: flex;
           align-items: flex-start;
@@ -133,7 +132,6 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
           padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
-
         label {
           display: flex;
           flex-direction: column;
@@ -141,7 +139,6 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
           color: ${isDisabled ? theme.palette.accents_4 : label};
           cursor: ${isDisabled ? 'not-allowed' : 'pointer'};
         }
-
         .name {
           font-size: var(--radio-size);
           font-weight: bold;
@@ -149,7 +146,6 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
           display: inline-flex;
           align-items: center;
         }
-
         .point {
           height: var(--radio-size);
           width: var(--radio-size);
@@ -161,7 +157,6 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
           transform: scale(0.875);
           margin-right: calc(var(--radio-size) * 0.375);
         }
-
         .point:before {
           content: '';
           position: absolute;
@@ -173,8 +168,7 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
           border-radius: 50%;
           background-color: ${isDisabled ? theme.palette.accents_4 : bg};
         }
-
-        .point.active:before {
+        .active:before {
           transform: scale(0.875);
           transition: all 0.2s ease 0s;
         }
@@ -185,5 +179,5 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
 
 RadioComponent.defaultProps = defaultProps
 RadioComponent.displayName = 'GeistRadio'
-const Radio = withScaleable(RadioComponent)
+const Radio = withScale(RadioComponent)
 export default Radio

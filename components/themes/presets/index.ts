@@ -70,6 +70,7 @@ export interface GeistUIThemesLayout {
 export interface GeistUIThemesFont {
   sans: string
   mono: string
+  prism: string
 }
 
 export interface BreakpointsItem {

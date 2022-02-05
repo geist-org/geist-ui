@@ -1,0 +1,54 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useTabs, Tabs, Button, Spacer } from 'components'
+
+export const meta = {
+  title: '选项卡绑定 useTabs',
+  group: '组件增强',
+  index: 11,
+}
+
+## useTabs / 选项卡绑定
+
+`useTabs` 提供对 [Tabs](/zh-cn/components/tabs) 组件的自动绑定功能，这可以有效减少模板代码量并提高开发者体验。
+使用此 Hooks 与你手动添加 `React.useState` 以绑定组件的行为完全一致。
+
+<Playground
+  desc="使用 Hooks 控制组件与捕获变化。"
+  scope={{ Tabs, Button, Spacer, useTabs }}
+  code={`
+() => {
+  const { setState, bindings } = useTabs('1')
+  return (
+    <>
+      <Button scale={1/3} font="12px" onClick={() => setState('2')}>
+        To Extensible
+      </Button>
+      <Spacer h={.5} />
+      <Tabs {...bindings}>
+        <Tabs.Item label="stateless" value="1">HTTP is stateless, but not sessionless.</Tabs.Item>
+        <Tabs.Item label="extensible" value="2">Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with.</Tabs.Item>
+      </Tabs>
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/hooks/use-tabs.mdx" >
+<Attributes.Title>useTabs</Attributes.Title>
+
+```ts
+type useTabs = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  bindings: {
+    value: string
+    onChange: (val: string) => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

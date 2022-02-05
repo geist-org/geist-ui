@@ -2,6 +2,7 @@ import React, { useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { Props, defaultProps } from './input-props'
 import PasswordIcon from './password-icon'
 import Input from './input'
+import { withScale } from '../use-scale'
 
 interface PasswordProps extends Props {
   hideToggle?: boolean
@@ -15,7 +16,7 @@ const passwordDefaultProps = {
 type NativeAttrs = Omit<React.InputHTMLAttributes<any>, keyof PasswordProps>
 export type InputPasswordProps = PasswordProps & NativeAttrs
 
-const InputPassword = React.forwardRef<
+const InputPasswordComponent = React.forwardRef<
   HTMLInputElement,
   React.PropsWithChildren<InputPasswordProps>
 >(
@@ -62,6 +63,7 @@ const InputPassword = React.forwardRef<
   },
 )
 
-InputPassword.defaultProps = passwordDefaultProps
-InputPassword.displayName = 'GeistInputPassword'
+InputPasswordComponent.defaultProps = passwordDefaultProps
+InputPasswordComponent.displayName = 'GeistInputPassword'
+const InputPassword = withScale(InputPasswordComponent)
 export default InputPassword

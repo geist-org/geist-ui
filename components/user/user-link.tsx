@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from '../link'
-import { withPureProps } from '../use-scaleable'
 
 interface Props {
   href?: string
@@ -28,7 +27,7 @@ const UserLink = React.forwardRef<
     ref: React.Ref<HTMLAnchorElement>,
   ) => {
     return (
-      <div className={className} {...withPureProps(props)}>
+      <div className={className} {...props}>
         <Link ref={ref} href={href} color target="_blank" rel="noopener">
           {children}
         </Link>

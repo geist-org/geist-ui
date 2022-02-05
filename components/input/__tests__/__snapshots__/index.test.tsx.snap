@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Input should be work with icon 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><span class=\\"input-icon\\"><span>test-icon</span><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container\\"><div class=\\"input-wrapper\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: border-box;
           display: inline-flex;
@@ -22,7 +22,7 @@ exports[`Input should be work with icon 1`] = `
           height: calc(var(--input-height) - 2px);
           transform: scale(0.44);
         }
-      </style></span><input type=\\"text\\" class=\\" left-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></span><input type=\\"text\\" class=\\"left-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             box-sizing: border-box;
@@ -49,7 +49,7 @@ exports[`Input should be work with icon 1`] = `
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: 5px;
+            border-radius: 6px;
             border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
@@ -119,7 +119,7 @@ exports[`Input should be work with icon 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #000 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container\\"><div class=\\"input-wrapper\\"><input type=\\"text\\" class=\\"right-icon\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"><span class=\\"input-icon\\"><span>test-icon</span><style>
         .input-icon {
           box-sizing: border-box;
           display: inline-flex;
@@ -167,7 +167,7 @@ exports[`Input should be work with icon 1`] = `
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: 5px;
+            border-radius: 6px;
             border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
@@ -241,7 +241,7 @@ exports[`Input should be work with icon 1`] = `
 `;
 
 exports[`Input should be work with label 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><span class=\\"\\">label<style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container\\"><span class=\\"\\">label<style>
         span {
           display: inline-flex;
           width: initial;
@@ -252,8 +252,8 @@ exports[`Input should be work with label 1`] = `
           padding: 0 8pt;
           color: #888;
           background-color: #fafafa;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
           border-top: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
@@ -264,12 +264,12 @@ exports[`Input should be work with label 1`] = `
         span.right {
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
           border-left: 0;
           border-right: 1px solid #eaeaea;
         }
-      </style></span><div class=\\"input-wrapper   left-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></span><div class=\\"input-wrapper  left-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             box-sizing: border-box;
@@ -296,7 +296,7 @@ exports[`Input should be work with label 1`] = `
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: 5px;
+            border-radius: 6px;
             border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
@@ -366,7 +366,7 @@ exports[`Input should be work with label 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #000 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   right-label\\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container\\"><div class=\\"input-wrapper  right-label\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div><span class=\\"right\\">label<style>
         span {
           display: inline-flex;
           width: initial;
@@ -377,8 +377,8 @@ exports[`Input should be work with label 1`] = `
           padding: 0 8pt;
           color: #888;
           background-color: #fafafa;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
+          border-top-left-radius: 6px;
+          border-bottom-left-radius: 6px;
           border-top: 1px solid #eaeaea;
           border-left: 1px solid #eaeaea;
           border-bottom: 1px solid #eaeaea;
@@ -389,8 +389,8 @@ exports[`Input should be work with label 1`] = `
         span.right {
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
+          border-top-right-radius: 6px;
+          border-bottom-right-radius: 6px;
           border-left: 0;
           border-right: 1px solid #eaeaea;
         }
@@ -421,7 +421,7 @@ exports[`Input should be work with label 1`] = `
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: 5px;
+            border-radius: 6px;
             border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
@@ -509,7 +509,7 @@ exports[`Input should be work with label 1`] = `
         label > :global(*:last-child) {
           margin-bottom: 0;
         }
-      </style></label><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+      </style></label><div class=\\"input-container\\"><div class=\\"input-wrapper\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             box-sizing: border-box;
@@ -536,7 +536,7 @@ exports[`Input should be work with label 1`] = `
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: 5px;
+            border-radius: 6px;
             border: 1px solid #eaeaea;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
@@ -610,7 +610,7 @@ exports[`Input should be work with label 1`] = `
 `;
 
 exports[`Input should work with different status 1`] = `
-"<div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+"<div><div class=\\"with-label\\"><div class=\\"input-container\\"><div class=\\"input-wrapper\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             box-sizing: border-box;
@@ -637,7 +637,7 @@ exports[`Input should work with different status 1`] = `
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: 5px;
+            border-radius: 6px;
             border: 1px solid #666;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
@@ -707,7 +707,7 @@ exports[`Input should work with different status 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #000 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container\\"><div class=\\"input-wrapper\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             box-sizing: border-box;
@@ -734,7 +734,7 @@ exports[`Input should work with different status 1`] = `
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: 5px;
+            border-radius: 6px;
             border: 1px solid #3291ff;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }
@@ -804,7 +804,7 @@ exports[`Input should work with different status 1`] = `
             -webkit-box-shadow: 0 0 0 30px #fff inset !important;
             -webkit-text-fill-color: #000 !important;
           }
-        </style></div><div class=\\"with-label\\"><div class=\\"input-container \\"><div class=\\"input-wrapper   \\"><input type=\\"text\\" class=\\" \\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
+        </style></div><div class=\\"with-label\\"><div class=\\"input-container\\"><div class=\\"input-wrapper\\"><input type=\\"text\\" class=\\"\\" placeholder=\\"\\" autocomplete=\\"off\\" value=\\"\\"></div></div><style>
           .with-label {
             display: inline-block;
             box-sizing: border-box;
@@ -831,7 +831,7 @@ exports[`Input should work with different status 1`] = `
             height: 100%;
             flex: 1;
             user-select: none;
-            border-radius: 5px;
+            border-radius: 6px;
             border: 1px solid #f7b955;
             transition: border 0.2s ease 0s, color 0.2s ease 0s;
           }

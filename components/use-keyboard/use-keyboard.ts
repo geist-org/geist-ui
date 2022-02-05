@@ -39,7 +39,7 @@ const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => {
     event = 'keydown',
   } = options
   const activeModMap = getActiveModMap(bindings)
-  const keyCode = bindings.filter((item: number) => !KeyMod[item])[0]
+  const keyCode = bindings.filter((item: number) => !KeyMod[item])
   const { CtrlCmd, WinCtrl } = getCtrlKeysByPlatform()
 
   const eventHandler = (event: React.KeyboardEvent | KeyboardEvent) => {
@@ -47,7 +47,8 @@ const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => {
     if (activeModMap.Alt && !event.altKey) return
     if (activeModMap.CtrlCmd && !event[CtrlCmd]) return
     if (activeModMap.WinCtrl && !event[WinCtrl]) return
-    if (keyCode && event.keyCode !== keyCode) return
+    const hitOne = keyCode.find(k => k === event.keyCode)
+    if (keyCode && !hitOne) return
     if (stopPropagation) {
       event.stopPropagation()
     }

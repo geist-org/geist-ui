@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withPureProps } from '../use-scaleable'
+import useScale from '../use-scale'
 
 export interface Props {
   tag: keyof JSX.IntrinsicElements
@@ -39,26 +39,12 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
 }: React.PropsWithChildren<TextChildProps> & typeof defaultProps) => {
   const Component = tag
   const theme = useTheme()
-  const { SCALES, getScaleableProps } = useScaleable()
-  const font = getScaleableProps('font')
-  const mx = getScaleableProps(['margin', 'marginLeft', 'marginRight', 'mx', 'ml', 'mr'])
-  const my = getScaleableProps(['margin', 'marginTop', 'marginBottom', 'my', 'mt', 'mb'])
-  const px = getScaleableProps([
-    'padding',
-    'paddingLeft',
-    'paddingRight',
-    'pl',
-    'pr',
-    'px',
-  ])
-  const py = getScaleableProps([
-    'padding',
-    'paddingTop',
-    'paddingBottom',
-    'pt',
-    'pb',
-    'py',
-  ])
+  const { SCALES, getScaleProps } = useScale()
+  const font = getScaleProps('font')
+  const mx = getScaleProps(['margin', 'marginLeft', 'marginRight', 'mx', 'ml', 'mr'])
+  const my = getScaleProps(['margin', 'marginTop', 'marginBottom', 'my', 'mt', 'mb'])
+  const px = getScaleProps(['padding', 'paddingLeft', 'paddingRight', 'pl', 'pr', 'px'])
+  const py = getScaleProps(['padding', 'paddingTop', 'paddingBottom', 'pt', 'pb', 'py'])
   const color = useMemo(() => getTypeColor(type, theme.palette), [type, theme.palette])
   const classNames = useMemo<string>(() => {
     const keys = [
@@ -76,7 +62,7 @@ const TextChild: React.FC<React.PropsWithChildren<TextChildProps>> = ({
   }, [mx, my, px, py, font, className])
 
   return (
-    <Component className={classNames} {...withPureProps(props)}>
+    <Component className={classNames} {...props}>
       {children}
       <style jsx>{`
         ${tag} {

@@ -2,7 +2,8 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { useProportions } from '../utils/calculations'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value?: number
@@ -35,18 +36,16 @@ const CapacityComponent: React.FC<CapacityProps> = ({
   ...props
 }: CapacityProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const percentValue = useProportions(value, limit)
+  const classes = useClasses('capacity', className)
   const color = useMemo(() => {
     if (userColor && userColor !== '') return userColor
     return getColor(percentValue, theme.palette)
   }, [userColor, percentValue, theme.palette])
 
   return (
-    <div
-      className={`capacity ${className}`}
-      title={`${percentValue}%`}
-      {...withPureProps(props)}>
+    <div className={classes} title={`${percentValue}%`} {...props}>
       <span />
       <style jsx>{`
         .capacity {
@@ -74,5 +73,5 @@ const CapacityComponent: React.FC<CapacityProps> = ({
 
 CapacityComponent.defaultProps = defaultProps
 CapacityComponent.displayName = 'GeistCapacity'
-const Capacity = withScaleable(CapacityComponent)
+const Capacity = withScale(CapacityComponent)
 export default Capacity

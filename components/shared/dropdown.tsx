@@ -6,6 +6,8 @@ import CssTransition from './css-transition'
 import useClickAnyWhere from '../utils/use-click-anywhere'
 import useDOMObserver from '../utils/use-dom-observer'
 import useWarning from '../utils/use-warning'
+import { getRefRect } from '../utils/layouts'
+import useClasses from '../use-classes'
 
 interface Props {
   parent?: MutableRefObject<HTMLElement | null> | undefined
@@ -28,38 +30,15 @@ const defaultRect: ReactiveDomReact = {
   width: 0,
 }
 
-const getOffset = (el?: HTMLElement | null | undefined) => {
-  if (!el)
-    return {
-      top: 0,
-      left: 0,
-    }
-  const { top, left } = el.getBoundingClientRect()
-  return { top, left }
-}
-
-const getRect = (
-  ref: MutableRefObject<HTMLElement | null>,
-  getContainer?: () => HTMLElement | null,
-): ReactiveDomReact => {
-  if (!ref || !ref.current) return defaultRect
-  const rect = ref.current.getBoundingClientRect()
-  const container = getContainer ? getContainer() : null
-  const scrollElement = container || document.documentElement
-  const { top: offsetTop, left: offsetLeft } = getOffset(container)
-
-  return {
-    ...rect,
-    width: rect.width || rect.right - rect.left,
-    top: rect.bottom + scrollElement.scrollTop - offsetTop,
-    left: rect.left + scrollElement.scrollLeft - offsetLeft,
-  }
-}
-
 const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
   ({ children, parent, visible, disableMatchWidth, getPopupContainer }) => {
     const el = usePortal('dropdown', getPopupContainer)
     const [rect, setRect] = useState<ReactiveDomReact>(defaultRect)
+    const classes = useClasses(
+      'dropdown',
+      disableMatchWidth ? 'disable-match' : 'width-match',
+    )
+
     if (!parent) return null
 
     /* istanbul ignore next */
@@ -76,13 +55,18 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
     }
 
     const updateRect = () => {
-      const { top, left, right, width: nativeWidth } = getRect(parent, getPopupContainer)
+      const {
+        top,
+        left,
+        right,
+        width: nativeWidth,
+      } = getRefRect(parent, getPopupContainer)
       setRect({ top, left, right, width: nativeWidth })
     }
 
     useResize(updateRect)
     useClickAnyWhere(() => {
-      const { top, left } = getRect(parent, getPopupContainer)
+      const { top, left } = getRefRect(parent, getPopupContainer)
       const shouldUpdatePosition = top !== rect.top || left !== rect.left
       if (!shouldUpdatePosition) return
       updateRect()
@@ -112,10 +96,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
     if (!el) return null
     return createPortal(
       <CssTransition visible={visible}>
-        <div
-          className={`dropdown ${disableMatchWidth ? 'disable-match' : 'width-match'}`}
-          onClick={clickHandler}
-          onMouseDown={mouseDownHandler}>
+        <div className={classes} onClick={clickHandler} onMouseDown={mouseDownHandler}>
           {children}
           <style jsx>{`
             .dropdown {
@@ -124,11 +105,9 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(
               left: ${rect.left}px;
               z-index: 1100;
             }
-
             .width-match {
               width: ${rect.width}px;
             }
-
             .disable-match {
               min-width: ${rect.width}px;
             }

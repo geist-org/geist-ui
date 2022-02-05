@@ -13,7 +13,8 @@ import SliderDot from './slider-dot'
 import SliderMark from './slider-mark'
 import { getColors } from './styles'
 import { NormalTypes } from '../utils/prop-types'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type SliderTypes = NormalTypes
 interface Props {
@@ -84,7 +85,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
   ...props
 }: React.PropsWithChildren<SliderProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [value, setValue] = useState<number>(initialValue)
   const [, setSliderWidth, sideWidthRef] = useCurrentState<number>(0)
   const [, setLastDargOffset, lastDargOffsetRef] = useCurrentState<number>(0)
@@ -157,10 +158,10 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
 
   return (
     <div
-      className={`slider ${className}`}
+      className={useClasses('slider', className)}
       onClick={clickHandler}
       ref={sliderRef}
-      {...withPureProps(props)}>
+      {...props}>
       <SliderDot disabled={disabled} ref={dotRef} isClick={isClick} left={currentRatio}>
         {hideValue || value}
       </SliderDot>
@@ -184,5 +185,5 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
 
 SliderComponent.defaultProps = defaultProps
 SliderComponent.displayName = 'GeistSlider'
-const Slider = withScaleable(SliderComponent)
+const Slider = withScale(SliderComponent)
 export default Slider

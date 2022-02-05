@@ -32,11 +32,11 @@ A common container component.
 
 <Playground
   title="Shadow"
-  scope={{ Card }}
+  scope={{ Card, Text }}
   code={`
 <Card shadow>
-  <h4>HTTP is extensible</h4>
-  <p>Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with. New functionality can even be introduced by a simple agreement between a client and a server about a new header's semantics.</p>
+  <Text h4 my={0}>HTTP is extensible</Text>
+  <Text>Introduced in HTTP/1.0, HTTP headers make this protocol easy to extend and experiment with. New functionality can even be introduced by a simple agreement between a client and a server about a new header's semantics.</Text>
 </Card>
 `}
 />
@@ -44,7 +44,7 @@ A common container component.
 <Playground
   title="Types"
   desc="Show different states with colors."
-  scope={{ Card, Grid }}
+  scope={{ Card, Grid, Text }}
   code={`
 () => {
   const types = ['secondary', 'success', 'warning', 'error', 'dark', 'alert', 'purple', 'violet', 'cyan']
@@ -53,8 +53,8 @@ A common container component.
       {types.map(type => (
         <Grid xs={8} key={type}>
           <Card type={type} width="100%">
-            <h4 style={{ textTransform: 'capitalize' }}>{type}</h4>
-            <span>{type}</span>
+            <Text h4 my={0} style={{ textTransform: 'uppercase' }}>{type}</Text>
+            <Text>{type}</Text>
           </Card>
         </Grid>
       ))}
@@ -66,22 +66,22 @@ A common container component.
 
 <Playground
   title="With Footer"
-  scope={{ Card, Link, Grid }}
+  scope={{ Card, Link, Grid, Text }}
   code={`
 <Grid.Container gap={1.5}>
   <Grid xs={12} justify="center">
-    <Card width="330px">
-      <h4>Geist UI React</h4>
-      <p>Modern and minimalist React UI library.</p>
+    <Card width="100%">
+      <Text h4 my={0}>Geist UI React</Text>
+      <Text>Modern and minimalist React UI library.</Text>
       <Card.Footer>
         <Link color target="_blank" href="https://github.com/geist-org/geist-ui">Visit source code on GitHub.</Link>
       </Card.Footer>
     </Card>
   </Grid>
   <Grid xs={12} justify="center">
-    <Card width="330px" type="dark">
-      <h4>Geist UI React</h4>
-      <p>Modern and minimalist React UI library.</p>
+    <Card width="100%" type="dark">
+      <Text h4 my={0}>Geist UI React</Text>
+      <Text>Modern and minimalist React UI library.</Text>
       <Card.Footer>
         <Link target="_blank" href="https://github.com/geist-org/geist-ui">Visit source code on GitHub.</Link>
       </Card.Footer>
@@ -114,9 +114,9 @@ A common container component.
   code={`
 <Card width="400px">
   <Card.Content>
-    <Text b>Description</Text>
+    <Text b my={0}>Description</Text>
   </Card.Content>
-  <Divider y={0} />
+  <Divider h="1px" my={0} />
   <Card.Content>
     <Text>The Object constructor creates an object wrapper for the given value.</Text>
     <Text>When called in a non-constructor context, Object behaves identically to <Code>new Object()</Code>.</Text>

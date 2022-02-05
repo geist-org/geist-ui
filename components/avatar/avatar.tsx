@@ -1,6 +1,7 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   src?: string
@@ -37,25 +38,19 @@ const AvatarComponent: React.FC<AvatarProps> = ({
   ...props
 }: AvatarProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const showText = !src
   const radius = isSquare ? theme.layout.radius : '50%'
   const marginLeft = stacked ? SCALES.ml(-0.625) : SCALES.ml(0)
-  const otherProps = withPureProps(props)
+  const classes = useClasses('avatar', className)
 
   return (
-    <span className={`avatar ${className}`}>
+    <span className={classes}>
       {!showText && (
-        <img
-          alt="avatar"
-          className="avatar-img"
-          src={src}
-          draggable={false}
-          {...otherProps}
-        />
+        <img alt="avatar" className="avatar-img" src={src} draggable={false} {...props} />
       )}
       {showText && (
-        <span className="avatar-text" {...otherProps}>
+        <span className="avatar-text" {...props}>
           {safeText(text)}
         </span>
       )}
@@ -102,5 +97,5 @@ const AvatarComponent: React.FC<AvatarProps> = ({
 
 AvatarComponent.defaultProps = defaultProps
 AvatarComponent.displayName = 'GeistAvatar'
-const Avatar = withScaleable(AvatarComponent)
+const Avatar = withScale(AvatarComponent)
 export default Avatar

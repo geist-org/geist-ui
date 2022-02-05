@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   title?: ReactNode | string
@@ -24,9 +25,11 @@ const DescriptionComponent: React.FC<DescriptionProps> = ({
   ...props
 }: DescriptionProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
+  const classes = useClasses('description', className)
+
   return (
-    <dl className={`description ${className}`} {...withPureProps(props)}>
+    <dl className={classes} {...props}>
       <dt>{title}</dt>
       <dd>{content}</dd>
 
@@ -69,5 +72,5 @@ const DescriptionComponent: React.FC<DescriptionProps> = ({
 
 DescriptionComponent.defaultProps = defaultProps
 DescriptionComponent.displayName = 'GeistDescription'
-const Description = withScaleable(DescriptionComponent)
+const Description = withScale(DescriptionComponent)
 export default Description

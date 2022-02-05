@@ -1,9 +1,7 @@
-import { Layout, Playground, Attributes } from 'lib/components'
 import Title from 'lib/components/playground/title'
-import { Spacer, Tabs, Snippet } from 'components'
-import * as Icon from '@geist-ui/icons'
 import Github from '@geist-ui/icons/github'
-import IconsGallery from 'lib/components/displays/icons'
+import { Spacer, Tabs, Snippet } from 'components'
+import { Layout, Playground, Attributes, IconsGallery } from 'lib/components'
 
 export const meta = {
   title: 'Icons',
@@ -28,7 +26,7 @@ Display semantic vector graphics in SVG format.
 
 <Playground
   title="Import"
-  scope={{ Icon, Github, Spacer }}
+  scope={{ Github, Spacer }}
   code={`
 // import * as Icon from '@geist-ui/icons'
 // or
@@ -36,11 +34,7 @@ Display semantic vector graphics in SVG format.
 // or, for tree-shaking:
 // import Github from '@geist-ui/icons/github'
 
-<>
-  <Icon.Github />
-  <Spacer w={1} inline />
-  <Github />
-</>
+<Github />
 `} />
 
 <Playground

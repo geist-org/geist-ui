@@ -1,0 +1,58 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useModal, Modal, Button } from 'components'
+
+export const meta = {
+  title: '对话框绑定 useModal',
+  group: '组件增强',
+  index: 11,
+}
+
+## useModal / 对话框绑定
+
+`useModal` 提供对 [Modal](/zh-cn/components/modal) 组件的自动绑定功能，这可以有效减少模板代码量并提高开发者体验。
+使用此 hooks 与你手动添加 `React.useState` 以绑定组件的行为完全一致。
+
+此工具额外支持绑定 [Select 组件](/zh-cn/components/select 'Select 组件')。
+
+<Playground
+  desc="使用 Hooks 控制 `Modal` 组件"
+  scope={{ Modal, Button, useModal }}
+  code={`
+() => {
+  const { visible, setVisible, bindings } = useModal()
+  return (
+    <>
+      <Button auto onClick={() => setVisible(true)}>打开对话框</Button>
+      <Modal {...bindings}>
+        <Modal.Title>标题</Modal.Title>
+        <Modal.Subtitle>这是副标题</Modal.Subtitle>
+        <Modal.Content>
+          <p>对话框的主体内容</p>
+        </Modal.Content>
+        <Modal.Action passive onClick={() => setVisible(false)}>取消</Modal.Action>
+        <Modal.Action>提交</Modal.Action>
+      </Modal>
+    </>
+  )
+}`}
+/>
+
+<Attributes edit="/pages/zh-cn/hooks/use-modal.mdx" >
+<Attributes.Title>useModal</Attributes.Title>
+
+```ts
+type useModal = (initialVisible: boolean) => {
+  visible: boolean
+  setVisible: Dispatch<SetStateAction<boolean>>
+  setVisible: Dispatch<SetStateAction<boolean>>
+  currentRef: MutableRefObject<boolean>
+  bindings: {
+    visible: boolean
+    onClose: () => void
+  }
+}
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

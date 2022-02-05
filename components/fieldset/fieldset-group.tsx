@@ -3,7 +3,8 @@ import useTheme from '../use-theme'
 import useCurrentState from '../utils/use-current-state'
 import { FieldsetContext, FieldItem } from './fieldset-context'
 import useWarning from '../utils/use-warning'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value: string
@@ -26,9 +27,10 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
   ...props
 }: React.PropsWithChildren<FieldsetGroupProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfVal, setSelfVal] = useState<string>(value)
   const [items, setItems, ref] = useCurrentState<FieldItem[]>([])
+  const classes = useClasses('group', className)
 
   const register = (newItem: FieldItem) => {
     const hasItem = ref.current.find(item => item.value === newItem.value)
@@ -57,7 +59,7 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
 
   return (
     <FieldsetContext.Provider value={providerValue}>
-      <div className={`group ${className}`} {...withPureProps(props)}>
+      <div className={classes} {...props}>
         <div className="group-tabs">
           {items.map(item => (
             <button
@@ -141,5 +143,5 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
 
 FieldsetGroupComponent.defaultProps = defaultProps
 FieldsetGroupComponent.displayName = 'GeistFieldsetGroup'
-const FieldsetGroup = withScaleable(FieldsetGroupComponent)
+const FieldsetGroup = withScale(FieldsetGroupComponent)
 export default FieldsetGroup

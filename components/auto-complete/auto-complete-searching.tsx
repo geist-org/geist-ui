@@ -1,6 +1,6 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -19,7 +19,7 @@ const AutoCompleteSearchComponent: React.FC<
   className,
 }: React.PropsWithChildren<AutoCompleteSearchProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
     <div className={className}>
@@ -53,6 +53,6 @@ const AutoCompleteSearchComponent: React.FC<
 
 AutoCompleteSearchComponent.defaultProps = defaultProps
 AutoCompleteSearchComponent.displayName = 'GeistAutoCompleteSearch'
-const AutoCompleteSearch = withScaleable(AutoCompleteSearchComponent)
+const AutoCompleteSearch = withScale(AutoCompleteSearchComponent)
 
 export default AutoCompleteSearch

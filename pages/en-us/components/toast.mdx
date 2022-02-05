@@ -1,5 +1,4 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { useToasts, Button, Spacer } from 'components'
+import { Layout, Attributes } from 'lib/components'
 
 export const meta = {
   title: 'Toast',
@@ -8,129 +7,8 @@ export const meta = {
 
 ## Toast
 
-Display an important message globally.
+The Toast component only supports Hooks calls, please see the [useToast](/en-us/hooks/use-toast 'Toast Hooks') documentation for details.
 
-<Playground
-  desc="Basic usage."
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: 'HTTP is stateless, but not sessionless.' })
-  return <Button onClick={click}>Show Toast</Button>
-}
-`}
-/>
-
-<Playground
-  title="Multiline"
-  desc="Display multiline or overlong text."
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [toasts, setToast] = useToasts()
-  const click = () => setToast({ text: 'HTTP is a protocol which allows the fetching of resources, such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance text, layout description, images, videos, scripts, and more.' })
-  return <Button onClick={click}>Show Toast</Button>
-}
-`}
-/>
-
-<Playground
-  title="Action"
-  desc="Add a custom button to the Toast."
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const action = {
-    name: 'alert',
-    handler: () => alert('alert from toast')
-  }
-  const click = () => setToast({
-    text: 'HTTP is stateless, but not sessionless.',
-    actions: [action],
-  })
-  return <Button onClick={click} type="secondary">Show Action</Button>
-}
-`}
-/>
-
-<Playground
-  title="Cancel"
-  desc="Use `passive` to change the style of the button."
-  scope={{ Button, useToasts }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const action = {
-    name: 'cancel',
-    passive: true,
-    handler: (event, cancel) => cancel()
-  }
-  const click = () => setToast({
-    text: 'HTTP is stateless, but not sessionless.',
-    actions: [action],
-  })
-  return <Button onClick={click}>Show Toast</Button>
-}
-`}
-/>
-
-<Playground
-  title="Type"
-  scope={{ Button, useToasts, Spacer }}
-  code={`
-() => {
-  const [, setToast] = useToasts()
-  const click = type => setToast({
-    text: 'HTTP is stateless, but not sessionless.',
-    type,
-  })
-  return (
-    <>
-    <Button onClick={() => click('success')} type="success">Show Success</Button>
-    <Spacer h={.5} />
-    <Button onClick={() => click('warning')} type="warning">Show Warning</Button>
-    </>
-  )
-}
-`}
-/>
-
-<Attributes edit="/pages/en-us/components/toast.mdx">
-<Attributes.Title>useToasts</Attributes.Title>
-
-```ts
-const [toasts: Array<Toast>, setToast: (toast: Toast) => void] = useToasts()
-```
-
-<Attributes.Title>Toast</Attributes.Title>
-
-```ts
-interface Toast {
-  text?: string
-  type?: ToastTypes
-  delay?: number
-  actions?: Array<ToastAction>
-}
-```
-
-<Attributes.Title>ToastAction</Attributes.Title>
-
-```ts
-interface ToastAction {
-  name: string
-  handler: (event: React.MouseEventHandler<HTMLButtonElement>, cancel: Function) => void
-  passive?: boolean
-}
-```
-
-<Attributes.Title>ToastTypes</Attributes.Title>
-
-```ts
-type ToastTypes = 'default' | 'secondary' | 'success' | 'warning' | 'error'
-```
-
-</Attributes>
+<Attributes edit="/pages/en-us/components/toast.mdx" />
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

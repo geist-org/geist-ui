@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Select Multiple should render correctly 1`] = `
-"<div class=\\"select  multiple \\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
+"<div class=\\"select multiple\\"><input type=\\"search\\" role=\\"combobox\\" aria-haspopup=\\"listbox\\" readonly=\\"\\" unselectable=\\"on\\" aria-expanded=\\"false\\"><style>
           input {
             position: fixed;
             top: -10000px;
@@ -22,35 +22,29 @@ exports[`Select Multiple should render correctly 1`] = `
           line-height: var(--select-height);
           min-width: 0;
         }
-      </style></span></span><div class=\\"item  mock \\"><style>
+      </style></span></span><div class=\\"item mock\\"><style>
         .item {
           font-size: inherit;
           height: auto;
         }
-
         .justify {
           justify-content: undefined;
         }
-
         .direction {
           flex-direction: undefined;
         }
-
         .alignContent {
           align-content: undefined;
         }
-
         .alignItems {
           align-items: undefined;
         }
-
         .xs {
           flex-grow: 1;
           max-width: 100%;
           flex-basis: 0;
           display: inherit;
         }
-
         @media only screen and (min-width: 650px) {
           .sm {
             flex-grow: 1;
@@ -59,7 +53,6 @@ exports[`Select Multiple should render correctly 1`] = `
             display: inherit;
           }
         }
-
         @media only screen and (min-width: 900px) {
           .md {
             flex-grow: 1;
@@ -68,7 +61,6 @@ exports[`Select Multiple should render correctly 1`] = `
             display: inherit;
           }
         }
-
         @media only screen and (min-width: 1280px) {
           .lg {
             flex-grow: 1;
@@ -77,7 +69,6 @@ exports[`Select Multiple should render correctly 1`] = `
             display: inherit;
           }
         }
-
         @media only screen and (min-width: 1920px) {
           .xl {
             flex-grow: 1;
@@ -107,7 +98,7 @@ exports[`Select Multiple should render correctly 1`] = `
               transition: border 150ms ease-in 0s, color 200ms ease-out 0s,
                 box-shadow 200ms ease 0s;
               border: 1px solid #eaeaea;
-              border-radius: 5px;
+              border-radius: 6px;
 
               background-color: #fff;
               --select-font-size: calc(0.875 * 16px);

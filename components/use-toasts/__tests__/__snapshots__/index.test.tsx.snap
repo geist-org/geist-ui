@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`UseToast should render different actions 1`] = `
-"<div class=\\"toast-container \\"><div class=\\"toast  \\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">remove</div><style>
+"<div class=\\"toasts\\"><div class=\\"toast  toast-enter\\"><div class=\\"message\\">hello</div><div class=\\"action\\"><button type=\\"button\\" class=\\"btn\\"><div class=\\"text\\">remove</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            line-height: calc(2.083333333333333 * 16px);
-            border-radius: 5px;
+            line-height: calc(1.6666666666666665 * 16px);
+            border-radius: 6px;
             font-weight: 400;
-            font-size: calc(0.7291666666666666 * 16px);
+            font-size: 13px;
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -25,14 +25,14 @@ exports[`UseToast should render different actions 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-icon-padding: calc(0.6058333333333332 * 16px);
-            --geist-ui-button-height: calc(2.083333333333333 * 16px);
+            --geist-ui-button-icon-padding: calc(0.48466666666666663 * 16px);
+            --geist-ui-button-height: calc(1.6666666666666665 * 16px);
             --geist-ui-button-color: #fff;
             --geist-ui-button-bg: #000;
             min-width: min-content;
             width: auto;
-            height: calc(2.083333333333333 * 16px);
-            padding: 0 calc(0.9583333333333331 * 16px) 0 calc(0.9583333333333331 * 16px);
+            height: calc(1.6666666666666665 * 16px);
+            padding: 0 calc(0.7666666666666666 * 16px) 0 calc(0.7666666666666666 * 16px);
             margin: 0 0 0 0;
           }
 
@@ -64,14 +64,14 @@ exports[`UseToast should render different actions 1`] = `
           .btn :global(.text div) {
             margin: 0;
           }
-        </style></button><button type=\\"button\\" class=\\"btn \\"><div class=\\"text\\">remove</div><style>
+        </style></button><button type=\\"button\\" class=\\"btn\\"><div class=\\"text\\">remove</div><style>
           .btn {
             box-sizing: border-box;
             display: inline-block;
-            line-height: calc(2.083333333333333 * 16px);
-            border-radius: 5px;
+            line-height: calc(1.6666666666666665 * 16px);
+            border-radius: 6px;
             font-weight: 400;
-            font-size: calc(0.7291666666666666 * 16px);
+            font-size: 13px;
             user-select: none;
             outline: none;
             text-transform: capitalize;
@@ -88,14 +88,14 @@ exports[`UseToast should render different actions 1`] = `
             cursor: pointer;
             pointer-events: auto;
             box-shadow: none;
-            --geist-ui-button-icon-padding: calc(0.6058333333333332 * 16px);
-            --geist-ui-button-height: calc(2.083333333333333 * 16px);
+            --geist-ui-button-icon-padding: calc(0.48466666666666663 * 16px);
+            --geist-ui-button-height: calc(1.6666666666666665 * 16px);
             --geist-ui-button-color: #666;
             --geist-ui-button-bg: #fff;
             min-width: min-content;
             width: auto;
-            height: calc(2.083333333333333 * 16px);
-            padding: 0 calc(0.9583333333333331 * 16px) 0 calc(0.9583333333333331 * 16px);
+            height: calc(1.6666666666666665 * 16px);
+            padding: 0 calc(0.7666666666666666 * 16px) 0 calc(0.7666666666666666 * 16px);
             margin: 0 0 0 0;
           }
 
@@ -139,34 +139,16 @@ exports[`UseToast should render different actions 1`] = `
             background-color: #fff;
             color: #000;
             border: 0;
-            border-radius: 5px;
-            padding: 16pt;
-            position: absolute;
-            bottom: 0;
-            right: 0;
+            border-radius: 6px;
             opacity: 1;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-            transform: translate3d(0, 100%, 0px) scale(1);
-            transition: transform 400ms ease 0ms, visibility 200ms ease 0ms,
-              opacity 200ms ease 0ms;
+            transition: all 350ms cubic-bezier(0.1, 0.2, 0.1, 1);
+            overflow: hidden;
           }
-
-          .toast.visible {
-            opacity: 1;
-            transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
-          }
-
-          .toast.hide {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-          }
-
           .message {
             align-items: center;
             height: 100%;
-            transition: opacity 0.4s ease;
-            font-size: 0.875rem;
+            font-size: 0.875em;
             display: -webkit-box;
             word-break: break-all;
             padding-right: 8pt;
@@ -177,30 +159,58 @@ exports[`UseToast should render different actions 1`] = `
             -webkit-line-clamp: 2;
             line-height: 1.1rem;
           }
-
-          .toast :global(button + button) {
-            margin-left: 4pt;
+          .toast-enter {
+            opacity: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            transform: translate(60px, 60px);
+          }
+          .toast-enter-active {
+            opacity: 1;
+            height: auto;
+            margin: 8px 0;
+            padding: 12px 16px;
+            transform: translate(0, 0);
+          }
+          .toast-leave {
+            opacity: 1;
+            transform: translate(0, 0);
+            height: auto;
+            margin: 8px 0;
+            padding: 12px 16px;
+          }
+          .toast-leave-active {
+            opacity: 0;
+            transform: translate(50px, -15px) scale(0.85);
           }
         </style></div><style>
-        .toast-container {
+        .toasts {
           position: fixed;
-          width: 420px;
-          max-width: 90vw;
-          bottom: 16pt;
+          width: auto;
+          max-width: 100%;
           right: 16pt;
+          bottom: 16pt;
           z-index: 2000;
           transition: all 400ms ease;
           box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
         }
-
-        .toast-container.hover {
-          transform: translate3d(0, -10px, 0);
+        .top {
+          bottom: unset;
+          flex-direction: column-reverse;
+          top: 16pt;
+        }
+        .left {
+          right: unset;
+          left: 16pt;
         }
       </style></div>"
 `;
 
 exports[`UseToast should work with different types 1`] = `
-"<div class=\\"toast-container \\"><div class=\\"toast visible \\"><div class=\\"message\\">hello</div><div class=\\"action\\"></div><style>
+"<div class=\\"toasts\\"><div class=\\"toast  toast-enter toast-enter-active\\"><div class=\\"message\\">hello</div><div class=\\"action\\"></div><style>
           .toast {
             width: 420px;
             max-width: 90vw;
@@ -212,34 +222,16 @@ exports[`UseToast should work with different types 1`] = `
             background-color: #0070f3;
             color: white;
             border: 0;
-            border-radius: 5px;
-            padding: 16pt;
-            position: absolute;
-            bottom: 0;
-            right: 0;
+            border-radius: 6px;
             opacity: 1;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-            transform: translate3d(0, 100%, 0px) scale(1);
-            transition: transform 400ms ease 0ms, visibility 200ms ease 0ms,
-              opacity 200ms ease 0ms;
+            transition: all 350ms cubic-bezier(0.1, 0.2, 0.1, 1);
+            overflow: hidden;
           }
-
-          .toast.visible {
-            opacity: 1;
-            transform: translate3d(0, calc(100% + -75px + -0px), -0px) scale(1);
-          }
-
-          .toast.hide {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-          }
-
           .message {
             align-items: center;
             height: 100%;
-            transition: opacity 0.4s ease;
-            font-size: 0.875rem;
+            font-size: 0.875em;
             display: -webkit-box;
             word-break: break-all;
             padding-right: 8pt;
@@ -250,24 +242,52 @@ exports[`UseToast should work with different types 1`] = `
             -webkit-line-clamp: 2;
             line-height: 1.1rem;
           }
-
-          .toast :global(button + button) {
-            margin-left: 4pt;
+          .toast-enter {
+            opacity: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            transform: translate(60px, 60px);
+          }
+          .toast-enter-active {
+            opacity: 1;
+            height: auto;
+            margin: 8px 0;
+            padding: 12px 16px;
+            transform: translate(0, 0);
+          }
+          .toast-leave {
+            opacity: 1;
+            transform: translate(0, 0);
+            height: auto;
+            margin: 8px 0;
+            padding: 12px 16px;
+          }
+          .toast-leave-active {
+            opacity: 0;
+            transform: translate(50px, -15px) scale(0.85);
           }
         </style></div><style>
-        .toast-container {
+        .toasts {
           position: fixed;
-          width: 420px;
-          max-width: 90vw;
-          bottom: 16pt;
+          width: auto;
+          max-width: 100%;
           right: 16pt;
+          bottom: 16pt;
           z-index: 2000;
           transition: all 400ms ease;
           box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
         }
-
-        .toast-container.hover {
-          transform: translate3d(0, -10px, 0);
+        .top {
+          bottom: unset;
+          flex-direction: column-reverse;
+          top: 16pt;
+        }
+        .left {
+          right: unset;
+          left: 16pt;
         }
       </style></div>"
 `;

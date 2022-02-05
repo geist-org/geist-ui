@@ -1,5 +1,4 @@
 import Layout from 'lib/components/layout'
-import { Note, Code, Spacer, Link } from 'components'
 
 export const meta = {
   title: 'Themes',
@@ -10,30 +9,18 @@ export const meta = {
 ## Themes
 
 **Geist UI** now supports a variety of themes, and it is very easy to create or inherit modifications, no third-party styles or configs.
-
 As a basic option, there are two themes available, `light` and `dark`.
-
-<Spacer h={2} />
 
 ### Switch themes
 
-<Note>
-  Before using any Components, you must add <Code>GeistProvider</Code> to the root node.
-</Note>
-<Spacer h={0.5} />
-<Note type="success">
-  <Code>CssBaseline</Code> provides basic CSS support, which is similar to{' '}
-  <Code>normalize</Code>.
-</Note>
-<Spacer h={1} />
-
-**Now you can change the theme as follows:**
+To switch in the default themes you only need to set the value of `themeType`, you can follow the steps below:
 
 1. Make sure `GeistProvider` and `CssBaseline` are already on the root component.
 
 2. Update the value of `themeType`, and the theme of all components will follow automatically.
 
 ```jsx
+// NAME:src/app.js
 import { CssBaseline, GeistProvider } from '@geist-ui/core'
 
 const App = () => {
@@ -50,20 +37,11 @@ const App = () => {
 }
 ```
 
-<Spacer h={3} />
-
 ### Customizing theme
 
 Customizing a theme is very simple in Geist UI, you just need to provide a new theme `Object`,
 and all the components will change automatically.
-Here is <Link target="_blank" color href="https://github.com/geist-org/geist-ui/tree/master/examples/custom-themes">a complete sample project</Link> for reference.
-
-Of course, if a _component_ doesn't use your customized variables, it doesn't make any additional **changes** or **rendering**.
-
-<Spacer h={1} />
-<Note type="warning">
-  The more changes you customize, the more Components will <b>Re-Render</b>.
-</Note>
+Here is a complete [sample](https://github.com/geist-org/geist-ui/tree/master/examples/custom-themes) for reference.
 
 ```jsx
 import { CssBaseline, GeistProvider, Themes } from '@geist-ui/core'
@@ -97,11 +75,11 @@ const myTheme2 = Themes.create(myBaseTheme, {
 })
 ```
 
-<Spacer h={3} />
+### Get types
 
-### View all types of Theme definitions
-
-If you are using TypeScript, you can import various preset types:
+When you need to know the detailed type definition when modifying the theme,
+you can refer to the existing [type file](https://github.com/geist-org/geist-ui/blob/master/components/themes/presets/index.ts),
+which corresponds to project that support TypeScript, you can refer to the type directly in the package：
 
 ```ts
 import {
@@ -121,13 +99,9 @@ const myPalette: Partial<GeistUIThemesPalette> = {
 }
 ```
 
-If you don't use TypeScript, to learn more about preset types, see <Link color target="_blank" href="https://github.com/geist-org/geist-ui/blob/master/components/themes/presets/index.ts">here</Link>.
+### Customizer
 
-<Spacer h={3} />
-
-### Customizing components
-
-#### Overriding styles with `className`
+#### ClassName
 
 You can override the style by defining a `className` on the component.
 
@@ -146,11 +120,9 @@ const MyPage = () => (
 }
 ```
 
-<Spacer h={2} />
+#### Inline styles
 
-#### Overriding styles with `inline-style`
-
-Defining an `inline-style` will also correctly override the component.
+Defining an inline style will also correctly override the component.
 
 ```jsx
 const MyPage = () => (
@@ -160,11 +132,10 @@ const MyPage = () => (
 )
 ```
 
-<Spacer h={2} />
+### Build components
 
-#### Build your own Components with `theme`
-
-Sometimes you want to create new components, but you want to be consistent with the current theme. Now you can try using **theme variables** in your components
+You can use the Geist preset Hooks to get the theme states to create your own components.
+For more information, please refer to [useTheme](/en-us/hooks/use-theme) documentation.
 
 ```jsx
 import { useTheme } from '@geist-ui/core'
@@ -179,9 +150,7 @@ const MyComponent = () => {
 }
 ```
 
-<Spacer h={2} />
-
-#### Themes APIs
+### Themes APIs
 
 `Themes` contains some static methods that are useful when working with custom themes:
 

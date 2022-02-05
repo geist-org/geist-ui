@@ -2,7 +2,7 @@ import React, { ReactNode, useMemo } from 'react'
 import useTheme from '../use-theme'
 import BreadcrumbsSeparator from './breadcrumbs-separator'
 import { addColorAlpha } from '../utils/color'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   separator?: string | ReactNode
@@ -23,7 +23,7 @@ const BreadcrumbsComponent: React.FC<React.PropsWithChildren<BreadcrumbsProps>> 
   className,
 }: BreadcrumbsProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const hoverColor = useMemo(() => {
     return addColorAlpha(theme.palette.link, 0.85)
   }, [theme.palette.link])
@@ -81,7 +81,7 @@ const BreadcrumbsComponent: React.FC<React.PropsWithChildren<BreadcrumbsProps>> 
           margin: 0 4px;
         }
 
-        nav :global(.breadcrums-item) {
+        nav :global(.breadcrumbs-item) {
           display: inline-flex;
           align-items: center;
         }
@@ -92,5 +92,5 @@ const BreadcrumbsComponent: React.FC<React.PropsWithChildren<BreadcrumbsProps>> 
 
 BreadcrumbsComponent.defaultProps = defaultProps
 BreadcrumbsComponent.displayName = 'GeistBreadcrumbs'
-const Breadcrumbs = withScaleable(BreadcrumbsComponent)
+const Breadcrumbs = withScale(BreadcrumbsComponent)
 export default Breadcrumbs

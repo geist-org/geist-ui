@@ -1,7 +1,8 @@
 import React from 'react'
 import css from 'styled-jsx/css'
 import GridBasicItem, { GridBasicItemProps } from './basic-item'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -18,7 +19,7 @@ const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
   className,
   ...props
 }: React.PropsWithChildren<GridProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { className: resolveClassName, styles } = css.resolve`
     div {
       margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
@@ -28,10 +29,10 @@ const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
         ${SCALES.pl(0, 'var(--grid-gap-unit)')};
     }
   `
+  const classes = useClasses(resolveClassName, className)
+
   return (
-    <GridBasicItem
-      className={`${resolveClassName} ${className}`}
-      {...withPureProps(props)}>
+    <GridBasicItem className={classes} {...props}>
       {children}
       {styles}
     </GridBasicItem>
@@ -40,5 +41,5 @@ const GridComponent: React.FC<React.PropsWithChildren<GridProps>> = ({
 
 GridComponent.defaultProps = defaultProps
 GridComponent.displayName = 'GeistGrid'
-const Grid = withScaleable(GridComponent)
+const Grid = withScale(GridComponent)
 export default Grid

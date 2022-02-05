@@ -2,7 +2,8 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { NormalTypes } from '../utils/prop-types'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type BadgeTypes = NormalTypes
 
@@ -40,15 +41,16 @@ const BadgeComponent: React.FC<React.PropsWithChildren<BadgeProps>> = ({
   ...props
 }: BadgeProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const bg = useMemo(() => getBgColor(type, theme.palette), [type, theme.palette])
   const color = useMemo(() => {
     if (!type || type === 'default') return theme.palette.background
     return 'white'
   }, [type, theme.palette.background])
+  const classes = useClasses('badge', { dot }, className)
 
   return (
-    <span className={`badge ${dot ? 'dot' : ''} ${className}`} {...withPureProps(props)}>
+    <span className={classes} {...props}>
       {!dot && children}
       <style jsx>{`
         .badge {
@@ -80,5 +82,5 @@ const BadgeComponent: React.FC<React.PropsWithChildren<BadgeProps>> = ({
 
 BadgeComponent.defaultProps = defaultProps
 BadgeComponent.displayName = 'GeistBadge'
-const Badge = withScaleable(BadgeComponent)
+const Badge = withScale(BadgeComponent)
 export default Badge

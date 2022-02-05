@@ -18,7 +18,8 @@ import { SelectContext, SelectConfig } from './select-context'
 import { getColors } from './styles'
 import Ellipsis from '../shared/ellipsis'
 import SelectInput from './select-input'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type SelectRef = {
   focus: () => void
@@ -85,7 +86,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
     selectRef,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const ref = useRef<HTMLDivElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
     const dropdownRef = useRef<HTMLDivElement>(null)
@@ -186,17 +187,23 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       updateVisible(false)
       setSelectFocus(false)
     }
+    const classes = useClasses(
+      'select',
+      {
+        active: selectFocus || visible,
+        multiple,
+      },
+      className,
+    )
 
     return (
       <SelectContext.Provider value={initialValue}>
         <div
-          className={`select ${selectFocus || visible ? 'active' : ''} ${
-            multiple ? 'multiple' : ''
-          } ${className}`}
+          className={classes}
           ref={ref}
           onClick={clickHandler}
           onMouseDown={mouseDownHandler}
-          {...withPureProps(props)}>
+          {...props}>
           <SelectInput
             ref={inputRef}
             visible={visible}
@@ -319,5 +326,5 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
 
 SelectComponent.defaultProps = defaultProps
 SelectComponent.displayName = 'GeistSelect'
-const Select = withScaleable(SelectComponent)
+const Select = withScale(SelectComponent)
 export default Select

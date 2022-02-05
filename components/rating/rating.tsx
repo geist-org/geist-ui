@@ -3,7 +3,8 @@ import { GeistUIThemesPalette } from '../themes'
 import { NormalTypes, tupleNumber } from '../utils/prop-types'
 import RatingIcon from './rating-icon'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type RatingTypes = NormalTypes
 const ratingCountTuple = tupleNumber(2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -58,7 +59,7 @@ const RatingComponent: React.FC<RatingProps> = ({
   ...props
 }: React.PropsWithChildren<RatingProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const color = useMemo(() => getColor(type, theme.palette), [type, theme.palette])
   const [value, setValue] = useState<number>(initialValue)
   const [isLocked, setIsLocked] = useState<boolean>(locked)
@@ -88,10 +89,12 @@ const RatingComponent: React.FC<RatingProps> = ({
   }, [customValue])
 
   return (
-    <div className={`rating ${className}`} {...withPureProps(props)}>
+    <div className={useClasses('rating', className)} {...props}>
       {[...Array(count)].map((_, index) => (
         <div
-          className={`icon-box ${index + 1 <= value ? 'hovered' : ''}`}
+          className={useClasses('icon-box', {
+            hovered: index + 1 <= value,
+          })}
           key={index}
           onMouseEnter={() => mouseEnterHandler(index + 1)}
           onClick={() => clickHandler(index + 1)}>
@@ -136,5 +139,5 @@ const RatingComponent: React.FC<RatingProps> = ({
 
 RatingComponent.defaultProps = defaultProps
 RatingComponent.displayName = 'GeistRating'
-const Rating = withScaleable(RatingComponent)
+const Rating = withScale(RatingComponent)
 export default Rating

@@ -1,5 +1,4 @@
 import React from 'react'
-import { withPureProps } from '../use-scaleable'
 
 interface Props {
   span?: number
@@ -29,7 +28,7 @@ const Col: React.FC<React.PropsWithChildren<ColProps>> = ({
   const Component = component
 
   return (
-    <Component className={`col ${className}`} {...withPureProps(props)}>
+    <Component className={`col ${className}`} {...props}>
       {children}
       <style jsx>{`
         .col {

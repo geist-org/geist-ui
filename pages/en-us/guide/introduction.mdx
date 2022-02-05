@@ -1,6 +1,5 @@
-import NextLink from 'next/link'
 import Layout from 'lib/components/layout'
-import { Code, Link, Text, Spacer, Note } from 'components'
+import { Note } from 'components'
 
 export const meta = {
   title: 'Introduction',
@@ -13,48 +12,30 @@ export const meta = {
 ### About
 
 **Geist UI** is an elegant and beautiful React component library with Geek style,
-originating from <Link rel="nofollow" target="_blank" href="https://vercel.com">Vercel</Link> design system.
+originating from [Vercel](https://vercel.com) design system.
 
-With Geist's unique advantages in text layout, optimization of light and dark lines, and scaleable components,
+With Geist's unique advantages in text layout, optimization of light and dark lines, and scale components,
 you can easily create clean and powerful personal sites, or quickly build modern web applications based on highly customizable design system.
 
-Get start on Geist with the <NextLink href="/en-us/guide/installation"><Link color>guide documentation</Link></NextLink>,
-or view <Link rel="nofollow" target="_blank" color href="https://github.com/geist-org/geist-ui/tree/master/examples">full project examples</Link>.
+Get start on Geist with the [guide](/en-us/guide/installation),
+or view full [project examples](https://github.com/geist-org/geist-ui/tree/master/examples).
 
 <Note label="" type="warning">
   <b>This is a COMMUNITY PROJECT, not associated with Vercel.</b>
 </Note>
 
-<Spacer h={2.5} />
-
 ### Contact
 
-<ul>
-  <li>
-    <Link
-      color
-      target="_blank"
-      rel="nofollow"
-      href="https://github.com/geist-org/geist-ui/issues/new">
-      Report an issue
-    </Link>
-  </li>
-  <li>
-    <Link
-      color
-      target="_blank"
-      rel="nofollow"
-      href="https://github.com/geist-org/geist-ui/discussions">
-      Chat on GitHub Discussions
-    </Link>
-  </li>
-  <li>We welcome feedback and ideas. We also love PRs.</li>
-</ul>
+- [Report an issue](https://github.com/geist-org/geist-ui/issues/new)
+- [Chat on GitHub Discussions](https://github.com/geist-org/geist-ui/discussions)
+- Share your work on the [Slack](https://github.com/geist-org/geist-ui/discussions/572) channel
+- We welcome feedback and ideas. We also love PRs
 
-<Spacer h={2.5} />
+### Open Source
 
-### License
-
-Licensed under the [MIT LICENSE](https://github.com/geist-org/geist-ui/blob/master/LICENSE).
+- [Release Notes](https://github.com/geist-org/geist-ui/releases)
+- [Contribution Guide](https://github.com/geist-org/geist-ui/blob/master/.github/CONTRIBUTING.md)
+- [Code of Conduct](https://github.com/geist-org/geist-ui/blob/master/.github/CODE_OF_CONDUCT.md)
+- License: [MIT LICENSE](https://github.com/geist-org/geist-ui/blob/master/LICENSE)
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

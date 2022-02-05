@@ -1,5 +1,5 @@
 import React from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 
 interface Props {
   className?: string
@@ -17,10 +17,10 @@ const PageContentComponent: React.FC<React.PropsWithChildren<PageContentProps>> 
   children,
   ...props
 }: React.PropsWithChildren<PageContentProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
-    <main className={className} {...withPureProps(props)}>
+    <main className={className} {...props}>
       {children}
       <style jsx>{`
         main {
@@ -37,5 +37,5 @@ const PageContentComponent: React.FC<React.PropsWithChildren<PageContentProps>> 
 
 PageContentComponent.defaultProps = defaultProps
 PageContentComponent.displayName = 'GeistPageContent'
-const PageContent = withScaleable(PageContentComponent)
+const PageContent = withScale(PageContentComponent)
 export default PageContent

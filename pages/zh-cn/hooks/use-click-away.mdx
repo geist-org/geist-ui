@@ -1,0 +1,42 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useClickAway, Link, Card, Spacer } from 'components'
+
+export const meta = {
+  title: '点击他处 useClickAway',
+  group: '实用工具',
+}
+
+## useClickAway / 点击他处触发事件
+
+检测点击事件是否在元素之外。
+
+<Playground
+  desc="点击绿色块外部才能触发回调。"
+  scope={{ useClickAway }}
+  code={`
+() => {
+  const ref = React.useRef()
+  const [count, setCount] = React.useState(0)
+  useClickAway(ref, () => setCount(last => last + 1))
+  return (
+    <div ref={ref} style={{ background: 'green', display: 'flex' }}>
+      <p style={{ fontSize: '2rem' }}>{count}</p>
+    </div>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/hooks/use-click-away.mdx">
+<Attributes.Title>useClickAway</Attributes.Title>
+
+```ts
+const useClickAway = (
+  ref: MutableRefObject<HTMLElement | null>,
+  handler: (event: Event) => void,
+) => void
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

@@ -1,0 +1,49 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, Spacer, Text, Link, useBodyScroll } from 'components'
+
+export const meta = {
+  title: 'useBodyScroll',
+  group: 'Utilities',
+}
+
+## useBodyScroll
+
+Disable scrolling behavior for body or any element, it is useful for displaying popup element or menus.
+
+This is custom React hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
+
+<Playground
+  desc="Click button to disable scrolling."
+  scope={{ Button, Spacer, Text, useBodyScroll }}
+  code={`
+() => {
+  const [hidden, setHidden] = useBodyScroll()
+  return (
+    <>
+      <Text small b type={hidden ? 'error' : 'default'}>{hidden ? 'Body disabled.' : 'Body can be scrolled.'}</Text>
+      <Spacer h={.75} />
+      <Button scale={0.5} type="success-light" auto onClick={() => setHidden(true)}>disable scroll</Button>
+      <Button ml="20px" scale={0.5} type="secondary-light" auto onClick={() => setHidden(false)}>reset</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/hooks/use-body-scroll.mdx">
+<Attributes.Title>useBodyScroll</Attributes.Title>
+
+```ts
+type BodyScrollOptions = {
+  scrollLayer: boolean  // whether Ref needs to scroll
+}
+
+const useBodyScroll = (
+  elementRef?: RefObject<HTMLElement> | null,
+  options?: BodyScrollOptions,
+) => [boolean, Dispatch<SetStateAction<boolean>>]
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

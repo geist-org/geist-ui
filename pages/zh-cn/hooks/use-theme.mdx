@@ -1,0 +1,77 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, useTheme } from 'components'
+
+export const meta = {
+  title: '主题的状态 useTheme',
+  group: '开发者',
+  index: 100,
+}
+
+## useTheme / 主题的状态
+
+此 Hooks 可以帮助用户在任意组件中获取主题状态，同时追踪状态的变化。在默认场景下 (没有改变 `themeType` 时)，
+Hooks 获取的值与 `Themes.getPresets` 是相同的。
+
+通常来自 Geist 的组件已在内部预置了这些状态跟踪，你不需要改变它们。此 Hooks 只是帮助你使用 Geist 主题样式创建自己的组件。
+
+注意下面的例子，当我们使用 Theme 定义组件后，自定义组件的样式属性将指向 Geist 的主题，在当前网站的右上角切换主题后，
+你会发现例子中组件的颜色将总是跟随 Geist 主题而变化。
+
+<Playground
+  scope={{ useTheme, Button }}
+  desc=""
+  code={`
+() => {
+  const theme = useTheme()
+  return (
+    <div style={{
+        width: '200px',
+        height: '50px',
+        borderRadius: theme.layout.radius,
+        background: theme.palette.accents_2
+      }}
+    >
+      <span style={{
+          color: theme.palette.accents_7,
+          paddingLeft: theme.layout.gapQuarter
+        }}
+      >我的第一个组件。</span>
+    </div>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/hooks/use-theme.mdx">
+<Attributes.Title>useTheme</Attributes.Title>
+
+```ts
+const theme: GeistUIThemes = useTheme()
+
+export type GeistUIThemes = {
+  type: string
+  font: GeistUIThemesFont
+  layout: GeistUIThemesLayout
+  palette: GeistUIThemesPalette
+  breakpoints: GeistUIThemesBreakpoints
+  expressiveness: GeistUIThemesExpressiveness
+}
+```
+
+<Attributes.Title>获取预置的类型</Attributes.Title>
+
+```ts
+import {
+  GeistUIThemes,
+  GeistUIThemesFont,
+  GeistUIThemesPalette,
+  GeistUIThemesExpressiveness,
+  GeistUIThemesLayout,
+} from '@geist-ui/core'
+
+const myFontTheme: GeistUIThemesFont = { }
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

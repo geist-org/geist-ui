@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
-import { NormalTypes } from '../utils/prop-types'
-import useCurrentState from '../utils/use-current-state'
-import { useGeistUIContext } from '../utils/use-geist-ui-context'
-import { ToastWithID } from './toast-container'
+import React, { CSSProperties, useEffect } from 'react'
+import type { NormalTypes } from '../utils/prop-types'
+import { defaultToastLayout, useGeistUIContext } from '../utils/use-geist-ui-context'
 import { getId } from '../utils/collections'
+import { ToastPlacement } from '../use-toasts/helpers'
 
 export interface ToastAction {
   name: string
@@ -11,86 +10,123 @@ export interface ToastAction {
   passive?: boolean
 }
 export type ToastTypes = NormalTypes
-export interface Toast {
-  text?: string | React.ReactNode
+export type ToastLayout = {
+  padding?: CSSProperties['padding']
+  margin?: CSSProperties['margin']
+  width?: CSSProperties['width']
+  maxWidth?: CSSProperties['maxWidth']
+  maxHeight?: CSSProperties['maxHeight']
+  placement?: ToastPlacement
+}
+export interface ToastInput {
+  text: string | React.ReactNode
   type?: ToastTypes
+  id?: string
   delay?: number
   actions?: Array<ToastAction>
 }
+export type ToastInstance = {
+  visible: boolean
+  cancel: () => void
+  _timeout: null | number
+  _internalIdent: string
+}
+
+export type Toast = Required<ToastInput> & ToastInstance
 
 const defaultToast = {
   delay: 2000,
+  type: 'default' as ToastTypes,
 }
 
-let destoryStack: Array<string> = []
-let maxDestoryTime: number = 0
-let destoryTimer: number | undefined
+export type ToastHooksResult = {
+  toasts: Array<Toast>
+  setToast: (toast: ToastInput) => void
+  removeAll: () => void
+  findToastOneByID: (ident: string) => Toast | undefined
+  removeToastOneByID: (ident: string) => void
+}
 
-const useToasts = (): [Array<Toast>, (t: Toast) => void] => {
-  const { updateToasts, toastHovering, toasts } = useGeistUIContext()
-  const [, setHovering, hoveringRef] = useCurrentState<boolean>(toastHovering)
+const useToasts = (layout?: ToastLayout): ToastHooksResult => {
+  const { updateToasts, toasts, updateToastLayout, updateLastToastId } =
+    useGeistUIContext()
 
-  useEffect(() => setHovering(toastHovering), [toastHovering])
+  useEffect(() => {
+    if (!layout) return
+    updateToastLayout(() =>
+      layout
+        ? {
+            ...defaultToastLayout,
+            ...layout,
+          }
+        : defaultToastLayout,
+    )
+  }, [])
 
-  const destoryAll = (delay: number, time: number) => {
-    /* istanbul ignore next */
-    if (time <= maxDestoryTime) return
-    clearTimeout(destoryTimer)
-    maxDestoryTime = time
-
-    destoryTimer = window.setTimeout(() => {
-      /* istanbul ignore next */
-      updateToasts((currentToasts: Array<ToastWithID>) => {
-        if (destoryStack.length < currentToasts.length) {
-          return currentToasts
+  const cancel = (internalId: string) => {
+    updateToasts((currentToasts: Array<Toast>) =>
+      currentToasts.map(item => {
+        if (item._internalIdent !== internalId) return item
+        return { ...item, visible: false }
+      }),
+    )
+    updateLastToastId(() => internalId)
+  }
+  const removeAll = () => {
+    updateToasts(last => last.map(toast => ({ ...toast, visible: false })))
+  }
+  const findToastOneByID = (id: string) => toasts.find(t => t.id === id)
+  const removeToastOneByID = (id: string) => {
+    updateToasts(last =>
+      last.map(toast => {
+        if (toast.id !== id) return toast
+        return {
+          ...toast,
+          visible: false,
         }
-        destoryStack = []
-        return []
-      })
-      clearTimeout(destoryTimer)
-    }, delay + 350)
+      }),
+    )
   }
 
-  const setToast = (toast: Toast): void => {
-    const id = `toast-${getId()}`
+  const setToast = (toast: ToastInput): void => {
+    const internalIdent = `toast-${getId()}`
     const delay = toast.delay || defaultToast.delay
-
-    const cancel = (id: string, delay: number) => {
-      updateToasts((currentToasts: Array<ToastWithID>) => {
-        return currentToasts.map(item => {
-          if (item.id !== id) return item
-          return { ...item, willBeDestroy: true }
-        })
-      })
-      destoryStack.push(id)
-      destoryAll(delay, performance.now())
-    }
-
-    updateToasts((currentToasts: Array<ToastWithID>) => {
-      const newToast = {
-        ...toast,
-        id,
-        delay,
-        cancel: () => cancel(id, delay),
+    if (toast.id) {
+      const hasIdent = toasts.find(t => t.id === toast.id)
+      if (hasIdent) {
+        throw new Error('Toast: Already have the same key: "ident"')
       }
-      return [...currentToasts, newToast]
-    })
-
-    const hideToast = (id: string, delay: number) => {
-      const hideTimer = window.setTimeout(() => {
-        if (hoveringRef.current) {
-          hideToast(id, delay)
-          return clearTimeout(hideTimer)
-        }
-        cancel(id, delay)
-        clearTimeout(hideTimer)
-      }, delay)
     }
 
-    hideToast(id, delay)
+    updateToasts((last: Array<Toast>) => {
+      const newToast: Toast = {
+        delay,
+        text: toast.text,
+        visible: true,
+        type: toast.type || defaultToast.type,
+        id: toast.id || internalIdent,
+        actions: toast.actions || [],
+        _internalIdent: internalIdent,
+        _timeout: window.setTimeout(() => {
+          cancel(internalIdent)
+          if (newToast._timeout) {
+            window.clearTimeout(newToast._timeout)
+            newToast._timeout = null
+          }
+        }, delay),
+        cancel: () => cancel(internalIdent),
+      }
+      return [...last, newToast]
+    })
   }
 
-  return [toasts, setToast]
+  return {
+    toasts,
+    setToast,
+    removeAll,
+    findToastOneByID,
+    removeToastOneByID,
+  }
 }
 
 export default useToasts

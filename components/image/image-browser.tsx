@@ -4,7 +4,9 @@ import { Props as LinkProps } from '../link/link'
 import useTheme from '../use-theme'
 import ImageBrowserHttpsIcon from './image-browser-https-icon'
 import { getBrowserColors, BrowserColors } from './styles'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import { getHostFromUrl } from './helpers'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type ImageAnchorProps = Omit<React.AnchorHTMLAttributes<any>, keyof LinkProps>
 
@@ -26,14 +28,6 @@ const defaultProps = {
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type ImageBrowserProps = Props & NativeAttrs
-
-const getHostFromUrl = (url: string) => {
-  try {
-    return new URL(url).host
-  } catch (e) {
-    return url
-  }
-}
 
 const getTitle = (title: string, colors: BrowserColors) => (
   <div className="title">
@@ -75,12 +69,10 @@ const getAddressInput = (
         overflow: hidden;
         position: relative;
       }
-
       .address-input :global(*) {
         font-size: 0.75em;
         color: inherit;
       }
-
       .address-input :global(a) {
         max-width: 90%;
         overflow: hidden;
@@ -89,7 +81,6 @@ const getAddressInput = (
         display: inline-block;
         color: inherit;
       }
-
       .https {
         width: 0.75em;
         height: 0.75em;
@@ -123,7 +114,7 @@ const ImageBrowserComponent = React.forwardRef<
     ref: React.Ref<HTMLDivElement>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const colors = useMemo(
       () => getBrowserColors(invert, theme.palette),
       [invert, theme.palette],
@@ -135,7 +126,7 @@ const ImageBrowserComponent = React.forwardRef<
     }, [url, showFullLink, title, colors, anchorProps])
 
     return (
-      <div className={`browser ${className}`} ref={ref} {...withPureProps(props)}>
+      <div className={useClasses('browser', className)} ref={ref} {...props}>
         <header>
           <div className="traffic">
             <span className="close" />
@@ -159,12 +150,10 @@ const ImageBrowserComponent = React.forwardRef<
               ${SCALES.ml(0, 'auto')};
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           }
-
           .browser :global(.image) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
           }
-
           header {
             height: 2.5em;
             width: 100%;
@@ -176,7 +165,6 @@ const ImageBrowserComponent = React.forwardRef<
             background-color: ${colors.barBgColor};
             border-bottom: 1px solid ${colors.borderColor};
           }
-
           .traffic {
             width: auto;
             position: absolute;
@@ -190,7 +178,6 @@ const ImageBrowserComponent = React.forwardRef<
             user-select: none;
             font-size: inherit;
           }
-
           .traffic span {
             border-radius: 50%;
             width: 0.75em;
@@ -200,15 +187,12 @@ const ImageBrowserComponent = React.forwardRef<
             display: inline-block;
             margin-right: 0.5em;
           }
-
           .close {
             background-color: #ff5f56;
           }
-
           .mini {
             background-color: #ffbd2e;
           }
-
           .full {
             background-color: #27c93f;
           }
@@ -220,5 +204,5 @@ const ImageBrowserComponent = React.forwardRef<
 
 ImageBrowserComponent.defaultProps = defaultProps
 ImageBrowserComponent.displayName = 'GeistImageBrowser'
-const ImageBrowser = withScaleable(ImageBrowserComponent)
+const ImageBrowser = withScale(ImageBrowserComponent)
 export default ImageBrowser

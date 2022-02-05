@@ -14,7 +14,7 @@ const Editor: React.FC<Props> = ({ code }) => {
   const { copy } = useClipboard()
   const { isChinese } = useConfigs()
   const [visible, setVisible] = useState(false)
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const clickHandler = (event: React.MouseEvent) => {
     event.stopPropagation()
     event.preventDefault()

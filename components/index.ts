@@ -172,7 +172,7 @@ export { default as useAllThemes } from './use-all-themes'
 export type { AllThemesConfig } from './use-all-themes'
 
 export { default as useToasts } from './use-toasts'
-export type { Toast } from './use-toasts'
+export type { Toast, ToastInput, ToastAction, ToastLayout } from './use-toasts'
 
 export { default as User } from './user'
 export type { UserProps } from './user'
@@ -196,3 +196,12 @@ export { default as useClickAway } from './use-click-away'
 export { default as useCurrentState } from './use-current-state'
 export { default as CssBaseline } from './css-baseline'
 export { default as useTheme } from './use-theme'
+export { default as useClasses } from './use-classes'
+export { default as useScale } from './use-scale'
+export { withScale, ScalePropKeys, ScaleContext } from './use-scale'
+export type {
+  ScalePropsAndInvalid,
+  ScaleProps,
+  ScaleConfig,
+  GetScalePropsFunction,
+} from './use-scale'

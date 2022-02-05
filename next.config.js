@@ -46,6 +46,26 @@ const nextConfig = {
         destination: 'https://github.com/geist-org/geist-ui/discussions/677',
         permanent: true,
       },
+      {
+        source: '/en-us/customization',
+        destination: '/en-us',
+        permanent: true,
+      },
+      {
+        source: '/zh-cn/customization',
+        destination: '/zh-cn',
+        permanent: true,
+      },
+      {
+        source: '/en-us/guide/scaleable',
+        destination: '/en-us/guide/scale',
+        permanent: true,
+      },
+      {
+        source: '/zh-cn/guide/scaleable',
+        destination: '/zh-cn/guide/scale',
+        permanent: true,
+      },
     ]
   },
 }

@@ -1,7 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import useTheme from '../use-theme'
 import ImageSkeleton from './image.skeleton'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import { transformDataSource } from './helpers'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   src: string
@@ -26,15 +28,16 @@ const ImageComponent: React.FC<ImageProps> = ({
   maxDelay,
   ...props
 }: ImageProps & typeof defaultProps) => {
-  const { SCALES, getScaleableProps } = useScaleable()
-  const width = getScaleableProps(['width', 'w'])
-  const height = getScaleableProps(['height', 'h'])
+  const { SCALES, getScaleProps } = useScale()
+  const width = getScaleProps(['width', 'w'])
+  const height = getScaleProps(['height', 'h'])
   const showAnimation = !disableSkeleton && width && height
 
   const theme = useTheme()
   const [loading, setLoading] = useState<boolean>(true)
   const [showSkeleton, setShowSkeleton] = useState<boolean>(true)
   const imageRef = useRef<HTMLImageElement>(null)
+  const url = useMemo(() => transformDataSource(src), [src])
 
   const imageLoaded = () => {
     if (!showAnimation) return
@@ -61,9 +64,9 @@ const ImageComponent: React.FC<ImageProps> = ({
   }, [loading])
 
   return (
-    <div className={`image ${className}`}>
+    <div className={useClasses('image', className)}>
       {showSkeleton && showAnimation && <ImageSkeleton opacity={loading ? 0.5 : 0} />}
-      <img ref={imageRef} onLoad={imageLoaded} src={src} {...withPureProps(props)} />
+      <img ref={imageRef} onLoad={imageLoaded} src={url} {...props} />
       <style jsx>{`
         .image {
           position: relative;
@@ -81,7 +84,7 @@ const ImageComponent: React.FC<ImageProps> = ({
           width: ${SCALES.width(1, 'auto')};
           height: ${SCALES.height(1, 'auto')};
           object-fit: scale-down;
-          display: block;
+          display: inline-block;
         }
       `}</style>
     </div>
@@ -90,5 +93,5 @@ const ImageComponent: React.FC<ImageProps> = ({
 
 ImageComponent.defaultProps = defaultProps
 ImageComponent.displayName = 'GeistImage'
-const Image = withScaleable(ImageComponent)
+const Image = withScale(ImageComponent)
 export default Image

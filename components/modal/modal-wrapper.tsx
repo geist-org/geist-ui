@@ -2,7 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
-import useScaleable, { withPureProps } from '../use-scaleable'
+import useScale from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -23,7 +24,7 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   ...props
 }: React.PropsWithChildren<ModalWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const modalContent = useRef<HTMLDivElement>(null)
   const tabStart = useRef<HTMLDivElement>(null)
   const tabEnd = useRef<HTMLDivElement>(null)
@@ -54,12 +55,12 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
   return (
     <CssTransition name="wrapper" visible={visible} clearTime={300}>
       <div
-        className={`wrapper ${className}`}
+        className={useClasses('wrapper', className)}
         role="dialog"
         tabIndex={-1}
         onKeyDown={onKeyDown}
         ref={modalContent}
-        {...withPureProps(props)}>
+        {...props}>
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabStart} />
         {children}
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabEnd} />

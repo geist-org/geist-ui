@@ -3,7 +3,8 @@ import useTheme from '../use-theme'
 import { useSelectContext } from './select-context'
 import useWarning from '../utils/use-warning'
 import Ellipsis from '../shared/ellipsis'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value?: string
@@ -36,10 +37,11 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
   ...props
 }: React.PropsWithChildren<SelectOptionProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { updateValue, value, disableAll } = useSelectContext()
   const isDisabled = useMemo(() => disabled || disableAll, [disabled, disableAll])
   const isLabel = useMemo(() => label || divider, [label, divider])
+  const classes = useClasses('option', { divider, label }, className)
   if (!isLabel && identValue === undefined) {
     useWarning('The props "value" is required.', 'Select Option')
   }
@@ -77,12 +79,7 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
   }
 
   return (
-    <div
-      className={`option ${divider ? 'divider' : ''} ${
-        label ? 'label' : ''
-      } ${className}`}
-      onClick={clickHandler}
-      {...withPureProps(props)}>
+    <div className={classes} onClick={clickHandler} {...props}>
       <Ellipsis height={SCALES.height(2.25)}>{children}</Ellipsis>
       <style jsx>{`
         .option {
@@ -137,5 +134,5 @@ const SelectOptionComponent: React.FC<React.PropsWithChildren<SelectOptionProps>
 
 SelectOptionComponent.defaultProps = defaultProps
 SelectOptionComponent.displayName = 'GeistSelectOption'
-const SelectOption = withScaleable(SelectOptionComponent)
+const SelectOption = withScale(SelectOptionComponent)
 export default SelectOption

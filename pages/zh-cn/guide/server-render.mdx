@@ -1,5 +1,4 @@
 import Layout from 'lib/components/layout'
-import { Code, Link, Spacer, Note } from 'components'
 
 export const meta = {
   title: '服务端渲染',
@@ -9,30 +8,22 @@ export const meta = {
 
 ## 服务端渲染
 
-所有 Geist UI 组件都能完美的适应 **服务端渲染**，实际上，你现在所见的文档站点就是来自服务端渲染。
+**所有的 Geist UI 组件**都能完美适应服务端渲染，实际上，你现在所见的文档站点就是来自服务端渲染。
 
-<Note label="阅读提示">
-  如果你只想创建{' '}
-  <Link
-    href="https://en.wikipedia.org/wiki/Single-page_application"
-    rel="nofollow"
-    underline>
-    一个 SPA 应用
-  </Link>
-  ， 建议跳过此章节。
-</Note>
+一个常见的 React 组件在服务端被渲染为 HTML 字符串通常包含两部分：HTML 骨架与样式，
+它们共同构成了请求中返回的首个字符串，这能有效的保证用户尽可能早的阅读到页面内容 (而不需要等待额外地 JavaScript 资源加载与解析)。
 
-<Spacer h={2.5} />
+在 Geist 中，你要做的只是把 Geist 生成的样式文本信息添加到服务端渲染工具中，无论 Next.js 还是自行构建的 HTTP 服务器。
 
 ### 使用 Next.js
 
 在 `next.js` 框架中，你首先需要创建 `_document.js` 文件来填充自定义信息，
-请参考 <Link href="https://nextjs.org/docs/advanced-features/custom-document" rel="nofollow">Next.js 的官方文档</Link>
-创建 `_document.js` 文件。
+请参考 [Next.js](https://nextjs.org/docs/advanced-features/custom-document) 的官方文档了解此文件的影响和意义。
 
-随后我们将以下示例代码加入到文件中即可：
+随后我们将以下示例代码加入到文件中：
 
 ```js
+// NAME:pages/_document.js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { CssBaseline } from '@geist-ui/core'
 
@@ -56,9 +47,7 @@ class MyDocument extends Document {
 }
 ```
 
-这里也准备了一个完整的应用示例供作参考: <Link href="https://github.com/unix/unix.bio/blob/template/pages/_document.jsx" rel="nofollow">\_document.jsx</Link>。
-
-<Spacer h={3} />
+示例中的 `flush` 方法用于收集 Geist 在当前页面中产生的样式，每个项目只需要设置一次。这里也准备了一个完整的 [应用示例](https://github.com/unix/unix.bio/blob/template/pages/_document.tsx) 供作参考。
 
 ### 定制服务端
 

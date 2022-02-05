@@ -1,6 +1,7 @@
 import React from 'react'
 import useTheme from '../use-theme'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   count?: number
@@ -20,10 +21,10 @@ const AvatarGroupComponent: React.FC<React.PropsWithChildren<AvatarGroupProps>> 
   children,
 }: AvatarGroupProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
 
   return (
-    <div className={`avatar-group ${className}`}>
+    <div className={useClasses('avatar-group', className)}>
       {children}
       {count && <span className="count">+{count}</span>}
       <style jsx>{`
@@ -54,5 +55,5 @@ const AvatarGroupComponent: React.FC<React.PropsWithChildren<AvatarGroupProps>> 
 
 AvatarGroupComponent.defaultProps = defaultProps
 AvatarGroupComponent.displayName = 'GeistAvatarGroup'
-const AvatarGroup = withScaleable(AvatarGroupComponent)
+const AvatarGroup = withScale(AvatarGroupComponent)
 export default AvatarGroup

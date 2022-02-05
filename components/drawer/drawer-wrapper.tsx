@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useRef } from 'react'
+import useScale from '../use-scale'
 import useTheme from '../use-theme'
 import CssTransition from '../shared/css-transition'
 import { isChildElement } from '../utils/collections'
-import useScaleable, { withPureProps } from '../use-scaleable'
 import { DrawerPlacement, getDrawerTransform } from './helper'
+import useClasses from '../use-classes'
 
 interface Props {
   className?: string
@@ -26,11 +27,12 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   ...props
 }: React.PropsWithChildren<DrawerWrapperProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const modalContent = useRef<HTMLDivElement>(null)
   const tabStart = useRef<HTMLDivElement>(null)
   const tabEnd = useRef<HTMLDivElement>(null)
   const transform = useMemo(() => getDrawerTransform(placement), [placement])
+  const classes = useClasses('wrapper', placement, className)
 
   useEffect(() => {
     if (!visible) return
@@ -58,12 +60,12 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps>> = ({
   return (
     <CssTransition name="wrapper" visible={visible} clearTime={300}>
       <div
-        className={`wrapper ${placement} ${className}`}
+        className={classes}
         role="dialog"
         tabIndex={-1}
         onKeyDown={onKeyDown}
         ref={modalContent}
-        {...withPureProps(props)}>
+        {...props}>
         <div tabIndex={0} className="hide-tab start" aria-hidden="true" ref={tabStart} />
         {children}
         <div tabIndex={0} className="hide-tab end" aria-hidden="true" ref={tabEnd} />

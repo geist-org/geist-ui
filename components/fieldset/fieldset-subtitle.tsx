@@ -1,5 +1,4 @@
 import React from 'react'
-import { withPureProps } from '../use-scaleable'
 
 interface Props {
   className?: string
@@ -19,7 +18,7 @@ const FieldsetSubtitle: React.FC<React.PropsWithChildren<FieldsetSubtitleProps>>
 }: React.PropsWithChildren<FieldsetSubtitleProps> & typeof defaultProps) => {
   return (
     <>
-      <div className={className} {...withPureProps(props)}>
+      <div className={className} {...props}>
         {children}
       </div>
       <style jsx>{`

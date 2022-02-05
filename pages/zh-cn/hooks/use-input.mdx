@@ -1,0 +1,62 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useInput, Input, Button, Spacer } from 'components'
+
+export const meta = {
+  title: '输入框绑定 useInput',
+  group: '组件增强',
+  index: 10,
+}
+
+## useInput / 输入框绑定
+
+`useInput` 提供对 [Input](/zh-cn/components/input) 组件的自动绑定功能，这可以有效减少模板代码量并提高开发者体验。
+使用此 Hooks 与你手动添加 `React.useState` 以绑定组件的行为完全一致。
+
+<Playground
+  desc="使用 Hooks 捕获数据变化"
+  scope={{ Input, useInput, Button, Spacer }}
+  code={`
+() => {
+  const { state, setState, reset, bindings } = useInput('Geist UI')
+  React.useEffect(() => console.log(state), [state])
+  return (
+    <>
+      <Input {...bindings} />
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/2} onClick={() => setState(Math.random().toString(32))}>设置值</Button>
+      <Button auto scale={1/2} ml="20px" onClick={() => reset()}>重置</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/hooks/use-input.mdx">
+<Attributes.Title>useInput</Attributes.Title>
+
+```ts
+type useInput = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  reset: () => void
+  bindings: {
+    value: string
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  }
+}
+```
+
+<Attributes.Title>KeyboardOptions</Attributes.Title>
+
+| 参数           | 介绍                   | 类型         |
+| -------------- | ---------------------- | ------------ |
+| **state**      | Input 组件的值         | `string`     |
+| **setState**   | 与 React.setState 相同 | -            |
+| **currentRef** | Input 组件的当前值     | `string`     |
+| **reset**      | 重置为初始值           | `() => void` |
+| **bindings**   | 自动绑定对象           | -            |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

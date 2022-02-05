@@ -3,7 +3,8 @@ import Collapse from './collapse'
 import useCurrentState from '../utils/use-current-state'
 import { setChildrenIndex } from '../utils/collections'
 import { CollapseContext, CollapseConfig } from './collapse-context'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   accordion?: boolean
@@ -24,8 +25,10 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
   className,
   ...props
 }: React.PropsWithChildren<CollapseGroupProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [state, setState, stateRef] = useCurrentState<Array<number>>([])
+  const classes = useClasses('collapse-group', className)
+
   const updateValues = (currentIndex: number, nextState: boolean) => {
     const hasChild = stateRef.current.find(val => val === currentIndex)
     if (accordion) {
@@ -50,7 +53,6 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
     }),
     [state.join(',')],
   )
-
   const hasIndexChildren = useMemo(
     () => setChildrenIndex(children, [Collapse]),
     [children],
@@ -58,7 +60,7 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
 
   return (
     <CollapseContext.Provider value={initialValue}>
-      <div className={`collapse-group ${className}`} {...withPureProps(props)}>
+      <div className={classes} {...props}>
         {hasIndexChildren}
         <style jsx>{`
           .collapse-group {
@@ -79,5 +81,5 @@ const CollapseGroupComponent: React.FC<React.PropsWithChildren<CollapseGroupProp
 
 CollapseGroupComponent.defaultProps = defaultProps
 CollapseGroupComponent.displayName = 'GeistCollapseGroup'
-const CollapseGroup = withScaleable(CollapseGroupComponent)
+const CollapseGroup = withScale(CollapseGroupComponent)
 export default CollapseGroup

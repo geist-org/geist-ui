@@ -1,0 +1,47 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useClipboard, Link, Button, useToasts, Spacer } from 'components'
+
+export const meta = {
+  title: '剪切板 useClipboard',
+  group: '实用工具',
+}
+
+## useClipboard / 拷贝至剪切板
+
+拷贝字符串到剪切板。
+
+<Playground
+  scope={{ useClipboard, Button, useToasts }}
+  code={`
+() => {
+  const { setToast } = useToasts()
+  const { copy } = useClipboard()
+  const handler = () => {
+    copy('hello, geist-ui')
+    setToast({ text: '文字已拷贝。' })
+  }
+  return (
+    <Button scale={0.5} auto onClick={handler}>点击拷贝</Button>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/zh-cn/hooks/use-clipboard.mdx">
+<Attributes.Title>useClipboard</Attributes.Title>
+
+```ts
+type UseClipboardOptions = {
+  onError: Function
+}
+
+type CopyResult = {
+  copy: (text: string) => void
+}
+
+const useClickAway = (options?: UseClipboardOptions) => CopyResult
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

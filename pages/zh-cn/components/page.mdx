@@ -1,6 +1,5 @@
-import { Layout, Playground, ExampleBlock, Attributes } from 'lib/components'
 import { Page, Button } from 'components'
-import MockPage from 'lib/components/displays/mock-page'
+import { Layout, Playground, Attributes, MockPage } from 'lib/components'
 
 export const meta = {
   title: '页面 Page',
@@ -72,6 +71,8 @@ export const meta = {
 | --------------- | -------------------- | --------------------------------- | --------------------------------------- | --------- |
 | **render**      | 渲染方式             | [PageRenderMode](#pagerendermode) | -                                       | `default` |
 | **dotBackdrop** | 在背景中显示装饰样式 | `boolean`                         | -                                       | `false`   |
+| **dotSize** | 背景中的点大小 | `CSSProperties`                         | -                        | `1px`   |
+| **dotSpace** | 背景中每个点的间距 | `number`                         | -                        | `1`   |
 | ...             | 原生属性             | `HTMLAttributes`                  | `'autoFocus', 'name', 'className', ...` | -         |
 
 <Attributes.Title>Page.Header.Props</Attributes.Title>

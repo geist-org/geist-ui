@@ -5,7 +5,8 @@ import { getStyles } from './styles'
 import SnippetIcon from './snippet-icon'
 import useClipboard from '../utils/use-clipboard'
 import useToasts from '../use-toasts'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type ToastTypes = NormalTypes
 interface Props {
@@ -52,9 +53,9 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   ...props
 }: React.PropsWithChildren<SnippetProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { copy } = useClipboard()
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
   const ref = useRef<HTMLPreElement>(null)
   const isMultiLine = text && Array.isArray(text)
 
@@ -82,7 +83,7 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
   }
 
   return (
-    <div className={`snippet ${className}`} {...withPureProps(props)}>
+    <div className={useClasses('snippet', className)} {...props}>
       {isMultiLine ? (
         (text as string[]).map((t, index) => <pre key={`snippet-${index}-${t}`}>{t}</pre>)
       ) : (
@@ -144,15 +145,16 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
           align-items: ${isMultiLine ? 'flex-start' : 'center'};
           width: calc(3.281 * var(--snippet-font-size));
           color: inherit;
-          transition: opacity 0.2s ease 0s;
+          transition: opacity 150ms ease 0s;
           border-radius: ${theme.layout.radius};
           cursor: pointer;
           user-select: none;
           padding-top: ${isMultiLine ? 'var(--snippet-padding-top)' : 0};
+          opacity: 0.65;
         }
 
         .copy:hover {
-          opacity: 0.7;
+          opacity: 1;
         }
       `}</style>
     </div>
@@ -161,5 +163,5 @@ const SnippetComponent: React.FC<React.PropsWithChildren<SnippetProps>> = ({
 
 SnippetComponent.defaultProps = defaultProps
 SnippetComponent.displayName = 'GeistSnippet'
-const Snippet = withScaleable(SnippetComponent)
+const Snippet = withScale(SnippetComponent)
 export default Snippet

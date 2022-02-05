@@ -1,5 +1,6 @@
 import React from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   center?: boolean
@@ -20,12 +21,11 @@ const PageHeaderComponent: React.FC<React.PropsWithChildren<PageHeaderProps>> = 
   className,
   ...props
 }: React.PropsWithChildren<PageHeaderProps> & typeof defaultProps) => {
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
+  const classes = useClasses({ center }, className)
 
   return (
-    <header
-      className={`${center ? 'center' : ''} ${className}`}
-      {...withPureProps(props)}>
+    <header className={classes} {...props}>
       {children}
       <style jsx>{`
         header {
@@ -48,5 +48,5 @@ const PageHeaderComponent: React.FC<React.PropsWithChildren<PageHeaderProps>> = 
 
 PageHeaderComponent.defaultProps = defaultProps
 PageHeaderComponent.displayName = 'GeistPageHeader'
-const PageHeader = withScaleable(PageHeaderComponent)
+const PageHeader = withScale(PageHeaderComponent)
 export default PageHeader

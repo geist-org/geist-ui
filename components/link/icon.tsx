@@ -4,8 +4,8 @@ export const LinkIconComponent: React.FC<unknown> = () => {
   return (
     <svg
       viewBox="0 0 24 24"
-      width="1em"
-      height="1em"
+      width="0.9375em"
+      height="0.9375em"
       stroke="currentColor"
       strokeWidth="1.5"
       strokeLinecap="round"
@@ -19,7 +19,7 @@ export const LinkIconComponent: React.FC<unknown> = () => {
 
       <style jsx>{`
         .icon {
-          margin: 0 0.3125em;
+          margin: 0 0 -1px 0.1875em;
           display: inline-flex;
           align-self: center;
           color: currentColor;

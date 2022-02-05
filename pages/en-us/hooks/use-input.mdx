@@ -1,0 +1,62 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { useInput, Input, Button, Spacer } from 'components'
+
+export const meta = {
+  title: 'useInput',
+  group: 'Enhancement',
+  index: 10,
+}
+
+## useInput
+
+`useInput` provides automatic binding for component [Input](/en-us/components/input), which can reduce the amount of repetitive code and improve the development experience.
+Using this hooks behaves the same as if you had added `React.useState` manually.
+
+<Playground
+  desc="Use hooks to capture changes."
+  scope={{ Input, useInput, Button, Spacer }}
+  code={`
+() => {
+  const { state, setState, reset, bindings } = useInput('Geist UI')
+  React.useEffect(() => console.log(state), [state])
+  return (
+    <>
+      <Input {...bindings} />
+      <Spacer h={.5} />
+      <Button auto type="secondary" scale={1/2} onClick={() => setState(Math.random().toString(32))}>set value</Button>
+      <Button auto scale={1/2} ml="20px" onClick={() => reset()}>reset value</Button>
+    </>
+  )
+}
+`}
+/>
+
+<Attributes edit="/pages/en-us/hooks/use-input.mdx">
+<Attributes.Title>useInput</Attributes.Title>
+
+```ts
+type useInput = (initialValue: string) => {
+  state: string
+  setState: Dispatch<SetStateAction<string>>
+  currentRef: MutableRefObject<string>
+  reset: () => void
+  bindings: {
+    value: string
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  }
+}
+```
+
+<Attributes.Title>KeyboardOptions</Attributes.Title>
+
+| Option         | Description                                        | Type         |
+| -------------- | -------------------------------------------------- | ------------ |
+| **state**      | the value of the Input                             | `string`     |
+| **setState**   | same as React.setState                             | -            |
+| **currentRef** | the current value of Input                         | `string`     |
+| **reset**      | reset the value of Input                           | `() => void` |
+| **bindings**   | auto-binding objects conforming to the Input props | -            |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

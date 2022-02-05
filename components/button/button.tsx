@@ -1,5 +1,5 @@
 import React, { useRef, useState, MouseEvent, useMemo, useImperativeHandle } from 'react'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
 import useTheme from '../use-theme'
 import ButtonDrip from './button.drip'
 import ButtonLoading from './button-loading'
@@ -12,6 +12,7 @@ import {
   getButtonDripColor,
   getButtonHoverColors,
 } from './styles'
+import useClasses from '../use-classes'
 
 interface Props {
   type?: ButtonTypes
@@ -52,7 +53,7 @@ const ButtonComponent = React.forwardRef<
     ref: React.Ref<HTMLButtonElement | null>,
   ) => {
     const theme = useTheme()
-    const { SCALES } = useScaleable()
+    const { SCALES } = useScale()
     const buttonRef = useRef<HTMLButtonElement>(null)
     useImperativeHandle(ref, () => buttonRef.current)
 
@@ -135,10 +136,10 @@ const ButtonComponent = React.forwardRef<
       <button
         ref={buttonRef}
         type={htmlType}
-        className={`btn ${className}`}
+        className={useClasses('btn', className)}
         disabled={disabled}
         onClick={clickHandler}
-        {...withPureProps(props)}>
+        {...props}>
         {loading && <ButtonLoading color={color} />}
         {childrenWithIcon}
         {dripShow && (
@@ -177,7 +178,7 @@ const ButtonComponent = React.forwardRef<
             --geist-ui-button-height: ${SCALES.height(2.5)};
             --geist-ui-button-color: ${color};
             --geist-ui-button-bg: ${bg};
-            min-width: ${auto ? 'min-content' : SCALES.width(12.5)};
+            min-width: ${auto ? 'min-content' : SCALES.width(10.5)};
             width: ${auto ? 'auto' : 'initial'};
             height: ${SCALES.height(2.5)};
             padding: ${SCALES.pt(0)} ${paddingRight} ${SCALES.pb(0)} ${paddingLeft};
@@ -220,5 +221,5 @@ const ButtonComponent = React.forwardRef<
 
 ButtonComponent.defaultProps = defaultProps
 ButtonComponent.displayName = 'GeistButton'
-const Button = withScaleable(ButtonComponent)
+const Button = withScale(ButtonComponent)
 export default Button

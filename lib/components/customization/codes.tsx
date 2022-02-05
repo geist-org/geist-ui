@@ -34,7 +34,7 @@ const CustomizationCodes: React.FC<unknown> = () => {
   const { isChinese } = useConfigs()
   const codeTheme = makeCodeTheme(theme)
   const { copy } = useClipboard()
-  const [, setToast] = useToasts()
+  const { setToast } = useToasts()
 
   const deepDifferents = useMemo(
     () => ({

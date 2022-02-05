@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import useRealShape from '../utils/use-real-shape'
+import useClasses from '../use-classes'
 
 export type ExpandProps = {
   isExpanded?: boolean
@@ -24,6 +25,7 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
   const leaveTimer = useRef<number>()
   const resetTimer = useRef<number>()
   const [state, updateShape] = useRealShape<HTMLDivElement>(contentRef)
+  const classes = useClasses('container', { expanded: selfExpanded })
 
   useEffect(() => setHeight(`${state.height}px`), [state.height])
   useEffect(() => {
@@ -64,11 +66,10 @@ const Expand: React.FC<React.PropsWithChildren<ExpandProps>> = ({
   }, [isExpanded])
 
   return (
-    <div className={`container ${selfExpanded ? 'expanded' : ''}`}>
+    <div className={classes}>
       <div ref={contentRef} className="content">
         {children}
       </div>
-
       <style jsx>{`
         .container {
           padding: 0;

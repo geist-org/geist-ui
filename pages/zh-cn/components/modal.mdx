@@ -1,6 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Modal, Button, Code, useModal, Note, Link } from 'components'
-import NextLink from 'next/link'
+import { Modal, Button, Code, useModal } from 'components'
 import { useState } from 'react'
 
 export const meta = {
@@ -10,15 +9,9 @@ export const meta = {
 
 ## Modal / 对话框
 
-弹出显示需要额外注意或重要的内容。
+弹出显示需要额外注意或重要的内容。如果你仅需要提示文本信息，请考虑 [Toast](/zh-cn/components/toast) 组件。
 
-<Note>
-  仅仅需要弹出文本信息？ 试试{' '}
-  <NextLink href="/zh-cn/components/toast">
-    <Link color>Toast / 通知</Link>
-  </NextLink>{' '}
-  组件。
-</Note>
+对话框组件包含额外的 Hooks，详情请参阅 [useModal](/zh-cn/hooks/use-modal) 小节。
 
 <Playground
   desc="使用 `visible` 属性控制何时显示对话框。"
@@ -44,35 +37,6 @@ export const meta = {
         <Modal.Action onClick={({ close }) => close()}>明白了</Modal.Action>
       </Modal>
     </div>
-  )
-}
-`}
-/>
-
-<Playground
-  title={
-    <>
-      与&nbsp;<Code>useModal</Code>&nbsp;组合
-    </>
-  }
-  desc="使用 `hooks` 可以更简单的控制对话框。"
-  scope={{ Modal, Button, useModal, Code }}
-  code={`
-() => {
-  const { visible, setVisible, bindings } = useModal()
-  return (
-    <>
-      <Button auto onClick={() => setVisible(true)}>显示对话框</Button>
-      <Modal {...bindings}>
-        <Modal.Title>箭头函数</Modal.Title>
-        <Modal.Subtitle>它不能用作构造函数</Modal.Subtitle>
-        <Modal.Content>
-          <p> <Code>yield</Code> 关键字通常不能在箭头函数中使用（除非是嵌套在允许使用的函数内）。因此，箭头函数不能用作函数生成器。</p>
-        </Modal.Content>
-        <Modal.Action passive onClick={() => setVisible(false)}>放弃使用</Modal.Action>
-        <Modal.Action onClick={() => setVisible(false)}>明白了</Modal.Action>
-      </Modal>
-    </>
   )
 }
 `}

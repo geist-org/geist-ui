@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { CSSProperties, MouseEvent } from 'react'
 
 export type TabsInternalCellProps = {
-  value: string | undefined
   onClick: (value: string) => void
+  onMouseOver: (e: MouseEvent<HTMLDivElement>) => void
+  activeClassName?: string
+  activeStyle?: CSSProperties
+  hideBorder?: boolean
 }
 
 export type TabsInternalCell = React.FC<TabsInternalCellProps>
@@ -16,6 +19,7 @@ export interface TabsConfig {
   register?: (item: TabsHeaderItem) => void
   currentValue?: string
   inGroup: boolean
+  leftSpace?: CSSProperties['marginLeft']
 }
 
 const defaultContext = {

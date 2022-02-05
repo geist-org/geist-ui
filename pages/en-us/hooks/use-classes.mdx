@@ -1,0 +1,88 @@
+import { Layout, Playground, Attributes } from 'lib/components'
+import { Button, useTheme } from 'components'
+
+export const meta = {
+  title: 'useClasses',
+  group: 'Development',
+  index: 104,
+}
+
+## useClasses
+
+Technically, this is not a hooks, it just uses the nomenclature of hooks as well.
+`useClasses` is used to mix strings, objects, expressions, etc. into class-names, and remove the extra space characters.
+It is actually similar in function to [classnames](https://www.npmjs.com/package/classnames), but much more compact and lower of size.
+
+The original purpose of creating an additional hooks instead of using a package from the community was to reduce the size of the package,
+there are not a lot of complex class-names expressions to deal with in _Geist_, just for regular space sign removal.
+
+### Basic usage
+
+Remove spaces from multiple characters：
+
+```tsx
+import { useClasses } from '@geist-ui/core'
+
+export default ({ className }) => {
+  const myClass = 'button'
+
+  // output -> "button "
+  return <div className={`${myClass} ${className}`} />
+
+  // output -> "button"
+  return <div className={useClasses(myClass, className)} />
+}
+```
+
+Add an expression based on class-names:
+
+```tsx
+export default ({ className }) => {
+  const classes = useClasses('button', isHover ? 'hover' : 'base', className)
+
+  // output -> "button hover"
+  // output -> "button base"
+  return <div className={classes} />
+}
+```
+
+### Parse Object
+
+For more complex scenarios, we can use hooks to parse an object and output a string:
+
+```tsx
+export default ({ active, disabled }) => {
+  const classes = useClasses('button', {
+    active,
+    'button-disabled': disabled,
+  })
+
+  // output -> "button active"
+  // output -> "button active button-disabled"
+  return <div className={classes} />
+}
+```
+
+### Boundary Scenes
+
+Any value that can be implicitly typed to false will be ignored:
+
+```tsx
+useClasses('') // output -> ""
+useClasses(null) // output -> ""
+useClasses('btn', undefined) // output -> "btn"
+useClasses({ actived: null }) // output -> ""
+useClasses(0) // output -> ""
+useClasses(false, 'btn', '') // output -> "btn"
+```
+
+<Attributes edit="/pages/en-us/hooks/use-classes.mdx">
+<Attributes.Title>useClasses</Attributes.Title>
+
+```ts
+type useClasses = (input: string | Object | null | undefined | boolean | number) => string
+```
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

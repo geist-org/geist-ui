@@ -3,7 +3,8 @@ import useTheme from '../use-theme'
 import { ButtonTypes } from '../utils/prop-types'
 import { ButtonGroupContext, ButtonGroupConfig } from './button-group-context'
 import { GeistUIThemesPalette } from '../themes/presets'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   disabled?: boolean
@@ -45,7 +46,7 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
   groupProps: ButtonGroupProps & typeof defaultProps,
 ) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { disabled, type, ghost, vertical, children, className, ...props } = groupProps
   const initialValue = useMemo<ButtonGroupConfig>(
     () => ({
@@ -56,16 +57,21 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
     }),
     [disabled, type],
   )
-
   const border = useMemo(() => {
     return getGroupBorderColors(theme.palette, groupProps)
   }, [theme, type, disabled, ghost])
+  const classes = useClasses(
+    'btn-group',
+    {
+      vertical: vertical,
+      horizontal: !vertical,
+    },
+    className,
+  )
 
   return (
     <ButtonGroupContext.Provider value={initialValue}>
-      <div
-        className={`btn-group ${vertical ? 'vertical' : 'horizontal'} ${className}`}
-        {...withPureProps(props)}>
+      <div className={classes} {...props}>
         {children}
         <style jsx>{`
           .btn-group {
@@ -80,36 +86,29 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
               ${SCALES.ml(0.313)};
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
           }
-
           .vertical {
             flex-direction: column;
           }
-
           .btn-group :global(.btn) {
             border: none;
           }
-
           .btn-group :global(.btn .text) {
             top: 0;
           }
-
           .horizontal :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-left: 1px solid ${border};
           }
-
           .horizontal :global(.btn:not(:last-child)) {
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
           }
-
           .vertical :global(.btn:not(:first-child)) {
             border-top-left-radius: 0;
             border-top-right-radius: 0;
             border-top: 1px solid ${border};
           }
-
           .vertical :global(.btn:not(:last-child)) {
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
@@ -122,5 +121,5 @@ const ButtonGroupComponent: React.FC<React.PropsWithChildren<ButtonGroupProps>> 
 
 ButtonGroupComponent.defaultProps = defaultProps
 ButtonGroupComponent.displayName = 'GeistButtonGroup'
-const ButtonGroup = withScaleable(ButtonGroupComponent)
+const ButtonGroup = withScale(ButtonGroupComponent)
 export default ButtonGroup

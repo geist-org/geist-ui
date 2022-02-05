@@ -34,7 +34,7 @@ exports[`Drawer customization should be supported 1`] = `
             box-sizing: border-box;
             background-color: #fff;
             color: #000;
-            border-radius: calc(3 * 5px);
+            border-radius: calc(3 * 6px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;
@@ -105,7 +105,7 @@ exports[`Drawer customization should be supported 1`] = `
 `;
 
 exports[`Drawer should render correctly 1`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper right   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Drawer</h2><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper right  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Drawer</h2><style>
         h2 {
           line-height: 1.6;
           font-weight: normal;
@@ -138,7 +138,7 @@ exports[`Drawer should render correctly 1`] = `
           padding: 0 0 0 0;
           margin: 0 0 0 0;
         }
-      </style><div class=\\"content \\"><p>Some content contained within the drawer.</p></div><style>
+      </style><div class=\\"content\\"><p>Some content contained within the drawer.</p></div><style>
         .content {
           position: relative;
           text-align: left;
@@ -175,7 +175,7 @@ exports[`Drawer should render correctly 1`] = `
             box-sizing: border-box;
             background-color: #fff;
             color: #000;
-            border-radius: calc(3 * 5px);
+            border-radius: calc(3 * 6px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;
@@ -309,7 +309,7 @@ exports[`Drawer should render correctly 1`] = `
 `;
 
 exports[`Drawer should work correctly with different placement 1`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper top   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper top  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             position: fixed;
             top: 0;
@@ -324,7 +324,7 @@ exports[`Drawer should work correctly with different placement 1`] = `
             box-sizing: border-box;
             background-color: #fff;
             color: #000;
-            border-radius: calc(3 * 5px);
+            border-radius: calc(3 * 6px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;
@@ -458,7 +458,7 @@ exports[`Drawer should work correctly with different placement 1`] = `
 `;
 
 exports[`Drawer should work correctly with different placement 2`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper right   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper right  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             position: fixed;
             top: 0;
@@ -473,7 +473,7 @@ exports[`Drawer should work correctly with different placement 2`] = `
             box-sizing: border-box;
             background-color: #fff;
             color: #000;
-            border-radius: calc(3 * 5px);
+            border-radius: calc(3 * 6px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;
@@ -607,7 +607,7 @@ exports[`Drawer should work correctly with different placement 2`] = `
 `;
 
 exports[`Drawer should work correctly with different placement 3`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper bottom   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper bottom  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             position: fixed;
             top: 0;
@@ -622,7 +622,7 @@ exports[`Drawer should work correctly with different placement 3`] = `
             box-sizing: border-box;
             background-color: #fff;
             color: #000;
-            border-radius: calc(3 * 5px);
+            border-radius: calc(3 * 6px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;
@@ -756,7 +756,7 @@ exports[`Drawer should work correctly with different placement 3`] = `
 `;
 
 exports[`Drawer should work correctly with different placement 4`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper left   wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper left  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             position: fixed;
             top: 0;
@@ -771,7 +771,7 @@ exports[`Drawer should work correctly with different placement 4`] = `
             box-sizing: border-box;
             background-color: #fff;
             color: #000;
-            border-radius: calc(3 * 5px);
+            border-radius: calc(3 * 6px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
             opacity: 0;
             outline: none;

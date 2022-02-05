@@ -1,6 +1,5 @@
-import NextLink from 'next/link'
 import Layout from 'lib/components/layout'
-import { Code, Link, Text, Spacer, Note } from 'components'
+import { Note } from 'components'
 
 export const meta = {
   title: '什么是 Geist UI',
@@ -13,47 +12,30 @@ export const meta = {
 ### 关于
 
 **Geist UI** 是一个优雅美观，拥有浓厚 Geek 风格的 React 组件库，
-灵感来自于 <Link rel="nofollow" target="_blank" href="https://vercel.com">Vercel</Link> 的设计风格。
+灵感来自于 [Vercel](https://vercel.com) 的设计风格。
 
 借助 Geist 在文字排版、明暗表达、伸缩组件等诸多别具一格的优势，你可以轻易创建简洁有力的个人站点，
 或是基于高度可定制化设计系统快速构建现代化 Web 应用。
 
-从 <NextLink href="/zh-cn/guide/installation"><Link color>入门指导</Link></NextLink> 开始快速上手 Geist 组件，
-或是浏览一个 <Link rel="nofollow" target="_blank" color href="https://github.com/geist-org/geist-ui/tree/master/examples">完整的项目示例</Link>。
+从 [入门指导](/zh-cn/guide/installation) 开始快速上手 Geist 组件，
+或是浏览一个完整地 [项目示例](https://github.com/geist-org/geist-ui/tree/master/examples)。
 
 <Note label="" type="warning">
   <b>这是一个社区开源项目，与 Vercel 无关联。</b>
 </Note>
 
-<Spacer h={2.5} />
-
 ### 联系我们
 
-<ul>
-  <li>
-    <Link
-      color
-      target="_blank"
-      rel="nofollow"
-      href="https://github.com/geist-org/geist-ui/issues/new">
-      报告问题
-    </Link>
-  </li>
-  <li>
-    <Link
-      color
-      target="_blank"
-      rel="nofollow"
-      href="https://github.com/geist-org/geist-ui/discussions">
-      在 GitHub Discussions 上提问
-    </Link>
-  </li>
-  <li>我们非常欢迎来自任何人有趣的想法与反馈，也欢迎你贡献代码。</li>
-</ul>
-<Spacer h={2.5} />
+- [报告问题](https://github.com/geist-org/geist-ui/issues/new)
+- 在 [GitHub Discussions](https://github.com/geist-org/geist-ui/discussions) 上提问和解决问题
+- 在 [Slack](https://github.com/geist-org/geist-ui/discussions/572) 频道分享你的作品
+- 我们非常愿意倾听来自任何人有趣的想法与反馈，也欢迎你贡献代码。
 
-### 开源许可
+### 开源
 
-项目使用 [MIT LICENSE](https://github.com/geist-org/geist-ui/blob/master/LICENSE) 许可证。
+- [版本发布日志](https://github.com/geist-org/geist-ui/releases)
+- [贡献指南](https://github.com/geist-org/geist-ui/blob/master/.github/CONTRIBUTING.md)
+- [社区行为约束](https://github.com/geist-org/geist-ui/blob/master/.github/CODE_OF_CONDUCT.md)
+- 许可证：[MIT LICENSE](https://github.com/geist-org/geist-ui/blob/master/LICENSE)
 
 export default ({ children }) => <Layout meta={meta}>{children}</Layout>

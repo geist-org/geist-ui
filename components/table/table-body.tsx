@@ -8,6 +8,7 @@ import {
   TableOnRowClick,
   TableRowClassNameHandler,
 } from './table-types'
+import useClasses from '../use-classes'
 
 interface Props<TableDataItem extends TableDataItemBase> {
   hover: boolean
@@ -47,7 +48,7 @@ const TableBody = <TableDataItem extends TableDataItemBase>({
         return (
           <tr
             key={`tbody-row-${index}`}
-            className={`${hover ? 'hover' : ''} ${className}`}
+            className={useClasses({ hover }, className)}
             onClick={() => rowClickHandler(row, index)}>
             <TableCell<TableDataItem>
               columns={columns}
@@ -64,11 +65,9 @@ const TableBody = <TableDataItem extends TableDataItemBase>({
           transition: background-color 0.25s ease;
           font-size: inherit;
         }
-
         tr.hover:hover {
           background-color: ${theme.palette.accents_1};
         }
-
         tr :global(td) {
           padding: 0 0.5em;
           border-bottom: 1px solid ${theme.palette.border};
@@ -76,7 +75,6 @@ const TableBody = <TableDataItem extends TableDataItemBase>({
           font-size: calc(0.875 * var(--table-font-size));
           text-align: left;
         }
-
         tr :global(.cell) {
           min-height: calc(3.125 * var(--table-font-size));
           display: flex;

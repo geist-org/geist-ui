@@ -2,7 +2,8 @@ import React, { useMemo } from 'react'
 import useTheme from '../use-theme'
 import { useAutoCompleteContext } from './auto-complete-context'
 import Ellipsis from '../shared/ellipsis'
-import useScaleable, { withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   value: string
@@ -23,16 +24,19 @@ const AutoCompleteItemComponent: React.FC<
   isLabelOnly,
 }: React.PropsWithChildren<AutoCompleteItemProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const { value, updateValue, updateVisible } = useAutoCompleteContext()
   const selectHandler = () => {
     updateValue && updateValue(identValue)
     updateVisible && updateVisible(false)
   }
   const isActive = useMemo(() => value === identValue, [identValue, value])
+  const classes = useClasses('item', {
+    active: isActive,
+  })
 
   return (
-    <div className={`item ${isActive ? 'active' : ''}`} onClick={selectHandler}>
+    <div className={classes} onClick={selectHandler}>
       {isLabelOnly ? <Ellipsis height={SCALES.height(2)}>{children}</Ellipsis> : children}
       <style jsx>{`
         .item {
@@ -79,5 +83,5 @@ const AutoCompleteItemComponent: React.FC<
 
 AutoCompleteItemComponent.defaultProps = defaultProps
 AutoCompleteItemComponent.displayName = 'GeistAutoCompleteItem'
-const AutoCompleteItem = withScaleable(AutoCompleteItemComponent)
+const AutoCompleteItem = withScale(AutoCompleteItemComponent)
 export default AutoCompleteItem

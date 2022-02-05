@@ -1,14 +1,14 @@
 import enUS from './metadata-en-us.json'
 import zhCN from './metadata-zh-cn.json'
-import { Sides } from 'lib/components/sidebar/side-item'
+import type { Sides } from 'lib/components/layout/sidebar/side-item'
 
-export interface MultilLocaleMetaInformation {
+export interface MultipleLocaleMetaInformation {
   [key: string]: Sides[]
 }
 
-const Metadatas: MultilLocaleMetaInformation = {
+const Metadata: MultipleLocaleMetaInformation = {
   'en-us': enUS,
   'zh-cn': zhCN,
 }
 
-export default Metadatas
+export default Metadata

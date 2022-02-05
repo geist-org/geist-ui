@@ -5,7 +5,8 @@ import useWarning from '../utils/use-warning'
 import { NormalTypes } from '../utils/prop-types'
 import { getColors } from './styles'
 import useTheme from '../use-theme'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 export type CheckboxTypes = NormalTypes
 export interface CheckboxEventTarget {
@@ -51,10 +52,11 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
   ...props
 }: CheckboxProps & typeof defaultProps) => {
   const theme = useTheme()
-  const { SCALES } = useScaleable()
+  const { SCALES } = useScale()
   const [selfChecked, setSelfChecked] = useState<boolean>(initialChecked)
   const { updateState, inGroup, disabledAll, values } = useCheckbox()
   const isDisabled = inGroup ? disabledAll || disabled : disabled
+  const classes = useClasses('checkbox', className)
 
   if (inGroup && checked) {
     useWarning(
@@ -102,17 +104,16 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
   }, [checked])
 
   return (
-    <label className={`checkbox ${className}`}>
+    <label className={classes}>
       <CheckboxIcon fill={fill} bg={bg} disabled={isDisabled} checked={selfChecked} />
       <input
         type="checkbox"
         disabled={isDisabled}
         checked={selfChecked}
         onChange={changeHandle}
-        {...withPureProps(props)}
+        {...props}
       />
       <span className="text">{children}</span>
-
       <style jsx>{`
         .checkbox {
           --checkbox-size: ${SCALES.font(0.875)};
@@ -155,5 +156,5 @@ const CheckboxComponent: React.FC<CheckboxProps> = ({
 
 CheckboxComponent.defaultProps = defaultProps
 CheckboxComponent.displayName = 'GeistCheckbox'
-const Checkbox = withScaleable(CheckboxComponent)
+const Checkbox = withScale(CheckboxComponent)
 export default Checkbox

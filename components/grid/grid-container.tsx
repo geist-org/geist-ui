@@ -2,7 +2,8 @@ import React, { useMemo } from 'react'
 import GridBasicItem, { GridBasicItemProps } from './basic-item'
 import { GridWrap } from './grid-types'
 import css from 'styled-jsx/css'
-import useScaleable, { withPureProps, withScaleable } from '../use-scaleable'
+import useScale, { withScale } from '../use-scale'
+import useClasses from '../use-classes'
 
 interface Props {
   gap?: number
@@ -25,7 +26,7 @@ const GridContainerComponent: React.FC<React.PropsWithChildren<GridContainerProp
   className,
   ...props
 }: React.PropsWithChildren<GridContainerProps> & typeof defaultProps) => {
-  const { unit, SCALES } = useScaleable()
+  const { unit, SCALES } = useScale()
   const gapUnit = useMemo(() => `calc(${gap} * ${unit} * 1/3)`, [gap, unit])
   const { className: resolveClassName, styles } = css.resolve`
     div {
@@ -42,11 +43,10 @@ const GridContainerComponent: React.FC<React.PropsWithChildren<GridContainerProp
         ${SCALES.ml(0, 'var(--grid-container-margin)')};
     }
   `
+  const classes = useClasses(resolveClassName, className)
 
   return (
-    <GridBasicItem
-      className={`${resolveClassName} ${className}`}
-      {...withPureProps(props)}>
+    <GridBasicItem className={classes} {...props}>
       {children}
       {styles}
     </GridBasicItem>
@@ -55,5 +55,5 @@ const GridContainerComponent: React.FC<React.PropsWithChildren<GridContainerProp
 
 GridContainerComponent.defaultProps = defaultProps
 GridContainerComponent.displayName = 'GeistGridContainer'
-const GridContainer = withScaleable(GridContainerComponent)
+const GridContainer = withScale(GridContainerComponent)
 export default GridContainer
