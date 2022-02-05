@@ -29,7 +29,6 @@
     "docs:collect": "node scripts/collect-meta.js",
     "docs:seeds": "node scripts/seeds/update.js",
     "docs:build": "yarn docs:collect & yarn docs:seeds && next build",
-    "now-build": "yarn run docs-build",
     "prettier": "prettier --write .",
     "lint": "eslint \"{components,lib}/**/*.{js,ts,tsx}\"",
     "test": "jest --config .jest.config.js --no-cache",
