@@ -1,5 +1,14 @@
 import React from 'react'
-import { defaultToastLayout, ToastLayout, Toast } from '../use-toasts/use-toast'
+import type { ToastLayout, Toast } from '../use-toasts/use-toast'
+
+export const defaultToastLayout: Required<ToastLayout> = {
+  padding: '12px 16px',
+  margin: '8px 0',
+  width: '420px',
+  maxWidth: '90vw',
+  maxHeight: '75px',
+  placement: 'bottomRight',
+}
 
 export type UpdateToastsFunction = (fn: (toasts: Array<Toast>) => Array<Toast>) => any
 export type UpdateToastsLayoutFunction = (
