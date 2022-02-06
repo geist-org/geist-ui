@@ -1,6 +1,10 @@
 import seeds, { Seeds } from '../../data/seeds'
 
 export type SearchResults = Seeds
+export type SearchResultGroup = {
+  title: string
+  items: Seeds
+}
 
 export const search = (keyword: string, local: string): SearchResults => {
   const localSeeds = local.includes('zh') ? seeds['zh-cn'] : seeds['en-us']
@@ -21,6 +25,19 @@ export const search = (keyword: string, local: string): SearchResults => {
   return data
 }
 
+export const groupResults = (data: SearchResults) => {
+  return data.reduce<SearchResultGroup[]>((acc, item) => {
+    const title = item.group || 'General'
+    const group = acc.find(group => group.title === title)
+    if (!group) {
+      acc.push({ title, items: [item] })
+    } else {
+      group.items.push(item)
+    }
+    return acc
+  }, [])
+}
+
 export const flattenArray = <T>(contents: T[][] | unknown): T[] => {
   if (!Array.isArray(contents)) return contents as T[]
   return contents.reduce((pre, current) => {
@@ -32,12 +49,8 @@ export const flattenArray = <T>(contents: T[][] | unknown): T[] => {
 
 export const isSearchItem = (el?: HTMLElement): boolean => {
   if (!el) return false
-  if (el?.dataset && el?.dataset['search-item']) return true
-  el.attributes.getNamedItem('data-search-item')
   return !!el.attributes.getNamedItem('data-search-item')
 }
-
-export const FOCUS_ELEMENT_DATA_NAME = 'data-search-item'
 
 export const focusNextElement = (
   containerElement: HTMLElement | null,
@@ -54,9 +67,9 @@ export const focusNextElement = (
   const children = Array.from(containerElement.querySelectorAll('button'))
   if (children.length === 0) return
 
-  const indexStr = document.activeElement?.getAttribute(FOCUS_ELEMENT_DATA_NAME)
-  const index = Number(indexStr)
-  if (Number.isNaN(index) || indexStr === null) {
+  const index = children.findIndex(child => child === document.activeElement)
+
+  if (index === -1) {
     if (isBack) return
     return focusTo(children[0])
   }
