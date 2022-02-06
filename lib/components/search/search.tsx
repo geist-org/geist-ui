@@ -5,7 +5,6 @@ import {
   KeyMod,
   KeyCode,
   useModal,
-  Text,
   Input,
   useTheme,
   useInput,

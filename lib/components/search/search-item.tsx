@@ -1,11 +1,10 @@
 import React, { MouseEvent, FocusEvent } from 'react'
-import { FOCUS_ELEMENT_DATA_NAME, SearchResults } from './helper'
+import { SearchResults } from './helper'
 import { Text, useTheme } from 'components'
 import SearchIcon from './search-icon'
 
 export type SearchItemProps = {
   data: SearchResults[number]
-  index: number
   onMouseOver: (e: MouseEvent<HTMLButtonElement>) => void
   onSelect: (url: string) => void
   onFocus: (e: FocusEvent<HTMLButtonElement>) => void
@@ -14,7 +13,6 @@ export type SearchItemProps = {
 
 const SearchItem: React.FC<SearchItemProps> = ({
   data,
-  index,
   onMouseOver,
   onSelect,
   onFocus,
@@ -25,10 +23,6 @@ const SearchItem: React.FC<SearchItemProps> = ({
     onSelect(data.url)
   }
 
-  const dataAttr = {
-    [FOCUS_ELEMENT_DATA_NAME]: index,
-  }
-
   return (
     <li role="option">
       <button
@@ -37,8 +31,7 @@ const SearchItem: React.FC<SearchItemProps> = ({
         onMouseOver={onMouseOver}
         onFocus={onFocus}
         onBlur={onBlur}
-        data-search-item
-        {...dataAttr}>
+        data-search-item>
         <SearchIcon data={data} />
         <Text pl="12px" font="14px" className="value" span>
           {data.name}

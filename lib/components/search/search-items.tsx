@@ -65,8 +65,8 @@ const SearchItems = React.forwardRef<
           visible={displayHighlight}
           activeOpacity={0.5}
         />
-        {grouppedResults.map((group, index) => (
-          <li role="presentation">
+        {grouppedResults.map((group) => (
+          <li role="presentation" key={group.title}>
             <div className="group-title">{group.title}</div>
             <ul role="group">
               {group.items.map(item => (
@@ -77,7 +77,6 @@ const SearchItems = React.forwardRef<
                   onBlur={blurHandler}
                   data={item}
                   key={item.url}
-                  index={index}
                 />
               ))}
             </ul>
