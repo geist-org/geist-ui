@@ -5,11 +5,11 @@ import {
   KeyMod,
   KeyCode,
   useModal,
-  Text,
   Input,
   useTheme,
   useInput,
   useCurrentState,
+  Divider,
 } from 'components'
 import { focusNextElement, search, SearchResults } from './helper'
 import SearchItems, { SearchItemsRef } from './search-items'
@@ -94,28 +94,29 @@ const Search: React.FC<unknown> = () => {
 
   return (
     <div className="container" {...KeyBindings}>
-      <Modal {...bindings} py={0} px={0} wrapClassName="algolia-search">
-        <div className="title">
-          <Text font="12px" span>
-            ESC to close
-          </Text>
-        </div>
+      <Modal {...bindings} py={0} px={0.75} wrapClassName="search-menu">
         <Input
           ref={ref}
           w="100%"
-          h="50px"
-          font="20px"
-          placeholder="Type Component to search"
+          h="unset"
+          font="1.125rem"
+          py={0.75}
+          placeholder="Search a component"
           className="search-input"
           clearable
           {...inputBindings}
         />
-        <SearchItems
-          preventHoverHighlightSync={preventHover}
-          ref={itemsRef}
-          data={state}
-          onSelect={selectHandler}
-        />
+        {state.length > 0 && (
+          <>
+            <Divider mt={0} mb={1} />
+            <SearchItems
+              preventHoverHighlightSync={preventHover}
+              ref={itemsRef}
+              data={state}
+              onSelect={selectHandler}
+            />
+          </>
+        )}
       </Modal>
       <style jsx>{`
         .title {
@@ -129,6 +130,12 @@ const Search: React.FC<unknown> = () => {
         }
         .container {
           visibility: hidden;
+        }
+        .container:global(ul),
+        .container:global(li) {
+          padding: 0;
+          margin: 0;
+          list-style: none;
         }
         .container:global(.input-container.search-input) {
           border: none;
@@ -144,18 +151,15 @@ const Search: React.FC<unknown> = () => {
         .container:global(.input-container .input-wrapper:active) {
           border: none;
         }
-        .container:global(.input-container input) {
-          color: ${theme.palette.violet};
-          font-weight: 500;
-        }
         .container:global(.backdrop .content) {
           position: absolute !important;
           top: 100px !important;
           left: 50% !important;
           transform: translateX(-50%) !important;
           transition: all 500ms ease !important;
+          width: 500px;
         }
-        .container:global(.wrapper.algolia-search) {
+        .container:global(.wrapper.search-menu) {
           box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15), 0 -5px 20px 0 rgba(0, 0, 0, 0.15) !important;
         }
       `}</style>
