@@ -55,7 +55,7 @@ describe('Backdrop', () => {
         <span>test-value</span>
       </Backdrop>,
     )
-    wrapper.find('.content').simulate('click', nativeEvent)
+    wrapper.find('.position').simulate('click', nativeEvent)
     expect(handler).toHaveBeenCalled()
     handler.mockRestore()
   })
@@ -72,7 +72,7 @@ describe('Backdrop', () => {
      * In simulation,`mousedown` and `mouseup`not directly triiger `click` event,
      * the click event below is just for simulation.
      */
-    wrapper.find('.content').simulate('mousedown')
+    wrapper.find('.position').simulate('mousedown')
     wrapper.find('.backdrop').simulate('click', nativeEvent)
     wrapper.find('.backdrop').simulate('mouseup')
     await updateWrapper(wrapper)

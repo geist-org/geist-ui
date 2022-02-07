@@ -18,12 +18,18 @@ interface Props {
   visible?: boolean
   keyboard?: boolean
   wrapClassName?: string
+  positionClassName?: string
+  backdropClassName?: string
+  layerClassName?: string
 }
 
 const defaultProps = {
   wrapClassName: '',
   keyboard: true,
   disableBackdropClick: false,
+  positionClassName: '',
+  backdropClassName: '',
+  layerClassName: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -37,6 +43,9 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
   wrapClassName,
   onContentClick,
   disableBackdropClick,
+  positionClassName,
+  backdropClassName,
+  layerClassName,
 }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => {
   const portal = usePortal('modal')
   const { SCALES } = useScale()
@@ -86,6 +95,9 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps>> = ({
         onContentClick={onContentClick}
         visible={visible}
         width={SCALES.width(26)}
+        positionClassName={positionClassName}
+        backdropClassName={backdropClassName}
+        layerClassName={layerClassName}
         {...bindings}>
         <ModalWrapper visible={visible} className={wrapClassName}>
           {withoutActionsChildren}

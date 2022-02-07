@@ -4,11 +4,11 @@ import { Drawer, useModal } from 'components'
 import { updateWrapper } from 'tests/utils'
 
 export const expectDrawerIsOpened = (wrapper: ReactWrapper) => {
-  expect(wrapper.find('.content').length).not.toBe(0)
+  expect(wrapper.find('.position').length).not.toBe(0)
 }
 
 export const expectDrawerIsClosed = (wrapper: ReactWrapper) => {
-  expect(wrapper.find('.content').length).toBe(0)
+  expect(wrapper.find('.position').length).toBe(0)
 }
 
 describe('UseModal & Drawer', () => {

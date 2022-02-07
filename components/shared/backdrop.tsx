@@ -2,18 +2,25 @@ import React, { MouseEvent } from 'react'
 import useTheme from '../use-theme'
 import CssTransition from './css-transition'
 import useCurrentState from '../utils/use-current-state'
+import useClasses from '../use-classes'
 
 interface Props {
   onClick?: (event: MouseEvent<HTMLElement>) => void
   visible?: boolean
   width?: string
   onContentClick?: (event: MouseEvent<HTMLElement>) => void
+  backdropClassName?: string
+  positionClassName?: string
+  layerClassName?: string
 }
 
 const defaultProps = {
   onClick: () => {},
   visible: false,
   onContentClick: () => {},
+  backdropClassName: '',
+  positionClassName: '',
+  layerClassName: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -26,6 +33,9 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
     visible,
     width,
     onContentClick,
+    backdropClassName,
+    positionClassName,
+    layerClassName,
     ...props
   }: React.PropsWithChildren<BackdropProps> & typeof defaultProps) => {
     const theme = useTheme()
@@ -45,14 +55,14 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
     return (
       <CssTransition name="backdrop-wrapper" visible={visible} clearTime={300}>
         <div
-          className="backdrop"
+          className={useClasses('backdrop', backdropClassName)}
           onClick={clickHandler}
           onMouseUp={mouseUpHandler}
           {...props}>
-          <div className="layer" />
+          <div className={useClasses('layer', layerClassName)} />
           <div
             onClick={onContentClick}
-            className="content"
+            className={useClasses('position', positionClassName)}
             onMouseDown={() => setIsContentMouseDown(true)}>
             {children}
           </div>
@@ -69,8 +79,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               box-sizing: border-box;
               text-align: center;
             }
-
-            .content {
+            .position {
               position: relative;
               z-index: 1001;
               outline: none;
@@ -80,7 +89,6 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               vertical-align: middle;
               display: inline-block;
             }
-
             .backdrop:before {
               display: inline-block;
               width: 0;
@@ -88,7 +96,6 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               vertical-align: middle;
               content: '';
             }
-
             .layer {
               position: fixed;
               top: 0;
@@ -103,19 +110,15 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
               pointer-events: none;
               z-index: 1000;
             }
-
             .backdrop-wrapper-enter .layer {
               opacity: 0;
             }
-
             .backdrop-wrapper-enter-active .layer {
               opacity: ${theme.expressiveness.portalOpacity};
             }
-
             .backdrop-wrapper-leave .layer {
               opacity: ${theme.expressiveness.portalOpacity};
             }
-
             .backdrop-wrapper-leave-active .layer {
               opacity: 0;
             }
