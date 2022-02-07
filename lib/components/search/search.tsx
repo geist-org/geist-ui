@@ -94,7 +94,12 @@ const Search: React.FC<unknown> = () => {
 
   return (
     <div className="container" {...KeyBindings}>
-      <Modal {...bindings} py={0} px={0.75} wrapClassName="search-menu">
+      <Modal
+        {...bindings}
+        py={0}
+        px={0.75}
+        wrapClassName="search-menu"
+        positionClassName="search-position">
         <Input
           ref={ref}
           w="100%"
@@ -131,35 +136,35 @@ const Search: React.FC<unknown> = () => {
         .container {
           visibility: hidden;
         }
-        .container:global(ul),
-        .container:global(li) {
+        :global(.search-menu ul),
+        :global(.search-menu li) {
           padding: 0;
           margin: 0;
           list-style: none;
         }
-        .container:global(.input-container.search-input) {
+        :global(.search-menu .input-container.search-input) {
           border: none;
           border-radius: 0;
         }
-        .container:global(.input-container div.input-wrapper) {
+        :global(.search-menu .input-container div.input-wrapper) {
           border: none;
           border-radius: 0;
         }
-        .container:global(.input-container .input-wrapper.hover) {
+        :global(.search-menu .input-container .input-wrapper.hover) {
           border: none;
         }
-        .container:global(.input-container .input-wrapper:active) {
+        :global(.search-menu .input-container .input-wrapper:active) {
           border: none;
         }
-        .container:global(.backdrop .content) {
-          position: absolute !important;
-          top: 100px !important;
-          left: 50% !important;
-          transform: translateX(-50%) !important;
-          transition: all 500ms ease !important;
+        :global(div.search-position.position) {
+          position: absolute;
+          top: 100px;
+          left: 50%;
+          transform: translateX(-50%);
+          transition: all 500ms ease;
           width: 500px;
         }
-        .container:global(.wrapper.search-menu) {
+        :global(.search-menu.wrapper) {
           box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15), 0 -5px 20px 0 rgba(0, 0, 0, 0.15) !important;
         }
       `}</style>
