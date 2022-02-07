@@ -105,7 +105,7 @@ exports[`Drawer customization should be supported 1`] = `
 `;
 
 exports[`Drawer should render correctly 1`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper right  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Drawer</h2><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"position\\"><div class=\\"wrapper right  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><h2 class=\\"\\">Drawer</h2><style>
         h2 {
           line-height: 1.6;
           font-weight: normal;
@@ -255,8 +255,7 @@ exports[`Drawer should render correctly 1`] = `
               box-sizing: border-box;
               text-align: center;
             }
-
-            .content {
+            .position {
               position: relative;
               z-index: 1001;
               outline: none;
@@ -266,7 +265,6 @@ exports[`Drawer should render correctly 1`] = `
               vertical-align: middle;
               display: inline-block;
             }
-
             .backdrop:before {
               display: inline-block;
               width: 0;
@@ -274,7 +272,6 @@ exports[`Drawer should render correctly 1`] = `
               vertical-align: middle;
               content: '';
             }
-
             .layer {
               position: fixed;
               top: 0;
@@ -289,19 +286,15 @@ exports[`Drawer should render correctly 1`] = `
               pointer-events: none;
               z-index: 1000;
             }
-
             .backdrop-wrapper-enter .layer {
               opacity: 0;
             }
-
             .backdrop-wrapper-enter-active .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave-active .layer {
               opacity: 0;
             }
@@ -309,7 +302,7 @@ exports[`Drawer should render correctly 1`] = `
 `;
 
 exports[`Drawer should work correctly with different placement 1`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper top  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"position\\"><div class=\\"wrapper top  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             position: fixed;
             top: 0;
@@ -404,8 +397,7 @@ exports[`Drawer should work correctly with different placement 1`] = `
               box-sizing: border-box;
               text-align: center;
             }
-
-            .content {
+            .position {
               position: relative;
               z-index: 1001;
               outline: none;
@@ -415,7 +407,6 @@ exports[`Drawer should work correctly with different placement 1`] = `
               vertical-align: middle;
               display: inline-block;
             }
-
             .backdrop:before {
               display: inline-block;
               width: 0;
@@ -423,7 +414,6 @@ exports[`Drawer should work correctly with different placement 1`] = `
               vertical-align: middle;
               content: '';
             }
-
             .layer {
               position: fixed;
               top: 0;
@@ -438,19 +428,15 @@ exports[`Drawer should work correctly with different placement 1`] = `
               pointer-events: none;
               z-index: 1000;
             }
-
             .backdrop-wrapper-enter .layer {
               opacity: 0;
             }
-
             .backdrop-wrapper-enter-active .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave-active .layer {
               opacity: 0;
             }
@@ -458,7 +444,7 @@ exports[`Drawer should work correctly with different placement 1`] = `
 `;
 
 exports[`Drawer should work correctly with different placement 2`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper right  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"position\\"><div class=\\"wrapper right  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             position: fixed;
             top: 0;
@@ -553,8 +539,7 @@ exports[`Drawer should work correctly with different placement 2`] = `
               box-sizing: border-box;
               text-align: center;
             }
-
-            .content {
+            .position {
               position: relative;
               z-index: 1001;
               outline: none;
@@ -564,7 +549,6 @@ exports[`Drawer should work correctly with different placement 2`] = `
               vertical-align: middle;
               display: inline-block;
             }
-
             .backdrop:before {
               display: inline-block;
               width: 0;
@@ -572,7 +556,6 @@ exports[`Drawer should work correctly with different placement 2`] = `
               vertical-align: middle;
               content: '';
             }
-
             .layer {
               position: fixed;
               top: 0;
@@ -587,19 +570,15 @@ exports[`Drawer should work correctly with different placement 2`] = `
               pointer-events: none;
               z-index: 1000;
             }
-
             .backdrop-wrapper-enter .layer {
               opacity: 0;
             }
-
             .backdrop-wrapper-enter-active .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave-active .layer {
               opacity: 0;
             }
@@ -607,7 +586,7 @@ exports[`Drawer should work correctly with different placement 2`] = `
 `;
 
 exports[`Drawer should work correctly with different placement 3`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper bottom  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"position\\"><div class=\\"wrapper bottom  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             position: fixed;
             top: 0;
@@ -702,8 +681,7 @@ exports[`Drawer should work correctly with different placement 3`] = `
               box-sizing: border-box;
               text-align: center;
             }
-
-            .content {
+            .position {
               position: relative;
               z-index: 1001;
               outline: none;
@@ -713,7 +691,6 @@ exports[`Drawer should work correctly with different placement 3`] = `
               vertical-align: middle;
               display: inline-block;
             }
-
             .backdrop:before {
               display: inline-block;
               width: 0;
@@ -721,7 +698,6 @@ exports[`Drawer should work correctly with different placement 3`] = `
               vertical-align: middle;
               content: '';
             }
-
             .layer {
               position: fixed;
               top: 0;
@@ -736,19 +712,15 @@ exports[`Drawer should work correctly with different placement 3`] = `
               pointer-events: none;
               z-index: 1000;
             }
-
             .backdrop-wrapper-enter .layer {
               opacity: 0;
             }
-
             .backdrop-wrapper-enter-active .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave-active .layer {
               opacity: 0;
             }
@@ -756,7 +728,7 @@ exports[`Drawer should work correctly with different placement 3`] = `
 `;
 
 exports[`Drawer should work correctly with different placement 4`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><div class=\\"wrapper left  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"position\\"><div class=\\"wrapper left  wrapper-enter\\" role=\\"dialog\\" tabindex=\\"-1\\"><div tabindex=\\"0\\" class=\\"hide-tab start\\" aria-hidden=\\"true\\"></div><p>Some content contained within the drawer.</p><div tabindex=\\"0\\" class=\\"hide-tab end\\" aria-hidden=\\"true\\"></div><style>
           .wrapper {
             position: fixed;
             top: 0;
@@ -851,8 +823,7 @@ exports[`Drawer should work correctly with different placement 4`] = `
               box-sizing: border-box;
               text-align: center;
             }
-
-            .content {
+            .position {
               position: relative;
               z-index: 1001;
               outline: none;
@@ -862,7 +833,6 @@ exports[`Drawer should work correctly with different placement 4`] = `
               vertical-align: middle;
               display: inline-block;
             }
-
             .backdrop:before {
               display: inline-block;
               width: 0;
@@ -870,7 +840,6 @@ exports[`Drawer should work correctly with different placement 4`] = `
               vertical-align: middle;
               content: '';
             }
-
             .layer {
               position: fixed;
               top: 0;
@@ -885,19 +854,15 @@ exports[`Drawer should work correctly with different placement 4`] = `
               pointer-events: none;
               z-index: 1000;
             }
-
             .backdrop-wrapper-enter .layer {
               opacity: 0;
             }
-
             .backdrop-wrapper-enter-active .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave-active .layer {
               opacity: 0;
             }

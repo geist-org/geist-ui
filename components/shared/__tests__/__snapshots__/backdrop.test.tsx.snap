@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Backdrop should render correctly 1`] = `
-"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"content\\"><span>test-value</span></div><style>
+"<div class=\\"backdrop  backdrop-wrapper-enter\\"><div class=\\"layer\\"></div><div class=\\"position\\"><span>test-value</span></div><style>
             .backdrop {
               position: fixed;
               top: 0;
@@ -14,8 +14,7 @@ exports[`Backdrop should render correctly 1`] = `
               box-sizing: border-box;
               text-align: center;
             }
-
-            .content {
+            .position {
               position: relative;
               z-index: 1001;
               outline: none;
@@ -25,7 +24,6 @@ exports[`Backdrop should render correctly 1`] = `
               vertical-align: middle;
               display: inline-block;
             }
-
             .backdrop:before {
               display: inline-block;
               width: 0;
@@ -33,7 +31,6 @@ exports[`Backdrop should render correctly 1`] = `
               vertical-align: middle;
               content: '';
             }
-
             .layer {
               position: fixed;
               top: 0;
@@ -48,19 +45,15 @@ exports[`Backdrop should render correctly 1`] = `
               pointer-events: none;
               z-index: 1000;
             }
-
             .backdrop-wrapper-enter .layer {
               opacity: 0;
             }
-
             .backdrop-wrapper-enter-active .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave .layer {
               opacity: 0.25;
             }
-
             .backdrop-wrapper-leave-active .layer {
               opacity: 0;
             }
