@@ -1,4 +1,3 @@
-export { default as TabbarMobile } from './tabbar-mobile'
 import React, { useEffect, useMemo, useRef } from 'react'
 import Router from 'next/router'
 import { useTheme, Spacer } from 'components'
