@@ -9,12 +9,12 @@ const useClickAway = (
   const handlerRef = useRef(handler)
   useEffect(() => {
     handlerRef.current = handler
-  }, [handlerRef])
+  }, [handler])
 
   useEffect(() => {
-    const callback = (event: Event) => {
+    const callback = (event: MouseEvent) => {
       const el = ref.current
-      if (!event || !el || el.contains((event as any).target)) return
+      if (!event || !el || el.contains(event.target as Node)) return
       handlerRef.current(event)
     }
 
