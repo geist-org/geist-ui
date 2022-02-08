@@ -31,20 +31,14 @@ const Application = () => (
 )
 ```
 
-<br/>
-
 ## Documentation
 
 - [Document Site](https://geist-ui.dev)
 - [中文文档](https://geist-ui.dev/zh-cn)
 
-<br/>
-
 ## Development
 
 - [Contributing Guide](https://github.com/geist-org/geist-ui/blob/master/.github/CONTRIBUTING.md)
-
-<br/>
 
 ## Showcases
 
@@ -57,8 +51,14 @@ const Application = () => (
 - [Regex-Vis: Regex visualizer & editor](https://github.com/Bowen7/regex-vis)
 - [Add here](https://github.com/geist-org/geist-ui/issues/new)
 
-<br/>
-
 ## LICENSE
 
 [MIT](./LICENSE)
+
+## Sponsors
+
+- Documentation site sponsored and hosted by Vercel.
+
+<br />
+
+[![powered-by-vercel](https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg)](https://vercel.com?utm_source=geist-ui&utm_campaign=oss)
