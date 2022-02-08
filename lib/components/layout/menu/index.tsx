@@ -136,7 +136,9 @@ const Menu: React.FC<unknown> = () => {
           width: 100%;
           backdrop-filter: saturate(180%) blur(5px);
           background-color: ${addColorAlpha(theme.palette.background, 0.8)};
-          box-shadow: ${theme.expressiveness.shadowSmall};
+          box-shadow: ${theme.type === 'dark'
+            ? '0 0 0 1px #333'
+            : '0 0 15px 0 rgba(0, 0, 0, 0.1)'};
           z-index: 999;
         }
         nav .content {
