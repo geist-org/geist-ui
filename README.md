@@ -54,11 +54,3 @@ const Application = () => (
 ## LICENSE
 
 [MIT](./LICENSE)
-
-## Sponsors
-
-- Documentation site sponsored and hosted by Vercel.
-
-<br />
-
-[![powered-by-vercel](https://www.datocms-assets.com/31049/1618983297-powered-by-vercel.svg)](https://vercel.com?utm_source=geist-ui&utm_campaign=oss)
