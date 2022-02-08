@@ -51,79 +51,75 @@ const Controls: React.FC<unknown> = React.memo(() => {
   }
 
   return (
-    <div className="controls">
-      <div className="tools">
-        <Keyboard
-          h="28px"
-          command
-          font="12px"
-          className="shortcuts"
-          title="Command + K to search.">
-          K
-        </Keyboard>
-        <Spacer w={0.75} />
-        <Button
-          w="28px"
-          h="28px"
-          py={0}
-          px={0}
-          onClick={switchLanguages}
-          title={isChinese ? '切换语言' : 'switch language'}>
-          <Text font="13px" style={{ fontWeight: 500 }}>
-            {isChinese ? 'En' : '中'}
-          </Text>
-        </Button>
-        <Spacer w={0.75} />
-        <Button
-          w="28px"
-          h="28px"
-          py={0}
-          px={0}
-          icon={<GitHubIcon />}
-          onClick={redirectGithub}
-          title={isChinese ? '代码仓库' : 'GitHub Repository'}
-        />
-        <Spacer w={0.75} />
-        <Select
-          scale={0.5}
-          h="28px"
-          pure
-          onChange={switchThemes}
-          value={theme.type}
-          title={isChinese ? '切换主题' : 'Switch Themes'}>
-          <Select.Option value="light">
+    <div className="wrapper">
+      <Keyboard
+        h="28px"
+        command
+        font="12px"
+        className="shortcuts"
+        title="Command + K to search.">
+        K
+      </Keyboard>
+      <Spacer w={0.75} />
+      <Button
+        w="28px"
+        h="28px"
+        py={0}
+        px={0}
+        onClick={switchLanguages}
+        title={isChinese ? '切换语言' : 'switch language'}>
+        <Text font="13px" style={{ fontWeight: 500 }}>
+          {isChinese ? 'En' : '中'}
+        </Text>
+      </Button>
+      <Spacer w={0.75} />
+      <Button
+        w="28px"
+        h="28px"
+        py={0}
+        px={0}
+        icon={<GitHubIcon />}
+        onClick={redirectGithub}
+        title={isChinese ? '代码仓库' : 'GitHub Repository'}
+      />
+      <Spacer w={0.75} />
+      <Select
+        scale={0.5}
+        h="28px"
+        pure
+        onChange={switchThemes}
+        value={theme.type}
+        title={isChinese ? '切换主题' : 'Switch Themes'}>
+        <Select.Option value="light">
+          <span className="select-content">
+            <SunIcon size={14} /> {isChinese ? '明亮' : 'Light'}
+          </span>
+        </Select.Option>
+        <Select.Option value="dark">
+          <span className="select-content">
+            <MoonIcon size={14} /> {isChinese ? '暗黑' : 'Dark'}
+          </span>
+        </Select.Option>
+        {hasCustomTheme && (
+          <Select.Option value={CUSTOM_THEME_TYPE}>
             <span className="select-content">
-              <SunIcon size={14} /> {isChinese ? '明亮' : 'Light'}
+              <UserIcon size={14} /> {CUSTOM_THEME_TYPE}
             </span>
           </Select.Option>
-          <Select.Option value="dark">
-            <span className="select-content">
-              <MoonIcon size={14} /> {isChinese ? '暗黑' : 'Dark'}
-            </span>
-          </Select.Option>
-          {hasCustomTheme && (
-            <Select.Option value={CUSTOM_THEME_TYPE}>
-              <span className="select-content">
-                <UserIcon size={14} /> {CUSTOM_THEME_TYPE}
-              </span>
-            </Select.Option>
-          )}
-        </Select>
-      </div>
+        )}
+      </Select>
       <style jsx>{`
-        .controls {
-          height: 100%;
+        .wrapper {
           display: flex;
-          margin: 0;
-          position: relative;
+          align-items: center;
         }
-        .controls:global(kbd.shortcuts) {
+        .wrapper :global(kbd.shortcuts) {
           line-height: 28px !important;
           cursor: help;
           opacity: 0.75;
           border: none;
         }
-        .controls :global(.select) {
+        .wrapper :global(.select) {
           width: 85px;
           min-width: 85px;
         }
@@ -137,19 +133,6 @@ const Controls: React.FC<unknown> = React.memo(() => {
         .select-content :global(svg) {
           margin-right: 10px;
           margin-left: 2px;
-        }
-        .tools {
-          display: flex;
-          height: 40px;
-          box-sizing: border-box;
-          align-items: center;
-        }
-        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
-          .controls {
-            display: none;
-            pointer-events: none;
-            visibility: hidden;
-          }
         }
       `}</style>
     </div>

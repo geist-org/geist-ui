@@ -6,7 +6,8 @@ import { MDXProvider } from '@mdx-js/react'
 import { CssBaseline, GeistProvider, useTheme, GeistUIThemes, Image } from 'components'
 import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
-import { HybridCode, HybridLink, Layout, Search } from 'lib/components'
+import { HybridCode, HybridLink, Search } from 'lib/components'
+import Menu from 'lib/components/layout/menu'
 import 'inter-ui/inter.css'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
@@ -69,7 +70,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <ConfigContext
           onThemeChange={themeChangeHandle}
           onThemeTypeChange={type => setThemeType(type)}>
-          <Layout.Menu />
+          <Menu />
           <Search />
           <MDXProvider
             components={{
@@ -82,8 +83,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         </ConfigContext>
         <style global jsx>{`
           html {
-            --geist-page-nav-height: 60px;
-            --geist-page-tab-height: 48px;
+            --geist-page-nav-height: 64px;
           }
           .tag {
             color: ${theme.palette.accents_5};
