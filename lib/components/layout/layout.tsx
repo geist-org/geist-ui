@@ -3,11 +3,6 @@ import PageHeader from './header'
 import { useTheme, useBodyScroll } from 'components'
 import Sidebar, { TabbarMobile } from './sidebar'
 import { useConfigs } from '../../config-context'
-import dynamic from 'next/dynamic'
-const DynamicPoweredBy = dynamic(() => import('./powered-by'), {
-  ssr: false,
-  loading: () => null,
-})
 
 export interface Meta {
   title: string
@@ -55,7 +50,6 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
         <div className="side-shadow" />
         <main className="main">
           <div>{children}</div>
-          <DynamicPoweredBy />
         </main>
         <style jsx global>{`
           .layout h3 {
