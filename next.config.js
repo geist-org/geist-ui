@@ -42,11 +42,6 @@ const nextConfig = {
         destination: '/en-us/components/icons',
       },
       {
-        source: '/move-to-core',
-        destination: 'https://github.com/geist-org/geist-ui/discussions/677',
-        permanent: true,
-      },
-      {
         source: '/en-us/customization',
         destination: '/en-us',
         permanent: true,

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PageHeader from './header'
 import { useTheme } from 'components'
 import Sidebar from './sidebar'
+import PoweredBy from './powered-by'
 
 export interface Meta {
   title: string
@@ -41,6 +42,7 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
         </aside>
         <main className="main">
           <div>{children}</div>
+          <PoweredBy />
         </main>
         <style jsx global>{`
           .layout h3 {
