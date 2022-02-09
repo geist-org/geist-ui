@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react'
 import ActiveLink from './active-link'
 import ActiveCatalog from './active-catalog'
-import { useTheme } from 'components'
 
 export type Sides = {
   name: string
@@ -16,8 +15,6 @@ export interface SideItemProps {
 
 const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(
   ({ children, sides }) => {
-    const theme = useTheme()
-
     return (
       <>
         {sides.map((side, index) => {
@@ -56,13 +53,6 @@ const SideItem: React.FC<React.PropsWithChildren<SideItemProps>> = React.memo(
 
           .active-title {
             font-weight: bold;
-          }
-
-          @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
-            .link {
-              border-bottom: 1px solid ${theme.palette.border};
-              height: 3.5rem;
-            }
           }
         `}</style>
       </>

@@ -48,18 +48,14 @@ const Application: NextPage<{}> = () => {
       </div>
       <style jsx>{`
         .layout {
-          min-height: calc(
-            100vh - var(--geist-page-nav-height) - var(--geist-page-tab-height)
-          );
+          min-height: calc(100vh - var(--geist-page-nav-height));
           max-width: ${theme.layout.pageWidthWithMargin};
           margin: 0 auto;
           padding: 0 ${theme.layout.gap} calc(${theme.layout.gap} * 2);
           box-sizing: border-box;
         }
         .hero {
-          height: calc(
-            100vh - var(--geist-page-nav-height) - var(--geist-page-tab-height) - 300px
-          );
+          height: calc(100vh - var(--geist-page-nav-height) - 300px);
           min-height: 30vh;
           max-width: 500px;
           margin: 0 auto;

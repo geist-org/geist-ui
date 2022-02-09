@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PageHeader from './header'
-import { useTheme, useBodyScroll } from 'components'
-import Sidebar, { TabbarMobile } from './sidebar'
-import { useConfigs } from '../../config-context'
+import { useTheme } from 'components'
+import Sidebar from './sidebar'
 
 export interface Meta {
   title: string
@@ -17,14 +16,6 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
   ({ children, meta }) => {
     const theme = useTheme()
     const [showAfterRender, setShowAfterRender] = useState<boolean>(false)
-    const { tabbarFixed } = useConfigs()
-    const [, setBodyScroll] = useBodyScroll(null, { scrollLayer: true })
-    const [expanded, setExpanded] = useState<boolean>(false)
-    const mobileTabbarClickHandler = () => {
-      setExpanded(!expanded)
-      setBodyScroll(!expanded)
-    }
-
     useEffect(() => setShowAfterRender(true), [])
 
     if (!showAfterRender)
@@ -43,11 +34,11 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
     return (
       <div className="layout">
         <PageHeader meta={meta} />
-        <TabbarMobile onClick={mobileTabbarClickHandler} />
         <aside className="sidebar">
-          <Sidebar />
+          <div className="content">
+            <Sidebar />
+          </div>
         </aside>
-        <div className="side-shadow" />
         <main className="main">
           <div>{children}</div>
         </main>
@@ -74,22 +65,19 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
             box-sizing: border-box;
           }
           .sidebar {
+            flex-grow: 1;
+          }
+          .sidebar > .content {
+            height: calc(100% - 2rem - 96px + var(--geist-page-nav-height));
+            position: fixed;
+            top: 96px;
+            bottom: 2rem;
+
             width: 200px;
             margin-right: 20px;
             -webkit-overflow-scrolling: touch;
             -webkit-flex-shrink: 0;
-            height: calc(100% - 2rem - 140px + ${tabbarFixed ? '60px' : 0});
-            position: fixed;
-            top: 140px;
-            bottom: 2rem;
-            transform: translateY(${tabbarFixed ? '-60px' : 0});
-            transition: transform 200ms ease-out;
             z-index: 100;
-          }
-          .side-shadow {
-            width: 220px;
-            flex-shrink: 0;
-            height: 100vh;
           }
           .main {
             display: flex;
@@ -107,27 +95,12 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
               padding: 20px 1rem;
             }
             .sidebar {
-              position: fixed;
-              top: 0;
-              left: 0;
-              right: 0;
-              z-index: 10;
-              width: 100vw;
-              box-sizing: border-box;
-              height: ${expanded ? '100vh' : '0'};
-              background-color: ${theme.palette.background};
-              padding: var(--geist-page-nav-height) 0 0 0;
-              overflow: hidden;
-              transition: height 250ms ease;
+              display: none;
             }
             .main {
               width: 90vw;
               max-width: 90vw;
               padding: 0;
-            }
-            .side-shadow {
-              display: none;
-              visibility: hidden;
             }
           }
         `}</style>

@@ -25,12 +25,10 @@ const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = R
       pathname.includes(CHINESE_LANGUAGE_IDENT),
     )
     const [scrollHeight, setScrollHeight] = useState<number>(0)
-    const [tabbarFixed, setTabbarFixed] = useState<boolean>(false)
     const [customTheme, setCustomTheme] = useState<GeistUIThemes>(theme)
 
     const updateSidebarScrollHeight = (height: number) => setScrollHeight(height)
     const updateChineseState = (state: boolean) => setIsChinese(state)
-    const updateTabbarFixed = (state: boolean) => setTabbarFixed(state)
     const updateCustomTheme = (nextTheme: DeepPartial<GeistUIThemes>) => {
       const mergedTheme = Themes.create(theme, { ...nextTheme, type: CUSTOM_THEME_TYPE })
       setCustomTheme(mergedTheme)
@@ -44,16 +42,14 @@ const ConfigProvider: React.FC<React.PropsWithChildren<ConfigProviderProps>> = R
       () => ({
         onThemeChange,
         isChinese,
-        tabbarFixed,
         customTheme,
         switchTheme,
         updateCustomTheme,
-        updateTabbarFixed,
         updateChineseState,
         sidebarScrollHeight: scrollHeight,
         updateSidebarScrollHeight,
       }),
-      [onThemeChange, scrollHeight, tabbarFixed, isChinese],
+      [onThemeChange, scrollHeight, isChinese],
     )
 
     return (

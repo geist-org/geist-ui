@@ -55,18 +55,6 @@ const ActiveLink: React.FC<Props> = React.memo(({ href, text }) => {
         .link.active span {
           color: ${theme.palette.successLight};
         }
-
-        @media only screen and (max-width: ${theme.layout.breakpointMobile}) {
-          .link {
-            color: ${theme.palette.foreground};
-            padding: calc(${theme.layout.unit} * 0.875) 0;
-            border-bottom: 1px solid ${theme.palette.border};
-            user-select: none;
-          }
-          .link.active {
-            font-weight: 700;
-          }
-        }
       `}</style>
     </>
   )
