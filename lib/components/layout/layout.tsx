@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PageHeader from './header'
 import Sidebar from './sidebar'
 import PoweredBy from './powered-by'
@@ -16,22 +16,22 @@ export interface LayoutProps {
 export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo(
   ({ children, meta }) => {
     const theme = useTheme()
-    // const [showAfterRender, setShowAfterRender] = useState<boolean>(false)
-    // useEffect(() => setShowAfterRender(true), [])
+    const [showAfterRender, setShowAfterRender] = useState<boolean>(false)
+    useEffect(() => setShowAfterRender(true), [])
 
-    // if (!showAfterRender)
-    //   return (
-    //     <section>
-    //       <PageHeader meta={meta} />
-    //       {children}
-    //       <style jsx>{`
-    //         section {
-    //           display: none;
-    //           opacity: 0;
-    //         }
-    //       `}</style>
-    //     </section>
-    //   )
+    if (!showAfterRender)
+      return (
+        <section>
+          <PageHeader meta={meta} />
+          {children}
+          <style jsx>{`
+            section {
+              display: none;
+              opacity: 0;
+            }
+          `}</style>
+        </section>
+      )
     return (
       <div className="layout">
         <PageHeader meta={meta} />
