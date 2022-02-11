@@ -23,13 +23,13 @@
     "react components",
     "react ui"
   ],
-  "sideEffects": false,
   "scripts": {
     "dev": "yarn docs:collect && next dev",
     "docs:start": "next start",
     "docs:collect": "node scripts/collect-meta.js",
     "docs:seeds": "node scripts/seeds/update.js",
-    "docs:build": "yarn docs:collect & yarn docs:seeds && next build",
+    "docs:effects": "node scripts/side-effects.js",
+    "docs:build": "yarn docs:effects && yarn docs:collect & yarn docs:seeds && next build",
     "prettier": "prettier --write .",
     "lint": "eslint \"{components,lib}/**/*.{js,ts,tsx}\"",
     "test": "jest --config .jest.config.js --no-cache",
@@ -85,7 +85,6 @@
     "eslint-plugin-react": "^7.22.0",
     "extract-mdx-metadata": "^1.0.0",
     "fs-extra": "^10.0.0",
-    "inter-ui": "^3.19.3",
     "jest": "^27.0.5",
     "next": "^12.0.9-canary.0",
     "prettier": "^2.3.1",
