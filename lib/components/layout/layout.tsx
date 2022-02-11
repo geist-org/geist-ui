@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PageHeader from './header'
-import { useTheme } from 'components'
 import Sidebar from './sidebar'
 import PoweredBy from './powered-by'
+import useTheme from 'components/use-theme'
 
 export interface Meta {
   title: string
@@ -16,22 +16,7 @@ export interface LayoutProps {
 export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo(
   ({ children, meta }) => {
     const theme = useTheme()
-    const [showAfterRender, setShowAfterRender] = useState<boolean>(false)
-    useEffect(() => setShowAfterRender(true), [])
 
-    if (!showAfterRender)
-      return (
-        <section>
-          <PageHeader meta={meta} />
-          {children}
-          <style jsx>{`
-            section {
-              display: none;
-              opacity: 0;
-            }
-          `}</style>
-        </section>
-      )
     return (
       <div className="layout">
         <PageHeader meta={meta} />
@@ -44,20 +29,18 @@ export const Layout: React.FC<React.PropsWithChildren<LayoutProps>> = React.memo
           <div>{children}</div>
           <PoweredBy />
         </main>
-        <style jsx global>{`
-          .layout h3 {
+        <style jsx>{`
+          :global(.layout h3) {
             margin-top: 40px;
           }
-          .layout h4 {
+          :global(.layout h4) {
             margin-top: 25px;
           }
-          .layout ol {
+          :global(.layout ol) {
             padding-left: 40px;
             margin: 25px auto;
             transform: scale(0.95);
           }
-        `}</style>
-        <style jsx>{`
           .layout {
             min-height: calc(100vh - 108px);
             max-width: ${theme.layout.pageWidthWithMargin};

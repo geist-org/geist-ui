@@ -8,7 +8,6 @@ import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
 import { HybridCode, HybridLink, Search } from 'lib/components'
 import Menu from 'lib/components/layout/menu'
-import 'inter-ui/inter.css'
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
