@@ -18,6 +18,7 @@ const plugins = [
     extensions,
     presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
     plugins: ['styled-jsx/babel'],
+    babelrc: false,
   }),
   localResolve(),
   nodeResolve({
