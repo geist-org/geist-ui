@@ -62,7 +62,7 @@ const Menu: React.FC<unknown> = () => {
       const defaultPath = `/${locale}/${tab}`
       router.push(defaultPath)
     },
-    [currentUrlTabValue],
+    [currentUrlTabValue, locale],
   )
 
   return (
