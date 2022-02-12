@@ -167,4 +167,30 @@ describe('UseScale', () => {
     inner = wrapper.find('#inner').getDOMNode()
     expect(inner.hasAttribute('scale')).not.toBe(true)
   })
+
+  it('should be update all native scale props', () => {
+    const wrapper: React.FC<any> = ({ children, ...props }) => (
+      <ScaleComponent {...props}>{children}</ScaleComponent>
+    )
+    const { result, rerender } = renderHook<any, ScaleConfig>(() => useScale(), {
+      wrapper,
+      initialProps: {},
+    })
+    let { SCALES, getAllScaleProps } = result.current
+    expect(typeof SCALES).toEqual('object')
+    expect(typeof getAllScaleProps).toEqual('function')
+    expect(typeof getAllScaleProps()).toEqual('object')
+
+    rerender({ width: '1em', height: '2em' })
+    getAllScaleProps = result.current.getAllScaleProps
+    expect(getAllScaleProps().width).toEqual('1em')
+    expect(getAllScaleProps().height).toEqual('2em')
+    expect(typeof getAllScaleProps().font).toEqual('undefined')
+
+    rerender({ px: '10px', mx: '20px' })
+    getAllScaleProps = result.current.getAllScaleProps
+    expect(getAllScaleProps().px).toEqual('10px')
+    expect(getAllScaleProps().mx).toEqual('20px')
+    expect(typeof getAllScaleProps().paddingTop).toEqual('undefined')
+  })
 })

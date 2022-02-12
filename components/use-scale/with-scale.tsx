@@ -1,13 +1,8 @@
 import React, { forwardRef } from 'react'
-import {
-  DynamicLayoutPipe,
-  GetScalePropsFunction,
-  ScaleConfig,
-  ScaleContext,
-  ScaleProps,
-} from './scale-context'
+import { DynamicLayoutPipe, ScaleConfig, ScaleContext, ScaleProps } from './scale-context'
 import useTheme from '../use-theme'
 import { isCSSNumberValue } from '../utils/collections'
+import { generateGetAllScaleProps, generateGetScaleProps } from './utils'
 
 const reduceScaleCoefficient = (scale: number) => {
   if (scale === 1) return scale
@@ -70,20 +65,9 @@ const withScale = <T, P = {}>(
         const customFactor = factor * Number(attrValue)
         return `calc(${customFactor} * ${unit})`
       }
-    const getScaleProps: GetScalePropsFunction = keyOrKeys => {
-      if (!Array.isArray(keyOrKeys)) return props[keyOrKeys as keyof ScaleProps]
-      let value = undefined
-      for (const key of keyOrKeys) {
-        const currentValue = props[key]
-        if (typeof currentValue !== 'undefined') {
-          value = currentValue
-        }
-      }
-      return value
-    }
 
     const value: ScaleConfig = {
-      unit,
+      unit: unit,
       SCALES: {
         pt: makeScaleHandler(paddingTop ?? pt ?? py ?? padding),
         pr: makeScaleHandler(paddingRight ?? pr ?? px ?? padding),
@@ -101,7 +85,8 @@ const withScale = <T, P = {}>(
         height: makeScaleHandler(height ?? h),
         font: makeScaleHandler(font),
       },
-      getScaleProps,
+      getScaleProps: generateGetScaleProps(props),
+      getAllScaleProps: generateGetAllScaleProps(props),
     }
 
     return (
