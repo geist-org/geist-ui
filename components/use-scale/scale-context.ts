@@ -1,5 +1,37 @@
 import React from 'react'
 
+export const ScalePropKeys = [
+  'width',
+  'height',
+  'padding',
+  'margin',
+  'w',
+  'h',
+  'paddingLeft',
+  'paddingRight',
+  'paddingTop',
+  'paddingBottom',
+  'pl',
+  'pr',
+  'pt',
+  'pb',
+  'marginLeft',
+  'marginRight',
+  'marginTop',
+  'marginBottom',
+  'ml',
+  'mr',
+  'mt',
+  'mb',
+  'px',
+  'py',
+  'mx',
+  'my',
+  'font',
+  'unit',
+  'scale',
+]
+
 export type ScaleProps = {
   width?: string | number
   height?: string | number
@@ -62,9 +94,12 @@ export type GetScalePropsFunction = (
   key: keyof ScaleProps | Array<keyof ScaleProps>,
 ) => ScaleProps[keyof ScaleProps]
 
+export type GetAllScalePropsFunction = () => ScaleProps
+
 export interface ScaleConfig {
   SCALES: DynamicScales
   getScaleProps: GetScalePropsFunction
+  getAllScaleProps: GetAllScalePropsFunction
   unit: string
 }
 
@@ -74,6 +109,7 @@ const defaultDynamicLayoutPipe: DynamicLayoutPipe = scale1x => {
 
 const defaultContext: ScaleConfig = {
   getScaleProps: () => undefined,
+  getAllScaleProps: () => ({}),
   SCALES: {
     pl: defaultDynamicLayoutPipe,
     pr: defaultDynamicLayoutPipe,

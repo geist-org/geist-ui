@@ -1,46 +1,39 @@
-import { ScaleProps } from './scale-context'
+import {
+  GetAllScalePropsFunction,
+  GetScalePropsFunction,
+  ScaleProps,
+  ScalePropKeys,
+} from './scale-context'
 
-export type ScalePropsAndInvalid = keyof ScaleProps | 'size'
+export const generateGetScaleProps = <P>(
+  props: P & ScaleProps,
+): GetScalePropsFunction => {
+  const getScaleProps: GetScalePropsFunction = keyOrKeys => {
+    if (!Array.isArray(keyOrKeys)) return props[keyOrKeys as keyof ScaleProps]
+    let value = undefined
+    for (const key of keyOrKeys) {
+      const currentValue = props[key]
+      if (typeof currentValue !== 'undefined') {
+        value = currentValue
+      }
+    }
+    return value
+  }
+  return getScaleProps
+}
 
-export const ScalePropKeys: Array<ScalePropsAndInvalid> = [
-  'paddingLeft',
-  'pl',
-  'paddingRight',
-  'pr',
-  'paddingTop',
-  'pt',
-  'paddingBottom',
-  'pb',
-  'marginTop',
-  'mt',
-  'marginRight',
-  'mr',
-  'marginBottom',
-  'mb',
-  'marginLeft',
-  'ml',
-  'px',
-  'py',
-  'mx',
-  'my',
-  'width',
-  'height',
-  'font',
-  'unit',
-  'scale',
-  'size',
-]
-
-// export const withPureProps = <T extends Record<any, any>>(
-//   props: T,
-// ): Omit<T, ScalePropsAndInvalid> => {
-//   if (!props) return {} as Omit<T, ScalePropsAndInvalid>
-//   const keys = Object.keys(props).filter(key => key !== '')
-//   const nextProps: any = {}
-//   for (const key of keys) {
-//     if (!(ScalePropKeys as string[]).includes(key)) {
-//       nextProps[key] = props[key]
-//     }
-//   }
-//   return nextProps
-// }
+export const generateGetAllScaleProps = <P>(
+  props: P & ScaleProps,
+): GetAllScalePropsFunction => {
+  const getAllScaleProps: GetAllScalePropsFunction = () => {
+    let scaleProps: ScaleProps = {}
+    for (const key of ScalePropKeys) {
+      const value = props[key as keyof ScaleProps]
+      if (typeof value !== 'undefined') {
+        scaleProps[key as keyof ScaleProps] = value as any
+      }
+    }
+    return scaleProps
+  }
+  return getAllScaleProps
+}
