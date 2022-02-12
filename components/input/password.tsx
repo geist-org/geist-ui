@@ -2,7 +2,7 @@ import React, { useImperativeHandle, useMemo, useRef, useState } from 'react'
 import { Props, defaultProps } from './input-props'
 import PasswordIcon from './password-icon'
 import Input from './input'
-import { withScale } from '../use-scale'
+import { useScale, withScale } from '../use-scale'
 
 interface PasswordProps extends Props {
   hideToggle?: boolean
@@ -28,6 +28,7 @@ const InputPasswordComponent = React.forwardRef<
     }: React.PropsWithChildren<InputPasswordProps> & typeof defaultProps,
     ref: React.Ref<HTMLInputElement | null>,
   ) => {
+    const { getAllScaleProps } = useScale()
     const inputRef = useRef<HTMLInputElement>(null)
     const [visible, setVisible] = useState<boolean>(false)
     useImperativeHandle(ref, () => inputRef.current)
@@ -56,7 +57,7 @@ const InputPasswordComponent = React.forwardRef<
     }, [hideToggle, visible])
 
     return (
-      <Input iconRight={icon} {...inputProps}>
+      <Input iconRight={icon} {...getAllScaleProps()} {...inputProps}>
         {children}
       </Input>
     )

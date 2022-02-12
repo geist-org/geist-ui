@@ -200,8 +200,8 @@ export { default as useClasses } from './use-classes'
 export { default as useScale } from './use-scale'
 export { withScale, ScalePropKeys, ScaleContext } from './use-scale'
 export type {
-  ScalePropsAndInvalid,
   ScaleProps,
   ScaleConfig,
   GetScalePropsFunction,
+  GetAllScalePropsFunction,
 } from './use-scale'
