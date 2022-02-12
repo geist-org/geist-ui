@@ -166,7 +166,6 @@ const InputComponent = React.forwardRef<
             --input-height: ${SCALES.height(2.25)};
             font-size: ${SCALES.font(0.875)};
             width: ${SCALES.width(1, 'initial')};
-            height: var(--input-height);
             padding: ${SCALES.pt(0)} ${SCALES.pr(0)} ${SCALES.pb(0)} ${SCALES.pl(0)};
             margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
           }
