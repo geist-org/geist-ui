@@ -262,7 +262,8 @@ const CssBaseline: React.FC<React.PropsWithChildren<unknown>> = ({ children }) =
         }
 
         summary::marker,
-        summary::before {
+        summary::before,
+        summary::-webkit-details-marker {
           display: none;
         }
 
