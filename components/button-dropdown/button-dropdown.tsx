@@ -57,8 +57,6 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
     'main',
     true,
   )
-  const classes = useClasses('btn-dropdown', className)
-
   const [visible, setVisible] = useState<boolean>(false)
   const clickHandler = useCallback(
     (event: MouseEvent<HTMLDetailsElement>) => {
@@ -89,23 +87,29 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
 
   return (
     <ButtonDropdownContext.Provider value={initialValue}>
-      <div ref={ref} className={classes} onClick={stopPropagation} {...props}>
+      <div
+        ref={ref}
+        className={useClasses('btn-dropdown', className)}
+        onClick={stopPropagation}
+        {...props}>
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>
-            {icon ? (
-              <span
-                className="dropdown-icon"
-                style={{
-                  color: colors.color,
-                  height: SCALES.height(2.5),
-                  width: SCALES.height(2.5),
-                }}>
-                {icon}
-              </span>
-            ) : (
-              <ButtonDropdownIcon color={colors.color} height={SCALES.height(2.5)} />
-            )}
+            <div className="dropdown-box">
+              {icon ? (
+                <span
+                  className="dropdown-icon"
+                  style={{
+                    color: colors.color,
+                    height: SCALES.height(2.5),
+                    width: SCALES.height(2.5),
+                  }}>
+                  {icon}
+                </span>
+              ) : (
+                <ButtonDropdownIcon color={colors.color} height={SCALES.height(2.5)} />
+              )}
+            </div>
           </summary>
           <div className="content">{itemChildrenWithoutMain}</div>
         </details>
@@ -132,6 +136,14 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
             border-top-right-radius: ${theme.layout.radius};
             border-bottom-right-radius: ${theme.layout.radius};
             overflow: hidden;
+          }
+
+          .dropdown-box {
+            height: ${SCALES.height(2.5)};
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: auto;
           }
 
           summary {

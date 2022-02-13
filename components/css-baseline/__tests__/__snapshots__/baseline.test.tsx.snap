@@ -257,7 +257,8 @@ LoadedCheerio {
         }
 
         summary::marker,
-        summary::before {
+        summary::before,
+        summary::-webkit-details-marker {
           display: none;
         }
 
@@ -660,7 +661,8 @@ LoadedCheerio {
         }
 
         summary::marker,
-        summary::before {
+        summary::before,
+        summary::-webkit-details-marker {
           display: none;
         }
 
