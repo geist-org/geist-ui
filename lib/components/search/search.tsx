@@ -103,7 +103,6 @@ const Search: React.FC<unknown> = () => {
         <Input
           ref={ref}
           w="100%"
-          h="unset"
           font="1.125rem"
           py={0.75}
           placeholder="Search a component"
@@ -163,6 +162,7 @@ const Search: React.FC<unknown> = () => {
           transform: translateX(-50%);
           transition: all 500ms ease;
           width: 500px;
+          height: auto;
         }
         :global(.search-menu.wrapper) {
           box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15), 0 -5px 20px 0 rgba(0, 0, 0, 0.15) !important;
