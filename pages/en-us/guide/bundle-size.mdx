@@ -1,0 +1,80 @@
+import Layout from 'lib/components/layout'
+
+export const meta = {
+  title: 'Bundle Size',
+  group: 'Getting Started',
+  index: 11,
+}
+
+## Bundle Size
+
+The size of Geist at the completion of full packing is about [111kb](https://bundle.js.org/?q=@geist-ui/react) (Gzipped),
+This is a good score when comparing the size of modern client applications and will not impact the performance of your application.
+As a matter of engineering practice, it is recommended that you always split Geist as a separate chunk within your application to get fixed caching.
+
+For higher first screen load speed, try using [Server Side Rendering](/en-us/guide/server-render) or perform volume optimization as described below.
+
+### Auto Tree-shaking
+
+For projects using `webpack 5.0` or higher, there is no need to add any configuration to get full tree-shaking.
+As long as you use the ES module to import Geist, you can automatically remove unnecessary components during bundle.
+
+Generally this means that the scaffolding you are using needs to be larger than the following versions
+
+- Webpack: `>= 5.0`
+- Next.js: `>= 11.0`
+- React scripts (CRA): `>= 5.0`
+
+#### Recommended Examples
+
+- [CRA with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-create-react-app/README.md)
+- [Next.js with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-nextjs/README.md)
+- [Webpack with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-webpack/README.md)
+
+### Import single component manually
+
+For projects with package size requirements, you can choose to import single component manually.
+
+Manually import single components does not guarantee 100% that only a single component will be packaged,
+as some components will depend on each other, for example, if only a single `Snippet` component is used in a project, the bundle package
+will also contain the `Toast` component. However, this type of optimization can still reduce the size of your application significantly,
+provided you only use a small amount components.
+
+```jsx
+import Button from '@geist-ui/core/esm/button'
+
+const MyComponent = () => <Button>Submit</Button>
+```
+
+### With Babel
+
+If your project does not support ES Module at the moment, you can use the Babel plugin to reduce the build size.
+
+Geist follows the Tree Shaking naming scheme (from community convention), this will be helpful for some legacy projects.
+This allows you to import in the full amount of components, but automatically exclude the parts that are not really used when packaging.
+This feature is usually used in conjunction with the [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import) tool.
+
+A classic use case is to add the following config to the `.babelrc`:
+
+```json
+// NAME:.babelrc
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "@geist-ui/core",
+        "libraryDirectory": "esm"
+      }
+    ]
+  ]
+}
+```
+
+#### Legacy Examples
+
+- [CRA with Babel](https://github.com/geist-org/geist-ui/blob/v2.3.3/examples/tree-shaking-create-react-app/README.md)
+- [Next.js with Babel](https://github.com/geist-org/geist-ui/blob/v2.3.3/examples/tree-shaking-nextjs/README.md)
+- [Webpack with Babel](https://github.com/geist-org/geist-ui/blob/v2.3.3/examples/tree-shaking-webpack/README.md)
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

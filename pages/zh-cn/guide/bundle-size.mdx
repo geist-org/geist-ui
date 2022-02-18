@@ -1,0 +1,76 @@
+import Layout from 'lib/components/layout'
+
+export const meta = {
+  title: '构建体积',
+  group: '快速上手',
+  index: 11,
+}
+
+## 构建体积
+
+一个包含 Geist 所有组件的包大约为 [111kb](https://bundle.js.org/?q=@geist-ui/react) (Gzipped)，对于现代化客户端应用来说这仍旧是不错的大小，
+并不会影响您的应用性能。在工程的实践中，推荐你在应用内将 Geist 切割为独立的 chunk 以获得固定的缓存。
+
+对于更好的首屏加载速度，推荐尝试 [服务端渲染](/zh-cn/guide/server-render)，或是按下所述对构建体积进行优化。
+
+### 自动地 Tree-shaking
+
+对于所有使用 `webpack 5.0` 或更高版本的项目，不需要添加任何额外配置即可获得完整的 tree-shaking。使用 ES 模块引入 Geist，
+在构建时会自动从最终的包中移除未使用的组件。
+
+通常这意味着你的脚手架需要高于以下版本：
+
+- Webpack: `>= 5.0`
+- Next.js: `>= 11.0`
+- React scripts (CRA): `>= 5.0`
+
+#### 推荐的示例
+
+- [CRA with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-create-react-app/README.md)
+- [Next.js with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-nextjs/README.md)
+- [Webpack with TreeShaking](https://github.com/geist-org/geist-ui/blob/master/examples/tree-shaking-webpack/README.md)
+
+### 手动引入单个组件
+
+对于非标准的构建工具 (或小型项目)，你可以通过手动引入单个组件来获得更好的构建体积。
+
+手动引入单个组件并不意味着 100% 只构建使用过的组件，一些组件存在内部依赖，如当你进使用 `Snippet` 组件时，最终的包也会包含 `Toast` 组件。
+尽管如此，这类优化方式还是能够显著降低应用的构建体积。
+
+```jsx
+import Button from '@geist-ui/core/esm/button'
+
+const MyComponent = () => <Button>Submit</Button>
+```
+
+### 使用 Babel
+
+如果您的项目暂不支持 ES Module，可以使用 Babel 插件降低构建体积。
+
+Geist 遵循自动 Tree Shaking 的命名方案 (社区约定)，这允许你全量引入组件库，但在打包时自动剔除没有真正使用的部分。
+此功能通常需要与 [babel-plugin-import](https://www.npmjs.com/package/babel-plugin-import) 工具搭配使用。
+
+一个典型的使用案例需要在 `.babelrc` 文件中添加如下配置：
+
+```json
+// NAME:.babelrc
+{
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "@geist-ui/core",
+        "libraryDirectory": "esm"
+      }
+    ]
+  ]
+}
+```
+
+#### 旧版本可用参考
+
+- [CRA with Babel](https://github.com/geist-org/geist-ui/blob/v2.3.3/examples/tree-shaking-create-react-app/README.md)
+- [Next.js with Babel](https://github.com/geist-org/geist-ui/blob/v2.3.3/examples/tree-shaking-nextjs/README.md)
+- [Webpack with Babel](https://github.com/geist-org/geist-ui/blob/v2.3.3/examples/tree-shaking-webpack/README.md)
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>

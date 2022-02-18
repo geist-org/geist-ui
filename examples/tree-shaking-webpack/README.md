@@ -2,16 +2,16 @@
 
 ### About
 
-If you use `webpack` and `babel` to build your React project, this example may be useful for you.
+Full tree-shaking is automatically available without any configuration when using `webpack 5.0` or higher.
 
 ### Previews
 
 **Before:**
 
-![before](esm-1.png)
+![before](tree-shaking-before.png)
 
 <br />
 
 **After:**
 
-![after](esm-2.png)
+![after](tree-shaking-after.png)

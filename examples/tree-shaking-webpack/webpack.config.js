@@ -29,11 +29,14 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({ template: path.join(__dirname, './src/index.html') }),
   ],
+  
+  optimization: {
+    usedExports: true,
+  },
 
   devServer: {
     host: '127.0.0.1',
     port: '3000',
-    contentBase: './dist',
     hot: true,
     open: true,
   },

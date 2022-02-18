@@ -5,24 +5,24 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "webpack --config ./webpack.config.js",
-    "analyze": "source-map-explorer 'dist/*.js'"
+    "build": "webpack --config ./webpack.config.js --mode production",
+    "analyze": "source-map-explorer 'dist/*.js' --gzip"
   },
+  "sideEffects": false,
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
-    "babel-loader": "^8.1.0",
-    "babel-plugin-import": "^1.13.0",
-    "html-webpack-plugin": "^4.3.0",
-    "source-map-explorer": "^2.4.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0"
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "source-map-explorer": "^2.5.2",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
-    "@geist-ui/core": "latest",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "@geist-ui/core": "^2.3.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
