@@ -4,22 +4,19 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "dev": "react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "dependencies": {
     "@geist-ui/core": "latest",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/react": "^16.9.32",
-    "@types/react-dom": "^16.9.6",
-    "babel-plugin-import": "^1.13.0",
-    "customize-cra": "^0.9.1",
-    "react-app-rewired": "^2.1.6",
-    "react-scripts": "^3.4.1",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "react-scripts": "^5.0.0",
     "source-map-explorer": "^2.4.2"
   },
   "browserslist": {

@@ -2,7 +2,7 @@
 
 ### About
 
-When you are using Webpack v5 or higher, you can specify `sideEffect` in the `package.json` file to get the full tree-shaking.
+Full tree-shaking is automatically available without any configuration when using `webpack 5.0` or higher.
 
 ### Previews
 
