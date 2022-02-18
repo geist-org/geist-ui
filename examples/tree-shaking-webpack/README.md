@@ -2,16 +2,16 @@
 
 ### About
 
-If you use `webpack` and `babel` to build your React project, this example may be useful for you.
+When you are using Webpack v5 or higher, you can specify `sideEffect` in the `package.json` file to get the full tree-shaking.
 
 ### Previews
 
 **Before:**
 
-![before](esm-1.png)
+![before](tree-shaking-before.png)
 
 <br />
 
 **After:**
 
-![after](esm-2.png)
+![after](tree-shaking-after.png)
