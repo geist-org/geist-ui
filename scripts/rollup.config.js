@@ -19,6 +19,7 @@ const plugins = [
     presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
     plugins: ['styled-jsx/babel'],
     babelrc: false,
+    sourcemap: false,
   }),
   localResolve(),
   nodeResolve({
@@ -47,6 +48,7 @@ const cjsOutput = {
   },
   chunkFileNames: '[name].js',
   globals,
+  sourcemap: false,
 }
 
 const esmOutput = {
