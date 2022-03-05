@@ -128,7 +128,7 @@ const InputComponent = React.forwardRef<
     }
 
     return (
-      <div className="with-label">
+      <div className={label ? "with-label" : undefined}>
         {children && <InputBlockLabel>{children}</InputBlockLabel>}
         <div className={useClasses('input-container', className)}>
           {label && <InputLabel>{label}</InputLabel>}
