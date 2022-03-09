@@ -205,3 +205,8 @@ export type {
   GetScalePropsFunction,
   GetAllScalePropsFunction,
 } from './use-scale'
+
+export { useRect } from './utils/layouts'
+export type { ReactiveDomReact } from './utils/layouts'
+export { default as Highlight } from './shared/highlight'
+export type { HighlightProps } from './shared/highlight'
