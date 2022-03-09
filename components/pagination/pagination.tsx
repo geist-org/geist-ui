@@ -65,7 +65,7 @@ const PaginationComponent: React.FC<React.PropsWithChildren<PaginationProps>> = 
       isLast: page >= count,
       update,
     }),
-    [page],
+    [page, count],
   )
 
   useEffect(() => {
