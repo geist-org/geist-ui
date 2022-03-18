@@ -1,6 +1,7 @@
 import React, { RefObject } from 'react'
 import { useBodyScroll } from 'components'
 import { act, renderHook } from '@testing-library/react-hooks'
+import { sleep } from 'tests/utils'
 
 describe('UseBodyScroll', () => {
   it('should work correctly', () => {
@@ -14,7 +15,7 @@ describe('UseBodyScroll', () => {
     expect(result.current[0]).toBe(true)
   })
 
-  it('should set overflow', () => {
+  it('should set overflow', async () => {
     const ref = React.createRef<HTMLDivElement>()
     ;(ref as any).current = document.createElement('div')
     const el = ref.current as HTMLDivElement
@@ -24,10 +25,11 @@ describe('UseBodyScroll', () => {
     expect(el.style.overflow).toEqual('hidden')
 
     act(() => result.current[1](false))
-    expect(el.style.overflow).toEqual('')
+    await sleep(10)
+    expect(el.style.overflow).not.toEqual('hidden')
   })
 
-  it('the last value of overflow should be recovered after setHidden', () => {
+  it('the last value of overflow should be recovered after setHidden', async () => {
     const ref = React.createRef<HTMLDivElement>()
     const div = document.createElement('div')
     div.style.overflow = 'scroll'
@@ -40,10 +42,11 @@ describe('UseBodyScroll', () => {
     expect(el.style.overflow).toEqual('hidden')
 
     act(() => result.current[1](false))
+    await sleep(10)
     expect(el.style.overflow).toEqual('scroll')
   })
 
-  it('should work correctly with multiple element', () => {
+  it('should work correctly with multiple element', async () => {
     const ref = React.createRef<HTMLDivElement>()
     ;(ref as any).current = document.createElement('div')
     const el = ref.current as HTMLDivElement
@@ -61,59 +64,27 @@ describe('UseBodyScroll', () => {
 
     act(() => result.current[1](false))
     act(() => result2.current[1](false))
+    await sleep(10)
     expect(el.style.overflow).toEqual('')
     expect(el2.style.overflow).toEqual('')
   })
 
-  it('should work correctly with iOS', () => {
-    Object.defineProperty(window.navigator, 'platform', { value: '', writable: true })
-    ;(window.navigator as any).platform = 'iPhone'
-    const event = { preventDefault: jest.fn() }
-
+  it('should work correctly with options', async () => {
     const ref = React.createRef<HTMLDivElement>()
     ;(ref as any).current = document.createElement('div')
     const el = ref.current as HTMLDivElement
-    const { result } = renderHook(() => useBodyScroll(ref))
+    const { result } = renderHook(() => useBodyScroll(ref, { delayReset: 300 }))
 
     act(() => result.current[1](true))
-    const touchEvent = new TouchEvent('touchmove', event as EventInit)
-    const MockEvent = Object.assign(touchEvent, event)
-    document.dispatchEvent(MockEvent)
-
-    expect(el.style.overflow).not.toEqual('hidden')
-    expect(event.preventDefault).toHaveBeenCalled()
-
-    // Touch events with multiple fingers do nothing
-    document.dispatchEvent(
-      new TouchEvent('touchmove', {
-        touches: [{}, {}, {}] as Array<Touch>,
-      }),
-    )
-    expect(event.preventDefault).toHaveBeenCalledTimes(1)
-
-    act(() => result.current[1](false))
-    ;(window.navigator as any).platform = ''
-  })
-
-  it('should work correctly with options', () => {
-    Object.defineProperty(window.navigator, 'platform', { value: '', writable: true })
-    ;(window.navigator as any).platform = 'iPhone'
-    const event = { preventDefault: jest.fn() }
-
-    const ref = React.createRef<HTMLDivElement>()
-    ;(ref as any).current = document.createElement('div')
-    const el = ref.current as HTMLDivElement
-    const { result } = renderHook(() => useBodyScroll(ref, { scrollLayer: true }))
-
-    act(() => result.current[1](true))
-    const touchEvent = new TouchEvent('touchmove', event as EventInit)
-    const MockEvent = Object.assign(touchEvent, event)
-    document.dispatchEvent(MockEvent)
-
     expect(el.style.overflow).toEqual('hidden')
-    expect(event.preventDefault).not.toHaveBeenCalled()
+
     act(() => result.current[1](false))
-    ;(window.navigator as any).platform = ''
+    await sleep(10)
+    expect(el.style.overflow).toEqual('hidden')
+    await sleep(100)
+    expect(el.style.overflow).toEqual('hidden')
+    await sleep(250)
+    expect(el.style.overflow).not.toEqual('hidden')
   })
 
   it('should work correctly when set element repeatedly', () => {

@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, useBodyScroll, Text, Link } from 'components'
+import { Button, Spacer, useBodyScroll, Text } from 'components'
 
 export const meta = {
   title: '锁定滚动 useBodyScroll',
@@ -9,6 +9,8 @@ export const meta = {
 ## useBodyScroll / 工具包
 
 禁用 `Body` 或其他任何元素的滚动，这在显示弹窗或菜单时非常有帮助。
+
+如果容器的滚动条在禁止滚动之前被自定义设置了宽度，那么在在禁止滚动后会为自动当前容器添加 `paddingRight` 作为补偿。
 
 <Playground
   desc="点击按钮以锁定滚动."
@@ -33,7 +35,7 @@ export const meta = {
 
 ```ts
 type BodyScrollOptions = {
-  scrollLayer: boolean  //  指定元素内部是否需要滚动
+  delayReset: number  //  延迟一段时间后恢复滚动，默认 0
 }
 
 const useBodyScroll = (

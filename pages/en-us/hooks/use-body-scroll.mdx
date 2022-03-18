@@ -1,5 +1,5 @@
 import { Layout, Playground, Attributes } from 'lib/components'
-import { Button, Spacer, Text, Link, useBodyScroll } from 'components'
+import { Button, Spacer, Text, useBodyScroll } from 'components'
 
 export const meta = {
   title: 'useBodyScroll',
@@ -10,7 +10,7 @@ export const meta = {
 
 Disable scrolling behavior for body or any element, it is useful for displaying popup element or menus.
 
-This is custom React hooks, you need to follow the <Link target="_blank" color href="https://reactjs.org/docs/hooks-rules.html">Basic Rules</Link> when you use it.
+If the page's scrollbar is set to a user-defined `width` before scrolling is disabled, a `paddingRight` value will be added after disabling to adapt.
 
 <Playground
   desc="Click button to disable scrolling."
@@ -35,7 +35,7 @@ This is custom React hooks, you need to follow the <Link target="_blank" color h
 
 ```ts
 type BodyScrollOptions = {
-  scrollLayer: boolean  // whether Ref needs to scroll
+  delayReset: number  // resume scrolling after a delay, default is 0
 }
 
 const useBodyScroll = (
