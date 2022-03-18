@@ -16,7 +16,7 @@ const Menu: React.FC<unknown> = () => {
   const { isChinese } = useConfigs()
   const { tabbar: currentUrlTabValue, locale } = useLocale()
   const [expanded, setExpanded] = useState<boolean>(false)
-  const [, setBodyHidden] = useBodyScroll(null, { scrollLayer: true })
+  const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 })
   const isMobile = useMediaQuery('xs', { match: 'down' })
   const allSides = useMemo(() => Metadata[locale], [locale])
 
@@ -64,6 +64,27 @@ const Menu: React.FC<unknown> = () => {
     },
     [currentUrlTabValue, locale],
   )
+  const [isLocked, setIsLocked] = useState<boolean>(false)
+
+  useEffect(() => {
+    const handler = () => {
+      const isLocked = document.body.style.overflow === 'hidden'
+      setIsLocked(last => (last !== isLocked ? isLocked : last))
+    }
+    const observer = new MutationObserver(mutations => {
+      mutations.forEach(function (mutation) {
+        if (mutation.type !== 'attributes') return
+        handler()
+      })
+    })
+
+    observer.observe(document.body, {
+      attributes: true,
+    })
+    return () => {
+      observer.disconnect()
+    }
+  }, [])
 
   return (
     <>
@@ -132,8 +153,11 @@ const Menu: React.FC<unknown> = () => {
         .menu {
           position: fixed;
           top: 0;
+          left: 0;
+          right: 0;
+          padding-right: ${isLocked ? 'var(--geist-page-scrollbar-width)' : 0};
           height: var(--geist-page-nav-height);
-          width: 100%;
+          //width: 100%;
           backdrop-filter: saturate(180%) blur(5px);
           background-color: ${addColorAlpha(theme.palette.background, 0.8)};
           box-shadow: ${theme.type === 'dark'

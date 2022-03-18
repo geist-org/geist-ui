@@ -81,9 +81,6 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           </MDXProvider>
         </ConfigContext>
         <style global jsx>{`
-          html {
-            --geist-page-nav-height: 64px;
-          }
           .tag {
             color: ${theme.palette.accents_5};
           }
@@ -118,12 +115,16 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
             color: ${theme.palette.accents_3};
           }
           body::-webkit-scrollbar {
-            width: 0;
+            width: var(--geist-page-scrollbar-width);
             background-color: ${theme.palette.accents_1};
           }
           body::-webkit-scrollbar-thumb {
             background-color: ${theme.palette.accents_2};
             border-radius: ${theme.layout.radius};
+          }
+          :root {
+            --geist-page-nav-height: 64px;
+            --geist-page-scrollbar-width: 4px;
           }
         `}</style>
       </GeistProvider>
