@@ -17,12 +17,14 @@ interface Props {
   count?: number
   limit?: number
   onChange?: (val: number) => void
+  className?: string
 }
 
 const defaultProps = {
   initialPage: 1,
   count: 1,
   limit: 7,
+  className: '',
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
@@ -35,6 +37,8 @@ const PaginationComponent: React.FC<React.PropsWithChildren<PaginationProps>> = 
   limit,
   children,
   onChange,
+  className,
+  ...props
 }: React.PropsWithChildren<PaginationProps> & typeof defaultProps) => {
   const { SCALES } = useScale()
   const [page, setPage, pageRef] = useCurrentState(initialPage)
@@ -79,7 +83,7 @@ const PaginationComponent: React.FC<React.PropsWithChildren<PaginationProps>> = 
 
   return (
     <PaginationContext.Provider value={values}>
-      <nav>
+      <nav className={className} {...props}>
         {prevItem}
         <PaginationPages count={count} current={page} limit={limit} setPage={setPage} />
         {nextItem}
