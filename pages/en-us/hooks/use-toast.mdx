@@ -16,7 +16,7 @@ Display an important message globally.
   scope={{ Button, useToasts }}
   code={`
 () => {
-  const { setToast } = useToasts()
+  const [toasts, setToast] = useToasts()
   const click = () => setToast({ text: 'HTTP is stateless, but not sessionless.', delay: 2000 })
   return <Button scale={2/3} auto onClick={click}>Show Toast</Button>
 }
@@ -29,7 +29,7 @@ Display an important message globally.
   scope={{ Button, useToasts }}
   code={`
 () => {
-  const { setToast } = useToasts()
+  const [toasts, setToast] = useToasts()
   const click = () => setToast({ text: 'HTTP is a protocol which allows the fetching of resources, such as HTML documents. It is the foundation of any data exchange on the Web and it is a client-server protocol, which means requests are initiated by the recipient, usually the Web browser. A complete document is reconstructed from the different sub-documents fetched, for instance text, layout description, images, videos, scripts, and more.' })
   return <Button scale={2/3} auto onClick={click}>Show Toast</Button>
 }
@@ -42,7 +42,7 @@ Display an important message globally.
   scope={{ Button, useToasts }}
   code={`
 () => {
-  const { setToast } = useToasts()
+  const [toasts, setToast] = useToasts()
   const action = {
     name: 'alert',
     handler: () => alert('alert from toast')
