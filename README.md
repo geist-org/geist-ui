@@ -49,6 +49,7 @@ const Application = () => (
 - [SentiNEO: Near-Earth Objects Viewer](https://sentineo.app)
 - [Dashboard Design](https://github.com/ofekashery/react-dashboard-design)
 - [Regex-Vis: Regex visualizer & editor](https://github.com/Bowen7/regex-vis)
+- [TakeNote](https://takenote-delta.vercel.app)
 - [Add here](https://github.com/geist-org/geist-ui/issues/new)
 
 ## LICENSE
