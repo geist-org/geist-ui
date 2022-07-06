@@ -90,6 +90,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
   const [, setSliderWidth, sideWidthRef] = useCurrentState<number>(0)
   const [, setLastDargOffset, lastDargOffsetRef] = useCurrentState<number>(0)
   const [isClick, setIsClick] = useState<boolean>(false)
+  const [isDrag, setIsDrag] = useState<boolean>(false)
 
   const sliderRef = useRef<HTMLDivElement>(null)
   const dotRef = useRef<HTMLDivElement>(null)
@@ -124,6 +125,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
   }
   const dragStartHandler = () => {
     setIsClick(false)
+    setIsDrag(true)
     setSliderWidth(getRefWidth(sliderRef))
   }
   const dragEndHandler = (event: DraggingEvent) => {
@@ -137,6 +139,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     if (disabled) return
     if (!sliderRef || !sliderRef.current) return
+    if (isDrag) return setIsDrag(false)
     setIsClick(true)
     setSliderWidth(getRefWidth(sliderRef))
     const clickOffset = event.clientX - sliderRef.current.getBoundingClientRect().x

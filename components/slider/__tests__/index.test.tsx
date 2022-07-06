@@ -149,4 +149,18 @@ describe('Slider', () => {
     let wrapper = mount(<Slider initialValue={20} hideValue />)
     expect(wrapper.html()).toMatchSnapshot()
   })
+  it('should not trigger click event when drag event is be called', async () => {
+    let value = 0
+    const changeHandler = jest.fn().mockImplementation(val => (value = val))
+    const wrapper = mount(<Slider initialValue={0} onChange={changeHandler} />)
+    const dot = wrapper.find('.dot').getDOMNode() as HTMLDivElement
+    act(() => triggerDrag(dot, 50))
+    wrapper.find('.slider').simulate('click', {
+      ...nativeEvent,
+      clientX: 51,
+    })
+    expect(changeHandler).toHaveBeenCalledTimes(1)
+    expect(value).toEqual(50)
+    changeHandler.mockRestore()
+  })
 })
