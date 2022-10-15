@@ -1,0 +1,75 @@
+import { Skeleton, Button, Grid } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components'
+
+export const meta = {
+  title: 'Skeleton',
+  group: 'Data Display',
+}
+
+
+## Skeleton
+
+Show a placeholder in place of content that is loading.
+
+<Playground
+  title="Default with set width."
+  scope={{ Skeleton }}
+  code={`
+<Skeleton width={10} />
+`}
+/>
+
+<Playground
+  title="Wrapping Children"
+  desc="The skeletons width will be the same as the children if not explicitly overwritten."
+  scope={{ Skeleton, Button, Grid }}
+  code={`
+<Grid.Container gap={2}>
+    <Grid xs={24}>
+        <Skeleton><Button>I'm hidden but alter the skeletons width</Button></Skeleton>
+    </Grid>
+    <Grid xs={24}>
+        <Skeleton show={true}><Button>I'm not hidden</Button></Skeleton>
+    </Grid>
+  </Grid.Container>
+`}
+/>
+
+<Playground
+    title="Rounded skeleton."
+    scope={{ Skeleton }}
+    code={`
+<Skeleton rounded width={3} height={3} />
+`}
+/>
+
+<Playground
+    title="Squared skeleton."
+    scope={{ Skeleton }}
+    code={`
+<Skeleton squared width={3} height={3} />
+`}
+/>
+
+<Playground
+    title="Disabled animation."
+    scope={{ Skeleton }}
+    code={`
+<Skeleton animate={false} width={10} height={3} />
+`}
+/>
+
+<Attributes edit="/pagFes/en-us/components/skeleton.mdx">
+<Attributes.Title>Skeleton.Props</Attributes.Title>
+
+| Attribute   | Description                                 | Type             | Accepted values    | Default |
+| ----------- | ------------------------------------------- | ---------------- | ------------------ | ------- |
+| **animate** | enable animation                            | `boolean`        | -                  | `true`  |
+| **rounded** | show round skeleton                         | `boolean`        | -                  | `false` |
+| **show**    | show children                               | `boolean`        | -                  | `false` |
+| **animate** | enable loading animation                    | `boolean`        | -                  | `false` |
+| ...         | native props                                | `HTMLAttributes` | `'className', ...` | -       |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
