@@ -47,7 +47,7 @@ const CardFooterComponent: React.FC<React.PropsWithChildren<CardFooterProps>> = 
           margin: ${SCALES.mt(0)} ${SCALES.mr(0)} ${SCALES.mb(0)} ${SCALES.ml(0)};
         }
 
-        .auto-margin :global(*) {
+        .auto-margin :global(> *) {
           margin-top: 0;
           margin-bottom: 0;
           margin-right: ${theme.layout.gapQuarter};
