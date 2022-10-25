@@ -55,7 +55,7 @@ const cyan: ColorEnum = {
 const highlight: ColorEnum = {
   alert: 'Alert',
   purple: 'Purple',
-  magenta: 'Violet',
+  magenta: 'Magenta',
 }
 
 const colorsData: { [key: string]: ColorEnum } = {
