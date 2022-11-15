@@ -10,6 +10,9 @@ export type { AvatarProps, AvatarGroupProps } from './avatar'
 export { default as Badge } from './badge'
 export type { BadgeProps, BadgeAnchorProps } from './badge'
 
+export {default as Box} from './box'
+export type {BoxProps} from './box'
+
 export { default as Breadcrumbs } from './breadcrumbs'
 export type {
   BreadcrumbsProps,
