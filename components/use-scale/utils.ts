@@ -2,9 +2,10 @@ import {
   GetAllScalePropsFunction,
   GetScalePropsFunction,
   ScaleProps,
-  ScalePropKeys, DynamicLayoutPipe,
+  ScalePropKeys,
+  DynamicLayoutPipe,
 } from './scale-context'
-import {isCSSNumberValue} from "../utils/collections";
+import { isCSSNumberValue } from '../utils/collections'
 
 export const generateGetScaleProps = <P>(
   props: P & ScaleProps,
@@ -46,20 +47,24 @@ export const reduceScaleCoefficient = (scale: number) => {
 }
 
 export const makeScaleHandler =
-    (attrValue: string | number | undefined, scale: number, unit: string): DynamicLayoutPipe =>
-        (scale1x, defaultValue) => {
-          // 0 means disable scale and the default value is 0
-          if (scale1x === 0) {
-            scale1x = 1
-            defaultValue = defaultValue || 0
-          }
-          const factor = reduceScaleCoefficient(scale) * scale1x
-          if (typeof attrValue === 'undefined') {
-            if (typeof defaultValue !== 'undefined') return `${defaultValue}`
-            return `calc(${factor} * ${unit})`
-          }
+  (
+    attrValue: string | number | undefined,
+    scale: number,
+    unit: string,
+  ): DynamicLayoutPipe =>
+  (scale1x, defaultValue) => {
+    // 0 means disable scale and the default value is 0
+    if (scale1x === 0) {
+      scale1x = 1
+      defaultValue = defaultValue || 0
+    }
+    const factor = reduceScaleCoefficient(scale) * scale1x
+    if (typeof attrValue === 'undefined') {
+      if (typeof defaultValue !== 'undefined') return `${defaultValue}`
+      return `calc(${factor} * ${unit})`
+    }
 
-          if (!isCSSNumberValue(attrValue)) return `${attrValue}`
-          const customFactor = factor * Number(attrValue)
-          return `calc(${customFactor} * ${unit})`
-        }
+    if (!isCSSNumberValue(attrValue)) return `${attrValue}`
+    const customFactor = factor * Number(attrValue)
+    return `calc(${customFactor} * ${unit})`
+  }
