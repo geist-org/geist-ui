@@ -147,19 +147,21 @@ Display a list of files and folders in a hierarchical tree structure.
 
 <Attributes.Title>Tree.File.Props</Attributes.Title>
 
-| Attribute          | Description   | Type             | Accepted values                   | Default |
-| ------------------ | ------------- | ---------------- | --------------------------------- | ------- |
-| **name**(required) | file name     | `string`         | -                                 | -       |
-| **extra**          | extra message | `string`         | -                                 | -       |
-| ...                | native props  | `HTMLAttributes` | `'id', 'title', 'className', ...` | -       |
+| Attribute          | Description        | Type             | Accepted values                   | Default |
+| ------------------ | ------------------ | ---------------- | --------------------------------- | ------- |
+| **name**(required) | file name          | `string`         | -                                 | -       |
+| **sortableName**   | sortable file name | `string`         | -                                 | -       |
+| **extra**          | extra message      | `string`         | -                                 | -       |
+| ...                | native props       | `HTMLAttributes` | `'id', 'title', 'className', ...` | -       |
 
 <Attributes.Title>Tree.Folder.Props</Attributes.Title>
 
-| Attribute          | Description   | Type             | Accepted values                   | Default |
-| ------------------ | ------------- | ---------------- | --------------------------------- | ------- |
-| **name**(required) | folder name   | `string`         | -                                 | -       |
-| **extra**          | extra message | `string`         | -                                 | -       |
-| ...                | native props  | `HTMLAttributes` | `'id', 'title', 'className', ...` | -       |
+| Attribute          | Description          | Type             | Accepted values                   | Default |
+| ------------------ | -------------------- | ---------------- | --------------------------------- | ------- |
+| **name**(required) | folder name          | `string`         | -                                 | -       |
+| **sortableName**   | sortable folder name | `string`         | -                                 | -       |
+| **extra**          | extra message        | `string`         | -                                 | -       |
+| ...                | native props         | `HTMLAttributes` | `'id', 'title', 'className', ...` | -       |
 
 <Attributes.Title>type FileTreeValue</Attributes.Title>
 
@@ -167,6 +169,7 @@ Display a list of files and folders in a hierarchical tree structure.
 type FileTreeValue = {
   type: 'directory' || 'file'
   name: string
+  sortableName?: string
   extra?: string
   files?: Array<FileTreeValue>
 }
