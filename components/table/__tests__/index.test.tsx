@@ -169,7 +169,8 @@ describe('Table', () => {
         data={data}
         emptyText="test-not-found"
         onRow={rowHandler}
-        onCell={cellHandler}>
+        onCell={cellHandler}
+      >
         <Table.Column prop="property" label="property" />
         <Table.Column prop="description" label="description" />
       </Table>,

@@ -44,7 +44,8 @@ const Editor: React.FC<Props> = ({ code }) => {
                 <span
                   className="copy"
                   onClick={copyHandler}
-                  title={isChinese ? '拷贝代码' : 'Copy Code'}>
+                  title={isChinese ? '拷贝代码' : 'Copy Code'}
+                >
                   <CopyIcon size={18} />
                 </span>
               )}

@@ -9,7 +9,7 @@ export const sortChildren = (
     if (a.type !== b.type) return a.type !== folderComponentType ? 1 : -1
     if (a.props.sortableName && b.props.sortableName) {
       return (
-        `${a.props.sortableName}`.charCodeAt(0) - `${b.props.sortableNname}`.charCodeAt(0)
+        `${a.props.sortableName}`.charCodeAt(0) - `${b.props.sortableName}`.charCodeAt(0)
       )
     }
 

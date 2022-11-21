@@ -139,7 +139,8 @@ const ButtonComponent = React.forwardRef<
         className={useClasses('btn', className)}
         disabled={disabled}
         onClick={clickHandler}
-        {...props}>
+        {...props}
+      >
         {loading && <ButtonLoading color={color} />}
         {childrenWithIcon}
         {dripShow && (

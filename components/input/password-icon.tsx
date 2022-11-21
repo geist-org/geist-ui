@@ -14,7 +14,8 @@ const PasswordIcon: React.FC<Props> = ({ visible }) => {
       strokeLinejoin="round"
       fill="none"
       shapeRendering="geometricPrecision"
-      style={{ color: 'currentColor' }}>
+      style={{ color: 'currentColor' }}
+    >
       {!visible ? (
         <>
           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />

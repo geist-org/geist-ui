@@ -88,7 +88,8 @@ const PopoverComponent: React.FC<React.PropsWithChildren<PopoverProps>> = ({
         portalClassName={classes}
         visible={visible}
         onVisibleChange={onPopoverVisibleChange}
-        {...props}>
+        {...props}
+      >
         {children}
         <style jsx>{`
           :global(.tooltip-content.popover > .inner) {

@@ -76,7 +76,8 @@ const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps>> = ({
       onContentClick={onContentClick}
       visible={visible}
       width="100%"
-      {...bindings}>
+      {...bindings}
+    >
       <DrawerWrapper visible={visible} className={wrapClassName} {...props}>
         {children}
       </DrawerWrapper>

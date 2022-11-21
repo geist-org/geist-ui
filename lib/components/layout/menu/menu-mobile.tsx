@@ -39,10 +39,12 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
           <div
             key={group.name}
             className="fadein"
-            style={{ animationDelay: `${(index + 1) * 50}ms` }}>
+            style={{ animationDelay: `${(index + 1) * 50}ms` }}
+          >
             <button
               className={`menu-item ${expandedGroupName === group.name && 'expanded'}`}
-              onClick={() => handleGroupClick(group.name)}>
+              onClick={() => handleGroupClick(group.name)}
+            >
               <ChevronRightIcon
                 size="1rem"
                 strokeWidth={2}
@@ -60,7 +62,8 @@ const MenuMobile: React.FC<Props> = ({ expanded }) => {
                         <a
                           className={`section-item ${
                             pathname === item.url ? 'active' : ''
-                          }`}>
+                          }`}
+                        >
                           {item.name}
                         </a>
                       </NextLink>
