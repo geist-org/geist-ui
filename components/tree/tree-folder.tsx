@@ -37,7 +37,7 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
   ...props
 }: React.PropsWithChildren<TreeFolderProps> & typeof defaultProps) => {
   const theme = useTheme()
-  const { initialExpand, isImperative } = useTreeContext()
+  const { initialExpand, isImperative, noSort } = useTreeContext()
   const [expanded, setExpanded] = useState<boolean>(initialExpand)
   useEffect(() => setExpanded(initialExpand), [])
 
@@ -55,7 +55,7 @@ const TreeFolder: React.FC<React.PropsWithChildren<TreeFolderProps>> = ({
 
   const sortedChildren = isImperative
     ? nextChildren
-    : sortChildren(nextChildren, TreeFolder)
+    : sortChildren(nextChildren, TreeFolder, noSort)
 
   return (
     <div className={useClasses('folder', className)} onClick={clickHandler} {...props}>
