@@ -207,7 +207,7 @@ const MyComponent = () => (
 | Attribute        | Description                                  | Type                                                  | Accepted values    | Default |
 | ---------------- | -------------------------------------------- | ----------------------------------------------------- | ------------------ | ------- |
 | **data**         | data source                                  | `Array<T>`                                            | -                  | -       |
-| **initialData**  | inital datas                                 | `Array<T>`                                            | -                  | `[]`    |
+| **initialData**  | initial data                                 | `Array<T>`                                            | -                  | `[]`    |
 | **emptyText**    | displayed text when table's content is empty | `string`                                              | -                  | -       |
 | **hover**        | table's hover effect                         | `boolean`                                             | -                  | `true`  |
 | **onRow**        | callback row's content by click              | [TableOnRowClick](#tableonrowclick)                   | -                  | -       |
@@ -238,7 +238,7 @@ type TableOnRowClick<T> = (rowData: T, rowIndex: number) => void
 type TableOnCellClick<T> = (
   value: T[keyof T],
   rowIndex: number,
-  colunmIndex: number,
+  columnIndex: number,
 ) => void
 ```
 
