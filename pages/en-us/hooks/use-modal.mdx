@@ -1,18 +1,18 @@
-import { Layout, Playground, Attributes } from 'lib/components'
-import { useModal, Modal, Button } from 'components'
+import { Layout, Playground, Attributes } from "lib/components";
+import { useModal, Modal, Button } from "components";
 
 export const meta = {
-  title: 'useModal',
-  group: 'Enhancement',
+  title: "useModal",
+  group: "Enhancement",
   index: 11,
-}
+};
 
 ## useModal
 
 `useModal` provides automatic binding for component [Modal](/en-us/components/modal), which can reduce the amount of repetitive code and improve the development experience.
 Using this hooks behaves the same as if you had added `React.useState` manually.
 
-This hooks also supports use on [Select component](/en-us/components/select 'Select Component').
+This hooks also supports use on [Select component](/en-us/components/select "Select Component").
 
 <Playground
   desc="Use hooks to control `Modal`."
@@ -42,17 +42,16 @@ This hooks also supports use on [Select component](/en-us/components/select 'Sel
 
 ```ts
 type useModal = (initialVisible: boolean) => {
-  visible: boolean
-  setVisible: Dispatch<SetStateAction<boolean>>
-  setVisible: Dispatch<SetStateAction<boolean>>
-  currentRef: MutableRefObject<boolean>
+  visible: boolean;
+  setVisible: Dispatch<SetStateAction<boolean>>;
+  currentRef: MutableRefObject<boolean>;
   bindings: {
-    visible: boolean
-    onClose: () => void
-  }
-}
+    visible: boolean;
+    onClose: () => void;
+  };
+};
 ```
 
 </Attributes>
 
-export default ({ children }) => <Layout meta={meta}>{children}</Layout>
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>;
