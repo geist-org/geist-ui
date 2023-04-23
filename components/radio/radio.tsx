@@ -59,7 +59,7 @@ const RadioComponent: React.FC<React.PropsWithChildren<RadioProps>> = ({
       useWarning('Remove props "checked" if in the Radio.Group.', 'Radio')
     }
     if (radioValue === undefined) {
-      useWarning('Props "value" must be deinfed if in the Radio.Group.', 'Radio')
+      useWarning('Props "value" must be defined if in the Radio.Group.', 'Radio')
     }
     useEffect(() => {
       setSelfChecked(groupValue === radioValue)
