@@ -97,7 +97,8 @@ const RatingComponent: React.FC<RatingProps> = ({
           })}
           key={index}
           onMouseEnter={() => mouseEnterHandler(index + 1)}
-          onClick={() => clickHandler(index + 1)}>
+          onClick={() => clickHandler(index + 1)}
+        >
           {icon}
         </div>
       ))}

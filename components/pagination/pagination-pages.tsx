@@ -30,7 +30,8 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
       <PaginationItem
         key={`pagination-item-${value}`}
         active={value === active}
-        onClick={() => setPage(value)}>
+        onClick={() => setPage(value)}
+      >
         {value}
       </PaginationItem>
     ),
@@ -47,7 +48,8 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
       <PaginationItem
         key={`pagination-middle-${index}`}
         active={index + 1 === middleNumber}
-        onClick={() => setPage(value)}>
+        onClick={() => setPage(value)}
+      >
         {value}
       </PaginationItem>
     )
@@ -66,7 +68,8 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
             <PaginationItem
               key={`pagination-item-${value}`}
               active={value === current}
-              onClick={() => setPage(value)}>
+              onClick={() => setPage(value)}
+            >
               {value}
             </PaginationItem>
           )

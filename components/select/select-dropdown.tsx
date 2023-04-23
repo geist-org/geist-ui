@@ -50,7 +50,8 @@ const SelectDropdown = React.forwardRef<
         parent={ref}
         visible={visible}
         disableMatchWidth={disableMatchWidth}
-        getPopupContainer={getPopupContainer}>
+        getPopupContainer={getPopupContainer}
+      >
         <div ref={internalDropdownRef} className={classes} style={dropdownStyle}>
           {children}
           <style jsx>{`

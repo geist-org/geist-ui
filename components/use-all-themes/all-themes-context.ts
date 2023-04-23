@@ -10,9 +10,8 @@ const defaultAllThemesConfig = {
   themes: Themes.getPresets(),
 }
 
-export const AllThemesContext: React.Context<AllThemesConfig> = React.createContext<AllThemesConfig>(
-  defaultAllThemesConfig,
-)
+export const AllThemesContext: React.Context<AllThemesConfig> =
+  React.createContext<AllThemesConfig>(defaultAllThemesConfig)
 
 export const useAllThemes = (): AllThemesConfig =>
   React.useContext<AllThemesConfig>(AllThemesContext)

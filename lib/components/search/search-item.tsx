@@ -31,7 +31,8 @@ const SearchItem: React.FC<SearchItemProps> = ({
         onMouseOver={onMouseOver}
         onFocus={onFocus}
         onBlur={onBlur}
-        data-search-item>
+        data-search-item
+      >
         <SearchIcon data={data} />
         <Text pl="12px" font="14px" className="value" span>
           {data.name}

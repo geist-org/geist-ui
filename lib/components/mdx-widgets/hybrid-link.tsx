@@ -27,7 +27,8 @@ const HybridLink: React.FC<HybridLinkProps> = ({ href = '#', children, ...props 
       color
       icon={!isHomePage}
       rel="noreferrer nofollow"
-      {...props}>
+      {...props}
+    >
       {children}
     </Link>
   )

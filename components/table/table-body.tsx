@@ -49,7 +49,8 @@ const TableBody = <TableDataItem extends TableDataItemBase>({
           <tr
             key={`tbody-row-${index}`}
             className={useClasses({ hover }, className)}
-            onClick={() => rowClickHandler(row, index)}>
+            onClick={() => rowClickHandler(row, index)}
+          >
             <TableCell<TableDataItem>
               columns={columns}
               row={row}

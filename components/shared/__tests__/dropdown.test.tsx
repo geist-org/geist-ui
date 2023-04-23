@@ -176,7 +176,8 @@ describe('Dropdown', () => {
             <Dropdown
               parent={ref}
               visible
-              getPopupContainer={() => customContainer.current}>
+              getPopupContainer={() => customContainer.current}
+            >
               <span>test-value</span>
             </Dropdown>
           </div>

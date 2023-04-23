@@ -68,7 +68,8 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
         <CssBaseline />
         <ConfigContext
           onThemeChange={themeChangeHandle}
-          onThemeTypeChange={type => setThemeType(type)}>
+          onThemeTypeChange={type => setThemeType(type)}
+        >
           <Menu />
           <Search />
           <MDXProvider
@@ -76,7 +77,8 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
               a: HybridLink,
               img: Image,
               pre: HybridCode,
-            }}>
+            }}
+          >
             <Component {...pageProps} />
           </MDXProvider>
         </ConfigContext>

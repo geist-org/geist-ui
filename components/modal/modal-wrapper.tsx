@@ -60,7 +60,8 @@ const ModalWrapper: React.FC<React.PropsWithChildren<ModalWrapperProps>> = ({
         tabIndex={-1}
         onKeyDown={onKeyDown}
         ref={modalContent}
-        {...props}>
+        {...props}
+      >
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabStart} />
         {children}
         <div tabIndex={0} className="hide-tab" aria-hidden="true" ref={tabEnd} />

@@ -94,7 +94,8 @@ const ToastContainer: React.FC<React.PropsWithChildren<unknown>> = () => {
     <div
       className={classNames}
       onMouseEnter={() => hoverHandler(true)}
-      onMouseLeave={() => hoverHandler(false)}>
+      onMouseLeave={() => hoverHandler(false)}
+    >
       {toastElements}
       <style jsx>{`
         .toasts {

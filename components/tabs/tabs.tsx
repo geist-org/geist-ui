@@ -122,7 +122,8 @@ const TabsComponent: React.FC<React.PropsWithChildren<TabsProps>> = ({
             hoverWidthRatio={hoverWidthRatio}
           />
           <div
-            className={useClasses('scroll-container', { 'hide-divider': hideDivider })}>
+            className={useClasses('scroll-container', { 'hide-divider': hideDivider })}
+          >
             {tabs.map(({ cell: Cell, value }) => (
               <Cell
                 key={value}

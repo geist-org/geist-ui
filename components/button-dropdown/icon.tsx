@@ -17,7 +17,8 @@ const ButtonDropdownIcon: React.FC<Props> = ({ color, height }) => {
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
-      shapeRendering="geometricPrecision">
+      shapeRendering="geometricPrecision"
+    >
       <path d="M6 9l6 6 6-6" />
 
       <style jsx>{`
