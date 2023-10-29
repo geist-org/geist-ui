@@ -36,7 +36,7 @@ const TableCell = <TableDataItem extends TableDataItemBase>({
 
         return (
           <td
-            key={`row-td-${index}-${column.prop}`}
+            key={`row-td-${index}-${String(column.prop)}`}
             onClick={() => onCellClick && onCellClick(currentRowValue, rowIndex, index)}
             className={column.className}>
             <div className="cell">
