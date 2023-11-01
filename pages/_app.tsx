@@ -8,6 +8,13 @@ import ConfigContext from 'lib/config-provider'
 import useDomClean from 'lib/use-dom-clean'
 import { HybridCode, HybridLink, Search } from 'lib/components'
 import Menu from 'lib/components/layout/menu'
+import { MDXComponents } from "@mdx-js/react/lib"
+
+const components: MDXComponents = {
+  a: HybridLink,
+  code: HybridCode,
+  Image,
+}
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
   const theme = useTheme()
@@ -71,12 +78,7 @@ const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
           onThemeTypeChange={type => setThemeType(type)}>
           <Menu />
           <Search />
-          <MDXProvider
-            components={{
-              a: HybridLink,
-              img: Image,
-              pre: HybridCode,
-            }}>
+          <MDXProvider components={components}>
             <Component {...pageProps} />
           </MDXProvider>
         </ConfigContext>

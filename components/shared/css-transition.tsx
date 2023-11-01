@@ -64,7 +64,8 @@ const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps>> = ({
   }, [visible, renderable])
   if (!React.isValidElement(children) || !renderable) return null
 
-  return React.cloneElement(children, {
+  // TODO: handle portals
+  return React.cloneElement(children as React.ReactElement, {
     ...props,
     className: `${children.props.className} ${className} ${classes}`,
   })

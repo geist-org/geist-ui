@@ -106,7 +106,7 @@ const SliderComponent: React.FC<React.PropsWithChildren<SliderProps>> = ({
   }
 
   const updateValue = useCallback(
-    offset => {
+    (offset: number) => {
       const currentValue = getValue(max, min, step, offset, sideWidthRef.current)
       setValue(currentValue)
       onChange && onChange(currentValue)

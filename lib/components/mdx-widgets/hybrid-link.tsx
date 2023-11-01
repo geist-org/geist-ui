@@ -3,7 +3,7 @@ import NextLink from 'next/link'
 import { Link, LinkProps } from 'components'
 import { useRouter } from 'next/router'
 
-export type HybridLinkProps = LinkProps
+export type HybridLinkProps = Omit<LinkProps, "color">
 
 const HybridLink: React.FC<HybridLinkProps> = ({ href = '#', children, ...props }) => {
   const isRelativeUrl = !/^([a-z0-9]*:|.{0})\/\/.*$/gim.test(href)

@@ -8,7 +8,7 @@ import useContextState, {
 } from './use-context-state'
 import { capitalize } from '../collections'
 
-const makeVirtualValues = <S,>(values: S): ContextStates<S> => {
+const makeVirtualValues = <S extends Record<string, unknown>>(values: S): ContextStates<S> => {
   const keys = Object.keys(values) as Array<keyof S>
   const handlers = keys.reduce<ContextHandler<S>>((pre, current) => {
     const updateHandler = {

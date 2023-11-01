@@ -19,7 +19,7 @@ describe('UseScale', () => {
   })
 
   it('should work correctly with HOC', () => {
-    const wrapper: React.FC<{ width: string }> = ({ width, children }) => (
+    const wrapper: React.FC<React.PropsWithChildren<{ width: string }>> = ({ width, children }) => (
       <ScaleComponent width={width}>{children}</ScaleComponent>
     )
     const { result, rerender } = renderHook<{ width: string }, ScaleConfig>(
@@ -40,7 +40,7 @@ describe('UseScale', () => {
   })
 
   it('should work correctly with SCALES', () => {
-    const wrapper: React.FC<ScaleProps> = ({ children, ...props }) => (
+    const wrapper: React.FC<React.PropsWithChildren<ScaleProps>> = ({ children, ...props }) => (
       <ScaleComponent {...props}>{children}</ScaleComponent>
     )
     const { result, rerender } = renderHook<ScaleProps, ScaleConfig>(() => useScale(), {
@@ -73,7 +73,7 @@ describe('UseScale', () => {
   })
 
   it('aliases should be allowed', () => {
-    const wrapper: React.FC<ScaleProps> = ({ children, ...props }) => (
+    const wrapper: React.FC<React.PropsWithChildren<ScaleProps>> = ({ children, ...props }) => (
       <ScaleComponent {...props}>{children}</ScaleComponent>
     )
     const { result, rerender } = renderHook<ScaleProps, ScaleConfig>(() => useScale(), {
@@ -103,7 +103,7 @@ describe('UseScale', () => {
   })
 
   it('should work correctly with different unit', () => {
-    const wrapper: React.FC<ScaleProps> = ({ children, ...props }) => (
+    const wrapper: React.FC<React.PropsWithChildren<ScaleProps>> = ({ children, ...props }) => (
       <ScaleComponent {...props}>{children}</ScaleComponent>
     )
     const { result, rerender } = renderHook<ScaleProps, ScaleConfig>(() => useScale(), {
@@ -122,7 +122,7 @@ describe('UseScale', () => {
   })
 
   it('should work correctly with multiple values', () => {
-    const wrapper: React.FC<ScaleProps> = ({ children, ...props }) => (
+    const wrapper: React.FC<React.PropsWithChildren<ScaleProps>> = ({ children, ...props }) => (
       <ScaleComponent {...props}>{children}</ScaleComponent>
     )
     const { result, rerender } = renderHook<ScaleProps, ScaleConfig>(() => useScale(), {
