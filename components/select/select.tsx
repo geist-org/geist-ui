@@ -171,7 +171,7 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
       const [, optionChildren] = pickChildByProps(children, 'value', value)
       return React.Children.map(optionChildren, child => {
         if (!React.isValidElement(child)) return null
-        const el = React.cloneElement(child, { preventAllEvents: true })
+        const el = React.cloneElement(child, { preventAllEvents: true } as any)
         if (!multiple) return el
         return (
           <SelectMultipleValue

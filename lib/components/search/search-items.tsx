@@ -19,7 +19,7 @@ export type SearchItemsProps = {
   displayHoverHighlight?: boolean
 }
 
-export type SearchItemsRef = HTMLUListElement & {
+export interface SearchItemsRef extends HTMLUListElement {
   closeHighlight: () => void
 }
 
@@ -35,11 +35,17 @@ const SearchItems = React.forwardRef<
     const { rect, setRect } = useRect()
     const ref = useRef<HTMLUListElement | null>(null)
     const [displayHighlight, setDisplayHighlight] = useState<boolean>(false)
-    useImperativeHandle(outRef, () =>
-      Object.assign(ref.current, {
-        closeHighlight: () => setDisplayHighlight(false),
-      }),
-    )
+    useImperativeHandle(outRef, () => {
+      if (ref.current) {
+        Object.assign(ref.current, {
+          closeHighlight: () => setDisplayHighlight(false),
+        })
+
+        return ref.current as SearchItemsRef
+      }
+
+      return null
+    })
 
     const hoverHandler = (event: MouseEvent<HTMLButtonElement>) => {
       if (preventHoverHighlightSync) return

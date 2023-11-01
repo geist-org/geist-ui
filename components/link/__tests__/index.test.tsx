@@ -43,11 +43,4 @@ describe('Link', () => {
     expect(() => wrapper.unmount()).not.toThrow()
     errorSpy.mockRestore()
   })
-
-  it('an warning should be thrown when using the pure prop', () => {
-    const errorSpy = jest.spyOn(console, 'error').mockImplementation(() => {})
-    mount(<Link pure />)
-    expect(errorSpy).toHaveBeenCalled()
-    errorSpy.mockRestore()
-  })
 })

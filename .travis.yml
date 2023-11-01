@@ -16,7 +16,7 @@ branches:
     - master
 
 install:
-  - yarn
+  - pnpm i
 
 script:
-  - yarn run build
+  - pnpm build

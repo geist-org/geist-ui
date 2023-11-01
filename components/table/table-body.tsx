@@ -25,7 +25,7 @@ const defaultProps = {
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props<any>>
-export type TableBodyProps<TableDataItem> = Props<TableDataItem> & NativeAttrs
+export type TableBodyProps<TableDataItem extends TableDataItemBase> = Props<TableDataItem> & NativeAttrs
 
 const TableBody = <TableDataItem extends TableDataItemBase>({
   data,
