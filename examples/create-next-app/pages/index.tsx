@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import { Page, Text, Image, Display, Button, Grid } from '@geist-ui/core'
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const gh = 'https://github.com/geist-org/geist-ui'
 const docs = 'https://geist-ui.dev'
