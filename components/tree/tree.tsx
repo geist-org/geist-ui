@@ -22,32 +22,36 @@ interface Props {
   initialExpand?: boolean
   onClick?: (path: string) => void
   className?: string
+  noSort?: boolean
 }
 
 const defaultProps = {
   initialExpand: false,
   className: '',
+  noSort: false,
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type TreeProps = Props & NativeAttrs
 
-const makeChildren = (value: Array<TreeFile> = []) => {
+const makeChildren = (value: Array<TreeFile> = [], noSort: boolean) => {
   if (!value || !value.length) return null
-  return value
-    .sort((a, b) => {
+  if (!noSort) {
+    // Sort
+    value = value.sort((a, b) => {
       if (a.type !== b.type) return a.type !== directoryType ? 1 : -1
 
       return `${a.name}`.charCodeAt(0) - `${b.name}`.charCodeAt(0)
     })
-    .map((item, index) => {
+  }
+  return value.map((item, index) => {
       if (item.type === directoryType)
         return (
           <TreeFolder
             name={item.name}
             extra={item.extra}
             key={`folder-${item.name}-${index}`}>
-            {makeChildren(item.files)}
+            {makeChildren(item.files, noSort)}
           </TreeFolder>
         )
       return (
@@ -66,6 +70,7 @@ const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
   initialExpand,
   value,
   className,
+  noSort,
   ...props
 }: React.PropsWithChildren<TreeProps> & typeof defaultProps) => {
   const isImperative = Boolean(value && value.length > 0)
@@ -78,13 +83,14 @@ const Tree: React.FC<React.PropsWithChildren<TreeProps>> = ({
       onFileClick,
       initialExpand,
       isImperative,
+      noSort,
     }),
     [initialExpand],
   )
 
   const customChildren = isImperative
-    ? makeChildren(value)
-    : sortChildren(children, TreeFolder)
+    ? makeChildren(value, noSort)
+    : sortChildren(children, TreeFolder, noSort)
 
   return (
     <TreeContext.Provider value={initialValue}>
