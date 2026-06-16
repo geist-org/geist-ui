@@ -35,12 +35,14 @@ describe('Grid', () => {
         alignItems="center"
         alignContent="center"
         direction="column"
-        wrap="wrap">
+        wrap="wrap"
+      >
         <Grid
           justify="center"
           alignItems="center"
           alignContent="center"
-          direction="column">
+          direction="column"
+        >
           test
         </Grid>
       </Grid.Container>,

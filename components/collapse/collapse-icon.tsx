@@ -14,7 +14,8 @@ const CollapseIcon: React.FC<Props> = ({ active }) => {
       strokeLinejoin="round"
       fill="none"
       shapeRendering="geometricPrecision"
-      style={{ color: 'currentColor' }}>
+      style={{ color: 'currentColor' }}
+    >
       <path d="M6 9l6 6 6-6" />
 
       <style jsx>{`

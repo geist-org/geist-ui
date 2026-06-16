@@ -31,7 +31,8 @@ const TreeStatusIcon: React.FC<TreeStatusIconProps> = ({
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
-      shapeRendering="geometricPrecision">
+      shapeRendering="geometricPrecision"
+    >
       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
       {!active && <path d="M12 8v8" />}
       <path d="M8 12h8" />

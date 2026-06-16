@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react'
+import useClasses from '../use-classes'
+import { tuple } from '../utils/prop-types'
+import { TreeContext } from './tree-context'
 import TreeFile from './tree-file'
 import TreeFolder from './tree-folder'
-import { TreeContext } from './tree-context'
-import { tuple } from '../utils/prop-types'
 import { sortChildren } from './tree-help'
-import useClasses from '../use-classes'
 
 const FileTreeValueType = tuple('directory', 'file')
 
@@ -13,6 +13,7 @@ const directoryType = FileTreeValueType[0]
 export type TreeFile = {
   type: typeof FileTreeValueType[number]
   name: string
+  sortableName?: string
   extra?: string
   files?: Array<TreeFile>
 }
@@ -38,6 +39,10 @@ const makeChildren = (value: Array<TreeFile> = []) => {
     .sort((a, b) => {
       if (a.type !== b.type) return a.type !== directoryType ? 1 : -1
 
+      if (a.sortableName && b.sortableName) {
+        return `${a.sortableName}`.charCodeAt(0) - `${b.sortableName}`.charCodeAt(0)
+      }
+
       return `${a.name}`.charCodeAt(0) - `${b.name}`.charCodeAt(0)
     })
     .map((item, index) => {
@@ -46,7 +51,8 @@ const makeChildren = (value: Array<TreeFile> = []) => {
           <TreeFolder
             name={item.name}
             extra={item.extra}
-            key={`folder-${item.name}-${index}`}>
+            key={`folder-${item.name}-${index}`}
+          >
             {makeChildren(item.files)}
           </TreeFolder>
         )

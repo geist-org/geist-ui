@@ -58,7 +58,8 @@ const TabsItemComponent: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
         onMouseOver={onMouseOver}
         onClick={clickHandler}
         style={active ? activeStyle : {}}
-        data-geist="tab-item">
+        data-geist="tab-item"
+      >
         {label}
         <style jsx>{`
           .tab {

@@ -38,7 +38,8 @@ const TableCell = <TableDataItem extends TableDataItemBase>({
           <td
             key={`row-td-${index}-${column.prop}`}
             onClick={() => onCellClick && onCellClick(currentRowValue, rowIndex, index)}
-            className={column.className}>
+            className={column.className}
+          >
             <div className="cell">
               {shouldBeRenderElement ? shouldBeRenderElement : cellValue}
             </div>

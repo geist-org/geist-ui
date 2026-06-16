@@ -24,7 +24,8 @@ export default function Home() {
               </Text>{' '}
               and start learning more !
             </>
-          }>
+          }
+        >
           <Image src="/geist-banner.png" alt="geist ui banner" draggable={false} />
         </Display>
         <Grid.Container justify="center" gap={3} mt="100px">
@@ -33,7 +34,8 @@ export default function Home() {
               shadow
               type="secondary-light"
               width="100%"
-              onClick={() => redirect(gh)}>
+              onClick={() => redirect(gh)}
+            >
               GitHub Repo
             </Button>
           </Grid>

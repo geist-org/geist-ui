@@ -21,7 +21,8 @@ export const makeToastActions = (actions: Toast['actions'], cancelHandle: () => 
       key={`action-${index}`}
       onClick={(event: React.MouseEvent<HTMLButtonElement>) =>
         handler(event, action.handler)
-      }>
+      }
+    >
       {action.name}
     </Button>
   ))

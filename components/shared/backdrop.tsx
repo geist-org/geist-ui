@@ -58,12 +58,14 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps>> = React.memo(
           className={useClasses('backdrop', backdropClassName)}
           onClick={clickHandler}
           onMouseUp={mouseUpHandler}
-          {...props}>
+          {...props}
+        >
           <div className={useClasses('layer', layerClassName)} />
           <div
             onClick={onContentClick}
             className={useClasses('position', positionClassName)}
-            onMouseDown={() => setIsContentMouseDown(true)}>
+            onMouseDown={() => setIsContentMouseDown(true)}
+          >
             {children}
           </div>
           <style jsx>{`

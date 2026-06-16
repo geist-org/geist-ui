@@ -92,7 +92,8 @@ describe('Tooltip', () => {
         <Tooltip
           text={<p id="visible">custom-content</p>}
           visible={true}
-          placement="rightEnd">
+          placement="rightEnd"
+        >
           some tips
         </Tooltip>
       </div>,
@@ -108,7 +109,8 @@ describe('Tooltip', () => {
         <Tooltip
           text={<p id="initial-visible">custom-content</p>}
           initialVisible={true}
-          placement={'test' as any}>
+          placement={'test' as any}
+        >
           some tips
         </Tooltip>
       </div>,

@@ -115,7 +115,8 @@ const Menu: React.FC<unknown> = () => {
                 align="center"
                 hideDivider
                 hideBorder
-                onChange={handleTabChange}>
+                onChange={handleTabChange}
+              >
                 <Tabs.Item font="14px" label={isChinese ? '主页' : 'Home'} value="" />
                 {allSides.map((tab, index) => (
                   <Tabs.Item
@@ -134,7 +135,8 @@ const Menu: React.FC<unknown> = () => {
                   className="menu-toggle"
                   auto
                   type="abort"
-                  onClick={() => setExpanded(!expanded)}>
+                  onClick={() => setExpanded(!expanded)}
+                >
                   <MenuIcon size="1.125rem" />
                 </Button>
               ) : (

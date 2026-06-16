@@ -57,7 +57,8 @@ const Controls: React.FC<unknown> = React.memo(() => {
         command
         font="12px"
         className="shortcuts"
-        title="Command + K to search.">
+        title="Command + K to search."
+      >
         K
       </Keyboard>
       <Spacer w={0.75} />
@@ -67,7 +68,8 @@ const Controls: React.FC<unknown> = React.memo(() => {
         py={0}
         px={0}
         onClick={switchLanguages}
-        title={isChinese ? '切换语言' : 'switch language'}>
+        title={isChinese ? '切换语言' : 'switch language'}
+      >
         <Text font="13px" style={{ fontWeight: 500 }}>
           {isChinese ? 'En' : '中'}
         </Text>
@@ -89,7 +91,8 @@ const Controls: React.FC<unknown> = React.memo(() => {
         pure
         onChange={switchThemes}
         value={theme.type}
-        title={isChinese ? '切换主题' : 'Switch Themes'}>
+        title={isChinese ? '切换主题' : 'Switch Themes'}
+      >
         <Select.Option value="light">
           <span className="select-content">
             <SunIcon size={14} /> {isChinese ? '明亮' : 'Light'}

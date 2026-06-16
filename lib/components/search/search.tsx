@@ -99,7 +99,8 @@ const Search: React.FC<unknown> = () => {
         py={0}
         px={0.75}
         wrapClassName="search-menu"
-        positionClassName="search-position">
+        positionClassName="search-position"
+      >
         <Input
           ref={ref}
           w="100%"

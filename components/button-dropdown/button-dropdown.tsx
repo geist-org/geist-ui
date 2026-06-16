@@ -91,7 +91,8 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
         ref={ref}
         className={useClasses('btn-dropdown', className)}
         onClick={stopPropagation}
-        {...props}>
+        {...props}
+      >
         {mainItemChildren}
         <details open={visible}>
           <summary onClick={clickHandler}>
@@ -103,7 +104,8 @@ const ButtonDropdownComponent: React.FC<React.PropsWithChildren<ButtonDropdownPr
                     color: colors.color,
                     height: SCALES.height(2.5),
                     width: SCALES.height(2.5),
-                  }}>
+                  }}
+                >
                   {icon}
                 </span>
               ) : (

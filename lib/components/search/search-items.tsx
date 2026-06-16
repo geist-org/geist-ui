@@ -65,7 +65,7 @@ const SearchItems = React.forwardRef<
           visible={displayHighlight}
           activeOpacity={0.5}
         />
-        {grouppedResults.map((group) => (
+        {grouppedResults.map(group => (
           <li role="presentation" key={group.title}>
             <div className="group-title">{group.title}</div>
             <ul role="group">

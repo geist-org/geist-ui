@@ -65,7 +65,8 @@ const FieldsetGroupComponent: React.FC<React.PropsWithChildren<FieldsetGroupProp
             <button
               onClick={() => clickHandle(item.value)}
               key={item.value}
-              className={selfVal === item.value ? 'active' : ''}>
+              className={selfVal === item.value ? 'active' : ''}
+            >
               {item.label}
             </button>
           ))}

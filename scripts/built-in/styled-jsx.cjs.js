@@ -354,7 +354,6 @@ https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92c
     }
   }
 })(stylesheet)
-
 ;(function (exports) {
   exports.__esModule = true
   exports['default'] = void 0
@@ -630,7 +629,6 @@ https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92c
     }
   }
 })(stylesheetRegistry)
-
 ;(function (exports) {
   exports.__esModule = true
   exports['default'] = JSXStyle

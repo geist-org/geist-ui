@@ -48,7 +48,8 @@ const AutoCompleteDropdown: React.FC<
       parent={ref}
       visible={visible}
       disableMatchWidth={disableMatchWidth}
-      getPopupContainer={getPopupContainer}>
+      getPopupContainer={getPopupContainer}
+    >
       <div className={classes} style={dropdownStyle} onClick={clickHandler}>
         {children}
         <style jsx>{`

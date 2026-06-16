@@ -27,7 +27,8 @@ const InputIconClear: React.FC<Props> = ({ onClick, disabled, visible }) => {
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
-        shapeRendering="geometricPrecision">
+        shapeRendering="geometricPrecision"
+      >
         <path d="M18 6L6 18" />
         <path d="M6 6l12 12" />
       </svg>

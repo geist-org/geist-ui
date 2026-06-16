@@ -176,7 +176,8 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
         return (
           <SelectMultipleValue
             disabled={disabled}
-            onClear={clearable ? () => updateValue(child.props.value) : null}>
+            onClear={clearable ? () => updateValue(child.props.value) : null}
+          >
             {el}
           </SelectMultipleValue>
         )
@@ -203,7 +204,8 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
           ref={ref}
           onClick={clickHandler}
           onMouseDown={mouseDownHandler}
-          {...props}>
+          {...props}
+        >
           <SelectInput
             ref={inputRef}
             visible={visible}
@@ -225,7 +227,8 @@ const SelectComponent = React.forwardRef<SelectRef, React.PropsWithChildren<Sele
             className={dropdownClassName}
             dropdownStyle={dropdownStyle}
             disableMatchWidth={disableMatchWidth}
-            getPopupContainer={getPopupContainer}>
+            getPopupContainer={getPopupContainer}
+          >
             {children}
           </SelectDropdown>
           {!pure && (

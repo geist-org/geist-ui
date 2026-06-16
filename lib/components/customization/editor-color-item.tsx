@@ -52,7 +52,8 @@ const EditorColorItem: React.FC<React.PropsWithChildren<Props>> = ({ keyName }) 
     <Popover
       content={() => popoverContent(mainColor)}
       portalClassName="editor-popover"
-      offset={3}>
+      offset={3}
+    >
       <div className="editor-item">
         <div className="dot-box">
           <span className="dot" />

@@ -117,7 +117,8 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       onClick={clickEventHandler}
       onMouseEnter={() => mouseEventHandler(true)}
       onMouseLeave={() => mouseEventHandler(false)}
-      {...props}>
+      {...props}
+    >
       {children}
       <TooltipContent {...contentProps}>{text}</TooltipContent>
       <style jsx>{`

@@ -7,6 +7,12 @@ export const sortChildren = (
   return React.Children.toArray(children).sort((a, b) => {
     if (!React.isValidElement(a) || !React.isValidElement(b)) return 0
     if (a.type !== b.type) return a.type !== folderComponentType ? 1 : -1
+    if (a.props.sortableName && b.props.sortableName) {
+      return (
+        `${a.props.sortableName}`.charCodeAt(0) - `${b.props.sortableName}`.charCodeAt(0)
+      )
+    }
+
     return `${a.props.name}`.charCodeAt(0) - `${b.props.name}`.charCodeAt(0)
   })
 }

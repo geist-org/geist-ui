@@ -1,17 +1,18 @@
 import React, { useEffect, useMemo, useState } from 'react'
+import Expand from '../shared/expand'
+import useClasses from '../use-classes'
 import useTheme from '../use-theme'
 import { setChildrenProps } from '../utils/collections'
-import TreeFile from './tree-file'
-import Expand from '../shared/expand'
-import TreeIndents from './tree-indents'
 import { useTreeContext } from './tree-context'
+import TreeFile from './tree-file'
 import TreeFolderIcon from './tree-folder-icon'
+import { makeChildPath, sortChildren, stopPropagation } from './tree-help'
+import TreeIndents from './tree-indents'
 import TreeStatusIcon from './tree-status-icon'
-import { sortChildren, makeChildPath, stopPropagation } from './tree-help'
-import useClasses from '../use-classes'
 
 interface Props {
   name: string
+  sortableName?: string
   extra?: string
   parentPath?: string
   level?: number
