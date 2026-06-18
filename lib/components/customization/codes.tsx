@@ -7,7 +7,7 @@ import CopyIcon from 'components/snippet/snippet-icon'
 import makeCodeTheme from 'lib/components/playground/code-theme'
 import { Text, Spacer, useTheme, Code, useToasts, Themes, useClipboard } from 'components'
 
-export const getDeepDifferents = <T,>(source: T, target: T): T => {
+export const getDeepDifferents = <T extends Record<string, any>>(source: T, target: T): T => {
   if (!isObject(target) || !isObject(source)) return target
 
   const sourceKeys = Object.keys(source) as Array<keyof T>

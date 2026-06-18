@@ -41,20 +41,20 @@ type ExcludeTooltipProps = {
   placement: any
 }
 
-export type PopoverProps = Props & Omit<TooltipProps, keyof ExcludeTooltipProps>
+export type PopoverProps = Props & Omit<TooltipProps, keyof ExcludeTooltipProps | "content">
 
 const PopoverComponent: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   content,
   children,
   trigger,
   placement,
-  initialVisible,
   portalClassName,
-  disableItemsAutoClose,
-  onVisibleChange,
   visible: customVisible,
+  initialVisible = defaultProps.initialVisible,
+  disableItemsAutoClose = defaultProps.disableItemsAutoClose,
+  onVisibleChange = defaultProps.onVisibleChange,
   ...props
-}: React.PropsWithChildren<PopoverProps> & typeof defaultProps) => {
+}) => {
   const { SCALES } = useScale()
   const [visible, setVisible] = useState<boolean>(initialVisible)
   const textNode = useMemo(() => getReactNode(content), [content])

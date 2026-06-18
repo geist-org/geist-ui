@@ -1,4 +1,6 @@
-import '@testing-library/jest-dom/extend-expect'
+import "@testing-library/jest-dom/matchers";
+import "@testing-library/jest-dom/jest-globals";
+
 import enzyme from 'enzyme'
 /**
  * The official repository does not currently support React 17

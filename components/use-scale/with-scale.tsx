@@ -13,7 +13,7 @@ const reduceScaleCoefficient = (scale: number) => {
 const withScale = <T, P = {}>(
   Render: React.ComponentType<P & { ref?: React.Ref<T> }>,
 ) => {
-  const ScaleFC = forwardRef<T, P & ScaleProps>(({ children, ...props }, ref) => {
+  const ScaleFC = forwardRef<T, P & React.PropsWithChildren<ScaleProps>>(({ children, ...props }, ref) => {
     const { layout } = useTheme()
     const {
       paddingLeft,

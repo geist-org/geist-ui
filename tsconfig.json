@@ -31,7 +31,11 @@
       "node_modules/@types",
       "./typings"
     ],
-    "incremental": true
+    "incremental": true,
+    "types": [
+      "jest",
+      "@testing-library/jest-dom",
+    ]
   },
   "exclude": [
     "node_modules",
@@ -41,6 +45,7 @@
   ],
   "include": [
     "next-env.d.ts",
+    "tests/setup.ts",
     "**/*.ts",
     "**/*.tsx",
     "lib/**/*.tsx",

@@ -14,15 +14,17 @@ jobs:
             - v2-dependencies-{{ checksum "package.json" }}
             - v2-dependencies-
 
-      - run: yarn
+      - run: yarn global add pnpm
+
+      - run: pnpm i
 
       - save_cache:
           paths:
             - node_modules
           key: v2-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn run lint
-      - run: yarn test -w 1 --coverage
+      - run: pnpm run lint
+      - run: pnpm test -w 1 --coverage
       - run: bash <(curl -s https://codecov.io/bash)
 
   build:
@@ -39,14 +41,14 @@ jobs:
             - v2-dependencies-{{ checksum "package.json" }}
             - v2-dependencies-
 
-      - run: yarn
+      - run: pnpm i
 
       - save_cache:
           paths:
             - node_modules
           key: v2-dependencies-{{ checksum "package.json" }}
 
-      - run: yarn run build
+      - run: pnpm run build
 workflows:
   version: 2
   build_and_test:

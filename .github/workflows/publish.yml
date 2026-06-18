@@ -14,13 +14,13 @@ jobs:
         with:
           node-version: 12
       - name: install
-        run: yarn install --check-files --frozen-lockfile
+        run: pnpm install --check-files --frozen-lockfile
       - name: lint
-        run: yarn lint
+        run: pnpm lint
       - name: lint
-        run: yarn test
+        run: pnpm test
       - name: build
-        run: yarn build
+        run: pnpm build
   publish:
     needs: build
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - name: install
-        run: yarn install --check-files --frozen-lockfile
+        run: pnpm install --check-files --frozen-lockfile
       - name: set dist-tag
         run: |
           case "${{github.event.release.name}}" in
@@ -48,6 +48,6 @@ jobs:
       - name: publish
         run: |
           echo ">> dist-tag: ${{ env.r_tag }}"
-          yarn release --tag ${{ env.r_tag }}
+          pnpm release --tag ${{ env.r_tag }}
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
