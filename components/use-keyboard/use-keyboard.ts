@@ -1,5 +1,5 @@
 import { KeyMod } from './codes'
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { getActiveModMap, getCtrlKeysByPlatform } from './helper'
 
 export type KeyboardOptions = {
@@ -30,51 +30,64 @@ export type UseKeyboard = (
 ) => KeyboardResult
 
 const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => {
-  const bindings = Array.isArray(keyBindings) ? (keyBindings as number[]) : [keyBindings]
+  const bindings = Array.isArray(keyBindings)
+    ? (keyBindings as number[])
+    : [keyBindings];
   const {
     disableGlobalEvent = false,
     capture = false,
     stopPropagation = false,
     preventDefault = true,
     event = 'keydown',
-  } = options
-  const activeModMap = getActiveModMap(bindings)
-  const keyCode = bindings.filter((item: number) => !KeyMod[item])
-  const { CtrlCmd, WinCtrl } = getCtrlKeysByPlatform()
+  } = options;
+  const activeModMap = getActiveModMap(bindings);
+  const keyCode = bindings.filter((item: number) => !KeyMod[item]);
+  const { CtrlCmd, WinCtrl } = getCtrlKeysByPlatform();
 
-  const eventHandler = (event: React.KeyboardEvent | KeyboardEvent) => {
-    if (activeModMap.Shift && !event.shiftKey) return
-    if (activeModMap.Alt && !event.altKey) return
-    if (activeModMap.CtrlCmd && !event[CtrlCmd]) return
-    if (activeModMap.WinCtrl && !event[WinCtrl]) return
-    const hitOne = keyCode.find(k => k === event.keyCode)
-    if (keyCode && !hitOne) return
-    if (stopPropagation) {
-      event.stopPropagation()
-    }
-    if (preventDefault) {
-      event.preventDefault()
-    }
-    handler && handler(event)
-  }
+  const eventHandler = useCallback(
+    (event: React.KeyboardEvent | KeyboardEvent) => {
+      if (activeModMap.Shift && !event.shiftKey) return;
+      if (activeModMap.Alt && !event.altKey) return;
+      if (activeModMap.CtrlCmd && !event[CtrlCmd]) return;
+      if (activeModMap.WinCtrl && !event[WinCtrl]) return;
+      const hitOne = keyCode.find((k) => k === event.keyCode);
+      if (keyCode && !hitOne) return;
+      if (stopPropagation) {
+        event.stopPropagation();
+      }
+      if (preventDefault) {
+        event.preventDefault();
+      }
+      handler && handler(event);
+    },
+    [
+      activeModMap,
+      CtrlCmd,
+      WinCtrl,
+      keyCode,
+      handler,
+      preventDefault,
+      stopPropagation,
+    ]
+  );
 
   useEffect(() => {
     if (!disableGlobalEvent) {
-      document.addEventListener(event, eventHandler)
+      document.addEventListener(event, eventHandler);
     }
     return () => {
-      document.removeEventListener(event, eventHandler)
-    }
-  }, [disableGlobalEvent])
+      document.removeEventListener(event, eventHandler);
+    };
+  }, [disableGlobalEvent, event, eventHandler]);
 
   const elementBindingHandler = (
     elementEventType: 'keydown' | 'keypress' | 'keyup',
-    isCapture: boolean = false,
+    isCapture = false
   ) => {
-    if (elementEventType !== event) return () => {}
-    if (isCapture !== capture) return () => {}
-    return (e: React.KeyboardEvent) => eventHandler(e)
-  }
+    if (elementEventType !== event) return () => null;
+    if (isCapture !== capture) return () => null;
+    return (e: React.KeyboardEvent) => eventHandler(e);
+  };
 
   return {
     bindings: {
@@ -85,7 +98,7 @@ const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => {
       onKeyUp: elementBindingHandler('keyup'),
       onKeyUpCapture: elementBindingHandler('keyup', true),
     },
-  }
-}
+  };
+};
 
 export default useKeyboard
