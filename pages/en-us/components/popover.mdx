@@ -23,7 +23,7 @@ The floating box popped by clicking or hovering.
     </div>
   )
   return (
-    <Popover content={content}>
+    <Popover content={content} placement="bottomStart">
       Menu
     </Popover>
   )
@@ -55,7 +55,7 @@ The floating box popped by clicking or hovering.
     </>
   )
   return (
-    <Popover content={content}>
+    <Popover content={content} placement="bottomStart">
       Menu
     </Popover>
   )
@@ -81,7 +81,8 @@ The floating box popped by clicking or hovering.
     </div>
   )
   return (
-    <Popover content={content} visible={visible}
+    <Popover content={content} placement="bottomStart"
+      visible={visible}
       onVisibleChange={changeHandler}>
       Menu
     </Popover>
