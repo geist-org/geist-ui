@@ -1,0 +1,55 @@
+import { Box } from 'components'
+import { Layout, Playground, Attributes } from 'lib/components'
+
+export const meta = {
+  title: 'Box',
+  group: 'Layout',
+}
+
+## Box
+
+Polymorphic scalable component.
+
+<Playground
+  scope={{ Box }}
+  code={`
+<Box>
+    Hello
+</Box>
+`}
+/>
+
+<Playground
+  title="Polymorphic property"
+  desc="Provide an element to render the Box as."
+  scope={{ Box }}
+  code={`
+<Box as='a' href='#'>
+    I am an anchor tag
+</Box>
+`}
+/>
+
+<Playground
+  title="Scalability"
+  desc="Use props to scale the Box."
+  scope={{ Box }}
+  code={`
+<Box font={3} py='3rem' mx='auto' width='300px'>
+    I am scalable
+</Box>
+`}
+/>
+
+<Attributes edit="/pages/en-us/components/page.mdx">
+<Attributes.Title>Box.Props</Attributes.Title>
+
+| Attribute | Description  | Type                | Accepted values              | Default |
+| --------- | ------------ | ------------------- | ---------------------------- | ------- |
+| **as**    | render mode  | `React.ElementType` | `'span', 'p', 'form', ...`   | `div`   |
+| ...       | scale props  | `ScaleProps`        | `'width', 'px', 'font', ...` | -       |
+| ...       | native props | `HTMLAttributes`    | `'id', 'className', ...`     | -       |
+
+</Attributes>
+
+export default ({ children }) => <Layout meta={meta}>{children}</Layout>
